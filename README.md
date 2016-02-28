@@ -4,7 +4,8 @@ MISP galaxy is a simple method to express a large object called cluster that can
 attributes. A cluster can be composed of one or more elements. Elements are expressed as key-values. There
 are default elements available in MISP galaxy but those can overwritten, replaced or updated as you wish.
 
-Existing clusters and elements can be used as-is or as a template.
+Existing clusters and elements can be used as-is or as a template. MISP distribution can be applied
+to each cluster to permit limited or a broader distribution scheme.
 
 # Available clusters
 
@@ -17,5 +18,5 @@ Existing clusters and elements can be used as-is or as a template.
 
 ## How to contribute?
 
-Fork the project, update elements or clusters and make a pull-request.
+Fork the project, update or create elements or clusters and make a pull-request.
 
