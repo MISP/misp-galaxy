@@ -13,7 +13,7 @@ to each cluster to permit limited or a broader distribution scheme.
 
 # Available Elements
 
-- [elements/adversary-groups.json](elements/apt-groups.json) - Adversary Groups - Known or estimated adversary groups targeting organizations and employees. Adversary groups are regularly confused with their initial operation or campaign.
+- [elements/adversary-groups.json](elements/adversary-groups.json) - Adversary groups - Known or estimated adversary groups targeting organizations and employees. Adversary groups are regularly confused with their initial operation or campaign.
 - [elements/threat-actor-motivation-vocabulary.json](elements/threat-actor-motivation-vocabulary.json) - The MotivationVocab is the default STIX vocabulary for expressing the motivation of a threat actor. STIX 1.2.1
 - [elements/threat-actor-intended-effect-vocabulary.json](elements/threat-actor-intended-effect-vocabulary.json) - The IntendedEffectVocab is the default STIX vocabulary for expressing the intended effect of a threat actor. STIX 1.2.1
 
