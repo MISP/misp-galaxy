@@ -15,6 +15,7 @@ to each cluster to permit a limited or broader distribution scheme.
 
 - [elements/adversary-groups.json](elements/adversary-groups.json) - Adversary groups - Known or estimated adversary groups targeting organizations and employees. Adversary groups are regularly confused with their initial operation or campaign.
 - [elements/certainty-level.json](elements/certainty-level.json) - Certainty level of an associated element or cluster.
+- [elements/planning-and-operational-support-vocabulary.json](elements/planning-and-operational-support-vocabulary.json) - The PlanningAndOperationalSupportVocab is the default STIX vocabulary for expressing the planning and operational support functions available to a threat actor.
 - [elements/threat-actor-motivation-vocabulary.json](elements/threat-actor-motivation-vocabulary.json) - The MotivationVocab is the default STIX vocabulary for expressing the motivation of a threat actor. STIX 1.2.1
 - [elements/threat-actor-intended-effect-vocabulary.json](elements/threat-actor-intended-effect-vocabulary.json) - The IntendedEffectVocab is the default STIX vocabulary for expressing the intended effect of a threat actor. STIX 1.2.1
 
