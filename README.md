@@ -31,3 +31,5 @@ to localized information (which is not shared) or additional information (that c
 
 Fork the project, update or create elements or clusters and make a pull-request.
 
+We recommend to validate the JSON file using [jq](https://stedolan.github.io/jq/) before doing a pull-request.
+
