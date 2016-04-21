@@ -1,5 +1,7 @@
 # misp-galaxy
 
+[![Build Status](https://travis-ci.org/MISP/misp-galaxy.svg?branch=master)](https://travis-ci.org/MISP/misp-galaxy)
+
 MISP galaxy is a simple method to express a large object called cluster that can be attached to MISP events or
 attributes. A cluster can be composed of one or more elements. Elements are expressed as key-values. There
 are default elements available in MISP galaxy but those can be overwritten, replaced or updated as you wish.
