@@ -35,3 +35,6 @@ Fork the project, update or create elements or clusters and make a pull-request.
 
 We recommend to validate the JSON file using [jq](https://stedolan.github.io/jq/) before doing a pull-request.
 
+## License
+
+MISP galaxy is licensed under [CC0 1.0 Universal (CC0 1.0)](https://creativecommons.org/publicdomain/zero/1.0/) -  Public Domain Dedication.
