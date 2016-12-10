@@ -17,7 +17,7 @@ to localized information (which is not shared) or additional information (that c
 # Available clusters
 
 - [clusters/threat-actor.json](clusters/threat-actor.json) - Adversary groups - Known or estimated adversary groups targeting organizations and employees. Adversary groups are regularly confused with their initial operation or campaign. MISP
-- [clusters/tools.json](clusters/tools.json) - threat-actor-tools is an enumeration of tools used by adversaries. The list includes malware but also common software regularly used by the adversaries. MISP
+- [clusters/tool.json](clusters/tool.json) - tool is an enumeration of tools used by adversaries. The list includes malware but also common software regularly used by the adversaries. MISP
 
 # Available Vocabularies
 
