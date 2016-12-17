@@ -33,6 +33,11 @@ to localized information (which is not shared) or additional information (that c
 - [vocabularies/threat-actor/sophistication.json](vocabularies/threat-actor/sophistication.json) - The ThreatActorSophisticationVocab enumeration is used to define the default STIX vocabulary for expressing the subjective level of sophistication of a threat actor.
 - [vocabularies/threat-actor/type.json](vocabularies/threat-actor/type.json) - The ThreatActorTypeVocab enumeration is used to define the default STIX vocabulary for expressing the subjective type of a threat actor.
 
+## MISP Integration
+
+Starting from [MISP 2.4.56](http://www.misp-project.org/2016/12/07/MISP.2.4.56.released.html), galaxy is integrated within the MISP threat sharing platform and users can directly benefit from the available clusters to attach them to the MISP event.
+
+![MISP Integration of the MISP galaxy](doc/images/screenshot.png)
 ## How to contribute?
 
 Fork the project, update or create elements or clusters and make a pull-request.
