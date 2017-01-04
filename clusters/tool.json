@@ -1,100 +1,112 @@
 {
+  "name": "Tool",
+  "type": "tool",
+  "source": "MISP Project",
+  "author": [
+    "Alexandre Dulaunoy",
+    "Florian Roth",
+    "Timo Steffens",
+    "Christophe Vandeplas"
+  ],
+  "description": "threat-actor-tools is an enumeration of tools used by adversaries. The list includes malware but also common software regularly used by the adversaries.",
+  "uuid": "0d821b68-9d82-4c6d-86a6-1071a9e0f79f",
+  "version": 8,
   "values": [
     {
-      "value": "PlugX",
-      "description": "Malware"
+      "description": "Malware",
+      "value": "PlugX"
     },
     {
       "value": "MSUpdater"
     },
     {
-      "value": "Lazagne",
-      "description": "A password recovery tool regularly used by attackers"
+      "description": "A password recovery tool regularly used by attackers",
+      "value": "Lazagne"
     },
     {
-      "value": "Poison Ivy",
-      "description": "Poison Ivy is a RAT which was freely available and first released in 2005.",
       "meta": {
         "refs": [
           "https://www.fireeye.com/content/dam/fireeye-www/global/en/current-threats/pdfs/rpt-poison-ivy.pdf"
         ]
-      }
+      },
+      "description": "Poison Ivy is a RAT which was freely available and first released in 2005.",
+      "value": "Poison Ivy"
     },
     {
-      "value": "SPIVY",
-      "description": "In March 2016, Unit 42 observed this new Poison Ivy variant we’ve named SPIVY being deployed via weaponized documents leveraging CVE-2015-2545.",
       "meta": {
         "refs": [
           "http://researchcenter.paloaltonetworks.com/2016/04/unit42-new-poison-ivy-rat-variant-targets-hong-kong-pro-democracy-activists/"
         ]
-      }
+      },
+      "description": "In March 2016, Unit 42 observed this new Poison Ivy variant we’ve named SPIVY being deployed via weaponized documents leveraging CVE-2015-2545.",
+      "value": "SPIVY"
     },
     {
       "value": "Torn RAT"
     },
     {
-      "value": "OzoneRAT",
       "meta": {
-        "refs": [
-          "https://blog.fortinet.com/2016/08/29/german-speakers-targeted-by-spam-leading-to-ozone-rat"
-        ],
         "synonyms": [
           "Ozone RAT",
           "ozonercp"
+        ],
+        "refs": [
+          "https://blog.fortinet.com/2016/08/29/german-speakers-targeted-by-spam-leading-to-ozone-rat"
         ]
-      }
+      },
+      "value": "OzoneRAT"
     },
     {
       "value": "ZeGhost"
     },
     {
-      "value": "Backdoor.Dripion",
-      "description": "Backdoor.Dripion was custom developed, deployed in a highly targeted fashion, and used command and control servers disguised as antivirus company websites.",
       "meta": {
-        "refs": [
-          "http://www.symantec.com/connect/blogs/taiwan-targeted-new-cyberespionage-back-door-trojan"
-        ],
         "synonyms": [
           "Dripion"
-        ]
-      }
-    },
-    {
-      "value": "Elise Backdoor",
-      "synonyms": [
-        "Elise"
-      ]
-    },
-    {
-      "value": "Trojan.Laziok",
-      "meta": {
-        "synonyms": [
-          "Laziok"
         ],
         "refs": [
-          "http://www.symantec.com/connect/blogs/new-reconnaissance-threat-trojanlaziok-targets-energy-sector"
+          "http://www.symantec.com/connect/blogs/taiwan-targeted-new-cyberespionage-back-door-trojan"
         ]
       },
-      "description": "A new information stealer, Trojan.Laziok, acts as a reconnaissance tool allowing attackers to gather information and tailor their attack methods for each compromised computer."
+      "description": "Backdoor.Dripion was custom developed, deployed in a highly targeted fashion, and used command and control servers disguised as antivirus company websites.",
+      "value": "Backdoor.Dripion"
     },
     {
-      "value": "Slempo",
-      "description": "Android-based malware",
+      "synonyms": [
+        "Elise"
+      ],
+      "value": "Elise Backdoor"
+    },
+    {
+      "description": "A new information stealer, Trojan.Laziok, acts as a reconnaissance tool allowing attackers to gather information and tailor their attack methods for each compromised computer.",
+      "meta": {
+        "refs": [
+          "http://www.symantec.com/connect/blogs/new-reconnaissance-threat-trojanlaziok-targets-energy-sector"
+        ],
+        "synonyms": [
+          "Laziok"
+        ]
+      },
+      "value": "Trojan.Laziok"
+    },
+    {
       "meta": {
         "synonyms": [
           "GM-Bot",
           "Acecard"
         ]
-      }
+      },
+      "description": "Android-based malware",
+      "value": "Slempo"
     },
     {
-      "value": "PWOBot",
-      "description": "We have discovered a malware family named ‘PWOBot’ that is fairly unique because it is written entirely in Python, and compiled via PyInstaller to generate a Microsoft Windows executable. The malware has been witnessed affecting a number of Europe-based organizations, particularly in Poland. Additionally, the malware is delivered via a popular Polish file-sharing web service.",
       "meta": {
         "refs": [
           "http://researchcenter.paloaltonetworks.com/2016/04/unit42-python-based-pwobot-targets-european-organizations/"
         ]
-      }
+      },
+      "description": "We have discovered a malware family named ‘PWOBot’ that is fairly unique because it is written entirely in Python, and compiled via PyInstaller to generate a Microsoft Windows executable. The malware has been witnessed affecting a number of Europe-based organizations, particularly in Poland. Additionally, the malware is delivered via a popular Polish file-sharing web service.",
+      "value": "PWOBot"
     },
     {
       "value": "Lstudio"
@@ -103,46 +115,46 @@
       "value": "Joy RAT"
     },
     {
-      "value": "Lost Door RAT",
-      "descriptions": "We recently came across a cyber attack that used a remote access Trojan (RAT) called Lost Door, a tool currently offered on social media sites. What also struck us the most about this RAT (detected as BKDR_LODORAT.A) is how it abuses the Port Forward feature in routers.",
       "meta": {
-        "synonyms": [
-          "LostDoor RAT"
-        ],
         "refs": [
           "http://blog.trendmicro.com/trendlabs-security-intelligence/lost-door-rat-accessible-customizable-attack-tool/"
+        ],
+        "synonyms": [
+          "LostDoor RAT"
         ]
-      }
+      },
+      "descriptions": "We recently came across a cyber attack that used a remote access Trojan (RAT) called Lost Door, a tool currently offered on social media sites. What also struck us the most about this RAT (detected as BKDR_LODORAT.A) is how it abuses the Port Forward feature in routers.",
+      "value": "Lost Door RAT"
     },
     {
-      "value": "njRAT",
       "meta": {
-        "synonyms": [
-          "Bladabindi"
-        ],
         "refs": [
           "http://www.fidelissecurity.com/files/files/FTA_1009-njRAT_Uncovered_rev2.pdf"
+        ],
+        "synonyms": [
+          "Bladabindi"
         ]
-      }
+      },
+      "value": "njRAT"
     },
     {
-      "value": "NanoCoreRAT",
       "meta": {
-        "synonyms": [
-          "NanoCore"
-        ],
         "refs": [
           "http://www.symantec.com/connect/blogs/nanocore-another-rat-tries-make-it-out-gutter"
+        ],
+        "synonyms": [
+          "NanoCore"
         ]
-      }
+      },
+      "value": "NanoCoreRAT"
     },
     {
-      "value": "Sakula",
       "meta": {
         "synonyms": [
           "Sakurel"
         ]
-      }
+      },
+      "value": "Sakula"
     },
     {
       "value": "Derusbi"
@@ -172,12 +184,12 @@
       "value": "WEBC2"
     },
     {
-      "value": "Pirpi",
       "meta": {
         "refs": [
           "http://www.symantec.com/connect/blogs/buckeye-cyberespionage-group-shifts-gaze-us-hong-kong"
         ]
-      }
+      },
+      "value": "Pirpi"
     },
     {
       "value": "RARSTONE"
@@ -192,16 +204,16 @@
       "value": "NETEAGLE"
     },
     {
-      "value": "Agent.BTZ",
       "meta": {
         "synonyms": [
           "ComRat"
         ]
-      }
+      },
+      "value": "Agent.BTZ"
     },
     {
-      "value": "Heseber BOT",
-      "description": "RAT bundle with standard VNC (to avoid/limit A/V detection)."
+      "description": "RAT bundle with standard VNC (to avoid/limit A/V detection).",
+      "value": "Heseber BOT"
     },
     {
       "value": "Agent.dne"
@@ -219,85 +231,85 @@
       "value": "Winexe"
     },
     {
-      "value": "Dark Comet",
-      "description": "RAT initialy identified in 2011 and still actively used."
+      "description": "RAT initialy identified in 2011 and still actively used.",
+      "value": "Dark Comet"
     },
     {
-      "value": "AlienSpy",
-      "description": "RAT for Apple OS X platforms"
+      "description": "RAT for Apple OS X platforms",
+      "value": "AlienSpy"
     },
     {
-      "value": "Cadelspy",
       "meta": {
         "synonyms": [
           "WinSpy"
         ]
-      }
+      },
+      "value": "Cadelspy"
     },
     {
-      "value": "CMStar",
       "meta": {
         "refs": [
           "http://researchcenter.paloaltonetworks.com/2016/03/digital-quartermaster-scenario-demonstrated-in-attacks-against-the-mongolian-government/"
         ]
-      }
+      },
+      "value": "CMStar"
     },
     {
-      "value": "DHS2015",
       "meta": {
-        "synonyms": [
-          "iRAT"
-        ],
         "refs": [
           "https://securelist.com/files/2015/02/The-Desert-Falcons-targeted-attacks.pdf"
+        ],
+        "synonyms": [
+          "iRAT"
         ]
-      }
+      },
+      "value": "DHS2015"
     },
     {
-      "value": "Gh0st Rat",
-      "description": "Gh0st Rat is a well-known Chinese remote access trojan which was originally made by C.Rufus Security Team several years ago.",
       "meta": {
-        "synonyms": [
-          "Gh0stRat, GhostRat"
-        ],
         "refs": [
           "http://download01.norman.no/documents/ThemanyfacesofGh0stRat.pdf"
+        ],
+        "synonyms": [
+          "Gh0stRat, GhostRat"
         ]
-      }
+      },
+      "description": "Gh0st Rat is a well-known Chinese remote access trojan which was originally made by C.Rufus Security Team several years ago.",
+      "value": "Gh0st Rat"
     },
     {
-      "value": "Fakem RAT",
-      "description": "Fakem RAT makes their network traffic look like well-known protocols (e.g. Messenger traffic, HTML pages). ",
       "meta": {
-        "synonyms": [
-          "FAKEM"
-        ],
         "refs": [
           "http://www.trendmicro.com/cloud-content/us/pdfs/security-intelligence/white-papers/wp-fakem-rat.pdf"
+        ],
+        "synonyms": [
+          "FAKEM"
         ]
-      }
+      },
+      "description": "Fakem RAT makes their network traffic look like well-known protocols (e.g. Messenger traffic, HTML pages). ",
+      "value": "Fakem RAT"
     },
     {
-      "value": "MFC Huner",
       "meta": {
+        "refs": [
+          "http://blog.trendmicro.com/trendlabs-security-intelligence/japan-us-defense-industries-among-targeted-entities-in-latest-attack/"
+        ],
         "synonyms": [
           "Hupigon",
           "BKDR_HUPIGON"
-        ],
-        "refs": [
-          "http://blog.trendmicro.com/trendlabs-security-intelligence/japan-us-defense-industries-among-targeted-entities-in-latest-attack/"
         ]
-      }
+      },
+      "value": "MFC Huner"
     },
     {
-      "value": "Blackshades",
-      "description": "Blackshades Remote Access Tool targets Microsoft Windows operating systems. Authors were arrested in 2012 and 2014.",
       "meta": {
         "refs": [
           "https://www.justice.gov/usao-sdny/pr/manhattan-us-attorney-and-fbi-assistant-director-charge-announce-charges-connection",
           "https://blog.malwarebytes.org/intelligence/2012/06/you-dirty-rat-part-2-blackshades-net/"
         ]
-      }
+      },
+      "description": "Blackshades Remote Access Tool targets Microsoft Windows operating systems. Authors were arrested in 2012 and 2014.",
+      "value": "Blackshades"
     },
     {
       "value": "CORESHELL"
@@ -312,21 +324,21 @@
       "value": "OLDBAIT"
     },
     {
-      "value": "Havex RAT",
       "meta": {
         "synonyms": [
           "Havex"
         ]
-      }
+      },
+      "value": "Havex RAT"
     },
     {
-      "value": "KjW0rm",
-      "description": "RAT initially written in VB.",
       "meta": {
         "refs": [
           "https://www.sentinelone.com/blog/understanding-kjw0rm-malware-we-dive-in-to-the-tv5-cyber-attack/"
         ]
-      }
+      },
+      "description": "RAT initially written in VB.",
+      "value": "KjW0rm"
     },
     {
       "value": "TinyTyphon"
@@ -413,85 +425,85 @@
       "value": "Tdrop2"
     },
     {
-      "value": "ZXShell",
       "meta": {
-        "synonyms": [
-          "Sensode"
-        ],
         "refs": [
           "http://www.fireeye.com/blog/uncategorized/2014/02/operation-snowman-deputydog-actor-compromises-us-veterans-of-foreign-wars-website.html"
+        ],
+        "synonyms": [
+          "Sensode"
         ]
-      }
+      },
+      "value": "ZXShell"
     },
     {
-      "value": "T9000",
       "meta": {
         "refs": [
           "http://researchcenter.paloaltonetworks.com/2016/02/t9000-advanced-modular-backdoor-uses-complex-anti-analysis-techniques/"
         ]
-      }
+      },
+      "value": "T9000"
     },
     {
-      "value": "T5000",
       "meta": {
-        "synonyms": [
-          "Plat1"
-        ],
         "refs": [
           "http://www.cylance.com/techblog/Grand-Theft-Auto-Panda.shtml"
+        ],
+        "synonyms": [
+          "Plat1"
         ]
-      }
+      },
+      "value": "T5000"
     },
     {
-      "value": "Taidoor",
       "meta": {
         "refs": [
           "http://www.symantec.com/connect/blogs/trojantaidoor-takes-aim-policy-think-tanks"
         ]
-      }
+      },
+      "value": "Taidoor"
     },
     {
-      "value": "Swisyn",
       "meta": {
         "refs": [
           "http://labs.alienvault.com/labs/index.php/2013/latest-adobe-pdf-exploit-used-to-target-uyghur-and-tibetan-activists/"
         ]
-      }
+      },
+      "value": "Swisyn"
     },
     {
-      "value": "Rekaf",
       "meta": {
         "refs": [
           "https://www.proofpoint.com/us/exploring-bergard-old-malware-new-tricks"
         ]
-      }
+      },
+      "value": "Rekaf"
     },
     {
       "value": "Scieron"
     },
     {
-      "value": "SkeletonKey",
       "meta": {
         "refs": [
           "http://www.secureworks.com/cyber-threat-intelligence/threats/skeleton-key-malware-analysis/"
         ]
-      }
+      },
+      "value": "SkeletonKey"
     },
     {
-      "value": "Skyipot",
       "meta": {
         "refs": [
           "http://labs.alienvault.com/labs/index.php/2011/another-sykipot-sample-likely-targeting-us-federal-agencies/"
         ]
-      }
+      },
+      "value": "Skyipot"
     },
     {
-      "value": "Spindest",
       "meta": {
         "refs": [
           "http://www.threatconnect.com/news/threatconnect-enables-healthy-networking-biomed-life-sciences-industry/"
         ]
-      }
+      },
+      "value": "Spindest"
     },
     {
       "value": "Preshin"
@@ -500,111 +512,111 @@
       "value": "Oficla"
     },
     {
-      "value": "PCClient RAT",
       "meta": {
         "refs": [
           "http://researchcenter.paloaltonetworks.com/2014/10/new-indicators-compromise-apt-group-nitro-uncovered/"
         ]
-      }
+      },
+      "value": "PCClient RAT"
     },
     {
       "value": "Plexor"
     },
     {
-      "value": "Mongall",
       "meta": {
         "refs": [
           "https://www.fireeye.com/blog/threat-research/2014/09/the-path-to-mass-producing-cyber-attacks.html"
         ]
-      }
+      },
+      "value": "Mongall"
     },
     {
-      "value": "NeD Worm",
       "meta": {
         "refs": [
           "http://www.clearskysec.com/dustysky/"
         ]
-      }
+      },
+      "value": "NeD Worm"
     },
     {
-      "value": "NewCT",
       "meta": {
         "refs": [
           "https://www.fireeye.com/blog/threat-research/2014/09/the-path-to-mass-producing-cyber-attacks.html"
         ]
-      }
+      },
+      "value": "NewCT"
     },
     {
-      "value": "Nflog",
       "meta": {
         "refs": [
           "https://www.fireeye.com/blog/threat-research/2014/09/the-path-to-mass-producing-cyber-attacks.html"
         ]
-      }
+      },
+      "value": "Nflog"
     },
     {
-      "value": "Janicab",
       "meta": {
         "refs": [
           "http://blog.avast.com/2013/07/22/multisystem-trojan-janicab-attacks-windows-and-macosx-via-scripts/"
         ]
-      }
+      },
+      "value": "Janicab"
     },
     {
-      "value": "Jripbot",
       "meta": {
-        "synonyms": [
-          "Jiripbot"
-        ],
         "refs": [
           "http://www.symantec.com/content/en/us/enterprise/media/security_response/whitepapers/butterfly-corporate-spies-out-for-financial-gain.pdf"
+        ],
+        "synonyms": [
+          "Jiripbot"
         ]
-      }
+      },
+      "value": "Jripbot"
     },
     {
-      "value": "Jolob",
       "meta": {
         "refs": [
           "http://pwc.blogs.com/cyber_security_updates/2014/10/scanbox-framework-whos-affected-and-whos-using-it-1.html"
         ]
-      }
+      },
+      "value": "Jolob"
     },
     {
-      "value": "IsSpace",
       "meta": {
         "refs": [
           "https://www.fireeye.com/blog/threat-research/2014/09/the-path-to-mass-producing-cyber-attacks.html"
         ]
-      }
+      },
+      "value": "IsSpace"
     },
     {
-      "value": "Hoardy",
       "meta": {
         "synonyms": [
           "Hoarde",
           "Phindolp",
           "BS2005"
         ]
-      }
+      },
+      "value": "Hoardy"
     },
     {
-      "value": "Htran",
       "meta": {
         "refs": [
           "http://www.secureworks.com/research/threats/htran/"
         ]
-      }
+      },
+      "value": "Htran"
     },
     {
-      "value": "HTTPBrowser",
       "meta": {
-        "synonyms": [
-          "TokenControl"
-        ],
         "refs": [
           "https://www.threatstream.com/blog/evasive-maneuvers-the-wekby-group-attempts-to-evade-analysis-via-custom-rop"
+        ],
+        "synonyms": [
+          "TokenControl"
         ]
-      }
+      },
+      "value": "HTTPBrowser"
     },
     {
       "value": "Disgufa"
@@ -613,270 +625,265 @@
       "value": "Elirks"
     },
     {
-      "value": "Snifula",
       "meta": {
-        "synonyms": [
-          "Ursnif"
-        ],
         "refs": [
           "https://www.circl.lu/pub/tr-13/"
+        ],
+        "synonyms": [
+          "Ursnif"
         ]
-      }
+      },
+      "value": "Snifula"
     },
     {
-      "value": "Aumlib",
       "meta": {
+        "refs": [
+          "http://www.cybersquared.com/killing-with-a-borrowed-knife-chaining-core-cloud-service-profile-infrastructure-for-cyber-attacks"
+        ],
         "synonyms": [
           "Yayih",
           "mswab",
           "Graftor"
-        ],
-        "refs": [
-          "http://www.cybersquared.com/killing-with-a-borrowed-knife-chaining-core-cloud-service-profile-infrastructure-for-cyber-attacks"
         ]
-      }
+      },
+      "value": "Aumlib"
     },
     {
-      "value": "CTRat",
       "meta": {
         "refs": [
           "http://www.fireeye.com/blog/technical/threat-intelligence/2014/07/spy-of-the-tiger.html"
         ]
-      }
+      },
+      "value": "CTRat"
     },
     {
-      "value": "Emdivi",
       "meta": {
-        "synonyms": [
-          "Newsripper"
-        ],
         "refs": [
           "http://www.symantec.com/connect/blogs/operation-cloudyomega-ichitaro-zero-day-and-ongoing-cyberespionage-campaign-targeting-japan"
+        ],
+        "synonyms": [
+          "Newsripper"
         ]
-      }
+      },
+      "value": "Emdivi"
     },
     {
-      "value": "Etumbot",
       "meta": {
+        "refs": [
+          "www.arbornetworks.com/asert/wp-content/uploads/2014/06/ASERT-Threat-Intelligence-Brief-2014-07-Illuminating-Etumbot-APT.pdf"
+        ],
         "synonyms": [
           "Exploz",
           "Specfix",
           "RIPTIDE"
-        ],
-        "refs": [
-          "www.arbornetworks.com/asert/wp-content/uploads/2014/06/ASERT-Threat-Intelligence-Brief-2014-07-Illuminating-Etumbot-APT.pdf"
         ]
-      }
+      },
+      "value": "Etumbot"
     },
     {
-      "value": "Fexel",
       "meta": {
         "synonyms": [
           "Loneagent"
         ]
-      }
+      },
+      "value": "Fexel"
     },
     {
-      "value": "Fysbis",
       "meta": {
         "refs": [
           "http://researchcenter.paloaltonetworks.com/2016/02/a-look-into-fysbis-sofacys-linux-backdoor/"
         ]
-      }
+      },
+      "value": "Fysbis"
     },
     {
-      "value": "Hikit",
       "meta": {
         "refs": [
           "https://blog.bit9.com/2013/02/25/bit9-security-incident-update/"
         ]
-      }
+      },
+      "value": "Hikit"
     },
     {
-      "value": "Hancitor",
       "meta": {
-        "refs": [
-          "https://www.proofpoint.com/us/threat-insight/post/hancitor-ruckguv-reappear"
-        ],
         "synonyms": [
           "Tordal",
           "Chanitor"
+        ],
+        "refs": [
+          "https://www.proofpoint.com/us/threat-insight/post/hancitor-ruckguv-reappear"
         ]
-      }
+      },
+      "value": "Hancitor"
     },
     {
-      "value": "Ruckguv",
       "meta": {
         "refs": [
           "https://www.proofpoint.com/us/threat-insight/post/hancitor-ruckguv-reappear"
         ]
-      }
+      },
+      "value": "Ruckguv"
     },
     {
-      "value": "HerHer Trojan",
       "meta": {
         "refs": [
           "http://researchcenter.paloaltonetworks.com/2016/05/the-oilrig-campaign-attacks-on-saudi-arabian-organizations-deliver-helminth-backdoor/"
         ]
-      }
+      },
+      "value": "HerHer Trojan"
     },
     {
-      "value": "Helminth backdoor",
       "meta": {
         "refs": [
           "http://researchcenter.paloaltonetworks.com/2016/05/the-oilrig-campaign-attacks-on-saudi-arabian-organizations-deliver-helminth-backdoor/"
         ]
-      }
+      },
+      "value": "Helminth backdoor"
     },
     {
-      "value": "HDRoot",
       "meta": {
         "refs": [
           "http://williamshowalter.com/a-universal-windows-bootkit/"
         ]
-      }
+      },
+      "value": "HDRoot"
     },
     {
-      "value": "IRONGATE",
       "meta": {
         "refs": [
           "https://www.fireeye.com/blog/threat-research/2016/06/irongate_ics_malware.html"
         ]
-      }
+      },
+      "value": "IRONGATE"
     },
     {
-      "value": "ShimRAT",
       "meta": {
         "refs": [
           "https://foxitsecurity.files.wordpress.com/2016/06/fox-it_mofang_threatreport_tlp-white.pdf"
         ]
-      }
+      },
+      "value": "ShimRAT"
     },
     {
-      "value": "X-Agent",
       "meta": {
-        "refs": [
-          "http://blog.trendmicro.com/trendlabs-security-intelligence/pawn-storm-update-ios-espionage-app-found/"
-        ],
         "synonyms": [
           "XAgent"
+        ],
+        "refs": [
+          "http://blog.trendmicro.com/trendlabs-security-intelligence/pawn-storm-update-ios-espionage-app-found/"
         ]
-      }
+      },
+      "value": "X-Agent"
     },
     {
-      "value": "X-Tunnel",
       "meta": {
         "synonyms": [
           "XTunnel"
         ]
-      }
+      },
+      "value": "X-Tunnel"
     },
     {
-      "value": "Foozer",
       "meta": {
         "refs": [
           "https://www.crowdstrike.com/blog/bears-midst-intrusion-democratic-national-committee/"
         ]
-      }
+      },
+      "value": "Foozer"
     },
     {
-      "value": "WinIDS",
       "meta": {
         "refs": [
           "https://www.crowdstrike.com/blog/bears-midst-intrusion-democratic-national-committee/"
         ]
-      }
+      },
+      "value": "WinIDS"
     },
     {
-      "value": "DownRange",
       "meta": {
         "refs": [
           "https://www.crowdstrike.com/blog/bears-midst-intrusion-democratic-national-committee/"
         ]
-      }
+      },
+      "value": "DownRange"
     },
     {
-      "value": "Mad Max",
       "meta": {
         "refs": [
           "https://www.arbornetworks.com/blog/asert/mad-max-dga/"
         ]
-      }
+      },
+      "value": "Mad Max"
     },
     {
-      "value": "Crimson",
-      "description": "Crimson is malware used as part of a campaign known as Operation Transparent Tribe that targeted Indian diplomatic and military victims",
       "meta": {
         "refs": [
           "https://www.proofpoint.com/sites/default/files/proofpoint-operation-transparent-tribe-threat-insight-en.pdf"
         ]
-      }
+      },
+      "description": "Crimson is malware used as part of a campaign known as Operation Transparent Tribe that targeted Indian diplomatic and military victims",
+      "value": "Crimson"
     },
     {
-      "value": "Prikormka",
-      "description": "Operation Groundbait based on our research into the Prikormka malware family. This includes detailed technical analysis of the Prikormka malware family and its spreading mechanisms, and a description of the most noteworthy attack campaigns.",
       "meta": {
         "refs": [
           "http://www.welivesecurity.com/wp-content/uploads/2016/05/Operation-Groundbait.pdf"
         ]
-      }
+      },
+      "description": "Operation Groundbait based on our research into the Prikormka malware family. This includes detailed technical analysis of the Prikormka malware family and its spreading mechanisms, and a description of the most noteworthy attack campaigns.",
+      "value": "Prikormka"
     },
     {
-      "value": "NanHaiShu",
-      "description": "This whitepaper details a malicious program we identify as NanHaiShu. Based on our analysis, the threat actor behind this malware targets government and private-sector organizations.",
       "meta": {
         "refs": [
           "https://www.f-secure.com/documents/996508/1030745/nanhaishu_whitepaper.pdf"
         ]
-      }
+      },
+      "description": "This whitepaper details a malicious program we identify as NanHaiShu. Based on our analysis, the threat actor behind this malware targets government and private-sector organizations.",
+      "value": "NanHaiShu"
     },
     {
-      "value": "Umbreon",
-      "description": "Umbreon (sharing the same name as the Pokémon) targets Linux systems, including systems running both Intel and ARM processors, expanding the scope of this threat to include embedded devices as well.",
       "meta": {
         "refs": [
           "http://blog.trendmicro.com/trendlabs-security-intelligence/pokemon-themed-umbreon-linux-rootkit-hits-x86-arm-systems/"
         ]
-      }
+      },
+      "description": "Umbreon (sharing the same name as the Pokémon) targets Linux systems, including systems running both Intel and ARM processors, expanding the scope of this threat to include embedded devices as well.",
+      "value": "Umbreon"
     },
     {
-      "value": "Odinaff",
-      "description": "Odinaff is typically deployed in the first stage of an attack, to gain a foothold onto the network, providing a persistent presence and the ability to install additional tools onto the target network. These additional tools bear the hallmarks of a sophisticated attacker which has plagued the financial industry since at least 2013–Carbanak. This new wave of attacks has also used some infrastructure that has previously been used in Carbanak campaigns.",
       "refs": [
         "https://www.symantec.com/connect/blogs/odinaff-new-trojan-used-high-level-financial-attacks"
-      ]
+      ],
+      "description": "Odinaff is typically deployed in the first stage of an attack, to gain a foothold onto the network, providing a persistent presence and the ability to install additional tools onto the target network. These additional tools bear the hallmarks of a sophisticated attacker which has plagued the financial industry since at least 2013–Carbanak. This new wave of attacks has also used some infrastructure that has previously been used in Carbanak campaigns.",
+      "value": "Odinaff"
     },
     {
-      "value": "Hworm",
-      "description": "Unit 42 has observed a new version of Hworm (or Houdini) being used within multiple attacks. This blog outlines technical details of this new Hworm version and documents an attack campaign making use of the backdoor. Of the samples used in this attack, the first we observed were June 2016, while as-of publication we were still seeing attacks as recently as mid-October, suggesting that this is likely an active, ongoing campaign.",
       "meta": {
-        "refs": [
-          "http://researchcenter.paloaltonetworks.com/2016/10/unit42-houdinis-magic-reappearance/"
-        ],
         "synonyms": [
           "Houdini"
+        ],
+        "refs": [
+          "http://researchcenter.paloaltonetworks.com/2016/10/unit42-houdinis-magic-reappearance/"
         ]
-      }
+      },
+      "description": "Unit 42 has observed a new version of Hworm (or Houdini) being used within multiple attacks. This blog outlines technical details of this new Hworm version and documents an attack campaign making use of the backdoor. Of the samples used in this attack, the first we observed were June 2016, while as-of publication we were still seeing attacks as recently as mid-October, suggesting that this is likely an active, ongoing campaign.",
+      "value": "Hworm"
     },
     {
-      "value": "Backdoor.Dripion",
-      "description": "Backdoor.Dripion was custom developed, deployed in a highly targeted fashion, and used command and control servers disguised as antivirus company websites.",
       "meta": {
-        "refs": [
-          "http://www.symantec.com/connect/blogs/taiwan-targeted-new-cyberespionage-back-door-trojan"
-        ],
         "synonyms": [
           "Dripion"
+        ],
+        "refs": [
+          "http://www.symantec.com/connect/blogs/taiwan-targeted-new-cyberespionage-back-door-trojan"
         ]
-      }
+      },
+      "description": "Backdoor.Dripion was custom developed, deployed in a highly targeted fashion, and used command and control servers disguised as antivirus company websites.",
+      "value": "Backdoor.Dripion"
     },
     {
-      "value": "Adwind",
-      "description": "Adwind is a backdoor written purely in Java that targets system supporting the Java runtime environment. Commands that can be used, among other things, to display messages on the system, open URLs, update the malware, download/execute files, and download/load plugins. A significant amount of additional functionality can be provided through downloadable plugins, including such things as remote control options and shell command execution.",
       "meta": {
-        "refs": [
-          "https://securelist.com/blog/research/73660/adwind-faq/"
-        ],
         "synonyms": [
           "AlienSpy",
           "Frutas",
@@ -885,18 +892,23 @@
           "JSocket",
           "jRat",
           "Backdoor:Java/Adwind"
+        ],
+        "refs": [
+          "https://securelist.com/blog/research/73660/adwind-faq/"
         ]
-      }
+      },
+      "description": "Adwind is a backdoor written purely in Java that targets system supporting the Java runtime environment. Commands that can be used, among other things, to display messages on the system, open URLs, update the malware, download/execute files, and download/load plugins. A significant amount of additional functionality can be provided through downloadable plugins, including such things as remote control options and shell command execution.",
+      "value": "Adwind"
     },
     {
-      "value": "Angler EK",
-      "description": "Angler Exploit Kit is a hacking tool that is produced to search for Java and Flash Player vulnerabilities on the attacked PC and use them with the aim to distribute malware infections. Angler Exploit Kit commonly checks to see if the PC it is proliferating to has Java or Flash.",
       "meta": {
         "refs": [
           "http://researchcenter.paloaltonetworks.com/2016/06/unit42-understanding-angler-exploit-kit-part-1-exploit-kit-fundamentals/",
           "https://blogs.sophos.com/2015/07/21/a-closer-look-at-the-angler-exploit-kit/"
         ]
-      }
+      },
+      "description": "Angler Exploit Kit is a hacking tool that is produced to search for Java and Flash Player vulnerabilities on the attacked PC and use them with the aim to distribute malware infections. Angler Exploit Kit commonly checks to see if the PC it is proliferating to has Java or Flash.",
+      "value": "Angler EK"
     },
     {
       "value": "Bedep"
@@ -905,23 +917,23 @@
       "value": "Cromptui"
     },
     {
-      "value": "Cryptowall",
-      "description": "CryptoWall is a new and highly destructive variant of ransomware. Ransomware is malicious software (malware) that infects your computer and holds hostage something of value to you in exchange for money. Older ransomware used to block access to computers. Newer ransomware, such as CryptoWall, takes your data hostage."
+      "description": "CryptoWall is a new and highly destructive variant of ransomware. Ransomware is malicious software (malware) that infects your computer and holds hostage something of value to you in exchange for money. Older ransomware used to block access to computers. Newer ransomware, such as CryptoWall, takes your data hostage.",
+      "value": "Cryptowall"
     },
     {
       "value": "CTB-Locker"
     },
     {
-      "value": "Dridex",
-      "description": "Dridex is a strain of banking malware that leverages macros in Microsoft Office to infect systems. Once a computer has been infected, Dridex attackers can steal banking credentials and other personal information on the system to gain access to the financial records of a user.",
       "meta": {
-        "refs": [
-          "http://www.symantec.com/content/en/us/enterprise/media/security_response/whitepapers/dridex-financial-trojan.pdf"
-        ],
         "synonyms": [
           "Cridex"
+        ],
+        "refs": [
+          "http://www.symantec.com/content/en/us/enterprise/media/security_response/whitepapers/dridex-financial-trojan.pdf"
         ]
-      }
+      },
+      "description": "Dridex is a strain of banking malware that leverages macros in Microsoft Office to infect systems. Once a computer has been infected, Dridex attackers can steal banking credentials and other personal information on the system to gain access to the financial records of a user.",
+      "value": "Dridex"
     },
     {
       "value": "Fareit"
@@ -930,52 +942,52 @@
       "value": "Gafgyt"
     },
     {
-      "value": "Gamarue",
       "meta": {
-        "refs": [
-          "https://blog.gdatasoftware.com/2015/03/24274-the-andromeda-gamarue-botnet-is-on-the-rise-again"
-        ],
         "synonyms": [
           "Andromeda"
+        ],
+        "refs": [
+          "https://blog.gdatasoftware.com/2015/03/24274-the-andromeda-gamarue-botnet-is-on-the-rise-again"
         ]
-      }
+      },
+      "value": "Gamarue"
     },
     {
-      "value": "Locky",
-      "description": "Ransomware"
+      "description": "Ransomware",
+      "value": "Locky"
     },
     {
-      "value": "Necurs",
-      "description": "The Necurs botnet is a distributor of many pieces of malware, most notably Locky.",
       "meta": {
         "refs": [
           "https://en.wikipedia.org/wiki/Necurs_botnet"
         ]
-      }
+      },
+      "description": "The Necurs botnet is a distributor of many pieces of malware, most notably Locky.",
+      "value": "Necurs"
     },
     {
-      "value": "Nuclear Pack",
       "meta": {
         "synonyms": [
           "Nuclear EK"
         ]
-      }
+      },
+      "value": "Nuclear Pack"
     },
     {
       "value": "Palevo"
     },
     {
-      "value": "Akbot",
       "meta": {
-        "refs": [
-          "https://en.wikipedia.org/wiki/Akbot"
-        ],
         "synonyms": [
           "Qbot",
           "Qakbot",
           "PinkSlipBot"
+        ],
+        "refs": [
+          "https://en.wikipedia.org/wiki/Akbot"
         ]
-      }
+      },
+      "value": "Akbot"
     },
     {
       "value": "Rig EK"
@@ -984,112 +996,123 @@
       "value": "Teslacrypt"
     },
     {
-      "value": "Upatre",
-      "description": "Upatre is a Trojan downloader that is used to set up other threats on the victim's PC. Upatre has been used recently in several high profile Trojan attacks involving the Gameover Trojan. "
+      "description": "Upatre is a Trojan downloader that is used to set up other threats on the victim's PC. Upatre has been used recently in several high profile Trojan attacks involving the Gameover Trojan. ",
+      "value": "Upatre"
     },
     {
-      "value": "Vawtrak",
-      "description": "Vawtrak is an information stealing malware family that is primarily used to gain unauthorised access to bank accounts through online banking websites.",
       "meta": {
         "refs": [
           "https://www.sophos.com/medialibrary/PDFs/technical%20papers/sophos-vawtrak-international-crimeware-as-a-service-tpna.pdf"
         ]
-      }
+      },
+      "description": "Vawtrak is an information stealing malware family that is primarily used to gain unauthorised access to bank accounts through online banking websites.",
+      "value": "Vawtrak"
     },
     {
-      "value": "Empire",
-      "description": "Empire is a pure PowerShell post-exploitation agent built on cryptologically-secure communications and a flexible architecture. Empire implements the ability to run PowerShell agents without needing powershell.exe, rapidly deployable post-exploitation modules ranging from key loggers to Mimikatz, and adaptable communications to evade network detection, all wrapped up in a usability-focused framework",
       "meta": {
         "refs": [
           "https://github.com/adaptivethreat/Empire"
         ]
-      }
+      },
+      "description": "Empire is a pure PowerShell post-exploitation agent built on cryptologically-secure communications and a flexible architecture. Empire implements the ability to run PowerShell agents without needing powershell.exe, rapidly deployable post-exploitation modules ranging from key loggers to Mimikatz, and adaptable communications to evade network detection, all wrapped up in a usability-focused framework",
+      "value": "Empire"
     },
     {
-      "value": "Explosive",
-      "description": "Beginning in late 2012, a carefully orchestrated attack campaign we call Volatile Cedar has been targeting individuals, companies and institutions worldwide. This campaign, led by a persistent attacker group, has successfully penetrated a large number of targets using various attack techniques, and specifically, a custom-made malware implant codenamed Explosive. ",
       "meta": {
         "refs": [
           "https://www.checkpoint.com/downloads/volatile-cedar-technical-report.pdf"
         ]
-      }
+      },
+      "description": "Beginning in late 2012, a carefully orchestrated attack campaign we call Volatile Cedar has been targeting individuals, companies and institutions worldwide. This campaign, led by a persistent attacker group, has successfully penetrated a large number of targets using various attack techniques, and specifically, a custom-made malware implant codenamed Explosive. ",
+      "value": "Explosive"
     },
     {
-      "value": "KeyBoy",
-      "description": "The actors used a new version of “KeyBoy,” a custom backdoor first disclosed by researchers at Rapid7 in June 2013. Their work outlined the capabilities of the backdoor, and exposed the protocols and algorithms used to hide the network communication and configuration data",
       "meta": {
         "refs": [
           "https://citizenlab.org/2016/11/parliament-keyboy/",
           "https://community.rapid7.com/community/infosec/blog/2013/06/07/keyboy-targeted-attacks-against-vietnam-and-india"
         ]
-      }
+      },
+      "description": "The actors used a new version of “KeyBoy,” a custom backdoor first disclosed by researchers at Rapid7 in June 2013. Their work outlined the capabilities of the backdoor, and exposed the protocols and algorithms used to hide the network communication and configuration data",
+      "value": "KeyBoy"
     },
     {
-      "value": "Yahoyah",
-      "description": "The attacks in this case are associated with a campaign called Tropic Trooper, which has been active since at least 2011 and is known for heavily targeting Taiwan. One of the attacks used their known Yahoyah malware...",
       "meta": {
-        "refs": [
-          "http://researchcenter.paloaltonetworks.com/2016/11/unit42-tropic-trooper-targets-taiwanese-government-and-fossil-fuel-provider-with-poison-ivy/"
-        ],
         "synonyms": [
           "W32/Seeav"
-        ]
-      }
-    },
-    {
-       "value": "Tartine",
-       "description": "Delphi RAT used by Sofacy."
-    },
-    {
-       "value": "Mirai",
-       "description": "Mirai (Japanese for \"the future\") is malware that turns computer systems running Linux into remotely controlled \"bots\", that can be used as part of a botnet in large-scale network attacks. It primarily targets online consumer devices such as remote cameras and home routers. The Mirai botnet has been used in some of the largest and most disruptive distributed denial of service (DDoS) attacks, including an attack on 20 September 2016 on computer security journalist Brian Krebs's web site, an attack on French web host OVH and the October 2016 Dyn cyberattack.",
-        "meta": {
-        "refs": [
-          "https://en.wikipedia.org/wiki/Mirai_(malware)"
         ],
+        "refs": [
+          "http://researchcenter.paloaltonetworks.com/2016/11/unit42-tropic-trooper-targets-taiwanese-government-and-fossil-fuel-provider-with-poison-ivy/"
+        ]
+      },
+      "description": "The attacks in this case are associated with a campaign called Tropic Trooper, which has been active since at least 2011 and is known for heavily targeting Taiwan. One of the attacks used their known Yahoyah malware...",
+      "value": "Yahoyah"
+    },
+    {
+      "description": "Delphi RAT used by Sofacy.",
+      "value": "Tartine"
+    },
+    {
+      "meta": {
         "synonyms": [
           "Linux/Mirai"
+        ],
+        "refs": [
+          "https://en.wikipedia.org/wiki/Mirai_(malware)"
         ]
-        }
+      },
+      "description": "Mirai (Japanese for \"the future\") is malware that turns computer systems running Linux into remotely controlled \"bots\", that can be used as part of a botnet in large-scale network attacks. It primarily targets online consumer devices such as remote cameras and home routers. The Mirai botnet has been used in some of the largest and most disruptive distributed denial of service (DDoS) attacks, including an attack on 20 September 2016 on computer security journalist Brian Krebs's web site, an attack on French web host OVH and the October 2016 Dyn cyberattack.",
+      "value": "Mirai"
     },
     {
-       "value": "BASHLITE"
+      "value": "BASHLITE"
     },
     {
-       "value": "BlackEnergy",
-       "description": "BlackEnergy is a trojan which has undergone significant functional changes since it was first publicly analysed by Arbor Networks in 2007. It has evolved from a relatively simple DDoS trojan into a relatively sophisticated piece of modern malware with a modular architecture, making it a suitable tool for sending spam and for online bank fraud, as well as for targeted attacks. BlackEnergy version 2, which featured rootkit techniques, was documented by SecureWorks in 2010. The targeted attacks recently discovered are proof that the trojan is still alive and kicking in 2014.  We provide a technical analysis of the BlackEnergy family, focusing on novel functionality and the differences introduced by new lite variants. We describe the most notable aspects of the malware, including its techniques for bypassing UAC, defeating the signed driver requirement in Windows and a selection of BlackEnergy2 plug-ins used for parasitic file infections, network discovery and remote code execution and data collection.",
-        "meta": {
-         "refs": ["https://www.virusbulletin.com/conference/vb2014/abstracts/back-blackenergy-2014-targeted-attacks-ukraine-and-poland/"]
-        }
+      "meta": {
+        "refs": [
+          "https://www.virusbulletin.com/conference/vb2014/abstracts/back-blackenergy-2014-targeted-attacks-ukraine-and-poland/"
+        ]
+      },
+      "description": "BlackEnergy is a trojan which has undergone significant functional changes since it was first publicly analysed by Arbor Networks in 2007. It has evolved from a relatively simple DDoS trojan into a relatively sophisticated piece of modern malware with a modular architecture, making it a suitable tool for sending spam and for online bank fraud, as well as for targeted attacks. BlackEnergy version 2, which featured rootkit techniques, was documented by SecureWorks in 2010. The targeted attacks recently discovered are proof that the trojan is still alive and kicking in 2014.  We provide a technical analysis of the BlackEnergy family, focusing on novel functionality and the differences introduced by new lite variants. We describe the most notable aspects of the malware, including its techniques for bypassing UAC, defeating the signed driver requirement in Windows and a selection of BlackEnergy2 plug-ins used for parasitic file infections, network discovery and remote code execution and data collection.",
+      "value": "BlackEnergy"
     },
     {
-       "value": "Trojan.Seaduke",
-       "description": "Trojan.Seaduke is a Trojan horse that opens a back door on the compromised computer. It may also download potentially malicious files.",
-       "refs": ["https://www.symantec.com/security_response/writeup.jsp?docid=2015-031915-4935-99"],
-       "synonyms": [ "Seaduke" ]
+      "meta": {
+        "synonyms": [
+          "Seaduke"
+        ],
+        "refs": [
+          "https://www.symantec.com/security_response/writeup.jsp?docid=2015-031915-4935-99"
+        ],
+        "description": "Trojan.Seaduke is a Trojan horse that opens a back door on the compromised computer. It may also download potentially malicious files."
+      },
+      "value": "Trojan.Seaduke"
     },
     {
-        "value": "Backdoor.Tinybaron"
+      "value": "Backdoor.Tinybaron"
     },
     {
-        "value": "Incognito RAT"
+      "value": "Incognito RAT"
     },
     {
-        "value": "DownRage",
-        "synonyms": ["Carberplike"],
-        "refs": ["https://labsblog.f-secure.com/2015/09/08/sofacy-recycles-carberp-and-metasploit-code/", "https://twitter.com/Timo_Steffens/status/814781584536719360"]
+      "meta": {
+        "refs": [
+          "https://labsblog.f-secure.com/2015/09/08/sofacy-recycles-carberp-and-metasploit-code/",
+          "https://twitter.com/Timo_Steffens/status/814781584536719360"
+        ]
+      },
+      "synonyms": [
+        "Carberplike"
+      ],
+      "value": "DownRage"
+    },
+    {
+      "meta": {
+        "refs": [
+          "https://www.proofpoint.com/us/threat-insight/post/threat-actors-using-legitimate-paypal-accounts-to-distribute-chthonic-banking-trojan"
+        ]
+      },
+      "value": "Chthonic"
     }
-],
-  "version": 7,
-  "uuid": "0d821b68-9d82-4c6d-86a6-1071a9e0f79f",
-  "description": "threat-actor-tools is an enumeration of tools used by adversaries. The list includes malware but also common software regularly used by the adversaries.",
-  "author": [
-    "Alexandre Dulaunoy",
-    "Florian Roth",
-    "Timo Steffens",
-    "Christophe Vandeplas"
-  ],
-  "source": "MISP Project",
-  "type": "tool",
-  "name": "Tool"
+  ]
 }
