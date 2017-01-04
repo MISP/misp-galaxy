@@ -42,6 +42,8 @@ Starting from [MISP 2.4.56](http://www.misp-project.org/2016/12/07/MISP.2.4.56.r
 ![MISP Integration of the MISP galaxy](doc/images/screenshot.png)
 ## How to contribute?
 
+In the world of threat intelligence, there are many different models or approaches to order, classify or describe threat actors, threats or activity groups. We welcome new ways of describing threat intelligence as the galaxy model allows to reuse the ones you use or trust for your organization or community.
+
 Fork the project, update or create elements or clusters and make a pull-request.
 
 We recommend to validate the JSON file using [jq](https://stedolan.github.io/jq/) before doing a pull-request.
