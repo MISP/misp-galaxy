@@ -10,7 +10,7 @@
   ],
   "description": "threat-actor-tools is an enumeration of tools used by adversaries. The list includes malware but also common software regularly used by the adversaries.",
   "uuid": "0d821b68-9d82-4c6d-86a6-1071a9e0f79f",
-  "version": 9,
+  "version": 10,
   "values": [
     {
       "description": "Malware",
@@ -1120,6 +1120,21 @@
       "meta": {
         "refs": ["https://attack.mitre.org/wiki/Software/S0049"]
     }
+    },
+    {
+      "value": "Shifu",
+      "description": "Shifu is a Banking Trojan first discovered in 2015. Shifu is based on the Shiz source code which incorporated techniques used by Zeus. Attackers use Shifu to steal credentials for online banking websites around the world, starting in Russia but later including the UK, Italy, and others.",
+      "meta": {
+         "refs": ["http://researchcenter.paloaltonetworks.com/2017/01/unit42-2016-updates-shifu-banking-trojan/"],
+         "derivated-from": ["Shiz"]
+       }
+    },
+    {
+      "value": "Shiz",
+      "description": "The new variant of the Shiz Trojan malware targets mission-critical enterprise resource planning (ERP) applications — particularly SAP users. ",
+      "meta": {
+        "refs": ["https://securityintelligence.com/tag/shiz-trojan-malware/"]
+      }
     }
   ]
 }
