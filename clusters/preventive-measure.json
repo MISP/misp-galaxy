@@ -1,0 +1,57 @@
+{
+  "values": [
+    {
+      "meta": {
+        "refs": [
+          "http://windows.microsoft.com/en-us/windows/back-up-restore-faq#1TC=windows-7."
+        ],
+        "Complexity": "Medium",
+        "Effectiveness": "High", 
+        "Impact": "Low", 
+        "Type": "Recovery"
+      },
+      "value": "Backup and Restore Process",
+      "description": "Make sure to have adequate backup processes on place and frequently test a restore of these backups. 
+       (Schrödinger's backup - it is both existent and non-existent until you've tried a restore"
+    },
+    {
+      "meta": {
+        "refs": [
+          "https://support.office.com/en-us/article/Enable-or-disable-macros-in-Office-files-12b036fd-d140-4e74-b45e-16fed1a7e5c6?ui=en-US&rs=en-US&ad=US",
+          "https://www.404techsupport.com/2016/04/office2016-macro-group-policy/?utm_source=dlvr.it&utm_medium=twitter"
+        ],
+        "Complexity": "Low",
+        "Effectiveness": "High", 
+        "Impact": "Low", 
+        "Type": "GPO"
+      },
+      "value": "Block Macros",
+      "description": "Disable macros in Office files downloaded from the Internet. This can be configured to work in two different modes:
+       A.) Open downloaded documents in 'Protected View'
+       B.) Open downloaded documents and block all macros"
+    },
+    {
+      "meta": {
+        "refs": [
+          "http://www.windowsnetworking.com/kbase/WindowsTips/WindowsXP/AdminTips/Customization/DisableWindowsScriptingHostWSH.html"
+        ],
+        "Complexity": "Low",
+        "Effectiveness": "Medium", 
+        "Impact": "Medium", 
+        "Type": "GPO"
+      },
+      "value": "Disable WSH",
+      "description": "Disable Windows Script Host"
+    },
+  ],
+  "name": "Preventive Measure",
+  "type": "preventive-measure",
+  "source": "MISP Project",
+  "authors": [
+    "Various"
+  ],
+  "description": "Preventive measures based on the ransomware document overview as published in https://docs.google.com/spreadsheets/d/1TWS238xacAto-fLKh1n5uTsdijWdCEsGIM0Y0Hvmc5g/pubhtml# . The preventive measures are quite generic and can fit any standard Windows infrastructure and their security measures.",
+  "uuid": "1a8e55eb-a0ff-425b-80e0-30df866f8f65",
+  "version": 1
+}
+
