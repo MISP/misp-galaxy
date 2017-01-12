@@ -11,8 +11,7 @@
         "Type": "Recovery"
       },
       "value": "Backup and Restore Process",
-      "description": "Make sure to have adequate backup processes on place and frequently test a restore of these backups. 
-       (Schrödinger's backup - it is both existent and non-existent until you've tried a restore"
+      "description": "Make sure to have adequate backup processes on place and frequently test a restore of these backups.\n(Schrödinger's backup - it is both existent and non-existent until you've tried a restore"
     },
     {
       "meta": {
@@ -26,9 +25,7 @@
         "Type": "GPO"
       },
       "value": "Block Macros",
-      "description": "Disable macros in Office files downloaded from the Internet. This can be configured to work in two different modes:
-       A.) Open downloaded documents in 'Protected View'
-       B.) Open downloaded documents and block all macros"
+      "description": "Disable macros in Office files downloaded from the Internet. This can be configured to work in two different modes:\nA.) Open downloaded documents in 'Protected View'\nB.) Open downloaded documents and block all macros"
     },
     {
       "meta": {
@@ -41,8 +38,180 @@
         "Type": "GPO"
       },
       "value": "Disable WSH",
-      "description": "Disable Windows Script Host"
+      "description": "Disable Windows Script Host",
+      "Possible Issues": "Administrative VBS scripts on Workstations"
     },
+    {
+      "meta": {
+        "Complexity": "Low",
+        "Effectiveness": "Medium", 
+        "Impact": "Low", 
+        "Type": "Mail Gateway"
+      },
+      "value": "Filter Attachments Level 1",
+      "description": "Filter the following attachments on your mail gateway:\n.ade, .adp, .ani, .bas, .bat, .chm, .cmd, .com, .cpl, .crt, .exe, .hlp, .ht, .hta, .inf, .ins, .isp, .jar, .job, .js, .jse, .lnk, .mda, .mdb, .mde, .mdz, .msc, .msi, .msp, .mst, .ocx, .pcd, .ps1, .reg, .scr, .sct, .shs, .svg, .url, .vb, .vbe, .vbs, .wbk, .wsc, .ws, .wsf, .wsh, .exe, .pif, .pub"
+    },
+    {
+      "meta": {
+        "Complexity": "Low",
+        "Effectiveness": "High", 
+        "Impact": "High", 
+        "Type": "Mail Gateway"
+      },
+      "value": "Filter Attachments Level 2",
+      "description": "Filter the following attachments on your mail gateway:\n(Filter expression of Level 1 plus) .doc, .xls, .rtf, .docm, .xlsm, .pptm",
+      "Possible Issues": "Office Communication with old versions of Microsoft Office files (.doc, .xls) "
+    },
+    {
+      "meta": {
+        "refs": [
+          "http://www.fatdex.net/php/2014/06/01/disable-exes-from-running-inside-any-user-appdata-directory-gpo/",	
+          "http://www.thirdtier.net/ransomware-prevention-kit/"
+        ],
+        "Complexity": "Medium",
+        "Effectiveness": "Medium", 
+        "Impact": "Medium", 
+        "Type": "GPO"
+      },
+      "value": "Restrict program execution",
+      "description": "Block all program executions from the %LocalAppData% and %AppData% folder",
+      "Possible Issues": "Web embedded software installers"
+    },
+    {
+      "meta": {
+        "refs": [
+          "http://www.sevenforums.com/tutorials/10570-file-extensions-hide-show.htm"
+        ],
+        "Complexity": "Low",
+        "Effectiveness": "Low", 
+        "Impact": "Low", 
+        "Type": "User Assistence"
+      },
+      "value": "Show File Extensions",
+      "description": "Set the registry key \"HideFileExt\" to 0 in order to show all file extensions, even of known file types. This helps avoiding cloaking tricks that use double extensions. (e.g. \"not_a_virus.pdf.exe\")"
+    },
+    {
+      "meta": {
+        "refs": [
+          "https://technet.microsoft.com/en-us/library/dd835564(WS.10).aspx"
+        ],
+        "Complexity": "Low",
+        "Effectiveness": "Medium", 
+        "Impact": "Low", 
+        "Type": "GPO"
+      },
+      "value": "Enforce UAC Prompt",
+      "description": "Enforce administrative users to confirm an action that requires elevated rights",
+      "Possible Issues": "administrator resentment"
+    },
+    {
+      "meta": {
+        "Complexity": "Medium",
+        "Effectiveness": "Medium", 
+        "Impact": "Medium", 
+        "Type": "Best Practice"
+      },
+      "value": "Remove Admin Privileges",
+      "description": "Remove and restrict administrative rights whenever possible. Malware can only modify files that users have write access to.",
+      "Possible Issues": "igher administrative costs"
+    },
+    {
+      "meta": {
+        "Complexity": "Medium",
+        "Effectiveness": "Low", 
+        "Impact": "Low", 
+        "Type": "Best Practice"
+      },
+      "value": "Restrict Workstation Communication",
+      "description": "Activate the Windows Firewall to restrict workstation to workstation communication"
+    },
+    {
+      "meta": {
+        "Complexity": "Medium",
+        "Effectiveness": "High", 
+        "Type": "Advanced Malware Protection"
+      },
+      "value": "Sandboxing Email Input",
+      "description": "Using sandbox that opens email attachments and removes attachments based on behavior analysis"
+    },
+    {
+      "meta": {
+        "Complexity": "Medium",
+        "Effectiveness": "Medium", 
+        "Type": "3rd Party Tools"
+      },
+      "value": "Execution Prevention",
+      "description": "Software that allows to control the execution of processes - sometimes integrated in Antivirus software\nFree: AntiHook, ProcessGuard, System Safety Monitor"
+    },
+    {
+      "meta": {
+        "refs": [
+          "https://bluesoul.me/2016/05/12/use-gpo-to-change-the-default-behavior-of-potentially-malicious-file-extensions/"
+        ],
+        "Complexity": "Low",
+        "Effectiveness": "Medium", 
+        "Impact": "Medium", 
+        "Type": "GPO"
+      },
+      "value": "Change Default \"Open With\" to Notepad",
+      "description": "Force extensions primarily used for infections to open up in Notepad rather than Windows Script Host or Internet Explorer",
+      "Possible Issues": "Some extensions will have legitimate uses, e.g., .vbs for logon scripts."
+    },
+    {
+      "meta": {
+        "refs": [
+          "http://jpelectron.com/sample/Info%20and%20Documents/Stop%20crypto%20badware%20before%20it%20ruins%20your%20day/1-PreventCrypto-Readme.htm"
+        ],
+        "Complexity": "Low",
+        "Effectiveness": "Medium", 
+        "Impact": "Low", 
+        "Type": "Monitoring"
+      },
+      "value": "File Screening",
+      "description": "Server-side file screening with the help of File Server Resource Manager"
+    },
+    {
+      "meta": {
+        "refs": [
+          "https://technet.microsoft.com/en-us/library/dd759117%28v=ws.11%29.aspx",
+          "http://social.technet.microsoft.com/wiki/contents/articles/5211.how-to-configure-applocker-group-policy-to-prevent-software-from-running.aspx"
+        ],
+        "Complexity": "Medium",
+        "Effectiveness": "Medium", 
+        "Impact": "Medium", 
+        "Type": "GPO"
+      },
+      "value": "Restrict program execution #2",
+      "description": "Block program executions (AppLocker)",
+      "Possible Issues": "Configure & test extensively"
+    },
+    {
+      "meta": {
+        "refs": [
+          "www.microsoft.com/emet",
+          "http://windowsitpro.com/security/control-emet-group-policy"
+        ],
+        "Complexity": "Medium",
+        "Effectiveness": "Medium", 
+        "Impact": "Low", 
+        "Type": "GPO"
+      },
+      "value": "EMET",
+      "description": "Detect and block exploitation techniques"
+    },
+    {
+      "meta": {
+        "refs": [
+          "https://twitter.com/JohnLaTwC/status/799792296883388416"
+        ],
+        "Complexity": "Medium",
+        "Effectiveness": "Low", 
+        "Impact": "Low", 
+        "Type": "3rd Party Tools"
+      },
+      "value": "Sysmon",
+      "description": "Detect Ransomware in an early stage with new Sysmon 5 File/Registry monitoring"
+    }
   ],
   "name": "Preventive Measure",
   "type": "preventive-measure",
@@ -54,4 +223,3 @@
   "uuid": "1a8e55eb-a0ff-425b-80e0-30df866f8f65",
   "version": 1
 }
-
