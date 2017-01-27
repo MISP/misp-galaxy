@@ -207,7 +207,12 @@
       "value": "Agent.dne"
     },
     {
-      "value": "Wipbot"
+      "value": "Wipbot",
+      "description": "Waterbug is the name given to the actors who use the malware tools Trojan.Wipbot (also known as Tavdig and Epic Turla)",
+      "meta": {
+        "synonyms": ["Tavdig", "Epic Turla"],
+        "refs": ["https://www.symantec.com/content/en/us/enterprise/media/security_response/whitepapers/waterbug-attack-group.pdf"]
+      }
     },
     {
       "value": "Turla"
@@ -1191,6 +1196,21 @@
     },
     {
       "meta": {
+        "synonyms": [
+          "Trojan.Zbot",
+          "Zbot",
+          "ZeuS"
+        ],
+        "refs": [
+          "https://en.wikipedia.org/wiki/Zeus_(malware)",
+          "https://www.symantec.com/security_response/writeup.jsp?docid=2010-011016-3514-99"
+        ]
+      },
+      "description": "Trojan.Zbot, also called Zeus, is a Trojan horse that attempts to steal confidential information from the compromised computer. It may also download configuration files and updates from the Internet. The Trojan is created using a Trojan-building toolkit.",
+      "value": "Zeus"
+    },
+    {
+      "meta": {
         "derivated-from": [
           "Shiz"
         ],
@@ -1232,9 +1252,31 @@
        },
        "description": "Shamoon,[a] also known as Disttrack, is a modular computer virus discovered by Seculert[1] in 2012, targeting recent NT kernel-based versions of Microsoft Windows. The virus has been used for cyber espionage in the energy sector.[2][3][4] Its discovery was announced on 16 August 2012 by Symantec,[3] Kaspersky Lab,[5] and Seculert.[6] Similarities have been highlighted by Kaspersky Lab and Seculert between Shamoon and the Flame malware.[5][6]",
        "value": "Shamoon"
+    },
+    {
+       "value": "GhostAdmin",
+       "description": "According to MalwareHunterTeam and other researchers that have looked at the malware's source code, GhostAdmin seems to be a reworked version of CrimeScene, another botnet malware family that was active around 3-4 years ago.",
+       "meta": {
+         "refs": ["https://www.bleepingcomputer.com/news/security/new-ghostadmin-malware-used-for-data-theft-and-exfiltration/"]
+       }
+    },
+    {
+       "value": " EyePyramid Malware",
+       "description": "Two Italians referred to as the “Occhionero brothers” have been arrested and accused of using malware and a carefully-prepared spear-phishing scheme to spy on high-profile politicians and businessmen. This case has been called “EyePyramid”, which we first discussed last week. (Conspiracy theories aside, the name came from a domain name and directory path that was found during the research.)",
+       "meta": {
+         "refs": ["http://blog.trendmicro.com/trendlabs-security-intelligence/uncovering-inner-workings-eyepyramid/"],
+         "country": "IT"
+       }
+    },
+    {
+       "value": "LuminosityLink",
+       "description": "LuminosityLink is a malware family costing $40 that purports to be a system administration utility",
+       "meta": {
+         "refs": ["http://researchcenter.paloaltonetworks.com/2016/07/unit42-investigating-the-luminositylink-remote-access-trojan-configuration/"]
+       }
     }
   ],
-  "version": 13,
+  "version": 16,
   "uuid": "0d821b68-9d82-4c6d-86a6-1071a9e0f79f",
   "description": "threat-actor-tools is an enumeration of tools used by adversaries. The list includes malware but also common software regularly used by the adversaries.",
   "author": [
