@@ -10,10 +10,10 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='CSV to Galaxy')
     parser.add_argument("-c", "--csv", required=True, help="input csv")
     parser.add_argument("-v", "--value", type=int, required=True, help="number of the column with the value")
-    parser.add_argument("-e", "--value_description", type=int, help="number of the column with description, if not defined, all other data wil be concataned")
+    parser.add_argument("-e", "--value_description", type=int, nargs='+', help="number of the column with description, if not defined, all other data wil be concataned")
     parser.add_argument("-w", "--version", type=int, help="version of the galaxy")
     parser.add_argument("-d", "--description", help="description of the galaxy")
-    parser.add_argument("-a", "--author", help="author of the galaxy")
+    parser.add_argument("-a", "--authors", nargs='+', help="author of the galaxy")
     parser.add_argument("-s", "--source", help="source of the galaxy")
     parser.add_argument("-t", "--type", help="type of galaxy, also the name of the generated json")
     parser.add_argument("-n", "--name", help="name of the galaxy")
@@ -33,10 +33,12 @@ if __name__ == '__main__':
                 continue
             temp = {}
             temp["value"] = data[args.value]
+            temp["description"] = ""
             if args.value_description is not None:
-                temp["description"] = data[args.value_description]
+                for i in args.value_description:
+                    if data[i] != "":
+                        temp["description"] = temp["description"] + data[i].replace('\n', ' ') + "; "
             else:
-                temp["description"] = ""
                 for i in range(len(data)):
                     if i != args.value and data[i] != "":
                         temp["description"] = temp["description"] + data[i] + "; "
@@ -57,8 +59,10 @@ if __name__ == '__main__':
     else:
         galaxy["description"] = "automagically generated galaxy"
 
-    if args.author is not None:
-        galaxy["authors"] = [args.author]
+    if args.authors is not None:
+        galaxy["authors"] = []
+        for author in args.authors:
+            galaxy["authors"].append(author)
     else:
         galaxy["authors"] = ["authorname"]
 
