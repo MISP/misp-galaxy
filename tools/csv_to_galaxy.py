@@ -36,7 +36,8 @@ if __name__ == '__main__':
             temp["description"] = ""
             if args.value_description is not None:
                 for i in args.value_description:
-                    temp["description"] = temp["description"] + data[i].replace('\n', ' ') + "; "
+                    if data[i] != "":
+                        temp["description"] = temp["description"] + data[i].replace('\n', ' ') + "; "
             else:
                 for i in range(len(data)):
                     if i != args.value and data[i] != "":
