@@ -64,7 +64,7 @@ if __name__ == '__main__':
         for author in args.authors:
             galaxy["authors"].append(author)
     else:
-        galaxy["authors"] = ["authorname"]
+        galaxy["authors"] = ["Various"]
 
     if args.source is not None:
         galaxy["source"] = args.source
