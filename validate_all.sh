@@ -12,7 +12,7 @@ if ! [ $diffs -eq 0 ]; then
 	exit 1
 fi
 
-for dir in galaxies/*.json
+for dir in clusters/*.json
 do
   echo -n "${dir}: "
   jsonschema -i ${dir} schema.json

@@ -5,7 +5,7 @@ set -x
 
 # Seeds sponge, from moreutils
 
-for dir in galaxies/*.json
+for dir in clusters/*.json
 do
     cat ${dir} | jq . | sponge ${dir}
 done
