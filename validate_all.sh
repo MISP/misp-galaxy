@@ -15,7 +15,14 @@ fi
 for dir in clusters/*.json
 do
   echo -n "${dir}: "
-  jsonschema -i ${dir} schema.json
+  jsonschema -i ${dir} schema_clusters.json
+  echo ''
+done
+
+for dir in galaxies/*.json
+do
+  echo -n "${dir}: "
+  jsonschema -i ${dir} schema_galaxies.json
   echo ''
 done
 

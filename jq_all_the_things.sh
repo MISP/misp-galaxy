@@ -10,4 +10,10 @@ do
     cat ${dir} | jq . | sponge ${dir}
 done
 
-cat schema.json | jq . | sponge schema.json
+for dir in galaxies/*.json
+do
+    cat ${dir} | jq . | sponge ${dir}
+done
+
+cat schema_clusters.json | jq . | sponge schema_clusters.json
+cat schema_galaxies.json | jq . | sponge schema_galaxies.json
