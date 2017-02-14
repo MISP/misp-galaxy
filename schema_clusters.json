@@ -36,14 +36,59 @@
           "value": {
             "type": "string"
           },
-          "type": {
-            "type": "string"
-          },
-          "Possible Issues": {
-            "type": "string"
-          },
           "meta": {
-            "type": "object"
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "refs": {
+                "type": "array",
+                "uniqueItems": true,
+                "items": {
+                  "type": "string"
+                }
+              },
+              "synonyms": {
+                "type": "array",
+                "uniqueItems": true,
+                "items": {
+                  "type": "string"
+                }
+              },
+              "derivated_from": {
+                "type": "array",
+                "uniqueItems": true,
+                "items": {
+                  "type": "string"
+                }
+              },
+              "status": {
+                "type": "string"
+              },
+              "country": {
+                "type": "string"
+              },
+              "effectiveness": {
+                "type": "string"
+              },
+              "complexity": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "impact": {
+                "type": "string"
+              },
+              "motive": {
+                "type": "string"
+              },
+              "colour": {
+                "type": "string"
+              },
+              "possible_issues": {
+                "type": "string"
+              }
+            }
           }
         },
         "required": [
