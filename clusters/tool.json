@@ -1,83 +1,178 @@
 {
   "values": [
-    {
-      "value": "PlugX",
-      "description": "Malware"
-    },
-    {
-      "value": "MSUpdater"
-    },
-    {
-      "value": "Lazagne",
-      "description": "A password recovery tool regularly used by attackers"
-    },
-    {
-      "value": "Poison Ivy",
-      "description": "Poison Ivy is a RAT which was freely available and first released in 2005.",
-      "meta": {
-        "refs": [
-          "https://www.fireeye.com/content/dam/fireeye-www/global/en/current-threats/pdfs/rpt-poison-ivy.pdf"
-        ]
-      }
-    },
-    {
-      "value": "SPIVY",
-      "description": "In March 2016, Unit 42 observed this new Poison Ivy variant we’ve named SPIVY being deployed via weaponized documents leveraging CVE-2015-2545.",
-      "meta": {
-        "refs": [
-          "http://researchcenter.paloaltonetworks.com/2016/04/unit42-new-poison-ivy-rat-variant-targets-hong-kong-pro-democracy-activists/"
-        ]
-      }
-    },
-    {
-      "value": "Torn RAT"
-    },
-    {
-      "value": "OzoneRAT",
-      "meta": {
-        "refs": [
-          "https://blog.fortinet.com/2016/08/29/german-speakers-targeted-by-spam-leading-to-ozone-rat"
-        ],
-        "synonyms": [
-          "Ozone RAT",
-          "ozonercp"
-        ]
-      }
-    },
-    {
-      "value": "ZeGhost"
-    },
-    {
-      "value": "Elise Backdoor",
-      "meta": {
-        "synonyms": [
-          "Elise"
-        ]
-      }
-    },
-    {
-      "value": "Trojan.Laziok",
-      "meta": {
-        "synonyms": [
-          "Laziok"
-        ],
-        "refs": [
-          "http://www.symantec.com/connect/blogs/new-reconnaissance-threat-trojanlaziok-targets-energy-sector"
-        ]
-      },
-      "description": "A new information stealer, Trojan.Laziok, acts as a reconnaissance tool allowing attackers to gather information and tailor their attack methods for each compromised computer."
-    },
-    {
-      "value": "Slempo",
-      "description": "Android-based malware",
-      "meta": {
-        "synonyms": [
-          "GM-Bot",
-          "Acecard"
-        ]
-      }
-    },
-    {
+            {
+            "value" : "PlugX",
+            "description" : "Malware",
+            "meta" : {
+                "refs" : [ 
+                    "https://www.trendmicro.com/vinfo/us/threat-encyclopedia/web-attack/112/pulling-the-plug-on-plugx"
+                ],
+                "synonyms" : [ 
+                    "W32/Backdoor.FSZO-5117", 
+                    "Gen:Trojan.Heur.JP.juW@ayZZvMb", 
+                    "Trojan.Inject1.6386", 
+                    "Win32/Korplug.A", 
+                    "Trojan.Win32.Korplug", 
+                    "Backdoor/Win32.Plugx", 
+                    "Backdoor.Win32.Agent.dhwf", 
+                    "W32/Korplug.CH!tr"
+                ],
+                "category" : [ 
+                    "rat"
+                ]
+            }
+        }, 
+        {
+            "value" : "MSUpdater",
+            "description" : " Trojan (RAT) linked to current targeted attacks and others dating back to at least early 2009",
+            "meta" : {
+                "refs" : [ 
+                    "https://www.zscaler.com/pdf/whitepapers/msupdater_trojan_whitepaper.pdfx"
+                ],
+                "category" : [ 
+                    "rat"
+                ]
+            }
+        }, 
+        {
+            "value" : "Lazagne",
+            "description" : "A password sthealing tool regularly used by attackers",
+            "meta" : {
+                "refs" : [ 
+                    "https://github.com/AlessandroZ/LaZagne"
+                ],
+                "category" : [ 
+                    "tool"
+                ]
+            }
+        }, 
+        {
+            "value" : "Poison Ivy",
+            "description" : "Poison Ivy is a RAT which was freely available and first released in 2005.",
+            "meta" : {
+                "refs" : [ 
+                    "https://www.fireeye.com/content/dam/fireeye-www/global/en/current-threats/pdfs/rpt-poison-ivy.pdf", 
+                    "https://www.f-secure.com/v-descs/backdoor_w32_poisonivy.shtml"
+                ],
+                "synonyms" : [ 
+                    "Backdoor.Win32.PoisonIvy", 
+                    "Gen:Trojan.Heur.PT"
+                ],
+                "category" : [ 
+                    "rat"
+                ]
+            }
+        }, 
+        {
+            "value" : "SPIVY",
+            "description" : "In March 2016, Unit 42 observed this new Poison Ivy variant we’ve named SPIVY being deployed via weaponized documents leveraging CVE-2015-2545.",
+            "meta" : {
+                "refs" : [ 
+                    "http://researchcenter.paloaltonetworks.com/2016/04/unit42-new-poison-ivy-rat-variant-targets-hong-kong-pro-democracy-activists/"
+                ],
+                "category" : [ 
+                    "rat"
+                ]
+            }
+        }, 
+        {
+            "value" : "Torn RAT",
+            "meta" : {
+                "refs" : [ 
+                    "https://www.crowdstrike.com/blog/whois-anchor-panda/"
+                ],
+                "synonyms" : [ 
+                    "Anchor Panda"
+                ],
+                "category" : [ 
+                    "rat"
+                ]
+            }
+        }, 
+        {
+            "value" : "OzoneRAT",
+            "meta" : {
+                "refs" : [ 
+                    "https://blog.fortinet.com/2016/08/29/german-speakers-targeted-by-spam-leading-to-ozone-rat"
+                ],
+                "synonyms" : [ 
+                    "Ozone RAT", 
+                    "ozonercp"
+                ],
+                "category" : [ 
+                    "rat"
+                ]
+            }
+        }, 
+        {
+            "value" : "ZeGhost",
+            "description" : "ZeGhots is a RAT which was freely available and first released in 2014.",
+            "meta" : {
+                "refs" : [ 
+                    "https://www.microsoft.com/security/portal/threat/encyclopedia/entry.aspx?Name=Backdoor%3aWin32%2fZegost.BW"
+                ],
+                "synonyms" : [ 
+                    "BackDoor-FBZT!52D84425CDF2", 
+                    "Trojan.Win32.Staser.ytq", 
+                    "Win32/Zegost.BW"
+                ],
+                "category" : [ 
+                    "rat"
+                ]
+            }
+        }, 
+        {
+            "value" : "Elise Backdoor",
+            "description" : " Trojan (RAT) linked to current targeted attacks and others dating back to at least early 2009",
+            "meta" : {
+                "refs" : [ 
+                    "http://thehackernews.com/2015/08/elise-malware-hacking.html"
+                ],
+                "synonyms" : [ 
+                    "Elise"
+                ],
+                "category" : [ 
+                    "dropper", 
+                    "stealer"
+                ]
+            }
+        }, 
+        {
+            "value" : "Trojan.Laziok",
+            "description" : "A new information stealer, Trojan.Laziok, acts as a reconnaissance tool allowing attackers to gather information and tailor their attack methods for each compromised computer.",
+            "meta" : {
+                "refs" : [ 
+                    "http://www.symantec.com/connect/blogs/new-reconnaissance-threat-trojanlaziok-targets-energy-sector"
+                ],
+                "synonyms" : [ 
+                    "Laziok"
+                ],
+                "category" : [ 
+                    "stealer", 
+                    "reco"
+                ]
+            }
+        }, 
+        {
+            "value" : "Slempo",
+            "description" : "Android-based malware",
+            "meta" : {
+                "refs" : [ 
+                    "https://securityintelligence.com/android-malware-about-to-get-worse-gm-bot-source-code-leaked/"
+                ],
+                "synonyms" : [ 
+                    "GM-Bot", 
+                    "SlemBunk", 
+                    "Bankosy", 
+                    "Acecard"
+                ],
+                "category" : [ 
+                    "spyware", 
+                    "android"
+                ]
+            }
+        }, 
+        {
       "value": "PWOBot",
       "description": "We have discovered a malware family named ‘PWOBot’ that is fairly unique because it is written entirely in Python, and compiled via PyInstaller to generate a Microsoft Windows executable. The malware has been witnessed affecting a number of Europe-based organizations, particularly in Poland. Additionally, the malware is delivered via a popular Polish file-sharing web service.",
       "meta": {
