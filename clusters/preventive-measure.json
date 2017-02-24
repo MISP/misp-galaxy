@@ -8,7 +8,9 @@
         "complexity": "Medium",
         "effectiveness": "High",
         "impact": "Low",
-        "type": "Recovery"
+        "type": [
+          "Recovery"
+        ]
       },
       "value": "Backup and Restore Process",
       "description": "Make sure to have adequate backup processes on place and frequently test a restore of these backups.\n(Schrödinger's backup - it is both existent and non-existent until you've tried a restore"
@@ -22,7 +24,9 @@
         "complexity": "Low",
         "effectiveness": "High",
         "impact": "Low",
-        "type": "GPO"
+        "type": [
+          "GPO"
+        ]
       },
       "value": "Block Macros",
       "description": "Disable macros in Office files downloaded from the Internet. This can be configured to work in two different modes:\nA.) Open downloaded documents in 'Protected View'\nB.) Open downloaded documents and block all macros"
@@ -35,7 +39,9 @@
         "complexity": "Low",
         "effectiveness": "Medium",
         "impact": "Medium",
-        "type": "GPO",
+        "type": [
+          "GPO"
+        ],
         "possible_issues": "Administrative VBS scripts on Workstations"
       },
       "value": "Disable WSH",
@@ -46,7 +52,9 @@
         "complexity": "Low",
         "effectiveness": "Medium",
         "impact": "Low",
-        "type": "Mail Gateway"
+        "type": [
+          "Mail Gateway"
+        ]
       },
       "value": "Filter Attachments Level 1",
       "description": "Filter the following attachments on your mail gateway:\n.ade, .adp, .ani, .bas, .bat, .chm, .cmd, .com, .cpl, .crt, .exe, .hlp, .ht, .hta, .inf, .ins, .isp, .jar, .job, .js, .jse, .lnk, .mda, .mdb, .mde, .mdz, .msc, .msi, .msp, .mst, .ocx, .pcd, .ps1, .reg, .scr, .sct, .shs, .svg, .url, .vb, .vbe, .vbs, .wbk, .wsc, .ws, .wsf, .wsh, .exe, .pif, .pub"
@@ -56,7 +64,9 @@
         "complexity": "Low",
         "effectiveness": "High",
         "impact": "High",
-        "type": "Mail Gateway",
+        "type": [
+          "Mail Gateway"
+        ],
         "possible_issues": "Office Communication with old versions of Microsoft Office files (.doc, .xls) "
       },
       "value": "Filter Attachments Level 2",
@@ -71,7 +81,9 @@
         "complexity": "Medium",
         "effectiveness": "Medium",
         "impact": "Medium",
-        "type": "GPO",
+        "type": [
+          "GPO"
+        ],
         "possible_issues": "Web embedded software installers"
       },
       "value": "Restrict program execution",
@@ -85,7 +97,9 @@
         "complexity": "Low",
         "effectiveness": "Low",
         "impact": "Low",
-        "type": "User Assistence"
+        "type": [
+          "User Assistence"
+        ]
       },
       "value": "Show File Extensions",
       "description": "Set the registry key \"HideFileExt\" to 0 in order to show all file extensions, even of known file types. This helps avoiding cloaking tricks that use double extensions. (e.g. \"not_a_virus.pdf.exe\")"
@@ -98,7 +112,9 @@
         "complexity": "Low",
         "effectiveness": "Medium",
         "impact": "Low",
-        "type": "GPO",
+        "type": [
+          "GPO"
+        ],
         "possible_issues": "administrator resentment"
       },
       "value": "Enforce UAC Prompt",
@@ -109,7 +125,9 @@
         "complexity": "Medium",
         "effectiveness": "Medium",
         "impact": "Medium",
-        "type": "Best Practice",
+        "type": [
+          "Best Practice"
+        ],
         "possible_issues": "igher administrative costs"
       },
       "value": "Remove Admin Privileges",
@@ -120,7 +138,9 @@
         "complexity": "Medium",
         "effectiveness": "Low",
         "impact": "Low",
-        "type": "Best Practice"
+        "type": [
+          "Best Practice"
+        ]
       },
       "value": "Restrict Workstation Communication",
       "description": "Activate the Windows Firewall to restrict workstation to workstation communication"
@@ -129,7 +149,9 @@
       "meta": {
         "complexity": "Medium",
         "effectiveness": "High",
-        "type": "Advanced Malware Protection"
+        "type": [
+          "Advanced Malware Protection"
+        ]
       },
       "value": "Sandboxing Email Input",
       "description": "Using sandbox that opens email attachments and removes attachments based on behavior analysis"
@@ -138,7 +160,9 @@
       "meta": {
         "complexity": "Medium",
         "effectiveness": "Medium",
-        "type": "3rd Party Tools"
+        "type": [
+          "3rd Party Tools"
+        ]
       },
       "value": "Execution Prevention",
       "description": "Software that allows to control the execution of processes - sometimes integrated in Antivirus software\nFree: AntiHook, ProcessGuard, System Safety Monitor"
@@ -151,7 +175,9 @@
         "complexity": "Low",
         "effectiveness": "Medium",
         "impact": "Medium",
-        "type": "GPO",
+        "type": [
+          "GPO"
+        ],
         "possible_issues": "Some extensions will have legitimate uses, e.g., .vbs for logon scripts."
       },
       "value": "Change Default \"Open With\" to Notepad",
@@ -165,7 +191,9 @@
         "complexity": "Low",
         "effectiveness": "Medium",
         "impact": "Low",
-        "type": "Monitoring"
+        "type": [
+          "Monitoring"
+        ]
       },
       "value": "File Screening",
       "description": "Server-side file screening with the help of File Server Resource Manager"
@@ -179,7 +207,9 @@
         "complexity": "Medium",
         "effectiveness": "Medium",
         "impact": "Medium",
-        "type": "GPO",
+        "type": [
+          "GPO"
+        ],
         "possible_issues": "Configure & test extensively"
       },
       "value": "Restrict program execution #2",
@@ -194,7 +224,9 @@
         "complexity": "Medium",
         "effectiveness": "Medium",
         "impact": "Low",
-        "type": "GPO"
+        "type": [
+          "GPO"
+        ]
       },
       "value": "EMET",
       "description": "Detect and block exploitation techniques"
@@ -207,7 +239,9 @@
         "complexity": "Medium",
         "effectiveness": "Low",
         "impact": "Low",
-        "type": "3rd Party Tools"
+        "type": [
+          "3rd Party Tools"
+        ]
       },
       "value": "Sysmon",
       "description": "Detect Ransomware in an early stage with new Sysmon 5 File/Registry monitoring"
