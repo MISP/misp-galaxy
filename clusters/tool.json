@@ -1,22 +1,80 @@
 {
   "values": [
     {
-      "value": "PlugX",
-      "description": "Malware"
+      "value": "Tinba",
+      "description": "Banking Malware",
+      "meta": {
+        "refs": [
+          "https://thehackernews.com/search/label/Zusy%20Malware",
+          "http://blog.trendmicro.com/trendlabs-security-intelligence/the-tinbatinybanker-malware/"
+        ],
+        "synonyms": [
+          "Hunter",
+          "Zusy",
+          "TinyBanker"
+        ],
+        "type": [
+          "Banking"
+        ]
+      }
     },
     {
-      "value": "MSUpdater"
+      "value": "PlugX",
+      "description": "Malware",
+      "meta": {
+        "refs": [
+          "https://www.trendmicro.com/vinfo/us/threat-encyclopedia/web-attack/112/pulling-the-plug-on-plugx"
+        ],
+        "synonyms": [
+          "Backdoor.FSZO-5117",
+          "Trojan.Heur.JP.juW@ayZZvMb",
+          "Trojan.Inject1.6386",
+          "Korplug",
+          "Agent.dhwf"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "MSUpdater",
+      "description": " Trojan (RAT) linked to current targeted attacks and others dating back to at least early 2009",
+      "meta": {
+        "refs": [
+          "https://www.zscaler.com/pdf/whitepapers/msupdater_trojan_whitepaper.pdfx"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
     },
     {
       "value": "Lazagne",
-      "description": "A password recovery tool regularly used by attackers"
+      "description": "A password sthealing tool regularly used by attackers",
+      "meta": {
+        "refs": [
+          "https://github.com/AlessandroZ/LaZagne"
+        ],
+        "type": [
+          "HackTool"
+        ]
+      }
     },
     {
       "value": "Poison Ivy",
       "description": "Poison Ivy is a RAT which was freely available and first released in 2005.",
       "meta": {
         "refs": [
-          "https://www.fireeye.com/content/dam/fireeye-www/global/en/current-threats/pdfs/rpt-poison-ivy.pdf"
+          "https://www.fireeye.com/content/dam/fireeye-www/global/en/current-threats/pdfs/rpt-poison-ivy.pdf",
+          "https://www.f-secure.com/v-descs/backdoor_w32_poisonivy.shtml"
+        ],
+        "synonyms": [
+          "Backdoor.Win32.PoisonIvy",
+          "Gen:Trojan.Heur.PT"
+        ],
+        "type": [
+          "Backdoor"
         ]
       }
     },
@@ -26,11 +84,25 @@
       "meta": {
         "refs": [
           "http://researchcenter.paloaltonetworks.com/2016/04/unit42-new-poison-ivy-rat-variant-targets-hong-kong-pro-democracy-activists/"
+        ],
+        "type": [
+          "Backdoor"
         ]
       }
     },
     {
-      "value": "Torn RAT"
+      "value": "Torn RAT",
+      "meta": {
+        "refs": [
+          "https://www.crowdstrike.com/blog/whois-anchor-panda/"
+        ],
+        "synonyms": [
+          "Anchor Panda"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
     },
     {
       "value": "OzoneRAT",
@@ -41,39 +113,77 @@
         "synonyms": [
           "Ozone RAT",
           "ozonercp"
+        ],
+        "type": [
+          "Backdoor"
         ]
       }
     },
     {
-      "value": "ZeGhost"
+      "value": "ZeGhost",
+      "description": "ZeGhots is a RAT which was freely available and first released in 2014.",
+      "meta": {
+        "refs": [
+          "https://www.microsoft.com/security/portal/threat/encyclopedia/entry.aspx?Name=Backdoor%3aWin32%2fZegost.BW"
+        ],
+        "synonyms": [
+          "BackDoor-FBZT!52D84425CDF2",
+          "Trojan.Win32.Staser.ytq",
+          "Win32/Zegost.BW"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
     },
     {
       "value": "Elise Backdoor",
+      "description": "Trojan (RAT) linked to current targeted attacks and others dating back to at least early 2009",
       "meta": {
+        "refs": [
+          "http://thehackernews.com/2015/08/elise-malware-hacking.html"
+        ],
         "synonyms": [
           "Elise"
+        ],
+        "type": [
+          "dropper",
+          "PWS"
         ]
       }
     },
     {
       "value": "Trojan.Laziok",
+      "description": "A new information stealer, Trojan.Laziok, acts as a reconnaissance tool allowing attackers to gather information and tailor their attack methods for each compromised computer.",
       "meta": {
+        "refs": [
+          "http://www.symantec.com/connect/blogs/new-reconnaissance-threat-trojanlaziok-targets-energy-sector"
+        ],
         "synonyms": [
           "Laziok"
         ],
-        "refs": [
-          "http://www.symantec.com/connect/blogs/new-reconnaissance-threat-trojanlaziok-targets-energy-sector"
+        "type": [
+          "PWS",
+          "reco"
         ]
-      },
-      "description": "A new information stealer, Trojan.Laziok, acts as a reconnaissance tool allowing attackers to gather information and tailor their attack methods for each compromised computer."
+      }
     },
     {
       "value": "Slempo",
       "description": "Android-based malware",
       "meta": {
+        "refs": [
+          "https://securityintelligence.com/android-malware-about-to-get-worse-gm-bot-source-code-leaked/"
+        ],
         "synonyms": [
           "GM-Bot",
+          "SlemBunk",
+          "Bankosy",
           "Acecard"
+        ],
+        "type": [
+          "Spyware",
+          "AndroidOS"
         ]
       }
     },
@@ -83,24 +193,35 @@
       "meta": {
         "refs": [
           "http://researchcenter.paloaltonetworks.com/2016/04/unit42-python-based-pwobot-targets-european-organizations/"
+        ],
+        "synonyms": [
+          "PWOLauncher",
+          "PWOHTTPD",
+          "PWOKeyLogger",
+          "PWOMiner",
+          "PWOPyExec",
+          "PWOQuery"
+        ],
+        "type": [
+          "Dropper",
+          "Miner",
+          "Spyware"
         ]
       }
-    },
-    {
-      "value": "Lstudio"
-    },
-    {
-      "value": "Joy RAT"
     },
     {
       "value": "Lost Door RAT",
       "description": "We recently came across a cyber attack that used a remote access Trojan (RAT) called Lost Door, a tool currently offered on social media sites. What also struck us the most about this RAT (detected as BKDR_LODORAT.A) is how it abuses the Port Forward feature in routers.",
       "meta": {
         "synonyms": [
-          "LostDoor RAT"
+          "LostDoor RAT",
+          "BKDR_LODORAT"
         ],
         "refs": [
           "http://blog.trendmicro.com/trendlabs-security-intelligence/lost-door-rat-accessible-customizable-attack-tool/"
+        ],
+        "type": [
+          "Backdoor"
         ]
       }
     },
@@ -108,10 +229,14 @@
       "value": "njRAT",
       "meta": {
         "synonyms": [
-          "Bladabindi"
+          "Bladabindi",
+          "Jorik"
         ],
         "refs": [
           "http://www.fidelissecurity.com/files/files/FTA_1009-njRAT_Uncovered_rev2.pdf"
+        ],
+        "type": [
+          "Backdoor"
         ]
       }
     },
@@ -119,10 +244,17 @@
       "value": "NanoCoreRAT",
       "meta": {
         "synonyms": [
-          "NanoCore"
+          "NanoCore",
+          "Nancrat",
+          "Zurten",
+          "Atros2.CKPN"
         ],
         "refs": [
-          "http://www.symantec.com/connect/blogs/nanocore-another-rat-tries-make-it-out-gutter"
+          "http://www.symantec.com/connect/blogs/nanocore-another-rat-tries-make-it-out-gutter",
+          "https://nanocore.io/"
+        ],
+        "type": [
+          "Backdoor"
         ]
       }
     },
@@ -131,23 +263,96 @@
       "meta": {
         "synonyms": [
           "Sakurel"
+        ],
+        "refs": [
+          "https://www.secureworks.com/research/sakula-malware-family"
+        ],
+        "type": [
+          "Backdoor"
         ]
       }
     },
     {
-      "value": "Derusbi"
+      "value": "Hi-ZOR",
+      "meta": {
+        "refs": [
+          "http://www.threatgeek.com/2016/01/introducing-hi-zor-rat.html"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
     },
     {
-      "value": "EvilGrab"
+      "value": "Derusbi",
+      "meta": {
+        "synonyms": [
+          "TROJ_DLLSERV.BE"
+        ],
+        "refs": [
+          "http://www.novetta.com/wp-content/uploads/2014/11/Derusbi.pdf",
+          "https://www.rsaconference.com/writable/presentations/file_upload/hta-w02-dissecting-derusbi.pdf"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
     },
     {
-      "value": "IEChecker"
+      "value": "EvilGrab",
+      "meta": {
+        "synonyms": [
+          "BKDR_HGDER",
+          "BKDR_EVILOGE",
+          "BKDR_NVICM",
+          "Wmonder"
+        ],
+        "refs": [
+          "http://blog.trendmicro.com/trendlabs-security-intelligence/evilgrab-malware-family-used-in-targeted-attacks-in-asia/",
+          "http://researchcenter.paloaltonetworks.com/2015/06/evilgrab-delivered-by-watering-hole-attack-on-president-of-myanmars-website/"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
     },
     {
-      "value": "Trojan.Naid"
+      "value": "Trojan.Naid",
+      "meta": {
+        "synonyms": [
+          "Naid",
+          "Mdmbot.E",
+          "AGENT.GUNZ",
+          "AGENT.AQUP.DROPPER",
+          "AGENT.BMZA",
+          "MCRAT.A",
+          "AGENT.ABQMR"
+        ],
+        "refs": [
+          "https://www.symantec.com/connect/blogs/cve-2012-1875-exploited-wild-part-1-trojannaid",
+          "http://telussecuritylabs.com/threats/show/TSL20120614-05"
+        ],
+        "type": [
+          "Dropper"
+        ]
+      }
     },
     {
-      "value": "Backdoor.Moudoor"
+      "value": "Moudoor",
+      "description": "Backdoor.Moudoor, a customized version of Gh0st RAT",
+      "meta": {
+        "synonyms": [
+          "SCAR",
+          "KillProc.14145"
+        ],
+        "refs": [
+          "http://www.darkreading.com/attacks-breaches/elite-chinese-cyberspy-group-behind-bit9-hack/d/d-id/1140495",
+          "https://securityledger.com/2013/09/apt-for-hire-symantec-outs-hidden-lynx-hacking-crew/"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
     },
     {
       "value": "NetTraveler"
@@ -156,7 +361,19 @@
       "value": "Winnti"
     },
     {
-      "value": "Mimikatz"
+      "value": "Mimikatz",
+      "description": "Ease Credential stealh and replay, A little tool to play with Windows security.",
+      "meta": {
+        "synonyms": [
+          "Mikatz"
+        ],
+        "refs": [
+          "https://github.com/gentilkiwi/mimikatz"
+        ],
+        "type": [
+          "HackTool"
+        ]
+      }
     },
     {
       "value": "WEBC2"
@@ -300,9 +517,6 @@
       }
     },
     {
-      "value": "CORESHELL"
-    },
-    {
       "value": "CHOPSTICK",
       "description": "backdoor",
       "meta": {
@@ -365,10 +579,16 @@
       "description": "credential harvester",
       "meta": {
         "synonyms": [
-          "Sasfis"
+          "Sasfis",
+          "BackDoor-FDU",
+          "IEChecker"
         ],
         "refs": [
+          "https://www.trendmicro.com/vinfo/us/threat-encyclopedia/malware/troj_sasfis.tl",
           "https://www2.fireeye.com/rs/848-DID-242/images/APT28-Center-of-Storm-2017.pdf"
+        ],
+        "type": [
+          "PWS"
         ]
       }
     },
@@ -974,27 +1194,10 @@
       }
     },
     {
-      "value": "Angler EK",
-      "description": "Angler Exploit Kit is a hacking tool that is produced to search for Java and Flash Player vulnerabilities on the attacked PC and use them with the aim to distribute malware infections. Angler Exploit Kit commonly checks to see if the PC it is proliferating to has Java or Flash.",
-      "meta": {
-        "refs": [
-          "http://researchcenter.paloaltonetworks.com/2016/06/unit42-understanding-angler-exploit-kit-part-1-exploit-kit-fundamentals/",
-          "https://blogs.sophos.com/2015/07/21/a-closer-look-at-the-angler-exploit-kit/"
-        ]
-      }
-    },
-    {
       "value": "Bedep"
     },
     {
       "value": "Cromptui"
-    },
-    {
-      "value": "Cryptowall",
-      "description": "CryptoWall is a new and highly destructive variant of ransomware. Ransomware is malicious software (malware) that infects your computer and holds hostage something of value to you in exchange for money. Older ransomware used to block access to computers. Newer ransomware, such as CryptoWall, takes your data hostage."
-    },
-    {
-      "value": "CTB-Locker"
     },
     {
       "value": "Dridex",
@@ -1026,23 +1229,11 @@
       }
     },
     {
-      "value": "Locky",
-      "description": "Ransomware"
-    },
-    {
       "value": "Necurs",
       "description": "The Necurs botnet is a distributor of many pieces of malware, most notably Locky.",
       "meta": {
         "refs": [
           "https://en.wikipedia.org/wiki/Necurs_botnet"
-        ]
-      }
-    },
-    {
-      "value": "Nuclear Pack",
-      "meta": {
-        "synonyms": [
-          "Nuclear EK"
         ]
       }
     },
@@ -1061,12 +1252,6 @@
           "PinkSlipBot"
         ]
       }
-    },
-    {
-      "value": "Rig EK"
-    },
-    {
-      "value": "Teslacrypt"
     },
     {
       "value": "Upatre",
