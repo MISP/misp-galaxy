@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# This file launch all validation of the jsons and schemas
+# By default, It stop on file not commited.
+
+# you could test with command ./validate_all.sh something
+
+
 # Check Jsons format, and beautify
 ./jq_all_the_things.sh
 rc=$?
@@ -10,14 +16,13 @@ fi
 set -e
 set -x
 
-# fixme to remove.. 
-# Not need anymore ow, jq stop upon error...
-# diffs=`git status --porcelain | wc -l`
-#
-#if ! [ $diffs -eq 0 ]; then
-#	echo "Please make sure you run ./jq_all_the_things.sh before commiting."
-#	exit
-#fi
+diffs=`git status --porcelain | wc -l`
+if ! [ $diffs -eq 0 ]; then
+  echo "Please make sure you run ./jq_all_the_things.sh before commiting."
+  if [ $# -eq 0 ]; then
+    exit 1
+  fi 
+fi
 
 # Validate schemas
 for dir in clusters/*.json
