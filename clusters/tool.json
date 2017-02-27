@@ -233,7 +233,8 @@
           "Jorik"
         ],
         "refs": [
-          "http://www.fidelissecurity.com/files/files/FTA_1009-njRAT_Uncovered_rev2.pdf"
+          "http://www.fidelissecurity.com/files/files/FTA_1009-njRAT_Uncovered_rev2.pdf",
+          "https://github.com/kevthehermit/RATDecoders/blob/master/yaraRules/njRat.yar"
         ],
         "type": [
           "Backdoor"
@@ -355,10 +356,37 @@
       }
     },
     {
-      "value": "NetTraveler"
+      "value": "NetTraveler",
+      "description": "APT that infected hundreds of high profile victims in more than 40 countries. Known targets of NetTraveler include Tibetan/Uyghur activists, oil industry companies, scientific research centers and institutes, universities, private companies, governments and governmental institutions, embassies and military contractors.",
+      "meta": {
+        "synonyms": [
+          "TravNet",
+          "Netfile"
+        ],
+        "refs": [
+          "https://securelist.com/blog/incidents/57455/nettraveler-is-back-the-red-star-apt-returns-with-new-tricks/"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
     },
     {
-      "value": "Winnti"
+      "value": "Winnti",
+      "description": "APT used As part of Operation SMN, Novetta analyzed recent versions of the Winnti malware. The samples, compiled from mid- to late 2014, exhibited minimal functional changes over the previous generations Kaspersky reported in 2013.",
+      "meta": {
+        "synonyms": [
+          "Etso",
+          "SUQ",
+          "Agent.ALQHI"
+        ],
+        "refs": [
+          "https://securelist.com/blog/incidents/57455/nettraveler-is-back-the-red-star-apt-returns-with-new-tricks/"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
     },
     {
       "value": "Mimikatz",
@@ -376,33 +404,104 @@
       }
     },
     {
-      "value": "WEBC2"
-    },
-    {
-      "value": "Pirpi",
+      "value": "WEBC2",
+      "description": "Backdoor attribued to APT1",
       "meta": {
         "refs": [
-          "http://www.symantec.com/connect/blogs/buckeye-cyberespionage-group-shifts-gaze-us-hong-kong"
+          "https://github.com/gnaegle/cse4990-practical3",
+          "https://www.securestate.com/blog/2013/02/20/apt-if-it-aint-broke"
+        ],
+        "type": [
+          "Backdoor"
         ]
       }
     },
     {
-      "value": "RARSTONE"
+      "value": "Pirpi",
+      "description": "Symantec has observed Buckeye activity dating back to 2009, involving attacks on various organizations in several regions. Buckeye used a remote access Trojan (Backdoor.Pirpi) in attacks against a US organization’s network in 2009. The group delivered Backdoor.Pirpi through malicious attachments or links in convincing spear-phishing emails.",
+      "meta": {
+        "synonyms": [
+          "Badey",
+          "EXL"
+        ],
+        "refs": [
+          "http://www.symantec.com/connect/blogs/buckeye-cyberespionage-group-shifts-gaze-us-hong-kong"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
     },
     {
-      "value": "BACKSPACe"
+      "value": "RARSTONE",
+      "description": "RARSTONE is a Remote Access Tool (RAT) discovered early 2013 by TrendMicro, it’s characterized by a great affinity with the other RAT know as Plug is and was used in April for phishing campaigns that followed the dramatic attack to the Boston Marathon.",
+      "meta": {
+        "refs": [
+          "http://blog.trendmicro.com/trendlabs-security-intelligence/bkdr_rarstone-new-rat-to-watch-out-for/"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
     },
     {
-      "value": "XSControl"
+      "value": "Backspace",
+      "description": "Backspace is a Backdoor that targets the Windows platform. This malware is reportedly associated with targeted attacks against Association of Southeast Asian Nations (ASEAN) members (APT30).",
+      "meta": {
+        "synonyms": [
+          "Lecna"
+        ],
+        "refs": [
+          "https://www2.fireeye.com/WEB-2015RPTAPT30.html",
+          "https://www.fireeye.com/content/dam/fireeye-www/current-threats/pdfs/rpt-southeast-asia-threat-landscape.pdf"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
     },
     {
-      "value": "NETEAGLE"
+      "value": "XSControl",
+      "description": "Backdoor user by he Naikon APT group",
+      "meta": {
+        "refs": [
+          "https://securelist.com/analysis/publications/69953/the-naikon-apt/",
+          "https://kasperskycontenthub.com/securelist/files/2015/05/TheNaikonAPT-MsnMM.pdf"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "Neteagle",
+      "description": "NETEAGLE is a backdoor developed by APT30 with compile dates as early as 2008. It has two main variants known as Scout and Norton.",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0034",
+          "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
+        ],
+        "synonyms": [
+          "scout",
+          "norton"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
     },
     {
       "value": "Agent.BTZ",
+      "description": "In November 2014, the experts of the G DATA SecurityLabs published an article about ComRAT, the Agent.BTZ successor. We explained that this case is linked to the Uroburos rootkit.",
       "meta": {
         "synonyms": [
           "ComRat"
+        ],
+        "refs": [
+          "https://blog.gdatasoftware.com/2015/01/23927-evolution-of-sophisticated-spyware-from-agent-btz-to-comrat"
+        ],
+        "type": [
+          "Backdoor"
         ]
       }
     },
@@ -419,18 +518,36 @@
       "meta": {
         "synonyms": [
           "Tavdig",
-          "Epic Turla"
+          "Epic Turla",
+          "WorldCupSec",
+          "TadjMakhal"
         ],
         "refs": [
+          "https://securelist.com/analysis/publications/65545/the-epic-turla-operation/",
           "https://www.symantec.com/content/en/us/enterprise/media/security_response/whitepapers/waterbug-attack-group.pdf"
+        ],
+        "type": [
+          "Backdoor"
         ]
       }
     },
     {
-      "value": "Turla"
-    },
-    {
-      "value": "Uroburos"
+      "value": "Turla",
+      "description": "Family of related sophisticated backdoor software - Name comes from Microsoft detection signature – anagram of Ultra (Ultra3) was a name of the fake driver).",
+      "meta": {
+        "synonyms": [
+          "Snake",
+          "Uroburos",
+          "Urouros"
+        ],
+        "refs": [
+          "https://www.first.org/resources/papers/tbilisi2014/turla-operations_and_development.pdf"
+        ],
+        "type": [
+          "Backdoor",
+          "Rootkit"
+        ]
+      }
     },
     {
       "value": "Winexe"
@@ -438,10 +555,6 @@
     {
       "value": "Dark Comet",
       "description": "RAT initialy identified in 2011 and still actively used."
-    },
-    {
-      "value": "AlienSpy",
-      "description": "RAT for Apple OS X platforms"
     },
     {
       "value": "Cadelspy",
@@ -518,32 +631,38 @@
     },
     {
       "value": "CHOPSTICK",
-      "description": "backdoor",
+      "description": "backdoor used by apt28 ",
       "meta": {
         "synonyms": [
-          "Xagent",
           "webhp",
           "SPLM",
           "(.v2 fysbis)"
         ],
         "refs": [
           "https://www2.fireeye.com/rs/848-DID-242/images/APT28-Center-of-Storm-2017.pdf"
+        ],
+        "possible_issues": "Report tells that is could be Xagent alias (Java Rat)",
+        "type": [
+          "Backdoor"
         ]
       }
     },
     {
       "value": "EVILTOSS",
-      "description": "backdoor",
+      "description": "backdoor used by apt28",
       "meta": {
         "synonyms": [
           "Sedreco",
           "AZZY",
-          "Xagent",
           "ADVSTORESHELL",
           "NETUI"
         ],
         "refs": [
           "https://www2.fireeye.com/rs/848-DID-242/images/APT28-Center-of-Storm-2017.pdf"
+        ],
+        "possible_issues": "Report tells that is could be Xagent alias (Java Rat)",
+        "type": [
+          "Backdoor"
         ]
       }
     },
@@ -559,6 +678,9 @@
         ],
         "refs": [
           "https://www2.fireeye.com/rs/848-DID-242/images/APT28-Center-of-Storm-2017.pdf"
+        ],
+        "type": [
+          "Backdoor"
         ]
       }
     },
@@ -1057,12 +1179,17 @@
     },
     {
       "value": "X-Agent",
+      "description": "This backdoor component is known to have a modular structure featuring various espionage functionalities, such as key-logging, screen grabbing and file exfiltration. This component is available for Osx, Windows, Linux and iOS operating systems.",
       "meta": {
         "refs": [
-          "http://blog.trendmicro.com/trendlabs-security-intelligence/pawn-storm-update-ios-espionage-app-found/"
+          "http://blog.trendmicro.com/trendlabs-security-intelligence/pawn-storm-update-ios-espionage-app-found/",
+          "https://app.box.com/s/l7n781ig6n8wlf1aff5hgwbh4qoi5jqq"
         ],
         "synonyms": [
           "XAgent"
+        ],
+        "type": [
+          "Backdoor"
         ]
       }
     },
@@ -1112,6 +1239,9 @@
       "meta": {
         "refs": [
           "https://www.proofpoint.com/sites/default/files/proofpoint-operation-transparent-tribe-threat-insight-en.pdf"
+        ],
+        "type": [
+          "Backdoor"
         ]
       }
     },
@@ -1121,6 +1251,9 @@
       "meta": {
         "refs": [
           "http://www.welivesecurity.com/wp-content/uploads/2016/05/Operation-Groundbait.pdf"
+        ],
+        "type": [
+          "Backdoor"
         ]
       }
     },
@@ -1385,8 +1518,7 @@
       "meta": {
         "synonyms": [
           "Trojan.Zbot",
-          "Zbot",
-          "ZeuS"
+          "Zbot"
         ],
         "refs": [
           "https://en.wikipedia.org/wiki/Zeus_(malware)",
@@ -1498,6 +1630,402 @@
       "meta": {
         "refs": [
           "https://blog.cylance.com/shell-crew-variants-continue-to-fly-under-big-avs-radar"
+        ]
+      }
+    },
+    {
+      "value": "adzok",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "albertino",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "arcom",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "blacknix",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "bluebanana",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "bozok",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "clientmesh",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "cybergate",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "darkcomet",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "darkrat",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "gh0st",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "greame",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "hawkeye",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "javadropper",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "lostdoor",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "luxnet",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "pandora",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "poisonivy",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "predatorpain",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "punisher",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "qrat",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "shadowtech",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "smallnet",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "spygate",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "template",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "tapaoux",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "vantom",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "virusrat",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "xena",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "xtreme",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "darkddoser",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "jspy",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "xrat",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
         ]
       }
     },
