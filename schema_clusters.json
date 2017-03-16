@@ -40,6 +40,34 @@
             "type": "object",
             "additionalProperties": false,
             "properties": {
+              "type": {
+                "type": "array",
+                "uniqueItems": true,
+                "items": {
+                  "type": "string"
+                }
+              },
+              "complexity": {
+                "type": "string"
+              },
+              "effectiveness": {
+                "type": "string"
+              },
+              "country": {
+                "type": "string"
+              },
+              "possible_issues": {
+                "type": "string"
+              },
+              "colour": {
+                "type": "string"
+              },
+              "motive": {
+                "type": "string"
+              },
+              "impact": {
+                "type": "string"
+              },
               "refs": {
                 "type": "array",
                 "uniqueItems": true,
@@ -62,34 +90,6 @@
                 }
               },
               "status": {
-                "type": "string"
-              },
-              "country": {
-                "type": "string"
-              },
-              "effectiveness": {
-                "type": "string"
-              },
-              "complexity": {
-                "type": "string"
-              },
-              "type": {
-                "type": "array",
-                "uniqueItems": true,
-                "items": {
-                  "type": "string"
-                }
-              },
-              "impact": {
-                "type": "string"
-              },
-              "motive": {
-                "type": "string"
-              },
-              "colour": {
-                "type": "string"
-              },
-              "possible_issues": {
                 "type": "string"
               }
             }
