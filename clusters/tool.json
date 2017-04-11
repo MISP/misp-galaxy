@@ -2172,9 +2172,7 @@
           "TROJAN.COOKIES"
         ]
       },
-      "description": "
-his family of malware is a backdoor capable of file upload and download as well as providing remote interactive shell access to the compromised machine.
-Communication with the Command & Control (C2) servers uses a combination of single-byte XOR and Base64 encoded data in the Cookie and Set-Cookie HTTP header fields. Communication with the C2 servers is over port 80. Some variants install a registry key as means of a persistence mechanism. The hardcoded strings cited include a string of a command in common with several other APT1 families.",
+      "description": "his family of malware is a backdoor capable of file upload and download as well as providing remote interactive shell access to the compromised machine. Communication with the Command & Control (C2) servers uses a combination of single-byte XOR and Base64 encoded data in the Cookie and Set-Cookie HTTP header fields. Communication with the C2 servers is over port 80. Some variants install a registry key as means of a persistence mechanism. The hardcoded strings cited include a string of a command in common with several other APT1 families.",
       "value": "COOKIEBAG"
     },
     {
@@ -2225,7 +2223,7 @@ Communication with the Command & Control (C2) servers uses a combination of sing
           "TROJAN.FOXY"
         ]
       },
-      "description": "A family of downloader malware, that retrieves an encoded payload from a fixed location, usually in the form of a file with the .jpg extension. Some variants have just an .exe that acts as a downloader, others have an .exe launcher that runs as a service and then loads an associated .dll of the same name that acts as the downloader. This IOC is targeted at the downloaders only. After downloading the file, the malware decodes the downloaded payload into an .exe file and launches it. The malware usually stages the files it uses in the %TEMP% directory or the %WINDIR%\Temp directory.",
+      "description": "A family of downloader malware, that retrieves an encoded payload from a fixed location, usually in the form of a file with the .jpg extension. Some variants have just an .exe that acts as a downloader, others have an .exe launcher that runs as a service and then loads an associated .dll of the same name that acts as the downloader. This IOC is targeted at the downloaders only. After downloading the file, the malware decodes the downloaded payload into an .exe file and launches it. The malware usually stages the files it uses in the %TEMP% directory or the %WINDIR%\\Temp directory.",
       "value": "GOGGLES"
     },
     {
@@ -2234,7 +2232,7 @@ Communication with the Command & Control (C2) servers uses a combination of sing
           "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
         ]
       },
-      "description": "Members of this family are full featured backdoors that communicates with a Web-based Command & Control (C2) server over SSL. Features include interactive shell, gathering system info, uploading and downloading files, and creating and killing processes, Malware in this family usually communicates with a hard-coded domain using SSL on port 443. Some members of this family rely on launchers to establish persistence mechanism for them. Others contains functionality that allows it to install itself, replacing an existing Windows service, and uninstall itself. Several variants use %SystemRoot%\Tasks or %WinDir%\Tasks as working directories, additional malware artifacts may be found there.",
+      "description": "Members of this family are full featured backdoors that communicates with a Web-based Command & Control (C2) server over SSL. Features include interactive shell, gathering system info, uploading and downloading files, and creating and killing processes, Malware in this family usually communicates with a hard-coded domain using SSL on port 443. Some members of this family rely on launchers to establish persistence mechanism for them. Others contains functionality that allows it to install itself, replacing an existing Windows service, and uninstall itself. Several variants use %SystemRoot%\\Tasks or %WinDir%\\Tasks as working directories, additional malware artifacts may be found there.",
       "value": "GREENCAT"
     },
     {
@@ -2243,9 +2241,7 @@ Communication with the Command & Control (C2) servers uses a combination of sing
           "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
         ]
       },
-      "description": " This family of malware is a backdoor that provides reverse shell, process creation, system statistics collection, process enumeration, and process termination capabilities.
-This family is designed to be a service DLL and does not contain an installation mechanism.
-It usually communicates over port 443. Some variants use their own encryption, others use SSL.",
+      "description": " This family of malware is a backdoor that provides reverse shell, process creation, system statistics collection, process enumeration, and process termination capabilities. This family is designed to be a service DLL and does not contain an installation mechanism. It usually communicates over port 443. Some variants use their own encryption, others use SSL.",
       "value": "HACKFASE"
     },
     {
@@ -2254,8 +2250,7 @@ It usually communicates over port 443. Some variants use their own encryption, o
           "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
         ]
       },
-      "description": " This family of malware is designed to operate as a service and provides remote command execution and file transfer capabilities to a fixed IP address or domain name. All communication with the C2 server happens over port 443 using SSL.
-This family can be installed as a service DLL. Some variants allow for uninstallation.",
+      "description": " This family of malware is designed to operate as a service and provides remote command execution and file transfer capabilities to a fixed IP address or domain name. All communication with the C2 server happens over port 443 using SSL. This family can be installed as a service DLL. Some variants allow for uninstallation.",
       "value": "HELAUTO"
     },
     {
@@ -2367,8 +2362,7 @@ This family can be installed as a service DLL. Some variants allow for uninstall
           "TROJAN LETSGO"
         ]
       },
-      "description": " This malware family is a full-featured backdoor capable of file uploading and downloading, arbitrary execution of programs, and providing a remote interactive command shell.
-All communications with the C2 server are sent over HTTP to a static URL, appending various URL parameters to the request. Some variants use a slightly different URL.",
+      "description": " This malware family is a full-featured backdoor capable of file uploading and downloading, arbitrary execution of programs, and providing a remote interactive command shell. All communications with the C2 server are sent over HTTP to a static URL, appending various URL parameters to the request. Some variants use a slightly different URL.",
       "value": "TABMSGSQL"
     },
     {
@@ -2398,8 +2392,6 @@ All communications with the C2 server are sent over HTTP to a static URL, append
       "description": "The WARP malware family is an HTTP based backdoor written in C++, and the majority of its code base is borrowed from source code available in the public domain.  Network communications are implemented using the same WWW client library (w3c.cpp) available from www.dankrusi.com/file_69653F3336383837.html.  The malware has system survey functionality (collects hostname, current user, system uptime, CPU speed, etc.) taken directly from the BO2K backdoor available from www.bo2k.com.  It also contains the hard disk identification code found at www.winsim.com/diskid32/diskid32.cpp.  When the WARP executing remote commands, the malware creates a copy of the ?%SYSTEMROOT%\\system32\\cmd.exe? file as '%USERPROFILE%\\Temp\\~ISUN32.EXE'.  The version signature information of the duplicate executable is zeroed out.  Some WARP variants maintain persistence through the use of DLL search order hijacking.",
       "value": "WARP"
     },
-    -----------------------------------------------------
-
     {
       "meta": {
         "refs": [
@@ -2424,8 +2416,7 @@ All communications with the C2 server are sent over HTTP to a static URL, append
           "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
         ]
       },
-      "description": " A WEBC2 backdoor is designed to retrieve a Web page from a pre-determined C2 server. It expects the Web page to contain special HTML tags; the backdoor will attempt to interpret the data between the tags as commands. This family of malware is a backdoor capable of downloading files and updating its configuration.
-Communication with the command and control (C2) server uses a combination of single-byte XOR and Base64 encoded data wrapped in standard HTML tags. The malware family installs a registry key as a persistence mechanism.",
+      "description": " A WEBC2 backdoor is designed to retrieve a Web page from a pre-determined C2 server. It expects the Web page to contain special HTML tags; the backdoor will attempt to interpret the data between the tags as commands. This family of malware is a backdoor capable of downloading files and updating its configuration. Communication with the command and control (C2) server uses a combination of single-byte XOR and Base64 encoded data wrapped in standard HTML tags. The malware family installs a registry key as a persistence mechanism.",
       "value": "WEBC2-BOLID"
     },
     {
@@ -2524,8 +2515,7 @@ Communication with the command and control (C2) server uses a combination of sin
           "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
         ]
       },
-      "description": "A WEBC2 backdoor is designed to retrieve a Web page from a pre-determined C2 server. It expects the Web page to contain special HTML tags; the backdoor will attempt to interpret the data between the tags as commands. Members of this family of malware provide remote command shell and remote file download and execution capabilities.
-The malware downloads a web page containing a crafted HTML comment that subsequently contains an encoded command. The contents of this command tell the malware whether to download and execute a program, launch a reverse shell to a specific host and port number, or to sleep for a period of time. ",
+      "description": "A WEBC2 backdoor is designed to retrieve a Web page from a pre-determined C2 server. It expects the Web page to contain special HTML tags; the backdoor will attempt to interpret the data between the tags as commands. Members of this family of malware provide remote command shell and remote file download and execution capabilities. The malware downloads a web page containing a crafted HTML comment that subsequently contains an encoded command. The contents of this command tell the malware whether to download and execute a program, launch a reverse shell to a specific host and port number, or to sleep for a period of time. ",
       "value": "WEBC2-UGX"
     },
     {
