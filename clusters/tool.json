@@ -2519,22 +2519,22 @@
       "value": "WEBC2-UGX"
     },
     {
-        "meta": {
-          "refs": [
-            "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
-          ]
-        },
-        "description": "A WEBC2 backdoor is designed to retrieve a Web page from a pre-determined C2 server. It expects the Web page to contain special HTML tags; the backdoor will attempt to interpret the data between the tags as commands. Members of this family of backdoor malware talk to specific Web-based Command & Control (C2) servers. The backdoor has a limited command set, depending on version. It is primarily a downloader, but it classified as a backdoor because it can accept a limited command set, including changing local directories, downloading and executing additional files, sleeping, and connecting to a specific IP & port not initially included in the instruction set for the malware. Each version of the malware has at least one hardcoded URL to which it connects to receive its initial commands. This family of malware installs itself as a service, with the malware either being the executable run by the service, or the service DLL loaded by a legitimate service. The same core code is seen recompiled on different dates or with different names, but the same functionality. Key signatures include a specific set of functions (some of which can be used with the OS-provided rundll32.exe tool to install the malware as a service), and hardcoded strings used in communication with C2 servers to issue commands to the implant.",
-        "value": "WEBC2-Y21K"
+      "meta": {
+        "refs": [
+          "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
+        ]
       },
-      {
-        "meta": {
-          "refs": [
-            "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
-          ]
-        },
-        "description": "The WEBC2 malware family is designed to retrieve a Web page from a pre-determined C2 server. It expects the Web page to contain special HTML tags; the backdoor will attempt to interpret the data between the tags as commands.  The WEBC2-YAHOO variant enters a loop where every ten minutes it attempts to download a web page that may contain an encoded URL.  The encoded URL will be found in the pages returned inside an attribute named 'sb' or 'ex' within a tag named 'yahoo'.  The embedded link can direct the malware to download and execute files.",
-        "value": "WEBC2-YAHOO"
-      }
+      "description": "A WEBC2 backdoor is designed to retrieve a Web page from a pre-determined C2 server. It expects the Web page to contain special HTML tags; the backdoor will attempt to interpret the data between the tags as commands. Members of this family of backdoor malware talk to specific Web-based Command & Control (C2) servers. The backdoor has a limited command set, depending on version. It is primarily a downloader, but it classified as a backdoor because it can accept a limited command set, including changing local directories, downloading and executing additional files, sleeping, and connecting to a specific IP & port not initially included in the instruction set for the malware. Each version of the malware has at least one hardcoded URL to which it connects to receive its initial commands. This family of malware installs itself as a service, with the malware either being the executable run by the service, or the service DLL loaded by a legitimate service. The same core code is seen recompiled on different dates or with different names, but the same functionality. Key signatures include a specific set of functions (some of which can be used with the OS-provided rundll32.exe tool to install the malware as a service), and hardcoded strings used in communication with C2 servers to issue commands to the implant.",
+      "value": "WEBC2-Y21K"
+    },
+    {
+      "meta": {
+        "refs": [
+          "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
+        ]
+      },
+      "description": "The WEBC2 malware family is designed to retrieve a Web page from a pre-determined C2 server. It expects the Web page to contain special HTML tags; the backdoor will attempt to interpret the data between the tags as commands.  The WEBC2-YAHOO variant enters a loop where every ten minutes it attempts to download a web page that may contain an encoded URL.  The encoded URL will be found in the pages returned inside an attribute named 'sb' or 'ex' within a tag named 'yahoo'.  The embedded link can direct the malware to download and execute files.",
+      "value": "WEBC2-YAHOO"
+    }
   ]
 }
