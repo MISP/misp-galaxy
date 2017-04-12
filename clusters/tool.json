@@ -2535,6 +2535,42 @@
       },
       "description": "The WEBC2 malware family is designed to retrieve a Web page from a pre-determined C2 server. It expects the Web page to contain special HTML tags; the backdoor will attempt to interpret the data between the tags as commands.  The WEBC2-YAHOO variant enters a loop where every ten minutes it attempts to download a web page that may contain an encoded URL.  The encoded URL will be found in the pages returned inside an attribute named 'sb' or 'ex' within a tag named 'yahoo'.  The embedded link can direct the malware to download and execute files.",
       "value": "WEBC2-YAHOO"
+    },
+    {
+      "meta": {
+        "refs": [
+          "https://www.fireeye.com/blog/threat-research/2017/04/apt10_menupass_grou.html"
+        ]
+      },
+      "description": "HAYMAKER is a backdoor that can download and execute additional payloads in the form of modules. It also conducts basic victim profiling activity, collecting the computer name, running process IDs, %TEMP% directory path and version of Internet Explorer. It communicates encoded system information to a single hard coded command and control (C2) server, using the system’s default User-Agent string.",
+      "value": "HAYMAKER"
+    },
+    {
+      "meta": {
+        "refs": [
+          "https://www.fireeye.com/blog/threat-research/2017/04/apt10_menupass_grou.html"
+        ]
+      },
+      "description": "BUGJUICE is a backdoor that is executed by launching a benign file and then hijacking the search order to load a malicious dll into it. That malicious dll then loads encrypted shellcode from the binary, which is decrypted and runs the final BUGJUICE payload. BUGJUICE defaults to TCP using a custom binary protocol to communicate with the C2, but can also use HTTP and HTTPs if directed by the C2. It has the capability to find files, enumerate drives, exfiltrate data, take screenshots and provide a reverse shell.",
+      "value": "BUGJUICE"
+    },
+    {
+      "meta": {
+        "refs": [
+          "https://www.fireeye.com/blog/threat-research/2017/04/apt10_menupass_grou.html"
+        ]
+      },
+      "description": "SNUGRIDE is a backdoor that communicates with its C2 server through HTTP requests. Messages are encrypted using AES with a static key. The malware’s capabilities include taking a system survey, access to the filesystem, executing commands and a reverse shell. Persistence is maintained through a Run registry key.",
+      "value": "SNUGRIDE"
+    },
+    {
+      "meta": {
+        "refs": [
+          "https://www.fireeye.com/blog/threat-research/2017/04/apt10_menupass_grou.html"
+        ]
+      },
+      "description": "QUASARRAT is an open-source RAT available at https://github.com/quasar/QuasarRat . The versions used by APT10 (1.3.4.0, 2.0.0.0, and 2.0.0.1) are not available via the public GitHub page, indicating that APT10 has further customized the open source version. The 2.0 versions require a dropper to decipher and launch the AES encrypted QUASARRAT payload. QUASARRAT is a fully functional .NET backdoor that has been used by multiple cyber espionage groups in the past.",
+      "value": "QUASARRAT"
     }
   ]
 }
