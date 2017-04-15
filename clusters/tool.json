@@ -1,39 +1,29 @@
 {
-  "name": "Tool",
-  "type": "tool",
-  "source": "MISP Project",
-  "authors": [
-    "Alexandre Dulaunoy",
-    "Florian Roth",
-    "Timo Steffens",
-    "Christophe Vandeplas"
-  ],
-  "description": "threat-actor-tools is an enumeration of tools used by adversaries. The list includes malware but also common software regularly used by the adversaries.",
-  "uuid": "0d821b68-9d82-4c6d-86a6-1071a9e0f79f",
-  "version": 29,
   "values": [
     {
+      "value": "Tinba",
+      "description": "Banking Malware",
       "meta": {
-        "type": [
-          "Banking"
+        "refs": [
+          "https://thehackernews.com/search/label/Zusy%20Malware",
+          "http://blog.trendmicro.com/trendlabs-security-intelligence/the-tinbatinybanker-malware/"
         ],
         "synonyms": [
           "Hunter",
           "Zusy",
           "TinyBanker"
         ],
-        "refs": [
-          "https://thehackernews.com/search/label/Zusy%20Malware",
-          "http://blog.trendmicro.com/trendlabs-security-intelligence/the-tinbatinybanker-malware/"
+        "type": [
+          "Banking"
         ]
-      },
-      "description": "Banking Malware",
-      "value": "Tinba"
+      }
     },
     {
+      "value": "PlugX",
+      "description": "Malware",
       "meta": {
-        "type": [
-          "Backdoor"
+        "refs": [
+          "https://www.trendmicro.com/vinfo/us/threat-encyclopedia/web-attack/112/pulling-the-plug-on-plugx"
         ],
         "synonyms": [
           "Backdoor.FSZO-5117",
@@ -42,149 +32,148 @@
           "Korplug",
           "Agent.dhwf"
         ],
-        "refs": [
-          "https://www.trendmicro.com/vinfo/us/threat-encyclopedia/web-attack/112/pulling-the-plug-on-plugx"
-        ]
-      },
-      "description": "Malware",
-      "value": "PlugX"
-    },
-    {
-      "meta": {
         "type": [
           "Backdoor"
-        ],
+        ]
+      }
+    },
+    {
+      "value": "MSUpdater",
+      "description": " Trojan (RAT) linked to current targeted attacks and others dating back to at least early 2009",
+      "meta": {
         "refs": [
           "https://www.zscaler.com/pdf/whitepapers/msupdater_trojan_whitepaper.pdfx"
-        ]
-      },
-      "description": " Trojan (RAT) linked to current targeted attacks and others dating back to at least early 2009",
-      "value": "MSUpdater"
-    },
-    {
-      "meta": {
-        "type": [
-          "HackTool"
         ],
-        "refs": [
-          "https://github.com/AlessandroZ/LaZagne"
-        ]
-      },
-      "description": "A password sthealing tool regularly used by attackers",
-      "value": "Lazagne"
-    },
-    {
-      "meta": {
         "type": [
           "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "Lazagne",
+      "description": "A password sthealing tool regularly used by attackers",
+      "meta": {
+        "refs": [
+          "https://github.com/AlessandroZ/LaZagne"
+        ],
+        "type": [
+          "HackTool"
+        ]
+      }
+    },
+    {
+      "value": "Poison Ivy",
+      "description": "Poison Ivy is a RAT which was freely available and first released in 2005.",
+      "meta": {
+        "refs": [
+          "https://www.fireeye.com/content/dam/fireeye-www/global/en/current-threats/pdfs/rpt-poison-ivy.pdf",
+          "https://www.f-secure.com/v-descs/backdoor_w32_poisonivy.shtml"
         ],
         "synonyms": [
           "Backdoor.Win32.PoisonIvy",
           "Gen:Trojan.Heur.PT"
         ],
-        "refs": [
-          "https://www.fireeye.com/content/dam/fireeye-www/global/en/current-threats/pdfs/rpt-poison-ivy.pdf",
-          "https://www.f-secure.com/v-descs/backdoor_w32_poisonivy.shtml"
-        ]
-      },
-      "description": "Poison Ivy is a RAT which was freely available and first released in 2005.",
-      "value": "Poison Ivy"
-    },
-    {
-      "meta": {
         "type": [
           "Backdoor"
-        ],
+        ]
+      }
+    },
+    {
+      "value": "SPIVY",
+      "description": "In March 2016, Unit 42 observed this new Poison Ivy variant we’ve named SPIVY being deployed via weaponized documents leveraging CVE-2015-2545.",
+      "meta": {
         "refs": [
           "http://researchcenter.paloaltonetworks.com/2016/04/unit42-new-poison-ivy-rat-variant-targets-hong-kong-pro-democracy-activists/"
-        ]
-      },
-      "description": "In March 2016, Unit 42 observed this new Poison Ivy variant we’ve named SPIVY being deployed via weaponized documents leveraging CVE-2015-2545.",
-      "value": "SPIVY"
-    },
-    {
-      "meta": {
+        ],
         "type": [
           "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "Torn RAT",
+      "meta": {
+        "refs": [
+          "https://www.crowdstrike.com/blog/whois-anchor-panda/"
         ],
         "synonyms": [
           "Anchor Panda"
         ],
-        "refs": [
-          "https://www.crowdstrike.com/blog/whois-anchor-panda/"
-        ]
-      },
-      "value": "Torn RAT"
-    },
-    {
-      "meta": {
         "type": [
           "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "OzoneRAT",
+      "meta": {
+        "refs": [
+          "https://blog.fortinet.com/2016/08/29/german-speakers-targeted-by-spam-leading-to-ozone-rat"
         ],
         "synonyms": [
           "Ozone RAT",
           "ozonercp"
         ],
-        "refs": [
-          "https://blog.fortinet.com/2016/08/29/german-speakers-targeted-by-spam-leading-to-ozone-rat"
-        ]
-      },
-      "value": "OzoneRAT"
-    },
-    {
-      "meta": {
         "type": [
           "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "ZeGhost",
+      "description": "ZeGhots is a RAT which was freely available and first released in 2014.",
+      "meta": {
+        "refs": [
+          "https://www.microsoft.com/security/portal/threat/encyclopedia/entry.aspx?Name=Backdoor%3aWin32%2fZegost.BW"
         ],
         "synonyms": [
           "BackDoor-FBZT!52D84425CDF2",
           "Trojan.Win32.Staser.ytq",
           "Win32/Zegost.BW"
         ],
-        "refs": [
-          "https://www.microsoft.com/security/portal/threat/encyclopedia/entry.aspx?Name=Backdoor%3aWin32%2fZegost.BW"
+        "type": [
+          "Backdoor"
         ]
-      },
-      "description": "ZeGhots is a RAT which was freely available and first released in 2014.",
-      "value": "ZeGhost"
+      }
     },
     {
+      "value": "Elise Backdoor",
+      "description": "Trojan (RAT) linked to current targeted attacks and others dating back to at least early 2009",
       "meta": {
-        "type": [
-          "dropper",
-          "PWS"
+        "refs": [
+          "http://thehackernews.com/2015/08/elise-malware-hacking.html"
         ],
         "synonyms": [
           "Elise"
         ],
-        "refs": [
-          "http://thehackernews.com/2015/08/elise-malware-hacking.html"
+        "type": [
+          "dropper",
+          "PWS"
         ]
-      },
-      "description": "Trojan (RAT) linked to current targeted attacks and others dating back to at least early 2009",
-      "value": "Elise Backdoor"
+      }
     },
     {
+      "value": "Trojan.Laziok",
+      "description": "A new information stealer, Trojan.Laziok, acts as a reconnaissance tool allowing attackers to gather information and tailor their attack methods for each compromised computer.",
       "meta": {
-        "type": [
-          "PWS",
-          "reco"
+        "refs": [
+          "http://www.symantec.com/connect/blogs/new-reconnaissance-threat-trojanlaziok-targets-energy-sector"
         ],
         "synonyms": [
           "Laziok"
         ],
-        "refs": [
-          "http://www.symantec.com/connect/blogs/new-reconnaissance-threat-trojanlaziok-targets-energy-sector"
+        "type": [
+          "PWS",
+          "reco"
         ]
-      },
-      "description": "A new information stealer, Trojan.Laziok, acts as a reconnaissance tool allowing attackers to gather information and tailor their attack methods for each compromised computer.",
-      "value": "Trojan.Laziok"
+      }
     },
     {
+      "value": "Slempo",
+      "description": "Android-based malware",
       "meta": {
-        "type": [
-          "Spyware",
-          "AndroidOS"
+        "refs": [
+          "https://securityintelligence.com/android-malware-about-to-get-worse-gm-bot-source-code-leaked/"
         ],
         "synonyms": [
           "GM-Bot",
@@ -192,19 +181,18 @@
           "Bankosy",
           "Acecard"
         ],
-        "refs": [
-          "https://securityintelligence.com/android-malware-about-to-get-worse-gm-bot-source-code-leaked/"
+        "type": [
+          "Spyware",
+          "AndroidOS"
         ]
-      },
-      "description": "Android-based malware",
-      "value": "Slempo"
+      }
     },
     {
+      "value": "PWOBot",
+      "description": "We have discovered a malware family named ‘PWOBot’ that is fairly unique because it is written entirely in Python, and compiled via PyInstaller to generate a Microsoft Windows executable. The malware has been witnessed affecting a number of Europe-based organizations, particularly in Poland. Additionally, the malware is delivered via a popular Polish file-sharing web service.",
       "meta": {
-        "type": [
-          "Dropper",
-          "Miner",
-          "Spyware"
+        "refs": [
+          "http://researchcenter.paloaltonetworks.com/2016/04/unit42-python-based-pwobot-targets-european-organizations/"
         ],
         "synonyms": [
           "PWOLauncher",
@@ -214,130 +202,124 @@
           "PWOPyExec",
           "PWOQuery"
         ],
-        "refs": [
-          "http://researchcenter.paloaltonetworks.com/2016/04/unit42-python-based-pwobot-targets-european-organizations/"
+        "type": [
+          "Dropper",
+          "Miner",
+          "Spyware"
         ]
-      },
-      "description": "We have discovered a malware family named ‘PWOBot’ that is fairly unique because it is written entirely in Python, and compiled via PyInstaller to generate a Microsoft Windows executable. The malware has been witnessed affecting a number of Europe-based organizations, particularly in Poland. Additionally, the malware is delivered via a popular Polish file-sharing web service.",
-      "value": "PWOBot"
+      }
     },
     {
+      "value": "Lost Door RAT",
+      "description": "We recently came across a cyber attack that used a remote access Trojan (RAT) called Lost Door, a tool currently offered on social media sites. What also struck us the most about this RAT (detected as BKDR_LODORAT.A) is how it abuses the Port Forward feature in routers.",
       "meta": {
-        "type": [
-          "Backdoor"
+        "synonyms": [
+          "LostDoor RAT",
+          "BKDR_LODORAT"
         ],
         "refs": [
           "http://blog.trendmicro.com/trendlabs-security-intelligence/lost-door-rat-accessible-customizable-attack-tool/"
         ],
-        "synonyms": [
-          "LostDoor RAT",
-          "BKDR_LODORAT"
-        ]
-      },
-      "description": "We recently came across a cyber attack that used a remote access Trojan (RAT) called Lost Door, a tool currently offered on social media sites. What also struck us the most about this RAT (detected as BKDR_LODORAT.A) is how it abuses the Port Forward feature in routers.",
-      "value": "Lost Door RAT"
-    },
-    {
-      "meta": {
         "type": [
           "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "njRAT",
+      "meta": {
+        "synonyms": [
+          "Bladabindi",
+          "Jorik"
         ],
         "refs": [
           "http://www.fidelissecurity.com/files/files/FTA_1009-njRAT_Uncovered_rev2.pdf",
           "https://github.com/kevthehermit/RATDecoders/blob/master/yaraRules/njRat.yar"
         ],
-        "synonyms": [
-          "Bladabindi",
-          "Jorik"
-        ]
-      },
-      "value": "njRAT"
-    },
-    {
-      "meta": {
         "type": [
           "Backdoor"
-        ],
-        "refs": [
-          "http://www.symantec.com/connect/blogs/nanocore-another-rat-tries-make-it-out-gutter",
-          "https://nanocore.io/"
-        ],
+        ]
+      }
+    },
+    {
+      "value": "NanoCoreRAT",
+      "meta": {
         "synonyms": [
           "NanoCore",
           "Nancrat",
           "Zurten",
           "Atros2.CKPN"
-        ]
-      },
-      "value": "NanoCoreRAT"
-    },
-    {
-      "meta": {
+        ],
+        "refs": [
+          "http://www.symantec.com/connect/blogs/nanocore-another-rat-tries-make-it-out-gutter",
+          "https://nanocore.io/"
+        ],
         "type": [
           "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "Sakula",
+      "meta": {
+        "synonyms": [
+          "Sakurel"
         ],
         "refs": [
           "https://www.secureworks.com/research/sakula-malware-family"
         ],
-        "synonyms": [
-          "Sakurel"
-        ]
-      },
-      "value": "Sakula"
-    },
-    {
-      "meta": {
         "type": [
           "Backdoor"
-        ],
+        ]
+      }
+    },
+    {
+      "value": "Hi-ZOR",
+      "meta": {
         "refs": [
           "http://www.threatgeek.com/2016/01/introducing-hi-zor-rat.html"
-        ]
-      },
-      "value": "Hi-ZOR"
-    },
-    {
-      "meta": {
+        ],
         "type": [
           "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "Derusbi",
+      "meta": {
+        "synonyms": [
+          "TROJ_DLLSERV.BE"
         ],
         "refs": [
           "http://www.novetta.com/wp-content/uploads/2014/11/Derusbi.pdf",
           "https://www.rsaconference.com/writable/presentations/file_upload/hta-w02-dissecting-derusbi.pdf"
         ],
-        "synonyms": [
-          "TROJ_DLLSERV.BE"
-        ]
-      },
-      "value": "Derusbi"
-    },
-    {
-      "meta": {
         "type": [
           "Backdoor"
-        ],
-        "refs": [
-          "http://blog.trendmicro.com/trendlabs-security-intelligence/evilgrab-malware-family-used-in-targeted-attacks-in-asia/",
-          "http://researchcenter.paloaltonetworks.com/2015/06/evilgrab-delivered-by-watering-hole-attack-on-president-of-myanmars-website/"
-        ],
+        ]
+      }
+    },
+    {
+      "value": "EvilGrab",
+      "meta": {
         "synonyms": [
           "BKDR_HGDER",
           "BKDR_EVILOGE",
           "BKDR_NVICM",
           "Wmonder"
-        ]
-      },
-      "value": "EvilGrab"
-    },
-    {
-      "meta": {
-        "type": [
-          "Dropper"
         ],
         "refs": [
-          "https://www.symantec.com/connect/blogs/cve-2012-1875-exploited-wild-part-1-trojannaid",
-          "http://telussecuritylabs.com/threats/show/TSL20120614-05"
+          "http://blog.trendmicro.com/trendlabs-security-intelligence/evilgrab-malware-family-used-in-targeted-attacks-in-asia/",
+          "http://researchcenter.paloaltonetworks.com/2015/06/evilgrab-delivered-by-watering-hole-attack-on-president-of-myanmars-website/"
         ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "Trojan.Naid",
+      "meta": {
         "synonyms": [
           "Naid",
           "Mdmbot.E",
@@ -346,414 +328,420 @@
           "AGENT.BMZA",
           "MCRAT.A",
           "AGENT.ABQMR"
+        ],
+        "refs": [
+          "https://www.symantec.com/connect/blogs/cve-2012-1875-exploited-wild-part-1-trojannaid",
+          "http://telussecuritylabs.com/threats/show/TSL20120614-05"
+        ],
+        "type": [
+          "Dropper"
         ]
-      },
-      "value": "Trojan.Naid"
+      }
     },
     {
+      "value": "Moudoor",
+      "description": "Backdoor.Moudoor, a customized version of Gh0st RAT",
       "meta": {
-        "type": [
-          "Backdoor"
+        "synonyms": [
+          "SCAR",
+          "KillProc.14145"
         ],
         "refs": [
           "http://www.darkreading.com/attacks-breaches/elite-chinese-cyberspy-group-behind-bit9-hack/d/d-id/1140495",
           "https://securityledger.com/2013/09/apt-for-hire-symantec-outs-hidden-lynx-hacking-crew/"
         ],
-        "synonyms": [
-          "SCAR",
-          "KillProc.14145"
-        ]
-      },
-      "description": "Backdoor.Moudoor, a customized version of Gh0st RAT",
-      "value": "Moudoor"
-    },
-    {
-      "meta": {
         "type": [
           "Backdoor"
-        ],
-        "refs": [
-          "https://securelist.com/blog/incidents/57455/nettraveler-is-back-the-red-star-apt-returns-with-new-tricks/"
-        ],
+        ]
+      }
+    },
+    {
+      "value": "NetTraveler",
+      "description": "APT that infected hundreds of high profile victims in more than 40 countries. Known targets of NetTraveler include Tibetan/Uyghur activists, oil industry companies, scientific research centers and institutes, universities, private companies, governments and governmental institutions, embassies and military contractors.",
+      "meta": {
         "synonyms": [
           "TravNet",
           "Netfile"
-        ]
-      },
-      "description": "APT that infected hundreds of high profile victims in more than 40 countries. Known targets of NetTraveler include Tibetan/Uyghur activists, oil industry companies, scientific research centers and institutes, universities, private companies, governments and governmental institutions, embassies and military contractors.",
-      "value": "NetTraveler"
-    },
-    {
-      "meta": {
-        "type": [
-          "Backdoor"
         ],
         "refs": [
           "https://securelist.com/blog/incidents/57455/nettraveler-is-back-the-red-star-apt-returns-with-new-tricks/"
         ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "Winnti",
+      "description": "APT used As part of Operation SMN, Novetta analyzed recent versions of the Winnti malware. The samples, compiled from mid- to late 2014, exhibited minimal functional changes over the previous generations Kaspersky reported in 2013.",
+      "meta": {
         "synonyms": [
           "Etso",
           "SUQ",
           "Agent.ALQHI"
+        ],
+        "refs": [
+          "https://securelist.com/blog/incidents/57455/nettraveler-is-back-the-red-star-apt-returns-with-new-tricks/"
+        ],
+        "type": [
+          "Backdoor"
         ]
-      },
-      "description": "APT used As part of Operation SMN, Novetta analyzed recent versions of the Winnti malware. The samples, compiled from mid- to late 2014, exhibited minimal functional changes over the previous generations Kaspersky reported in 2013.",
-      "value": "Winnti"
+      }
     },
     {
+      "value": "Mimikatz",
+      "description": "Ease Credential stealh and replay, A little tool to play with Windows security.",
       "meta": {
-        "type": [
-          "HackTool"
+        "synonyms": [
+          "Mikatz"
         ],
         "refs": [
           "https://github.com/gentilkiwi/mimikatz"
         ],
-        "synonyms": [
-          "Mikatz"
+        "type": [
+          "HackTool"
         ]
-      },
-      "description": "Ease Credential stealh and replay, A little tool to play with Windows security.",
-      "value": "Mimikatz"
+      }
     },
     {
+      "value": "WEBC2",
+      "description": "Backdoor attribued to APT1",
       "meta": {
-        "type": [
-          "Backdoor"
-        ],
         "refs": [
           "https://github.com/gnaegle/cse4990-practical3",
           "https://www.securestate.com/blog/2013/02/20/apt-if-it-aint-broke"
-        ]
-      },
-      "description": "Backdoor attribued to APT1",
-      "value": "WEBC2"
-    },
-    {
-      "meta": {
+        ],
         "type": [
           "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "Pirpi",
+      "description": "Symantec has observed Buckeye activity dating back to 2009, involving attacks on various organizations in several regions. Buckeye used a remote access Trojan (Backdoor.Pirpi) in attacks against a US organization’s network in 2009. The group delivered Backdoor.Pirpi through malicious attachments or links in convincing spear-phishing emails.",
+      "meta": {
+        "synonyms": [
+          "Badey",
+          "EXL"
         ],
         "refs": [
           "http://www.symantec.com/connect/blogs/buckeye-cyberespionage-group-shifts-gaze-us-hong-kong"
         ],
-        "synonyms": [
-          "Badey",
-          "EXL"
-        ]
-      },
-      "description": "Symantec has observed Buckeye activity dating back to 2009, involving attacks on various organizations in several regions. Buckeye used a remote access Trojan (Backdoor.Pirpi) in attacks against a US organization’s network in 2009. The group delivered Backdoor.Pirpi through malicious attachments or links in convincing spear-phishing emails.",
-      "value": "Pirpi"
-    },
-    {
-      "meta": {
         "type": [
           "Backdoor"
-        ],
+        ]
+      }
+    },
+    {
+      "value": "RARSTONE",
+      "description": "RARSTONE is a Remote Access Tool (RAT) discovered early 2013 by TrendMicro, it’s characterized by a great affinity with the other RAT know as Plug is and was used in April for phishing campaigns that followed the dramatic attack to the Boston Marathon.",
+      "meta": {
         "refs": [
           "http://blog.trendmicro.com/trendlabs-security-intelligence/bkdr_rarstone-new-rat-to-watch-out-for/"
-        ]
-      },
-      "description": "RARSTONE is a Remote Access Tool (RAT) discovered early 2013 by TrendMicro, it’s characterized by a great affinity with the other RAT know as Plug is and was used in April for phishing campaigns that followed the dramatic attack to the Boston Marathon.",
-      "value": "RARSTONE"
-    },
-    {
-      "meta": {
+        ],
         "type": [
           "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "Backspace",
+      "description": "Backspace is a Backdoor that targets the Windows platform. This malware is reportedly associated with targeted attacks against Association of Southeast Asian Nations (ASEAN) members (APT30).",
+      "meta": {
+        "synonyms": [
+          "Lecna"
         ],
         "refs": [
           "https://www2.fireeye.com/WEB-2015RPTAPT30.html",
           "https://www.fireeye.com/content/dam/fireeye-www/current-threats/pdfs/rpt-southeast-asia-threat-landscape.pdf"
         ],
-        "synonyms": [
-          "Lecna"
-        ]
-      },
-      "description": "Backspace is a Backdoor that targets the Windows platform. This malware is reportedly associated with targeted attacks against Association of Southeast Asian Nations (ASEAN) members (APT30).",
-      "value": "Backspace"
-    },
-    {
-      "meta": {
         "type": [
           "Backdoor"
-        ],
+        ]
+      }
+    },
+    {
+      "value": "XSControl",
+      "description": "Backdoor user by he Naikon APT group",
+      "meta": {
         "refs": [
           "https://securelist.com/analysis/publications/69953/the-naikon-apt/",
           "https://kasperskycontenthub.com/securelist/files/2015/05/TheNaikonAPT-MsnMM.pdf"
-        ]
-      },
-      "description": "Backdoor user by he Naikon APT group",
-      "value": "XSControl"
-    },
-    {
-      "meta": {
+        ],
         "type": [
           "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "Neteagle",
+      "description": "NETEAGLE is a backdoor developed by APT30 with compile dates as early as 2008. It has two main variants known as Scout and Norton.",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0034",
+          "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
         ],
         "synonyms": [
           "scout",
           "norton"
         ],
-        "refs": [
-          "https://attack.mitre.org/wiki/Software/S0034",
-          "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf"
-        ]
-      },
-      "description": "NETEAGLE is a backdoor developed by APT30 with compile dates as early as 2008. It has two main variants known as Scout and Norton.",
-      "value": "Neteagle"
-    },
-    {
-      "meta": {
         "type": [
           "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "Agent.BTZ",
+      "description": "In November 2014, the experts of the G DATA SecurityLabs published an article about ComRAT, the Agent.BTZ successor. We explained that this case is linked to the Uroburos rootkit.",
+      "meta": {
+        "synonyms": [
+          "ComRat"
         ],
         "refs": [
           "https://blog.gdatasoftware.com/2015/01/23927-evolution-of-sophisticated-spyware-from-agent-btz-to-comrat"
         ],
-        "synonyms": [
-          "ComRat"
+        "type": [
+          "Backdoor"
         ]
-      },
-      "description": "In November 2014, the experts of the G DATA SecurityLabs published an article about ComRAT, the Agent.BTZ successor. We explained that this case is linked to the Uroburos rootkit.",
-      "value": "Agent.BTZ"
+      }
     },
     {
-      "description": "RAT bundle with standard VNC (to avoid/limit A/V detection).",
-      "value": "Heseber BOT"
+      "value": "Heseber BOT",
+      "description": "RAT bundle with standard VNC (to avoid/limit A/V detection)."
     },
     {
       "value": "Agent.dne"
     },
     {
+      "value": "Wipbot",
+      "description": "Waterbug is the name given to the actors who use the malware tools Trojan.Wipbot (also known as Tavdig and Epic Turla)",
       "meta": {
-        "type": [
-          "Backdoor"
-        ],
-        "refs": [
-          "https://securelist.com/analysis/publications/65545/the-epic-turla-operation/",
-          "https://www.symantec.com/content/en/us/enterprise/media/security_response/whitepapers/waterbug-attack-group.pdf"
-        ],
         "synonyms": [
           "Tavdig",
           "Epic Turla",
           "WorldCupSec",
           "TadjMakhal"
-        ]
-      },
-      "description": "Waterbug is the name given to the actors who use the malware tools Trojan.Wipbot (also known as Tavdig and Epic Turla)",
-      "value": "Wipbot"
-    },
-    {
-      "meta": {
-        "type": [
-          "Backdoor",
-          "Rootkit"
         ],
         "refs": [
-          "https://www.first.org/resources/papers/tbilisi2014/turla-operations_and_development.pdf"
+          "https://securelist.com/analysis/publications/65545/the-epic-turla-operation/",
+          "https://www.symantec.com/content/en/us/enterprise/media/security_response/whitepapers/waterbug-attack-group.pdf"
         ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "Turla",
+      "description": "Family of related sophisticated backdoor software - Name comes from Microsoft detection signature – anagram of Ultra (Ultra3) was a name of the fake driver).",
+      "meta": {
         "synonyms": [
           "Snake",
           "Uroburos",
           "Urouros"
+        ],
+        "refs": [
+          "https://www.first.org/resources/papers/tbilisi2014/turla-operations_and_development.pdf"
+        ],
+        "type": [
+          "Backdoor",
+          "Rootkit"
         ]
-      },
-      "description": "Family of related sophisticated backdoor software - Name comes from Microsoft detection signature – anagram of Ultra (Ultra3) was a name of the fake driver).",
-      "value": "Turla"
+      }
     },
     {
       "value": "Winexe"
     },
     {
-      "description": "RAT initialy identified in 2011 and still actively used.",
-      "value": "Dark Comet"
+      "value": "Dark Comet",
+      "description": "RAT initialy identified in 2011 and still actively used."
     },
     {
+      "value": "Cadelspy",
       "meta": {
         "synonyms": [
           "WinSpy"
         ]
-      },
-      "value": "Cadelspy"
+      }
     },
     {
+      "value": "CMStar",
       "meta": {
         "refs": [
           "http://researchcenter.paloaltonetworks.com/2016/03/digital-quartermaster-scenario-demonstrated-in-attacks-against-the-mongolian-government/"
         ]
-      },
-      "value": "CMStar"
+      }
     },
     {
+      "value": "DHS2015",
       "meta": {
-        "refs": [
-          "https://securelist.com/files/2015/02/The-Desert-Falcons-targeted-attacks.pdf"
-        ],
         "synonyms": [
           "iRAT"
+        ],
+        "refs": [
+          "https://securelist.com/files/2015/02/The-Desert-Falcons-targeted-attacks.pdf"
         ]
-      },
-      "value": "DHS2015"
+      }
     },
     {
+      "value": "Gh0st Rat",
+      "description": "Gh0st Rat is a well-known Chinese remote access trojan which was originally made by C.Rufus Security Team several years ago.",
       "meta": {
-        "refs": [
-          "http://download01.norman.no/documents/ThemanyfacesofGh0stRat.pdf"
-        ],
         "synonyms": [
           "Gh0stRat, GhostRat"
+        ],
+        "refs": [
+          "http://download01.norman.no/documents/ThemanyfacesofGh0stRat.pdf"
         ]
-      },
-      "description": "Gh0st Rat is a well-known Chinese remote access trojan which was originally made by C.Rufus Security Team several years ago.",
-      "value": "Gh0st Rat"
+      }
     },
     {
+      "value": "Fakem RAT",
+      "description": "Fakem RAT makes their network traffic look like well-known protocols (e.g. Messenger traffic, HTML pages). ",
       "meta": {
-        "refs": [
-          "http://www.trendmicro.com/cloud-content/us/pdfs/security-intelligence/white-papers/wp-fakem-rat.pdf"
-        ],
         "synonyms": [
           "FAKEM"
+        ],
+        "refs": [
+          "http://www.trendmicro.com/cloud-content/us/pdfs/security-intelligence/white-papers/wp-fakem-rat.pdf"
         ]
-      },
-      "description": "Fakem RAT makes their network traffic look like well-known protocols (e.g. Messenger traffic, HTML pages). ",
-      "value": "Fakem RAT"
+      }
     },
     {
+      "value": "MFC Huner",
       "meta": {
-        "refs": [
-          "http://blog.trendmicro.com/trendlabs-security-intelligence/japan-us-defense-industries-among-targeted-entities-in-latest-attack/"
-        ],
         "synonyms": [
           "Hupigon",
           "BKDR_HUPIGON"
+        ],
+        "refs": [
+          "http://blog.trendmicro.com/trendlabs-security-intelligence/japan-us-defense-industries-among-targeted-entities-in-latest-attack/"
         ]
-      },
-      "value": "MFC Huner"
+      }
     },
     {
+      "value": "Blackshades",
+      "description": "Blackshades Remote Access Tool targets Microsoft Windows operating systems. Authors were arrested in 2012 and 2014.",
       "meta": {
         "refs": [
           "https://www.justice.gov/usao-sdny/pr/manhattan-us-attorney-and-fbi-assistant-director-charge-announce-charges-connection",
           "https://blog.malwarebytes.org/intelligence/2012/06/you-dirty-rat-part-2-blackshades-net/"
         ]
-      },
-      "description": "Blackshades Remote Access Tool targets Microsoft Windows operating systems. Authors were arrested in 2012 and 2014.",
-      "value": "Blackshades"
+      }
     },
     {
+      "value": "CHOPSTICK",
+      "description": "backdoor used by apt28 ",
       "meta": {
-        "type": [
-          "Backdoor"
-        ],
-        "possible_issues": "Report tells that is could be Xagent alias (Java Rat)",
-        "refs": [
-          "https://www2.fireeye.com/rs/848-DID-242/images/APT28-Center-of-Storm-2017.pdf"
-        ],
         "synonyms": [
           "webhp",
           "SPLM",
           "(.v2 fysbis)"
-        ]
-      },
-      "description": "backdoor used by apt28 ",
-      "value": "CHOPSTICK"
-    },
-    {
-      "meta": {
-        "type": [
-          "Backdoor"
         ],
-        "possible_issues": "Report tells that is could be Xagent alias (Java Rat)",
         "refs": [
           "https://www2.fireeye.com/rs/848-DID-242/images/APT28-Center-of-Storm-2017.pdf"
         ],
+        "possible_issues": "Report tells that is could be Xagent alias (Java Rat)",
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "EVILTOSS",
+      "description": "backdoor used by apt28",
+      "meta": {
         "synonyms": [
           "Sedreco",
           "AZZY",
           "ADVSTORESHELL",
           "NETUI"
-        ]
-      },
-      "description": "backdoor used by apt28",
-      "value": "EVILTOSS"
-    },
-    {
-      "meta": {
-        "type": [
-          "Backdoor"
         ],
         "refs": [
           "https://www2.fireeye.com/rs/848-DID-242/images/APT28-Center-of-Storm-2017.pdf"
         ],
+        "possible_issues": "Report tells that is could be Xagent alias (Java Rat)",
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "GAMEFISH",
+      "description": "backdoor",
+      "meta": {
         "synonyms": [
           "Sednit",
           "Seduploader",
           "JHUHUGIT",
           "Sofacy"
-        ]
-      },
-      "description": "backdoor",
-      "value": "GAMEFISH"
-    },
-    {
-      "meta": {
+        ],
         "refs": [
           "https://www2.fireeye.com/rs/848-DID-242/images/APT28-Center-of-Storm-2017.pdf"
         ],
-        "synonyms": [
-          "Sofacy"
+        "type": [
+          "Backdoor"
         ]
-      },
-      "description": "downloader - Older version of CORESHELL",
-      "value": "SOURFACE"
+      }
     },
     {
+      "value": "SOURFACE",
+      "description": "downloader - Older version of CORESHELL",
       "meta": {
-        "type": [
-          "PWS"
+        "synonyms": [
+          "Sofacy"
+        ],
+        "refs": [
+          "https://www2.fireeye.com/rs/848-DID-242/images/APT28-Center-of-Storm-2017.pdf"
+        ]
+      }
+    },
+    {
+      "value": "OLDBAIT",
+      "description": "credential harvester",
+      "meta": {
+        "synonyms": [
+          "Sasfis",
+          "BackDoor-FDU",
+          "IEChecker"
         ],
         "refs": [
           "https://www.trendmicro.com/vinfo/us/threat-encyclopedia/malware/troj_sasfis.tl",
           "https://www2.fireeye.com/rs/848-DID-242/images/APT28-Center-of-Storm-2017.pdf"
         ],
-        "synonyms": [
-          "Sasfis",
-          "BackDoor-FDU",
-          "IEChecker"
+        "type": [
+          "PWS"
         ]
-      },
-      "description": "credential harvester",
-      "value": "OLDBAIT"
+      }
     },
     {
+      "value": "CORESHELL",
+      "description": "downloader - Newer version of SOURFACE",
       "meta": {
-        "refs": [
-          "https://www2.fireeye.com/rs/848-DID-242/images/APT28-Center-of-Storm-2017.pdf"
-        ],
         "synonyms": [
           "Sofacy"
+        ],
+        "refs": [
+          "https://www2.fireeye.com/rs/848-DID-242/images/APT28-Center-of-Storm-2017.pdf"
         ]
-      },
-      "description": "downloader - Newer version of SOURFACE",
-      "value": "CORESHELL"
+      }
     },
     {
+      "value": "Havex RAT",
       "meta": {
         "synonyms": [
           "Havex"
         ]
-      },
-      "value": "Havex RAT"
+      }
     },
     {
+      "value": "KjW0rm",
+      "description": "RAT initially written in VB.",
       "meta": {
         "refs": [
           "https://www.sentinelone.com/blog/understanding-kjw0rm-malware-we-dive-in-to-the-tv5-cyber-attack/"
         ]
-      },
-      "description": "RAT initially written in VB.",
-      "value": "KjW0rm"
+      }
     },
     {
       "value": "TinyTyphon"
@@ -786,17 +774,17 @@
       "value": "FireMalv"
     },
     {
+      "value": "Regin",
+      "description": "Regin (also known as Prax or WarriorPride) is a sophisticated malware toolkit revealed by Kaspersky Lab, Symantec, and The Intercept in November 2014. The malware targets specific users of Microsoft Windows-based computers and has been linked to the US intelligence gathering agency NSA and its British counterpart, the GCHQ. The Intercept provided samples of Regin for download including malware discovered at Belgian telecommunications provider, Belgacom. Kaspersky Lab says it first became aware of Regin in spring 2012, but that some of the earliest samples date from 2003. The name Regin is first found on the VirusTotal website on 9 March 2011.",
       "meta": {
+        "refs": [
+          "https://en.wikipedia.org/wiki/Regin_(malware)"
+        ],
         "synonyms": [
           "Prax",
           "WarriorPride"
-        ],
-        "refs": [
-          "https://en.wikipedia.org/wiki/Regin_(malware)"
         ]
-      },
-      "description": "Regin (also known as Prax or WarriorPride) is a sophisticated malware toolkit revealed by Kaspersky Lab, Symantec, and The Intercept in November 2014. The malware targets specific users of Microsoft Windows-based computers and has been linked to the US intelligence gathering agency NSA and its British counterpart, the GCHQ. The Intercept provided samples of Regin for download including malware discovered at Belgian telecommunications provider, Belgacom. Kaspersky Lab says it first became aware of Regin in spring 2012, but that some of the earliest samples date from 2003. The name Regin is first found on the VirusTotal website on 9 March 2011.",
-      "value": "Regin"
+      }
     },
     {
       "value": "Duqu"
@@ -850,85 +838,85 @@
       "value": "Tdrop2"
     },
     {
+      "value": "ZXShell",
       "meta": {
-        "refs": [
-          "http://www.fireeye.com/blog/uncategorized/2014/02/operation-snowman-deputydog-actor-compromises-us-veterans-of-foreign-wars-website.html"
-        ],
         "synonyms": [
           "Sensode"
+        ],
+        "refs": [
+          "http://www.fireeye.com/blog/uncategorized/2014/02/operation-snowman-deputydog-actor-compromises-us-veterans-of-foreign-wars-website.html"
         ]
-      },
-      "value": "ZXShell"
+      }
     },
     {
+      "value": "T9000",
       "meta": {
         "refs": [
           "http://researchcenter.paloaltonetworks.com/2016/02/t9000-advanced-modular-backdoor-uses-complex-anti-analysis-techniques/"
         ]
-      },
-      "value": "T9000"
+      }
     },
     {
+      "value": "T5000",
       "meta": {
-        "refs": [
-          "http://www.cylance.com/techblog/Grand-Theft-Auto-Panda.shtml"
-        ],
         "synonyms": [
           "Plat1"
+        ],
+        "refs": [
+          "http://www.cylance.com/techblog/Grand-Theft-Auto-Panda.shtml"
         ]
-      },
-      "value": "T5000"
+      }
     },
     {
+      "value": "Taidoor",
       "meta": {
         "refs": [
           "http://www.symantec.com/connect/blogs/trojantaidoor-takes-aim-policy-think-tanks"
         ]
-      },
-      "value": "Taidoor"
+      }
     },
     {
+      "value": "Swisyn",
       "meta": {
         "refs": [
           "http://labs.alienvault.com/labs/index.php/2013/latest-adobe-pdf-exploit-used-to-target-uyghur-and-tibetan-activists/"
         ]
-      },
-      "value": "Swisyn"
+      }
     },
     {
+      "value": "Rekaf",
       "meta": {
         "refs": [
           "https://www.proofpoint.com/us/exploring-bergard-old-malware-new-tricks"
         ]
-      },
-      "value": "Rekaf"
+      }
     },
     {
       "value": "Scieron"
     },
     {
+      "value": "SkeletonKey",
       "meta": {
         "refs": [
           "http://www.secureworks.com/cyber-threat-intelligence/threats/skeleton-key-malware-analysis/"
         ]
-      },
-      "value": "SkeletonKey"
+      }
     },
     {
+      "value": "Skyipot",
       "meta": {
         "refs": [
           "http://labs.alienvault.com/labs/index.php/2011/another-sykipot-sample-likely-targeting-us-federal-agencies/"
         ]
-      },
-      "value": "Skyipot"
+      }
     },
     {
+      "value": "Spindest",
       "meta": {
         "refs": [
           "http://www.threatconnect.com/news/threatconnect-enables-healthy-networking-biomed-life-sciences-industry/"
         ]
-      },
-      "value": "Spindest"
+      }
     },
     {
       "value": "Preshin"
@@ -937,111 +925,111 @@
       "value": "Oficla"
     },
     {
+      "value": "PCClient RAT",
       "meta": {
         "refs": [
           "http://researchcenter.paloaltonetworks.com/2014/10/new-indicators-compromise-apt-group-nitro-uncovered/"
         ]
-      },
-      "value": "PCClient RAT"
+      }
     },
     {
       "value": "Plexor"
     },
     {
+      "value": "Mongall",
       "meta": {
         "refs": [
           "https://www.fireeye.com/blog/threat-research/2014/09/the-path-to-mass-producing-cyber-attacks.html"
         ]
-      },
-      "value": "Mongall"
+      }
     },
     {
+      "value": "NeD Worm",
       "meta": {
         "refs": [
           "http://www.clearskysec.com/dustysky/"
         ]
-      },
-      "value": "NeD Worm"
+      }
     },
     {
+      "value": "NewCT",
       "meta": {
         "refs": [
           "https://www.fireeye.com/blog/threat-research/2014/09/the-path-to-mass-producing-cyber-attacks.html"
         ]
-      },
-      "value": "NewCT"
+      }
     },
     {
+      "value": "Nflog",
       "meta": {
         "refs": [
           "https://www.fireeye.com/blog/threat-research/2014/09/the-path-to-mass-producing-cyber-attacks.html"
         ]
-      },
-      "value": "Nflog"
+      }
     },
     {
+      "value": "Janicab",
       "meta": {
         "refs": [
           "http://blog.avast.com/2013/07/22/multisystem-trojan-janicab-attacks-windows-and-macosx-via-scripts/"
         ]
-      },
-      "value": "Janicab"
+      }
     },
     {
+      "value": "Jripbot",
       "meta": {
-        "refs": [
-          "http://www.symantec.com/content/en/us/enterprise/media/security_response/whitepapers/butterfly-corporate-spies-out-for-financial-gain.pdf"
-        ],
         "synonyms": [
           "Jiripbot"
+        ],
+        "refs": [
+          "http://www.symantec.com/content/en/us/enterprise/media/security_response/whitepapers/butterfly-corporate-spies-out-for-financial-gain.pdf"
         ]
-      },
-      "value": "Jripbot"
+      }
     },
     {
+      "value": "Jolob",
       "meta": {
         "refs": [
           "http://pwc.blogs.com/cyber_security_updates/2014/10/scanbox-framework-whos-affected-and-whos-using-it-1.html"
         ]
-      },
-      "value": "Jolob"
+      }
     },
     {
+      "value": "IsSpace",
       "meta": {
         "refs": [
           "https://www.fireeye.com/blog/threat-research/2014/09/the-path-to-mass-producing-cyber-attacks.html"
         ]
-      },
-      "value": "IsSpace"
+      }
     },
     {
+      "value": "Hoardy",
       "meta": {
         "synonyms": [
           "Hoarde",
           "Phindolp",
           "BS2005"
         ]
-      },
-      "value": "Hoardy"
+      }
     },
     {
+      "value": "Htran",
       "meta": {
         "refs": [
           "http://www.secureworks.com/research/threats/htran/"
         ]
-      },
-      "value": "Htran"
+      }
     },
     {
+      "value": "HTTPBrowser",
       "meta": {
-        "refs": [
-          "https://www.threatstream.com/blog/evasive-maneuvers-the-wekby-group-attempts-to-evade-analysis-via-custom-rop"
-        ],
         "synonyms": [
           "TokenControl"
+        ],
+        "refs": [
+          "https://www.threatstream.com/blog/evasive-maneuvers-the-wekby-group-attempts-to-evade-analysis-via-custom-rop"
         ]
-      },
-      "value": "HTTPBrowser"
+      }
     },
     {
       "value": "Disgufa"
@@ -1050,278 +1038,283 @@
       "value": "Elirks"
     },
     {
+      "value": "Snifula",
       "meta": {
-        "refs": [
-          "https://www.circl.lu/pub/tr-13/"
-        ],
         "synonyms": [
           "Ursnif"
+        ],
+        "refs": [
+          "https://www.circl.lu/pub/tr-13/"
         ]
-      },
-      "value": "Snifula"
+      }
     },
     {
+      "value": "Aumlib",
       "meta": {
-        "refs": [
-          "http://www.cybersquared.com/killing-with-a-borrowed-knife-chaining-core-cloud-service-profile-infrastructure-for-cyber-attacks"
-        ],
         "synonyms": [
           "Yayih",
           "mswab",
           "Graftor"
+        ],
+        "refs": [
+          "http://www.cybersquared.com/killing-with-a-borrowed-knife-chaining-core-cloud-service-profile-infrastructure-for-cyber-attacks"
         ]
-      },
-      "value": "Aumlib"
+      }
     },
     {
+      "value": "CTRat",
       "meta": {
         "refs": [
           "http://www.fireeye.com/blog/technical/threat-intelligence/2014/07/spy-of-the-tiger.html"
         ]
-      },
-      "value": "CTRat"
+      }
     },
     {
+      "value": "Emdivi",
       "meta": {
-        "refs": [
-          "http://www.symantec.com/connect/blogs/operation-cloudyomega-ichitaro-zero-day-and-ongoing-cyberespionage-campaign-targeting-japan"
-        ],
         "synonyms": [
           "Newsripper"
+        ],
+        "refs": [
+          "http://www.symantec.com/connect/blogs/operation-cloudyomega-ichitaro-zero-day-and-ongoing-cyberespionage-campaign-targeting-japan"
         ]
-      },
-      "value": "Emdivi"
+      }
     },
     {
+      "value": "Etumbot",
       "meta": {
-        "refs": [
-          "www.arbornetworks.com/asert/wp-content/uploads/2014/06/ASERT-Threat-Intelligence-Brief-2014-07-Illuminating-Etumbot-APT.pdf"
-        ],
         "synonyms": [
           "Exploz",
           "Specfix",
           "RIPTIDE"
+        ],
+        "refs": [
+          "www.arbornetworks.com/asert/wp-content/uploads/2014/06/ASERT-Threat-Intelligence-Brief-2014-07-Illuminating-Etumbot-APT.pdf"
         ]
-      },
-      "value": "Etumbot"
+      }
     },
     {
+      "value": "Fexel",
       "meta": {
         "synonyms": [
           "Loneagent"
         ]
-      },
-      "value": "Fexel"
+      }
     },
     {
+      "value": "Fysbis",
       "meta": {
         "refs": [
           "http://researchcenter.paloaltonetworks.com/2016/02/a-look-into-fysbis-sofacys-linux-backdoor/"
         ]
-      },
-      "value": "Fysbis"
+      }
     },
     {
+      "value": "Hikit",
       "meta": {
         "refs": [
           "https://blog.bit9.com/2013/02/25/bit9-security-incident-update/"
         ]
-      },
-      "value": "Hikit"
+      }
     },
     {
+      "value": "Hancitor",
       "meta": {
+        "refs": [
+          "https://www.proofpoint.com/us/threat-insight/post/hancitor-ruckguv-reappear"
+        ],
         "synonyms": [
           "Tordal",
           "Chanitor"
-        ],
-        "refs": [
-          "https://www.proofpoint.com/us/threat-insight/post/hancitor-ruckguv-reappear"
         ]
-      },
-      "value": "Hancitor"
+      }
     },
     {
+      "value": "Ruckguv",
       "meta": {
         "refs": [
           "https://www.proofpoint.com/us/threat-insight/post/hancitor-ruckguv-reappear"
         ]
-      },
-      "value": "Ruckguv"
+      }
     },
     {
+      "value": "HerHer Trojan",
       "meta": {
         "refs": [
           "http://researchcenter.paloaltonetworks.com/2016/05/the-oilrig-campaign-attacks-on-saudi-arabian-organizations-deliver-helminth-backdoor/"
         ]
-      },
-      "value": "HerHer Trojan"
+      }
     },
     {
+      "value": "Helminth backdoor",
       "meta": {
         "refs": [
           "http://researchcenter.paloaltonetworks.com/2016/05/the-oilrig-campaign-attacks-on-saudi-arabian-organizations-deliver-helminth-backdoor/"
         ]
-      },
-      "value": "Helminth backdoor"
+      }
     },
     {
+      "value": "HDRoot",
       "meta": {
         "refs": [
           "http://williamshowalter.com/a-universal-windows-bootkit/"
         ]
-      },
-      "value": "HDRoot"
+      }
     },
     {
+      "value": "IRONGATE",
       "meta": {
         "refs": [
           "https://www.fireeye.com/blog/threat-research/2016/06/irongate_ics_malware.html"
         ]
-      },
-      "value": "IRONGATE"
+      }
     },
     {
+      "value": "ShimRAT",
       "meta": {
         "refs": [
           "https://foxitsecurity.files.wordpress.com/2016/06/fox-it_mofang_threatreport_tlp-white.pdf"
         ]
-      },
-      "value": "ShimRAT"
+      }
     },
     {
+      "value": "X-Agent",
+      "description": "This backdoor component is known to have a modular structure featuring various espionage functionalities, such as key-logging, screen grabbing and file exfiltration. This component is available for Osx, Windows, Linux and iOS operating systems.",
       "meta": {
-        "type": [
-          "Backdoor"
+        "refs": [
+          "http://blog.trendmicro.com/trendlabs-security-intelligence/pawn-storm-update-ios-espionage-app-found/",
+          "https://app.box.com/s/l7n781ig6n8wlf1aff5hgwbh4qoi5jqq"
         ],
         "synonyms": [
           "XAgent"
         ],
-        "refs": [
-          "http://blog.trendmicro.com/trendlabs-security-intelligence/pawn-storm-update-ios-espionage-app-found/",
-          "https://app.box.com/s/l7n781ig6n8wlf1aff5hgwbh4qoi5jqq"
+        "type": [
+          "Backdoor"
         ]
-      },
-      "description": "This backdoor component is known to have a modular structure featuring various espionage functionalities, such as key-logging, screen grabbing and file exfiltration. This component is available for Osx, Windows, Linux and iOS operating systems.",
-      "value": "X-Agent"
+      }
     },
     {
+      "value": "X-Tunnel",
       "meta": {
         "synonyms": [
           "XTunnel"
         ]
-      },
-      "value": "X-Tunnel"
+      }
     },
     {
+      "value": "Foozer",
       "meta": {
         "refs": [
           "https://www.crowdstrike.com/blog/bears-midst-intrusion-democratic-national-committee/"
         ]
-      },
-      "value": "Foozer"
+      }
     },
     {
+      "value": "WinIDS",
       "meta": {
         "refs": [
           "https://www.crowdstrike.com/blog/bears-midst-intrusion-democratic-national-committee/"
         ]
-      },
-      "value": "WinIDS"
+      }
     },
     {
+      "value": "DownRange",
       "meta": {
         "refs": [
           "https://www.crowdstrike.com/blog/bears-midst-intrusion-democratic-national-committee/"
         ]
-      },
-      "value": "DownRange"
+      }
     },
     {
+      "value": "Mad Max",
       "meta": {
         "refs": [
           "https://www.arbornetworks.com/blog/asert/mad-max-dga/"
         ]
-      },
-      "value": "Mad Max"
+      }
     },
     {
+      "value": "Crimson",
+      "description": "Crimson is malware used as part of a campaign known as Operation Transparent Tribe that targeted Indian diplomatic and military victims",
       "meta": {
-        "type": [
-          "Backdoor"
-        ],
         "refs": [
           "https://www.proofpoint.com/sites/default/files/proofpoint-operation-transparent-tribe-threat-insight-en.pdf"
-        ]
-      },
-      "description": "Crimson is malware used as part of a campaign known as Operation Transparent Tribe that targeted Indian diplomatic and military victims",
-      "value": "Crimson"
-    },
-    {
-      "meta": {
+        ],
         "type": [
           "Backdoor"
-        ],
-        "refs": [
-          "http://www.welivesecurity.com/wp-content/uploads/2016/05/Operation-Groundbait.pdf"
         ]
-      },
-      "description": "Operation Groundbait based on our research into the Prikormka malware family. This includes detailed technical analysis of the Prikormka malware family and its spreading mechanisms, and a description of the most noteworthy attack campaigns.",
-      "value": "Prikormka"
+      }
     },
     {
+      "value": "Prikormka",
+      "description": "Operation Groundbait based on our research into the Prikormka malware family. This includes detailed technical analysis of the Prikormka malware family and its spreading mechanisms, and a description of the most noteworthy attack campaigns.",
+      "meta": {
+        "refs": [
+          "http://www.welivesecurity.com/wp-content/uploads/2016/05/Operation-Groundbait.pdf"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "NanHaiShu",
+      "description": "This whitepaper details a malicious program we identify as NanHaiShu. Based on our analysis, the threat actor behind this malware targets government and private-sector organizations.",
       "meta": {
         "refs": [
           "https://www.f-secure.com/documents/996508/1030745/nanhaishu_whitepaper.pdf"
         ]
-      },
-      "description": "This whitepaper details a malicious program we identify as NanHaiShu. Based on our analysis, the threat actor behind this malware targets government and private-sector organizations.",
-      "value": "NanHaiShu"
+      }
     },
     {
+      "value": "Umbreon",
+      "description": "Umbreon (sharing the same name as the Pokémon) targets Linux systems, including systems running both Intel and ARM processors, expanding the scope of this threat to include embedded devices as well.",
       "meta": {
         "refs": [
           "http://blog.trendmicro.com/trendlabs-security-intelligence/pokemon-themed-umbreon-linux-rootkit-hits-x86-arm-systems/"
         ]
-      },
-      "description": "Umbreon (sharing the same name as the Pokémon) targets Linux systems, including systems running both Intel and ARM processors, expanding the scope of this threat to include embedded devices as well.",
-      "value": "Umbreon"
+      }
     },
     {
+      "value": "Odinaff",
+      "description": "Odinaff is typically deployed in the first stage of an attack, to gain a foothold onto the network, providing a persistent presence and the ability to install additional tools onto the target network. These additional tools bear the hallmarks of a sophisticated attacker which has plagued the financial industry since at least 2013–Carbanak. This new wave of attacks has also used some infrastructure that has previously been used in Carbanak campaigns.",
       "meta": {
         "refs": [
           "https://www.symantec.com/connect/blogs/odinaff-new-trojan-used-high-level-financial-attacks"
         ]
-      },
-      "description": "Odinaff is typically deployed in the first stage of an attack, to gain a foothold onto the network, providing a persistent presence and the ability to install additional tools onto the target network. These additional tools bear the hallmarks of a sophisticated attacker which has plagued the financial industry since at least 2013–Carbanak. This new wave of attacks has also used some infrastructure that has previously been used in Carbanak campaigns.",
-      "value": "Odinaff"
+      }
     },
     {
+      "value": "Hworm",
+      "description": "Unit 42 has observed a new version of Hworm (or Houdini) being used within multiple attacks. This blog outlines technical details of this new Hworm version and documents an attack campaign making use of the backdoor. Of the samples used in this attack, the first we observed were June 2016, while as-of publication we were still seeing attacks as recently as mid-October, suggesting that this is likely an active, ongoing campaign.",
       "meta": {
-        "synonyms": [
-          "Houdini"
-        ],
         "refs": [
           "http://researchcenter.paloaltonetworks.com/2016/10/unit42-houdinis-magic-reappearance/"
+        ],
+        "synonyms": [
+          "Houdini"
         ]
-      },
-      "description": "Unit 42 has observed a new version of Hworm (or Houdini) being used within multiple attacks. This blog outlines technical details of this new Hworm version and documents an attack campaign making use of the backdoor. Of the samples used in this attack, the first we observed were June 2016, while as-of publication we were still seeing attacks as recently as mid-October, suggesting that this is likely an active, ongoing campaign.",
-      "value": "Hworm"
+      }
     },
     {
+      "value": "Backdoor.Dripion",
+      "description": "Backdoor.Dripion was custom developed, deployed in a highly targeted fashion, and used command and control servers disguised as antivirus company websites.",
       "meta": {
-        "synonyms": [
-          "Dripion"
-        ],
         "refs": [
           "http://www.symantec.com/connect/blogs/taiwan-targeted-new-cyberespionage-back-door-trojan"
+        ],
+        "synonyms": [
+          "Dripion"
         ]
-      },
-      "description": "Backdoor.Dripion was custom developed, deployed in a highly targeted fashion, and used command and control servers disguised as antivirus company websites.",
-      "value": "Backdoor.Dripion"
+      }
     },
     {
+      "value": "Adwind",
+      "description": "Adwind is a backdoor written purely in Java that targets system supporting the Java runtime environment. Commands that can be used, among other things, to display messages on the system, open URLs, update the malware, download/execute files, and download/load plugins. A significant amount of additional functionality can be provided through downloadable plugins, including such things as remote control options and shell command execution.",
       "meta": {
+        "refs": [
+          "https://securelist.com/blog/research/73660/adwind-faq/"
+        ],
         "synonyms": [
           "AlienSpy",
           "Frutas",
@@ -1330,13 +1323,8 @@
           "JSocket",
           "jRat",
           "Backdoor:Java/Adwind"
-        ],
-        "refs": [
-          "https://securelist.com/blog/research/73660/adwind-faq/"
         ]
-      },
-      "description": "Adwind is a backdoor written purely in Java that targets system supporting the Java runtime environment. Commands that can be used, among other things, to display messages on the system, open URLs, update the malware, download/execute files, and download/load plugins. A significant amount of additional functionality can be provided through downloadable plugins, including such things as remote control options and shell command execution.",
-      "value": "Adwind"
+      }
     },
     {
       "value": "Bedep"
@@ -1345,16 +1333,16 @@
       "value": "Cromptui"
     },
     {
+      "value": "Dridex",
+      "description": "Dridex is a strain of banking malware that leverages macros in Microsoft Office to infect systems. Once a computer has been infected, Dridex attackers can steal banking credentials and other personal information on the system to gain access to the financial records of a user.",
       "meta": {
-        "synonyms": [
-          "Cridex"
-        ],
         "refs": [
           "http://www.symantec.com/content/en/us/enterprise/media/security_response/whitepapers/dridex-financial-trojan.pdf"
+        ],
+        "synonyms": [
+          "Cridex"
         ]
-      },
-      "description": "Dridex is a strain of banking malware that leverages macros in Microsoft Office to infect systems. Once a computer has been infected, Dridex attackers can steal banking credentials and other personal information on the system to gain access to the financial records of a user.",
-      "value": "Dridex"
+      }
     },
     {
       "value": "Fareit"
@@ -1363,133 +1351,133 @@
       "value": "Gafgyt"
     },
     {
+      "value": "Gamarue",
       "meta": {
-        "synonyms": [
-          "Andromeda"
-        ],
         "refs": [
           "https://blog.gdatasoftware.com/2015/03/24274-the-andromeda-gamarue-botnet-is-on-the-rise-again"
+        ],
+        "synonyms": [
+          "Andromeda"
         ]
-      },
-      "value": "Gamarue"
+      }
     },
     {
+      "value": "Necurs",
+      "description": "The Necurs botnet is a distributor of many pieces of malware, most notably Locky.",
       "meta": {
         "refs": [
           "https://en.wikipedia.org/wiki/Necurs_botnet"
         ]
-      },
-      "description": "The Necurs botnet is a distributor of many pieces of malware, most notably Locky.",
-      "value": "Necurs"
+      }
     },
     {
       "value": "Palevo"
     },
     {
+      "value": "Akbot",
       "meta": {
+        "refs": [
+          "https://en.wikipedia.org/wiki/Akbot"
+        ],
         "synonyms": [
           "Qbot",
           "Qakbot",
           "PinkSlipBot"
-        ],
-        "refs": [
-          "https://en.wikipedia.org/wiki/Akbot"
         ]
-      },
-      "value": "Akbot"
+      }
     },
     {
-      "description": "Upatre is a Trojan downloader that is used to set up other threats on the victim's PC. Upatre has been used recently in several high profile Trojan attacks involving the Gameover Trojan. ",
-      "value": "Upatre"
+      "value": "Upatre",
+      "description": "Upatre is a Trojan downloader that is used to set up other threats on the victim's PC. Upatre has been used recently in several high profile Trojan attacks involving the Gameover Trojan. "
     },
     {
+      "value": "Vawtrak",
+      "description": "Vawtrak is an information stealing malware family that is primarily used to gain unauthorised access to bank accounts through online banking websites.",
       "meta": {
         "refs": [
           "https://www.sophos.com/medialibrary/PDFs/technical%20papers/sophos-vawtrak-international-crimeware-as-a-service-tpna.pdf"
         ]
-      },
-      "description": "Vawtrak is an information stealing malware family that is primarily used to gain unauthorised access to bank accounts through online banking websites.",
-      "value": "Vawtrak"
+      }
     },
     {
+      "value": "Empire",
+      "description": "Empire is a pure PowerShell post-exploitation agent built on cryptologically-secure communications and a flexible architecture. Empire implements the ability to run PowerShell agents without needing powershell.exe, rapidly deployable post-exploitation modules ranging from key loggers to Mimikatz, and adaptable communications to evade network detection, all wrapped up in a usability-focused framework",
       "meta": {
         "refs": [
           "https://github.com/adaptivethreat/Empire"
         ]
-      },
-      "description": "Empire is a pure PowerShell post-exploitation agent built on cryptologically-secure communications and a flexible architecture. Empire implements the ability to run PowerShell agents without needing powershell.exe, rapidly deployable post-exploitation modules ranging from key loggers to Mimikatz, and adaptable communications to evade network detection, all wrapped up in a usability-focused framework",
-      "value": "Empire"
+      }
     },
     {
+      "value": "Explosive",
+      "description": "Beginning in late 2012, a carefully orchestrated attack campaign we call Volatile Cedar has been targeting individuals, companies and institutions worldwide. This campaign, led by a persistent attacker group, has successfully penetrated a large number of targets using various attack techniques, and specifically, a custom-made malware implant codenamed Explosive. ",
       "meta": {
         "refs": [
           "https://www.checkpoint.com/downloads/volatile-cedar-technical-report.pdf"
         ]
-      },
-      "description": "Beginning in late 2012, a carefully orchestrated attack campaign we call Volatile Cedar has been targeting individuals, companies and institutions worldwide. This campaign, led by a persistent attacker group, has successfully penetrated a large number of targets using various attack techniques, and specifically, a custom-made malware implant codenamed Explosive. ",
-      "value": "Explosive"
+      }
     },
     {
+      "value": "KeyBoy",
+      "description": "The actors used a new version of “KeyBoy,” a custom backdoor first disclosed by researchers at Rapid7 in June 2013. Their work outlined the capabilities of the backdoor, and exposed the protocols and algorithms used to hide the network communication and configuration data",
       "meta": {
         "refs": [
           "https://citizenlab.org/2016/11/parliament-keyboy/",
           "https://community.rapid7.com/community/infosec/blog/2013/06/07/keyboy-targeted-attacks-against-vietnam-and-india"
         ]
-      },
-      "description": "The actors used a new version of “KeyBoy,” a custom backdoor first disclosed by researchers at Rapid7 in June 2013. Their work outlined the capabilities of the backdoor, and exposed the protocols and algorithms used to hide the network communication and configuration data",
-      "value": "KeyBoy"
+      }
     },
     {
+      "value": "Yahoyah",
+      "description": "The attacks in this case are associated with a campaign called Tropic Trooper, which has been active since at least 2011 and is known for heavily targeting Taiwan. One of the attacks used their known Yahoyah malware...",
       "meta": {
-        "synonyms": [
-          "W32/Seeav"
-        ],
         "refs": [
           "http://researchcenter.paloaltonetworks.com/2016/11/unit42-tropic-trooper-targets-taiwanese-government-and-fossil-fuel-provider-with-poison-ivy/"
-        ]
-      },
-      "description": "The attacks in this case are associated with a campaign called Tropic Trooper, which has been active since at least 2011 and is known for heavily targeting Taiwan. One of the attacks used their known Yahoyah malware...",
-      "value": "Yahoyah"
-    },
-    {
-      "description": "Delphi RAT used by Sofacy.",
-      "value": "Tartine"
-    },
-    {
-      "meta": {
-        "synonyms": [
-          "Linux/Mirai"
         ],
+        "synonyms": [
+          "W32/Seeav"
+        ]
+      }
+    },
+    {
+      "value": "Tartine",
+      "description": "Delphi RAT used by Sofacy."
+    },
+    {
+      "value": "Mirai",
+      "description": "Mirai (Japanese for \"the future\") is malware that turns computer systems running Linux into remotely controlled \"bots\", that can be used as part of a botnet in large-scale network attacks. It primarily targets online consumer devices such as remote cameras and home routers. The Mirai botnet has been used in some of the largest and most disruptive distributed denial of service (DDoS) attacks, including an attack on 20 September 2016 on computer security journalist Brian Krebs's web site, an attack on French web host OVH and the October 2016 Dyn cyberattack.",
+      "meta": {
         "refs": [
           "https://en.wikipedia.org/wiki/Mirai_(malware)"
+        ],
+        "synonyms": [
+          "Linux/Mirai"
         ]
-      },
-      "description": "Mirai (Japanese for \"the future\") is malware that turns computer systems running Linux into remotely controlled \"bots\", that can be used as part of a botnet in large-scale network attacks. It primarily targets online consumer devices such as remote cameras and home routers. The Mirai botnet has been used in some of the largest and most disruptive distributed denial of service (DDoS) attacks, including an attack on 20 September 2016 on computer security journalist Brian Krebs's web site, an attack on French web host OVH and the October 2016 Dyn cyberattack.",
-      "value": "Mirai"
+      }
     },
     {
       "value": "BASHLITE"
     },
     {
+      "value": "BlackEnergy",
+      "description": "BlackEnergy is a trojan which has undergone significant functional changes since it was first publicly analysed by Arbor Networks in 2007. It has evolved from a relatively simple DDoS trojan into a relatively sophisticated piece of modern malware with a modular architecture, making it a suitable tool for sending spam and for online bank fraud, as well as for targeted attacks. BlackEnergy version 2, which featured rootkit techniques, was documented by SecureWorks in 2010. The targeted attacks recently discovered are proof that the trojan is still alive and kicking in 2014.  We provide a technical analysis of the BlackEnergy family, focusing on novel functionality and the differences introduced by new lite variants. We describe the most notable aspects of the malware, including its techniques for bypassing UAC, defeating the signed driver requirement in Windows and a selection of BlackEnergy2 plug-ins used for parasitic file infections, network discovery and remote code execution and data collection.",
       "meta": {
         "refs": [
           "https://www.virusbulletin.com/conference/vb2014/abstracts/back-blackenergy-2014-targeted-attacks-ukraine-and-poland/"
         ]
-      },
-      "description": "BlackEnergy is a trojan which has undergone significant functional changes since it was first publicly analysed by Arbor Networks in 2007. It has evolved from a relatively simple DDoS trojan into a relatively sophisticated piece of modern malware with a modular architecture, making it a suitable tool for sending spam and for online bank fraud, as well as for targeted attacks. BlackEnergy version 2, which featured rootkit techniques, was documented by SecureWorks in 2010. The targeted attacks recently discovered are proof that the trojan is still alive and kicking in 2014.  We provide a technical analysis of the BlackEnergy family, focusing on novel functionality and the differences introduced by new lite variants. We describe the most notable aspects of the malware, including its techniques for bypassing UAC, defeating the signed driver requirement in Windows and a selection of BlackEnergy2 plug-ins used for parasitic file infections, network discovery and remote code execution and data collection.",
-      "value": "BlackEnergy"
+      }
     },
     {
+      "value": "Trojan.Seaduke",
+      "description": "Trojan.Seaduke is a Trojan horse that opens a back door on the compromised computer. It may also download potentially malicious files.",
       "meta": {
-        "synonyms": [
-          "Seaduke"
-        ],
         "refs": [
           "https://www.symantec.com/security_response/writeup.jsp?docid=2015-031915-4935-99"
+        ],
+        "synonyms": [
+          "Seaduke"
         ]
-      },
-      "description": "Trojan.Seaduke is a Trojan horse that opens a back door on the compromised computer. It may also download potentially malicious files.",
-      "value": "Trojan.Seaduke"
+      }
     },
     {
       "value": "Backdoor.Tinybaron"
@@ -1498,1214 +1486,1250 @@
       "value": "Incognito RAT"
     },
     {
+      "value": "DownRage",
       "meta": {
-        "synonyms": [
-          "Carberplike"
-        ],
         "refs": [
           "https://labsblog.f-secure.com/2015/09/08/sofacy-recycles-carberp-and-metasploit-code/",
           "https://twitter.com/Timo_Steffens/status/814781584536719360"
+        ],
+        "synonyms": [
+          "Carberplike"
         ]
-      },
-      "value": "DownRage"
+      }
     },
     {
+      "value": "Chthonic",
       "meta": {
         "refs": [
           "https://www.proofpoint.com/us/threat-insight/post/threat-actors-using-legitimate-paypal-accounts-to-distribute-chthonic-banking-trojan"
         ]
-      },
-      "value": "Chthonic"
+      }
     },
     {
-      "value": "GeminiDuke",
-      "description": "GeminiDuke is malware that was used by APT29 from 2009 to 2012.",
       "meta": {
         "refs": [
           "https://attack.mitre.org/wiki/Software/S0049"
         ]
-      }
+      },
+      "description": "GeminiDuke is malware that was used by APT29 from 2009 to 2012.",
+      "value": "GeminiDuke"
     },
     {
-      "value": "Zeus",
-      "description": "Trojan.Zbot, also called Zeus, is a Trojan horse that attempts to steal confidential information from the compromised computer. It may also download configuration files and updates from the Internet. The Trojan is created using a Trojan-building toolkit.",
       "meta": {
-        "refs": [
-          "https://en.wikipedia.org/wiki/Zeus_(malware)",
-          "https://www.symantec.com/security_response/writeup.jsp?docid=2010-011016-3514-99"
-        ],
         "synonyms": [
           "Trojan.Zbot",
           "Zbot"
+        ],
+        "refs": [
+          "https://en.wikipedia.org/wiki/Zeus_(malware)",
+          "https://www.symantec.com/security_response/writeup.jsp?docid=2010-011016-3514-99"
         ]
-      }
+      },
+      "description": "Trojan.Zbot, also called Zeus, is a Trojan horse that attempts to steal confidential information from the compromised computer. It may also download configuration files and updates from the Internet. The Trojan is created using a Trojan-building toolkit.",
+      "value": "Zeus"
     },
     {
-      "value": "Shifu",
-      "description": "Shifu is a Banking Trojan first discovered in 2015. Shifu is based on the Shiz source code which incorporated techniques used by Zeus. Attackers use Shifu to steal credentials for online banking websites around the world, starting in Russia but later including the UK, Italy, and others.",
       "meta": {
-        "refs": [
-          "http://researchcenter.paloaltonetworks.com/2017/01/unit42-2016-updates-shifu-banking-trojan/"
-        ],
         "derivated_from": [
           "Shiz"
+        ],
+        "refs": [
+          "http://researchcenter.paloaltonetworks.com/2017/01/unit42-2016-updates-shifu-banking-trojan/"
         ]
-      }
+      },
+      "description": "Shifu is a Banking Trojan first discovered in 2015. Shifu is based on the Shiz source code which incorporated techniques used by Zeus. Attackers use Shifu to steal credentials for online banking websites around the world, starting in Russia but later including the UK, Italy, and others.",
+      "value": "Shifu"
     },
     {
-      "value": "Shiz",
-      "description": "The new variant of the Shiz Trojan malware targets mission-critical enterprise resource planning (ERP) applications — particularly SAP users. ",
       "meta": {
         "refs": [
           "https://securityintelligence.com/tag/shiz-trojan-malware/"
         ]
-      }
+      },
+      "description": "The new variant of the Shiz Trojan malware targets mission-critical enterprise resource planning (ERP) applications — particularly SAP users. ",
+      "value": "Shiz"
     },
     {
-      "value": "MM Core",
-      "description": "Also known as “BaneChant”, MM Core is a file-less APT which is executed in memory by a downloader component. It was first reported in 2013 under the version number “2.0-LNK” where it used the tag “BaneChant” in its command-and-control (C2) network request. A second version “2.1-LNK” with the network tag “StrangeLove” was discovered shortly after.",
       "meta": {
-        "refs": [
-          "https://blogs.forcepoint.com/security-labs/mm-core-memory-backdoor-returns-bigboss-and-sillygoose"
-        ],
         "synonyms": [
           "MM Core backdoor",
           "BigBoss",
           "SillyGoose",
           "BaneChant",
           "StrangeLove"
+        ],
+        "refs": [
+          "https://blogs.forcepoint.com/security-labs/mm-core-memory-backdoor-returns-bigboss-and-sillygoose"
         ]
-      }
+      },
+      "description": "Also known as “BaneChant”, MM Core is a file-less APT which is executed in memory by a downloader component. It was first reported in 2013 under the version number “2.0-LNK” where it used the tag “BaneChant” in its command-and-control (C2) network request. A second version “2.1-LNK” with the network tag “StrangeLove” was discovered shortly after.",
+      "value": "MM Core"
     },
     {
-      "value": "Shamoon",
-      "description": "Shamoon,[a] also known as Disttrack, is a modular computer virus discovered by Seculert[1] in 2012, targeting recent NT kernel-based versions of Microsoft Windows. The virus has been used for cyber espionage in the energy sector.[2][3][4] Its discovery was announced on 16 August 2012 by Symantec,[3] Kaspersky Lab,[5] and Seculert.[6] Similarities have been highlighted by Kaspersky Lab and Seculert between Shamoon and the Flame malware.[5][6]",
       "meta": {
         "refs": [
           "https://en.wikipedia.org/wiki/Shamoon"
         ]
-      }
+      },
+      "description": "Shamoon,[a] also known as Disttrack, is a modular computer virus discovered by Seculert[1] in 2012, targeting recent NT kernel-based versions of Microsoft Windows. The virus has been used for cyber espionage in the energy sector.[2][3][4] Its discovery was announced on 16 August 2012 by Symantec,[3] Kaspersky Lab,[5] and Seculert.[6] Similarities have been highlighted by Kaspersky Lab and Seculert between Shamoon and the Flame malware.[5][6]",
+      "value": "Shamoon"
     },
     {
+      "value": "GhostAdmin",
+      "description": "According to MalwareHunterTeam and other researchers that have looked at the malware's source code, GhostAdmin seems to be a reworked version of CrimeScene, another botnet malware family that was active around 3-4 years ago.",
       "meta": {
         "refs": [
           "https://www.bleepingcomputer.com/news/security/new-ghostadmin-malware-used-for-data-theft-and-exfiltration/"
         ]
-      },
-      "description": "According to MalwareHunterTeam and other researchers that have looked at the malware's source code, GhostAdmin seems to be a reworked version of CrimeScene, another botnet malware family that was active around 3-4 years ago.",
-      "value": "GhostAdmin"
+      }
     },
     {
+      "value": " EyePyramid Malware",
+      "description": "Two Italians referred to as the “Occhionero brothers” have been arrested and accused of using malware and a carefully-prepared spear-phishing scheme to spy on high-profile politicians and businessmen. This case has been called “EyePyramid”, which we first discussed last week. (Conspiracy theories aside, the name came from a domain name and directory path that was found during the research.)",
       "meta": {
-        "country": "IT",
         "refs": [
           "http://blog.trendmicro.com/trendlabs-security-intelligence/uncovering-inner-workings-eyepyramid/"
-        ]
-      },
-      "description": "Two Italians referred to as the “Occhionero brothers” have been arrested and accused of using malware and a carefully-prepared spear-phishing scheme to spy on high-profile politicians and businessmen. This case has been called “EyePyramid”, which we first discussed last week. (Conspiracy theories aside, the name came from a domain name and directory path that was found during the research.)",
-      "value": " EyePyramid Malware"
+        ],
+        "country": "IT"
+      }
     },
     {
+      "value": "LuminosityLink",
+      "description": "LuminosityLink is a malware family costing $40 that purports to be a system administration utility",
       "meta": {
         "refs": [
           "http://researchcenter.paloaltonetworks.com/2016/07/unit42-investigating-the-luminositylink-remote-access-trojan-configuration/"
         ]
-      },
-      "description": "LuminosityLink is a malware family costing $40 that purports to be a system administration utility",
-      "value": "LuminosityLink"
+      }
     },
     {
+      "value": "Flokibot",
+      "description": "Floki Bot, described recently by Dr. Peter Stephenson from SC Magazine, is yet another bot based on the leaked Zeus code. However, the author came up with various custom modifications that makes it more interesting.",
       "meta": {
-        "synonyms": [
-          "Floki Bot"
-        ],
         "refs": [
           "https://www.arbornetworks.com/blog/asert/flokibot-flock-bots/",
           "https://blog.malwarebytes.com/threat-analysis/2016/11/floki-bot-and-the-stealthy-dropper/"
-        ]
-      },
-      "description": "Floki Bot, described recently by Dr. Peter Stephenson from SC Magazine, is yet another bot based on the leaked Zeus code. However, the author came up with various custom modifications that makes it more interesting.",
-      "value": "Flokibot"
-    },
-    {
-      "meta": {
-        "refs": [
-          "https://www.proofpoint.com/us/threat-insight/post/APT-targets-russia-belarus-zerot-plugx"
-        ]
-      },
-      "description": "Most recently, we have observed the same group targeting military and aerospace interests in Russia and Belarus. Since the summer of 2016, this group began using a new downloader known as ZeroT to install the PlugX remote access Trojan (RAT) and added Microsoft Compiled HTML Help (.chm) as one of the initial droppers delivered in spear-phishing emails.",
-      "value": "ZeroT"
-    },
-    {
-      "meta": {
-        "refs": [
-          "https://blog.cylance.com/shell-crew-variants-continue-to-fly-under-big-avs-radar"
-        ]
-      },
-      "description": "Cylance dubbed this family of malware StreamEx, based upon a common exported function used across all samples ‘stream’, combined with the dropper functionality to append ‘ex’ to the DLL file name.  The StreamEx family has the ability to access and modify the user’s file system, modify the registry, create system services, enumerate process and system information, enumerate network resources and drive types, scan for security tools such as firewall products and antivirus products, change browser security settings, and remotely execute commands. The malware documented in this post was predominantly 64-bit, however, there are 32-bit versions of the malware in the wild. ",
-      "value": "StreamEx"
-    },
-    {
-      "meta": {
-        "type": [
-          "Backdoor"
-        ],
-        "refs": [
-          "https://github.com/kevthehermit/RATDecoders"
-        ]
-      },
-      "description": "Remote Access Trojan",
-      "value": "adzok"
-    },
-    {
-      "meta": {
-        "type": [
-          "Backdoor"
-        ],
-        "refs": [
-          "https://github.com/kevthehermit/RATDecoders"
-        ]
-      },
-      "description": "Remote Access Trojan",
-      "value": "albertino"
-    },
-    {
-      "meta": {
-        "type": [
-          "Backdoor"
-        ],
-        "refs": [
-          "https://github.com/kevthehermit/RATDecoders"
-        ]
-      },
-      "description": "Remote Access Trojan",
-      "value": "arcom"
-    },
-    {
-      "meta": {
-        "type": [
-          "Backdoor"
-        ],
-        "refs": [
-          "https://github.com/kevthehermit/RATDecoders"
-        ]
-      },
-      "description": "Remote Access Trojan",
-      "value": "blacknix"
-    },
-    {
-      "meta": {
-        "type": [
-          "Backdoor"
-        ],
-        "refs": [
-          "https://github.com/kevthehermit/RATDecoders"
-        ]
-      },
-      "description": "Remote Access Trojan",
-      "value": "bluebanana"
-    },
-    {
-      "meta": {
-        "type": [
-          "Backdoor"
-        ],
-        "refs": [
-          "https://github.com/kevthehermit/RATDecoders"
-        ]
-      },
-      "description": "Remote Access Trojan",
-      "value": "bozok"
-    },
-    {
-      "meta": {
-        "type": [
-          "Backdoor"
-        ],
-        "refs": [
-          "https://github.com/kevthehermit/RATDecoders"
-        ]
-      },
-      "description": "Remote Access Trojan",
-      "value": "clientmesh"
-    },
-    {
-      "meta": {
-        "type": [
-          "Backdoor"
-        ],
-        "refs": [
-          "https://github.com/kevthehermit/RATDecoders"
-        ]
-      },
-      "description": "Remote Access Trojan",
-      "value": "cybergate"
-    },
-    {
-      "meta": {
-        "type": [
-          "Backdoor"
-        ],
-        "refs": [
-          "https://github.com/kevthehermit/RATDecoders"
-        ]
-      },
-      "description": "Remote Access Trojan",
-      "value": "darkcomet"
-    },
-    {
-      "meta": {
-        "type": [
-          "Backdoor"
-        ],
-        "refs": [
-          "https://github.com/kevthehermit/RATDecoders"
-        ]
-      },
-      "description": "Remote Access Trojan",
-      "value": "darkrat"
-    },
-    {
-      "meta": {
-        "type": [
-          "Backdoor"
-        ],
-        "refs": [
-          "https://github.com/kevthehermit/RATDecoders"
-        ]
-      },
-      "description": "Remote Access Trojan",
-      "value": "gh0st"
-    },
-    {
-      "meta": {
-        "type": [
-          "Backdoor"
-        ],
-        "refs": [
-          "https://github.com/kevthehermit/RATDecoders"
-        ]
-      },
-      "description": "Remote Access Trojan",
-      "value": "greame"
-    },
-    {
-      "meta": {
-        "type": [
-          "Backdoor"
-        ],
-        "refs": [
-          "https://github.com/kevthehermit/RATDecoders"
-        ]
-      },
-      "description": "Remote Access Trojan",
-      "value": "hawkeye"
-    },
-    {
-      "meta": {
-        "type": [
-          "Backdoor"
-        ],
-        "refs": [
-          "https://github.com/kevthehermit/RATDecoders"
-        ]
-      },
-      "description": "Remote Access Trojan",
-      "value": "javadropper"
-    },
-    {
-      "meta": {
-        "type": [
-          "Backdoor"
-        ],
-        "refs": [
-          "https://github.com/kevthehermit/RATDecoders"
-        ]
-      },
-      "description": "Remote Access Trojan",
-      "value": "lostdoor"
-    },
-    {
-      "meta": {
-        "type": [
-          "Backdoor"
-        ],
-        "refs": [
-          "https://github.com/kevthehermit/RATDecoders"
-        ]
-      },
-      "description": "Remote Access Trojan",
-      "value": "luxnet"
-    },
-    {
-      "meta": {
-        "type": [
-          "Backdoor"
-        ],
-        "refs": [
-          "https://github.com/kevthehermit/RATDecoders"
-        ]
-      },
-      "description": "Remote Access Trojan",
-      "value": "pandora"
-    },
-    {
-      "meta": {
-        "type": [
-          "Backdoor"
-        ],
-        "refs": [
-          "https://github.com/kevthehermit/RATDecoders"
-        ]
-      },
-      "description": "Remote Access Trojan",
-      "value": "poisonivy"
-    },
-    {
-      "meta": {
-        "type": [
-          "Backdoor"
-        ],
-        "refs": [
-          "https://github.com/kevthehermit/RATDecoders"
-        ]
-      },
-      "description": "Remote Access Trojan",
-      "value": "predatorpain"
-    },
-    {
-      "meta": {
-        "type": [
-          "Backdoor"
-        ],
-        "refs": [
-          "https://github.com/kevthehermit/RATDecoders"
-        ]
-      },
-      "description": "Remote Access Trojan",
-      "value": "punisher"
-    },
-    {
-      "meta": {
-        "type": [
-          "Backdoor"
-        ],
-        "refs": [
-          "https://github.com/kevthehermit/RATDecoders"
-        ]
-      },
-      "description": "Remote Access Trojan",
-      "value": "qrat"
-    },
-    {
-      "meta": {
-        "type": [
-          "Backdoor"
-        ],
-        "refs": [
-          "https://github.com/kevthehermit/RATDecoders"
-        ]
-      },
-      "description": "Remote Access Trojan",
-      "value": "shadowtech"
-    },
-    {
-      "meta": {
-        "type": [
-          "Backdoor"
-        ],
-        "refs": [
-          "https://github.com/kevthehermit/RATDecoders"
-        ]
-      },
-      "description": "Remote Access Trojan",
-      "value": "smallnet"
-    },
-    {
-      "meta": {
-        "type": [
-          "Backdoor"
-        ],
-        "refs": [
-          "https://github.com/kevthehermit/RATDecoders"
-        ]
-      },
-      "description": "Remote Access Trojan",
-      "value": "spygate"
-    },
-    {
-      "meta": {
-        "type": [
-          "Backdoor"
-        ],
-        "refs": [
-          "https://github.com/kevthehermit/RATDecoders"
-        ]
-      },
-      "description": "Remote Access Trojan",
-      "value": "template"
-    },
-    {
-      "meta": {
-        "type": [
-          "Backdoor"
-        ],
-        "refs": [
-          "https://github.com/kevthehermit/RATDecoders"
-        ]
-      },
-      "description": "Remote Access Trojan",
-      "value": "tapaoux"
-    },
-    {
-      "meta": {
-        "type": [
-          "Backdoor"
-        ],
-        "refs": [
-          "https://github.com/kevthehermit/RATDecoders"
-        ]
-      },
-      "description": "Remote Access Trojan",
-      "value": "vantom"
-    },
-    {
-      "meta": {
-        "type": [
-          "Backdoor"
-        ],
-        "refs": [
-          "https://github.com/kevthehermit/RATDecoders"
-        ]
-      },
-      "description": "Remote Access Trojan",
-      "value": "virusrat"
-    },
-    {
-      "meta": {
-        "type": [
-          "Backdoor"
-        ],
-        "refs": [
-          "https://github.com/kevthehermit/RATDecoders"
-        ]
-      },
-      "description": "Remote Access Trojan",
-      "value": "xena"
-    },
-    {
-      "meta": {
-        "type": [
-          "Backdoor"
-        ],
-        "refs": [
-          "https://github.com/kevthehermit/RATDecoders"
-        ]
-      },
-      "description": "Remote Access Trojan",
-      "value": "xtreme"
-    },
-    {
-      "meta": {
-        "type": [
-          "Backdoor"
-        ],
-        "refs": [
-          "https://github.com/kevthehermit/RATDecoders"
-        ]
-      },
-      "description": "Remote Access Trojan",
-      "value": "darkddoser"
-    },
-    {
-      "meta": {
-        "type": [
-          "Backdoor"
-        ],
-        "refs": [
-          "https://github.com/kevthehermit/RATDecoders"
-        ]
-      },
-      "description": "Remote Access Trojan",
-      "value": "jspy"
-    },
-    {
-      "meta": {
-        "type": [
-          "Backdoor"
-        ],
-        "refs": [
-          "https://github.com/kevthehermit/RATDecoders"
-        ]
-      },
-      "description": "Remote Access Trojan",
-      "value": "xrat"
-    },
-    {
-      "meta": {
-        "refs": [
-          "https://github.com/n1nj4sec/pupy"
-        ]
-      },
-      "description": "Pupy is an opensource, cross-platform (Windows, Linux, OSX, Android) remote administration and post-exploitation tool mainly written in python.",
-      "value": "PupyRAT"
-    },
-    {
-      "meta": {
-        "refs": [
-          "https://www.trendmicro.com/vinfo/us/threat-encyclopedia/malware/elf_imeij.a"
-        ]
-      },
-      "description": "Linux Arm malware spread via RFIs in cgi-bin scripts.  This backdoor executes commands from a remote malicious user, effectively compromising the affected system. It connects to a website to send and receive information.",
-      "value": "ELF_IMEIJ"
-    },
-    {
-      "meta": {
-        "refs": [
-          "https://blogs.forcepoint.com/security-labs/trojanized-adobe-installer-used-install-dragonok%E2%80%99s-new-custom-backdoor"
-        ]
-      },
-      "description": "KHRAT is a small backdoor that has three exports (functions), namely, K1, K2, and K3. K1 checks if the current user is an administrator. If not, it uninstalls itself by calling the K2 function.",
-      "value": "KHRAT"
-    },
-    {
-      "meta": {
-        "refs": [
-          "http://www.enigmasoftware.com/trochilusrat-removal/"
-        ]
-      },
-      "description": "The Trochilus RAT is a threatening RAT (Remote Access Trojan) that may evade many anti-virus programs. The Trochilus RAT is currently being used as part of an extended threat campaign in South East Asia. The first appearance of the Trochilus RAT in this campaign, which has been active since August of 2015, was first detected in the summer of 2015. The Trochilus RAT is currently being used against civil society organizations and government computers in the South East Asia region, particularly in attacks directed towards the government of Myanmar.",
-      "value": "Trochilus"
-    },
-    {
-      "meta": {
-        "refs": [
-          "http://researchcenter.paloaltonetworks.com/2017/03/unit42-trochilus-rat-new-moonwind-rat-used-attack-thai-utility-organizations/"
-        ]
-      },
-      "description": "The MoonWind sample used for this analysis was compiled with a Chinese compiler known as BlackMoon, the same compiler used for the BlackMoon banking Trojan. While a number of attributes match the BlackMoon banking Trojan, the malware is not the same. Both malware families were simply compiled using the same compiler, and it was the BlackMoon artifacts that resulted in the naming of the BlackMoon banking Trojan. But because this new sample is different from the BlackMoon banking Trojan,",
-      "value": "MoonWind"
-    },
-    {
-      "description": "Chrysaor is spyware believed to be created by NSO Group Technologies, specializing in the creation and sale of software and infrastructure for targeted attacks. Chrysaor is believed to be related to the Pegasus spyware that was first identified on iOS and analyzed by Citizen Lab and Lookout.",
-      "value": "Chrysaor",
-      "meta": {
-        "refs": [
-          "https://security.googleblog.com/2017/04/an-investigation-of-chrysaor-malware-on.html"
         ],
         "synonyms": [
-          "Pegasus",
-          "Pegasus spyware"
+          "Floki Bot"
         ]
       }
     },
     {
+      "value": "ZeroT",
+      "description": "Most recently, we have observed the same group targeting military and aerospace interests in Russia and Belarus. Since the summer of 2016, this group began using a new downloader known as ZeroT to install the PlugX remote access Trojan (RAT) and added Microsoft Compiled HTML Help (.chm) as one of the initial droppers delivered in spear-phishing emails.",
+      "meta": {
+        "refs": [
+          "https://www.proofpoint.com/us/threat-insight/post/APT-targets-russia-belarus-zerot-plugx"
+        ]
+      }
+    },
+    {
+      "value": "StreamEx",
+      "description": "Cylance dubbed this family of malware StreamEx, based upon a common exported function used across all samples ‘stream’, combined with the dropper functionality to append ‘ex’ to the DLL file name.  The StreamEx family has the ability to access and modify the user’s file system, modify the registry, create system services, enumerate process and system information, enumerate network resources and drive types, scan for security tools such as firewall products and antivirus products, change browser security settings, and remotely execute commands. The malware documented in this post was predominantly 64-bit, however, there are 32-bit versions of the malware in the wild. ",
+      "meta": {
+        "refs": [
+          "https://blog.cylance.com/shell-crew-variants-continue-to-fly-under-big-avs-radar"
+        ]
+      }
+    },
+    {
+      "value": "adzok",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "albertino",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "arcom",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "blacknix",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "bluebanana",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "bozok",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "clientmesh",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "cybergate",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "darkcomet",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "darkrat",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "gh0st",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "greame",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "hawkeye",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "javadropper",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "lostdoor",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "luxnet",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "pandora",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "poisonivy",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "predatorpain",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "punisher",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "qrat",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "shadowtech",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "smallnet",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "spygate",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "template",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "tapaoux",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "vantom",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "virusrat",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "xena",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "xtreme",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "darkddoser",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "jspy",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "xrat",
+      "description": "Remote Access Trojan",
+      "meta": {
+        "refs": [
+          "https://github.com/kevthehermit/RATDecoders"
+        ],
+        "type": [
+          "Backdoor"
+        ]
+      }
+    },
+    {
+      "value": "PupyRAT",
+      "description": "Pupy is an opensource, cross-platform (Windows, Linux, OSX, Android) remote administration and post-exploitation tool mainly written in python.",
+      "meta": {
+        "refs": [
+          "https://github.com/n1nj4sec/pupy"
+        ]
+      }
+    },
+    {
+      "value": "ELF_IMEIJ",
+      "description": "Linux Arm malware spread via RFIs in cgi-bin scripts.  This backdoor executes commands from a remote malicious user, effectively compromising the affected system. It connects to a website to send and receive information.",
+      "meta": {
+        "refs": [
+          "https://www.trendmicro.com/vinfo/us/threat-encyclopedia/malware/elf_imeij.a"
+        ]
+      }
+    },
+    {
+      "value": "KHRAT",
+      "description": "KHRAT is a small backdoor that has three exports (functions), namely, K1, K2, and K3. K1 checks if the current user is an administrator. If not, it uninstalls itself by calling the K2 function.",
+      "meta": {
+        "refs": [
+          "https://blogs.forcepoint.com/security-labs/trojanized-adobe-installer-used-install-dragonok%E2%80%99s-new-custom-backdoor"
+        ]
+      }
+    },
+    {
+      "value": "Trochilus",
+      "description": "The Trochilus RAT is a threatening RAT (Remote Access Trojan) that may evade many anti-virus programs. The Trochilus RAT is currently being used as part of an extended threat campaign in South East Asia. The first appearance of the Trochilus RAT in this campaign, which has been active since August of 2015, was first detected in the summer of 2015. The Trochilus RAT is currently being used against civil society organizations and government computers in the South East Asia region, particularly in attacks directed towards the government of Myanmar.",
+      "meta": {
+        "refs": [
+          "http://www.enigmasoftware.com/trochilusrat-removal/"
+        ]
+      }
+    },
+    {
+      "value": "MoonWind",
+      "description": "The MoonWind sample used for this analysis was compiled with a Chinese compiler known as BlackMoon, the same compiler used for the BlackMoon banking Trojan. While a number of attributes match the BlackMoon banking Trojan, the malware is not the same. Both malware families were simply compiled using the same compiler, and it was the BlackMoon artifacts that resulted in the naming of the BlackMoon banking Trojan. But because this new sample is different from the BlackMoon banking Trojan,",
+      "meta": {
+        "refs": [
+          "http://researchcenter.paloaltonetworks.com/2017/03/unit42-trochilus-rat-new-moonwind-rat-used-attack-thai-utility-organizations/"
+        ]
+      }
+    },
+    {
+      "meta": {
+        "synonyms": [
+          "Pegasus",
+          "Pegasus spyware"
+        ],
+        "refs": [
+          "https://security.googleblog.com/2017/04/an-investigation-of-chrysaor-malware-on.html"
+        ]
+      },
+      "value": "Chrysaor",
+      "description": "Chrysaor is spyware believed to be created by NSO Group Technologies, specializing in the creation and sale of software and infrastructure for targeted attacks. Chrysaor is believed to be related to the Pegasus spyware that was first identified on iOS and analyzed by Citizen Lab and Lookout."
+    },
+    {
+      "value": "Sathurbot",
+      "description": "The trojan serves as a backdoor. It can be controlled remotely.",
       "meta": {
         "refs": [
           "http://virusradar.com/en/Win32_Sathurbot.A/description",
           "https://www.welivesecurity.com/2017/04/06/sathurbot-distributed-wordpress-password-attack/"
         ]
-      },
-      "description": "The trojan serves as a backdoor. It can be controlled remotely.",
-      "value": "Sathurbot"
+      }
     },
     {
-      "meta": {
-        "refs": [
-          "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
-        ]
-      },
+      "value": "AURIGA",
       "description": "The AURIGA malware family shares a large amount of functionality with the BANGAT backdoor.  The malware family contains functionality for keystroke logging, creating and killing processes, performing file system and registry modifications, spawning interactive command shells, performing process injection, logging off the current user or shutting down the local machine.  The AURIGA malware contains a driver component which is used to inject the malware DLL into other processes.  This driver can also perform process and IP connection hiding.  The malware family will create a copy of cmd.exe to perform its C2 activity, and replace the \"Microsoft corp\" strings in the cmd.exe binary with different values.  The malware family typically maintains persistence through installing itself as a service.",
-      "value": "AURIGA"
-    },
-    {
       "meta": {
         "refs": [
           "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
         ]
-      },
+      }
+    },
+    {
+      "value": "BANGAT",
       "description": "The BANGAT malware family shares a large amount of functionality with the AURIGA backdoor.  The malware family contains functionality for keylogging, creating and killing processes, performing filesystem and registry modifications, spawning interactive command shells, performing process injection, logging off the current user or shutting down the local machine.  In addition, the malware also implements a custom VNC like protocol which sends screenshots of the desktop to the C2 server and accepts keyboard and mouse input.  The malware communicates to its C2 servers using SSL, with self signed SSL certificates.  The malware family will create a copy of cmd.exe to perform its C2 activity, and replace the \"Microsoft corp\" strings in the cmd.exe binary with different values.  The malware family typically maintains persistence through installing itself as a service.",
-      "value": "BANGAT"
-    },
-    {
       "meta": {
         "refs": [
           "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
         ]
-      },
+      }
+    },
+    {
+      "value": "BISCUIT",
       "description": "BISCUIT provides attackers with full access to an infected host.  BISCUIT capabilities include launching an interactive command shell, enumerating servers on a Windows network, enumerating and manipulating process, and transferring files.  BISCUIT communicates using a custom protocol, which is then encrypted using SSL.  Once installed BISCUIT will attempt to beacon to its command/control servers approximately every 10 or 30 minutes.  It will beacon its primary server first, followed by a secondary server. All communication is encrypted with SSL (OpenSSL 0.9.8i).",
-      "value": "BISCUIT"
-    },
-    {
       "meta": {
         "refs": [
           "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
         ]
-      },
+      }
+    },
+    {
+      "value": "BOUNCER",
       "description": "BOUNCER will load an extracted DLL into memory, and then will call the DLL's dump export.  The dump export is called with the parameters passed via the command line to the BOUNCER executable.  It requires at least two arguments, the IP and port to send the password dump information.  It can accept at most five arguments, including a proxy IP, port and an x.509 key for SSL authentication.  The DLL backdoor has the capability to execute arbitrary commands, collect database and server information, brute force SQL login credentials, launch arbitrary programs, create processes and threads, delete files, and redirect network traffic.",
-      "value": "BOUNCER"
-    },
-    {
       "meta": {
         "refs": [
           "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
         ]
-      },
+      }
+    },
+    {
+      "value": "CALENDAR",
       "description": "This family of malware uses Google Calendar to retrieve commands and send results. It retrieves event feeds associated with Google Calendar, where each event contains commands from the attacker for the malware to perform. Results are posted back to the event feed. The malware authenticates with Google using the hard coded email address and passwords. The malware uses the deprecated ClientLogin authentication API from Google. The malware is registered as a service dll as a persistence mechanism. Artifacts of this may be found in the registry.",
-      "value": "CALENDAR"
-    },
-    {
       "meta": {
         "refs": [
           "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
         ]
-      },
-      "description": "The COMBOS malware family is an HTTP based backdoor.  The backdoor is capable of file upload, file download, spawning a interactive reverse shell, and terminating its own process.  The backdoor may decrypt stored Internet Explorer credentials from the local system and transmit the credentials to the C2 server.  The COMBOS malware family does not have any persistence mechanisms built into itself.",
-      "value": "COMBOS"
+      }
     },
     {
+      "value": "COMBOS",
+      "description": "The COMBOS malware family is an HTTP based backdoor.  The backdoor is capable of file upload, file download, spawning a interactive reverse shell, and terminating its own process.  The backdoor may decrypt stored Internet Explorer credentials from the local system and transmit the credentials to the C2 server.  The COMBOS malware family does not have any persistence mechanisms built into itself.",
       "meta": {
         "refs": [
           "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
-        ],
+        ]
+      }
+    },
+    {
+      "value": "COOKIEBAG",
+      "description": "his family of malware is a backdoor capable of file upload and download as well as providing remote interactive shell access to the compromised machine. Communication with the Command & Control (C2) servers uses a combination of single-byte XOR and Base64 encoded data in the Cookie and Set-Cookie HTTP header fields. Communication with the C2 servers is over port 80. Some variants install a registry key as means of a persistence mechanism. The hardcoded strings cited include a string of a command in common with several other APT1 families.",
+      "meta": {
         "synonyms": [
           "TROJAN.COOKIES"
-        ]
-      },
-      "description": "his family of malware is a backdoor capable of file upload and download as well as providing remote interactive shell access to the compromised machine. Communication with the Command & Control (C2) servers uses a combination of single-byte XOR and Base64 encoded data in the Cookie and Set-Cookie HTTP header fields. Communication with the C2 servers is over port 80. Some variants install a registry key as means of a persistence mechanism. The hardcoded strings cited include a string of a command in common with several other APT1 families.",
-      "value": "COOKIEBAG"
-    },
-    {
-      "meta": {
-        "refs": [
-          "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
-        ]
-      },
-      "description": "Members of this malware family are backdoors that provide file downloading, process listing, process killing, and reverse shell capabilities.  This malware may also add itself to the Authorized Applications list for the Windows Firewall.",
-      "value": "DAIRY"
-    },
-    {
-      "meta": {
-        "refs": [
-          "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
-        ]
-      },
-      "description": "Members of this family of malware are utilities designed to extract email messages and attachments from Outlook PST files. One part of this utility set is an executable, one is a dll. The malware may create a registry artifact related to the executable.",
-      "value": "GETMAIL"
-    },
-    {
-      "meta": {
-        "refs": [
-          "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
-        ]
-      },
-      "description": "This family of malware is a utility designed to upload files to Google Docs. Nearly all communications are with docs.google.com are SSL encrypted. The malware does not use Google's published API to interact with their services. The malware does not currently work with Google Docs. It does not detect HTTP 302 redirections and will get caught in an infinite loop attempting to parse results from Google that are not present.",
-      "value": "GDOCUPLOAD"
-    },
-    {
-      "meta": {
-        "refs": [
-          "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
         ],
+        "refs": [
+          "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
+        ]
+      }
+    },
+    {
+      "value": "DAIRY",
+      "description": "Members of this malware family are backdoors that provide file downloading, process listing, process killing, and reverse shell capabilities.  This malware may also add itself to the Authorized Applications list for the Windows Firewall.",
+      "meta": {
+        "refs": [
+          "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
+        ]
+      }
+    },
+    {
+      "value": "GETMAIL",
+      "description": "Members of this family of malware are utilities designed to extract email messages and attachments from Outlook PST files. One part of this utility set is an executable, one is a dll. The malware may create a registry artifact related to the executable.",
+      "meta": {
+        "refs": [
+          "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
+        ]
+      }
+    },
+    {
+      "value": "GDOCUPLOAD",
+      "description": "This family of malware is a utility designed to upload files to Google Docs. Nearly all communications are with docs.google.com are SSL encrypted. The malware does not use Google's published API to interact with their services. The malware does not currently work with Google Docs. It does not detect HTTP 302 redirections and will get caught in an infinite loop attempting to parse results from Google that are not present.",
+      "meta": {
+        "refs": [
+          "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
+        ]
+      }
+    },
+    {
+      "value": "GLOOXMAIL",
+      "description": "GLOOXMAIL communicates with Google's Jabber/XMPP servers and authenticates with a hard-coded username and password.  The malware can accept commands over XMPP that includes file upload and download, provide a remote shell, sending process listings, and terminating specified processes.  The malware makes extensive use of the open source gloox library (http://camaya.net/gloox/, version 0.9.9.12) to communicate using the Jabber/XMPP protocol.  All communications with the Google XMPP server are encrypted.",
+      "meta": {
         "synonyms": [
           "TROJAN.GTALK"
-        ]
-      },
-      "description": "GLOOXMAIL communicates with Google's Jabber/XMPP servers and authenticates with a hard-coded username and password.  The malware can accept commands over XMPP that includes file upload and download, provide a remote shell, sending process listings, and terminating specified processes.  The malware makes extensive use of the open source gloox library (http://camaya.net/gloox/, version 0.9.9.12) to communicate using the Jabber/XMPP protocol.  All communications with the Google XMPP server are encrypted.",
-      "value": "GLOOXMAIL"
-    },
-    {
-      "meta": {
+        ],
         "refs": [
           "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
-        ],
+        ]
+      }
+    },
+    {
+      "value": "GOGGLES",
+      "description": "A family of downloader malware, that retrieves an encoded payload from a fixed location, usually in the form of a file with the .jpg extension. Some variants have just an .exe that acts as a downloader, others have an .exe launcher that runs as a service and then loads an associated .dll of the same name that acts as the downloader. This IOC is targeted at the downloaders only. After downloading the file, the malware decodes the downloaded payload into an .exe file and launches it. The malware usually stages the files it uses in the %TEMP% directory or the %WINDIR%\\Temp directory.",
+      "meta": {
         "synonyms": [
           "TROJAN.FOXY"
-        ]
-      },
-      "description": "A family of downloader malware, that retrieves an encoded payload from a fixed location, usually in the form of a file with the .jpg extension. Some variants have just an .exe that acts as a downloader, others have an .exe launcher that runs as a service and then loads an associated .dll of the same name that acts as the downloader. This IOC is targeted at the downloaders only. After downloading the file, the malware decodes the downloaded payload into an .exe file and launches it. The malware usually stages the files it uses in the %TEMP% directory or the %WINDIR%\\Temp directory.",
-      "value": "GOGGLES"
-    },
-    {
-      "meta": {
+        ],
         "refs": [
           "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
         ]
-      },
+      }
+    },
+    {
+      "value": "GREENCAT",
       "description": "Members of this family are full featured backdoors that communicates with a Web-based Command & Control (C2) server over SSL. Features include interactive shell, gathering system info, uploading and downloading files, and creating and killing processes, Malware in this family usually communicates with a hard-coded domain using SSL on port 443. Some members of this family rely on launchers to establish persistence mechanism for them. Others contains functionality that allows it to install itself, replacing an existing Windows service, and uninstall itself. Several variants use %SystemRoot%\\Tasks or %WinDir%\\Tasks as working directories, additional malware artifacts may be found there.",
-      "value": "GREENCAT"
-    },
-    {
       "meta": {
         "refs": [
           "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
         ]
-      },
+      }
+    },
+    {
+      "value": "HACKFASE",
       "description": " This family of malware is a backdoor that provides reverse shell, process creation, system statistics collection, process enumeration, and process termination capabilities. This family is designed to be a service DLL and does not contain an installation mechanism. It usually communicates over port 443. Some variants use their own encryption, others use SSL.",
-      "value": "HACKFASE"
-    },
-    {
       "meta": {
         "refs": [
           "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
         ]
-      },
+      }
+    },
+    {
+      "value": "HELAUTO",
       "description": " This family of malware is designed to operate as a service and provides remote command execution and file transfer capabilities to a fixed IP address or domain name. All communication with the C2 server happens over port 443 using SSL. This family can be installed as a service DLL. Some variants allow for uninstallation.",
-      "value": "HELAUTO"
-    },
-    {
       "meta": {
         "refs": [
           "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
         ]
-      },
+      }
+    },
+    {
+      "value": "KURTON",
       "description": "This family of malware is a backdoor that tunnels its connection through a preconfigured proxy. The malware communicates with a remote command and control server over HTTPS via the proxy. The malware installs itself as a Windows service with a service name supplied by the attacker but defaults to IPRIP if no service name is provided during install.",
-      "value": "KURTON"
-    },
-    {
       "meta": {
         "refs": [
           "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
         ]
-      },
+      }
+    },
+    {
+      "value": "LIGHTBOLT",
       "description": "LIGHTBOLT is a utility with the ability to perform HTTP GET requests for a list of user-specified URLs. The responses of the HTTP requests are then saved as MHTML files, which are added to encrypted RAR files. LIGHTBOLT has the ability to use software certificates for authentication.",
-      "value": "LIGHTBOLT"
-    },
-    {
       "meta": {
         "refs": [
           "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
         ]
-      },
+      }
+    },
+    {
+      "value": "LIGHTDART",
       "description": "LIGHTDART is a tool used to access a pre-configured web page that hosts an interface to query a database or data set. The tool then downloads the results of a query against that web page to an encrypted RAR file. This RAR file (1.rar) is renamed and uploaded to an attacker controlled FTP server, or uploaded via an HTTP POST with a .jpg extension. The malware will execute this search once a day. The target webpage usually contains information useful to the attacker, which is updated on a regular basis. Examples of targeted information include weather information or ship coordinates.",
-      "value": "LIGHTDART"
-    },
-    {
       "meta": {
         "refs": [
           "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
         ]
-      },
+      }
+    },
+    {
+      "value": "LONGRUN",
       "description": "LONGRUN is a backdoor designed to communicate with a hard-coded IP address and provide the attackers with a custom interactive shell.  It supports file uploads and downloads, and executing arbitrary commands on the compromised machine.  When LONGRUN executes, it first loads configuration data stored as an obfuscated string inside the PE resource section. The distinctive string thequickbrownfxjmpsvalzydg is used as part of the input to the decoding algorithm.  When the configuration data string is decoded it is parsed and treated as an IP and port number.  The malware then connects to the host and begins interacting with it over a custom protocol.",
-      "value": "LONGRUN"
-    },
-    {
       "meta": {
         "refs": [
           "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
         ]
-      },
-      "description": "This family of malware will beacon out at random intervals to the remote attacker. The attacker can run programs, execute arbitrary commands, and easily upload and download files. This IOC looks for both the dropper file and the backdoor.",
-      "value": "MANITSME"
+      }
     },
     {
+      "value": "MANITSME",
+      "description": "This family of malware will beacon out at random intervals to the remote attacker. The attacker can run programs, execute arbitrary commands, and easily upload and download files. This IOC looks for both the dropper file and the backdoor.",
+      "meta": {
+        "refs": [
+          "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
+        ]
+      }
+    },
+    {
+      "value": "MAPIGET",
+      "description": "This malware utility is a set of two files that operate in conjunction to extract email messages and attachments from an Exchange server. In order to operate successfully, these programs require authentication credentials for a user on the Exchange server, and must be run from a machine joined to the domain that has Microsoft Outlook installed (or equivalent software that provides the Microsoft 'Messaging API' (MAPI) service).",
       "meta": {
         "refs": [
           "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html",
           "http://contagiodump.blogspot.com/2010/06/these-days-i-see-spike-in-number-of.html"
         ]
-      },
-      "description": "This malware utility is a set of two files that operate in conjunction to extract email messages and attachments from an Exchange server. In order to operate successfully, these programs require authentication credentials for a user on the Exchange server, and must be run from a machine joined to the domain that has Microsoft Outlook installed (or equivalent software that provides the Microsoft 'Messaging API' (MAPI) service).",
-      "value": "MAPIGET"
+      }
     },
     {
-      "meta": {
-        "refs": [
-          "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
-        ]
-      },
+      "value": "MINIASP",
       "description": "This family of malware consists of backdoors that attempt to fetch encoded commands over HTTP. The malware is capable of downloading a file, downloading and executing a file, executing arbitrary shell commands, or sleeping a specified interval.",
-      "value": "MINIASP"
-    },
-    {
       "meta": {
         "refs": [
           "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
         ]
-      },
+      }
+    },
+    {
+      "value": "NEWSREELS",
       "description": "The NEWSREELS malware family is an HTTP based backdoor.  When first started, NEWSREELS decodes two strings from its resources section. These strings are both used as C2 channels, one URL is used as a beacon URL (transmitting) and the second URL is used to get commands (receiving).  The NEWSREELS malware family is capable of performing file uploads, downloads, creating processes or creating an interactive reverse shell.",
-      "value": "NEWSREELS"
-    },
-    {
       "meta": {
         "refs": [
           "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
         ]
-      },
+      }
+    },
+    {
+      "value": "SEASALT",
       "description": "The SEASALT malware family communicates via a custom binary protocol.  It is capable of gathering some basic system information, file system manipulation, file upload and download, process creation and termination, and spawning an interactive reverse shell.  The malware maintains persistence by installing itself as a service.",
-      "value": "SEASALT"
-    },
-    {
       "meta": {
         "refs": [
           "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
         ]
-      },
+      }
+    },
+    {
+      "value": "STARSYPOUND",
       "description": "STARSYPOUND provides an interactive remote shell over an obfuscated communications channel.  When it is first run, it loads a string (from the executable PE resource section) containing the beacon IP address and port.  The malware sends the beacon string \"*(SY)# <HOSTNAME>\" to the remote system, where <HOSTNAME> is the hostname of the victim system.  The remote host responds with a packet that also begins with the string \"*(SY)# cmd\". This causes the malware to launch a new cmd.exe child process. Further communications are forwarded to the cmd.exe child process to execute. The commands sent to the shell and their responses are obfuscated when sent over the network.",
-      "value": "STARSYPOUND"
-    },
-    {
       "meta": {
         "refs": [
           "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
         ]
-      },
-      "description": "This family of malware provides a backdoor over the network to the attackers. It is configured to connect to a single host and offers file download over HTTP, program execution, and arbitrary execution of commands through a cmd.exe instance.",
-      "value": "SWORD"
+      }
     },
     {
+      "value": "SWORD",
+      "description": "This family of malware provides a backdoor over the network to the attackers. It is configured to connect to a single host and offers file download over HTTP, program execution, and arbitrary execution of commands through a cmd.exe instance.",
       "meta": {
         "refs": [
           "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
-        ],
+        ]
+      }
+    },
+    {
+      "value": "TABMSGSQL",
+      "description": " This malware family is a full-featured backdoor capable of file uploading and downloading, arbitrary execution of programs, and providing a remote interactive command shell. All communications with the C2 server are sent over HTTP to a static URL, appending various URL parameters to the request. Some variants use a slightly different URL.",
+      "meta": {
         "synonyms": [
           "TROJAN LETSGO"
-        ]
-      },
-      "description": " This malware family is a full-featured backdoor capable of file uploading and downloading, arbitrary execution of programs, and providing a remote interactive command shell. All communications with the C2 server are sent over HTTP to a static URL, appending various URL parameters to the request. Some variants use a slightly different URL.",
-      "value": "TABMSGSQL"
-    },
-    {
-      "meta": {
+        ],
         "refs": [
           "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
         ]
-      },
+      }
+    },
+    {
+      "value": "TARSIP-ECLIPSE",
       "description": "The TARSIP malware family is a backdoor which communicates over encoded information in HTTPS headers.  Typical TARSIP malware samples will only beacon out to their C2 servers if the C2 DNS address resolves to a specific address.  The capability of TARSIP backdoors includes file uploading, file downloading, interactive command shells, process enumeration, process creation, process termination. The TARSIP-ECLIPSE family is distinguished by the presence of 'eclipse' in .pdb debug strings present in the malware samples. It does not provide a built in mechanism to maintain persistence.",
-      "value": "TARSIP-ECLIPSE"
-    },
-    {
       "meta": {
         "refs": [
           "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
         ]
-      },
+      }
+    },
+    {
+      "value": "TARSIP-MOON",
       "description": "The TARSIP malware family is a backdoor which communicates over encoded information in HTTPS headers.  Typical TARSIP malware samples will only beacon out to their C2 servers if the C2 DNS address resolves to a specific address.  The capability of TARSIP backdoors includes file uploading, file downloading, interactive command shells, process enumeration, process creation, process termination. The TARSIP-MOON family is distinguished by the presence of 'moon' in .pdb debug strings present in the malware samples.  It does not provide a built in mechanism to maintain persistence.",
-      "value": "TARSIP-MOON"
-    },
-    {
       "meta": {
         "refs": [
           "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
         ]
-      },
+      }
+    },
+    {
+      "value": "WARP",
       "description": "The WARP malware family is an HTTP based backdoor written in C++, and the majority of its code base is borrowed from source code available in the public domain.  Network communications are implemented using the same WWW client library (w3c.cpp) available from www.dankrusi.com/file_69653F3336383837.html.  The malware has system survey functionality (collects hostname, current user, system uptime, CPU speed, etc.) taken directly from the BO2K backdoor available from www.bo2k.com.  It also contains the hard disk identification code found at www.winsim.com/diskid32/diskid32.cpp.  When the WARP executing remote commands, the malware creates a copy of the ?%SYSTEMROOT%\\system32\\cmd.exe? file as '%USERPROFILE%\\Temp\\~ISUN32.EXE'.  The version signature information of the duplicate executable is zeroed out.  Some WARP variants maintain persistence through the use of DLL search order hijacking.",
-      "value": "WARP"
-    },
-    {
       "meta": {
         "refs": [
           "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
         ]
-      },
+      }
+    },
+    {
+      "value": "WEBC2-ADSPACE",
       "description": "A WEBC2 backdoor is designed to retrieve a Web page from a pre-determined C2 server. It expects the Web page to contain special HTML tags; the backdoor will attempt to interpret the data between the tags as commands. This family of malware  is capable of downloading and executing a file. All variants represented here are the same file with different MD5 signatures. This malware attempts to contact its C2 once a week (Thursday at 10:00 AM). It looks for commands inside a set of HTML tags, part of which are in the File Strings indicator term below.",
-      "value": "WEBC2-ADSPACE"
-    },
-    {
       "meta": {
         "refs": [
           "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
         ]
-      },
+      }
+    },
+    {
+      "value": "WEBC2-AUSOV",
       "description": "A WEBC2 backdoor is designed to retrieve a Web page from a pre-determined C2 server. It expects the Web page to contain special HTML tags; the backdoor will attempt to interpret the data between the tags as commands. This malware family is a only a downloader which operates over the HTTP protocol with a hard-coded URL. If directed, it has the capability to download, decompress, and execute compressed binaries.",
-      "value": "WEBC2-AUSOV"
-    },
-    {
       "meta": {
         "refs": [
           "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
         ]
-      },
+      }
+    },
+    {
+      "value": "WEBC2-BOLID",
       "description": " A WEBC2 backdoor is designed to retrieve a Web page from a pre-determined C2 server. It expects the Web page to contain special HTML tags; the backdoor will attempt to interpret the data between the tags as commands. This family of malware is a backdoor capable of downloading files and updating its configuration. Communication with the command and control (C2) server uses a combination of single-byte XOR and Base64 encoded data wrapped in standard HTML tags. The malware family installs a registry key as a persistence mechanism.",
-      "value": "WEBC2-BOLID"
-    },
-    {
       "meta": {
         "refs": [
           "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
         ]
-      },
+      }
+    },
+    {
+      "value": "WEBC2-CLOVER",
       "description": "A WEBC2 backdoor is designed to retrieve a Web page from a pre-determined C2 server. It expects the Web page to contain special HTML tags; the backdoor will attempt to interpret the data between the tags as commands. The family of malware provides the attacker with an interactive command shell, the ability to upload and download files, execute commands on the system, list processes and DLLs, kill processes, and ping hosts on the local network. Responses to these commands are encrypted and compressed before being POSTed to the server. Some variants copy cmd.exe to Updatasched.exe in a temporary directory, and then may launch that in a process if an interactive shell is called. On initial invocation, the malware also attempts to delete previous copies of the Updatasched.exe file.",
-      "value": "WEBC2-CLOVER"
-    },
-    {
       "meta": {
         "refs": [
           "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
         ]
-      },
+      }
+    },
+    {
+      "value": "WEBC2-CSON",
       "description": "A WEBC2 backdoor is designed to retrieve a Web page from a pre-determined C2 server. It expects the Web page to contain special HTML tags; the backdoor will attempt to interpret the data between the tags as commands. Members of this family of malware act only as downloaders and droppers for other malware. They communicate with a hard-coded C2 server, reading commands embedded in HTML comment fields. Some variants are executables which act upon execution, others are DLLs which can be attached to services or loaded through search order hijacking.",
-      "value": "WEBC2-CSON"
-    },
-    {
       "meta": {
         "refs": [
           "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
         ]
-      },
+      }
+    },
+    {
+      "value": "WEBC2-DIV",
       "description": "The WEBC2 malware family is designed to retrieve a Web page from a pre-determined C2 server. It expects the Web page to contain special HTML tags; the backdoor will attempt to interpret the data between the tags as commands.  The WEBC2-DIV variant searches for the strings \"div safe:\" and \" balance\" to delimit encoded C2 information. If the decoded string begins with the letter \"J\" the malware will parse additional arguments in the decoded string to specify the sleep interval to use.  WEBC2-DIV is capable of downloading a file, downloading and executing a file, or sleeping a specified interval.",
-      "value": "WEBC2-DIV"
-    },
-    {
       "meta": {
         "refs": [
           "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
         ]
-      },
+      }
+    },
+    {
+      "value": "WEBC2-GREENCAT",
       "description": "A WEBC2 backdoor is designed to retrieve a Web page from a pre-determined C2 server. It expects the Web page to contain special HTML tags; the backdoor will attempt to interpret the data between the tags as commands. This malware is a variant on the GREENCAT family, using a fixed web C2. This family is a full featured backdoor which provides remote command execution, file transfer, process and service enumeration and manipulation.  It installs itself persistently through the current user's registry Run key.",
-      "value": "WEBC2-GREENCAT"
-    },
-    {
       "meta": {
         "refs": [
           "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
         ]
-      },
+      }
+    },
+    {
+      "value": "WEBC2-HEAD",
       "description": "The WEBC2 malware family is designed to retrieve a Web page from a pre-determined C2 server. It expects the Web page to contain special HTML tags; the backdoor will attempt to interpret the data between the tags as commands.  The WEBC2-HEAD variant communicates over HTTPS, using the system's SSL implementation to encrypt all communications with the C2 server.  WEBC2-HEAD first issues an HTTP GET to the host, sending the Base64-encoded string containing the name of the compromised machine running the malware.",
-      "value": "WEBC2-HEAD"
-    },
-    {
       "meta": {
         "refs": [
           "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
         ]
-      },
+      }
+    },
+    {
+      "value": "WEBC2-KT3",
       "description": "The WEBC2 malware family is designed to retrieve a Web page from a pre-determined C2 server. It expects the Web page to contain special HTML tags; the backdoor will attempt to interpret the data between the tags as commands.  The WEBC2-KT3 variant searches for commands in a specific comment tag.  Network traffic starting with *!Kt3+v| may indicate WEBC2-KT3 activity.",
-      "value": "WEBC2-KT3"
-    },
-    {
       "meta": {
         "refs": [
           "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
         ]
-      },
+      }
+    },
+    {
+      "value": "WEBC2-QBP",
       "description": "The WEBC2 malware family is designed to retrieve a Web page from a pre-determined C2 server. It expects the Web page to contain special HTML tags; the backdoor will attempt to interpret the data between the tags as commands.  The WEBC2-QBP variant will search for two strings in a HTML comment. The first will be \"2010QBP \" followed by \" 2010QBP//--\".  Inside these tags will be a DES-encrypted string. ",
-      "value": "WEBC2-QBP"
-    },
-    {
       "meta": {
         "refs": [
           "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
         ]
-      },
+      }
+    },
+    {
+      "value": "WEBC2-RAVE",
       "description": "A WEBC2 backdoor is designed to retrieve a Web page from a pre-determined C2 server. It expects the Web page to contain special HTML tags; the backdoor will attempt to interpret the data between the tags as commands. This family of malware will set itself up as a service and connect out to a hardcoded web page and read a modified base64 string from this webpage. The later versions of this malware supports three commands (earlier ones are just downloaders or reverse shells). The first commands will sleep the malware for N number of hours. The second command will download a binary from the encoded HTML comment and execute it on the infected host. The third will spawn an encoded reverse shell to an attacker specified location and port.",
-      "value": "WEBC2-RAVE"
-    },
-    {
       "meta": {
         "refs": [
           "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
         ]
-      },
+      }
+    },
+    {
+      "value": "WEBC2-TABLE",
       "description": "The WEBC2 malware family is designed to retrieve a Web page from a pre-determined C2 server. It expects the Web page to contain special HTML tags; the backdoor will attempt to interpret the data between the tags as commands. The WEBC2-TABLE variant looks for web pages containing 'background', 'align', and 'bgcolor' tags to be present in the requested Web page.  If the data in these tags are formatted correctly, the malware will decode a second URL and a filename.  This URL is then retrieved, written to the decoded filename and executed.",
-      "value": "WEBC2-TABLE"
-    },
-    {
       "meta": {
         "refs": [
           "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
         ]
-      },
+      }
+    },
+    {
+      "value": "WEBC2-TOCK",
       "description": "The WEBC2 malware family is designed to retrieve a Web page from a pre-determined C2 server. It expects the Web page to contain special HTML tags; the backdoor will attempt to interpret the data between the tags as commands. The WEBC2-TABLE variant looks for web pages containing 'background', 'align', and 'bgcolor' tags to be present in the requested Web page.  If the data in these tags are formatted correctly, the malware will decode a second URL and a filename.  This URL is then retrieved, written to the decoded filename and executed.",
-      "value": "WEBC2-TOCK"
-    },
-    {
       "meta": {
         "refs": [
           "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
         ]
-      },
+      }
+    },
+    {
+      "value": "WEBC2-UGX",
       "description": "A WEBC2 backdoor is designed to retrieve a Web page from a pre-determined C2 server. It expects the Web page to contain special HTML tags; the backdoor will attempt to interpret the data between the tags as commands. Members of this family of malware provide remote command shell and remote file download and execution capabilities. The malware downloads a web page containing a crafted HTML comment that subsequently contains an encoded command. The contents of this command tell the malware whether to download and execute a program, launch a reverse shell to a specific host and port number, or to sleep for a period of time. ",
-      "value": "WEBC2-UGX"
-    },
-    {
       "meta": {
         "refs": [
           "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
         ]
-      },
+      }
+    },
+    {
+      "value": "WEBC2-Y21K",
       "description": "A WEBC2 backdoor is designed to retrieve a Web page from a pre-determined C2 server. It expects the Web page to contain special HTML tags; the backdoor will attempt to interpret the data between the tags as commands. Members of this family of backdoor malware talk to specific Web-based Command & Control (C2) servers. The backdoor has a limited command set, depending on version. It is primarily a downloader, but it classified as a backdoor because it can accept a limited command set, including changing local directories, downloading and executing additional files, sleeping, and connecting to a specific IP & port not initially included in the instruction set for the malware. Each version of the malware has at least one hardcoded URL to which it connects to receive its initial commands. This family of malware installs itself as a service, with the malware either being the executable run by the service, or the service DLL loaded by a legitimate service. The same core code is seen recompiled on different dates or with different names, but the same functionality. Key signatures include a specific set of functions (some of which can be used with the OS-provided rundll32.exe tool to install the malware as a service), and hardcoded strings used in communication with C2 servers to issue commands to the implant.",
-      "value": "WEBC2-Y21K"
-    },
-    {
       "meta": {
         "refs": [
           "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
         ]
-      },
+      }
+    },
+    {
+      "value": "WEBC2-YAHOO",
       "description": "The WEBC2 malware family is designed to retrieve a Web page from a pre-determined C2 server. It expects the Web page to contain special HTML tags; the backdoor will attempt to interpret the data between the tags as commands.  The WEBC2-YAHOO variant enters a loop where every ten minutes it attempts to download a web page that may contain an encoded URL.  The encoded URL will be found in the pages returned inside an attribute named 'sb' or 'ex' within a tag named 'yahoo'.  The embedded link can direct the malware to download and execute files.",
-      "value": "WEBC2-YAHOO"
-    },
-    {
       "meta": {
         "refs": [
-          "https://www.fireeye.com/blog/threat-research/2017/04/apt10_menupass_grou.html"
+          "http://contagiodump.blogspot.lu/2013/03/mandiant-apt1-samples-categorized-by.html"
         ]
-      },
+      }
+    },
+    {
+      "value": "HAYMAKER",
       "description": "HAYMAKER is a backdoor that can download and execute additional payloads in the form of modules. It also conducts basic victim profiling activity, collecting the computer name, running process IDs, %TEMP% directory path and version of Internet Explorer. It communicates encoded system information to a single hard coded command and control (C2) server, using the system’s default User-Agent string.",
-      "value": "HAYMAKER"
-    },
-    {
       "meta": {
         "refs": [
           "https://www.fireeye.com/blog/threat-research/2017/04/apt10_menupass_grou.html"
         ]
-      },
+      }
+    },
+    {
+      "value": "BUGJUICE",
       "description": "BUGJUICE is a backdoor that is executed by launching a benign file and then hijacking the search order to load a malicious dll into it. That malicious dll then loads encrypted shellcode from the binary, which is decrypted and runs the final BUGJUICE payload. BUGJUICE defaults to TCP using a custom binary protocol to communicate with the C2, but can also use HTTP and HTTPs if directed by the C2. It has the capability to find files, enumerate drives, exfiltrate data, take screenshots and provide a reverse shell.",
-      "value": "BUGJUICE"
-    },
-    {
       "meta": {
         "refs": [
           "https://www.fireeye.com/blog/threat-research/2017/04/apt10_menupass_grou.html"
         ]
-      },
+      }
+    },
+    {
+      "value": "SNUGRIDE",
       "description": "SNUGRIDE is a backdoor that communicates with its C2 server through HTTP requests. Messages are encrypted using AES with a static key. The malware’s capabilities include taking a system survey, access to the filesystem, executing commands and a reverse shell. Persistence is maintained through a Run registry key.",
-      "value": "SNUGRIDE"
-    },
-    {
       "meta": {
         "refs": [
           "https://www.fireeye.com/blog/threat-research/2017/04/apt10_menupass_grou.html"
         ]
-      },
-      "description": "QUASARRAT is an open-source RAT available at https://github.com/quasar/QuasarRat . The versions used by APT10 (1.3.4.0, 2.0.0.0, and 2.0.0.1) are not available via the public GitHub page, indicating that APT10 has further customized the open source version. The 2.0 versions require a dropper to decipher and launch the AES encrypted QUASARRAT payload. QUASARRAT is a fully functional .NET backdoor that has been used by multiple cyber espionage groups in the past.",
-      "value": "QUASARRAT"
+      }
     },
     {
+      "value": "QUASARRAT",
+      "description": "QUASARRAT is an open-source RAT available at https://github.com/quasar/QuasarRat . The versions used by APT10 (1.3.4.0, 2.0.0.0, and 2.0.0.1) are not available via the public GitHub page, indicating that APT10 has further customized the open source version. The 2.0 versions require a dropper to decipher and launch the AES encrypted QUASARRAT payload. QUASARRAT is a fully functional .NET backdoor that has been used by multiple cyber espionage groups in the past.",
       "meta": {
+        "refs": [
+          "https://www.fireeye.com/blog/threat-research/2017/04/apt10_menupass_grou.html"
+        ]
+      }
+    },
+    {
+      "value": "da Vinci RCS",
+      "description": "Hacking Team’s \"DaVinci\" Remote Control System is able, the company says, to break encryption and allow law enforcement agencies to monitor encrypted files and emails (even ones encrypted with PGP), Skype and other Voice over IP or chat communication. It allows identification of the target’s location and relationships. It can also remotely activate microphones and cameras on a computer and works worldwide. Hacking Team claims that its software is able to monitor hundreds of thousands of computers at once, all over the country. Trojans are available for Windows, Mac, Linux, iOS, Android, Symbian and Blackberry.",
+      "meta": {
+        "synonyms": [
+          "DaVinci",
+          "Morcut"
+        ],
         "refs": [
           "http://surveillance.rsf.org/en/hacking-team/",
           "https://wikileaks.org/hackingteam/emails/fileid/581640/267803",
           "https://wikileaks.org/hackingteam/emails/emailid/31436"
-        ],
-        "synonyms": [
-          "DaVinci",
-          "Morcut"
         ]
-      },
-      "description": "Hacking Team’s \"DaVinci\" Remote Control System is able, the company says, to break encryption and allow law enforcement agencies to monitor encrypted files and emails (even ones encrypted with PGP), Skype and other Voice over IP or chat communication. It allows identification of the target’s location and relationships. It can also remotely activate microphones and cameras on a computer and works worldwide. Hacking Team claims that its software is able to monitor hundreds of thousands of computers at once, all over the country. Trojans are available for Windows, Mac, Linux, iOS, Android, Symbian and Blackberry.",
-      "value": "da Vinci RCS"
+      }
     },
     {
+      "value": "LATENTBOT",
+      "description": "LATENTBOT, a new, highly obfuscated BOT that has been in the wild since mid-2013. It has managed to leave hardly any traces on the Internet, is capable of watching its victims without ever being noticed, and can even corrupt a hard disk, thus making a PC useless.",
       "meta": {
         "refs": [
           "https://www.fireeye.com/blog/threat-research/2015/12/latentbot_trace_me.html",
           "https://www.fireeye.com/blog/threat-research/2017/04/cve-2017-0199_useda.html"
         ]
-      },
-      "description": "LATENTBOT, a new, highly obfuscated BOT that has been in the wild since mid-2013. It has managed to leave hardly any traces on the Internet, is capable of watching its victims without ever being noticed, and can even corrupt a hard disk, thus making a PC useless.",
-      "value": "LATENTBOT"
+      }
     },
     {
+      "value": "FINSPY",
+      "description": "Though we have not identified the targets, FINSPY is sold by Gamma Group to multiple nation-state clients, and we assess with moderate confidence that it was being used along with the zero-day to carry out cyber espionage.",
       "meta": {
         "refs": [
           "https://www.fireeye.com/blog/threat-research/2017/04/cve-2017-0199_useda.html"
         ]
-      },
-      "description": "Though we have not identified the targets, FINSPY is sold by Gamma Group to multiple nation-state clients, and we assess with moderate confidence that it was being used along with the zero-day to carry out cyber espionage.",
-      "value": "FINSPY"
+      }
     },
     {
+      "value": "RCS Galileo",
+      "description": "HackingTeam Remote Control System (RCS) Galileo hacking platform",
       "meta": {
         "refs": [
           "https://www.f-secure.com/documents/996508/1030745/callisto-group"
         ]
-      },
-      "description": "HackingTeam Remote Control System (RCS) Galileo hacking platform",
-      "value": "RCS Galileo"
+      }
     },
     {
-      "description": "RedHat 7.0 - 7.1 Sendmail 8.11.x exploit",
-      "value": "EARLYSHOVEL"
+      "value": "EARLYSHOVEL",
+      "description": "RedHat 7.0 - 7.1 Sendmail 8.11.x exploit"
     },
     {
-      "description": "root RCE via RPC XDR overflow in Solaris 6, 7, 8, 9 & 10 (possibly newer) both SPARC and x86",
-      "value": "EBBISLAND (EBBSHAVE)"
+      "value": "EBBISLAND (EBBSHAVE)",
+      "description": "root RCE via RPC XDR overflow in Solaris 6, 7, 8, 9 & 10 (possibly newer) both SPARC and x86"
     },
     {
-      "description": "remote Samba 3.0.x Linux exploit",
-      "value": "ECHOWRECKER"
+      "value": "ECHOWRECKER",
+      "description": "remote Samba 3.0.x Linux exploit"
     },
     {
-      "description": "appears to be an MDaemon email server vulnerability",
-      "value": "EASYBEE"
+      "value": "EASYBEE",
+      "description": "appears to be an MDaemon email server vulnerability"
     },
     {
-      "description": "an IBM Lotus Notes exploit that gets detected as Stuxnet",
-      "value": "EASYPI"
+      "value": "EASYPI",
+      "description": "an IBM Lotus Notes exploit that gets detected as Stuxnet"
     },
     {
-      "description": "an exploit for IBM Lotus Domino 6.5.4 & 7.0.2",
-      "value": "EWOKFRENZY"
+      "value": "EWOKFRENZY",
+      "description": "an exploit for IBM Lotus Domino 6.5.4 & 7.0.2"
     },
     {
-      "description": "an IIS 6.0 exploit that creates a remote backdoor",
-      "value": "EXPLODINGCAN"
+      "value": "EXPLODINGCAN",
+      "description": "an IIS 6.0 exploit that creates a remote backdoor"
     },
     {
-      "description": "a SMB1 exploit over TCP port 445 which targets XP, 2003, Vista, 7, Windows 8, 2008, 2008 R2, and gives SYSTEM privileges (MS17-010)",
-      "value": "ETERNALROMANCE"
+      "value": "ETERNALROMANCE",
+      "description": "a SMB1 exploit over TCP port 445 which targets XP, 2003, Vista, 7, Windows 8, 2008, 2008 R2, and gives SYSTEM privileges (MS17-010)"
     },
     {
-      "description": "a SMB exploit (MS09-050)",
-      "value": "EDUCATEDSCHOLAR"
+      "value": "EDUCATEDSCHOLAR",
+      "description": "a SMB exploit (MS09-050)"
     },
     {
-      "description": "a SMB exploit for Windows XP and Server 2003 (MS10-061)",
-      "value": "EMERALDTHREAD"
+      "value": "EMERALDTHREAD",
+      "description": "a SMB exploit for Windows XP and Server 2003 (MS10-061)"
     },
     {
-      "description": "a remote IMAP exploit for IBM Lotus Domino 6.6.4 to 8.5.2",
-      "value": "EMPHASISMINE"
+      "value": "EMPHASISMINE",
+      "description": "a remote IMAP exploit for IBM Lotus Domino 6.6.4 to 8.5.2"
     },
     {
-      "description": "Outlook Exchange WebAccess rules to trigger executable code on the client's side to send an email to other users",
-      "value": "ENGLISHMANSDENTIST"
+      "value": "ENGLISHMANSDENTIST",
+      "description": "Outlook Exchange WebAccess rules to trigger executable code on the client's side to send an email to other users"
     },
     {
-      "description": "0-day exploit (RCE) for Avaya Call Server",
-      "value": "EPICHERO"
+      "value": "EPICHERO",
+      "description": "0-day exploit (RCE) for Avaya Call Server"
     },
     {
-      "description": "SMBv1 exploit targeting Windows XP and Server 2003",
-      "value": "ERRATICGOPHER"
+      "value": "ERRATICGOPHER",
+      "description": "SMBv1 exploit targeting Windows XP and Server 2003"
     },
     {
-      "description": "a SMBv3 remote code execution flaw for Windows 8 and Server 2012 SP0 (MS17-010)",
-      "value": "ETERNALSYNERGY"
+      "value": "ETERNALSYNERGY",
+      "description": "a SMBv3 remote code execution flaw for Windows 8 and Server 2012 SP0 (MS17-010)"
     },
     {
-      "description": "SMBv2 exploit for Windows 7 SP1 (MS17-010)",
-      "value": "ETERNALBLUE"
+      "value": "ETERNALBLUE",
+      "description": "SMBv2 exploit for Windows 7 SP1 (MS17-010)"
     },
     {
-      "description": "a SMBv1 exploit",
-      "value": "ETERNALCHAMPION"
+      "value": "ETERNALCHAMPION",
+      "description": "a SMBv1 exploit"
     },
     {
-      "description": "Kerberos exploit targeting 2000, 2003, 2008 and 2008 R2 domain controllers",
-      "value": "ESKIMOROLL"
+      "value": "ESKIMOROLL",
+      "description": "Kerberos exploit targeting 2000, 2003, 2008 and 2008 R2 domain controllers"
     },
     {
-      "description": "RDP exploit and backdoor for Windows Server 2003",
-      "value": "ESTEEMAUDIT"
+      "value": "ESTEEMAUDIT",
+      "description": "RDP exploit and backdoor for Windows Server 2003"
     },
     {
-      "description": "RCE exploit for the Server service in Windows Server 2008 and later (MS08-067)",
-      "value": "ECLIPSEDWING"
+      "value": "ECLIPSEDWING",
+      "description": "RCE exploit for the Server service in Windows Server 2008 and later (MS08-067)"
     },
     {
-      "description": "exploit for IMail 8.10 to 8.22",
-      "value": "ETRE"
+      "value": "ETRE",
+      "description": "exploit for IMail 8.10 to 8.22"
     },
     {
-      "description": "an exploit framework, similar to MetaSploit",
-      "value": "FUZZBUNCH"
+      "value": "FUZZBUNCH",
+      "description": "an exploit framework, similar to MetaSploit"
     },
     {
-      "description": "implant builder and C&C server that can deliver exploits for Windows 2000 and later, also not detected by any AV vendors",
-      "value": "ODDJOB"
+      "value": "ODDJOB",
+      "description": "implant builder and C&C server that can deliver exploits for Windows 2000 and later, also not detected by any AV vendors"
+    },
+    {
+      "value": "PASSFREELY",
+      "description": "utility which Bypasses authentication for Oracle servers"
+    },
+    {
+      "value": "SMBTOUCH",
+      "description": "check if the target is vulnerable to samba exploits like ETERNALSYNERGY, ETERNALBLUE, ETERNALROMANCE"
+    },
+    {
+      "value": "ERRATICGOPHERTOUCH",
+      "description": "Check if the target is running some RPC"
+    },
+    {
+      "value": "IISTOUCH",
+      "description": "check if the running IIS version is vulnerable"
+    },
+    {
+      "value": "RPCOUTCH",
+      "description": "get info about windows via RPC"
+    },
+    {
+      "value": "DOPU",
+      "description": "used to connect to machines exploited by ETERNALCHAMPIONS"
     }
-  ]
+  ],
+  "version": 30,
+  "uuid": "0d821b68-9d82-4c6d-86a6-1071a9e0f79f",
+  "description": "threat-actor-tools is an enumeration of tools used by adversaries. The list includes malware but also common software regularly used by the adversaries.",
+  "authors": [
+    "Alexandre Dulaunoy",
+    "Florian Roth",
+    "Timo Steffens",
+    "Christophe Vandeplas"
+  ],
+  "source": "MISP Project",
+  "type": "tool",
+  "name": "Tool"
 }
