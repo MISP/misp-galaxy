@@ -1,0 +1,88 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import os
+import json
+import argparse
+
+thisDir = os.path.dirname(__file__)
+
+clusters = []
+
+pathClusters = os.path.join(thisDir, '../clusters')
+
+for f in os.listdir(pathClusters):
+    if '.json' in f:
+        clusters.append(f)
+
+clusters.sort()
+
+argParser = argparse.ArgumentParser(description='Generate documentation from MISP galaxy clusters', epilog='Available galaxy clusters are {0}'.format(clusters))
+argParser.add_argument('-v', action='store_true', help='Verbose mode')
+args = argParser.parse_args()
+
+def header(adoc=False):
+    if adoc is False:
+        return False
+    doc = adoc
+    doc = doc + ":toc: right\n"
+    doc = doc + ":toclevels: 1\n"
+    doc = doc + ":toc-title: MISP Galaxy Cluster\n"
+    doc = doc + ":icons: font\n"
+    doc = doc + ":sectanchors:\n"
+    doc = doc + ":sectlinks:\n"
+    doc = doc + ":images-cdn: https://raw.githubusercontent.com/MISP/MISP/2.4/INSTALL/logos/\n"
+    doc = doc + "\n= MISP Galaxy Clusters\n\n"
+    doc = doc + "Generated from https://github.com/MISP/misp-galaxy.\n\n"
+    doc = doc + "\nimage::{images-cdn}misp-logo.png[MISP logo]\n"
+    doc = "{}{}".format(doc, "\nMISP galaxy is a simple method to express a large object called cluster that can be attached to MISP events or attributes. A cluster can be composed of one or more elements. Elements are expressed as key-values. There are default vocabularies available in MISP galaxy but those can be overwritten, replaced or updated as you wish.  Existing clusters and vocabularies can be used as-is or as a template. MISP distribution can be applied to each cluster to permit a limited or broader distribution scheme.\n")
+    doc = doc + "\n\n"
+
+    return doc
+
+def asciidoc(content=False, adoc=None, t='title',title=''):
+
+    adoc = adoc + "\n"
+    output = ""
+    if t == 'title':
+        output = '== ' + content
+    elif t == 'info':
+        output = "\n{}.\n\n{} {}\n".format(content, 'NOTE: ', title)
+    elif t == 'author':
+        output = '\nauthors:: {}\n'.format(' - '.join(content))
+    elif t == 'value':
+        output = '=== ' + content
+    elif t == 'description':
+        output = '\n{}\n'.format(content)
+    elif t == 'meta':
+        if 'synonyms' in content:
+            for s in content['synonyms']:
+                output = "{}\n* {}\n".format(output,s)
+            output = '{} is also known as:\n{}\n'.format(title,output)
+        if 'refs' in content:
+            output = '{}{}'.format(output,'\n.Table References\n|===\n|Links\n')
+            for r in content['refs']:
+                output = '{}|{}[{}]\n'.format(output, r, r)
+            output = '{}{}'.format(output,'|===\n')
+    adoc = adoc + output
+    return adoc
+
+adoc = ""
+print (header(adoc=adoc))
+
+for cluster in clusters:
+    fullPathClusters = os.path.join(pathClusters, cluster)
+    with open(fullPathClusters) as fp:
+        c = json.load(fp)
+    title = c['name']
+    adoc = asciidoc(content=title, adoc=adoc, t='title')
+    adoc = asciidoc(content=c['description'], adoc=adoc, t='info', title=title)
+    if 'authors' in c:
+        adoc = asciidoc(content=c['authors'], adoc=adoc, t='author', title=title)
+    for v in c['values']:
+        adoc = asciidoc(content=v['value'], adoc=adoc, t='value', title=title)
+        if 'description' in v:
+            adoc = asciidoc(content=v['description'], adoc=adoc, t='description')
+        if 'meta' in v:
+            adoc = asciidoc(content=v['meta'], adoc=adoc, t='meta', title=v['value'])
+print (adoc)
