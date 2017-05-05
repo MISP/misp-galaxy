@@ -47,7 +47,7 @@ def asciidoc(content=False, adoc=None, t='title',title=''):
     if t == 'title':
         output = '== ' + content
     elif t == 'info':
-        output = "\n{}.\n\n{} {}\n".format(content, 'NOTE: ', title)
+        output = "\n{}.\n\n{} {} {}{}.json[*this location*] {}.\n".format(content, 'NOTE: ', title, 'is a cluster galaxy available in JSON format at https://github.com/MISP/misp-galaxy/blob/master/clusters/',title.lower(),' The JSON format can be freely reused in your application or automatically enabled in https://www.github.com/MISP/MISP[MISP].')
     elif t == 'author':
         output = '\nauthors:: {}\n'.format(' - '.join(content))
     elif t == 'value':
