@@ -27,6 +27,9 @@ to localized information (which is not shared) or additional information (that c
 
 # Available Vocabularies
 
+A [readable PDF overview of the MISP galaxy is available](https://www.misp.software/galaxy.pdf) and generated from the JSON.
+
+
 ## Common
 
 - [vocabularies/common/certainty-level.json](vocabularies/common/certainty-level.json) - Certainty level of an associated element or cluster.
