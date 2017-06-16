@@ -54,7 +54,7 @@ In the world of threat intelligence, there are many different models or approach
 
 Fork the project, update or create elements or clusters and make a pull-request.
 
-We recommend to validate the JSON file using [jq](https://stedolan.github.io/jq/) before doing a pull-request.
+We recommend to validate the JSON file using [jq](https://stedolan.github.io/jq/) and [validate_all.sh](https://github.com/MISP/misp-galaxy/blob/master/validate_all.sh) before doing a pull-request.
 
 ## License
 
