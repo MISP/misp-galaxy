@@ -389,7 +389,8 @@
           "Backdoor"
         ],
         "refs": [
-          "https://securelist.com/blog/incidents/57455/nettraveler-is-back-the-red-star-apt-returns-with-new-tricks/"
+          "https://securelist.com/blog/incidents/57455/nettraveler-is-back-the-red-star-apt-returns-with-new-tricks/",
+          "https://kasperskycontenthub.com/wp-content/uploads/sites/43/vlpdfs/winnti-more-than-just-a-game-130410.pdf"
         ],
         "synonyms": [
           "Etso",
@@ -1629,7 +1630,8 @@
     {
       "meta": {
         "synonyms": [
-          "Floki Bot"
+          "Floki Bot",
+          "Floki"
         ],
         "refs": [
           "https://www.arbornetworks.com/blog/asert/flokibot-flock-bots/",
@@ -2799,10 +2801,92 @@
       }
     },
     {
+      "description": "Netskope Threat Research Labs recently discovered a Phishing-as-a-Service (PhaaS) platform named Hackshit, that records the credentials of the phished bait victims. The phished bait pages are packaged with base64 encoding and served from secure (HTTPS) websites with “.moe” top level domain (TLD) to evade traditional scanners. “.moe” TLD is intended for the purpose of ‘The marketing of products or services deemed’. The victim’s credentials are sent to the Hackshit PhaaS platform via websockets. The Netskope Active Platform can proactively protect customers by creating custom applications and a policy to block all the activities related to Hackshit PhaaS.",
+      "value": "Hackshit",
+      "meta": {
+        "refs": [
+          "https://resources.netskope.com/h/i/352356475-phishing-as-a-service-phishing-revamped"
+        ]
+      }
+    },
+    {
       "value": "Moneygram Adwind",
       "meta": {
         "refs": [
           "https://myonlinesecurity.co.uk/new-guidelines-from-moneygram-malspam-delivers-a-brand-new-java-adwind-version/"
+        ]
+      }
+    },
+    {
+      "description": " Banload has been around since the last decade. This malware generally arrives on a victim’s system through a spam email containing an archived file or bundled software as an attachment. In a few cases, this malware may also be dropped by other malware or a drive-by download. When executed, Banload downloads other malware, often banking Trojans, on the victim’s system to carry out further infections.",
+      "value": "Banload",
+      "meta": {
+        "refs": [
+          "https://researchcenter.paloaltonetworks.com/2016/03/banload-malware-affecting-brazil-exhibits-unusually-complex-infection-process/",
+          "https://www.trendmicro.com/vinfo/us/threat-encyclopedia/malware/banload",
+          "http://blog.trendmicro.com/trendlabs-security-intelligence/banload-limits-targets-via-security-plugin/",
+          "https://securingtomorrow.mcafee.com/mcafee-labs/banload-trojan-targets-brazilians-with-malware-downloads/"
+        ]
+      }
+    },
+    {
+      "description": "This small application is used to download other malware. What makes the bot interesting are various tricks that it uses for deception and self protection.",
+      "value": "Smoke Loader",
+      "meta": {
+        "refs": [
+          "https://blog.malwarebytes.com/threat-analysis/2016/08/smoke-loader-downloader-with-a-smokescreen-still-alive/"
+        ],
+        "synonyms": [
+          "Dofoil"
+        ]
+      }
+    },
+    {
+      "description": "The analyzed sample has a recent compilation date (2017-06-24) and is available on VirusTotal. It starts out by resolving several Windows functions using API hashing (CRC32 is used as the hashing function).",
+      "value": "LockPoS",
+      "meta": {
+        "refs": [
+          "https://www.arbornetworks.com/blog/asert/lockpos-joins-flock/"
+        ]
+      }
+    },
+    {
+      "description": "Win.Worm.Fadok drops several files. %AppData%\\RAC\\mls.exe or %AppData%\\RAC\\svcsc.exe are instances of the malware which are auto-started when Windows starts. Further, the worm drops and opens a Word document. It connects to the domain wxanalytics[.]ru.",
+      "value": "Fadok",
+      "meta": {
+        "refs": [
+          "https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=Worm%3AWin32%2FFadok.A",
+          "http://blog.talosintelligence.com/2017/06/threat-roundup-0602-0609.html"
+        ],
+        "synonyms": [
+          "Win32/Fadok"
+        ]
+      }
+    },
+    {
+      "description": "Loki Bot is a commodity malware sold on underground sites which is designed to steal private data from infected machines, and then submit that info to a command and control host via HTTP POST. This private data includes stored passwords, login credential information from Web browsers, and a variety of cryptocurrency wallets.",
+      "value": "Loki Bot",
+      "meta": {
+        "refs": [
+          "https://phishme.com/loki-bot-malware/"
+        ]
+      }
+    },
+    {
+      "description": "Talos has discovered an unknown Remote Administration Tool that we believe has been in use for over 3 years. During this time it has managed to avoid scrutiny by the security community. The current version of the malware allows the operator to steal files, keystrokes, perform screenshots, and execute arbitrary code on the infected host. Talos has named this malware KONNI. \nThroughout the multiple campaigns observed over the last 3 years, the actor has used an email attachment as the initial infection vector. They then use additional social engineering to prompt the target to open a .scr file, display a decoy document to the users, and finally execute the malware on the victim's machine. The malware infrastructure of the analysed samples was hosted by a free web hosting provider: 000webhost. The malware has evolved over time. In this article, we will analyse this evolution:",
+      "value": "KONNI",
+      "meta": {
+        "refs": [
+          "http://blog.talosintelligence.com/2017/05/konni-malware-under-radar-for-years.html"
+        ]
+      }
+    },
+    {
+      "description": "Recently, Palo Alto Networks researchers discovered an advanced Android malware we’ve named “SpyDealer” which exfiltrates private data from more than 40 apps and steals sensitive messages from communication apps by abusing the Android accessibility service feature. SpyDealer uses exploits from a commercial rooting app to gain root privilege, which enables the subsequent data theft.",
+      "value": "SpyDealer",
+      "meta": {
+        "refs": [
+          "https://researchcenter.paloaltonetworks.com/2017/07/unit42-spydealer-android-trojan-spying-40-apps/"
         ]
       }
     }
