@@ -407,7 +407,8 @@
           "HackTool"
         ],
         "refs": [
-          "https://github.com/gentilkiwi/mimikatz"
+          "https://github.com/gentilkiwi/mimikatz",
+          "https://researchcenter.paloaltonetworks.com/2017/07/unit42-twoface-webshell-persistent-access-point-lateral-movement/"
         ],
         "synonyms": [
           "Mikatz"
@@ -2900,7 +2901,7 @@
       }
     },
     {
-      "description": "n mid-July 2017, we found a new modification of the well-known mobile banking malware family Svpeng – Trojan-Banker.AndroidOS.Svpeng.ae. In this modification, the cybercriminals have added new functionality: it now also works as a keylogger, stealing entered text through the use of accessibility services.",
+      "description": "In mid-July 2017, we found a new modification of the well-known mobile banking malware family Svpeng – Trojan-Banker.AndroidOS.Svpeng.ae. In this modification, the cybercriminals have added new functionality: it now also works as a keylogger, stealing entered text through the use of accessibility services.",
       "value": "Svpeng",
       "meta": {
         "refs": [
@@ -2908,6 +2909,39 @@
         ],
         "synonyms": [
           "trojan-banker.androidos.svpeng.ae"
+        ]
+      }
+    },
+    {
+      "description": "While investigating a recent security incident, Unit 42 found a webshell that we believe was used by the threat actor to remotely access the network of a targeted Middle Eastern organization. The construction of the webshell was interesting by itself, as it was actually two separate webshells: an initial webshell that was responsible for saving and loading the second fully functional webshell. It is this second webshell that enabled the threat actor to run a variety of commands on the compromised server. Due to these two layers, we use the name TwoFace to track this webshell.\nDuring our analysis, we extracted the commands executed by the TwoFace webshell from the server logs on the compromised server. Our analysis shows that the commands issued by the threat actor date back to June 2016; this suggests that the actor had access to this shell for almost an entire year. The commands issued show the actor was interested in gathering credentials from the compromised server using the Mimikatz tool. We also saw the attacker using the TwoFace webshell to move laterally through the network by copying itself and other webshells to other servers.",
+      "value": "TwoFace",
+      "meta": {
+        "type": [
+          "webshell"
+        ],
+        "refs": [
+          "https://researchcenter.paloaltonetworks.com/2017/07/unit42-twoface-webshell-persistent-access-point-lateral-movement/"
+        ]
+      }
+    },
+    {
+      "description": "Like TwoFace, the IntrudingDivisor webshell requires the threat actor to authenticate before issuing commands. To authenticate, the actor must provide two pieces of information, first an integer that is divisible by 5473 and a string whose MD5 hash is “9A26A0E7B88940DAA84FC4D5E6C61AD0”. Upon successful authentication, the webshell has a command handler that uses integers within the request to determine the command to execute - To complete",
+      "value": "IntrudingDivisor",
+      "meta": {
+        "type": [
+          "webshell"
+        ],
+        "refs": [
+          "https://researchcenter.paloaltonetworks.com/2017/07/unit42-twoface-webshell-persistent-access-point-lateral-movement/"
+        ]
+      }
+    },
+    {
+      "description": "Attacks that use completely fileless malware are a rare occurrence, so we thought it important to discuss a new trojan known as JS_POWMET (Detected by Trend Micro as JS_POWMET.DE), which arrives via an autostart registry procedure. By utilizing a completely fileless infection chain, the malware will be more difficult to analyze using a sandbox, making it more difficult for anti-malware engineers to examine.",
+      "value": "JS_POWMET",
+      "meta": {
+        "refs": [
+          "http://blog.trendmicro.com/trendlabs-security-intelligence/look-js_powmet-completely-fileless-malware/ "
         ]
       }
     }
