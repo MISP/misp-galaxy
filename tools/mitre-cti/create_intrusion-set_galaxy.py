@@ -37,13 +37,13 @@ galaxy['name'] = "Intrusion Set"
 galaxy['type'] = "course-of-action"
 galaxy['description'] = "Name of ATT&CK Group"
 galaxy['uuid' ] = "1023f364-7831-11e7-8318-43b5531983ab"
-galaxy['version'] = "1"
+galaxy['version'] = 1
 
 cluster = {} 
 cluster['name'] = "intrusion Set"
 cluster['type'] = "intrusion-set"
 cluster['description'] = "Name of ATT&CK Group"
-cluster['version'] = "1"
+cluster['version'] = 1
 cluster['source'] = "https://github.com/mitre/cti"
 cluster['uuid' ] = "10df003c-7831-11e7-bdb9-971cdd1218df"
 cluster['authors'] = ["MITRE"]

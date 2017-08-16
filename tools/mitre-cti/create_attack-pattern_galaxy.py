@@ -40,13 +40,13 @@ galaxy['name'] = "Attack Pattern"
 galaxy['type'] = "attack-pattern"
 galaxy['description'] = "ATT&CK Tactic"
 galaxy['uuid' ] = "c4e851fa-775f-11e7-8163-b774922098cd"
-galaxy['version'] = "1"
+galaxy['version'] = 1
 
 cluster = {} 
 cluster['name'] = "Attack Pattern"
 cluster['type'] = "attack-pattern"
 cluster['description'] = "ATT&CK tactic"
-cluster['version'] = "1"
+cluster['version'] = 1
 cluster['source'] = "https://github.com/mitre/cti"
 cluster['uuid' ] = "dcb864dc-775f-11e7-9fbb-1f41b4996683"
 cluster['authors'] = ["MITRE"]

@@ -32,13 +32,13 @@ galaxy['name'] = "Course of Action"
 galaxy['type'] = "course-of-action"
 galaxy['description'] = "ATT&CK Mitigation"
 galaxy['uuid' ] = "6fcb4472-6de4-11e7-b5f7-37771619e14e"
-galaxy['version'] = "1"
+galaxy['version'] = 1
 
 cluster = {} 
 cluster['name'] = "Course of Action"
 cluster['type'] = "course-of-action"
 cluster['description'] = "ATT&CK Mitigation"
-cluster['version'] = "1"
+cluster['version'] = 1
 cluster['source'] = "https://github.com/mitre/cti"
 cluster['uuid' ] = "a8825ae8-6dea-11e7-8d57-7728f3cfe086"
 cluster['authors'] = ["MITRE"]
