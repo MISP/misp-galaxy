@@ -22,8 +22,9 @@ for element in os.listdir('.'):
 
             value = {}
             value['description'] = temp['description']
-            value['uuid'] = re.search('--(.*)$', temp['id']).group(0)[2:]
             value['value'] = temp['name']
+            value['meta'] = {}
+            value['meta']['uuid'] = re.search('--(.*)$', temp['id']).group(0)[2:]
             values.append(value)
 
 galaxy = {}

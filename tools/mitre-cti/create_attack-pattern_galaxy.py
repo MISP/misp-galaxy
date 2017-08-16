@@ -22,7 +22,6 @@ for element in os.listdir('.'):
 
             value = {}
             value['description'] = temp['description']
-            value['uuid'] = re.search('--(.*)$', temp['id']).group(0)[2:]
             value['value'] = temp['name']
             value['meta'] = {}
             value['meta']['refs'] = []
@@ -34,6 +33,7 @@ for element in os.listdir('.'):
             if 'x_mitre_platforms' in temp:
                 value['meta']['x_mitre_platforms'] = temp['x_mitre_platforms']
             values.append(value)
+            value['meta']['uuid'] = re.search('--(.*)$', temp['id']).group(0)[2:]
 
 galaxy = {}
 galaxy['name'] = "Attack Pattern"

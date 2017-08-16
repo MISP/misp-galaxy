@@ -22,7 +22,6 @@ for element in os.listdir('.'):
 
             value = {}
             value['description'] = temp['description']
-            value['uuid'] = re.search('--(.*)$', temp['id']).group(0)[2:]
             value['value'] = temp['name']
             value['meta'] = {}
             value['meta']['refs'] = []
@@ -31,6 +30,7 @@ for element in os.listdir('.'):
                     value['meta']['refs'].append(reference['url'])
             if'x_mitre_aliases' in temp:
                 value['meta']['synonyms'] = temp['x_mitre_aliases']     
+            value['meta']['uuid'] = re.search('--(.*)$', temp['id']).group(0)[2:]
             values.append(value)
 
 galaxy = {}
