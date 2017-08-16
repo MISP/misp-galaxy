@@ -23,7 +23,7 @@ for element in os.listdir('.'):
             value = {}
             value['description'] = temp['description']
             value['uuid'] = re.search('--(.*)$', temp['id']).group(0)[2:]
-            value['name'] = temp['name']
+            value['value'] = temp['name']
             value['meta'] = {}
             value['meta']['refs'] = []
             for reference in temp['external_references']:
