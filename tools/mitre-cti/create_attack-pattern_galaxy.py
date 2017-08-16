@@ -22,8 +22,7 @@ for element in os.listdir('.'):
 
             value = {}
             value['description'] = temp['description']
-            value['uuid'] = re.search('--(.*)$', temp['id']).group(0)[2:]
-            value['name'] = temp['name']
+            value['value'] = temp['name']
             value['meta'] = {}
             value['meta']['refs'] = []
             for reference in temp['external_references']:
@@ -34,19 +33,20 @@ for element in os.listdir('.'):
             if 'x_mitre_platforms' in temp:
                 value['meta']['x_mitre_platforms'] = temp['x_mitre_platforms']
             values.append(value)
+            value['meta']['uuid'] = re.search('--(.*)$', temp['id']).group(0)[2:]
 
 galaxy = {}
 galaxy['name'] = "Attack Pattern"
 galaxy['type'] = "attack-pattern"
 galaxy['description'] = "ATT&CK Tactic"
 galaxy['uuid' ] = "c4e851fa-775f-11e7-8163-b774922098cd"
-galaxy['version'] = "1"
+galaxy['version'] = 1
 
 cluster = {} 
 cluster['name'] = "Attack Pattern"
 cluster['type'] = "attack-pattern"
 cluster['description'] = "ATT&CK tactic"
-cluster['version'] = "1"
+cluster['version'] = 1
 cluster['source'] = "https://github.com/mitre/cti"
 cluster['uuid' ] = "dcb864dc-775f-11e7-9fbb-1f41b4996683"
 cluster['authors'] = ["MITRE"]

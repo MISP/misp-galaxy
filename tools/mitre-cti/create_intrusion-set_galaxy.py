@@ -22,15 +22,14 @@ for element in os.listdir('.'):
 
             value = {}
             value['description'] = temp['description']
-            value['uuid'] = re.search('--(.*)$', temp['id']).group(0)[2:]
-            value['name'] = temp['name']
+            value['value'] = temp['name']
             value['meta'] = {}
             value['meta']['synonyms'] = temp['aliases']
             value['meta']['refs']= []
             for reference in temp['external_references']:
                 if 'url' in reference:                    
                     value['meta']['refs'].append(reference['url'])
- 
+            value['meta']['uuid'] = re.search('--(.*)$', temp['id']).group(0)[2:]
             values.append(value)
 
 galaxy = {}
@@ -38,13 +37,13 @@ galaxy['name'] = "Intrusion Set"
 galaxy['type'] = "course-of-action"
 galaxy['description'] = "Name of ATT&CK Group"
 galaxy['uuid' ] = "1023f364-7831-11e7-8318-43b5531983ab"
-galaxy['version'] = "1"
+galaxy['version'] = 1
 
 cluster = {} 
 cluster['name'] = "intrusion Set"
 cluster['type'] = "intrusion-set"
 cluster['description'] = "Name of ATT&CK Group"
-cluster['version'] = "1"
+cluster['version'] = 1
 cluster['source'] = "https://github.com/mitre/cti"
 cluster['uuid' ] = "10df003c-7831-11e7-bdb9-971cdd1218df"
 cluster['authors'] = ["MITRE"]
