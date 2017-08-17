@@ -34,7 +34,7 @@ for element in os.listdir('.'):
 
 galaxy = {}
 galaxy['name'] = "Intrusion Set"
-galaxy['type'] = "course-of-action"
+galaxy['type'] = "intrusion-set"
 galaxy['description'] = "Name of ATT&CK Group"
 galaxy['uuid' ] = "1023f364-7831-11e7-8318-43b5531983ab"
 galaxy['version'] = 1
