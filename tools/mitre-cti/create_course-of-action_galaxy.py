@@ -4,11 +4,11 @@
 import json
 import re
 import os
+import argparse
 
-'''
-Create a couple galaxy/cluster with cti's courses-of-action 
-Must be in the mitre/cti/ATTACK/course-of-action folder
-'''
+parser = argparse.ArgumentParser(description='Create a couple galaxy/cluster with cti\'s courses-of-action.\nMust be in the mitre/cti/ATTACK/course-of-action folder')
+parser.add_argument("-v", "--version", type=int, required=True, help="Version of the galaxy. Please increment the previous one")
+args = parser.parse_args()
 
 values = []
 
@@ -29,16 +29,16 @@ for element in os.listdir('.'):
 
 galaxy = {}
 galaxy['name'] = "Course of Action"
-galaxy['type'] = "course-of-action"
+galaxy['type'] = "mitre-course-of-action"
 galaxy['description'] = "ATT&CK Mitigation"
 galaxy['uuid' ] = "6fcb4472-6de4-11e7-b5f7-37771619e14e"
-galaxy['version'] = 1
+galaxy['version'] = args.version
 
 cluster = {} 
 cluster['name'] = "Course of Action"
-cluster['type'] = "course-of-action"
+cluster['type'] = "mitre-course-of-action"
 cluster['description'] = "ATT&CK Mitigation"
-cluster['version'] = 1
+cluster['version'] = args.version
 cluster['source'] = "https://github.com/mitre/cti"
 cluster['uuid' ] = "a8825ae8-6dea-11e7-8d57-7728f3cfe086"
 cluster['authors'] = ["MITRE"]

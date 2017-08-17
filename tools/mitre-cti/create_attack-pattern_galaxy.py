@@ -4,11 +4,11 @@
 import json
 import re
 import os
+import argparse
 
-'''
-Create a couple galaxy/cluster with cti's attack-patterns 
-Must be in the mitre/cti/ATTACK/attack-pattern folder
-'''
+parser = argparse.ArgumentParser(description='Create a couple galaxy/cluster with cti\'s attack-patterns\nMust be in the mitre/cti/ATTACK/attack-pattern folder')
+parser.add_argument("-v", "--version", type=int, required=True, help="Version of the galaxy. Please increment the previous one")
+args = parser.parse_args()
 
 values = []
 
@@ -37,16 +37,16 @@ for element in os.listdir('.'):
 
 galaxy = {}
 galaxy['name'] = "Attack Pattern"
-galaxy['type'] = "attack-pattern"
+galaxy['type'] = "mitre-attack-pattern"
 galaxy['description'] = "ATT&CK Tactic"
 galaxy['uuid' ] = "c4e851fa-775f-11e7-8163-b774922098cd"
-galaxy['version'] = 1
+galaxy['version'] = args.version
 
 cluster = {} 
 cluster['name'] = "Attack Pattern"
-cluster['type'] = "attack-pattern"
+cluster['type'] = "mitre-attack-pattern"
 cluster['description'] = "ATT&CK tactic"
-cluster['version'] = 1
+cluster['version'] = args.version
 cluster['source'] = "https://github.com/mitre/cti"
 cluster['uuid' ] = "dcb864dc-775f-11e7-9fbb-1f41b4996683"
 cluster['authors'] = ["MITRE"]

@@ -4,11 +4,11 @@
 import json
 import re
 import os
+import argparse
 
-'''
-Create a couple galaxy/cluster with cti's tools 
-Must be in the mitre/cti/ATTACK/tool folder
-'''
+parser = argparse.ArgumentParser(description='Create a couple galaxy/cluster with cti\'s tools\nMust be in the mitre/cti/ATTACK/tool folder')
+parser.add_argument("-v", "--version", type=int, required=True, help="Version of the galaxy. Please increment the previous one")
+args = parser.parse_args()
 
 values = []
 
@@ -35,16 +35,16 @@ for element in os.listdir('.'):
 
 galaxy = {}
 galaxy['name'] = "Tool"
-galaxy['type'] = "tool"
+galaxy['type'] = "mitre-tool"
 galaxy['description'] = "Name of ATT&CK software"
 galaxy['uuid' ] = "d5cbd1a2-78f6-11e7-a833-7b9bccca9649"
-galaxy['version'] = 1
+galaxy['version'] = args.version
 
 cluster = {} 
 cluster['name'] = "Tool"
-cluster['type'] = "tool"
+cluster['type'] = "mitre-tool"
 cluster['description'] = "Name of ATT&CK software"
-cluster['version'] = 1
+cluster['version'] = args.version
 cluster['source'] = "https://github.com/mitre/cti"
 cluster['uuid' ] = "d700dc5c-78f6-11e7-a476-5f748c8e4fe0"
 cluster['authors'] = ["MITRE"]
