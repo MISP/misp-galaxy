@@ -4,11 +4,11 @@
 import json
 import re
 import os
+import argparse
 
-'''
-Create a couple galaxy/cluster with cti's intrusion-sets 
-Must be in the mitre/cti/ATTACK/intrusion-set folder
-'''
+parser = argparse.ArgumentParser(description='Create a couple galaxy/cluster with cti\'s intrusion-sets\nMust be in the mitre/cti/ATTACK/intrusion-set folder')
+parser.add_argument("-v", "--version", type=int, required=True, help="Version of the galaxy. Please increment the previous one")
+args = parser.parse_args()
 
 values = []
 
@@ -34,16 +34,16 @@ for element in os.listdir('.'):
 
 galaxy = {}
 galaxy['name'] = "Intrusion Set"
-galaxy['type'] = "intrusion-set"
+galaxy['type'] = "mitre-intrusion-set"
 galaxy['description'] = "Name of ATT&CK Group"
 galaxy['uuid' ] = "1023f364-7831-11e7-8318-43b5531983ab"
-galaxy['version'] = 1
+galaxy['version'] = args.version
 
 cluster = {} 
 cluster['name'] = "intrusion Set"
-cluster['type'] = "intrusion-set"
+cluster['type'] = "mitre-intrusion-set"
 cluster['description'] = "Name of ATT&CK Group"
-cluster['version'] = 1
+cluster['version'] = args.version
 cluster['source'] = "https://github.com/mitre/cti"
 cluster['uuid' ] = "10df003c-7831-11e7-bdb9-971cdd1218df"
 cluster['authors'] = ["MITRE"]
