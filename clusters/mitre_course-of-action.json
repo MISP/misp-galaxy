@@ -1,0 +1,909 @@
+{
+  "uuid": "a8825ae8-6dea-11e7-8d57-7728f3cfe086",
+  "description": "ATT&CK Mitigation",
+  "type": "mitre-course-of-action",
+  "source": "https://github.com/mitre/cti",
+  "authors": [
+    "MITRE"
+  ],
+  "name": "Course of Action",
+  "version": 3,
+  "values": [
+    {
+      "meta": {
+        "uuid": "ff5d862a-ae6b-4833-8c15-e235d654d28e"
+      },
+      "description": "Direct mitigation of this technique may not be recommended for a particular environment since COM objects are a legitimate part of the operating system and installed software. Blocking COM object changes may have unforeseen side effects to legitimate functionality.\n\nInstead, identify and block potentially malicious software that may execute, or be executed by, this technique using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "Component Object Model Hijacking Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "92c28497-2820-445e-9f3e-a03dd77dc0c8"
+      },
+      "description": "Mitigations for command and control apply. Network intrusion detection and prevention systems that use network signatures to identify traffic for specific adversary malware can be used to mitigate activity at the network level. Signatures are often for unique indicators within protocols and may be based on the specific obfuscation technique used by a particular adversary or tool, and will likely be different across various malware families and versions. Adversaries will likely change tool command and control signatures over time or construct protocols in such a way to avoid detection by common defensive tools.[[CiteRef::University of Birmingham C2]]",
+      "value": "Exfiltration Over Command and Control Channel Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "74febc44-8955-4e4d-aca0-d4dad2f967d7"
+      },
+      "description": "Mitigating specific API calls will likely have unintended side effects, such as preventing legitimate software from operating properly. Efforts should be focused on preventing adversary tools from running earlier in the chain of activity and on identification of subsequent malicious behavior. \n\nIdentify or block potentially malicious software that may contain DLL injection functionality by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "DLL Injection Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "beb45abb-11e8-4aef-9778-1f9ac249784f"
+      },
+      "description": "Remove users from the local administrator group on systems. Although UAC bypass techniques exist, it is still prudent to use the highest enforcement level for UAC when possible and mitigate bypass opportunities that exist with techniques such as [[Technique/T1038|DLL Search Order Hijacking]]. \n\nCheck for common UAC bypass weaknesses on Windows systems to be aware of the risk posture and address issues where appropriate.[[CiteRef::Github UACMe]]",
+      "value": "Bypass User Account Control Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "f28a20fd-d173-4603-807e-2cb3f51bdf04"
+      },
+      "description": "Audit and/or block command-line interpreters by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "Command-Line Interface Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "96913243-2b5e-4483-a65c-bb152ddd2f04"
+      },
+      "description": "Use auditing tools capable of detecting DLL search order hijacking opportunities on systems within an enterprise and correct them. Toolkits like the PowerSploit framework contain PowerUp modules that can be used to explore systems for DLL hijacking weaknesses.[[CiteRef::Powersploit]]\n\nIdentify and block potentially malicious software that may be executed through search order hijacking by using whitelisting[[CiteRef::Beechey 2010]] tools like AppLocker[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] that are capable of auditing and/or blocking unknown DLLs.",
+      "value": "DLL Search Order Hijacking Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "a0d8db1d-a731-4428-8209-c07175f4b1fe"
+      },
+      "description": "Properly configure firewalls and proxies to limit outgoing traffic to only necessary ports. \n\nNetwork intrusion detection and prevention systems that use network signatures to identify traffic for specific adversary malware can be used to mitigate activity at the network level. Signatures are often for unique indicators within protocols and may be based on the specific protocol used by a particular adversary or tool, and will likely be different across various malware families and versions. Adversaries will likely change tool C2 signatures over time or construct protocols in such a way as to avoid detection by common defensive tools.[[CiteRef::University of Birmingham C2]]",
+      "value": "Uncommonly Used Port Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "a90da496-b460-47e8-92e7-cc36eb00bd9a"
+      },
+      "description": "Regsvcs and Regasm may not be necessary within a given environment. Block execution of Regsvcs.exe and Regasm.exe if they are not required for a given system or network to prevent potential misuess by adversaries.",
+      "value": "Regsvcs/Regasm Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "c88151a5-fe3f-4773-8147-d801587065a4"
+      },
+      "description": "Grant access to application deployment systems only to a limited number of authorized administrators. Ensure proper system and access isolation for critical network systems through use of firewalls, account privilege separation, group policy, and multifactor authentication. Verify that account credentials that may be used to access deployment systems are unique and not used throughout the enterprise network. Patch deployment systems regularly to prevent potential remote access through [[Technique/T1068|Exploitation of Vulnerability]]. \n\nIf the application deployment system can be configured to deploy only signed binaries, then ensure that the trusted signing certificates are not co-located with the application deployment system and are instead located on a system that cannot be accessed remotely or to which remote access is tightly controlled.",
+      "value": "Application Deployment Software Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "7c1796c7-9fc3-4c3e-9416-527295bf5d95"
+      },
+      "description": "Network intrusion detection and prevention systems that use network signatures to identify traffic for specific adversary malware can be used to mitigate activity at the network level. Signatures are often for unique indicators within protocols and may be based on the specific protocol used by a particular adversary or tool, and will likely be different across various malware families and versions. Adversaries will likely change tool C2 signatures over time or construct protocols in such a way as to avoid detection by common defensive tools.[[CiteRef::University of Birmingham C2]]",
+      "value": "Commonly Used Port Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "ba2ec548-fb75-4b8c-88d6-d91a77a943cf"
+      },
+      "description": "Disabling WMI or RPCS may cause system instability and should be evaluated to assess the impact to a network.  By default, only administrators are allowed to connect remotely using WMI. Restrict other users who are allowed to connect, or disallow all users to connect remotely to WMI. Prevent credential overlap across systems of administrator and privileged accounts.[[CiteRef::FireEye WMI 2015]]",
+      "value": "Windows Management Instrumentation Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "e0703d4f-3972-424a-8277-84004817e024"
+      },
+      "description": "Eliminate path interception weaknesses in program configuration files, scripts, the PATH environment variable, services, and in shortcuts by surrounding PATH variables with quotation marks when functions allow for them[[CiteRef::Microsoft CreateProcess]]. Be aware of the search order Windows uses for executing or loading binaries and use fully qualified paths wherever appropriate[[CiteRef::MSDN DLL Security]]. Clean up old Windows Registry keys when software is uninstalled to avoid keys with no associated legitimate binaries.\n\nPeriodically search for and correct or report path interception weaknesses on systems that may have been introduced using custom or available tools that report software using insecure path configurations[[CiteRef::Kanthak Sentinel]]. \n\nRequire that all executables be placed in write-protected directories. Ensure that proper permissions and directory access control are set to deny users the ability to write files to the top-level directory <code>C:</code> and system directories, such as <code>C:\\Windows\\</code>, to reduce places where malicious files could be placed for execution.\n\nIdentify and block potentially malicious software that may be executed through the path interception by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies,[[CiteRef::Corio 2008]] that are capable of auditing and/or blocking unknown executables.",
+      "value": "Path Interception Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "aaa92b37-f96c-4a0a-859c-b1cb6faeb13d"
+      },
+      "description": "Prevent adversaries from gaining access to credentials through [[Credential Access]] that can be used to log into remote desktop sessions on systems.\n\nIdentify unnecessary system utilities, third-party tools, or potentially malicious software that may be used to log into remote interactive sessions, and audit and/or block them by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] and Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "Graphical User Interface Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "ac008435-af58-4f77-988a-c9b96c5920f5"
+      },
+      "description": "It may be difficult or inadvisable to block access to EA. Efforts should be focused on preventing potentially malicious software from running. Identify and block potentially malicious software that may contain functionality to hide information in EA by using whitelisting[[CiteRef::Beechey 2010]] tools like AppLocker[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "NTFS Extended Attributes Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "4b998a71-7b8f-4dcc-8f3f-277f2e740271"
+      },
+      "description": "Mitigation is difficult in instances like this because the adversary may have access to the system through another channel and can learn what techniques or tools are blocked by resident defenses. Exercising best practices with configuration and security as well as ensuring that proper process is followed during investigation of potential compromise is essential to detecting a larger intrusion through discrete alerts.\n\nIdentify and block potentially malicious software that may be used by an adversary by using whitelisting[[CiteRef::Beechey 2010]] tools like AppLocker[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "Indicator Removal from Tools Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "19edfa02-1a5f-47e4-ad82-3288f57f64cf"
+      },
+      "description": "Instead of blocking software based on clipboard capture behavior, identify potentially malicious software that may contain this functionality, and audit and/or block it by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "Clipboard Data Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "8b36d944-f274-4d46-9acd-dbba6927ce7a"
+      },
+      "description": "Identify and block potentially malicious software that may be executed through run key or startup folder persistence using whitelisting[[CiteRef::Beechey 2010]] tools like AppLocker[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "Registry Run Keys / Start Folder Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "514e7371-a344-4de7-8ec3-3aa42b801d52"
+      },
+      "description": "Command and control infrastructure used in a multi-stage channel may be blocked if known ahead of time. If unique signatures are present in the C2 traffic, they could also be used as the basis of identifying and blocking the channel.[[CiteRef::University of Birmingham C2]]",
+      "value": "Multi-Stage Channels Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "4320b080-9ae9-4541-9b8b-bcd0961dbbbd"
+      },
+      "description": "Identify unnecessary system utilities or potentially malicious software that may be used to collect data from removable media, and audit and/or block them by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "Data Staged Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "39706d54-0d06-4a25-816a-78cc43455100"
+      },
+      "description": "Identify unnecessary system utilities or potentially malicious software that may be used to collect data from removable media, and audit and/or block them by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "Data from Removable Media Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "d9727aee-48b8-4fdb-89e2-4c49746ba4dd"
+      },
+      "description": "Identify unnecessary system utilities or potentially malicious software that may be used to collect data from a network share, and audit and/or block them by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "Data from Network Shared Drive Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "fdb1ae84-7b00-4d3d-b7dc-c774beef6425"
+      },
+      "description": "Use multifactor authentication. Follow guidelines to prevent or limit adversary access to [[Technique/T1078|Legitimate Credentials]].\n\nProtect domain controllers by ensuring proper security configuration for critical servers. Configure access controls and firewalls to limit access to these systems. Do not allow domain administrator accounts to be used for day-to-day operations that may expose them to potential adversaries on unprivileged systems.",
+      "value": "Credential Manipulation Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "d0415180-51e9-40ce-b57c-c332b0b441f2"
+      },
+      "description": "It may be possible to remove PowerShell from systems when not needed, but a review should be performed to assess the impact to an environment, since it could be in use for many legitimate purposes and administrative functions. When PowerShell is necessary, restrict PowerShell execution policy to administrators and to only execute signed scripts. Be aware that there are methods of bypassing the PowerShell execution policy, depending on environment configuration.[[CiteRef::Netspi PowerShell Execution Policy Bypass]] Disable/restrict the WinRM Service to help prevent uses of PowerShell for remote execution.",
+      "value": "PowerShell Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "c620e3a1-fff5-424f-abea-d2b0f3616f67"
+      },
+      "description": "Identify unnecessary system utilities or potentially malicious software that may be used to acquire information about the operating system and underlying hardware, and audit and/or block them by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "System Information Discovery Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "313c8b20-4d49-40c1-9ac0-4c573aca28f3"
+      },
+      "description": "Upgrade the operating system to a newer version of Windows if using a version prior to Vista. \n\nLimit the privileges of user accounts so that only authorized administrators can perform Winlogon helper changes.\n\nIdentify and block potentially malicious software that may be executed through the Winlogon helper process by using whitelisting[[CiteRef::Beechey 2010]] tools like AppLocker[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] that are capable of auditing and/or blocking unknown DLLs.",
+      "value": "Winlogon Helper DLL Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "624d063d-cda8-4616-b4e4-54c04e427aec"
+      },
+      "description": "Identify and block potentially malicious software that may persist in this manner by using whitelisting[[CiteRef::Beechey 2010]] tools capable of monitoring DLL loads by Windows utilities like AppLocker.[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]]",
+      "value": "Netsh Helper DLL Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "94e95eeb-7cdb-4bd7-afba-f32fda303dbb"
+      },
+      "description": "Follow best practices for mitigation of activity related to establishing [[Technique/T1077|Windows Admin Shares]]. \n\nIdentify unnecessary system utilities or potentially malicious software that may be used to leverage network shares, and audit and/or block them by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "Network Share Connection Removal Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "d75a3d1b-b536-4f15-a23c-f4bcc17837b8"
+      },
+      "description": "Network intrusion detection and prevention systems that use network signatures to identify traffic for specific adversary malware can be used to mitigate activity at the network level. Signatures are often for unique indicators within protocols and may be based on the specific C2 protocol used by a particular adversary or tool, and will likely be different across various malware families and versions. Adversaries will likely change tool C2 signatures over time or construct protocols in such a way as to avoid detection by common defensive tools.[[CiteRef::University of Birmingham C2]]",
+      "value": "Connection Proxy Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "25d5e1d8-c6fb-4735-bc57-115a21222f4b"
+      },
+      "description": "Identify unnecessary system utilities or potentially malicious software that may be used to acquire information, and audit and/or block them by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "Application Window Discovery Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "d4fd04e0-d1a4-4b5a-a5bb-16683cdbcce2"
+      },
+      "description": "Limit access to remote services through centrally managed concentrators such as VPNs and other managed remote access systems. Deny direct remote access to internal systems through uses of network proxies, gateways, and firewalls as appropriate. Use strong two-factor or multi-factor authentication for remote service accounts to mitigate an adversary's ability to leverage stolen credentials, but be aware of [[Technique/T1111|Two-Factor Authentication Interception]] techniques for some two-factor authentication implementations.",
+      "value": "External Remote Services Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "bcee7b05-89a6-41a5-b7aa-fce4da7ede9e"
+      },
+      "description": "Monitor systems and domain logs for unusual credential logon activity. Prevent access to [[Technique/T1078|Legitimate Credentials]]. Apply patch KB2871997 to Windows 7 and higher systems to limit the default access of accounts in the local administrator group. Limit credential overlap across systems to prevent the damage of credential compromise and reduce the adversary's ability to perform [[Lateral Movement]] between systems. Ensure that built-in and created local administrator accounts have complex, unique passwords. Do not allow a domain user to be in the local administrator group on multiple systems.",
+      "value": "Pass the Hash Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "5c49bc54-9929-48ca-b581-7018219b5a97"
+      },
+      "description": "Identify unnecessary system utilities or potentially malicious software that may be used to acquire information about system and domain accounts, and audit and/or block them by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "Account Discovery Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "823fbfe9-b015-4bf3-9e67-d340c7373ca0"
+      },
+      "description": "MSBuild.exe may not be necessary within a given environment and should be removed if not used. Use application whitelisting configured to block MSBuild.exe to prevent potential misuse by adversaries.[[CiteRef::SubTee MSBuild]][[CiteRef::Exploit Monday Mitigate Device Guard Bypases]][[CiteRef::GitHub mattifestation DeviceGuardBypass]]",
+      "value": "MSBuild Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "3a476d83-43eb-4fad-9b75-b1febd834e3d"
+      },
+      "description": "Monitor domains for unusual credential logons. Limit credential overlap across systems to prevent the damage of credential compromise. Ensure that local administrator accounts have complex, unique passwords. Do not allow a user to be a local administrator for multiple systems. Limit domain admin account permissions to domain controllers and limited servers. Delegate other admin functions to separate accounts.[[CiteRef::ADSecurity AD Kerberos Attacks]]\n\nAttempt to identify and block unknown or malicious software that could be used to obtain Kerberos tickets and use them to authenticate by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "Pass the Ticket Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "16f144e4-c780-4ed2-98b4-55d14e2dfa44"
+      },
+      "description": "Identify unnecessary system utilities or potentially malicious software that may be used to acquire information about system users, and audit and/or block them by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "System Owner/User Discovery Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "aeff5887-8f9e-48d5-a523-9b395e2ce80a"
+      },
+      "description": "Monitor/harden access to LSASS and SAM table with tools that allow process whitelisting. Limit credential overlap across systems to prevent lateral movement opportunities using [[Technique/T1078|Legitimate Credentials]] if passwords and hashes are obtained. Ensure that local administrator accounts have complex, unique passwords across all systems on the network. Do not put user or admin domain accounts in the local administrator groups across systems unless they are tightly controlled, as this is often equivalent to having a local administrator account with the same password on all systems. On Windows 8.1 and Windows Server 2012 R2, enable Protected Process Light for LSA.[[CiteRef::Microsoft LSA]]\n\nIdentify and block potentially malicious software that may be used to dump credentials by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]\n\nWith Windows 10, Microsoft implemented new protections called Credential Guard to protect the LSA secrets that can be used to obtain credentials through forms of credential dumping. It is not implemented by default and has hardware requirements.[[CiteRef::TechNet Credential Guard]]",
+      "value": "Credential Dumping Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "12c13879-b7bd-4bc5-8def-aacec386d432"
+      },
+      "description": "Microsoft's Enhanced Mitigation Experience Toolkit (EMET) Attack Surface Reduction (ASR) feature can be used to block regsvr32.exe from being used to bypass whitelisting.[[CiteRef::Secure Host Baseline EMET]]",
+      "value": "Regsvr32 Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "7c39ebbf-244e-4d1c-b0ac-b282453ece43"
+      },
+      "description": "Mitigating specific API calls will likely have unintended side effects, such as preventing legitimate software from operating properly. Efforts should be focused on preventing adversary tools from running earlier in the chain of activity and on identifying subsequent malicious behavior. \n\nAlthough process hollowing may be used to evade certain types of defenses, it is still good practice to identify potentially malicious software that may be used to perform adversarial actions, including process hollowing, and audit and/or block it by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "Process Hollowing Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "56db6ccc-433d-4411-8383-c3fd7053e2c8"
+      },
+      "description": "Mitigating specific API calls will likely have unintended side effects, such as preventing legitimate software from operating properly. Efforts should be focused on preventing adversary tools from running earlier in the chain of activity and on identifying subsequent malicious behavior. Audit and/or block potentially malicious software by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "Execution through API Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "f0a42cad-9b1f-44da-a672-718f18381018"
+      },
+      "description": "Protect shared folders by minimizing users who have write access. Use utilities that detect or mitigate common features used in exploitation, such as the Microsoft Enhanced Mitigation Experience Toolkit (EMET).\n\nIdentify potentially malicious software that may be used to taint content or may result from it and audit and/or block the unknown programs by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "Taint Shared Content Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "f9b3e5d9-7454-4b7d-bce6-27620e19924e"
+      },
+      "description": "Identify and block potentially malicious software that may be used as a remote access tool, and audit and/or block it by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]\n\nNetwork intrusion detection and prevention systems that use network signatures to identify traffic for specific adversary malware can be used to mitigate activity at the network level. Signatures are often for unique indicators within protocols and will be different across various malware families and versions. Adversaries will likely change tool signatures over time or construct protocols in such a way as to avoid detection by common defensive tools.[[CiteRef::University of Birmingham C2]]",
+      "value": "Redundant Access Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "16dd03c6-0dfb-4d77-89cd-9ff3ee6e533d"
+      },
+      "description": "Mitigating this technique specifically may be difficult as it requires fine-grained API control. Efforts should be focused on preventing unwanted or unknown code from executing on a system.\n\nIdentify and block potentially malicious software that may be used to record audio by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "Audio Capture Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "b7b2c89c-09c1-4b71-ae7c-000ec2893aab"
+      },
+      "description": "Limit privileges of user accounts and remediate [[Privilege Escalation]] vectors so only  authorized administrators can create new services.\n\nIdentify and block unnecessary system utilities or potentially malicious software that may be used to create services by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "New Service Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "57019a80-8523-46b6-be7d-f763a15a2cc6"
+      },
+      "description": "Turn off unused features or restrict access to scripting engines such as VBScript or scriptable administration frameworks such as PowerShell.",
+      "value": "Scripting Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "515f6584-fa98-44fe-a4e8-e428c7188514"
+      },
+      "description": "Network intrusion detection and prevention systems that use network signatures to identify traffic for specific adversary malware can be used to mitigate activity at the network level. Signatures are often for unique indicators within protocols and may be based on the specific protocol used by a particular adversary or tool, and will likely be different across various malware families and versions. Adversaries will likely change tool C2 signatures over time or construct protocols in such a way as to avoid detection by common defensive tools.[[CiteRef::University of Birmingham C2]]",
+      "value": "Fallback Channels Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "d8787791-d22e-45bb-a9a8-251d8d0a1ff2"
+      },
+      "description": "Identify unnecessary system utilities or potentially malicious software that may be used to acquire information about services, and audit and/or block them by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "System Service Discovery Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "6cac62ce-550b-4793-8ee6-6a1b8836edb0"
+      },
+      "description": "Automatically forward events to a log server or data repository to prevent conditions in which the adversary can locate and manipulate data on the local system. When possible, minimize time delay on event reporting to avoid prolonged storage on the local system. Protect generated event files that are stored locally with proper permissions and authentication. Obfuscate/encrypt event files locally and in transit to avoid giving feedback to an adversary.",
+      "value": "Indicator Removal on Host Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "9378f139-10ef-4e4b-b679-2255a0818902"
+      },
+      "description": "Identify and block potentially malicious software that may be executed through service abuse by using whitelisting[[CiteRef::Beechey 2010]] tools like AppLocker[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] that are capable of auditing and/or blocking unknown programs.",
+      "value": "Service Registry Permissions Weakness Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "5c167af7-c2cb-42c8-ae67-3fb275bf8488"
+      },
+      "description": "Mitigation of timestomping specifically is likely difficult. Efforts should be focused on preventing potentially malicious software from running. Identify and block potentially malicious software that may contain functionality to perform timestomping by using whitelisting[[CiteRef::Beechey 2010]] tools like AppLocker[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "Timestomp Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "684feec3-f9ba-4049-9d8f-52d52f3e0e40"
+      },
+      "description": "Identify unnecessary system utilities or potentially malicious software that may be used to acquire information about a system's network configuration, and audit and/or block them by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "Local Network Configuration Discovery Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "cfd2cd3b-93e7-4b3e-ab46-f8bcafdbdfcf"
+      },
+      "description": "Directly mitigating module loads and API calls related to module loads will likely have unintended side effects, such as preventing legitimate software from operating properly. Efforts should be focused on preventing adversary tools from running earlier in the chain of activity and on identifying and correlated subsequent behavior to determine if it is the result of malicious activity.",
+      "value": "Execution through Module Load Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "43b366a4-b5ff-4d4e-8a3b-f09a9d2faff5"
+      },
+      "description": "Networks that allow for open development and testing of Web content and allow users to set up their own Web servers on the enterprise network may be particularly vulnerable if the systems and Web servers are not properly secured to limit privileged account use, unauthenticated network share access, and network/system isolation.\n\nEnsure proper permissions on directories that are accessible through a Web server. Disallow remote access to the webroot or other directories used to serve Web content. Disable execution on directories within the webroot. Ensure that permissions of the Web server process are only what is required by not using built-in accounts; instead, create specific accounts to limit unnecessary access or permissions overlap across multiple systems.",
+      "value": "Shared Webroot Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "f2cb6ce2-188d-4162-8feb-594f949b13dd"
+      },
+      "description": "Limit privileges of user accounts and remediate [[Privilege Escalation]] vectors so only authorized administrators can create scheduled tasks. Toolkits like the PowerSploit framework contain PowerUp modules that can be used to explore systems for permission weaknesses in scheduled tasks that could be used to escalate privileges.[[CiteRef::Powersploit]]\n\nIdentify and block unnecessary system utilities or potentially malicious software that may be used to schedule tasks using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "Scheduled Task Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "16a8ac85-a06f-460f-ad22-910167bd7332"
+      },
+      "description": "Identify potentially malicious software that may be executed from a padded or otherwise obfuscated binary, and audit and/or block it by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "Binary Padding Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "46b7ef91-4e1d-43c5-a2eb-00fa9444f6f4"
+      },
+      "description": "Ensure that all wireless traffic is encrypted appropriately. Use Kerberos, SSL, and multifactor authentication wherever possible. Monitor switches and network for span port usage, ARP/DNS poisoning, and router reconfiguration.\n\nIdentify and block potentially malicious software that may be used to sniff or analyze network traffic by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "Network Sniffing Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "2a8de25c-f743-4348-b101-3ee33ab5871b"
+      },
+      "description": "Identify unnecessary system utilities, third-party tools, or potentially malicious software that may be used to encrypt files, and audit and/or block them by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "Data Encrypted Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "a766ce73-5583-48f3-b7c0-0bb43c6ef8c7"
+      },
+      "description": "Network intrusion detection and prevention systems that use network signatures to identify traffic for specific adversary malware can be used to mitigate activity at the network level. Use of encryption protocols may make typical network-based C2 detection more difficult due to a reduced ability to signature the traffic. Prior knowledge of adversary C2 infrastructure may be useful for domain and IP address blocking, but will likely not be an effective long-term solution because adversaries can change infrastructure often.[[CiteRef::University of Birmingham C2]]",
+      "value": "Standard Cryptographic Protocol Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "24478001-2eb3-4b06-a02e-96b3d61d27ec"
+      },
+      "description": "Network intrusion detection and prevention systems that use network signatures to identify traffic for specific adversary malware can be used to mitigate activity at the network level. Use of encryption protocols may make typical network-based C2 detection more difficult due to a reduced ability to signature the traffic. Prior knowledge of adversary C2 infrastructure may be useful for domain and IP address blocking, but will likely not be an effective long-term solution because adversaries can change infrastructure often.[[CiteRef::University of Birmingham C2]]",
+      "value": "Multilayer Encryption Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "45e7f570-6a0b-4095-bf02-4bca05da6bae"
+      },
+      "description": "When creating security rules, avoid exclusions based on file name or file path. Require signed binaries. Use file system access controls to protect folders such as C:\\Windows\\System32. Use tools that restrict program execution via whitelisting by attributes other than file name.\n\nIdentify potentially malicious software that may look like a legitimate program based on name and location, and audit and/or block it by using whitelisting[[CiteRef::Beechey 2010]] tools like AppLocker[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "Masquerading Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "902286b2-96cc-4dd7-931f-e7340c9961da"
+      },
+      "description": "Identify potentially malicious software that may be used to access logical drives in this manner, and audit and/or block it by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "File System Logical Offsets Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "979e6485-7a2f-42bd-ae96-4e622c3cd173"
+      },
+      "description": "Limit the number of accounts that may use remote services. Use multifactor authentication where possible. Limit the permissions for accounts that are at higher risk of compromise; for example, configure SSH so users can only run specific programs. Prevent [[Credential Access]] techniques that may allow an adversary to acquire [[Technique/T1078|Legitimate Credentials]] that can be used by existing services.",
+      "value": "Remote Services Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "34efb2fd-4dc2-40d4-a564-0c147c85034d"
+      },
+      "description": "Identify unnecessary system utilities, third-party tools, or potentially malicious software that may be used to delete files, and audit and/or block them by using whitelisting[[CiteRef::Beechey 2010]] tools like AppLocker[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "File Deletion Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "28adf6fd-ab6c-4553-9aa7-cef18a191f33"
+      },
+      "description": "Identify unnecessary system utilities, third-party tools, or potentially malicious software that may be used to compress files, and audit and/or block them by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]\n\nIf network intrusion prevention or data loss prevention tools are set to block specific file types from leaving the network over unencrypted channels, then an adversary may move to an encrypted channel.",
+      "value": "Data Compressed Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "943d370b-2054-44df-8be2-ab4139bde1c5"
+      },
+      "description": "Windows 8.1 and Windows Server 2012 R2 may make LSA run as a Protected Process Light (PPL) by setting the Registry key <code>HKLM\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\RunAsPPL</code>, which requires all DLLs loaded by LSA to be signed by Microsoft.[[CiteRef::Graeber 2014]][[CiteRef::Microsoft Configure LSA]]",
+      "value": "Authentication Package Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "1c6bc7f3-d517-4971-aed4-8f939090846b"
+      },
+      "description": "Identify and block potentially malicious software that may persist in this manner by using whitelisting[[CiteRef::Beechey 2010]] tools capable of monitoring DLL loads by processes running under SYSTEM permissions.",
+      "value": "Local Port Monitor Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "c085476e-1964-4d7f-86e1-d8657a7741e8"
+      },
+      "description": "To use this technique remotely, an adversary must use it in conjunction with RDP. Ensure that Network Level Authentication is enabled to force the remote desktop session to authenticate before the session is created and the login screen displayed. It is enabled by default on Windows Vista and later.[[CiteRef::TechNet RDP NLA]]\n\nIf possible, use a Remote Desktop Gateway to manage connections and security configuration of RDP within a network.[[CiteRef::TechNet RDP Gateway]]\n\nIdentify and block potentially malicious software that may be executed by an adversary with this technique by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "Accessibility Features Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "96150c35-466f-4f0a-97a9-ae87ee27f751"
+      },
+      "description": "Ensure proper permissions are in place to help prevent adversary access to privileged accounts necessary to perform this action. Use Trusted Platform Module technology and a secure or trusted boot process to prevent system integrity from being compromised.[[CiteRef::TCG Trusted Platform Module]][[CiteRef::TechNet Secure Boot Process]]",
+      "value": "Bootkit Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "d45f03a8-790a-4f90-b956-cd7e5b8886bf"
+      },
+      "description": "Take measures to detect or prevent techniques such as [[Technique/T1003|Credential Dumping]] or installation of keyloggers to acquire credentials through [[Technique/T1056|Input Capture]]. Limit credential overlap across systems to prevent access if account credentials are obtained. Ensure that local administrator accounts have complex, unique passwords across all systems on the network. Do not put user or admin domain accounts in the local administrator groups across systems unless they are tightly controlled and use of accounts is segmented, as this is often equivalent to having a local administrator account with the same password on all systems. Audit domain and local accounts as well as their permission levels routinely to look for situations that could allow an adversary to gain wide access by obtaining credentials of a privileged account.[[CiteRef::TechNet Credential Theft]][[CiteRef::TechNet Least Privilege]]",
+      "value": "Legitimate Credentials Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "388606d3-f38f-45bf-885d-a9dc9df3c8a8"
+      },
+      "description": "Ensure proper process, registry, and file permissions are in place to prevent adversaries from disabling or interfering with security services.",
+      "value": "Disabling Security Tools Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "0640214c-95af-4c04-a574-2a1ba6dda00b"
+      },
+      "description": "Identify unnecessary system utilities or potentially malicious software that may be used to acquire information within the Registry, and audit and/or block them by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "Query Registry Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "25e53928-6f33-49b7-baee-8180578286f6"
+      },
+      "description": "Prevent adversary access to privileged accounts or access necessary to perform this technique. Check the integrity of the existing BIOS to determine if it is vulnerable to modification. Patch the BIOS as necessary. Use Trusted Platform Module technology.[[CiteRef::TCG Trusted Platform Module]]",
+      "value": "Basic Input/Output System Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "da987565-27b6-4b31-bbcd-74b909847116"
+      },
+      "description": "Network intrusion detection and prevention systems that use network signatures to identify traffic for specific adversary malware can be used to mitigate activity at the network level. Signatures are often for unique indicators within protocols and may be based on the specific protocol used by a particular adversary or tool, and will likely be different across various malware families and versions. Adversaries will likely change tool C2 signatures over time or construct protocols in such a way as to avoid detection by common defensive tools.[[CiteRef::University of Birmingham C2]]",
+      "value": "Multiband Communication Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "9a902722-cecd-4fbe-a6c9-49333aa0f8c2"
+      },
+      "description": "Identify unnecessary system utilities or potentially malicious software that may be used to acquire information on remotely available systems, and audit and/or block them by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "Remote System Discovery Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "2ace01f8-67c8-43eb-b7b1-a7b9f1fe67e1"
+      },
+      "description": "File system activity is a common part of an operating system, so it is unlikely that mitigation would be appropriate for this technique. It may still be beneficial to identify and block unnecessary system utilities or potentially malicious software by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "File and Directory Discovery Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "1022138b-497c-40e6-b53a-13351cbd4090"
+      },
+      "description": "Use auditing tools capable of detecting file system permissions abuse opportunities on systems within an enterprise and correct them. Limit privileges of user accounts and groups so that only authorized administrators can interact with service changes and service binary target path locations. Toolkits like the PowerSploit framework contain PowerUp modules that can be used to explore systems for service file system permissions weaknesses.[[CiteRef::Powersploit]]\n\nIdentify and block potentially malicious software that may be executed through abuse of file, directory, and service permissions by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] that are capable of auditing and/or blocking unknown programs. Deny execution from user directories such as file download directories and temp directories where able.[[CiteRef::Seclists Kanthak 7zip Installer]]\n\nTurn off UAC's privilege elevation for standard users and installer detection for all users by modifying registry key\n<code>[HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Policies\\System]</code>to automatically deny elevation requests, add: <code>\"ConsentPromptBehaviorUser\"=dword:00000000</code>; to disable installer detection, add: <code>\"EnableInstallerDetection\"=dword:00000000</code>.[[CiteRef::Seclists Kanthak 7zip Installer]]",
+      "value": "File System Permissions Weakness Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "d5dce4b9-f1fa-4c03-aff9-ce177246cb64"
+      },
+      "description": "Ensure that permissions disallow services that run at a higher permissions level from being created or interacted with by a user with a lower permission level. Also ensure that high permission level service binaries cannot be replaced or modified by users with a lower permission level.\n\nIdentify unnecessary system utilities or potentially malicious software that may be used to interact with Windows services, and audit and/or block them by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "Service Execution Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "b8d57b16-d8e2-428c-a645-1083795b3445"
+      },
+      "description": "Disable Autorun if it is unnecessary.[[CiteRef::Microsoft Disable Autorun]] Disallow or restrict removable media at an organizational policy level if they are not required for business operations.[[CiteRef::TechNet Removable Media Control]]",
+      "value": "Communication Through Removable Media Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "e8d22ec6-2236-48de-954b-974d17492782"
+      },
+      "description": "Remove smart cards when not in use. Protect devices and services used to transmit and receive out-of-band codes.\n\nIdentify and block potentially malicious software that may be used to intercept 2FA credentials on a system by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "Two-Factor Authentication Interception Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "399d9038-b100-43ef-b28d-a5065106b935"
+      },
+      "description": "Properly configure firewalls and proxies to limit outgoing traffic to only necessary ports and through proper network gateway systems.\n\nNetwork intrusion detection and prevention systems that use network signatures to identify traffic for specific adversary malware can be used to mitigate activity at the network level. Signatures are often for unique indicators within protocols and may be based on the specific obfuscation technique used by a particular adversary or tool, and will likely be different across various malware families and versions. Adversaries will likely change tool C2 signatures over time or construct protocols in such a way as to avoid detection by common defensive tools.[[CiteRef::University of Birmingham C2]]",
+      "value": "Standard Non-Application Layer Protocol Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "ba06d68a-4891-4eb5-b634-152e05ec60ee"
+      },
+      "description": "Network intrusion detection and prevention systems that use network signatures to identify traffic for specific adversary command and control infrastructure and malware can be used to mitigate activity at the network level. Signatures are often for unique indicators within protocols and may be based on the specific obfuscation technique used by a particular adversary or tool, and will likely be different across various malware families and versions. Adversaries will likely change tool command and control signatures over time or construct protocols in such a way to avoid detection by common defensive tools.[[CiteRef::University of Birmingham C2]]",
+      "value": "Data Transfer Size Limits Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "10571bf2-8073-4edf-a71c-23bad225532e"
+      },
+      "description": "Upgrade to Windows 8 or later and enable secure boot.\n\nIdentify and block potentially malicious software that may be executed through AppInit DLLs by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] that are capable of auditing and/or blocking unknown DLLs.",
+      "value": "AppInit DLLs Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "ec418d1b-4963-439f-b055-f914737ef362"
+      },
+      "description": "InstallUtil may not be necessary within a given environment. Use application whitelisting configured to block execution of InstallUtil.exe if it is not required for a given system or network to prevent potential misuse by adversaries.",
+      "value": "InstallUtil Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "a13e35cc-8c90-4d77-a965-5461042c1612"
+      },
+      "description": "Identify and block unknown, potentially malicious software that may be executed through shortcut modification by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "Shortcut Modification Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "f3d0c735-330f-43c2-8e8e-51bcfa51e8c3"
+      },
+      "description": "Network intrusion detection and prevention systems that use network signatures to identify traffic for specific adversary malware can be used to mitigate activity at the network level. Signatures are often for unique indicators within protocols and may be based on the specific protocol used by a particular adversary or tool, and will likely be different across various malware families and versions. Adversaries will likely change tool C2 signatures over time or construct protocols in such a way as to avoid detection by common defensive tools.[[CiteRef::University of Birmingham C2]]",
+      "value": "Custom Command and Control Protocol Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "2497ac92-e751-4391-82c6-1b86e34d0294"
+      },
+      "description": "Identify unnecessary system utilities, scripts, or potentially malicious software that may be used to transfer data outside of a network, and audit and/or block them by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "Automated Exfiltration Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "d7c49196-b40e-42bc-8eed-b803113692ed"
+      },
+      "description": "Direct mitigation of this technique is not recommended since it is a legitimate function that can be performed by users for software preferences. Follow Microsoft's best practices for file associations.[[CiteRef::MSDN File Associations]]\n\nIdentify and block potentially malicious software that may be executed by this technique using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "Change Default File Association Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "1881da33-fdf2-4eea-afd0-e04caf9c000f"
+      },
+      "description": "Identify unnecessary system utilities or potentially malicious software that may be used to acquire information about peripheral devices, and audit and/or block them by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "Peripheral Device Discovery Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "addb3703-5a59-4461-9bcd-7e2b5d4e92a0"
+      },
+      "description": "Network intrusion detection and prevention systems that use network signatures to identify traffic for specific adversary malware can be used to mitigate activity at the network level. Signatures are often for unique indicators within protocols and will be different across various malware families and versions. Adversaries will likely change tool signatures over time or construct protocols in such a way to avoid detection by common defensive tools.[[CiteRef::University of Birmingham C2]]",
+      "value": "Standard Application Layer Protocol Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "da8a87d2-946d-4c34-9a30-709058b98996"
+      },
+      "description": "Identify and block potentially malicious software that may be used to acquire credentials or information from the user by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]\n\nIn cases where this behavior is difficult to detect or mitigate, efforts can be made to lessen some of the impact that might result from an adversary acquiring credential information. It is also good practice to follow mitigation recommendations for adversary use of [[Technique/T1078|Legitimate Credentials]].",
+      "value": "Input Capture Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "9e57c770-5a39-49a2-bb91-253ba629e3ac"
+      },
+      "description": "Windows 8.1 and Windows Server 2012 R2 may make LSA run as a Protected Process Light (PPL) by setting the Registry key <code>HKLM\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\RunAsPPL</code>, which requires all SSP DLLs to be signed by Microsoft.[[CiteRef::Graeber 2014]][[CiteRef::Microsoft Configure LSA]]",
+      "value": "Security Support Provider Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "f6469191-1814-4dbe-a081-2a6daf83a10b"
+      },
+      "description": "Identify unnecessary system utilities or potentially malicious software that may be used to acquire information about processes, and audit and/or block them by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "Process Discovery Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "effb83a0-ead1-4b36-b7f6-b7bdf9c4616e"
+      },
+      "description": "Disable Autorun if it is unnecessary.[[CiteRef::Microsoft Disable Autorun]] Disallow or restrict removable media at an organizational policy level if it is not required for business operations.[[CiteRef::TechNet Removable Media Control]]\n\nIdentify potentially malicious software that may be used to infect removable media or may result from tainted removable media, and audit and/or block it by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "Replication Through Removable Media Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "1c0711c8-2a73-48a1-893d-ff88bcd23824"
+      },
+      "description": "Network intrusion detection and prevention systems that use network signatures to identify traffic for specific adversary command and control infrastructure and malware can be used to mitigate activity at the network level. Signatures are often for unique indicators within protocols and may be based on the specific obfuscation technique used by a particular adversary or tool, and will likely be different across various malware families and versions. Adversaries will likely change tool command and control signatures over time or construct protocols in such a way to avoid detection by common defensive tools.[[CiteRef::University of Birmingham C2]]",
+      "value": "Scheduled Transfer Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "2c3ce852-06a2-40ee-8fe6-086f6402a739"
+      },
+      "description": "Prevent adversary access to privileged accounts necessary to install a hypervisor.",
+      "value": "Hypervisor Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "8bd1ae32-a686-48f4-a6f8-470287f76152"
+      },
+      "description": "Encryption and off-system storage of sensitive information may be one way to mitigate collection of files, but may not stop an adversary from acquiring the information if an intrusion persists over a long period of time and the adversary is able to discover and access the data through other means. A keylogger installed on a system may be able to intercept passwords through [[Technique/T1056|Input Capture]] and be used to decrypt protected documents that an adversary may have collected. Strong passwords should be used to prevent offline cracking of encrypted documents through [[Technique/T1110|Brute Force]] techniques.\n\nIdentify unnecessary system utilities, third-party tools, or potentially malicious software that may be used to collect files and audit and/or block them by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "Automated Collection Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "e547ed6a-f1ca-40df-8613-2ce27927f145"
+      },
+      "description": "Disable Autorun if it is unnecessary.[[CiteRef::Microsoft Disable Autorun]] Disallow or restrict removable media at an organizational policy level if they are not required for business operations.[[CiteRef::TechNet Removable Media Control]]",
+      "value": "Exfiltration Over Physical Medium Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "fcbe8424-eb3e-4794-b76d-e743f5a49b8b"
+      },
+      "description": "Network intrusion detection and prevention systems that use network signatures to identify traffic for specific adversary malware can be used to mitigate activity at the network level. Signatures are often for unique indicators within protocols and may be based on the specific obfuscation technique used by a particular adversary or tool, and will likely be different across various malware families and versions. Adversaries will likely change tool C2 signatures over time or construct protocols in such a way as to avoid detection by common defensive tools.[[CiteRef::University of Birmingham C2]]",
+      "value": "Data Encoding Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "7a14d974-f3d9-4e4e-9b7d-980385762908"
+      },
+      "description": "Update software regularly. Install software in write-protected locations. Use the program sxstrace.exe that is included with Windows along with manual inspection to check manifest files for side-loading vulnerabilities in software.",
+      "value": "DLL Side-Loading Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "95ddb356-7ba0-4bd9-a889-247262b8946f"
+      },
+      "description": "Identify potentially malicious software that may contain rootkit functionality, and audit and/or block it by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "Rootkit Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "ed202147-4026-4330-b5bd-1e8dfa8cf7cc"
+      },
+      "description": "Identify and block unnecessary system utilities or potentially malicious software that may be used to modify the Registry by using whitelisting[[CiteRef::Beechey 2010]] tools like AppLocker[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "Modify Registry Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "82d8e990-c901-4aed-8596-cc002e7eb307"
+      },
+      "description": "Benign software uses legitimate processes to gather system time. Efforts should be focused on preventing unwanted or unknown code from executing on a system. Some common tools, such as net.exe, may be blocked by policy to prevent common ways of acquiring remote system time.\n\nIdentify unnecessary system utilities or potentially malicious software that may be used to acquire system time information, and audit and/or block them by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "System Time Discovery Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "c1676218-c16a-41c9-8f7a-023779916e39"
+      },
+      "description": "Identify unnecessary system utilities or potentially malicious software that may be used to acquire information about network connections, and audit and/or block them by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "Local Network Connections Discovery Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "51b37302-b844-4c08-ac98-ae6955ed1f55"
+      },
+      "description": "Blocking software based on screen capture functionality may be difficult, and there may be legitimate software that performs those actions. Instead, identify potentially malicious software that may have functionality to acquire screen captures, and audit and/or block it by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "Screen Capture Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "308855d1-078b-47ad-8d2a-8f9b2713ffb5"
+      },
+      "description": "Do not reuse local administrator account passwords across systems. Ensure password complexity and uniqueness such that the passwords cannot be cracked or guessed. Deny remote use of local admin credentials to log into systems. Do not allow domain user accounts to be in the local Administrators group multiple systems.\n\nIdentify unnecessary system utilities or potentially malicious software that may be used to leverage SMB and the Windows admin shares, and audit and/or block them by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "Windows Admin Shares Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "fe0aeb41-1a51-4152-8467-628256ea6adf"
+      },
+      "description": "Use auditing tools capable of detecting privilege and service abuse opportunities on systems within an enterprise and correct them. Limit privileges of user accounts and groups so that only authorized administrators can interact with service changes and service configurations. Toolkits like the PowerSploit framework contain the PowerUp modules that can be used to explore systems for [[Privilege Escalation]] weaknesses.[[CiteRef::Powersploit]]\n\nIdentify and block potentially malicious software that may be executed through service abuse by using whitelisting[[CiteRef::Beechey 2010]] tools like AppLocker[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] that are capable of auditing and/or blocking unknown programs.",
+      "value": "Modify Existing Service Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "160af6af-e733-4b6a-a04a-71c620ac0930"
+      },
+      "description": "Evaluate the security of third-party software that could be used to deploy or execute programs. Ensure that access to management systems for deployment systems is limited, monitored, and secure. Have a strict approval policy for use of deployment systems.\n\nGrant access to application deployment systems only to a limited number of authorized administrators. Ensure proper system and access isolation for critical network systems through use of firewalls, account privilege separation, group policy, and multifactor authentication. Verify that account credentials that may be used to access deployment systems are unique and not used throughout the enterprise network. Patch deployment systems regularly to prevent potential remote access through [[Technique/T1068|Exploitation of Vulnerability]]. \n\nIf the application deployment system can be configured to deploy only signed binaries, then ensure that the trusted signing certificates are not co-located with the application deployment system and are instead located on a system that cannot be accessed remotely or to which remote access is tightly controlled.",
+      "value": "Third-party Software Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "d9f4b5fa-2a39-4bdf-b40a-ea998933cd6d"
+      },
+      "description": "Mitigating this technique specifically may be difficult as it requires fine-grained API control. Efforts should be focused on preventing unwanted or unknown code from executing on a system.\n\nIdentify and block potentially malicious software that may be used to capture video and images by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "Video Capture Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "23061b40-a7b6-454f-8950-95d5ff80331c"
+      },
+      "description": "HTTP Public Key Pinning (HPKP) is one method to mitigate potential man-in-the-middle situations where and adversary uses a mis-issued or fraudulent certificate to intercept encrypted communications by enforcing use of an expected certificate.[[CiteRef::Wikipedia HPKP]]",
+      "value": "Install Root Certificate Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "4a99fecc-680b-448e-8fe7-8144c60d272c"
+      },
+      "description": "Set account lockout policies after a certain number of failed login attempts to prevent passwords from being guessed. Use multifactor authentication.",
+      "value": "Brute Force Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "383caaa3-c46a-4f61-b2e3-653eb132f0e7"
+      },
+      "description": "Use of encryption provides an added layer of security to sensitive information sent over email. Encryption using public key cryptography requires the adversary to obtain the private certificate along with an encryption key to decrypt messages.\n\nUse of two-factor authentication for public-facing webmail servers is also a recommended best practice to minimize the usefulness of user names and passwords to adversaries.\n\nIdentify unnecessary system utilities or potentially malicious software that may be used to collect email data files or access the corporate email server, and audit and/or block them by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "Email Collection Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "92e6d080-ca3f-4f95-bc45-172a32c4e502"
+      },
+      "description": "Update software regularly by employing patch management for internal enterprise endpoints and servers. Develop a robust cyber threat intelligence capability to determine what types and levels of threat may use software exploits and 0-days against a particular organization. Make it difficult for adversaries to advance their operation through exploitation of undiscovered or unpatched vulnerabilities by using sandboxing, virtualization, and exploit prevention tools such as the Microsoft Enhanced Mitigation Experience Toolkit.[[CiteRef::SRD EMET]]",
+      "value": "Exploitation of Vulnerability Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "cdecc44a-1dbf-4c1f-881c-f21e3f47272a"
+      },
+      "description": "Network intrusion detection and prevention systems that use network signatures to identify traffic for specific adversary malware or unusual data transfer over known tools and protocols like FTP can be used to mitigate activity at the network level. Signatures are often for unique indicators within protocols and may be based on the specific obfuscation technique used by a particular adversary or tool, and will likely be different across various malware families and versions. Adversaries will likely change tool C2 signatures over time or construct protocols in such a way as to avoid detection by common defensive tools.[[CiteRef::University of Birmingham C2]]",
+      "value": "Remote File Copy Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "0e5bdf42-a7f7-4d16-a074-4915bd262f80"
+      },
+      "description": "Follow best practices for network firewall configurations to allow only necessary ports and traffic to enter and exit the network. For example, if services like FTP are not required for sending information outside of a network, then block FTP-related ports at the network perimeter. Enforce proxies and use dedicated servers for services such as DNS and only allow those systems to communicate over respective ports/protocols, instead of all systems within a network.[[CiteRef::TechNet Firewall Design]] These actions will help reduce command and control and exfiltration path opportunities.\n\nNetwork intrusion detection and prevention systems that use network signatures to identify traffic for specific adversary command and control infrastructure and malware can be used to mitigate activity at the network level. Signatures are often for unique indicators within protocols and may be based on the specific obfuscation technique used by a particular adversary or tool, and will likely be different across various malware families and versions. Adversaries will likely change tool command and control signatures over time or construct protocols in such a way to avoid detection by common defensive tools.[[CiteRef::University of Birmingham C2]]",
+      "value": "Exfiltration Over Alternative Protocol Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "53b3b027-bed3-480c-9101-1247047d0fe6"
+      },
+      "description": "Disable the RDP service if it is unnecessary, remove unnecessary accounts and groups from Remote Desktop Users groups, and enable firewall rules to block RDP traffic between network security zones. Audit the Remote Desktop Users group membership regularly. Remove the local Administrators group from the list of groups allowed to log in through RDP. Limit remote user permissions if remote access is necessary. Use remote desktop gateways and multifactor authentication for remote logins.[[CiteRef::Berkley Secure]]",
+      "value": "Remote Desktop Protocol Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "4689b9fb-dca4-473e-831b-34717ad50c97"
+      },
+      "description": "Firewalls and Web proxies can be used to enforce external network communication policy. It may be difficult for an organization to block particular services because so many of them are commonly used during the course of business.\n\nNetwork intrusion detection and prevention systems that use network signatures to identify traffic for specific adversary malware can be used to mitigate activity at the network level. Signatures are often for unique indicators within protocols and may be based on the specific protocol or encoded commands used by a particular adversary or tool, and will likely be different across various malware families and versions. Adversaries will likely change tool C2 signatures over time or construct protocols in such a way as to avoid detection by common defensive tools.[[CiteRef::University of Birmingham C2]]",
+      "value": "Web Service Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "d256cb63-b021-4b4a-bb6d-1b42eea179a3"
+      },
+      "description": "Use network intrusion detection/prevention systems to detect and prevent remote service scans. Ensure that unnecessary ports and services are closed and proper network segmentation is followed to protect critical servers and devices.\n\nIdentify unnecessary system utilities or potentially malicious software that may be used to acquire information about services running on remote systems, and audit and/or block them by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "Network Service Scanning Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "0bc3ce00-83bc-4a92-a042-79ffbc6af259"
+      },
+      "description": "Disabling WMI services may cause system instability and should be evaluated to assess the impact to a network. By default, only administrators are allowed to connect remotely using WMI; restrict other users that are allowed to connect, or disallow all users from connecting remotely to WMI. Prevent credential overlap across systems of administrator and privileged accounts.[[CiteRef::FireEye WMI 2015]]",
+      "value": "Windows Management Instrumentation Event Subscription Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "7ee0879d-ce4f-4f54-a96b-c532dfb98ffd"
+      },
+      "description": "Identify unnecessary system utilities or potentially malicious software that may be used to collect data from the local system, and audit and/or block them by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "Data from Local System Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "a569295c-a093-4db4-9fb4-7105edef85ad"
+      },
+      "description": "Network intrusion detection and prevention systems that use network signatures to identify traffic for specific adversary malware can be used to mitigate activity at the network level. Since the custom protocol used may not adhere to typical protocol standards, there may be opportunities to signature the traffic on a network level for detection. Signatures are often for unique indicators within protocols and may be based on the specific protocol used by a particular adversary or tool, and will likely be different across various malware families and versions. Adversaries will likely change tool C2 signatures over time or construct protocols in such a way as to avoid detection by common defensive tools.[[CiteRef::University of Birmingham C2]]",
+      "value": "Custom Cryptographic Protocol Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "0472af99-f25c-4abe-9fce-010fa3450e72"
+      },
+      "description": "Establish an organizational policy that prohibits password storage in files. Ensure that developers and system administrators are aware of the risk associated with having plaintext passwords in software configuration files that may be left on endpoint systems or servers. Preemptively search for files containing passwords and remove when found. Restrict file shares to specific directories with access only to necessary users. Remove vulnerable Group Policy Preferences.[[CiteRef::Microsoft MS14-025]]",
+      "value": "Credentials in Files Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "dd9a85ad-6a92-4986-a215-b01d0ce7b987"
+      },
+      "description": "Identify unnecessary system utilities or potentially malicious software that may be used to acquire information about groups and permissions, and audit and/or block them by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "Permission Groups Discovery Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "9ab7de33-99b2-4d8d-8cf3-182fa0015cc2"
+      },
+      "description": "Restrict write access to logon scripts to specific administrators. Prevent access to administrator accounts by mitigating [[Credential Access]] techniques and limiting account access and permissions of [[Technique/T1078|Legitimate Credentials]].\n\nIdentify and block potentially malicious software that may be executed through logon script modification by using whitelisting[[CiteRef::Beechey 2010]] tools like AppLocker[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] that are capable of auditing and/or blocking unknown programs.",
+      "value": "Logon Scripts Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "82fbc58b-171d-4a2d-9a20-c6b2a716bd08"
+      },
+      "description": "Process whitelisting and trusted publishers to verify authenticity of software can help prevent signed malicious or untrusted code from executing on a system.[[CiteRef::NSA MS AppLocker]][[CiteRef::TechNet Trusted Publishers]][[CiteRef::Securelist Digital Certificates]]",
+      "value": "Code Signing Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "3e9f8875-d2f7-4380-a578-84393bd3b025"
+      },
+      "description": "Disable the WinRM service. If the service is necessary, lock down critical enclaves with separate WinRM infrastructure, accounts, and permissions. Follow WinRM best practices on configuration of authentication methods and use of host firewalls to restrict WinRM access to allow communication only to/from specific devices.[[CiteRef::NSA Spotting]]",
+      "value": "Windows Remote Management Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "bcc91b8c-f104-4710-964e-1d5409666736"
+      },
+      "description": "Ensure that externally facing Web servers are patched regularly to prevent adversary access through [[Technique/T1068|Exploitation of Vulnerability]] to gain remote code access or through file inclusion weaknesses that may allow adversaries to upload files or scripts that are automatically served as Web pages. \n\nAudit account and group permissions to ensure that accounts used to manage servers do not overlap with accounts and permissions of users in the internal network that could be acquired through [[Credential Access]] and used to log into the Web server and plant a Web shell or pivot from the Web server into the internal network.[[CiteRef::US-CERT Alert TA15-314A Web Shells]]",
+      "value": "Web Shell Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "d0fcf37a-b6c4-4745-9c43-4fcdb8bfc88e"
+      },
+      "description": "Network intrusion detection and prevention systems that use network signatures to identify traffic for specific adversary malware can be used to mitigate activity at the network level. Signatures are often for unique indicators within protocols and may be based on the specific obfuscation technique used by a particular adversary or tool, and will likely be different across various malware families and versions. Adversaries will likely change tool C2 signatures over time or construct protocols in such a way as to avoid detection by common defensive tools.[[CiteRef::University of Birmingham C2]]",
+      "value": "Data Obfuscation Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "c95c8b5c-b431-43c9-9557-f494805e2502"
+      },
+      "description": "Ensure updated virus definitions. Create custom signatures for observed malware. Employ heuristic-based malware detection.\n\nIdentify and prevent execution of potentially malicious software that may have been packed by using whitelisting[[CiteRef::Beechey 2010]] tools like AppLocker[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "Software Packing Mitigation"
+    },
+    {
+      "meta": {
+        "uuid": "bd2554b8-634f-4434-a986-9b49c29da2ae"
+      },
+      "description": "Identify unnecessary system utilities or potentially malicious software that may be used to acquire information about local security software, and audit and/or block them by using whitelisting[[CiteRef::Beechey 2010]] tools, like AppLocker,[[CiteRef::Windows Commands JPCERT]][[CiteRef::NSA MS AppLocker]] or Software Restriction Policies[[CiteRef::Corio 2008]] where appropriate.[[CiteRef::TechNet Applocker vs SRP]]",
+      "value": "Security Software Discovery Mitigation"
+    }
+  ]
+}

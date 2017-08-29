@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/schema#",
-  "title": "Validator for misp-galaxies",
-  "id": "https://www.github.com/MISP/misp-galaxies/schema.json",
+  "title": "Validator for misp-galaxies - Clusters",
+  "id": "https://www.github.com/MISP/misp-galaxies/schema_clusters.json",
   "type": "object",
   "additionalProperties": false,
   "properties": {
@@ -38,8 +38,36 @@
           },
           "meta": {
             "type": "object",
-            "additionalProperties": false,
+            "additionalProperties": true,
             "properties": {
+              "type": {
+                "type": "array",
+                "uniqueItems": true,
+                "items": {
+                  "type": "string"
+                }
+              },
+              "complexity": {
+                "type": "string"
+              },
+              "effectiveness": {
+                "type": "string"
+              },
+              "country": {
+                "type": "string"
+              },
+              "possible_issues": {
+                "type": "string"
+              },
+              "colour": {
+                "type": "string"
+              },
+              "motive": {
+                "type": "string"
+              },
+              "impact": {
+                "type": "string"
+              },
               "refs": {
                 "type": "array",
                 "uniqueItems": true,
@@ -64,33 +92,25 @@
               "status": {
                 "type": "string"
               },
-              "country": {
+              "date": {
                 "type": "string"
               },
-              "effectiveness": {
+              "encryption": {
                 "type": "string"
               },
-              "complexity": {
-                "type": "string"
-              },
-              "type": {
+              "extensions": {
                 "type": "array",
                 "uniqueItems": true,
                 "items": {
                   "type": "string"
                 }
               },
-              "impact": {
-                "type": "string"
-              },
-              "motive": {
-                "type": "string"
-              },
-              "colour": {
-                "type": "string"
-              },
-              "possible_issues": {
-                "type": "string"
+              "ransomnotes": {
+                "type": "array",
+                "uniqueItems": true,
+                "items": {
+                  "type": "string"
+                }
               }
             }
           }
