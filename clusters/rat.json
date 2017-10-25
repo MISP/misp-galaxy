@@ -7,7 +7,7 @@
   ],
   "description": "remote administration tool or remote access tool (RAT), also called sometimes remote access trojan, is a piece of software or programming that allows a remote \"operator\" to control a system as if they have physical access to that system.",
   "uuid": "312f8714-45cb-11e7-b898-135207cdceb9",
-  "version": 1,
+  "version": 3,
   "values": [
     {
       "meta": {
@@ -17,6 +17,15 @@
       },
       "description": "TeamViewer is a proprietary computer software package for remote control, desktop sharing, online meetings, web conferencing and file transfer between computers.",
       "value": "TeamViewer"
+    },
+    {
+      "value": "JadeRAT",
+      "description": "JadeRAT is just one example of numerous mobile surveillanceware families we've seen in recent months, indicating that actors are continuing to incorporate mobile tools in their attack chains.",
+      "meta": {
+        "refs": [
+          "https://blog.lookout.com/mobile-threat-jaderat"
+        ]
+      }
     },
     {
       "meta": {
@@ -39,7 +48,8 @@
         "refs": [
           "http://www.symantec.com/avcenter/warn/backorifice.html",
           "https://www.f-secure.com/v-descs/netbus.shtml"
-        ]
+        ],
+        "date": "1998"
       },
       "description": "NetBus or Netbus is a software program for remotely controlling a Microsoft Windows computer system over a network. It was created in 1998 and has been very controversial for its potential of being used as a backdoor.",
       "value": "Netbus"
@@ -67,7 +77,8 @@
         ],
         "refs": [
           "https://www.symantec.com/security_response/writeup.jsp?docid=2001-020114-5445-99"
-        ]
+        ],
+        "date": "1999"
       },
       "description": "Sub7, or SubSeven or Sub7Server, is a Trojan horse program.[1] Its name was derived by spelling NetBus backwards (\"suBteN\") and swapping \"ten\" with \"seven\". Sub7 was created by Mobman. Mobman has not maintained or updated the software since 2004, however an author known as Read101 has carried on the Sub7 legacy.",
       "value": "Sub7"
@@ -76,7 +87,8 @@
       "meta": {
         "refs": [
           "https://en.wikipedia.org/wiki/Beast_(Trojan_horse)"
-        ]
+        ],
+        "date": "2002"
       },
       "description": "Beast is a Windows-based backdoor trojan horse, more commonly known in the hacking community as a Remote Administration Tool or a \"RAT\". It is capable of infecting versions of Windows from 95 to 10.",
       "value": "Beast Trojan"
@@ -86,7 +98,8 @@
         "refs": [
           "https://www.revolvy.com/main/index.php?s=Bifrost%20(trojan%20horse)&item_type=topic",
           "http://malware-info.blogspot.lu/2008/10/bifrost-trojan.html"
-        ]
+        ],
+        "date": "2004"
       },
       "description": "Bifrost is a discontinued backdoor trojan horse family of more than 10 variants which can infect Windows 95 through Windows 10 (although on modern Windows systems, after Windows XP, its functionality is limited). Bifrost uses the typical server, server builder, and client backdoor program configuration to allow a remote attacker, who uses the client, to execute arbitrary code on the compromised machine (which runs the server whose behavior can be controlled by the server editor).",
       "value": "Bifrost"
@@ -95,7 +108,8 @@
       "meta": {
         "refs": [
           "https://krebsonsecurity.com/2014/05/blackshades-trojan-users-had-it-coming/"
-        ]
+        ],
+        "date": "2010"
       },
       "description": "Blackshades is the name of a malicious trojan horse used by hackers to control computers remotely. The malware targets computers using Microsoft Windows -based operating systems.[2] According to US officials, over 500,000 computer systems have been infected worldwide with the software.",
       "value": "Blackshades"
@@ -108,7 +122,8 @@
         ],
         "synonyms": [
           "Dark Comet"
-        ]
+        ],
+        "date": "2008"
       },
       "description": "DarkComet is a Remote Administration Tool (RAT) which was developed by Jean-Pierre Lesueur (known as DarkCoderSc), an independent programmer and computer security coder from the United Kingdom. Although the RAT was developed back in 2008, it began to proliferate at the start of 2012.",
       "value": "DarkComet"
@@ -117,7 +132,8 @@
       "meta": {
         "refs": [
           "https://www.symantec.com/security_response/writeup.jsp?docid=2002-121116-0350-99"
-        ]
+        ],
+        "date": "2002"
       },
       "description": "Backdoor.Lanfiltrator is a backdoor Trojan that gives an attacker unauthorized access to a compromised computer. The detection is used for a family of Trojans that are produced by the Backdoor.Lanfiltrator generator.",
       "value": "Lanfiltrator"
@@ -138,7 +154,8 @@
           "https://en.wikipedia.org/wiki/Optix_Pro",
           "https://www.symantec.com/security_response/writeup.jsp?docid=2002-090416-0521-99",
           "https://www.symantec.com/security_response/attacksignatures/detail.jsp?asid=20208"
-        ]
+        ],
+        "date": "2002"
       },
       "description": "Optix Pro is a configurable remote access tool or Trojan, similar to SubSeven or BO2K",
       "value": "Optix Pro"
@@ -153,7 +170,8 @@
           "https://home.mcafee.com/VirusInfo/VirusProfile.aspx?key=10229",
           "https://www.symantec.com/security_response/writeup.jsp?docid=2000-121814-5417-99",
           "https://www.f-secure.com/v-descs/bo2k.shtml"
-        ]
+        ],
+        "date": "1998"
       },
       "description": "Back Orifice 2000 (often shortened to BO2k) is a computer program designed for remote system administration. It enables a user to control a computer running the Microsoft Windows operating system from a remote location. The name is a pun on Microsoft BackOffice Server software. Back Orifice 2000 is a new version of the famous Back Orifice backdoor trojan (hacker's remote access tool). It was created by the Cult of Dead Cow hackers group in July 1999. Originally the BO2K was released as a source code and utilities package on a CD-ROM. There are reports that some files on that CD-ROM were infected with CIH virus, so the people who got that CD might get infected and spread not only the compiled backdoor, but also the CIH virus. ",
       "value": "Back Orifice 2000"
@@ -175,12 +193,19 @@
       "meta": {
         "synonyms": [
           "UNRECOM",
-          "UNiversal REmote COntrol Multi-Platform"
+          "UNiversal REmote COntrol Multi-Platform",
+          "Frutas",
+          "AlienSpy",
+          "Unrecom",
+          "Jsocket",
+          "JBifrost"
         ],
         "refs": [
           "https://securelist.com/securelist/files/2016/02/KL_AdwindPublicReport_2016.pdf",
-          "https://www.f-secure.com/v-descs/backdoor_java_adwind.shtml"
-        ]
+          "https://www.f-secure.com/v-descs/backdoor_java_adwind.shtml",
+          "https://blog.fortinet.com/2016/08/16/jbifrost-yet-another-incarnation-of-the-adwind-rat"
+        ],
+        "date": "2011"
       },
       "description": "Backdoor:Java/Adwind is a Java archive (.JAR) file that drops a malicious component onto the machines and runs as a backdoor. When active, it is capable of stealing user information and may also be used to distribute other malware. ",
       "value": "Adwind RAT"
@@ -217,7 +242,8 @@
         "refs": [
           "https://leakforums.net/thread-123872",
           "https://techanarchy.net/2014/02/blue-banana-rat-config/"
-        ]
+        ],
+        "date": "2012"
       },
       "description": "Blue Banana is a RAT (Remote Administration Tool) created purely in Java",
       "value": "Blue Banana"
@@ -226,7 +252,8 @@
       "meta": {
         "refs": [
           "https://www.fireeye.com/blog/threat-research/2013/10/know-your-enemy-tracking-a-rapidly-evolving-apt-actor.html"
-        ]
+        ],
+        "date": "2013"
       },
       "description": "Bozok, like many other popular RATs, is freely available. The author of the Bozok RAT goes by the moniker “Slayer616” and has created another RAT known as Schwarze Sonne, or “SS-RAT” for short. Both of these RATs are free and easy to find — various APT actors have used both in previous targeted attacks.",
       "value": "Bozok"
@@ -246,7 +273,8 @@
         "refs": [
           "http://www.hackersthirst.com/2011/03/cybergate-rat-hacking-facebook-twitter.html",
           "http://www.nbcnews.com/id/41584097/ns/technology_and_science-security/t/cybergate-leaked-e-mails-hint-corporate-hacking-conspiracy/"
-        ]
+        ],
+        "date": "2011"
       },
       "description": "CyberGate is a powerful, fully configurable and stable Remote Administration Tool coded in Delphi that is continuously getting developed. Using cybergate you can log the victim's passwords and can also get the screen shots of his computer's screen.",
       "value": "CyberGate"
@@ -267,7 +295,8 @@
         "refs": [
           "https://www.infosecurity-magazine.com/blogs/the-dark-rat/",
           "http://darkratphp.blogspot.lu/"
-        ]
+        ],
+        "date": "2005"
       },
       "description": "In March 2017, Fujitsu Cyber Threat Intelligence uncovered a newly developed remote access tool referred to by its developer as ‘Dark RAT’ – a tool used to steal sensitive information from victims. Offered as a Fully Undetectable build (FUD) the RAT has a tiered price model including 24/7 support and an Android version. Android malware has seen a significant rise in interest and in 2015 this resulted in the arrests of a number of suspects involved in the infamous DroidJack malware.",
       "value": "DarkRat"
@@ -284,7 +313,8 @@
       "meta": {
         "refs": [
           "http://securityaffairs.co/wordpress/54837/hacking/one-stop-shop-hacking.html"
-        ]
+        ],
+        "date": "2003"
       },
       "description": "HawkEye is a popular RAT that can be used as a keylogger, it is also able to identify login events and record the destination, username, and password.",
       "value": "HawkEye"
@@ -293,7 +323,11 @@
       "meta": {
         "refs": [
           "https://www.rekings.com/shop/jrat/"
-        ]
+        ],
+        "synonyms": [
+          "JacksBot"
+        ],
+        "date": "2012"
       },
       "description": "jRAT is the cross-platform remote administrator tool that is coded in Java, Because its coded in Java it gives jRAT possibilities to run on all operation systems, Which includes Windows, Mac OSX and Linux distributions.",
       "value": "jRAT"
@@ -302,7 +336,8 @@
       "meta": {
         "refs": [
           "https://leakforums.net/thread-479505"
-        ]
+        ],
+        "date": "2013"
       },
       "description": "jSpy is a Java RAT. ",
       "value": "jSpy"
@@ -320,7 +355,11 @@
       "meta": {
         "refs": [
           "https://www.cyber.nj.gov/threat-profiles/trojan-variants/njrat"
-        ]
+        ],
+        "synonyms": [
+          "Njw0rm"
+        ],
+        "date": "2012"
       },
       "description": "NJRat is a remote access trojan (RAT), first spotted in June 2013 with samples dating back to November 2012. It was developed and is supported by Arabic speakers and mainly used by cybercrime groups against targets in the Middle East. In addition to targeting some governments in the region, the trojan is used to control botnets and conduct other typical cybercrime activity. It infects victims via phishing attacks and drive-by downloads and propagates through infected USB keys or networked drives. It can download and execute additional malware, execute shell commands, read and write registry keys, capture screenshots, log keystrokes, and spy on webcams.",
       "value": "NJRat"
@@ -329,7 +368,8 @@
       "meta": {
         "refs": [
           "https://www.rekings.com/pandora-rat-2-2/"
-        ]
+        ],
+        "date": "2002"
       },
       "description": "Remote administrator tool that has been developed for Windows operation system. With advanced features and stable structure, Pandora’s structure is based on advanced client / server architecture. was configured using modern technology.",
       "value": "Pandora"
@@ -351,7 +391,8 @@
       "meta": {
         "refs": [
           "http://punisher-rat.blogspot.lu/"
-        ]
+        ],
+        "date": "2007"
       },
       "description": "Remote administration tool",
       "value": "Punisher RAT"
@@ -401,7 +442,8 @@
       "meta": {
         "refs": [
           "https://www.fireeye.com/blog/threat-research/2014/02/xtremerat-nuisance-or-threat.html"
-        ]
+        ],
+        "date": "2010"
       },
       "description": "This malware has been used in targeted attacks as well as traditional cybercrime. During our investigation we found that the majority of XtremeRAT activity is associated with spam campaigns that typically distribute Zeus variants and other banking-focused malware. ",
       "value": "XtremeRAT"
@@ -410,7 +452,8 @@
       "meta": {
         "refs": [
           "https://www.secureworks.com/blog/netwire-rat-steals-payment-card-data"
-        ]
+        ],
+        "date": "2012"
       },
       "description": "NetWire has a built-in keylogger that can capture inputs from peripheral devices such as USB card readers.",
       "value": "Netwire"
@@ -419,7 +462,8 @@
       "meta": {
         "refs": [
           "https://www.volexity.com/blog/2017/03/23/have-you-been-haunted-by-the-gh0st-rat-today/"
-        ]
+        ],
+        "date": "2001"
       },
       "description": "Gh0st RAT is a Trojan horse for the Windows platform that the operators of GhostNet used to hack into some of the most sensitive computer networks on Earth. It is a cyber spying computer program. .",
       "value": "Gh0st RAT"
@@ -464,7 +508,8 @@
       "meta": {
         "refs": [
           "https://github.com/quasar/QuasarRAT"
-        ]
+        ],
+        "date": "2014"
       },
       "description": "Quasar is a fast and light-weight remote administration tool coded in C#. Providing high stability and an easy-to-use user interface",
       "value": "Quasar RAT"
@@ -474,7 +519,8 @@
         "refs": [
           "https://github.com/qqshow/dendroid",
           "https://github.com/nyx0/Dendroid"
-        ]
+        ],
+        "date": "2014"
       },
       "description": "Dendroid is malware that affects Android OS and targets the mobile platform. It was first discovered in early of 2014 by Symantec and appeared in the underground for sale for $300. Some things were noted in Dendroid, such as being able to hide from emulators at the time. When first discovered in 2014 it was one of the most sophisticated Android remote administration tools known at that time. It was one of the first Trojan applications to get past Google's Bouncer and caused researchers to warn about it being easier to create Android malware due to it. It also seems to have follow in the footsteps of Zeus and SpyEye by having simple-to-use command and control panels. The code appeared to be leaked somewhere around 2014. It was noted that an apk binder was included in the leak, which provided a simple way to bind Dendroid to legitimate applications.",
       "value": "Dendroid"
@@ -483,7 +529,8 @@
       "meta": {
         "refs": [
           "https://github.com/shotskeber/Ratty"
-        ]
+        ],
+        "date": "2016"
       },
       "description": "A Java R.A.T. program",
       "value": "Ratty"
@@ -502,7 +549,8 @@
       "meta": {
         "refs": [
           "http://arabian-attacker.software.informer.com/"
-        ]
+        ],
+        "date": "2006"
       },
       "value": "Arabian-Attacker RAT"
     },
@@ -533,7 +581,8 @@
         ],
         "refs": [
           "https://github.com/mwsrc/Schwarze-Sonne-RAT"
-        ]
+        ],
+        "date": "2010"
       },
       "value": "Schwarze-Sonne-RAT"
     },
@@ -560,7 +609,8 @@
       "meta": {
         "refs": [
           "http://spynet-rat-officiel.blogspot.lu/"
-        ]
+        ],
+        "date": "2010"
       },
       "description": "Spy-Net is a software that allow you to control any computer in world using Windows Operating System.He is back using new functions and good options to give you full control of your remote computer.Stable and fast, this software offer to you a good interface, creating a easy way to use all his functions",
       "value": "Spynet"
@@ -613,7 +663,8 @@
           "http://www.grayhatforum.org/thread-4373-post-5213.html#pid5213",
           "http://www.spy-emergency.com/research/T/Theef_Download_Creator.html",
           "http://www.spy-emergency.com/research/T/Theef.html"
-        ]
+        ],
+        "date": "2002"
       },
       "value": "Theef"
     },
@@ -622,7 +673,8 @@
         "refs": [
           "http://prorat.software.informer.com/",
           "http://malware.wikia.com/wiki/ProRat"
-        ]
+        ],
+        "date": "2002"
       },
       "description": "ProRat is a Microsoft Windows based backdoor trojan, more commonly known as a Remote Administration Tool. As with other trojan horses it uses a client and server. ProRat opens a port on the computer which allows the client to perform numerous operations on the server (the machine being controlled). ",
       "value": "ProRat"
@@ -655,7 +707,8 @@
       "meta": {
         "refs": [
           "https://orcustechnologies.com/"
-        ]
+        ],
+        "date": "2015"
       },
       "value": "Orcus"
     },
@@ -680,7 +733,8 @@
       "meta": {
         "refs": [
           "http://www.connect-trojan.net/2015/01/bx-rat-v1.0.html"
-        ]
+        ],
+        "date": "2014"
       },
       "value": "BX"
     },
@@ -700,7 +754,8 @@
         "refs": [
           "https://www.rekings.com/darktrack-4-alien/",
           "http://news.softpedia.com/news/free-darktrack-rat-has-the-potential-of-being-the-best-rat-on-the-market-508179.shtml"
-        ]
+        ],
+        "date": "2017"
       },
       "value": "DarkTrack"
     },
@@ -708,7 +763,8 @@
       "meta": {
         "refs": [
           "https://github.com/c4bbage/xRAT"
-        ]
+        ],
+        "date": "2017"
       },
       "description": "Free, Open-Source Remote Administration Tool. xRAT 2.0 is a fast and light-weight Remote Administration Tool coded in C# (using .NET Framework 2.0).",
       "value": "xRAT"
@@ -734,7 +790,8 @@
       "meta": {
         "refs": [
           "https://leakforums.net/thread-36962"
-        ]
+        ],
+        "date": "2009"
       },
       "value": "Apocalypse"
     },
@@ -742,7 +799,8 @@
       "meta": {
         "refs": [
           "https://leakforums.net/thread-363920"
-        ]
+        ],
+        "date": "2013"
       },
       "value": "JCage"
     },
@@ -795,6 +853,9 @@
       "meta": {
         "refs": [
           "https://www.alienvault.com/blogs/labs-research/kilerrat-taking-over-where-njrat-remote-access-trojan-left-off"
+        ],
+        "synonyms": [
+          "Njw0rm"
         ]
       },
       "description": "This remote access trojan (RAT) has capabilities ranging from manipulating the registry to opening a reverse shell. From stealing credentials stored in browsers to accessing the victims webcam. Through the Command & Control (CnC) server software, the attacker has capabilities to create and configure the malware to spread utilizing physic devices, such as USB drives, but also to use the victim as a pivot point to gain more access laterally throughout the network. This remote access trojan could be classified as a variant of the well known njrat, as they share many similar features such as their display style, several abilities and a general template for communication methods . However, where njrat left off KilerRat has taken over. KilerRat is a very feature rich RAT with an active development force that is rapidly gaining in popularity amongst the middle eastern community and the world.",
@@ -812,7 +873,11 @@
           "http://lost-door.blogspot.lu/",
           "http://blog.trendmicro.com/trendlabs-security-intelligence/lost-door-rat-accessible-customizable-attack-tool/",
           "https://www.cyber.nj.gov/threat-profiles/trojan-variants/lost-door-rat"
-        ]
+        ],
+        "synonyms": [
+          "LostDoor"
+        ],
+        "date": "2010"
       },
       "description": "Unlike most attack tools that one can only find in cybercriminal underground markets, Lost Door is very easy to obtain. It’s promoted on social media sites like YouTube and Facebook. Its maker, “OussamiO,” even has his own Facebook page where details on his creation can be found. He also has a dedicated blog (hxxp://lost-door[.]blogspot[.]com/) where tutorial videos and instructions on using the RAT is found. Any cybercriminal or threat actor can purchase and use the RAT to launch attacks.",
       "value": "Lost Door"
@@ -848,7 +913,8 @@
       "meta": {
         "refs": [
           "https://github.com/n1nj4sec/pupy"
-        ]
+        ],
+        "date": "2015"
       },
       "description": "Pupy is an opensource, cross-platform (Windows, Linux, OSX, Android) remote administration and post-exploitation tool mainly written in python ",
       "value": "Pupy"
@@ -857,7 +923,8 @@
       "meta": {
         "refs": [
           "http://novarat.sourceforge.net/"
-        ]
+        ],
+        "date": "2002"
       },
       "description": "Nova is a proof of concept demonstrating screen sharing over UDP hole punching.",
       "value": "Nova"
@@ -871,16 +938,19 @@
           "https://www.symantec.com/security_response/attacksignatures/detail.jsp?asid=20264"
         ],
         "synonyms": [
-          "Back Door Y3K RAT "
-        ]
+          "Back Door Y3K RAT",
+          "Y3k"
+        ],
+        "date": "1998"
       },
-      "value": "BD Y3K RAT "
+      "value": "BD Y3K RAT"
     },
     {
       "meta": {
         "refs": [
           "http://turkojan.blogspot.lu/"
-        ]
+        ],
+        "date": "2003"
       },
       "description": "Turkojan is a remote administration and spying tool for Microsoft Windows operating systems.",
       "value": "Turkojan"
@@ -903,7 +973,8 @@
         "synonyms": [
           "SHARK",
           "Shark"
-        ]
+        ],
+        "date": "2008"
       },
       "description": "sharK is an advanced reverse connecting, firewall bypassing remote administration tool written in VB6. With sharK you will be able to administrate every PC (using Windows OS) remotely.",
       "value": "SharK"
@@ -983,7 +1054,8 @@
         ],
         "synonyms": [
           "Ammyy"
-        ]
+        ],
+        "date": "2011"
       },
       "description": "Ammyy Admin is a completely portable remote access program that's extremely simple to setup. It works by connecting one computer to another via an ID supplied by the program.",
       "value": "Ammyy Admin"
@@ -1110,7 +1182,8 @@
       "meta": {
         "refs": [
           "http://www.nuclearwintercrew.com/Products-View/57/Bandook_RAT_v1.35__NEW_/"
-        ]
+        ],
+        "date": "2005"
       },
       "description": "Bandook is a FWB#++ reverse connection rat (Remote Administration Tool), with a small size server when packed 30 KB, and a long list of amazing features",
       "value": "Bandook RAT"
@@ -1119,30 +1192,47 @@
       "meta": {
         "refs": [
           "http://www.hacktohell.org/2011/05/setting-up-cerberus-ratremote.html"
-        ]
+        ],
+        "date": "2009"
       },
       "value": "Cerberus RAT"
     },
     {
-      "value": "Syndrome RAT"
+      "value": "Syndrome RAT",
+      "meta": {
+        "date": "2010"
+      }
     },
     {
       "meta": {
         "refs": [
           "http://www.spy-emergency.com/research/S/Snoopy.html"
-        ]
+        ],
+        "date": "2002"
       },
       "description": "Snoopy is a Remote Administration Tool. Software for controlling user computer remotely from other computer on local network or Internet.",
       "value": "Snoopy"
     },
     {
-      "value": "5p00f3r.N$ RAT"
+      "value": "5p00f3r.N$ RAT",
+      "meta": {
+        "date": "2010"
+      }
     },
     {
+      "meta": {
+        "synonyms": [
+          "P.Storrie RAT"
+        ],
+        "date": "2011"
+      },
       "value": "P. Storrie RAT"
     },
     {
-      "value": "xHacker Pro RAT"
+      "value": "xHacker Pro RAT",
+      "meta": {
+        "date": "2007"
+      }
     },
     {
       "meta": {
@@ -1161,6 +1251,880 @@
       },
       "description": "In September of 2015, a DigiTrust client visited a web link that was providing an Adobe Flash Player update. The client, an international retail organization, attempted to download and run what appeared to be a regular update. The computer trying to download this update was a back office system that processed end of day credit card transactions. This system also had the capability of connecting to the corporate network which contained company sales reports.\nDigiTrust experts were alerted to something malicious and blocked the download. The investigation found that what appeared to be an Adobe Flash Player update, was a Remote Access Trojan called NanoCore. If installation had been successful, customer credit card data, personal information, and internal sales information could have been captured and monetized. During the analysis of NanoCore, our experts found that there was much more to this RAT than simply being another Remote Access Trojan.",
       "value": "NanoCore"
+    },
+    {
+      "description": "The Zscaler ThreatLabZ research team has been monitoring a new remote access Trojan (RAT) family called Cobian RAT since February 2017. The RAT builder for this family was first advertised on multiple underground forums where cybercriminals often buy and sell exploit and malware kits. This RAT builder caught our attention as it was being offered for free and had lot of similarities to the njRAT/H-Worm family",
+      "value": "Cobian RAT",
+      "meta": {
+        "refs": [
+          "https://www.zscaler.com/blogs/research/cobian-rat-backdoored-rat"
+        ],
+        "date": "2017"
+      }
+    },
+    {
+      "description": "NetSupport Manager continues to deliver the very latest in remote access, PC support and desktop management capabilities. From a desktop, laptop, tablet or smartphone, monitor multiple systems in a single action, deliver hands-on remote support, collaborate and even record or play back sessions. When needed, gather real-time hardware and software inventory, monitor services and even view system config remotely to help resolve issues quickly.",
+      "value": "Netsupport Manager",
+      "meta": {
+        "refs": [
+          "http://www.netsupportmanager.com/index.asp"
+        ],
+        "date": "1989"
+      }
+    },
+    {
+      "value": "Vortex",
+      "meta": {
+        "date": "1998"
+      }
+    },
+    {
+      "value": "Assassin",
+      "meta": {
+        "date": "2002"
+      }
+    },
+    {
+      "value": "Net Devil",
+      "meta": {
+        "refs": [
+          "https://www.symantec.com/security_response/attacksignatures/detail.jsp?asid=20702"
+        ],
+        "date": "2002",
+        "synonyms": [
+          "NetDevil"
+        ]
+      }
+    },
+    {
+      "value": "A4Zeta",
+      "meta": {
+        "refs": [
+          "http://www.megasecurity.org/trojans/a/a4zeta/A4zeta_b2.html"
+        ],
+        "date": "2002"
+      }
+    },
+    {
+      "value": "Greek Hackers RAT",
+      "meta": {
+        "refs": [
+          "http://www.connect-trojan.net/2013/04/greek-hackers-rat-1.0.html?m=0"
+        ],
+        "date": "2002"
+      }
+    },
+    {
+      "value": "MRA RAT",
+      "meta": {
+        "refs": [
+          "http://www.connect-trojan.net/2013/04/greek-hackers-rat-1.0.html?m=0"
+        ],
+        "date": "2002"
+      }
+    },
+    {
+      "value": "Sparta RAT",
+      "meta": {
+        "refs": [
+          "http://www.connect-trojan.net/2015/09/sparta-rat-1.2-by-azooz-ejram.html"
+        ],
+        "date": "2002"
+      }
+    },
+    {
+      "value": "LokiTech",
+      "meta": {
+        "date": "2003"
+      }
+    },
+    {
+      "value": "MadRAT",
+      "meta": {
+        "date": "2002"
+      }
+    },
+    {
+      "value": "Tequila Bandita",
+      "meta": {
+        "refs": [
+          "http://www.connect-trojan.net/2013/07/tequila-bandita-1.3b2.html"
+        ],
+        "date": "2004"
+      }
+    },
+    {
+      "value": "Toquito Bandito",
+      "meta": {
+        "refs": [
+          "http://www.megasecurity.org/trojans/t/toquitobandito/Toquitobandito_all.html"
+        ],
+        "date": "2004"
+      }
+    },
+    {
+      "description": "MofoTro is a new rat coded by Cool_mofo_2.",
+      "value": "MofoTro",
+      "meta": {
+        "refs": [
+          "http://www.megasecurity.org/trojans/m/mofotro/Mofotro_beta.html",
+          "http://www.megasecurity.org/trojans/m/mofotro/Mofotroresurrection.html",
+          "http://www.megasecurity.org/trojans/m/mofotro/Mofotro_beta1.5.html"
+        ],
+        "date": "2006"
+      }
+    },
+    {
+      "description": "Written in Delphi",
+      "value": "Hav-RAT",
+      "meta": {
+        "refs": [
+          "http://www.megasecurity.org/trojans/h/hav/Havrat1.2.html"
+        ],
+        "date": "2007"
+      }
+    },
+    {
+      "description": "ComRAT is a remote access tool suspected of being a decedent of Agent.btz and used by Turla.",
+      "value": "ComRAT",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0126"
+        ],
+        "date": "2007"
+      }
+    },
+    {
+      "description": "4H RAT is malware that has been used by Putter Panda since at least 2007.",
+      "value": "4H RAT",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0065"
+        ],
+        "date": "2007"
+      }
+    },
+    {
+      "description": "",
+      "value": "Darknet RAT",
+      "meta": {
+        "refs": [
+          "http://www.connect-trojan.net/2015/06/dark-net-rat-v.0.3.9.0.html"
+        ],
+        "date": "2007",
+        "synonyms": [
+          "Dark NET RAT"
+        ]
+      }
+    },
+    {
+      "value": "CIA RAT",
+      "meta": {
+        "date": "2008"
+      }
+    },
+    {
+      "value": "Minimo",
+      "meta": {
+        "date": "2008"
+      }
+    },
+    {
+      "value": "miniRAT",
+      "meta": {
+        "date": "2008"
+      }
+    },
+    {
+      "value": "Pain RAT",
+      "meta": {
+        "date": "2008"
+      }
+    },
+    {
+      "description": "PLUGX is a remote access tool (RAT) used in targeted attacks aimed toward government-related institutions and key industries. It was utilized the same way as Poison Ivy, a RAT involved in a campaign dating back to 2008.",
+      "value": "PlugX",
+      "meta": {
+        "refs": [
+          "https://www.lastline.com/labsblog/an-analysis-of-plugx-malware/",
+          "https://www.trendmicro.com/vinfo/us/threat-encyclopedia/malware/PLUGX"
+        ],
+        "synonyms": [
+          "Korplug"
+        ],
+        "date": "2005 or 2008"
+      }
+    },
+    {
+      "description": "The existence of the UNITEDRAKE RAT first came to light in 2014 as part of a series of classified documents leaked by former NSA contractor Edward Snowden.",
+      "value": "UNITEDRAKE",
+      "meta": {
+        "refs": [
+          "http://thehackernews.com/2017/09/shadowbrokers-unitedrake-hacking.html",
+          "https://www.itnews.com.au/news/shadowbrokers-release-unitedrake-nsa-malware-472771"
+        ],
+        "date": "2008"
+      }
+    },
+    {
+      "description": "Written in Visual Basic",
+      "value": "MegaTrojan",
+      "meta": {
+        "refs": [
+          "http://www.megasecurity.org/trojans/m/mega/Megatrojan1.0.html"
+        ],
+        "date": "2008"
+      }
+    },
+    {
+      "value": "Venomous Ivy",
+      "meta": {
+        "date": "2009"
+      }
+    },
+    {
+      "value": "Xploit",
+      "meta": {
+        "date": "2010"
+      }
+    },
+    {
+      "value": "Arctic R.A.T.",
+      "meta": {
+        "refs": [
+          "http://anti-virus-soft.com/threats/artic"
+        ],
+        "synonyms": [
+          "Artic"
+        ],
+        "date": "2010"
+      }
+    },
+    {
+      "value": "GOlden Phoenix",
+      "meta": {
+        "refs": [
+          "http://www.connect-trojan.net/2014/02/golden-phoenix-rat-0.2.html"
+        ],
+        "date": "2010"
+      }
+    },
+    {
+      "value": "GraphicBooting",
+      "meta": {
+        "refs": [
+          "http://www.connect-trojan.net/2014/10/graphicbooting-rat-v0.1-beta.html?m=0"
+        ],
+        "date": "2010"
+      }
+    },
+    {
+      "value": "Pocket RAT",
+      "meta": {
+        "date": "2010"
+      }
+    },
+    {
+      "value": "Erebus",
+      "meta": {
+        "date": "2010"
+      }
+    },
+    {
+      "value": "SharpEye",
+      "meta": {
+        "refs": [
+          "http://www.connect-trojan.net/2014/10/sharpeye-rat-1.0-beta-1.html",
+          "http://www.connect-trojan.net/2014/02/sharpeye-rat-1.0-beta-2.html"
+        ],
+        "date": "2010"
+      }
+    },
+    {
+      "value": "VorteX",
+      "meta": {
+        "date": "2010"
+      }
+    },
+    {
+      "value": "Archelaus Beta",
+      "meta": {
+        "refs": [
+          "http://www.connect-trojan.net/2014/02/archelaus-rat-beta.html"
+        ],
+        "date": "2010"
+      }
+    },
+    {
+      "description": "C# RAT (Remote Adminitration Tool) - Educational purposes only",
+      "value": "BlackHole",
+      "meta": {
+        "refs": [
+          "https://github.com/hussein-aitlahcen/BlackHole"
+        ],
+        "date": "2011"
+      }
+    },
+    {
+      "value": "Vanguard",
+      "meta": {
+        "refs": [
+          "http://ktwox7.blogspot.lu/2010/12/vanguard-remote-administration.html"
+        ],
+        "date": "2010"
+      }
+    },
+    {
+      "value": "Ahtapod",
+      "meta": {
+        "refs": [
+          "http://www.ibtimes.co.uk/turkish-journalist-baris-pehlivan-jailed-terrorism-was-framed-by-hackers-says-report-1577481"
+        ],
+        "date": "2011"
+      }
+    },
+    {
+      "meta": {
+        "refs": [
+          "https://www.fireeye.com/blog/threat-research/2017/04/cve-2017-0199_useda.html"
+        ],
+        "date": "2012"
+      },
+      "description": "Though we have not identified the targets, FINSPY is sold by Gamma Group to multiple nation-state clients, and we assess with moderate confidence that it was being used along with the zero-day to carry out cyber espionage.",
+      "value": "FINSPY"
+    },
+    {
+      "description": "Seed is a firewall bypass plus trojan, injects into default browser and has a simple purpose: to be compact (4kb server size) and useful while uploading bigger and full trojans, or even making Seed download them somewhere. Has computer info, process manager, file manager, with download, create folder, delete, execute and upload. And a remote download function. Everything with a easy to use interface, reminds an instant messenger.",
+      "value": "Seed RAT",
+      "meta": {
+        "refs": [
+          "http://www.nuclearwintercrew.com/Products-View/25/Seed_1.1/"
+        ],
+        "date": "2004 or 2011"
+      }
+    },
+    {
+      "value": "SharpBot",
+      "meta": {
+        "date": "2011"
+      }
+    },
+    {
+      "value": "TorCT PHP RAT",
+      "meta": {
+        "refs": [
+          "https://github.com/alienwithin/torCT-PHP-RAT"
+        ],
+        "date": "2012"
+      }
+    },
+    {
+      "value": "A32s RAT",
+      "meta": {
+        "date": "2012"
+      }
+    },
+    {
+      "value": "Char0n",
+      "meta": {
+        "date": "2012"
+      }
+    },
+    {
+      "value": "Nytro",
+      "meta": {
+        "date": "2012"
+      }
+    },
+    {
+      "value": "Syla",
+      "meta": {
+        "refs": [
+          "http://www.connect-trojan.net/2013/07/syla-rat-0.3.html"
+        ],
+        "date": "2012"
+      }
+    },
+    {
+      "description": "Cobalt Strike is software for Adversary Simulations and Red Team Operations.",
+      "value": "Cobalt Strike",
+      "meta": {
+        "refs": [
+          "https://www.cobaltstrike.com/"
+        ],
+        "date": "2012"
+      }
+    },
+    {
+      "description": "The RAT, which according to compile timestamps first surfaced in November 2012, has been used in targeted intrusions through 2015. Sakula enables an adversary to run interactive commands as well as to download and execute additional components.",
+      "value": "Sakula",
+      "meta": {
+        "refs": [
+          "https://www.secureworks.com/research/sakula-malware-family"
+        ],
+        "synonyms": [
+          "Sakurel",
+          "VIPER"
+        ],
+        "date": "2012"
+      }
+    },
+    {
+      "description": "hcdLoader is a remote access tool (RAT) that has been used by APT18.",
+      "value": "hcdLoader",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0071"
+        ],
+        "date": "2012"
+      }
+    },
+    {
+      "value": "Crimson",
+      "meta": {
+        "refs": [
+          "http://www.connect-trojan.net/2015/01/crimson-rat-3.0.0.html"
+        ],
+        "date": "2012"
+      }
+    },
+    {
+      "value": "KjW0rm",
+      "meta": {
+        "refs": [
+          "http://hack-defender.blogspot.fr/2015/12/kjw0rm-v05x.html"
+        ],
+        "date": "2013"
+      }
+    },
+    {
+      "value": "Ghost",
+      "meta": {
+        "refs": [
+          "https://www.youtube.com/watch?v=xXZW4ajVYkI"
+        ],
+        "synonyms": [
+          "Ucul"
+        ],
+        "date": "2013"
+      }
+    },
+    {
+      "value": "9002",
+      "meta": {
+        "date": "2013"
+      }
+    },
+    {
+      "value": "Sandro RAT",
+      "meta": {
+        "date": "2014"
+      }
+    },
+    {
+      "value": "Mega",
+      "meta": {
+        "date": "2014"
+      }
+    },
+    {
+      "value": "WiRAT",
+      "meta": {
+        "date": "2014"
+      }
+    },
+    {
+      "value": "3PARA RAT",
+      "meta": {
+        "refs": [
+          "https://books.google.fr/books?isbn=2212290136"
+        ]
+      }
+    },
+    {
+      "value": "BBS RAT",
+      "meta": {
+        "date": "2014"
+      }
+    },
+    {
+      "description": "KONNI is a remote access Trojan (RAT) that was first reported in May of 2017, but is believed to have been in use for over 3 years. As Part of our daily threat monitoring, FortiGuard Labs came across a new variant of the KONNI RAT and decided to take a deeper look.",
+      "value": "Konni",
+      "meta": {
+        "refs": [
+          "https://blog.fortinet.com/2017/08/15/a-quick-look-at-a-new-konni-rat-variant",
+          "https://www.cylance.com/en_us/blog/threat-spotlight-konni-stealthy-remote-access-trojan.html",
+          "https://vallejo.cc/2017/07/08/analysis-of-new-variant-of-konni-rat/",
+          "http://blog.talosintelligence.com/2017/07/konni-references-north-korean-missile-capabilities.html"
+        ],
+        "synonyms": [
+          "KONNI"
+        ]
+      }
+    },
+    {
+      "value": "Felismus RAT",
+      "meta": {
+        "date": "2014"
+      }
+    },
+    {
+      "description": "Xsser mRAT is a piece of malware that targets iOS devices that have software limitations removed. The app is installed via a rogue repository on Cydia, the most popular third-party application store for jailbroken iPhones. Once the malicious bundle has been installed and executed, it gains persistence - preventing the user from deleting it. The mRAT then makes server-side checks and proceeds to steal data from the user's device and executes remote commands as directed by its command-and-control (C2) server.",
+      "value": "Xsser",
+      "meta": {
+        "refs": [
+          "https://blogs.akamai.com/2014/12/ios-and-android-os-targeted-by-man-in-the-middle-attacks.html",
+          "http://malware.wikia.com/wiki/Xsser_mRAT"
+        ],
+        "synonyms": [
+          "mRAT"
+        ],
+        "date": "2014"
+      }
+    },
+    {
+      "description": "GovRAT is an old cyberespionage tool, it has been in the wild since 2014 and it was used by various threat actors across the years.",
+      "value": "GovRAT",
+      "meta": {
+        "refs": [
+          "http://securityaffairs.co/wordpress/41714/cyber-crime/govrat-platform.html",
+          "http://securityaffairs.co/wordpress/51202/cyber-crime/govrat-2-0-attacks.html"
+        ],
+        "date": "2015"
+      }
+    },
+    {
+      "value": "Rottie3",
+      "meta": {
+        "refs": [
+          "https://www.youtube.com/watch?v=jUg5--68Iqs"
+        ],
+        "date": "2015"
+      }
+    },
+    {
+      "value": "Killer RAT",
+      "meta": {
+        "date": "2015"
+      }
+    },
+    {
+      "value": "Hi-Zor",
+      "meta": {
+        "refs": [
+          "https://www.fidelissecurity.com/threatgeek/2016/01/introducing-hi-zor-rat"
+        ],
+        "date": "2015"
+      }
+    },
+    {
+      "description": "Quaverse RAT or QRAT is a fairly new Remote Access Tool (RAT) introduced in May 2015. This RAT is marketed as an undetectable Java RAT. As you might expect from a RAT, the tool is capable of grabbing passwords, key logging and browsing files on the victim's computer. On a regular basis for the past several months, we have observed the inclusion of QRAT in a number of spam campaigns. ",
+      "value": "Quaverse",
+      "meta": {
+        "refs": [
+          "https://www.trustwave.com/Resources/SpiderLabs-Blog/Quaverse-RAT--Remote-Access-as-a-Service/"
+        ],
+        "synonyms": [
+          "QRAT"
+        ],
+        "date": "2015"
+      }
+    },
+    {
+      "value": "Heseber",
+      "meta": {
+        "date": "2015"
+      }
+    },
+    {
+      "description": "Cardinal is a remote access trojan (RAT) discovered by Palo Alto Networks in 2017 and has been active for over two years. It is delivered via a downloader, known as Carp, and uses malicious macros in Microsoft Excel documents to compile embedded C# programming language source code into an executable that runs and deploys the Cardinal RAT. The malicious Excel files use different tactics to get the victims to execute it. ",
+      "value": "Cardinal",
+      "meta": {
+        "refs": [
+          "https://researchcenter.paloaltonetworks.com/2017/04/unit42-cardinal-rat-active-two-years/",
+          "https://www.scmagazine.com/cardinal-rats-unique-downloader-allowed-it-to-avoid-detection-for-years/article/651927/",
+          "https://www.cyber.nj.gov/threat-profiles/trojan-variants/cardinal"
+        ],
+        "date": "2015"
+      }
+    },
+    {
+      "description": "Works on all Android, Windows, Linux and Mac devices!",
+      "value": "OmniRAT",
+      "meta": {
+        "refs": [
+          "https://omnirat.eu/en/"
+        ],
+        "date": "2015"
+      }
+    },
+    {
+      "value": "Jfect",
+      "meta": {
+        "refs": [
+          "https://www.youtube.com/watch?v=qKdoExQFb68"
+        ],
+        "date": "2015"
+      }
+    },
+    {
+      "description": "Trochilus is a remote access trojan (RAT) first identified in October 2015 when attackers used it to infect visitors of a Myanmar website. It was then used in a 2016 cyber-espionage campaign, dubbed \"the Seven Pointed Dagger,\" managed by another group, \"Group 27,\" who also uses the PlugX trojan. Trochilus is primarily spread via emails with a malicious .RAR attachment containing the malware. The trojan's functionality includes a shellcode extension, remote uninstall, a file manager, and the ability to download and execute, upload and execute, and access the system information. Once present on a system, Trochilus can move laterally in the network for better access. This trojan operates in memory only and does not write to the disk, helping it evade detection. ",
+      "value": "Trochilus",
+      "meta": {
+        "refs": [
+          "https://researchcenter.paloaltonetworks.com/2017/03/unit42-trochilus-rat-new-moonwind-rat-used-attack-thai-utility-organizations/",
+          "http://securityaffairs.co/wordpress/43889/cyber-crime/new-rat-trochilus.html"
+        ],
+        "date": "2015"
+      }
+    },
+    {
+      "description": "Their most commonly used initial attack vector is a simple, yet alarmingly effective, spearphishing attack, infecting unsuspecting victims via a malicious email attachment (usually an executable that has been disguised as something else). From there, Matryoshka runs second stage malware via a dropper and covertly installs a Remote Access Toolkit (RAT). This is done using a reflective loader technique that allows the malware to run in process memory, rather than being written to disk. This not only hides the install of the RAT but also ensures that the RAT will be ‘reinstalled’ after system restart.",
+      "value": "Matryoshka",
+      "meta": {
+        "refs": [
+          "https://www.alienvault.com/blogs/security-essentials/matryoshka-malware-from-copykittens-group"
+        ],
+        "date": "2015"
+      }
+    },
+    {
+      "description": "First discovered by Trend Micro in June, Mangit is a new malware family being marketed on both the Dark web and open internet. Users have the option to rent the trojan's infrastructure for about $600 per 10-day period or buy the source code for about $8,800. Mangit was allegedly developed by  \"Ric\", a Brazilian hacker, who makes himself available via Skype to discuss rental agreements. Once the malware is rented or purchased, the user controls a portion of the Mangit botnet, the trojan, the dropper, an auto-update system, and the server infrastructure to run their attacks. Mangit contains support for nine Brazillian banks including Citibank, HSBC, and Santander. The malware can also be used to steal user PayPal credentials. Mangit has the capability to collect banking credentials, receive SMS texts when a victim is accessing their bank account, and take over victim's browsers. To circumvent two-factor authentication, attackers can use Mangit to lock victim's browsers and push pop-ups to the victim asking for the verification code they just received.",
+      "value": "Mangit",
+      "meta": {
+        "refs": [
+          "http://virusguides.com/newly-discovered-mangit-malware-offers-banking-trojan-service/",
+          "https://www.cyber.nj.gov/threat-profiles/trojan-variants/mangit",
+          "http://news.softpedia.com/news/new-malware-mangit-surfaces-as-banking-trojan-as-a-service-505458.shtml"
+        ],
+        "date": "2016"
+      }
+    },
+    {
+      "value": "LeGeNd",
+      "meta": {
+        "refs": [
+          "http://www.connect-trojan.net/2016/08/legend-rat-v1.3-by-ahmed-ibrahim.html",
+          "http://www.connect-trojan.net/2016/11/legend-rat-v1.9-by-ahmed-ibrahim.html"
+        ],
+        "date": "2016"
+      }
+    },
+    {
+      "description": "Revenge v0.1 was a simple tool, according to a researcher known as Rui, who says the malware’s author didn’t bother obfuscating the RAT’s source code. This raised a question mark with the researchers, who couldn’t explain why VirusTotal scanners couldn’t pick it up as a threat right away.Revenge, which was written in Visual Basic, also didn’t feature too many working features, compared to similar RATs. Even Napolean admitted that his tool was still in the early development stages, a reason why he provided the RAT for free.",
+      "value": "Revenge-RAT",
+      "meta": {
+        "refs": [
+          "http://www.securitynewspaper.com/2016/08/31/unsophisticated-revenge-rat-released-online-free-exclusive/"
+        ],
+        "date": "2016"
+      }
+    },
+    {
+      "value": "vjw0rm 0.1",
+      "meta": {
+        "refs": [
+          "https://twitter.com/malwrhunterteam/status/816993165119016960?lang=en"
+        ],
+        "date": "2016"
+      }
+    },
+    {
+      "description": "ROKRAT is a remote access trojan (RAT) that leverages a malicious Hangual Word Processor (HWP) document sent in spearphishing emails to infect hosts. The HWP document contains an embedded Encapsulated PostScript (EPS) object. The object exploits an EPS buffer overflow vulnerability and downloads a binary disguised as a .JPG file. The file is then decoded and the ROKRAT executable is initiated. The trojan uses legitimate Twitter, Yandex, and Mediafire websites for its command and control communications and exfiltration platforms, making them difficult to block globally. Additionally, the platforms use HTTPS connections, making it more difficult to gather additional data on its activities. Cisco's Talos Group identified two email campaigns. In one, attackers send potential victims emails from an email server of a private university in Seoul, South Korea with a sender email address of \"kgf2016@yonsei.ac.kr,\" the contact email for the Korea Global Forum, adding a sense of legitimacy to the email. It is likely that the email address was compromised and used by the attackers in this campaign. The second is less sophisticated and sends emails claiming to be from a free Korean mail service with a the subject line, \"Request Help\" and attached malicious HWP filename, \"I'm a munchon person in Gangwon-do, North Korea.\" The ROKRAT developer uses several techniques to hinder analysis, including identifying tools usually used by malware analysts or within sandbox environments. Once it has infected a device, this trojan can execute commands, move a file, remove a file, kill a process, download and execute a file, upload documents, capture screenshots, and log keystrokes. Researchers believe the developer is a native Korean speaker and the campaign is currently targeting Korean-speakers.",
+      "value": "rokrat",
+      "meta": {
+        "refs": [
+          "http://blog.talosintelligence.com/2017/04/introducing-rokrat.html"
+        ],
+        "date": "2016"
+      }
+    },
+    {
+      "description": "Travelers applying for a US Visa in Switzerland were recently targeted by cyber-criminals linked to a malware called QRAT. Twitter user @hkashfi posted a Tweet saying that one of his friends received a file (US Travel Docs Information.jar) from someone posing as USTRAVELDOCS.COM support personnel using the Skype account ustravelidocs-switzerland (notice the “i” between “travel” and “docs”).",
+      "value": "Qarallax",
+      "meta": {
+        "refs": [
+          "https://labsblog.f-secure.com/2016/06/07/qarallax-rat-spying-on-us-visa-applicants/"
+        ],
+        "synonyms": [
+          "qrat"
+        ],
+        "date": "2016"
+      }
+    },
+    {
+      "description": "MoonWind is a remote access tool (RAT) that was used in 2016 to target organizations in Thailand.",
+      "value": "MoonWind",
+      "meta": {
+        "refs": [
+          "https://researchcenter.paloaltonetworks.com/2017/03/unit42-trochilus-rat-new-moonwind-rat-used-attack-thai-utility-organizations/",
+          "https://attack.mitre.org/wiki/Software/S0149"
+        ],
+        "date": "2016"
+      }
+    },
+    {
+      "description": "Remcos is another RAT (Remote Administration Tool) that was first discovered being sold in hacking forums in the second half of 2016. Since then, it has been updated with more features, and just recently, we’ve seen its payload being distributed in the wild for the first time.",
+      "value": "Remcos",
+      "meta": {
+        "refs": [
+          "https://blog.fortinet.com/2017/02/14/remcos-a-new-rat-in-the-wild-2"
+        ],
+        "date": "2016"
+      }
+    },
+    {
+      "description": "The purpose of the Client Maximus malware is financial fraud. As such, its code aspires to create the capabilities that most banking Trojans have, which allow attackers to monitor victims’ web navigation and interrupt online banking session at will. After taking over a victim’s banking session, an attacker operating this malware can initiate a fraudulent transaction from the account and use social engineering screens to manipulate the unwitting victim into authorizing it.",
+      "value": "Client Maximus",
+      "meta": {
+        "refs": [
+          "https://securityintelligence.com/client-maximus-new-remote-overlay-malware-highlights-rising-malcode-sophistication-in-brazil/"
+        ],
+        "date": "2016"
+      }
+    },
+    {
+      "description": "Thefatrat a massive exploiting tool revealed >> An easy tool to generate backdoor and easy tool to post exploitation attack like browser attack,dll . This tool compiles a malware with popular payload and then the compiled malware can be execute on windows, android, mac . The malware that created with this tool also have an ability to bypass most… ",
+      "value": "TheFat RAT",
+      "meta": {
+        "refs": [
+          "https://github.com/Screetsec/TheFatRat"
+        ],
+        "date": "2016"
+      }
+    },
+    {
+      "description": "Since around October 2016, JPCERT/CC has been confirming information leakage and other damages caused by malware ‘RedLeaves’. It is a new type of malware which has been observed since 2016 in attachments to targeted emails.",
+      "value": "RedLeaves",
+      "meta": {
+        "refs": [
+          "http://blog.jpcert.or.jp/2017/04/redleaves---malware-based-on-open-source-rat.html"
+        ],
+        "date": "2016"
+      }
+    },
+    {
+      "description": "Dubbed Rurktar, the tool hasn’t had all of its functionality implemented yet, but G DATA says “it is relatively safe to say [it] is intended for use in targeted spying operations.” The malicious program could be used for reconnaissance operations, as well as to spy on infected computers users, and steal or upload files.",
+      "value": "Rurktar",
+      "meta": {
+        "refs": [
+          "http://www.securityweek.com/rurktar-malware-espionage-tool-development"
+        ],
+        "date": "2017"
+      }
+    },
+    {
+      "description": "RATAttack is a remote access trojan (RAT) that uses the Telegram protocol to support encrypted communication between the victim's machine and the attacker. The Telegram protocol also provides a simple method to communicate to the target, negating the need for port forwarding. Before using RATAttack, the attacker must create a Telegram bot and embed the bot's Telegram token into the trojan's configuration file. When a system is infected with RATAttack, it connects to the bot's Telegram channel. The attacker can then connect to the same channel and manage the RATAttack clients on the infected host machines. The trojan's code was available on GitHub then was taken down by the author on April 19, 2017.",
+      "value": "RATAttack",
+      "meta": {
+        "refs": [
+          "https://www.cyber.nj.gov/threat-profiles/trojan-variants/ratattack"
+        ],
+        "date": "2017"
+      }
+    },
+    {
+      "description": "So called because the Command and Control (C2) infrastructure from previous variants of the malware was located in Cambodia, as discussed by Roland Dela Paz at Forecpoint here, KHRAT is a Trojan that registers victims using their infected machine’s username, system language and local IP address. KHRAT provides the threat actors typical RAT features and access to the victim system, including keylogging, screenshot capabilities, remote shell access and so on.",
+      "value": "KhRAT",
+      "meta": {
+        "refs": [
+          "https://researchcenter.paloaltonetworks.com/2017/08/unit42-updated-khrat-malware-used-in-cambodia-attacks/"
+        ],
+        "date": "2017"
+      }
+    },
+    {
+      "description": "",
+      "value": "RevCode",
+      "meta": {
+        "refs": [
+          "https://revcode.eu/"
+        ],
+        "date": "2017"
+      }
+    },
+    {
+      "description": "Android Remote Administration Tool",
+      "value": "AhNyth Android",
+      "meta": {
+        "refs": [
+          "https://github.com/AhMyth/AhMyth-Android-RAT"
+        ],
+        "date": "2017"
+      }
+    },
+    {
+      "value": "Socket23",
+      "description": "SOCKET23 was launched from his web site and immedi- ately infected major French corporations between August and October 1998. The virus (distributing the Trojan) was known as W32/HLLP.DeTroie.A (alias W32/Cheval.TCV).  Never had a virus so disrupted French industry. The author quickly offered his own remover and made his apologies on his web site (now suppressed). Jean-Christophe X (18) was arrested on Tuesday 15 June 1999 in the Paris area and placed under judicial investigation for ‘fraudulent intrusion of data in a data processing system, suppression and fraudulent modification of data’",
+      "meta": {
+        "refs": [
+          "https://www.virusbulletin.com/uploads/pdf/magazine/1999/199908.pdf"
+        ],
+        "date": "1998"
+      }
+    },
+    {
+      "value": "PowerRAT",
+      "meta": {
+        "date": "2017"
+      }
+    },
+    {
+      "description": "MacSpy is advertised as the \"most sophisticated Mac spyware ever\", with the low starting price of free. While the idea of malware-as-a-service (MaaS) isn’t a new one with players such as Tox and Shark the game, it can be said that MacSpy is one of the first seen for the OS X platform.",
+      "value": "MacSpy",
+      "meta": {
+        "refs": [
+          "https://www.alienvault.com/blogs/labs-research/macspy-os-x-rat-as-a-service"
+        ],
+        "date": "2017"
+      }
+    },
+    {
+      "description": "Talos recently analyzed an interesting malware sample that made use of DNS TXT record queries and responses to create a bidirectional Command and Control (C2) channel. This allows the attacker to use DNS communications to submit new commands to be run on infected machines and return the results of the command execution to the attacker. This is an extremely uncommon and evasive way of administering a RAT. The use of multiple stages of Powershell with various stages being completely fileless indicates an attacker who has taken significant measures to avoid detection. ",
+      "value": "DNSMessenger",
+      "meta": {
+        "refs": [
+          "http://blog.talosintelligence.com/2017/03/dnsmessenger.html"
+        ],
+        "date": "2017"
+      }
+    },
+    {
+      "value": "PentagonRAT",
+      "meta": {
+        "refs": [
+          "http://pentagon-rat.blogspot.fr/"
+        ],
+        "date": "2017"
+      }
+    },
+    {
+      "description": "NewCore is a remote access trojan first discovered by Fortinet researchers while conducting analysis on a China-linked APT campaign targeting Vietnamese organizations. The trojan is a DLL file, executed after a trojan downloader is installed on the targeted machine. Based on strings in the code, the trojan may be compiled from the publicly-available source code of the PcClient and PcCortr backdoor trojans.",
+      "value": "NewCore",
+      "meta": {
+        "refs": [
+          "https://www.cyber.nj.gov/threat-profiles/trojan-variants/newcore"
+        ],
+        "date": "2017"
+      }
+    },
+    {
+      "value": "Deeper RAT",
+      "meta": {
+        "date": "2010"
+      }
+    },
+    {
+      "value": "Xyligan",
+      "meta": {
+        "date": "2012"
+      }
+    },
+    {
+      "value": "H-w0rm",
+      "meta": {
+        "date": "2013"
+      }
     }
   ]
 }

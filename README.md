@@ -25,13 +25,14 @@ to localized information (which is not shared) or additional information (that c
 - [clusters/threat-actor.json](clusters/threat-actor.json) - Adversary groups - Known or estimated adversary groups targeting organizations and employees. Adversary groups are regularly confused with their initial operation or campaign. MISP
 - [clusters/tool.json](clusters/tool.json) - tool is an enumeration of tools used by adversaries. The list includes malware but also common software regularly used by the adversaries.
 
-
 - [clusters/mitre_attack-pattern.json](clusters/mitre_attack-pattern.json) - Attack Pattern - MITRE Adversarial Tactics, Techniques & Common Knowledge (ATT&CK)
 - [clusters/mitre_course-of-action.json](clusters/mitre_course-of-action.json) - Course of Action - MITRE Adversarial Tactics, Techniques & Common Knowledge (ATT&CK)
 - [clusters/mitre_intrusion-set.json](clusters/mitre_intrusion-set.json) - Intrusion Test - MITRE Adversarial Tactics, Techniques & Common Knowledge (ATT&CK)
 - [clusters/mitre_malware.json](clusters/mitre_malware.json) - Malware - MITRE Adversarial Tactics, Techniques & Common Knowledge (ATT&CK)
 - [clusters/mitre_tool.json](clusters/mitre_tool.json) - Tool - MITRE Adversarial Tactics, Techniques & Common Knowledge (ATT&CK)
 
+- [clusters/sectors.json](clusters/sectors.json) - Activity sectors
+- [clusters/cert-eu-govsector,json](clusters/cert-eu-govsector,json) - Cert EU GovSector 
 
 # Available Vocabularies
 
@@ -41,9 +42,13 @@ A [readable PDF overview of the MISP galaxy is available](https://www.misp.softw
 ## Common
 
 - [vocabularies/common/certainty-level.json](vocabularies/common/certainty-level.json) - Certainty level of an associated element or cluster.
+- [vocabularies/common/threat-actor-type.json](vocabularies/common/threat-actor-type.json) - threat actor type vocab as defined by Cert EU.
+- [vocabularies/common/ttp-category.json](vocabularies/common/ttp-category.json) - ttp category vocab as defined by Cert EU.
+- [vocabularies/common/ttp-type.json](vocabularies/common/ttp-type.json) - ttp type vocab as defined by Cert EU.
 
 ## Threat Actor
 
+- [vocabularies/threat-actor/cert-eu-motive.json](vocabularies/threat-actor/cert-eu-motive.json) - Motive vocab as defined by Cert EU.
 - [vocabularies/threat-actor/intended-effect-vocabulary.json](vocabularies/threat-actor/intended-effect.json) - The IntendedEffectVocab is the default STIX vocabulary for expressing the intended effect of a threat actor. STIX 1.2.1
 - [vocabularies/threat-actor/motivation-vocabulary.json](vocabularies/threat-actor/motivation.json) - The MotivationVocab is the default STIX vocabulary for expressing the motivation of a threat actor. STIX 1.2.1
 - [vocabularies/threat-actor/planning-and-operational-support-vocabulary.json](vocabularies/threat-actor/planning-and-operational-support.json) - The PlanningAndOperationalSupportVocab is the default STIX vocabulary for expressing the planning and operational support functions available to a threat actor.
