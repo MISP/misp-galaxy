@@ -29,9 +29,9 @@ for element in os.listdir('.'):
                 if 'url' in reference:                    
                     value['meta']['refs'].append(reference['url'])
             if 'x_mitre_data_sources' in temp:
-                value['meta']['x_mitre_data_sources'] = temp['x_mitre_data_sources']
+                value['meta']['mitre_data_sources'] = temp['x_mitre_data_sources']
             if 'x_mitre_platforms' in temp:
-                value['meta']['x_mitre_platforms'] = temp['x_mitre_platforms']
+                value['meta']['mitre_platforms'] = temp['x_mitre_platforms']
             values.append(value)
             value['meta']['uuid'] = re.search('--(.*)$', temp['id']).group(0)[2:]
 
