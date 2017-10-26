@@ -38,6 +38,7 @@ galaxy['type'] = "mitre-intrusion-set"
 galaxy['description'] = "Name of ATT&CK Group"
 galaxy['uuid' ] = "1023f364-7831-11e7-8318-43b5531983ab"
 galaxy['version'] = args.version
+galaxy['icon'] = "user-secret"
 
 cluster = {} 
 cluster['name'] = "intrusion Set"
