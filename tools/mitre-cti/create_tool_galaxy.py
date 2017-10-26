@@ -39,6 +39,7 @@ galaxy['type'] = "mitre-tool"
 galaxy['description'] = "Name of ATT&CK software"
 galaxy['uuid' ] = "d5cbd1a2-78f6-11e7-a833-7b9bccca9649"
 galaxy['version'] = args.version
+galaxy['icon'] = "gavel"
 
 cluster = {} 
 cluster['name'] = "Tool"
