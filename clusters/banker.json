@@ -36,8 +36,6 @@
           "https://feodotracker.abuse.ch/"
         ],
         "synonyms": [
-          "Bugat",
-          "Cridex",
           "Feodo Version D"
         ],
         "date": "Discovery in 2014, still active"
@@ -174,7 +172,7 @@
         ],
         "date": "First seen ~ Spring 2016"
       },
-      "description": " ",
+      "description": "Zeus like banking trojan that is delivered primarily through malspam emails and exploit kits.",
       "value": "Panda Banker"
     },
     {
@@ -202,16 +200,6 @@
       },
       "description": "Chthonic according to Kaspersky is an evolution of Zeus VM.  It uses the same encryptor as Andromeda bot, the same encryption scheme as Zeus AES and Zeus V2 Trojans, and a virtual machine similar to that used in ZeusVM and KINS malware.",
       "value": "Chthonic"
-    },
-    {
-      "meta": {
-        "refs": [
-          "https://researchcenter.paloaltonetworks.com/2016/02/new-android-trojan-xbot-phishes-credit-cards-and-bank-accounts-encrypts-devices-for-ransom/"
-        ],
-        "date": "Discovered ~February 2016"
-      },
-      "description": "Android banking trojan that tries to steal victims’ banking credentials and credit card information via phishing pages crafted to mimic Google Play’s payment interface as well as the login pages of 7 different banks’ apps.",
-      "value": "Xbot"
     },
     {
       "meta": {
@@ -266,25 +254,10 @@
       "meta": {
         "refs": [
           "https://feodotracker.abuse.ch/",
-          "https://www.cert.pl/en/news/single/analysis-of-emotet-v4/"
-        ],
-        "synonyms": [
-          "Emotet v4",
-          "Feodo Version E"
-        ],
-        "date": "Discovered in March 2017."
-      },
-      "description": "Heodo is a successor of Geodo / Emotet (Version C or v3). It is a botnet capable of downloading modules including a banker module that uses MiTB techniques to steal banking information from victims.  It is primarily delivered via malicious email (malspam) campaigns. ",
-      "value": "Heodo"
-    },
-    {
-      "meta": {
-        "refs": [
-          "https://feodotracker.abuse.ch/",
           "http://blog.trendmicro.com/trendlabs-security-intelligence/new-banking-malware-uses-network-sniffing-for-data-theft/"
         ],
         "synonyms": [
-          "Feodo Version B",
+          "Feodo Version C",
           "Emotet"
         ],
         "date": "Discovered ~Summer 2014"
@@ -305,7 +278,7 @@
         ],
         "date": "Discovered ~September 2011"
       },
-      "description": "Feodo is a banking trojan that utilizes web injects and is also capable of monitoring & manipulating cookies. It is delivered primarily via exploit kits and malspam emails.",
+      "description": "Feodo is a banking trojan that utilizes web injects and is also capable of monitoring & manipulating cookies. Version A = Port 8080, Version B = Port 80 It is delivered primarily via exploit kits and malspam emails.",
       "value": "Feodo"
     },
     {
@@ -379,18 +352,132 @@
           "http://securityintelligence.com/tsukuba-banking-trojan-phishing-in-japanese-waters/"
         ],
         "synonyms": [
-          "Tsukaba",
+          "Tsukuba",
           "Werdlod"
         ],
         "date": "Discovered in 2014"
       },
       "description": "Retefe is a banking trojan that is distributed by what SWITCH CERT calls the Retefe gang or Operation Emmental.  It uses geolocation based targeting.  It also leverages fake root certificate and changes the DNS server for domain name resolution in order to display fake banking websites to victims. It is spread primarily through malspam emails. ",
       "value": "Retefe"
+    },
+    {
+      "meta": {
+        "refs": [
+          "http://www.malwaredigger.com/2015/06/rovnix-payload-and-plugin-analysis.html",
+          "https://www.symantec.com/connect/blogs/new-carberp-variant-heads-down-under",
+          "http://www.malwaredigger.com/2015/05/rovnix-dropper-analysis.html",
+          "http://blog.trendmicro.com/trendlabs-security-intelligence/rovnix-infects-systems-with-password-protected-macros/"
+        ],
+        "date": "Discovered ~early 2015"
+      },
+      "description": "ReactorBot is sometimes mistakenly tagged as Rovnix. ReactorBot is a full fledged modular bot that includes a banking module that has roots with the Carberp banking trojan. Distributed primarily via malspam emails.",
+      "value": "ReactorBot"
+    },
+    {
+      "meta": {
+        "refs": [
+          "https://www.arbornetworks.com/blog/asert/another-banker-enters-matrix/"
+        ],
+        "date": "Discovered ~Spring 2017"
+      },
+      "description": "Matrix Banker is named accordingly because of the Matrix reference in it's C2 panel. Distributed primarily via malspam emails.",
+      "value": "Matrix Banker"
+    },
+    {
+      "meta": {
+        "refs": [
+          "https://heimdalsecurity.com/blog/zeus-gameover/",
+          "https://www.us-cert.gov/ncas/alerts/TA14-150A"
+        ],
+        "date": "Discovered ~Sept. 2011"
+      },
+      "description": "Zeus Gameover captures banking credentials from infected computers, then use those credentials to initiate or re-direct wire transfers to accounts overseas that are controlled by the criminals. GameOver has a decentralized, peer-to-peer command and control infrastructure rather than centralized points of origin. Distributed primarily via malspam emails and exploit kits.",
+      "value": "Zeus Gameover"
+    },
+    {
+      "meta": {
+        "refs": [
+          "https://www.ioactive.com/pdfs/ZeusSpyEyeBankingTrojanAnalysis.pdf",
+          "https://www.computerworld.com/article/2509482/security0/spyeye-trojan-defeating-online-banking-defenses.html",
+          "https://www.symantec.com/connect/blogs/spyeye-bot-versus-zeus-bot"
+        ],
+        "date": "Discovered early 2011"
+      },
+      "description": "SpyEye is a similar to the Zeus botnet banking trojan. It utilizes a web control panel for C2 and can perform form grabbing, autofill credit card modules, ftp grabber, pop3 grabber and HTTP basic access authorization grabber.  It also contained a Kill Zeus feature which would remove any Zeus infections if SpyEye was on the system.  Distributed primarily via exploit kits and malspam emails.",
+      "value": "SpyEye"
+    },
+    {
+      "meta": {
+        "refs": [
+          "https://blog.malwarebytes.com/threat-analysis/2012/11/citadel-a-cyber-criminals-ultimate-weapon/",
+          "https://krebsonsecurity.com/tag/citadel-trojan/",
+          "https://securityintelligence.com/cybercriminals-use-citadel-compromise-password-management-authentication-solutions/"
+        ],
+        "date": "Discovered ~January 2012"
+      },
+      "description": "Citadel is an offspring of the Zeus banking trojan. Delivered primarily via exploit kits.",
+      "value": "Citadel"
+    },
+    {
+      "meta": {
+        "refs": [
+          "https://heimdalsecurity.com/blog/security-alert-citadel-trojan-resurfaces-atmos-zeus-legacy/",
+          "http://www.xylibox.com/2016/02/citadel-0011-atmos.html"
+        ],
+        "date": "Discovered ~spring 2016"
+      },
+      "description": "Atmos is derived from the Citadel banking trojan. Delivered primarily via exploit kits and malspam emails.",
+      "value": "Atmos"
+    },
+    {
+      "meta": {
+        "refs": [
+          "https://securelist.com/ice-ix-not-cool-at-all/29111/ "
+        ],
+        "date": "Discovered ~Fall 2011"
+      },
+      "description": "Ice IX is a bot created using the source code of ZeuS 2.0.8.9.  No major improvements compared to ZeuS 2.0.8.9.",
+      "value": "Ice IX"
+    },
+    {
+      "meta": {
+        "refs": [
+          "https://securelist.com/zeus-in-the-mobile-for-android-10/29258/"
+        ],
+        "date": "Discovered ~end of 2010"
+      },
+      "description": "Zeus in the mobile. Banking trojan developed for mobile devices such as Windows Mobile, Blackberry and Android.",
+      "value": "Zitmo"
+    },
+    {
+      "meta": {
+        "refs": [
+          "https://johannesbader.ch/2015/09/three-variants-of-murofets-dga/",
+          "https://www.trendmicro.com/vinfo/us/threat-encyclopedia/malware/PE_LICAT.A",
+          "https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=Virus%3aWin32%2fMurofet.A"
+        ],
+        "synonyms": [
+          "Murofet"
+        ],
+        "date": "Discovered in 2010"
+      },
+      "description": "Banking trojan based on Zeus V2.  Murofet is a newer version of Licat found ~end of 2011 ",
+      "value": "Licat"
+    },
+    {
+      "meta": {
+        "refs": [
+          "https://blog.rapid7.com/2012/12/06/skynet-a-tor-powered-botnet-straight-from-reddit/"
+        ],
+        "date": "Discovered end of 2012"
+      },
+      "description": "Skynet is a Tor-powered trojan with DDoS, Bitcoin mining and Banking capabilities.  Spread via USENET as per rapid7. ",
+      "value": "Skynet"
     }
   ],
-  "version": 2,
+  "version": 3,
   "uuid": "59f20cce-5420-4084-afd5-0884c0a83832",
-  "description": "Banking malware galaxy.",
+  "description": "A list of banker malware.",
   "authors": [
     "Unknown"
   ],
