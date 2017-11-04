@@ -42,6 +42,8 @@ args = argParser.parse_args()
 def header(adoc=False):
     if adoc is False:
         return False
+
+    dedication = "\n[dedication]\n== Funding and Support\nThe MISP project is financially and resource supported by https://www.circl.lu/[CIRCL Computer Incident Response Center Luxembourg ].\n\nimage:{images-misp}logo.png[CIRCL logo]\n\nA CEF (Connecting Europe Facility) funding under CEF-TC-2016-3 - Cyber Security has been granted from 1st September 2017 until 31th August 2019 as ***Improving MISP as building blocks for next-generation information sharing***.\n\nimage:{images-misp}en_cef.png[CEF funding]\n\nIf you are interested to co-fund projects around MISP, feel free to get in touch with us.\n\n"
     doc = adoc
     doc = doc + ":toc: right\n"
     doc = doc + ":toclevels: 1\n"
@@ -50,12 +52,19 @@ def header(adoc=False):
     doc = doc + ":sectanchors:\n"
     doc = doc + ":sectlinks:\n"
     doc = doc + ":images-cdn: https://raw.githubusercontent.com/MISP/MISP/2.4/INSTALL/logos/\n"
+    doc = doc + ":images-misp: https://www.misp-project.org/assets/images/\n"
     doc = doc + "\n= MISP Galaxy Clusters\n\n"
-    doc = doc + "Generated from https://github.com/MISP/misp-galaxy.\n\n"
-    doc = doc + "\nimage::{images-cdn}misp-logo.png[MISP logo]\n"
+    doc = doc + "= Introduction\n"
+    doc = doc + "\nimage::{images-cdn}misp-logo.png[MISP logo]\n\n"
+    doc = doc + "The MISP threat sharing platform is a free and open source software helping information sharing of threat intelligence including cyber security indicators, financial fraud or counter-terrorism information. The MISP project includes multiple sub-projects to support the operational requirements of analysts and improve the overall quality of information shared.\n\n"
+    doc = doc + ""
     doc = "{}{}".format(doc, "\nMISP galaxy is a simple method to express a large object called cluster that can be attached to MISP events or attributes. A cluster can be composed of one or more elements. Elements are expressed as key-values. There are default vocabularies available in MISP galaxy but those can be overwritten, replaced or updated as you wish.  Existing clusters and vocabularies can be used as-is or as a template. MISP distribution can be applied to each cluster to permit a limited or broader distribution scheme.\n")
+    doc = doc + "The following document is generated from the machine-readable JSON describing the https://github.com/MISP/misp-galaxy[MISP galaxy]."
     doc = doc + "\n\n"
-
+    doc = doc + "<<<\n"
+    doc = doc + dedication
+    doc = doc + "<<<\n"
+    doc = doc + "= MISP galaxy\n"
     return doc
 
 def asciidoc(content=False, adoc=None, t='title',title=''):
@@ -103,4 +112,6 @@ for cluster in clusters:
             adoc = asciidoc(content=v['description'], adoc=adoc, t='description')
         if 'meta' in v:
             adoc = asciidoc(content=v['meta'], adoc=adoc, t='meta', title=v['value'])
+
+
 print (adoc)
