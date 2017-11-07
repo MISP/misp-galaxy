@@ -16,6 +16,8 @@ to localized information (which is not shared) or additional information (that c
 
 # Available clusters
 
+- [clusters/android.json](clusters/android.json) - Android malware galaxy based on multiple open sources.
+- [clusters/banker.json](clusters/banker.json) - A list of banker malware.
 - [clusters/exploit-kit.json](clusters/exploit-kit.json) - Exploit-Kit is an enumeration of some exploitation kits used by adversaries. The list includes document, browser and router exploit kits. It's not meant to be totally exhaustive but aim at covering the most seen in the past 5 years.
 - [clusters/microsoft-activity-group.json](clusters/microsoft-activity-group.json) - Activity groups as described by Microsoft.
 - [clusters/preventive-measure.json](clusters/preventive-measure.json) - Preventive measures.
@@ -32,7 +34,7 @@ to localized information (which is not shared) or additional information (that c
 - [clusters/mitre_tool.json](clusters/mitre_tool.json) - Tool - MITRE Adversarial Tactics, Techniques & Common Knowledge (ATT&CK)
 
 - [clusters/sectors.json](clusters/sectors.json) - Activity sectors
-- [clusters/cert-eu-govsector,json](clusters/cert-eu-govsector,json) - Cert EU GovSector 
+- [clusters/cert-eu-govsector,json](clusters/cert-eu-govsector,json) - Cert EU GovSector
 
 # Available Vocabularies
 
