@@ -34,7 +34,7 @@ to localized information (which is not shared) or additional information (that c
 - [clusters/mitre_tool.json](clusters/mitre_tool.json) - Tool - MITRE Adversarial Tactics, Techniques & Common Knowledge (ATT&CK)
 
 - [clusters/sectors.json](clusters/sectors.json) - Activity sectors
-- [clusters/cert-eu-govsector,json](clusters/cert-eu-govsector,json) - Cert EU GovSector
+- [clusters/cert-eu-govsector.json](clusters/cert-eu-govsector,json) - Cert EU GovSector
 
 # Available Vocabularies
 
