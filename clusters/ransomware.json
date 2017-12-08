@@ -8634,12 +8634,42 @@
           ".fucku"
         ]
       }
+    },
+    {
+      "value": "qkG",
+      "description": "Security researchers have discovered a new ransomware strain named qkG that targets only Office documents for encryption and infects the Word default document template to propagate to new Word documents opened through the same Office suite on the same computer.",
+      "meta": {
+        "refs": [
+          "https://www.bleepingcomputer.com/news/security/qkg-ransomware-encrypts-only-word-documents-hides-and-spreads-via-macros/"
+        ]
+      }
+    },
+    {
+      "value": "Scarab",
+      "description": "The Scarab ransomware is a relatively new ransomware strain that was first spotted by security researcher Michael Gillespie in June this year.\nWritten in Delphi, the first version was simplistic and was recognizable via the \".scarab\" extension it appended after the names of encrypted files.\nMalwarebytes researcher Marcelo Rivera spotted a second version in July that used the \".scorpio\" extension. The version spotted with the Necurs spam today has reverted back to using the .scarab extension.\nThe current version of Scarab encrypts files but does not change original file names as previous versions. This Scarab version appends each file's name with the \".[suupport@protonmail.com].scarab\" extension.\nScarab also deletes shadow volume copies and drops a ransom note named \"IF YOU WANT TO GET ALL YOUR FILES BACK, PLEASE READ THIS.TXT\" on users' computers, which it opens immediately.",
+      "meta": {
+        "refs": [
+          "https://www.bleepingcomputer.com/news/security/scarab-ransomware-pushed-via-massive-spam-campaign/",
+          "https://labsblog.f-secure.com/2017/11/23/necurs-business-is-booming-in-a-new-partnership-with-scarab-ransomware/",
+          "https://blogs.forcepoint.com/security-labs/massive-email-campaign-spreads-scarab-ransomware",
+          "https://twitter.com/malwrhunterteam/status/933643147766321152",
+          "https://myonlinesecurity.co.uk/necurs-botnet-malspam-delivering-a-new-ransomware-via-fake-scanner-copier-messages/"
+        ],
+        "extensions": [
+          ".scarab",
+          ".scorpio",
+          ".[suupport@protonmail.com].scarab"
+        ],
+        "ransomnotes":[
+          "IF YOU WANT TO GET ALL YOUR FILES BACK, PLEASE READ THIS.TXT"
+        ]
+      }
     }
   ],
   "source": "Various",
   "uuid": "10cf658b-5d32-4c4b-bb32-61760a640372",
   "name": "Ransomware",
-  "version": 4,
+  "version": 5,
   "type": "ransomware",
   "description": "Ransomware galaxy based on https://docs.google.com/spreadsheets/d/1TWS238xacAto-fLKh1n5uTsdijWdCEsGIM0Y0Hvmc5g/pubhtml and http://pastebin.com/raw/GHgpWjar"
 }
