@@ -3200,6 +3200,33 @@
           "Okiru"
         ]
       }
+    },
+    {
+      "value": "PowerSpritz",
+      "description": "PowerSpritz is a Windows executable that hides both its legitimate payload and malicious PowerShell command using a non-standard implementation of the already rarely used Spritz encryption algorithm (see the Attribution section for additional analysis of the Spritz implementation). This malicious downloader has been observed being delivered via spearphishing attacks using the TinyCC link shortener service to redirect to likely attacker-controlled servers hosting the malicious PowerSpritz payload.",
+      "meta": {
+        "refs": [
+          "https://www.proofpoint.com/sites/default/files/pfpt-us-wp-north-korea-bitten-by-bitcoin-bug.pdf"
+        ]
+      }
+    },
+    {
+      "value": "PowerRatankba",
+      "description": "PowerRatankba is used for the same purpose as Ratankba: as a first stage reconnaissance tool and for the deployment of further stage implants on targets that are deemed interesting by the actor. Similar to its predecessor, PowerRatankba utilizes HTTP for its C&C communication.",
+      "meta": {
+        "refs": [
+          "https://www.proofpoint.com/sites/default/files/pfpt-us-wp-north-korea-bitten-by-bitcoin-bug.pdf"
+        ]
+      }
+    },
+    {
+      "value": "Ratankba",
+      "description": "In one instance we observed, one of the initial malware delivered to the victim, RATANKBA, connects to a legitimate but compromised website from which a hack tool (nbt_scan.exe) is also downloaded. The domain also serves as one of the campaign’s platform for C&C communication.\nThe threat actor uses RATANKBA to survey the lay of the land as it looks into various aspects of the host machine where it has been initially downloaded—the machine that has been victim of the watering hole attack. Information such as the running tasks, domain, shares, user information, if the host has default internet connectivity, and so forth.",
+      "meta": {
+        "refs": [
+          "http://blog.trendmicro.com/trendlabs-security-intelligence/ratankba-watering-holes-against-enterprises/"
+        ]
+      }
     }
   ]
 }
