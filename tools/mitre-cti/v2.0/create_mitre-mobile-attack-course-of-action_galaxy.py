@@ -23,7 +23,6 @@ for element in os.listdir('.'):
             value = {}
             value['description'] = temp['description']
             value['value'] = temp['name']
-            value['meta'] = {}
             value['uuid'] = re.search('--(.*)$', temp['id']).group(0)[2:]
             values.append(value)
 
