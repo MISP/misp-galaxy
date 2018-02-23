@@ -29,11 +29,26 @@ to localized information (which is not shared) or additional information (that c
 - [clusters/threat-actor.json](clusters/threat-actor.json) - Adversary groups - Known or estimated adversary groups targeting organizations and employees. Adversary groups are regularly confused with their initial operation or campaign. MISP
 - [clusters/tool.json](clusters/tool.json) - tool is an enumeration of tools used by adversaries. The list includes malware but also common software regularly used by the adversaries.
 
-- [clusters/mitre_attack-pattern.json](clusters/mitre_attack-pattern.json) - Attack Pattern - MITRE Adversarial Tactics, Techniques & Common Knowledge (ATT&CK)
-- [clusters/mitre_course-of-action.json](clusters/mitre_course-of-action.json) - Course of Action - MITRE Adversarial Tactics, Techniques & Common Knowledge (ATT&CK)
-- [clusters/mitre_intrusion-set.json](clusters/mitre_intrusion-set.json) - Intrusion Test - MITRE Adversarial Tactics, Techniques & Common Knowledge (ATT&CK)
-- [clusters/mitre_malware.json](clusters/mitre_malware.json) - Malware - MITRE Adversarial Tactics, Techniques & Common Knowledge (ATT&CK)
-- [clusters/mitre_tool.json](clusters/mitre_tool.json) - Tool - MITRE Adversarial Tactics, Techniques & Common Knowledge (ATT&CK)
+- [clusters/mitre-attack-pattern.json](clusters/mitre-attack-pattern.json) - Attack Pattern - MITRE Adversarial Tactics, Techniques & Common Knowledge (ATT&CK) - v1.0
+- [clusters/mitre-course-of-action.json](clusters/mitre-course-of-action.json) - Course of Action - MITRE Adversarial Tactics, Techniques & Common Knowledge (ATT&CK) - v1.0
+- [clusters/mitre-intrusion-set.json](clusters/mitre-intrusion-set.json) - Intrusion Set - MITRE Adversarial Tactics, Techniques & Common Knowledge (ATT&CK) - v1.0
+- [clusters/mitre-malware.json](clusters/mitre-malware.json) - Malware - MITRE Adversarial Tactics, Techniques & Common Knowledge (ATT&CK) - v1.0
+- [clusters/mitre-tool.json](clusters/mitre-tool.json) - Tool - MITRE Adversarial Tactics, Techniques & Common Knowledge (ATT&CK) - v1.0
+
+- [clusters/mitre-entreprise-attack-attack-pattern.json](clusters/mitre-entreprise-attack-attack-pattern.json) - Attack Pattern - MITRE Adversarial Tactics, Techniques & Common Knowledge (ATT&CK) - v2.0 Entreprise Attack
+- [clusters/mitre-entreprise-attack-course-of-action.json](clusters/mitre-entreprise-attack-course-of-action.json) - Course of Action - MITRE Adversarial Tactics, Techniques & Common Knowledge (ATT&CK) - v2.0  Entreprise Attack
+- [clusters/mitre-entreprise-attack-intrusion-set.json](clusters/mitre-entreprise-attack-intrusion-set.json) - Intrusion Set - MITRE Adversarial Tactics, Techniques & Common Knowledge (ATT&CK) - v2.0  Entreprise Attack - Malware - MITRE Adversarial Tactics, Techniques & Common Knowledge (ATT&CK) - v2.0  Entreprise Attack
+- [clusters/mitre-entreprise-attack-relationship.json](clusters/mitre-entreprise-attack-relationship.json) - Relationship . MITRE Relationship - V2.0 Entreprise Attack
+- [clusters/mitre-entreprise-attack-tool.json](clusters/mitre-entreprise-attack-tool.json) - Tool - MITRE Adversarial Tactics, Techniques & Common Knowledge (ATT&CK) - v2.0  Entreprise Attack
+- [clusters/mitre-mobile-attack-attack-pattern.json](clusters/mitre-mobile-attack-attack-pattern.json) - Attack Pattern - MITRE Adversarial Tactics, Techniques & Common Knowledge (ATT&CK) - v2.0  Mobile Attack
+- [clusters/mitre-mobile-attack-course-of-action.json](clusters/mitre-mobile-attack-course-of-action.json) - Course of Action - MITRE Adversarial Tactics, Techniques & Common Knowledge (ATT&CK) - v2.0  Mobile Attack
+- [clusters/mitre-mobile-attack-intrusion-set.json](clusters/mitre-mobile-attack-intrusion-set.json) - Intrusion Set - MITRE Adversarial Tactics, Techniques & Common Knowledge (ATT&CK) - v2.0  Mobile Attack
+- [clusters/mitre-mobile-attack-malware.json](clusters/mitre-mobile-attack-malware.json) - Malware - MITRE Adversarial Tactics, Techniques & Common Knowledge (ATT&CK) - v2.0  Mobile Attack
+- [clusters/mitre-mobile-attack-relationship.json](clusters/mitre-mobile-attack-relationship.json) - Relationship . MITRE Relationship - V2.0 Mobile Attack
+- [clusters/mitre-mobile-attack-tool.json](clusters/mitre-mobile-attack-tool.json) - Tool - MITRE Adversarial Tactics, Techniques & Common Knowledge (ATT&CK) - v2.0  Mobile Attack
+- [clusters/mitre-pre-attack-attack-pattern.json](clusters/mitre-pre-attack-attack-pattern.json) - Attack Pattern - MITRE Adversarial Tactics, Techniques & Common Knowledge (ATT&CK) - v2.0 Pre Attack
+- [clusters/mitre-pre-attack-intrusion-set.json](clusters/mitre-pre-attack-intrusion-set.json) - Intrusion Set - MITRE Adversarial Tactics, Techniques & Common Knowledge (ATT&CK) - v2.0  Pre Attack
+- [clusters/mitre-pre-attack-relationship.json](clusters/mitre-pre-attack-relationship.json) - Relationship . MITRE Relationship - V2.0 Pre Attack
 
 - [clusters/sectors.json](clusters/sectors.json) - Activity sectors
 - [clusters/cert-eu-govsector.json](clusters/cert-eu-govsector.json) - Cert EU GovSector
