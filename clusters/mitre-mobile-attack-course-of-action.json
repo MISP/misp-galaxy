@@ -1,97 +1,83 @@
 {
-    "name": "Mobile Attack - Course of Action",
-    "type": "mitre-mobile-attack-course-of-action",
-    "description": "ATT&CK Mitigation",
-    "version": 1,
-    "source": "https://github.com/mitre/cti",
-    "uuid": "03956f9e-1708-11e8-8395-976b24233e15",
-    "authors": [
-        "MITRE"
-    ],
-    "values": [
-        {
-            "description": "A variety of methods exist that can be used to enable enterprises to identify compromised (e.g. rooted/jailbroken) devices, whether using security mechanisms built directly into the device, third-party mobile security applications, enterprise mobility management (EMM)/mobile device management (MDM) capabilities, or other methods. Some methods may be trivial to evade while others may be more sophisticated.",
-            "value": "Deploy Compromised Device Detection Method",
-            "meta": {},
-            "uuid": "cf2cccb1-cab8-431a-8ecf-f7874d05f433"
-        },
-        {
-            "description": "In order to mitigate Signaling System 7 (SS7) exploitation, the Communications, Security, Reliability, and Interoperability Council (CSRIC) describes filtering interconnections between network operators to block inappropriate requests (Citation: CSRIC5-WG10-FinalReport).",
-            "value": "Interconnection Filtering",
-            "meta": {},
-            "uuid": "e829ee51-1caf-4665-ba15-7f8979634124"
-        },
-        {
-            "description": "Application developers should use device-provided credential storage mechanisms such as Android's KeyStore or iOS's KeyChain. These can prevent credentials from being exposed to an adversary.",
-            "value": "Use Device-Provided Credential Storage",
-            "meta": {},
-            "uuid": "d2a199d2-dfea-4d0c-987d-6195ed17be9c"
-        },
-        {
-            "description": "New mobile operating system versions bring not only patches against discovered vulnerabilities but also often bring security architecture improvements that provide resilience against potential vulnerabilities or weaknesses that have not yet been discovered. They may also bring improvements that block use of observed adversary techniques.",
-            "value": "Use Recent OS Version",
-            "meta": {},
-            "uuid": "0beabf44-e8d8-4ae4-9122-ef56369a2564"
-        },
-        {
-            "description": "Install security updates in response to discovered vulnerabilities.\n\nPurchase devices with a vendor and/or mobile carrier commitment to provide security updates in a prompt manner for a set period of time.\n\nDecommission devices that will no longer receive security updates.\n\nLimit or block access to enterprise resources from devices that have not installed recent security updates.\n* On Android devices, access can be controlled based on each device's security patch level.\n* On iOS devices, access can be controlled based on the iOS version.",
-            "value": "Security Updates",
-            "meta": {},
-            "uuid": "bcecd036-f40e-4916-9f8e-fd0ccf0ece8d"
-        },
-        {
-            "description": "On devices that provide the capability to unlock the bootloader (hence allowing any operating system code to be flashed onto the device), perform periodic checks to ensure that the bootloader is locked.",
-            "value": "Lock Bootloader",
-            "meta": {},
-            "uuid": "8ccd428d-39da-4e8f-a55b-d48ea1d56e58"
-        },
-        {
-            "description": "Ensure that Android devices being used include and enable the Verified Boot capability, which cryptographically ensures the integrity of the system partition.",
-            "value": "System Partition Integrity",
-            "meta": {},
-            "uuid": "7b1cf46f-784b-405a-a8dd-4624c19d8321"
-        },
-        {
-            "description": "Enable remote attestation capabilities when available (such as Android SafetyNet or Samsung Knox TIMA Attestation) and prohibit devices that fail the attestation from accessing enterprise resources.",
-            "value": "Attestation",
-            "meta": {},
-            "uuid": "ff4821f6-5afb-481b-8c0f-26c28c0d666c"
-        },
-        {
-            "description": "Warn device users not to accept requests to grant Device Administrator access to applications without good reason.\n\nAdditionally, application vetting should include a check on whether the application requests Device Administrator access. Applications that do request Device Administrator access should be carefully scrutinized and only allowed to be used if a valid reason exists.",
-            "value": "Caution with Device Administrator Access",
-            "meta": {},
-            "uuid": "e944670c-d03a-4e93-a21c-b3d4c53ec4c9"
-        },
-        {
-            "description": "This mitigation describes any guidance or training given to developers of applications to avoid introducing security weaknesses that an adversary may be able to take advantage of.",
-            "value": "Application Developer Guidance",
-            "meta": {},
-            "uuid": "25dc1ce8-eb55-4333-ae30-a7cb4f5894a1"
-        },
-        {
-            "description": "Enterprises can vet applications for exploitable vulnerabilities or unwanted (privacy-invasive or malicious) behaviors. Enterprises can inspect applications themselves or use a third-party service.\n\nEnterprises may impose policies to only allow pre-approved applications to be installed on their devices or may impose policies to block use of specific applications known to have issues. In Bring Your Own Device (BYOD) environments, enterprises may only be able to impose these policies over an enterprise-managed portion of the device.\n\nApplication Vetting is not a complete mitigation. Techniques such as Detect App Analysis Environment exist that can enable adversaries to bypass vetting.",
-            "value": "Application Vetting",
-            "meta": {},
-            "uuid": "1553b156-6767-47f7-9eb4-2a692505666d"
-        },
-        {
-            "description": "Describes any guidance or training given to users to set particular configuration settings or avoid specific potentially risky behaviors.",
-            "value": "User Guidance",
-            "meta": {},
-            "uuid": "653492e3-27be-4a0e-b08c-938dd2b7e0e1"
-        },
-        {
-            "description": "An enterprise mobility management (EMM), also known as mobile device management (MDM), system can be used to provision policies to mobile devices to control aspects of their allowed behavior.",
-            "value": "Enterprise Policy",
-            "meta": {},
-            "uuid": "649f7268-4c12-483b-ac84-4b7bca9fe2ee"
-        },
-        {
-            "description": "Application developers should encrypt all of their application network traffic using the Transport Layer Security (TLS) protocol to ensure protection of sensitive data and deter network-based attacks. If desired, application developers could perform message-based encryption of data before passing it for TLS encryption.\n\niOS's App Transport Security feature can be used to help ensure that all application network traffic is appropriately protected. Apple intends to mandate use of App Transport Security  (Citation: TechCrunch-ATS) for all apps in the Apple App Store unless appropriate justification is given.\n\nAndroid's Network Security Configuration feature similarly can be used by app developers to help ensure that all of their application network traffic is appropriately protected  (Citation: Android-NetworkSecurityConfig).\n\nUse of Virtual Private Network (VPN) tunnels, e.g. using the IPsec protocol, can help mitigate some types of network attacks as well.",
-            "value": "Encrypt Network Traffic",
-            "meta": {},
-            "uuid": "8220b57e-c400-4525-bf69-f8edc6b389a8"
-        }
-    ]
+  "name": "Mobile Attack - Course of Action",
+  "type": "mitre-mobile-attack-course-of-action",
+  "description": "ATT&CK Mitigation",
+  "version": 1,
+  "source": "https://github.com/mitre/cti",
+  "uuid": "03956f9e-1708-11e8-8395-976b24233e15",
+  "authors": [
+    "MITRE"
+  ],
+  "values": [
+    {
+      "description": "A variety of methods exist that can be used to enable enterprises to identify compromised (e.g. rooted/jailbroken) devices, whether using security mechanisms built directly into the device, third-party mobile security applications, enterprise mobility management (EMM)/mobile device management (MDM) capabilities, or other methods. Some methods may be trivial to evade while others may be more sophisticated.",
+      "value": "Deploy Compromised Device Detection Method",
+      "uuid": "cf2cccb1-cab8-431a-8ecf-f7874d05f433"
+    },
+    {
+      "description": "In order to mitigate Signaling System 7 (SS7) exploitation, the Communications, Security, Reliability, and Interoperability Council (CSRIC) describes filtering interconnections between network operators to block inappropriate requests (Citation: CSRIC5-WG10-FinalReport).",
+      "value": "Interconnection Filtering",
+      "uuid": "e829ee51-1caf-4665-ba15-7f8979634124"
+    },
+    {
+      "description": "Application developers should use device-provided credential storage mechanisms such as Android's KeyStore or iOS's KeyChain. These can prevent credentials from being exposed to an adversary.",
+      "value": "Use Device-Provided Credential Storage",
+      "uuid": "d2a199d2-dfea-4d0c-987d-6195ed17be9c"
+    },
+    {
+      "description": "New mobile operating system versions bring not only patches against discovered vulnerabilities but also often bring security architecture improvements that provide resilience against potential vulnerabilities or weaknesses that have not yet been discovered. They may also bring improvements that block use of observed adversary techniques.",
+      "value": "Use Recent OS Version",
+      "uuid": "0beabf44-e8d8-4ae4-9122-ef56369a2564"
+    },
+    {
+      "description": "Install security updates in response to discovered vulnerabilities.\n\nPurchase devices with a vendor and/or mobile carrier commitment to provide security updates in a prompt manner for a set period of time.\n\nDecommission devices that will no longer receive security updates.\n\nLimit or block access to enterprise resources from devices that have not installed recent security updates.\n* On Android devices, access can be controlled based on each device's security patch level.\n* On iOS devices, access can be controlled based on the iOS version.",
+      "value": "Security Updates",
+      "uuid": "bcecd036-f40e-4916-9f8e-fd0ccf0ece8d"
+    },
+    {
+      "description": "On devices that provide the capability to unlock the bootloader (hence allowing any operating system code to be flashed onto the device), perform periodic checks to ensure that the bootloader is locked.",
+      "value": "Lock Bootloader",
+      "uuid": "8ccd428d-39da-4e8f-a55b-d48ea1d56e58"
+    },
+    {
+      "description": "Ensure that Android devices being used include and enable the Verified Boot capability, which cryptographically ensures the integrity of the system partition.",
+      "value": "System Partition Integrity",
+      "uuid": "7b1cf46f-784b-405a-a8dd-4624c19d8321"
+    },
+    {
+      "description": "Enable remote attestation capabilities when available (such as Android SafetyNet or Samsung Knox TIMA Attestation) and prohibit devices that fail the attestation from accessing enterprise resources.",
+      "value": "Attestation",
+      "uuid": "ff4821f6-5afb-481b-8c0f-26c28c0d666c"
+    },
+    {
+      "description": "Warn device users not to accept requests to grant Device Administrator access to applications without good reason.\n\nAdditionally, application vetting should include a check on whether the application requests Device Administrator access. Applications that do request Device Administrator access should be carefully scrutinized and only allowed to be used if a valid reason exists.",
+      "value": "Caution with Device Administrator Access",
+      "uuid": "e944670c-d03a-4e93-a21c-b3d4c53ec4c9"
+    },
+    {
+      "description": "This mitigation describes any guidance or training given to developers of applications to avoid introducing security weaknesses that an adversary may be able to take advantage of.",
+      "value": "Application Developer Guidance",
+      "uuid": "25dc1ce8-eb55-4333-ae30-a7cb4f5894a1"
+    },
+    {
+      "description": "Enterprises can vet applications for exploitable vulnerabilities or unwanted (privacy-invasive or malicious) behaviors. Enterprises can inspect applications themselves or use a third-party service.\n\nEnterprises may impose policies to only allow pre-approved applications to be installed on their devices or may impose policies to block use of specific applications known to have issues. In Bring Your Own Device (BYOD) environments, enterprises may only be able to impose these policies over an enterprise-managed portion of the device.\n\nApplication Vetting is not a complete mitigation. Techniques such as Detect App Analysis Environment exist that can enable adversaries to bypass vetting.",
+      "value": "Application Vetting",
+      "uuid": "1553b156-6767-47f7-9eb4-2a692505666d"
+    },
+    {
+      "description": "Describes any guidance or training given to users to set particular configuration settings or avoid specific potentially risky behaviors.",
+      "value": "User Guidance",
+      "uuid": "653492e3-27be-4a0e-b08c-938dd2b7e0e1"
+    },
+    {
+      "description": "An enterprise mobility management (EMM), also known as mobile device management (MDM), system can be used to provision policies to mobile devices to control aspects of their allowed behavior.",
+      "value": "Enterprise Policy",
+      "uuid": "649f7268-4c12-483b-ac84-4b7bca9fe2ee"
+    },
+    {
+      "description": "Application developers should encrypt all of their application network traffic using the Transport Layer Security (TLS) protocol to ensure protection of sensitive data and deter network-based attacks. If desired, application developers could perform message-based encryption of data before passing it for TLS encryption.\n\niOS's App Transport Security feature can be used to help ensure that all application network traffic is appropriately protected. Apple intends to mandate use of App Transport Security  (Citation: TechCrunch-ATS) for all apps in the Apple App Store unless appropriate justification is given.\n\nAndroid's Network Security Configuration feature similarly can be used by app developers to help ensure that all of their application network traffic is appropriately protected  (Citation: Android-NetworkSecurityConfig).\n\nUse of Virtual Private Network (VPN) tunnels, e.g. using the IPsec protocol, can help mitigate some types of network attacks as well.",
+      "value": "Encrypt Network Traffic",
+      "uuid": "8220b57e-c400-4525-bf69-f8edc6b389a8"
+    }
+  ]
 }
