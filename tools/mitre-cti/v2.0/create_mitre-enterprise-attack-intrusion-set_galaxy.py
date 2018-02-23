@@ -27,7 +27,7 @@ for element in os.listdir('.'):
             value['meta']['synonyms'] = temp['aliases']
             value['meta']['refs']= []
             for reference in temp['external_references']:
-                if 'url' in reference:                    
+                if 'url' in reference and reference['url'] not in value['meta']['refs']:                    
                     value['meta']['refs'].append(reference['url'])
             value['uuid'] = re.search('--(.*)$', temp['id']).group(0)[2:]
             values.append(value)

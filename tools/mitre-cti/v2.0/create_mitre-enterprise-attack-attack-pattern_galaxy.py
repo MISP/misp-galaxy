@@ -26,7 +26,7 @@ for element in os.listdir('.'):
             value['meta'] = {}
             value['meta']['refs'] = []
             for reference in temp['external_references']:
-                if 'url' in reference:                    
+                if 'url' in reference and reference['url'] not in value['meta']['refs']:                    
                     value['meta']['refs'].append(reference['url'])
             if 'x_mitre_data_sources' in temp:
                 value['meta']['mitre_data_sources'] = temp['x_mitre_data_sources']
