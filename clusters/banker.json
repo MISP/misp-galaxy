@@ -1,539 +1,579 @@
 {
-  "values": [
-    {
-      "meta": {
-        "refs": [
-          "https://usa.kaspersky.com/resource-center/threats/zeus-virus"
-        ],
-        "synonyms": [
-          "Zbot"
-        ],
-        "date": "Initally discovered between 2006 and 2007. New bankers with Zeus roots still active today."
-      },
-      "description": "Zeus is a trojan horse that is primarily delivered via drive-by-downloads, malvertising, exploit kits and malspam campaigns. It uses man-in-the-browser keystroke logging and form grabbing to steal information from victims.  Source was leaked in 2011.",
-      "value": "Zeus"
-    },
-    {
-      "meta": {
-        "refs": [
-          "https://www.kaspersky.com/blog/neverquest-trojan-built-to-steal-from-hundreds-of-banks/3247/",
-          "https://www.fidelissecurity.com/threatgeek/2016/05/vawtrak-trojan-bank-it-evolving",
-          "https://www.proofpoint.com/us/threat-insight/post/In-The-Shadows",
-          "https://www.botconf.eu/wp-content/uploads/2016/11/2016-Vawtrak-technical-report.pdf"
-        ],
-        "synonyms": [
-          "Neverquest"
-        ],
-        "date": "Discovered early 2013"
-      },
-      "description": "Delivered primarily by exploit kits as well as malspam campaigns utilizing macro based Microsoft Office documents as attachments. Vawtrak/Neverquest is a modularized banking trojan designed to steal credentials through harvesting, keylogging, Man-In-The-Browser, etc.",
-      "value": "Vawtrak"
-    },
-    {
-      "meta": {
-        "refs": [
-          "https://blog.malwarebytes.com/detections/trojan-dridex/",
-          "https://feodotracker.abuse.ch/"
-        ],
-        "synonyms": [
-          "Feodo Version D"
-        ],
-        "date": "Discovery in 2014, still active"
-      },
-      "description": " Dridex leverages redirection attacks designed to send victims to malicious replicas of the banking sites they think they're visiting.",
-      "value": "Dridex"
-    },
-    {
-      "meta": {
-        "refs": [
-          "https://www.secureworks.com/research/gozi",
-          "https://www.gdatasoftware.com/blog/2016/11/29325-analysis-ursnif-spying-on-your-data-since-2007",
-          "https://lokalhost.pl/gozi_tree.txt"
-        ],
-        "synonyms": [
-          "Ursnif",
-          "CRM",
-          "Snifula",
-          "Papras"
-        ],
-        "date": "First seen ~ 2007"
-      },
-      "description": "Banking trojan delivered primarily via email (typically malspam) and exploit kits. Gozi 1.0 source leaked in 2010",
-      "value": "Gozi"
-    },
-    {
-      "meta": {
-        "refs": [
-          "https://krebsonsecurity.com/tag/gozi-prinimalka/",
-          "https://securityintelligence.com/project-blitzkrieg-how-to-block-the-planned-prinimalka-gozi-trojan-attack/",
-          "https://lokalhost.pl/gozi_tree.txt"
-        ],
-        "synonyms": [
-          "Prinimalka"
-        ],
-        "date": "Fall Oct. 2012 - Spring 2013"
-      },
-      "description": "Banking trojan attributed to Project Blitzkrieg targeting U.S. Financial institutions.",
-      "value": "Goziv2"
-    },
-    {
-      "meta": {
-        "refs": [
-          "https://www.govcert.admin.ch/blog/18/gozi-isfb-when-a-bug-really-is-a-feature",
-          "https://blog.malwarebytes.com/threat-analysis/2017/04/binary-options-malvertising-campaign-drops-isfb-banking-trojan/",
-          "https://info.phishlabs.com/blog/the-unrelenting-evolution-of-vawtrak",
-          "https://lokalhost.pl/gozi_tree.txt"
-        ],
-        "date": "Beginning 2010"
-      },
-      "description": "Banking trojan based on Gozi source.  Features include web injects for the victims’ browsers, screenshoting, video recording, transparent redirections, etc. Source leaked ~ end of 2015.",
-      "value": "Gozi ISFB"
-    },
-    {
-      "meta": {
-        "refs": [
-          "https://blog.malwarebytes.com/threat-analysis/2017/04/binary-options-malvertising-campaign-drops-isfb-banking-trojan/",
-          "https://www.proofpoint.com/us/threat-insight/post/ursnif-variant-dreambot-adds-tor-functionality",
-          "https://lokalhost.pl/gozi_tree.txt"
-        ],
-        "date": "Since 2014"
-      },
-      "description": "Dreambot is a variant of Gozi ISFB that is spread via numerous exploit kits as well as through malspam email attachments and links.",
-      "value": "Dreambot"
-    },
-    {
-      "meta": {
-        "refs": [
-          "https://lokalhost.pl/gozi_tree.txt",
-          "http://archive.is/I7hi8#selection-217.0-217.6"
-        ],
-        "date": "Seen Autumn 2014"
-      },
-      "description": "Gozi ISFB variant ",
-      "value": "IAP"
-    },
-    {
-      "meta": {
-        "refs": [
-          "https://securityintelligence.com/meet-goznym-the-banking-malware-offspring-of-gozi-isfb-and-nymaim/",
-          "https://lokalhost.pl/gozi_tree.txt"
-        ],
-        "date": "Spring 2016"
-      },
-      "description": "GozNym hybrid takes the best of both the Nymaim and Gozi ISFB.  From the Nymaim malware, it leverages the dropper’s stealth and persistence; the Gozi ISFB parts add the banking Trojan’s capabilities to facilitate fraud via infected Internet browsers.",
-      "value": "GozNym"
-    },
-    {
-      "meta": {
-        "refs": [
-          "https://blog.threatstop.com/zloader/terdot-that-man-in-the-middle",
-          "https://www.scmagazine.com/terdot-zloaderzbot-combo-abuses-certificate-app-to-pull-off-mitm-browser-attacks/article/634443/"
-        ],
-        "synonyms": [
-          "Zeus Terdot"
-        ],
-        "date": "First seen in Fall 2016 and still active today."
-      },
-      "description": "Zloader is a loader that loads different payloads, one of which is a Zeus module. Delivered via exploit kits and malspam emails. ",
-      "value": "Zloader Zeus"
-    },
-    {
-      "meta": {
-        "refs": [
-          "https://blog.malwarebytes.com/threat-analysis/2014/02/hiding-in-plain-sight-a-story-about-a-sneaky-banking-trojan/",
-          "https://securityintelligence.com/new-zberp-trojan-discovered-zeus-zbot-carberp/"
-        ],
-        "synonyms": [
-          "VM Zeus"
-        ],
-        "date": "First seen ~Feb 2014"
-      },
-      "description": "Zeus variant that utilizes steganography in image files to retrieve configuration file. ",
-      "value": "Zeus VM"
-    },
-    {
-      "meta": {
-        "refs": [
-          "https://securityintelligence.com/brazil-cant-catch-a-break-after-panda-comes-the-sphinx/"
-        ],
-        "date": "First seen ~Aug 2015"
-      },
-      "description": "Sphinx is a modular banking trojan that is a commercial offering sold to cybercriminals via underground fraudster boards.",
-      "value": "Zeus Sphinx"
-    },
-    {
-      "meta": {
-        "refs": [
-          "https://www.proofpoint.com/us/threat-insight/post/panda-banker-new-banking-trojan-hits-the-market",
-          "https://cyberwtf.files.wordpress.com/2017/07/panda-whitepaper.pdf",
-          "https://www.proofpoint.com/us/threat-insight/post/zeus-panda-banking-trojan-targets-online-holiday-shoppers"
-        ],
-        "synonyms": [
-          "Zeus Panda"
-        ],
-        "date": "First seen ~ Spring 2016"
-      },
-      "description": "Zeus like banking trojan that is delivered primarily through malspam emails and exploit kits.",
-      "value": "Panda Banker"
-    },
-    {
-      "meta": {
-        "refs": [
-          "https://securityintelligence.com/zeus-maple-variant-targets-canadian-online-banking-customers/",
-          "https://github.com/nyx0/KINS"
-        ],
-        "synonyms": [
-          "Kasper Internet Non-Security",
-          "Maple"
-        ],
-        "date": "First seen 2014"
-      },
-      "description": "Zeus KINS is a modified version of ZeuS 2.0.8.9. It contains an encrypted version of it's config in the registry. ",
-      "value": "Zeus KINS"
-    },
-    {
-      "meta": {
-        "refs": [
-          "https://www.proofpoint.com/us/threat-insight/post/threat-actors-using-legitimate-paypal-accounts-to-distribute-chthonic-banking-trojan",
-          "https://securelist.com/chthonic-a-new-modification-of-zeus/68176/"
-        ],
-        "date": "First seen fall of 2014"
-      },
-      "description": "Chthonic according to Kaspersky is an evolution of Zeus VM.  It uses the same encryptor as Andromeda bot, the same encryption scheme as Zeus AES and Zeus V2 Trojans, and a virtual machine similar to that used in ZeusVM and KINS malware.",
-      "value": "Chthonic"
-    },
-    {
-      "meta": {
-        "refs": [
-          "https://blog.malwarebytes.com/threat-analysis/2016/10/trick-bot-dyrezas-successor/",
-          "https://blog.malwarebytes.com/threat-analysis/2017/08/trickbot-comes-with-new-tricks-attacking-outlook-and-browsing-data/",
-          "http://www.pwc.co.uk/issues/cyber-security-data-privacy/research/trickbots-bag-of-tricks.html",
-          "https://www.flashpoint-intel.com/blog/new-version-trickbot-adds-worm-propagation-module/"
-        ],
-        "synonyms": [
-          "Trickster",
-          "Trickloader"
-        ],
-        "date": "Discovered Fall 2016"
-      },
-      "description": "Trickbot is a bot that is delivered via exploit kits and malspam campaigns. The bot is capable of downloading modules, including a banker module.  Trickbot also shares roots with the Dyre banking trojan",
-      "value": "Trickbot"
-    },
-    {
-      "meta": {
-        "refs": [
-          "https://www.secureworks.com/research/dyre-banking-trojan",
-          "https://blog.malwarebytes.com/threat-analysis/2015/11/a-technical-look-at-dyreza/"
-        ],
-        "synonyms": [
-          "Dyreza"
-        ],
-        "date": "Discovered  ~June 2014"
-      },
-      "description": "Dyre is a banking trojan distributed via exploit kits and malspam emails primarily.  It has a modular architectur and utilizes  man-in-the-browser functionality.  It also leverages a backconnect server that allows threat actors to connect to a bank website through the victim's computer.",
-      "value": "Dyre"
-    },
-    {
-      "meta": {
-        "refs": [
-          "https://securityblog.switch.ch/2015/06/18/so-long-and-thanks-for-all-the-domains/",
-          "http://securityintelligence.com/tinba-malware-reloaded-and-attacking-banks-around-the-world/",
-          "https://blog.avast.com/2014/09/15/tiny-banker-trojan-targets-customers-of-major-banks-worldwide/",
-          "http://my.infotex.com/tiny-banker-trojan/"
-        ],
-        "synonyms": [
-          "Zusy",
-          "TinyBanker",
-          "illi"
-        ],
-        "date": "Discovered ~Spring 2012"
-      },
-      "description": "Tinba is a very small banking trojan that hooks into browsers and steals login data and sniffs on network traffic. It also uses Man in The Browser (MiTB) and webinjects. Tinba is primarily delivered via exploit kits, malvertising and malspam email campaigns.",
-      "value": "Tinba"
-    },
-    {
-      "meta": {
-        "refs": [
-          "https://feodotracker.abuse.ch/",
-          "http://blog.trendmicro.com/trendlabs-security-intelligence/new-banking-malware-uses-network-sniffing-for-data-theft/"
-        ],
-        "synonyms": [
-          "Feodo Version C",
-          "Emotet"
-        ],
-        "date": "Discovered ~Summer 2014"
-      },
-      "description": "Geodo is a banking trojan delivered primarily through malspam emails. It is capable of sniffing network activity to steal information by hooking certain network API calls.",
-      "value": "Geodo"
-    },
-    {
-      "meta": {
-        "refs": [
-          "https://securelist.com/dridex-a-history-of-evolution/78531/",
-          "https://feodotracker.abuse.ch/",
-          "http://stopmalvertising.com/rootkits/analysis-of-cridex.html"
-        ],
-        "synonyms": [
-          "Bugat",
-          "Cridex"
-        ],
-        "date": "Discovered ~September 2011"
-      },
-      "description": "Feodo is a banking trojan that utilizes web injects and is also capable of monitoring & manipulating cookies. Version A = Port 8080, Version B = Port 80 It is delivered primarily via exploit kits and malspam emails.",
-      "value": "Feodo"
-    },
-    {
-      "meta": {
-        "refs": [
-          "https://www.cert.pl/en/news/single/ramnit-in-depth-analysis/"
-        ],
-        "synonyms": [
-          "Nimnul"
-        ],
-        "date": "Discovered ~2010."
-      },
-      "description": "Originally not a banking trojan in 2010, Ramnit became a banking trojan after the Zeus source code leak.  It is capable of perforrming Man-in-the-Browser attacks.  Distributed primarily via exploit kits.",
-      "value": "Ramnit"
-    },
-    {
-      "meta": {
-        "refs": [
-          "https://securityintelligence.com/qakbot-banking-trojan-causes-massive-active-directory-lockouts/",
-          "https://www.johannesbader.ch/2016/02/the-dga-of-qakbot/",
-          "https://www.virusbulletin.com/uploads/pdf/magazine/2016/VB2016-Karve-etal.pdf"
-        ],
-        "synonyms": [
-          "Qbot ",
-          "Pinkslipbot"
-        ],
-        "date": "Discovered ~2007"
-      },
-      "description": "Qakbot is a banking trojan that leverages webinjects to steal banking information from victims.  It also utilizes DGA for command and control. It is primarily delivered via exploit kits.",
-      "value": "Qakbot"
-    },
-    {
-      "meta": {
-        "refs": [
-          "https://securityintelligence.com/an-overnight-sensation-corebot-returns-as-a-full-fledged-financial-malware/",
-          "https://www.arbornetworks.com/blog/asert/wp-content/uploads/2016/02/ASERT-Threat-Intelligence-Brief-2016-02-Corebot-1.pdf",
-          "https://malwarebreakdown.com/2017/09/11/re-details-malspam-downloads-corebot-banking-trojan/"
-        ],
-        "date": "Discovered ~Fall 2015"
-      },
-      "description": "Corebot is a modular trojan that leverages a banking module that can perform browser hooking, form grabbing, MitM, webinjection to steal financial information from victims. Distributed primarily via malspam emails and exploit kits.",
-      "value": "Corebot"
-    },
-    {
-      "meta": {
-        "refs": [
-          "https://securelist.com/the-nukebot-banking-trojan-from-rough-drafts-to-real-threats/78957/",
-          "https://www.arbornetworks.com/blog/asert/dismantling-nuclear-bot/",
-          "https://securityintelligence.com/the-nukebot-trojan-a-bruised-ego-and-a-surprising-source-code-leak/",
-          "http://www.kernelmode.info/forum/viewtopic.php?f=16&t=4596",
-          "https://benkowlab.blogspot.ca/2017/08/quick-look-at-another-alina-fork-xbot.html"
-        ],
-        "synonyms": [
-          "NukeBot",
-          "Nuclear Bot",
-          "MicroBankingTrojan",
-          "Xbot"
-        ],
-        "date": "Discovered ~December 2016"
-      },
-      "description": "TinyNuke is a modular banking trojan that includes a HiddenDesktop/VNC server and reverse SOCKS 4 server.  It's main functionality is to make web injections into specific pages to steal user data.  Distributed primarily via malspam emails and exploit kits.",
-      "value": "TinyNuke"
-    },
-    {
-      "meta": {
-        "refs": [
-          "https://www.govcert.admin.ch/blog/33/the-retefe-saga",
-          "https://threatpost.com/eternalblue-exploit-used-in-retefe-banking-trojan-campaign/128103/",
-          "https://countuponsecurity.com/2016/02/29/retefe-banking-trojan/",
-          "https://securityblog.switch.ch/2014/11/05/retefe-with-a-new-twist/",
-          "http://securityintelligence.com/tsukuba-banking-trojan-phishing-in-japanese-waters/"
-        ],
-        "synonyms": [
-          "Tsukuba",
-          "Werdlod"
-        ],
-        "date": "Discovered in 2014"
-      },
-      "description": "Retefe is a banking trojan that is distributed by what SWITCH CERT calls the Retefe gang or Operation Emmental.  It uses geolocation based targeting.  It also leverages fake root certificate and changes the DNS server for domain name resolution in order to display fake banking websites to victims. It is spread primarily through malspam emails. ",
-      "value": "Retefe"
-    },
-    {
-      "meta": {
-        "refs": [
-          "http://www.malwaredigger.com/2015/06/rovnix-payload-and-plugin-analysis.html",
-          "https://www.symantec.com/connect/blogs/new-carberp-variant-heads-down-under",
-          "http://www.malwaredigger.com/2015/05/rovnix-dropper-analysis.html",
-          "http://blog.trendmicro.com/trendlabs-security-intelligence/rovnix-infects-systems-with-password-protected-macros/"
-        ],
-        "date": "Discovered ~early 2015"
-      },
-      "description": "ReactorBot is sometimes mistakenly tagged as Rovnix. ReactorBot is a full fledged modular bot that includes a banking module that has roots with the Carberp banking trojan. Distributed primarily via malspam emails.",
-      "value": "ReactorBot"
-    },
-    {
-      "meta": {
-        "refs": [
-          "https://www.arbornetworks.com/blog/asert/another-banker-enters-matrix/"
-        ],
-        "date": "Discovered ~Spring 2017"
-      },
-      "description": "Matrix Banker is named accordingly because of the Matrix reference in it's C2 panel. Distributed primarily via malspam emails.",
-      "value": "Matrix Banker"
-    },
-    {
-      "meta": {
-        "refs": [
-          "https://heimdalsecurity.com/blog/zeus-gameover/",
-          "https://www.us-cert.gov/ncas/alerts/TA14-150A"
-        ],
-        "date": "Discovered ~Sept. 2011"
-      },
-      "description": "Zeus Gameover captures banking credentials from infected computers, then use those credentials to initiate or re-direct wire transfers to accounts overseas that are controlled by the criminals. GameOver has a decentralized, peer-to-peer command and control infrastructure rather than centralized points of origin. Distributed primarily via malspam emails and exploit kits.",
-      "value": "Zeus Gameover"
-    },
-    {
-      "meta": {
-        "refs": [
-          "https://www.ioactive.com/pdfs/ZeusSpyEyeBankingTrojanAnalysis.pdf",
-          "https://www.computerworld.com/article/2509482/security0/spyeye-trojan-defeating-online-banking-defenses.html",
-          "https://www.symantec.com/connect/blogs/spyeye-bot-versus-zeus-bot"
-        ],
-        "date": "Discovered early 2011"
-      },
-      "description": "SpyEye is a similar to the Zeus botnet banking trojan. It utilizes a web control panel for C2 and can perform form grabbing, autofill credit card modules, ftp grabber, pop3 grabber and HTTP basic access authorization grabber.  It also contained a Kill Zeus feature which would remove any Zeus infections if SpyEye was on the system.  Distributed primarily via exploit kits and malspam emails.",
-      "value": "SpyEye"
-    },
-    {
-      "meta": {
-        "refs": [
-          "https://blog.malwarebytes.com/threat-analysis/2012/11/citadel-a-cyber-criminals-ultimate-weapon/",
-          "https://krebsonsecurity.com/tag/citadel-trojan/",
-          "https://securityintelligence.com/cybercriminals-use-citadel-compromise-password-management-authentication-solutions/"
-        ],
-        "date": "Discovered ~January 2012"
-      },
-      "description": "Citadel is an offspring of the Zeus banking trojan. Delivered primarily via exploit kits.",
-      "value": "Citadel"
-    },
-    {
-      "meta": {
-        "refs": [
-          "https://heimdalsecurity.com/blog/security-alert-citadel-trojan-resurfaces-atmos-zeus-legacy/",
-          "http://www.xylibox.com/2016/02/citadel-0011-atmos.html"
-        ],
-        "date": "Discovered ~spring 2016"
-      },
-      "description": "Atmos is derived from the Citadel banking trojan. Delivered primarily via exploit kits and malspam emails.",
-      "value": "Atmos"
-    },
-    {
-      "meta": {
-        "refs": [
-          "https://securelist.com/ice-ix-not-cool-at-all/29111/ "
-        ],
-        "date": "Discovered ~Fall 2011"
-      },
-      "description": "Ice IX is a bot created using the source code of ZeuS 2.0.8.9.  No major improvements compared to ZeuS 2.0.8.9.",
-      "value": "Ice IX"
-    },
-    {
-      "meta": {
-        "refs": [
-          "https://securelist.com/zeus-in-the-mobile-for-android-10/29258/"
-        ],
-        "date": "Discovered ~end of 2010"
-      },
-      "description": "Zeus in the mobile. Banking trojan developed for mobile devices such as Windows Mobile, Blackberry and Android.",
-      "value": "Zitmo"
-    },
-    {
-      "meta": {
-        "refs": [
-          "https://johannesbader.ch/2015/09/three-variants-of-murofets-dga/",
-          "https://www.trendmicro.com/vinfo/us/threat-encyclopedia/malware/PE_LICAT.A",
-          "https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=Virus%3aWin32%2fMurofet.A"
-        ],
-        "synonyms": [
-          "Murofet"
-        ],
-        "date": "Discovered in 2010"
-      },
-      "description": "Banking trojan based on Zeus V2.  Murofet is a newer version of Licat found ~end of 2011",
-      "value": "Licat"
-    },
-    {
-      "meta": {
-        "refs": [
-          "https://blog.rapid7.com/2012/12/06/skynet-a-tor-powered-botnet-straight-from-reddit/"
-        ],
-        "date": "Discovered end of 2012"
-      },
-      "description": "Skynet is a Tor-powered trojan with DDoS, Bitcoin mining and Banking capabilities.  Spread via USENET as per rapid7.",
-      "value": "Skynet"
-    },
-    {
-      "meta": {
-        "refs": [
-          "https://www.bleepingcomputer.com/news/security/new-icedid-banking-trojan-discovered/",
-          "https://securityintelligence.com/new-banking-trojan-icedid-discovered-by-ibm-x-force-research/"
-        ],
-        "date": "Discovered in September 2017"
-      },
-      "description": "According to X-Force research, the new banking Trojan emerged in the wild in September 2017, when its first test campaigns were launched. Our researchers noted that IcedID has a modular malicious code with modern banking Trojan capabilities comparable to malware such as the Zeus Trojan. At this time, the malware targets banks, payment card providers, mobile services providers, payroll, webmail and e-commerce sites in the U.S. Two major banks in the U.K. are also on the target list the malware fetches.",
-      "value": "IcedID"
-    },
-    {
-      "value": "GratefulPOS",
-      "description": "GratefulPOS has the following functions\n1. Access arbitrary processes on the target POS system\n2. Scrape track 1 and 2 payment card data from the process(es)\n3. Exfiltrate the payment card data via lengthy encoded and obfuscated DNS queries to a hardcoded domain registered and controlled by the perpetrators, similar to that described by Paul Rascagneres in his analysis of FrameworkPOS in 2014[iii], and more recently by Luis Mendieta of Anomoli in analysis of a precursor to this sample.",
-      "meta": {
-        "refs": [
-          "https://community.rsa.com/community/products/netwitness/blog/2017/12/08/gratefulpos-credit-card-stealing-malware-just-in-time-for-the-shopping-season"
-        ]
-      }
-    },
-    {
-      "value": "Dok",
-      "description": "A macOS banking trojan that that redirects an infected user's web traffic in order to extract banking credentials.",
-      "meta": {
-        "refs": [
-          "https://objective-see.com/blog/blog_0x25.html#Dok"
-        ]
-      }
-    },
-    {
-      "value": "downAndExec",
-      "description": "Services like Netflix use content delivery networks (CDNs) to maximize bandwidth usage as it gives users greater speed when viewing the content, as the server is close to them and is part of the Netflix CDN. This results in faster loading times for series and movies, wherever you are in the world. But, apparently, the CDNs are starting to become a new way of spreading malware. The attack chain is very extensive, and incorporates the execution of remote scripts (similar in some respects to the recent “fileless” banking malware trend), plus the use of CDNs for command and control (C&C), and other standard techniques for the execution and protection of malware.",
-      "meta": {
-        "refs": [
-          "https://www.welivesecurity.com/2017/09/13/downandexec-banking-malware-cdns-brazil/"
-        ]
-      }
-    },
-    {
-      "value": "Smominru",
-      "description": "Since the end of May 2017, we have been monitoring a Monero miner that spreads using the EternalBlue Exploit (CVE-2017-0144). The miner itself, known as Smominru (aka Ismo) has been well-documented, so we will not discuss  its post-infection behavior. However, the miner’s use of Windows Management Infrastructure is unusual among coin mining malware.\nThe speed at which mining operations conduct mathematical operations to unlock new units of cryptocurrency is referred to as “hash power”. Based on the hash power associated with the Monero payment address for this operation, it appeared that this botnet was likely twice the size of Adylkuzz. The operators had already mined approximately 8,900 Monero (valued this week between $2.8M and $3.6M). Each day, the botnet mined roughly 24 Monero, worth an average of $8,500 this week.",
-      "meta": {
-        "refs": [
-          "https://www.proofpoint.com/us/threat-insight/post/smominru-monero-mining-botnet-making-millions-operators"
-        ],
-        "synonyms": [
-          "Ismo",
-          "lsmo"
-        ]
-      }
-    }
-  ],
-  "version": 7,
-  "uuid": "59f20cce-5420-4084-afd5-0884c0a83832",
-  "description": "A list of banker malware.",
-  "authors": [
-    "Unknown"
-  ],
-  "source": "Open Sources",
-  "type": "banker",
-  "name": "Banker"
+    "values": [
+        {
+            "meta": {
+                "refs": [
+                    "https://usa.kaspersky.com/resource-center/threats/zeus-virus"
+                ],
+                "synonyms": [
+                    "Zbot"
+                ],
+                "date": "Initally discovered between 2006 and 2007. New bankers with Zeus roots still active today."
+            },
+            "description": "Zeus is a trojan horse that is primarily delivered via drive-by-downloads, malvertising, exploit kits and malspam campaigns. It uses man-in-the-browser keystroke logging and form grabbing to steal information from victims.  Source was leaked in 2011.",
+            "value": "Zeus",
+            "uuid": "f0ec2df5-2e38-4df3-970d-525352006f2e"
+        },
+        {
+            "meta": {
+                "refs": [
+                    "https://www.kaspersky.com/blog/neverquest-trojan-built-to-steal-from-hundreds-of-banks/3247/",
+                    "https://www.fidelissecurity.com/threatgeek/2016/05/vawtrak-trojan-bank-it-evolving",
+                    "https://www.proofpoint.com/us/threat-insight/post/In-The-Shadows",
+                    "https://www.botconf.eu/wp-content/uploads/2016/11/2016-Vawtrak-technical-report.pdf"
+                ],
+                "synonyms": [
+                    "Neverquest"
+                ],
+                "date": "Discovered early 2013"
+            },
+            "description": "Delivered primarily by exploit kits as well as malspam campaigns utilizing macro based Microsoft Office documents as attachments. Vawtrak/Neverquest is a modularized banking trojan designed to steal credentials through harvesting, keylogging, Man-In-The-Browser, etc.",
+            "value": "Vawtrak",
+            "uuid": "f3813bbd-682c-400d-8165-778be6d3f91f"
+        },
+        {
+            "meta": {
+                "refs": [
+                    "https://blog.malwarebytes.com/detections/trojan-dridex/",
+                    "https://feodotracker.abuse.ch/"
+                ],
+                "synonyms": [
+                    "Feodo Version D"
+                ],
+                "date": "Discovery in 2014, still active"
+            },
+            "description": " Dridex leverages redirection attacks designed to send victims to malicious replicas of the banking sites they think they're visiting.",
+            "value": "Dridex",
+            "uuid": "44754726-e1d5-4e5f-a113-234c4a8ca65e"
+        },
+        {
+            "meta": {
+                "refs": [
+                    "https://www.secureworks.com/research/gozi",
+                    "https://www.gdatasoftware.com/blog/2016/11/29325-analysis-ursnif-spying-on-your-data-since-2007",
+                    "https://lokalhost.pl/gozi_tree.txt"
+                ],
+                "synonyms": [
+                    "Ursnif",
+                    "CRM",
+                    "Snifula",
+                    "Papras"
+                ],
+                "date": "First seen ~ 2007"
+            },
+            "description": "Banking trojan delivered primarily via email (typically malspam) and exploit kits. Gozi 1.0 source leaked in 2010",
+            "value": "Gozi",
+            "uuid": "b9448d2a-a23c-4bf2-92a1-d860716ba2f3"
+        },
+        {
+            "meta": {
+                "refs": [
+                    "https://krebsonsecurity.com/tag/gozi-prinimalka/",
+                    "https://securityintelligence.com/project-blitzkrieg-how-to-block-the-planned-prinimalka-gozi-trojan-attack/",
+                    "https://lokalhost.pl/gozi_tree.txt"
+                ],
+                "synonyms": [
+                    "Prinimalka"
+                ],
+                "date": "Fall Oct. 2012 - Spring 2013"
+            },
+            "description": "Banking trojan attributed to Project Blitzkrieg targeting U.S. Financial institutions.",
+            "value": "Goziv2",
+            "uuid": "71ad2c86-b9da-4351-acf9-7005f64062c7"
+        },
+        {
+            "meta": {
+                "refs": [
+                    "https://www.govcert.admin.ch/blog/18/gozi-isfb-when-a-bug-really-is-a-feature",
+                    "https://blog.malwarebytes.com/threat-analysis/2017/04/binary-options-malvertising-campaign-drops-isfb-banking-trojan/",
+                    "https://info.phishlabs.com/blog/the-unrelenting-evolution-of-vawtrak",
+                    "https://lokalhost.pl/gozi_tree.txt"
+                ],
+                "date": "Beginning 2010"
+            },
+            "description": "Banking trojan based on Gozi source.  Features include web injects for the victims\u2019 browsers, screenshoting, video recording, transparent redirections, etc. Source leaked ~ end of 2015.",
+            "value": "Gozi ISFB",
+            "uuid": "ffbbbc14-1cdb-4be9-a631-ed53c5407369"
+        },
+        {
+            "meta": {
+                "refs": [
+                    "https://blog.malwarebytes.com/threat-analysis/2017/04/binary-options-malvertising-campaign-drops-isfb-banking-trojan/",
+                    "https://www.proofpoint.com/us/threat-insight/post/ursnif-variant-dreambot-adds-tor-functionality",
+                    "https://lokalhost.pl/gozi_tree.txt"
+                ],
+                "date": "Since 2014"
+            },
+            "description": "Dreambot is a variant of Gozi ISFB that is spread via numerous exploit kits as well as through malspam email attachments and links.",
+            "value": "Dreambot",
+            "uuid": "549d1f8c-f76d-4d66-a1a2-2cd048d739ea"
+        },
+        {
+            "meta": {
+                "refs": [
+                    "https://lokalhost.pl/gozi_tree.txt",
+                    "http://archive.is/I7hi8#selection-217.0-217.6"
+                ],
+                "date": "Seen Autumn 2014"
+            },
+            "description": "Gozi ISFB variant ",
+            "value": "IAP",
+            "uuid": "0f96a666-bf26-44e0-8ad6-f2136208c924"
+        },
+        {
+            "meta": {
+                "refs": [
+                    "https://securityintelligence.com/meet-goznym-the-banking-malware-offspring-of-gozi-isfb-and-nymaim/",
+                    "https://lokalhost.pl/gozi_tree.txt"
+                ],
+                "date": "Spring 2016"
+            },
+            "description": "GozNym hybrid takes the best of both the Nymaim and Gozi ISFB.  From the Nymaim malware, it leverages the dropper\u2019s stealth and persistence; the Gozi ISFB parts add the banking Trojan\u2019s capabilities to facilitate fraud via infected Internet browsers.",
+            "value": "GozNym",
+            "uuid": "bcefac9a-a928-490f-9cb6-a8863f40c949"
+        },
+        {
+            "meta": {
+                "refs": [
+                    "https://blog.threatstop.com/zloader/terdot-that-man-in-the-middle",
+                    "https://www.scmagazine.com/terdot-zloaderzbot-combo-abuses-certificate-app-to-pull-off-mitm-browser-attacks/article/634443/"
+                ],
+                "synonyms": [
+                    "Zeus Terdot"
+                ],
+                "date": "First seen in Fall 2016 and still active today."
+            },
+            "description": "Zloader is a loader that loads different payloads, one of which is a Zeus module. Delivered via exploit kits and malspam emails. ",
+            "value": "Zloader Zeus",
+            "uuid": "2eb658ed-aff4-4253-a21f-9059b133ce17"
+        },
+        {
+            "meta": {
+                "refs": [
+                    "https://blog.malwarebytes.com/threat-analysis/2014/02/hiding-in-plain-sight-a-story-about-a-sneaky-banking-trojan/",
+                    "https://securityintelligence.com/new-zberp-trojan-discovered-zeus-zbot-carberp/"
+                ],
+                "synonyms": [
+                    "VM Zeus"
+                ],
+                "date": "First seen ~Feb 2014"
+            },
+            "description": "Zeus variant that utilizes steganography in image files to retrieve configuration file. ",
+            "value": "Zeus VM",
+            "uuid": "09d1cad8-6b06-48d7-a968-5b17bbe9ca65"
+        },
+        {
+            "meta": {
+                "refs": [
+                    "https://securityintelligence.com/brazil-cant-catch-a-break-after-panda-comes-the-sphinx/"
+                ],
+                "date": "First seen ~Aug 2015"
+            },
+            "description": "Sphinx is a modular banking trojan that is a commercial offering sold to cybercriminals via underground fraudster boards.",
+            "value": "Zeus Sphinx",
+            "uuid": "8914802c-3aca-4a0d-874a-85ac7a1bc505"
+        },
+        {
+            "meta": {
+                "refs": [
+                    "https://www.proofpoint.com/us/threat-insight/post/panda-banker-new-banking-trojan-hits-the-market",
+                    "https://cyberwtf.files.wordpress.com/2017/07/panda-whitepaper.pdf",
+                    "https://www.proofpoint.com/us/threat-insight/post/zeus-panda-banking-trojan-targets-online-holiday-shoppers"
+                ],
+                "synonyms": [
+                    "Zeus Panda"
+                ],
+                "date": "First seen ~ Spring 2016"
+            },
+            "description": "Zeus like banking trojan that is delivered primarily through malspam emails and exploit kits.",
+            "value": "Panda Banker",
+            "uuid": "f1971442-6477-4aa2-aafa-7529b8252455"
+        },
+        {
+            "meta": {
+                "refs": [
+                    "https://securityintelligence.com/zeus-maple-variant-targets-canadian-online-banking-customers/",
+                    "https://github.com/nyx0/KINS"
+                ],
+                "synonyms": [
+                    "Kasper Internet Non-Security",
+                    "Maple"
+                ],
+                "date": "First seen 2014"
+            },
+            "description": "Zeus KINS is a modified version of ZeuS 2.0.8.9. It contains an encrypted version of it's config in the registry. ",
+            "value": "Zeus KINS",
+            "uuid": "bc0be3a4-89d8-4c4c-b2aa-2dddbed1f71d"
+        },
+        {
+            "meta": {
+                "refs": [
+                    "https://www.proofpoint.com/us/threat-insight/post/threat-actors-using-legitimate-paypal-accounts-to-distribute-chthonic-banking-trojan",
+                    "https://securelist.com/chthonic-a-new-modification-of-zeus/68176/"
+                ],
+                "date": "First seen fall of 2014"
+            },
+            "description": "Chthonic according to Kaspersky is an evolution of Zeus VM.  It uses the same encryptor as Andromeda bot, the same encryption scheme as Zeus AES and Zeus V2 Trojans, and a virtual machine similar to that used in ZeusVM and KINS malware.",
+            "value": "Chthonic",
+            "uuid": "6deb9f26-969b-45aa-9222-c23663fd6ef8"
+        },
+        {
+            "meta": {
+                "refs": [
+                    "https://blog.malwarebytes.com/threat-analysis/2016/10/trick-bot-dyrezas-successor/",
+                    "https://blog.malwarebytes.com/threat-analysis/2017/08/trickbot-comes-with-new-tricks-attacking-outlook-and-browsing-data/",
+                    "http://www.pwc.co.uk/issues/cyber-security-data-privacy/research/trickbots-bag-of-tricks.html",
+                    "https://www.flashpoint-intel.com/blog/new-version-trickbot-adds-worm-propagation-module/"
+                ],
+                "synonyms": [
+                    "Trickster",
+                    "Trickloader"
+                ],
+                "date": "Discovered Fall 2016"
+            },
+            "description": "Trickbot is a bot that is delivered via exploit kits and malspam campaigns. The bot is capable of downloading modules, including a banker module.  Trickbot also shares roots with the Dyre banking trojan",
+            "value": "Trickbot",
+            "uuid": "07e3260b-d80c-4c86-bd28-8adc111bbec6"
+        },
+        {
+            "meta": {
+                "refs": [
+                    "https://www.secureworks.com/research/dyre-banking-trojan",
+                    "https://blog.malwarebytes.com/threat-analysis/2015/11/a-technical-look-at-dyreza/"
+                ],
+                "synonyms": [
+                    "Dyreza"
+                ],
+                "date": "Discovered  ~June 2014"
+            },
+            "description": "Dyre is a banking trojan distributed via exploit kits and malspam emails primarily.  It has a modular architectur and utilizes  man-in-the-browser functionality.  It also leverages a backconnect server that allows threat actors to connect to a bank website through the victim's computer.",
+            "value": "Dyre",
+            "uuid": "15e969e6-f031-4441-a49b-f401332e4b00"
+        },
+        {
+            "meta": {
+                "refs": [
+                    "https://securityblog.switch.ch/2015/06/18/so-long-and-thanks-for-all-the-domains/",
+                    "http://securityintelligence.com/tinba-malware-reloaded-and-attacking-banks-around-the-world/",
+                    "https://blog.avast.com/2014/09/15/tiny-banker-trojan-targets-customers-of-major-banks-worldwide/",
+                    "http://my.infotex.com/tiny-banker-trojan/"
+                ],
+                "synonyms": [
+                    "Zusy",
+                    "TinyBanker",
+                    "illi"
+                ],
+                "date": "Discovered ~Spring 2012"
+            },
+            "description": "Tinba is a very small banking trojan that hooks into browsers and steals login data and sniffs on network traffic. It also uses Man in The Browser (MiTB) and webinjects. Tinba is primarily delivered via exploit kits, malvertising and malspam email campaigns.",
+            "value": "Tinba",
+            "uuid": "5594b171-32ec-4145-b712-e7701effffdd"
+        },
+        {
+            "meta": {
+                "refs": [
+                    "https://feodotracker.abuse.ch/",
+                    "http://blog.trendmicro.com/trendlabs-security-intelligence/new-banking-malware-uses-network-sniffing-for-data-theft/"
+                ],
+                "synonyms": [
+                    "Feodo Version C",
+                    "Emotet"
+                ],
+                "date": "Discovered ~Summer 2014"
+            },
+            "description": "Geodo is a banking trojan delivered primarily through malspam emails. It is capable of sniffing network activity to steal information by hooking certain network API calls.",
+            "value": "Geodo",
+            "uuid": "8e002f78-7fb8-4e70-afd7-0b4ac655be26"
+        },
+        {
+            "meta": {
+                "refs": [
+                    "https://securelist.com/dridex-a-history-of-evolution/78531/",
+                    "https://feodotracker.abuse.ch/",
+                    "http://stopmalvertising.com/rootkits/analysis-of-cridex.html"
+                ],
+                "synonyms": [
+                    "Bugat",
+                    "Cridex"
+                ],
+                "date": "Discovered ~September 2011"
+            },
+            "description": "Feodo is a banking trojan that utilizes web injects and is also capable of monitoring & manipulating cookies. Version A = Port 8080, Version B = Port 80 It is delivered primarily via exploit kits and malspam emails.",
+            "value": "Feodo",
+            "uuid": "7ca93488-c357-44c3-b246-3f88391aca5a"
+        },
+        {
+            "meta": {
+                "refs": [
+                    "https://www.cert.pl/en/news/single/ramnit-in-depth-analysis/"
+                ],
+                "synonyms": [
+                    "Nimnul"
+                ],
+                "date": "Discovered ~2010."
+            },
+            "description": "Originally not a banking trojan in 2010, Ramnit became a banking trojan after the Zeus source code leak.  It is capable of perforrming Man-in-the-Browser attacks.  Distributed primarily via exploit kits.",
+            "value": "Ramnit",
+            "uuid": "7e2288ec-e7d4-4833-9245-a2bc5ae40ee2"
+        },
+        {
+            "meta": {
+                "refs": [
+                    "https://securityintelligence.com/qakbot-banking-trojan-causes-massive-active-directory-lockouts/",
+                    "https://www.johannesbader.ch/2016/02/the-dga-of-qakbot/",
+                    "https://www.virusbulletin.com/uploads/pdf/magazine/2016/VB2016-Karve-etal.pdf"
+                ],
+                "synonyms": [
+                    "Qbot ",
+                    "Pinkslipbot"
+                ],
+                "date": "Discovered ~2007"
+            },
+            "description": "Qakbot is a banking trojan that leverages webinjects to steal banking information from victims.  It also utilizes DGA for command and control. It is primarily delivered via exploit kits.",
+            "value": "Qakbot",
+            "uuid": "b2ec1f16-2a76-4910-adc5-ecb3570e7c1a"
+        },
+        {
+            "meta": {
+                "refs": [
+                    "https://securityintelligence.com/an-overnight-sensation-corebot-returns-as-a-full-fledged-financial-malware/",
+                    "https://www.arbornetworks.com/blog/asert/wp-content/uploads/2016/02/ASERT-Threat-Intelligence-Brief-2016-02-Corebot-1.pdf",
+                    "https://malwarebreakdown.com/2017/09/11/re-details-malspam-downloads-corebot-banking-trojan/"
+                ],
+                "date": "Discovered ~Fall 2015"
+            },
+            "description": "Corebot is a modular trojan that leverages a banking module that can perform browser hooking, form grabbing, MitM, webinjection to steal financial information from victims. Distributed primarily via malspam emails and exploit kits.",
+            "value": "Corebot",
+            "uuid": "8a3d46db-d3b4-4f89-99e2-d1f0de3f484c"
+        },
+        {
+            "meta": {
+                "refs": [
+                    "https://securelist.com/the-nukebot-banking-trojan-from-rough-drafts-to-real-threats/78957/",
+                    "https://www.arbornetworks.com/blog/asert/dismantling-nuclear-bot/",
+                    "https://securityintelligence.com/the-nukebot-trojan-a-bruised-ego-and-a-surprising-source-code-leak/",
+                    "http://www.kernelmode.info/forum/viewtopic.php?f=16&t=4596",
+                    "https://benkowlab.blogspot.ca/2017/08/quick-look-at-another-alina-fork-xbot.html"
+                ],
+                "synonyms": [
+                    "NukeBot",
+                    "Nuclear Bot",
+                    "MicroBankingTrojan",
+                    "Xbot"
+                ],
+                "date": "Discovered ~December 2016"
+            },
+            "description": "TinyNuke is a modular banking trojan that includes a HiddenDesktop/VNC server and reverse SOCKS 4 server.  It's main functionality is to make web injections into specific pages to steal user data.  Distributed primarily via malspam emails and exploit kits.",
+            "value": "TinyNuke",
+            "uuid": "e683cd91-40b4-4e1c-be25-34a27610a22e"
+        },
+        {
+            "meta": {
+                "refs": [
+                    "https://www.govcert.admin.ch/blog/33/the-retefe-saga",
+                    "https://threatpost.com/eternalblue-exploit-used-in-retefe-banking-trojan-campaign/128103/",
+                    "https://countuponsecurity.com/2016/02/29/retefe-banking-trojan/",
+                    "https://securityblog.switch.ch/2014/11/05/retefe-with-a-new-twist/",
+                    "http://securityintelligence.com/tsukuba-banking-trojan-phishing-in-japanese-waters/"
+                ],
+                "synonyms": [
+                    "Tsukuba",
+                    "Werdlod"
+                ],
+                "date": "Discovered in 2014"
+            },
+            "description": "Retefe is a banking trojan that is distributed by what SWITCH CERT calls the Retefe gang or Operation Emmental.  It uses geolocation based targeting.  It also leverages fake root certificate and changes the DNS server for domain name resolution in order to display fake banking websites to victims. It is spread primarily through malspam emails. ",
+            "value": "Retefe",
+            "uuid": "87b69cb4-8b65-47ee-91b0-9b1decdd5c5c"
+        },
+        {
+            "meta": {
+                "refs": [
+                    "http://www.malwaredigger.com/2015/06/rovnix-payload-and-plugin-analysis.html",
+                    "https://www.symantec.com/connect/blogs/new-carberp-variant-heads-down-under",
+                    "http://www.malwaredigger.com/2015/05/rovnix-dropper-analysis.html",
+                    "http://blog.trendmicro.com/trendlabs-security-intelligence/rovnix-infects-systems-with-password-protected-macros/"
+                ],
+                "date": "Discovered ~early 2015"
+            },
+            "description": "ReactorBot is sometimes mistakenly tagged as Rovnix. ReactorBot is a full fledged modular bot that includes a banking module that has roots with the Carberp banking trojan. Distributed primarily via malspam emails.",
+            "value": "ReactorBot",
+            "uuid": "d939e802-acb2-4881-bdaf-ece1eccf5699"
+        },
+        {
+            "meta": {
+                "refs": [
+                    "https://www.arbornetworks.com/blog/asert/another-banker-enters-matrix/"
+                ],
+                "date": "Discovered ~Spring 2017"
+            },
+            "description": "Matrix Banker is named accordingly because of the Matrix reference in it's C2 panel. Distributed primarily via malspam emails.",
+            "value": "Matrix Banker",
+            "uuid": "aa3fc68c-413c-4bfb-b4cd-bca7094da985"
+        },
+        {
+            "meta": {
+                "refs": [
+                    "https://heimdalsecurity.com/blog/zeus-gameover/",
+                    "https://www.us-cert.gov/ncas/alerts/TA14-150A"
+                ],
+                "date": "Discovered ~Sept. 2011"
+            },
+            "description": "Zeus Gameover captures banking credentials from infected computers, then use those credentials to initiate or re-direct wire transfers to accounts overseas that are controlled by the criminals. GameOver has a decentralized, peer-to-peer command and control infrastructure rather than centralized points of origin. Distributed primarily via malspam emails and exploit kits.",
+            "value": "Zeus Gameover",
+            "uuid": "8653a94e-3eb3-4d88-8683-a1ae4a524774"
+        },
+        {
+            "meta": {
+                "refs": [
+                    "https://www.ioactive.com/pdfs/ZeusSpyEyeBankingTrojanAnalysis.pdf",
+                    "https://www.computerworld.com/article/2509482/security0/spyeye-trojan-defeating-online-banking-defenses.html",
+                    "https://www.symantec.com/connect/blogs/spyeye-bot-versus-zeus-bot"
+                ],
+                "date": "Discovered early 2011"
+            },
+            "description": "SpyEye is a similar to the Zeus botnet banking trojan. It utilizes a web control panel for C2 and can perform form grabbing, autofill credit card modules, ftp grabber, pop3 grabber and HTTP basic access authorization grabber.  It also contained a Kill Zeus feature which would remove any Zeus infections if SpyEye was on the system.  Distributed primarily via exploit kits and malspam emails.",
+            "value": "SpyEye",
+            "uuid": "ebce18e9-b387-4b7d-bab9-4acd4fca7a7c"
+        },
+        {
+            "meta": {
+                "refs": [
+                    "https://blog.malwarebytes.com/threat-analysis/2012/11/citadel-a-cyber-criminals-ultimate-weapon/",
+                    "https://krebsonsecurity.com/tag/citadel-trojan/",
+                    "https://securityintelligence.com/cybercriminals-use-citadel-compromise-password-management-authentication-solutions/"
+                ],
+                "date": "Discovered ~January 2012"
+            },
+            "description": "Citadel is an offspring of the Zeus banking trojan. Delivered primarily via exploit kits.",
+            "value": "Citadel",
+            "uuid": "9eb89081-3245-423a-995f-c1d78ce39619"
+        },
+        {
+            "meta": {
+                "refs": [
+                    "https://heimdalsecurity.com/blog/security-alert-citadel-trojan-resurfaces-atmos-zeus-legacy/",
+                    "http://www.xylibox.com/2016/02/citadel-0011-atmos.html"
+                ],
+                "date": "Discovered ~spring 2016"
+            },
+            "description": "Atmos is derived from the Citadel banking trojan. Delivered primarily via exploit kits and malspam emails.",
+            "value": "Atmos",
+            "uuid": "ee021933-929d-4d6c-abca-5827cfb77289"
+        },
+        {
+            "meta": {
+                "refs": [
+                    "https://securelist.com/ice-ix-not-cool-at-all/29111/ "
+                ],
+                "date": "Discovered ~Fall 2011"
+            },
+            "description": "Ice IX is a bot created using the source code of ZeuS 2.0.8.9.  No major improvements compared to ZeuS 2.0.8.9.",
+            "value": "Ice IX",
+            "uuid": "1d4a5704-c6fb-4bbb-92b2-88dc67f86339"
+        },
+        {
+            "meta": {
+                "refs": [
+                    "https://securelist.com/zeus-in-the-mobile-for-android-10/29258/"
+                ],
+                "date": "Discovered ~end of 2010"
+            },
+            "description": "Zeus in the mobile. Banking trojan developed for mobile devices such as Windows Mobile, Blackberry and Android.",
+            "value": "Zitmo",
+            "uuid": "3b1aff8f-647d-4709-aab0-6db1859c5f11"
+        },
+        {
+            "meta": {
+                "refs": [
+                    "https://johannesbader.ch/2015/09/three-variants-of-murofets-dga/",
+                    "https://www.trendmicro.com/vinfo/us/threat-encyclopedia/malware/PE_LICAT.A",
+                    "https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=Virus%3aWin32%2fMurofet.A"
+                ],
+                "synonyms": [
+                    "Murofet"
+                ],
+                "date": "Discovered in 2010"
+            },
+            "description": "Banking trojan based on Zeus V2.  Murofet is a newer version of Licat found ~end of 2011",
+            "value": "Licat",
+            "uuid": "0b097926-2e1a-4134-8ab9-4c16d0cca0fc"
+        },
+        {
+            "meta": {
+                "refs": [
+                    "https://blog.rapid7.com/2012/12/06/skynet-a-tor-powered-botnet-straight-from-reddit/"
+                ],
+                "date": "Discovered end of 2012"
+            },
+            "description": "Skynet is a Tor-powered trojan with DDoS, Bitcoin mining and Banking capabilities.  Spread via USENET as per rapid7.",
+            "value": "Skynet",
+            "uuid": "f20791e4-26a7-45e0-90e6-709553b223b2"
+        },
+        {
+            "meta": {
+                "refs": [
+                    "https://www.bleepingcomputer.com/news/security/new-icedid-banking-trojan-discovered/",
+                    "https://securityintelligence.com/new-banking-trojan-icedid-discovered-by-ibm-x-force-research/"
+                ],
+                "date": "Discovered in September 2017"
+            },
+            "description": "According to X-Force research, the new banking Trojan emerged in the wild in September 2017, when its first test campaigns were launched. Our researchers noted that IcedID has a modular malicious code with modern banking Trojan capabilities comparable to malware such as the Zeus Trojan. At this time, the malware targets banks, payment card providers, mobile services providers, payroll, webmail and e-commerce sites in the U.S. Two major banks in the U.K. are also on the target list the malware fetches.",
+            "value": "IcedID",
+            "uuid": "9d67069c-b778-486f-8158-53f5dcd05d08"
+        },
+        {
+            "value": "GratefulPOS",
+            "description": "GratefulPOS has the following functions\n1. Access arbitrary processes on the target POS system\n2. Scrape track 1 and 2 payment card data from the process(es)\n3. Exfiltrate the payment card data via lengthy encoded and obfuscated DNS queries to a hardcoded domain registered and controlled by the perpetrators, similar to that described by Paul Rascagneres in his analysis of FrameworkPOS in 2014[iii], and more recently by Luis Mendieta of Anomoli in analysis of a precursor to this sample.",
+            "meta": {
+                "refs": [
+                    "https://community.rsa.com/community/products/netwitness/blog/2017/12/08/gratefulpos-credit-card-stealing-malware-just-in-time-for-the-shopping-season"
+                ]
+            },
+            "uuid": "7d9362e5-e3cf-4640-88a2-3faf31952963"
+        },
+        {
+            "value": "Dok",
+            "description": "A macOS banking trojan that that redirects an infected user's web traffic in order to extract banking credentials.",
+            "meta": {
+                "refs": [
+                    "https://objective-see.com/blog/blog_0x25.html#Dok"
+                ]
+            },
+            "uuid": "e159c4f8-3c22-49f9-a60a-16588a9c22b0"
+        },
+        {
+            "value": "downAndExec",
+            "description": "Services like Netflix use content delivery networks (CDNs) to maximize bandwidth usage as it gives users greater speed when viewing the content, as the server is close to them and is part of the Netflix CDN. This results in faster loading times for series and movies, wherever you are in the world. But, apparently, the CDNs are starting to become a new way of spreading malware. The attack chain is very extensive, and incorporates the execution of remote scripts (similar in some respects to the recent \u201cfileless\u201d banking malware trend), plus the use of CDNs for command and control (C&C), and other standard techniques for the execution and protection of malware.",
+            "meta": {
+                "refs": [
+                    "https://www.welivesecurity.com/2017/09/13/downandexec-banking-malware-cdns-brazil/"
+                ]
+            },
+            "uuid": "bfff538a-89dd-4bed-9ac1-b4faee373724"
+        },
+        {
+            "value": "Smominru",
+            "description": "Since the end of May 2017, we have been monitoring a Monero miner that spreads using the EternalBlue Exploit (CVE-2017-0144). The miner itself, known as Smominru (aka Ismo) has been well-documented, so we will not discuss  its post-infection behavior. However, the miner\u2019s use of Windows Management Infrastructure is unusual among coin mining malware.\nThe speed at which mining operations conduct mathematical operations to unlock new units of cryptocurrency is referred to as \u201chash power\u201d. Based on the hash power associated with the Monero payment address for this operation, it appeared that this botnet was likely twice the size of Adylkuzz. The operators had already mined approximately 8,900 Monero (valued this week between $2.8M and $3.6M). Each day, the botnet mined roughly 24 Monero, worth an average of $8,500 this week.",
+            "meta": {
+                "refs": [
+                    "https://www.proofpoint.com/us/threat-insight/post/smominru-monero-mining-botnet-making-millions-operators"
+                ],
+                "synonyms": [
+                    "Ismo",
+                    "lsmo"
+                ]
+            },
+            "uuid": "f93acc85-8d2c-41e0-b0c5-47795b8c6194"
+        }
+    ],
+    "version": 7,
+    "uuid": "59f20cce-5420-4084-afd5-0884c0a83832",
+    "description": "A list of banker malware.",
+    "authors": [
+        "Unknown"
+    ],
+    "source": "Open Sources",
+    "type": "banker",
+    "name": "Banker"
 }
