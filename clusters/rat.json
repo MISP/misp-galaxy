@@ -7,7 +7,7 @@
   ],
   "description": "remote administration tool or remote access tool (RAT), also called sometimes remote access trojan, is a piece of software or programming that allows a remote \"operator\" to control a system as if they have physical access to that system.",
   "uuid": "312f8714-45cb-11e7-b898-135207cdceb9",
-  "version": 6,
+  "version": 7,
   "values": [
     {
       "meta": {
@@ -2401,6 +2401,15 @@
         ]
       },
       "uuid": "696125b9-7a91-463a-9e6b-b4fc381b8833"
+    },
+    {
+      "description": "TSCookie provides parameters such as C&C server information when loading TSCookieRAT. Upon the execution, information of the infected host is sent with HTTP POST request to an external server. (The HTTP header format is the same as TSCookie.)\nThe data is RC4-encrypted from the beginning to 0x14 (the key is Date header value), which is followed by the information of the infected host (host name, user name, OS version, etc.). Please refer to Appendix C, Table C-1 for the data format.",
+      "value": "TSCookieRAT",
+      "meta": {
+        "refs": [
+          "http://blog.jpcert.or.jp/.s/2018/03/malware-tscooki-7aa0.html"
+        ]
+      }
     }
   ]
 }
