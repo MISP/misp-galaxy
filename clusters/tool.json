@@ -10,7 +10,7 @@
   ],
   "description": "threat-actor-tools is an enumeration of tools used by adversaries. The list includes malware but also common software regularly used by the adversaries.",
   "uuid": "0d821b68-9d82-4c6d-86a6-1071a9e0f79f",
-  "version": 52,
+  "version": 53,
   "values": [
     {
       "meta": {
@@ -3717,6 +3717,15 @@
         ]
       },
       "uuid": "d248a27c-d036-4032-bc70-803a1b0c8148"
+    },
+    {
+      "description": "TSCookie itself only serves as a downloader. It expands functionality by downloading modules from C&C servers. The sample that was examined downloaded a DLL file which has exfiltrating function among many others (hereafter “TSCookieRAT”). Downloaded modules only runs on memory.",
+      "value": "TSCookie",
+      "meta": {
+        "refs": [
+          "http://blog.jpcert.or.jp/.s/2018/03/malware-tscooki-7aa0.html"
+        ]
+      }
     }
   ]
 }
