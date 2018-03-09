@@ -10,7 +10,7 @@
   ],
   "description": "threat-actor-tools is an enumeration of tools used by adversaries. The list includes malware but also common software regularly used by the adversaries.",
   "uuid": "0d821b68-9d82-4c6d-86a6-1071a9e0f79f",
-  "version": 53,
+  "version": 54,
   "values": [
     {
       "meta": {
@@ -3726,6 +3726,111 @@
           "http://blog.jpcert.or.jp/.s/2018/03/malware-tscooki-7aa0.html"
         ]
       }
+    },
+    {
+      "value": "Exforel",
+      "description": "Exforel backdoor malware, VirTool:WinNT/Exforel.A, backdoor implemented at the Network Driver Interface Specification (NDIS) level.",
+      "meta": {
+        "refs": [
+          "http://news.softpedia.com/news/Exforel-Backdoor-Implemented-at-NDIS-Level-to-Be-More-Stealthy-Experts-Say-313567.shtml"
+        ]
+      },
+      "uuid": "3119554e-236e-11e8-ae2e-b7063732fd07"
+    },
+    {
+      "value": "Rotinom",
+      "description": "W32.Rotinom is a worm that spreads by copying itself to removable drives. ",
+      "meta": {
+        "refs": [
+          "https://www.symantec.com/security_response/writeup.jsp?docid=2011-011117-0057-99"
+        ]
+      },
+      "uuid": "5f4be30a-2373-11e8-bbab-774ff49fd040"
+    },
+    {
+      "value": "Aurora",
+      "description": "You probably have heard the recent news about a widespread attack that was carried out using a 0-Day exploit for Internet Explorer as one of the vectors. This exploit is also known as the \"Aurora Exploit\". The code has recently gone public and it was also added to the Metasploit framework.\nThis exploit was used to deliver a malicious payload, known by the name of Trojan.Hydraq, the main purpose of which was to steal information from the compromised computer and report it back to the attackers.\nThe exploit code makes use of known techniques to exploit a vulnerability that exists in the way Internet Explorer handles a deleted object. The final purpose of the exploit itself is to access an object that was previously deleted, causing the code to reference a memory location over which the attacker has control and in which the attacker dropped his malicious code.",
+      "meta": {
+        "refs": [
+          "https://www.symantec.com/connect/blogs/trojanhydraq-incident-analysis-aurora-0-day-exploit",
+          "https://www.symantec.com/connect/blogs/hydraq-aurora-attackers-back",
+          "https://www.symantec.com/connect/blogs/hydraq-attack-mythical-proportions"
+        ],
+        "synonyms": [
+          "Hydraq"
+        ]
+      },
+      "uuid": "70c31066-237a-11e8-8eff-37ef1ad0c703"
+    },
+    {
+      "value": "Cheshire Cat",
+      "description": "Oldest Cheshire Cat malware compiled in 2002. It's a very old family of malware.\nThe time stamps may be forged but the malware does have support for very old operating systems. The 2002 implant retrieves a handle for an asr2892 drives that they never got their hands on. It checks for a NE header which is a header type used before PE headers even existed. References to 16bit or DOS on a non 9x platform. This malware implant IS REALLY for old systems.\nThe malware is for espionage - it's very carefully made to stay hidden. Newer versions install as icon handler shell extension for .lnk files. Shell in this case means the program manager because windows explorer was not yet a thing. It sets up COM server objects. It looks like it was written in pure C, but made to look like C++.\nA sensitive implant as well: it checks for all kinds of old MS platforms including Windows NT, win95, win98, winME and more. It checks the patch level as well. A lot of effort was put into adapting this malware to a lot of different operating systems with very granular decision chains.",
+      "meta": {
+        "refs": [
+          "https://www.youtube.com/watch?v=u2Ry9HTBbZI",
+          "https://malware-research.org/prepare-father-of-stuxnet-news-are-coming/",
+          "https://www.peerlyst.com/posts/hack-lu-2016-recap-interesting-malware-no-i-m-not-kidding-by-marion-marschalek-claus-cramon"
+        ]
+      },
+      "uuid": "7af226a0-237d-11e8-b438-075460988010"
+    },
+    {
+      "value": "Downloader-FGO",
+      "description": "Downloader-FGO is a trojan that comes hidden in malicious programs. Once you install the source (carrier) program, this trojan attempts to gain \"root\" access (administrator level access) to your computer without your knowledge",
+      "meta": {
+        "refs": [
+          "https://www.solvusoft.com/en/malware/trojans/downloader-fgo/"
+        ],
+        "synonyms": [
+          "Win32:Malware-gen",
+          "Generic30.ASYL (Trojan horse)",
+          "TR/Agent.84480.85",
+          "Trojan.Generic.8627031",
+          "Trojan:Win32/Sisproc",
+          "SB/Malware",
+          "Trj/CI.A",
+          "Mal/Behav-112",
+          "Trojan.Spuler",
+          "TROJ_KAZY.SM1",
+          "Win32/FakePPT_i"
+        ],
+        "uuid": "c565a3a4-2384-11e8-99e9-ebd8ea5c3c3e"
+      }
+    },
+    {
+      "value": "miniFlame",
+      "description": "Newly discovered spying malware designed to steal data from infected systems was likely built from the same cyber-weaponry factory that produced two other notorious cyberespionage software Flame and Gauss, a security vendor says.\nKaspersky Lab released a technical paper Monday outlining the discovery of the malware the vendor has dubbed \"miniFlame.\"\nWhile capable of working with Flame and Gauss, miniFlame is a \"small, fully functional espionage module designed for data theft and direct access to infected systems,\" Kaspersky said.",
+      "meta": {
+        "refs": [
+          "https://securelist.com/miniflame-aka-spe-elvis-and-his-friends-5/31730/",
+          "https://www.csoonline.com/article/2132422/malware-cybercrime/cyberespionage-malware--miniflame--discovered.html"
+        ]
+      },
+      "uuid": "16c57264-239f-11e8-9469-0738871e7aa4"
+    },
+    {
+      "value": "GHOTEX",
+      "description": "PE_GHOTEX.A-O is a portable executable (PE is the standard executable format for 32-bit Windows files) virus. PE viruses infect executable Windows files by incorporating their code into these files such that they are executed when the infected files are opened.",
+      "meta": {
+        "refs": [
+          "https://www.trendmicro.com/vinfo/dk/threat-encyclopedia/archive/malware/pe_ghotex.a-o"
+        ]
+      },
+      "uuid": "231b7572-239f-11e8-8404-df420a5d403b"
+    },
+    {
+      "value": "Shipup",
+      "description": "Trojan:Win32/Shipup.G is a trojan that modifies the Autorun feature for certain devices.",
+      "meta": {
+        "refs": [
+          "https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=Trojan:Win32/Shipup.G",
+          "https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=Trojan%3AWin32%2FShipup.K",
+          "https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=Worm:Win32/Shipup.A",
+          "https://www.sophos.com/en-us/threat-center/threat-analyses/viruses-and-spyware/W32~ShipUp-F/detailed-analysis.aspx",
+          "https://www.sophos.com/en-us/threat-center/threat-analyses/viruses-and-spyware/Troj~ShipUp-A/detailed-analysis.aspx"
+        ]
+      },
+      "uuid": "231b7572-239f-11e8-8404-df420a5d403b"
     }
   ]
 }
