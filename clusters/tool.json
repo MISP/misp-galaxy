@@ -10,7 +10,7 @@
   ],
   "description": "threat-actor-tools is an enumeration of tools used by adversaries. The list includes malware but also common software regularly used by the adversaries.",
   "uuid": "0d821b68-9d82-4c6d-86a6-1071a9e0f79f",
-  "version": 54,
+  "version": 55,
   "values": [
     {
       "meta": {
@@ -3831,6 +3831,24 @@
         ]
       },
       "uuid": "231b7572-239f-11e8-8404-df420a5d403b"
+    },
+    {
+      "value": "Neuron",
+      "description": "Neuron consists of both client and server components. The Neuron client and Neuron service are written using the .NET framework with some codebase overlaps.\nThe Neuron client is used to infect victim endpoints and extract sensitive information from local client machines. The Neuron server is used to infect network infrastructure such as mail and web servers, and acts as local Command & Control (C2) for the client component. Establishing a local C2 limits interaction with the target network and remote hosts. It also reduces the log footprint of actor infrastructure and enables client interaction to appear more convincing as the traffic is contained within the target network. ",
+      "meta": {
+        "refs": [
+          "https://www.ncsc.gov.uk/content/files/protected_files/article_files/Turla%20group%20using%20Neuron%20and%20Nautilus%20tools%20alongside%20Snake%20malware_0.pdf"
+        ]
+      }
+    },
+    {
+      "value": "Nautilus",
+      "description": "Nautilus is very similar to Neuron both in the targeting of mail servers and how client communications are performed. This malware is referred to as Nautilus due to its embedded internal DLL name “nautilus-service.dll”, again sharing some resemblance to Neuron.\nThe  Nautilus  service  listens  for  HTTP  requests  from  clients  to  process  tasking requests such as executing commands, deleting files and writing files to disk",
+      "meta": {
+        "refs": [
+          "https://www.ncsc.gov.uk/content/files/protected_files/article_files/Turla%20group%20using%20Neuron%20and%20Nautilus%20tools%20alongside%20Snake%20malware_0.pdf"
+        ]
+      }
     }
   ]
 }
