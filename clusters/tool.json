@@ -6,11 +6,12 @@
     "Alexandre Dulaunoy",
     "Florian Roth",
     "Timo Steffens",
-    "Christophe Vandeplas"
+    "Christophe Vandeplas",
+    "Dennis Rand"
   ],
   "description": "threat-actor-tools is an enumeration of tools used by adversaries. The list includes malware but also common software regularly used by the adversaries.",
   "uuid": "0d821b68-9d82-4c6d-86a6-1071a9e0f79f",
-  "version": 56,
+  "version": 57,
   "values": [
     {
       "meta": {
@@ -3854,6 +3855,200 @@
         ]
       },
       "uuid": "73cb7ecc-25e3-11e8-a97b-c35ec4e7dcf8"
+    },
+    {
+      "value": "CORALDECK",
+      "description": "CORALDECK is an exfiltration tool that searches for specified files and exfiltrates them in password protected archives using hardcoded HTTP POST headers. CORALDECK has been observed dropping and using Winrar to exfiltrate data in password protected RAR files as well as WinImage and zip archives",
+      "meta": {
+        "refs": [
+          "https://www2.fireeye.com/rs/848-DID-242/images/rpt_APT37.pdf"
+        ],
+        "synonyms": [
+          "APT.InfoStealer.Win.CORALDECK",
+          "FE_APT_InfoStealer_Win_CORALDECK_1"
+        ]
+      },
+      "uuid": "becf81e5-f989-4093-a67d-d55a0483885f"
+    },
+    {
+      "value": "DOGCALL",
+      "description": "DOGCALL is a backdoor commonly distributed as an encoded binary file downloaded and decrypted by shellcode following the exploitation of weaponized documents. DOGCALL is capable of capturing screenshots, logging keystrokes, evading analysis with anti-virtual machine detections, and leveraging cloud storage APIs such as Cloud, Box, Dropbox, and Yandex. DOGCALL was used to target South Korean Government and military organizations in March and April 2017. The malware is typically dropped using an HWP exploit in a lure document. The wiper tool, RUHAPPY, was found on some of the systems targeted by DOGCALL. While DOGCALL is primarily an espionage tool, RUHAPPY is a destructive wiper tool meant to render systems inoperable.",
+      "meta": {
+        "refs": [
+          "https://www2.fireeye.com/rs/848-DID-242/images/rpt_APT37.pdf"
+        ],
+        "synonyms": [
+          "FE_APT_RAT_DOGCALL",
+          "FE_APT_Backdoor_Win32_DOGCALL_1",
+          "APT.Backdoor.Win.DOGCALL"
+        ]
+      },
+      "uuid": "a5e851b4-e046-43b6-bc6e-c6c008e3c5aa"
+    },
+    {
+      "value": "GELCAPSULE",
+      "description": "GELCAPSULE is a downloader traditionally dropped or downloaded by an exploit document. GELCAPSULE has been observed downloading SLOWDRIFT to victim systems.",
+      "meta": {
+        "refs": [
+          "https://www2.fireeye.com/rs/848-DID-242/images/rpt_APT37.pdf"
+        ],
+        "synonyms": [
+          "FE_APT_Downloader_Win32_GELCAPSULE_1"
+        ]
+      },
+      "uuid": "ac008bbd-f415-458e-96bf-be7d158df2d8"
+    },
+    {
+      "value": "HAPPYWORK",
+      "description": "HAPPYWORK is a malicious downloader that can download and execute a second-stage payload, collect system information, and beacon it to the command and control domains. The collected system information includes: computer name, user name, system manufacturer via registry, IsDebuggerPresent state, and execution path. In November 2016, HAPPYWORK targeted government and financial targets in South Korea.",
+      "meta": {
+        "refs": [
+          "https://www2.fireeye.com/rs/848-DID-242/images/rpt_APT37.pdf"
+        ],
+        "synonyms": [
+          "FE_APT_Downloader_HAPPYWORK",
+          "FE_APT_Exploit_HWP_Happy",
+          "Downloader.APT.HAPPYWORK"
+        ]
+      },
+      "uuid": "656cd201-d57a-4a2f-a201-531eb4922a72"
+    },
+    {
+      "value": "KARAE",
+      "description": "Karae backdoors are typically used as first-stage malware after an initial compromise. The backdoors can collect system information, upload and download files, and may be used to retrieve a second-stage payload. The malware uses public cloud-based storage providers for command and control. In March 2016, KARAE malware was distributed through torrent file-sharing websites for South Korean users. During this campaign, the malware used a YouTube video downloader application as a lure.",
+      "meta": {
+        "refs": [
+          "https://www2.fireeye.com/rs/848-DID-242/images/rpt_APT37.pdf"
+        ],
+        "synonyms": [
+          "FE_APT_Backdoor_Karae_enc",
+          "FE_APT_Backdoor_Karae",
+          "Backdoor.APT.Karae"
+        ]
+      },
+      "uuid": "70ca8408-bc45-4d39-acd2-9190ba15ea97"
+    },
+    {
+      "value": "MILKDROP",
+      "description": "MILKDROP is a launcher that sets a persistence registry key and launches a backdoor.",
+      "meta": {
+        "refs": [
+          "https://www2.fireeye.com/rs/848-DID-242/images/rpt_APT37.pdf"
+        ],
+        "synonyms": [
+          "FE_Trojan_Win32_MILKDROP_1"
+        ]
+      },
+      "uuid": "1064c911-44e6-4c84-8e11-f476a8b06ce8"
+    },
+    {
+      "value": "POORAIM",
+      "description": "POORAIM malware is designed with basic backdoor functionality and leverages AOL Instant Messenger for command and control communications. POORAIM includes the following capabilities: System information enumeration, File browsing, manipulation and exfiltration, Process enumeration, Screen capture, File execution, Exfiltration of browser favorites, and battery status. Exfiltrated data is sent via files over AIM. POORAIM has been involved in campaigns against South Korean media organizations and sites relating to North Korean refugees and defectors since early 2014. Compromised sites have acted as watering holes to deliver newer variants of POORAIM.",
+      "meta": {
+        "refs": [
+          "https://www2.fireeye.com/rs/848-DID-242/images/rpt_APT37.pdf"
+        ],
+        "synonyms": [
+          "Backdoor.APT.POORAIM"
+        ]
+      },
+      "uuid": "fe97ace3-9a80-42af-9eae-1f9245927e5d"
+    },
+    {
+      "value": "RICECURRY",
+      "description": "RICECURRY is a Javascript based profiler used to fingerprint a victim's web browser and deliver malicious code in return. Browser, operating system, and Adobe Flash version are detected by RICECURRY, which may be a modified version of PluginDetect.",
+      "meta": {
+        "refs": [
+          "https://www2.fireeye.com/rs/848-DID-242/images/rpt_APT37.pdf"
+        ],
+        "synonyms": [
+          "Exploit.APT.RICECURRY"
+        ]
+      },
+      "uuid": "6f37edf6-f5e6-4749-82f9-2aa7c30582c4"
+    },
+    {
+      "value": "RUHAPPY",
+      "description": "RUHAPPY is a destructive wiper tool seen on systems targeted by DOGCALL. It attempts to overwrite the MBR, causing the system not to boot. When victims' systems attempt to boot, the string 'Are you Happy?' is displayed. The malware is believed to be tied to the developers of DOGCALL and HAPPYWORK based on similar PDB paths in all three.",
+      "meta": {
+        "refs": [
+          "https://www2.fireeye.com/rs/848-DID-242/images/rpt_APT37.pdf"
+        ],
+        "synonyms": [
+          "FE_APT_Trojan_Win32_RUHAPPY_1"
+        ]
+      },
+      "uuid": "96296d57-e9d9-42f1-b08c-c8636369b9aa"
+    },
+    {
+      "value": "SHUTTERSPEED",
+      "description": "SHUTTERSPEED is a backdoor that can collect system information, acquire screenshots, and download/execute an arbitrary executable. SHUTTERSPEED typically requires an argument at runtime in order to execute fully. Observed arguments used by SHUTTERSPEED include: 'help', 'console', and 'sample'. The spear phishing email messages contained documents exploiting RTF vulnerability CVE-2017-0199. Many of the compromised domains in the command and control infrastructure are linked to South Korean companies. Most of these domains host a fake webpage pertinent to targets.",
+      "meta": {
+        "refs": [
+          "https://www2.fireeye.com/rs/848-DID-242/images/rpt_APT37.pdf"
+        ],
+        "synonyms": [
+          "FE_APT_Backdoor_SHUTTERSPEED",
+          "APT.Backdoor.SHUTTERSPEED"
+        ]
+      },
+      "uuid": "d909efe3-abc3-4be0-9640-e4727542fa2b"
+    },
+    {
+      "value": "SLOWDRIFT",
+      "description": "SLOWDRIFT is a launcher that communicates via cloud based infrastructure. It sends system information to the attacker command and control and then downloads and executes additional payloads.Lure documents distributing SLOWDRIFT were not tailored for specific victims, suggesting that TEMP.Reaper is attempting to widen its target base across multiple industries and in the private sector. SLOWDRIFT was seen being deployed against academic and strategic targets in South Korea using lure emails with documents leveraging the HWP exploit. Recent SLOWDRIFT samples were uncovered in June 2017 with lure documents pertaining to cyber crime prevention and news stories. These documents were last updated by the same actor who developed KARAE, POORAIM and ZUMKONG.",
+      "meta": {
+        "refs": [
+          "https://www2.fireeye.com/rs/848-DID-242/images/rpt_APT37.pdf"
+        ],
+        "synonyms": [
+          "FE_APT_Downloader_Win_SLOWDRIFT_1",
+          "FE_APT_Downloader_Win_SLOWDRIFT_2",
+          "APT.Downloader.SLOWDRIFT"
+        ]
+      },
+      "uuid": "e5a9a2ec-348e-4a2f-98dd-16c3e8845576"
+    },
+    {
+      "value": "SOUNDWAVE",
+      "description": "SOUNDWAVE is a windows based audio capturing utility. Via command line it accepts the -l switch (for listen probably), captures microphone input for 100 minutes, writing the data out to a log file in this format: C:\\Temp\\HncDownload\\YYYYMMDDHHMMSS.log.",
+      "meta": {
+        "refs": [
+          "https://www2.fireeye.com/rs/848-DID-242/images/rpt_APT37.pdf"
+        ],
+        "synonyms": [
+          "FE_APT_HackTool_Win32_SOUNDWAVE_1"
+        ]
+      },
+      "uuid": "6a0e3c75-5a59-4747-8fec-2e344a328575"
+    },
+    {
+      "value": "ZUMKONG",
+      "description": "ZUMKONG is a credential stealer capable of harvesting usernames and passwords stored by Internet Explorer and Chrome browsers. Stolen credentials are emailed to the attacker via HTTP POST requests to mail[.]zmail[.]ru.",
+      "meta": {
+        "refs": [
+          "https://www2.fireeye.com/rs/848-DID-242/images/rpt_APT37.pdf"
+        ],
+        "synonyms": [
+          "FE_APT_Trojan_Zumkong",
+          "Trojan.APT.Zumkong"
+        ]
+      },
+      "uuid": "6f1b9155-5de4-4ef7-9f42-60007599c477"
+    },
+    {
+      "value": "WINERACK",
+      "description": "WINERACK is backdoor whose primary features include user and host information gathering, process creation and termination, filesystem and registry manipulation, as well as the creation of a reverse shell that utilizes statically-linked Wine cmd.exe code to emulate Windows command prompt commands. Other capabilities include the enumeration of files, directories, services, active windows and processes.",
+      "meta": {
+        "refs": [
+          "https://www2.fireeye.com/rs/848-DID-242/images/rpt_APT37.pdf"
+        ],
+        "synonyms": [
+          "FE_APT_Backdoor_WINERACK",
+          "Backdoor.APT.WINERACK"
+        ]
+      },
+      "uuid": "49025073-4cd3-43b8-b893-e80a1d3adc04"
     }
   ]
 }
