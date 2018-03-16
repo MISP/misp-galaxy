@@ -11,7 +11,7 @@
   ],
   "description": "threat-actor-tools is an enumeration of tools used by adversaries. The list includes malware but also common software regularly used by the adversaries.",
   "uuid": "0d821b68-9d82-4c6d-86a6-1071a9e0f79f",
-  "version": 57,
+  "version": 58,
   "values": [
     {
       "meta": {
@@ -4049,6 +4049,25 @@
         ]
       },
       "uuid": "49025073-4cd3-43b8-b893-e80a1d3adc04"
+    },
+    {
+      "value": "RoyalCli",
+      "description": "The RoyalCli backdoor appears to be an evolution of BS2005 and uses familiar encryption and encoding routines. The name RoyalCli was chosen by us due to a debugging path left in the binary: 'c:\\users\\wizard\\documents\\visual studio 2010\\Projects\\RoyalCli\\Release\\RoyalCli.pdb' RoyalCli and BS2005 both communicate with the attacker's command and control (C2) through Internet Explorer (IE) by using the COM interface IWebBrowser2. Due to the nature of the technique, this results in C2 data being cached to disk by the IE process; we'll get to this later.",
+      "meta": {
+        "refs": [
+          "https://www.nccgroup.trust/uk/about-us/newsroom-and-events/blogs/2018/march/apt15-is-alive-and-strong-an-analysis-of-royalcli-and-royaldns/"
+        ]
+      },
+      "uuid": "ac04d0b0-c6b5-4125-acd7-c58dfe7ad4cf"
+    },
+    {
+      "value": "RoyalDNS",
+      "meta": {
+        "refs": [
+          "https://www.nccgroup.trust/uk/about-us/newsroom-and-events/blogs/2018/march/apt15-is-alive-and-strong-an-analysis-of-royalcli-and-royaldns/"
+        ]
+      },
+      "uuid": "7b20b78a-df6e-40c7-9a3a-363f040cfad7"
     }
   ]
 }
