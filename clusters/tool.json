@@ -11,7 +11,7 @@
   ],
   "description": "threat-actor-tools is an enumeration of tools used by adversaries. The list includes malware but also common software regularly used by the adversaries.",
   "uuid": "0d821b68-9d82-4c6d-86a6-1071a9e0f79f",
-  "version": 58,
+  "version": 59,
   "values": [
     {
       "meta": {
@@ -3855,6 +3855,17 @@
         ]
       },
       "uuid": "73cb7ecc-25e3-11e8-a97b-c35ec4e7dcf8"
+    },
+    {
+      "value": "Gamut Botnet",
+      "description": "Gamut was found to be downloaded by a Trojan Downloader that arrives as an attachment from a spam email message. The bot installation is quite simple. After the malware binary has been downloaded, it launches itself from its current directory, usually the Windows %Temp% folder and installs itself as a Windows service.\nThe malware utilizes an anti-VM (virtual machine) trick and terminates itself if it detects that it is running in a virtual machine environment. The bot uses INT 03h trap sporadically in its code, an anti-debugging technique which prevents its code from running within a debugger environment. It can also determine if it is being debugged by using the Kernel32 API - IsDebuggerPresent function.",
+      "meta": {
+        "refs": [
+          "https://www.bleepingcomputer.com/news/security/necurs-and-gamut-botnets-account-for-97-percent-of-the-internets-spam-emails/",
+          "https://www.trustwave.com/Resources/SpiderLabs-Blog/Gamut-Spambot-Analysis/"
+        ]
+      },
+      "uuid": "492879ac-285b-11e8-a06e-33f548e66e42"
     },
     {
       "value": "CORALDECK",
