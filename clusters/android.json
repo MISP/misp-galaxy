@@ -4181,9 +4181,93 @@
         ]
       },
       "uuid": "e3cd1cf3-2f49-4adc-977f-d15a2b0b4c85"
+    },
+    {
+      "value": "Chamois",
+      "description": "Chamois is one of the largest PHA families in Android to date and is distributed through multiple channels. While much of the backdoor version of this family was cleaned up in 2016, a new variant emerged in 2017. To avoid detection, this version employs a number of techniques, such as implementing custom code obfuscation, preventing user notifications, and not appearing in the device’s app list. Chamois apps, which in many cases come preloaded with the system image, try to trick users into clicking ads by displaying deceptive graphics to commit WAP or SMS fraud.",
+      "meta": {
+        "refs": [
+          "https://source.android.com/security/reports/Google_Android_Security_2017_Report_Final.pdf",
+          "https://android-developers.googleblog.com/2017/03/detecting-and-eliminating-chamois-fraud.html"
+        ]
+      },
+      "uuid": "a53e93e6-2d17-11e8-a718-0bb6e34b87d0"
+    },
+    {
+      "value": "IcicleGum",
+      "description": "IcicleGum is a spyware PHA family whose apps rely on versions of the Igexin ads SDK that offer dynamic code-loading support. IcicleGum apps use this library's code-loading features to fetch encrypted DEX files over HTTP from command-and-control servers. The files are then decrypted and loaded via class reflection to read and send phone call logs and other data to remote locations.",
+      "meta": {
+        "refs": [
+          "https://blog.lookout.com/igexin-malicious-sdk",
+          "https://source.android.com/security/reports/Google_Android_Security_2017_Report_Final.pdf"
+        ]
+      },
+      "uuid": "a5be6094-2d17-11e8-a5b1-ff153ed7d9c3"
+    },
+    {
+      "value": "BreadSMS",
+      "description": "BreadSMS is a large SMS-fraud PHA family that we started tracking at the beginning of 2017. These apps compose and send text messages to premium numbers without the user’s consent. In some cases, BreadSMS apps also implement subscription-based SMS fraud and silently enroll users in services provided by their mobile carriers. These apps are linked to a group of command-and-control servers whose IP addresses change frequently and that are used to provide the apps with premium SMS numbers and message text.",
+      "meta": {
+        "refs": [
+          "https://source.android.com/security/reports/Google_Android_Security_2017_Report_Final.pdf"
+        ]
+      },
+      "uuid": "2c75b006-2d18-11e8-8f57-2714f7737ec5 "
+    },
+    {
+      "value": "JamSkunk",
+      "description": "JamSkunk is a toll-fraud PHA family composed of apps that subscribe users to services without their consent. These apps disable Wi-Fi to force traffic to go through users' mobile data connection and then contact command-and-control servers to dynamically fetch code that tries to bypass the network’s WAP service subscription verification steps. This type of PHA monetizes their abuse via WAP billing, a payment method that works through mobile data connections and allows users to easily sign up and pay for new services using their existing account (i.e., services are billed directly by the carrier, and not the service provider; the user does not need a new account or a different form of payment). Once authentication is bypassed, JamSkunk apps enroll the device in services that the user may not notice until they receive and read their next bill.",
+      "meta": {
+        "refs": [
+          "https://blog.fosec.vn/malicious-applications-stayed-at-google-appstore-for-months-d8834ff4de59",
+          "https://source.android.com/security/reports/Google_Android_Security_2017_Report_Final.pdf"
+        ]
+      },
+      "uuid": "1b5ff93c-2d1a-11e8-8559-07216a0f4416"
+    },
+    {
+      "value": "Expensive Wall",
+      "description": "Expensive Wall is a family of SMS-fraud apps that affected a large number of devices in 2017. Expensive Wall apps use code obfuscation to slow down analysis and evade detection, and rely on the JS2Java bridge to allow JavaScript code loaded inside a Webview to call Java methods the way Java apps directly do. Upon launch, Expensive Wall apps connect to command-and-control servers to fetch a domain name. This domain is then contacted via a Webview instance that loads a webpage and executes JavaScript code that calls Java methods to compose and send premium SMS messages or click ads without users' knowledge.",
+      "meta": {
+        "refs": [
+          "https://source.android.com/security/reports/Google_Android_Security_2017_Report_Final.pdf",
+          "https://blog.checkpoint.com/2017/09/14/expensivewall-dangerous-packed-malware-google-play-will-hit-wallet/"
+        ]
+      },
+      "uuid": "1c105534-2d1a-11e8-af59-f3a9d10da2ae"
+    },
+    {
+      "value": "BambaPurple",
+      "description": "BambaPurple is a two-stage toll-fraud PHA family that tries to trick users into installing it by disguising itself as a popular app. After install, the app disables Wi-Fi to force the device to use its 3G connection, then redirects to subscription pages without the user’s knowledge, clicks subscription buttons using downloaded JavaScript, and intercepts incoming subscription SMS messages to prevent the user from unsubscribing. In a second stage, BambaPurple installs a backdoor app that requests device admin privileges and drops a .dex file. This executable checks to make sure it is not being debugged, downloads even more apps without user consent, and displays ads.",
+      "meta": {
+        "refs": [
+          "https://source.android.com/security/reports/Google_Android_Security_2017_Report_Final.pdf"
+        ]
+      },
+      "uuid": "1c90db8c-2d1a-11e8-8855-8b52c54dc70c"
+    },
+    {
+      "value": "KoreFrog",
+      "description": "KoreFrog is a family of trojan apps that request permission to install packages and push other apps onto the device as system apps without the user’s authorization. System apps can be disabled by the user, but cannot be easily uninstalled. KoreFrog apps operate as daemons running in the background that try to impersonate Google and other system apps by using misleading names and icons to avoid detection. The KoreFrog PHA family has also been observed to serve ads, in addition to apps.",
+      "meta": {
+        "refs": [
+          "https://source.android.com/security/reports/Google_Android_Security_2017_Report_Final.pdf"
+        ]
+      },
+      "uuid": "1cd12f7a-2d1a-11e8-9d61-5f382712fa0a"
+    },
+    {
+      "value": "Gaiaphish",
+      "description": "Gaiaphish is a large family of trojan apps that target authentication tokens stored on the device to abuse the user’s privileges for various purposes. These apps use base64-encoded URL strings to avoid detection of the command-and-control servers they rely on to download APK files. These files contain phishing apps that try to steal GAIA authentication tokens that grant the user permissions to access Google services, such as Google Play, Google+, and YouTube. With these tokens, Gaiaphish apps are able to generate spam and automatically post content (for instance, fake app ratings and comments on Google Play app pages)",
+      "meta": {
+        "refs": [
+          "https://source.android.com/security/reports/Google_Android_Security_2017_Report_Final.pdf"
+        ]
+      },
+      "uuid": "1dcd622c-2d1a-11e8-870e-9f50a5dd5a84"
     }
   ],
-  "version": 4,
+  "version": 5,
   "uuid": "84310ba3-fa6a-44aa-b378-b9e3271c58fa",
   "description": "Android malware galaxy based on multiple open sources.",
   "authors": [
