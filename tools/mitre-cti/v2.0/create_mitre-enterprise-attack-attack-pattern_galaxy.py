@@ -6,7 +6,7 @@ import re
 import os
 import argparse
 
-parser = argparse.ArgumentParser(description='Create a couple galaxy/cluster with cti\'s attack-patterns\nMust be in the mitre/cti/entreprise-attack/attack-pattern folder')
+parser = argparse.ArgumentParser(description='Create a couple galaxy/cluster with cti\'s attack-patterns\nMust be in the mitre/cti/enterprise-attack/attack-pattern folder')
 parser.add_argument("-v", "--version", type=int, required=True, help="Version of the galaxy. Please increment the previous one")
 args = parser.parse_args()
 
@@ -36,16 +36,16 @@ for element in os.listdir('.'):
             value['uuid'] = re.search('--(.*)$', temp['id']).group(0)[2:]
 
 galaxy = {}
-galaxy['name'] = "Entreprise Attack - Attack Pattern"
-galaxy['type'] = "mitre-entreprise-attack-attack-pattern"
+galaxy['name'] = "Enterprise Attack - Attack Pattern"
+galaxy['type'] = "mitre-enterprise-attack-attack-pattern"
 galaxy['description'] = "ATT&CK Tactic"
 galaxy['uuid' ] = "fa7016a8-1707-11e8-82d0-1b73d76eb204"
 galaxy['version'] = args.version
 galaxy['icon'] = "map"
 
 cluster = {} 
-cluster['name'] = "Entreprise Attack - Attack Pattern"
-cluster['type'] = "mitre-entreprise-attack-attack-pattern"
+cluster['name'] = "Enterprise Attack - Attack Pattern"
+cluster['type'] = "mitre-enterprise-attack-attack-pattern"
 cluster['description'] = "ATT&CK tactic"
 cluster['version'] = args.version
 cluster['source'] = "https://github.com/mitre/cti"
@@ -53,8 +53,8 @@ cluster['uuid' ] = "fb2242d8-1707-11e8-ab20-6fa7448c3640"
 cluster['authors'] = ["MITRE"]
 cluster['values'] = values
 
-with open('generate/galaxies/mitre-entreprise-attack-attack-pattern.json', 'w') as galaxy_file:
+with open('generate/galaxies/mitre-enterprise-attack-attack-pattern.json', 'w') as galaxy_file:
     json.dump(galaxy, galaxy_file, indent=4)
 
-with open('generate/clusters/mitre-entreprise-attack-attack-pattern.json', 'w') as cluster_file:
+with open('generate/clusters/mitre-enterprise-attack-attack-pattern.json', 'w') as cluster_file:
     json.dump(cluster, cluster_file, indent=4)
