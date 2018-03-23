@@ -6,7 +6,7 @@ import re
 import os
 import argparse
 
-parser = argparse.ArgumentParser(description='Create a couple galaxy/cluster with cti\'s intrusion-sets\nMust be in the mitre/cti/entreprise-attack/intrusion-set folder')
+parser = argparse.ArgumentParser(description='Create a couple galaxy/cluster with cti\'s intrusion-sets\nMust be in the mitre/cti/enterprise-attack/intrusion-set folder')
 parser.add_argument("-v", "--version", type=int, required=True, help="Version of the galaxy. Please increment the previous one")
 args = parser.parse_args()
 
@@ -33,16 +33,16 @@ for element in os.listdir('.'):
             values.append(value)
 
 galaxy = {}
-galaxy['name'] = "Entreprise Attack -Intrusion Set"
-galaxy['type'] = "mitre-entreprise-attack-intrusion-set"
+galaxy['name'] = "Enterprise Attack -Intrusion Set"
+galaxy['type'] = "mitre-enterprise-attack-intrusion-set"
 galaxy['description'] = "Name of ATT&CK Group"
 galaxy['uuid' ] = "1f3b8c56-1708-11e8-b211-17a60c0f73ee"
 galaxy['version'] = args.version
 galaxy['icon'] = "user-secret"
 
 cluster = {} 
-cluster['name'] = "Entreprise Attack -intrusion Set"
-cluster['type'] = "mitre-entreprise-attack-intrusion-set"
+cluster['name'] = "Enterprise Attack -intrusion Set"
+cluster['type'] = "mitre-enterprise-attack-intrusion-set"
 cluster['description'] = "Name of ATT&CK Group"
 cluster['version'] = args.version
 cluster['source'] = "https://github.com/mitre/cti"
@@ -50,8 +50,8 @@ cluster['uuid' ] = "01f18402-1708-11e8-ac1c-1ffb3c4a7775"
 cluster['authors'] = ["MITRE"]
 cluster['values'] = values
 
-with open('generate/galaxies/mitre-entreprise-attack-intrusion-set.json', 'w') as galaxy_file:
+with open('generate/galaxies/mitre-enterprise-attack-intrusion-set.json', 'w') as galaxy_file:
     json.dump(galaxy, galaxy_file, indent=4)
 
-with open('generate/clusters/mitre-entreprise-attack-intrusion-set.json', 'w') as cluster_file:
+with open('generate/clusters/mitre-enterprise-attack-intrusion-set.json', 'w') as cluster_file:
     json.dump(cluster, cluster_file, indent=4)

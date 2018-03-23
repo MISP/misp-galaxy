@@ -35,11 +35,11 @@ to localized information (which is not shared) or additional information (that c
 - [clusters/mitre-malware.json](clusters/mitre-malware.json) - Malware - MITRE Adversarial Tactics, Techniques & Common Knowledge (ATT&CK) - v1.0
 - [clusters/mitre-tool.json](clusters/mitre-tool.json) - Tool - MITRE Adversarial Tactics, Techniques & Common Knowledge (ATT&CK) - v1.0
 
-- [clusters/mitre-entreprise-attack-attack-pattern.json](clusters/mitre-entreprise-attack-attack-pattern.json) - Attack Pattern - MITRE Adversarial Tactics, Techniques & Common Knowledge (ATT&CK) - v2.0 Entreprise Attack
-- [clusters/mitre-entreprise-attack-course-of-action.json](clusters/mitre-entreprise-attack-course-of-action.json) - Course of Action - MITRE Adversarial Tactics, Techniques & Common Knowledge (ATT&CK) - v2.0  Entreprise Attack
-- [clusters/mitre-entreprise-attack-intrusion-set.json](clusters/mitre-entreprise-attack-intrusion-set.json) - Intrusion Set - MITRE Adversarial Tactics, Techniques & Common Knowledge (ATT&CK) - v2.0  Entreprise Attack - Malware - MITRE Adversarial Tactics, Techniques & Common Knowledge (ATT&CK) - v2.0  Entreprise Attack
-- [clusters/mitre-entreprise-attack-relationship.json](clusters/mitre-entreprise-attack-relationship.json) - Relationship . MITRE Relationship - V2.0 Entreprise Attack
-- [clusters/mitre-entreprise-attack-tool.json](clusters/mitre-entreprise-attack-tool.json) - Tool - MITRE Adversarial Tactics, Techniques & Common Knowledge (ATT&CK) - v2.0  Entreprise Attack
+- [clusters/mitre-enterprise-attack-attack-pattern.json](clusters/mitre-enterprise-attack-attack-pattern.json) - Attack Pattern - MITRE Adversarial Tactics, Techniques & Common Knowledge (ATT&CK) - v2.0 Enterprise Attack
+- [clusters/mitre-enterprise-attack-course-of-action.json](clusters/mitre-enterprise-attack-course-of-action.json) - Course of Action - MITRE Adversarial Tactics, Techniques & Common Knowledge (ATT&CK) - v2.0  Enterprise Attack
+- [clusters/mitre-enterprise-attack-intrusion-set.json](clusters/mitre-enterprise-attack-intrusion-set.json) - Intrusion Set - MITRE Adversarial Tactics, Techniques & Common Knowledge (ATT&CK) - v2.0  Enterprise Attack - Malware - MITRE Adversarial Tactics, Techniques & Common Knowledge (ATT&CK) - v2.0  Enterprise Attack
+- [clusters/mitre-enterprise-attack-relationship.json](clusters/mitre-enterprise-attack-relationship.json) - Relationship . MITRE Relationship - V2.0 Enterprise Attack
+- [clusters/mitre-enterprise-attack-tool.json](clusters/mitre-enterprise-attack-tool.json) - Tool - MITRE Adversarial Tactics, Techniques & Common Knowledge (ATT&CK) - v2.0  Enterprise Attack
 - [clusters/mitre-mobile-attack-attack-pattern.json](clusters/mitre-mobile-attack-attack-pattern.json) - Attack Pattern - MITRE Adversarial Tactics, Techniques & Common Knowledge (ATT&CK) - v2.0  Mobile Attack
 - [clusters/mitre-mobile-attack-course-of-action.json](clusters/mitre-mobile-attack-course-of-action.json) - Course of Action - MITRE Adversarial Tactics, Techniques & Common Knowledge (ATT&CK) - v2.0  Mobile Attack
 - [clusters/mitre-mobile-attack-intrusion-set.json](clusters/mitre-mobile-attack-intrusion-set.json) - Intrusion Set - MITRE Adversarial Tactics, Techniques & Common Knowledge (ATT&CK) - v2.0  Mobile Attack
