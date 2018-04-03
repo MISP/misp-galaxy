@@ -22,12 +22,12 @@ for element in os.listdir('.'):
 
             value = {}
             value['description'] = temp['description']
-            value['value'] = temp['name']
+            value['value'] = temp['name'] + ' - ' + temp['external_references'][0]['external_id']
             value['meta'] = {}
             value['meta']['synonyms'] = temp['aliases']
             value['meta']['refs']= []
             for reference in temp['external_references']:
-                if 'url' in reference and reference['url'] not in value['meta']['refs']:                    
+                if 'url' in reference and reference['url'] not in value['meta']['refs']:
                     value['meta']['refs'].append(reference['url'])
             value['uuid'] = re.search('--(.*)$', temp['id']).group(0)[2:]
             values.append(value)
@@ -40,7 +40,7 @@ galaxy['uuid' ] = "0314e554-1708-11e8-b049-8f8a42b5bb62"
 galaxy['version'] = args.version
 galaxy['icon'] = "user-secret"
 
-cluster = {} 
+cluster = {}
 cluster['name'] = "Mobile Attack - intrusion Set"
 cluster['type'] = "mitre-mobile-attack-intrusion-set"
 cluster['description'] = "Name of ATT&CK Group"
