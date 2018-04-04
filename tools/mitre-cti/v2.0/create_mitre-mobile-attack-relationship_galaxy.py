@@ -17,7 +17,7 @@ for element in os.listdir(path):
     with open(path+element) as json_data:
         d = json.load(json_data)
         json_data.close()
-    
+
     temp = d['objects'][0]
     source = temp['source_ref']
     target = temp['target_ref']
@@ -72,7 +72,7 @@ for element in os.listdir(path):
     value['uuid'] = re.search('--(.*)$', temp['id']).group(0)[2:]
     value['meta']['source-uuid'] = re.search('--(.*)$', s['objects'][0]['id']).group(0)[2:]
     value['meta']['target-uuid'] = re.search('--(.*)$', t['objects'][0]['id']).group(0)[2:]
-    value['value'] = s['objects'][0]['name'] + ' ' + relationship + ' ' + t['objects'][0]['name']
+    value['value'] = s['objects'][0]['name'] + ' (' + s['objects'][0]['external_references'][0]['external_id'] + ') ' + relationship + ' ' + t['objects'][0]['name'] + ' (' + t['objects'][0]['external_references'][0]['external_id'] + ')'
     values.append(value)
 
 galaxy = {}
@@ -83,7 +83,7 @@ galaxy['uuid' ] = "fc8471aa-1707-11e8-b306-33cbe96a1ede"
 galaxy['version'] = args.version
 galaxy['icon'] = "link"
 
-cluster = {} 
+cluster = {}
 cluster['name'] = "Mobile Attack - Relationship"
 cluster['type'] = "mitre-mobile-attack-relationship"
 cluster['description'] = "MITRE Relationship"

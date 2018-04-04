@@ -22,7 +22,7 @@ for element in os.listdir('.'):
 
             value = {}
             value['description'] = temp['description']
-            value['value'] = temp['name']
+            value['value'] = temp['name'] + ' - ' + temp['external_references'][0]['external_id']
             value['uuid'] = re.search('--(.*)$', temp['id']).group(0)[2:]
             values.append(value)
 
@@ -34,7 +34,7 @@ galaxy['uuid' ] = "fb5a36c0-1707-11e8-81f5-d732b22a4982"
 galaxy['version'] = args.version
 galaxy['icon'] = "chain"
 
-cluster = {} 
+cluster = {}
 cluster['name'] = "Enterprise Attack - Course of Action"
 cluster['type'] = "mitre-enterprise-attack-course-of-action"
 cluster['description'] = "ATT&CK Mitigation"

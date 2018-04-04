@@ -22,14 +22,14 @@ for element in os.listdir('.'):
 
             value = {}
             value['description'] = temp['description']
-            value['value'] = temp['name']
+            value['value'] = temp['name'] + ' - ' + temp['external_references'][0]['external_id']
             value['meta'] = {}
             value['meta']['refs'] = []
             for reference in temp['external_references']:
                 if 'url' in reference and reference['url'] not in value['meta']['refs']:
                     value['meta']['refs'].append(reference['url'])
             if'x_mitre_aliases' in temp:
-                value['meta']['synonyms'] = temp['x_mitre_aliases']     
+                value['meta']['synonyms'] = temp['x_mitre_aliases']
             value['uuid'] = re.search('--(.*)$', temp['id']).group(0)[2:]
             values.append(value)
 
@@ -41,7 +41,7 @@ galaxy['uuid' ] = "fbfa0470-1707-11e8-be22-eb46b373fdd3"
 galaxy['version'] = args.version
 galaxy['icon'] = "gavel"
 
-cluster = {} 
+cluster = {}
 cluster['name'] = "Enterprise Attack - Tool"
 cluster['type'] = "mitre-enterprise-attack-tool"
 cluster['description'] = "Name of ATT&CK software"

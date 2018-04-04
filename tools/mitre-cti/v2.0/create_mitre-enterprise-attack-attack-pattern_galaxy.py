@@ -22,11 +22,11 @@ for element in os.listdir('.'):
 
             value = {}
             value['description'] = temp['description']
-            value['value'] = temp['name']
+            value['value'] = temp['name'] + ' - ' + temp['external_references'][0]['external_id']
             value['meta'] = {}
             value['meta']['refs'] = []
             for reference in temp['external_references']:
-                if 'url' in reference and reference['url'] not in value['meta']['refs']:                    
+                if 'url' in reference and reference['url'] not in value['meta']['refs']:
                     value['meta']['refs'].append(reference['url'])
             if 'x_mitre_data_sources' in temp:
                 value['meta']['mitre_data_sources'] = temp['x_mitre_data_sources']
@@ -43,7 +43,7 @@ galaxy['uuid' ] = "fa7016a8-1707-11e8-82d0-1b73d76eb204"
 galaxy['version'] = args.version
 galaxy['icon'] = "map"
 
-cluster = {} 
+cluster = {}
 cluster['name'] = "Enterprise Attack - Attack Pattern"
 cluster['type'] = "mitre-enterprise-attack-attack-pattern"
 cluster['description'] = "ATT&CK tactic"
