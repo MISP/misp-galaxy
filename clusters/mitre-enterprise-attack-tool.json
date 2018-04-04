@@ -1,527 +1,527 @@
 {
-    "name": "Enterprise Attack - Tool",
-    "type": "mitre-enterprise-attack-tool",
-    "description": "Name of ATT&CK software",
-    "version": 3,
-    "source": "https://github.com/mitre/cti",
-    "uuid": "fc1ea6e0-1707-11e8-ac05-2b70d00c354e",
-    "authors": [
-        "MITRE"
-    ],
-    "values": [
-        {
-            "description": "at is used to schedule tasks on a system to run at a specified date or time. (Citation: TechNet At)\n\nAliases: at, at.exe",
-            "value": "at - S0110",
-            "meta": {
-                "refs": [
-                    "https://attack.mitre.org/wiki/Software/S0110",
-                    "https://technet.microsoft.com/en-us/library/bb490866.aspx"
-                ],
-                "synonyms": [
-                    "at",
-                    "at.exe"
-                ]
-            },
-            "uuid": "0c8465c0-d0b4-4670-992e-4eee8d7ff952"
-        },
-        {
-            "description": "route can be used to find or change information within the local system IP routing table. (Citation: TechNet Route)\n\nAliases: route, route.exe",
-            "value": "route - S0103",
-            "meta": {
-                "refs": [
-                    "https://attack.mitre.org/wiki/Software/S0103",
-                    "https://technet.microsoft.com/en-us/library/bb490991.aspx"
-                ],
-                "synonyms": [
-                    "route",
-                    "route.exe"
-                ]
-            },
-            "uuid": "c11ac61d-50f4-444f-85d8-6f006067f0de"
-        },
-        {
-            "description": "The Tasklist utility displays a list of applications and services with their Process IDs (PID) for all tasks running on either a local or a remote computer. It is packaged with Windows operating systems and can be executed from the command-line interface. (Citation: Microsoft Tasklist)\n\nAliases: Tasklist",
-            "value": "Tasklist - S0057",
-            "meta": {
-                "refs": [
-                    "https://attack.mitre.org/wiki/Software/S0057",
-                    "https://technet.microsoft.com/en-us/library/bb491010.aspx"
-                ],
-                "synonyms": [
-                    "Tasklist"
-                ]
-            },
-            "uuid": "2e45723a-31da-4a7e-aaa6-e01998a6788f"
-        },
-        {
-            "description": "Windows Credential Editor is a password dumping tool. (Citation: Amplia WCE)\n\nAliases: Windows Credential Editor, WCE",
-            "value": "Windows Credential Editor - S0005",
-            "meta": {
-                "refs": [
-                    "https://attack.mitre.org/wiki/Software/S0005",
-                    "http://www.ampliasecurity.com/research/wcefaq.html"
-                ],
-                "synonyms": [
-                    "Windows Credential Editor",
-                    "WCE"
-                ]
-            },
-            "uuid": "242f3da3-4425-4d11-8f5c-b842886da966"
-        },
-        {
-            "description": "Responder is an open source tool used for LLMNR, NBT-NS and MDNS poisoning, with built-in HTTP/SMB/MSSQL/FTP/LDAP rogue authentication server supporting NTLMv1/NTLMv2/LMv2, Extended Security NTLMSSP and Basic HTTP authentication. (Citation: GitHub Responder)\n\nAliases: Responder",
-            "value": "Responder - S0174",
-            "meta": {
-                "refs": [
-                    "https://attack.mitre.org/wiki/Software/S0174",
-                    "https://github.com/SpiderLabs/Responder"
-                ],
-                "synonyms": [
-                    "Responder"
-                ]
-            },
-            "uuid": "a1dd2dbd-1550-44bf-abcc-1a4c52e97719"
-        },
-        {
-            "description": "schtasks is used to schedule execution of programs or scripts on a Windows system to run at a specific date and time. (Citation: TechNet Schtasks)\n\nAliases: schtasks, schtasks.exe",
-            "value": "schtasks - S0111",
-            "meta": {
-                "refs": [
-                    "https://attack.mitre.org/wiki/Software/S0111",
-                    "https://technet.microsoft.com/en-us/library/bb490996.aspx"
-                ],
-                "synonyms": [
-                    "schtasks",
-                    "schtasks.exe"
-                ]
-            },
-            "uuid": "c9703cd3-141c-43a0-a926-380082be5d04"
-        },
-        {
-            "description": "UACMe is an open source assessment tool that contains many methods for bypassing Windows User Account Control on multiple versions of the operating system. (Citation: Github UACMe)\n\nAliases: UACMe",
-            "value": "UACMe - S0116",
-            "meta": {
-                "refs": [
-                    "https://attack.mitre.org/wiki/Software/S0116",
-                    "https://github.com/hfiref0x/UACME"
-                ],
-                "synonyms": [
-                    "UACMe"
-                ]
-            },
-            "uuid": "102c3898-85e0-43ee-ae28-62a0a3ed9507"
-        },
-        {
-            "description": "ifconfig is a Unix-based utility used to gather information about and interact with the TCP/IP settings on a system. (Citation: Wikipedia Ifconfig)\n\nAliases: ifconfig",
-            "value": "ifconfig - S0101",
-            "meta": {
-                "refs": [
-                    "https://attack.mitre.org/wiki/Software/S0101",
-                    "https://en.wikipedia.org/wiki/Ifconfig"
-                ],
-                "synonyms": [
-                    "ifconfig"
-                ]
-            },
-            "uuid": "362dc67f-4e85-4562-9dac-1b6b7f3ec4b5"
-        },
-        {
-            "description": "Mimikatz is a credential dumper capable of obtaining plaintext Windows account logins and passwords, along with many other features that make it useful for testing the security of networks. (Citation: Deply Mimikatz) (Citation: Adsecurity Mimikatz Guide)\n\nAliases: Mimikatz\n\nContributors: Vincent Le Toux",
-            "value": "Mimikatz - S0002",
-            "meta": {
-                "refs": [
-                    "https://attack.mitre.org/wiki/Software/S0002",
-                    "https://github.com/gentilkiwi/mimikatz",
-                    "https://adsecurity.org/?page%20id=1821"
-                ],
-                "synonyms": [
-                    "Mimikatz"
-                ]
-            },
-            "uuid": "afc079f3-c0ea-4096-b75d-3f05338b7f60"
-        },
-        {
-            "description": " (Citation: xCmd) is an open source tool that is similar to PsExec and allows the user to execute applications on remote systems. (Citation: xCmd)\n\nAliases:  (Citation: xCmd)",
-            "value": "xCmd - S0123",
-            "meta": {
-                "refs": [
-                    "https://attack.mitre.org/wiki/Software/S0123",
-                    "https://ashwinrayaprolu.wordpress.com/2011/04/12/xcmd-an-alternative-to-psexec/"
-                ],
-                "synonyms": [
-                    "xCmd"
-                ]
-            },
-            "uuid": "4fa49fc0-9162-4bdb-a37e-7aa3dcb6d38b"
-        },
-        {
-            "description": "is a credential dumper, similar to Mimikatz, designed specifically for Linux platforms. (Citation: MimiPenguin GitHub May 2017)\n\nAliases: MimiPenguin\n\nContributors: Vincent Le Toux",
-            "value": "MimiPenguin - S0179",
-            "meta": {
-                "refs": [
-                    "https://attack.mitre.org/wiki/Software/S0179",
-                    "https://github.com/huntergregal/mimipenguin"
-                ],
-                "synonyms": [
-                    "MimiPenguin"
-                ]
-            },
-            "uuid": "5a33468d-844d-4b1f-98c9-0e786c556b27"
-        },
-        {
-            "description": "Systeminfo is a Windows utility that can be used to gather detailed information about a computer. (Citation: TechNet Systeminfo)\n\nAliases: Systeminfo, systeminfo.exe",
-            "value": "Systeminfo - S0096",
-            "meta": {
-                "refs": [
-                    "https://attack.mitre.org/wiki/Software/S0096",
-                    "https://technet.microsoft.com/en-us/library/bb491007.aspx"
-                ],
-                "synonyms": [
-                    "Systeminfo",
-                    "systeminfo.exe"
-                ]
-            },
-            "uuid": "7fcbc4e8-1989-441f-9ac5-e7b6ff5806f1"
-        },
-        {
-            "description": "netsh is a scripting utility used to interact with networking components on local or remote systems. (Citation: TechNet Netsh)\n\nAliases: netsh, netsh.exe",
-            "value": "netsh - S0108",
-            "meta": {
-                "refs": [
-                    "https://attack.mitre.org/wiki/Software/S0108",
-                    "https://technet.microsoft.com/library/bb490939.aspx"
-                ],
-                "synonyms": [
-                    "netsh",
-                    "netsh.exe"
-                ]
-            },
-            "uuid": "5a63f900-5e7e-4928-a746-dd4558e1df71"
-        },
-        {
-            "description": "dsquery is a command-line utility that can be used to query Active Directory for information from a system within a domain. (Citation: TechNet Dsquery) It is typically installed only on Windows Server versions but can be installed on non-server variants through the Microsoft-provided Remote Server Administration Tools bundle.\n\nAliases: dsquery, dsquery.exe",
-            "value": "dsquery - S0105",
-            "meta": {
-                "refs": [
-                    "https://attack.mitre.org/wiki/Software/S0105",
-                    "https://technet.microsoft.com/en-us/library/cc732952.aspx"
-                ],
-                "synonyms": [
-                    "dsquery",
-                    "dsquery.exe"
-                ]
-            },
-            "uuid": "38952eac-cb1b-4a71-bad2-ee8223a1c8fe"
-        },
-        {
-            "description": "gsecdump is a publicly-available credential dumper used to obtain password hashes and LSA secrets from Windows operating systems. (Citation: TrueSec Gsecdump)\n\nAliases: gsecdump",
-            "value": "gsecdump - S0008",
-            "meta": {
-                "refs": [
-                    "https://attack.mitre.org/wiki/Software/S0008",
-                    "https://www.truesec.se/sakerhet/verktyg/saakerhet/gsecdump%20v2.0b5"
-                ],
-                "synonyms": [
-                    "gsecdump"
-                ]
-            },
-            "uuid": "b07c2c47-fefb-4d7c-a69e-6a3296171f54"
-        },
-        {
-            "description": "Ping is an operating system utility commonly used to troubleshoot and verify network connections. (Citation: TechNet Ping)\n\nAliases: Ping, ping.exe",
-            "value": "Ping - S0097",
-            "meta": {
-                "refs": [
-                    "https://attack.mitre.org/wiki/Software/S0097",
-                    "https://technet.microsoft.com/en-us/library/bb490968.aspx"
-                ],
-                "synonyms": [
-                    "Ping",
-                    "ping.exe"
-                ]
-            },
-            "uuid": "b77b563c-34bb-4fb8-86a3-3694338f7b47"
-        },
-        {
-            "description": "Fgdump is a Windows password hash dumper. (Citation: Mandiant APT1)\n\nAliases: Fgdump",
-            "value": "Fgdump - S0120",
-            "meta": {
-                "refs": [
-                    "https://attack.mitre.org/wiki/Software/S0120",
-                    "https://www.fireeye.com/content/dam/fireeye-www/services/pdfs/mandiant-apt1-report.pdf"
-                ],
-                "synonyms": [
-                    "Fgdump"
-                ]
-            },
-            "uuid": "4f45dfeb-fe51-4df0-8db3-edf7dd0513fe"
-        },
-        {
-            "description": "Lslsass is a publicly-available tool that can dump active logon session password hashes from the lsass process. (Citation: Mandiant APT1)\n\nAliases: Lslsass",
-            "value": "Lslsass - S0121",
-            "meta": {
-                "refs": [
-                    "https://attack.mitre.org/wiki/Software/S0121",
-                    "https://www.fireeye.com/content/dam/fireeye-www/services/pdfs/mandiant-apt1-report.pdf"
-                ],
-                "synonyms": [
-                    "Lslsass"
-                ]
-            },
-            "uuid": "2fab555f-7664-4623-b4e0-1675ae38190b"
-        },
-        {
-            "description": "Pass-The-Hash Toolkit is a toolkit that allows an adversary to \"pass\" a password hash (without knowing the original password) to log in to systems. (Citation: Mandiant APT1)\n\nAliases: Pass-The-Hash Toolkit",
-            "value": "Pass-The-Hash Toolkit - S0122",
-            "meta": {
-                "refs": [
-                    "https://attack.mitre.org/wiki/Software/S0122",
-                    "https://www.fireeye.com/content/dam/fireeye-www/services/pdfs/mandiant-apt1-report.pdf"
-                ],
-                "synonyms": [
-                    "Pass-The-Hash Toolkit"
-                ]
-            },
-            "uuid": "a52edc76-328d-4596-85e7-d56ef5a9eb69"
-        },
-        {
-            "description": "FTP is a utility commonly available with operating systems to transfer information over the File Transfer Protocol (FTP). Adversaries can use it to transfer other tools onto a system or to exfiltrate data. (Citation: Wikipedia FTP)\n\nAliases: FTP, ftp.exe",
-            "value": "FTP - S0095",
-            "meta": {
-                "refs": [
-                    "https://attack.mitre.org/wiki/Software/S0095",
-                    "https://en.wikipedia.org/wiki/File%20Transfer%20Protocol"
-                ],
-                "synonyms": [
-                    "FTP",
-                    "ftp.exe"
-                ]
-            },
-            "uuid": "cf23bf4a-e003-4116-bbae-1ea6c558d565"
-        },
-        {
-            "description": "ipconfig is a Windows utility that can be used to find information about a system's TCP/IP, DNS, DHCP, and adapter configuration. (Citation: TechNet Ipconfig)\n\nAliases: ipconfig, ipconfig.exe",
-            "value": "ipconfig - S0100",
-            "meta": {
-                "refs": [
-                    "https://attack.mitre.org/wiki/Software/S0100",
-                    "https://technet.microsoft.com/en-us/library/bb490921.aspx"
-                ],
-                "synonyms": [
-                    "ipconfig",
-                    "ipconfig.exe"
-                ]
-            },
-            "uuid": "294e2560-bd48-44b2-9da2-833b5588ad11"
-        },
-        {
-            "description": "nbtstat is a utility used to troubleshoot NetBIOS name resolution. (Citation: TechNet Nbtstat)\n\nAliases: nbtstat, nbtstat.exe",
-            "value": "nbtstat - S0102",
-            "meta": {
-                "refs": [
-                    "https://attack.mitre.org/wiki/Software/S0102",
-                    "https://technet.microsoft.com/en-us/library/cc940106.aspx"
-                ],
-                "synonyms": [
-                    "nbtstat",
-                    "nbtstat.exe"
-                ]
-            },
-            "uuid": "b35068ec-107a-4266-bda8-eb7036267aea"
-        },
-        {
-            "description": "HTRAN is a tool that proxies connections through intermediate hops and aids users in disguising their true geographical location. It can be used by adversaries to hide their location when interacting with the victim networks.  (Citation: Operation Quantum Entanglement)\n\nAliases: HTRAN, HUC Packet Transmit Tool",
-            "value": "HTRAN - S0040",
-            "meta": {
-                "refs": [
-                    "https://attack.mitre.org/wiki/Software/S0040",
-                    "https://www.fireeye.com/content/dam/fireeye-www/global/en/current-threats/pdfs/wp-operation-quantum-entanglement.pdf"
-                ],
-                "synonyms": [
-                    "HTRAN",
-                    "HUC Packet Transmit Tool"
-                ]
-            },
-            "uuid": "d5e96a35-7b0b-4c6a-9533-d63ecbda563e"
-        },
-        {
-            "description": "Tor is a software suite and network that provides increased anonymity on the Internet. It creates a multi-hop proxy network and utilizes multilayer encryption to protect both the message and routing information. Tor utilizes \"Onion Routing,\" in which messages are encrypted with multiple layers of encryption; at each step in the proxy network, the topmost layer is decrypted and the contents forwarded on to the next node until it reaches its destination. (Citation: Dingledine Tor The Second-Generation Onion Router)\n\nAliases: Tor",
-            "value": "Tor - S0183",
-            "meta": {
-                "refs": [
-                    "https://attack.mitre.org/wiki/Software/S0183",
-                    "http://www.dtic.mil/dtic/tr/fulltext/u2/a465464.pdf"
-                ],
-                "synonyms": [
-                    "Tor"
-                ]
-            },
-            "uuid": "ed7d0cb1-87a6-43b4-9f46-ef1bc56d6c68"
-        },
-        {
-            "description": "netstat is an operating system utility that displays active TCP connections, listening ports, and network statistics. (Citation: TechNet Netstat)\n\nAliases: netstat, netstat.exe",
-            "value": "netstat - S0104",
-            "meta": {
-                "refs": [
-                    "https://attack.mitre.org/wiki/Software/S0104",
-                    "https://technet.microsoft.com/en-us/library/bb490947.aspx"
-                ],
-                "synonyms": [
-                    "netstat",
-                    "netstat.exe"
-                ]
-            },
-            "uuid": "4664b683-f578-434f-919b-1c1aad2a1111"
-        },
-        {
-            "description": "pwdump is a credential dumper. (Citation: Wikipedia pwdump)\n\nAliases: pwdump",
-            "value": "pwdump - S0006",
-            "meta": {
-                "refs": [
-                    "https://attack.mitre.org/wiki/Software/S0006",
-                    "https://en.wikipedia.org/wiki/Pwdump"
-                ],
-                "synonyms": [
-                    "pwdump"
-                ]
-            },
-            "uuid": "9de2308e-7bed-43a3-8e58-f194b3586700"
-        },
-        {
-            "description": "Cachedump is a publicly-available tool that program extracts cached password hashes from a system\u2019s registry. (Citation: Mandiant APT1)\n\nAliases: Cachedump",
-            "value": "Cachedump - S0119",
-            "meta": {
-                "refs": [
-                    "https://attack.mitre.org/wiki/Software/S0119",
-                    "https://www.fireeye.com/content/dam/fireeye-www/services/pdfs/mandiant-apt1-report.pdf"
-                ],
-                "synonyms": [
-                    "Cachedump"
-                ]
-            },
-            "uuid": "c9cd7ec9-40b7-49db-80be-1399eddd9c52"
-        },
-        {
-            "description": "The Net utility is a component of the Windows operating system. It is used in command-line operations for control of users, groups, services, and network connections. (Citation: Microsoft Net Utility)\n\nNet has a great deal of functionality, (Citation: Savill 1999) much of which is useful for an adversary, such as gathering system and network information for Discovery, moving laterally through Windows admin shares using <code>net use</code> commands, and interacting with services.\n\nAliases: Net, net.exe",
-            "value": "Net - S0039",
-            "meta": {
-                "refs": [
-                    "https://attack.mitre.org/wiki/Software/S0039",
-                    "https://msdn.microsoft.com/en-us/library/aa939914",
-                    "http://windowsitpro.com/windows/netexe-reference"
-                ],
-                "synonyms": [
-                    "Net",
-                    "net.exe"
-                ]
-            },
-            "uuid": "03342581-f790-4f03-ba41-e82e67392e23"
-        },
-        {
-            "description": "PsExec is a free Microsoft tool that can be used to execute a program on another computer. It is used by IT administrators and attackers. (Citation: Russinovich Sysinternals) (Citation: SANS PsExec)\n\nAliases: PsExec",
-            "value": "PsExec - S0029",
-            "meta": {
-                "refs": [
-                    "https://attack.mitre.org/wiki/Software/S0029",
-                    "https://technet.microsoft.com/en-us/sysinternals/bb897553.aspx",
-                    "https://digital-forensics.sans.org/blog/2012/12/17/protecting-privileged-domain-accounts-psexec-deep-dive"
-                ],
-                "synonyms": [
-                    "PsExec"
-                ]
-            },
-            "uuid": "ff6caf67-ea1f-4895-b80e-4bb0fc31c6db"
-        },
-        {
-            "description": "Certutil is a command-line utility that can be used to obtain certificate authority information and configure Certificate Services. (Citation: TechNet Certutil)\n\nAliases: certutil, certutil.exe",
-            "value": "certutil - S0160",
-            "meta": {
-                "refs": [
-                    "https://attack.mitre.org/wiki/Software/S0160",
-                    "https://technet.microsoft.com/library/cc732443.aspx"
-                ],
-                "synonyms": [
-                    "certutil",
-                    "certutil.exe"
-                ]
-            },
-            "uuid": "0a68f1f1-da74-4d28-8d9a-696c082706cc"
-        },
-        {
-            "description": "Arp displays information about a system's Address Resolution Protocol (ARP) cache. (Citation: TechNet Arp)\n\nAliases: Arp, arp.exe",
-            "value": "Arp - S0099",
-            "meta": {
-                "refs": [
-                    "https://attack.mitre.org/wiki/Software/S0099",
-                    "https://technet.microsoft.com/en-us/library/bb490864.aspx"
-                ],
-                "synonyms": [
-                    "Arp",
-                    "arp.exe"
-                ]
-            },
-            "uuid": "30489451-5886-4c46-90c9-0dff9adc5252"
-        },
-        {
-            "description": "cmd is the Windows command-line interpreter that can be used to interact with systems and execute other processes and utilities. (Citation: TechNet Cmd)\n\nCmd.exe contains native functionality to perform many operations to interact with the system, including listing files in a directory (e.g., <code>dir</code> (Citation: TechNet Dir)), deleting files (e.g., <code>del</code> (Citation: TechNet Del)), and copying files (e.g., <code>copy</code> (Citation: TechNet Copy)).\n\nAliases: cmd, cmd.exe",
-            "value": "cmd - S0106",
-            "meta": {
-                "refs": [
-                    "https://attack.mitre.org/wiki/Software/S0106",
-                    "https://technet.microsoft.com/en-us/library/bb490880.aspx",
-                    "https://technet.microsoft.com/en-us/library/cc755121.aspx",
-                    "https://technet.microsoft.com/en-us/library/cc771049.aspx",
-                    "https://technet.microsoft.com/en-us/library/bb490886.aspx"
-                ],
-                "synonyms": [
-                    "cmd",
-                    "cmd.exe"
-                ]
-            },
-            "uuid": "bba595da-b73a-4354-aa6c-224d4de7cb4e"
-        },
-        {
-            "description": "is an open-source Tor plugin that tunnels Tor traffic through HTTPS connections.\n\nAliases: meek",
-            "value": "meek - S0175",
-            "meta": {
-                "refs": [
-                    "https://attack.mitre.org/wiki/Software/S0175"
-                ],
-                "synonyms": [
-                    "meek"
-                ]
-            },
-            "uuid": "65370d0b-3bd4-4653-8cf9-daf56f6be830"
-        },
-        {
-            "description": "Reg is a Windows utility used to interact with the Windows Registry. It can be used at the command-line interface to query, add, modify, and remove information. (Citation: Microsoft Reg)\n\nUtilities such as Reg are known to be used by persistent threats. (Citation: Windows Commands JPCERT)\n\nAliases: Reg, reg.exe",
-            "value": "Reg - S0075",
-            "meta": {
-                "refs": [
-                    "https://attack.mitre.org/wiki/Software/S0075",
-                    "https://technet.microsoft.com/en-us/library/cc732643.aspx",
-                    "http://blog.jpcert.or.jp/2016/01/windows-commands-abused-by-attackers.html"
-                ],
-                "synonyms": [
-                    "Reg",
-                    "reg.exe"
-                ]
-            },
-            "uuid": "cde2d700-9ed1-46cf-9bce-07364fe8b24f"
-        },
-        {
-            "description": "Cobalt Strike is a commercial, full-featured, penetration testing tool which bills itself as \u201cadversary simulation software designed to execute targeted attacks and emulate the post-exploitation actions of advanced threat actors\u201d.  Cobalt Strike\u2019s interactive post-exploit capabilities cover the full range of ATT&CK tactics, all executed within a single, integrated system. (Citation: cobaltstrike manual)\n\nIn addition to its own capabilities, Cobalt Strike leverages the capabilities of other well-known tools such as Metasploit and Mimikatz. (Citation: cobaltstrike manual)\n\nAliases: Cobalt Strike",
-            "value": "Cobalt Strike - S0154",
-            "meta": {
-                "refs": [
-                    "https://attack.mitre.org/wiki/Software/S0154",
-                    "https://cobaltstrike.com/downloads/csmanual38.pdf"
-                ],
-                "synonyms": [
-                    "Cobalt Strike"
-                ]
-            },
-            "uuid": "aafea02e-ece5-4bb2-91a6-3bf8c7f38a39"
-        }
-    ]
+  "name": "Enterprise Attack - Tool",
+  "type": "mitre-enterprise-attack-tool",
+  "description": "Name of ATT&CK software",
+  "version": 3,
+  "source": "https://github.com/mitre/cti",
+  "uuid": "fc1ea6e0-1707-11e8-ac05-2b70d00c354e",
+  "authors": [
+    "MITRE"
+  ],
+  "values": [
+    {
+      "description": "at is used to schedule tasks on a system to run at a specified date or time. (Citation: TechNet At)\n\nAliases: at, at.exe",
+      "value": "at - S0110",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0110",
+          "https://technet.microsoft.com/en-us/library/bb490866.aspx"
+        ],
+        "synonyms": [
+          "at",
+          "at.exe"
+        ]
+      },
+      "uuid": "0c8465c0-d0b4-4670-992e-4eee8d7ff952"
+    },
+    {
+      "description": "route can be used to find or change information within the local system IP routing table. (Citation: TechNet Route)\n\nAliases: route, route.exe",
+      "value": "route - S0103",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0103",
+          "https://technet.microsoft.com/en-us/library/bb490991.aspx"
+        ],
+        "synonyms": [
+          "route",
+          "route.exe"
+        ]
+      },
+      "uuid": "c11ac61d-50f4-444f-85d8-6f006067f0de"
+    },
+    {
+      "description": "The Tasklist utility displays a list of applications and services with their Process IDs (PID) for all tasks running on either a local or a remote computer. It is packaged with Windows operating systems and can be executed from the command-line interface. (Citation: Microsoft Tasklist)\n\nAliases: Tasklist",
+      "value": "Tasklist - S0057",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0057",
+          "https://technet.microsoft.com/en-us/library/bb491010.aspx"
+        ],
+        "synonyms": [
+          "Tasklist"
+        ]
+      },
+      "uuid": "2e45723a-31da-4a7e-aaa6-e01998a6788f"
+    },
+    {
+      "description": "Windows Credential Editor is a password dumping tool. (Citation: Amplia WCE)\n\nAliases: Windows Credential Editor, WCE",
+      "value": "Windows Credential Editor - S0005",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0005",
+          "http://www.ampliasecurity.com/research/wcefaq.html"
+        ],
+        "synonyms": [
+          "Windows Credential Editor",
+          "WCE"
+        ]
+      },
+      "uuid": "242f3da3-4425-4d11-8f5c-b842886da966"
+    },
+    {
+      "description": "Responder is an open source tool used for LLMNR, NBT-NS and MDNS poisoning, with built-in HTTP/SMB/MSSQL/FTP/LDAP rogue authentication server supporting NTLMv1/NTLMv2/LMv2, Extended Security NTLMSSP and Basic HTTP authentication. (Citation: GitHub Responder)\n\nAliases: Responder",
+      "value": "Responder - S0174",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0174",
+          "https://github.com/SpiderLabs/Responder"
+        ],
+        "synonyms": [
+          "Responder"
+        ]
+      },
+      "uuid": "a1dd2dbd-1550-44bf-abcc-1a4c52e97719"
+    },
+    {
+      "description": "schtasks is used to schedule execution of programs or scripts on a Windows system to run at a specific date and time. (Citation: TechNet Schtasks)\n\nAliases: schtasks, schtasks.exe",
+      "value": "schtasks - S0111",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0111",
+          "https://technet.microsoft.com/en-us/library/bb490996.aspx"
+        ],
+        "synonyms": [
+          "schtasks",
+          "schtasks.exe"
+        ]
+      },
+      "uuid": "c9703cd3-141c-43a0-a926-380082be5d04"
+    },
+    {
+      "description": "UACMe is an open source assessment tool that contains many methods for bypassing Windows User Account Control on multiple versions of the operating system. (Citation: Github UACMe)\n\nAliases: UACMe",
+      "value": "UACMe - S0116",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0116",
+          "https://github.com/hfiref0x/UACME"
+        ],
+        "synonyms": [
+          "UACMe"
+        ]
+      },
+      "uuid": "102c3898-85e0-43ee-ae28-62a0a3ed9507"
+    },
+    {
+      "description": "ifconfig is a Unix-based utility used to gather information about and interact with the TCP/IP settings on a system. (Citation: Wikipedia Ifconfig)\n\nAliases: ifconfig",
+      "value": "ifconfig - S0101",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0101",
+          "https://en.wikipedia.org/wiki/Ifconfig"
+        ],
+        "synonyms": [
+          "ifconfig"
+        ]
+      },
+      "uuid": "362dc67f-4e85-4562-9dac-1b6b7f3ec4b5"
+    },
+    {
+      "description": "Mimikatz is a credential dumper capable of obtaining plaintext Windows account logins and passwords, along with many other features that make it useful for testing the security of networks. (Citation: Deply Mimikatz) (Citation: Adsecurity Mimikatz Guide)\n\nAliases: Mimikatz\n\nContributors: Vincent Le Toux",
+      "value": "Mimikatz - S0002",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0002",
+          "https://github.com/gentilkiwi/mimikatz",
+          "https://adsecurity.org/?page%20id=1821"
+        ],
+        "synonyms": [
+          "Mimikatz"
+        ]
+      },
+      "uuid": "afc079f3-c0ea-4096-b75d-3f05338b7f60"
+    },
+    {
+      "description": " (Citation: xCmd) is an open source tool that is similar to PsExec and allows the user to execute applications on remote systems. (Citation: xCmd)\n\nAliases:  (Citation: xCmd)",
+      "value": "xCmd - S0123",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0123",
+          "https://ashwinrayaprolu.wordpress.com/2011/04/12/xcmd-an-alternative-to-psexec/"
+        ],
+        "synonyms": [
+          "xCmd"
+        ]
+      },
+      "uuid": "4fa49fc0-9162-4bdb-a37e-7aa3dcb6d38b"
+    },
+    {
+      "description": "is a credential dumper, similar to Mimikatz, designed specifically for Linux platforms. (Citation: MimiPenguin GitHub May 2017)\n\nAliases: MimiPenguin\n\nContributors: Vincent Le Toux",
+      "value": "MimiPenguin - S0179",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0179",
+          "https://github.com/huntergregal/mimipenguin"
+        ],
+        "synonyms": [
+          "MimiPenguin"
+        ]
+      },
+      "uuid": "5a33468d-844d-4b1f-98c9-0e786c556b27"
+    },
+    {
+      "description": "Systeminfo is a Windows utility that can be used to gather detailed information about a computer. (Citation: TechNet Systeminfo)\n\nAliases: Systeminfo, systeminfo.exe",
+      "value": "Systeminfo - S0096",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0096",
+          "https://technet.microsoft.com/en-us/library/bb491007.aspx"
+        ],
+        "synonyms": [
+          "Systeminfo",
+          "systeminfo.exe"
+        ]
+      },
+      "uuid": "7fcbc4e8-1989-441f-9ac5-e7b6ff5806f1"
+    },
+    {
+      "description": "netsh is a scripting utility used to interact with networking components on local or remote systems. (Citation: TechNet Netsh)\n\nAliases: netsh, netsh.exe",
+      "value": "netsh - S0108",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0108",
+          "https://technet.microsoft.com/library/bb490939.aspx"
+        ],
+        "synonyms": [
+          "netsh",
+          "netsh.exe"
+        ]
+      },
+      "uuid": "5a63f900-5e7e-4928-a746-dd4558e1df71"
+    },
+    {
+      "description": "dsquery is a command-line utility that can be used to query Active Directory for information from a system within a domain. (Citation: TechNet Dsquery) It is typically installed only on Windows Server versions but can be installed on non-server variants through the Microsoft-provided Remote Server Administration Tools bundle.\n\nAliases: dsquery, dsquery.exe",
+      "value": "dsquery - S0105",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0105",
+          "https://technet.microsoft.com/en-us/library/cc732952.aspx"
+        ],
+        "synonyms": [
+          "dsquery",
+          "dsquery.exe"
+        ]
+      },
+      "uuid": "38952eac-cb1b-4a71-bad2-ee8223a1c8fe"
+    },
+    {
+      "description": "gsecdump is a publicly-available credential dumper used to obtain password hashes and LSA secrets from Windows operating systems. (Citation: TrueSec Gsecdump)\n\nAliases: gsecdump",
+      "value": "gsecdump - S0008",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0008",
+          "https://www.truesec.se/sakerhet/verktyg/saakerhet/gsecdump%20v2.0b5"
+        ],
+        "synonyms": [
+          "gsecdump"
+        ]
+      },
+      "uuid": "b07c2c47-fefb-4d7c-a69e-6a3296171f54"
+    },
+    {
+      "description": "Ping is an operating system utility commonly used to troubleshoot and verify network connections. (Citation: TechNet Ping)\n\nAliases: Ping, ping.exe",
+      "value": "Ping - S0097",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0097",
+          "https://technet.microsoft.com/en-us/library/bb490968.aspx"
+        ],
+        "synonyms": [
+          "Ping",
+          "ping.exe"
+        ]
+      },
+      "uuid": "b77b563c-34bb-4fb8-86a3-3694338f7b47"
+    },
+    {
+      "description": "Fgdump is a Windows password hash dumper. (Citation: Mandiant APT1)\n\nAliases: Fgdump",
+      "value": "Fgdump - S0120",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0120",
+          "https://www.fireeye.com/content/dam/fireeye-www/services/pdfs/mandiant-apt1-report.pdf"
+        ],
+        "synonyms": [
+          "Fgdump"
+        ]
+      },
+      "uuid": "4f45dfeb-fe51-4df0-8db3-edf7dd0513fe"
+    },
+    {
+      "description": "Lslsass is a publicly-available tool that can dump active logon session password hashes from the lsass process. (Citation: Mandiant APT1)\n\nAliases: Lslsass",
+      "value": "Lslsass - S0121",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0121",
+          "https://www.fireeye.com/content/dam/fireeye-www/services/pdfs/mandiant-apt1-report.pdf"
+        ],
+        "synonyms": [
+          "Lslsass"
+        ]
+      },
+      "uuid": "2fab555f-7664-4623-b4e0-1675ae38190b"
+    },
+    {
+      "description": "Pass-The-Hash Toolkit is a toolkit that allows an adversary to \"pass\" a password hash (without knowing the original password) to log in to systems. (Citation: Mandiant APT1)\n\nAliases: Pass-The-Hash Toolkit",
+      "value": "Pass-The-Hash Toolkit - S0122",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0122",
+          "https://www.fireeye.com/content/dam/fireeye-www/services/pdfs/mandiant-apt1-report.pdf"
+        ],
+        "synonyms": [
+          "Pass-The-Hash Toolkit"
+        ]
+      },
+      "uuid": "a52edc76-328d-4596-85e7-d56ef5a9eb69"
+    },
+    {
+      "description": "FTP is a utility commonly available with operating systems to transfer information over the File Transfer Protocol (FTP). Adversaries can use it to transfer other tools onto a system or to exfiltrate data. (Citation: Wikipedia FTP)\n\nAliases: FTP, ftp.exe",
+      "value": "FTP - S0095",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0095",
+          "https://en.wikipedia.org/wiki/File%20Transfer%20Protocol"
+        ],
+        "synonyms": [
+          "FTP",
+          "ftp.exe"
+        ]
+      },
+      "uuid": "cf23bf4a-e003-4116-bbae-1ea6c558d565"
+    },
+    {
+      "description": "ipconfig is a Windows utility that can be used to find information about a system's TCP/IP, DNS, DHCP, and adapter configuration. (Citation: TechNet Ipconfig)\n\nAliases: ipconfig, ipconfig.exe",
+      "value": "ipconfig - S0100",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0100",
+          "https://technet.microsoft.com/en-us/library/bb490921.aspx"
+        ],
+        "synonyms": [
+          "ipconfig",
+          "ipconfig.exe"
+        ]
+      },
+      "uuid": "294e2560-bd48-44b2-9da2-833b5588ad11"
+    },
+    {
+      "description": "nbtstat is a utility used to troubleshoot NetBIOS name resolution. (Citation: TechNet Nbtstat)\n\nAliases: nbtstat, nbtstat.exe",
+      "value": "nbtstat - S0102",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0102",
+          "https://technet.microsoft.com/en-us/library/cc940106.aspx"
+        ],
+        "synonyms": [
+          "nbtstat",
+          "nbtstat.exe"
+        ]
+      },
+      "uuid": "b35068ec-107a-4266-bda8-eb7036267aea"
+    },
+    {
+      "description": "HTRAN is a tool that proxies connections through intermediate hops and aids users in disguising their true geographical location. It can be used by adversaries to hide their location when interacting with the victim networks.  (Citation: Operation Quantum Entanglement)\n\nAliases: HTRAN, HUC Packet Transmit Tool",
+      "value": "HTRAN - S0040",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0040",
+          "https://www.fireeye.com/content/dam/fireeye-www/global/en/current-threats/pdfs/wp-operation-quantum-entanglement.pdf"
+        ],
+        "synonyms": [
+          "HTRAN",
+          "HUC Packet Transmit Tool"
+        ]
+      },
+      "uuid": "d5e96a35-7b0b-4c6a-9533-d63ecbda563e"
+    },
+    {
+      "description": "Tor is a software suite and network that provides increased anonymity on the Internet. It creates a multi-hop proxy network and utilizes multilayer encryption to protect both the message and routing information. Tor utilizes \"Onion Routing,\" in which messages are encrypted with multiple layers of encryption; at each step in the proxy network, the topmost layer is decrypted and the contents forwarded on to the next node until it reaches its destination. (Citation: Dingledine Tor The Second-Generation Onion Router)\n\nAliases: Tor",
+      "value": "Tor - S0183",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0183",
+          "http://www.dtic.mil/dtic/tr/fulltext/u2/a465464.pdf"
+        ],
+        "synonyms": [
+          "Tor"
+        ]
+      },
+      "uuid": "ed7d0cb1-87a6-43b4-9f46-ef1bc56d6c68"
+    },
+    {
+      "description": "netstat is an operating system utility that displays active TCP connections, listening ports, and network statistics. (Citation: TechNet Netstat)\n\nAliases: netstat, netstat.exe",
+      "value": "netstat - S0104",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0104",
+          "https://technet.microsoft.com/en-us/library/bb490947.aspx"
+        ],
+        "synonyms": [
+          "netstat",
+          "netstat.exe"
+        ]
+      },
+      "uuid": "4664b683-f578-434f-919b-1c1aad2a1111"
+    },
+    {
+      "description": "pwdump is a credential dumper. (Citation: Wikipedia pwdump)\n\nAliases: pwdump",
+      "value": "pwdump - S0006",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0006",
+          "https://en.wikipedia.org/wiki/Pwdump"
+        ],
+        "synonyms": [
+          "pwdump"
+        ]
+      },
+      "uuid": "9de2308e-7bed-43a3-8e58-f194b3586700"
+    },
+    {
+      "description": "Cachedump is a publicly-available tool that program extracts cached password hashes from a system’s registry. (Citation: Mandiant APT1)\n\nAliases: Cachedump",
+      "value": "Cachedump - S0119",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0119",
+          "https://www.fireeye.com/content/dam/fireeye-www/services/pdfs/mandiant-apt1-report.pdf"
+        ],
+        "synonyms": [
+          "Cachedump"
+        ]
+      },
+      "uuid": "c9cd7ec9-40b7-49db-80be-1399eddd9c52"
+    },
+    {
+      "description": "The Net utility is a component of the Windows operating system. It is used in command-line operations for control of users, groups, services, and network connections. (Citation: Microsoft Net Utility)\n\nNet has a great deal of functionality, (Citation: Savill 1999) much of which is useful for an adversary, such as gathering system and network information for Discovery, moving laterally through Windows admin shares using <code>net use</code> commands, and interacting with services.\n\nAliases: Net, net.exe",
+      "value": "Net - S0039",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0039",
+          "https://msdn.microsoft.com/en-us/library/aa939914",
+          "http://windowsitpro.com/windows/netexe-reference"
+        ],
+        "synonyms": [
+          "Net",
+          "net.exe"
+        ]
+      },
+      "uuid": "03342581-f790-4f03-ba41-e82e67392e23"
+    },
+    {
+      "description": "PsExec is a free Microsoft tool that can be used to execute a program on another computer. It is used by IT administrators and attackers. (Citation: Russinovich Sysinternals) (Citation: SANS PsExec)\n\nAliases: PsExec",
+      "value": "PsExec - S0029",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0029",
+          "https://technet.microsoft.com/en-us/sysinternals/bb897553.aspx",
+          "https://digital-forensics.sans.org/blog/2012/12/17/protecting-privileged-domain-accounts-psexec-deep-dive"
+        ],
+        "synonyms": [
+          "PsExec"
+        ]
+      },
+      "uuid": "ff6caf67-ea1f-4895-b80e-4bb0fc31c6db"
+    },
+    {
+      "description": "Certutil is a command-line utility that can be used to obtain certificate authority information and configure Certificate Services. (Citation: TechNet Certutil)\n\nAliases: certutil, certutil.exe",
+      "value": "certutil - S0160",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0160",
+          "https://technet.microsoft.com/library/cc732443.aspx"
+        ],
+        "synonyms": [
+          "certutil",
+          "certutil.exe"
+        ]
+      },
+      "uuid": "0a68f1f1-da74-4d28-8d9a-696c082706cc"
+    },
+    {
+      "description": "Arp displays information about a system's Address Resolution Protocol (ARP) cache. (Citation: TechNet Arp)\n\nAliases: Arp, arp.exe",
+      "value": "Arp - S0099",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0099",
+          "https://technet.microsoft.com/en-us/library/bb490864.aspx"
+        ],
+        "synonyms": [
+          "Arp",
+          "arp.exe"
+        ]
+      },
+      "uuid": "30489451-5886-4c46-90c9-0dff9adc5252"
+    },
+    {
+      "description": "cmd is the Windows command-line interpreter that can be used to interact with systems and execute other processes and utilities. (Citation: TechNet Cmd)\n\nCmd.exe contains native functionality to perform many operations to interact with the system, including listing files in a directory (e.g., <code>dir</code> (Citation: TechNet Dir)), deleting files (e.g., <code>del</code> (Citation: TechNet Del)), and copying files (e.g., <code>copy</code> (Citation: TechNet Copy)).\n\nAliases: cmd, cmd.exe",
+      "value": "cmd - S0106",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0106",
+          "https://technet.microsoft.com/en-us/library/bb490880.aspx",
+          "https://technet.microsoft.com/en-us/library/cc755121.aspx",
+          "https://technet.microsoft.com/en-us/library/cc771049.aspx",
+          "https://technet.microsoft.com/en-us/library/bb490886.aspx"
+        ],
+        "synonyms": [
+          "cmd",
+          "cmd.exe"
+        ]
+      },
+      "uuid": "bba595da-b73a-4354-aa6c-224d4de7cb4e"
+    },
+    {
+      "description": "is an open-source Tor plugin that tunnels Tor traffic through HTTPS connections.\n\nAliases: meek",
+      "value": "meek - S0175",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0175"
+        ],
+        "synonyms": [
+          "meek"
+        ]
+      },
+      "uuid": "65370d0b-3bd4-4653-8cf9-daf56f6be830"
+    },
+    {
+      "description": "Reg is a Windows utility used to interact with the Windows Registry. It can be used at the command-line interface to query, add, modify, and remove information. (Citation: Microsoft Reg)\n\nUtilities such as Reg are known to be used by persistent threats. (Citation: Windows Commands JPCERT)\n\nAliases: Reg, reg.exe",
+      "value": "Reg - S0075",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0075",
+          "https://technet.microsoft.com/en-us/library/cc732643.aspx",
+          "http://blog.jpcert.or.jp/2016/01/windows-commands-abused-by-attackers.html"
+        ],
+        "synonyms": [
+          "Reg",
+          "reg.exe"
+        ]
+      },
+      "uuid": "cde2d700-9ed1-46cf-9bce-07364fe8b24f"
+    },
+    {
+      "description": "Cobalt Strike is a commercial, full-featured, penetration testing tool which bills itself as “adversary simulation software designed to execute targeted attacks and emulate the post-exploitation actions of advanced threat actors”.  Cobalt Strike’s interactive post-exploit capabilities cover the full range of ATT&CK tactics, all executed within a single, integrated system. (Citation: cobaltstrike manual)\n\nIn addition to its own capabilities, Cobalt Strike leverages the capabilities of other well-known tools such as Metasploit and Mimikatz. (Citation: cobaltstrike manual)\n\nAliases: Cobalt Strike",
+      "value": "Cobalt Strike - S0154",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0154",
+          "https://cobaltstrike.com/downloads/csmanual38.pdf"
+        ],
+        "synonyms": [
+          "Cobalt Strike"
+        ]
+      },
+      "uuid": "aafea02e-ece5-4bb2-91a6-3bf8c7f38a39"
+    }
+  ]
 }
