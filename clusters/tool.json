@@ -11,7 +11,7 @@
   ],
   "description": "threat-actor-tools is an enumeration of tools used by adversaries. The list includes malware but also common software regularly used by the adversaries.",
   "uuid": "0d821b68-9d82-4c6d-86a6-1071a9e0f79f",
-  "version": 60,
+  "version": 61,
   "values": [
     {
       "meta": {
@@ -4089,6 +4089,32 @@
         ]
       },
       "uuid": "3784c74-691a-4110-94f6-66e60224aa92"
+    },
+    {
+      "value": "KillDisk Wiper",
+      "description": "KillDisk, along with the multipurpose, cyberespionage-related BlackEnergy, was used in cyberattacks in late December 2015 against Ukraine’s energy sector as well as its banking, rail, and mining industries. The malware has since metamorphosed into a threat used for digital extortion, affecting Windows and Linux platforms. The note accompanying the ransomware versions, like in the case of Petya, was a ruse: Because KillDisk also overwrites and deletes files (and don’t store the encryption keys on disk or online), recovering the scrambled files was out of the question. The new variant we found, however, does not include a ransom note.",
+      "meta": {
+        "refs": [
+          "https://blog.trendmicro.com/trendlabs-security-intelligence/new-killdisk-variant-hits-financial-organizations-in-latin-america/"
+        ],
+        "synonyms": [
+          "KillDisk"
+        ]
+      },
+      "uuid": "aef0fdd4-38b6-11e8-afdd-3b6145112467"
+    },
+    {
+      "value": "UselessDisk",
+      "description": "A new MBR bootlocker called DiskWriter, or UselessDisk, has been discovered that overwrites the MBR of a victim's computer and then displays a ransom screen on reboot instead of booting into Windows. This ransom note asks for $300 in bitcoins in order to gain access to Windows again. Might be a wiper.",
+      "meta": {
+        "refs": [
+          "https://www.bleepingcomputer.com/news/security/the-diskwriter-or-uselessdisk-bootlocker-may-be-a-wiper/"
+        ],
+        "synonyms": [
+          "DiskWriter"
+        ]
+      },
+      "uuid": "b5112fe0-38b6-11e8-af9f-6381b5e5403f"
     }
   ]
 }
