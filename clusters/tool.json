@@ -11,7 +11,7 @@
   ],
   "description": "threat-actor-tools is an enumeration of tools used by adversaries. The list includes malware but also common software regularly used by the adversaries.",
   "uuid": "0d821b68-9d82-4c6d-86a6-1071a9e0f79f",
-  "version": 61,
+  "version": 62,
   "values": [
     {
       "meta": {
@@ -4115,6 +4115,17 @@
         ]
       },
       "uuid": "b5112fe0-38b6-11e8-af9f-6381b5e5403f"
+    },
+    {
+      "value": "GoScanSSH",
+      "description": "During a recent Incident Response (IR) engagement, Talos identified a new malware family that was being used to compromise SSH servers exposed to the internet. This malware, which we have named GoScanSSH, was written using the Go programming language, and exhibited several interesting characteristics. This is not the first malware family that Talos has observed that was written using Go. However, it is relatively uncommon to see malware written in this programming language. In this particular case, we also observed that the attacker created unique malware binaries for each host that was infected with the GoScanSSH malware. Additionally, the GoScanSSH command and control (C2) infrastructure was observed leveraging the Tor2Web proxy service in an attempt to make tracking the attacker-controlled infrastructure more difficult and resilient to takedowns. ",
+      "meta": {
+        "refs": [
+          "http://blog.talosintelligence.com/2018/03/goscanssh-analysis.html",
+          "https://www.bleepingcomputer.com/news/security/goscanssh-malware-avoids-government-and-military-servers/"
+        ]
+      },
+      "uuid": "8c0a7e1e-3cc4-11e8-8f03-2f71e72f737b"
     }
   ]
 }
