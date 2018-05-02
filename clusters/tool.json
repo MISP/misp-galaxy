@@ -11,7 +11,7 @@
   ],
   "description": "threat-actor-tools is an enumeration of tools used by adversaries. The list includes malware but also common software regularly used by the adversaries.",
   "uuid": "0d821b68-9d82-4c6d-86a6-1071a9e0f79f",
-  "version": 64,
+  "version": 65,
   "values": [
     {
       "meta": {
@@ -4130,6 +4130,16 @@
         ]
       },
       "uuid": "a4036a28-3d94-11e8-ad9f-97ada3c6d5fb"
+    },
+    {
+      "value": "Kwampirs",
+      "description": "Once Orangeworm has infiltrated a victim’s network, they deploy Trojan.Kwampirs, a backdoor Trojan that provides the attackers with remote access to the compromised computer. When executed, Kwampirs decrypts and extracts a copy of its main DLL payload from its resource section. Before writing the payload to disk, it inserts a randomly generated string into the middle of the decrypted payload in an attempt to evade hash-based detections.",
+      "meta": {
+        "refs": [
+          "https://www.symantec.com/blogs/threat-intelligence/orangeworm-targets-healthcare-us-europe-asia"
+        ]
+      },
+      "uuid": "d1e548b8-4793-11e8-8dea-6beff82cac0a"
     }
   ]
 }
