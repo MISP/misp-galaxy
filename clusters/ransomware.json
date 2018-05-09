@@ -9676,12 +9676,26 @@
         ]
       },
       "uuid": "c1788ac0-4fa0-11e8-b0fd-63f5a2914926"
+    },
+    {
+      "value": "HPE iLO 4 Ransomware",
+      "description": "Attackers are targeting Internet accessible HPE iLO 4 remote management interfaces, supposedly encrypting the hard drives, and then demanding Bitcoins to get access to the data again.\nAccording to the victim, the attackers are demanding 2 bitcoins to gain access to the drives again. The attackers will also provide a bitcoin address to the victim that should be used for payment. These bitcoin addresses appear to be unique per victim as the victim's was different from other reported ones.\nAn interesting part of the ransom note is that the attackers state that the ransom price is not negotiable unless the victim's are from Russia. This is common for Russian based attackers, who in many cases tries to avoid infecting Russian victims.\nFinally, could this be a decoy/wiper rather than an actual true ransomware attack? Ransomware attacks typically provide a unique ID to the victim in order to distinguish one victim from another. This prevents a victim from \"stealing\" another victim's payment and using it to unlock their computer.\nIn a situation like this, where no unique ID is given to identify the encrypted computer and the email is publicly accessible, it could be a case where the main goal is to wipe a server or act as a decoy for another attack.",
+      "meta": {
+        "refs": [
+          "https://www.bleepingcomputer.com/news/security/ransomware-hits-hpe-ilo-remote-management-interfaces/",
+          "https://twitter.com/M_Shahpasandi/status/989157283799162880"
+        ],
+        "ransomnotes": [
+          "Security Notice\n\nHey. Your hard disk is encrypted using RSA 2048 asymmetric encryption. To decrypt files you need to obtain the private key.\nIt means We are the only ones in the world to recover files back to you. Not even god can help you. Its all math and cryptography .\nIf you want your files back, Please send an email to 15fd9ngtetwjtdc@yopmail.com.\nWe don't know who are you, All what we need is some money and we are doing it for good cause.\nDon't panic if we don't answer you during 24 hours. It means that we didn't received your letter and write us again.\nYou can use of that bitcoin exchangers for transfering bitcoin.\nhttps://localbitcoins.com\nhttps://www.kraken.com\nPlease use english language in your letters. If you don't speak english then use https://translate.google.com to translate your letter on english language.\n\nProcess:\n1) Pay some BTC to our wallet address.(negotations almost impossible unless you are a russian citizen)\n2) We will send you private key and instructions to decrypt your hard drive\n3) Boom! You got your files back."
+        ]
+      },
+      "uuid": "39cb0268-528b-11e8-ac30-0fa44afdc8de"
     }
   ],
   "source": "Various",
   "uuid": "10cf658b-5d32-4c4b-bb32-61760a640372",
   "name": "Ransomware",
-  "version": 20,
+  "version": 21,
   "type": "ransomware",
   "description": "Ransomware galaxy based on https://docs.google.com/spreadsheets/d/1TWS238xacAto-fLKh1n5uTsdijWdCEsGIM0Y0Hvmc5g/pubhtml and http://pastebin.com/raw/GHgpWjar"
 }
