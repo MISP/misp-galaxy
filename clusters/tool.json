@@ -11,7 +11,7 @@
   ],
   "description": "threat-actor-tools is an enumeration of tools used by adversaries. The list includes malware but also common software regularly used by the adversaries.",
   "uuid": "0d821b68-9d82-4c6d-86a6-1071a9e0f79f",
-  "version": 58,
+  "version": 68,
   "values": [
     {
       "meta": {
@@ -1705,15 +1705,6 @@
       "uuid": "ab5c4362-c369-4c78-985d-04ba1226ea32"
     },
     {
-      "meta": {
-        "refs": [
-          "https://www.proofpoint.com/us/threat-insight/post/threat-actors-using-legitimate-paypal-accounts-to-distribute-chthonic-banking-trojan"
-        ]
-      },
-      "value": "Chthonic",
-      "uuid": "783f61a1-8210-4145-b801-53f71b909ebf"
-    },
-    {
       "value": "GeminiDuke",
       "description": "GeminiDuke is malware that was used by APT29 from 2009 to 2012.",
       "meta": {
@@ -3118,7 +3109,8 @@
         "refs": [
           "https://blog.malwarebytes.com/threat-analysis/2016/10/trick-bot-dyrezas-successor/",
           "https://blog.fraudwatchinternational.com/malware/trickbot-malware-works",
-          "https://securityintelligence.com/trickbot-is-hand-picking-private-banks-for-targets-with-redirection-attacks-in-tow/"
+          "https://securityintelligence.com/trickbot-is-hand-picking-private-banks-for-targets-with-redirection-attacks-in-tow/",
+          "https://www.bleepingcomputer.com/news/security/trickbot-banking-trojan-gets-screenlocker-component/"
         ],
         "synonyms": [
           "TrickBot",
@@ -3834,7 +3826,7 @@
           "https://www.sophos.com/en-us/threat-center/threat-analyses/viruses-and-spyware/Troj~ShipUp-A/detailed-analysis.aspx"
         ]
       },
-      "uuid": "231b7572-239f-11e8-8404-df420a5d403b"
+      "uuid": "4613b76c-4966-44b6-bcd5-f74fa64deb18"
     },
     {
       "value": "Neuron",
@@ -3855,6 +3847,17 @@
         ]
       },
       "uuid": "73cb7ecc-25e3-11e8-a97b-c35ec4e7dcf8"
+    },
+    {
+      "value": "Gamut Botnet",
+      "description": "Gamut was found to be downloaded by a Trojan Downloader that arrives as an attachment from a spam email message. The bot installation is quite simple. After the malware binary has been downloaded, it launches itself from its current directory, usually the Windows %Temp% folder and installs itself as a Windows service.\nThe malware utilizes an anti-VM (virtual machine) trick and terminates itself if it detects that it is running in a virtual machine environment. The bot uses INT 03h trap sporadically in its code, an anti-debugging technique which prevents its code from running within a debugger environment. It can also determine if it is being debugged by using the Kernel32 API - IsDebuggerPresent function.",
+      "meta": {
+        "refs": [
+          "https://www.bleepingcomputer.com/news/security/necurs-and-gamut-botnets-account-for-97-percent-of-the-internets-spam-emails/",
+          "https://www.trustwave.com/Resources/SpiderLabs-Blog/Gamut-Spambot-Analysis/"
+        ]
+      },
+      "uuid": "492879ac-285b-11e8-a06e-33f548e66e42"
     },
     {
       "value": "CORALDECK",
@@ -4068,6 +4071,107 @@
         ]
       },
       "uuid": "7b20b78a-df6e-40c7-9a3a-363f040cfad7"
+    },
+    {
+      "value": "SHARPKNOT",
+      "meta": {
+        "refs": [
+          "https://www.us-cert.gov/sites/default/files/publications/MAR-10135536.11.WHITE.pdf"
+        ]
+      },
+      "uuid": "3784c74-691a-4110-94f6-66e60224aa92"
+    },
+    {
+      "value": "KillDisk Wiper",
+      "description": "KillDisk, along with the multipurpose, cyberespionage-related BlackEnergy, was used in cyberattacks in late December 2015 against Ukraine’s energy sector as well as its banking, rail, and mining industries. The malware has since metamorphosed into a threat used for digital extortion, affecting Windows and Linux platforms. The note accompanying the ransomware versions, like in the case of Petya, was a ruse: Because KillDisk also overwrites and deletes files (and don’t store the encryption keys on disk or online), recovering the scrambled files was out of the question. The new variant we found, however, does not include a ransom note.",
+      "meta": {
+        "refs": [
+          "https://blog.trendmicro.com/trendlabs-security-intelligence/new-killdisk-variant-hits-financial-organizations-in-latin-america/"
+        ],
+        "synonyms": [
+          "KillDisk"
+        ]
+      },
+      "uuid": "aef0fdd4-38b6-11e8-afdd-3b6145112467"
+    },
+    {
+      "value": "UselessDisk",
+      "description": "A new MBR bootlocker called DiskWriter, or UselessDisk, has been discovered that overwrites the MBR of a victim's computer and then displays a ransom screen on reboot instead of booting into Windows. This ransom note asks for $300 in bitcoins in order to gain access to Windows again. Might be a wiper.",
+      "meta": {
+        "refs": [
+          "https://www.bleepingcomputer.com/news/security/the-diskwriter-or-uselessdisk-bootlocker-may-be-a-wiper/"
+        ],
+        "synonyms": [
+          "DiskWriter"
+        ]
+      },
+      "uuid": "b5112fe0-38b6-11e8-af9f-6381b5e5403f"
+    },
+    {
+      "value": "GoScanSSH",
+      "description": "During a recent Incident Response (IR) engagement, Talos identified a new malware family that was being used to compromise SSH servers exposed to the internet. This malware, which we have named GoScanSSH, was written using the Go programming language, and exhibited several interesting characteristics. This is not the first malware family that Talos has observed that was written using Go. However, it is relatively uncommon to see malware written in this programming language. In this particular case, we also observed that the attacker created unique malware binaries for each host that was infected with the GoScanSSH malware. Additionally, the GoScanSSH command and control (C2) infrastructure was observed leveraging the Tor2Web proxy service in an attempt to make tracking the attacker-controlled infrastructure more difficult and resilient to takedowns. ",
+      "meta": {
+        "refs": [
+          "http://blog.talosintelligence.com/2018/03/goscanssh-analysis.html",
+          "https://www.bleepingcomputer.com/news/security/goscanssh-malware-avoids-government-and-military-servers/"
+        ]
+      },
+      "uuid": "8c0a7e1e-3cc4-11e8-8f03-2f71e72f737b"
+    },
+    {
+      "value": "Rovnix",
+      "description": "We recently found that the malware family ROVNIX is capable of being distributed via macro downloader. This malware technique was previously seen in the DRIDEX malware, which was notable for using the same routines. DRIDEX is also known as the successor of the banking malware CRIDEX.",
+      "meta": {
+        "refs": [
+          "https://blog.trendmicro.com/trendlabs-security-intelligence/rovnix-infects-systems-with-password-protected-macros/"
+        ],
+        "synonyms": [
+          "ROVNIX"
+        ]
+      },
+      "uuid": "a4036a28-3d94-11e8-ad9f-97ada3c6d5fb"
+    },
+    {
+      "value": "Kwampirs",
+      "description": "Once Orangeworm has infiltrated a victim’s network, they deploy Trojan.Kwampirs, a backdoor Trojan that provides the attackers with remote access to the compromised computer. When executed, Kwampirs decrypts and extracts a copy of its main DLL payload from its resource section. Before writing the payload to disk, it inserts a randomly generated string into the middle of the decrypted payload in an attempt to evade hash-based detections.",
+      "meta": {
+        "refs": [
+          "https://www.symantec.com/blogs/threat-intelligence/orangeworm-targets-healthcare-us-europe-asia"
+        ]
+      },
+      "uuid": "d1e548b8-4793-11e8-8dea-6beff82cac0a"
+    },
+    {
+      "value": "Rubella Macro Builder",
+      "description": "A crimeware kit dubbed the Rubella Macro Builder has recently been gaining popularity among members of a top-tier Russian hacking forum. Despite being relatively new and unsophisticated, the kit has a clear appeal for cybercriminals: it’s cheap, fast, and can defeat basic static antivirus detection.",
+      "meta": {
+        "refs": [
+          "https://www.flashpoint-intel.com/blog/rubella-macro-builder/"
+        ]
+      },
+      "uuid": "b7be6732-4ed5-11e8-8b82-dff39eb7a396"
+    },
+    {
+      "value": "kitty Malware",
+      "description": "Researchers at Imperva's Incapsula said a new piece malware called Kitty leaves a note for cat lovers. It attacks the Drupal content management system (CMS) to illegally mine cryptocurrency Monero.",
+      "meta": {
+        "refs": [
+          "https://www.zdnet.com/article/hello-kitty-malware-targets-drupal-to-mine-for-cryptocurrency/",
+          "https://threatpost.com/kitty-cryptomining-malware-cashes-in-on-drupalgeddon-2-0/131668/",
+          "https://cryptovest.com/news/hello-kitty-new-malware-me0ws-its-way-into-mining-monero/"
+        ]
+      },
+      "uuid": "85d5da28-51f7-11e8-bbeb-af367d720136"
+    },
+    {
+      "value": "Maikspy",
+      "description": "We discovered a malware family called Maikspy — a multi-platform spyware that can steal users’ private data. The spyware targets Windows and Android users, and first posed as an adult game named after a popular U.S.-based adult film actress. Maikspy, which is an alias that combines the name of the adult film actress and spyware, has been around since 2016.",
+      "meta": {
+        "refs": [
+          "https://blog.trendmicro.com/trendlabs-security-intelligence/maikspy-spyware-poses-as-adult-game-targets-windows-and-android-users/"
+        ]
+      },
+      "uuid": "d83ec444-535c-11e8-ae83-831d0a85d77a"
     }
   ]
 }

@@ -6,7 +6,7 @@ import re
 import os
 import argparse
 
-parser = argparse.ArgumentParser(description='Create a couple galaxy/cluster with cti\'s relationship\nMust be in the mitre/cti/entreprise-attack/relationship folder')
+parser = argparse.ArgumentParser(description='Create a couple galaxy/cluster with cti\'s relationship\nMust be in the mitre/cti/enterprise-attack/relationship folder')
 parser.add_argument("-v", "--version", type=int, required=True, help="Version of the galaxy. Please increment the previous one")
 args = parser.parse_args()
 
@@ -17,7 +17,7 @@ for element in os.listdir(path):
     with open(path+element) as json_data:
         d = json.load(json_data)
         json_data.close()
-    
+
     temp = d['objects'][0]
     source = temp['source_ref']
     target = temp['target_ref']
@@ -72,20 +72,21 @@ for element in os.listdir(path):
     value['uuid'] = re.search('--(.*)$', temp['id']).group(0)[2:]
     value['meta']['source-uuid'] = re.search('--(.*)$', s['objects'][0]['id']).group(0)[2:]
     value['meta']['target-uuid'] = re.search('--(.*)$', t['objects'][0]['id']).group(0)[2:]
-    value['value'] = s['objects'][0]['name'] + ' ' + relationship + ' ' + t['objects'][0]['name']
+    value['value'] = s['objects'][0]['name'] + ' (' + s['objects'][0]['external_references'][0]['external_id'] + ') ' + relationship + ' ' + t['objects'][0]['name'] + ' (' + t['objects'][0]['external_references'][0]['external_id'] + ')'
+    # value['value'] = s['objects'][0]['name'] + ' ' + relationship + ' ' + t['objects'][0]['name']
     values.append(value)
 
 galaxy = {}
-galaxy['name'] = "Entreprise Attack - Relationship"
-galaxy['type'] = "mitre-entreprise-attack-relationship"
+galaxy['name'] = "Enterprise Attack - Relationship"
+galaxy['type'] = "mitre-enterprise-attack-relationship"
 galaxy['description'] = "Mitre Relationship"
 galaxy['uuid' ] = "fc404638-1707-11e8-a5cf-b78b9b562766"
 galaxy['version'] = args.version
 galaxy['icon'] = "link"
 
-cluster = {} 
-cluster['name'] = "Entreprise Attack - Relationship"
-cluster['type'] = "mitre-entreprise-attack-relationship"
+cluster = {}
+cluster['name'] = "Enterprise Attack - Relationship"
+cluster['type'] = "mitre-enterprise-attack-relationship"
 cluster['description'] = "MITRE Relationship"
 cluster['version'] = args.version
 cluster['source'] = "https://github.com/mitre/cti"
@@ -93,8 +94,8 @@ cluster['uuid' ] = "fc605f90-1707-11e8-9d6a-9f165ac2ab5c"
 cluster['authors'] = ["MITRE"]
 cluster['values'] = values
 
-with open('generate/galaxies/mitre-entreprise-attack-relationship.json', 'w') as galaxy_file:
+with open('generate/galaxies/mitre-enterprise-attack-relationship.json', 'w') as galaxy_file:
     json.dump(galaxy, galaxy_file, indent=4)
 
-with open('generate/clusters/mitre-entreprise-attack-relationship.json', 'w') as cluster_file:
+with open('generate/clusters/mitre-enterprise-attack-relationship.json', 'w') as cluster_file:
     json.dump(cluster, cluster_file, indent=4)

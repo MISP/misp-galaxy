@@ -6,7 +6,7 @@ import re
 import os
 import argparse
 
-parser = argparse.ArgumentParser(description='Create a couple galaxy/cluster with cti\'s tools\nMust be in the mitre/cti/entreprise-attack/tool folder')
+parser = argparse.ArgumentParser(description='Create a couple galaxy/cluster with cti\'s tools\nMust be in the mitre/cti/enterprise-attack/tool folder')
 parser.add_argument("-v", "--version", type=int, required=True, help="Version of the galaxy. Please increment the previous one")
 args = parser.parse_args()
 
@@ -22,28 +22,28 @@ for element in os.listdir('.'):
 
             value = {}
             value['description'] = temp['description']
-            value['value'] = temp['name']
+            value['value'] = temp['name'] + ' - ' + temp['external_references'][0]['external_id']
             value['meta'] = {}
             value['meta']['refs'] = []
             for reference in temp['external_references']:
                 if 'url' in reference and reference['url'] not in value['meta']['refs']:
                     value['meta']['refs'].append(reference['url'])
             if'x_mitre_aliases' in temp:
-                value['meta']['synonyms'] = temp['x_mitre_aliases']     
+                value['meta']['synonyms'] = temp['x_mitre_aliases']
             value['uuid'] = re.search('--(.*)$', temp['id']).group(0)[2:]
             values.append(value)
 
 galaxy = {}
-galaxy['name'] = "Entreprise Attack - Tool"
-galaxy['type'] = "mitre-entreprise-attack-tool"
+galaxy['name'] = "Enterprise Attack - Tool"
+galaxy['type'] = "mitre-enterprise-attack-tool"
 galaxy['description'] = "Name of ATT&CK software"
 galaxy['uuid' ] = "fbfa0470-1707-11e8-be22-eb46b373fdd3"
 galaxy['version'] = args.version
 galaxy['icon'] = "gavel"
 
-cluster = {} 
-cluster['name'] = "Entreprise Attack - Tool"
-cluster['type'] = "mitre-entreprise-attack-tool"
+cluster = {}
+cluster['name'] = "Enterprise Attack - Tool"
+cluster['type'] = "mitre-enterprise-attack-tool"
 cluster['description'] = "Name of ATT&CK software"
 cluster['version'] = args.version
 cluster['source'] = "https://github.com/mitre/cti"
@@ -51,8 +51,8 @@ cluster['uuid' ] = "fc1ea6e0-1707-11e8-ac05-2b70d00c354e"
 cluster['authors'] = ["MITRE"]
 cluster['values'] = values
 
-with open('generate/galaxies/mitre-entreprise-attack-tool.json', 'w') as galaxy_file:
+with open('generate/galaxies/mitre-enterprise-attack-tool.json', 'w') as galaxy_file:
     json.dump(galaxy, galaxy_file, indent=4)
 
-with open('generate/clusters/mitre-entreprise-attack-tool.json', 'w') as cluster_file:
+with open('generate/clusters/mitre-enterprise-attack-tool.json', 'w') as cluster_file:
     json.dump(cluster, cluster_file, indent=4)

@@ -465,7 +465,8 @@
           "POTASSIUM",
           "DustStorm",
           "Red Apollo",
-          "CVNX"
+          "CVNX",
+          "HOGFISH"
         ],
         "country": "CN",
         "refs": [
@@ -1834,7 +1835,8 @@
           "https://www.fireeye.com/blog/threat-research/2017/05/cyber-espionage-apt32.html",
           "https://www.cybereason.com/labs-operation-cobalt-kitty-a-large-scale-apt-in-asia-carried-out-by-the-oceanlotus-group/",
           "https://www.scmagazineuk.com/ocean-lotus-groupapt-32-identified-as-vietnamese-apt-group/article/663565/",
-          "https://www.brighttalk.com/webcast/10703/261205"
+          "https://www.brighttalk.com/webcast/10703/261205",
+          "https://github.com/eset/malware-research/tree/master/oceanlotus"
         ]
       },
       "value": "APT32",
@@ -2477,6 +2479,202 @@
         ],
         "country": "KP"
       }
+    },
+    {
+      "value": "Leviathan",
+      "description": "Leviathan is an espionage actor targeting organizations and high-value targets in defense and government. Active since at least 2014, this actor has long-standing interest in maritime industries, naval defense contractors, and associated research institutions in the United States and Western Europe.",
+      "meta": {
+        "refs": [
+          "https://www.proofpoint.com/us/threat-insight/post/leviathan-espionage-actor-spearphishes-maritime-and-defense-targets",
+          "https://www.fireeye.com/blog/threat-research/2018/03/suspected-chinese-espionage-group-targeting-maritime-and-engineering-industries.html"
+        ],
+        "synonyms": [
+          "TEMP.Periscope"
+        ],
+        "country": "CN"
+      },
+      "uuid": "5b4b6980-3bc7-11e8-84d6-879aaac37dd9"
+    },
+    {
+      "value": "APT34",
+      "description": "Since at least 2014, an Iranian threat group tracked by FireEye as APT34 has conducted reconnaissance aligned with the strategic interests of Iran. The group conducts operations primarily in the Middle East, targeting financial, government, energy, chemical, telecommunications and other industries. Repeated targeting of Middle Eastern financial, energy and government organizations leads FireEye to assess that those sectors are a primary concern of APT34. The use of infrastructure tied to Iranian operations, timing and alignment with the national interests of Iran also lead FireEye to assess that APT34 acts on behalf of the Iranian government.",
+      "meta": {
+        "refs": [
+          "https://www.fireeye.com/content/dam/collateral/en/mtrends-2018.pdf",
+          "https://www.wired.com/story/apt-34-iranian-hackers-critical-infrastructure-companies/  ",
+          "https://www.fireeye.com/blog/threat-research/2017/12/targeted-attack-in-middle-east-by-apt34.html"
+        ],
+        "synonyms": [
+          "APT 34"
+        ],
+        "country": "IR"
+      },
+      "uuid": "73a521f6-3bc7-11e8-9e30-df7c90e50dda"
+    },
+    {
+      "value": "APT35",
+      "description": "FireEye has identified APT35 operations dating back to 2014. APT35, also known as the Newscaster Team, is a threat group sponsored by the Iranian government that conducts long term, resource-intensive operations to collect strategic intelligence. APT35 typically targets U.S. and the Middle Eastern military, diplomatic and government personnel, organizations in the media, energy and defense industrial base (DIB), and engineering, business services and telecommunications sectors.",
+      "meta": {
+        "refs": [
+          "https://www.fireeye.com/content/dam/collateral/en/mtrends-2018.pdf"
+        ],
+        "synonyms": [
+          "APT 35",
+          "Newscaster Team"
+        ],
+        "country": "IR"
+      },
+      "uuid": "b8967b3c-3bc9-11e8-8701-8b1ead8c099e"
+    },
+    {
+      "value": "Operation Parliament",
+      "description": "Kaspersky Lab has been tracking a series of attacks utilizing unknown malware since early 2017. The attacks appear to be geopolitically motivated and target high profile organizations. The objective of the attacks is clearly espionage – they involve gaining access to top legislative, executive and judicial bodies around the world.",
+      "meta": {
+        "refs": [
+          "https://securelist.com/operation-parliament-who-is-doing-what/85237/"
+        ]
+      },
+      "uuid": "20f2d3a4-3ee7-11e8-8e78-837fd23517e0"
+    },
+    {
+      "value": "Orangeworm",
+      "description": "Symantec has identified a previously unknown group called Orangeworm that has been observed installing a custom backdoor called Trojan.Kwampirs within large international corporations that operate within the healthcare sector in the United States, Europe, and Asia.\nFirst identified in January 2015, Orangeworm has also conducted targeted attacks against organizations in related industries as part of a larger supply-chain attack in order to reach their intended victims. Known victims include healthcare providers, pharmaceuticals, IT solution providers for healthcare and equipment manufacturers that serve the healthcare industry, likely for the purpose of corporate espionage.",
+      "meta": {
+        "refs": [
+          "https://www.symantec.com/blogs/threat-intelligence/orangeworm-targets-healthcare-us-europe-asia"
+        ]
+      },
+      "uuid": "35d71626-4794-11e8-b74d-bbcbe48fee3c"
+    },
+    {
+      "value": "ALLANITE",
+      "description": "Adversaries abusing ICS (based on Dragos Inc adversary list).",
+      "meta": {
+        "refs": [
+          "https://dragos.com/adversaries.html"
+        ],
+        "mode-of-operation": "Watering-hole and phishing leading to ICS recon and screenshot collection",
+        "since": "2017",
+        "capabilities": "Powershell scripts, THC Hydra, SecretsDump, Inveigh, PSExec",
+        "victimology": "Electric utilities, US and UK",
+        "synonyms": [
+          "Palmetto Fusion"
+        ]
+      },
+      "uuid": "a9000eaf-2b75-4ec7-8dcf-fe1bb5c77470"
+    },
+    {
+      "value": "CHRYSENE",
+      "description": "Adversaries abusing ICS (based on Dragos Inc adversary list).",
+      "meta": {
+        "refs": [
+          "https://dragos.com/adversaries.html"
+        ],
+        "mode-of-operation": "IT compromise, information gathering and recon against industrial orgs",
+        "since": "2017",
+        "capabilities": "Watering holes, 64-bit malware, covert C2 via IPv6 DNS, ISMDOOR",
+        "victimology": "Oil and Gas, Manufacturing, Europe, MENA, North America",
+        "synonyms": [
+          "OilRig",
+          "Greenbug"
+        ]
+      },
+      "uuid": "a0082cfa-32e2-42b8-92d8-5c7a7409dcf1"
+    },
+    {
+      "value": "COVELLITE",
+      "description": "Adversaries abusing ICS (based on Dragos Inc adversary list).",
+      "meta": {
+        "refs": [
+          "https://dragos.com/adversaries.html"
+        ],
+        "mode-of-operation": "IT compromise with hardened anti-analysis malware against industrial orgs",
+        "since": "2017",
+        "capabilities": "Encoded binaries in documents, evasion techniques",
+        "victimology": "Electric Utilities, US",
+        "synonyms": [
+          "Lazarus",
+          "Hidden Cobra"
+        ]
+      },
+      "uuid": "027a1428-6e79-4a4b-82b9-e698e8525c2b"
+    },
+    {
+      "value": "DYMALLOY",
+      "description": "Adversaries abusing ICS (based on Dragos Inc adversary list).",
+      "meta": {
+        "refs": [
+          "https://dragos.com/adversaries.html"
+        ],
+        "mode-of-operation": "Deep ICS environment information gathering, operator credentials, industrial process details",
+        "since": "2016",
+        "capabilities": "GOODOR, DORSHEL, KARAGANY, Mimikatz",
+        "victimology": "Turkey, Europe, US",
+        "synonyms": [
+          "Dragonfly2",
+          "Berserker Bear"
+        ]
+      },
+      "uuid": "a08ab076-33c1-4350-b021-650c34277f2d"
+    },
+    {
+      "value": "ELECTRUM",
+      "description": "Adversaries abusing ICS (based on Dragos Inc adversary list).",
+      "meta": {
+        "refs": [
+          "https://dragos.com/adversaries.html"
+        ],
+        "mode-of-operation": "Electric grid disruption and long-term persistence",
+        "since": "2016",
+        "capabilities": "CRASHOVERRIDE",
+        "victimology": "Ukraine, Electric Utilities",
+        "synonyms": [
+          "Sandworm"
+        ]
+      },
+      "uuid": "a2d44915-6cff-43cf-8a53-f4850058ad05"
+    },
+    {
+      "value": "MAGNALLIUM",
+      "description": "Adversaries abusing ICS (based on Dragos Inc adversary list).",
+      "meta": {
+        "refs": [
+          "https://dragos.com/adversaries.html"
+        ],
+        "mode-of-operation": "IT network limited, information gathering against industrial orgs",
+        "since": "2016",
+        "capabilities": "STONEDRILL wiper, variants of TURNEDUP malware",
+        "victimology": "Petrochemical, Aerospace, Saudi Arabia",
+        "synonyms": [
+          "APT33"
+        ]
+      },
+      "uuid": "accd848b-b8f4-46ba-a408-9063b35cfbf2"
+    },
+    {
+      "value": "XENOTIME",
+      "description": "Adversaries abusing ICS (based on Dragos Inc adversary list).",
+      "meta": {
+        "refs": [
+          "https://dragos.com/adversaries.html"
+        ],
+        "mode-of-operation": "Focused on physical destruction and long-term persistence",
+        "since": "2014",
+        "capabilities": "TRISIS, custom credential harvesting",
+        "victimology": "Oil and Gas, Middle East",
+        "synonyms": []
+      },
+      "uuid": "3dddc77e-a52a-466a-bf1c-1463e352077f"
+    },
+    {
+      "value": "ZooPark",
+      "description": "ZooPark is a cyberespionage operation that has been focusing on Middle Eastern targets since at least June 2015. The threat actors behind ZooPark infect Android devices using several generations of malware we label from v1-v4, with v4 being the most recent version deployed in 2017.",
+      "meta": {
+        "refs": [
+          "https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/05/03095519/ZooPark_for_public_final.pdf"
+        ]
+      },
+      "uuid": "4defbf2e-4f73-11e8-807f-578d61da7568"
     }
   ],
   "name": "Threat actor",
@@ -2491,5 +2689,5 @@
   ],
   "description": "Known or estimated adversary groups targeting organizations and employees. Adversary groups are regularly confused with their initial operation or campaign.",
   "uuid": "7cdff317-a673-4474-84ec-4f1754947823",
-  "version": 35
+  "version": 39
 }

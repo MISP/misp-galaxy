@@ -17,7 +17,7 @@ for element in os.listdir(path):
     with open(path+element) as json_data:
         d = json.load(json_data)
         json_data.close()
-    
+
     temp = d['objects'][0]
     source = temp['source_ref']
     target = temp['target_ref']
@@ -66,13 +66,14 @@ for element in os.listdir(path):
     with open(patht+target+'.json') as json_data:
         t = json.load(json_data)
         json_data.close()
- 
+
     value = {}
     value['meta'] = {}
     value['uuid'] = re.search('--(.*)$', temp['id']).group(0)[2:]
     value['meta']['source-uuid'] = re.search('--(.*)$', s['objects'][0]['id']).group(0)[2:]
     value['meta']['target-uuid'] = re.search('--(.*)$', t['objects'][0]['id']).group(0)[2:]
-    value['value'] = s['objects'][0]['name'] + ' ' + relationship + ' ' + t['objects'][0]['name']
+    value['value'] = s['objects'][0]['name'] + ' (' + s['objects'][0]['external_references'][0]['external_id'] + ') ' + relationship + ' ' + t['objects'][0]['name'] + ' (' + t['objects'][0]['external_references'][0]['external_id'] + ')'
+    # value['value'] = s['objects'][0]['name'] + ' ' + relationship + ' ' + t['objects'][0]['name']
     values.append(value)
 
 galaxy = {}
@@ -83,7 +84,7 @@ galaxy['uuid' ] = "1f8e3bae-1708-11e8-8e97-4bd2150e5aae"
 galaxy['version'] = args.version
 galaxy['icon'] = "link"
 
-cluster = {} 
+cluster = {}
 cluster['name'] = "Pre Attack - Relationship"
 cluster['type'] = "mitre-pre-attack-relationship"
 cluster['description'] = "MITRE Relationship"
