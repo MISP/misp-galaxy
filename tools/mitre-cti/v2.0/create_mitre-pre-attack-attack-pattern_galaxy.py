@@ -30,6 +30,9 @@ for element in os.listdir('.'):
                     value['meta']['refs'].append(reference['url'])
                 if 'external_id' in reference:
                     value['meta']['external_id'] = reference['external_id']
+            value['meta']['kill_chain'] = []
+            for killchain in temp['kill_chain_phases']:
+                value['meta']['kill_chain'].append(killchain['kill_chain_name'] + ':pre-attack:' + killchain['phase_name'])
             if 'x_mitre_data_sources' in temp:
                 value['meta']['mitre_data_sources'] = temp['x_mitre_data_sources']
             if 'x_mitre_platforms' in temp:

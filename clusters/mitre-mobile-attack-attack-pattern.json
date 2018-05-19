@@ -2,7 +2,7 @@
   "name": "Mobile Attack - Attack Pattern",
   "type": "mitre-mobile-attack-attack-pattern",
   "description": "ATT&CK tactic",
-  "version": 2,
+  "version": 3,
   "source": "https://github.com/mitre/cti",
   "uuid": "1e606d06-1708-11e8-8a43-df11c8cf9ae2",
   "authors": [
@@ -17,6 +17,10 @@
           "https://attack.mitre.org/mobile/index.php/Technique/MOB-T1057",
           "http://www.forbes.com/2009/07/28/hackers-iphone-apple-technology-security-hackers.html",
           "https://srlabs.de/bites/rooting-sim-cards/"
+        ],
+        "external_id": "MOB-T1057",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:exploit-via-cellular-network"
         ],
         "mitre_platforms": [
           "Android",
@@ -34,6 +38,10 @@
           "https://pages.nist.gov/mobile-threat-catalogue/application-threats/APP-0.html",
           "https://pages.nist.gov/mobile-threat-catalogue/application-threats/APP-1.html",
           "https://experts.illinois.edu/en/publications/security-concerns-in-android-mhealth-apps"
+        ],
+        "external_id": "APP-1",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:general-network-based"
         ],
         "mitre_platforms": [
           "Android",
@@ -53,6 +61,10 @@
           "https://media.blackhat.com/eu-13/briefings/Brodie/bh-eu-13-lacoon-attacks-mdm-brodie-wp.pdf",
           "http://www.blackhat.com/us-16/briefings.html#bad-for-enterprise-attacking-byod-enterprise-mobile-security-solutions"
         ],
+        "external_id": "EMM-5",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:defense-evasion"
+        ],
         "mitre_platforms": [
           "Android",
           "iOS"
@@ -68,6 +80,10 @@
           "https://attack.mitre.org/mobile/index.php/Technique/MOB-T1022",
           "https://zeltser.com/third-party-keyboards-security/"
         ],
+        "external_id": "MOB-T1022",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:discovery"
+        ],
         "mitre_platforms": [
           "Android"
         ]
@@ -82,6 +98,10 @@
           "https://attack.mitre.org/mobile/index.php/Technique/MOB-T1051",
           "https://blog.lookout.com/blog/2013/08/02/dragon-lady/",
           "https://static.googleusercontent.com/media/source.android.com/en//security/reports/Google%20Android%20Security%202014%20Report%20Final.pdf"
+        ],
+        "external_id": "MOB-T1051",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:effects"
         ],
         "mitre_platforms": [
           "Android"
@@ -99,6 +119,10 @@
           "https://pages.nist.gov/mobile-threat-catalogue/ecosystem-threats/ECO-1.html",
           "https://www.elcomsoft.com/eppb.html"
         ],
+        "external_id": "ECO-1",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:cloud-based"
+        ],
         "mitre_platforms": [
           "Android",
           "iOS"
@@ -114,6 +138,11 @@
           "https://attack.mitre.org/mobile/index.php/Technique/MOB-T1016",
           "https://pages.nist.gov/mobile-threat-catalogue/application-threats/APP-3.html",
           "https://pages.nist.gov/mobile-threat-catalogue/application-threats/APP-13.html"
+        ],
+        "external_id": "APP-13",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:collection",
+          "mitre-mobile-attack:mobile-attack:credential-access"
         ],
         "mitre_platforms": [
           "Android"
@@ -131,6 +160,10 @@
           "http://dl.acm.org/citation.cfm?id=1920314",
           "http://arstechnica.com/security/2016/11/meet-poisontap-the-5-tool-that-ransacks-password-protected-computers/"
         ],
+        "external_id": "PHY-2",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:lateral-movement"
+        ],
         "mitre_platforms": [
           "Android"
         ]
@@ -144,6 +177,10 @@
         "refs": [
           "https://attack.mitre.org/mobile/index.php/Technique/MOB-T1019",
           "https://tools.ietf.org/html/rfc7636"
+        ],
+        "external_id": "MOB-T1019",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:credential-access"
         ],
         "mitre_platforms": [
           "Android"
@@ -163,6 +200,10 @@
           "http://www.dhanjani.com/blog/2010/11/insecure-handling-of-url-schemes-in-apples-ios.html",
           "https://www.fireeye.com/blog/threat-research/2015/02/ios%20masque%20attackre.html"
         ],
+        "external_id": "AUT-10",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:credential-access"
+        ],
         "mitre_platforms": [
           "iOS"
         ]
@@ -176,6 +217,10 @@
         "refs": [
           "https://attack.mitre.org/mobile/index.php/Technique/MOB-T1031",
           "https://pages.nist.gov/mobile-threat-catalogue/application-threats/APP-32.html"
+        ],
+        "external_id": "APP-32",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:lateral-movement"
         ],
         "mitre_platforms": [
           "Android",
@@ -194,6 +239,11 @@
           "https://source.android.com/security/verifiedboot/",
           "https://www.apple.com/business/docs/iOS%20Security%20Guide.pdf"
         ],
+        "external_id": "APP-27",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:defense-evasion",
+          "mitre-mobile-attack:mobile-attack:persistence"
+        ],
         "mitre_platforms": [
           "Android",
           "iOS"
@@ -210,6 +260,10 @@
           "https://zeltser.com/third-party-keyboards-security/",
           "http://stackoverflow.com/questions/7848766/how-can-we-programmatically-detect-which-ios-version-is-device-running-on"
         ],
+        "external_id": "MOB-T1029",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:discovery"
+        ],
         "mitre_platforms": [
           "Android",
           "iOS"
@@ -223,6 +277,10 @@
       "meta": {
         "refs": [
           "https://attack.mitre.org/mobile/index.php/Technique/MOB-T1026"
+        ],
+        "external_id": "MOB-T1026",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:discovery"
         ],
         "mitre_platforms": [
           "Android",
@@ -238,6 +296,10 @@
         "refs": [
           "https://attack.mitre.org/mobile/index.php/Technique/MOB-T1036",
           "https://pages.nist.gov/mobile-threat-catalogue/application-threats/APP-13.html"
+        ],
+        "external_id": "APP-13",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:collection"
         ],
         "mitre_platforms": [
           "Android",
@@ -260,6 +322,10 @@
           "https://media.blackhat.com/bh-us-12/Briefings/Percoco/BH%20US%2012%20Percoco%20Adventures%20in%20Bouncerland%20WP.pdf",
           "https://www.usenix.org/conference/usenixsecurity13/technical-sessions/presentation/wang%20tielei"
         ],
+        "external_id": "ECO-22",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:app-delivery-via-authorized-app-store"
+        ],
         "mitre_platforms": [
           "Android",
           "iOS"
@@ -275,6 +341,10 @@
           "https://attack.mitre.org/mobile/index.php/Technique/MOB-T1059",
           "https://pages.nist.gov/mobile-threat-catalogue/cellular-threats/CEL-22.html"
         ],
+        "external_id": "CEL-22",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:exploit-via-internet"
+        ],
         "mitre_platforms": [
           "Android",
           "iOS"
@@ -289,6 +359,10 @@
         "refs": [
           "https://attack.mitre.org/mobile/index.php/Technique/MOB-T1045",
           "https://jon.oberheide.org/files/summercon12-bouncer.pdf"
+        ],
+        "external_id": "MOB-T1045",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:app-delivery-via-authorized-app-store"
         ],
         "mitre_platforms": [
           "Android",
@@ -306,6 +380,10 @@
           "https://pages.nist.gov/mobile-threat-catalogue/cellular-threats/CEL-22.html",
           "https://blog.zimperium.com/experts-found-a-unicorn-in-the-heart-of-android/"
         ],
+        "external_id": "CEL-22",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:exploit-via-internet"
+        ],
         "mitre_platforms": [
           "Android",
           "iOS"
@@ -321,6 +399,10 @@
           "https://attack.mitre.org/mobile/index.php/Technique/MOB-T1037",
           "https://pages.nist.gov/mobile-threat-catalogue/authentication-threats/AUT-9.html",
           "https://pages.nist.gov/mobile-threat-catalogue/ecosystem-threats/ECO-13.html"
+        ],
+        "external_id": "ECO-13",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:app-delivery-via-other-means"
         ],
         "mitre_platforms": [
           "Android",
@@ -338,6 +420,11 @@
           "https://pages.nist.gov/mobile-threat-catalogue/application-threats/APP-29.html",
           "https://securelist.com/analysis/kaspersky-security-bulletin/58335/mobile-malware-evolution-2013/"
         ],
+        "external_id": "APP-29",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:command-and-control",
+          "mitre-mobile-attack:mobile-attack:exfiltration"
+        ],
         "mitre_platforms": [
           "Android",
           "iOS"
@@ -352,6 +439,10 @@
         "refs": [
           "https://attack.mitre.org/mobile/index.php/Technique/MOB-T1023"
         ],
+        "external_id": "MOB-T1023",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:discovery"
+        ],
         "mitre_platforms": [
           "Android"
         ]
@@ -364,6 +455,10 @@
       "meta": {
         "refs": [
           "https://attack.mitre.org/mobile/index.php/Technique/MOB-T1050"
+        ],
+        "external_id": "MOB-T1050",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:effects"
         ],
         "mitre_platforms": [
           "Android"
@@ -379,6 +474,10 @@
           "https://attack.mitre.org/mobile/index.php/Technique/MOB-T1032",
           "https://pages.nist.gov/mobile-threat-catalogue/application-threats/APP-19.html"
         ],
+        "external_id": "APP-19",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:collection"
+        ],
         "mitre_platforms": [
           "Android",
           "iOS"
@@ -392,6 +491,10 @@
       "meta": {
         "refs": [
           "https://attack.mitre.org/mobile/index.php/Technique/MOB-T1076"
+        ],
+        "external_id": "MOB-T1076",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:supply-chain"
         ],
         "mitre_platforms": [
           "Android",
@@ -412,6 +515,10 @@
           "http://blog.trendmicro.com/trendlabs-security-intelligence/cybercriminals-improve-android-malware-stealth-routines-with-obad/",
           "http://www.slideshare.net/Shakacon/fruit-vs-zombies-defeat-nonjailbroken-ios-malware-by-claud-xiao"
         ],
+        "external_id": "APP-21",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:defense-evasion"
+        ],
         "mitre_platforms": [
           "Android",
           "iOS"
@@ -431,6 +538,10 @@
           "https://developer.android.com/reference/android/app/ActivityManager.html#getRunningTasks%28int%29",
           "http://stackoverflow.com/questions/30619349/android-5-1-1-and-above-getrunningappprocesses-returns-my-application-packag"
         ],
+        "external_id": "APP-31",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:credential-access"
+        ],
         "mitre_platforms": [
           "Android",
           "iOS"
@@ -449,6 +560,10 @@
           "http://www.theregister.co.uk/2015/11/12/mobile%20pwn2own1/",
           "https://www.usenix.org/system/files/conference/woot12/woot12-final24.pdf"
         ],
+        "external_id": "STA-19",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:exploit-via-cellular-network"
+        ],
         "mitre_platforms": [
           "Android",
           "iOS"
@@ -464,6 +579,10 @@
           "https://attack.mitre.org/mobile/index.php/Technique/MOB-T1027",
           "https://code.google.com/p/android/issues/detail?id=205565"
         ],
+        "external_id": "MOB-T1027",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:discovery"
+        ],
         "mitre_platforms": [
           "Android"
         ]
@@ -477,6 +596,10 @@
         "refs": [
           "https://attack.mitre.org/mobile/index.php/Technique/MOB-T1004",
           "https://pages.nist.gov/mobile-threat-catalogue/application-threats/APP-22.html"
+        ],
+        "external_id": "APP-22",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:persistence"
         ],
         "mitre_platforms": [
           "Android"
@@ -493,6 +616,10 @@
           "https://pages.nist.gov/mobile-threat-catalogue/authentication-threats/AUT-9.html",
           "https://pages.nist.gov/mobile-threat-catalogue/ecosystem-threats/ECO-21.html"
         ],
+        "external_id": "ECO-21",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:app-delivery-via-other-means"
+        ],
         "mitre_platforms": [
           "Android",
           "iOS"
@@ -506,6 +633,11 @@
       "meta": {
         "refs": [
           "https://attack.mitre.org/mobile/index.php/Technique/MOB-T1015"
+        ],
+        "external_id": "MOB-T1015",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:collection",
+          "mitre-mobile-attack:mobile-attack:credential-access"
         ],
         "mitre_platforms": [
           "Android",
@@ -522,6 +654,10 @@
           "https://attack.mitre.org/mobile/index.php/Technique/MOB-T1074",
           "https://pages.nist.gov/mobile-threat-catalogue/application-threats/APP-28.html"
         ],
+        "external_id": "APP-28",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:effects"
+        ],
         "mitre_platforms": [
           "Android"
         ]
@@ -536,6 +672,10 @@
           "https://attack.mitre.org/mobile/index.php/Technique/MOB-T1048",
           "https://pages.nist.gov/mobile-threat-catalogue/ecosystem-threats/ECO-23.html",
           "http://www.slideshare.net/Shakacon/fruit-vs-zombies-defeat-nonjailbroken-ios-malware-by-claud-xiao"
+        ],
+        "external_id": "ECO-23",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:app-delivery-via-other-means"
         ],
         "mitre_platforms": [
           "iOS"
@@ -552,6 +692,10 @@
           "https://developer.android.com/reference/java/net/NetworkInterface.html",
           "https://developer.android.com/reference/android/telephony/TelephonyManager.html"
         ],
+        "external_id": "MOB-T1025",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:discovery"
+        ],
         "mitre_platforms": [
           "Android"
         ]
@@ -565,6 +709,11 @@
         "refs": [
           "https://attack.mitre.org/mobile/index.php/Technique/MOB-T1041",
           "https://pages.nist.gov/mobile-threat-catalogue/application-threats/APP-30.html"
+        ],
+        "external_id": "APP-30",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:command-and-control",
+          "mitre-mobile-attack:mobile-attack:exfiltration"
         ],
         "mitre_platforms": [
           "Android",
@@ -581,6 +730,10 @@
           "https://attack.mitre.org/mobile/index.php/Technique/MOB-T1024",
           "https://play.google.com/store/apps/details?id=com.antispycell.connmonitor&hl=en"
         ],
+        "external_id": "MOB-T1024",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:discovery"
+        ],
         "mitre_platforms": [
           "Android"
         ]
@@ -594,6 +747,10 @@
         "refs": [
           "https://attack.mitre.org/mobile/index.php/Technique/MOB-T1062",
           "http://www.popsci.com/box-can-figure-out-your-4-digit-iphone-passcode"
+        ],
+        "external_id": "MOB-T1062",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:exploit-via-physical-access"
         ],
         "mitre_platforms": [
           "Android",
@@ -614,6 +771,11 @@
           "https://usmile.at/symposium/program/2015/ekberg",
           "http://bits-please.blogspot.co.il/2016/05/war-of-worlds-hijacking-linux-kernel.html"
         ],
+        "external_id": "APP-27",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:credential-access",
+          "mitre-mobile-attack:mobile-attack:privilege-escalation"
+        ],
         "mitre_platforms": [
           "Android"
         ]
@@ -629,6 +791,10 @@
           "https://pages.nist.gov/mobile-threat-catalogue/lan-pan-threats/LPN-0.html",
           "http://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-153.pdf",
           "https://blog.kaspersky.com/darkhotel-apt/6613/"
+        ],
+        "external_id": "LPN-0",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:general-network-based"
         ],
         "mitre_platforms": [
           "Android",
@@ -646,6 +812,10 @@
           "https://pages.nist.gov/mobile-threat-catalogue/ecosystem-threats/ECO-5.html",
           "https://pages.nist.gov/mobile-threat-catalogue/emm-threats/EMM-7.html"
         ],
+        "external_id": "EMM-7",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:cloud-based"
+        ],
         "mitre_platforms": [
           "Android",
           "iOS"
@@ -661,6 +831,10 @@
           "https://attack.mitre.org/mobile/index.php/Technique/MOB-T1063",
           "https://srlabs.de/bites/spoofing-fingerprints/",
           "https://support.apple.com/en-us/HT204587"
+        ],
+        "external_id": "MOB-T1063",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:exploit-via-physical-access"
         ],
         "mitre_platforms": [
           "Android",
@@ -681,6 +855,11 @@
           "https://pages.nist.gov/mobile-threat-catalogue/gps-threats/GPS-0.html",
           "http://csrc.nist.gov/publications/drafts/800-187/sp800%20187%20draft.pdf"
         ],
+        "external_id": "GPS-0",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:cellular-network-based",
+          "mitre-mobile-attack:mobile-attack:general-network-based"
+        ],
         "mitre_platforms": [
           "Android",
           "iOS"
@@ -696,6 +875,11 @@
           "https://attack.mitre.org/mobile/index.php/Technique/MOB-T1017",
           "https://pages.nist.gov/mobile-threat-catalogue/application-threats/APP-35.html"
         ],
+        "external_id": "APP-35",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:collection",
+          "mitre-mobile-attack:mobile-attack:credential-access"
+        ],
         "mitre_platforms": [
           "Android",
           "iOS"
@@ -710,6 +894,10 @@
         "refs": [
           "https://attack.mitre.org/mobile/index.php/Technique/MOB-T1035",
           "https://pages.nist.gov/mobile-threat-catalogue/application-threats/APP-13.html"
+        ],
+        "external_id": "APP-13",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:collection"
         ],
         "mitre_platforms": [
           "Android",
@@ -728,6 +916,10 @@
           "https://pages.nist.gov/mobile-threat-catalogue/ecosystem-threats/ECO-17.html",
           "http://www.infoworld.com/article/2854963/mobile-development/how-to-keep-your-app-store-dev-account-from-being-hijacked.html"
         ],
+        "external_id": "ECO-17",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:app-delivery-via-authorized-app-store"
+        ],
         "mitre_platforms": [
           "Android",
           "iOS"
@@ -743,6 +935,11 @@
           "https://attack.mitre.org/mobile/index.php/Technique/MOB-T1013",
           "https://www.skycure.com/blog/malicious-profiles-the-sleeping-giant-of-ios-security/"
         ],
+        "external_id": "MOB-T1013",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:collection",
+          "mitre-mobile-attack:mobile-attack:credential-access"
+        ],
         "mitre_platforms": [
           "Android",
           "iOS"
@@ -757,6 +954,11 @@
         "refs": [
           "https://attack.mitre.org/mobile/index.php/Technique/MOB-T1012",
           "https://pages.nist.gov/mobile-threat-catalogue/authentication-threats/AUT-0.html"
+        ],
+        "external_id": "AUT-0",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:collection",
+          "mitre-mobile-attack:mobile-attack:credential-access"
         ],
         "mitre_platforms": [
           "Android",
@@ -775,6 +977,11 @@
           "https://hackinparis.com/data/slides/2013/Slidesthomasroth.pdf",
           "https://www.apple.com/business/docs/iOS%20Security%20Guide.pdf"
         ],
+        "external_id": "APP-27",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:defense-evasion",
+          "mitre-mobile-attack:mobile-attack:persistence"
+        ],
         "mitre_platforms": [
           "Android"
         ]
@@ -790,6 +997,11 @@
           "https://pages.nist.gov/mobile-threat-catalogue/cellular-threats/CEL-3.html",
           "http://csrc.nist.gov/publications/drafts/800-187/sp800%20187%20draft.pdf"
         ],
+        "external_id": "CEL-3",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:cellular-network-based",
+          "mitre-mobile-attack:mobile-attack:general-network-based"
+        ],
         "mitre_platforms": [
           "Android",
           "iOS"
@@ -803,6 +1015,10 @@
       "meta": {
         "refs": [
           "https://attack.mitre.org/mobile/index.php/Technique/MOB-T1075"
+        ],
+        "external_id": "MOB-T1075",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:effects"
         ],
         "mitre_platforms": [
           "Android",
@@ -819,6 +1035,10 @@
           "https://attack.mitre.org/mobile/index.php/Technique/MOB-T1005",
           "http://ieeexplore.ieee.org/document/6234407"
         ],
+        "external_id": "MOB-T1005",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:persistence"
+        ],
         "mitre_platforms": [
           "Android"
         ]
@@ -831,6 +1051,11 @@
       "meta": {
         "refs": [
           "https://attack.mitre.org/mobile/index.php/Technique/MOB-T1039"
+        ],
+        "external_id": "MOB-T1039",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:command-and-control",
+          "mitre-mobile-attack:mobile-attack:exfiltration"
         ],
         "mitre_platforms": [
           "Android",
@@ -846,6 +1071,10 @@
         "refs": [
           "https://attack.mitre.org/mobile/index.php/Technique/MOB-T1055"
         ],
+        "external_id": "MOB-T1055",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:effects"
+        ],
         "mitre_platforms": [
           "Android",
           "iOS"
@@ -860,6 +1089,10 @@
         "refs": [
           "https://attack.mitre.org/mobile/index.php/Technique/MOB-T1038",
           "https://pages.nist.gov/mobile-threat-catalogue/application-threats/APP-13.html"
+        ],
+        "external_id": "APP-13",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:collection"
         ],
         "mitre_platforms": [
           "Android",
@@ -877,6 +1110,10 @@
           "https://pages.nist.gov/mobile-threat-catalogue/ecosystem-threats/ECO-5.html",
           "https://pages.nist.gov/mobile-threat-catalogue/emm-threats/EMM-7.html",
           "https://www.wired.com/2012/08/apple-amazon-mat-honan-hacking/"
+        ],
+        "external_id": "EMM-7",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:cloud-based"
         ],
         "mitre_platforms": [
           "Android",
@@ -897,6 +1134,10 @@
           "https://www.ptsecurity.com/upload/ptcom/PT-SS7-AD-Data-Sheet-eng.pdf",
           "https://www.fcc.gov/files/csric5-wg10-finalreport031517pdf"
         ],
+        "external_id": "CEL-37",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:cellular-network-based"
+        ],
         "mitre_platforms": [
           "Android",
           "iOS"
@@ -915,6 +1156,11 @@
           "https://www2.samsungknox.com/en/faq/what-knox-warranty-bit-and-how-it-triggered",
           "https://www.apple.com/business/docs/iOS%20Security%20Guide.pdf"
         ],
+        "external_id": "APP-27",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:defense-evasion",
+          "mitre-mobile-attack:mobile-attack:persistence"
+        ],
         "mitre_platforms": [
           "Android",
           "iOS"
@@ -930,6 +1176,11 @@
           "https://attack.mitre.org/mobile/index.php/Technique/MOB-T1056",
           "https://www.skycure.com/blog/accessibility-clickjacking/"
         ],
+        "external_id": "MOB-T1056",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:collection",
+          "mitre-mobile-attack:mobile-attack:credential-access"
+        ],
         "mitre_platforms": [
           "Android"
         ]
@@ -944,6 +1195,10 @@
           "https://attack.mitre.org/mobile/index.php/Technique/MOB-T1028",
           "https://pages.nist.gov/mobile-threat-catalogue/application-threats/APP-6.html",
           "https://www.nowsecure.com/blog/2015/06/15/a-pattern-for-remote-code-execution-using-arbitrary-file-writes-and-multidex-applications/"
+        ],
+        "external_id": "APP-6",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:supply-chain"
         ],
         "mitre_platforms": [
           "Android",
@@ -964,6 +1219,10 @@
           "https://www.fireeye.com/blog/threat-research/2016/01/hot%20or%20not%20the%20bene.html",
           "https://www.usenix.org/conference/usenixsecurity13/technical-sessions/presentation/wang%20tielei"
         ],
+        "external_id": "APP-20",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:defense-evasion"
+        ],
         "mitre_platforms": [
           "Android",
           "iOS"
@@ -983,6 +1242,10 @@
           "https://www.ptsecurity.com/upload/ptcom/PT-SS7-AD-Data-Sheet-eng.pdf",
           "https://www.fcc.gov/files/csric5-wg10-finalreport031517pdf"
         ],
+        "external_id": "CEL-38",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:cellular-network-based"
+        ],
         "mitre_platforms": [
           "Android",
           "iOS"
@@ -998,6 +1261,11 @@
           "https://attack.mitre.org/mobile/index.php/Technique/MOB-T1020",
           "https://zeltser.com/third-party-keyboards-security/"
         ],
+        "external_id": "MOB-T1020",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:collection",
+          "mitre-mobile-attack:mobile-attack:credential-access"
+        ],
         "mitre_platforms": [
           "Android",
           "iOS"
@@ -1012,6 +1280,10 @@
         "refs": [
           "https://attack.mitre.org/mobile/index.php/Technique/MOB-T1007",
           "https://pages.nist.gov/mobile-threat-catalogue/application-threats/APP-26.html"
+        ],
+        "external_id": "APP-26",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:privilege-escalation"
         ],
         "mitre_platforms": [
           "Android",
@@ -1030,6 +1302,10 @@
           "https://jon.oberheide.org/blog/2010/06/25/remote-kill-and-install-on-google-android/",
           "http://www.vvdveen.com/publications/BAndroid.pdf"
         ],
+        "external_id": "ECO-4",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:app-delivery-via-authorized-app-store"
+        ],
         "mitre_platforms": [
           "Android"
         ]
@@ -1043,6 +1319,10 @@
         "refs": [
           "https://attack.mitre.org/mobile/index.php/Technique/MOB-T1006",
           "https://www.blackhat.com/docs/asia-15/materials/asia-15-Sabanal-Hiding-Behind-ART-wp.pdf"
+        ],
+        "external_id": "MOB-T1006",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:persistence"
         ],
         "mitre_platforms": [
           "Android"
@@ -1059,6 +1339,11 @@
           "https://developer.android.com/reference/android/content/pm/PackageManager.html",
           "https://andreas-kurtz.de/2014/09/malicious-ios-apps/"
         ],
+        "external_id": "MOB-T1021",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:defense-evasion",
+          "mitre-mobile-attack:mobile-attack:discovery"
+        ],
         "mitre_platforms": [
           "Android",
           "iOS"
@@ -1074,6 +1359,10 @@
           "https://attack.mitre.org/mobile/index.php/Technique/MOB-T1064",
           "https://www.wired.com/2015/09/hack-brief-new-emergency-number-hack-easily-bypasses-android-lock-screens/",
           "https://threatpost.com/ios-10-passcode-bypass-can-access-photos-contacts/122033/"
+        ],
+        "external_id": "MOB-T1064",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:exploit-via-physical-access"
         ],
         "mitre_platforms": [
           "Android",
@@ -1093,6 +1382,10 @@
           "http://betanews.com/2016/02/12/everything-you-need-to-know-about-sim-swap-scams/",
           "https://www.theguardian.com/money/2016/apr/16/sim-swap-fraud-mobile-banking-fraudsters"
         ],
+        "external_id": "STA-22",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:cellular-network-based"
+        ],
         "mitre_platforms": [
           "Android",
           "iOS"
@@ -1107,6 +1400,10 @@
         "refs": [
           "https://attack.mitre.org/mobile/index.php/Technique/MOB-T1033",
           "https://pages.nist.gov/mobile-threat-catalogue/application-threats/APP-24.html"
+        ],
+        "external_id": "APP-24",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:collection"
         ],
         "mitre_platforms": [
           "Android",
@@ -1126,6 +1423,10 @@
           "https://media.blackhat.com/us-13/US-13-Lau-Mactans-Injecting-Malware-into-iOS-Devices-via-Malicious-Chargers-WP.pdf",
           "https://securityintelligence.com/android-vulnerabilities-attacking-nexus-6-and-6p-custom-boot-modes/"
         ],
+        "external_id": "PHY-1",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:exploit-via-physical-access"
+        ],
         "mitre_platforms": [
           "Android",
           "iOS"
@@ -1141,6 +1442,10 @@
           "https://attack.mitre.org/mobile/index.php/Technique/MOB-T1066",
           "https://pages.nist.gov/mobile-threat-catalogue/application-threats/APP-1.html",
           "https://www.fireeye.com/blog/threat-research/2014/08/ssl-vulnerabilities-who-listens-when-android-applications-talk.html"
+        ],
+        "external_id": "APP-1",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:general-network-based"
         ],
         "mitre_platforms": [
           "Android",
@@ -1158,6 +1463,10 @@
           "https://pages.nist.gov/mobile-threat-catalogue/cellular-threats/CEL-7.html",
           "http://www.computerworld.com/article/2484538/cybercrime-hacking/researchers-exploit-cellular-tech-flaws-to-intercept-phone-calls.html"
         ],
+        "external_id": "CEL-7",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:cellular-network-based"
+        ],
         "mitre_platforms": [
           "Android",
           "iOS"
@@ -1173,6 +1482,11 @@
           "https://attack.mitre.org/mobile/index.php/Technique/MOB-T1047",
           "https://pages.nist.gov/mobile-threat-catalogue/application-threats/APP-14.html",
           "http://ieeexplore.ieee.org/document/6234407"
+        ],
+        "external_id": "APP-14",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:app-delivery-via-authorized-app-store",
+          "mitre-mobile-attack:mobile-attack:app-delivery-via-other-means"
         ],
         "mitre_platforms": [
           "Android",
@@ -1190,6 +1504,10 @@
           "https://pages.nist.gov/mobile-threat-catalogue/application-threats/APP-28.html",
           "http://researchcenter.paloaltonetworks.com/2015/08/keyraider-ios-malware-steals-over-225000-apple-accounts-to-create-free-app-utopia/"
         ],
+        "external_id": "APP-28",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:effects"
+        ],
         "mitre_platforms": [
           "Android",
           "iOS"
@@ -1204,6 +1522,10 @@
         "refs": [
           "https://attack.mitre.org/mobile/index.php/Technique/MOB-T1065",
           "http://researchcenter.paloaltonetworks.com/2015/09/novel-malware-xcodeghost-modifies-xcode-infects-apple-ios-apps-and-hits-app-store/"
+        ],
+        "external_id": "MOB-T1065",
+        "kill_chain": [
+          "mitre-mobile-attack:mobile-attack:supply-chain"
         ],
         "mitre_platforms": [
           "Android",
