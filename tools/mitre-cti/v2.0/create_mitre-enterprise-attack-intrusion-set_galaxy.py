@@ -21,14 +21,18 @@ for element in os.listdir('.'):
             temp = d['objects'][0]
 
             value = {}
-            value['description'] = temp['description']
+            if 'description' in temp:
+                value['description'] = temp['description']
             value['value'] = temp['name'] + ' - ' + temp['external_references'][0]['external_id']
             value['meta'] = {}
-            value['meta']['synonyms'] = temp['aliases']
+            if 'aliases' in temp:
+                value['meta']['synonyms'] = temp['aliases']
             value['meta']['refs']= []
             for reference in temp['external_references']:
                 if 'url' in reference and reference['url'] not in value['meta']['refs']:
                     value['meta']['refs'].append(reference['url'])
+                if 'external_id' in reference:
+                    value['meta']['external_id'] = reference['external_id']
             value['uuid'] = re.search('--(.*)$', temp['id']).group(0)[2:]
             values.append(value)
 

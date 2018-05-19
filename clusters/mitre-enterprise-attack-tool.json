@@ -2,13 +2,29 @@
   "name": "Enterprise Attack - Tool",
   "type": "mitre-enterprise-attack-tool",
   "description": "Name of ATT&CK software",
-  "version": 3,
+  "version": 4,
   "source": "https://github.com/mitre/cti",
   "uuid": "fc1ea6e0-1707-11e8-ac05-2b70d00c354e",
   "authors": [
     "MITRE"
   ],
   "values": [
+    {
+      "description": "is a lightweight, open source tool similar to PsExec designed to allow system administrators to execute commands on remote servers. (Citation: Winexe Github Sept 2013)  is unique in that it is a GNU/Linux based client. (Citation: Überwachung APT28 Forfiles June 2015)\n\nAliases: Winexe",
+      "value": "Winexe - S0191",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0191",
+          "https://github.com/skalkoto/winexe/",
+          "https://netzpolitik.org/2015/digital-attack-on-german-parliament-investigative-report-on-the-hack-of-the-left-party-infrastructure-in-bundestag/"
+        ],
+        "external_id": "S0191",
+        "synonyms": [
+          "Winexe"
+        ]
+      },
+      "uuid": "96fd6cc4-a693-4118-83ec-619e5352d07d"
+    },
     {
       "description": "at is used to schedule tasks on a system to run at a specified date or time. (Citation: TechNet At)\n\nAliases: at, at.exe",
       "value": "at - S0110",
@@ -17,6 +33,7 @@
           "https://attack.mitre.org/wiki/Software/S0110",
           "https://technet.microsoft.com/en-us/library/bb490866.aspx"
         ],
+        "external_id": "S0110",
         "synonyms": [
           "at",
           "at.exe"
@@ -32,6 +49,7 @@
           "https://attack.mitre.org/wiki/Software/S0103",
           "https://technet.microsoft.com/en-us/library/bb490991.aspx"
         ],
+        "external_id": "S0103",
         "synonyms": [
           "route",
           "route.exe"
@@ -47,6 +65,7 @@
           "https://attack.mitre.org/wiki/Software/S0057",
           "https://technet.microsoft.com/en-us/library/bb491010.aspx"
         ],
+        "external_id": "S0057",
         "synonyms": [
           "Tasklist"
         ]
@@ -61,6 +80,7 @@
           "https://attack.mitre.org/wiki/Software/S0005",
           "http://www.ampliasecurity.com/research/wcefaq.html"
         ],
+        "external_id": "S0005",
         "synonyms": [
           "Windows Credential Editor",
           "WCE"
@@ -76,6 +96,7 @@
           "https://attack.mitre.org/wiki/Software/S0174",
           "https://github.com/SpiderLabs/Responder"
         ],
+        "external_id": "S0174",
         "synonyms": [
           "Responder"
         ]
@@ -90,6 +111,7 @@
           "https://attack.mitre.org/wiki/Software/S0111",
           "https://technet.microsoft.com/en-us/library/bb490996.aspx"
         ],
+        "external_id": "S0111",
         "synonyms": [
           "schtasks",
           "schtasks.exe"
@@ -105,6 +127,7 @@
           "https://attack.mitre.org/wiki/Software/S0116",
           "https://github.com/hfiref0x/UACME"
         ],
+        "external_id": "S0116",
         "synonyms": [
           "UACMe"
         ]
@@ -119,11 +142,27 @@
           "https://attack.mitre.org/wiki/Software/S0101",
           "https://en.wikipedia.org/wiki/Ifconfig"
         ],
+        "external_id": "S0101",
         "synonyms": [
           "ifconfig"
         ]
       },
       "uuid": "362dc67f-4e85-4562-9dac-1b6b7f3ec4b5"
+    },
+    {
+      "description": "is a command line tool used to create and manage BITS Jobs. (Citation: Microsoft BITSAdmin)\n\nAliases: BITSAdmin",
+      "value": "BITSAdmin - S0190",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0190",
+          "https://msdn.microsoft.com/library/aa362813.aspx"
+        ],
+        "external_id": "S0190",
+        "synonyms": [
+          "BITSAdmin"
+        ]
+      },
+      "uuid": "64764dc6-a032-495f-8250-1e4c06bdc163"
     },
     {
       "description": "Mimikatz is a credential dumper capable of obtaining plaintext Windows account logins and passwords, along with many other features that make it useful for testing the security of networks. (Citation: Deply Mimikatz) (Citation: Adsecurity Mimikatz Guide)\n\nAliases: Mimikatz\n\nContributors: Vincent Le Toux",
@@ -134,6 +173,7 @@
           "https://github.com/gentilkiwi/mimikatz",
           "https://adsecurity.org/?page%20id=1821"
         ],
+        "external_id": "S0002",
         "synonyms": [
           "Mimikatz"
         ]
@@ -148,6 +188,7 @@
           "https://attack.mitre.org/wiki/Software/S0123",
           "https://ashwinrayaprolu.wordpress.com/2011/04/12/xcmd-an-alternative-to-psexec/"
         ],
+        "external_id": "S0123",
         "synonyms": [
           "xCmd"
         ]
@@ -155,18 +196,34 @@
       "uuid": "4fa49fc0-9162-4bdb-a37e-7aa3dcb6d38b"
     },
     {
-      "description": "is a credential dumper, similar to Mimikatz, designed specifically for Linux platforms. (Citation: MimiPenguin GitHub May 2017)\n\nAliases: MimiPenguin\n\nContributors: Vincent Le Toux",
+      "description": "MimiPenguin is a credential dumper, similar to Mimikatz, designed specifically for Linux platforms. (Citation: MimiPenguin GitHub May 2017)\n\nAliases: MimiPenguin\n\nContributors: Vincent Le Toux",
       "value": "MimiPenguin - S0179",
       "meta": {
         "refs": [
           "https://attack.mitre.org/wiki/Software/S0179",
           "https://github.com/huntergregal/mimipenguin"
         ],
+        "external_id": "S0179",
         "synonyms": [
           "MimiPenguin"
         ]
       },
       "uuid": "5a33468d-844d-4b1f-98c9-0e786c556b27"
+    },
+    {
+      "description": "is an application that securely deletes data in a way that makes it unrecoverable. It is part of the Microsoft Sysinternals suite of tools. (Citation: Microsoft SDelete July 2016)\n\nAliases: SDelete",
+      "value": "SDelete - S0195",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0195",
+          "https://docs.microsoft.com/en-us/sysinternals/downloads/sdelete"
+        ],
+        "external_id": "S0195",
+        "synonyms": [
+          "SDelete"
+        ]
+      },
+      "uuid": "d8d19e33-94fd-4aa3-b94a-08ee801a2153"
     },
     {
       "description": "Systeminfo is a Windows utility that can be used to gather detailed information about a computer. (Citation: TechNet Systeminfo)\n\nAliases: Systeminfo, systeminfo.exe",
@@ -176,6 +233,7 @@
           "https://attack.mitre.org/wiki/Software/S0096",
           "https://technet.microsoft.com/en-us/library/bb491007.aspx"
         ],
+        "external_id": "S0096",
         "synonyms": [
           "Systeminfo",
           "systeminfo.exe"
@@ -191,6 +249,7 @@
           "https://attack.mitre.org/wiki/Software/S0108",
           "https://technet.microsoft.com/library/bb490939.aspx"
         ],
+        "external_id": "S0108",
         "synonyms": [
           "netsh",
           "netsh.exe"
@@ -206,6 +265,7 @@
           "https://attack.mitre.org/wiki/Software/S0105",
           "https://technet.microsoft.com/en-us/library/cc732952.aspx"
         ],
+        "external_id": "S0105",
         "synonyms": [
           "dsquery",
           "dsquery.exe"
@@ -221,6 +281,7 @@
           "https://attack.mitre.org/wiki/Software/S0008",
           "https://www.truesec.se/sakerhet/verktyg/saakerhet/gsecdump%20v2.0b5"
         ],
+        "external_id": "S0008",
         "synonyms": [
           "gsecdump"
         ]
@@ -235,6 +296,7 @@
           "https://attack.mitre.org/wiki/Software/S0097",
           "https://technet.microsoft.com/en-us/library/bb490968.aspx"
         ],
+        "external_id": "S0097",
         "synonyms": [
           "Ping",
           "ping.exe"
@@ -250,6 +312,7 @@
           "https://attack.mitre.org/wiki/Software/S0120",
           "https://www.fireeye.com/content/dam/fireeye-www/services/pdfs/mandiant-apt1-report.pdf"
         ],
+        "external_id": "S0120",
         "synonyms": [
           "Fgdump"
         ]
@@ -264,6 +327,7 @@
           "https://attack.mitre.org/wiki/Software/S0121",
           "https://www.fireeye.com/content/dam/fireeye-www/services/pdfs/mandiant-apt1-report.pdf"
         ],
+        "external_id": "S0121",
         "synonyms": [
           "Lslsass"
         ]
@@ -278,6 +342,7 @@
           "https://attack.mitre.org/wiki/Software/S0122",
           "https://www.fireeye.com/content/dam/fireeye-www/services/pdfs/mandiant-apt1-report.pdf"
         ],
+        "external_id": "S0122",
         "synonyms": [
           "Pass-The-Hash Toolkit"
         ]
@@ -292,6 +357,7 @@
           "https://attack.mitre.org/wiki/Software/S0095",
           "https://en.wikipedia.org/wiki/File%20Transfer%20Protocol"
         ],
+        "external_id": "S0095",
         "synonyms": [
           "FTP",
           "ftp.exe"
@@ -307,6 +373,7 @@
           "https://attack.mitre.org/wiki/Software/S0100",
           "https://technet.microsoft.com/en-us/library/bb490921.aspx"
         ],
+        "external_id": "S0100",
         "synonyms": [
           "ipconfig",
           "ipconfig.exe"
@@ -322,6 +389,7 @@
           "https://attack.mitre.org/wiki/Software/S0102",
           "https://technet.microsoft.com/en-us/library/cc940106.aspx"
         ],
+        "external_id": "S0102",
         "synonyms": [
           "nbtstat",
           "nbtstat.exe"
@@ -337,6 +405,7 @@
           "https://attack.mitre.org/wiki/Software/S0040",
           "https://www.fireeye.com/content/dam/fireeye-www/global/en/current-threats/pdfs/wp-operation-quantum-entanglement.pdf"
         ],
+        "external_id": "S0040",
         "synonyms": [
           "HTRAN",
           "HUC Packet Transmit Tool"
@@ -352,6 +421,7 @@
           "https://attack.mitre.org/wiki/Software/S0183",
           "http://www.dtic.mil/dtic/tr/fulltext/u2/a465464.pdf"
         ],
+        "external_id": "S0183",
         "synonyms": [
           "Tor"
         ]
@@ -366,6 +436,7 @@
           "https://attack.mitre.org/wiki/Software/S0104",
           "https://technet.microsoft.com/en-us/library/bb490947.aspx"
         ],
+        "external_id": "S0104",
         "synonyms": [
           "netstat",
           "netstat.exe"
@@ -381,6 +452,7 @@
           "https://attack.mitre.org/wiki/Software/S0006",
           "https://en.wikipedia.org/wiki/Pwdump"
         ],
+        "external_id": "S0006",
         "synonyms": [
           "pwdump"
         ]
@@ -395,11 +467,27 @@
           "https://attack.mitre.org/wiki/Software/S0119",
           "https://www.fireeye.com/content/dam/fireeye-www/services/pdfs/mandiant-apt1-report.pdf"
         ],
+        "external_id": "S0119",
         "synonyms": [
           "Cachedump"
         ]
       },
       "uuid": "c9cd7ec9-40b7-49db-80be-1399eddd9c52"
+    },
+    {
+      "description": "Forfiles is a Windows utility commonly used in batch jobs to execute commands on one or more selected files or directories (ex: list all directories in a drive, read the first line of all files created yesterday, etc.). Forfiles can be executed from either the command line, Run window, or batch files/scripts.  (Citation: Microsoft Forfiles Aug 2016)\n\nAliases: Forfiles\n\nContributors: Matthew Demaske, Adaptforward",
+      "value": "Forfiles - S0193",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0193",
+          "https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc753551(v=ws.11)"
+        ],
+        "external_id": "S0193",
+        "synonyms": [
+          "Forfiles"
+        ]
+      },
+      "uuid": "90ec2b22-7061-4469-b539-0989ec4f96c2"
     },
     {
       "description": "The Net utility is a component of the Windows operating system. It is used in command-line operations for control of users, groups, services, and network connections. (Citation: Microsoft Net Utility)\n\nNet has a great deal of functionality, (Citation: Savill 1999) much of which is useful for an adversary, such as gathering system and network information for Discovery, moving laterally through Windows admin shares using <code>net use</code> commands, and interacting with services.\n\nAliases: Net, net.exe",
@@ -410,6 +498,7 @@
           "https://msdn.microsoft.com/en-us/library/aa939914",
           "http://windowsitpro.com/windows/netexe-reference"
         ],
+        "external_id": "S0039",
         "synonyms": [
           "Net",
           "net.exe"
@@ -426,6 +515,7 @@
           "https://technet.microsoft.com/en-us/sysinternals/bb897553.aspx",
           "https://digital-forensics.sans.org/blog/2012/12/17/protecting-privileged-domain-accounts-psexec-deep-dive"
         ],
+        "external_id": "S0029",
         "synonyms": [
           "PsExec"
         ]
@@ -440,6 +530,7 @@
           "https://attack.mitre.org/wiki/Software/S0160",
           "https://technet.microsoft.com/library/cc732443.aspx"
         ],
+        "external_id": "S0160",
         "synonyms": [
           "certutil",
           "certutil.exe"
@@ -455,6 +546,7 @@
           "https://attack.mitre.org/wiki/Software/S0099",
           "https://technet.microsoft.com/en-us/library/bb490864.aspx"
         ],
+        "external_id": "S0099",
         "synonyms": [
           "Arp",
           "arp.exe"
@@ -473,6 +565,7 @@
           "https://technet.microsoft.com/en-us/library/cc771049.aspx",
           "https://technet.microsoft.com/en-us/library/bb490886.aspx"
         ],
+        "external_id": "S0106",
         "synonyms": [
           "cmd",
           "cmd.exe"
@@ -481,12 +574,45 @@
       "uuid": "bba595da-b73a-4354-aa6c-224d4de7cb4e"
     },
     {
-      "description": "is an open-source Tor plugin that tunnels Tor traffic through HTTPS connections.\n\nAliases: meek",
+      "description": "Havij is an automatic SQL Injection tool distributed by the Iranian ITSecTeam security company. Havij has been used by penetration testers and adversaries. (Citation: Check Point Havij Analysis)\n\nAliases: Havij",
+      "value": "Havij - S0224",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0224",
+          "https://blog.checkpoint.com/2015/05/14/analysis-havij-sql-injection-tool/"
+        ],
+        "external_id": "S0224",
+        "synonyms": [
+          "Havij"
+        ]
+      },
+      "uuid": "fbd727ea-c0dc-42a9-8448-9e12962d1ab5"
+    },
+    {
+      "description": "PowerSploit is an open source, offensive security framework compromised of PowerShell modules and scripts that perform a wide range of tasks related to penetration testing such as code execution, persistence, bypassing anti-virus, recon, and exfiltration. (Citation: GitHub PowerSploit May 2012) (Citation: PowerShellMagazine PowerSploit July 2014) (Citation: PowerSploit Documentation)\n\nAliases: PowerSploit",
+      "value": "PowerSploit - S0194",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0194",
+          "https://github.com/PowerShellMafia/PowerSploit",
+          "http://www.powershellmagazine.com/2014/07/08/powersploit/",
+          "http://powersploit.readthedocs.io"
+        ],
+        "external_id": "S0194",
+        "synonyms": [
+          "PowerSploit"
+        ]
+      },
+      "uuid": "13cd9151-83b7-410d-9f98-25d0f0d1d80d"
+    },
+    {
+      "description": "meek is an open-source Tor plugin that tunnels Tor traffic through HTTPS connections.\n\nAliases: meek",
       "value": "meek - S0175",
       "meta": {
         "refs": [
           "https://attack.mitre.org/wiki/Software/S0175"
         ],
+        "external_id": "S0175",
         "synonyms": [
           "meek"
         ]
@@ -502,6 +628,7 @@
           "https://technet.microsoft.com/en-us/library/cc732643.aspx",
           "http://blog.jpcert.or.jp/2016/01/windows-commands-abused-by-attackers.html"
         ],
+        "external_id": "S0075",
         "synonyms": [
           "Reg",
           "reg.exe"
@@ -510,18 +637,79 @@
       "uuid": "cde2d700-9ed1-46cf-9bce-07364fe8b24f"
     },
     {
-      "description": "Cobalt Strike is a commercial, full-featured, penetration testing tool which bills itself as “adversary simulation software designed to execute targeted attacks and emulate the post-exploitation actions of advanced threat actors”.  Cobalt Strike’s interactive post-exploit capabilities cover the full range of ATT&CK tactics, all executed within a single, integrated system. (Citation: cobaltstrike manual)\n\nIn addition to its own capabilities, Cobalt Strike leverages the capabilities of other well-known tools such as Metasploit and Mimikatz. (Citation: cobaltstrike manual)\n\nAliases: Cobalt Strike",
+      "description": "spwebmember is a Microsoft SharePoint enumeration and data dumping tool written in .NET. (Citation: NCC Group APT15 Alive and Strong)\n\nAliases: spwebmember",
+      "value": "spwebmember - S0227",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0227",
+          "https://www.nccgroup.trust/uk/about-us/newsroom-and-events/blogs/2018/march/apt15-is-alive-and-strong-an-analysis-of-royalcli-and-royaldns/"
+        ],
+        "external_id": "S0227",
+        "synonyms": [
+          "spwebmember"
+        ]
+      },
+      "uuid": "33b9e38f-103c-412d-bdcf-904a91fff1e4"
+    },
+    {
+      "description": "Pupy is an open source, cross-platform (Windows, Linux, OSX, Android) remote administration and post-exploitation tool.  (Citation: GitHub Pupy) It is written in Python and can be generated as a payload in several different ways (Windows exe, Python file, PowerShell oneliner/file, Linux elf, APK, Rubber Ducky, etc.). (Citation: GitHub Pupy) Pupy is publicly available on GitHub.  (Citation: GitHub Pupy)\n\nAliases: Pupy",
+      "value": "Pupy - S0192",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0192",
+          "https://github.com/n1nj4sec/pupy"
+        ],
+        "external_id": "S0192",
+        "synonyms": [
+          "Pupy"
+        ]
+      },
+      "uuid": "cb69b20d-56d0-41ab-8440-4a4b251614d4"
+    },
+    {
+      "description": "sqlmap is an open source penetration testing tool that can be used to automate the process of detecting and exploiting SQL injection flaws. (Citation: sqlmap Introduction)\n\nAliases: sqlmap",
+      "value": "sqlmap - S0225",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0225",
+          "http://sqlmap.org/"
+        ],
+        "external_id": "S0225",
+        "synonyms": [
+          "sqlmap"
+        ]
+      },
+      "uuid": "9a2640c2-9f43-46fe-b13f-bde881e55555"
+    },
+    {
+      "description": "Cobalt Strike is a commercial, full-featured, penetration testing tool which bills itself as “adversary simulation software designed to execute targeted attacks and emulate the post-exploitation actions of advanced threat actors”.  Cobalt Strike’s interactive post-exploit capabilities cover the full range of ATT&CK tactics, all executed within a single, integrated system. (Citation: cobaltstrike manual)\n\nIn addition to its own capabilities, Cobalt Strike leverages the capabilities of other well-known tools such as Metasploit and Mimikatz. (Citation: cobaltstrike manual)\n\nAliases: Cobalt Strike\n\nContributors: Josh Abraham",
       "value": "Cobalt Strike - S0154",
       "meta": {
         "refs": [
           "https://attack.mitre.org/wiki/Software/S0154",
           "https://cobaltstrike.com/downloads/csmanual38.pdf"
         ],
+        "external_id": "S0154",
         "synonyms": [
           "Cobalt Strike"
         ]
       },
       "uuid": "aafea02e-ece5-4bb2-91a6-3bf8c7f38a39"
+    },
+    {
+      "description": "Invoke-PSImage takes a PowerShell script and embeds the bytes of the script into the pixels of a PNG image. It generates a one liner for executing either from a file of from the web. Example of usage is embedding the PowerShell code from the Invoke-Mimikatz module and embed it into an image file. By calling the image file from a macro for example, the macro will download the picture and execute the PowerShell code, which in this case will dump the passwords. (Citation: GitHub Invoke-PSImage)\n\nAliases: Invoke-PSImage\n\nContributors: Christiaan Beek, @ChristiaanBeek",
+      "value": "Invoke-PSImage - S0231",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/wiki/Software/S0231",
+          "https://github.com/peewpw/Invoke-PSImage"
+        ],
+        "external_id": "S0231",
+        "synonyms": [
+          "Invoke-PSImage"
+        ]
+      },
+      "uuid": "b52d6583-14a2-4ddc-8527-87fd2142558f"
     }
   ]
 }

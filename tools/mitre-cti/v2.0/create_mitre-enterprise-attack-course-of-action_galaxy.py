@@ -24,6 +24,8 @@ for element in os.listdir('.'):
             value['description'] = temp['description']
             value['value'] = temp['name'] + ' - ' + temp['external_references'][0]['external_id']
             value['uuid'] = re.search('--(.*)$', temp['id']).group(0)[2:]
+            value['meta'] = {}
+            value['meta']['external_id'] = temp['external_references'][0]['external_id']    
             values.append(value)
 
 galaxy = {}
