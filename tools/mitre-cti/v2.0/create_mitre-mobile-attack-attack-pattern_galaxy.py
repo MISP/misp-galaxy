@@ -47,6 +47,7 @@ galaxy['description'] = "ATT&CK Tactic"
 galaxy['uuid' ] = "1c6d1332-1708-11e8-847c-e3c5643c41a5"
 galaxy['version'] = args.version
 galaxy['icon'] = "map"
+galaxy['namespace'] = "mitre-attack"
 
 cluster = {}
 cluster['name'] = "Mobile Attack - Attack Pattern"

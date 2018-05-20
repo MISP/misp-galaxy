@@ -42,6 +42,7 @@ galaxy['description'] = "Name of ATT&CK software"
 galaxy['uuid' ] = "1d0b4bce-1708-11e8-9e6e-1b130c9b0a91"
 galaxy['version'] = args.version
 galaxy['icon'] = "gavel"
+galaxy['namespace'] = "mitre-attack"
 
 cluster = {}
 cluster['name'] = "Mobile Attack - Tool"

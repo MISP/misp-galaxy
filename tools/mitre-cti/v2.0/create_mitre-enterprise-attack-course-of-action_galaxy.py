@@ -35,6 +35,7 @@ galaxy['description'] = "ATT&CK Mitigation"
 galaxy['uuid' ] = "fb5a36c0-1707-11e8-81f5-d732b22a4982"
 galaxy['version'] = args.version
 galaxy['icon'] = "chain"
+galaxy['namespace'] = "mitre-attack"
 
 cluster = {}
 cluster['name'] = "Enterprise Attack - Course of Action"

@@ -83,6 +83,7 @@ galaxy['description'] = "Mitre Relationship"
 galaxy['uuid' ] = "1f8e3bae-1708-11e8-8e97-4bd2150e5aae"
 galaxy['version'] = args.version
 galaxy['icon'] = "link"
+galaxy['namespace'] = "mitre-attack"
 
 cluster = {}
 cluster['name'] = "Pre Attack - Relationship"
