@@ -78,7 +78,7 @@ for element in os.listdir(path):
 
 galaxy = {}
 galaxy['name'] = "Pre Attack - Relationship"
-galaxy['type'] = "mitre-pre-attack-relashipship"
+galaxy['type'] = "mitre-pre-attack-relationship"
 galaxy['description'] = "Mitre Relationship"
 galaxy['uuid' ] = "1f8e3bae-1708-11e8-8e97-4bd2150e5aae"
 galaxy['version'] = args.version
