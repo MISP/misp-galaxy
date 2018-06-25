@@ -1,6 +1,6 @@
 {
   "uuid": "59f20cce-5420-4084-afd5-0884c0a83832",
-  "name": "Banker",
+  "description": "A list of banker malware.",
   "source": "Open Sources",
   "version": 8,
   "values": [
@@ -583,11 +583,33 @@
       "description": "It's a Trojan that includes banking site web injections and stealer functions. It consists of a downloader component that downloads an encrypted file containing the main DLL. The DLL, in turn, connects using raw TCP connections to port 443 and downloads additional modules (i.e. VNCDLL.dll, StealerDLL.dll, ProxyDLL.dll)",
       "value": "DanaBot",
       "uuid": "844417c6-a404-4c4e-8e93-84db596d725b"
+    },
+    {
+      "meta": {
+        "refs": [
+          "https://www.cert.pl/news/single/analiza-zlosliwego-oprogramowania-backswap/",
+          "https://www.welivesecurity.com/2018/05/25/backswap-malware-empty-bank-accounts/"
+        ]
+      },
+      "description": "The banker is distributed through malicious email spam campaigns. Instead of using complex process injection methods to monitor browsing activity, the malware hooks key Windows message loop events in order to inspect values of the window objects for banking activity. The payload is delivered as a modified version of a legitimate application that is partially overwritten by the malicious payload",
+      "value": "Backswap",
+      "uuid": "ea0b5f45-6b56-4c92-b22b-0d84c45160a0"
+    },
+    {
+      "meta": {
+        "refs": [
+          "https://research.checkpoint.com/banking-trojans-development/"
+        ]
+      },
+      "description": "Trojan under development and already being distributed through the RIG Exploit Kit. Observed code similarities with other well-known bankers such as Ramnit, Vawtrak and TrickBot. Karius works in a rather traditional fashion to other banking malware and consists of three components (injector32\\64.exe, proxy32\\64.dll and mod32\\64.dll), these components essentially work together to deploy webinjects in several browsers.",
+      "value": "Karius",
+      "uuid": "a088c428-d0bb-49c8-9ed7-dcced0c74754"
     }
   ],
   "authors": [
-    "Unknown"
+    "Unknown",
+    "raw-data"
   ],
   "type": "banker",
-  "description": "A list of banker malware."
+  "name": "Banker"
 }
