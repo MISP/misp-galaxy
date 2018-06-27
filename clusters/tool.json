@@ -2,7 +2,7 @@
   "uuid": "0d821b68-9d82-4c6d-86a6-1071a9e0f79f",
   "name": "Tool",
   "source": "MISP Project",
-  "version": 77,
+  "version": 78,
   "values": [
     {
       "meta": {
@@ -4344,6 +4344,26 @@
         ]
       },
       "uuid": "76d5c7a2-73c3-11e8-bd92-db4d715af093"
+    },
+    {
+      "value": "DDKONG",
+      "description": "The malware in question is configured with the following three exported functions: ServiceMain,Rundll32Call, DllEntryPoint. The ServiceMain exported function indicates that this DLL is expected to be loaded as a service. If this function is successfully loaded, it will ultimately spawn a new instance of itself with the Rundll32Call export via a call to rundll32.exe. The Rundll32Call exported function begins by creating a named event named ‘RunOnce’. This event ensures that only a single instance of DDKong is executed at a given time. If this is the only instance of DDKong running at the time, the malware continues. If it’s not, it dies. This ensures that only a single instance of DDKong is executed at a given time. DDKong attempts to decode an embedded configuration using a single byte XOR key of 0xC3. After this configuration is decoded and parsed, DDKONG proceeds to send a beacon to the configured remote server via a raw TCP connection. The packet has a header of length 32 and an optional payload. In the beacon, no payload is provided, and as such, the length of this packet is set to zero. After it sends the beacon, the malware expects a response command of either 0x4 or 0x6. Both responses instruct the malware to download and load a remote plugin. In the event 0x4 is specified, the malware is instructed to load the exported ‘InitAction’ function. If 0x6 is specified, the malware is instructed to load the exported ‘KernelDllCmdAction’ function. Prior to downloading the plugin, the malware downloads a buffer that is concatenated with the embedded configuration and ultimately provided to the plugin at runtime. As we can see in the above text, two full file paths are included in this buffer, providing us with insight into the original malware family’s name, as well as the author. After this buffer is collected, the malware downloads the plugin and loads the appropriate function. This plugin provides the attacker with the ability to both list files and download/upload files on the victim machine.",
+      "meta": {
+        "refs": [
+          "https://researchcenter.paloaltonetworks.com/2018/06/unit42-rancor-targeted-attacks-south-east-asia-using-plaintee-ddkong-malware-families/"
+        ]
+      },
+      "uuid": "57dd0828-79d7-11e8-a7d8-57db14e1ef24"
+    },
+    {
+      "value": "PLAINTEE",
+      "description": "This sample is configured with three exported functions: Add, Sub, DllEntryPoint. The DLL expects the export named ‘Add’ to be used when initially loaded. When this function is executed PLAINTEE executes a command in a new process to add persistence. Next, the malware calls the ‘Sub’ function which begins by spawning a mutex named ‘microsoftfuckedupb’ to ensure only a single instance is running at a given time. In addition, PLAINTEE will create a unique GUID via a call to CoCreateGuid() to be used as an identifier for the victim. The malware then proceeds to collect general system enumeration data about the infected machine and enters a loop where it will decode an embedded config blob and send an initial beacon to the C2 server. The configuration blob is encoded using a simple single-byte XOR scheme. The first byte of the string is used as the XOR key to in turn decode the remainder of the data. The malware then proceeds to beacon to the configured port via a custom UDP protocol. The network traffic is encoded in a similar fashion, with a random byte being selected as the first byte, which is then used to decode the remainder of the packet via XOR. This beacon is continuously sent out until a valid response is obtained from the C2 server (there is no sleep timer set). After the initial beacon, there is a two second delay in between all other requests made. This response is expected to have a return command of 0x66660002 and to contain the same GUID that was sent to the C2 server. Once this response is received, the malware spawns several new threads, with different Command parameters, with the overall objective of loading and executing a new plugin that is to be received from the C2 server. During a file analysis of PLAINTEE in WildFire, we observed the attackers download and execute a plugin during the runtime for that sample. PLAINTEE expects the downloaded plugin to be a DLL with an export function of either ‘shell’ or ‘file’. The plugin uses the same network protocol as PLAINTEE and so we were able to trivially decode further commands that were sent.  The following commands were observed: tasklist, ipconfig /all. The attacker performed these two commands 33 seconds apart. As automated commands are typically performed more quickly this indicates that they may have been sent manually by the attacker.",
+      "meta": {
+        "refs": [
+          "https://researchcenter.paloaltonetworks.com/2018/06/unit42-rancor-targeted-attacks-south-east-asia-using-plaintee-ddkong-malware-families/"
+        ]
+      },
+      "uuid": "58b24db2-79d7-11e8-9b1b-bbdbc798af4f"
     }
   ],
   "authors": [
