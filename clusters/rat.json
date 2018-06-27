@@ -1,8 +1,8 @@
 {
   "uuid": "312f8714-45cb-11e7-b898-135207cdceb9",
-  "name": "RAT",
+  "description": "remote administration tool or remote access tool (RAT), also called sometimes remote access trojan, is a piece of software or programming that allows a remote \"operator\" to control a system as if they have physical access to that system.",
   "source": "MISP Project",
-  "version": 10,
+  "version": 11,
   "values": [
     {
       "meta": {
@@ -2500,11 +2500,33 @@
       "description": "Joanap is a two-stage malware used to establish peer-to-peer communications and to manage botnets designed to enable other operations. Joanap malware provides HIDDEN COBRA actors with the ability to exfiltrate data, drop and run secondary payloads, and initialize proxy communications on a compromised Windows device. ",
       "value": "joanap",
       "uuid": "caac1aa2-6982-11e8-8107-a331ae3511e7"
+    },
+    {
+      "meta": {
+        "refs": [
+          "https://www.nccgroup.trust/uk/about-us/newsroom-and-events/blogs/2018/june/cve-2017-8750-rtf-and-the-sisfader-rat/"
+        ]
+      },
+      "description": "Sisfader maintains persistence installing itself as a system service, it is made up of multiple components ([1] Dropper - installing the malware, [2] Agent - main code of the RAT, [3] Config - written to the registry, [4] Auto Loader - responsible for extracting the Agent, the Config from the registry) and it has its own custom protocol for communication.",
+      "value": "Sisfader",
+      "uuid": "b533439d-b060-4c90-80e0-9dce67b0c6fb"
+    },
+    {
+      "meta": {
+        "refs": [
+          "https://file.gdatasoftware.com/web/en/documents/whitepaper/G_DATA_SocketPlayer_Analysis.pdf",
+          "https://volon.io/2018/06/targeted-attack-on-indian-defense-officials-using-socketplayer-malware/"
+        ]
+      },
+      "description": "The RAT is written in .NET, it uses socket.io for communication. Currently there are two variants of the malware, the 1st variant is a typical downloader whereas the 2nd one has download and C2 functionalities.",
+      "value": "SocketPlayer",
+      "uuid": "d9475765-2cea-45c0-b638-a082b9427239"
     }
   ],
   "authors": [
-    "Various"
+    "Various",
+    "raw-data"
   ],
   "type": "rat",
-  "description": "remote administration tool or remote access tool (RAT), also called sometimes remote access trojan, is a piece of software or programming that allows a remote \"operator\" to control a system as if they have physical access to that system."
+  "name": "RAT"
 }

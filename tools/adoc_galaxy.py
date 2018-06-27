@@ -67,14 +67,14 @@ def header(adoc=False):
     doc = doc + "= MISP galaxy\n"
     return doc
 
-def asciidoc(content=False, adoc=None, t='title',title=''):
+def asciidoc(content=False, adoc=None, t='title',title='', typename=''):
 
     adoc = adoc + "\n"
     output = ""
     if t == 'title':
         output = '== ' + content
     elif t == 'info':
-        output = "\n{}.\n\n{} {} {}{}.json[*this location*] {}.\n".format(content, 'NOTE: ', title, 'is a cluster galaxy available in JSON format at https://github.com/MISP/misp-galaxy/blob/master/clusters/',title.lower(),' The JSON format can be freely reused in your application or automatically enabled in https://www.github.com/MISP/MISP[MISP]')
+        output = "\n{}.\n\n{} {} {}$${}$$.json[*this location*] {}.\n".format(content, 'NOTE: ', title, 'is a cluster galaxy available in JSON format at https://github.com/MISP/misp-galaxy/blob/master/clusters/',typename.lower(),' The JSON format can be freely reused in your application or automatically enabled in https://www.github.com/MISP/MISP[MISP]')
     elif t == 'author':
         output = '\nauthors:: {}\n'.format(' - '.join(content))
     elif t == 'value':
@@ -102,8 +102,9 @@ for cluster in clusters:
     with open(fullPathClusters) as fp:
         c = json.load(fp)
     title = c['name']
+    typename = c['type']
     adoc = asciidoc(content=title, adoc=adoc, t='title')
-    adoc = asciidoc(content=c['description'], adoc=adoc, t='info', title=title)
+    adoc = asciidoc(content=c['description'], adoc=adoc, t='info', title=title, typename = typename)
     if 'authors' in c:
         adoc = asciidoc(content=c['authors'], adoc=adoc, t='author', title=title)
     for v in c['values']:
