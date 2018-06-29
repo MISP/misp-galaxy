@@ -1,6 +1,6 @@
 {
   "uuid": "0d821b68-9d82-4c6d-86a6-1071a9e0f79f",
-  "name": "Tool",
+  "description": "threat-actor-tools is an enumeration of tools used by adversaries. The list includes malware but also common software regularly used by the adversaries.",
   "source": "MISP Project",
   "version": 78,
   "values": [
@@ -4244,105 +4244,105 @@
       "uuid": "895d769e-b288-4977-a4e1-7d64eb134bf9"
     },
     {
-      "uuid": "1740ec4-d730-40d6-a3b8-32d5fe7f21cf",
-      "value": "Iron Backdoor",
-      "description": "Iron Backdoor uses a virtual machine detection code taken directly from HackingTeam’s Soldier implant leaked source code. Iron Backdoor is also using the DynamicCall module from HackingTeam core library. Backdoor was used to drop cryptocurrency miners.",
       "meta": {
         "refs": [
           "https://www.intezer.com/iron-cybercrime-group-under-the-scope-2/"
         ]
-      }
+      },
+      "uuid": "1740ec4-d730-40d6-a3b8-32d5fe7f21cf",
+      "value": "Iron Backdoor",
+      "description": "Iron Backdoor uses a virtual machine detection code taken directly from HackingTeam’s Soldier implant leaked source code. Iron Backdoor is also using the DynamicCall module from HackingTeam core library. Backdoor was used to drop cryptocurrency miners."
     },
     {
-      "uuid": "4c057ade-6989-11e8-9efd-ab33ed427468",
-      "value": "Brambul",
-      "description": "Brambul malware is a malicious Windows 32-bit SMB worm that functions as a service dynamic link library file or a portable executable file often dropped and installed onto victims’ networks by dropper malware. When executed, the malware attempts to establish contact with victim systems and IP addresses on victims’ local subnets. If successful, the application attempts to gain unauthorized access via the SMB protocol (ports 139 and 445) by launching brute-force password attacks using a list of embedded passwords. Additionally, the malware generates random IP addresses for further attacks.",
       "meta": {
         "refs": [
           "https://www.us-cert.gov/ncas/alerts/TA18-149A"
         ]
-      }
+      },
+      "uuid": "4c057ade-6989-11e8-9efd-ab33ed427468",
+      "value": "Brambul",
+      "description": "Brambul malware is a malicious Windows 32-bit SMB worm that functions as a service dynamic link library file or a portable executable file often dropped and installed onto victims’ networks by dropper malware. When executed, the malware attempts to establish contact with victim systems and IP addresses on victims’ local subnets. If successful, the application attempts to gain unauthorized access via the SMB protocol (ports 139 and 445) by launching brute-force password attacks using a list of embedded passwords. Additionally, the malware generates random IP addresses for further attacks."
     },
     {
-      "uuid": "d1482c9e-6af3-11e8-aa8e-279274bd10c7",
-      "value": "PLEAD",
-      "description": "PLEAD has two kinds – RAT (Remote Access Tool) and downloader. The RAT operates based on commands that are provided from C&C servers. On the other hand, PLEAD downloader downloads modules and runs it on memory in the same way as TSCookie does.",
       "meta": {
         "refs": [
           "https://blog.jpcert.or.jp/2018/06/plead-downloader-used-by-blacktech.html"
         ]
-      }
+      },
+      "uuid": "d1482c9e-6af3-11e8-aa8e-279274bd10c7",
+      "value": "PLEAD",
+      "description": "PLEAD has two kinds – RAT (Remote Access Tool) and downloader. The RAT operates based on commands that are provided from C&C servers. On the other hand, PLEAD downloader downloads modules and runs it on memory in the same way as TSCookie does."
     },
     {
-      "uuid": "65c0dff4-6b23-11e8-899f-8fcb21ad9649",
-      "value": "BabaYaga",
-      "description": "The group behind BabaYaga —believed to be Russian-speaking hackers— uses this malware to inject sites with special keyboards to drive SEO traffic to hidden pages on compromised sites. These pages are then used to redirect users to affiliate marketing links, where if the user purchases advertised goods, the hackers also make a profit.\nThe malware per-se is comprised of two modules —one that injects the spam content inside the compromised sites, and a backdoor module that gives attackers control over an infected site at any time.\nThe intricacies of both modules are detailed in much more depth in this 26-page report authored by Defiant (formerly known as WordFence), the security firm which dissected the malware's more recent versions.\n\"[BabaYaga] is relatively well-written, and it demonstrates that the author has some understanding of software development challenges, like code deployment, performance and management,\" Defiant researchers say. \"It can also infect Joomla and Drupal sites, or even generic PHP sites, but it is most fully developed around Wordpress.\"",
       "meta": {
         "refs": [
           "https://www.bleepingcomputer.com/news/security/lol-babayaga-wordpress-malware-updates-your-site/"
         ]
-      }
+      },
+      "uuid": "65c0dff4-6b23-11e8-899f-8fcb21ad9649",
+      "value": "BabaYaga",
+      "description": "The group behind BabaYaga —believed to be Russian-speaking hackers— uses this malware to inject sites with special keyboards to drive SEO traffic to hidden pages on compromised sites. These pages are then used to redirect users to affiliate marketing links, where if the user purchases advertised goods, the hackers also make a profit.\nThe malware per-se is comprised of two modules —one that injects the spam content inside the compromised sites, and a backdoor module that gives attackers control over an infected site at any time.\nThe intricacies of both modules are detailed in much more depth in this 26-page report authored by Defiant (formerly known as WordFence), the security firm which dissected the malware's more recent versions.\n\"[BabaYaga] is relatively well-written, and it demonstrates that the author has some understanding of software development challenges, like code deployment, performance and management,\" Defiant researchers say. \"It can also infect Joomla and Drupal sites, or even generic PHP sites, but it is most fully developed around Wordpress.\""
     },
     {
-      "uuid": "10f50ef8-6e3b-11e8-a648-d73fb4d2f48e",
-      "value": "InvisiMole",
-      "description": "Except for the malware's binary file, very little is known of who's behind it, how it spreads, or in what types of campaigns has this been used.\n\n\"Our telemetry indicates that the malicious actors behind this malware have been active at least since 2013, yet the cyber-espionage tool was never analyzed nor detected until discovered by ESET products on compromised computers in Ukraine and Russia,\" said ESET researcher Zuzana Hromcová, who recently penned an in-depth report about this new threat.\n\n\"All infection vectors are possible, including installation facilitated by physical access to the machine,\" Hromcová added.\n\nTypical to malware used in highly-targeted attacks, the malware has been stripped of most clues that could lead researchers back to its author. With the exception of one file (dating to October 13, 2013), all compilation dates have been stripped and replaced with zeros, giving little clues regarding its timeline and lifespan.\n\nFurthermore, the malware is some clever piece of coding in itself, as it's comprised of two modules, both with their own set of spying features, but which can also help each other in exfiltrating data.",
       "meta": {
         "refs": [
           "https://www.bleepingcomputer.com/news/security/invisimole-is-a-complex-spyware-that-can-take-pictures-and-record-audio/"
         ]
-      }
+      },
+      "uuid": "10f50ef8-6e3b-11e8-a648-d73fb4d2f48e",
+      "value": "InvisiMole",
+      "description": "Except for the malware's binary file, very little is known of who's behind it, how it spreads, or in what types of campaigns has this been used.\n\n\"Our telemetry indicates that the malicious actors behind this malware have been active at least since 2013, yet the cyber-espionage tool was never analyzed nor detected until discovered by ESET products on compromised computers in Ukraine and Russia,\" said ESET researcher Zuzana Hromcová, who recently penned an in-depth report about this new threat.\n\n\"All infection vectors are possible, including installation facilitated by physical access to the machine,\" Hromcová added.\n\nTypical to malware used in highly-targeted attacks, the malware has been stripped of most clues that could lead researchers back to its author. With the exception of one file (dating to October 13, 2013), all compilation dates have been stripped and replaced with zeros, giving little clues regarding its timeline and lifespan.\n\nFurthermore, the malware is some clever piece of coding in itself, as it's comprised of two modules, both with their own set of spying features, but which can also help each other in exfiltrating data."
     },
     {
-      "uuid": "f35f219a-6eed-11e8-980a-93bb96299951",
-      "value": "Roaming Mantis",
-      "description": "Roaming Mantis malware is designed for distribution through a simple, but very efficient trick based on a technique known as DNS hijacking. When a user attempts to access any website via a compromised router, they will be redirected to a malicious website. For example, if a user were to navigate to www.securelist.com using a web browser, the browser would be redirected to a rogue server which has nothing to do with the security research blog. As long as the browser displays the original URL, users are likely to believe the website is genuine. The web page from the rogue server displays the popup message: To better experience the browsing, update to the latest chrome version.",
       "meta": {
         "refs": [
           "https://securelist.com/roaming-mantis-uses-dns-hijacking-to-infect-android-smartphones/85178/"
         ]
-      }
+      },
+      "uuid": "f35f219a-6eed-11e8-980a-93bb96299951",
+      "value": "Roaming Mantis",
+      "description": "Roaming Mantis malware is designed for distribution through a simple, but very efficient trick based on a technique known as DNS hijacking. When a user attempts to access any website via a compromised router, they will be redirected to a malicious website. For example, if a user were to navigate to www.securelist.com using a web browser, the browser would be redirected to a rogue server which has nothing to do with the security research blog. As long as the browser displays the original URL, users are likely to believe the website is genuine. The web page from the rogue server displays the popup message: To better experience the browsing, update to the latest chrome version."
     },
     {
-      "uuid": "7cda6406-6eef-11e8-a2ad-9340096d5711",
-      "value": "PLEAD Downloader",
-      "description": "PLEAD is referred to both as a name of malware including TSCookie and its attack campaign. PLEAD has two kinds – RAT (Remote Access Tool) and downloader. The RAT operates based on commands that are provided from C&C servers.　On the other hand, PLEAD downloader downloads modules and runs it on memory in the same way as TSCookie does.",
       "meta": {
         "refs": [
           "https://blog.jpcert.or.jp/2018/06/plead-downloader-used-by-blacktech.html"
         ]
-      }
+      },
+      "uuid": "7cda6406-6eef-11e8-a2ad-9340096d5711",
+      "value": "PLEAD Downloader",
+      "description": "PLEAD is referred to both as a name of malware including TSCookie and its attack campaign. PLEAD has two kinds – RAT (Remote Access Tool) and downloader. The RAT operates based on commands that are provided from C&C servers.　On the other hand, PLEAD downloader downloads modules and runs it on memory in the same way as TSCookie does."
     },
     {
-      "uuid": "9f926c84-72cb-11e8-a1f2-676d779700ba",
-      "value": "ClipboardWalletHijacker",
-      "description": "The malware's purpose is to intercept content recorded in the Windows clipboard, look for strings resembling Bitcoin and Ethereum addresses, and replace them with ones owned by the malware's authors. ClipboardWalletHijacker's end-plan is to hijack BTC and ETH transactions, so victims unwittingly send funds to the malware's authors.",
       "meta": {
         "refs": [
           "https://www.bleepingcomputer.com/news/security/clipboard-hijacker-targeting-bitcoin-and-ethereum-users-infects-over-300-0000-pcs/",
           "https://blog.360totalsecurity.com/en/new-cryptominer-hijacks-your-bitcoin-transaction-over-300000-computers-have-been-attacked/"
         ]
-      }
+      },
+      "uuid": "9f926c84-72cb-11e8-a1f2-676d779700ba",
+      "value": "ClipboardWalletHijacker",
+      "description": "The malware's purpose is to intercept content recorded in the Windows clipboard, look for strings resembling Bitcoin and Ethereum addresses, and replace them with ones owned by the malware's authors. ClipboardWalletHijacker's end-plan is to hijack BTC and ETH transactions, so victims unwittingly send funds to the malware's authors."
     },
     {
-      "value": "TYPEFRAME",
-      "description": "Trojan malware",
       "meta": {
         "refs": [
           "https://www.us-cert.gov/ncas/analysis-reports/AR18-165A"
         ]
       },
+      "description": "Trojan malware",
+      "value": "TYPEFRAME",
       "uuid": "8981aaca-72dc-11e8-8649-838c1b2613c5"
     },
     {
-      "value": "Olympic Destroyer",
-      "description": "The Winter Olympics this year is being held in Pyeongchang, South Korea. The Guardian, a UK Newspaper reported an article that suggested the Olympic computer systems suffered technical issues during the opening ceremony. Officials at the games confirmed some technical issues to non-critical systems and they completed recovery within around 12 hours. Sunday 11th February the Olympic games officials confirmed a cyber attack occurred but did not comment or speculate further.\nTalos have identified the samples, with moderate confidence, used in this attack. The infection vector is currently unknown as we continue to investigate. The samples identified, however, are not from adversaries looking for information from the games but instead they are aimed to disrupt the games. The samples analysed appear to perform only destructive functionality. There does not appear to be any exfiltration of data. Analysis shows that actors are again favouring legitimate pieces of software as PsExec functionality is identified within the sample. The destructive nature of this malware aims to render the machine unusable by deleting shadow copies, event logs and trying to use PsExec & WMI to further move through the environment. This is something we have witnessed previously with BadRabbit and Nyetya.",
       "meta": {
         "refs": [
           "https://blog.talosintelligence.com/2018/02/olympic-destroyer.html",
           "https://www.bleepingcomputer.com/news/security/malware-that-hit-pyeongchang-olympics-deployed-in-new-attacks/"
         ]
       },
+      "description": "The Winter Olympics this year is being held in Pyeongchang, South Korea. The Guardian, a UK Newspaper reported an article that suggested the Olympic computer systems suffered technical issues during the opening ceremony. Officials at the games confirmed some technical issues to non-critical systems and they completed recovery within around 12 hours. Sunday 11th February the Olympic games officials confirmed a cyber attack occurred but did not comment or speculate further.\nTalos have identified the samples, with moderate confidence, used in this attack. The infection vector is currently unknown as we continue to investigate. The samples identified, however, are not from adversaries looking for information from the games but instead they are aimed to disrupt the games. The samples analysed appear to perform only destructive functionality. There does not appear to be any exfiltration of data. Analysis shows that actors are again favouring legitimate pieces of software as PsExec functionality is identified within the sample. The destructive nature of this malware aims to render the machine unusable by deleting shadow copies, event logs and trying to use PsExec & WMI to further move through the environment. This is something we have witnessed previously with BadRabbit and Nyetya.",
+      "value": "Olympic Destroyer",
       "uuid": "76d5c7a2-73c3-11e8-bd92-db4d715af093"
     },
     {
@@ -4364,6 +4364,17 @@
         ]
       },
       "uuid": "58b24db2-79d7-11e8-9b1b-bbdbc798af4f"
+    },
+    {
+      "meta": {
+        "refs": [
+          "https://github.com/zerosum0x0/koadic",
+          "https://researchcenter.paloaltonetworks.com/2018/06/unit42-sofacy-groups-parallel-attacks/"
+        ]
+      },
+      "description": "Koadic, or COM Command & Control, is a Windows post-exploitation rootkit similar to other penetration testing tools such as Meterpreter and Powershell Empire. The major difference is that Koadic does most of its operations using Windows Script Host",
+      "value": "Koadic",
+      "uuid": "f9e0b922-253c-40fa-a6d2-e60ec9c6980b"
     }
   ],
   "authors": [
@@ -4371,8 +4382,9 @@
     "Florian Roth",
     "Timo Steffens",
     "Christophe Vandeplas",
-    "Dennis Rand"
+    "Dennis Rand",
+    "raw-data"
   ],
   "type": "tool",
-  "description": "threat-actor-tools is an enumeration of tools used by adversaries. The list includes malware but also common software regularly used by the adversaries."
+  "name": "Tool"
 }
