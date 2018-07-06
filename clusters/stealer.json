@@ -1,8 +1,8 @@
 {
   "uuid": "f2ef4033-9001-4427-a418-df8c48e6d054",
-  "description": "A list of malware stealer.",
+  "name": "Stealer",
   "source": "Open Sources",
-  "version": 1,
+  "version": 2,
   "values": [
     {
       "meta": {
@@ -25,11 +25,24 @@
       "description": "The first version stole browser credentials and cookies, along with all text files it can find on the system. The second variant added the ability to collect Telegram's desktop cache and key files, as well as login information for the video game storefront Steam.",
       "value": "TeleGrab",
       "uuid": "a6780288-24eb-4006-9ddd-062870c6feec"
+    },
+    {
+      "meta": {
+        "date": "July 2018.",
+        "refs": [
+          "https://www.proofpoint.com/us/threat-insight/post/threat-actors-using-legitimate-paypal-accounts-to-distribute-chthonic-banking-trojan",
+          "https://blog.minerva-labs.com/analyzing-an-azorult-attack-evasion-in-a-cloak-of-multiple-layers",
+          "https://malware.lu/articles/2018/05/04/azorult-stealer.html"
+        ]
+      },
+      "description": "It is able to steal accounts from different software, such as, Firefox password Internet Explorer/Edge Thunderbird Chrome/Chromium and many more. It is also able to (1) list all installed software, (2) list processes, (3) Get information about the machine name (CPU type, Graphic card, size of memory), (4) take screen captures, (5) Steal cryptomoney wallet from Electrum, MultiBit, monero-project, bitcoin-qt.",
+      "value": "AZORult",
+      "uuid": "a646edab-5c6f-4a79-8a6c-153535259e16"
     }
   ],
   "authors": [
     "raw-data"
   ],
   "type": "stealer",
-  "name": "Stealer"
+  "description": "A list of malware stealer."
 }
