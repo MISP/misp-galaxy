@@ -1,0 +1,24 @@
+{
+  "uuid": "75436e27-cb57-4f32-bf1d-9636dd78a2bf",
+  "description": "A list of backdoor malware.",
+  "source": "Open Sources",
+  "version": 1,
+  "values": [
+    {
+      "meta": {
+        "date": "July 2018.",
+        "refs": [
+          "https://blog.jpcert.or.jp/2018/07/malware-wellmes-9b78.html"
+        ]
+      },
+      "description": "Cross-platform malware written in Golang, compatible with Linux and Windows. Although there are some minor differences, both variants have the same functionality. The malware communicates with a CnC server using HTTP requests and performs functions based on the received commands. Results of command execution are sent in HTTP POST requests data (RSA-encrypted). Main functionalities are: (1) Execute arbitrary shell commands, (2) Upload/Download files. The PE variant of the infection, in addition, executes PowerShell scripts. A .Net version was also observed in the wild.",
+      "value": "WellMess",
+      "uuid": "e0e79fab-0f1d-4fc2-b424-208cb019a9cd"
+    }
+  ],
+  "authors": [
+    "raw-data"
+  ],
+  "type": "backdoor",
+  "name": "Backdoor"
+}
