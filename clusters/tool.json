@@ -2,7 +2,7 @@
   "uuid": "0d821b68-9d82-4c6d-86a6-1071a9e0f79f",
   "description": "threat-actor-tools is an enumeration of tools used by adversaries. The list includes malware but also common software regularly used by the adversaries.",
   "source": "MISP Project",
-  "version": 78,
+  "version": 79,
   "values": [
     {
       "meta": {
@@ -4375,6 +4375,17 @@
       "description": "Koadic, or COM Command & Control, is a Windows post-exploitation rootkit similar to other penetration testing tools such as Meterpreter and Powershell Empire. The major difference is that Koadic does most of its operations using Windows Script Host",
       "value": "Koadic",
       "uuid": "f9e0b922-253c-40fa-a6d2-e60ec9c6980b"
+    },
+    {
+      "value": "Bisonal",
+      "uuid": "23f6da78-873a-4ab0-9167-c8b0563627a5",
+      "description": "In early May, Unit 42 discovered an attack campaign against at least one defense company in Russia and one unidentified organization in South Korea delivering a variant of Bisonal malware. While not previously publicly documented, the variant has been in the wild since at least 2014. There are three primary differences between it and older Bisonal malware including a different cipher and encryption for C2 communication, and a large rewrite of the code for both network communication and maintaining persistence. To date, we have only collected 14 samples of this variant, indicating it may be sparingly used. The adversary behind these attacks lured the targets into launching the Microsoft Windows executable malware by masquerading it as a PDF file (using a fake PDF icon) and reusing publicly available data for the decoy PDF file’s contents.  Attacks using Bisonal have been blogged about in the past. In 2013, both COSEINC and FireEye revealed attacks using Bisonal against Japanese organizations . In October 2017, AhnLab published a report called “Operation Bitter Biscuit,” an attack campaign against South Korea, Japan, India and Russia using Bisonal and its successors, Bioazih and Dexbia. ",
+      "meta": {
+        "refs": [
+          "https://researchcenter.paloaltonetworks.com/2018/07/unit42-bisonal-malware-used-attacks-russia-south-korea/",
+          "https://camal.coseinc.com/publish/2013Bisonal.pdf"
+        ]
+      }
     }
   ],
   "authors": [
