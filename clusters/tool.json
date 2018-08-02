@@ -2,7 +2,7 @@
   "uuid": "0d821b68-9d82-4c6d-86a6-1071a9e0f79f",
   "description": "threat-actor-tools is an enumeration of tools used by adversaries. The list includes malware but also common software regularly used by the adversaries.",
   "source": "MISP Project",
-  "version": 79,
+  "version": 80,
   "values": [
     {
       "meta": {
@@ -4384,6 +4384,69 @@
         "refs": [
           "https://researchcenter.paloaltonetworks.com/2018/07/unit42-bisonal-malware-used-attacks-russia-south-korea/",
           "https://camal.coseinc.com/publish/2013Bisonal.pdf"
+        ]
+      }
+    },
+    {
+      "value": "Sekur",
+      "uuid": "ddbd9db5-7875-437b-b7c5-a17d2892d218",
+      "description": "Sekur has been CARBON SPIDER’s primary tool for several years, although usage over the last year appears to have declined. It contains all the functionality you would expect from a RAT, allowing the adversary to execute commands, manage the file system, manage processes, and collect data. In addition, it can record videos of victim sessions, log keystrokes, enable remote desktop, or install Ammyy Admin or VNC modules. From July 2014 on, samples were compiled with the capability to target Epicor POS systems and to collect credit card data.",
+      "meta": {
+        "refs": [
+          "https://www.crowdstrike.com/blog/arrests-put-new-focus-on-carbon-spider-adversary-group/"
+        ]
+      }
+    },
+    {
+      "value": "Agent ORM",
+      "uuid": "c1159097-3dad-48ab-91cf-c055182f5785",
+      "description": "Agent ORM began circulating alongside Skeur in campaigns throughout the second half of 2015. The malware collects basic system information and is able to take screenshots of victim systems. It is used to download next-stage payloads when systems of interest are identified. It is strongly suspected that Agent ORM has been deprecated in favor of script-based first-stage implants (VB Flash, JS Flash, and Bateleur).",
+      "meta": {
+        "refs": [
+          "https://www.crowdstrike.com/blog/arrests-put-new-focus-on-carbon-spider-adversary-group/"
+        ],
+        "synonyms": [
+          "Tosliph",
+          "DRIFTPIN"
+        ]
+      }
+    },
+    {
+      "value": "VB Flash",
+      "uuid": "2815a353-cd56-4ed0-8581-812b94f7a326",
+      "description": "VB Flash was first observed being deployed alongside Agent ORM in September 2015. It is likely that this was developed as a replacement to Agent ORM and contained similar capabilities. The first observed instance of VB Flash included comments and was easy to analyze—later versions soon began to integrate multiple layers of obfuscation. Several versions of VB Flash were developed including ones that utilized Google Forms, Google Macros, and Google Spreadsheets together to make a command-and-control (C2) channel. This variant would POST victim data to a specified Google form, then make a request to a Google macro script, receiving an address for a Google Spreadsheet from which to request commands.",
+      "meta": {
+        "refs": [
+          "https://www.crowdstrike.com/blog/arrests-put-new-focus-on-carbon-spider-adversary-group/"
+        ],
+        "synonyms": [
+          "HALFBAKED"
+        ]
+      }
+    },
+    {
+      "value": "JS Flash",
+      "uuid": "bf03a7ae-3c5e-47b9-84c6-27756297f1b5",
+      "description": "JS Flash capabilities closely resemble those of VB Flash and leverage interesting techniques in deployment via batch scripts embedded as OLE objects in malicious documents. Many iterations of JS Flash were observed being tested before deployment, containing minor changes to obfuscation and more complex additions, such as the ability to download TinyMet (a cutdown of the Metasploit Meterpreter payload). PowerShell was also used heavily for the execution of commands and arbitrary script execution. No JS Flash samples were observed being deployed after November 2017.",
+      "meta": {
+        "refs": [
+          "https://www.crowdstrike.com/blog/arrests-put-new-focus-on-carbon-spider-adversary-group/"
+        ],
+        "synonyms": [
+          "JavaScript variant of HALFBAKED"
+        ]
+      }
+    },
+    {
+      "value": "Bateleur",
+      "uuid": "81faf0c1-0595-436b-a66a-05d8b435bccd",
+      "description": "Bateleur deployments began not long after JS Flash and were also written in JavaScript. Deployments were more infrequent and testing was not observed. It is likely that Bateleur was run in parallel as an alternative tool and eventually replaced JS Flash as CARBON SPIDER’s first stage tool of choice. Although much simpler in design than JS Flash, all executing out of a single script with more basic obfuscation, Bateleur has a wealth of capabilities—including the ability to download arbitrary scripts and executables, deploy TinyMet, execute commands via PowerShell, deploy a credential stealer, and collect victim system information such as screenshots.",
+      "meta": {
+        "refs": [
+          "https://www.crowdstrike.com/blog/arrests-put-new-focus-on-carbon-spider-adversary-group/"
+        ],
+        "synonyms": [
+          ""
         ]
       }
     }
