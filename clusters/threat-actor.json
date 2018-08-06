@@ -533,7 +533,7 @@
           "Malaysia",
           "Cambodia",
           "China",
-          "Phillipines",
+          "Philippines",
           "South Korea",
           "United States",
           "Indonesia",
@@ -825,7 +825,7 @@
         "cfr-suspected-victims": [
           "Mongolia",
           "Kazakhstan",
-          "Tajikstan",
+          "Tajikistan",
           "Germany",
           "United Kingdom",
           "India",
@@ -1600,7 +1600,8 @@
           "https://www.symantec.com/connect/blogs/odinaff-new-trojan-used-high-level-financial-attacks",
           "https://blog.cyber4sight.com/2017/04/similarities-between-carbanak-and-fin7-malware-suggest-actors-are-closely-related/",
           "https://www.proofpoint.com/us/threat-insight/post/fin7carbanak-threat-actor-unleashes-bateleur-jscript-backdoor",
-          "https://www.icebrg.io/blog/footprints-of-fin7-tracking-actor-patterns"
+          "https://www.icebrg.io/blog/footprints-of-fin7-tracking-actor-patterns",
+          "https://www.crowdstrike.com/blog/arrests-put-new-focus-on-carbon-spider-adversary-group/"
         ],
         "motive": "Cybercrime"
       },
@@ -2687,6 +2688,22 @@
       "uuid": "feac86e4-6bb2-4ba0-ac99-806aeb0a776c"
     },
     {
+      "value": "RASPITE",
+      "description": "Dragos has identified a new activity group targeting access operations in the electric utility sector. We call this activity group RASPITE.  Analysis of RASPITE tactics, techniques, and procedures (TTPs) indicate the group has been active in some form since early- to mid-2017. RASPITE targeting includes entities in the US, Middle East, Europe, and East Asia. Operations against electric utility organizations appear limited to the US at this time.  RASPITE leverages strategic website compromise to gain initial access to target networks. RASPITE uses the same methodology as DYMALLOY and ALLANITE in embedding a link to a resource to prompt an SMB connection, from which it harvests Windows credentials. The group then deploys install scripts for a malicious service to beacon back to RASPITE-controlled infrastructure, allowing the adversary to remotely access the victim machine.",
+      "uuid": "2c8994ba-367c-46f6-bfb0-390c8760dd9e",
+      "meta": {
+        "synonyms": [
+          "LeafMiner"
+        ],
+        "since": "2017",
+        "victimology": "Electric utility sector",
+        "refs": [
+          "https://dragos.com/blog/20180802Raspite.html",
+          "https://www.symantec.com/blogs/threat-intelligence/leafminer-espionage-middle-east"
+        ]
+      }
+    },
+    {
       "meta": {
         "refs": [
           "https://www.fireeye.com/blog/threat-research/2016/05/windows-zero-day-payment-cards.html",
@@ -3742,14 +3759,14 @@
     },
     {
       "value": "The Big Bang",
+      "uuid": "475df014-556a-41db-ad6a-ff509dd202a1",
       "description": "While it is not clear exactly what the attacker is looking for, what is clear is that once he finds it, a second stage of the attack awaits, fetching additional modules and/or malware from the Command and Control server. This then is a surveillance attack in progress and has been dubbed ‘Big Bang’ due to the attacker’s fondness for the ‘Big Bang Theory’ TV show, after which some of the malware’s modules are named.",
       "meta": {
         "refs": [
           "https://research.checkpoint.com/apt-attack-middle-east-big-bang/",
           "https://blog.talosintelligence.com/2017/06/palestine-delphi.html"
         ]
-      },
-      "uuid": "a6fdd972-971a-11e8-bf58-9b08a198e9a3"
+      }
     },
     {
       "value": "Subaat",
@@ -3760,6 +3777,27 @@
         ]
       },
       "uuid": "a7bc4ef2-971a-11e8-9bf0-13aa7d6d8651"
+    },
+    {
+      "value": "The Gorgon Group",
+      "description": "Unit 42 researchers have been tracking Subaat, an attacker, since 2017. Recently Subaat drew our attention due to renewed targeted attack activity. Part of monitoring Subaat included realizing the actor was possibly part of a larger crew of individuals responsible for carrying out targeted attacks against worldwide governmental organizations. Technical analysis on some of the attacks as well as attribution links with Pakistan actors have been already depicted by 360 and Tuisec, in which they found interesting connections to a larger group of attackers Unit 42 researchers have been tracking, which we are calling Gorgon Group.",
+      "uuid": "e47c2c4d-706b-4098-92a2-b93e7103e131",
+      "meta": {
+        "refs": [
+          "https://researchcenter.paloaltonetworks.com/2018/08/unit42-gorgon-group-slithering-nation-state-cybercrime/"
+        ]
+      }
+    },
+    {
+      "value": "DarkHydrus",
+      "description": "In July 2018, Unit 42 analyzed a targeted attack using a novel file type against at least one government agency in the Middle East. It was carried out by a previously unpublished threat group we track as DarkHydrus. Based on our telemetry, we were able to uncover additional artifacts leading us to believe this adversary group has been in operation with their current playbook since early 2016. This attack diverged from previous attacks we observed from this group as it involved spear-phishing emails sent to targeted organizations with password protected RAR archive attachments that contained malicious Excel Web Query files (.iqy).",
+      "uuid": "ce2c2dfd-2445-4fbc-a747-9e7092e383f9",
+      "meta": {
+        "refs": [
+          "https://researchcenter.paloaltonetworks.com/2018/07/unit42-new-threat-actor-group-darkhydrus-targets-middle-east-government/"
+        ]
+      }
+>>>>>>> 38f559a3ff4fbb46ca8b1a9163ad72f2c12ca1ed
     }
   ],
   "name": "Threat actor",
@@ -3774,5 +3812,9 @@
   ],
   "description": "Known or estimated adversary groups targeting organizations and employees. Adversary groups are regularly confused with their initial operation or campaign.",
   "uuid": "7cdff317-a673-4474-84ec-4f1754947823",
+<<<<<<< HEAD
   "version": 47
+=======
+  "version": 49
+>>>>>>> 38f559a3ff4fbb46ca8b1a9163ad72f2c12ca1ed
 }
