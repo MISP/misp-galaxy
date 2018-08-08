@@ -38,6 +38,25 @@
           },
           "uuid": {
             "type": "string"
+	  },
+          "related": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "dest-uuid": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "tags": {
+                "type": "array",
+                "uniqueItems": true,
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
           },
           "meta": {
             "type": "object",
