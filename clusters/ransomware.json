@@ -5874,7 +5874,8 @@
       "meta": {
         "synonyms": [
           "Cryptear",
-          "EDA2"
+          "EDA2",
+          "Hidden Tear"
         ],
         "extensions": [
           ".locked"
@@ -10002,12 +10003,68 @@
         ]
       },
       "uuid": "541a479c-73a5-11e8-9d70-47736508231f"
+    },
+    {
+      "value": "RASTAKHIZ",
+      "description": "Hidden Tear variant discovered in October 2016. After activation, provides victims with an unlimited amount of time to gather the requested ransom money and pay it. Related unlock keys and the response sent to and from a Gmail addres",
+      "meta": {
+        "refs": [
+          "https://www.accenture.com/t20180803T064557Z__w__/us-en/_acnmedia/PDF-83/Accenture-Cyber-Threatscape-Report-2018.pdf"
+        ]
+      },
+      "uuid": "884eaa14-9ba8-11e8-a6ec-7f903f720e60"
+    },
+    {
+      "value": "TYRANT",
+      "description": "DUMB variant discovered on November 16, 2017. Disguised itself as a popular virtual private network (VPN) in Iran known as Psiphon and infected Iranian users.  Included Farsi-language ransom note, decryptable in the same way as previous DUMB-based variants. Message requested only US$15 for unlock key. Advertised two local and Iran-based payment processors: exchange.ir and webmoney.ir.Shared unique and specialized indicators with RASTAKHIZ; iDefense threat intelligence analysts believe this similarity confirms that the same actor was behind the repurposing of both types of ransomware.",
+      "meta": {
+        "refs": [
+          "https://www.accenture.com/t20180803T064557Z__w__/us-en/_acnmedia/PDF-83/Accenture-Cyber-Threatscape-Report-2018.pdf"
+        ],
+        "synonyms": [
+          "Crypto Tyrant"
+        ]
+      },
+      "uuid": "701f2a3e-9baa-11e8-a044-4b8bc49ea971"
+    },
+    {
+      "value": "WannaSmile",
+      "description": "zCrypt variant discovered on November 17, 2017, one day after the discovery of TYRANT. Used Farsi-language ransom note asking for a staggering 20 Bitcoin ransom payment. Also advertised local Iran-based payment processors and exchanges—www.exchangeing[.]ir, www.payment24[.]ir, www.farhadexchange.net, and www.digiarz.com)—through which Bitcoins could be acquired.",
+      "meta": {
+        "refs": [
+          "https://www.accenture.com/t20180803T064557Z__w__/us-en/_acnmedia/PDF-83/Accenture-Cyber-Threatscape-Report-2018.pdf"
+        ]
+      },
+      "uuid": "b3f04486-9bc4-11e8-bbfe-cf096483b45e"
+    },
+    {
+      "value": "Black Ruby",
+      "description": "Discovered on February 6, 2018. May have been distributed through unknown vectors. Will not encrypt a machine if its IP address is identified as coming from Iran; this feature enables actors to avoid a particular Iranian cybercrime law that prohibits Iran-based actors from attacking Iranian victims. Encrypts files on the infected machine, scrambles files, and appends the .BlackRuby extension to them. Installs a Monero miner on the infected computer that utilizes the machine’s maximum CPU power. Delivers a ransom note in English asking for US$650 in Bitcoins. Might be installed via Remote Desktop Services.",
+      "meta": {
+        "refs": [
+          "https://www.accenture.com/t20180803T064557Z__w__/us-en/_acnmedia/PDF-83/Accenture-Cyber-Threatscape-Report-2018.pdf"
+        ],
+        "extensions": [
+          ".BlackRuby"
+        ]
+      },
+      "uuid": "b4433e66-9bc4-11e8-8f4e-7363f5526636"
+    },
+    {
+      "value": "Unnamed Android Ransomware",
+      "description": "Uses APK Editor Pro. Picks and activates DEX>Smali from APK Editor. Utilizes LockService application and edits the “const-string v4, value” to a desired unlock key. Changes contact information within the ransom note. Once the victim has downloaded the malicious app, the only way to recover its content is to pay the ransom and receive the unlock key. ",
+      "meta": {
+        "refs": [
+          "https://www.accenture.com/t20180803T064557Z__w__/us-en/_acnmedia/PDF-83/Accenture-Cyber-Threatscape-Report-2018.pdf"
+        ]
+      },
+      "uuid": "b48a7d62-9bc4-11e8-a7c5-47d13fad265f"
     }
   ],
   "source": "Various",
   "uuid": "10cf658b-5d32-4c4b-bb32-61760a640372",
   "name": "Ransomware",
-  "version": 25,
+  "version": 26,
   "type": "ransomware",
   "description": "Ransomware galaxy based on https://docs.google.com/spreadsheets/d/1TWS238xacAto-fLKh1n5uTsdijWdCEsGIM0Y0Hvmc5g/pubhtml and http://pastebin.com/raw/GHgpWjar"
 }
