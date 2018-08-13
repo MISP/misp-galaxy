@@ -1,56 +1,65 @@
 {
+  "authors": [
+    "Various"
+  ],
+  "description": "Preventive measures based on the ransomware document overview as published in https://docs.google.com/spreadsheets/d/1TWS238xacAto-fLKh1n5uTsdijWdCEsGIM0Y0Hvmc5g/pubhtml# . The preventive measures are quite generic and can fit any standard Windows infrastructure and their security measures.",
+  "name": "Preventive Measure",
+  "source": "MISP Project",
+  "type": "preventive-measure",
+  "uuid": "1a8e55eb-a0ff-425b-80e0-30df866f8f65",
   "values": [
     {
+      "description": "Make sure to have adequate backup processes on place and frequently test a restore of these backups.\n(Schrödinger's backup - it is both existent and non-existent until you've tried a restore",
       "meta": {
-        "refs": [
-          "http://windows.microsoft.com/en-us/windows/back-up-restore-faq#1TC=windows-7."
-        ],
         "complexity": "Medium",
         "effectiveness": "High",
         "impact": "Low",
+        "refs": [
+          "http://windows.microsoft.com/en-us/windows/back-up-restore-faq#1TC=windows-7."
+        ],
         "type": [
           "Recovery"
         ]
       },
-      "value": "Backup and Restore Process",
-      "description": "Make sure to have adequate backup processes on place and frequently test a restore of these backups.\n(Schrödinger's backup - it is both existent and non-existent until you've tried a restore",
-      "uuid": "5f942376-ea5b-4b23-9c26-81d3aeba7fb4"
+      "uuid": "5f942376-ea5b-4b23-9c26-81d3aeba7fb4",
+      "value": "Backup and Restore Process"
     },
     {
+      "description": "Disable macros in Office files downloaded from the Internet. This can be configured to work in two different modes:\nA.) Open downloaded documents in 'Protected View'\nB.) Open downloaded documents and block all macros",
       "meta": {
+        "complexity": "Low",
+        "effectiveness": "High",
+        "impact": "Low",
         "refs": [
           "https://support.office.com/en-us/article/Enable-or-disable-macros-in-Office-files-12b036fd-d140-4e74-b45e-16fed1a7e5c6?ui=en-US&rs=en-US&ad=US",
           "https://www.404techsupport.com/2016/04/office2016-macro-group-policy/?utm_source=dlvr.it&utm_medium=twitter"
         ],
-        "complexity": "Low",
-        "effectiveness": "High",
-        "impact": "Low",
         "type": [
           "GPO"
         ]
       },
-      "value": "Block Macros",
-      "description": "Disable macros in Office files downloaded from the Internet. This can be configured to work in two different modes:\nA.) Open downloaded documents in 'Protected View'\nB.) Open downloaded documents and block all macros",
-      "uuid": "79563662-8d92-4fd1-929a-9b8926a62685"
+      "uuid": "79563662-8d92-4fd1-929a-9b8926a62685",
+      "value": "Block Macros"
     },
     {
+      "description": "Disable Windows Script Host",
       "meta": {
-        "refs": [
-          "http://www.windowsnetworking.com/kbase/WindowsTips/WindowsXP/AdminTips/Customization/DisableWindowsScriptingHostWSH.html"
-        ],
         "complexity": "Low",
         "effectiveness": "Medium",
         "impact": "Medium",
+        "possible_issues": "Administrative VBS scripts on Workstations",
+        "refs": [
+          "http://www.windowsnetworking.com/kbase/WindowsTips/WindowsXP/AdminTips/Customization/DisableWindowsScriptingHostWSH.html"
+        ],
         "type": [
           "GPO"
-        ],
-        "possible_issues": "Administrative VBS scripts on Workstations"
+        ]
       },
-      "value": "Disable WSH",
-      "description": "Disable Windows Script Host",
-      "uuid": "e6df1619-f8b3-476c-b5cf-22b4c9e9dd7f"
+      "uuid": "e6df1619-f8b3-476c-b5cf-22b4c9e9dd7f",
+      "value": "Disable WSH"
     },
     {
+      "description": "Filter the following attachments on your mail gateway:\n.ade, .adp, .ani, .bas, .bat, .chm, .cmd, .com, .cpl, .crt, .exe, .hlp, .ht, .hta, .inf, .ins, .isp, .jar, .job, .js, .jse, .lnk, .mda, .mdb, .mde, .mdz, .msc, .msi, .msp, .mst, .ocx, .pcd, .ps1, .reg, .scr, .sct, .shs, .svg, .url, .vb, .vbe, .vbs, .wbk, .wsc, .ws, .wsf, .wsh, .exe, .pif, .pub",
       "meta": {
         "complexity": "Low",
         "effectiveness": "Medium",
@@ -59,90 +68,90 @@
           "Mail Gateway"
         ]
       },
-      "value": "Filter Attachments Level 1",
-      "description": "Filter the following attachments on your mail gateway:\n.ade, .adp, .ani, .bas, .bat, .chm, .cmd, .com, .cpl, .crt, .exe, .hlp, .ht, .hta, .inf, .ins, .isp, .jar, .job, .js, .jse, .lnk, .mda, .mdb, .mde, .mdz, .msc, .msi, .msp, .mst, .ocx, .pcd, .ps1, .reg, .scr, .sct, .shs, .svg, .url, .vb, .vbe, .vbs, .wbk, .wsc, .ws, .wsf, .wsh, .exe, .pif, .pub",
-      "uuid": "7055b72b-b113-4f93-8387-e6f58ce5fc92"
+      "uuid": "7055b72b-b113-4f93-8387-e6f58ce5fc92",
+      "value": "Filter Attachments Level 1"
     },
     {
+      "description": "Filter the following attachments on your mail gateway:\n(Filter expression of Level 1 plus) .doc, .xls, .rtf, .docm, .xlsm, .pptm",
       "meta": {
         "complexity": "Low",
         "effectiveness": "High",
         "impact": "High",
+        "possible_issues": "Office Communication with old versions of Microsoft Office files (.doc, .xls) ",
         "type": [
           "Mail Gateway"
-        ],
-        "possible_issues": "Office Communication with old versions of Microsoft Office files (.doc, .xls) "
+        ]
       },
-      "value": "Filter Attachments Level 2",
-      "description": "Filter the following attachments on your mail gateway:\n(Filter expression of Level 1 plus) .doc, .xls, .rtf, .docm, .xlsm, .pptm",
-      "uuid": "8c9bbbf5-a321-4eb1-8c03-a399a9687687"
+      "uuid": "8c9bbbf5-a321-4eb1-8c03-a399a9687687",
+      "value": "Filter Attachments Level 2"
     },
     {
+      "description": "Block all program executions from the %LocalAppData% and %AppData% folder",
       "meta": {
+        "complexity": "Medium",
+        "effectiveness": "Medium",
+        "impact": "Medium",
+        "possible_issues": "Web embedded software installers",
         "refs": [
           "http://www.fatdex.net/php/2014/06/01/disable-exes-from-running-inside-any-user-appdata-directory-gpo/",
           "http://www.thirdtier.net/ransomware-prevention-kit/"
         ],
-        "complexity": "Medium",
-        "effectiveness": "Medium",
-        "impact": "Medium",
         "type": [
           "GPO"
-        ],
-        "possible_issues": "Web embedded software installers"
+        ]
       },
-      "value": "Restrict program execution",
-      "description": "Block all program executions from the %LocalAppData% and %AppData% folder",
-      "uuid": "6a234b1d-8e86-49c4-91d6-cc3be3d04f74"
+      "uuid": "6a234b1d-8e86-49c4-91d6-cc3be3d04f74",
+      "value": "Restrict program execution"
     },
     {
+      "description": "Set the registry key \"HideFileExt\" to 0 in order to show all file extensions, even of known file types. This helps avoiding cloaking tricks that use double extensions. (e.g. \"not_a_virus.pdf.exe\")",
       "meta": {
-        "refs": [
-          "http://www.sevenforums.com/tutorials/10570-file-extensions-hide-show.htm"
-        ],
         "complexity": "Low",
         "effectiveness": "Low",
         "impact": "Low",
+        "refs": [
+          "http://www.sevenforums.com/tutorials/10570-file-extensions-hide-show.htm"
+        ],
         "type": [
           "User Assistence"
         ]
       },
-      "value": "Show File Extensions",
-      "description": "Set the registry key \"HideFileExt\" to 0 in order to show all file extensions, even of known file types. This helps avoiding cloaking tricks that use double extensions. (e.g. \"not_a_virus.pdf.exe\")",
-      "uuid": "5b911d46-66c8-4180-ab97-663a0868264e"
+      "uuid": "5b911d46-66c8-4180-ab97-663a0868264e",
+      "value": "Show File Extensions"
     },
     {
+      "description": "Enforce administrative users to confirm an action that requires elevated rights",
       "meta": {
-        "refs": [
-          "https://technet.microsoft.com/en-us/library/dd835564(WS.10).aspx"
-        ],
         "complexity": "Low",
         "effectiveness": "Medium",
         "impact": "Low",
+        "possible_issues": "administrator resentment",
+        "refs": [
+          "https://technet.microsoft.com/en-us/library/dd835564(WS.10).aspx"
+        ],
         "type": [
           "GPO"
-        ],
-        "possible_issues": "administrator resentment"
+        ]
       },
-      "value": "Enforce UAC Prompt",
-      "description": "Enforce administrative users to confirm an action that requires elevated rights",
-      "uuid": "3f8c55db-611e-4831-b624-f9cbdc3b0e11"
+      "uuid": "3f8c55db-611e-4831-b624-f9cbdc3b0e11",
+      "value": "Enforce UAC Prompt"
     },
     {
+      "description": "Remove and restrict administrative rights whenever possible. Malware can only modify files that users have write access to.",
       "meta": {
         "complexity": "Medium",
         "effectiveness": "Medium",
         "impact": "Medium",
+        "possible_issues": "Higher administrative costs",
         "type": [
           "Best Practice"
-        ],
-        "possible_issues": "Higher administrative costs"
+        ]
       },
-      "value": "Remove Admin Privileges",
-      "description": "Remove and restrict administrative rights whenever possible. Malware can only modify files that users have write access to.",
-      "uuid": "168f94d3-4ffc-4ea6-8f2e-8ba699f0fef6"
+      "uuid": "168f94d3-4ffc-4ea6-8f2e-8ba699f0fef6",
+      "value": "Remove Admin Privileges"
     },
     {
+      "description": "Activate the Windows Firewall to restrict workstation to workstation communication",
       "meta": {
         "complexity": "Medium",
         "effectiveness": "Low",
@@ -151,11 +160,11 @@
           "Best Practice"
         ]
       },
-      "value": "Restrict Workstation Communication",
-      "description": "Activate the Windows Firewall to restrict workstation to workstation communication",
-      "uuid": "fb25c345-0cee-4ae7-ab31-c1c801cde1c2"
+      "uuid": "fb25c345-0cee-4ae7-ab31-c1c801cde1c2",
+      "value": "Restrict Workstation Communication"
     },
     {
+      "description": "Using sandbox that opens email attachments and removes attachments based on behavior analysis",
       "meta": {
         "complexity": "Medium",
         "effectiveness": "High",
@@ -163,11 +172,11 @@
           "Advanced Malware Protection"
         ]
       },
-      "value": "Sandboxing Email Input",
-      "description": "Using sandbox that opens email attachments and removes attachments based on behavior analysis",
-      "uuid": "7960740f-71a5-42db-8a1a-1c7ccbf83349"
+      "uuid": "7960740f-71a5-42db-8a1a-1c7ccbf83349",
+      "value": "Sandboxing Email Input"
     },
     {
+      "description": "Software that allows to control the execution of processes - sometimes integrated in Antivirus software\nFree: AntiHook, ProcessGuard, System Safety Monitor",
       "meta": {
         "complexity": "Medium",
         "effectiveness": "Medium",
@@ -175,115 +184,106 @@
           "3rd Party Tools"
         ]
       },
-      "value": "Execution Prevention",
-      "description": "Software that allows to control the execution of processes - sometimes integrated in Antivirus software\nFree: AntiHook, ProcessGuard, System Safety Monitor",
-      "uuid": "bfda0c9e-1303-4861-b028-e0506dd8861c"
+      "uuid": "bfda0c9e-1303-4861-b028-e0506dd8861c",
+      "value": "Execution Prevention"
     },
     {
+      "description": "Force extensions primarily used for infections to open up in Notepad rather than Windows Script Host or Internet Explorer",
       "meta": {
-        "refs": [
-          "https://bluesoul.me/2016/05/12/use-gpo-to-change-the-default-behavior-of-potentially-malicious-file-extensions/"
-        ],
         "complexity": "Low",
         "effectiveness": "Medium",
         "impact": "Medium",
+        "possible_issues": "Some extensions will have legitimate uses, e.g., .vbs for logon scripts.",
+        "refs": [
+          "https://bluesoul.me/2016/05/12/use-gpo-to-change-the-default-behavior-of-potentially-malicious-file-extensions/"
+        ],
         "type": [
           "GPO"
-        ],
-        "possible_issues": "Some extensions will have legitimate uses, e.g., .vbs for logon scripts."
+        ]
       },
-      "value": "Change Default \"Open With\" to Notepad",
-      "description": "Force extensions primarily used for infections to open up in Notepad rather than Windows Script Host or Internet Explorer",
-      "uuid": "3b7bc1b2-e04f-4492-b3b1-87bb6701635b"
+      "uuid": "3b7bc1b2-e04f-4492-b3b1-87bb6701635b",
+      "value": "Change Default \"Open With\" to Notepad"
     },
     {
+      "description": "Server-side file screening with the help of File Server Resource Manager",
       "meta": {
-        "refs": [
-          "http://jpelectron.com/sample/Info%20and%20Documents/Stop%20crypto%20badware%20before%20it%20ruins%20your%20day/1-PreventCrypto-Readme.htm"
-        ],
         "complexity": "Low",
         "effectiveness": "Medium",
         "impact": "Low",
+        "refs": [
+          "http://jpelectron.com/sample/Info%20and%20Documents/Stop%20crypto%20badware%20before%20it%20ruins%20your%20day/1-PreventCrypto-Readme.htm"
+        ],
         "type": [
           "Monitoring"
         ]
       },
-      "value": "File Screening",
-      "description": "Server-side file screening with the help of File Server Resource Manager",
-      "uuid": "79769940-7cd2-4aaa-80da-b90c0372b898"
+      "uuid": "79769940-7cd2-4aaa-80da-b90c0372b898",
+      "value": "File Screening"
     },
     {
+      "description": "Block program executions (AppLocker)",
       "meta": {
+        "complexity": "Medium",
+        "effectiveness": "Medium",
+        "impact": "Medium",
+        "possible_issues": "Configure & test extensively",
         "refs": [
           "https://technet.microsoft.com/en-us/library/dd759117%28v=ws.11%29.aspx",
           "http://social.technet.microsoft.com/wiki/contents/articles/5211.how-to-configure-applocker-group-policy-to-prevent-software-from-running.aspx"
         ],
-        "complexity": "Medium",
-        "effectiveness": "Medium",
-        "impact": "Medium",
         "type": [
           "GPO"
-        ],
-        "possible_issues": "Configure & test extensively"
+        ]
       },
-      "value": "Restrict program execution #2",
-      "description": "Block program executions (AppLocker)",
-      "uuid": "feb6cddb-4182-4515-94dc-0eadffcdc098"
+      "uuid": "feb6cddb-4182-4515-94dc-0eadffcdc098",
+      "value": "Restrict program execution #2"
     },
     {
+      "description": "Detect and block exploitation techniques",
       "meta": {
+        "complexity": "Medium",
+        "effectiveness": "Medium",
+        "impact": "Low",
         "refs": [
           "www.microsoft.com/emet",
           "http://windowsitpro.com/security/control-emet-group-policy"
         ],
-        "complexity": "Medium",
-        "effectiveness": "Medium",
-        "impact": "Low",
         "type": [
           "GPO"
         ]
       },
-      "value": "EMET",
-      "description": "Detect and block exploitation techniques",
-      "uuid": "5f0a749f-88f2-4e6e-8fd8-46307f8439f6"
+      "uuid": "5f0a749f-88f2-4e6e-8fd8-46307f8439f6",
+      "value": "EMET"
     },
     {
+      "description": "Detect Ransomware in an early stage with new Sysmon 5 File/Registry monitoring",
       "meta": {
-        "refs": [
-          "https://twitter.com/JohnLaTwC/status/799792296883388416"
-        ],
         "complexity": "Medium",
         "effectiveness": "Low",
         "impact": "Low",
+        "refs": [
+          "https://twitter.com/JohnLaTwC/status/799792296883388416"
+        ],
         "type": [
           "3rd Party Tools"
         ]
       },
-      "value": "Sysmon",
-      "description": "Detect Ransomware in an early stage with new Sysmon 5 File/Registry monitoring",
-      "uuid": "1b1e5664-4250-459b-adbb-f0b33f64bf7e"
+      "uuid": "1b1e5664-4250-459b-adbb-f0b33f64bf7e",
+      "value": "Sysmon"
     },
     {
-      "value": "Blacklist-phone-numbers",
       "description": "Filter the numbers at phone routing level including PABX",
       "meta": {
-        "refs": [
-          "https://wiki.freepbx.org/display/FPG/Blacklist+Module+User+Guide#BlacklistModuleUserGuide-ImportingorExportingaBlacklistinCSVFileFormat"
-        ],
+        "complexity": "Low",
         "effectiveness": "Medium",
         "impact": "Medium",
-        "complexity": "Low"
+        "refs": [
+          "https://wiki.freepbx.org/display/FPG/Blacklist+Module+User+Guide#BlacklistModuleUserGuide-ImportingorExportingaBlacklistinCSVFileFormat"
+        ]
       },
-      "uuid": "123e20c5-8f44-4de5-a183-6890788e5a81"
+      "uuid": "123e20c5-8f44-4de5-a183-6890788e5a81",
+      "value": "Blacklist-phone-numbers"
     }
   ],
-  "name": "Preventive Measure",
-  "type": "preventive-measure",
-  "source": "MISP Project",
-  "authors": [
-    "Various"
-  ],
-  "description": "Preventive measures based on the ransomware document overview as published in https://docs.google.com/spreadsheets/d/1TWS238xacAto-fLKh1n5uTsdijWdCEsGIM0Y0Hvmc5g/pubhtml# . The preventive measures are quite generic and can fit any standard Windows infrastructure and their security measures.",
-  "uuid": "1a8e55eb-a0ff-425b-80e0-30df866f8f65",
   "version": 3
 }
