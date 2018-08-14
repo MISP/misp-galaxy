@@ -8,6 +8,8 @@ The mapping is made by using the synonyms documented in each cluster.
 
 The output is saved in the cluster files themselves, if a change is done the version number is increased.
 (commented out) The output is saved in a file called "mapping_XXX.json".
+
+# TODO add a blacklist support for blacklisted mappings
 '''
 import json
 import os
