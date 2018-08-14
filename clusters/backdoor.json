@@ -1,10 +1,16 @@
 {
-  "uuid": "75436e27-cb57-4f32-bf1d-9636dd78a2bf",
+  "authors": [
+    "raw-data"
+  ],
   "description": "A list of backdoor malware.",
+  "name": "Backdoor",
   "source": "Open Sources",
   "version": 2,
+  "type": "backdoor",
+  "uuid": "75436e27-cb57-4f32-bf1d-9636dd78a2bf",
   "values": [
     {
+      "description": "Cross-platform malware written in Golang, compatible with Linux and Windows. Although there are some minor differences, both variants have the same functionality. The malware communicates with a CnC server using HTTP requests and performs functions based on the received commands. Results of command execution are sent in HTTP POST requests data (RSA-encrypted). Main functionalities are: (1) Execute arbitrary shell commands, (2) Upload/Download files. The PE variant of the infection, in addition, executes PowerShell scripts. A .Net version was also observed in the wild.",
       "meta": {
         "date": "July 2018.",
         "refs": [
@@ -27,11 +33,7 @@
         ]
       },
       "uuid": "2bb165dc-9f93-11e8-ae64-d3dbab0dd786"
-    }
+      }
   ],
-  "authors": [
-    "raw-data"
-  ],
-  "type": "backdoor",
-  "name": "Backdoor"
+  "version": 1
 }

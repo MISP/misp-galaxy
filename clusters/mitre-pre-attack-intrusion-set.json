@@ -1,33 +1,38 @@
 {
-  "name": "Pre Attack - intrusion Set",
-  "type": "mitre-pre-attack-intrusion-set",
-  "description": "Name of ATT&CK Group",
-  "version": 3,
-  "source": "https://github.com/mitre/cti",
-  "uuid": "1fdc8fa2-1708-11e8-99a3-67b4efc13c4f",
   "authors": [
     "MITRE"
   ],
+  "description": "Name of ATT&CK Group",
+  "name": "Pre Attack - intrusion Set",
+  "source": "https://github.com/mitre/cti",
+  "type": "mitre-pre-attack-intrusion-set",
+  "uuid": "1fdc8fa2-1708-11e8-99a3-67b4efc13c4f",
   "values": [
     {
       "description": "APT16 is a China-based threat group that has launched spearphishing campaigns targeting Japanese and Taiwanese organizations. (Citation: FireEye EPS Awakens Part 2)",
-      "value": "APT16 - G0023",
       "meta": {
-        "synonyms": [
-          "APT16"
-        ],
+        "external_id": "G0023",
         "refs": [
           "https://attack.mitre.org/wiki/Group/G0023",
           "https://www.fireeye.com/blog/threat-research/2015/12/the-eps-awakens-part-two.html"
         ],
-        "external_id": "G0023"
+        "synonyms": [
+          "APT16"
+        ]
       },
-      "uuid": "d6e88e18-81e8-4709-82d8-973095da1e70"
+      "uuid": "d6e88e18-81e8-4709-82d8-973095da1e70",
+      "value": "APT16 - G0023"
     },
     {
       "description": "APT28 is a threat group that has been attributed to the Russian government. (Citation: FireEye APT28) (Citation: SecureWorks TG-4127) (Citation: FireEye APT28) January 2017 (Citation: GRIZZLY STEPPE JAR) This group reportedly compromised the Democratic National Committee in April 2016. (Citation: Crowdstrike DNC June 2016)",
-      "value": "APT28 - G0007",
       "meta": {
+        "external_id": "G0007",
+        "refs": [
+          "https://attack.mitre.org/wiki/Group/G0007",
+          "https://www.crowdstrike.com/blog/bears-midst-intrusion-democratic-national-committee/",
+          "https://www.fireeye.com/content/dam/fireeye-www/global/en/current-threats/pdfs/rpt-apt28.pdf",
+          "https://www.secureworks.com/research/threat-group-4127-targets-hillary-clinton-presidential-campaign"
+        ],
         "synonyms": [
           "APT28",
           "Sednit",
@@ -38,104 +43,237 @@
           "Tsar Team",
           "Threat Group-4127",
           "TG-4127"
-        ],
-        "refs": [
-          "https://attack.mitre.org/wiki/Group/G0007",
-          "https://www.crowdstrike.com/blog/bears-midst-intrusion-democratic-national-committee/",
-          "https://www.fireeye.com/content/dam/fireeye-www/global/en/current-threats/pdfs/rpt-apt28.pdf",
-          "https://www.secureworks.com/research/threat-group-4127-targets-hillary-clinton-presidential-campaign"
-        ],
-        "external_id": "G0007"
+        ]
       },
-      "uuid": "bef4c620-0787-42a8-a96d-b7eb6e85917c"
+      "related": [
+        {
+          "dest-uuid": "213cdde9-c11a-4ea9-8ce0-c868e9826fec",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        },
+        {
+          "dest-uuid": "5b4ee3ea-eee3-4c8e-8323-85ae32658754",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "bef4c620-0787-42a8-a96d-b7eb6e85917c",
+      "value": "APT28 - G0007"
     },
     {
       "description": "Cleaver is a threat group that has been attributed to Iranian actors and is responsible for activity tracked as Operation Cleaver. (Citation: Cylance Cleaver) Strong circumstantial evidence suggests Cleaver is linked to Threat Group 2889 (TG-2889). (Citation: Dell Threat Group 2889)",
-      "value": "Cleaver - G0003",
       "meta": {
-        "synonyms": [
-          "Cleaver",
-          "TG-2889",
-          "Threat Group 2889"
-        ],
+        "external_id": "G0003",
         "refs": [
           "https://attack.mitre.org/wiki/Group/G0003",
           "https://www.cylance.com/content/dam/cylance/pages/operation-cleaver/Cylance%20Operation%20Cleaver%20Report.pdf",
           "http://www.secureworks.com/cyber-threat-intelligence/threats/suspected-iran-based-hacker-group-creates-network-of-fake-linkedin-profiles/"
         ],
-        "external_id": "G0003"
+        "synonyms": [
+          "Cleaver",
+          "TG-2889",
+          "Threat Group 2889"
+        ]
       },
-      "uuid": "8f5e8dc7-739d-4f5e-a8a1-a66e004d7063"
+      "related": [
+        {
+          "dest-uuid": "11e17436-6ede-4733-8547-4ce0254ea19e",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        },
+        {
+          "dest-uuid": "86724806-7ec9-4a48-a0a7-ecbde3bf4810",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        },
+        {
+          "dest-uuid": "42be2a84-5a5c-4c6d-9864-3f09d75bb0ba",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        },
+        {
+          "dest-uuid": "d56c99fa-4710-472c-81a6-41b7a84ea4be",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        },
+        {
+          "dest-uuid": "a0082cfa-32e2-42b8-92d8-5c7a7409dcf1",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        },
+        {
+          "dest-uuid": "f9d6633a-55e6-4adc-9263-6ae080421a13",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        },
+        {
+          "dest-uuid": "ba724df5-9aa0-45ca-8e0e-7101c208ae48",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        },
+        {
+          "dest-uuid": "f98bac6b-12fd-4cad-be84-c84666932232",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        },
+        {
+          "dest-uuid": "f873db71-3d53-41d5-b141-530675ade27a",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "8f5e8dc7-739d-4f5e-a8a1-a66e004d7063",
+      "value": "Cleaver - G0003"
     },
     {
       "description": "APT12 is a threat group that has been attributed to China. (Citation: Meyers Numbered Panda)",
-      "value": "APT12 - G0005",
       "meta": {
+        "external_id": "G0005",
+        "refs": [
+          "https://attack.mitre.org/wiki/Group/G0005",
+          "http://www.crowdstrike.com/blog/whois-numbered-panda/"
+        ],
         "synonyms": [
           "APT12",
           "IXESHE",
           "DynCalc",
           "Numbered Panda",
           "DNSCALC"
-        ],
-        "refs": [
-          "https://attack.mitre.org/wiki/Group/G0005",
-          "http://www.crowdstrike.com/blog/whois-numbered-panda/"
-        ],
-        "external_id": "G0005"
+        ]
       },
-      "uuid": "c47f937f-1022-4f42-8525-e7a4779a14cb"
+      "related": [
+        {
+          "dest-uuid": "48146604-6693-4db1-bd94-159744726514",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "c47f937f-1022-4f42-8525-e7a4779a14cb",
+      "value": "APT12 - G0005"
     },
     {
       "description": "APT1 is a Chinese threat group that has been attributed to the 2nd Bureau of the People’s Liberation Army (PLA) General Staff Department’s (GSD) 3rd Department, commonly known by its Military Unit Cover Designator (MUCD) as Unit 61398. (Citation: Mandiant APT1)",
-      "value": "APT1 - G0006",
       "meta": {
+        "external_id": "G0006",
+        "refs": [
+          "https://attack.mitre.org/wiki/Group/G0006",
+          "https://www.fireeye.com/content/dam/fireeye-www/services/pdfs/mandiant-apt1-report.pdf"
+        ],
         "synonyms": [
           "APT1",
           "Comment Crew",
           "Comment Group",
           "Comment Panda"
-        ],
-        "refs": [
-          "https://attack.mitre.org/wiki/Group/G0006",
-          "https://www.fireeye.com/content/dam/fireeye-www/services/pdfs/mandiant-apt1-report.pdf"
-        ],
-        "external_id": "G0006"
+        ]
       },
-      "uuid": "6a2e693f-24e5-451a-9f88-b36a108e5662"
+      "related": [
+        {
+          "dest-uuid": "1cb7e1cc-d695-42b1-92f4-fd0112a3c9be",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "6a2e693f-24e5-451a-9f88-b36a108e5662",
+      "value": "APT1 - G0006"
     },
     {
       "description": "Night Dragon is a campaign name for activity involving threat group that has conducted activity originating primarily in China. (Citation: McAfee Night Dragon) The activity from this group is also known as Musical Chairs. (Citation: Arbor Musical Chairs Feb 2018)",
-      "value": "Night Dragon - G0014",
       "meta": {
-        "synonyms": [
-          "Night Dragon",
-          "Musical Chairs"
-        ],
+        "external_id": "G0014",
         "refs": [
           "https://attack.mitre.org/wiki/Group/G0014",
           "https://securingtomorrow.mcafee.com/wp-content/uploads/2011/02/McAfee%20NightDragon%20wp%20draft%20to%20customersv1-1.pdf",
           "https://www.arbornetworks.com/blog/asert/musical-chairs-playing-tetris/"
         ],
-        "external_id": "G0014"
+        "synonyms": [
+          "Night Dragon",
+          "Musical Chairs"
+        ]
       },
-      "uuid": "23b6a0f5-fa95-46f9-a6f3-4549c5e45ec8"
+      "related": [
+        {
+          "dest-uuid": "b3714d59-b61e-4713-903a-9b4f04ae7f3d",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "23b6a0f5-fa95-46f9-a6f3-4549c5e45ec8",
+      "value": "Night Dragon - G0014"
     },
     {
       "description": "APT17 is a China-based threat group that has conducted network intrusions against U.S. government entities, the defense industry, law firms, information technology companies, mining companies, and non-government organizations. (Citation: FireEye APT17)",
-      "value": "APT17 - G0025",
       "meta": {
-        "synonyms": [
-          "APT17",
-          "Deputy Dog"
-        ],
+        "external_id": "G0025",
         "refs": [
           "https://attack.mitre.org/wiki/Group/G0025",
           "https://www2.fireeye.com/rs/fireye/images/APT17%20Report.pdf"
         ],
-        "external_id": "G0025"
+        "synonyms": [
+          "APT17",
+          "Deputy Dog"
+        ]
       },
-      "uuid": "090242d7-73fc-4738-af68-20162f7a5aae"
+      "related": [
+        {
+          "dest-uuid": "c5947e1c-1cbc-434c-94b8-27c7e3be0fff",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        },
+        {
+          "dest-uuid": "24110866-cb22-4c85-a7d2-0413e126694b",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        },
+        {
+          "dest-uuid": "99e30d89-9361-4b73-a999-9e5ff9320bcb",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        },
+        {
+          "dest-uuid": "a0cb9370-e39b-44d5-9f50-ef78e412b973",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "090242d7-73fc-4738-af68-20162f7a5aae",
+      "value": "APT17 - G0025"
     }
-  ]
+  ],
+  "version": 4
 }
