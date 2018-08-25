@@ -473,6 +473,13 @@
             "estimative-language:likelihood-probability=\"likely\""
           ],
           "type": "similar"
+        },
+        {
+          "dest-uuid": "9cebfaa8-a797-11e8-99e0-3ffa312b9a10",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
         }
       ],
       "uuid": "99e30d89-9361-4b73-a999-9e5ff9320bcb",
@@ -616,6 +623,13 @@
         },
         {
           "dest-uuid": "a0cb9370-e39b-44d5-9f50-ef78e412b973",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        },
+        {
+          "dest-uuid": "9cebfaa8-a797-11e8-99e0-3ffa312b9a10",
           "tags": [
             "estimative-language:likelihood-probability=\"likely\""
           ],
@@ -1097,7 +1111,16 @@
         ]
       },
       "uuid": "3501fbf2-098f-47e7-be6a-6b0ff5742ce8",
-      "value": "Mirage"
+      "value": "Mirage",
+      "related": [
+        {
+          "dest-uuid": "9cebfaa8-a797-11e8-99e0-3ffa312b9a10",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        }
+      ]
     },
     {
       "description": "PLA Navy",
@@ -2034,7 +2057,9 @@
           "https://www2.fireeye.com/rs/848-DID-242/images/wp-mandiant-matryoshka-mining.pdf",
           "https://www.crowdstrike.com/blog/bears-midst-intrusion-democratic-national-committee/",
           "http://researchcenter.paloaltonetworks.com/2016/06/unit42-new-sofacy-attacks-against-us-government-agency/",
-          "https://www.cfr.org/interactive/cyber-operations/apt-28"
+          "https://www.cfr.org/interactive/cyber-operations/apt-28",
+          "https://blogs.microsoft.com/on-the-issues/2018/08/20/we-are-taking-new-steps-against-broadening-threats-to-democracy/",
+          "https://www.bleepingcomputer.com/news/security/microsoft-disrupts-apt28-hacking-campaign-aimed-at-us-midterm-elections/"
         ],
         "synonyms": [
           "APT 28",
@@ -2525,10 +2550,24 @@
           "South Korea",
           "Bangladesh Bank",
           "Sony Pictures Entertainment",
-          "United States"
+          "United States",
+          "Thailand",
+          "France",
+          "China",
+          "Hong Kong",
+          "United Kingdom",
+          "Guatemala",
+          "Canada",
+          "Bangladesh",
+          "Japan",
+          "India",
+          "Germany",
+          "Brazil",
+          "Thailand",
+          "Australia"
         ],
         "cfr-target-category": [
-          "    Government",
+          "Government",
           "Private sector"
         ],
         "cfr-type-of-incident": "Espionage",
@@ -2542,7 +2581,8 @@
           "https://www.us-cert.gov/ncas/alerts/TA17-318A",
           "https://www.us-cert.gov/ncas/alerts/TA17-318B",
           "https://www.bleepingcomputer.com/news/security/north-korean-hackers-are-up-to-no-good-again/",
-          "https://www.cfr.org/interactive/cyber-operations/lazarus-group"
+          "https://www.cfr.org/interactive/cyber-operations/lazarus-group",
+          "https://www.cfr.org/interactive/cyber-operations/operation-ghostsecret"
         ],
         "synonyms": [
           "Operation DarkSeoul",
@@ -5305,10 +5345,21 @@
       "description": "The Rancor group’s attacks use two primary malware families which are naming DDKONG and PLAINTEE. DDKONG is used throughout the campaign and PLAINTEE appears to be new addition to these attackers’ toolkit.  Countries Unit 42 has identified as targeted by Rancor with these malware families include, but are not limited to Singapore and Cambodia.",
       "meta": {
         "refs": [
-          "https://researchcenter.paloaltonetworks.com/2018/06/unit42-rancor-targeted-attacks-south-east-asia-using-plaintee-ddkong-malware-families/"
+          "https://researchcenter.paloaltonetworks.com/2018/06/unit42-rancor-targeted-attacks-south-east-asia-using-plaintee-ddkong-malware-families/",
+          "https://www.cfr.org/interactive/cyber-operations/rancor"
         ],
         "synonyms": [
           "Rancor group"
+        ],
+        "cfr-suspected-victims": [
+          "Singapore",
+          "Cambodia"
+        ],
+        "cfr-suspected-state-sponsor": "China",
+        "cfr-type-of-incident": "Espionage",
+        "cfr-target-category": [
+          "Government",
+          "Civil society"
         ]
       },
       "uuid": "79c7c7e0-79d5-11e8-9b9c-1ff96be20c0b",
@@ -5378,7 +5429,139 @@
           "DoNot Team"
         ]
       }
+    },
+    {
+      "value": "TempTick",
+      "description": "This threat actor targets organizations in the finance, defense, aerospace, technology, health-care, and automotive sectors and media organizations in East Asia for the purpose of espionage. Believed to be responsible for the targeting of South Korean actors prior to the meeting of Donald J. Trump and Kim Jong-un",
+      "meta": {
+        "refs": [
+          "https://www.cfr.org/interactive/cyber-operations/temptick"
+        ],
+        "cfr-suspected-victims": [
+          "South Korea",
+          "Japan"
+        ],
+        "cfr-suspected-state-sponsor": "China",
+        "cfr-target-category": [
+          "Government",
+          "Private sector"
+        ]
+      },
+      "uuid": "3f3ff6de-a6a7-11e8-92b4-3743eb1c7762"
+    },
+    {
+      "value": "Operation Parliament",
+      "description": "This threat actor uses spear-phishing techniques to target parliaments, government ministries, academics, and media organizations, primarily in the Middle East, for the purpose of espionage.",
+      "meta": {
+        "refs": [
+          "https://www.cfr.org/interactive/cyber-operations/operation-parliament"
+        ],
+        "cfr-suspected-victims": [
+          "Palestine",
+          "United Arab Emirates",
+          "Qatar",
+          "Somalia",
+          "Syria",
+          "Canada",
+          "Germany",
+          "Serbia",
+          "Kuwait",
+          "Egypt",
+          "Saudi Arabia",
+          "Chile",
+          "Iraq",
+          "India",
+          "United States",
+          "Israel",
+          "Russia",
+          "South Korea",
+          "Jordan",
+          "Djibouti",
+          "Lebonon",
+          "Morocco",
+          "Iran",
+          "United Kingdom",
+          "Afghanistan",
+          "Oman",
+          "Denmark"
+        ],
+        "cfr-suspected-state-sponsor": "Unknown",
+        "cfr-type-of-incident": "Espionage",
+        "cfr-target-category": [
+          "Government",
+          "Civil society"
+        ]
+      },
+      "uuid": "e20e8eb8-a6b4-11e8-8a92-6ba6e7540c6d"
+    },
+    {
+      "value": "Inception Framework",
+      "description": "This threat actor uses spear-phishing techniques to target private-sector energy, defense, aerospace, research, and media organizations and embassies in Africa, Europe, and the Middle East, for the purpose of espionage.",
+      "meta": {
+        "refs": [
+          "https://www.cfr.org/interactive/cyber-operations/inception-framework"
+        ],
+        "cfr-suspected-victims": [
+          "South Africa",
+          "Malaysia",
+          "Kenya",
+          "Suriname",
+          "United Kingdom"
+        ],
+        "cfr-suspected-state-sponsor": "Unknown",
+        "cfr-type-of-incident": "Espionage",
+        "cfr-target-category": [
+          "Government",
+          "Private sector"
+        ]
+      },
+      "uuid": "71ef51ca-a791-11e8-a026-07980ca910ca"
+    },
+    {
+      "value": "Winnti Umbrella",
+      "description": "This threat actor targets software companies and political organizations in the United States, China, Japan, and South Korea. It primarily acts to support cyber operations conducted by other threat actors affiliated with Chinese intelligence services.\nBelieved to be associated with the Axiom, APT 17, and Mirage threat actors. Believed to share the same tools and infrastructure as the threat actors that carried out Operation Aurora, the 2015 targeting of video game companies, the 2015 targeting of the Thai government, and the 2017 targeting of Chinese-language news websites",
+      "meta": {
+        "refs": [
+          "https://www.cfr.org/interactive/cyber-operations/winnti-umbrella"
+        ],
+        "cfr-suspected-victims": [
+          "United States",
+          "South Korea",
+          "United Kingdom",
+          "China",
+          "Japan"
+        ],
+        "cfr-suspected-state-sponsor": "China",
+        "cfr-type-of-incident": "Espionage",
+        "cfr-target-category": [
+          "Private sector"
+        ]
+      },
+      "uuid": "9cebfaa8-a797-11e8-99e0-3ffa312b9a10",
+      "related": [
+        {
+          "dest-uuid": "24110866-cb22-4c85-a7d2-0413e126694b",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        },
+        {
+          "dest-uuid": "99e30d89-9361-4b73-a999-9e5ff9320bcb",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        },
+        {
+          "dest-uuid": "3501fbf2-098f-47e7-be6a-6b0ff5742ce8",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        }
+      ]
     }
   ],
-  "version": 53
+  "version": 54
 }
