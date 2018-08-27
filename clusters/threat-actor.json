@@ -5057,20 +5057,32 @@
       "value": "ALLANITE"
     },
     {
-      "description": "Adversaries abusing ICS (based on Dragos Inc adversary list).",
+      "description": "Adversaries abusing ICS (based on Dragos Inc adversary list).\nThis threat actor targets organizations involved in oil, gas, and electricity production, primarily in the Gulf region, for espionage purposes. According to one cybersecurity company, the threat actor “compromises a target machine and passes it off to another threat actor for further exploitation.”",
       "meta": {
         "capabilities": "Watering holes, 64-bit malware, covert C2 via IPv6 DNS, ISMDOOR",
         "mode-of-operation": "IT compromise, information gathering and recon against industrial orgs",
         "refs": [
           "https://dragos.com/adversaries.html",
-          "https://dragos.com/media/2017-Review-Industrial-Control-System-Threats.pdf"
+          "https://dragos.com/media/2017-Review-Industrial-Control-System-Threats.pdf",
+          "https://www.cfr.org/interactive/cyber-operations/chrysene"
         ],
         "since": "2017",
         "synonyms": [
           "OilRig",
           "Greenbug"
         ],
-        "victimology": "Oil and Gas, Manufacturing, Europe, MENA, North America"
+        "victimology": "Oil and Gas, Manufacturing, Europe, MENA, North America",
+        "cfr-suspected-victims": [
+          "Iraq",
+          "United Kingdom",
+          "Pakistan",
+          "Israel"
+        ],
+        "cfr-suspected-state-sponsor": "Unknown",
+        "cfr-type-of-incident": "Espionage",
+        "cfr-target-category": [
+          "Private sector"
+        ]
       },
       "related": [
         {
@@ -5162,20 +5174,29 @@
       "value": "CHRYSENE"
     },
     {
-      "description": "Adversaries abusing ICS (based on Dragos Inc adversary list).",
+      "description": "Adversaries abusing ICS (based on Dragos Inc adversary list).\nThis threat actor compromises the networks of companies involved in electric power, specifically looking for intellectual property and information about the companies’ operations.",
       "meta": {
         "capabilities": "Encoded binaries in documents, evasion techniques",
         "mode-of-operation": "IT compromise with hardened anti-analysis malware against industrial orgs",
         "refs": [
           "https://dragos.com/adversaries.html",
-          "https://dragos.com/media/2017-Review-Industrial-Control-System-Threats.pdf"
+          "https://dragos.com/media/2017-Review-Industrial-Control-System-Threats.pdf",
+          "https://www.cfr.org/interactive/cyber-operations/covellite"
         ],
         "since": "2017",
         "synonyms": [
           "Lazarus",
           "Hidden Cobra"
         ],
-        "victimology": "Electric Utilities, US"
+        "victimology": "Electric Utilities, US",
+        "cfr-suspected-victims": [
+          "United States"
+        ],
+        "cfr-suspected-state-sponsor": "Unknown",
+        "cfr-type-of-incident": "Espionage",
+        "cfr-target-category": [
+          "Private sector"
+        ]
       },
       "related": [
         {
@@ -5197,20 +5218,29 @@
       "value": "COVELLITE"
     },
     {
-      "description": "Adversaries abusing ICS (based on Dragos Inc adversary list).",
+      "description": "Adversaries abusing ICS (based on Dragos Inc adversary list).\nThis threat actor targets industrial control systems in Turkey, Europe, and North America.\n    Believed to be linked to Crouching Yeti",
       "meta": {
         "capabilities": "GOODOR, DORSHEL, KARAGANY, Mimikatz",
         "mode-of-operation": "Deep ICS environment information gathering, operator credentials, industrial process details",
         "refs": [
           "https://dragos.com/adversaries.html",
-          "https://dragos.com/media/2017-Review-Industrial-Control-System-Threats.pdf"
+          "https://dragos.com/media/2017-Review-Industrial-Control-System-Threats.pdf",
+          "https://www.cfr.org/interactive/cyber-operations/dymalloy"
         ],
         "since": "2016",
         "synonyms": [
           "Dragonfly2",
           "Berserker Bear"
         ],
-        "victimology": "Turkey, Europe, US"
+        "victimology": "Turkey, Europe, US",
+        "cfr-suspected-victims": [
+          "Turkey"
+        ],
+        "cfr-suspected-state-sponsor": "Unknown",
+        "cfr-type-of-incident": "Espionage",
+        "cfr-target-category": [
+          "Private sector"
+        ]
       },
       "uuid": "a08ab076-33c1-4350-b021-650c34277f2d",
       "value": "DYMALLOY"
@@ -5303,6 +5333,26 @@
           "Bronze Union",
           "ZipToken",
           "Iron Tiger"
+        ],
+        "cfr-suspected-victims": [
+          "United States",
+          "Japan",
+          "Taiwan",
+          "India",
+          "Canada",
+          "China",
+          "Thailand",
+          "Israel",
+          "Australia",
+          "Republic of Korea",
+          "Russia",
+          "Iran"
+        ],
+        "cfr-suspected-state-sponsor": "Unknown",
+        "cfr-type-of-incident": "Espionage",
+        "cfr-target-category": [
+          "Government",
+          "Private sector"
         ]
       },
       "related": [
@@ -5561,7 +5611,96 @@
           "type": "similar"
         }
       ]
+    },
+    {
+      "value": "HenBox",
+      "description": "This threat actor targets Uighurs—a minority ethnic group located primarily in northwestern China—and devices from Chinese mobile phone manufacturer Xiaomi, for espionage purposes.",
+      "meta": {
+        "refs": [
+          "https://www.cfr.org/interactive/cyber-operations/henbox"
+        ],
+        "cfr-suspected-victims": [
+          "Uighurs"
+        ],
+        "cfr-suspected-state-sponsor": "China",
+        "cfr-type-of-incident": "Espionage",
+        "cfr-target-category": [
+          "Civil society"
+        ]
+      },
+      "uuid": "36ee04f4-a9df-11e8-b92b-d7ddfd3a8896",
+      "related": [
+        {
+          "dest-uuid": "72c37e24-4ead-11e8-8f08-db3ec8f8db86§",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        }
+      ]
+    },
+    {
+      "value": "Mustang Panda",
+      "description": "This threat actor targets nongovernmental organizations using Mongolian-themed lures for espionage purposes.",
+      "meta": {
+        "refs": [
+          "https://www.cfr.org/interactive/cyber-operations/mustang-panda"
+        ],
+        "cfr-suspected-victims": [
+          "United States"
+        ],
+        "cfr-suspected-state-sponsor": "China",
+        "cfr-type-of-incident": "Espionage",
+        "cfr-target-category": [
+          "Civil society"
+        ]
+      },
+      "uuid": "78bf726c-a9e6-11e8-9e43-77249a2f7339"
+    },
+    {
+      "value": "Thrip",
+      "description": "This threat actor targets organizations in the satellite communications, telecommunications, geospatial-imaging, and defense sectors in the United States and Southeast Asia for espionage purposes.",
+      "meta": {
+        "refs": [
+          "https://www.cfr.org/interactive/cyber-operations/thrip"
+        ],
+        "cfr-suspected-victims": [
+          "United States"
+        ],
+        "cfr-suspected-state-sponsor": "Unknown",
+        "cfr-type-of-incident": "Espionage",
+        "cfr-target-category": [
+          "Private sector"
+        ]
+      },
+      "uuid": "98be4300-a9ef-11e8-9a95-bb9221083cfc"
+    },
+    {
+      "value": " Stealth Mango and Tangelo ",
+      "description": "This threat actor targets organizations in the satellite communications, telecommunications, geospatial-imaging, and defense sectors in the United States and Southeast Asia for espionage purposes.",
+      "meta": {
+        "refs": [
+          "https://www.cfr.org/interactive/cyber-operations/stealth-mango-and-tangelo"
+        ],
+        "cfr-suspected-victims": [
+          "Pakistan",
+          "Iraq",
+          "Australia",
+          "Afghanistan",
+          "United Arab Emirates",
+          "Germany",
+          "India",
+          "United States"
+        ],
+        "cfr-suspected-state-sponsor": "Pakistan",
+        "cfr-type-of-incident": "Espionage",
+        "cfr-target-category": [
+          "Government",
+          "Civil society"
+        ]
+      },
+      "uuid": "f82b352e-a9f8-11e8-8be8-fbcf6eddd58c"
     }
   ],
-  "version": 54
+  "version": 55
 }
