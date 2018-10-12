@@ -17,6 +17,7 @@ set -x
 
 for dir in clusters/*.json
 do
+    python3 tools/add_missing_uuid.py -f ${dir}
     # Beautify it
     cat ${dir} | jq --sort-keys . | sponge ${dir}
 done
