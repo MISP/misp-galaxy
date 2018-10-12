@@ -4210,14 +4210,14 @@
       "value": "KONNI"
     },
     {
-      "value": "NOKKI",
-      "uuid": "9e4fd0d3-9736-421c-b1e1-96c1d3665c80",
       "description": "Beginning in early 2018, Unit 42 observed a series of attacks using a previously unreported malware family, which we have named ‘NOKKI’. The malware in question has ties to a previously reported malware family named KONNI, however, after careful consideration, we believe enough differences are present to introduce a different malware family name. To reflect the close relationship with KONNI, we chose NOKKI, swapping KONNI’s Ns and Ks.  Because of code overlap found within both malware families, as well as infrastructure overlap, we believe the threat actors responsible for KONNI are very likely also responsible for NOKKI. Previous reports stated it was likely KONNI had been in use for over three years in multiple campaigns with a heavy interest in the Korean peninsula and surrounding areas. As of this writing, it is not certain if the KONNI or NOKKI operators are related to known adversary groups operating in the regions of interest, although there is evidence of a tenuous relationship with a group known as Reaper.",
       "meta": {
         "refs": [
           "https://researchcenter.paloaltonetworks.com/2018/09/unit42-new-konni-malware-attacking-eurasia-southeast-asia/"
         ]
-      }
+      },
+      "uuid": "9e4fd0d3-9736-421c-b1e1-96c1d3665c80",
+      "value": "NOKKI"
     },
     {
       "description": "Recently, Palo Alto Networks researchers discovered an advanced Android malware we’ve named “SpyDealer” which exfiltrates private data from more than 40 apps and steals sensitive messages from communication apps by abusing the Android accessibility service feature. SpyDealer uses exploits from a commercial rooting app to gain root privilege, which enables the subsequent data theft.",
@@ -5748,17 +5748,16 @@
       "value": "KEYMARBLE"
     },
     {
-      "value": "BISKVIT",
       "description": "The BISKVIT Trojan is a multi-component malware written in C#. We dubbed this malware BISKVIT based on the namespaces used in the code, which contain the word “biscuit”.  Unfortunately, there is already an existing unrelated malware called BISCUIT, so BISKVIT is used instead, which is the Russian translation of biscuit.",
       "meta": {
         "refs": [
           "https://www.fortinet.com/blog/threat-research/russian-army-exhibition-decoy-leads-to-new-biskvit-malware.html"
         ]
       },
-      "uuid": "69ed8a69-8b33-4195-9b21-a1f4cd76acde"
+      "uuid": "69ed8a69-8b33-4195-9b21-a1f4cd76acde",
+      "value": "BISKVIT"
     },
     {
-      "value": "Sirefef",
       "description": "This family of malware uses stealth to hide its presence on your PC. Trojans in this family can do different things, including: -Downloading and running other files -Contacting remote hosts -Disabling security features\nMembers of the family can also change search results, which can generate money for the hackers who use Sirefef.",
       "meta": {
         "refs": [
@@ -5768,28 +5767,23 @@
           "Win32/Sirefef"
         ]
       },
-      "uuid": "641464a6-b690-11e8-976e-bffc9a17c6a4"
+      "uuid": "641464a6-b690-11e8-976e-bffc9a17c6a4",
+      "value": "Sirefef"
     },
     {
-      "value": "MagentoCore Malware",
       "description": "A Dutch security researcher has lifted the veil on a massive website hacking campaign that has infected 7,339 Magento stores with a script that collects payment card data from people shopping on the sites.\nThe script is what industry experts call a \"payment card scraper\" or \"skimmer.\" Hackers breach sites and modify their source code to load the script along with its legitimate files.\nThe script usually loads on store checkout pages and secretly records payment card details entered in payment forms, data that it later sends to a server under the hacker's control.",
       "meta": {
         "refs": [
           "https://www.bleepingcomputer.com/news/security/magentocore-malware-found-on-7-339-magento-stores/"
         ]
       },
-      "uuid": "df05f528-bb57-11e8-9fd4-8320e14151f2"
+      "uuid": "df05f528-bb57-11e8-9fd4-8320e14151f2",
+      "value": "MagentoCore Malware"
     },
     {
-      "value": "NotPetya",
       "description": "Threat actors deploy a tool, called NotPetya, with the purpose of encrypting data on victims' machines and rendering it unusable. The malware was spread through tax software that companies and individuals require for filing taxes in Ukraine. Australia, Estonia, Denmark, Lithuania, Ukraine, the United Kingdom, and the United States issued statements attributing NotPetya to Russian state-sponsored actors. In June 2018, the United States sanctioned Russian organizations believed to have assisted the Russian state-sponsored actors with the operation.",
       "meta": {
-        "refs": [
-          "https://www.cfr.org/interactive/cyber-operations/notpetya"
-        ],
-        "synonyms": [
-          "Not Petya"
-        ],
+        "cfr-suspected-state-sponsor": "Russian Federation",
         "cfr-suspected-victims": [
           "Rosneft",
           "Cie de Saint-Gobain",
@@ -5802,59 +5796,63 @@
           "Merck",
           "Kyivenergo"
         ],
-        "cfr-suspected-state-sponsor": "Russian Federation",
-        "cfr-type-of-incident": "Data destruction",
         "cfr-target-category": [
           "Government",
           "Private sector"
+        ],
+        "cfr-type-of-incident": "Data destruction",
+        "refs": [
+          "https://www.cfr.org/interactive/cyber-operations/notpetya"
+        ],
+        "synonyms": [
+          "Not Petya"
         ]
       },
-      "uuid": "00c31914-bc0e-11e8-8241-3ff3b5e4671d"
+      "uuid": "00c31914-bc0e-11e8-8241-3ff3b5e4671d",
+      "value": "NotPetya"
     },
     {
-      "value": "Xbash",
       "description": "Xbash is a malware family that is targeting Linux and Microsoft Windows servers. We can tie this malware, which we have named Xbash, to the Iron Group, a threat actor group known for previous ransomware attacks.",
       "meta": {
         "refs": [
           "https://researchcenter.paloaltonetworks.com/2018/09/unit42-xbash-combines-botnet-ransomware-coinmining-worm-targets-linux-windows/"
         ]
       },
-      "uuid": "10c981cc-4ef1-4719-8ed7-c5e4c2f6c7a3"
+      "uuid": "10c981cc-4ef1-4719-8ed7-c5e4c2f6c7a3",
+      "value": "Xbash"
     },
     {
-      "value": "LoJax",
       "description": "rootkit for the Unified Extensible Firmware Interface (UEFI). Used by APT28. The researchers named the rootkit LoJax, after the malicious samples of the LoJack anti-theft software that were discovered earlier this year.",
       "meta": {
         "refs": [
           "https://www.bleepingcomputer.com/news/security/apt28-uses-lojax-first-uefi-rootkit-seen-in-the-wild/"
         ]
       },
-      "uuid": "6d53a74e-c8a5-11e8-a123-332e4eaac9bb"
+      "uuid": "6d53a74e-c8a5-11e8-a123-332e4eaac9bb",
+      "value": "LoJax"
     },
     {
-      "value": "Chainshot",
       "description": "The new piece of malware, which received the name Chainshot, is used in the early stages of an attack to activate a downloader for the final payload in a malicious chain reaction.",
       "meta": {
         "refs": [
           "https://www.bleepingcomputer.com/news/security/new-chainshot-malware-found-by-cracking-512-bit-rsa-key/"
         ]
       },
-      "uuid": "a032460e-c54c-11e8-9965-43b7b6469a65"
+      "uuid": "a032460e-c54c-11e8-9965-43b7b6469a65",
+      "value": "Chainshot"
     },
     {
-      "value": "CroniX",
       "description": "The researchers named this campaign CroniX, a moniker that derives from the malware's use of Cron to achieve persistence and Xhide to launch executables with fake process names. The cryptocurrency minted on victim's computers is Monero (XMR), the coin of choice in cryptojacking activities. To make sure that rival activity does not revive, CroniX deletes the binaries of other cryptominers present on the system. Another action CroniX takes to establish supremacy on the machine is to check the names of the processes and kill those that swallow 60% of the CPU or more.",
       "meta": {
         "refs": [
           "https://www.bleepingcomputer.com/news/security/cronix-cryptominer-kills-rivals-to-reign-supreme/"
         ]
       },
-      "uuid": "55d29d1c-c550-11e8-9904-47c1d86af7c5"
+      "uuid": "55d29d1c-c550-11e8-9904-47c1d86af7c5",
+      "value": "CroniX"
     },
     {
-      "value": "FASTCash",
       "description": "Treasury has identified a sophisticated cyber-enabled ATM cash out campaign we are calling FASTCash. FASTCash has been active since late 2016 targeting banks in Africa and Asia to remotely compromise payment switch application servers within banks to facilitate fraudulent transactions, primarily involving ATMs, to steal cash equivalent to tens of millions of dollars. FBI has attributed malware used in this campaign to the North Korean government. We expect FASTCash to continue targeting retail payment systems vulnerable to remote exploitation.",
-      "uuid": "e306fe62-c708-11e8-89f2-073e396e5403",
       "related": [
         {
           "dest-uuid": "e38d32a2-c708-11e8-8785-472c4cfccd85",
@@ -5863,26 +5861,28 @@
           ],
           "type": "similar"
         }
-      ]
+      ],
+      "uuid": "e306fe62-c708-11e8-89f2-073e396e5403",
+      "value": "FASTCash"
     },
     {
-      "value": "ZEBROCY",
       "description": "ZEBROCY is a tool used by APT28, which has been observed since late 2015. The communications module used by ZEBROCY transmits using HTTP. The implant has key logging and file exfiltration functionality and utilises a file collection capability that identifies files with particular extensions.",
       "meta": {
         "refs": [
           "https://www.ncsc.gov.uk/alerts/indicators-compromise-malware-used-apt28"
         ]
       },
-      "uuid": "8a2ae47a-c7b2-11e8-b223-ab4d8f78f3ef"
+      "uuid": "8a2ae47a-c7b2-11e8-b223-ab4d8f78f3ef",
+      "value": "ZEBROCY"
     },
     {
-      "value": "CoalaBot",
       "meta": {
         "refs:": [
           "https://malware.dontneedcoffee.com/2017/10/coalabot-http-ddos-bot.html"
         ]
       },
-      "uuid": "92628a72-c874-11e8-a094-ebbb3bd1f412"
+      "uuid": "92628a72-c874-11e8-a094-ebbb3bd1f412",
+      "value": "CoalaBot"
     }
   ],
   "version": 93
