@@ -54,7 +54,8 @@ type_mapping = {
     # 'mitre-mobile-attack-course-of-action': '',
     'mitre-pre-attack-intrusion-set': 'actor',
     # 'mitre-enterprise-attack-relationship': '',
-    'tds': 'tool'
+    'tds': 'tool',
+    'malpedia': 'tool'
 }
 
 
@@ -103,6 +104,7 @@ if __name__ == '__main__':
 
         # ignore the galaxies that are not relevant for us
         if galaxy not in type_mapping:
+            print("Ignoring galaxy '{}' as it is not in the mapping.".format(galaxy))
             continue
 
         # process the entries in each cluster
