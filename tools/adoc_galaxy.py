@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
 #
@@ -35,41 +35,50 @@ for f in os.listdir(pathClusters):
 
 clusters.sort()
 
+# build a mapping between uuids and Clusters
+cluster_uuids = {}
+for cluster in clusters:
+    fullPathClusters = os.path.join(pathClusters, cluster)
+    with open(fullPathClusters) as fp:
+        c = json.load(fp)
+    for v in c['values']:
+        if 'uuid' not in v:
+            continue
+        cluster_uuids[v['uuid']] = 'misp-galaxy:{}="{}"'.format(c['type'], v['value'])
+
+
 argParser = argparse.ArgumentParser(description='Generate documentation from MISP galaxy clusters', epilog='Available galaxy clusters are {0}'.format(clusters))
 argParser.add_argument('-v', action='store_true', help='Verbose mode')
 args = argParser.parse_args()
 
-def header(adoc=False):
-    if adoc is False:
-        return False
-
+def header():
+    doc = []
     dedication = "\n[dedication]\n== Funding and Support\nThe MISP project is financially and resource supported by https://www.circl.lu/[CIRCL Computer Incident Response Center Luxembourg ].\n\nimage:{images-misp}logo.png[CIRCL logo]\n\nA CEF (Connecting Europe Facility) funding under CEF-TC-2016-3 - Cyber Security has been granted from 1st September 2017 until 31th August 2019 as ***Improving MISP as building blocks for next-generation information sharing***.\n\nimage:{images-misp}en_cef.png[CEF funding]\n\nIf you are interested to co-fund projects around MISP, feel free to get in touch with us.\n\n"
-    doc = adoc
-    doc = doc + ":toc: right\n"
-    doc = doc + ":toclevels: 1\n"
-    doc = doc + ":toc-title: MISP Galaxy Cluster\n"
-    doc = doc + ":icons: font\n"
-    doc = doc + ":sectanchors:\n"
-    doc = doc + ":sectlinks:\n"
-    doc = doc + ":images-cdn: https://raw.githubusercontent.com/MISP/MISP/2.4/INSTALL/logos/\n"
-    doc = doc + ":images-misp: https://www.misp-project.org/assets/images/\n"
-    doc = doc + "\n= MISP Galaxy Clusters\n\n"
-    doc = doc + "= Introduction\n"
-    doc = doc + "\nimage::{images-cdn}misp-logo.png[MISP logo]\n\n"
-    doc = doc + "The MISP threat sharing platform is a free and open source software helping information sharing of threat intelligence including cyber security indicators, financial fraud or counter-terrorism information. The MISP project includes multiple sub-projects to support the operational requirements of analysts and improve the overall quality of information shared.\n\n"
-    doc = doc + ""
-    doc = "{}{}".format(doc, "\nMISP galaxy is a simple method to express a large object called cluster that can be attached to MISP events or attributes. A cluster can be composed of one or more elements. Elements are expressed as key-values. There are default vocabularies available in MISP galaxy but those can be overwritten, replaced or updated as you wish.  Existing clusters and vocabularies can be used as-is or as a template. MISP distribution can be applied to each cluster to permit a limited or broader distribution scheme.\n")
-    doc = doc + "The following document is generated from the machine-readable JSON describing the https://github.com/MISP/misp-galaxy[MISP galaxy]."
-    doc = doc + "\n\n"
-    doc = doc + "<<<\n"
-    doc = doc + dedication
-    doc = doc + "<<<\n"
-    doc = doc + "= MISP galaxy\n"
+    doc += ":toc: right\n"
+    doc += ":toclevels: 1\n"
+    doc += ":toc-title: MISP Galaxy Cluster\n"
+    doc += ":icons: font\n"
+    doc += ":sectanchors:\n"
+    doc += ":sectlinks:\n"
+    doc += ":images-cdn: https://raw.githubusercontent.com/MISP/MISP/2.4/INSTALL/logos/\n"
+    doc += ":images-misp: https://www.misp-project.org/assets/images/\n"
+    doc += "\n= MISP Galaxy Clusters\n\n"
+    doc += "= Introduction\n"
+    doc += "\nimage::{images-cdn}misp-logo.png[MISP logo]\n\n"
+    doc += "The MISP threat sharing platform is a free and open source software helping information sharing of threat intelligence including cyber security indicators, financial fraud or counter-terrorism information. The MISP project includes multiple sub-projects to support the operational requirements of analysts and improve the overall quality of information shared.\n\n"
+    doc += ""
+    doc += "\nMISP galaxy is a simple method to express a large object called cluster that can be attached to MISP events or attributes. A cluster can be composed of one or more elements. Elements are expressed as key-values. There are default vocabularies available in MISP galaxy but those can be overwritten, replaced or updated as you wish.  Existing clusters and vocabularies can be used as-is or as a template. MISP distribution can be applied to each cluster to permit a limited or broader distribution scheme.\n"
+    doc += "The following document is generated from the machine-readable JSON describing the https://github.com/MISP/misp-galaxy[MISP galaxy]."
+    doc += "\n\n"
+    doc += "<<<\n"
+    doc += dedication
+    doc += "<<<\n"
+    doc += "= MISP galaxy\n"
     return doc
 
-def asciidoc(content=False, adoc=None, t='title',title='', typename=''):
-
-    adoc = adoc + "\n"
+def asciidoc(content=False, t='title',title='', typename=''):
+    adoc = []
+    adoc += "\n"
     output = ""
     if t == 'title':
         output = '== ' + content
@@ -81,21 +90,31 @@ def asciidoc(content=False, adoc=None, t='title',title='', typename=''):
         output = '=== ' + content
     elif t == 'description':
         output = '\n{}\n'.format(content)
-    elif t == 'meta':
+    elif t == 'meta-synonyms':
         if 'synonyms' in content:
             for s in content['synonyms']:
                 output = "{}\n* {}\n".format(output,s)
             output = '{} is also known as:\n{}\n'.format(title,output)
+    elif t == 'meta-refs':
         if 'refs' in content:
             output = '{}{}'.format(output,'\n.Table References\n|===\n|Links\n')
             for r in content['refs']:
                 output = '{}|{}[{}]\n'.format(output, r, r)
             output = '{}{}'.format(output,'|===\n')
-    adoc = adoc + output
+    elif t == 'related':
+        for r in content:
+            try:
+                output = "{}\n* {}: {} with {}\n".format(output, r['type'], cluster_uuids[r['dest-uuid']], ', '.join(r['tags']))
+            except Exception:
+                pass  # ignore lookup errors
+        if output: 
+            output = '{} has relationships with:\n{}\n'.format(title,output)
+    adoc += output
     return adoc
 
-adoc = ""
-print (header(adoc=adoc))
+
+adoc = []
+adoc += header()
 
 for cluster in clusters:
     fullPathClusters = os.path.join(pathClusters, cluster)
@@ -103,16 +122,18 @@ for cluster in clusters:
         c = json.load(fp)
     title = c['name']
     typename = c['type']
-    adoc = asciidoc(content=title, adoc=adoc, t='title')
-    adoc = asciidoc(content=c['description'], adoc=adoc, t='info', title=title, typename = typename)
+    adoc += asciidoc(content=title, t='title')
+    adoc += asciidoc(content=c['description'], t='info', title=title, typename = typename)
     if 'authors' in c:
-        adoc = asciidoc(content=c['authors'], adoc=adoc, t='author', title=title)
+        adoc += asciidoc(content=c['authors'], t='author', title=title)
     for v in c['values']:
-        adoc = asciidoc(content=v['value'], adoc=adoc, t='value', title=title)
+        adoc += asciidoc(content=v['value'], t='value', title=title)
         if 'description' in v:
-            adoc = asciidoc(content=v['description'], adoc=adoc, t='description')
+            adoc += asciidoc(content=v['description'], t='description')
         if 'meta' in v:
-            adoc = asciidoc(content=v['meta'], adoc=adoc, t='meta', title=v['value'])
-
-
-print (adoc)
+            adoc += asciidoc(content=v['meta'], t='meta-synonyms', title=v['value'])
+        if 'related' in v:
+            adoc += asciidoc(content=v['related'], t='related', title=v['value'])
+        if 'meta' in v:
+            adoc += asciidoc(content=v['meta'], t='meta-refs', title=v['value'])
+print (''.join(adoc))
