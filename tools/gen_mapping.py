@@ -36,7 +36,7 @@ type_mapping = {
     'mitre-mobile-attack-tool': 'tool',
     'backdoor': 'tool',
     # 'mitre-pre-attack-attack-pattern': '',
-    'mitre-mobile-attack-intrusion-set': 'tool',
+    'mitre-mobile-attack-intrusion-set': 'actor',
     'mitre-tool': 'tool',
     # 'mitre-mobile-attack-attack-pattern': '',
     'mitre-mobile-attack-malware': 'tool',
