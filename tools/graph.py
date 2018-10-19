@@ -117,7 +117,7 @@ def gen_dot(uuid):
                     node_params.append('shape=box')
                     node_params.append('style=filled,color=deepskyblue')
                 else:
-                    node_params.append('shape=ellipse')  
+                    node_params.append('shape=ellipse')
                 dot.append('"{src}" [{params}];'.format(
                             src=src_tag,
                             params=','.join(node_params)
@@ -151,7 +151,7 @@ def gen_dot(uuid):
         # print(new_things_to_keep)
         things_to_keep = new_things_to_keep.copy()
 
-    
+
     return dot
 
 if args.uuid:
@@ -162,8 +162,8 @@ if args.uuid:
     dot.append('overlap=scale;')
     generated_dot = gen_dot(uuid)
     if len(generated_dot) == 0:
-        print("Empty      graph for uuid: {}".format(uuid))
-        exit()    
+        print("Empty graph for uuid: {}".format(uuid))
+        exit()
     print("Generating graph for uuid: {}".format(uuid))
     dot += generated_dot
     # dot.append('}')
@@ -182,14 +182,14 @@ elif args.all:
         if len(generated_dot) == 0:
             print("Empty      graph for uuid: {}".format(uuid))
             continue
-        
+
         print("Generating graph for uuid: {}".format(uuid))
         dot += generated_dot
         # dot.append('}')
         # dg.source = '\n'.join(dot)
 
         dg = Digraph(format='png', body=dot)
-        # print(dg.source)
-        dg.render(engine='dot', filename='graphs/{}'.format(uuid), cleanup=False)
+        #print(dg.source)
+        dg.render(filename='graphs/{}'.format(uuid))
 else:
     exit("No parameters given, use --help for more info.")
