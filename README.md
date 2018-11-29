@@ -14,6 +14,22 @@ Vocabularies are from existing standards (like STIX, Veris, MISP and so on) or c
 The objective is to have a comment set of clusters for organizations starting analysis but that can be expanded
 to localized information (which is not shared) or additional information (that can be shared).
 
+# Dependencies
+
+To create your own Galaxies the following tools are needed to run the validation scripts.
+
+- jsonschema (>v2.4)
+- jq
+- moreutils (sponge)
+
+On a Debian flavoured distribution you can potentially do this:
+
+```bash
+sudo apt install jq moreutils python3-jsonschema
+sudo wget -O /usr/local/bin/jsonschema https://gist.githubusercontent.com/SteveClement/e6ac60e153e9657913000216fc77c6ef/raw/c273ace06ad338d609dd2c84a0a6e215a268ea11/jsonschema
+sudo chmod +x /usr/local/bin/jsonschema # This will only work with jsonschema >2.4 (before no CLI interface was available)
+```
+
 # Available clusters
 
 - [clusters/android.json](clusters/android.json) - Android malware galaxy based on multiple open sources.
