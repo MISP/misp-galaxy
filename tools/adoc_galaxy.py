@@ -76,39 +76,40 @@ def header():
     doc += "= MISP galaxy\n"
     return doc
 
-def asciidoc(content=False, t='title',title='', typename=''):
+
+def asciidoc(content=False, t='title', title='', typename=''):
     adoc = []
     adoc += "\n"
     output = ""
     if t == 'title':
         output = '== ' + content
     elif t == 'info':
-        output = "\n{}.\n\n{} {} {}$${}$$.json[*this location*] {}.\n".format(content, 'NOTE: ', title, 'is a cluster galaxy available in JSON format at https://github.com/MISP/misp-galaxy/blob/master/clusters/',typename.lower(),' The JSON format can be freely reused in your application or automatically enabled in https://www.github.com/MISP/MISP[MISP]')
+        output = "\n{}.\n\n{} {} {}$${}$$.json[*this location*] {}.\n".format(content, 'NOTE: ', title, 'is a cluster galaxy available in JSON format at https://github.com/MISP/misp-galaxy/blob/master/clusters/', typename.lower(), ' The JSON format can be freely reused in your application or automatically enabled in https://www.github.com/MISP/MISP[MISP]')
     elif t == 'author':
         output = '\nauthors:: {}\n'.format(' - '.join(content))
     elif t == 'value':
-        output = '=== ' + content
+        output = '=== {}'.format(content)
     elif t == 'description':
         output = '\n{}\n'.format(content)
     elif t == 'meta-synonyms':
         if 'synonyms' in content:
             for s in content['synonyms']:
-                output = "{}\n* {}\n".format(output,s)
-            output = '{} is also known as:\n{}\n'.format(title,output)
+                output = "{}\n* {}\n".format(output, s)
+            output = '{} is also known as:\n{}\n'.format(title, output)
     elif t == 'meta-refs':
         if 'refs' in content:
-            output = '{}{}'.format(output,'\n.Table References\n|===\n|Links\n')
+            output = '{}{}'.format(output, '\n.Table References\n|===\n|Links\n')
             for r in content['refs']:
                 output = '{}|{}[{}]\n'.format(output, r, r)
-            output = '{}{}'.format(output,'|===\n')
+            output = '{}{}'.format(output, '|===\n')
     elif t == 'related':
         for r in content:
             try:
                 output = "{}\n* {}: {} with {}\n".format(output, r['type'], cluster_uuids[r['dest-uuid']], ', '.join(r['tags']))
             except Exception:
                 pass  # ignore lookup errors
-        if output: 
-            output = '{} has relationships with:\n{}\n'.format(title,output)
+        if output:
+            output = '{} has relationships with:\n{}\n'.format(title, output)
     adoc += output
     return adoc
 
@@ -123,17 +124,18 @@ for cluster in clusters:
     title = c['name']
     typename = c['type']
     adoc += asciidoc(content=title, t='title')
-    adoc += asciidoc(content=c['description'], t='info', title=title, typename = typename)
+    adoc += asciidoc(content=c['description'], t='info', title=title, typename=typename)
     if 'authors' in c:
         adoc += asciidoc(content=c['authors'], t='author', title=title)
     for v in c['values']:
-        adoc += asciidoc(content=v['value'], t='value', title=title)
+        adoc += asciidoc(content=v['value'], t='value')
         if 'description' in v:
             adoc += asciidoc(content=v['description'], t='description')
+        adoc += asciidoc(content='The tag is: _misp-galaxy:{}="{}"_'.format(c['type'], v['value']), t='description')
         if 'meta' in v:
             adoc += asciidoc(content=v['meta'], t='meta-synonyms', title=v['value'])
         if 'related' in v:
             adoc += asciidoc(content=v['related'], t='related', title=v['value'])
         if 'meta' in v:
             adoc += asciidoc(content=v['meta'], t='meta-refs', title=v['value'])
-print (''.join(adoc))
+print(''.join(adoc))
