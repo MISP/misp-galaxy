@@ -92,11 +92,12 @@ for domain in domains:
             if 'kill_chain_phases' in item:   # many (but not all) attack-patterns have this
                 value['meta']['kill_chain'] = []
                 for killchain in item['kill_chain_phases']:
-                    value['meta']['kill_chain'].append(killchain['kill_chain_name'] + ':enterprise-attack:' + killchain['phase_name'])
+                    value['meta']['kill_chain'].append(killchain['kill_chain_name'] + ':' + killchain['phase_name'])
             if 'x_mitre_data_sources' in item:
                 value['meta']['mitre_data_sources'] = item['x_mitre_data_sources']
             if 'x_mitre_platforms' in item:
                 value['meta']['mitre_platforms'] = item['x_mitre_platforms']
+            # TODO add the other x_mitre elements dynamically
 
             # relationships will be build separately afterwards
             value['type'] = item['type']  # remove this before dump to json
@@ -128,10 +129,10 @@ for domain in domains:
             ],
             "type": rel_type
         }
-        if 'relation' not in all_data_uuid[source_uuid]:
-            all_data_uuid[source_uuid]['relation'] = []
-        if rel_source not in all_data_uuid[source_uuid]['relation']:
-            all_data_uuid[source_uuid]['relation'].append(rel_source)
+        if 'related' not in all_data_uuid[source_uuid]:
+            all_data_uuid[source_uuid]['related'] = []
+        if rel_source not in all_data_uuid[source_uuid]['related']:
+            all_data_uuid[source_uuid]['related'].append(rel_source)
 
         # LATER find the opposite word of "rel_type" and build the relation in the opposite direction
 
@@ -140,17 +141,22 @@ for t in types:
     fname = os.path.join(misp_dir, 'clusters', 'mitre-{}.json'.format(t))
     if not os.path.exists(fname):
         exit("File {} does not exist, this is unexpected.".format(fname))
-        # print("##### {}".format(fname))
     with open(fname) as f:
         file_data = json.load(f)
 
     file_data['values'] = []
     for item in all_data_uuid.values():
+        # print(json.dumps(item, sort_keys=True, indent=2))
         if item['type'] != t:
             continue
-        item.pop('type', None)
-        file_data['values'].append(item)
+        item_2 = item.copy()
+        item_2.pop('type', None)
+        file_data['values'].append(item_2)
 
+    file_data['values'] = sorted(file_data['values'], key=lambda x: sorted(x['value']))  # FIXME the sort algo needs to be further improved
+    file_data['version'] += 1
     with open(fname, 'w') as f:
         json.dump(file_data, f, indent=2, sort_keys=True, ensure_ascii=False)
         f.write('\n')  # only needed for the beauty and to be compliant with jq_all_the_things
+
+print("All done, please don't forget to ./validate_all.sh and ./jq_all_the_things.sh")
