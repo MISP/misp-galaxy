@@ -1,11 +1,34 @@
 {
   "description": "ATT&CK Tactic",
   "icon": "map",
-  "name": "Attack Pattern",
-  "namespace": "mitre-attack",
-  "type": "mitre-attack-pattern",
-  "uuid": "c4e851fa-775f-11e7-8163-b774922098cd",
   "kill_chain_order": {
+    "mitre-attack": [
+      "initial-access",
+      "execution",
+      "persistence",
+      "privilege-escalation",
+      "defense-evasion",
+      "credential-access",
+      "discovery",
+      "lateral-movement",
+      "collection",
+      "exfiltration",
+      "command-and-control"
+    ],
+    "mitre-mobile-attack": [
+      "initial-access",
+      "persistence",
+      "privilege-escalation",
+      "defense-evasion",
+      "credential-access",
+      "discovery",
+      "lateral-movement",
+      "effects",
+      "collection",
+      "exfiltration",
+      "network-effects",
+      "remote-service-effects"
+    ],
     "mitre-pre-attack": [
       "priority-definition-planning",
       "priority-definition-direction",
@@ -22,34 +45,11 @@
       "build-capabilities",
       "test-capabilities",
       "stage-capabilities"
-    ],
-    "mitre-mobile-attack": [
-      "initial-access",
-      "persistence",
-      "privilege-escalation",
-      "defense-evasion",
-      "credential-access",
-      "discovery",
-      "lateral-movement",
-      "effects",
-      "collection",
-      "exfiltration",
-      "network-effects",
-      "remote-service-effects"
-    ],
-    "mitre-attack": [
-      "initial-access",
-      "execution",
-      "persistence",
-      "privilege-escalation",
-      "defense-evasion",
-      "credential-access",
-      "discovery",
-      "lateral-movement",
-      "collection",
-      "exfiltration",
-      "command-and-control"
     ]
   },
+  "name": "Attack Pattern",
+  "namespace": "mitre-attack",
+  "type": "mitre-attack-pattern",
+  "uuid": "c4e851fa-775f-11e7-8163-b774922098cd",
   "version": 7
 }
