@@ -51,7 +51,36 @@
       },
       "uuid": "8b50360c-4d16-4f52-be75-e74c27f533df",
       "value": "ServHelper"
+    },
+    {
+      "description": "The Rising Sun backdoor uses the RC4 cipher to encrypt its configuration data and communications. As with most backdoors, on initial infection, Rising Sun will send data regarding the infected system to a command and control (C2) site. That information captures computer and user name, IP address, operating system version and network adapter information. Rising Sun contains 14 functions  including executing commands, obtaining information on disk drives and running processes, terminating processes, obtaining file creation and last access times, reading and writing files, deleting files, altering file attributes, clearing the memory of processes and connecting to a specified IP address.",
+      "meta": {
+        "refs": [
+          "https://www.bluvector.io/threat-report-rising-sun-operation-sharpshooter/"
+        ]
+      },
+      "uuid": "0ae6636e-87e4-4b4c-a1c8-e14e1cab964f",
+      "value": "Rising Sun"
+    },
+    {
+      "description": "A new backdoor was observed using the Github Gist service and the Slack messaging system as communication channels with its masters, as well as targeting a very specific type of victim using a watering hole attack.\nThe backdoor dubbed SLUB by the Trend Micro Cyber Safety Solutions Team who detected it in the wild is part of a multi-stage infection process designed by capable threat actors who programmed it in C++.\nSLUB uses statically-linked curl, boost, and JsonCpp libraries for performing HTTP request, \"extracting commands from gist snippets,\" and \"parsing Slack channel communication.\"\nThe campaign recently observed by the Trend Micro security researchers abusing the Github and Slack uses a multi-stage infection process.",
+      "meta": {
+        "refs": [
+          "https://www.bleepingcomputer.com/news/security/new-slub-backdoor-uses-slack-github-as-communication-channels/"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "bb6492fa-36b5-4f4a-a787-e718e7f9997f",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "a4757e11-0837-42c0-958a-7490cff58687",
+      "value": "SLUB"
     }
   ],
-  "version": 4
+  "version": 5
 }
