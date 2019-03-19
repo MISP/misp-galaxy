@@ -1,0 +1,89 @@
+{
+  "authors": [
+    "Francesco Bigarella"
+  ],
+  "category": "guidelines",
+  "description": "attck4fraud - Principles of MITRE ATT&CK in the fraud domain",
+  "name": "attck4fraud",
+  "source": "Open Sources",
+  "type": "guidelines",
+  "uuid": "4ae4ceec-2fe5-423e-99a5-44a7cf30c999",
+  "values": [
+    {
+      "description": "In the context of ATT&CK for Fraud, phishing is described as the sending of fraudulent emails to a large audience in order to obtain sensitive information (PII, credentials, payment information). Phishing is never targeted to a specific individual or organisation. Phishing tries to create a sense of urgency or curiosity in order to capture the victim.",
+      "meta": {
+        "detection": "Email sender is spoofed; Email sender belongs to a domain recently created; Presence of typos or poor grammar in the email text; The request in the mail is unsolicited and creates urgency; No recollection of the subject or the sender of the phishing email; Request for credentials; Presence of a suspicious URL or attachment.",
+        "examples": [
+          "Phishing messages were sent to Amazon users posing as the Amazon customer support",
+          "Fake Apple invoices were sent to Apple App Store customers in order to obtain their Apple ID credentials"
+        ],
+        "external_id": "FT1001",
+        "kill_chain": [
+          "fraud-tactics:Initiation"
+        ],
+        "mitigation": "Implementation of DKIM and SPF authentication to detected spoofed email senders; anti-phishing solutions.",
+        "refs": [
+          "https://blog.malwarebytes.com/cybercrime/2015/02/amazon-notice-ticket-number-phish-seeks-card-details/",
+          "https://www.bleepingcomputer.com/news/security/widespread-apple-id-phishing-attack-pretends-to-be-app-store-receipts/"
+        ],
+        "victim": "end customer, enterprise"
+      },
+      "uuid": "65d9dc34-d0eb-4b12-ab96-2e382845ab75",
+      "value": "Phishing"
+    },
+    {
+      "description": "Spear phishing is the use of targeted emails to gain the trust of the target with the goal of committing fraud. Spear phishing messages are generally specific to the target and show an understanding of the target’s organisation structure, supply chain or business.",
+      "meta": {
+        "detection": "Email sender is spoofed; Email sender belongs to a domain recently created; The request in the mail is unsolicited and creates urgency; No recollection of the subject or the sender of the phishing email; Request for credentials; Presence of a suspicious URL or attachment.",
+        "examples": [
+          "In 2013 a Lithuanian man was able to obtain the trust of Facebook and Google and gain a sum of over USD 100 million in fraudulent payments.",
+          "World Anti-Doping Agency was targeted by spear phishing emails trying to obtain valid credentials"
+        ],
+        "external_id": "FT1002",
+        "kill_chain": [
+          "fraud-tactics:Initiation"
+        ],
+        "mitigation": "Implementation of DKIM and SPF authentication to detected spoofed email senders; flagging email coming from outside the enterprise (enterprise); anti-phishing solutions; awareness training (enterprise).",
+        "refs": [
+          "http://fortune.com/2017/04/27/facebook-google-rimasauskas/",
+          "https://www.ibtimes.co.uk/russian-hackers-fancy-bear-likely-breached-olympic-drug-testing-agency-dnc-experts-say-1577508"
+        ],
+        "victim": "end customer, enterprise"
+      },
+      "uuid": "41f7cfc1-51ed-4a8d-aba9-34f9c6b8388b",
+      "value": "Spear phishing"
+    },
+    {
+      "description": "Spear phishing is the use of targeted emails to gain the trust of the target with the goal of committing fraud. Spear phishing messages are generally specific to the target and show an understanding of the target’s organisation structure, supply chain or business.",
+      "meta": {
+        "detection": "Anti-skimming technology: metal detection for card readers, card jitter motion. Visual evidence of tampering with the ATM; comparison to nearby ATMs of the same manufacturer and model; Presence of hidden cameras in the ATM fascia or near the PIN pad.",
+        "examples": [
+          "Insert skimmer",
+          "Deep-insert skimmer",
+          "overlay pad skimmer",
+          "Green skimmer",
+          "wiretapping"
+        ],
+        "external_id": "FT1003",
+        "kill_chain": [
+          "fraud-tactics:Initiation"
+        ],
+        "mitigation": "Anti-skimming technology: metal detection for card readers, card jitter motion (enterprise). Cover the numerical input pad while entering the PIN (customer); Avoid self-standing ATMs in isolated areas (customer); Chip installed on bank cards (enterprise).",
+        "refs": [
+          "https://krebsonsecurity.com/2015/07/spike-in-atm-skimming-in-mexico/",
+          "https://krebsonsecurity.com/2011/12/pro-grade-3d-printer-made-atm-skimmer/",
+          "https://krebsonsecurity.com/2017/08/dumping-data-from-deep-insert-skimmers/",
+          "https://krebsonsecurity.com/2016/06/atm-insert-skimmers-in-action/",
+          "https://krebsonsecurity.com/2014/11/skimmer-innovation-wiretapping-atms/",
+          "https://krebsonsecurity.com/2016/09/secret-service-warns-of-periscope-skimmers/",
+          "https://krebsonsecurity.com/2011/03/green-skimmers-skimming-green",
+          "https://blog.dieboldnixdorf.com/have-you-asked-yourself-this-question-about-skimming/"
+        ],
+        "victim": "end customer, enterprise"
+      },
+      "uuid": "0e45e11c-9c24-49a2-b1fe-5d78a235844b",
+      "value": "ATM skimming"
+    }
+  ],
+  "version": 1
+}
