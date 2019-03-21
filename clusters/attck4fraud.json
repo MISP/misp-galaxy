@@ -1,0 +1,353 @@
+{
+  "authors": [
+    "Francesco Bigarella"
+  ],
+  "category": "guidelines",
+  "description": "attck4fraud - Principles of MITRE ATT&CK in the fraud domain",
+  "name": "attck4fraud",
+  "source": "Open Sources",
+  "type": "financial-fraud",
+  "uuid": "cc0c8ae9-aec2-42c6-9939-f4f82b051836",
+  "values": [
+    {
+      "description": "In the context of ATT&CK for Fraud, phishing is described as the sending of fraudulent emails to a large audience in order to obtain sensitive information (PII, credentials, payment information). Phishing is never targeted to a specific individual or organisation. Phishing tries to create a sense of urgency or curiosity in order to capture the victim.",
+      "meta": {
+        "detection": "Email sender is spoofed; Email sender belongs to a domain recently created; Presence of typos or poor grammar in the email text; The request in the mail is unsolicited and creates urgency; No recollection of the subject or the sender of the phishing email; Request for credentials; Presence of a suspicious URL or attachment.",
+        "examples": [
+          "Phishing messages were sent to Amazon users posing as the Amazon customer support",
+          "Fake Apple invoices were sent to Apple App Store customers in order to obtain their Apple ID credentials"
+        ],
+        "external_id": "FT1001",
+        "kill_chain": [
+          "fraud-tactics:Initiation"
+        ],
+        "mitigation": "Implementation of DKIM and SPF authentication to detected spoofed email senders; anti-phishing solutions.",
+        "refs": [
+          "https://blog.malwarebytes.com/cybercrime/2015/02/amazon-notice-ticket-number-phish-seeks-card-details/",
+          "https://www.bleepingcomputer.com/news/security/widespread-apple-id-phishing-attack-pretends-to-be-app-store-receipts/"
+        ],
+        "victim": "end customer, enterprise"
+      },
+      "uuid": "65d9dc34-d0eb-4b12-ab96-2e382845ab75",
+      "value": "Phishing"
+    },
+    {
+      "description": "Spear phishing is the use of targeted emails to gain the trust of the target with the goal of committing fraud. Spear phishing messages are generally specific to the target and show an understanding of the target’s organisation structure, supply chain or business.",
+      "meta": {
+        "detection": "Email sender is spoofed; Email sender belongs to a domain recently created; The request in the mail is unsolicited and creates urgency; No recollection of the subject or the sender of the phishing email; Request for credentials; Presence of a suspicious URL or attachment.",
+        "examples": [
+          "In 2013 a Lithuanian man was able to obtain the trust of Facebook and Google and gain a sum of over USD 100 million in fraudulent payments.",
+          "World Anti-Doping Agency was targeted by spear phishing emails trying to obtain valid credentials"
+        ],
+        "external_id": "FT1002",
+        "kill_chain": [
+          "fraud-tactics:Initiation"
+        ],
+        "mitigation": "Implementation of DKIM and SPF authentication to detected spoofed email senders; flagging email coming from outside the enterprise (enterprise); anti-phishing solutions; awareness training (enterprise).",
+        "refs": [
+          "http://fortune.com/2017/04/27/facebook-google-rimasauskas/",
+          "https://www.ibtimes.co.uk/russian-hackers-fancy-bear-likely-breached-olympic-drug-testing-agency-dnc-experts-say-1577508"
+        ],
+        "victim": "end customer, enterprise"
+      },
+      "uuid": "41f7cfc1-51ed-4a8d-aba9-34f9c6b8388b",
+      "value": "Spear phishing"
+    },
+    {
+      "description": "ATM Skimming refers to the act of capturing the data stored on a bank cards (tracks) and the Personal Identification Number (PIN) associated to that card. Upon obtaining the data, the criminal proceeds to encode the same information into a new card and use it in combination with the PIN to perform illicit cash withdrawals. ATM Skimming is often achieved with a combination of a skimmer device for the card and a camera to capture the PIN.",
+      "meta": {
+        "detection": "Anti-skimming technology: metal detection for card readers, card jitter motion. Visual evidence of tampering with the ATM; comparison to nearby ATMs of the same manufacturer and model; Presence of hidden cameras in the ATM fascia or near the PIN pad.",
+        "examples": [
+          "Insert skimmer",
+          "Deep-insert skimmer",
+          "overlay pad skimmer",
+          "Green skimmer",
+          "wiretapping"
+        ],
+        "external_id": "FT1003",
+        "kill_chain": [
+          "fraud-tactics:Initiation"
+        ],
+        "mitigation": "Anti-skimming technology: metal detection for card readers, card jitter motion (enterprise). Cover the numerical input pad while entering the PIN (customer); Avoid self-standing ATMs in isolated areas (customer); Chip installed on bank cards (enterprise).",
+        "refs": [
+          "https://krebsonsecurity.com/2015/07/spike-in-atm-skimming-in-mexico/",
+          "https://krebsonsecurity.com/2011/12/pro-grade-3d-printer-made-atm-skimmer/",
+          "https://krebsonsecurity.com/2017/08/dumping-data-from-deep-insert-skimmers/",
+          "https://krebsonsecurity.com/2016/06/atm-insert-skimmers-in-action/",
+          "https://krebsonsecurity.com/2014/11/skimmer-innovation-wiretapping-atms/",
+          "https://krebsonsecurity.com/2016/09/secret-service-warns-of-periscope-skimmers/",
+          "https://krebsonsecurity.com/2011/03/green-skimmers-skimming-green",
+          "https://blog.dieboldnixdorf.com/have-you-asked-yourself-this-question-about-skimming/"
+        ],
+        "victim": "end customer, enterprise"
+      },
+      "uuid": "0e45e11c-9c24-49a2-b1fe-5d78a235844b",
+      "value": "ATM skimming"
+    },
+    {
+      "description": "ATM Shimming refers to the act of capturing a bank card data accessing the EMV chip installed on the card while presenting the card to a ATM. Due to their low profile, shimmers can be fit inside ATM card readers and are therefore more difficult to detect.",
+      "meta": {
+        "detection": "Inspection of motorised card slot for the presence of unrecognised devices; Visual evidence of tampering with the ATM.",
+        "examples": [
+          "Shimmer device found inside a Diebold Opteva 520",
+          "Shimmer installed inside point-of-sale terminals at Coquitlam"
+        ],
+        "external_id": "FT1004",
+        "kill_chain": [
+          "fraud-tactics:Initiation"
+        ],
+        "mitigation": "Cover the numerical input pad while entering the PIN (customer); Avoid self-standing ATMs in isolated areas (customer); Anti-skimming technology: metal detection for card readers, card jitter motion (enterprise); verification of transaction using the codes generated by the EMV chip (enterprise).",
+        "refs": [
+          "https://krebsonsecurity.com/2015/08/chip-card-atm-shimmer-found-in-mexico/",
+          "https://www.cbc.ca/news/canada/british-columbia/shimmers-criminal-chip-card-reader-fraud-1.3953438",
+          "https://krebsonsecurity.com/2017/01/atm-shimmers-target-chip-based-cards/",
+          "https://blog.dieboldnixdorf.com/atm-security-skimming-vs-shimming/"
+        ],
+        "victim": "end customer, enterprise"
+      },
+      "uuid": "469d22c1-7a73-4034-a449-74db7f021255",
+      "value": "ATM Shimming"
+    },
+    {
+      "description": "Vishing",
+      "meta": {
+        "kill_chain": [
+          "fraud-tactics:Initiation"
+        ]
+      },
+      "uuid": "308fb88c-412a-4468-91ed-468d07fe4170",
+      "value": "Vishing"
+    },
+    {
+      "description": "POS Skimming",
+      "meta": {
+        "kill_chain": [
+          "fraud-tactics:Initiation"
+        ]
+      },
+      "uuid": "c33778e5-b5cc-4d12-8e4e-a329156d988c",
+      "value": "POS Skimming"
+    },
+    {
+      "description": "Social Media Scams",
+      "meta": {
+        "kill_chain": [
+          "fraud-tactics:Initiation"
+        ]
+      },
+      "uuid": "8702106a-2ceb-4cf2-8d93-c569224f0eee",
+      "value": "Social Media Scams"
+    },
+    {
+      "description": "Malware",
+      "meta": {
+        "kill_chain": [
+          "fraud-tactics:Target Compromise"
+        ]
+      },
+      "uuid": "6ee0f7cd-a0ef-46c5-9d80-f0fbac2a9140",
+      "value": "Malware"
+    },
+    {
+      "description": "Account-Checking Services",
+      "meta": {
+        "kill_chain": [
+          "fraud-tactics:Target Compromise"
+        ]
+      },
+      "uuid": "1ca518cb-77e0-4261-8fb1-a16a877bce0d",
+      "value": "Account-Checking Services"
+    },
+    {
+      "description": "ATM Black Box Attack",
+      "meta": {
+        "kill_chain": [
+          "fraud-tactics:Target Compromise"
+        ]
+      },
+      "uuid": "6bec22cb-9aed-426a-bffc-b0a78db6527a",
+      "value": "ATM Black Box Attack"
+    },
+    {
+      "description": "Account-Checking Services",
+      "meta": {
+        "kill_chain": [
+          "fraud-tactics:Target Compromise"
+        ]
+      },
+      "uuid": "824bccd3-9dea-4579-8642-8dd15afcfacc",
+      "value": "Account-Checking Services"
+    },
+    {
+      "description": "Insider Trading",
+      "meta": {
+        "kill_chain": [
+          "fraud-tactics:Perform Fraud"
+        ]
+      },
+      "uuid": "102e0d9e-8807-4c52-8a79-455d5e688081",
+      "value": "Insider Trading"
+    },
+    {
+      "description": "Business Email Compromise",
+      "meta": {
+        "kill_chain": [
+          "fraud-tactics:Perform Fraud"
+        ]
+      },
+      "uuid": "d09cd56c-d817-4c9f-bba7-1f26b788238f",
+      "value": "Business Email Compromise"
+    },
+    {
+      "description": "Scam",
+      "meta": {
+        "kill_chain": [
+          "fraud-tactics:Perform Fraud"
+        ]
+      },
+      "uuid": "0c8b8a09-9caa-49f6-8f96-9302e516373e",
+      "value": "Scam"
+    },
+    {
+      "description": "CxO Fraud",
+      "meta": {
+        "kill_chain": [
+          "fraud-tactics:Perform Fraud"
+        ]
+      },
+      "uuid": "76bd07d8-67f4-4af6-9730-723aa2a5b90d",
+      "value": "CxO Fraud"
+    },
+    {
+      "description": "Compromised Payment Cards",
+      "meta": {
+        "kill_chain": [
+          "fraud-tactics:Obtain Fraudulent Assets"
+        ]
+      },
+      "uuid": "d46e397f-8957-41f1-8736-13400b9e82fc",
+      "value": "Compromised Payment Cards"
+    },
+    {
+      "description": "Compromised Account Credentials",
+      "meta": {
+        "kill_chain": [
+          "fraud-tactics:Obtain Fraudulent Assets"
+        ]
+      },
+      "uuid": "7d71e71c-502f-412a-8fc7-584de8a9d203",
+      "value": "Compromised Account Credentials"
+    },
+    {
+      "description": "Compromised Personally Identifiable Information (PII)",
+      "meta": {
+        "kill_chain": [
+          "fraud-tactics:Obtain Fraudulent Assets"
+        ]
+      },
+      "uuid": "5537becf-4397-4b9f-916b-d6b776e30c2f",
+      "value": "Compromised Personally Identifiable Information (PII)"
+    },
+    {
+      "description": "Compromised Intellectual Property (IP)",
+      "meta": {
+        "kill_chain": [
+          "fraud-tactics:Obtain Fraudulent Assets"
+        ]
+      },
+      "uuid": "699e86ad-1188-4189-a7c6-2e2a77422af0",
+      "value": "Compromised Intellectual Property (IP)"
+    },
+    {
+      "description": "SWIFT Transaction",
+      "meta": {
+        "kill_chain": [
+          "fraud-tactics:Assets Transfer"
+        ]
+      },
+      "uuid": "7ea5b06e-ba99-4115-b1b6-6fc4eef7bd3b",
+      "value": "SWIFT Transaction"
+    },
+    {
+      "description": "Fund Transfer",
+      "meta": {
+        "kill_chain": [
+          "fraud-tactics:Assets Transfer"
+        ]
+      },
+      "uuid": "72ffa97e-d128-4c41-b323-0297b43d8a1b",
+      "value": "Fund Transfer"
+    },
+    {
+      "description": "Cryptocurrency Exchange",
+      "meta": {
+        "kill_chain": [
+          "fraud-tactics:Assets Transfer"
+        ]
+      },
+      "uuid": "c76a990c-c7ac-4c96-984f-a03fc8676394",
+      "value": "Cryptocurrency Exchange"
+    },
+    {
+      "description": "ATM Jackpotting",
+      "meta": {
+        "kill_chain": [
+          "fraud-tactics:Monetisation"
+        ]
+      },
+      "uuid": "08a6e487-6987-4764-a6ad-a1d1f3a4d172",
+      "value": "ATM Jackpotting"
+    },
+    {
+      "description": "Money Mules",
+      "meta": {
+        "kill_chain": [
+          "fraud-tactics:Monetisation"
+        ]
+      },
+      "uuid": "f1243265-d50a-42fb-a83c-4696f95636e9",
+      "value": "Money Mules"
+    },
+    {
+      "description": "Fund Transfer",
+      "meta": {
+        "kill_chain": [
+          "fraud-tactics:Monetisation"
+        ]
+      },
+      "uuid": "a8913af2-8f22-44b2-b6bc-32b7489d8f96",
+      "value": "Fund Transfer"
+    },
+    {
+      "description": "Prepaid Cards",
+      "meta": {
+        "kill_chain": [
+          "fraud-tactics:Monetisation"
+        ]
+      },
+      "uuid": "372dfb2e-5df6-4f76-8fc2-9437377ff812",
+      "value": "Prepaid Cards"
+    },
+    {
+      "description": "Resell Stolen Data",
+      "meta": {
+        "kill_chain": [
+          "fraud-tactics:Monetisation"
+        ]
+      },
+      "uuid": "e5a3297e-dd0d-4c2a-8133-d07ad6aadfd8",
+      "value": "Resell Stolen Data"
+    },
+    {
+      "description": "ATM Explosive Attack",
+      "meta": {
+        "kill_chain": [
+          "fraud-tactics:Monetisation"
+        ]
+      },
+      "uuid": "9bfd2f4f-39a7-43fe-b5cd-a345a065276d",
+      "value": "ATM Explosive Attack"
+    }
+  ],
+  "version": 1
+}
