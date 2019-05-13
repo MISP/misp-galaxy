@@ -3,14 +3,27 @@ language: python
 cache: pip
 
 python:
-    - "3.6"
+    - "3.6-dev"
+    - "3.7-dev"
 
 sudo: required
 
 install:
     - sudo apt-get update -qq
     - sudo apt-get install -y -qq jq moreutils
-    - pip install jsonschema
+    - pip install jsonschema pipenv
+    - pushd ..
+    # Install PyMISPGalaxies
+    - git clone https://github.com/MISP/PyMISPGalaxies.git
+    - pushd PyMISPGalaxies
+    - git submodule update --init
+    - git submodule foreach git pull origin master
+    - pipenv install -d
+    - popd
+    - popd
 
 script:
     - ./validate_all.sh
+    - pushd ../PyMISPGalaxies
+    - pipenv run nosetests-3.4 --with-coverage --cover-package=pymispgalaxies -d
+    - popd
