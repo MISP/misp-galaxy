@@ -7681,6 +7681,87 @@
       },
       "uuid": "5f0f6af2-b644-49a6-8f68-5d4ca58c989e",
       "value": "Scranos"
+    },
+    {
+      "description": "Unit 42 has discovered a new malware family we’ve named “Reaver” with ties to attackers who use SunOrcal malware. SunOrcal activity has been documented to at least 2013, and based on metadata surrounding some of the C2s, may have been active as early as 2010. The new family appears to have been in the wild since late 2016 and to date we have only identified 10 unique samples, indicating it may be sparingly used. Reaver is also somewhat unique in the fact that its final payload is in the form of a Control panel item, or CPL file. To date, only 0.006% of all malware seen by Palo Alto Networks employs this technique, indicating that it is in fact fairly rare.",
+      "meta": {
+        "refs": [
+          "https://unit42.paloaltonetworks.com/unit42-new-malware-with-ties-to-sunorcal-discovered/",
+          "https://threatvector.cylance.com/en_us/home/reaver-mapping-connections-between-disparate-chinese-apt-groups.html"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "80365d3a-6d46-4195-a772-364749a6dc06",
+          "tags": [
+            "estimative-language:likelihood-probability=\"roughly-even-chance\""
+          ],
+          "type": "similar"
+        },
+        {
+          "dest-uuid": "dd919e75-57e8-4e5c-9451-8be6e734f1f3",
+          "tags": [
+            "estimative-language:likelihood-probability=\"roughly-even-chance\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "22b75148-9d58-4fa7-8459-6ef25bbaf759",
+      "value": "Reaver"
+    },
+    {
+      "description": "The Citizen Lab analyzed a malicious email sent to Tibetan organizations in June 2013. The email in question purported to be from a prominent member of the Tibetan community and repurposed content from a community mailing list. Attached to the email were what appeared to be three Microsoft Word documents (.doc), but which were trojaned with a malware family we call “Surtr”.1 All three attachments drop the exact same malware. We have seen the Surtr malware family used in attacks on Tibetan groups dating back to November 2012.",
+      "meta": {
+        "refs": [
+          "https://citizenlab.ca/2013/08/surtr-malware-family-targeting-the-tibetan-community/",
+          "https://otx.alienvault.com/pulse/588a7c8fe4166d1d84244b9a"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "22b75148-9d58-4fa7-8459-6ef25bbaf759",
+          "tags": [
+            "estimative-language:likelihood-probability=\"roughly-even-chance\""
+          ],
+          "type": "similar"
+        },
+        {
+          "dest-uuid": "80365d3a-6d46-4195-a772-364749a6dc06",
+          "tags": [
+            "estimative-language:likelihood-probability=\"roughly-even-chance\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "dd919e75-57e8-4e5c-9451-8be6e734f1f3",
+      "value": "SURTR"
+    },
+    {
+      "description": "SunOrcal is a trojan malware family whose activity dates back to at least 2013. A version discovered in November 2017 incorporates steganography techniques and can collect C2 information via GitHub, obscuring its C2 infrastructure and evading detection using the legitimate site for its first beacon. The threat actors have targeted users in the Vietnam area, spreading phishing emails containing malicious documents purportedly regarding South China Sea disputes. The new SunOrcal version has also been used with the recently discovered Reaver trojan and the original SunOrcal version. Some of the recent activity also incorporates the use of the Surtr malware.",
+      "meta": {
+        "refs": [
+          "https://unit42.paloaltonetworks.com/unit42-sunorcal-adds-github-steganography-repertoire-expands-vietnam-myanmar/",
+          "https://www.cyber.nj.gov/threat-profiles/trojan-variants/sunorcal"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "22b75148-9d58-4fa7-8459-6ef25bbaf759",
+          "tags": [
+            "estimative-language:likelihood-probability=\"roughly-even-chance\""
+          ],
+          "type": "similar"
+        },
+        {
+          "dest-uuid": "dd919e75-57e8-4e5c-9451-8be6e734f1f3",
+          "tags": [
+            "estimative-language:likelihood-probability=\"roughly-even-chance\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "80365d3a-6d46-4195-a772-364749a6dc06",
+      "value": "SunOrcal"
     }
   ],
   "version": 121
