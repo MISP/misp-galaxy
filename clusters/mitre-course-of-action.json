@@ -343,14 +343,14 @@
           "type": "mitigates"
         },
         {
-          "dest-uuid": "82f04b1e-5371-4a6f-be06-411f0f43b483",
+          "dest-uuid": "9d7c32f4-ab39-49dc-8055-8106bc2294a1",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
           "type": "mitigates"
         },
         {
-          "dest-uuid": "9d7c32f4-ab39-49dc-8055-8106bc2294a1",
+          "dest-uuid": "82f04b1e-5371-4a6f-be06-411f0f43b483",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
@@ -1016,7 +1016,7 @@
       "value": "Signed Script Proxy Execution Mitigation - T1216"
     },
     {
-      "description": "Certain signed binaries that can be used to execute other programs may not be necessary within a given environment. Use application whitelisting configured to block execution of these scripts if they are not required for a given system or network to prevent potential misuse by adversaries.",
+      "description": "Certain signed binaries that can be used to execute other programs may not be necessary within a given environment. Use application whitelisting configured to block execution of these binaries if they are not required for a given system or network to prevent potential misuse by adversaries. If these binaries are required for use, then restrict execution of them to privileged accounts or groups that need to use them to lessen the opportunities for malicious use.",
       "meta": {
         "external_id": "T1218",
         "refs": [
@@ -1122,6 +1122,74 @@
       "value": "Hidden Files and Directories Mitigation - T1158"
     },
     {
+      "description": "Consider implementing IT disaster recovery plans that contain procedures for regularly taking and testing data backups that can be used to restore organizational data.(Citation: Ready.gov IT DRP)\n\nIn some cases, the means to decrypt files affected by a ransomware campaign is released to the public. Research trusted sources for public releases of decryptor tools/keys to reverse the effects of ransomware.\n\nIdentify potentially malicious software and audit and/or block it by using whitelisting(Citation: Beechey 2010) tools, like AppLocker,(Citation: Windows Commands JPCERT)(Citation: NSA MS AppLocker) or Software Restriction Policies(Citation: Corio 2008) where appropriate.(Citation: TechNet Applocker vs SRP)",
+      "meta": {
+        "external_id": "T1486",
+        "refs": [
+          "https://attack.mitre.org/techniques/T1486",
+          "https://www.ready.gov/business/implementation/IT",
+          "http://www.sans.org/reading-room/whitepapers/application/application-whitelisting-panacea-propaganda-33599",
+          "http://blog.jpcert.or.jp/2016/01/windows-commands-abused-by-attackers.html",
+          "https://www.iad.gov/iad/library/ia-guidance/tech-briefs/application-whitelisting-using-microsoft-applocker.cfm",
+          "http://technet.microsoft.com/en-us/magazine/2008.06.srp.aspx",
+          "https://technet.microsoft.com/en-us/library/ee791851.aspx"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "b80d107d-fa0d-4b60-9684-b0433e8bdba0",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "429a5c0c-e132-45c0-a4aa-c1f736c92a1c",
+      "value": "Data Encrypted for Impact Mitigation - T1486"
+    },
+    {
+      "description": "When flood volumes exceed the capacity of the network connection being targeted, it is typically necessary to intercept the incoming traffic upstream to filter out the attack traffic from the legitimate traffic. Such defenses can be provided by the hosting Internet Service Provider (ISP) or by a 3rd party such as a Content Delivery Network (CDN) or providers specializing in DoS mitigations.(Citation: CERT-EU DDoS March 2017)\n\nDepending on flood volume, on-premises filtering may be possible by blocking source addresses sourcing the attack, blocking ports that are being targeted, or blocking protocols being used for transport.(Citation: CERT-EU DDoS March 2017)\n\nAs immediate response may require rapid engagement of 3rd parties, analyze the risk associated to critical resources being affected by Network DoS attacks and create a disaster recovery plan/business continuity plan to respond to incidents.(Citation: CERT-EU DDoS March 2017)",
+      "meta": {
+        "external_id": "T1498",
+        "refs": [
+          "https://attack.mitre.org/techniques/T1498",
+          "http://cert.europa.eu/static/WhitePapers/CERT-EU_Security_Whitepaper_DDoS_17-003.pdf"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "d74c4a7e-ffbf-432f-9365-7ebf1f787cab",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "654addf1-47ab-410a-8578-e1a0dc2a49b8",
+      "value": "Network Denial of Service Mitigation - T1498"
+    },
+    {
+      "description": "Leverage services provided by Content Delivery Networks (CDN) or providers specializing in DoS mitigations to filter traffic upstream from services.(Citation: CERT-EU DDoS March 2017) Filter boundary traffic by blocking source addresses sourcing the attack, blocking ports that are being targeted, or blocking protocols being used for transport. To defend against SYN floods, enable SYN Cookies.",
+      "meta": {
+        "external_id": "T1499",
+        "refs": [
+          "https://attack.mitre.org/techniques/T1499",
+          "http://cert.europa.eu/static/WhitePapers/CERT-EU_Security_Whitepaper_DDoS_17-003.pdf"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "c675646d-e204-4aa8-978d-e3d6d65885c4",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "82c21600-ccb6-4232-8c04-ef3792b56628",
+      "value": "Endpoint Denial of Service Mitigation - T1499"
+    },
+    {
       "description": "Application developers should use device-provided credential storage mechanisms such as Android's KeyStore or iOS's KeyChain. These can prevent credentials from being exposed to an adversary.",
       "meta": {
         "external_id": "M1008",
@@ -1209,9 +1277,9 @@
     {
       "description": "Identify unnecessary system utilities or potentially malicious software that may be used to acquire information about system users, and audit and/or block them by using whitelisting (Citation: Beechey 2010) tools, like AppLocker, (Citation: Windows Commands JPCERT) (Citation: NSA MS AppLocker) or Software Restriction Policies (Citation: Corio 2008) where appropriate. (Citation: TechNet Applocker vs SRP)",
       "meta": {
-        "external_id": "T1033",
+        "external_id": "T1482",
         "refs": [
-          "https://attack.mitre.org/techniques/T1033",
+          "https://attack.mitre.org/techniques/T1482",
           "http://www.sans.org/reading-room/whitepapers/application/application-whitelisting-panacea-propaganda-33599",
           "http://blog.jpcert.or.jp/2016/01/windows-commands-abused-by-attackers.html",
           "https://www.iad.gov/iad/library/ia-guidance/tech-briefs/application-whitelisting-using-microsoft-applocker.cfm",
@@ -1226,10 +1294,17 @@
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
           "type": "mitigates"
+        },
+        {
+          "dest-uuid": "767dbf9e-df3f-45cb-8998-4903ab5f80c0",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
         }
       ],
       "uuid": "16f144e4-c780-4ed2-98b4-55d14e2dfa44",
-      "value": "System Owner/User Discovery Mitigation - T1033"
+      "value": "System Owner/User Discovery Mitigation - T1482"
     },
     {
       "description": "Identify unnecessary system utilities or potentially malicious software that may be used to acquire information, and audit and/or block them by using whitelisting (Citation: Beechey 2010) tools, like AppLocker, (Citation: Windows Commands JPCERT) (Citation: NSA MS AppLocker) or Software Restriction Policies (Citation: Corio 2008) where appropriate. (Citation: TechNet Applocker vs SRP)",
@@ -1296,90 +1371,6 @@
           "type": "mitigates"
         },
         {
-          "dest-uuid": "79eec66a-9bd0-4a3f-ac82-19159e94bd44",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "fd339382-bfec-4bf0-8d47-1caedc9e7e57",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "351c0927-2fc1-4a2c-ad84-cbbee7eb8172",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "8f0e39c6-82c9-41ec-9f93-5696c0f2e274",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "82f04b1e-5371-4a6f-be06-411f0f43b483",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "ef771e03-e080-43b4-a619-ac6f84899884",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "cde2cb84-455e-410c-8aa9-086f2788bcd2",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "3b0b604f-10db-41a0-b54c-493124d455b9",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "3dd58c80-4c2e-458c-9503-1b2cd273c4d2",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "dfe29258-ce59-421c-9dee-e85cb9fa90cd",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "88932a8c-3a17-406f-9431-1da3ff19f6d6",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "1b51f5bc-b97a-498a-8dbd-bc6b1901bf19",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
           "dest-uuid": "2204c371-6100-4ae0-82f3-25c07c29772a",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
@@ -1387,21 +1378,7 @@
           "type": "mitigates"
         },
         {
-          "dest-uuid": "29e07491-8947-43a3-8d4e-9a787c45f3d3",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "e8b4e1ec-8e3b-484c-9038-4459b1ed8060",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "2d646840-f6f5-4619-a5a8-29c8316bbac5",
+          "dest-uuid": "cde2cb84-455e-410c-8aa9-086f2788bcd2",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
@@ -1422,6 +1399,34 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "29e07491-8947-43a3-8d4e-9a787c45f3d3",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "3b0b604f-10db-41a0-b54c-493124d455b9",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "79eec66a-9bd0-4a3f-ac82-19159e94bd44",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "2d646840-f6f5-4619-a5a8-29c8316bbac5",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "702055ac-4e54-4ae9-9527-e23a38e0b160",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
@@ -1429,7 +1434,7 @@
           "type": "mitigates"
         },
         {
-          "dest-uuid": "667e5707-3843-4da8-bd34-88b922526f0d",
+          "dest-uuid": "e8b4e1ec-8e3b-484c-9038-4459b1ed8060",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
@@ -1437,6 +1442,76 @@
         },
         {
           "dest-uuid": "cf28ca46-1fd3-46b4-b1f6-ec0b72361848",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "1b51f5bc-b97a-498a-8dbd-bc6b1901bf19",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "3dd58c80-4c2e-458c-9503-1b2cd273c4d2",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "8f0e39c6-82c9-41ec-9f93-5696c0f2e274",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "82f04b1e-5371-4a6f-be06-411f0f43b483",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "fd339382-bfec-4bf0-8d47-1caedc9e7e57",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "351c0927-2fc1-4a2c-ad84-cbbee7eb8172",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "dfe29258-ce59-421c-9dee-e85cb9fa90cd",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "ef771e03-e080-43b4-a619-ac6f84899884",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "88932a8c-3a17-406f-9431-1da3ff19f6d6",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "667e5707-3843-4da8-bd34-88b922526f0d",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
@@ -1682,7 +1757,7 @@
       "value": "Graphical User Interface Mitigation - T1061"
     },
     {
-      "description": "Grant access to application deployment systems only to a limited number of authorized administrators. Ensure proper system and access isolation for critical network systems through use of firewalls, account privilege separation, group policy, and multifactor authentication. Verify that account credentials that may be used to access deployment systems are unique and not used throughout the enterprise network. Patch deployment systems regularly to prevent potential remote access through [Exploitation of Vulnerability](https://attack.mitre.org/techniques/T1068). \n\nIf the application deployment system can be configured to deploy only signed binaries, then ensure that the trusted signing certificates are not co-located with the application deployment system and are instead located on a system that cannot be accessed remotely or to which remote access is tightly controlled.",
+      "description": "Grant access to application deployment systems only to a limited number of authorized administrators. Ensure proper system and access isolation for critical network systems through use of firewalls, account privilege separation, group policy, and multifactor authentication. Verify that account credentials that may be used to access deployment systems are unique and not used throughout the enterprise network. Patch deployment systems regularly to prevent potential remote access through [Exploitation for Privilege Escalation](https://attack.mitre.org/techniques/T1068). \n\nIf the application deployment system can be configured to deploy only signed binaries, then ensure that the trusted signing certificates are not co-located with the application deployment system and are instead located on a system that cannot be accessed remotely or to which remote access is tightly controlled.",
       "meta": {
         "external_id": "T1017",
         "refs": [
@@ -1748,7 +1823,7 @@
       "value": "Remote System Discovery Mitigation - T1018"
     },
     {
-      "description": "Identify or block potentially malicious software that may contain abusive functionality by using whitelisting (Citation: Beechey 2010) tools, like AppLocker, (Citation: Windows Commands JPCERT) (Citation: NSA MS AppLocker) or Software Restriction Policies (Citation: Corio 2008) where appropriate. (Citation: TechNet Applocker vs SRP). These mechanisms can also be used to disable and/or limit user access to Windows utilities used to invoke execution.",
+      "description": "Identify or block potentially malicious software that may contain abusive functionality by using whitelisting (Citation: Beechey 2010) tools, like AppLocker, (Citation: Windows Commands JPCERT) (Citation: NSA MS AppLocker) or Software Restriction Policies (Citation: Corio 2008) where appropriate. (Citation: TechNet Applocker vs SRP). These mechanisms can also be used to disable and/or limit user access to Windows utilities and file types/locations used to invoke malicious execution.(Citation: SpectorOPs SettingContent-ms Jun 2018)",
       "meta": {
         "external_id": "T1202",
         "refs": [
@@ -1757,7 +1832,8 @@
           "http://blog.jpcert.or.jp/2016/01/windows-commands-abused-by-attackers.html",
           "https://www.iad.gov/iad/library/ia-guidance/tech-briefs/application-whitelisting-using-microsoft-applocker.cfm",
           "http://technet.microsoft.com/en-us/magazine/2008.06.srp.aspx",
-          "https://technet.microsoft.com/en-us/library/ee791851.aspx"
+          "https://technet.microsoft.com/en-us/library/ee791851.aspx",
+          "https://posts.specterops.io/the-tale-of-settingcontent-ms-files-f1ea253e4d39"
         ]
       },
       "related": [
@@ -1833,6 +1909,31 @@
       ],
       "uuid": "a569295c-a093-4db4-9fb4-7105edef85ad",
       "value": "Custom Cryptographic Protocol Mitigation - T1024"
+    },
+    {
+      "description": "This type of technique cannot be easily mitigated with preventive controls or patched since it is based on the abuse of operating system design features. For example, blocking all file compilation may have unintended side effects, such as preventing legitimate OS frameworks and code development mechanisms from operating properly. Consider removing compilers if not needed, otherwise efforts should be focused on preventing adversary tools from running earlier in the chain of activity and on identifying subsequent malicious behavior.\n\nIdentify unnecessary system utilities or potentially malicious software that may be used to decrypt, deobfuscate, decode, and compile files or information, and audit and/or block them by using whitelisting (Citation: Beechey 2010) tools, like AppLocker, (Citation: Windows Commands JPCERT) (Citation: NSA MS AppLocker) or Software Restriction Policies (Citation: Corio 2008) where appropriate. (Citation: TechNet Applocker vs SRP)",
+      "meta": {
+        "external_id": "T1502",
+        "refs": [
+          "https://attack.mitre.org/techniques/T1502",
+          "http://www.sans.org/reading-room/whitepapers/application/application-whitelisting-panacea-propaganda-33599",
+          "http://blog.jpcert.or.jp/2016/01/windows-commands-abused-by-attackers.html",
+          "https://www.iad.gov/iad/library/ia-guidance/tech-briefs/application-whitelisting-using-microsoft-applocker.cfm",
+          "http://technet.microsoft.com/en-us/magazine/2008.06.srp.aspx",
+          "https://technet.microsoft.com/en-us/library/ee791851.aspx"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "cf7b3a06-8b42-4c33-bbe9-012120027925",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "ae56a49d-5281-45c5-ab95-70a1439c338e",
+      "value": "Compile After Delivery Mitigation - T1502"
     },
     {
       "description": "Identify unnecessary system utilities or potentially malicious software that may be used to acquire information about the operating system and underlying hardware, and audit and/or block them by using whitelisting (Citation: Beechey 2010) tools, like AppLocker, (Citation: Windows Commands JPCERT) (Citation: NSA MS AppLocker) or Software Restriction Policies (Citation: Corio 2008) where appropriate. (Citation: TechNet Applocker vs SRP)",
@@ -1973,6 +2074,32 @@
       "value": "Windows Management Instrumentation Mitigation - T1047"
     },
     {
+      "description": "Consider technical controls to prevent the disabling of services or deletion of files involved in system recovery. \n\nConsider implementing IT disaster recovery plans that contain procedures for taking regular data backups that can be used to restore organizational data.(Citation: Ready.gov IT DRP) Ensure backups are stored off system and is protected from common methods adversaries may use to gain access and destroy the backups to prevent recovery.\n\nIdentify potentially malicious software and audit and/or block it by using whitelisting(Citation: Beechey 2010) tools, like AppLocker,(Citation: Windows Commands JPCERT)(Citation: NSA MS AppLocker) or Software Restriction Policies(Citation: Corio 2008) where appropriate.(Citation: TechNet Applocker vs SRP)",
+      "meta": {
+        "external_id": "T1490",
+        "refs": [
+          "https://attack.mitre.org/techniques/T1490",
+          "https://www.ready.gov/business/implementation/IT",
+          "http://www.sans.org/reading-room/whitepapers/application/application-whitelisting-panacea-propaganda-33599",
+          "http://blog.jpcert.or.jp/2016/01/windows-commands-abused-by-attackers.html",
+          "https://www.iad.gov/iad/library/ia-guidance/tech-briefs/application-whitelisting-using-microsoft-applocker.cfm",
+          "http://technet.microsoft.com/en-us/magazine/2008.06.srp.aspx",
+          "https://technet.microsoft.com/en-us/library/ee791851.aspx"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "f5d8eed6-48a9-4cdf-a3d7-d1ffa99c3d2a",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "bb25b897-bfc7-4128-839d-52e9764dbfa6",
+      "value": "Inhibit System Recovery Mitigation - T1490"
+    },
+    {
       "description": "Properly configure firewalls and proxies to limit outgoing traffic to only necessary ports. \n\nNetwork intrusion detection and prevention systems that use network signatures to identify traffic for specific adversary malware can be used to mitigate activity at the network level. Signatures are often for unique indicators within protocols and may be based on the specific protocol used by a particular adversary or tool, and will likely be different across various malware families and versions. Adversaries will likely change tool C2 signatures over time or construct protocols in such a way as to avoid detection by common defensive tools. (Citation: University of Birmingham C2)",
       "meta": {
         "external_id": "T1065",
@@ -1998,7 +2125,8 @@
       "meta": {
         "external_id": "T1075",
         "refs": [
-          "https://attack.mitre.org/techniques/T1075"
+          "https://attack.mitre.org/techniques/T1075",
+          "https://github.com/iadgov/Secure-Host-Baseline/blob/master/Windows/Group%20Policy%20Templates/en-US/SecGuide.adml"
         ]
       },
       "related": [
@@ -2384,14 +2512,16 @@
       "value": "Network Share Discovery Mitigation - T1135"
     },
     {
-      "description": "Follow Office macro security best practices suitable for your environment. Disable Office VBA macros from executing. Even setting to disable with notification could enable unsuspecting users to execute potentially malicious macros. (Citation: TechNet Office Macro Security)\n\nFor the Office Test method, create the Registry key used to execute it and set the permissions to \"Read Control\" to prevent easy access to the key without administrator permissions or requiring Privilege Escalation. (Citation: Palo Alto Office Test Sofacy)\n\nDisable Office add-ins. If they are required, follow best practices for securing them by requiring them to be signed and disabling user notification for allowing add-ins. For some add-ins types (WLL, VBA) additional mitigation is likely required as disabling add-ins in the Office Trust Center does not disable WLL nor does it prevent VBA code from executing. (Citation: MRWLabs Office Persistence Add-ins)",
+      "description": "Follow Office macro security best practices suitable for your environment. Disable Office VBA macros from executing. Even setting to disable with notification could enable unsuspecting users to execute potentially malicious macros. (Citation: TechNet Office Macro Security)\n\nFor the Office Test method, create the Registry key used to execute it and set the permissions to \"Read Control\" to prevent easy access to the key without administrator permissions or requiring Privilege Escalation. (Citation: Palo Alto Office Test Sofacy)\n\nDisable Office add-ins. If they are required, follow best practices for securing them by requiring them to be signed and disabling user notification for allowing add-ins. For some add-ins types (WLL, VBA) additional mitigation is likely required as disabling add-ins in the Office Trust Center does not disable WLL nor does it prevent VBA code from executing. (Citation: MRWLabs Office Persistence Add-ins)\n\nFor the Outlook methods, blocking macros may be ineffective as the Visual Basic engine used for these features is separate from the macro scripting engine.(Citation: SensePost Outlook Forms) Microsoft has released patches to try to address each issue. Ensure KB3191938 which blocks Outlook Visual Basic and displays a malicious code warning, KB4011091 which disables custom forms by default, and KB4011162 which removes the legacy Home Page feature, are applied to systems.(Citation: SensePost Outlook Home Page)",
       "meta": {
         "external_id": "T1137",
         "refs": [
           "https://attack.mitre.org/techniques/T1137",
+          "https://blogs.technet.microsoft.com/mmpc/2016/03/22/new-feature-in-office-2016-can-block-macros-and-help-prevent-infection/",
           "https://researchcenter.paloaltonetworks.com/2016/07/unit42-technical-walkthrough-office-test-persistence-method-used-in-recent-sofacy-attacks/",
           "https://labs.mwrinfosecurity.com/blog/add-in-opportunities-for-office-persistence/",
-          "https://blogs.technet.microsoft.com/mmpc/2016/03/22/new-feature-in-office-2016-can-block-macros-and-help-prevent-infection/"
+          "https://sensepost.com/blog/2017/outlook-forms-and-shells/",
+          "https://sensepost.com/blog/2017/outlook-home-page-another-ruler-vector/"
         ]
       },
       "related": [
@@ -2407,18 +2537,18 @@
       "value": "Office Application Startup Mitigation - T1137"
     },
     {
-      "description": "Registry keys specific to Microsoft Office feature control security can be set to disable automatic DDE/OLE execution. (Citation: Microsoft DDE Advisory Nov 2017) (Citation: BleepingComputer DDE Disabled in Word Dec 2017) (Citation: GitHub Disable DDEAUTO Oct 2017) Microsoft also created Registry keys to completely disable DDE execution in Word and Excel. (Citation: Microsoft ADV170021 Dec 2017)\n\nEnsure Protected View is enabled (Citation: Microsoft Protected View) and consider disabling embedded files in Office programs, such as OneNote, not enrolled in Protected View. (Citation: Enigma Reviving DDE Jan 2018) (Citation: GitHub Disable DDEAUTO Oct 2017)\n\nOn Windows 10, enable Attack Surface Reduction (ASR) rules to prevent DDE attacks and spawning of child processes from Office programs. (Citation: Microsoft ASR Nov 2017) (Citation: Enigma Reviving DDE Jan 2018)",
+      "description": "Registry keys specific to Microsoft Office feature control security can be set to disable automatic DDE/OLE execution. (Citation: Microsoft DDE Advisory Nov 2017) (Citation: BleepingComputer DDE Disabled in Word Dec 2017) (Citation: GitHub Disable DDEAUTO Oct 2017) Microsoft also created, and enabled by default, Registry keys to completely disable DDE execution in Word and Excel. (Citation: Microsoft ADV170021 Dec 2017)\n\nEnsure Protected View is enabled (Citation: Microsoft Protected View) and consider disabling embedded files in Office programs, such as OneNote, not enrolled in Protected View. (Citation: Enigma Reviving DDE Jan 2018) (Citation: GitHub Disable DDEAUTO Oct 2017)\n\nOn Windows 10, enable Attack Surface Reduction (ASR) rules to prevent DDE attacks and spawning of child processes from Office programs. (Citation: Microsoft ASR Nov 2017) (Citation: Enigma Reviving DDE Jan 2018)",
       "meta": {
         "external_id": "T1173",
         "refs": [
           "https://attack.mitre.org/techniques/T1173",
           "https://technet.microsoft.com/library/security/4053440",
-          "https://support.office.com/en-us/article/What-is-Protected-View-d6f09ac7-e6b9-4495-8e43-2bbcdbcb6653",
           "https://www.bleepingcomputer.com/news/microsoft/microsoft-disables-dde-feature-in-word-to-prevent-further-malware-attacks/",
           "https://gist.github.com/wdormann/732bb88d9b5dd5a66c9f1e1498f31a1b",
+          "https://portal.msrc.microsoft.com/security-guidance/advisory/ADV170021",
+          "https://support.office.com/en-us/article/What-is-Protected-View-d6f09ac7-e6b9-4495-8e43-2bbcdbcb6653",
           "https://posts.specterops.io/reviving-dde-using-onenote-and-excel-for-code-execution-d7226864caee",
-          "https://docs.microsoft.com/windows/threat-protection/windows-defender-exploit-guard/enable-attack-surface-reduction",
-          "https://portal.msrc.microsoft.com/security-guidance/advisory/ADV170021"
+          "https://docs.microsoft.com/windows/threat-protection/windows-defender-exploit-guard/enable-attack-surface-reduction"
         ]
       },
       "related": [
@@ -2496,13 +2626,14 @@
       "value": "Spearphishing via Service Mitigation - T1194"
     },
     {
-      "description": "Apply supply chain risk management (SCRM) practices and procedures (Citation: MITRE SE Guide 2014), such as supply chain analysis and appropriate risk management, throughout the life-cycle of a system.\n\nLeverage established software development lifecycle (SDLC) practices (Citation: NIST Supply Chain 2012): \n\n* Uniquely Identify Supply Chain Elements, Processes, and Actors\n* Limit Access and Exposure within the Supply Chain\n* Establish and Maintain the Provenance of Elements, Processes, Tools, and Data\n* Share Information within Strict Limits\n* Perform SCRM Awareness and Training\n* Use Defensive Design for Systems, Elements, and Processes\n* Perform Continuous Integrator Review\n* Strengthen Delivery Mechanisms\n* Assure Sustainment Activities and Processes\n* Manage Disposal and Final Disposition Activities throughout the System or Element Life Cycle",
+      "description": "Apply supply chain risk management (SCRM) practices and procedures (Citation: MITRE SE Guide 2014), such as supply chain analysis and appropriate risk management, throughout the life-cycle of a system.\n\nLeverage established software development lifecycle (SDLC) practices (Citation: NIST Supply Chain 2012): \n\n* Uniquely Identify Supply Chain Elements, Processes, and Actors\n* Limit Access and Exposure within the Supply Chain\n* Establish and Maintain the Provenance of Elements, Processes, Tools, and Data\n* Share Information within Strict Limits\n* Perform SCRM Awareness and Training\n* Use Defensive Design for Systems, Elements, and Processes\n* Perform Continuous Integrator Review\n* Strengthen Delivery Mechanisms\n* Assure Sustainment Activities and Processes\n* Manage Disposal and Final Disposition Activities throughout the System or Element Life Cycle\n\nA patch management process should be implemented to check unused dependencies, unmaintained and/or previously vulnerable dependencies, unnecessary features, components, files, and documentation. Continuous monitoring of vulnerability sources and the use of automatic and manual code review tools should also be implemented as well. (Citation: OWASP Top 10 2017)",
       "meta": {
         "external_id": "T1195",
         "refs": [
           "https://attack.mitre.org/techniques/T1195",
           "https://www.mitre.org/sites/default/files/publications/se-guide-book-interactive.pdf",
-          "http://dx.doi.org/10.6028/NIST.IR.7622"
+          "http://dx.doi.org/10.6028/NIST.IR.7622",
+          "https://www.owasp.org/images/7/72/OWASP_Top_10-2017_%28en%29.pdf.pdf"
         ]
       },
       "related": [
@@ -2623,12 +2754,150 @@
       "value": "Compiled HTML File Mitigation - T1223"
     },
     {
-      "description": "Disable LLMNR and NetBIOS in local computer security settings or by group policy if they are not needed within an environment. (Citation: ADSecurity Windows Secure Baseline)\n\nUse host-based security software to block LLMNR/NetBIOS traffic.",
+      "description": "Map the trusts within existing domains/forests and keep trust relationships to a minimum. Employ network segmentation for sensitive domains.(Citation: Harmj0y Domain Trusts)",
+      "meta": {
+        "external_id": "T1482",
+        "refs": [
+          "https://attack.mitre.org/techniques/T1482",
+          "http://www.harmj0y.net/blog/redteaming/a-guide-to-attacking-domain-trusts/ "
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "767dbf9e-df3f-45cb-8998-4903ab5f80c0",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "159b4ee4-8fa1-44a5-b095-2973f3c7e25e",
+      "value": "Domain Trust Discovery Mitigation - T1482"
+    },
+    {
+      "description": "Identify critical business and system processes that may be targeted by adversaries and work to secure the data related to those processes against tampering. least privilege principles are applied to important information resources to reduce exposure to data manipulation risk. Consider encrypting important information to reduce an adversaries ability to perform tailor data modifications. Where applicable, examine using file monitoring software to check integrity on important files and directories as well as take corrective actions when unauthorized changes are detected. \n\nConsider implementing IT disaster recovery plans that contain procedures for taking regular data backups that can be used to restore organizational data.(Citation: Ready.gov IT DRP) Ensure backups are stored off system and is protected from common methods adversaries may use to gain access and manipulate backups.",
+      "meta": {
+        "external_id": "T1492",
+        "refs": [
+          "https://attack.mitre.org/techniques/T1492",
+          "https://www.ready.gov/business/implementation/IT"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "0bf78622-e8d2-41da-a857-731472d61a92",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "e9362d25-4427-446b-99e8-b8f0c3b86615",
+      "value": "Stored Data Manipulation Mitigation - T1492"
+    },
+    {
+      "description": "This technique may be difficult to mitigate since the domains can be registered just before they are used, and disposed shortly after. Malware researchers can reverse-engineer malware variants that use DGAs and determine future domains that the malware will attempt to contact, but this is a time and resource intensive effort.(Citation: Cybereason Dissecting DGAs)(Citation: Cisco Umbrella DGA Brute Force) Malware is also increasingly incorporating seed values that can be unique for each instance, which would then need to be determined to extract future generated domains. In some cases, the seed that a particular sample uses can be extracted from DNS traffic.(Citation: Akamai DGA Mitigation) Even so, there can be thousands of possible domains generated per day; this makes it impractical for defenders to preemptively register all possible C2 domains due to the cost. In some cases a local DNS sinkhole may be used to help prevent DGA-based command and control at a reduced cost.\n\nNetwork intrusion detection and prevention systems that use network signatures to identify traffic for specific adversary malware can be used to mitigate activity at the network level. Signatures are often for unique indicators within protocols and may be based on the specific protocol used by a particular adversary or tool, and will likely be different across various malware families and versions. Adversaries will likely change tool C2 signatures over time or construct protocols in such a way as to avoid detection by common defensive tools. (Citation: University of Birmingham C2)",
+      "meta": {
+        "external_id": "T1483",
+        "refs": [
+          "https://attack.mitre.org/techniques/T1483",
+          "http://go.cybereason.com/rs/996-YZT-709/images/Cybereason-Lab-Analysis-Dissecting-DGAs-Eight-Real-World-DGA-Variants.pdf",
+          "https://umbrella.cisco.com/blog/2015/02/18/at-high-noon-algorithms-do-battle/",
+          "https://blogs.akamai.com/2018/01/a-death-match-of-domain-generation-algorithms.html",
+          "https://arxiv.org/ftp/arxiv/papers/1408/1408.1136.pdf"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "54456690-84de-4538-9101-643e26437e09",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "3bd2cf87-1ceb-4317-9aee-3e7dc713261b",
+      "value": "Domain Generation Algorithms Mitigation - T1483"
+    },
+    {
+      "description": "Identify critical business and system processes that may be targeted by adversaries and work to secure communications related to those processes against tampering. Encrypt all important data flows to reduce the impact of tailored modifications on data in transit.",
+      "meta": {
+        "external_id": "T1493",
+        "refs": [
+          "https://attack.mitre.org/techniques/T1493"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "cc1e737c-236c-4e3b-83ba-32039a626ef8",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "245075bc-f992-4d89-af8c-834c53d403f4",
+      "value": "Transmitted Data Manipulation Mitigation - T1493"
+    },
+    {
+      "description": "Identify and correct GPO permissions abuse opportunities (ex: GPO modification privileges) using auditing tools such as Bloodhound (version 1.5.1 and later)(Citation: GitHub Bloodhound).\n\nConsider implementing WMI and security filtering to further tailor which users and computers a GPO will apply to.(Citation: Wald0 Guide to GPOs)(Citation: Microsoft WMI Filters)(Citation: Microsoft GPO Security Filtering)",
+      "meta": {
+        "external_id": "T1484",
+        "refs": [
+          "https://attack.mitre.org/techniques/T1484",
+          "https://github.com/BloodHoundAD/BloodHound",
+          "https://wald0.com/?p=179",
+          "https://blogs.technet.microsoft.com/askds/2008/09/11/fun-with-wmi-filters-in-group-policy/",
+          "https://docs.microsoft.com/en-us/previous-versions/windows/desktop/Policy/filtering-the-scope-of-a-gpo"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "ebb42bbe-62d7-47d7-a55f-3b08b61d792d",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "2108b914-eee1-45cc-8840-36272b19596a",
+      "value": "Group Policy Modification Mitigation - T1484"
+    },
+    {
+      "description": "Identify critical business and system processes that may be targeted by adversaries and work to secure those systems against tampering. Prevent critical business and system processes from being replaced, overwritten, or reconfigured to load potentially malicious code. Identify potentially malicious software and audit and/or block it by using whitelisting(Citation: Beechey 2010) tools, like AppLocker,(Citation: Windows Commands JPCERT)(Citation: NSA MS AppLocker) or Software Restriction Policies(Citation: Corio 2008) where appropriate.(Citation: TechNet Applocker vs SRP)",
+      "meta": {
+        "external_id": "T1494",
+        "refs": [
+          "https://attack.mitre.org/techniques/T1494",
+          "http://www.sans.org/reading-room/whitepapers/application/application-whitelisting-panacea-propaganda-33599",
+          "http://blog.jpcert.or.jp/2016/01/windows-commands-abused-by-attackers.html",
+          "https://www.iad.gov/iad/library/ia-guidance/tech-briefs/application-whitelisting-using-microsoft-applocker.cfm",
+          "http://technet.microsoft.com/en-us/magazine/2008.06.srp.aspx",
+          "https://technet.microsoft.com/en-us/library/ee791851.aspx"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "ca205a36-c1ad-488b-aa6c-ab34bdd3a36b",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "337172b1-b003-4034-8a3f-1d89a71da628",
+      "value": "Runtime Data Manipulation Mitigation - T1494"
+    },
+    {
+      "description": "Disable LLMNR and NetBIOS in local computer security settings or by group policy if they are not needed within an environment. (Citation: ADSecurity Windows Secure Baseline)\n\nUse host-based security software to block LLMNR/NetBIOS traffic. Enabling SMB Signing can stop NTLMv2 relay attacks.(Citation: byt3bl33d3r NTLM Relaying)(Citation: Secure Ideas SMB Relay)(Citation: Microsoft SMB Packet Signing)",
       "meta": {
         "external_id": "T1171",
         "refs": [
           "https://attack.mitre.org/techniques/T1171",
-          "https://adsecurity.org/?p=3299"
+          "https://adsecurity.org/?p=3299",
+          "https://byt3bl33d3r.github.io/practical-guide-to-ntlm-relaying-in-2017-aka-getting-a-foothold-in-under-5-minutes.html",
+          "https://blog.secureideas.com/2018/04/ever-run-a-relay-why-smb-relays-should-be-on-your-mind.html",
+          "https://docs.microsoft.com/en-us/previous-versions/system-center/operations-manager-2005/cc180803(v=technet.10)"
         ]
       },
       "related": [
@@ -2665,7 +2934,7 @@
       "value": "Multi-Stage Channels Mitigation - T1104"
     },
     {
-      "description": "Evaluate the security of third-party software that could be used to deploy or execute programs. Ensure that access to management systems for deployment systems is limited, monitored, and secure. Have a strict approval policy for use of deployment systems.\n\nGrant access to application deployment systems only to a limited number of authorized administrators. Ensure proper system and access isolation for critical network systems through use of firewalls, account privilege separation, group policy, and multifactor authentication. Verify that account credentials that may be used to access deployment systems are unique and not used throughout the enterprise network. Patch deployment systems regularly to prevent potential remote access through [Exploitation of Vulnerability](https://attack.mitre.org/techniques/T1068). \n\nIf the application deployment system can be configured to deploy only signed binaries, then ensure that the trusted signing certificates are not co-located with the application deployment system and are instead located on a system that cannot be accessed remotely or to which remote access is tightly controlled.",
+      "description": "Evaluate the security of third-party software that could be used to deploy or execute programs. Ensure that access to management systems for deployment systems is limited, monitored, and secure. Have a strict approval policy for use of deployment systems.\n\nGrant access to application deployment systems only to a limited number of authorized administrators. Ensure proper system and access isolation for critical network systems through use of firewalls, account privilege separation, group policy, and multifactor authentication. Verify that account credentials that may be used to access deployment systems are unique and not used throughout the enterprise network. Patch deployment systems regularly to prevent potential remote access through [Exploitation for Privilege Escalation](https://attack.mitre.org/techniques/T1068). \n\nIf the application deployment system can be configured to deploy only signed binaries, then ensure that the trusted signing certificates are not co-located with the application deployment system and are instead located on a system that cannot be accessed remotely or to which remote access is tightly controlled.",
       "meta": {
         "external_id": "T1072",
         "refs": [
@@ -2820,6 +3089,26 @@
       "value": "Drive-by Compromise Mitigation - T1189"
     },
     {
+      "description": "Mitigation of this technique with preventative controls may impact the adversary's decision process depending on what they're looking for, how they use the information, and what their objectives are. Since it may be difficult to mitigate all aspects of information that could be gathered, efforts should be focused on preventing adversary tools from running earlier in the chain of activity and on identifying subsequent malicious behavior if compromised.",
+      "meta": {
+        "external_id": "T1497",
+        "refs": [
+          "https://attack.mitre.org/techniques/T1497"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "82caa33e-d11a-433a-94ea-9b5a5fbef81d",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "c4585911-6ecf-47b6-aa6b-a2bae30fd3f7",
+      "value": "Virtualization/Sandbox Evasion Mitigation - T1497"
+    },
+    {
       "description": "Network intrusion detection and prevention systems that use network signatures to identify traffic for specific adversary malware can be used to mitigate activity at the network level. Signatures are often for unique indicators within protocols and may be based on the specific obfuscation technique used by a particular adversary or tool, and will likely be different across various malware families and versions. Adversaries will likely change tool C2 signatures over time or construct protocols in such a way as to avoid detection by common defensive tools. (Citation: University of Birmingham C2)",
       "meta": {
         "external_id": "T1001",
@@ -2841,7 +3130,7 @@
       "value": "Data Obfuscation Mitigation - T1001"
     },
     {
-      "description": "Ensure that externally facing Web servers are patched regularly to prevent adversary access through [Exploitation of Vulnerability](https://attack.mitre.org/techniques/T1068) to gain remote code access or through file inclusion weaknesses that may allow adversaries to upload files or scripts that are automatically served as Web pages. \n\nAudit account and group permissions to ensure that accounts used to manage servers do not overlap with accounts and permissions of users in the internal network that could be acquired through Credential Access and used to log into the Web server and plant a Web shell or pivot from the Web server into the internal network. (Citation: US-CERT Alert TA15-314A Web Shells)",
+      "description": "Ensure that externally facing Web servers are patched regularly to prevent adversary access through [Exploitation for Privilege Escalation](https://attack.mitre.org/techniques/T1068) to gain remote code access or through file inclusion weaknesses that may allow adversaries to upload files or scripts that are automatically served as Web pages. \n\nAudit account and group permissions to ensure that accounts used to manage servers do not overlap with accounts and permissions of users in the internal network that could be acquired through Credential Access and used to log into the Web server and plant a Web shell or pivot from the Web server into the internal network. (Citation: US-CERT Alert TA15-314A Web Shells)",
       "meta": {
         "external_id": "T1100",
         "refs": [
@@ -3120,28 +3409,7 @@
           "type": "mitigates"
         },
         {
-          "dest-uuid": "fb3fa94a-3aee-4ab0-b7e7-abdf0a51286d",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
           "dest-uuid": "a5de0540-73e7-4c67-96da-4143afedc7ed",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "f58cd69a-e548-478b-9248-8a9af881dc34",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "d731c21e-f27d-4756-b418-0e2aaabd6d63",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
@@ -3155,7 +3423,28 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "f58cd69a-e548-478b-9248-8a9af881dc34",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "3b0b604f-10db-41a0-b54c-493124d455b9",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "d731c21e-f27d-4756-b418-0e2aaabd6d63",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "fb3fa94a-3aee-4ab0-b7e7-abdf0a51286d",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
@@ -3166,11 +3455,12 @@
       "value": "Encrypt Network Traffic - M1009"
     },
     {
-      "description": "Set account lockout policies after a certain number of failed login attempts to prevent passwords from being guessed. Use multifactor authentication. Follow best practices for mitigating access to [Valid Accounts](https://attack.mitre.org/techniques/T1078)",
+      "description": "Set account lockout policies after a certain number of failed login attempts to prevent passwords from being guessed. \nToo strict a policy can create a denial of service condition and render environments un-usable, with all accounts being locked-out permanently. Use multifactor authentication. Follow best practices for mitigating access to [Valid Accounts](https://attack.mitre.org/techniques/T1078)\n\nRefer to NIST guidelines when creating passwords.(Citation: NIST 800-63-3)\n\nWhere possible, also enable multi factor authentication on external facing services.",
       "meta": {
         "external_id": "T1110",
         "refs": [
-          "https://attack.mitre.org/techniques/T1110"
+          "https://attack.mitre.org/techniques/T1110",
+          "https://pages.nist.gov/800-63-3/sp800-63b.html"
         ]
       },
       "related": [
@@ -3361,6 +3651,26 @@
       ],
       "uuid": "2d704e56-e689-4011-b989-bf4e025a8727",
       "value": "Plist Modification Mitigation - T1150"
+    },
+    {
+      "description": "The creation and modification of systemd service unit files is generally reserved for administrators such as the Linux root user and other users with superuser privileges. Limit user access to system utilities such as systemctl to only users who have a legitimate need. Restrict read/write access to systemd unit files to only select privileged users who have a legitimate need to manage system services. Additionally, the installation of software commonly adds and changes systemd service unit files. Restrict software installation to trusted repositories only and be cautious of orphaned software packages. Utilize malicious code protection and application whitelisting to mitigate the ability of malware to create or modify systemd services. ",
+      "meta": {
+        "external_id": "T1501",
+        "refs": [
+          "https://attack.mitre.org/techniques/T1501"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "0fff2797-19cb-41ea-a5f1-8a9303b8158e",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "83130e62-bca6-4a81-bd4b-8e233bd49db6",
+      "value": "Systemd Service Mitigation - T1501"
     },
     {
       "description": "Networks that allow for open development and testing of Web content and allow users to set up their own Web servers on the enterprise network may be particularly vulnerable if the systems and Web servers are not properly secured to limit privileged account use, unauthenticated network share access, and network/system isolation.\n\nEnsure proper permissions on directories that are accessible through a Web server. Disallow remote access to the webroot or other directories used to serve Web content. Disable execution on directories within the webroot. Ensure that permissions of the Web server process are only what is required by not using built-in accounts; instead, create specific accounts to limit unnecessary access or permissions overlap across multiple systems. (Citation: acunetix Server Secuirty) (Citation: NIST Server Security July 2008)",
@@ -3873,6 +4183,26 @@
       "value": "Data Staged Mitigation - T1074"
     },
     {
+      "description": "This technique likely should not be mitigated with preventative controls because it may protect unintended targets from being compromised. If targeted, efforts should be focused on preventing adversary tools from running earlier in the chain of activity and on identifying subsequent malicious behavior if compromised.",
+      "meta": {
+        "external_id": "T1480",
+        "refs": [
+          "https://attack.mitre.org/techniques/T1480"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "853c4192-4311-43e1-bfbb-b11b14911852",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "c61e2da1-f51f-424c-b152-dc930d4f2e70",
+      "value": "Environmental Keying Mitigation - T1480"
+    },
+    {
       "description": "This type of attack technique cannot be easily mitigated with preventive controls since it is based on the abuse of operating system design features. For example, mitigating specific Windows API calls will likely have unintended side effects, such as preventing legitimate software (i.e., security products) from operating properly. Efforts should be focused on preventing adversary tools from running earlier in the chain of activity and on identification of subsequent malicious behavior. (Citation: GDSecurity Linux injection)\n\nIdentify or block potentially malicious software that may contain process injection functionality by using whitelisting (Citation: Beechey 2010) tools, like AppLocker, (Citation: Windows Commands JPCERT) (Citation: NSA MS AppLocker) or Software Restriction Policies (Citation: Corio 2008) where appropriate. (Citation: TechNet Applocker vs SRP)\n\nUtilize Yama  (Citation: Linux kernel Yama) to mitigate ptrace based process injection by restricting the use of ptrace to privileged users only. Other mitigation controls involve the deployment of security kernel modules that provide advanced access control and process restrictions such as SELinux  (Citation: SELinux official), grsecurity  (Citation: grsecurity official), and AppAmour  (Citation: AppArmor official).",
       "meta": {
         "external_id": "T1055",
@@ -3979,14 +4309,15 @@
       "value": "Account Discovery Mitigation - T1087"
     },
     {
-      "description": "Take measures to detect or prevent techniques such as [Credential Dumping](https://attack.mitre.org/techniques/T1003) or installation of keyloggers to acquire credentials through [Input Capture](https://attack.mitre.org/techniques/T1056). Limit credential overlap across systems to prevent access if account credentials are obtained. Ensure that local administrator accounts have complex, unique passwords across all systems on the network. Do not put user or admin domain accounts in the local administrator groups across systems unless they are tightly controlled and use of accounts is segmented, as this is often equivalent to having a local administrator account with the same password on all systems. Follow best practices for design and administration of an enterprise network to limit privileged account use across administrative tiers. (Citation: Microsoft Securing Privileged Access). Audit domain and local accounts as well as their permission levels routinely to look for situations that could allow an adversary to gain wide access by obtaining credentials of a privileged account. (Citation: TechNet Credential Theft) (Citation: TechNet Least Privilege)",
+      "description": "Take measures to detect or prevent techniques such as [Credential Dumping](https://attack.mitre.org/techniques/T1003) or installation of keyloggers to acquire credentials through [Input Capture](https://attack.mitre.org/techniques/T1056). Limit credential overlap across systems to prevent access if account credentials are obtained. Ensure that local administrator accounts have complex, unique passwords across all systems on the network. Do not put user or admin domain accounts in the local administrator groups across systems unless they are tightly controlled and use of accounts is segmented, as this is often equivalent to having a local administrator account with the same password on all systems. \n\nFollow best practices for design and administration of an enterprise network to limit privileged account use across administrative tiers. (Citation: Microsoft Securing Privileged Access) \n\nAudit domain and local accounts as well as their permission levels routinely to look for situations that could allow an adversary to gain wide access by obtaining credentials of a privileged account. (Citation: TechNet Credential Theft) (Citation: TechNet Least Privilege) These audits should also include if default accounts have been enabled, or if new local accounts are created that have not be authorized. \n\nApplications and appliances that utilize default username and password should be changed immediately after the installation, and before deployment to a production environment. (Citation: US-CERT Alert TA13-175A Risks of Default Passwords on the Internet) When possible, applications that use SSH keys should be updated periodically and properly secured. ",
       "meta": {
         "external_id": "T1078",
         "refs": [
           "https://attack.mitre.org/techniques/T1078",
+          "https://docs.microsoft.com/en-us/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material#a-nameesaebmaesae-administrative-forest-design-approach",
           "https://technet.microsoft.com/en-us/library/dn535501.aspx",
           "https://technet.microsoft.com/en-us/library/dn487450.aspx",
-          "https://docs.microsoft.com/en-us/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material#a-nameesaebmaesae-administrative-forest-design-approach"
+          "https://www.us-cert.gov/ncas/alerts/TA13-175A"
         ]
       },
       "related": [
@@ -4140,7 +4471,7 @@
       "value": "Email Collection Mitigation - T1114"
     },
     {
-      "description": "Users need to be trained to know which programs ask for permission and why. Follow mitigation recommendations for [AppleScript](https://attack.mitre.org/techniques/T1155).",
+      "description": "This technique exploits users' tendencies to always supply credentials when prompted, which makes it very difficult to mitigate. Use user training as a way to bring awareness and raise suspicion for potentially malicious events (ex: Office documents prompting for credentials).",
       "meta": {
         "external_id": "T1141",
         "refs": [
@@ -4633,6 +4964,27 @@
       "value": "LC_MAIN Hijacking Mitigation - T1149"
     },
     {
+      "description": "Implementing best practices for websites such as defending against [Exploit Public-Facing Application](https://attack.mitre.org/techniques/T1190) (Citation: OWASP Top 10 2017). Consider implementing IT disaster recovery plans that contain procedures for taking regular data backups that can be used to restore organizational data. (Ready.gov IT DRP) Ensure backups are stored off system and is protected from common methods adversaries may use to gain access and destroy the backups to prevent recovery.",
+      "meta": {
+        "external_id": "T1491",
+        "refs": [
+          "https://attack.mitre.org/techniques/T1491",
+          "https://www.owasp.org/images/7/72/OWASP_Top_10-2017_%28en%29.pdf.pdf"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "5909f20f-3c39-4795-be06-ef1ea40d350b",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "5d8507c4-603e-4fe1-8a4a-b8241f58734b",
+      "value": "Defacement Mitigation  - T1491"
+    },
+    {
       "description": "Since StartupItems are deprecated, preventing all users from writing to the <code>/Library/StartupItems</code> directory would prevent any startup items from getting registered. Similarly, appropriate permissions should be applied such that only specific users can edit the startup items so that they can’t be leveraged for privilege escalation.",
       "meta": {
         "external_id": "T1165",
@@ -4828,6 +5180,111 @@
       "value": "Trusted Relationship Mitigation - T1199"
     },
     {
+      "description": "Prevent adversary access to privileged accounts or access necessary to perform this technique. Check the integrity of the existing BIOS and device firmware to determine if it is vulnerable to modification. Patch the BIOS and other firmware as necessary to prevent successful use of known vulnerabilities. ",
+      "meta": {
+        "external_id": "T1495",
+        "refs": [
+          "https://attack.mitre.org/techniques/T1495"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "f5bb433e-bdf6-4781-84bc-35e97e43be89",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "70886857-0f19-4caa-b081-548354a8a994",
+      "value": "Firmware Corruption Mitigation - T1495"
+    },
+    {
+      "description": "Identify potentially malicious software and audit and/or block it by using whitelisting(Citation: Beechey 2010) tools, like AppLocker,(Citation: Windows Commands JPCERT)(Citation: NSA MS AppLocker) or Software Restriction Policies(Citation: Corio 2008) where appropriate.(Citation: TechNet Applocker vs SRP)",
+      "meta": {
+        "external_id": "T1496",
+        "refs": [
+          "https://attack.mitre.org/techniques/T1496",
+          "http://www.sans.org/reading-room/whitepapers/application/application-whitelisting-panacea-propaganda-33599",
+          "http://blog.jpcert.or.jp/2016/01/windows-commands-abused-by-attackers.html",
+          "https://www.iad.gov/iad/library/ia-guidance/tech-briefs/application-whitelisting-using-microsoft-applocker.cfm",
+          "http://technet.microsoft.com/en-us/magazine/2008.06.srp.aspx",
+          "https://technet.microsoft.com/en-us/library/ee791851.aspx"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "cd25c1b4-935c-4f0e-ba8d-552f28bc4783",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "46acc565-11aa-40ba-b629-33ba0ab9b07b",
+      "value": "Resource Hijacking Mitigation - T1496"
+    },
+    {
+      "description": "Consider implementing IT disaster recovery plans that contain procedures for taking regular data backups that can be used to restore organizational data.(Citation: Ready.gov IT DRP) Ensure backups are stored off system and is protected from common methods adversaries may use to gain access and destroy the backups to prevent recovery.\n\nIdentify potentially malicious software and audit and/or block it by using whitelisting(Citation: Beechey 2010) tools, like AppLocker,(Citation: Windows Commands JPCERT)(Citation: NSA MS AppLocker) or Software Restriction Policies(Citation: Corio 2008) where appropriate.(Citation: TechNet Applocker vs SRP)",
+      "meta": {
+        "external_id": "T1488",
+        "refs": [
+          "https://attack.mitre.org/techniques/T1488",
+          "https://www.ready.gov/business/implementation/IT",
+          "http://www.sans.org/reading-room/whitepapers/application/application-whitelisting-panacea-propaganda-33599",
+          "http://blog.jpcert.or.jp/2016/01/windows-commands-abused-by-attackers.html",
+          "https://www.iad.gov/iad/library/ia-guidance/tech-briefs/application-whitelisting-using-microsoft-applocker.cfm",
+          "http://technet.microsoft.com/en-us/magazine/2008.06.srp.aspx",
+          "https://technet.microsoft.com/en-us/library/ee791851.aspx"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "d45a3d09-b3cf-48f4-9f0f-f521ee5cb05c",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "2e114e45-2c50-404c-804a-3af9564d240e",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "b82f7d37-b826-4ec9-9391-8e121c78aed7",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "0b3ee33e-430b-476f-9525-72d120c90f8d",
+      "value": "Data Destruction Mitigation - T1488"
+    },
+    {
+      "description": "Ensure proper process, registry, and file permissions are in place to inhibit adversaries from disabling or interfering with critical services. Limit privileges of user accounts and groups so that only authorized administrators can interact with service changes and service configurations. Harden systems used to serve critical network, business, and communications functions. Operate intrusion detection, analysis, and response systems on a separate network from the production environment to lessen the chances that an adversary can see and interfere with critical response functions.",
+      "meta": {
+        "external_id": "T1489",
+        "refs": [
+          "https://attack.mitre.org/techniques/T1489"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "20fb2507-d71c-455d-9b6d-6104461cf26b",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "417fed8c-bd76-48b5-90a2-a88882a95241",
+      "value": "Service Stop Mitigation - T1489"
+    },
+    {
       "description": "Limit privileges of user accounts so only authorized users can edit the rc.common file.",
       "meta": {
         "external_id": "T1163",
@@ -4848,7 +5305,7 @@
       "value": "Rc.common Mitigation - T1163"
     },
     {
-      "description": "Regsvcs and Regasm may not be necessary within a given environment. Block execution of Regsvcs.exe and Regasm.exe if they are not required for a given system or network to prevent potential misuess by adversaries.",
+      "description": "Regsvcs and Regasm may not be necessary within a given environment. Block execution of Regsvcs.exe and Regasm.exe if they are not required for a given system or network to prevent potential misuse by adversaries.",
       "meta": {
         "external_id": "T1121",
         "refs": [
@@ -4884,98 +5341,7 @@
           "type": "mitigates"
         },
         {
-          "dest-uuid": "29e07491-8947-43a3-8d4e-9a787c45f3d3",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "f1c3d071-0c24-483d-aca0-e8b8496ce468",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "b332a960-3c04-495a-827f-f17a5daed3a6",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "dfe29258-ce59-421c-9dee-e85cb9fa90cd",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "88932a8c-3a17-406f-9431-1da3ff19f6d6",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "667e5707-3843-4da8-bd34-88b922526f0d",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "2d646840-f6f5-4619-a5a8-29c8316bbac5",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "702055ac-4e54-4ae9-9527-e23a38e0b160",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "351c0927-2fc1-4a2c-ad84-cbbee7eb8172",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
           "dest-uuid": "3b0b604f-10db-41a0-b54c-493124d455b9",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "79eec66a-9bd0-4a3f-ac82-19159e94bd44",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "a0464539-e1b7-4455-a355-12495987c300",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "e8b4e1ec-8e3b-484c-9038-4459b1ed8060",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "fd339382-bfec-4bf0-8d47-1caedc9e7e57",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
@@ -4989,7 +5355,21 @@
           "type": "mitigates"
         },
         {
-          "dest-uuid": "46d818a5-67fa-4585-a7fc-ecf15376c8d5",
+          "dest-uuid": "a0464539-e1b7-4455-a355-12495987c300",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "f1c3d071-0c24-483d-aca0-e8b8496ce468",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "2d646840-f6f5-4619-a5a8-29c8316bbac5",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
@@ -4997,6 +5377,83 @@
         },
         {
           "dest-uuid": "c5089859-b21f-40a3-8be4-63e381b8b1c0",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "b332a960-3c04-495a-827f-f17a5daed3a6",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "fd339382-bfec-4bf0-8d47-1caedc9e7e57",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "29e07491-8947-43a3-8d4e-9a787c45f3d3",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "e8b4e1ec-8e3b-484c-9038-4459b1ed8060",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "702055ac-4e54-4ae9-9527-e23a38e0b160",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "88932a8c-3a17-406f-9431-1da3ff19f6d6",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "dfe29258-ce59-421c-9dee-e85cb9fa90cd",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "79eec66a-9bd0-4a3f-ac82-19159e94bd44",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "667e5707-3843-4da8-bd34-88b922526f0d",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "46d818a5-67fa-4585-a7fc-ecf15376c8d5",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "351c0927-2fc1-4a2c-ad84-cbbee7eb8172",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
@@ -5023,14 +5480,14 @@
           "type": "mitigates"
         },
         {
-          "dest-uuid": "c5089859-b21f-40a3-8be4-63e381b8b1c0",
+          "dest-uuid": "667e5707-3843-4da8-bd34-88b922526f0d",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
           "type": "mitigates"
         },
         {
-          "dest-uuid": "667e5707-3843-4da8-bd34-88b922526f0d",
+          "dest-uuid": "c5089859-b21f-40a3-8be4-63e381b8b1c0",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
@@ -5057,21 +5514,35 @@
           "type": "mitigates"
         },
         {
-          "dest-uuid": "82f04b1e-5371-4a6f-be06-411f0f43b483",
+          "dest-uuid": "79eec66a-9bd0-4a3f-ac82-19159e94bd44",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
           "type": "mitigates"
         },
         {
-          "dest-uuid": "702055ac-4e54-4ae9-9527-e23a38e0b160",
+          "dest-uuid": "99e6295e-741b-4857-b6e5-64989eb039b4",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
           "type": "mitigates"
         },
         {
-          "dest-uuid": "e8b4e1ec-8e3b-484c-9038-4459b1ed8060",
+          "dest-uuid": "bd4d32f5-eed4-4018-a649-40b229dd1d69",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "198ce408-1470-45ee-b47f-7056050d4fc2",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "d4536441-1bcc-49fa-80ae-a596ed3f7ffd",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
@@ -5085,7 +5556,147 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "351c0927-2fc1-4a2c-ad84-cbbee7eb8172",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "d731c21e-f27d-4756-b418-0e2aaabd6d63",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "6683aa0c-d98a-4f5b-ac57-ca7e9934a760",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "62adb627-f647-498e-b4cc-41499361bacb",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "82f04b1e-5371-4a6f-be06-411f0f43b483",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "e8b4e1ec-8e3b-484c-9038-4459b1ed8060",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "ef771e03-e080-43b4-a619-ac6f84899884",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "8f142a25-f6c3-4520-bd50-2ae3ab50ed3e",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "4e6620ac-c30c-4f6d-918e-fa20cae7c1ce",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "8e27551a-5080-4148-a584-c64348212e4f",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "29e07491-8947-43a3-8d4e-9a787c45f3d3",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "d9e88203-2b5d-405f-a406-2933b1e3d7e4",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "d9db3d46-66ca-44b4-9daa-1ef97cb7465a",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "9d7c32f4-ab39-49dc-8055-8106bc2294a1",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "8f0e39c6-82c9-41ec-9f93-5696c0f2e274",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "3dd58c80-4c2e-458c-9503-1b2cd273c4d2",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "2204c371-6100-4ae0-82f3-25c07c29772a",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "702055ac-4e54-4ae9-9527-e23a38e0b160",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "a8c31121-852b-46bd-9ba4-674ae5afe7ad",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "77e30eee-fd48-40b4-99ec-73e97c158b58",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "6c49d50f-494d-4150-b774-a655022d20a6",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
@@ -5106,55 +5717,6 @@
           "type": "mitigates"
         },
         {
-          "dest-uuid": "3b0b604f-10db-41a0-b54c-493124d455b9",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "3dd58c80-4c2e-458c-9503-1b2cd273c4d2",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "79eec66a-9bd0-4a3f-ac82-19159e94bd44",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "77e30eee-fd48-40b4-99ec-73e97c158b58",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "d9db3d46-66ca-44b4-9daa-1ef97cb7465a",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "99e6295e-741b-4857-b6e5-64989eb039b4",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "d731c21e-f27d-4756-b418-0e2aaabd6d63",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
           "dest-uuid": "1b51f5bc-b97a-498a-8dbd-bc6b1901bf19",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
@@ -5162,14 +5724,7 @@
           "type": "mitigates"
         },
         {
-          "dest-uuid": "4e6620ac-c30c-4f6d-918e-fa20cae7c1ce",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "bd4d32f5-eed4-4018-a649-40b229dd1d69",
+          "dest-uuid": "3b0b604f-10db-41a0-b54c-493124d455b9",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
@@ -5177,104 +5732,6 @@
         },
         {
           "dest-uuid": "c4b96c0b-cb58-497a-a1c2-bb447d79d692",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "d9e88203-2b5d-405f-a406-2933b1e3d7e4",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "9d7c32f4-ab39-49dc-8055-8106bc2294a1",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "62adb627-f647-498e-b4cc-41499361bacb",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "198ce408-1470-45ee-b47f-7056050d4fc2",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "6c49d50f-494d-4150-b774-a655022d20a6",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "6683aa0c-d98a-4f5b-ac57-ca7e9934a760",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "8e27551a-5080-4148-a584-c64348212e4f",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "2204c371-6100-4ae0-82f3-25c07c29772a",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "29e07491-8947-43a3-8d4e-9a787c45f3d3",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "351c0927-2fc1-4a2c-ad84-cbbee7eb8172",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "d4536441-1bcc-49fa-80ae-a596ed3f7ffd",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "a8c31121-852b-46bd-9ba4-674ae5afe7ad",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "8f0e39c6-82c9-41ec-9f93-5696c0f2e274",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "8f142a25-f6c3-4520-bd50-2ae3ab50ed3e",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
@@ -5301,7 +5758,7 @@
           "type": "mitigates"
         },
         {
-          "dest-uuid": "a8c31121-852b-46bd-9ba4-674ae5afe7ad",
+          "dest-uuid": "6f86d346-f092-4abc-80df-8558a90c426a",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
@@ -5309,6 +5766,27 @@
         },
         {
           "dest-uuid": "a93ccb8f-3996-42e2-b7c7-bb599d4e205f",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "a8c31121-852b-46bd-9ba4-674ae5afe7ad",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "0c71033e-401e-4b97-9309-7a7c95e43a5d",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "cde2cb84-455e-410c-8aa9-086f2788bcd2",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
@@ -5329,28 +5807,7 @@
           "type": "mitigates"
         },
         {
-          "dest-uuid": "cde2cb84-455e-410c-8aa9-086f2788bcd2",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
           "dest-uuid": "53263a67-075e-48fa-974b-91c5b5445db7",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "0c71033e-401e-4b97-9309-7a7c95e43a5d",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "6f86d346-f092-4abc-80df-8558a90c426a",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
@@ -5384,14 +5841,14 @@
           "type": "mitigates"
         },
         {
-          "dest-uuid": "667e5707-3843-4da8-bd34-88b922526f0d",
+          "dest-uuid": "53263a67-075e-48fa-974b-91c5b5445db7",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
           "type": "mitigates"
         },
         {
-          "dest-uuid": "dfe29258-ce59-421c-9dee-e85cb9fa90cd",
+          "dest-uuid": "667e5707-3843-4da8-bd34-88b922526f0d",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
@@ -5405,7 +5862,7 @@
           "type": "mitigates"
         },
         {
-          "dest-uuid": "53263a67-075e-48fa-974b-91c5b5445db7",
+          "dest-uuid": "dfe29258-ce59-421c-9dee-e85cb9fa90cd",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
@@ -5469,7 +5926,7 @@
       "value": "Rootkit Mitigation - T1014"
     },
     {
-      "description": "Mshta.exe may not be necessary within a given environment since its functionality is tied to older versions of Internet Explorer which have reached end of life. Use application whitelisting configured to block execution of mshta.exe if it is not required for a given system or network to prevent potential misuse by adversaries.",
+      "description": "Mshta.exe may not be necessary within a given environment since its functionality is tied to older versions of Internet Explorer that have reached end of life. Use application whitelisting configured to block execution of mshta.exe if it is not required for a given system or network to prevent potential misuse by adversaries.",
       "meta": {
         "external_id": "T1170",
         "refs": [
@@ -5951,5 +6408,5 @@
       "value": "Attestation - M1002"
     }
   ],
-  "version": 10
+  "version": 12
 }

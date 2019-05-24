@@ -6469,7 +6469,7 @@
           "type": "similar"
         }
       ],
-      "uuid": "3784c74-691a-4110-94f6-66e60224aa92",
+      "uuid": "203fd529-6382-417e-a68f-7565fbf89ece",
       "value": "SHARPKNOT"
     },
     {
@@ -6682,7 +6682,7 @@
           "https://www.intezer.com/iron-cybercrime-group-under-the-scope-2/"
         ]
       },
-      "uuid": "1740ec4-d730-40d6-a3b8-32d5fe7f21cf",
+      "uuid": "5433edec-f1c3-4051-a3cc-c7f9fc8972ee",
       "value": "Iron Backdoor"
     },
     {
@@ -7630,7 +7630,139 @@
       },
       "uuid": "e1ca79ea-5628-4266-bb36-3892c7126ef4",
       "value": "Brushaloader"
+    },
+    {
+      "description": "In addition to increased reports of threat activity, we have also discovered new evidence that the threat actors behind the DNSpionage campaign continue to change their tactics, likely in an attempt to improve the efficacy of their operations. In February, we discovered some changes to the actors' tactics, techniques and procedures (TTPs), including the use of a new reconnaissance phase that selectively chooses which targets to infect with malware. In April 2019, we also discovered the actors using a new malware, which we are calling Karkoff.",
+      "meta": {
+        "refs": [
+          "https://blog.talosintelligence.com/2019/04/dnspionage-brings-out-karkoff.html"
+        ]
+      },
+      "uuid": "a9fc6d3d-09d5-45c3-a91e-e8c61ef37908",
+      "value": "Karkoff"
+    },
+    {
+      "description": "We conclude that this RAT/stealeris efficient and was also really interesting to analyse.Furthermore, the creator made effortsto look Korean, for example the author of the .pdf file is Kim Song  Chol.  He  is  the  brother  of Kim  Jong-un,  the  leader  of  North  Korea.  We  identified  that  the author of a variant of this stealer is another brother of Kim Jong-un. Maybe the author named every variant withthe name of each brother. After   some searches   using Google,   we   identified   anold   variant   of   this   malware   here: http://contagiodump.blogspot.ca/2010/10/oct-08-cve-2010-2883-pdf-nuclear.html.  The  code  of  the malware available on the blog is closeto our case but with fewer features. In 2010, the password of the Gmail account was futurekimkim. Three years ago, the author was already fixatedon the Kim family...The language of the resource stored in the .dll file is Korean (LANG_KOREAN). The owner of the gmail mailbox is laoshi135.zhangand the secret question of this account is in Korean too.We don’t know if the malware truly comesfrom  Korea.However,  thanks  to  these  factors, we decided to name this sample KimJongRAT/Stealer.",
+      "meta": {
+        "refs": [
+          "https://malware.lu/assets/files/articles/RAP003_KimJongRAT-Stealer_Analysis.1.0.pdf"
+        ]
+      },
+      "uuid": "3160f772-d458-4bff-970c-1c0431238803",
+      "value": "KimJongRAT"
+    },
+    {
+      "description": "Based on our research, it appears the malware author calls the encoded secondary payload “Cowboy” regardless of what malware family is delivered.",
+      "meta": {
+        "refs": [
+          "https://unit42.paloaltonetworks.com/babyshark-malware-part-two-attacks-continue-using-kimjongrat-and-pcrat/"
+        ]
+      },
+      "uuid": "50baa4dc-0667-4b47-b4aa-374a2743f409",
+      "value": "Cowboy"
+    },
+    {
+      "description": "JasperLoader employs a multi-stage infection process that features several obfuscation techniques that make analysis more difficult. It appears that this loader was designed with resiliency and flexibility in mind, as evidenced in later stages of the infection process. ",
+      "meta": {
+        "refs": [
+          "https://blog.talosintelligence.com/2019/04/jasperloader-targets-italy.html?m=1"
+        ]
+      },
+      "uuid": "d8de6b56-9950-4389-83b8-4fc3262dc4c9",
+      "value": "JasperLoader"
+    },
+    {
+      "description": "The malware Scranos infects with rootkit capabilities, burying deep into vulnerable Windows computers to gain persistent access — even after the computer restarts. Scranos only emerged in recent months, according to Bitdefender with new research out Tuesday, but the number of its infections has rocketed in the months since it was first identified in November.",
+      "meta": {
+        "refs": [
+          "https://labs.bitdefender.com/2019/04/inside-scranos-a-cross-platform-rootkit-enabled-spyware-operation/",
+          "https://techcrunch.com/2019/04/16/scranos-rootkit-passwords-payments/?guccounter=1&guce_referrer_us=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8&guce_referrer_cs=MrGSn18TmNoWovpLbekFYA"
+        ]
+      },
+      "uuid": "5f0f6af2-b644-49a6-8f68-5d4ca58c989e",
+      "value": "Scranos"
+    },
+    {
+      "description": "Unit 42 has discovered a new malware family we’ve named “Reaver” with ties to attackers who use SunOrcal malware. SunOrcal activity has been documented to at least 2013, and based on metadata surrounding some of the C2s, may have been active as early as 2010. The new family appears to have been in the wild since late 2016 and to date we have only identified 10 unique samples, indicating it may be sparingly used. Reaver is also somewhat unique in the fact that its final payload is in the form of a Control panel item, or CPL file. To date, only 0.006% of all malware seen by Palo Alto Networks employs this technique, indicating that it is in fact fairly rare.",
+      "meta": {
+        "refs": [
+          "https://unit42.paloaltonetworks.com/unit42-new-malware-with-ties-to-sunorcal-discovered/",
+          "https://threatvector.cylance.com/en_us/home/reaver-mapping-connections-between-disparate-chinese-apt-groups.html"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "80365d3a-6d46-4195-a772-364749a6dc06",
+          "tags": [
+            "estimative-language:likelihood-probability=\"roughly-even-chance\""
+          ],
+          "type": "similar"
+        },
+        {
+          "dest-uuid": "dd919e75-57e8-4e5c-9451-8be6e734f1f3",
+          "tags": [
+            "estimative-language:likelihood-probability=\"roughly-even-chance\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "22b75148-9d58-4fa7-8459-6ef25bbaf759",
+      "value": "Reaver"
+    },
+    {
+      "description": "The Citizen Lab analyzed a malicious email sent to Tibetan organizations in June 2013. The email in question purported to be from a prominent member of the Tibetan community and repurposed content from a community mailing list. Attached to the email were what appeared to be three Microsoft Word documents (.doc), but which were trojaned with a malware family we call “Surtr”.1 All three attachments drop the exact same malware. We have seen the Surtr malware family used in attacks on Tibetan groups dating back to November 2012.",
+      "meta": {
+        "refs": [
+          "https://citizenlab.ca/2013/08/surtr-malware-family-targeting-the-tibetan-community/",
+          "https://otx.alienvault.com/pulse/588a7c8fe4166d1d84244b9a"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "22b75148-9d58-4fa7-8459-6ef25bbaf759",
+          "tags": [
+            "estimative-language:likelihood-probability=\"roughly-even-chance\""
+          ],
+          "type": "similar"
+        },
+        {
+          "dest-uuid": "80365d3a-6d46-4195-a772-364749a6dc06",
+          "tags": [
+            "estimative-language:likelihood-probability=\"roughly-even-chance\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "dd919e75-57e8-4e5c-9451-8be6e734f1f3",
+      "value": "SURTR"
+    },
+    {
+      "description": "SunOrcal is a trojan malware family whose activity dates back to at least 2013. A version discovered in November 2017 incorporates steganography techniques and can collect C2 information via GitHub, obscuring its C2 infrastructure and evading detection using the legitimate site for its first beacon. The threat actors have targeted users in the Vietnam area, spreading phishing emails containing malicious documents purportedly regarding South China Sea disputes. The new SunOrcal version has also been used with the recently discovered Reaver trojan and the original SunOrcal version. Some of the recent activity also incorporates the use of the Surtr malware.",
+      "meta": {
+        "refs": [
+          "https://unit42.paloaltonetworks.com/unit42-sunorcal-adds-github-steganography-repertoire-expands-vietnam-myanmar/",
+          "https://www.cyber.nj.gov/threat-profiles/trojan-variants/sunorcal"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "22b75148-9d58-4fa7-8459-6ef25bbaf759",
+          "tags": [
+            "estimative-language:likelihood-probability=\"roughly-even-chance\""
+          ],
+          "type": "similar"
+        },
+        {
+          "dest-uuid": "dd919e75-57e8-4e5c-9451-8be6e734f1f3",
+          "tags": [
+            "estimative-language:likelihood-probability=\"roughly-even-chance\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "80365d3a-6d46-4195-a772-364749a6dc06",
+      "value": "SunOrcal"
     }
   ],
-  "version": 116
+  "version": 121
 }

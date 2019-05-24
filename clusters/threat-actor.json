@@ -8,7 +8,7 @@
   ],
   "category": "actor",
   "description": "Known or estimated adversary groups targeting organizations and employees. Adversary groups are regularly confused with their initial operation or campaign.",
-  "name": "Threat actor",
+  "name": "Threat Actor",
   "source": "MISP Project",
   "type": "threat-actor",
   "uuid": "7cdff317-a673-4474-84ec-4f1754947823",
@@ -757,7 +757,7 @@
         "country": "CN",
         "refs": [
           "https://securelist.com/analysis/publications/69953/the-naikon-apt/",
-          "http://www.fireeye.com/blog/technical/malware-research/2014/03/spear-phishing-the-news-cycle-apt-actors-leverage-interest-in-the-disappearance-of-malaysian-flight-mh-370.html",
+          "https://www.fireeye.com/blog/threat-research/2014/03/spear-phishing-the-news-cycle-apt-actors-leverage-interest-in-the-disappearance-of-malaysian-flight-mh-370.html",
           "https://www.cfr.org/interactive/cyber-operations/apt-30"
         ],
         "synonyms": [
@@ -1709,13 +1709,12 @@
         "refs": [
           "https://en.wikipedia.org/wiki/Operation_Newscaster",
           "https://iranthreats.github.io/resources/macdownloader-macos-malware/",
-          "https://www.isightpartners.com/2014/05/newscaster-iranian-threat-inside-social-media/",
+          "https://paper.seebug.org/papers/APT/APT_CyberCriminal_Campagin/2014/2014.05.28.NewsCaster_An_Iranian_Threat_Within_Social_Networks/file-2581720763-pdf.pdf",
           "https://www.forbes.com/sites/thomasbrewster/2017/07/27/iran-hackers-oilrig-use-fake-personas-on-facebook-linkedin-for-cyberespionage/",
           "https://cryptome.org/2012/11/parastoo-hacks-iaea.htm",
           "https://securelist.com/files/2017/03/Report_Shamoon_StoneDrill_final.pdf",
           "https://securelist.com/blog/software/74503/freezer-paper-around-free-meat/",
           "https://www.verfassungsschutz.de/download/broschuere-2016-10-bfv-cyber-brief-2016-04.pdf",
-          "https://github.com/gasgas4/APT_CyberCriminal_Campagin/tree/master/2014/2014.05.28.NewsCaster_An_Iranian_Threat_Within_Social_Networks",
           "https://www.cfr.org/interactive/cyber-operations/newscaster"
         ],
         "synonyms": [
@@ -2313,7 +2312,8 @@
           "https://www.welivesecurity.com/2017/03/30/carbon-paper-peering-turlas-second-stage-backdoor/",
           "https://www.cfr.org/interactive/cyber-operations/turla",
           "https://www.bleepingcomputer.com/news/security/turla-outlook-backdoor-uses-clever-tactics-for-stealth-and-persistence/",
-          "https://www.nccgroup.trust/uk/about-us/newsroom-and-events/blogs/2018/november/turla-png-dropper-is-back/"
+          "https://www.nccgroup.trust/uk/about-us/newsroom-and-events/blogs/2018/november/turla-png-dropper-is-back/",
+          "http://download.bitdefender.com/resources/files/News/CaseStudies/study/115/Bitdefender-Whitepaper-PAC-A4-en-EN1.pdf"
         ],
         "synonyms": [
           "Turla",
@@ -2327,7 +2327,9 @@
           "Pfinet",
           "TAG_0530",
           "KRYPTON",
-          "Hippo Team"
+          "Hippo Team",
+          "Pacifier APT",
+          "Popeye"
         ]
       },
       "related": [
@@ -2619,9 +2621,16 @@
       "value": "Berserk Bear"
     },
     {
+      "description": "FIN4 is a financially-motivated threat group that has targeted confidential information related to the public financial market, particularly regarding healthcare and pharmaceutical companies, since at least 2013. FIN4 is unique in that they do not infect victims with typical persistent malware, but rather they focus on capturing credentials authorized to access email and other non-public correspondence.",
       "meta": {
         "attribution-confidence": "50",
         "country": "RO",
+        "refs": [
+          "https://www.reuters.com/article/2015/06/23/us-hackers-insidertrading-idUSKBN0P31M720150623",
+          "https://www.fireeye.com/blog/threat-research/2014/11/fin4_stealing_insid.html",
+          "https://www2.fireeye.com/rs/fireye/images/rpt-fin4.pdf",
+          "https://pwc.blogs.com/cyber_security_updates/2015/06/unfin4ished-business.html"
+        ],
         "synonyms": [
           "FIN4"
         ]
@@ -2887,12 +2896,22 @@
           "http://documents.trendmicro.com/assets/pdf/Indian-military-personnel-targeted-by-information-theft-campaign-cmajor.pdf",
           "https://www.proofpoint.com/sites/default/files/proofpoint-operation-transparent-tribe-threat-insight-en.pdf",
           "https://www.amnesty.org/en/documents/asa33/8366/2018/en/",
-          "https://www.crowdstrike.com/blog/adversary-of-the-month-for-may/"
+          "https://www.crowdstrike.com/blog/adversary-of-the-month-for-may/",
+          "https://unit42.paloaltonetworks.com/unit42-projectm-link-found-between-pakistani-actor-and-operation-transparent-tribe",
+          "https://mkd-cirt.mk/wp-content/uploads/2018/08/20181009_3_1_M-Trends2018-May-2018-compressed.pdf",
+          "https://nciipc.gov.in/documents/NCIIPC_Newsletter_July18.pdf",
+          "https://aisa.org.au//PDF/AISA%20Sydney%20-%20Dec2016.pdf",
+          "https://cysinfo.com/cyber-attack-targeting-cbi-and-possibly-indian-army-officials",
+          "https://s.tencent.com/research/report/669.html"
         ],
         "synonyms": [
           "C-Major",
           "Transparent Tribe",
-          "Mythic Leopard"
+          "Mythic Leopard",
+          "ProjectM",
+          "APT36",
+          "APT 36",
+          "TMP.Lapis"
         ]
       },
       "related": [
@@ -2971,22 +2990,6 @@
       ],
       "uuid": "bb446dc2-4fee-4212-8b2c-3ffa2917e338",
       "value": "ScarCruft"
-    },
-    {
-      "description": "Bitdefender detected and blocked an ongoing cyber-espionage campaign against Romanian institutions and other foreign targets. The attacks started in 2014, with the latest reported occurrences in May of 2016. The APT, dubbed Pacifier by Bitdefender researchers, makes use of malicious .doc documents and .zip files distributed via spear phishing e-mail.",
-      "meta": {
-        "attribution-confidence": "50",
-        "country": "RU",
-        "refs": [
-          "http://download.bitdefender.com/resources/files/News/CaseStudies/study/115/Bitdefender-Whitepaper-PAC-A4-en-EN1.pdf"
-        ],
-        "synonyms": [
-          "Skipper",
-          "Popeye"
-        ]
-      },
-      "uuid": "32db3cc1-bb79-4b08-a7a4-747a37221afa",
-      "value": "Pacifier APT"
     },
     {
       "description": "This group created a malware that takes over Android devices and generates $300,000 per month in fraudulent ad revenue.  The group effectively controls an arsenal of over 85 million mobile devices around the world. With the potential to sell access to these devices to the highest bidder",
@@ -5756,7 +5759,9 @@
       "description": "In March 2017, the 360 Chasing Team found a sample of targeted attacks that confirmed the previously unknown sample of APT's attack actions, which the organization can now trace back at least in April 2016. The chasing team named the attack organization APT-C-35. In June 2017, the 360 Threat Intelligence Center discovered the organization’s new attack activity, confirmed and exposed the gang’s targeted attacks against Pakistan, and analyzed in detail. The unique EHDevel malicious code framework used by the organization",
       "meta": {
         "refs": [
-          "https://ti.360.net/blog/articles/latest-activity-of-apt-c-35/"
+          "https://ti.360.net/blog/articles/latest-activity-of-apt-c-35/",
+          "https://www.netscout.com/blog/asert/donot-team-leverages-new-modular-malware-framework-south-asia",
+          "https://ti.360.net/blog/articles/donot-group-is-targeting-pakistani-businessman-working-in-china-en/"
         ],
         "synonyms": [
           "DoNot Team"
@@ -6373,7 +6378,11 @@
       "meta": {
         "refs": [
           "https://www.crowdstrike.com/blog/big-game-hunting-with-ryuk-another-lucrative-targeted-ransomware/",
-          "https://www.crowdstrike.com/blog/meet-crowdstrikes-adversary-of-the-month-for-february-mummy-spider/"
+          "https://www.crowdstrike.com/blog/meet-crowdstrikes-adversary-of-the-month-for-february-mummy-spider/",
+          "https://www.proofpoint.com/us/threat-insight/post/threat-actor-profile-ta542-banker-malware-distribution-service"
+        ],
+        "synonyms": [
+          "TA542"
         ]
       },
       "uuid": "c93281be-f6cd-4cd0-a5a3-defde9d77d8b",
@@ -6657,19 +6666,58 @@
       "value": "Operation ShadowHammer"
     },
     {
-      "description": "FireEye details APT36 as a Pakistani espionage group that supports Pakistani military and diplomatic interests, targeting Indian military and government. Operations have been also observed in the US, Europe, and Central Asia. Uses social engineering emails, multiple open-source, and custom malware tools.",
+      "description": "In July 2018, an attack on Singapore’s largest public health organization, SingHealth, resulted in a reported 1.5 million patient records being stolen. Until now, nothing was known about who was responsible for this attack. Symantec researchers have discovered that this attack group, which we call Whitefly, has been operating since at least 2017, has targeted organizations based mostly in Singapore across a wide variety of sectors, and is primarily interested in stealing large amounts of sensitive information.",
       "meta": {
         "refs": [
-          "https://mkd-cirt.mk/wp-content/uploads/2018/08/20181009_3_1_M-Trends2018-May-2018-compressed.pdf"
-        ],
-        "synonyms": [
-          "APT 36",
-          "TMP.Lapis"
+          "https://www.symantec.com/blogs/threat-intelligence/whitefly-espionage-singapore"
         ]
       },
-      "uuid": "80fad97c-df3a-44ea-a127-cf29833b4946",
-      "value": "APT36"
+      "uuid": "943f490e-ac7f-40fe-b6f3-33e2623649d2",
+      "value": "Whitefly"
+    },
+    {
+      "description": " This blog post discusses the technical details of a state-sponsored attack manipulating DNS systems. While this incident is limited to targeting primarily national security organizations in the Middle East and North Africa, and we do not want to overstate the consequences of this specific campaign, we are concerned that the success of this operation will lead to actors more broadly attacking the global DNS system. DNS is a foundational technology supporting the Internet. Manipulating that system has the potential to undermine the trust users have on the internet. That trust and the stability of the DNS system as a whole drives the global economy. Responsible nations should avoid targeting this system, work together to establish an accepted global norm that this system and the organizations that control it are off-limits, and cooperate in pursuing those actors who act irresponsibly by targeting this system.",
+      "meta": {
+        "refs": [
+          "https://blog.talosintelligence.com/2019/04/seaturtle.html"
+        ]
+      },
+      "uuid": "ce7bba52-5ae8-44ea-9979-68502d832ab7",
+      "value": "Sea Turtle"
+    },
+    {
+      "description": "Last Friday, Deputy Attorney General Rod Rosenstein announced the indictment of nine Iranians who worked for an organization named the Mabna Institute. According to prosecutors, the defendants stole more than 31 terabytes of data from universities, companies, and government agencies around the world. The cost to the universities alone reportedly amounted to approximately $3.4 billion. The information stolen from these universities was used by the Islamic Revolutionary Guard Corps (IRGC) or sold for profit inside Iran. PhishLabs has been tracking this same threat group since late-2017, designating them Silent Librarian. Since discovery, we have been working with the FBI, ISAC partners, and other international law enforcement agencies to help understand and mitigate these attacks.",
+      "meta": {
+        "refs": [
+          "https://info.phishlabs.com/blog/silent-librarian-more-to-the-story-of-the-iranian-mabna-institute-indictment",
+          "https://info.phishlabs.com/blog/silent-librarian-university-attacks-continue-unabated-in-days-following-indictment",
+          "https://www.justice.gov/usao-sdny/pr/nine-iranians-charged-conducting-massive-cyber-theft-campaign-behalf-islamic",
+          "https://www.secureworks.com/blog/back-to-school-cobalt-dickens-targets-universities"
+        ],
+        "synonyms": [
+          "COBALT DICKENS"
+        ]
+      },
+      "uuid": "5059b44d-2753-4977-b987-4922f09afe6b",
+      "value": "Silent Librarian"
+    },
+    {
+      "description": "FireEye characterizes APT31 as an actor specialized on intellectual property theft, focusing on data and projects that make a particular organization competetive in its field. Based on available data (April 2016), FireEye assesses that APT31 conducts network operations at the behest of the Chinese Government.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://www.microsoft.com/security/blog/2017/03/27/detecting-and-mitigating-elevation-of-privilege-exploit-for-cve-2017-0005/",
+          "https://duo.com/decipher/apt-groups-moving-down-the-supply-chain",
+          "https://github.com/GuardaCyber/APT-Groups-and-Operations/blob/master/Reports/FireEye%20Intel%20-%20APT31%20Threat%20Group%20Profile.pdf"
+        ],
+        "synonyms": [
+          "APT 31",
+          "ZIRCONIUM"
+        ]
+      },
+      "uuid": "6bf7e6b6-5917-45a6-9567-f0baba79768c",
+      "value": "APT31"
     }
   ],
-  "version": 106
+  "version": 110
 }
