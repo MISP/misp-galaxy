@@ -411,7 +411,8 @@
         "country": "CN",
         "refs": [
           "http://www.crowdstrike.com/blog/whois-numbered-panda/",
-          "https://www.cfr.org/interactive/cyber-operations/apt-12"
+          "https://www.cfr.org/interactive/cyber-operations/apt-12",
+          "https://www.fireeye.com/blog/threat-research/2014/09/darwins-favorite-apt-group-2.html"
         ],
         "synonyms": [
           "Numbered Panda",
@@ -439,6 +440,7 @@
       "value": "IXESHE"
     },
     {
+      "description": "Between November 26, 2015, and December 1, 2015, known and suspected China-based APT groups launched several spear-phishing attacks targeting Japanese and Taiwanese organizations in the high-tech, government services, media and financial services industries. Each campaign delivered a malicious Microsoft Word document exploiting the aforementioned EPS dict copy use-after-free vulnerability, and the local Windows privilege escalation vulnerability CVE-2015-1701. The successful exploitation of both vulnerabilities led to the delivery of either a downloader that we refer to as IRONHALO, or a backdoor that we refer to as ELMER.",
       "meta": {
         "attribution-confidence": "50",
         "cfr-suspected-state-sponsor": "China",
@@ -454,6 +456,10 @@
         "refs": [
           "https://www.fireeye.com/blog/threat-research/2015/12/the_eps_awakens.html",
           "https://www.cfr.org/interactive/cyber-operations/apt-16"
+        ],
+        "synonyms": [
+          "APT16",
+          "SVCMONDR"
         ]
       },
       "uuid": "1f73e14f-b882-4032-a565-26dc653b0daf",
@@ -485,7 +491,8 @@
           "Group 8",
           "APT17",
           "Hidden Lynx",
-          "Tailgater Team"
+          "Tailgater Team",
+          "Dogfish"
         ]
       },
       "related": [
@@ -4351,9 +4358,11 @@
       "value": "Danti"
     },
     {
+      "description": "We have observed one APT group, which we call APT5, particularly focused on telecommunications and technology companies. More than half of the organizations we have observed being targeted or breached by APT5 operate in these sectors. Several times, APT5 has targeted organizations and personnel based in Southeast Asia. APT5 has been active since at least 2007. It appears to be a large threat group that consists of several subgroups, often with distinct tactics and infrastructure. APT5 has targeted or breached organizations across multiple industries, but its focus appears to be on telecommunications and technology companies, especially information about satellite communications. \nAPT5 targeted the network of an electronics firm that sells products for both industrial and military applications. The group subsequently stole communications related to the firm’s business relationship with a national military, including inventories and memoranda about specific products they provided. \nIn one case in late 2014, APT5 breached the network of an international telecommunications company. The group used malware with keylogging capabilities to monitor the computer of an executive who manages the company’s relationships with other telecommunications companies",
       "meta": {
         "refs": [
-          "https://www.fireeye.com/current-threats/apt-groups.html"
+          "https://www.fireeye.com/current-threats/apt-groups.html",
+          "https://www.fireeye.com/content/dam/fireeye-www/current-threats/pdfs/rpt-southeast-asia-threat-landscape.pdf"
         ]
       },
       "uuid": "a47b79ae-7a0c-4308-9efc-294af19cc795",
@@ -4957,9 +4966,13 @@
       "value": "Cyber fighters of Izz Ad-Din Al Qassam"
     },
     {
+      "description": "The FBI issued a rare bulletin admitting that a group named Advanced Persistent Threat 6 (APT6) hacked into US government computer systems as far back as 2011 and for years stole sensitive data.\nThe FBI alert was issued in February and went largely unnoticed. Nearly a month later, security experts are now shining a bright light on the alert and the mysterious group behind the attack.\n“This is a rare alert and a little late, but one that is welcomed by all security vendors as it offers a chance to mitigate their customers and also collaborate further in what appears to be an ongoing FBI investigation,” said Deepen Desai, director of security research at the security firm Zscaler in an email to Threatpost.\nDetails regarding the actual attack and what government systems were infected are scant. Government officials said they knew the initial attack occurred in 2011, but are unaware of who specifically is behind the attacks.\n“Given the nature of malware payload involved and the duration of this compromise being unnoticed – the scope of lateral movement inside the compromised network is very high possibly exposing all the critical systems,”Deepen said.",
       "meta": {
         "attribution-confidence": "50",
         "country": "CN",
+        "refs": [
+          "https://threatpost.com/fbi-quietly-admits-to-multi-year-apt-attack-sensitive-data-stolen/117267/"
+        ],
         "synonyms": [
           "1.php Group",
           "APT6"
@@ -5360,7 +5373,7 @@
       "value": "Orangeworm"
     },
     {
-      "description": "Adversaries abusing ICS (based on Dragos Inc adversary list).",
+      "description": "Adversaries abusing ICS (based on Dragos Inc adversary list).\nALLANITE accesses business and industrial control (ICS) networks, conducts reconnaissance, and gathers intelligence in United States and United Kingdom electric utility sectors. Dragos assesses with moderate confidence that ALLANITE operators continue to maintain ICS network access to: (1) understand the operational environment necessary to develop disruptive capabilities, (2) have ready access from which to disrupt electric utilities.\nALLANITE uses email phishing campaigns and compromised websites called watering holes to steal credentials and gain access to target networks, including collecting and distributing screenshots of industrial control systems. ALLANITE operations limit themselves to information gathering and have not demonstrated any disruptive or damaging capabilities.\nALLANITE conducts malware-less operations primarily leveraging legitimate and available tools in the Windows operating system.",
       "meta": {
         "capabilities": "Powershell scripts, THC Hydra, SecretsDump, Inveigh, PSExec",
         "mode-of-operation": "Watering-hole and phishing leading to ICS recon and screenshot collection",
@@ -5370,7 +5383,8 @@
         ],
         "since": "2017",
         "synonyms": [
-          "Palmetto Fusion"
+          "Palmetto Fusion",
+          "Allanite"
         ],
         "victimology": "Electric utilities, US and UK"
       },
