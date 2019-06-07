@@ -375,13 +375,13 @@
         "refs": [
           "https://securelist.com/blog/research/71713/darkhotels-attacks-in-2015/",
           "https://blogs.technet.microsoft.com/mmpc/2016/06/09/reverse-engineering-dubnium-2",
-          "https://securelist.com/blog/research/66779/the-darkhotel-apt/",,
-          "https://securelist.com/the-darkhotel-apt/66779/"
+          "https://securelist.com/blog/research/66779/the-darkhotel-apt/",
+          "https://securelist.com/the-darkhotel-apt/66779/",
           "http://drops.wooyun.org/tips/11726",
           "https://labs.bitdefender.com/wp-content/uploads/downloads/inexsmar-an-unusual-darkhotel-campaign/",
           "https://www.cfr.org/interactive/cyber-operations/darkhotel",
           "https://www.securityweek.com/darkhotel-apt-uses-new-methods-target-politicians",
-          "https://attack.mitre.org/groups/G0012/>"
+          "https://attack.mitre.org/groups/G0012/"
         ],
         "synonyms": [
           "DUBNIUM",
@@ -389,7 +389,7 @@
           "Karba",
           "Luder",
           "Nemim",
-          "Nemin"
+          "Nemin",
           "Tapaoux",
           "Pioneer",
           "Shadow Crane",
@@ -711,7 +711,25 @@
         "refs": [
           "http://cybercampaigns.net/wp-content/uploads/2013/06/Deep-Panda.pdf",
           "http://www.rsaconference.com/writable/presentations/file_upload/anf-t07b-the-art-of-attribution-identifying-and-pursuing-your-cyber-adversaries_final.pdf",
-          "https://www.cfr.org/interactive/cyber-operations/deep-panda"
+          "https://www.cfr.org/interactive/cyber-operations/deep-panda",
+          "https://eromang.zataz.com/2012/12/29/attack-and-ie-0day-informations-used-against-council-on-foreign-relations/",
+          "https://eromang.zataz.com/2013/01/02/capstone-turbine-corporation-also-targeted-in-the-cfr-watering-hole-attack-and-more/",
+          "https://www.crowdstrike.com/blog/department-labor-strategic-web-compromise/",
+          "https://www.crowdstrike.com/blog/deep-thought-chinese-targeting-national-security-think-tanks/",
+          "https://krebsonsecurity.com/2015/06/catching-up-on-the-opm-breach/",
+          "https://krebsonsecurity.com/2015/02/anthem-breach-may-have-started-in-april-2014/",
+          "https://www.nextgov.com/cybersecurity/2015/05/third-party-software-was-entry-point-background-check-system-hack/112354/",
+          "https://www.crowdstrike.com/blog/ironman-deep-panda-uses-sakula-malware-target-organizations-multiple-sectors/",
+          "https://www.abc.net.au/news/2014-11-13/g20-china-affliliated-hackers-breaches-australian-media/5889442",
+          "https://www.washingtonpost.com/business/economy/keypoint-suffers-network-breach-thousands-of-fed-workers-could-be-affected/2014/12/18/e6c7146c-86e1-11e4-a702-fa31ff4ae98e_story.html",
+          "https://www.seattletimes.com/business/local-business/feds-warned-premera-about-security-flaws-before-breach/",
+          "https://krebsonsecurity.com/2015/05/carefirst-blue-cross-breach-hits-1-1m/",
+          "https://threatvector.cylance.com/en_us/home/shell-crew-variants-continue-to-fly-under-big-avs-radar.html",
+          "https://www.bleepingcomputer.com/news/security/us-arrests-chinese-man-involved-with-sakula-malware-used-in-opm-and-anthem-hacks/",
+          "https://gizmodo.com/u-s-indicts-chinese-hacker-spies-in-conspiracy-to-stea-1830111695",
+          "https://www.cyberscoop.com/anthem-breach-indictment-chinese-national/",
+          "https://www.symantec.com/content/en/us/enterprise/media/security_response/whitepapers/the-black-vine-cyberespionage-group.pdf",
+          "https://attack.mitre.org/groups/G0009/"
         ],
         "synonyms": [
           "Deep Panda",
@@ -5058,7 +5076,9 @@
           "https://www.proofpoint.com/us/threat-insight/post/Operation-Arid-Viper-Slithers-Back-Into-View",
           "https://www.ci-project.org/blog/2017/3/4/arid-viper",
           "http://blog.talosintelligence.com/2017/06/palestine-delphi.html",
-          "https://www.threatconnect.com/blog/kasperagent-malware-campaign/"
+          "https://www.threatconnect.com/blog/kasperagent-malware-campaign/",
+          "https://www.trendmicro.com/vinfo/us/security/news/cyber-attacks/sexually-explicit-material-used-as-lures-in-cyber-attacks?linkId=12425812",
+          "<https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08064309/The-Desert-Falcons-targeted-attacks.pdf"
         ],
         "synonyms": [
           "Desert Falcon",
@@ -5885,7 +5905,9 @@
           "https://ti.360.net/blog/articles/donot-group-is-targeting-pakistani-businessman-working-in-china-en/"
         ],
         "synonyms": [
-          "DoNot Team"
+          "DoNot Team",
+          "Donot Team",
+          "APT-C-35"
         ]
       },
       "uuid": "b9dc4e81-909f-4324-8b25-a0f359cd88e0",
@@ -6369,7 +6391,11 @@
       "description": "Cisco Talos recently discovered a new campaign targeting Lebanon and the United Arab Emirates (UAE) affecting .gov domains, as well as a private Lebanese airline company. Based on our research, it's clear that this adversary spent time understanding the victims' network infrastructure in order to remain under the radar and act as inconspicuous as possible during their attacks.\nBased on this actor's infrastructure and TTPs, we haven't been able to connect them with any other campaign or actor that's been observed recently. This particular campaign utilizes two fake, malicious websites containing job postings that are used to compromise targets via malicious Microsoft Office documents with embedded macros. The malware utilized by this actor, which we are calling \"DNSpionage,\" supports HTTP and DNS communication with the attackers.\nIn a separate campaign, the attackers used the same IP to redirect the DNS of legitimate .gov and private company domains. During each DNS compromise, the actor carefully generated Let's Encrypt certificates for the redirected domains. These certificates provide X.509 certificates for TLS free of charge to the user. We don't know at this time if the DNS redirections were successful.\nIn this post, we will break down the attackers' methods and show how they used malicious documents to attempt to trick users into opening malicious websites that are disguised as \"help wanted\" sites for job seekers. Additionally, we will describe the malicious DNS redirection and the timeline of the events.",
       "meta": {
         "refs": [
-          "https://blog.talosintelligence.com/2018/11/dnspionage-campaign-targets-middle-east.html"
+          "https://blog.talosintelligence.com/2018/11/dnspionage-campaign-targets-middle-east.html",
+          "https://blog.talosintelligence.com/2019/04/dnspionage-brings-out-karkoff.html",
+          "https://www.fireeye.com/blog/threat-research/2019/01/global-dns-hijacking-campaign-dns-record-manipulation-at-scale.html",
+          "https://www.crowdstrike.com/blog/widespread-dns-hijacking-activity-targets-multiple-sectors/",
+          "https://krebsonsecurity.com/tag/dnspionage/"
         ]
       },
       "uuid": "608a903a-8145-4fd1-84bc-235e278480bf",
