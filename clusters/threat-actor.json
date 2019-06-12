@@ -646,7 +646,7 @@
         "refs": [
           "http://securelist.com/blog/research/57585/winnti-faq-more-than-just-a-game/",
           "http://williamshowalter.com/a-universal-windows-bootkit/",
-          "https://blogs.technet.microsoft.com/mmpc/2017/01/25/detecting-threat-actors-in-recent-german-industrial-attacks-with-windows-defender-atp",
+          "https://www.microsoft.com/security/blog/2017/01/25/detecting-threat-actors-in-recent-german-industrial-attacks-with-windows-defender-atp/",
           "https://www.cfr.org/interactive/cyber-operations/axiom"
         ],
         "synonyms": [
@@ -850,6 +850,7 @@
       "value": "Naikon"
     },
     {
+      "description": "Lotus Blossom is a threat group that has targeted government and military organizations in Southeast Asia.",
       "meta": {
         "attribution-confidence": "50",
         "cfr-suspected-state-sponsor": "China",
@@ -872,7 +873,11 @@
           "https://securelist.com/spring-dragon-updated-activity/79067/",
           "https://www.cfr.org/interactive/cyber-operations/lotus-blossom",
           "https://unit42.paloaltonetworks.com/operation-lotus-blossom/",
-          "https://www.accenture.com/t00010101T000000Z__w__/gb-en/_acnmedia/PDF-46/Accenture-Security-Elise-Threat-Analysis.pdf"
+          "https://www.accenture.com/t00010101T000000Z__w__/gb-en/_acnmedia/PDF-46/Accenture-Security-Elise-Threat-Analysis.pdf",
+          "https://unit42.paloaltonetworks.com/attack-on-french-diplomat-linked-to-operation-lotus-blossom/",
+          "https://community.rsa.com/community/products/netwitness/blog/2018/02/13/lotus-blossom-continues-asean-targeting",
+          "https://www.accenture.com/t20180127T003755Z_w_/us-en/_acnmedia/PDF-46/Accenture-Security-Dragonfish-Threat-Analysis.pdf",
+          "https://attack.mitre.org/groups/G0030/"
         ],
         "synonyms": [
           "Spring Dragon",
@@ -938,15 +943,21 @@
       "value": "Lotus Panda"
     },
     {
+      "description": "We have investigated their intrusions since 2013 and have been battling them nonstop over the last year at several large telecommunications and technology companies. The determination of this China-based adversary is truly impressive: they are like a dog with a bone.\nHURRICANE PANDA’s preferred initial vector of compromise and persistence is a China Chopper webshell – a tiny and easily obfuscated 70 byte text file that consists of an ‘eval()’ command, which is then used to provide full command execution and file upload/download capabilities to the attackers. This script is typically uploaded to a web server via a SQL injection or WebDAV vulnerability, which is often trivial to uncover in a company with a large external web presence.\nOnce inside, the adversary immediately moves on to execution of a credential theft tool such as Mimikatz (repacked to avoid AV detection). If they are lucky to have caught an administrator who might be logged into that web server at the time, they will have gained domain administrator credentials and can now roam your network at will via ‘net use’ and ‘wmic’ commands executed through the webshell terminal.",
       "meta": {
         "attribution-confidence": "50",
         "country": "CN",
         "refs": [
-          "http://www.crowdstrike.com/blog/cyber-deterrence-in-action-a-story-of-one-long-hurricane-panda-campaign/"
+          "http://www.crowdstrike.com/blog/cyber-deterrence-in-action-a-story-of-one-long-hurricane-panda-campaign/",
+          "https://blog.confiant.com/uncovering-2017s-largest-malvertising-operation-b84cd38d6b85",
+          "https://blog.confiant.com/zirconium-was-one-step-ahead-of-chromes-redirect-blocker-with-0-day-2d61802efd0d"
         ],
         "synonyms": [
           "Black Vine",
-          "TEMP.Avengers"
+          "TEMP.Avengers",
+          "Zirconium",
+          "APT 31",
+          "APT31"
         ]
       },
       "related": [
@@ -1194,7 +1205,12 @@
           "https://www.fireeye.com/blog/threat-research/2014/09/forced-to-adapt-xslcmd-backdoor-now-on-os-x.html",
           "http://arstechnica.com/security/2015/04/elite-cyber-crime-group-strikes-back-after-attack-by-rival-apt-gang/",
           "https://github.com/nccgroup/Royal_APT",
-          "https://www.cfr.org/interactive/cyber-operations/mirage"
+          "https://www.cfr.org/interactive/cyber-operations/mirage",
+          "https://www.fireeye.com/content/dam/fireeye-www/global/en/current-threats/pdfs/wp-operation-ke3chang.pdf",
+          "https://unit42.paloaltonetworks.com/operation-ke3chang-resurfaces-with-new-tidepool-malware/",
+          "https://www.nccgroup.trust/uk/about-us/newsroom-and-events/blogs/2018/march/apt15-is-alive-and-strong-an-analysis-of-royalcli-and-royaldns/",
+          "https://www.intezer.com/miragefox-apt15-resurfaces-with-new-tools-based-on-old-ones/",
+          "https://attack.mitre.org/groups/G0004/"
         ],
         "synonyms": [
           "Vixen Panda",
@@ -1339,9 +1355,10 @@
         "cfr-type-of-incident": "Espionage",
         "country": "CN",
         "refs": [
-          "https://securelist.com/blog/research/57331/the-icefog-apt-a-tale-of-cloak-and-three-daggers/",
-          "https://securelist.com/blog/incidents/58209/the-icefog-apt-hits-us-targets-with-java-backdoor/",
-          "https://www.cfr.org/interactive/cyber-operations/icefog"
+          "https://securelist.com/the-icefog-apt-a-tale-of-cloak-and-three-daggers/57331/",
+          "https://securelist.com/the-icefog-apt-hits-us-targets-with-java-backdoor/58209/",
+          "https://www.cfr.org/interactive/cyber-operations/icefog",
+          "https://d2538mqrb7brka.cloudfront.net/wp-content/uploads/sites/43/2018/03/20133739/icefog.pdf"
         ],
         "synonyms": [
           "IceFog",
@@ -2098,7 +2115,17 @@
           "https://www.secureworks.com/research/the-curious-case-of-mia-ash",
           "http://www.secureworks.com/cyber-threat-intelligence/threats/suspected-iran-based-hacker-group-creates-network-of-fake-linkedin-profiles/",
           "https://www.cfr.org/interactive/cyber-operations/operation-cleaver",
-          "https://www.cfr.org/interactive/cyber-operations/magic-hound"
+          "https://www.cfr.org/interactive/cyber-operations/magic-hound",
+          "https://www.cylance.com/content/dam/cylance/pages/operation-cleaver/Cylance_Operation_Cleaver_Report.pdf",
+          "https://www.trendmicro.com/vinfo/us/security/news/cyber-attacks/operation-woolen-goldfish-when-kittens-go-phishing",
+          "https://unit42.paloaltonetworks.com/unit42-magic-hound-campaign-attacks-saudi-targets/",
+          "https://www.secureworks.com/blog/iranian-pupyrat-bites-middle-eastern-organizations",
+          "https://www.secureworks.com/research/the-curious-case-of-mia-ash",
+          "https://blogs.microsoft.com/on-the-issues/2019/03/27/new-steps-to-protect-customers-from-hacking/",
+          "https://www.trendmicro.de/cloud-content/us/pdfs/security-intelligence/white-papers/wp-the-spy-kittens-are-back.pdf",
+          "https://blog.checkpoint.com/wp-content/uploads/2015/11/rocket-kitten-report.pdf",
+          "https://attack.mitre.org/groups/G0059/",
+          "https://attack.mitre.org/groups/G0003/"
         ],
         "synonyms": [
           "Operation Cleaver",
@@ -2108,9 +2135,14 @@
           "TG-2889",
           "Cobalt Gypsy",
           "Ghambar",
+          "Rocket_Kitten",
           "Cutting Kitten",
           "Group 41",
-          "Magic Hound"
+          "Magic Hound",
+          "APT35",
+          "APT 35",
+          "TEMP.Beanie",
+          "Ghambar"
         ]
       },
       "related": [
@@ -2819,7 +2851,9 @@
           "OperationTroy",
           "Guardian of Peace",
           "GOP",
-          "WHOis Team"
+          "WHOis Team",
+          "Andariel",
+          "Subgroup: Andariel"
         ]
       },
       "uuid": "245c8dde-ed42-4c49-b48b-634e3e21bdd7",
@@ -2874,7 +2908,43 @@
           "https://securelist.com/operation-applejeus/87553/",
           "https://www.cfr.org/interactive/cyber-operations/compromise-cryptocurrency-exchanges-south-korea",
           "https://www.bleepingcomputer.com/news/security/lazarus-group-deploys-its-first-mac-malware-in-cryptocurrency-exchange-hack/",
-          "https://content.fireeye.com/apt/rpt-apt38"
+          "https://content.fireeye.com/apt/rpt-apt38",
+          "https://blog.malwarebytes.com/threat-analysis/2019/03/the-advanced-persistent-threat-files-lazarus-group/",
+          "https://www.theguardian.com/world/2009/jul/08/south-korea-cyber-attack",
+          "https://www.symantec.com/connect/blogs/trojankoredos-comes-unwelcomed-surprise",
+          "https://www.nytimes.com/2013/03/21/world/asia/south-korea-computer-network-crashes.html",
+          "https://www.symantec.com/connect/blogs/south-korean-financial-companies-targeted-castov",
+          "https://www.symantec.com/connect/blogs/four-years-darkseoul-cyberattacks-against-south-korea-continue-anniversary-korean-war",
+          "https://www.trendmicro.com/vinfo/us/security/news/cyber-attacks/the-hack-of-sony-pictures-what-you-need-to-know",
+          "https://blog.trendmicro.com/trendlabs-security-intelligence/new-killdisk-variant-hits-financial-organizations-in-latin-america/",
+          "https://www.welivesecurity.com/2018/04/03/lazarus-killdisk-central-american-casino/",
+          "https://securingtomorrow.mcafee.com/other-blogs/mcafee-labs/hidden-cobra-targets-turkish-financial-sector-new-bankshot-implant/",
+          "https://securingtomorrow.mcafee.com/other-blogs/mcafee-labs/analyzing-operation-ghostsecret-attack-seeks-to-steal-data-worldwide/",
+          "https://securelist.com/operation-applejeus/87553/",
+          "https://securingtomorrow.mcafee.com/other-blogs/mcafee-labs/operation-sharpshooter-targets-global-defense-critical-infrastructure/",
+          "https://securelist.com/cryptocurrency-businesses-still-being-targeted-by-lazarus/90019/",
+          "https://www.theregister.co.uk/2019/04/10/lazarus_group_malware/",
+          "https://www.us-cert.gov/ncas/analysis-reports/AR19-129A",
+          "https://www.operationblockbuster.com/wp-content/uploads/2016/02/Operation-Blockbuster-Report.pdf",
+          "https://www.justice.gov/opa/pr/north-korean-regime-backed-programmer-charged-conspiracy-conduct-multiple-cyber-attacks-and",
+          "https://www.trendmicro.com/vinfo/us/security/news/cybercrime-and-digital-threats/a-look-into-the-lazarus-groups-operations",
+          "https://www.kaspersky.com/about/press-releases/2017_chasing-lazarus-a-hunt-for-the-infamous-hackers-to-prevent-large-bank-robberies",
+          "https://medium.com/threat-intel/lazarus-attacks-wannacry-5fdeddee476c",
+          "https://content.fireeye.com/apt/rpt-apt38",
+          "https://attack.mitre.org/groups/G0032/",
+          "https://threatpost.com/lazarus-apt-spinoff-linked-to-banking-hacks/124746/",
+          "https://www.symantec.com/connect/blogs/duuzer-back-door-trojan-targets-south-korea-take-over-computers",
+          "https://www.bankinfosecurity.com/vietnamese-bank-blocks-1-million-online-heist-a-9105",
+          "https://www.reuters.com/article/us-cyber-heist-swift-specialreport-idUSKCN0YB0DD",
+          "https://www.symantec.com/connect/blogs/swift-attackers-malware-linked-more-financial-attacks",
+          "https://www.symantec.com/blogs/threat-intelligence/fastcash-lazarus-atm-malware",
+          "https://blog.trendmicro.com/trendlabs-security-intelligence/what-we-can-learn-from-the-bangladesh-central-bank-cyber-heist/",
+          "https://www.symantec.com/connect/blogs/attackers-target-dozens-global-banks-new-malware-0",
+          "https://baesystemsai.blogspot.com/2017/10/taiwan-heist-lazarus-tools.html",
+          "https://www.bloomberg.com/news/articles/2018-05-29/mexico-foiled-a-110-million-bank-heist-then-kept-it-a-secret",
+          "https://threatpost.com/banco-de-chile-wiper-attack-just-a-cover-for-10m-swift-heist/132796/",
+          "https://www.darkreading.com/attacks-breaches/north-korean-hacking-group-steals-$135-million-from-indian-bank-/d/d-id/1332678",
+          "https://www.zdnet.com/article/north-korean-hackers-infiltrate-chiles-atm-network-after-skype-job-interview/"
         ],
         "synonyms": [
           "Operation DarkSeoul",
@@ -2886,13 +2956,20 @@
           "Bureau 121",
           "NewRomanic Cyber Army Team",
           "Bluenoroff",
+          "Subgroup: Bluenoroff",
           "Group 77",
           "Labyrinth Chollima",
           "Operation Troy",
           "Operation GhostSecret",
           "Operation AppleJeus",
           "APT38",
-          "Stardust Chollima"
+          "APT 38",
+          "Stardust Chollima",
+          "Whois Hacking Team",
+          "Zinc",
+          "Appleworm",
+          "Nickel Academy",
+          "APT-C-26"
         ]
       },
       "related": [
@@ -3258,7 +3335,8 @@
           "https://unit42.paloaltonetworks.com/unit-42-identifies-new-dragonok-backdoor-malware-deployed-against-japanese-targets/",
           "https://unit42.paloaltonetworks.com/unit42-dragonok-updates-toolset-targets-multiple-geographic-regions/",
           "https://www.phnompenhpost.com/national/kingdom-targeted-new-malware",
-          "https://attack.mitre.org/groups/G0017/"
+          "https://attack.mitre.org/groups/G0017/",
+          "https://attack.mitre.org/groups/G0002/"
         ],
         "synonyms": [
           "Moafee"
@@ -3721,11 +3799,24 @@
         "refs": [
           "https://www.fireeye.com/blog/threat-research/2013/08/operation-molerats-middle-east-cyber-attacks-using-poison-ivy.html",
           "http://blog.vectranetworks.com/blog/moonlight-middle-east-targeted-attacks",
-          "https://ti.360.net/blog/articles/suspected-molerats-new-attack-in-the-middle-east/"
+          "https://ti.360.net/blog/articles/suspected-molerats-new-attack-in-the-middle-east/",
+          "https://ti.360.net/blog/articles/suspected-molerats-new-attack-in-the-middle-east-en/",
+          "https://middle-east-online.com/en/cyber-war-gaza-hackers-deface-israel-fire-service-website",
+          "https://www.fireeye.com/blog/threat-research/2014/06/molerats-here-for-spring.html",
+          "https://pwc.blogs.com/cyber_security_updates/2015/04/attacks-against-israeli-palestinian-interests.html",
+          "https://blog.vectra.ai/blog/moonlight-middle-east-targeted-attacks",
+          "https://securelist.com/gaza-cybergang-wheres-your-ir-team/72283/",
+          "https://www.clearskysec.com/wp-content/uploads/2016/01/Operation%20DustySky_TLP_WHITE.pdf",
+          "https://www.clearskysec.com/wp-content/uploads/2016/06/Operation-DustySky2_-6.2016_TLP_White.pdf",
+          "https://kc.mcafee.com/resources/sites/MCAFEE/content/live/PRODUCT_DOCUMENTATION/26000/PD26760/en_US/McAfee_Labs_Threat_Advisory_GazaCybergang.pdf",
+          "https://securelist.com/gaza-cybergang-updated-2017-activity/82765/",
+          "https://www.kaspersky.com/blog/gaza-cybergang/26363/",
+          "https://attack.mitre.org/groups/G0021/"
         ],
         "synonyms": [
           "Gaza Hackers Team",
           "Gaza cybergang",
+          "Gaza Cybergang",
           "Operation Molerats",
           "Extreme Jackal",
           "Moonlight"
@@ -4022,7 +4113,7 @@
       "value": "Hammer Panda"
     },
     {
-      "description": "Infy is a group of suspected Iranian origin.",
+      "description": "Infy is a group of suspected Iranian origin.\nSince early 2013, we have observed activity from a unique threat actor group, which we began to investigate based on increased activities against human right activists in the beginning of 2015. In line5with other research on the campaign, released prior to publication of this document, we have adopted the name “Infy”, which is based on labels used in the infrastructure and its two families of malware agents.\nThanks to information we have been able to collect during the course of our research, such as characteristics of the group’s malware and development cycle, our research strongly supports the claim that the Infy group is of Iranian origin and potentially connected to the Iranian state. Amongst a backdrop of other incidents, Infy became one of the most frequently observed agents for attempted malware attacks against Iranian civil society beginning in late 2014, growing in use up to the February 2016 parliamentary election in Iran. After the conclusion of the parliamentary election, the rate of attempted intrusions and new compromises through the Infy agent slowed, but did not end. The trends witnessed in reports from recipients are reinforced through telemetry provided by design failures in more recent versions of the Infy malware.",
       "meta": {
         "attribution-confidence": "50",
         "cfr-suspected-state-sponsor": "Iran (Islamic Republic of)",
@@ -4054,7 +4145,9 @@
           "https://iranthreats.github.io/",
           "http://researchcenter.paloaltonetworks.com/2016/05/prince-of-persia-infy-malware-active-in-decade-of-targeted-attacks/",
           "https://researchcenter.paloaltonetworks.com/2017/08/unit42-prince-persia-ride-lightning-infy-returns-foudre/",
-          "https://www.cfr.org/interactive/cyber-operations/prince-persia"
+          "https://www.cfr.org/interactive/cyber-operations/prince-persia",
+          "https://unit42.paloaltonetworks.com/prince-of-persia-infy-malware-active-in-decade-of-targeted-attacks/",
+          "https://unit42.paloaltonetworks.com/unit42-prince-persia-ride-lightning-infy-returns-foudre/"
         ],
         "synonyms": [
           "Operation Mermaid",
@@ -4329,11 +4422,13 @@
       "meta": {
         "refs": [
           "https://dragos.com/blog/20180802Raspite.html",
-          "https://www.symantec.com/blogs/threat-intelligence/leafminer-espionage-middle-east"
+          "https://www.symantec.com/blogs/threat-intelligence/leafminer-espionage-middle-east",
+          "https://attack.mitre.org/groups/G0077/"
         ],
         "since": "2017",
         "synonyms": [
-          "LeafMiner"
+          "LeafMiner",
+          "Raspite"
         ],
         "victimology": "Electric utility sector"
       },
@@ -4661,7 +4756,8 @@
         "refs": [
           "https://blog.fox-it.com/2016/06/15/mofang-a-politically-motivated-information-stealing-adversary/",
           "https://www.threatconnect.com/china-superman-apt/",
-          "https://www.cfr.org/interactive/cyber-operations/mofang"
+          "https://www.cfr.org/interactive/cyber-operations/mofang",
+          "https://foxitsecurity.files.wordpress.com/2016/06/fox-it_mofang_threatreport_tlp-white.pdf"
         ],
         "synonyms": [
           "Superman"
@@ -4746,6 +4842,7 @@
       "value": "Test Panda"
     },
     {
+      "description": "Kaspersky Lab and Seculert worked together to sinkhole the Madi Command & Control (C&C) servers to monitor the campaign. Kaspersky Lab and Seculert identified more than 800 victims located in Iran, Israel and select countries across the globe connecting to the C&Cs over the past eight months. Statistics from the sinkhole revealed that the victims were primarily business people working on Iranian and Israeli critical infrastructure projects, Israeli financial institutions, Middle Eastern engineering students, and various government agencies communicating in the Middle East.\nCommon applications and websites that were spied on include accounts on Gmail, Hotmail, Yahoo! Mail, ICQ, Skype, Google+, and Facebook. Surveillance is also performed over integrated ERP/CRM systems, business contracts, and financial management systems.",
       "meta": {
         "attribution-confidence": "50",
         "cfr-suspected-state-sponsor": "Iran (Islamic Republic of)",
@@ -4762,9 +4859,12 @@
         "cfr-type-of-incident": "Espionage",
         "country": "IR",
         "refs": [
-          "https://securelist.com/blog/incidents/33693/the-madi-campaign-part-i-5/",
-          "https://securelist.com/blog/incidents/33701/the-madi-campaign-part-ii-53/",
-          "https://www.cfr.org/interactive/cyber-operations/madi"
+          "https://securelist.com/the-madi-campaign-part-i-5/33693/",
+          "https://securelist.com/the-madi-campaign-part-ii-53/33701/",
+          "https://www.cfr.org/interactive/cyber-operations/madi",
+          "https://www.kaspersky.com/about/press-releases/2012_kaspersky-lab-and-seculert-announce--madi--a-newly-discovered-cyber-espionage-campaign-in-the-middle-east",
+          "https://threatpost.com/new-and-improved-madi-spyware-campaign-continues-072512/76849/",
+          "https://www.symantec.com/connect/blogs/madi-attacks-series-social-engineering-campaigns"
         ]
       },
       "uuid": "d5dacda0-12c2-4e80-bdf2-1c5019ec40e2",
@@ -4850,7 +4950,7 @@
         "cfr-type-of-incident": "Espionage",
         "country": "KP",
         "refs": [
-          "http://securelist.com/analysis/57915/the-kimsuky-operation-a-north-korean-apt/",
+          "https://securelist.com/the-kimsuky-operation-a-north-korean-apt/57915/",
           "https://www.cfr.org/interactive/cyber-operations/kimsuky"
         ],
         "synonyms": [
@@ -5288,12 +5388,23 @@
         "cfr-type-of-incident": "Espionage",
         "country": "IR",
         "refs": [
-          "https://researchcenter.paloaltonetworks.com/2017/11/unit42-muddying-the-water-targeted-attacks-in-the-middle-east/",
-          "https://www.cfr.org/interactive/cyber-operations/muddywater"
+          "https://unit42.paloaltonetworks.com/unit42-muddying-the-water-targeted-attacks-in-the-middle-east/",
+          "https://www.cfr.org/interactive/cyber-operations/muddywater",
+          "https://www.fireeye.com/blog/threat-research/2018/03/iranian-threat-group-updates-ttps-in-spear-phishing-campaign.html",
+          "https://blog.trendmicro.com/trendlabs-security-intelligence/campaign-possibly-connected-muddywater-surfaces-middle-east-central-asia/",
+          "https://blog.trendmicro.com/trendlabs-security-intelligence/another-potential-muddywater-campaign-uses-powershell-based-prb-backdoor/",
+          "https://securelist.com/muddywater/88059/",
+          "https://www.symantec.com/blogs/threat-intelligence/seedworm-espionage-group",
+          "https://www.clearskysec.com/wp-content/uploads/2018/11/MuddyWater-Operations-in-Lebanon-and-Oman.pdf",
+          "https://www.clearskysec.com/muddywater-targets-kurdish-groups-turkish-orgs/",
+          "https://blog.talosintelligence.com/2019/05/recent-muddywater-associated-blackwater.html",
+          "https://www.zdnet.com/article/new-leaks-of-iranian-cyber-espionage-operations-hit-telegram-and-the-dark-web/",
+          "https://attack.mitre.org/groups/G0069/"
         ],
         "synonyms": [
           "TEMP.Zagros",
-          "Static Kitten"
+          "Static Kitten",
+          "Seedworm"
         ]
       },
       "related": [
@@ -5431,7 +5542,11 @@
           "https://www.proofpoint.com/us/threat-insight/post/leviathan-espionage-actor-spearphishes-maritime-and-defense-targets",
           "https://www.fireeye.com/blog/threat-research/2018/03/suspected-chinese-espionage-group-targeting-maritime-and-engineering-industries.html",
           "https://www.cfr.org/interactive/cyber-operations/leviathan",
-          "https://www.fireeye.com/blog/threat-research/2019/03/apt40-examining-a-china-nexus-espionage-actor.html"
+          "https://www.fireeye.com/blog/threat-research/2019/03/apt40-examining-a-china-nexus-espionage-actor.html",
+          "https://www.recordedfuture.com/chinese-threat-actor-tempperiscope/",
+          "https://www.fireeye.com/blog/threat-research/2018/07/chinese-espionage-group-targets-cambodia-ahead-of-elections.html",
+          "https://www.fireeye.com/blog/threat-research/2019/03/apt40-examining-a-china-nexus-espionage-actor.html",
+          "https://attack.mitre.org/groups/G0065/"
         ],
         "synonyms": [
           "TEMP.Periscope",
@@ -6073,7 +6188,12 @@
         ],
         "cfr-type-of-incident": "Espionage",
         "refs": [
-          "https://www.cfr.org/interactive/cyber-operations/inception-framework"
+          "https://www.cfr.org/interactive/cyber-operations/inception-framework",
+          "https://www.symantec.com/connect/blogs/blue-coat-exposes-inception-framework-very-sophisticated-layered-malware-attack-targeted-milit",
+          "https://securelist.com/red-october-diplomatic-cyber-attacks-investigation/36740/%238",
+          "https://www.symantec.com/blogs/threat-intelligence/inception-framework-hiding-behind-proxies",
+          "https://securelist.com/cloud-atlas-redoctober-apt-is-back-in-style/68083/",
+          "https://www.akamai.com/uk/en/multimedia/documents/white-paper/upnproxy-blackhat-proxies-via-nat-injections-white-paper.pdf"
         ]
       },
       "uuid": "71ef51ca-a791-11e8-a026-07980ca910ca",
@@ -6843,7 +6963,9 @@
         "country": "IR",
         "refs": [
           "https://resecurity.com/blog/parliament_races/",
-          "https://www.nbcnews.com/politics/national-security/iranian-backed-hackers-stole-data-major-u-s-government-contractor-n980986"
+          "https://www.nbcnews.com/politics/national-security/iranian-backed-hackers-stole-data-major-u-s-government-contractor-n980986",
+          "https://threatpost.com/ranian-apt-6tb-data-citrix/142688/",
+          "https://hub.packtpub.com/resecurity-reports-iriduim-behind-citrix-data-breach-200-government-agencies-oil-and-gas-companies-and-technology-companies-also-targeted/"
         ]
       },
       "uuid": "29cfe970-5446-4cfc-a2da-00e9f49e02ba",
@@ -6919,10 +7041,12 @@
           "https://info.phishlabs.com/blog/silent-librarian-more-to-the-story-of-the-iranian-mabna-institute-indictment",
           "https://info.phishlabs.com/blog/silent-librarian-university-attacks-continue-unabated-in-days-following-indictment",
           "https://www.justice.gov/usao-sdny/pr/nine-iranians-charged-conducting-massive-cyber-theft-campaign-behalf-islamic",
+          "https://www.justice.gov/opa/pr/nine-iranians-charged-conducting-massive-cyber-theft-campaign-behalf-islamic-revolutionary",
           "https://www.secureworks.com/blog/back-to-school-cobalt-dickens-targets-universities"
         ],
         "synonyms": [
-          "COBALT DICKENS"
+          "COBALT DICKENS",
+          "Mabna Institute"
         ]
       },
       "uuid": "5059b44d-2753-4977-b987-4922f09afe6b",
@@ -7056,7 +7180,19 @@
       },
       "uuid": "2d82a18e-8c53-11e9-b0ec-536b62fa3d86",
       "value": "Honeybee"
+    },
+    {
+      "description": "A series of attacks, targeting both Indian military research and south Asian shipping organizations, demonstrate the minimum level of effort required to successfully compromise a target and steal sensitive information. The attackers use very simple malware, which required little development time or skills, in conjunction with freely available Web hosting, to implement a highly effective attack. It is a case of the attackers obtaining a maximum return on their investment. The attack shows how an intelligent attacker does not need to be particularly technically skilled in order to steal the information they are after. The attack begins, as is often the case, with an email sent to the victim. A malicious document is attached to the email, which, when loaded, activates the malware. The attackers use tailored emails to encourage the victim to open the email. For example, one email sent to an academic claimed to be a call for papers for a conference (CFP).\nThe vast majority of the victims were based in India, with some in Malaysia. The victim industry was mostly military research and also shipping based in the Arabian and South China seas. In some instances the attackers appeared to have a clear goal, whereby specific files were retrieved from certain compromised computers. In other cases, the attackers used more of a ‘shotgun’ like approach, copying every file from a computer. Military technologies were obviously the focus of one particular attack with what appeared to be source code stolen. 45 different attacker IP addresses were observed. Out of those, 43 were within the same IP address range based in Sichuan province, China. The remaining two were based in South Korea. The pattern of attacker connections implies that the IP addresses are being used as a VPN, probably in an attempt to render the attackers anonymous.ænThe attacks have been active from at least April 2011 up to February 2012. The attackers are intelligent and focused, employing the minimum amount of work necessary for the maximum gain. They do not use zero day exploits or complicated threats, instead they rely on effective social engineering and lax security measures on the part of the victims.",
+      "meta": {
+        "refs": [
+          "https://www.symantec.com/content/en/us/enterprise/media/security_response/whitepapers/the_luckycat_hackers.pdf",
+          "https://www.trendmicro.de/cloud-content/us/pdfs/security-intelligence/white-papers/wp_luckycat_redux.pdf",
+          ""
+        ]
+      },
+      "uuid": "e502802e-8d0a-11e9-bd72-9f046529b3fd",
+      "value": "Lucky Cat"
     }
   ],
-  "version": 113
+  "version": 114
 }
