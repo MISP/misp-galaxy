@@ -653,10 +653,22 @@
         "cfr-type-of-incident": "Espionage",
         "country": "CN",
         "refs": [
-          "http://securelist.com/blog/research/57585/winnti-faq-more-than-just-a-game/",
+          "https://securelist.com/winnti-faq-more-than-just-a-game/57585/",
+          "https://securelist.com/winnti-more-than-just-a-game/37029/",
           "http://williamshowalter.com/a-universal-windows-bootkit/",
           "https://www.microsoft.com/security/blog/2017/01/25/detecting-threat-actors-in-recent-german-industrial-attacks-with-windows-defender-atp/",
-          "https://www.cfr.org/interactive/cyber-operations/axiom"
+          "https://www.cfr.org/interactive/cyber-operations/axiom",
+          "https://securelist.com/games-are-over/70991/",
+          "https://blog.vsec.com.vn/apt/initial-winnti-analysis-against-vietnam-game-company.html",
+          "https://medium.com/chronicle-blog/winnti-more-than-just-windows-and-gates-e4f03436031a",
+          "https://www.dw.com/en/thyssenkrupp-victim-of-cyber-attack/a-36695341",
+          "https://www.bleepingcomputer.com/news/security/teamviewer-confirms-undisclosed-breach-from-2016/",
+          "https://blog.trendmicro.com/trendlabs-security-intelligence/winnti-abuses-github/",
+          "https://www.dw.com/en/bayer-points-finger-at-wicked-panda-in-cyberattack/a-48196004",
+          "https://www.welivesecurity.com/2019/03/11/gaming-industry-scope-attackers-asia/",
+          "https://securelist.com/winnti-more-than-just-a-game/37029/",
+          "https://401trg.com/burning-umbrella/",
+          "https://attack.mitre.org/groups/G0044/"
         ],
         "synonyms": [
           "Winnti Group",
@@ -4490,12 +4502,16 @@
       "value": "SilverTerrier"
     },
     {
-      "description": "A corporate espionage group has compromised a string of major corporations over the past three years in order to steal confidential information and intellectual property. The gang, which Symantec calls Butterfly, is not-state sponsored, rather financially motivated. It has attacked multi-billion dollar companies operating in the internet, IT software, pharmaceutical, and commodities sectors. Twitter, Facebook, Apple, and Microsoft are among the companies who have publicly acknowledged attacks.",
+      "description": "A corporate espionage group has compromised a string of major corporations over the past three years in order to steal confidential information and intellectual property. The gang, which Symantec calls Butterfly, is not-state sponsored, rather financially motivated. It has attacked multi-billion dollar companies operating in the internet, IT software, pharmaceutical, and commodities sectors. Twitter, Facebook, Apple, and Microsoft are among the companies who have publicly acknowledged attacks.\n Butterfly is technically proficient and well resourced. The group has developed a suite of custom malware tools capable of attacking both Windows and Apple computers, and appears to have used at least one zero-day vulnerability in its attacks. It keeps a low profile and maintains good operational security. After successfully compromising a target organization, it cleans up after itself before moving on to its next target.\n This group operates at a much higher level than the average cybercrime gang. It is not interested in stealing credit card details or customer databases and is instead focused on high-level corporate information. Butterfly may be selling this information to the highest bidder or may be operating as hackers for hire. Stolen information could also be used for insider-trading purposes.",
       "meta": {
         "refs": [
           "https://www.symantec.com/connect/blogs/butterfly-profiting-high-level-corporate-attacks",
-          "https://securelist.com/71275/wild-neutron-economic-espionage-threat-actor-returns-with-new-tricks/",
-          "https://research.kudelskisecurity.com/2015/11/05/sphinx-moth-expanding-our-knowledge-of-the-wild-neutron-morpho-apt/"
+          "https://securelist.com/wild-neutron-economic-espionage-threat-actor-returns-with-new-tricks/71275/",
+          "https://research.kudelskisecurity.com/2015/11/05/sphinx-moth-expanding-our-knowledge-of-the-wild-neutron-morpho-apt/",
+          "https://blog.twitter.com/official/en_us/a/2013/keeping-our-users-secure.html",
+          "https://www.facebook.com/notes/facebook-security/protecting-people-on-facebook/10151249208250766",
+          "https://www.reuters.com/article/us-apple-hackers/exclusive-apple-macs-hit-by-hackers-who-targeted-facebook-idUSBRE91I10920130219",
+          "https://blogs.technet.microsoft.com/msrc/2013/02/22/recent-cyberattacks/"
         ],
         "synonyms": [
           "Butterfly",
@@ -5451,6 +5467,7 @@
       "value": "Unit 8200"
     },
     {
+      "description": "As a part of our Kaspersky APT Intelligence Reporting subscription, customers received an update in mid-February 2017 on some interesting APT activity that we called WhiteBear. Much of the contents of that report are reproduced here. WhiteBear is a parallel project or second stage of the Skipper Turla cluster of activity documented in another private intelligence report “Skipper Turla – the White Atlas framework” from mid-2016. Like previous Turla activity, WhiteBear leverages compromised websites and hijacked satellite connections for command and control (C2) infrastructure. As a matter of fact, WhiteBear infrastructure has overlap with other Turla campaigns, like those deploying Kopiluwak, as documented in “KopiLuwak – A New JavaScript Payload from Turla” in December 2016. WhiteBear infected systems maintained a dropper (which was typically signed) as well as a complex malicious platform which was always preceded by WhiteAtlas module deployment attempts. However, despite the similarities to previous Turla campaigns, we believe that WhiteBear is a distinct project with a separate focus. We note that this observation of delineated target focus, tooling, and project context is an interesting one that also can be repeated across broadly labeled Turla and Sofacy activity.\nFrom February to September 2016, WhiteBear activity was narrowly focused on embassies and consular operations around the world. All of these early WhiteBear targets were related to embassies and diplomatic/foreign affair organizations. Continued WhiteBear activity later shifted to include defense-related organizations into June 2017. When compared to WhiteAtlas infections, WhiteBear deployments are relatively rare and represent a departure from the broader Skipper Turla target set. Additionally, a comparison of the WhiteAtlas framework to WhiteBear components indicates that the malware is the product of separate development efforts. WhiteBear infections appear to be preceded by a condensed spearphishing dropper, lack Firefox extension installer payloads, and contain several new components signed with a new code signing digital certificate, unlike WhiteAtlas incidents and modules.",
       "meta": {
         "attribution-confidence": "50",
         "cfr-suspected-state-sponsor": "Russian Federation",
@@ -7213,7 +7230,8 @@
       "description": "In July 2018, an attack on Singapore’s largest public health organization, SingHealth, resulted in a reported 1.5 million patient records being stolen. Until now, nothing was known about who was responsible for this attack. Symantec researchers have discovered that this attack group, which we call Whitefly, has been operating since at least 2017, has targeted organizations based mostly in Singapore across a wide variety of sectors, and is primarily interested in stealing large amounts of sensitive information.",
       "meta": {
         "refs": [
-          "https://www.symantec.com/blogs/threat-intelligence/whitefly-espionage-singapore"
+          "https://www.symantec.com/blogs/threat-intelligence/whitefly-espionage-singapore",
+          "https://www.reuters.com/article/us-singapore-cyberattack/cyberattack-on-singapore-health-database-steals-details-of-1-5-million-including-pm-idUSKBN1KA14J"
         ]
       },
       "uuid": "943f490e-ac7f-40fe-b6f3-33e2623649d2",
@@ -7444,7 +7462,62 @@
       },
       "uuid": "90abfc42-91c6-11e9-89b1-af58de8f7ec2",
       "value": "TEMP.Veles"
+    },
+    {
+      "description": "In August of 2018, DarkMatter released a report entitled “In the Trails of WINDSHIFT APT”, which unveiled a threat actor with TTPs very similar to those of Bahamut. Subsequently, two additional articles were released by Objective-See which provide an analysis of some validated WINDSHIFT samples targeting OSX systems. Pivoting on specific file attributes and infrastructure indicators, Unit 42 was able to identify and correlate additional attacker activity and can now provide specific details on a targeted WINDSHIFT attack as it unfolded at a Middle Eastern government agency.",
+      "meta": {
+        "refs": [
+          "https://unit42.paloaltonetworks.com/shifting-in-the-wind-windshift-attacks-target-middle-eastern-governments/",
+          "https://gsec.hitb.org/materials/sg2018/D1%20COMMSEC%20-%20In%20the%20Trails%20of%20WINDSHIFT%20APT%20-%20Taha%20Karim.pdf"
+        ]
+      },
+      "uuid": "cbbbfc82-9294-11e9-8e19-2bc14137b25b",
+      "value": "WindShift"
+    },
+    {
+      "description": "Over the last few weeks, several significant leaks regarding a number of Iranian APTs took place. After analyzing and investigating the documents we conclude that they are authentic. Consequently, this causes considerable harm to the groups and their operation. The identity of the actor behind the leak is currently unknown, however based on the scope and the quality of the exposed documents and information, it appears that they are professional and highly capable. This leak will likely hamstring the groups' operation in the near future. Accordingly, in our assessment this will minimize the risk of potential attacks in the next few months and possibly even year. Note -most of the leaks are posted on Telegram channels that were created specifically for this purpose.\n Below are the three main Telegram groups on which the leaks were posted: \nLab Dookhtegam pseudonym (\"The people whose lips are stitched and sealed\" –translation from Persian) –In this channel attack tools attributed to the group 'OilRig' were leaked; including a webshell that was inserted into the Technion, various tools that were used for DNS attacks, and more. \nGreen Leakers–In this channel attack tools attributed to the group 'MuddyWatter' were leaked. The group's name and its symbol are identified with the \"green movement\", which led the protests in Iran after the Presidential elections in 2009. These protests were heavily repressed by the revolutionary guards (IRGC) \nBlack Box–Unlike the previous two channels this has been around for a long time. On Friday May 5th, dozens of confidential documents labeled as \"secret\" (a high confidentiality level in Iran, one before the highest -top secret) were posted on this channel. The documents were related to Iranian attack groups' activity.",
+      "meta": {
+        "refs": [
+          "https://www.clearskysec.com/wp-content/uploads/2019/05/Iranian-Nation-State-APT-Leak-Analysis-and-Overview.pdf"
+        ]
+      },
+      "uuid": "f50a5f64-9296-11e9-9b46-a331d01a008d",
+      "value": "[Unnamed group]"
+    },
+    {
+      "description": "DUNGEON SPIDER is a criminal group operating the ransomware most commonly known as Locky, which has been active since February 2016 and was last observed in late 2017. Locky is a ransomware tool that encrypts files using a combination of cryptographic algorithms: RSA with a key size of 2,048 bits, and AES with a key size of 128 bits. Locky targets a large number of file extensions and is able to encrypt data on shared network drives. In an attempt to further impact victims and prevent file recovery, Locky deletes all of the Shadow Volume Copies on the machine.\nDUNGEON SPIDER primarily relies on broad spam campaigns with malicious attachments for distribution. Locky is the community/industry name associated with this actor.",
+      "meta": {
+        "refs": [
+          "https://www.crowdstrike.com/blog/meet-crowdstrikes-adversary-of-the-month-for-october-dungeon-spider/"
+        ]
+      },
+      "uuid": "f1da463c-9297-11e9-875a-d327fc8282f2",
+      "value": "Dungeon Spider"
+    },
+    {
+      "description": "Throughout 2017 and 2018, Fxmsp established a network of trusted proxy resellers to promote their breaches on the criminal underground. Some of the known Fxmsp TTPs included accessing network environments via externally available remote desktop protocol (RDP) servers and exposed active directory.\nMost recently, the actor claimed to have developed a credential-stealing botnet capable of infecting high-profile targets in order to exfiltrate sensitive usernames and passwords. Fxmsp has claimed that developing this botnet and improving its capabilities for stealing information from secured systems is their main goal.",
+      "meta": {
+        "refs": [
+          "https://www.advanced-intel.com/blog/top-tier-russian-hacking-collective-claims-breaches-of-three-major-anti-virus-companies"
+        ]
+      },
+      "uuid": "686f4fe0-9298-11e9-b02a-af9595918956",
+      "value": "Fxmsp"
+    },
+    {
+      "description": "The hacker said that he put up the data for sale mainly because these companies had failed to protect passwords with strong encryption algorithms like bcrypt.\nMost of the hashed passwords the hacker put up for sale today can cracked with various levels of difficulty --but they can be cracked.\n\"I got upset because I feel no one is learning,\" the hacker told ZDNet in an online chat earlier today. \"I just felt upset at this particular moment, because seeing this lack of security in 2019 is making me angry.\"\nIn a conversation with ZDNet last month, the hacker told us he wanted to hack and put up for sale more than one billion records and then retire and disappear with the money.\nBut in a conversation today, the hacker says this is not his target anymore, as he learned that other hackers have already achieved the same goal before him.\n Gnosticplayers also revealed that not all the data he obtained from hacked companies had been put up for sale. Some companies gave into extortion demands and paid fees so breaches would remain private.\n\"I came to an agreement with some companies, but the concerned startups won't see their data for sale,\" he said. \"I did it that's why I can't publish the rest of my databases or even name them.\"",
+      "meta": {
+        "refs": [
+          "https://www.zdnet.com/article/round-4-hacker-returns-and-puts-26mil-user-records-for-sale-on-the-dark-web/",
+          "https://www.theregister.co.uk/2019/02/11/620_million_hacked_accounts_dark_web/",
+          "https://www.zdnet.com/article/127-million-user-records-from-8-companies-put-up-for-sale-on-the-dark-web/",
+          "https://www.zdnet.com/article/hacker-puts-up-for-sale-third-round-of-hacked-databases-on-the-dark-web/",
+          "https://www.zdnet.com/article/a-hacker-has-dumped-nearly-one-billion-user-records-over-the-past-two-months/"
+        ]
+      },
+      "uuid": "f32e3682-9298-11e9-8dcb-639156d97cd1",
+      "value": "Gnosticplayers"
     }
   ],
-  "version": 117
+  "version": 118
 }
