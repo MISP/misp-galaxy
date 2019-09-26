@@ -35,7 +35,7 @@ if __name__ == '__main__':
                 temp['meta']['subregion'] = []
                 values.append(temp)
 
-    '''----------------  column 2 ------------------'''
+    """----------------  column 2 ------------------"""
 
     with open(args.csv, newline='') as csvfile:
         csvreader = csv.reader(csvfile, delimiter=',', quotechar='"')
@@ -72,7 +72,7 @@ if __name__ == '__main__':
                     if test == 0:
                         value['meta']['subregion'].append(value_name)
 
-    '''----------------  column 3 ------------------'''
+    """----------------  column 3 ------------------"""
 
     with open(args.csv, newline='') as csvfile:
         csvreader = csv.reader(csvfile, delimiter=',', quotechar='"')
@@ -110,7 +110,7 @@ if __name__ == '__main__':
                         value['meta']['subregion'].append(value_name)
 
 
-    '''----------------  column 4 ------------------'''
+    """----------------  column 4 ------------------"""
 
     with open(args.csv, newline='') as csvfile:
         csvreader = csv.reader(csvfile, delimiter=',', quotechar='"')
@@ -147,8 +147,8 @@ if __name__ == '__main__':
                     if test == 0:
                         value['meta']['subregion'].append(value_name)
 
-    '''----------------  column 5 ------------------'''
-
+    """----------------  column 5 ------------------"""
+    
     with open(args.csv, newline='') as csvfile:
         csvreader = csv.reader(csvfile, delimiter=',', quotechar='"')
         pass_first_line = True
