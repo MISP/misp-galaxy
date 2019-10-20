@@ -164,7 +164,7 @@ def main():
     amitt.write_amitt_file('../galaxies/misinfosec-amitt-misinformation-pattern.json', galaxy)
 
     cluster = amitt.make_amitt_cluster()
-    amitt.write_amitt_file('../clusters/misinfosec-amitt-misinformation-technique.json', cluster)
+    amitt.write_amitt_file('../clusters/misinfosec-amitt-misinformation-pattern.json', cluster)
 
 
 if __name__ == '__main__':
