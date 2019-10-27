@@ -17,7 +17,23 @@ domains = ['enterprise-attack', 'mobile-attack', 'pre-attack']
 types = ['attack-pattern', 'course-of-action', 'intrusion-set', 'malware', 'tool']
 all_data = {}  # variable that will contain everything
 
-# read in existing data
+# read in the non-MITRE data
+# we need this to be able to build a list of non-MITRE-UUIDs which we will use later on
+# to remove relations that are from MITRE.
+# the reasoning is that the new MITRE export might contain less relationships than it did before
+# so we cannot migrate all existing relationships as such
+non_mitre_uuids = set()
+for fname in os.listdir(os.path.join(misp_dir, 'clusters')):
+    if 'mitre' in fname:
+        continue
+    if '.json' in fname:
+        # print(fname)
+        with open(os.path.join(misp_dir, 'clusters', fname)) as f_in:
+            cluster_data = json.load(f_in)
+            for cluster in cluster_data['values']:
+                non_mitre_uuids.add(cluster['uuid'])
+
+# read in existing MITRE data
 # first build a data set of the MISP Galaxy ATT&CK elements by using the UUID as reference, this speeds up lookups later on.
 # at the end we will convert everything again to separate datasets
 all_data_uuid = {}
@@ -29,6 +45,15 @@ for t in types:
             file_data = json.load(f)
         # print(file_data)
         for value in file_data['values']:
+            # remove (old)MITRE relations, and keep non-MITRE relations
+            if 'related' in value:
+                related_original = value['related']
+                related_new = []
+                for rel in related_original:
+                    if rel['dest-uuid'] in non_mitre_uuids:
+                        related_new.append(rel)
+                value['related'] = related_new
+            # find and handle duplicate uuids
             if value['uuid'] in all_data_uuid:
                 # exit("ERROR: Something is really wrong, we seem to have duplicates.")
                 # if it already exists we need to copy over all the data manually to merge it
