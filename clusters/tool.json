@@ -663,7 +663,10 @@
         "synonyms": [
           "Etso",
           "SUQ",
-          "Agent.ALQHI"
+          "Agent.ALQHI",
+          "RbDoor",
+          "RibDoor",
+          "HIGHNOON"
         ],
         "type": [
           "Backdoor"
@@ -5352,6 +5355,10 @@
       "meta": {
         "refs": [
           "https://cdn.securelist.com/files/2017/08/ShadowPad_technical_description_PDF.pdf"
+        ],
+        "synonyms": [
+          "POISONPLUG",
+          "Barlaiy"
         ]
       },
       "related": [
@@ -7808,7 +7815,79 @@
       },
       "uuid": "c72f8f57-fc2f-4ca2-afbe-ca5bfa5a1747",
       "value": "Amavaldo"
+    },
+    {
+      "description": "hacker going by the handle Mr. Burns. He also created something similar called RMS, which behaves very much like the TVSPY builder.\n“RMS/TVSPY continues to be developed, with a new version being posted by the developer/reseller on a regular basis,” Damballa researchers noted. “In fact, the legitimate RMS version developed by TektonIT and the version posted in criminal forums appear to be identical. TVSPY seems to be merely a modification of RMS to utilize TeamViewer infrastructure and a command-and-control interface manageable through the Web.",
+      "meta": {
+        "refs": [
+          "https://mobile.twitter.com/SaudiDFIR/status/1177740045186457600"
+        ],
+        "synonyms": [
+          "TVRAT",
+          "SpY-Agent",
+          "teamspy"
+        ]
+      },
+      "uuid": "ae82a19e-2334-4e72-b55c-79b4ba4f137f",
+      "value": "TVSPY"
+    },
+    {
+      "description": "The COMpfun malware was initially documented by G-DATA in 2014. Although G-DATA didn’t identify which actor was using this malware, Kaspersky tentatively linked it to the Turla APT, based on the victimology. Our telemetry indicates that the current campaign using Reductor started at the end of April 2019 and remained active at the time of writing (August 2019). We identified targets in Russia and Belarus.",
+      "meta": {
+        "refs": [
+          "https://securelist.com/compfun-successor-reductor/93633/",
+          "https://www.gdatasoftware.com/blog/2014/10/23941-com-object-hijacking-the-discreet-way-of-persistence"
+        ]
+      },
+      "uuid": "b2c2d42b-a6a3-4ab0-a013-eb1c7461aca9",
+      "value": "COMpfun"
+    },
+    {
+      "description": "We called these new modules ‘Reductor’ after a .pdb path left in some samples. Besides typical RAT functions such as uploading, downloading and executing files, Reductor’s authors put a lot of effort into manipulating digital certificates and marking outbound TLS traffic with unique host-related identifiers.  The Kaspersky Attribution Engine shows strong code similarities between this family and the COMPfun Trojan. Moreover, further research showed that the original COMpfun Trojan most probably is used as a downloader in one of the distribution schemes. Based on these similarities, we’re quite sure the new malware was developed by the COMPfun authors.",
+      "meta": {
+        "refs": [
+          "https://securelist.com/compfun-successor-reductor/93633/"
+        ]
+      },
+      "uuid": "a577bb0d-9732-449a-80f7-5e6c93e6046c",
+      "value": "Reductor"
+    },
+    {
+      "description": "Legitimate tool - command-line tool used to monitor a running process and dump memory depending on customcriteria. The attackers use this tool to dump the LSASS process to gatherWINDOWScredentials hashes",
+      "uuid": "1ae22855-c343-4ae9-8cab-522c9da938aa",
+      "value": "ProcDump"
+    },
+    {
+      "description": "Legitimate tool - command-line tool used to import and export certificates on a machine. The attackers use this toolto gather credentials used for VPN authentication to the clients’ networks",
+      "uuid": "fadd0d1f-b098-43ea-b7a6-50fb58aef9f6",
+      "value": "CertMig"
+    },
+    {
+      "description": "Legitimate tool - tool used to scan IPv4/IPv6 networks and remotely execute PowerShell commands.",
+      "uuid": "bbba3a35-5064-4e60-ad4b-0ba16cc81a23",
+      "value": "Netscan"
+    },
+    {
+      "description": "Malware embedded in Asus Live Update in 2018. ShadowHammer triggers its malicious behavior only if the computer it is running on has a network adapter with the MAC address whitelisted by the attacker.",
+      "meta": {
+        "refs": [
+          "https://www.welivesecurity.com/wp-content/uploads/2019/10/ESET_Winnti.pdf"
+        ]
+      },
+      "uuid": "c1815516-aa2a-43d2-9136-78a8feb054b6",
+      "value": "ShadowHammer"
+    },
+    {
+      "description": "DePriMon is a malicious downloader, with several stages and using many non-traditional techniques. To achieve persistence, the malware registers a new local port monitor – a trick falling under the “Port Monitors” technique in the MITRE ATT&CK knowledgebase. For that, the malware uses the “Windows Default Print Monitor” name; that’s why we have named it DePriMon. Due to its complexity and modular architecture, we consider it to be a framework.",
+      "meta": {
+        "refs": [
+          "https://www.bleepingcomputer.com/news/security/deprimon-malware-registers-itself-as-a-windows-print-monitor/",
+          "https://www.welivesecurity.com/2019/11/21/deprimon-default-print-monitor-malicious-downloader/"
+        ]
+      },
+      "uuid": "c76874cd-0d73-4cbf-8d39-a066900dd4ce",
+      "value": "DePriMon"
     }
   ],
-  "version": 123
+  "version": 128
 }

@@ -7,7 +7,7 @@
     "Various"
   ],
   "category": "actor",
-  "description": "Known or estimated adversary groups targeting organizations and employees. Adversary groups are regularly confused with their initial operation or campaign.",
+  "description": "Known or estimated adversary groups targeting organizations and employees. Adversary groups are regularly confused with their initial operation or campaign. threat-actor-classification meta can be used to clarify the understanding of the threat-actor if also considered as operation, campaign or activity group.",
   "name": "Threat Actor",
   "source": "MISP Project",
   "type": "threat-actor",
@@ -671,8 +671,12 @@
           "https://www.crowdstrike.com/blog/meet-crowdstrikes-adversary-of-the-month-for-july-wicked-spider/"
         ],
         "synonyms": [
+          "Winnti Umbrella",
           "Winnti Group",
           "Tailgater Team",
+          "Suckfly",
+          "APT41",
+          "APT 41",
           "Group 72",
           "Group72",
           "Tailgater",
@@ -1056,7 +1060,8 @@
           "APT27",
           "Operation Iron Tiger",
           "Iron Tiger APT",
-          "BRONZE UNION"
+          "BRONZE UNION",
+          "Lucky Mouse"
         ]
       },
       "related": [
@@ -1978,7 +1983,10 @@
         "attribution-confidence": "50",
         "country": "IR",
         "refs": [
-          "https://www.fireeye.com/blog/threat-research/2017/09/apt33-insights-into-iranian-cyber-espionage.html"
+          "https://www.fireeye.com/blog/threat-research/2017/09/apt33-insights-into-iranian-cyber-espionage.html",
+          "https://blog.trendmicro.com/trendlabs-security-intelligence/more-than-a-dozen-obfuscated-apt33-botnets-used-for-extreme-narrow-targeting/",
+          "https://www.brighttalk.com/webcast/10703/275683",
+          "https://www.symantec.com/blogs/threat-intelligence/elfin-apt33-espionage"
         ],
         "synonyms": [
           "APT 33",
@@ -2563,6 +2571,7 @@
           "Turla",
           "Snake",
           "Venomous Bear",
+          "VENOMOUS Bear",
           "Group 88",
           "Waterbug",
           "WRAITH",
@@ -6995,8 +7004,12 @@
           "https://www.group-ib.com/blog/silence",
           "https://securelist.com/the-silence/83009/"
         ],
+        "spoken-language": [
+          "rus"
+        ],
         "synonyms": [
-          "Silence"
+          "Silence",
+          "Silence APT group"
         ]
       },
       "uuid": "0d5e17fd-7a71-47fd-b4bc-867cdb833726",
@@ -7287,11 +7300,15 @@
           "https://info.phishlabs.com/blog/silent-librarian-university-attacks-continue-unabated-in-days-following-indictment",
           "https://www.justice.gov/usao-sdny/pr/nine-iranians-charged-conducting-massive-cyber-theft-campaign-behalf-islamic",
           "https://www.justice.gov/opa/pr/nine-iranians-charged-conducting-massive-cyber-theft-campaign-behalf-islamic-revolutionary",
-          "https://www.secureworks.com/blog/back-to-school-cobalt-dickens-targets-universities"
+          "https://www.secureworks.com/blog/cobalt-dickens-goes-back-to-school-again",
+          "https://www.secureworks.com/blog/back-to-school-cobalt-dickens-targets-universities",
+          "https://www.proofpoint.com/us/threat-insight/post/seems-phishy-back-school-lures-target-university-students-and-staff",
+          "https://www.proofpoint.com/us/threat-insight/post/threat-actor-profile-ta407-silent-librarian"
         ],
         "synonyms": [
           "COBALT DICKENS",
-          "Mabna Institute"
+          "Mabna Institute",
+          "TA407"
         ]
       },
       "uuid": "5059b44d-2753-4977-b987-4922f09afe6b",
@@ -7708,7 +7725,82 @@
       "description": "SectorJ04 is a Russian-based cybercrime group that began operating about five years ago and conducted hacking activities for financial profit using malware such as banking trojans and ransomware against national and industrial sectors located across Europe, North America and West Africa.\nIn 2019, the SectorJ04 group expanded its hacking activities to cover various industrial sectors located across Southeast Asia and East Asia, and is changing the pattern of their attacks from targeted attacks to searching for random victims. This report includes details related to the major hacking targets of the SectorJ04 group in 2019, how those targets were hacked, characteristics of their hacking activities this year and recent cases of the SectorJ04 group’s hacking.",
       "uuid": "50e25cfb-8b4d-408d-a7c6-bd0672662d39",
       "value": "SectorJ04"
+    },
+    {
+      "description": "A previously undocumented attack group is using both custom and off-the-shelf malware to target IT providers in Saudi Arabia in what appear to be supply chain attacks with the end goal of compromising the IT providers’ customers.\nThe group, which we are calling Tortoiseshell, has been active since at least July 2018. Symantec has identified a total of 11 organizations hit by the group, the majority of which are based in Saudi Arabia. In at least two organizations, evidence suggests that the attackers gained domain admin-level access.",
+      "meta": {
+        "refs": [
+          "https://www.symantec.com/blogs/threat-intelligence/tortoiseshell-apt-supply-chain"
+        ]
+      },
+      "uuid": "5f108484-db7f-11e9-aaa4-fb0176425734",
+      "value": "Tortoiseshell"
+    },
+    {
+      "description": "Between November 2018 and May 2019, senior members of Tibetan groups received malicious links in individually tailored WhatsApp text exchanges with operators posing as NGO workers, journalists, and other fake personas. The links led to code designed to exploit web browser vulnerabilities to install spyware on iOS and Android devices, and in some cases to OAuth phishing pages. This campaign was carried out by what appears to be a single operator that we call POISON CARP.",
+      "meta": {
+        "refs": [
+          "https://citizenlab.ca/2019/09/poison-carp-tibetan-groups-targeted-with-1-click-mobile-exploits/",
+          "https://www.volexity.com/blog/2019/09/02/digital-crackdown-large-scale-surveillance-and-exploitation-of-uyghurs/"
+        ],
+        "synonyms": [
+          "Evil Eye"
+        ]
+      },
+      "uuid": "7aa99279-4255-4d26-bb95-12e7156555a0",
+      "value": "POISON CARP"
+    },
+    {
+      "description": "Early in August 2019, Proofpoint described what appeared to be state-sponsored activity targeting the US utilities sector with malware that we dubbed “Lookback”. Between August 21 and August 29, 2019, several spear phishing emails were identified targeting additional US companies in the utilities sector. The phishing emails originated from what appears to be an actor-controlled domain: globalenergycertification[.]net. This domain, like those used in previous campaigns, impersonated a licensing body related to the utilities sector. In this case, it masqueraded as the legitimate domain for Global Energy Certification (“GEC”). The emails include a GEC examination-themed body and a malicious Microsoft Word attachment that uses macros to install and run LookBack. (Note confusion between Malware, Campaign and ThreatActor)",
+      "meta": {
+        "refs": [
+          "https://www.proofpoint.com/us/threat-insight/post/lookback-forges-ahead-continued-targeting-united-states-utilities-sector-reveals",
+          "https://www.proofpoint.com/us/threat-insight/post/lookback-malware-targets-united-states-utilities-sector-phishing-attacks"
+        ]
+      },
+      "uuid": "5cd95926-0098-435e-892d-9c9f61763ad7",
+      "value": "LookBack"
+    },
+    {
+      "description": "In 2018, the Cybereason Nocturnus team identified an advanced, persistent attack targeting global telecommunications providers carried out by a threat actor using tools and techniques commonly associated with Chinese-affiliated threat actors, such as APT10.  This multi-wave attacks focused on obtaining data of specific, high-value targets and resulted in a complete takeover of the network.",
+      "meta": {
+        "refs": [
+          "https://www.cybereason.com/blog/operation-soft-cell-a-worldwide-campaign-against-telecommunications-providers"
+        ],
+        "threat-actor-classification": [
+          "operation"
+        ]
+      },
+      "uuid": "8dda51ef-9a30-48f7-b0fd-5b6f0a62262d",
+      "value": "Operation Soft Cell"
+    },
+    {
+      "description": "We are calling these attacks Operation WizardOpium. So far, we have been unable to establish a definitive link with any known threat actors. There are certain very weak code similarities with Lazarus attacks, although these could very well be a false flag. The profile of the targeted website is more in line with earlier DarkHotel attacks that have recently deployed similar false flag attacks.",
+      "meta": {
+        "refs": [
+          "https://securelist.com/chrome-0-day-exploit-cve-2019-13720-used-in-operation-wizardopium/94866/"
+        ],
+        "threat-actor-classification": [
+          "operation"
+        ]
+      },
+      "uuid": "75db4269-924b-4771-8f62-0de600a43634",
+      "value": "Operation WizardOpium"
+    },
+    {
+      "description": "For the first time, the activity of the Calypso group was detected by specialists of PT Expert Security Center in March 2019, during the work to detect cyber threats. As a result, many malware samples of this group were obtained, affected organizations and control servers of intruders were identified. According to our data, the group has been active since at least September 2016. The main goal of the group is to steal confidential data, the main victims are government agencies from Brazil, India, Kazakhstan, Russia, Thailand, Turkey. Our data suggest that the group has Asian roots. Description translated from Russian.",
+      "meta": {
+        "refs": [
+          "https://www.ptsecurity.com/upload/corporate/ru-ru/analytics/calypso-apt-2019-rus.pdf"
+        ],
+        "synonyms": [
+          "Calypso",
+          "Calypso APT"
+        ]
+      },
+      "uuid": "200d04c8-a11f-45c4-86fd-35bb5de3f7a3",
+      "value": "Calypso group"
     }
   ],
-  "version": 131
+  "version": 143
 }

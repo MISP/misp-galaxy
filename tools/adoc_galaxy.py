@@ -28,10 +28,14 @@ thisDir = os.path.dirname(__file__)
 clusters = []
 
 pathClusters = os.path.join(thisDir, '../clusters')
+pathGalaxies = os.path.join(thisDir, '../galaxies')
 
-for f in os.listdir(pathClusters):
+for f in os.listdir(pathGalaxies):
     if '.json' in f:
-        clusters.append(f)
+        with open(os.path.join(pathGalaxies, f), 'r') as f_in:
+            galaxy_data = json.load(f_in)
+            if galaxy_data.get('namespace') != 'deprecated':
+                clusters.append(f)
 
 clusters.sort()
 
