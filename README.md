@@ -51,6 +51,7 @@ to localized information (which is not shared) or additional information (that c
 
 - [clusters/sectors.json](clusters/sectors.json) - Activity sectors
 - [clusters/cert-eu-govsector.json](clusters/cert-eu-govsector.json) - Cert EU GovSector
+- [clusters/social-dark-patterns.json](clusters/social-dark-patterns.json) - Social Engineering - Dark Patterns
 
 # Available Vocabularies
 
