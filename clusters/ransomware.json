@@ -1,7 +1,8 @@
 {
   "authors": [
     "https://docs.google.com/spreadsheets/d/1TWS238xacAto-fLKh1n5uTsdijWdCEsGIM0Y0Hvmc5g/pubhtml",
-    "http://pastebin.com/raw/GHgpWjar"
+    "http://pastebin.com/raw/GHgpWjar",
+    "MISP Project"
   ],
   "category": "tool",
   "description": "Ransomware galaxy based on https://docs.google.com/spreadsheets/d/1TWS238xacAto-fLKh1n5uTsdijWdCEsGIM0Y0Hvmc5g/pubhtml and http://pastebin.com/raw/GHgpWjar",
@@ -13619,7 +13620,40 @@
       },
       "uuid": "21b349c3-ede2-4e11-abda-1444eb272eff",
       "value": "Clop"
+    },
+    {
+      "description": "The cybercrime group that brought us Satan, DBGer and Lucky ransomware and perhaps Iron ransomware, has now come up with a new version or rebranding named 5ss5c. [...] It will however only encrypt files with the following extensions: 7z, bak, cer, csv, db, dbf, dmp, docx, eps, ldf, mdb, mdf, myd, myi, ora, pdf, pem, pfx, ppt, pptx, psd, rar, rtf, sql, tar, txt, vdi, vmdk, vmx, xls, xlsx, zip",
+      "meta": {
+        "ransomnotes-filenames": [
+          "_如何解密我的文件_.txt"
+        ],
+        "ransomnotes-refs": [
+          "https://1.bp.blogspot.com/-T0B4txHlNHs/Xh4-raVFVtI/AAAAAAAACTE/R-YoW8QHFLsuD140AF9vD-_rOifULExUgCLcBGAsYHQ/s1600/note.PNG"
+        ],
+        "refs": [
+          "https://bartblaze.blogspot.com/2020/01/satan-ransomware-rebrands-as-5ss5c.html"
+        ]
+      },
+      "uuid": "8ac9fc73-05db-4be8-8f46-33bbd6b3502b",
+      "value": "5ss5c Ransomware"
+    },
+    {
+      "description": "Nodera is a ransomware family that uses the Node.js framework and was discovered by Quick Heal researchers. The infection chain starts with a VBS script embedded with multiple JavaScript files. Upon execution, a directory is created and both the main node.exe program and several required NodeJS files are downloaded into the directory. Additionally, a malicious JavaScript payload that performs the encryption process is saved in this directory. After checking that it has admin privileges and setting applicable variables, the malicious JavaScript file enumerates the drives to create a list of targets. Processes associated with common user file types are stopped and volume shadow copies are deleted. Finally, all user-specific files on the C: drive and all files on other drives are encrypted and are appended with a .encrypted extension. The ransom note containing instructions on paying the Bitcoin ransom are provided along with a batch script to be used for decryption after obtaining the private key. Some mistakes in the ransom note identified by the researchers include the fact that it mentions a 2048-bit RSA public key instead of 4096-bit (the size that was actually used), a hard-coded private key destruction time dating back almost 2 years ago, and a lack of instructions for how the private key will be obtained after the ransom is paid. These are signs that the ransomware may be in the development phase and was likely written by an amateur. For more information, see the QuickHeal blog post in the Reference section below.",
+      "meta": {
+        "extensions": [
+          ".encrypted"
+        ],
+        "refs": [
+          "https://exchange.xforce.ibmcloud.com/collection/6f18908ce6d9cf4efb551911e00d9ec4",
+          "https://blogs.quickheal.com/first-node-js-based-ransomware-nodera/"
+        ],
+        "synonyms": [
+          "Nodera"
+        ]
+      },
+      "uuid": "0529c53a-afe7-4549-899e-3f8735467f96",
+      "value": "Nodera Ransomware"
     }
   ],
-  "version": 76
+  "version": 78
 }
