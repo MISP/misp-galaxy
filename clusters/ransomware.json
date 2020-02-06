@@ -13339,6 +13339,15 @@
           "https://www.cert.ssi.gouv.fr/uploads/CERTFR-2019-ACT-005.pdf"
         ]
       },
+      "related": [
+        {
+          "dest-uuid": "0529c53a-afe7-4549-899e-3f8735467f96",
+          "tags": [
+            "estimative-language:likelihood-probability=\"roughly-even-chance\""
+          ],
+          "type": "similar"
+        }
+      ],
       "uuid": "1e19dae5-80c3-4358-abcd-2bf0ba4c76fe",
       "value": "LockerGoga"
     },
@@ -13451,7 +13460,8 @@
           "https://blog.talosintelligence.com/2019/04/sodinokibi-ransomware-exploits-weblogic.html"
         ],
         "synonyms": [
-          "REvil"
+          "REvil",
+          "Revil"
         ]
       },
       "uuid": "24bd9a4b-2b66-428b-8e1c-6b280b056c00",
@@ -13612,10 +13622,14 @@
       "value": "FTCode"
     },
     {
+      "description": "Observed for the first time in Febuary 2019, variant from CryptoMix Family, itself a variation from CryptXXX and CryptoWall family",
       "meta": {
         "extensions": [
           ".CIop",
           ".Clop"
+        ],
+        "refs": [
+          "https://www.cert.ssi.gouv.fr/uploads/CERTFR-2020-CTI-001.pdf"
         ]
       },
       "uuid": "21b349c3-ede2-4e11-abda-1444eb272eff",
@@ -13653,7 +13667,36 @@
       },
       "uuid": "0529c53a-afe7-4549-899e-3f8735467f96",
       "value": "Nodera Ransomware"
+    },
+    {
+      "description": "Discovered in May 2019. dropped throught networks compromised by trojan like Emotet or TrickBot. Tools and methods used are similar to LockerGoga",
+      "meta": {
+        "refs": [
+          "https://www.cert.ssi.gouv.fr/uploads/CERTFR-2020-CTI-001.pdf"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "1e19dae5-80c3-4358-abcd-2bf0ba4c76fe",
+          "tags": [
+            "estimative-language:likelihood-probability=\"roughly-even-chance\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "f1041289-f42b-416f-b649-7bb8e543011f",
+      "value": "MegaCortex"
+    },
+    {
+      "description": "Detected in April 2019. Known for paralyzing the cities of Baltimore and Greenville. Probably also exfiltrate data",
+      "meta": {
+        "refs": [
+          "https://www.cert.ssi.gouv.fr/uploads/CERTFR-2020-CTI-001.pdf"
+        ]
+      },
+      "uuid": "000fb0bf-8be3-4ff1-8bbd-cc0513bcdd89",
+      "value": "RobinHood"
     }
   ],
-  "version": 78
+  "version": 79
 }
