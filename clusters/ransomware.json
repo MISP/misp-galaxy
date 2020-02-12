@@ -13696,7 +13696,20 @@
       },
       "uuid": "000fb0bf-8be3-4ff1-8bbd-cc0513bcdd89",
       "value": "RobinHood"
+    },
+    {
+      "description": "Bart ransomware is distributed by the same Russian Cyber Mafia behind Dridex 220 and Locky.  Bart doesn't communicate with a command and control (C&C) server, so it can encrypt files without being connected to a computer.\nBart is spread to end users via phishing emails containing .zip attachments with JavaScript Code and use social engineering to trick users into opening the 'photo' attachments. The zipped files are obfuscated to make it more hard to tell what actions they are performing. See screenshot above for an example of what they look like. If opened, these attachments download and install the intermediary loader RockLoader which downloads Bart onto the machine over HTTPS.\nOnce executed, it will first check the language on the infected computer. If the malware detects Russian, Belorussian, or Ukrainian, the ransomware will terminate and will not proceed with the infection. If it's any other language, it will start scanning the computer for certain file extensions to encrypt.\nBecause Bart does not require communication with C&C infrastructure prior to encrypting files, Bart could possibly encrypt machines sitting behind corporate firewalls that would otherwise block such traffic. Thus, organizations need to ensure that Bart is blocked at the email gateway using rules that block zipped executables.",
+      "meta": {
+        "refs": [
+          "https://www.knowbe4.com/bart-ransomware"
+        ],
+        "synonyms": [
+          "Locky Bart"
+        ]
+      },
+      "uuid": "05d5263f-ec23-4279-bb98-55fc233d7e89",
+      "value": "Bart ransomware"
     }
   ],
-  "version": 79
+  "version": 80
 }
