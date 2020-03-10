@@ -1,7 +1,8 @@
 {
   "authors": [
     "https://docs.google.com/spreadsheets/d/1TWS238xacAto-fLKh1n5uTsdijWdCEsGIM0Y0Hvmc5g/pubhtml",
-    "http://pastebin.com/raw/GHgpWjar"
+    "http://pastebin.com/raw/GHgpWjar",
+    "MISP Project"
   ],
   "category": "tool",
   "description": "Ransomware galaxy based on https://docs.google.com/spreadsheets/d/1TWS238xacAto-fLKh1n5uTsdijWdCEsGIM0Y0Hvmc5g/pubhtml and http://pastebin.com/raw/GHgpWjar",
@@ -13312,6 +13313,10 @@
         "payment-method": "Bitcoin Email",
         "refs": [
           "https://www.crowdstrike.com/blog/big-game-hunting-the-evolution-of-indrik-spider-from-dridex-wire-fraud-to-bitpaymer-targeted-ransomware/"
+        ],
+        "synonyms": [
+          "FriedEx",
+          "IEncrypt"
         ]
       },
       "uuid": "09fa0e0a-f0b2-46ea-8477-653e627b1c22",
@@ -13334,6 +13339,15 @@
           "https://www.cert.ssi.gouv.fr/uploads/CERTFR-2019-ACT-005.pdf"
         ]
       },
+      "related": [
+        {
+          "dest-uuid": "0529c53a-afe7-4549-899e-3f8735467f96",
+          "tags": [
+            "estimative-language:likelihood-probability=\"roughly-even-chance\""
+          ],
+          "type": "similar"
+        }
+      ],
       "uuid": "1e19dae5-80c3-4358-abcd-2bf0ba4c76fe",
       "value": "LockerGoga"
     },
@@ -13446,7 +13460,8 @@
           "https://blog.talosintelligence.com/2019/04/sodinokibi-ransomware-exploits-weblogic.html"
         ],
         "synonyms": [
-          "REvil"
+          "REvil",
+          "Revil"
         ]
       },
       "uuid": "24bd9a4b-2b66-428b-8e1c-6b280b056c00",
@@ -13522,7 +13537,203 @@
       },
       "uuid": "7cea4438-1d1c-121a-30af-011d661260b2",
       "value": "Mr.Dec"
+    },
+    {
+      "description": "Freezing crypto ransomware encrypts user data using AES, and then requires a ransom in # BTC to return the files. Original title: not indicated in the note. The file says: FreeMe.exe",
+      "meta": {
+        "encryption": "AES",
+        "refs": [
+          "http://id-ransomware.blogspot.com/2019/06/freeme-freezing-ransomware.html"
+        ],
+        "synonyms": [
+          "Freezing"
+        ]
+      },
+      "uuid": "4cea4448-1d3c-111a-40af-011d461260b4",
+      "value": "Freeme"
+    },
+    {
+      "description": "We have dubbed this new ransomware DoppelPaymer because it shares most of its code with the BitPaymer ransomware operated by INDRIK SPIDER. However, there are a number of differences between DoppelPaymer and BitPaymer, which may signify that one or more members of INDRIK SPIDER have split from the group and forked the source code of both Dridex and BitPaymer to start their own Big Game Hunting ransomware operation.",
+      "meta": {
+        "encryption": "AES",
+        "refs": [
+          "https://www.crowdstrike.com/blog/doppelpaymer-ransomware-and-dridex-2/",
+          "https://malpedia.caad.fkie.fraunhofer.de/details/win.doppelpaymer"
+        ]
+      },
+      "uuid": "5cea5548-1e3c-222a-3faf-022d461260b5",
+      "value": "DoppelPaymer"
+    },
+    {
+      "description": "This crypto ransomware encrypts enterprise LAN data with AES (ECB mode), and then requires a ransom in # BTC to return the files.",
+      "meta": {
+        "encryption": "AES",
+        "refs": [
+          "https://id-ransomware.blogspot.com/2019/01/unnamed-desync-ransomware.html"
+        ]
+      },
+      "uuid": "6cea5546-1e2c-333a-4faf-033d461360b5",
+      "value": "Desync"
+    },
+    {
+      "description": "Maze Ransomware encrypts files and makes them inaccessible while adding a custom extension containing part of the ID of the victim. The ransom note is placed inside a text file and an htm file. There are a few different extensions appended to files which are randomly generated.",
+      "meta": {
+        "encryption": "ChaCha20 and RSA",
+        "refs": [
+          "https://malpedia.caad.fkie.fraunhofer.de/details/win.maze",
+          "https://www.bleepingcomputer.com/news/security/maze-ransomware-now-delivered-by-spelevo-exploit-kit/",
+          "https://www.proofpoint.com/us/threat-insight/post/ta2101-plays-government-imposter-distribute-malware-german-italian-and-us"
+        ]
+      },
+      "uuid": "7cea8846-1f3d-331a-3ebf-055d452351b6",
+      "value": "Maze"
+    },
+    {
+      "description": "Ransomware delivered using fake Windows Update spam",
+      "meta": {
+        "extensions": [
+          ".777"
+        ],
+        "ransomnotes-filenames": [
+          "Cyborg_DECRYPT.txt"
+        ],
+        "ransomnotes-refs": [
+          "https://npercoco.typepad.com/.a/6a0133f264aa62970b0240a4ebff1b200b-pi"
+        ],
+        "refs": [
+          "https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/fake-windows-update-spam-leads-to-cyborg-ransomware-and-its-builder/"
+        ]
+      },
+      "uuid": "0a0b9311-8cbc-4d97-b337-42c9a018ebe0",
+      "value": "Cyborg Ransomware"
+    },
+    {
+      "description": "A targeted email campaign has been spotted distributing the JasperLoader to victims. While the JasperLoader was originally used to then install Gootkit, Certego has observed it now being used to infect victims with a new ransomware dubbed FTCODE. Using an invoice-themed email appearing to target Italian users, the attackers attempt to convince users to allow macros in a Word document. The macro is used to run PowerShell to retrieve additional PowerShell code.",
+      "meta": {
+        "payment-method": "Bitcoin",
+        "price": "0.06",
+        "refs": [
+          "https://www.certego.net/en/news/malware-tales-ftcode/",
+          "https://exchange.xforce.ibmcloud.com/collection/FTCODE-Ransomware-45dacdc2d5cf30722ced20b9d37988c2",
+          "https://malpedia.caad.fkie.fraunhofer.de/details/ps1.ftcode"
+        ]
+      },
+      "uuid": "7cea9946-1f4d-441a-4ebf-044d442454b6",
+      "value": "FTCode"
+    },
+    {
+      "description": "Observed for the first time in Febuary 2019, variant from CryptoMix Family, itself a variation from CryptXXX and CryptoWall family",
+      "meta": {
+        "extensions": [
+          ".CIop",
+          ".Clop",
+          ".Ciop",
+          ".Clop2"
+        ],
+        "refs": [
+          "https://www.cert.ssi.gouv.fr/uploads/CERTFR-2020-CTI-001.pdf"
+        ]
+      },
+      "uuid": "21b349c3-ede2-4e11-abda-1444eb272eff",
+      "value": "Clop"
+    },
+    {
+      "description": "The cybercrime group that brought us Satan, DBGer and Lucky ransomware and perhaps Iron ransomware, has now come up with a new version or rebranding named 5ss5c. [...] It will however only encrypt files with the following extensions: 7z, bak, cer, csv, db, dbf, dmp, docx, eps, ldf, mdb, mdf, myd, myi, ora, pdf, pem, pfx, ppt, pptx, psd, rar, rtf, sql, tar, txt, vdi, vmdk, vmx, xls, xlsx, zip",
+      "meta": {
+        "ransomnotes-filenames": [
+          "_如何解密我的文件_.txt"
+        ],
+        "ransomnotes-refs": [
+          "https://1.bp.blogspot.com/-T0B4txHlNHs/Xh4-raVFVtI/AAAAAAAACTE/R-YoW8QHFLsuD140AF9vD-_rOifULExUgCLcBGAsYHQ/s1600/note.PNG"
+        ],
+        "refs": [
+          "https://bartblaze.blogspot.com/2020/01/satan-ransomware-rebrands-as-5ss5c.html"
+        ]
+      },
+      "uuid": "8ac9fc73-05db-4be8-8f46-33bbd6b3502b",
+      "value": "5ss5c Ransomware"
+    },
+    {
+      "description": "Nodera is a ransomware family that uses the Node.js framework and was discovered by Quick Heal researchers. The infection chain starts with a VBS script embedded with multiple JavaScript files. Upon execution, a directory is created and both the main node.exe program and several required NodeJS files are downloaded into the directory. Additionally, a malicious JavaScript payload that performs the encryption process is saved in this directory. After checking that it has admin privileges and setting applicable variables, the malicious JavaScript file enumerates the drives to create a list of targets. Processes associated with common user file types are stopped and volume shadow copies are deleted. Finally, all user-specific files on the C: drive and all files on other drives are encrypted and are appended with a .encrypted extension. The ransom note containing instructions on paying the Bitcoin ransom are provided along with a batch script to be used for decryption after obtaining the private key. Some mistakes in the ransom note identified by the researchers include the fact that it mentions a 2048-bit RSA public key instead of 4096-bit (the size that was actually used), a hard-coded private key destruction time dating back almost 2 years ago, and a lack of instructions for how the private key will be obtained after the ransom is paid. These are signs that the ransomware may be in the development phase and was likely written by an amateur. For more information, see the QuickHeal blog post in the Reference section below.",
+      "meta": {
+        "extensions": [
+          ".encrypted"
+        ],
+        "refs": [
+          "https://exchange.xforce.ibmcloud.com/collection/6f18908ce6d9cf4efb551911e00d9ec4",
+          "https://blogs.quickheal.com/first-node-js-based-ransomware-nodera/"
+        ],
+        "synonyms": [
+          "Nodera"
+        ]
+      },
+      "uuid": "0529c53a-afe7-4549-899e-3f8735467f96",
+      "value": "Nodera Ransomware"
+    },
+    {
+      "description": "Discovered in May 2019. dropped throught networks compromised by trojan like Emotet or TrickBot. Tools and methods used are similar to LockerGoga",
+      "meta": {
+        "refs": [
+          "https://www.cert.ssi.gouv.fr/uploads/CERTFR-2020-CTI-001.pdf"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "1e19dae5-80c3-4358-abcd-2bf0ba4c76fe",
+          "tags": [
+            "estimative-language:likelihood-probability=\"roughly-even-chance\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "f1041289-f42b-416f-b649-7bb8e543011f",
+      "value": "MegaCortex"
+    },
+    {
+      "description": "Detected in April 2019. Known for paralyzing the cities of Baltimore and Greenville. Probably also exfiltrate data",
+      "meta": {
+        "refs": [
+          "https://www.cert.ssi.gouv.fr/uploads/CERTFR-2020-CTI-001.pdf"
+        ]
+      },
+      "uuid": "000fb0bf-8be3-4ff1-8bbd-cc0513bcdd89",
+      "value": "RobinHood"
+    },
+    {
+      "description": "Bart ransomware is distributed by the same Russian Cyber Mafia behind Dridex 220 and Locky.  Bart doesn't communicate with a command and control (C&C) server, so it can encrypt files without being connected to a computer.\nBart is spread to end users via phishing emails containing .zip attachments with JavaScript Code and use social engineering to trick users into opening the 'photo' attachments. The zipped files are obfuscated to make it more hard to tell what actions they are performing. See screenshot above for an example of what they look like. If opened, these attachments download and install the intermediary loader RockLoader which downloads Bart onto the machine over HTTPS.\nOnce executed, it will first check the language on the infected computer. If the malware detects Russian, Belorussian, or Ukrainian, the ransomware will terminate and will not proceed with the infection. If it's any other language, it will start scanning the computer for certain file extensions to encrypt.\nBecause Bart does not require communication with C&C infrastructure prior to encrypting files, Bart could possibly encrypt machines sitting behind corporate firewalls that would otherwise block such traffic. Thus, organizations need to ensure that Bart is blocked at the email gateway using rules that block zipped executables.",
+      "meta": {
+        "refs": [
+          "https://www.knowbe4.com/bart-ransomware"
+        ],
+        "synonyms": [
+          "Locky Bart"
+        ]
+      },
+      "uuid": "05d5263f-ec23-4279-bb98-55fc233d7e89",
+      "value": "Bart ransomware"
+    },
+    {
+      "description": "Razor was discovered by dnwls0719, it is a part of Garrantydecrypt ransomware family. Like many other programs of this type, Razor is designed to encrypt files (make them unusable/inaccessible), change their filenames, create a ransom note and change victim's desktop wallpaper. Razor renames files by appending the \".razor\" extension to their filenames. For example, it renames \"1.jpg\" to \"1.jpg.razor\", and so on. It creates a ransom note which is a text file named \"#RECOVERY#.txt\", this file contains instructions on how to contact Razor's developers (cyber criminals) and other details.\nAs stated in the \"#RECOVERY#.txt\" file, this ransomware encrypts all files and information about how to purchase a decryption tool can be received by contacting Razor's developers. Victims supposed to contact them via razor2020@protonmail.ch, Jabber client (razor2020@jxmpp.jp) or ICQ client (@razor2020) and wait for further instructions. It is very likely that they will name a price of a decryption tool and/or key and provide cryptocurrency wallet's address that should be used to make a transaction. However, it is never a good idea to trust (pay) any cyber criminals/ransomware developers. It is common that they do not provide decryption tools even after a payment. Another problem is that ransomware-type programs encrypt files with strong encryption algorithms and their developers are the only ones who have tools that can decrypt files encrypted by their ransomware. In most cases victims have the only free and safe option: to restore files from a backup. Also, it is worth mentioning that files remain encrypted even after uninstallation of ransomware, its removal only prevents it from causing further encryptions.",
+      "meta": {
+        "extensions": [
+          ".razor"
+        ],
+        "ransomnotes": [
+          "All your files have been ENCRYPTED!!!\nWrite to our email:  \n razor2020@protonmail.ch\n ICQ:\n @razor2020\n Or contact us via jabber:\n razor2020@jxmpp.jp\nJabber (Pidgin) client installation instructions, you can find on youtube - hxxps://www.youtube.com/results?search_query=pidgin+jabber+install\nAttention!\nDo not rename encrypted files.\nDo not try to decrypt your data using third party software, it may cause permanent data loss.\ntell your unique ID"
+        ],
+        "ransomnotes-filenames": [
+          "#RECOVERY#.txt"
+        ],
+        "ransomnotes-refs": [
+          "https://www.pcrisk.com/images/stories/screenshots202002/razor-ransom-note.jpg"
+        ],
+        "refs": [
+          "https://www.pcrisk.com/removal-guides/17016-razor-ransomware"
+        ]
+      },
+      "uuid": "ea35282c-0686-4115-a001-bc4203549418",
+      "value": "Razor"
     }
   ],
-  "version": 68
+  "version": 82
 }

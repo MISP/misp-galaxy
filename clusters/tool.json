@@ -663,7 +663,10 @@
         "synonyms": [
           "Etso",
           "SUQ",
-          "Agent.ALQHI"
+          "Agent.ALQHI",
+          "RbDoor",
+          "RibDoor",
+          "HIGHNOON"
         ],
         "type": [
           "Backdoor"
@@ -5352,6 +5355,10 @@
       "meta": {
         "refs": [
           "https://cdn.securelist.com/files/2017/08/ShadowPad_technical_description_PDF.pdf"
+        ],
+        "synonyms": [
+          "POISONPLUG",
+          "Barlaiy"
         ]
       },
       "related": [
@@ -7859,7 +7866,119 @@
       "description": "Legitimate tool - tool used to scan IPv4/IPv6 networks and remotely execute PowerShell commands.",
       "uuid": "bbba3a35-5064-4e60-ad4b-0ba16cc81a23",
       "value": "Netscan"
+    },
+    {
+      "description": "Malware embedded in Asus Live Update in 2018. ShadowHammer triggers its malicious behavior only if the computer it is running on has a network adapter with the MAC address whitelisted by the attacker.",
+      "meta": {
+        "refs": [
+          "https://www.welivesecurity.com/wp-content/uploads/2019/10/ESET_Winnti.pdf"
+        ]
+      },
+      "uuid": "c1815516-aa2a-43d2-9136-78a8feb054b6",
+      "value": "ShadowHammer"
+    },
+    {
+      "description": "DePriMon is a malicious downloader, with several stages and using many non-traditional techniques. To achieve persistence, the malware registers a new local port monitor – a trick falling under the “Port Monitors” technique in the MITRE ATT&CK knowledgebase. For that, the malware uses the “Windows Default Print Monitor” name; that’s why we have named it DePriMon. Due to its complexity and modular architecture, we consider it to be a framework.",
+      "meta": {
+        "refs": [
+          "https://www.bleepingcomputer.com/news/security/deprimon-malware-registers-itself-as-a-windows-print-monitor/",
+          "https://www.welivesecurity.com/2019/11/21/deprimon-default-print-monitor-malicious-downloader/"
+        ]
+      },
+      "uuid": "c76874cd-0d73-4cbf-8d39-a066900dd4ce",
+      "value": "DePriMon"
+    },
+    {
+      "description": "Private Internet Access provides state of the art, multi-layered security with advanced privacy protection using VPN tunneling. ",
+      "meta": {
+        "refs": [
+          "https://www.privateinternetaccess.com/"
+        ],
+        "synonyms": [
+          "PIA"
+        ]
+      },
+      "uuid": "68cd6cbf-6629-4e02-98b6-128978f44546",
+      "value": "Private Internet Access"
+    },
+    {
+      "description": "Reads from and writes to network connections using TCP or UDP protocols.",
+      "uuid": "cb45bb39-745b-4cde-9a42-2e67334e5071",
+      "value": "Netcat"
+    },
+    {
+      "description": "NBTScan is a program for scanning IP networks for NetBIOS name information (similar to what the Windows nbtstat tool provides against single hosts). It sends a NetBIOS status query to each address in a supplied range and lists received information in human readable form. For each responded host it lists IP address, NetBIOS computer name, logged-in user name and MAC address.",
+      "meta": {
+        "refs": [
+          "https://sectools.org/tool/nbtscan/"
+        ]
+      },
+      "uuid": "a0736351-1721-42ed-a057-19b4b93b585e",
+      "value": "NBTScan"
+    },
+    {
+      "description": "ZeroCleare was used to execute a destructive attack that affected organizations in the energy and industrial sectorsin the Middle East. Based on the analysis of the malware and the attackers’ behavior, we suspect Iran-based nation state adversaries were involved to develop and deploy this new wiper. ",
+      "meta": {
+        "refs": [
+          "https://www.ibm.com/downloads/cas/OAJ4VZNJ"
+        ]
+      },
+      "uuid": "40fdcaac-a733-4088-9058-7b15a415b943",
+      "value": "ZeroCleare"
+    },
+    {
+      "description": "At the heart of the recent Bapco attack is a new strain of malware named Dustman. According to an analysis by Saudi Arabia's cyber-security agency, Dustman is a so-called data wiper -- malware designed to delete data on infected computers, once launched into execution.\nDustman represents the third different data-wiping malware linked to the Tehran regime. Iranian state-backed hackers have a long history of developing data-wiping malware.",
+      "meta": {
+        "refs": [
+          "https://mobile.twitter.com/IntezerLabs/status/1215252764080644098"
+        ]
+      },
+      "uuid": "ff692a4c-23ff-4e86-a03b-2de8d36bc98f",
+      "value": "Dustman"
+    },
+    {
+      "description": "This rootkit is a very simple. The name of the driver is “autochk.sys” - that’s why we’ll call it the autochk rootkit. The rootkit implements 2 functionalities: File Redirection and Network Connection Hiding.",
+      "meta": {
+        "refs": [
+          "https://repnz.github.io/posts/autochk-rootkit-analysis/"
+        ]
+      },
+      "uuid": "4a60dc72-1ca0-4503-a635-96e119c5278d",
+      "value": "Autochk Rootkit"
+    },
+    {
+      "description": "New trojan called Lampion has spread using template emails from the Portuguese Government Finance & Tax during the last days of 2019.",
+      "meta": {
+        "refs": [
+          "https://seguranca-informatica.pt/targeting-portugal-a-new-trojan-lampion-has-spread-using-template-emails-from-the-portuguese-government-finance-tax/"
+        ]
+      },
+      "uuid": "dd299e22-bf82-4317-8c81-c6b1f7514571",
+      "value": "Lampion"
+    },
+    {
+      "description": "Bitdefender researchers tracked the development of a Mirai-inspired botnet, dubbed LiquorBot, which seems to be actively in development and has recently incorporated Monero cryptocurrency mining features.",
+      "meta": {
+        "refs": [
+          "https://labs.bitdefender.com/2020/01/hold-my-beer-mirai-spinoff-named-liquorbot-incorporates-cryptomining/"
+        ]
+      },
+      "uuid": "e537e165-ea8b-4e75-8813-6519632d3f6a",
+      "value": "LiquorBot"
+    },
+    {
+      "description": "Written in C++ and designed to function as a downloader of other malware, Gelup stood out for its obfuscation techniques. Gelup can also bypass User Account Control (UAC) by mocking trusted directories, abusing auto-elevated executables and using the Dynamic Link Library (DLL) side-loading technique.",
+      "meta": {
+        "refs": [
+          "https://securityintelligence.com/news/ta505-delivers-new-gelup-malware-tool-flowerpippi-backdoor-via-spam-campaign/"
+        ],
+        "synonyms": [
+          "AndroMut"
+        ]
+      },
+      "uuid": "32a6065c-4f4e-4a60-8717-5872b5f21ac4",
+      "value": "Gelup malware tool"
     }
   ],
-  "version": 126
+  "version": 133
 }

@@ -17,36 +17,55 @@ domains = ['enterprise-attack', 'mobile-attack', 'pre-attack']
 types = ['attack-pattern', 'course-of-action', 'intrusion-set', 'malware', 'tool']
 all_data = {}  # variable that will contain everything
 
-# read in existing data
-# THIS IS FOR MIGRATION - reading the data from the enterprise-attack, mobile-attack, pre-attack
+# read in the non-MITRE data
+# we need this to be able to build a list of non-MITRE-UUIDs which we will use later on
+# to remove relations that are from MITRE.
+# the reasoning is that the new MITRE export might contain less relationships than it did before
+# so we cannot migrate all existing relationships as such
+non_mitre_uuids = set()
+for fname in os.listdir(os.path.join(misp_dir, 'clusters')):
+    if 'mitre' in fname:
+        continue
+    if '.json' in fname:
+        # print(fname)
+        with open(os.path.join(misp_dir, 'clusters', fname)) as f_in:
+            cluster_data = json.load(f_in)
+            for cluster in cluster_data['values']:
+                non_mitre_uuids.add(cluster['uuid'])
+
+# read in existing MITRE data
 # first build a data set of the MISP Galaxy ATT&CK elements by using the UUID as reference, this speeds up lookups later on.
 # at the end we will convert everything again to separate datasets
 all_data_uuid = {}
-for domain in domains:
-    for t in types:
-        fname = os.path.join(misp_dir, 'clusters', 'mitre-{}-{}.json'.format(domain, t))
-        if os.path.exists(fname):
-            # print("##### {}".format(fname))
-            with open(fname) as f:
-                file_data = json.load(f)
-            # print(file_data)
-            for value in file_data['values']:
-                if value['uuid'] in all_data_uuid:
-                    # exit("ERROR: Something is really wrong, we seem to have duplicates.")
-                    # if it already exists we need to copy over all the data manually to merge it
-                    # on the other hand, from a manual analysis it looks like it's mostly the relations that are different
-                    # so now we will just copy over the relationships
-                    # actually, at time of writing the code below results in no change as the new items always contained more than the previously seen items
-                    value_orig = all_data_uuid[value['uuid']]
-                    if 'related' in value_orig:
-                        for related_item in value_orig['related']:
-                            if related_item not in value['related']:
-                                value['related'].append(related_item)
-                all_data_uuid[value['uuid']] = value
-
-# THIS IS FOR NORMAL OPERATIONS - reading from the very old and new models - one model per type
-# FIXME implement this (copy paste above or put above in function and call function)
-
+for t in types:
+    fname = os.path.join(misp_dir, 'clusters', 'mitre-{}.json'.format(t))
+    if os.path.exists(fname):
+        # print("##### {}".format(fname))
+        with open(fname) as f:
+            file_data = json.load(f)
+        # print(file_data)
+        for value in file_data['values']:
+            # remove (old)MITRE relations, and keep non-MITRE relations
+            if 'related' in value:
+                related_original = value['related']
+                related_new = []
+                for rel in related_original:
+                    if rel['dest-uuid'] in non_mitre_uuids:
+                        related_new.append(rel)
+                value['related'] = related_new
+            # find and handle duplicate uuids
+            if value['uuid'] in all_data_uuid:
+                # exit("ERROR: Something is really wrong, we seem to have duplicates.")
+                # if it already exists we need to copy over all the data manually to merge it
+                # on the other hand, from a manual analysis it looks like it's mostly the relations that are different
+                # so now we will just copy over the relationships
+                # actually, at time of writing the code below results in no change as the new items always contained more than the previously seen items
+                value_orig = all_data_uuid[value['uuid']]
+                if 'related' in value_orig:
+                    for related_item in value_orig['related']:
+                        if related_item not in value['related']:
+                            value['related'].append(related_item)
+            all_data_uuid[value['uuid']] = value
 
 # now load the MITRE ATT&CK
 for domain in domains:
@@ -136,6 +155,7 @@ for domain in domains:
 
         # LATER find the opposite word of "rel_type" and build the relation in the opposite direction
 
+
 # dump all_data to their respective file
 for t in types:
     fname = os.path.join(misp_dir, 'clusters', 'mitre-{}.json'.format(t))
@@ -147,7 +167,7 @@ for t in types:
     file_data['values'] = []
     for item in all_data_uuid.values():
         # print(json.dumps(item, sort_keys=True, indent=2))
-        if item['type'] != t:
+        if 'type' not in item or item['type'] != t:  # drop old data or not from the right type
             continue
         item_2 = item.copy()
         item_2.pop('type', None)
