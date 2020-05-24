@@ -1,0 +1,533 @@
+{
+  "authors": [
+    "Siddharth Prakash Rao",
+    "Silke Holtmanns",
+    "Tuomas Aura"
+  ],
+  "category": "mobile",
+  "description": "Bhadra Threat Modeling Framework",
+  "name": "Bhadra Framework",
+  "source": "https://arxiv.org/pdf/2005.05110.pdf",
+  "type": "bhadra-framework",
+  "uuid": "e7b7304b-9e9c-4db4-a7dd-561db4eeeb3d",
+  "values": [
+    {
+      "description": "\"Attacks from UE\" refers to any technique that involves the attacks launched by the software or hardware components of the user equipment to send malicious traffic into the mobile network.",
+      "meta": {
+        "external_id": "T0001",
+        "kill_chain": [
+          "bhadra-framework:Initial Access"
+        ]
+      },
+      "uuid": "859055d9-08fe-4a05-ad2a-5846fce601d8",
+      "value": "Attacks from UE"
+    },
+    {
+      "description": "The \"SIM-based attacks\" are the techniques that involve any physical smart cards, namely SIM from 2G, USIM from 3G, and UICC from 4G networks.",
+      "meta": {
+        "external_id": "T0002",
+        "kill_chain": [
+          "bhadra-framework:Initial Access"
+        ]
+      },
+      "uuid": "33ec6366-66e6-4502-8ee7-0b8d1c1f9c28",
+      "value": "SIM-based attacks"
+    },
+    {
+      "description": "The \"attacks from radio access network\" are the techniques where an adversary with radio capabilities impersonates the mobile network to the UE (or vice versa) and becomes a man-in-the-middle.",
+      "meta": {
+        "external_id": "T0003",
+        "kill_chain": [
+          "bhadra-framework:Initial Access"
+        ]
+      },
+      "uuid": "0451a939-e997-401d-8fc1-bb224982eb81",
+      "value": "Attacks from radio access network"
+    },
+    {
+      "description": "The \"attacks from other mobile networks\" and the \"attacks with physical access to transport network\" techniques can be conducted by evil mobile operators, law enforcement agencies for legal interception and human insiders with access to network nodes",
+      "meta": {
+        "external_id": "T0004",
+        "kill_chain": [
+          "bhadra-framework:Initial Access"
+        ]
+      },
+      "uuid": "214ae387-da5f-4c97-8f89-0628e666e6aa",
+      "value": "Attacks from other mobile network"
+    },
+    {
+      "description": "The \"attacks from other mobile networks\" and the \"attacks with physical access to transport network\" techniques can be conducted by evil mobile operators, law enforcement agencies for legal interception and human insiders with access to network nodes",
+      "meta": {
+        "external_id": "T0005",
+        "kill_chain": [
+          "bhadra-framework:Initial Access"
+        ]
+      },
+      "uuid": "3a53c6ec-76d5-4f5e-9ba6-7f5d8905369c",
+      "value": "Attacks with access to transport network"
+    },
+    {
+      "description": "The \"attacks from IP-based attacks\" techniques mostly are launched from the service and application network, which allows non operator entities to infuse malicious trac into an operator’s network.",
+      "meta": {
+        "external_id": "T0006",
+        "kill_chain": [
+          "bhadra-framework:Initial Access"
+        ]
+      },
+      "uuid": "4d68356b-9824-4bbf-bf99-54a64bccd0af",
+      "value": "Attacks from IP-based network"
+    },
+    {
+      "description": "The \"insider attacks and human errors\" technique involve the intentional attacks and unintentional mistakes from human insiders with access to any component of the mobile communication ecosystem.",
+      "meta": {
+        "external_id": "T0007",
+        "kill_chain": [
+          "bhadra-framework:Initial Access"
+        ]
+      },
+      "uuid": "26cc4a99-339b-4145-8ecd-fdb74adbe5ff",
+      "value": "Insider attacks and human errors"
+    },
+    {
+      "description": "Retaining the foothold gained on the target system through the initial access by infecting UE hardware or software.",
+      "meta": {
+        "external_id": "T0008",
+        "kill_chain": [
+          "bhadra-framework:Persistence"
+        ]
+      },
+      "uuid": "076f66c9-7822-4bac-9b1c-b4df52628d93",
+      "value": "Infecting UE hardware or software"
+    },
+    {
+      "description": "Retaining the foothold gained on the target system through the initial access by infecting SIM cards.",
+      "meta": {
+        "external_id": "T0009",
+        "kill_chain": [
+          "bhadra-framework:Persistence"
+        ]
+      },
+      "uuid": "0c8c17de-0c46-42bc-9355-c9e615d42513",
+      "value": "Infecting SIM cards"
+    },
+    {
+      "description": "Retaining the foothold gained on the target system through the initial access by radio network spoofing.",
+      "meta": {
+        "external_id": "T0010",
+        "kill_chain": [
+          "bhadra-framework:Persistence"
+        ]
+      },
+      "uuid": "7a50a393-fc4a-4eae-b706-202b02aebc64",
+      "value": "Spoofed radio network"
+    },
+    {
+      "description": "Retaining the foothold gained on the target system through the initial access by infecting network nodes.",
+      "meta": {
+        "external_id": "T0011",
+        "kill_chain": [
+          "bhadra-framework:Persistence"
+        ]
+      },
+      "uuid": "57b4cb23-5ef6-483d-911b-07d416566c4c",
+      "value": "Infecting network nodes"
+    },
+    {
+      "description": "Retaining the foothold gained on the target system through the initial access via covert channels.",
+      "meta": {
+        "external_id": "T0012",
+        "kill_chain": [
+          "bhadra-framework:Persistence"
+        ]
+      },
+      "uuid": "aede9e30-6186-45c3-aab6-819b9dd0ee3d",
+      "value": "Covert channels"
+    },
+    {
+      "description": "\"Port scanning or sweeping\" techniques to probe servers or hosts with open ports.",
+      "meta": {
+        "external_id": "T0013",
+        "kill_chain": [
+          "bhadra-framework:Discovery"
+        ]
+      },
+      "uuid": "3db4bdba-4640-41d6-bd3e-de5ecb30c0a2",
+      "value": "Port scanning or sweeping"
+    },
+    {
+      "description": "\"perimeter mapping\" techniques such as command-line utilities (e.g., nmap and whois), web-based lookup tools and official APIs provided by the Internet registrars that assign the ASNs using a wide range of publicly available sources.",
+      "meta": {
+        "external_id": "T0014",
+        "kill_chain": [
+          "bhadra-framework:Discovery"
+        ]
+      },
+      "uuid": "91d150e3-c7a9-40d2-96a7-1a536f93cd82",
+      "value": "Perimeter mapping"
+    },
+    {
+      "description": "\"Threat intelligence gathering\" using dedicated search engines (such as Censys, Shodan) to gather information about vulnerable devices or networks, or using advanced search options of traditional search engines.",
+      "meta": {
+        "external_id": "T0015",
+        "kill_chain": [
+          "bhadra-framework:Discovery"
+        ]
+      },
+      "uuid": "4a8ec69a-36e1-4fb2-a908-c2313b70f226",
+      "value": "Threat intelligence gathering"
+    },
+    {
+      "description": "\"CN-specific scanning\", used to scan nodes that are interconnected with protocols specific to the mobile communication domain (GTP, SCTP).",
+      "meta": {
+        "external_id": "T0016",
+        "kill_chain": [
+          "bhadra-framework:Discovery"
+        ]
+      },
+      "uuid": "07603ccb-e810-495d-89d0-aeecedae880d",
+      "value": "CN-specific scanning"
+    },
+    {
+      "description": "\"Internal resource search\" refers to an insider with access to provider internal databases abusing the information as a discovery tactic.",
+      "meta": {
+        "external_id": "T0017",
+        "kill_chain": [
+          "bhadra-framework:Discovery"
+        ]
+      },
+      "uuid": "82ae55dd-1123-488e-a9c5-64c333452446",
+      "value": "Internal resource search"
+    },
+    {
+      "description": "\"UE knocking\" refers to the technique that scans User Equipment, similarly to how IP endpoints and core network nodes are scanned or mapped.",
+      "meta": {
+        "external_id": "T0018",
+        "kill_chain": [
+          "bhadra-framework:Discovery"
+        ]
+      },
+      "uuid": "7b38b259-e765-4c4c-85da-ff56c574a641",
+      "value": "UE knocking"
+    },
+    {
+      "description": "\"Exploit roaming agreements\" is a technique exploited by evil mobile operators. Despite communication with operators is dependent on a roaming agreement being in place, an attacker that has gained a foothold with one operator, it can abuse the roaming agreements in place for lateral movement with all adjacent operators with agreements in place.",
+      "meta": {
+        "external_id": "T0019",
+        "kill_chain": [
+          "bhadra-framework:Lateral Movement"
+        ]
+      },
+      "uuid": "3b690fdc-f385-4cfa-a360-a26b4cbf3b00",
+      "value": "Exploit roaming agreements"
+    },
+    {
+      "description": "\"Abusing Inter-working functionalities\" is a technique for adversaries to move between networks of different generations laterally",
+      "meta": {
+        "external_id": "T0020",
+        "kill_chain": [
+          "bhadra-framework:Lateral Movement"
+        ]
+      },
+      "uuid": "cab3ece7-2e7b-416a-b779-62cf91a888e3",
+      "value": "Abusing interworking functionalities"
+    },
+    {
+      "description": "Once an attacker has gained a foothold in an operator, it can conduct privilege escalation and process injection for gaining administrative rights, password cracking of valid user accounts on the nodes, exploit vulnerabilities in databases and file systems, and take advantage of improper configurations of routers and switches.",
+      "meta": {
+        "external_id": "T0021",
+        "kill_chain": [
+          "bhadra-framework:Lateral Movement"
+        ]
+      },
+      "uuid": "c1db9100-549c-4801-8be4-18817789afe4",
+      "value": "Exploit platform & service-specific vulnerabilities"
+    },
+    {
+      "description": "Attacks abusing the SS7 protocol.",
+      "meta": {
+        "external_id": "T0022",
+        "kill_chain": [
+          "bhadra-framework:Standard Protocol Misuse"
+        ]
+      },
+      "uuid": "0d7a4177-5550-4954-9dae-ff2206a9f458",
+      "value": "SS7-based-attacks"
+    },
+    {
+      "description": "Attacks abusing the Diameter protocol.",
+      "meta": {
+        "external_id": "T0023",
+        "kill_chain": [
+          "bhadra-framework:Standard Protocol Misuse"
+        ]
+      },
+      "uuid": "3ceb439f-ceb0-479e-af04-fcc4202cde83",
+      "value": "Diameter-based attacks"
+    },
+    {
+      "description": "Attacks abusing the GTP protocol.",
+      "meta": {
+        "external_id": "T0024",
+        "kill_chain": [
+          "bhadra-framework:Standard Protocol Misuse"
+        ]
+      },
+      "uuid": "080d4c95-8a02-455b-8a77-6fda59bda347",
+      "value": "GTP-based attacks"
+    },
+    {
+      "description": "DNS based attacks.",
+      "meta": {
+        "external_id": "T0025",
+        "kill_chain": [
+          "bhadra-framework:Standard Protocol Misuse"
+        ]
+      },
+      "uuid": "a747a969-36a8-4c7d-bdd1-bdb4cd1d84ac",
+      "value": "DNS-based attacks"
+    },
+    {
+      "description": "Attack techniques that take place during the unencrypted communication that occurs prior to the AKA protocol.",
+      "meta": {
+        "external_id": "T0026",
+        "kill_chain": [
+          "bhadra-framework:Standard Protocol Misuse"
+        ]
+      },
+      "uuid": "cf58df7a-b02d-45b5-b947-03b5dab5dc7d",
+      "value": "Pre-AKA attacks"
+    },
+    {
+      "description": "The operating systems, software, and services used on the network nodes are prone to security vulnerabilities and installation of unwanted malware. Although operators conduct routine security audits to track and patch the vulnerabilities or remove the malware from the infected nodes, their effectiveness is not known to the public. Any means by which an adversary can remain undetected from such audits are referred to as the security audit camouflage technique.",
+      "meta": {
+        "external_id": "T0027",
+        "kill_chain": [
+          "bhadra-framework:Defense Evasion"
+        ]
+      },
+      "uuid": "61295e27-1797-45b1-8459-864f8dbad2f7",
+      "value": "Security audit camouflage"
+    },
+    {
+      "description": "Mobile operators employ several defenses in terms of securing their network traffic. For instance, operators maintain a whitelist of IPs and GTs of nodes from their own infrastructure and their partner operators (as agreed in IR 21), and traffic from only these nodes are processed. Similarly, a blacklist is also maintained to control spam due to configuration errors and malicious traffic. Anything from the blacklist is banned from entering the operator’s network. Such defense mechanisms may defend against unsolicited traffic from external networks (e.g., from the public Internet and SAN), but it barely serves its purpose in the case of attacks from inter-operator communications. Since most of the communication protocols are unauthenticated in nature, an aacker with knowledge of identifiers of the allowed nodes (i.e. gained during the discovery phase) can impersonate their identity. We call it the blacklist evasion technique.",
+      "meta": {
+        "external_id": "T0028",
+        "kill_chain": [
+          "bhadra-framework:Defense Evasion"
+        ]
+      },
+      "uuid": "48388815-3a22-406e-beeb-68d5429d6f0d",
+      "value": "Blacklist evasion"
+    },
+    {
+      "description": "NAT middleboxes are used for separating private networks of mobile operators from public Internet works as the second line of defense. However, studies have shown that the middleboxes deployed by operators are prone to misconfigurations that allow adversaries to infiltrate malicious traffic into mobile networks e.g., by spoofing the IP headers. Some of the other NAT vulnerabilities lie in IPv4-to-IPv6 address mapping logic, which can be exploited by adversaries to exhaust the resources, wipe out the mapping, or to assist with blacklist evasion. Adversaries use such middlebox misconfiguration exploit techniques to launch denial-of-service or over-billing attacks.",
+      "meta": {
+        "external_id": "T0029",
+        "kill_chain": [
+          "bhadra-framework:Defense Evasion"
+        ]
+      },
+      "uuid": "619cd33a-6b2f-4999-95e5-a051a139ae37",
+      "value": "Middlebox misconfiguration exploits"
+    },
+    {
+      "description": "Adversaries (e.g., evil operators) can for example exploit the implicit trust between roaming partners as a bypass firewall technique.",
+      "meta": {
+        "external_id": "T0030",
+        "kill_chain": [
+          "bhadra-framework:Defense Evasion"
+        ]
+      },
+      "uuid": "691dbd3c-cceb-4bf8-b9a3-bf7eb6282145",
+      "value": "Bypass Firewall"
+    },
+    {
+      "description": "SMS home routing is a defense mechanism, where an additional SMS router intervenes in external location queries for SMS deliveries, and the roaming network takes the responsibility of delivering the SMS without providing location information to the external entity. Although many operators have implemented SMS home routing solutions, there are no silver bullets. If the SMS routers are incorrectly configured, adversaries can hide SMS delivery location queries within other messages so that the SMS home router fails to process them. We refer to it as the bypass home routing technique.",
+      "meta": {
+        "external_id": "T0031",
+        "kill_chain": [
+          "bhadra-framework:Defense Evasion"
+        ]
+      },
+      "uuid": "50018fa5-0dd5-40f9-949a-2942f286aef6",
+      "value": "Bypass homerouting"
+    },
+    {
+      "description": "Attacks on the radio access networks are well-studied and newer generations are designed to address the weaknesses in previous generations. Usage of weak cryptographic primitives, lack of integrity protection of the radio channels, and one-sided authentication (only from the network) remain as the problem of mostly GSM only radio communication. So, radio link attackers use downgrading as an attack technique to block service over newer generations and accept to serve only in the GSM radio network. The downgrading technique works similarly in the core network, where the adversary accepts to serve only in SS7-based signaling instead of Diameterbased signaling. Using interworking functions for inter-generation communication translation could make the downgrading attacks much easier.",
+      "meta": {
+        "external_id": "T0032",
+        "kill_chain": [
+          "bhadra-framework:Defense Evasion"
+        ]
+      },
+      "uuid": "c3dbbd41-0292-4c1a-be2a-0550427f9e19",
+      "value": "Downgrading"
+    },
+    {
+      "description": "Redirection technique is a variant of the downgrading technique, where an adversary forcefully routes the traffic through networks or components that are under its control. By redirecting traffic to an unsafe network, the adversary can intercept mobile communication (e.g., calls and SMS) on the RAN part. Redirection attacks on the core network result in not only communication interception, but also in billing discrepancies, as an adversary can route the calls of a mobile user from its home network through a foreign network on a higher call rate.",
+      "meta": {
+        "external_id": "T0033",
+        "kill_chain": [
+          "bhadra-framework:Defense Evasion"
+        ]
+      },
+      "uuid": "2a33a0c5-5cdc-4735-861e-2f847340e393",
+      "value": "Redirection"
+    },
+    {
+      "description": "Protection on the UE is mainly available in the form of antivirus apps as a defense against viruses and malware that steals sensitive information (e.g., banking credentials and user passwords) or track user activities. Simple visual cues on UE (such as notifications) could also be a protection mechanism by itself. Unfortunately, mobile network-based attacks cannot be detected or defended effectively from UE’s side by traditional antivirus apps, and such attacks do not trigger any visual signs. Although there are attempts for defending against radio link attacks, including citywide studies to detect IMSI catchers, their effectiveness is still under debate. Similarly, there are recent attempts to detect signaling attacks using distance bounding protocol run from a UE. However, such solutions are still in the research phase, and their effectiveness on a large scale is still untested. To this end, the absence of robust detection and defense mechanisms on the UE is, in fact, an evasion mechanism for an adversary. We refer to them as UE protection evasion techniques.",
+      "meta": {
+        "external_id": "T0034",
+        "kill_chain": [
+          "bhadra-framework:Defense Evasion"
+        ]
+      },
+      "uuid": "b22ac4f7-66d6-425e-a0a4-9c399d258056",
+      "value": "UE Protection evasion"
+    },
+    {
+      "description": "Stealing legitimate admin credentials for critical nodes is beneficial for the adversary to increase its chances of persistence to the target or masquerade its activities.",
+      "meta": {
+        "external_id": "T0035",
+        "kill_chain": [
+          "bhadra-framework:Collection"
+        ]
+      },
+      "uuid": "05d14025-b326-4772-827c-c054af6dbc56",
+      "value": "Admin credentials"
+    },
+    {
+      "description": "User-specific identifiers such as IMSI and IMEI are an indicator for who owns UE with a specific subscription and where a UE is located physically. Since mobile users always keep their mobile phones physically near them, an adversary with the knowledge of these permanent identifiers will be able to determine whether or not a user is in a specific location. On the other hand, temporary identifiers (e.g., TMSI and GUTI) are used to reduce the usage of permanent identifiers like IMSI over radio channels. Although the temporary identifiers are supposed to change frequently and expected to live for a short period, research has shown that it is not the case",
+      "meta": {
+        "external_id": "T0036",
+        "kill_chain": [
+          "bhadra-framework:Collection"
+        ]
+      },
+      "uuid": "def80301-2b64-477d-a7d4-a75b455b8803",
+      "value": "User-specific identifiers"
+    },
+    {
+      "description": "Adversaries can collect several types of user-specific data, such as the content of SMS and calls, location dumps from base stations, call and billing records, and browsing-related data (such as DNS queries and unencrypted browsing sessions).",
+      "meta": {
+        "external_id": "T0037",
+        "kill_chain": [
+          "bhadra-framework:Collection"
+        ]
+      },
+      "uuid": "bc6b5be2-5fe9-47d9-88a0-6351add40396",
+      "value": "User-specific data"
+    },
+    {
+      "description": "Adversaries aim to collect network-specific identifiers such as GTs and IPs of critical nodes and Tunnel Endpoint Identifier (TEID) of GTP tunnels from operators’ networks",
+      "meta": {
+        "external_id": "T0038",
+        "kill_chain": [
+          "bhadra-framework:Collection"
+        ]
+      },
+      "uuid": "78a19125-c8c8-42f5-9196-b19cf0e8f4e6",
+      "value": "Network-specific identifiers"
+    },
+    {
+      "description": "Adversaries may also be interested in network-specific data that are obtained mainly during the execution of discovery tactics. Such data includes, e.g., the network topology, the trust relationship between different nodes, routing metadata, and sensitive documents",
+      "meta": {
+        "external_id": "T0039",
+        "kill_chain": [
+          "bhadra-framework:Collection"
+        ]
+      },
+      "uuid": "3918796d-343c-454f-8375-18a99708c987",
+      "value": "Network-specific data"
+    },
+    {
+      "description": "Attacker is able to track the location of the target end-user.",
+      "meta": {
+        "external_id": "T0040",
+        "kill_chain": [
+          "bhadra-framework:Impact"
+        ]
+      },
+      "uuid": "e6503faf-cccc-48a8-84dd-9e839a273396",
+      "value": "Location tracking"
+    },
+    {
+      "description": "Attacker is able to eavesdrop on calls.",
+      "meta": {
+        "external_id": "T0041",
+        "kill_chain": [
+          "bhadra-framework:Impact"
+        ]
+      },
+      "uuid": "4ce359fb-91d4-4129-a3f9-5a19566a3f33",
+      "value": "Calls eavesdropping"
+    },
+    {
+      "description": "Attacker is able to intercept SMS messages.",
+      "meta": {
+        "external_id": "T0042",
+        "kill_chain": [
+          "bhadra-framework:Impact"
+        ]
+      },
+      "uuid": "d75f062b-c6c0-4152-a9ac-d65511675648",
+      "value": "SMS interception"
+    },
+    {
+      "description": "Attacker is able to intercept or modify internet traffic.",
+      "meta": {
+        "external_id": "T0043",
+        "kill_chain": [
+          "bhadra-framework:Impact"
+        ]
+      },
+      "uuid": "a9bb7cf3-5cc8-45e2-a4df-e45b2bfc73d4",
+      "value": "Data interception"
+    },
+    {
+      "description": "Billing frauds refer to various types of attacks where an adversary causes financial discrepancies for operators.",
+      "meta": {
+        "external_id": "T0044",
+        "kill_chain": [
+          "bhadra-framework:Impact"
+        ]
+      },
+      "uuid": "872363fc-427d-410a-a016-a1a91fb3b5d2",
+      "value": "Billing frauds"
+    },
+    {
+      "description": "The attacker can create signaling havoc in specific nodes of operators by repeatedly triggering resource allocation or revocation requests.",
+      "meta": {
+        "external_id": "T0045",
+        "kill_chain": [
+          "bhadra-framework:Impact"
+        ]
+      },
+      "uuid": "3498fc4b-d9d1-4481-ad30-f3fe3f3f70fa",
+      "value": "DoS - network"
+    },
+    {
+      "description": "The attacker can cause denial of service to mobile users.",
+      "meta": {
+        "external_id": "T0046",
+        "kill_chain": [
+          "bhadra-framework:Impact"
+        ]
+      },
+      "uuid": "94aa2097-ef18-4060-933f-b17b775fcaa5",
+      "value": "DoS - user"
+    },
+    {
+      "description": "Identity-based attacks involve attack techniques using userand network-specific identifiers. Identity-based attacks cause harm to the privacy of mobile users and produce fraudulent traffic that incurs a financial loss to operators. In most cases, identity-based attacks are used in impersonation, where an adversary impersonates a legitimate mobile user to the core network without possessing appropriate credentials, for example, to avail free mobile services. Most of the signaling attacks that use SS7 are also fall into this category. In other cases, identitybased attacks involve identity mapping, where the adversaries map temporary identifiers (e.g., TMSI and GUTI) to permanent identifiers (e.g., IMSI or MSISDN). In rare cases, the IMSI can further be mapped to social media identities.",
+      "meta": {
+        "external_id": "T0047",
+        "kill_chain": [
+          "bhadra-framework:Impact"
+        ]
+      },
+      "uuid": "800d26bb-844d-4730-ba8a-c19469017d8f",
+      "value": "Identity-related attacks"
+    }
+  ],
+  "version": 3
+}
