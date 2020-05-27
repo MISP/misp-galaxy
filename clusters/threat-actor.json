@@ -391,7 +391,8 @@
           "https://www.cfr.org/interactive/cyber-operations/darkhotel",
           "https://www.securityweek.com/darkhotel-apt-uses-new-methods-target-politicians",
           "https://attack.mitre.org/groups/G0012/",
-          "http://www.secureworks.com/research/threat-profiles/tungsten-bridge"
+          "http://www.secureworks.com/research/threat-profiles/tungsten-bridge",
+          "https://www.antiy.cn/research/notice&report/research_report/20200522.html"
         ],
         "synonyms": [
           "DUBNIUM",
@@ -405,7 +406,8 @@
           "Shadow Crane",
           "APT-C-06",
           "SIG25",
-          "TUNGSTEN BRIDGE"
+          "TUNGSTEN BRIDGE",
+          "T-APT-02"
         ]
       },
       "related": [
@@ -4140,23 +4142,11 @@
         "attribution-confidence": "50",
         "country": "IR",
         "refs": [
-          "https://web.archive.org/web/20191221064439/https://www.symantec.com/connect/blogs/iran-based-attackers-use-back-door-threats-spy-middle-eastern-targets"
+          "https://www.symantec.com/connect/blogs/iran-based-attackers-use-back-door-threats-spy-middle-eastern-targets"
         ]
       },
       "uuid": "03f13462-003c-4296-8784-bccea16710a9",
       "value": "Cadelle"
-    },
-    {
-      "description": "Symantec telemetry identified Cadelle and Chafer activity dating from as far back as July 2014, however, it’s likely that activity began well before this date. Command-and-control (C&C) registrant information points to activity possibly as early as 2011, while executable compilation times suggest early 2012. Their attacks continue to the present day. Symantec estimates that each team is made up of between 5 and 10 people.",
-      "meta": {
-        "attribution-confidence": "50",
-        "country": "IR",
-        "refs": [
-          "https://symantec-blogs.broadcom.com/blogs/threat-intelligence/chafer-latest-attacks-reveal-heightened-ambitions"
-        ]
-      },
-      "uuid": "ddd95696-3d9a-4d0c-beec-a34d396182f3",
-      "value": "Chafer"
     },
     {
       "description": "The PassCV group continues to be one of the most successful and active threat groups that leverage a wide array of stolen Authenticode-signing certificates.  Snorre Fagerland of Blue Coat Systems first coined the term PassCV in a blog post. His post provides a good introduction to the group and covers some of the older infrastructure, stolen code-signing certificate reuse, and other connections associated with the PassCV malware. There are several clues alluding to the possibility that multiple groups may be utilizing the same stolen signing certificates, but at this time SPEAR believes the current attacks are more likely being perpetrated by a single group employing multiple publicly available Remote Administration Tools (RATs).  The PassCV group has been operating with continued success and has already started to expand their malware repertoire into different off-the-shelf RATs and custom code. SPEAR identified eighteen previously undisclosed stolen Authenticode certificates. These certificates were originally issued to companies and individuals scattered across China, Taiwan, Korea, Europe, the United States and Russia.  In this post we expand the usage of the term ‘PassCV’ to encompass the malware mentioned in the Blue Coat Systems report, as well as the APT group behind the larger C2 infrastructure and stolen Authenticode certificates. We’d like to share some of our findings as they pertain to the stolen certificates, command and control infrastructure, and some of the newer custom RATs they’ve begun development on.",
@@ -7139,6 +7129,8 @@
     {
       "description": "APT39 was created to bring together previous activities and methods used by this actor, and its activities largely align with a group publicly referred to as \"Chafer.\" However, there are differences in what has been publicly reported due to the variances in how organizations track activity. APT39 primarily leverages the SEAWEED and CACHEMONEY backdoors along with a specific variant of the POWBAT backdoor. While APT39's targeting scope is global, its activities are concentrated in the Middle East. APT39 has prioritized the telecommunications sector, with additional targeting of the travel industry and IT firms that support it and the high-tech industry.",
       "meta": {
+        "attribution-confidence": "50",
+        "country": "IR",
         "refs": [
           "https://www.fireeye.com/blog/threat-research/2019/01/apt39-iranian-cyber-espionage-group-focused-on-personal-information.html",
           "https://www.symantec.com/blogs/threat-intelligence/chafer-latest-attacks-reveal-heightened-ambitions",
@@ -8349,5 +8341,5 @@
       "value": "COBALT KATANA"
     }
   ],
-  "version": 159
+  "version": 160
 }
