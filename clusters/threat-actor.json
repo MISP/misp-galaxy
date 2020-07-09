@@ -1158,13 +1158,6 @@
             "estimative-language:likelihood-probability=\"likely\""
           ],
           "type": "similar"
-        },
-        {
-          "dest-uuid": "8dda51ef-9a30-48f7-b0fd-5b6f0a62262d",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "suspected-link"
         }
       ],
       "uuid": "56b37b05-72e7-4a89-ba8a-61ce45269a8c",
@@ -3688,6 +3681,7 @@
         "cfr-type-of-incident": "Espionage",
         "country": "CN",
         "refs": [
+          "https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/eagle-eye-is-back-apt30/",
           "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf",
           "https://attack.mitre.org/wiki/Group/G0013",
           "https://www.cfr.org/interactive/cyber-operations/apt-30"
@@ -6816,6 +6810,9 @@
         ],
         "synonyms": [
           "Roaming Mantis Group"
+        ],
+        "threat-actor-classification": [
+          "campaign"
         ]
       },
       "uuid": "b27beb94-ce25-11e8-8e11-2f1a59bd0e91",
@@ -7019,6 +7016,10 @@
           "https://threatpost.com/ta505-servhelper-malware/140792/",
           "https://blog.yoroi.company/research/the-stealthy-email-stealer-in-the-ta505-arsenal/",
           "https://threatrecon.nshc.net/2019/08/29/sectorj04-groups-increased-activity-in-2019/",
+          "https://www.proofpoint.com/us/threat-insight/post/ta505-distributes-new-sdbbot-remote-access-trojan-get2-downloader",
+          "https://www.blueliv.com/cyber-security-and-cyber-threat-intelligence-blog-blueliv/research/servhelper-evolution-and-new-ta505-campaigns/",
+          "https://www.telekom.com/en/blog/group/article/cybersecurity-ta505-s-box-of-chocolate-597672",
+          "https://www.telekom.com/en/blog/group/article/cybersecurity-ta505-returns-with-a-new-bag-of-tricks-602104",
           "https://www.secureworks.com/research/threat-profiles/gold-tahoe"
         ],
         "synonyms": [
@@ -7427,7 +7428,9 @@
           "https://www.microsoft.com/security/blog/2017/03/27/detecting-and-mitigating-elevation-of-privilege-exploit-for-cve-2017-0005/",
           "https://duo.com/decipher/apt-groups-moving-down-the-supply-chain",
           "https://redalert.nshc.net/2019/12/03/threat-actor-targeting-hong-kong-activists",
-          "https:/twitter.com/bkMSFT/status/1201876664667582466",
+          "https://twitter.com/bkMSFT/status/1201876664667582466",
+          "https://www.secureworks.com/research/bronz-vinewood-uses-hanaloader-to-target-government-supply-chain",
+          "https://www.secureworks.com/research/bronze-vinewood-targets-supply-chains",
           "https://www.secureworks.com/research/threat-profiles/bronze-vinewood"
         ],
         "synonyms": [
@@ -7898,11 +7901,12 @@
       "meta": {
         "refs": [
           "https://www.proofpoint.com/us/threat-insight/post/lookback-forges-ahead-continued-targeting-united-states-utilities-sector-reveals",
-          "https://www.proofpoint.com/us/threat-insight/post/lookback-malware-targets-united-states-utilities-sector-phishing-attacks"
+          "https://www.proofpoint.com/us/threat-insight/post/lookback-malware-targets-united-states-utilities-sector-phishing-attacks",
+          "https://www.proofpoint.com/us/blog/threat-insight/ta410-group-behind-lookback-attacks-against-us-utilities-sector-returns-new"
         ]
       },
       "uuid": "5cd95926-0098-435e-892d-9c9f61763ad7",
-      "value": "LookBack"
+      "value": "TA410"
     },
     {
       "description": "In 2018, the Cybereason Nocturnus team identified an advanced, persistent attack targeting global telecommunications providers carried out by a threat actor using tools and techniques commonly associated with Chinese-affiliated threat actors, such as APT10.  This multi-wave attacks focused on obtaining data of specific, high-value targets and resulted in a complete takeover of the network.",
@@ -7916,16 +7920,9 @@
       },
       "related": [
         {
-          "dest-uuid": "56b37b05-72e7-4a89-ba8a-61ce45269a8c",
+          "dest-uuid": "e400b6c5-77cf-453d-ba0f-44575583ac6c",
           "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "suspected-link"
-        },
-        {
-          "dest-uuid": "6085aad0-1d95-11ea-a140-078d42aced40",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
+            "estimative-language:likelihood-probability=\"almost-certain\""
           ],
           "type": "similar"
         }
@@ -8304,7 +8301,8 @@
         ],
         "country": "KR",
         "refs": [
-          "https://s.tencent.com/research/report/836.html"
+          "https://s.tencent.com/research/report/836.html",
+          "https://blog.malwarebytes.com/threat-analysis/2020/06/higaisa/"
         ]
       },
       "uuid": "a9df6cb7-74ff-482f-b23b-ac40e975a31a",
@@ -8350,7 +8348,27 @@
       },
       "uuid": "3cbc52d5-fe4d-4d7a-a5e9-641b7c073d62",
       "value": "Dark Basin"
+    },
+    {
+      "description": "GALLIUM, is a threat actor believed to be targeting telecommunication providers over the world, mostly South-East Asia, Europe and Africa. To compromise targeted networks, GALLIUM target unpatched internet-facing services using publicly available exploits and have been known to target vulnerabilities in WildFly/JBoss.",
+      "meta": {
+        "refs": [
+          "https://www.microsoft.com/security/blog/2019/12/12/gallium-targeting-global-telecom/",
+          "https://www.youtube.com/watch?v=fBFm2fiEPTg"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "8dda51ef-9a30-48f7-b0fd-5b6f0a62262d",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "e400b6c5-77cf-453d-ba0f-44575583ac6c",
+      "value": "GALLIUM"
     }
   ],
-  "version": 163
+  "version": 168
 }
