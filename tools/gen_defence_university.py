@@ -196,22 +196,8 @@ def _gen_galaxy(scrape):
 
     for uni in scrape:
         new_template = template = {
-            # university description
             "description": "",
             "meta": {
-                "supervising agency": [],
-                "subsidiary": [],
-                "category": [],
-                "topics": [],
-                # Defence labs
-                "Major Defence Laboratories": [],
-                # Defence labs
-                "alias": [],
-                "risk": "",
-                "address": "",
-                "lat": "",
-                "long": "",
-                # External link to ASPI
                 "refs": []
             },
             "uuid": "",
@@ -222,34 +208,57 @@ def _gen_galaxy(scrape):
 
         new_template["meta"]["refs"].append(uni["url"])
 
-        for intro in uni["intro"]:
-            new_template["description"] += intro["clause"]
-
         new_template["value"] = uni["name"] + f" ({uni['_name']})"
 
-        new_template["meta"]["risk"] = uni["risk statement"]
+        def _append_meta(key, meta):
+            if uni.get(meta):
+                values = []
+                for value in uni[meta]:
+                    if value != "":
+                        values.append(value)
+                if values:
+                    new_template["meta"][key] = values
 
-        for alias in uni["aliases"]:
-            new_template["meta"]["alias"].append(alias)
+        if uni.get("intro"):
+            for intro in uni["intro"]:
+                new_template["description"] += intro["clause"]
+            if new_template["description"] == "":
+                new_template["description"] += uni["name"] + f" ({uni['_name']})"
+        else:
+            new_template["description"] += uni["name"] + f" ({uni['_name']})"
 
-        for agency in uni["supervising agencies"]:
-            new_template["meta"]["supervising agency"].append(agency)
+        if uni.get("risk"):
+            if uni.get("risk") != "":
+                new_template["meta"]["risk"] = uni["risk statement"]
 
-        if uni.get("subsidiaries"):
-            for subsidiary in uni["subsidiaries"]:
-                new_template["meta"]["subsidiary"].append(subsidiary)
+        _append_meta("aliases", "aliases")
 
-        if uni.get("topics"):
-            for topic in uni["topics"]:
-                new_template["meta"]["topics"].append(topic)
+        _append_meta("supervising agencies", "supervising agencies")
 
-        for category in uni["categories"]:
-            new_template["meta"]["category"].append(category)
+        _append_meta("subsidiaries", "subsidiaries")
+
+        _append_meta("topics", "topics")
+
+        _append_meta("categories", "categories")
+
+        if uni.get("sections"):
+            labs = []
+            for section in uni["sections"]:
+                if section["title"] == "Major defence laboratories":
+                    for lab in section["body"]:
+                        if lab.get("name"):
+                            if lab["name"] != "":
+                                labs.append(lab["name"])
+            if labs:
+                new_template["meta"]["major defence laboratories"] = labs
 
         if uni.get("location"):
-            new_template["meta"]["address"] = uni["location"][0]["name"]
-            new_template["meta"]["lat"] = uni["location"][0]["lat"]
-            new_template["meta"]["long"] = uni["location"][0]["long"]
+            if uni.get(uni["location"][0]["name"]) != "":
+                new_template["meta"]["address"] = uni["location"][0]["name"]
+            if uni.get(uni["location"][0]["lat"]) != "":
+                new_template["meta"]["lat"] = uni["location"][0]["lat"]
+            if uni.get(uni["location"][0]["long"]) != "":
+                new_template["meta"]["long"] = uni["location"][0]["long"]
 
         base["values"].append(new_template)
 
@@ -275,6 +284,8 @@ def main():
             head = "bloop"
 
     galaxy = _gen_galaxy(articles)
+
+    print(galaxy)
 
     with open("china-defence-universities.json", "w") as g:
         g.write(json.dumps(galaxy, indent=4, sort_keys=True))
