@@ -1,0 +1,270 @@
+{
+  "authors": [
+    "MITRE"
+  ],
+  "category": "actor",
+  "description": "Groups are sets of related intrusion activity that are tracked by a common name in the security community. Groups are also sometimes referred to as campaigns or intrusion sets. Some groups have multiple names associated with the same set of activities due to various organizations tracking the same set of activities by different names. Groups are mapped to publicly reported technique use and referenced in the ATT&CK for ICS knowledge base. Groups are also mapped to reported software used during intrusions.",
+  "name": "Groups",
+  "source": "https://collaborate.mitre.org/attackics/index.php/Groups",
+  "type": "mitre-ics-groups",
+  "uuid": "8fb1c036-8904-4d4b-82d5-0286da77eb7e",
+  "values": [
+    {
+      "description": "ALLANITE is a suspected Russian cyber espionage group, that has primarily targeted the electric utility sector within the United States and United Kingdom. The group's tactics and techniques are reportedly similar to Dragonfly / Dragonfly 2.0, although ALLANITE’s technical capabilities have not exhibited disruptive or destructive abilities. It has been suggested that the group maintains a presence in ICS for the purpose of gaining understanding of processes and to maintain persistence.",
+      "meta": {
+        "Associated Group Descriptions": [
+          "ALLANITE",
+          "Palmetto Fusion"
+        ],
+        "Techniques Used": [
+          "Screen Capture - ALLANITE has been identified to collect and distribute screenshots of ICS systems such as HMIs https://collaborate.mitre.org/attackics/index.php/Technique/T852",
+          "Drive-by Compromise - ALLANITE leverages watering hole attacks to gain access into electric utilities https://collaborate.mitre.org/attackics/index.php/Technique/T817",
+          "Valid Accounts - ALLANITE utilized credentials collected through phishing and watering hole attacks https://collaborate.mitre.org/attackics/index.php/Technique/T859",
+          "Spearphishing Attachment - ALLANITE utilized spear phishing to gain access into energy sector environments"
+        ],
+        "refs": [
+          "https://dragos.com/resource/allanite/",
+          "https://www.us-cert.gov/ncas/alerts/TA17-293A",
+          "https://www.securityweek.com/allanite-group-targets-ics-networks-electric-utilities-us-uk",
+          "https://www.eisac.com/public-news-detail?id=115909"
+        ]
+      },
+      "uuid": "fd28d200-2f1f-464a-af1f-fcadac7640a1",
+      "value": "ALLANITE"
+    },
+    {
+      "description": "APT33 is a suspected Iranian threat group that has carried out operations since at least 2013. The group has targeted organizations across multiple industries in the United States, Saudi Arabia, and South Korea, with a particular interest in the aviation and energy sectors.",
+      "meta": {
+        "Associated Group Descriptions": [
+          "APT33 - Fireeye noted a potential link between APT33 and Shamoon based on similar dropper malware DROPSHOT",
+          "Elfin - Symantec mentioned a potential link between Elfin and Shamoon based on such close occurances of the attacks within a particular organization",
+          "MAGNALLIUM"
+        ],
+        "Techniques Used": [
+          "Spearphishing Attachment - APT33 sent spear phishing emails containing links to HTML application files, which were embedded with malicious code.2 APT33 has conducted targeted spear phishing campaigns against U.S. government agencies and private sector companies https://collaborate.mitre.org/attackics/index.php/Technique/T865",
+          "Scripting - APT33 utilized PowerShell scripts to establish command and control and install files for execution https://collaborate.mitre.org/attackics/index.php/Technique/T853",
+          "Screen Capture - APT33 utilize backdoors capable of capturing screenshots once installed on a system https://collaborate.mitre.org/attackics/index.php/Technique/T852"
+        ],
+        "refs": [
+          "https://attack.mitre.org/groups/G0064/",
+          "https://www.fireeye.com/blog/threat-research/2017/09/apt33-insights-into-iranian-cyber-espionage.html",
+          "https://www.symantec.com/blogs/threat-intelligence/elfin-apt33-espionage",
+          "https://dragos.com/resource/magnallium/",
+          "https://www.wired.com/story/iran-hackers-us-phishing-tensions/",
+          "https://www.symantec.com/security-center/writeup/2017-030708-4403-99"
+        ]
+      },
+      "uuid": "8f6f8a49-8a22-4494-a4c0-5a341444339a",
+      "value": "APT33"
+    },
+    {
+      "description": "Dragonfly is a cyber espionage group that has been active since at least 2011. They initially targeted defense and aviation companies but shifted to focus on the energy sector in early 2013. They have also targeted companies related to industrial control systems. A similar group emerged in 2015 and was identified by Symantec as Dragonfly 2.0. There is debate over the extent of the overlap between Dragonfly and Dragonfly 2.0, but there is sufficient evidence to lead to these being tracked as two separate groups.",
+      "meta": {
+        "Associated Group Descriptions": [
+          "Dragonfly",
+          "Energetic Bear"
+        ],
+        "Software": [
+          "Backdoor.Oldrea"
+        ],
+        "Techniques Used": [
+          "Screen Capture - Dragonfly has been reported to take screenshots of the GUI for ICS equipment, such as HMIs https://collaborate.mitre.org/attackics/index.php/Technique/T852",
+          "Spearphishing Attachment - Dragonfly sent pdf documents over email which contained links to malicious sites and downloads https://collaborate.mitre.org/attackics/index.php/Technique/T865",
+          "Drive-by Compromise - Dragonfly used intermediate targets for watering hole attacks on an intended target. A line of code is injected into the header.php file, this is used to redirect the visitors to an adversary controlled IP https://collaborate.mitre.org/attackics/index.php/Technique/T817",
+          "Valid Accounts - Dragonfly leveraged compromised user credentials to access the targets networks and download tools from a remote server https://collaborate.mitre.org/attackics/index.php/Technique/T859",
+          "Commonly Used Port - Dragonfly communicated with command and control over TCP ports 445 and 139 or UDP 137 or 138 https://collaborate.mitre.org/attackics/index.php/Technique/T885"
+        ],
+        "refs": [
+          "https://attack.mitre.org/groups/G0035/",
+          "https://dragos.com/resource/dymalloy/",
+          "https://www.us-cert.gov/ncas/alerts/TA17-293A",
+          "http://www.symantec.com/content/en/us/enterprise/media/security_response/whitepapers/Dragonfly_Threat_Against_Western_Energy_Suppliers.pdf",
+          "https://www.symantec.com/connect/blogs/dragonfly-western-energy-sector-targeted-sophisticated-attack-group"
+        ]
+      },
+      "uuid": "9b4143ce-253c-45c4-a160-0d0a7450aace",
+      "value": "Dragonfly"
+    },
+    {
+      "description": "Dragonfly 2.0 is a suspected Russian threat group which has been active since at least late 2015. Dragonfly 2.0's initial reported targets were a part of the energy sector, located within the United States, Switzerland, and Turkey. There is debate over the extent of overlap between Dragonfly 2.0 and Dragonfly, but there is sufficient evidence to lead to these being tracked as two separate groups.",
+      "meta": {
+        "Associated Group Descriptions": [
+          "Dragonfly 2.0",
+          "Beserk Bear",
+          "DYMALLOY"
+        ],
+        "Techniques Used": [
+          "Spearphishing Attachment - Dragonfly 2.0 used the Phishery tool kit to conduct spear phishing attacks and gather credentials.14 Dragonfly 2.0 conducted a targeted spear phishing campaign against multiple electric utilities in the North America https://collaborate.mitre.org/attackics/index.php/Technique/T865",
+          "Supply Chain Compromise - Dragonfly 2.0 trojanized legitimate software to deliver malware disguised as standard windows applications https://collaborate.mitre.org/attackics/index.php/Technique/T862",
+          "https://collaborate.mitre.org/attackics/index.php/Technique/T817 https://collaborate.mitre.org/attackics/index.php/Technique/T817",
+          "Valid Accounts - Dragonfly 2.0 used credentials collected through spear phishing and watering hole attacks https://collaborate.mitre.org/attackics/index.php/Technique/T859"
+        ],
+        "refs": [
+          "https://www.symantec.com/connect/blogs/dragonfly-western-energy-sector-targeted-sophisticated-attack-group",
+          "https://fortune.com/2017/09/06/hack-energy-grid-symantec/",
+          "https://dragos.com/resource/dymalloy/",
+          "https://blog.talosintelligence.com/2017/07/template-injection.html",
+          "https://dragos.com/wp-content/uploads/Sample-WorldView-Report.pdf",
+          "https://dragos.com/wp-content/uploads/yir-ics-activity-groups-threat-landscape-2018.pdf"
+        ]
+      },
+      "uuid": "790c3072-49d1-4c4f-8fd0-dc3db50887c1",
+      "value": "Dragonfly 2.0"
+    },
+    {
+      "description": "HEXANE is a threat group that has targeted ICS organization within the oil & gas, and telecommunications sectors. Many of the targeted organizations have been located in the Middle East including Kuwait. HEXANE's targeting of telecommunications has been speculated to be part of an effort to establish man-in-the-middle capabilities throughout the region. HEXANE's TTPs appear similar to APT33 and OilRig but due to differences in victims and tools it is tracked as a separate entity.",
+      "meta": {
+        "Associated Group Descriptions": [
+          "HEXANE",
+          "Lyceum"
+        ],
+        "Techniques Used": [
+          "Spearphishing Attachment - HEXANE has used malicious documents to drop malware and gain access into an environment https://collaborate.mitre.org/attackics/index.php/Technique/T865",
+          "Standard Application Layer Protocol - HEXANE communicated with command and control over HTTP and DNS https://collaborate.mitre.org/attackics/index.php/Technique/T869",
+          "Valid Accounts - HEXANE has used valid IT accounts to extend their spearphishing campaign within an organization https://collaborate.mitre.org/attackics/index.php/Technique/T859",
+          "Man in the Middle - HEXANE targeted telecommunication providers in the greater Middle East, Central Asia, and Africa, potentially as a stepping stone to network-focused man-in-the-middle and related attacks https://collaborate.mitre.org/attackics/index.php/Technique/T830",
+          "Scripting - HEXANE utilizes VBA macros and Powershell scripts such as DanDrop and kl.ps1 tools https://collaborate.mitre.org/attackics/index.php/Technique/T853"
+        ],
+        "refs": [
+          "https://dragos.com/resource/hexane/",
+          "https://www.secureworks.com/blog/lyceum-takes-center-stage-in-middle-east-campaign",
+          "https://www.securityweek.com/researchers-analyze-tools-used-hexane-attackers-against-industrial-firms",
+          "https://www.bankinfosecurity.com/lyceum-apt-group-new-threat-to-oil-gas-companies-a-13003"
+        ]
+      },
+      "uuid": "a529ddda-9a44-4a0f-912e-4681f442b488",
+      "value": "HEXANE"
+    },
+    {
+      "description": "Lazarus group is a suspected North Korean adversary group that has targeted networks associated with civilian electric energy in Europe, East Asia, and North America. Links have been established associating this group with the WannaCry ransomware from 2017.3 While WannaCry was not an ICS focused attack, Lazarus group is considered to be a threat to ICS. North Korean group definitions are known to have significant overlap, and the name Lazarus Group is known to encompass a broad range of activity. Some organizations use the name Lazarus Group to refer to any activity attributed to North Korea. Some organizations track North Korean clusters or groups such as Bluenoroff, APT37, and APT38 separately, while other organizations may track some activity associated with those group names by the name Lazarus Group.",
+      "meta": {
+        "Associated Group Descriptions": [
+          "Lazarus group",
+          "COVELLITE",
+          "HIDDEN COBRA",
+          "ZINC",
+          "Guardians of Peace"
+        ],
+        "Software": [
+          "WannaCry"
+        ],
+        "Techniques Used": [
+          "Spearphishing Attachment - Lazarus group has been observed targeting organizations using spearphishing documents with embedded malicious payloads. Highly targeted spear phishing campaigns have been conducted against a U.S. electric grid company https://collaborate.mitre.org/attackics/index.php/Technique/T865"
+        ],
+        "refs": [
+          "https://www.us-cert.gov/HIDDEN-COBRA-North-Korean-Malicious-Cyber-Activity",
+          "https://dragos.com/resource/covellite/",
+          "https://www.us-cert.gov/ncas/alerts/TA17-132A",
+          "https://www.operationblockbuster.com/wp-content/uploads/2016/02/Operation-Blockbuster-Report.pdf",
+          "https://www.us-cert.gov/ncas/alerts/TA17-164A",
+          "https://blogs.microsoft.com/on-the-issues/2017/12/19/microsoft-facebook-disrupt-zinc-malware-attack-protect-customers-internet-ongoing-cyberthreats/",
+          "https://www.securityweek.com/five-threat-groups-target-industrial-systems-dragos",
+          "https://www.symantec.com/connect/blogs/wannacry-ransomware-attacks-show-strong-links-lazarus-group"
+        ]
+      },
+      "uuid": "3bbf3f0f-346d-49ad-9300-3bb0f23c83ef",
+      "value": "Lazarus group"
+    },
+    {
+      "description": "Leafminer is a threat group that has targeted Saudi Arabia, Japan, Europe and the United States. Within the US, Leafminer has targeted electric utilities and initial access into those organizations. Reporting indicates that Leafminer has not demonstrated ICS specific or destructive capabilities.",
+      "meta": {
+        "Associated Group Descriptions": [
+          "Leafminer",
+          "RASPITE"
+        ],
+        "refs": [
+          "https://www.symantec.com/blogs/threat-intelligence/leafminer-espionage-middle-east",
+          "https://dragos.com/resource/raspite/"
+        ]
+      },
+      "uuid": "956a44f1-0d5c-4f3c-a9a7-16f96f9656e4",
+      "value": "Leafminer"
+    },
+    {
+      "description": "OilRig is a suspected Iranian threat group that has targeted the financial, government, energy, chemical, and telecommunication sectors as well as petrochemical, oil & gas. OilRig has been observed operating in Iraq, Pakistan, Israel, and the UK, and has been linked to the Shamoon attacks in 2012 on Saudi Aramco. ",
+      "meta": {
+        "Associated Group Descriptions": [
+          "OilRig",
+          "CHRYSENE",
+          "Greenbug",
+          "APT 34"
+        ],
+        "Techniques Used": [
+          "Spearphishing Attachment - OilRig used spearphishing emails with malicious Microsoft Excel spreadsheet attachments https://collaborate.mitre.org/attackics/index.php/Technique/T865",
+          "Scripting - OilRig has embedded a macro within spearphishing attachments that has been made up of both a VBScript and a PowerShell script https://collaborate.mitre.org/attackics/index.php/Technique/T853",
+          "Standard Application Layer Protocol - OilRig communicated with its command and control using HTTP requests https://collaborate.mitre.org/attackics/index.php/Technique/T869",
+          "Drive-by Compromise - OilRig has been seen utilizing watering hole attacks to collect credentials which could be used to gain access into ICS networks https://collaborate.mitre.org/attackics/index.php/Technique/T817",
+          "Valid Accounts - OilRig utilized stolen credentials to gain access to victim machines https://collaborate.mitre.org/attackics/index.php/Technique/T859"
+        ],
+        "refs": [
+          "https://www.fireeye.com/current-threats/apt-groups.html#apt34",
+          "https://www.fireeye.com/blog/threat-research/2017/12/targeted-attack-in-middle-east-by-apt34.html",
+          "https://dragos.com/resource/chrysene/",
+          "https://unit42.paloaltonetworks.com/unit42-oilrig-targets-technology-service-provider-government-agency-quadagent/",
+          "https://unit42.paloaltonetworks.com/the-oilrig-campaign-attacks-on-saudi-arabian-organizations-deliver-helminth-backdoor/",
+          "https://www.cyberviser.com/2018/05/group-linked-to-shamoon-attacks-targeting-ics-networks-in-middle-east-and-uk/"
+        ]
+      },
+      "uuid": "4945c0e7-9f4b-404d-83b2-e5cd3f26c32f",
+      "value": "OilRig"
+    },
+    {
+      "description": "Sandworm is a threat group associated with the Kiev, Ukraine electrical transmission substation attacks which resulted in the impact of electric grid operations on December 17th, 2016. Sandworm has been cited as the authors of the Industroyer malware which was used in the 2016 Ukraine attacks.",
+      "meta": {
+        "Associated Group Descriptions": [
+          "Sandworm",
+          "ELECTRUM"
+        ],
+        "Software": [
+          "Industroyer",
+          "Notpetya"
+        ],
+        "Techniques Used": [
+          "Internet Accessible Device - Sandworm actors exploited vulnerabilities in GE's Cimplicity HMI and Advantech/Broadwin WebAccess HMI software which had been directly exposed to the internet https://collaborate.mitre.org/attackics/index.php/Technique/T883",
+          "Valid Accounts - Sandworm used valid accounts to laterally move through VPN connections and dual-homed systems https://collaborate.mitre.org/attackics/index.php/Technique/T859"
+        ],
+        "refs": [
+          "https://dragos.com/resource/electrum/",
+          "https://www.welivesecurity.com/wp-content/uploads/2017/06/Win32_Industroyer.pdf",
+          "https://dragos.com/blog/crashoverride/CrashOverride-01.pdf",
+          "https://www.fireeye.com/blog/threat-research/2016/01/ukraine-and-sandworm-team.html",
+          "https://www.us-cert.gov/ics/alerts/ICS-ALERT-14-281-01B",
+          "https://www.us-cert.gov/ics/advisories/ICSA-11-094-02B",
+          "https://dragos.com/wp-content/uploads/CRASHOVERRIDE2018.pdf",
+          "https://www.welivesecurity.com/2018/10/11/new-telebots-backdoor-linking-industroyer-notpetya/",
+          "https://www.wired.com/story/notpetya-cyberattack-ukraine-russia-code-crashed-the-world/"
+        ]
+      },
+      "uuid": "b4fbf3b0-1a5e-4bdc-8977-74fff1db19ff",
+      "value": "Sandworm"
+    },
+    {
+      "description": "XENOTIME is a threat group that has targeted and compromised industrial systems, specifically safety instrumented systems that are designed to provide safety and protective functions. Xenotime has previously targeted oil & gas, as well as electric sectors within the Middle east, Europe, and North America. Xenotime has also been reported to target ICS vendors, manufacturers, and organizations in the middle east. This group is one of the few with reported destructive capabilities.",
+      "meta": {
+        "Associated Group Descriptions": [
+          "XENOTIME",
+          "TEMP.Veles - Fireeye attributes with high confidence that intrusion activity and Triton development was supported by a Russian government-owned technical research institution."
+        ],
+        "Software": [
+          "Triton"
+        ],
+        "Techniques Used": [
+          "Drive-by Compromise - XENOTIME utilizes watering hole websites to target industrial employees https://collaborate.mitre.org/attackics/index.php/Technique/T817",
+          "External Remote Services - XENOTIME utilized remote desktop protocol (RDP) jump boxes to move into the ICS environment https://collaborate.mitre.org/attackics/index.php/Technique/T822",
+          "Valid Accounts - XENOTIME used valid credentials when laterally moving through RDP jump boxes into the ICS environment https://collaborate.mitre.org/attackics/index.php/Technique/T859",
+          "Supply Chain Compromise - XENOTIME targeted several ICS vendors and manufacturers https://collaborate.mitre.org/attackics/index.php/Technique/T862"
+        ],
+        "refs": [
+          "https://dragos.com/resource/xenotime/",
+          "https://www.fireeye.com/blog/threat-research/2018/10/triton-attribution-russian-government-owned-lab-most-likely-built-tools.html",
+          "https://www.cyberscoop.com/xenotime-ics-cyber-attacks-trisis-dragos/",
+          "https://dragos.com/blog/trisis/TRISIS-01.pdf",
+          "https://dragos.com/wp-content/uploads/Dragos-Oil-and-Gas-Threat-Perspective-2019.pdf"
+        ]
+      },
+      "uuid": "acb04037-e160-4a4e-a8cf-8a53a2f8221b",
+      "value": "XENOTIME"
+    }
+  ],
+  "version": 1
+}

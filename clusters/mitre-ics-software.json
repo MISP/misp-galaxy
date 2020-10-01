@@ -1,0 +1,453 @@
+{
+  "authors": [
+    "MITRE"
+  ],
+  "category": "tool",
+  "description": "Software is a generic term for custom or commercial code, operating system utilities, open-source software, or other tools used to conduct behavior modeled in ATT&CK for ICS.",
+  "name": "Software",
+  "source": "https://collaborate.mitre.org/attackics/index.php/Software",
+  "type": "mitre-ics-software",
+  "uuid": "7d259f36-6e80-472e-9a42-9d4a83519825",
+  "values": [
+    {
+      "description": "ACAD/Medre.A is a worm that steals operational information. The worm collects AutoCAD files with drawings. ACAD/Medre.A has the capability to be used for industrial espionage.",
+      "meta": {
+        "Techniques Used": [
+          "Theft of Operational Information - ACAD/Medre.A can collect AutoCad files with drawings. These drawings may contain operational information https://collaborate.mitre.org/attackics/index.php/Technique/T882",
+          "Data from Information Repositories - ACAD/Medre.A collects information related to the AutoCAD application. The worm collects AutoCAD (*.dwg) files with drawings from information repositories https://collaborate.mitre.org/attackics/index.php/Technique/T811"
+        ],
+        "refs": []
+      },
+      "uuid": "73f55487-1e11-4cec-b57f-4cabe4633928",
+      "value": "ACAD/Medre.A"
+    },
+    {
+      "description": "Backdoor.Oldrea is a Remote Access Trojan (RAT) that communicates with a Command and Control (C2) server. The C2 server can deploy payloads that provide additional functionality. One payload has been identified and analyzed that enumerates all connected network resources, such as computers or shared resources, and uses the classic DCOM-based (Distributed Component Object Model) version of the Open Platform Communications (OPC) standard to gather information about connected control system devices and resources within the network.",
+      "meta": {
+        "Associated Software Descriptions": [
+          "Backdoor.Oldrea",
+          "Havex"
+        ],
+        "Groups": [
+          "Dragonfly https://collaborate.mitre.org/attackics/index.php/Group/G0002"
+        ],
+        "Techniques Used": [
+          "Role Identification - The Backdoor.Oldrea payload gathers server information that includes CLSID, server name, Program ID, OPC version, vendor information, running state, group count, and server bandwidth. This information helps indicate the role the server has in the control process https://collaborate.mitre.org/attackics/index.php/Technique/T850",
+          "Control Device Identification - The Backdoor.Oldrea payload has the capability of enumerating OPC tags, in addition to more generic OPC server information. The server data and tag names can provide information about the names and function of control devices https://collaborate.mitre.org/attackics/index.php/Technique/T808",
+          "Remote System Discovery - The Backdoor.Oldrea ICS malware plugin relies on Windows networking (WNet) to discover all the servers, including OPC servers, that are reachable by the compromised machine over the network https://collaborate.mitre.org/attackics/index.php/Technique/T846",
+          "Location Identification - The Backdoor.Oldrea payload has the capability of enumerating OPC tags, in addition to more generic OPC server information. The tag names, depending on the naming convention, can provide information about facilities and locations https://collaborate.mitre.org/attackics/index.php/Technique/T825",
+          "Denial of Service - The Backdoor.Oldrea payload has caused multiple common OPC platforms to intermittently crash. This could cause a denial of service effect on applications reliant on OPC communications https://collaborate.mitre.org/attackics/index.php/Technique/T814",
+          "Supply Chain Compromise - The Backdoor.Oldrea RAT is distributed through trojanized installers planted on compromised vendor sites https://collaborate.mitre.org/attackics/index.php/Technique/T862",
+          "Spearphishing Attachment - The Backdoor.Oldrea RAT is distributed through a trojanized installer attached to emails https://collaborate.mitre.org/attackics/index.php/Technique/T865",
+          "Automated Collection - Using OPC, a component of Backdoor.Oldrea gathers any details about connected devices and sends them back to the C2 for the attackers to analyze https://collaborate.mitre.org/attackics/index.php/Technique/T802",
+          "User Execution - Execution of Backdoor.Oldrea relies on a user opening a trojanized installer attached to an email https://collaborate.mitre.org/attackics/index.php/Technique/T863",
+          "Point & Tag Identification - Backdoor.Oldrea enumerates all OPC tags and queries for specific fields such as server state, tag name, type, access, and id Point & Tag Identification - Backdoor.Oldrea enumerates all OPC tags and queries for specific fields such as server state, tag name, type, access, and id https://collaborate.mitre.org/attackics/index.php/Technique/T861"
+        ],
+        "refs": [
+          "https://ics-cert.us-cert.gov/advisories/ICSA-14-178-01",
+          "https://ics-cert.us-cert.gov/alerts/ICS-ALERT-14-176-02A",
+          "https://www.f-secure.com/weblog/archives/00002718.html",
+          "https://pdfs.semanticscholar.org/18df/43ef1690b0fae15a36f770001160aefbc6c5.pdf",
+          "https://www.fireeye.com/blog/threat-research/2014/07/havex-its-down-with-opc.html",
+          "https://www.symantec.com/connect/blogs/dragonfly-western-energy-companies-under-sabotage-threat",
+          "https://www.youtube.com/watch?v=eywmb7UDODY&feature=youtu.be&t=939",
+          "https://www.sans.org/reading-room/whitepapers/ICS/impact-dragonfly-malware-industrial-control-systems-36672"
+        ]
+      },
+      "uuid": "1a2b786f-6ed2-47f6-969c-8d9c62fb8f22",
+      "value": "Backdoor.Oldrea, Havex"
+    },
+    {
+      "description": "Bad Rabbit is a self-propagating (“wormable”) ransomware that affected the transportation sector in Ukraine.",
+      "meta": {
+        "Associated Software Descriptions": [
+          "Bad Rabbit",
+          "Diskcoder.D"
+        ],
+        "Techniques Used": [
+          "Drive-by Compromise - Bad Rabbit ransomware spreads through drive-by attacks where insecure websites are compromised. While the target is visiting a legitimate website, a malware dropper is being downloaded from the threat actor’s infrastructure https://collaborate.mitre.org/attackics/index.php/Technique/T817",
+          "User Execution - Bad Rabbit is disguised as an Adobe Flash installer. When the file is opened it starts locking the infected computer https://collaborate.mitre.org/attackics/index.php/Technique/T863",
+          "Loss of Productivity and Revenue - Several transportation organizations in Ukraine have suffered from being infected by Bad Rabbit, resulting in some computers becoming encrypted, according to media reports https://collaborate.mitre.org/attackics/index.php/Technique/T828",
+          "Exploitation of Remote Services - Bad Rabbit initially infected IT networks, but by means of an exploit (particularly the SMBv1-targeting MS17-010 vulnerability) spread to industrial networks https://collaborate.mitre.org/attackics/index.php/Technique/T866",
+          "External Remote Services - Bad Rabbit can utilize exposed SMB services to access industrial networks https://collaborate.mitre.org/attackics/index.php/Technique/T822",
+          "Remote File Copy - Bad Rabbit can move laterally through industrial networks by means of the SMB service https://collaborate.mitre.org/attackics/index.php/Technique/T867"
+        ],
+        "refs": [
+          "https://www.welivesecurity.com/2017/10/24/bad-rabbit-not-petya-back/",
+          "https://securelist.com/bad-rabbit-ransomware/82851/",
+          "https://dragos.com/blog/industry-news/implications-of-it-ransomware-for-ics-environments/"
+        ]
+      },
+      "uuid": "625cba2e-43ba-4abd-81e9-6fa78c442e6f",
+      "value": "Bad Rabbit, Diskcoder.D"
+    },
+    {
+      "description": "BlackEnergy 3 is a malware toolkit that has been used by both criminal and APT actors. It support various plug-ins including a variant of KillDisk. It is known to have been used against the Ukrainian power grid.",
+      "meta": {
+        "Associated Software Descriptions": [
+          "BlackEnergy 3"
+        ],
+        "Techniques Used": [
+          "Valid Accounts - BlackEnergy utilizes valid user and administrator credentials, in addition to creating new administrator accounts to maintain presence https://collaborate.mitre.org/attackics/index.php/Technique/T859",
+          "Standard Application Layer Protocol - BlackEnergy uses HTTP POST request to contact external command and control servers https://collaborate.mitre.org/attackics/index.php/Technique/T869",
+          "Spearphishing Attachment - BlackEnergy targeted energy sector organizations in a wide reaching email spearphishing campaign. Adversaries utilized malicious Microsoft Word documents attachments https://collaborate.mitre.org/attackics/index.php/Technique/T865"
+        ],
+        "refs": [
+          "https://www.boozallen.com/content/dam/boozallen/documents/2016/09/ukraine-report-when-the-lights-went-out.pdf"
+        ]
+      },
+      "uuid": "5ce0966c-0e03-4df7-8678-7d10781c0006",
+      "value": "BlackEnergy 3"
+    },
+    {
+      "description": "Conficker is a computer worm that targets Microsoft Windows and was first detected in November 2008. It targets a vulnerability (MS08-067) in Windows OS software and dictionary attacks on administrator passwords to propagate while forming a botnet. Conficker made its way onto computers and removable disk drives in a nuclear power plant.",
+      "meta": {
+        "Associated Software Descriptions": [
+          "Conficker",
+          "Downadup",
+          "Kido"
+        ],
+        "Techniques Used": [
+          "Loss of Availability - A Conficker infection at a nuclear power plant forced the facility to temporarily shutdown https://collaborate.mitre.org/attackics/index.php/Technique/T826",
+          "Replication Through Removable Media - Conficker exploits Windows drive shares. Once it has infected a computer, Conficker automatically copies itself to all visible open drive shares on other computers inside the network.2 Nuclear power plant officials suspect someone brought in Conficker by accident on a USB thumb drive, either from home or computers found in the power plant's facility https://collaborate.mitre.org/attackics/index.php/Technique/T847",
+          "Loss of Productivity and Revenue - A Conficker infection at a nuclear power plant forced the facility to shutdown and go through security procedures involved with such events, with its staff scanning computer systems and going through all the regular checks and motions before putting the plant back into production https://collaborate.mitre.org/attackics/index.php/Technique/T828"
+        ],
+        "refs": [
+          "https://news.softpedia.com/news/on-chernobyl-s-30th-anniversary-malware-shuts-down-german-nuclear-power-plant-503429.shtml"
+        ]
+      },
+      "uuid": "88b08418-dbcc-457b-b28a-9deeeac26745",
+      "value": "Conficker"
+    },
+    {
+      "description": "Duqu is a collection of computer malware discovered in 2011. It is reportedly related to the Stuxnet worm, although Duqu is not self-replicating.",
+      "meta": {
+        "Associated Software Descriptions": [
+          "Duqu"
+        ],
+        "Techniques Used": [
+          "Theft of Operational Information - Duqu’s purpose is to gather intelligence data and assets from entities such as industrial infrastructure and system manufacturers, amongst others not in the industrial sector, in order to more easily conduct a future attack against another third party https://collaborate.mitre.org/attackics/index.php/Technique/T882",
+          "Data from Information Repositories - Duqu downloads additional modules for the collection of data in information repositories. The modules are named: infostealer 1, infostealer 2 and reconnaissance https://collaborate.mitre.org/attackics/index.php/Technique/T811"
+        ],
+        "refs": [
+          "https://www.symantec.com/content/en/us/enterprise/media/security_response/whitepapers/w32_duqu_the_precursor_to_the_next_stuxnet.pdf"
+        ]
+      },
+      "uuid": "7bc3d4cd-786f-4913-983f-0d1fa9eb132f",
+      "value": "Duqu"
+    },
+    {
+      "description": "Flame is an attacker-instructed worm which may open a backdoor and steal information from a compromised computer. Flame has the capability to be used for industrial espionage.",
+      "meta": {
+        "Associated Software Descriptions": [
+          "Flame",
+          "Flamer",
+          "sKyWIper"
+        ],
+        "Techniques Used": [
+          "Theft of Operational Information - Flame can collect AutoCAD design data and visio diagrams as well as other documents that may contain operational information https://collaborate.mitre.org/attackics/index.php/Technique/T882",
+          "Data from Information Repositories - Flame has built-in modules to gather information from compromised computers https://collaborate.mitre.org/attackics/index.php/Technique/T811"
+        ],
+        "refs": [
+          "https://www.symantec.com/security-center/writeup/2012-052811-0308-99",
+          "https://www.welivesecurity.com/2012/07/20/flame-in-depth-code-analysis-of-mssecmgr-ocx/",
+          "https://www.fireeye.com/blog/threat-research/2012/05/flamerskywiper-analysis.html"
+        ]
+      },
+      "uuid": "ed2618d4-0450-4466-92c4-61b89a46960e",
+      "value": "Flame"
+    },
+    {
+      "description": "Industroyer is a sophisticated piece of malware designed to cause an Impact to the working processes of Industrial Control Systems (ICS), specifically ICSs used in electrical substations.1 Industroyer was alleged to be used in the attacks on the Ukrainian power grid in December 2016.",
+      "meta": {
+        "Associated Software Descriptions": [
+          "Industroyer",
+          "CRASHOVERRIDE"
+        ],
+        "Groups": [
+          "Sandworm"
+        ],
+        "Techniques Used": [
+          "Data Historian Compromise - In Industroyer, after pivoting into the ICS environment, the adversary gained Initial Access to devices involved with critical process operations through a Microsoft Windows Server 2003 running a SQL Server https://collaborate.mitre.org/attackics/index.php/Technique/T810",
+          "Block Command Message - In Industroyer the first COM port from the configuration file is used for the actual communication and the two other COM ports are just opened to prevent other processes accessing them. Thus, the IEC 101 payload component is able to take over and maintain control of the RTU device https://collaborate.mitre.org/attackics/index.php/Technique/T803",
+          "Block Serial COM - In Industroyer the first COM port from the configuration file is used for the actual communication and the two other COM ports are just opened to prevent other processes accessing them. Thus, the IEC 101 payload component is able to take over and maintain control of the RTU device https://collaborate.mitre.org/attackics/index.php/Technique/T805",
+          "Data Destruction - Industroyer has a destructive wiper that overwrites all ICS configuration files across the hard drives and all mapped network drives specifically targeting ABB PCM600 configuration files https://collaborate.mitre.org/attackics/index.php/Technique/T809",
+          "Masquerading - Industroyer modules operate by inhibiting the normal SCADA master communication functions and then activate a replacement master communication module managed by the malware, which executes a script of commands to issue normal protocol messages https://collaborate.mitre.org/attackics/index.php/Technique/T849",
+          "Network Connection Enumeration - Industroyer contains an IEC 61850 module that enumerates all connected network adapters to determine their TCP/IP subnet masks https://collaborate.mitre.org/attackics/index.php/Technique/T840",
+          "Remote System Discovery - The Industroyer IEC 61850 payload enumerates all possible IP addresses for each of the subnet masks for the interfaces on the infected machine, and tries to connect to port 102 on each of those addresses. Therefore, this component has the ability to discover relevant devices in the network automatically https://collaborate.mitre.org/attackics/index.php/Technique/T846",
+          "Control Device Identification - Industroyer contains an OPC DA module that enumerates all OPC servers using the ICatInformation::EnumClassesOfCategories method with CATID_OPCDAServer20 category identifier and IOPCServer::GetStatus to identify the ones running. The OPC DA module also uses IOPCBrowseServerAddressSpace to look for items with the following strings: ctlSelOn, ctlOperOn, ctlSelOff, ctlOperOff, Pos and stVal https://collaborate.mitre.org/attackics/index.php/Technique/T808",
+          "Serial Connection Enumeration - Industroyer contains modules for IEC 101 and IEC 104 communications.1 IEC 101 uses serial for the physical connection and IEC 104 uses Ethernet. Analysis of the malware by Dragos states that both of the modules have equivalent functionality.2 The IEC 104 module uses Network Connection Enumeration to determine the Ethernet adapters on the device. Since functionality between the two modules are equivalent, this implies that the IEC 101 module is able to detect serial interfaces on the device https://collaborate.mitre.org/attackics/index.php/Technique/T854",
+          "Control Device Identification - If the target device responds appropriately, the Industroyer IEC 61850 payload then sends an InitiateRequest packet using the Manufacturing Message Specification (MMS). If the expected answer is received, it continues, sending an MMS getNameList request. Thereby, the component compiles a list of object names in a Virtual Manufacturing Device https://collaborate.mitre.org/attackics/index.php/Technique/T808",
+          "Role Identification - The Industroyer IEC 61850 component enumerates the objects discovered in the previous step and sends the domain-specific getNameList requests with each object name. This enumerates named variables in a specific domain https://collaborate.mitre.org/attackics/index.php/Technique/T850",
+          "Activate Firmware Update Mode - The Industroyer SIPROTEC DoS module exploits the CVE-2015-5374 vulnerability in order to render a Siemens SIPROTEC device unresponsive. Once this vulnerability is successfully exploited, the target device stops responding to any commands until it is rebooted manually.1 Once the tool is executed it sends specifically crafted packets to port 50,000 of the target IP addresses using UDP. The UDP packet contains the following 18 byte payload: 0x11 49 00 00 00 00 00 00 00 00 00 00 00 00 00 00 28 9E https://collaborate.mitre.org/attackics/index.php/Technique/T800",
+          "Unauthorized Command Message - The Industroyer IEC 101 module has the capability to communicate with devices (likely RTUs) via the IEC 101 protocol. The module will attempt to find all Information Object Addresses (IOAs) for the device and attempt to change their state in the following sequence: OFF, ON, OFF https://collaborate.mitre.org/attackics/index.php/Technique/T855",
+          "Brute Force I/O - The Industroyer IEC 104 module has 3 modes available to perform its attack. These modes are range, shift, and sequence. The range mode operates in 2 stages. The first stage of range mode gathers Information Object Addresses (IOA) and sends select and execute packets to switch the state. The second stage of range mode has an infinite loop where it will switch the state of all of the previously discovered IOAs. Shift mode is similar to range mode, but instead of staying within the same range, it will add a shift value to the default range values https://collaborate.mitre.org/attackics/index.php/Technique/T806",
+          "Device Restart/Shutdown - The Industroyer SIPROTEC DoS module exploits the CVE-2015-5374 vulnerability in order to render a Siemens SIPROTEC device unresponsive. Once this vulnerability is successfully exploited, the target device stops responding to any commands until it is rebooted manually.1 Once the tool is executed it sends specifically crafted packets to port 50,000 of the target IP addresses using UDP. The UDP packet contains the following 18 byte payload: 0x11 49 00 00 00 00 00 00 00 00 00 00 00 00 00 00 28 9E https://collaborate.mitre.org/attackics/index.php/Technique/T816",
+          "Denial of Service - The Industroyer SIPROTEC DoS module exploits the CVE-2015-5374 vulnerability in order to render a Siemens SIPROTEC device unresponsive. Once this vulnerability is successfully exploited, the target device stops responding to any commands until it is rebooted manually.1 Once the tool is executed it sends specifically crafted packets to port 50,000 of the target IP addresses using UDP. The UDP packet contains the following 18 byte payload: 0x11 49 00 00 00 00 00 00 00 00 00 00 00 00 00 00 28 9E https://collaborate.mitre.org/attackics/index.php/Technique/T814",
+          "Activate Firmware Update Mode - The Industroyer SPIROTEC DoS module places the victim device into firmware update mode. This is a legitimate use case under normal circumstances, but in this case is used the adversary to prevent the SPIROTEC from performing its designed protective functions. As a result the normal safeguards are disabled, leaving an unprotected link in the electric transmission https://collaborate.mitre.org/attackics/index.php/Technique/T800",
+          "Automated Collection - Industroyer automatically collects protocol object data to learn about control devices in the environment https://collaborate.mitre.org/attackics/index.php/Technique/T802",
+          "Loss of Control - Industroyer's data wiper component removes the registry image path throughout the system and overwrites all files, rendering the system unusable https://collaborate.mitre.org/attackics/index.php/Technique/T827",
+          "Loss of View - Industroyer's data wiper component removes the registry image path throughout the system and overwrites all files, rendering the system unusable https://collaborate.mitre.org/attackics/index.php/Technique/T829",
+          "Manipulation of Control - Industroyer toggles breakers to the open state utilizing unauthorized command messages https://collaborate.mitre.org/attackics/index.php/Technique/T831",
+          "Service Stop - Industroyer has the capability to stop a service itself, or to login as a user and stop a service as that user https://collaborate.mitre.org/attackics/index.php/Technique/T881",
+          "Block Reporting Message - Industroyer uses the first COM port from the configuration file for the communication and the other two COM ports are opened to prevent other processes accessing them. This may block processes or operators from getting reporting messages from a device. https://collaborate.mitre.org/attackics/index.php/Technique/T804",
+          "Denial of Control - Industroyer is able to block serial COM channels temporarily causing a denial of control https://collaborate.mitre.org/attackics/index.php/Technique/T813",
+          "Denial of View - Industroyer is able to block serial COM channels temporarily causing a denial of view https://collaborate.mitre.org/attackics/index.php/Technique/T815",
+          "Command-Line Interface - The name of the Industroyer payload DLL is supplied by the attackers via a command line parameter supplied in one of the main backdoor’s “execute a shell command” commands https://collaborate.mitre.org/attackics/index.php/Technique/T807",
+          "Manipulation of View - Industroyer's OPC module can brute force values and will send out a 0x01 status which for the target systems equates to a “Primary Variable Out of Limits” misdirecting operators from understanding protective relay status https://collaborate.mitre.org/attackics/index.php/Technique/T832",
+          "Loss of Safety - Industroyer contained a module which leveraged a vulnerability in the Siemens SIPROTEC relays (CVE-2015-5374) to create a Denial of Service against automated protective relays https://collaborate.mitre.org/attackics/index.php/Technique/T880"
+        ],
+        "refs": [
+          "https://www.welivesecurity.com/wp-content/uploads/2017/06/Win32_Industroyer.pdf",
+          "https://dragos.com/blog/crashoverride/CrashOverride-01.pdf",
+          "https://www.us-cert.gov/ncas/alerts/TA17-163A",
+          "https://dragos.com/wp-content/uploads/CRASHOVERRIDE2018.pdf",
+          "https://dragos.com/wp-content/uploads/CRASHOVERRIDE.pdf"
+        ]
+      },
+      "uuid": "d13b0ff8-9125-4990-8ec1-94782b4e22df",
+      "value": "Industroyer"
+    },
+    {
+      "description": "In 2015 the BlackEnergy malware contained a component called KillDisk. KillDisk's main functionality is to overwrite files with random data, rendering the OS unbootable.",
+      "meta": {
+        "Associated Software Descriptions": [
+          "KillDisk"
+        ],
+        "Techniques Used": [
+          "Loss of View - KillDisk erases the master boot record (MBR) and system logs, leaving the system unusable https://collaborate.mitre.org/attackics/index.php/Technique/T829",
+          "Data Destruction - KillDisk is able to delete system files to make the system unbootable and targets 35 different types of files for deletion https://collaborate.mitre.org/attackics/index.php/Technique/T809",
+          "Indicator Removal on Host - KillDisk deletes application, security, setup, and system event logs from Windows systems https://collaborate.mitre.org/attackics/index.php/Technique/T872",
+          "Service Stop - KillDisk looks for and terminates two non-standard processes, one of which is an ICS application https://collaborate.mitre.org/attackics/index.php/Technique/T881"
+        ],
+        "refs": [
+          "https://www.welivesecurity.com/2016/01/03/blackenergy-sshbeardoor-details-2015-attacks-ukrainian-news-media-electric-industry/",
+          "https://www.boozallen.com/content/dam/boozallen/documents/2016/09/ukraine-report-when-the-lights-went-out.pdf"
+        ]
+      },
+      "uuid": "df960d5e-481a-47fe-8577-427057553a1b",
+      "value": "KillDisk"
+    },
+    {
+      "description": "LockerGoga is ransomware that has been tied to various attacks on industrial and manufacturing firms with apparently catastrophic consequences.",
+      "meta": {
+        "Associated Software Descriptions": [
+          "LockerGoga"
+        ],
+        "Techniques Used": [
+          "Loss of Productivity and Revenue - While Norsk Hydro attempted to recover from a LockerGoga infection, most of its 160 manufacturing locations switched to manual (non-IT driven) operations. Manual operations can result in a loss of productivity https://collaborate.mitre.org/attackics/index.php/Technique/T828",
+          "Loss of View - Some of Norsk Hydro's production systems were impacted by a LockerGoga infection. This resulted in a loss of view which forced the company to switch to manual operations https://collaborate.mitre.org/attackics/index.php/Technique/T829",
+          "Loss of Control - Some of Norsk Hydro's production systems were impacted by a LockerGoga infection. This resulted in a loss of control which forced the company to switch to manual operations https://collaborate.mitre.org/attackics/index.php/Technique/T827"
+        ],
+        "refs": [
+          "https://www.wired.com/story/lockergoga-ransomware-crippling-industrial-firms/",
+          "https://doublepulsar.com/how-lockergoga-took-down-hydro-ransomware-used-in-targeted-attacks-aimed-at-big-business-c666551f5880",
+          "https://www.hydro.com/en/media/on-the-agenda/cyber-attack/"
+        ]
+      },
+      "uuid": "6187b975-7d80-4eb3-9c5a-89d07f2e3512",
+      "value": "LockerGoga"
+    },
+    {
+      "description": "NotPetya is malware that was first seen in a worldwide attack starting on June 27, 2017. The main purpose of the malware appeared to be to effectively destroy data and disk structures on compromised systems. Though NotPetya presents itself as a form of ransomware, it appears likely that the attackers never intended to make the encrypted data recoverable. As such, NotPetya may be more appropriately thought of as a form of wiper malware. NotPetya contains self-propagating (“wormable”) features to spread itself across a computer network using the SMBv1 exploits EternalBlue and EternalRomance.",
+      "meta": {
+        "Associated Software Descriptions": [
+          "NotPetya"
+        ],
+        "Groups": [
+          "Sandworm"
+        ],
+        "Techniques Used": [
+          "Exploitation of Remote Services - NotPetya initially infected IT networks, but by means of an exploit (particularly the SMBv1-targeting MS17-010 vulnerability) spread to industrial networks https://collaborate.mitre.org/attackics/index.php/Technique/T866",
+          "External Remote Services - NotPetya can utilize exposed SMB services to access industrial networks https://collaborate.mitre.org/attackics/index.php/Technique/T822",
+          "Remote File Copy - NotPetya can move laterally through industrial networks by means of the SMB service https://collaborate.mitre.org/attackics/index.php/Technique/T867",
+          "Loss of Productivity and Revenue - NotPetya disrupted manufacturing facilities supplying vaccines, resulting in a halt of production and the inability to meet demand for specific vaccines https://collaborate.mitre.org/attackics/index.php/Technique/T828"
+        ],
+        "refs": [
+          "https://attack.mitre.org/software/S0368/",
+          "https://dragos.com/blog/industry-news/implications-of-it-ransomware-for-ics-environments/",
+          "https://www.bloomberg.com/news/features/2019-12-03/merck-cyberattack-s-1-3-billion-question-was-it-an-act-of-war"
+        ]
+      },
+      "uuid": "564c7c31-234f-4427-aab7-80d40183a1e9",
+      "value": "NotPetya"
+    },
+    {
+      "description": "PLC-Blaster is a piece of proof-of-concept malware that runs on Siemens S7 PLCs. This worm locates other Siemens S7 PLCs on the network and attempts to infect them. Once this worm has infected its target and attempted to infect other devices on the network, the worm can then run one of many modules.",
+      "meta": {
+        "Associated Software Descriptions": [
+          "PLC-Blaster"
+        ],
+        "Techniques Used": [
+          "Remote System Discovery - PLC-Blaster scans the network to find other Siemens S7 PLC devices to infect. It locates these devices by checking for a service listening on TCP port 102 https://collaborate.mitre.org/attackics/index.php/Technique/T846",
+          "Control Device Identification - The PLC-Blaster worm starts by scanning for probable targets. Siemens SIMATIC PLCs may be identified by the port 102/tcp https://collaborate.mitre.org/attackics/index.php/Technique/T808",
+          "Program Organization Units - PLC-Blaster copies itself to various Program Organization Units (POU) on the target device. The POUs include the Organization Block, Data Block, Function, and Function Block https://collaborate.mitre.org/attackics/index.php/Technique/T844",
+          "Manipulate I/O Image - PLC-Blaster may manipulate any outputs of the PLC. Using the POU POKE any value within the process image may be modified https://collaborate.mitre.org/attackics/index.php/Technique/T835",
+          "Execution through API - PLC-Blaster utilizes the PLC communication and management API to load executable Program Organization Units https://collaborate.mitre.org/attackics/index.php/Technique/T871",
+          "Change Program State - After PLC-Blaster is transferred to a PLC, the PLC begins execution of PLC-Blaster https://collaborate.mitre.org/attackics/index.php/Technique/T875",
+          "Denial of Service - The execution on the PLC can be stopped by violating the cycle time limit. The PLC-Blaster implements an endless loop triggering an error condition within the PLC with the impact of a DoS https://collaborate.mitre.org/attackics/index.php/Technique/T814"
+        ],
+        "refs": [
+          "https://www.blackhat.com/docs/asia-16/materials/asia-16-Spenneberg-PLC-Blaster-A-Worm-Living-Solely-In-The-PLC-wp.pdf"
+        ]
+      },
+      "uuid": "f0db07ce-a13b-4c6e-9ba5-fe2be3080ace",
+      "value": "PLC-Blaster"
+    },
+    {
+      "description": "Ryuk is ransomware that was first seen targeting large organizations for high-value ransoms in August of 2018. Ryuk temporarily disrupted operations at a manufacturing firm in 2018.",
+      "meta": {
+        "Associated Software Descriptions": [
+          "Ryuk"
+        ],
+        "Techniques Used": [
+          "Loss of Productivity and Revenue - An enterprise resource planning (ERP) manufacturing server was lost to the Ryuk attack. The manufacturing process had to rely on paper and existing orders to keep the shop floor open https://collaborate.mitre.org/attackics/index.php/Technique/T828"
+        ],
+        "refs": [
+          "https://www.crowdstrike.com/blog/big-game-hunting-with-ryuk-another-lucrative-targeted-ransomware/",
+          "https://www.darkreading.com/attacks-breaches/how-a-manufacturing-firm-recovered-from-a-devastating-ransomware-attack/d/d-id/1334760"
+        ]
+      },
+      "uuid": "707075af-cabd-404d-8eb9-7c1ba063ac88",
+      "value": "Ryuk"
+    },
+    {
+      "description": "Stuxnet was the first publicly reported piece of malware to specifically target industrial control systems devices. Stuxnet is a large and complex piece of malware that utilized multiple different complex tactics including multiple zero-day vulnerabilites, a sophisticated Windows rootkit, and network infection routines.",
+      "meta": {
+        "Associated Software Descriptions": [
+          "Stuxnet"
+        ],
+        "Techniques Used": [
+          "Remote System Discovery - Stuxnet scanned the network to identify the Siemens PLCs that it was targeting https://collaborate.mitre.org/attackics/index.php/Technique/T846",
+          "Rootkit - One of Stuxnet's rootkits is contained entirely in the fake s7otbxdx.dll. In order to continue existing undetected on the PLC it needs to account for at least the following situations: read requests for its own malicious code blocks, read requests for infected blocks (OB1, OB35, DP_RECV), and write requests that could overwrite Stuxnet’s own code. Stuxnet contains code to monitor and intercept these types of requests. The rootkit modifies these requests so that Stuxnet’s PLC code is not discovered or damaged https://collaborate.mitre.org/attackics/index.php/Technique/T851",
+          "Manipulate I/O Image - When the peripheral output is written to, sequence C intercepts the output and ensures it is not written to the process image output. The output is the instructions the PLC sends to a device to change its operating behavior. By intercepting the peripheral output, Stuxnet prevents an operator from noticing unauthorized commands sent to the peripheral https://collaborate.mitre.org/attackics/index.php/Technique/T835",
+          "Control Device Identification - The Siemens s7otbxdx.dll is responsible for handling PLC block exchange between the programming device (i.e., a computer running a Simatic manager on Windows) and the PLC. s7db_open function is an export hook that is used to obtain information used to create handles to manage a PLC (such a handle is used by APIs that manipulate the PLC). Stuxnet utilized this export hook to gain information about targeted PLCs such as model information. Stuxnet was specifically targeting CPUs 6ES7-315-2 (Series 300) with special system data block characteristics for sequence A or B and 6ES7-315-2 for sequence C. The PLC type can also be checked using the s7ag_read_szl API https://collaborate.mitre.org/attackics/index.php/Technique/T808",
+          "I/O Module Discovery - Stuxnet enumerates and parses the System Data Blocks (SDB). Stuxnet must find an SDB with the DWORD at offset 50h equal to 0100CB2Ch. This specifies that the system uses the Profibus communications processor module CP 342-5. In addition, specific values are searched for and counted: 7050h and 9500h. 7050h is assigned to part number KFC750V3 which appears to be a frequency converter drive (also known as variable frequency drive) manufactured by Fararo Paya in Teheran, Iran. 9500h is assigned to Vacon NX frequency converter drives manufactured by Vacon based in Finland https://collaborate.mitre.org/attackics/index.php/Technique/T824",
+          "Network Sniffing - DP_RECV is the name of a standard function block used by network coprocessors. It is used to receive network frames on the Profibus – a standard industrial network bus used for distributed I/O. The original block is copied to FC1869, and then replaced by a malicious block. Each time the function is used to receive a packet, the malicious Stuxnet block takes control: it will call the original DP_RECV in FC1869 and then perform postprocessing on the packet data. This secondary thread is used to monitor a data block DB890 of sequence A or B. Though constantly running and probing this block (every 5 minutes), this thread has no purpose if the PLC is not infected. The purpose of the thread is to monitor each S7-315 on the bus. The replaced DP_RECV block (later on referred to as the “DP_RECV monitor”) is meant to monitor data sent by the frequency converter drives to the 315-2 CPU via CP 342-5 Profibus communication modules https://collaborate.mitre.org/attackics/index.php/Technique/T842",
+          "Monitor Process State - Stuxnet examines fields recorded by the DP_RECV monitor to determine if the target system is in a particular state of operation https://collaborate.mitre.org/attackics/index.php/Technique/T801",
+          "Modify Parameter - In states 3 and 4 Stuxnet sends two network bursts (done through the DP_SEND primitive). The data in the frames are instructions for the frequency converter drives. For example one of the frames contains records that change the maximum frequency (the speed at which the motor will operate). The frequency converter drives consist of parameters, which can be remotely configured via Profibus. One can write new values to these parameters changing the behavior of the device https://collaborate.mitre.org/attackics/index.php/Technique/T836",
+          "Manipulation of Control - Stuxnet can reprogram a PLC and change critical parameters in such a way that legitimate commands can be overridden or intercepted. In addition, Stuxnet can apply inappropriate command sequences or parameters to cause damage to property https://collaborate.mitre.org/attackics/index.php/Technique/T831",
+          "Program Download - Stuxnet infects PLCs with different code depending on the characteristics of the target system. An infection sequence consists of code blocks and data blocks that will be downloaded to the PLC to alter its behavior https://collaborate.mitre.org/attackics/index.php/Technique/T843",
+          "Program Organization Units - Stuxnet infects PLCs with different code depending on the characteristics of the target system. An infection sequence consists of code blocks and data blocks that will be downloaded to the PLC to alter its behavior https://collaborate.mitre.org/attackics/index.php/Technique/T844",
+          "Project File Infection - Stuxnet copies itself into Step 7 projects in such a way that it automatically executes when the Step 7 project is loaded https://collaborate.mitre.org/attackics/index.php/Technique/T873",
+          "Hooking - Stuxnet modifies the Import Address Tables DLLs to hook specific APIs that are used to open project files https://collaborate.mitre.org/attackics/index.php/Technique/T874",
+          "Unauthorized Command Message - In states 3 and 4 Stuxnet sends two network bursts (done through the DP_SEND primitive). The data in the frames are instructions for the frequency converter drives https://collaborate.mitre.org/attackics/index.php/Technique/T855",
+          "Change Program State - Stuxnet halts the original PLC code and the malicious PLC code begins sending frames of data based on the recorded values during the DP_RECV monitor phase https://collaborate.mitre.org/attackics/index.php/Technique/T875",
+          "I/O Image - Stuxnet copies the input area of an I/O image into data blocks with a one second interval between copies, forming a 21 second recording of the input area. The input area contains information being passed to the PLC from a peripheral. For example, the current state of a valve or the temperature of a device https://collaborate.mitre.org/attackics/index.php/Technique/T877",
+          "Rootkit - When the peripheral output is written to, sequence C of Stuxnet intercepts the output and ensures it is not written to the process image output. The output is the instructions the PLC sends to a device to change its operating behavior. By intercepting the peripheral output, Stuxnet prevents an operator from noticing unauthorized commands sent to the peripheral https://collaborate.mitre.org/attackics/index.php/Technique/T851",
+          "Masquerading - Stuxnet renames a dll responsible for handling communications with a PLC. It replaces the original .dll file with its own version that allows it to intercept any calls that are made to access the PLC https://collaborate.mitre.org/attackics/index.php/Technique/T849",
+          "Execution through API - Stuxnet utilizes the PLC communication and management API to load executable Program Organization Units https://collaborate.mitre.org/attackics/index.php/Technique/T871",
+          "Standard Application Layer Protocol - Stuxnet attempts to contact command and control servers over HTTP to send basic information about the computer it has compromised https://collaborate.mitre.org/attackics/index.php/Technique/T869",
+          "Commonly Used Port - Stuxnet attempts to contact command and control servers on port 80 to send basic information about the computer it has compromised https://collaborate.mitre.org/attackics/index.php/Technique/T885",
+          "Replication Through Removable Media - Stuxnet was able to self-replicate by being spread through removable drives. A willing insider or unknown third party, such as a contractor, may have brought the removable media into the target environment.1 The earliest version of Stuxnet relied on physical installation, infecting target systems when an infected configuration file carried by a USB stick was opened https://collaborate.mitre.org/attackics/index.php/Technique/T847",
+          "Man in the Middle - Stuxnet de-couples all inputs and signals from the legitimate code on a PLC and chooses what is passed to the original code. STUXNET effectively creates a man in the middle attack with the input and output signals and control logic https://collaborate.mitre.org/attackics/index.php/Technique/T830",
+          "Program Upload - Stuxnet replaces the DLL responsible for reading projects from a PLC to the step7 software. This allows Stuxnet the ability to upload a program from the PLC https://collaborate.mitre.org/attackics/index.php/Technique/T845",
+          "Manipulation of View - Stuxnet manipulates the view of operators replaying process input and manipulating the I/O image to evade detection and inhibit protection functions https://collaborate.mitre.org/attackics/index.php/Technique/T832",
+          "Engineering Workstation Compromise - Stuxnet utilized an engineering workstation as the initial access point for PLC devices https://collaborate.mitre.org/attackics/index.php/Technique/T818",
+          "Damage to Property - Stuxnet attacks were designed to over-pressure and damage centrifuge rotors by manipulating process pressure and rotor speeds over time. One focused on a routine to change centrifuge rotor speeds, while the other manipulated critical resonance speeds to over-pressure them https://collaborate.mitre.org/attackics/index.php/Technique/T879"
+        ],
+        "refs": [
+          "https://www.wired.com/images_blogs/threatlevel/2010/11/w32_stuxnet_dossier.pdf",
+          "https://www.symantec.com/security-center/writeup/2010-071400-3123-99",
+          "https://www.us-cert.gov/ics/advisories/ICSA-10-238-01B",
+          "https://scadahacker.com/resources/stuxnet-mitigation.html",
+          "https://www.langner.com/wp-content/uploads/2017/03/to-kill-a-centrifuge.pdf"
+        ]
+      },
+      "uuid": "119f4adc-b15c-48e0-8208-dae63673bb46",
+      "value": "Stuxnet"
+    },
+    {
+      "description": "Triton is an attack framework built to interact with Triconex Safety Instrumented System (SIS) controllers",
+      "meta": {
+        "Associated Software Descriptions": [
+          "Triton",
+          "TRISIS",
+          "Hatman"
+        ],
+        "Groups": [
+          "XENOTIME"
+        ],
+        "Techniques Used": [
+          "Utilize/Change Operating Mode - Triton is able to modify code if the Triconex SIS Controller is configured with the physical keyswitch in ‘program mode’ during operation. If the controller is placed in Run mode (program changes not permitted), arbitrary changes in logic are not possible substantially reducing the likelihood of manipulation. Once the Triton implant is installed on the SIS it is able to conduct any operation regardless of any future position of the keyswitch https://collaborate.mitre.org/attackics/index.php/Technique/T858",
+          "Unauthorized Command Message - Using Triton, an adversary can manipulate the process into an unsafe state from the DCS while preventing the SIS from functioning appropriately https://collaborate.mitre.org/attackics/index.php/Technique/T855",
+          "Masquerading - The Triton malware was configured to masquerade as trilog.exe, which is the Triconex software for analyzing SIS logs https://collaborate.mitre.org/attackics/index.php/Technique/T849",
+          "Modify Control Logic - Triton can reprogram the SIS logic to cause it to trip and shutdown a process that is, in actuality, in a safe state. In other words, trigger a false positive. Triton also can reprogram the SIS logic to allow unsafe conditions to persist.1 The Triton malware is able to add a malicious program to the execution table of the controller. This action leaves the legitimate programs in place. If the controller failed, Triton would attempt to return it to a running state. If the controller did not recover within a certain time window, the sample would overwrite the malicious program to cover its tracks https://collaborate.mitre.org/attackics/index.php/Technique/T833",
+          "Scripting - In the version of Triton available at the time of publication, the component that programs the Triconex controllers is written entirely in Python. The modules that implement the communciation protocol and other supporting components are found in a separate file -- library.zip -- which the main script that employs this functionality is compiled into a standalone Windows executable -- trilog.exe -- that includes a Python environment https://collaborate.mitre.org/attackics/index.php/Technique/T853",
+          "Remote System Discovery - Triton uses a Python script that is capable of detecting Triconex controllers on the network by sending a specific UDP broadcast packet over port 1502 https://collaborate.mitre.org/attackics/index.php/Technique/T846",
+          "System Firmware - The malicious shellcode Triton uses is split into two separate pieces -- inject.bin and imain.bin. The former program is more generic code that handles injecting the payload into the running firmware, while the latter is the payload that actually performs the additional malicious functionality. The payload --imain.bin-- is designed to take a TriStation protocol get main processor diagnostic data command, look for a specially crafted packet body, and perform custom actions on demand. It is able to read and write memory on the safety controller and execute code at an arbitrary address within the firmware. In addition, if the memory address it writes to is within the firmware region, it disables address translation, writes the code at the provided address, flushes the instruction cache, and re-enables address translation. This allows the malware to make changes to the running firmware in memory. This allows Triton to change how the device operates and would allow for the modification of other actions that the Triton controller might make https://collaborate.mitre.org/attackics/index.php/Technique/T857",
+          "Scripting - A Python script seen in Triton communicates using four Python modules—TsBase, TsLow, TsHi, and TS_cnames—that collectively implement the TriStation network protocol (“TS”, via UDP 1502); this is the protocol that the TriStation TS1131 software uses to communicate with Triconex safety PLCs https://collaborate.mitre.org/attackics/index.php/Technique/T853",
+          "Exploitation for Evasion - Triton disables a firmware RAM/ROM consistency check, injects a payload (imain.bin) into the firmware memory region, and changes a jumptable entry to point to the added code 384. In Schneider Electric Triconex Tricon MP model 3008 firmware versions 10.0-10.4, system calls read directly from memory addresses within the control program area without any verification. Manipulating this data could allow adversary data to be copied anywhere within memory.910 Triconex systems include continuous means of detection including checksums for firmware and program integrity, memory and memory reference integrity, and configuration https://collaborate.mitre.org/attackics/index.php/Technique/T820",
+          "Control Device Identification - The Triton Python script is also capable of autodetecting Triconex controllers on the network by sending a specific UDP broadcast packet over port 1502 https://collaborate.mitre.org/attackics/index.php/Technique/T808",
+          "Engineering Workstation Compromise - The Triton malware gained remote access to an SIS engineering workstation https://collaborate.mitre.org/attackics/index.php/Technique/T818",
+          "Loss of Safety - Triton has the capability to reprogram the SIS logic to allow unsafe conditions to persist or reprogram the SIS to allow an unsafe state – while using the DCS to create an unsafe state or hazard https://collaborate.mitre.org/attackics/index.php/Technique/T880",
+          "Program Download - Triton leveraged the TriStation protocol to download programs onto Triconex Safety Instrumented System https://collaborate.mitre.org/attackics/index.php/Technique/T843",
+          "ndicator Removal on Host - Triton would reset the controller to the previous state over TriStation and if this failed it would write a dummy program to memory in what was likely an attempt at anti-forensics https://collaborate.mitre.org/attackics/index.php/Technique/T872",
+          "Commonly Used Port - Triton framework can communicate with the implant utilizing the TriStation 'get main processor diagnostic data' command and looks for a specifically crafted packet body from which it extracts a command value and its arguments https://collaborate.mitre.org/attackics/index.php/Technique/T885",
+          "Execution through API - Triton leverages a reconstructed TriStation protocol within its framework to trigger APIs related to program download, program allocation, and program changes https://collaborate.mitre.org/attackics/index.php/Technique/T871",
+          "Detect Program State - Triton contains a file named TS_cnames.py which contains default definitions for program state (TS_progstate). Program state is referenced in TsHi.py https://collaborate.mitre.org/attackics/index.php/Technique/T870",
+          "Detect Operating Mode - Triton contains a file named TS_cnames.py which contains default definitions for key state (TS_keystate). Key state is referenced in TsHi.py https://collaborate.mitre.org/attackics/index.php/Technique/T868",
+          "Change Program State - Triton has the ability to halt or run a program through the TriStation protocol. TsHi.py contains instances of halt and run functions being executed https://collaborate.mitre.org/attackics/index.php/Technique/T875"
+        ],
+        "refs": [
+          "https://www.fireeye.com/blog/threat-research/2017/12/attackers-deploy-new-ics-attack-framework-triton.html",
+          "https://dragos.com/blog/trisis/TRISIS-01.pdf",
+          "https://ics-cert.us-cert.gov/sites/default/files/documents/MAR-17-352-01%20HatMan%20-%20Safety%20System%20Targeted%20Malware%20%28Update%20B%29.pdf",
+          "https://www.youtube.com/watch?v=f09E75bWvkk&index=3&list=PL8OWO1qWXF4qYG19p7An4Vw3N2YZ86aRS&t=0s",
+          "https://www.youtube.com/watch?v=XwSJ8hloGvY",
+          "https://download.schneider-electric.com/files?p_enDocType=Technical+leaflet&p_File_Name=SEVD-2017-347-01+Triconex+V3.pdf&p_Doc_Ref=SEVD-2017-347-01",
+          "https://www.midnightbluelabs.com/blog/2018/1/16/analyzing-the-triton-industrial-malware",
+          "https://ics-cert.us-cert.gov/advisories/ICSA-18-107-02",
+          "https://nvd.nist.gov/vuln/detail/CVE-2018-8872",
+          "https://cwe.mitre.org/data/definitions/119.html",
+          "https://www.nrc.gov/docs/ML1209/ML120900890.pdf",
+          "https://github.com/MDudek-ICS/TRISIS-TRITON-HATMAN/tree/master/decompiled_code/library"
+        ]
+      },
+      "uuid": "e98dca35-5141-4b6c-87e1-9ee36a92d54e",
+      "value": "Triton"
+    },
+    {
+      "description": "VPNFilter is a multi-stage, modular platform with versatile capabilities to support both intelligence-collection and destructive cyber attack operations. VPNFilter modules such as its packet sniffer ('ps') can collect traffic that passes through an infected device, allowing the theft of website credentials and monitoring of Modbus SCADA protocols",
+      "meta": {
+        "Associated Software Descriptions": [
+          "VPNFilter"
+        ],
+        "Techniques Used": [
+          "Network Sniffing - The VPNFilter packet sniffer looks for basic authentication as well as monitors ICS traffic, and is specific to the TP-LINK R600-VPN. The malware uses a raw socket to look for connections to a pre-specified IP address, only looking at TCP packets that are 150 bytes or larger. Packets that are not on port 502, are scanned for BasicAuth, and that information is logged. This may have allowed credential harvesting from communications between devices accessing a modbus-enabled HMI https://collaborate.mitre.org/attackics/index.php/Technique/T842",
+          "Control Device Identification - The VPNFilter packet sniffer monitors ICS traffic, and is specific to the TP-LINK R600-VPN. The malware uses a raw socket to look for connections to a pre-specified IP address, only looking at TCP packets that are 150 bytes or larger. 'ps' identifies and logs on IPs and ports, but not the packet contents on port 502 (Modbus traffic). It does not validate the traffic as Modbus https://collaborate.mitre.org/attackics/index.php/Technique/T808"
+        ],
+        "refs": [
+          "https://blog.talosintelligence.com/2018/06/vpnfilter-update.html",
+          "https://www.youtube.com/watch?v=yuZazP22rpI"
+        ]
+      },
+      "uuid": "cea7e5ff-cfde-4856-9829-acd7166cd1f9",
+      "value": "VPNFilter"
+    },
+    {
+      "description": "WannaCry is ransomware that was first seen in a global attack during May 2017, which affected more than 150 countries. It contains self-propagating (“wormable”) features to spread itself across a computer network using the SMBv1 exploit EternalBlue.",
+      "meta": {
+        "Associated Software Descriptions": [
+          "WannaCry"
+        ],
+        "Groups": [
+          "Lazarus group"
+        ],
+        "Techniques Used": [
+          "Exploitation of Remote Services - WannaCry initially infected IT networks, but by means of an exploit (particularly the SMBv1-targeting MS17-010 vulnerability) spread to industrial networks https://collaborate.mitre.org/attackics/index.php/Technique/T866",
+          "External Remote Services - WannaCry can utilize exposed SMB services to access industrial networks https://collaborate.mitre.org/attackics/index.php/Technique/T822",
+          "Remote File Copy - WannaCry can move laterally through industrial networks by means of the SMB service https://collaborate.mitre.org/attackics/index.php/Technique/T867"
+        ],
+        "refs": [
+          "https://attack.mitre.org/software/S0366/",
+          "https://www.us-cert.gov/ncas/alerts/TA17-132A",
+          "https://dragos.com/blog/industry-news/implications-of-it-ransomware-for-ics-environments/"
+        ]
+      },
+      "uuid": "2901adef-0da6-4c1e-854b-b4e4e0d8e15a",
+      "value": "WannaCry"
+    }
+  ],
+  "version": 1
+}
