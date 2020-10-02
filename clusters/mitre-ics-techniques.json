@@ -12,7 +12,7 @@
     {
       "description": "Adversaries may activate firmware update mode on devices to prevent expected response functions from engaging in reaction to an emergency or process malfunction. For example, devices such as protection relays may have an operation mode designed for firmware installation. This mode may halt process monitoring and related functions to allow new firmware to be loaded. A device left in update mode may be placed in an inactive holding state if no firmware is provided to it. By entering and leaving a device in this mode, the adversary may deny its usual functionalities.",
       "meta": {
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "The Industroyer SPIROTEC DoS module places the victim device into firmware update mode. This is a legitimate use case under normal circumstances, but in this case is used the adversary to prevent the SPIROTEC from performing its designed protective functions. As a result the normal safeguards are disabled, leaving an unprotected link in the electric transmission",
           "The Industroyer SIPROTEC DoS module exploits the CVE-2015-5374 vulnerability in order to render a Siemens SIPROTEC device unresponsive. Once this vulnerability is successfully exploited, the target device stops responding to any commands until it is rebooted manually. Once the tool is executed it sends specifically crafted packets to port 50,000 of the target IP addresses using UDP. The UDP packet contains the following 18 byte payload: 0x11 49 00 00 00 00 00 00 00 00 00 00 00 00 00 00 28 9E"
         ],
@@ -50,7 +50,7 @@
     {
       "description": "Adversaries may automate collection of industrial environment information using tools or scripts. This automated collection may leverage native control protocols and tools available in the control systems environment. For example, the OPC protocol may be used to enumerate and gather information. Access to a system or interface with these native protocols may allow collection and enumeration of other attached, communicating servers and devices.",
       "meta": {
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "Using OPC, a component of Backdoor.Oldrea gathers any details about connected devices and sends them back to the C2 for the attackers to analyze.",
           "Industroyer automatically collects protocol object data to learn about control devices in the environment."
         ],
@@ -77,7 +77,7 @@
           "Monitor the network for expected outcomes and to detect unexpected states.",
           "Implement antivirus and malware detection tools to protect against threats, such as code enabling improper network access."
         ],
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "In Industroyer the first COM port from the configuration file is used for the actual communication and the two other COM ports are just opened to prevent other processes accessing them. Thus, the IEC 101 payload component is able to take over and maintain control of the RTU device."
         ],
         "Tactic": [
@@ -106,7 +106,7 @@
           "Implement antivirus and malware detection tools to protect against threats, such as code enabling improper network access.",
           "Authenticate wireless usersâ€™ access with a secure IEEE 802.1x authentication protocol, that authenticates users via user certificates or a Remote Authentication Dial In User Service (RADIUS) server."
         ],
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "Industroyer uses the first COM port from the configuration file for the communication and the other two COM ports are opened to prevent other processes accessing them. This may block processes or operators from getting reporting messages from a device."
         ],
         "Tactic": [
@@ -135,7 +135,7 @@
           "Use only authorized media in the physical environment and be aware of anomalies. Take care to keep backups and stored data in secure, protected locations.",
           "Implement antivirus and malware detection tools to detect improper access to serial COM by malicious or unexpected programs. Maintain environmental awareness to help detect instances when a serial COM may be blocked, resulting in commands or reports not being carried out."
         ],
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "In Industroyer the first COM port from the configuration file is used for the actual communication and the two other COM ports are just opened to prevent other processes accessing them. Thus, the IEC 101 payload component is able to take over and maintain control of the RTU device."
         ],
         "Tactic": [
@@ -155,7 +155,7 @@
     {
       "description": "Adversaries may brute force I/O addresses on a device and attempt to exhaustively perform an action. By enumerating the full range of I/O addresses, an adversary may manipulate a process function without having to target specific I/O interfaces. More than one process function manipulation and enumeration pass may occur on the targeted I/O range in a brute force attempt.",
       "meta": {
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "The Industroyer IEC 104 module has 3 modes available to perform its attack. These modes are range, shift, and sequence. The range mode operates in 2 stages. The first stage of range mode gathers Information Object Addresses (IOA) and sends select and execute packets to switch the state. The second stage of range mode has an infinite loop where it will switch the state of all of the previously discovered IOAs. Shift mode is similar to range mode, but instead of staying within the same range, it will add a shift value to the default range values."
         ],
         "Tactic": [
@@ -174,7 +174,7 @@
     {
       "description": "Adversaries may attempt to change the state of the current program on a control device. Program state changes may be used to allow for another program to take over control or be loaded onto the device.",
       "meta": {
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "After PLC-Blaster is transferred to a PLC, the PLC begins execution of PLC-Blaster.",
           "Stuxnet halts the original PLC code and the malicious PLC code begins sending frames of data based on the recorded values during the DP_RECV monitor phase.",
           "Triton has the ability to halt or run a program through the TriStation protocol. TsHi.py contains instances of halt and run functions being executed."
@@ -232,7 +232,7 @@
           "VPNs can be used to provide secure access from an untrusted network to the ICS control network and restrict access to and from host computers.",
           "Intrusion detection can be put in place to monitor traffic and logs. Unexpected or a high amount of traffic involving even commonly used ports can be suspicious when it deviates from the often consistent state of the ICS environment."
         ],
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "Dragonfly communicated with command and control over TCP ports 445 and 139 or UDP 137 or 138.",
           "Stuxnet attempts to contact command and control servers on port 80 to send basic information about the computer it has compromised.",
           "Triton framework can communicate with the implant utilizing the TriStation 'get main processor diagnostic data' command and looks for a specifically crafted packet body from which it extracts a command value and its arguments."
@@ -280,7 +280,7 @@
     {
       "description": "Adversaries may cause damage and destruction of property to infrastructure, equipment, and the surrounding environment when attacking control systems. This technique may result in device and operational equipment breakdown, or represent tangential damage from other techniques used in an attack. Depending on the severity of physical damage and disruption caused to control processes and systems, this technique may result in Loss of Safety. Operations that result in Loss of Control may also cause damage to property, which may be directly or indirectly motivated by an adversary seeking to cause impact in the form of Loss of Productivity and Revenue. The German Federal Office for Information Security (BSI) reported a targeted attack on a steel mill under an incidents affecting business section of its 2014 IT Security Report. These targeted attacks affected industrial operations and resulted in breakdowns of control system components and even entire installations. As a result of these breakdowns, massive impact and damage resulted from the uncontrolled shutdown of a blast furnace. In the Maroochy Attack, Vitek Boden gained remote computer access to the control system and altered data so that whatever function should have occurred at affected pumping stations did not occur or occurred in a different way. This ultimately led to 800,000 liters of raw sewage being spilled out into the community. The raw sewage affected local parks, rivers, and even a local hotel. This resulted in harm to marine life and produced a sickening stench from the community's now blackened rivers. A Polish student used a remote controller device to interface with the Lodz city tram system in Poland.345 Using this remote, the student was able to capture and replay legitimate tram signals. This resulted in damage to impacted trams, people, and the surrounding property. Reportedly, four trams were derailed and were forced to make emergency stops.4 Commands issued by the student may have also resulted in tram collisions, causing harm to those on board and the environment outside.",
       "meta": {
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "Stuxnet attacks were designed to over-pressure and damage centrifuge rotors by manipulating process pressure and rotor speeds over time. One focused on a routine to change centrifuge rotor speeds, while the other manipulated critical resonance speeds to over-pressure them."
         ],
         "Tactic": [
@@ -311,7 +311,7 @@
           "Take note of suspicious files and run antivirus and malware detecting solutions to assist in catching malicious programs that can result in Data Destruction.",
           "dentify unnecessary system utilities, third-party tools, or potentially malicious software that may be used to delete files, and audit and/or block them by using whitelisting5 tools like AppLocker or Software Restriction Policies where appropriate."
         ],
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "Industroyer has a destructive wiper that overwrites all ICS configuration files across the hard drives and all mapped network drives specifically targeting ABB PCM600 configuration files.",
           "KillDisk is able to delete system files to make the system unbootable and targets 35 different types of files for deletion."
         ],
@@ -339,7 +339,7 @@
     {
       "description": "Adversaries may compromise and gain control of a data historian to gain a foothold into the control system environment. Access to a data historian may be used to learn stored database archival and analysis information on the control system. A dual-homed data historian may provide adversaries an interface from the IT environment to the OT environment. Dragos has released an updated analysis on CrashOverride that outlines the attack from the ICS network breach to payload delivery and execution.1 The report summarized that CrashOverride represents a new application of malware, but relied on standard intrusion techniques. In particular, new artifacts include refs to a Microsoft Windows Server 2003 host, with a SQL Server. Within the ICS environment, such a database server can act as a data historian. Dragos noted a device with this role should be expected to have extensive connections within the ICS environment. Adversary activity leveraged database capabilities to perform reconnaissance, including directory queries and network connectivity checks. ",
       "meta": {
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "In Industroyer, after pivoting into the ICS environment, the adversary gained Initial Access to devices involved with critical process operations through a Microsoft Windows Server 2003 running a SQL Server."
         ],
         "Tactic": [
@@ -358,7 +358,7 @@
     {
       "description": "Adversaries may target and collect data from information repositories. This can include sensitive data such as specifications, schematics, or diagrams of control system layouts, devices, and processes. Examples of target information repositories include reference databases and local machines on the process environment.",
       "meta": {
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "ACAD/Medre.A collects information related to the AutoCAD application. The worm collects AutoCAD (*.dwg) files with drawings from information repositories.",
           "Duqu downloads additional modules for the collection of data in information repositories. The modules are named: infostealer 1, infostealer 2 and reconnaissance.",
           "Flame has built-in modules to gather information from compromised computers."
@@ -407,7 +407,7 @@
     {
       "description": "Adversaries may cause a denial of control to temporarily prevent operators and engineers from interacting with process controls. An adversary may attempt to deny process control access to cause a temporary loss of communication with the control device or to prevent operator adjustment of process controls. An affected process may still be operating during the period of control loss, but not necessarily in a desired state. In the Maroochy attack, the adversary was able to temporarily shut an investigator out of the network preventing them from issuing any controls. ",
       "meta": {
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "Industroyer is able to block serial COM channels temporarily causing a denial of control."
         ],
         "Tactic": [
@@ -429,7 +429,7 @@
     {
       "description": "Adversaries may perform Denial-of-Service (DoS) attacks to disrupt expected device functionality. Examples of DoS attacks include overwhelming the target device with a high volume of requests in a short time period and sending the target device a request it does not know how to handle. Disrupting device state may temporarily render it unresponsive, possibly lasting until a reboot can occur. When placed in this state, devices may be unable to send and receive requests, and may not perform expected response functions in reaction to other events in the environment. Some ICS devices are particularly sensitive to DoS events, and may become unresponsive in reaction to even a simple ping sweep. Adversaries may also attempt to execute a Permanent Denial-of-Service (PDoS) against certain devices, such as in the case of the BrickerBot malware. Adversaries may exploit a software vulnerability to cause a denial of service by taking advantage of a programming error in a program, service, or within the operating system software or kernel itself to execute adversary-controlled code. Vulnerabilities may exist in software that can be used to cause a or denial of service condition. Adversaries may have prior knowledge about industrial protocols or control devices used in the environment through Control Device Identification. There are examples of adversaries remotely causing a Device Restart/Shutdown by exploiting a vulnerability that induces uncontrolled resource consumption. In the Maroochy attack, the adversary was able to shut an investigator out of the network.",
       "meta": {
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "The Backdoor.Oldrea payload has caused multiple common OPC platforms to intermittently crash. This could cause a denial of service effect on applications reliant on OPC communications.",
           "The Industroyer SIPROTEC DoS module exploits the CVE-2015-5374 vulnerability in order to render a Siemens SIPROTEC device unresponsive. Once this vulnerability is successfully exploited, the target device stops responding to any commands until it is rebooted manually.7 Once the tool is executed it sends specifically crafted packets to port 50,000 of the target IP addresses using UDP. The UDP packet contains the following 18 byte payload: 0x11 49 00 00 00 00 00 00 00 00 00 00 00 00 00 00 28 9E",
           "The execution on the PLC can be stopped by violating the cycle time limit. The PLC-Blaster implements an endless loop triggering an error condition within the PLC with the impact of a DoS."
@@ -457,7 +457,7 @@
     {
       "description": "Adversaries may cause a denial of view in attempt to disrupt and prevent operator oversight on the status of an ICS environment. This may manifest itself as a temporary communication failure between a device and its control source, where the interface recovers and becomes available once the interference ceases. An adversary may attempt to deny operator visibility by preventing them from receiving status and reporting messages. Denying this view may temporarily block and prevent operators from noticing a change in state or anomalous behavior. The environment's data and processes may still be operational, but functioning in an unintended or adversarial manner. In the Maroochy attack, the adversary was able to temporarily shut an investigator out of the network, preventing them from viewing the state of the system.",
       "meta": {
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "Industroyer is able to block serial COM channels temporarily causing a denial of view."
         ],
         "Tactic": [
@@ -469,7 +469,6 @@
         "refs": [
           "https://www.corero.com/resources/files/whitepapers/cns_whitepaper_ics.pdf",
           "https://www.sans.org/reading-room/whitepapers/ICS/industrial-control-system-cyber-kill-chain-36297",
-          "",
           "https://books.google.com/books?id=oXIYBAAAQBAJ&pg=PA249&lpg=PA249&dq=loss+denial+manipulation+of+view&source=bl&ots=dV1uQ8IUff&sig=ACfU3U2NIwGjhg051D_Ytw6npyEk9xcf4w&hl=en&sa=X&ved=2ahUKEwj2wJ7y4tDlAhVmplkKHSTaDnQQ6AEwAHoECAgQAQ#v=onepage&q=loss%20denial%20manipulation%20of%20view&f=false"
         ]
       },
@@ -479,7 +478,7 @@
     {
       "description": "Adversaries may gather information about the current operating state of a PLC. CPU operating modes are often controlled by a key switch on the PLC. Example states may be run, prog, stop, remote, and invalid. Knowledge of these states may be valuable to an adversary to determine if they are able to reprogram the PLC. ",
       "meta": {
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "Triton contains a file named TS_cnames.py which contains default definitions for key state (TS_keystate). Key state is referenced in TsHi.py."
         ],
         "Tactic": [
@@ -498,7 +497,7 @@
     {
       "description": "Adversaries may seek to gather information about the current state of a program on a PLC. State information reveals information about the program, including whether it's running, halted, stopped, or has generated an exception. This information may be leveraged as a verification of malicious program execution or to determine if a PLC is ready to download a new program. ",
       "meta": {
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "Triton contains a file named TS_cnames.py which contains default definitions for program state (TS_progstate). Program state is referenced in TsHi.py."
         ],
         "Tactic": [
@@ -525,7 +524,7 @@
           "Restrict access to control room(s), portable devices, and removable media, which should be locked down and physically secured. Keep track of cables, to ensure that the ICS and IT environments remain separate and no interceptive, adversarial devices are installed. Cable exposure should be as minimal as possible, to reduce likely hood of tampering.",
           "Depending on security needs and risks, it might also be prudent to disable or physically protect power buttons to prevent unauthorized use."
         ],
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "The Industroyer SIPROTEC DoS module exploits the CVE-2015-5374 vulnerability in order to render a Siemens SIPROTEC device unresponsive. Once this vulnerability is successfully exploited, the target device stops responding to any commands until it is rebooted manually.3 Once the tool is executed it sends specifically crafted packets to port 50,000 of the target IP addresses using UDP. The UDP packet contains the following 18 byte payload: 0x11 49 00 00 00 00 00 00 00 00 00 00 00 00 00 00 28 9E."
         ],
         "Tactic": [
@@ -547,7 +546,7 @@
     {
       "description": "Adversaries may gain access to a system during a drive-by compromise, when a user visits a website as part of a regular browsing session.With this technique, the user's web browser is targeted and exploited simply by visiting the compromised website. The adversary may target a specific community, such as trusted third party suppliers or other industry specific groups, which often visit the target website. This kind of targeted attack relies on a common interest, and is known as a strategic web compromise or watering hole attack. The National Cyber Awareness System (NCAS) has issued a Technical Alert (TA) regarding Russian government cyber activity targeting critical infrastructure sectors. Analysis by DHS and FBI has noted two distinct categories of victims in the Dragonfly campaign on the Western energy sector: staging and intended targets. The adversary targeted the less secure networks of staging targets, including trusted third-party suppliers and related peripheral organizations. Initial access to the intended targets used watering hole attacks to target process control, ICS, and critical infrastructure related trade publications and informational websites. ",
       "meta": {
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "ALLANITE leverages watering hole attacks to gain access into electric utilities.",
           "Dragonfly 2.0 utilized watering hole attacks to gather credentials, by compromising websites that energy sector organizations might access.",
           "Dragonfly used intermediate targets for watering hole attacks on an intended target. A line of code is injected into the header.php file, this is used to redirect the visitors to an adversary controlled IP.",
@@ -577,7 +576,7 @@
     {
       "description": "Adversaries may compromise and gain control of an engineering workstation as an Initial Access technique into the control system environment. Access to an engineering workstation may occur as a result of remote access or by physical means, such as a person with privileged access or infection by removable media. A dual-homed engineering workstation may allow the adversary access into multiple networks. For example, unsegregated process control, safety system, or information system networks. An Engineering Workstation is designed as a reliable computing platform that configures, maintains, and diagnoses control system equipment and applications. Compromise of an engineering workstation may provide access to and control of other control system applications and equipment. In the Maroochy attack, the adversary utilized a computer, possibly stolen, with proprietary engineering software to communicate with a wastewater system. ",
       "meta": {
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "Stuxnet utilized an engineering workstation as the initial access point for PLC devices.",
           "The Triton malware gained remote access to an SIS engineering workstation."
         ],
@@ -598,7 +597,7 @@
     {
       "description": "Adversaries may attempt to leverage Application Program Interfaces (APIs) used for communication between control software and the hardware. Specific functionality is often coded into APIs which can be called by software to engage specific functions on a device or other software, such as Change Program State of a program on a PLC. ",
       "meta": {
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "PLC-Blaster utilizes the PLC communication and management API to load executable Program Organization Units.",
           "Stuxnet utilizes the PLC communication and management API to load executable Program Organization Units.",
           "Triton leverages a reconstructed TriStation protocol within its framework to trigger APIs related to program download, program allocation, and program changes"
@@ -637,7 +636,7 @@
     {
       "description": "Adversaries may exploit a software vulnerability to take advantage of a programming error in a program, service, or within the operating system software or kernel itself to evade detection. Vulnerabilities may exist in software that can be used to disable or circumvent security features. Adversaries may have prior knowledge through Control Device Identification about security features implemented on control devices. These device security features will likely be targeted directly for exploitation. There are examples of firmware RAM/ROM consistency checks on control devices being targeted by adversaries to enable the installation of malicious System Firmware. ",
       "meta": {
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "Triton disables a firmware RAM/ROM consistency check, injects a payload (imain.bin) into the firmware memory region, and changes a jumptable entry to point to the added code. In Schneider Electric Triconex Tricon MP model 3008 firmware versions 10.0-10.4, system calls read directly from memory addresses within the control program area without any verification. Manipulating this data could allow adversary data to be copied anywhere within memory.45 Triconex systems include continuous means of detection including checksums for firmware and program integrity, memory and memory reference integrity, and configuration "
         ],
         "Tactic": [
@@ -661,7 +660,7 @@
     {
       "description": "Adversaries may exploit a software vulnerability to take advantage of a programming error in a program, service, or within the operating system software or kernel itself to enable remote service abuse. A common goal for post-compromise exploitation of remote services is for lateral movement to enable access to a remote system. ICS asset owners and operators have been affected by ransomware (or disruptive malware masquerading as ransomware) migrating from enterprise IT to ICS environments: WannaCry, NotPetya, and BadRabbit. In each of these cases, self-propagating (“wormable”) malware initially infected IT networks, but through exploit (particularly the SMBv1-targeting MS17-010 vulnerability) spread to industrial networks, producing significant impacts.",
       "meta": {
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "Bad Rabbit initially infected IT networks, but by means of an exploit (particularly the SMBv1-targeting MS17-010 vulnerability) spread to industrial networks.",
           "NotPetya initially infected IT networks, but by means of an exploit (particularly the SMBv1-targeting MS17-010 vulnerability) spread to industrial networks.",
           "WannaCry initially infected IT networks, but by means of an exploit (particularly the SMBv1-targeting MS17-010 vulnerability) spread to industrial networks."
@@ -691,7 +690,7 @@
           "Secure and restrict access to the control room(s), which could be leveraged to set up an external remote service. Ensure VPNs, which are commonly used to provide secure access to ICS environments from untrusted networks, are properly configured.",
           "Maintain awareness and observe use of External Remote Services with intrusion detection systems and solutions. Timely patch maintenance will assist with reducing the likelihood of Exploitation of Vulnerability for External Remote Service."
         ],
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "XENOTIME utilized remote desktop protocol (RDP) jump boxes to move into the ICS environment.",
           "Bad Rabbit can utilize exposed SMB services to access industrial networks.",
           "NotPetya can utilize exposed SMB services to access industrial networks.",
@@ -749,7 +748,7 @@
     {
       "description": "Adversaries may hook into application programming interface (API) functions used by processes to redirect calls for persistent means. Windows processes often leverage these API functions to perform tasks that require reusable system resources. Windows API functions are typically stored in dynamic-link libraries (DLLs) as exported functions. One type of hooking seen in ICS involves redirecting calls to these functions via import address table (IAT) hooking. IAT hooking uses modifications to a process’s IAT, where pointers to imported API functions are stored.",
       "meta": {
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "Stuxnet modifies the Import Address Tables DLLs to hook specific APIs that are used to open project files."
         ],
         "Tactic": [
@@ -769,7 +768,7 @@
     {
       "description": "Adversaries may seek to capture process image values related to the inputs and outputs of a PLC. Within a PLC all input and output states are stored into an I/O image. This image is used by the user program instead of directly interacting with physical I/O.",
       "meta": {
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "Stuxnet copies the input area of an I/O image into data blocks with a one second interval between copies, forming a 21 second recording of the input area. The input area contains information being passed to the PLC from a peripheral. For example, the current state of a valve or the temperature of a device."
         ],
         "Tactic": [
@@ -792,7 +791,7 @@
         "Mitigations": [
           "Restrict access to control room(s), portable devices, and removable media, which should be locked down and physically secured. *Ensure ICS and IT network cables are kept separate and that devices are locked up when possible. *Consider multi-factor authentication solutions, such as biometric or card-based tokens, to supplement traditional password-protection to access physical rooms."
         ],
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "Stuxnet enumerates and parses the System Data Blocks (SDB). Stuxnet must find an SDB with the DWORD at offset 50h equal to 0100CB2Ch. This specifies that the system uses the Profibus communications processor module CP 342-5. In addition, specific values are searched for and counted: 7050h and 9500h. 7050h is assigned to part number KFC750V3 which appears to be a frequency converter drive (also known as variable frequency drive) manufactured by Fararo Paya in Teheran, Iran. 9500h is assigned to Vacon NX frequency converter drives manufactured by Vacon based in Finland."
         ],
         "Tactic": [
@@ -812,7 +811,7 @@
     {
       "description": "Adversaries may attempt to remove indicators of their presence on a system in an effort to cover their tracks. In cases where an adversary may feel detection is imminent, they may try to overwrite, delete, or cover up changes they have made to the device. ",
       "meta": {
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "KillDisk deletes application, security, setup, and system event logs from Windows systems.",
           "Triton would reset the controller to the previous state over TriStation and if this failed it would write a dummy program to memory in what was likely an attempt at anti-forensics."
         ],
@@ -833,7 +832,7 @@
     {
       "description": "Adversaries may gain access into industrial environments directly through systems exposed to the internet for remote access rather than through External Remote Services. Minimal protections provided by these devices such as password authentication may be targeted and compromised. In the case of the Bowman dam incident, adversaries leveraged access to the dam control network through a cellular modem. Access to the device was protected by password authentication, although the application was vulnerable to brute forcing.",
       "meta": {
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "Sandworm actors exploited vulnerabilities in GE's Cimplicity HMI and Advantech/Broadwin WebAccess HMI software which had been directly exposed to the internet."
         ],
         "Tactic": [
@@ -863,7 +862,7 @@
           "Ensure ICS and IT network cables are kept separate and that devices are locked up when possible. Protecting and securing cables reduces potential collateral damage and the likelihood of being tampered with.",
           "Whenever possible, protect location information from outside eyes. Limit viewing of any stored data to those with the need to know and try to restrict data sending to encrypted channels."
         ],
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "The Backdoor.Oldrea payload has the capability of enumerating OPC tags, in addition to more generic OPC server information. The tag names, depending on the naming convention, can provide information about facilities and locations."
         ],
         "Tactic": [
@@ -884,7 +883,7 @@
     {
       "description": "Adversaries may attempt to disrupt essential components or systems to prevent owner and operator from delivering products or services. Adversaries may leverage malware to delete or encrypt critical data on HMIs, workstations, or databases. ",
       "meta": {
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "A Conficker infection at a nuclear power plant forced the facility to temporarily shutdown."
         ],
         "Tactic": [
@@ -906,7 +905,7 @@
     {
       "description": "Adversaries may seek to achieve a sustained loss of control or a runaway condition in which operators cannot issue any commands even if the malicious interference has subsided.",
       "meta": {
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "Industroyer's data wiper component removes the registry image path throughout the system and overwrites all files, rendering the system unusable.",
           "Some of Norsk Hydro's production systems were impacted by a LockerGoga infection. This resulted in a loss of control which forced the company to switch to manual operations."
         ],
@@ -931,7 +930,7 @@
     {
       "description": "Adversaries may cause loss of productivity and revenue through disruption and even damage to the availability and integrity of control system operations, devices, and related processes. This technique may manifest as a direct effect of an ICS-targeting attack or tangentially, due to an IT-targeting attack against non-segregated environments. In some cases, this may result from the postponement and disruption of ICS operations and production as part of a remediation effort. Operations may be brought to a halt and effectively stopped in an effort to contain and properly remove malware or due to the Loss of Safety. ",
       "meta": {
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "Several transportation organizations in Ukraine have suffered from being infected by Bad Rabbit, resulting in some computers becoming encrypted, according to media reports.",
           "A Conficker infection at a nuclear power plant forced the facility to shutdown and go through security procedures involved with such events, with its staff scanning computer systems and going through all the regular checks and motions before putting the plant back into production.",
           "While Norsk Hydro attempted to recover from a LockerGoga infection, most of its 160 manufacturing locations switched to manual (non-IT driven) operations. Manual operations can result in a loss of productivity",
@@ -959,7 +958,7 @@
     {
       "description": "Adversaries may cause loss of safety whether on purpose or as a consequence of actions taken to accomplish an operation. The loss of safety can describe a physical impact and threat, or the potential for unsafe conditions and activity in terms of control systems environments, devices, or processes. For instance, an adversary may issue commands or influence and possibly inhibit safety mechanisms that allow the injury of and possible loss of life. This can also encompass scenarios resulting in the failure of a safety mechanism or control, that may lead to unsafe and dangerous execution and outcomes of physical processes and related systems. The German Federal Office for Information Security (BSI) reported a targeted attack on a steel mill in its 2014 IT Security Report. These targeted attacks affected industrial operations and resulted in breakdowns of control system components and even entire installations. As a result of these breakdowns, massive impact resulted in damage and unsafe conditions from the uncontrolled shutdown of a blast furnace. A Polish student used a remote controller device to interface with the Lodz city tram system in Poland.567 Using this remote, the student was able to capture and replay legitimate tram signals. As a consequence, four trams were derailed and twelve people injured due to resulting emergency stops. The track controlling commands issued may have also resulted in tram collisions, a further risk to those on board and nearby the areas of impact.",
       "meta": {
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "Industroyer contained a module which leveraged a vulnerability in the Siemens SIPROTEC relays (CVE-2015-5374) to create a Denial of Service against automated protective relays.",
           "Triton has the capability to reprogram the SIS logic to allow unsafe conditions to persist or reprogram the SIS to allow an unsafe state – while using the DCS to create an unsafe state or hazard."
         ],
@@ -987,7 +986,7 @@
     {
       "description": "Adversaries may cause a sustained or permanent loss of view where the ICS equipment will require local, hands-on operator intervention; for instance, a restart or manual operation. By causing a sustained reporting or visibility loss, the adversary can effectively hide the present state of operations. This loss of view can occur without affecting the physical processes themselves.",
       "meta": {
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "Industroyer's data wiper component removes the registry image path throughout the system and overwrites all files, rendering the system unusable. KillDisk erases the master boot record (MBR) and system logs, leaving the system unusable.",
           "Some of Norsk Hydro's production systems were impacted by a LockerGoga infection. This resulted in a loss of view which forced the company to switch to manual operations."
         ],
@@ -1016,7 +1015,7 @@
         "Mitigations": [
           "Encrypt and protect the integrity of wireless device communications, while taking care not to degrade end device performance. OSI Layer 2 encryption, rather than Layer 3, can reduce encryption-based latency. Hardware accelerator solutions for cryptographic functions may also be considered. Special care should be taken to ensure passwords used with encrypted, as opposed to non-encrypted protocols are not the same. Password lockout policies can be enforced, but take care to balance this with operational needs, that might result in a few failed login attempts in stressful situations.4 *Implementing Challenge/Response authentication eliminates the risk of discovery or replay that traditional password exchange has.4*Restrict access to control room(s), portable devices, and removable media, which should be locked down and physically secured. Unauthorized and suspicious media should be avoided and kept away from systems and the network.4 *Ensure ICS and IT network cables are kept separate and that devices are locked up when possible. VPNs can be used to provide secure access from an untrusted network to the ICS control network and restrict access to and from host computers. Depending on how it is deployed, an Intrusion Detection System (IDS) might be able to detect or help with the detection of a MitM attack."
         ],
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "HEXANE targeted telecommunication providers in the greater Middle East, Central Asia, and Africa, potentially as a stepping stone to network-focused man-in-the-middle and related attacks.",
           "Stuxnet de-couples all inputs and signals from the legitimate code on a PLC and chooses what is passed to the original code. STUXNET effectively creates a man in the middle attack with the input and output signals and control logic."
         ],
@@ -1039,7 +1038,7 @@
     {
       "description": "Adversaries may manipulate the I/O image of PLCs through various means to prevent them from functioning as expected. Methods of I/O image manipulation may include overriding the I/O table via direct memory manipulation or using the override function used for testing PLC programs. During the PLC scan cycle, the state of the actual physical inputs is copied to a portion of the PLC memory, commonly called the input image table. When the program is scanned, it examines the input image table to read the state of a physical input. When the logic determines the state of a physical output, it writes to a portion of the PLC memory commonly called the output image table. The output image may also be examined during the program scan. To update the physical outputs, the output image table contents are copied to the physical outputs after the program is scanned. One of the unique characteristics of PLCs is their ability to override the status of a physical discrete input or to override the logic driving a physical output coil and force the output to a desired status. ",
       "meta": {
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "PLC-Blaster may manipulate any outputs of the PLC. Using the POU POKE any value within the process image may be modified.",
           "When the peripheral output is written to, sequence C intercepts the output and ensures it is not written to the process image output. The output is the instructions the PLC sends to a device to change its operating behavior. By intercepting the peripheral output, Stuxnet prevents an operator from noticing unauthorized commands sent to the peripheral."
         ],
@@ -1061,7 +1060,7 @@
     {
       "description": "Adversaries may manipulate physical process control within the industrial environment. Methods of manipulating control can include changes to set point values, tags, or other parameters. Adversaries may manipulate control systems devices or possibly leverage their own, to communicate with and command physical control processes. The duration of manipulation may be temporary or longer sustained, depending on operator detection. Methods of Manipulation of Control include: Man-in-the-middle, Spoof command message, Changing setpoints",
       "meta": {
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "Industroyer toggles breakers to the open state utilizing unauthorized command messages.",
           "Stuxnet can reprogram a PLC and change critical parameters in such a way that legitimate commands can be overridden or intercepted. In addition, Stuxnet can apply inappropriate command sequences or parameters to cause damage to property."
         ],
@@ -1081,7 +1080,7 @@
     {
       "description": "Adversaries may use masquerading to disguise a malicious application or executable as another file, to avoid operator and engineer suspicion. Possible disguises of these masquerading files can include commonly found programs, expected vendor executables and configuration files, and other commonplace application and naming conventions. By impersonating expected and vendor-relevant files and applications, operators and engineers may not notice the presence of the underlying malicious content and possibly end up running those masquerading as legitimate functions. Applications and other files commonly found on Windows systems or in engineering workstations have been impersonated before. This can be as simple as renaming a file to effectively disguise it in the ICS environment. ",
       "meta": {
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "Industroyer modules operate by inhibiting the normal SCADA master communication functions and then activate a replacement master communication module managed by the malware, which executes a script of commands to issue normal protocol messages.",
           "Stuxnet renames a dll responsible for handling communications with a PLC. It replaces the original .dll file with its own version that allows it to intercept any calls that are made to access the PLC.",
           "The Triton malware was configured to masquerade as trilog.exe, which is the Triconex software for analyzing SIS logs."
@@ -1137,7 +1136,7 @@
           "Encrypt and protect the integrity of wireless device communications, while taking care not to degrade end device performance. OSI Layer 2 encryption, rather than Layer 3, can reduce encryption-based latency. Hardware accelerator solutions for cryptographic functions may also be considered. Restrict access to control room(s), portable devices, and removable media, which should be locked down and physically secured.",
           "Make use of antivirus and malware detection tools to further secure the environment. In particular, intrusion detection system solutions can assist with monitoring the ICS environment for unexpected or alarming behaviors."
         ],
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "Triton can reprogram the SIS logic to cause it to trip and shutdown a process that is, in actuality, in a safe state. In other words, trigger a false positive. Triton also can reprogram the SIS logic to allow unsafe conditions to persist. The Triton malware is able to add a malicious program to the execution table of the controller. This action leaves the legitimate programs in place. If the controller failed, Triton would attempt to return it to a running state. If the controller did not recover within a certain time window, the sample would overwrite the malicious program to cover its tracks."
         ],
         "Tactic": [
@@ -1165,7 +1164,7 @@
           "Monitor system parameters for safe, expected settings and raise alerts when unsafe parameters, unexpected changes, or odd system states occur. Logging and/or associating device changes to accounts may also be beneficial, as an ICS environment rarely changes",
           "Secure and restrict authorization to the control room and the physical environment. Ensure ICS and IT network cables are kept separate and that devices are locked up when possible."
         ],
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "In states 3 and 4 Stuxnet sends two network bursts (done through the DP_SEND primitive). The data in the frames are instructions for the frequency converter drives. For example one of the frames contains records that change the maximum frequency (the speed at which the motor will operate). The frequency converter drives consist of parameters, which can be remotely configured via Profibus. One can write new values to these parameters changing the behavior of the device."
         ],
         "Tactic": [
@@ -1220,7 +1219,7 @@
           "Restrict access to control room(s), portable devices, and removable media, which should be locked down and physically secured. Unauthorized and suspicious media should be avoided and kept away from systems and the network. Keeping a controlled and consistent asset inventory can assist with this",
           "Special care should be taken to ensure backups and other data are restricted to authorized users and kept out of the adversary’s hands. Never use portable ICS environment assets outside of the ICS network."
         ],
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "Stuxnet examines fields recorded by the DP_RECV monitor to determine if the target system is in a particular state of operation."
         ],
         "Tactic": [
@@ -1246,7 +1245,7 @@
           "Restrict communications to and from devices over the network with access controls, such as whitelists.",
           "Utilize intrusion detection system (IDS) capabilities and heuristics to detect adversarial monitoring of the environment and modules or actions that deviate from normal functionality"
         ],
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "Industroyer contains an IEC 61850 module that enumerates all connected network adapters to determine their TCP/IP subnet masks."
         ],
         "Tactic": [
@@ -1305,7 +1304,7 @@
           "Make use of antivirus and malware detection tools to further secure the environment. Monitor the network and enforce access control practices, such as whitelisting, to reduce points of contact to and from control system devices, where applicable. Implement heuristics to detect monitoring and invasive probing activity on the network.",
           "Identify and block potentially malicious software that may be used to sniff or analyze network traffic by using whitelisting6 tools, like AppLocker,78 or Software Restriction Policies9 where appropriate."
         ],
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "DP_RECV is the name of a standard function block used by network coprocessors. It is used to receive network frames on the Profibus – a standard industrial network bus used for distributed I/O. The original block is copied to FC1869, and then replaced by a malicious block. Each time the function is used to receive a packet, the malicious Stuxnet block takes control: it will call the original DP_RECV in FC1869 and then perform postprocessing on the packet data. This secondary thread is used to monitor a data block DB890 of sequence A or B. Though constantly running and probing this block (every 5 minutes), this thread has no purpose if the PLC is not infected. The purpose of the thread is to monitor each S7-315 on the bus. The replaced DP_RECV block (later on referred to as the “DP_RECV monitor”) is meant to monitor data sent by the frequency converter drives to the 315-2 CPU via CP 342-5 Profibus communication modules.",
           "The VPNFilter packet sniffer looks for basic authentication as well as monitors ICS traffic, and is specific to the TP-LINK R600-VPN. The malware uses a raw socket to look for connections to a pre-specified IP address, only looking at TCP packets that are 150 bytes or larger. Packets that are not on port 502, are scanned for BasicAuth, and that information is logged. This may have allowed credential harvesting from communications between devices accessing a modbus-enabled HMI."
         ],
@@ -1334,7 +1333,7 @@
     {
       "description": "Adversaries may collect point and tag values to gain a more comprehensive understanding of the process environment. Points may be values such as inputs, memory locations, outputs or other process specific variables.1 Tags are the identifiers given to points for operator convenience. Collecting such tags provides valuable context to environmental points and enables an adversary to map inputs, outputs, and other values to their control processes. Understanding the points being collected may inform an adversary on which processes and values to keep track of over the course of an operation. ",
       "meta": {
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "Backdoor.Oldrea enumerates all OPC tags and queries for specific fields such as server state, tag name, type, access, and id"
         ],
         "Tactic": [
@@ -1354,7 +1353,7 @@
     {
       "description": "Adversaries may perform a program download to load malicious or unintended program logic on a device as a method of persistence or to disrupt response functions or process control. Program download onto devices, such as PLCs, allows adversaries to implement custom logic. Malicious PLC programs may be used to disrupt physical processes or enable adversary persistence. The act of a program download will cause the PLC to enter a STOP operation state, which may prevent response functions from operating correctly. ",
       "meta": {
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "Stuxnet infects PLCs with different code depending on the characteristics of the target system. An infection sequence consists of code blocks and data blocks that will be downloaded to the PLC to alter its behavior.",
           "Triton leveraged the TriStation protocol to download programs onto Triconex Safety Instrumented System."
         ],
@@ -1375,7 +1374,7 @@
     {
       "description": "Program Organizational Units (POUs) are block structures used within PLC programming to create programs and projects. POUs can be used to hold user programs written in IEC 61131-3 languages: Structured text, Instruction list, Function block, and Ladder logic. They can also provide additional functionality, such as establishing connections between the PLC and other devices using TCON. Stuxnet uses a simple code-prepending infection technique to infect Organization Blocks (OB). For example, the following sequence of actions is performed when OB1 is infected: Increase the size of the original block. Write malicious code to the beginning of the block. Insert the original OB1 code after the malicious code.",
       "meta": {
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "PLC-Blaster copies itself to various Program Organization Units (POU) on the target device. The POUs include the Organization Block, Data Block, Function, and Function Block.",
           "Stuxnet infects PLCs with different code depending on the characteristics of the target system. An infection sequence consists of code blocks and data blocks that will be downloaded to the PLC to alter its behavior."
         ],
@@ -1398,7 +1397,7 @@
     {
       "description": "Adversaries may attempt to upload a program from a PLC to gather information about an industrial process. Uploading a program may allow them to acquire and study the underlying logic. Methods of program upload include vendor software, which enables the user to upload and read a program running on a PLC. This software can be used to upload the target program to a workstation, jump box, or an interfacing device. ",
       "meta": {
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "Stuxnet replaces the DLL responsible for reading projects from a PLC to the step7 software. This allows Stuxnet the ability to upload a program from the PLC."
         ],
         "Tactic": [
@@ -1417,7 +1416,7 @@
     {
       "description": "Adversaries may attempt to infect project files with malicious code. These project files may consist of objects, program organization units, variables such as tags, documentation, and other configurations needed for PLC programs to function. Using built in functions of the engineering software, adversaries may be able to download an infected program to a PLC in the operating environment enabling further execution and persistence techniques. Adversaries may export their own code into project files with conditions to execute at specific intervals.3 Malicious programs allow adversaries control of all aspects of the process enabled by the PLC. Once the project file is downloaded to a PLC the workstation device may be disconnected with the infected project file still executing.",
       "meta": {
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "Stuxnet copies itself into Step 7 projects in such a way that it automatically executes when the Step 7 project is loaded"
         ],
         "Tactic": [
@@ -1438,7 +1437,7 @@
     {
       "description": "Adversaries may copy files from one system to another to stage adversary tools or other files over the course of an operation. Copying of files may also be performed laterally between internal victim systems to support Lateral Movement with remote Execution using inherent file sharing protocols such as file sharing over SMB to connected network shares. In control systems environments, malware may use SMB and other file sharing protocols to move laterally through industrial networks. ",
       "meta": {
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "Bad Rabbit can move laterally through industrial networks by means of the SMB service.",
           "NotPetya can move laterally through industrial networks by means of the SMB service.",
           "WannaCry can move laterally through industrial networks by means of the SMB service."
@@ -1468,7 +1467,7 @@
           "Monitor the network and enforce access control practices, such as whitelisting, to reduce points of contact to and from control system devices, where applicable. Utilize intrusion detection system (IDS) capabilities to assist with detecting and preventing the spread of malicious files.",
           "Implement heuristics to detect monitoring and invasive probing activity on the network. Filter and limit communications to and from devices. Ensure devices are patched and up-to-date."
         ],
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "The Backdoor.Oldrea ICS malware plugin relies on Windows networking (WNet) to discover all the servers, including OPC servers, that are reachable by the compromised machine over the network.",
           "The Industroyer IEC 61850 payload enumerates all possible IP addresses for each of the subnet masks for the interfaces on the infected machine, and tries to connect to port 102 on each of those addresses. Therefore, this component has the ability to discover relevant devices in the network automatically.",
           "PLC-Blaster scans the network to find other Siemens S7 PLC devices to infect. It locates these devices by checking for a service listening on TCP port 102.",
@@ -1497,7 +1496,7 @@
     {
       "description": "Adversaries may move onto systems, such as those separated from the enterprise network, by copying malware to removable media which is inserted into the control systems environment. The adversary may rely on unknowing trusted third parties, such as suppliers or contractors with access privileges, to introduce the removable media. This technique enables initial access to target devices that never connect to untrusted networks, but are physically accessible. Operators of the German nuclear power plant, Gundremmingen, discovered malware on a facility computer not connected to the internet. The malware included Conficker and W32.Ramnit, which were also found on eighteen removable disk drives in the facility. The plant has since checked for infection and cleaned up more than 1,000 computers.9 An ESET researcher commented that internet disconnection does not guarantee system safety from infection or payload execution.",
       "meta": {
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "Conficker exploits Windows drive shares. Once it has infected a computer, Conficker automatically copies itself to all visible open drive shares on other computers inside the network. Nuclear power plant officials suspect someone brought in Conficker by accident on a USB thumb drive, either from home or computers found in the power plant's facility.",
           "Stuxnet was able to self-replicate by being spread through removable drives. A willing insider or unknown third party, such as a contractor, may have brought the removable media into the target environment. The earliest version of Stuxnet relied on physical installation, infecting target systems when an infected configuration file carried by a USB stick was opened."
         ],
@@ -1567,7 +1566,7 @@
           "Restrict access to control room(s), portable devices, and removable media, which should be locked down and physically secured. Unauthorized and suspicious media should be avoided and kept away from systems and the network.",
           "Ensure ICS and IT network cables are kept separate and that devices are locked up when possible, to reduce the likelihood they can be tampered with."
         ],
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "The Backdoor.Oldrea payload gathers server information that includes CLSID, server name, Program ID, OPC version, vendor information, running state, group count, and server bandwidth. This information helps indicate the role the server has in the control process.",
           "The Industroyer IEC 61850 component enumerates the objects discovered in the previous step and sends the domain-specific getNameList requests with each object name. This enumerates named variables in a specific domain."
         ],
@@ -1598,7 +1597,7 @@
           "Make use of antivirus and malware detection tools to further secure the environment.",
           "Identify potentially malicious software that may contain rootkit functionality, and audit and/or block it by using whitelisting tools, like AppLocker, or Software Restriction Policies where appropriate."
         ],
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "One of Stuxnet's rootkits is contained entirely in the fake s7otbxdx.dll. In order to continue existing undetected on the PLC it needs to account for at least the following situations: read requests for its own malicious code blocks, read requests for infected blocks (OB1, OB35, DP_RECV), and write requests that could overwrite Stuxnet’s own code. Stuxnet contains code to monitor and intercept these types of requests. The rootkit modifies these requests so that Stuxnet’s PLC code is not discovered or damaged.",
           "When the peripheral output is written to, sequence C of Stuxnet intercepts the output and ensures it is not written to the process image output. The output is the instructions the PLC sends to a device to change its operating behavior. By intercepting the peripheral output, Stuxnet prevents an operator from noticing unauthorized commands sent to the peripheral."
         ],
@@ -1626,7 +1625,7 @@
     {
       "description": "Adversaries may attempt to perform screen capture of devices in the control system environment. Screenshots may be taken of workstations, HMIs, or other devices that display environment-relevant process, device, reporting, alarm, or related data. These device displays may reveal information regarding the ICS process, layout, control, and related schematics. In particular, an HMI can provide a lot of important industrial process information. Analysis of screen captures may provide the adversary with an understanding of intended operations and interactions between critical devices. ",
       "meta": {
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "ALLANITE has been identified to collect and distribute screenshots of ICS systems such as HMIs",
           "APT33 utilize backdoors capable of capturing screenshots once installed on a system",
           "Dragonfly has been reported to take screenshots of the GUI for ICS equipment, such as HMIs."
@@ -1657,7 +1656,7 @@
           "Restrict access to control room(s), portable devices, and removable media, which should be locked down and physically secured. Unauthorized and suspicious media should be avoided and kept away from systems and the network.",
           "Physical access to systems may allow the adversary to run scripts, if privileged accounts are logged in. Consider enforcing a logoff or timeout policy, consistent with operational needs."
         ],
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "APT33 utilized PowerShell scripts to establish command and control and install files for execution.",
           "HEXANE utilizes VBA macros and Powershell scripts such as DanDrop and kl.ps1 tools",
           "OilRig has embedded a macro within spearphishing attachments that has been made up of both a VBScript and a PowerShell script.",
@@ -1691,8 +1690,7 @@
           "Keep documentation and portable assets secured and stowed away when not in use.",
           "Limit communications to and from devices wherever possible, such as enforcing whitelist policies for network-based communications."
         ],
-        "Proceedure Examples": [
-          "",
+        "Procedure Examples": [
           "Industroyer contains modules for IEC 101 and IEC 104 communications. IEC 101 uses serial for the physical connection and IEC 104 uses Ethernet. Analysis of the malware by Dragos states that both of the modules have equivalent functionality. The IEC 104 module uses Network Connection Enumeration to determine the Ethernet adapters on the device. Since functionality between the two modules are equivalent, this implies that the IEC 101 module is able to detect serial interfaces on the device."
         ],
         "Tactic": [
@@ -1713,7 +1711,7 @@
     {
       "description": "Adversaries may stop or disable services on a system to render those services unavailable to legitimate users. Stopping critical services can inhibit or stop response to an incident or aid in the adversary's overall objectives to cause damage to the environment. Services may not allow for modification of their data stores while running. Adversaries may stop services in order to conduct Data Destruction.",
       "meta": {
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "Industroyer has the capability to stop a service itself, or to login as a user and stop a service as that user.",
           "KillDisk looks for and terminates two non-standard processes, one of which is an ICS application."
         ],
@@ -1735,7 +1733,7 @@
     {
       "description": "Adversaries may use a spearphishing attachment, a variant of spearphishing, as a form of a social engineering attack against specific targets. Spearphishing attachments are different from other forms of spearphishing in that they employ malware attached to an email. All forms of spearphishing are electronically delivered and target a specific individual, company, or industry. In this scenario, adversaries attach a file to the spearphishing email and usually rely upon User Execution to gain execution and access.",
       "meta": {
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "ALLANITE utilized spear phishing to gain access into energy sector environments",
           "APT33 sent spear phishing emails containing links to HTML application files, which were embedded with malicious code.",
           "APT33 has conducted targeted spear phishing campaigns against U.S. government agencies and private sector companies.",
@@ -1759,7 +1757,6 @@
           "https://www.fireeye.com/blog/threat-research/2017/09/apt33-insights-into-iranian-cyber-espionage.html",
           "https://www.wired.com/story/iran-hackers-us-phishing-tensions/",
           "https://www.symantec.com/connect/blogs/dragonfly-western-energy-sector-targeted-sophisticated-attack-group",
-          "https://www.symantec.com/connect/blogs/dragonfly-western-energy-sector-targeted-sophisticated-attack-group",
           "https://dragos.com/wp-content/uploads/Sample-WorldView-Report.pdf",
           "https://dragos.com/wp-content/uploads/yir-ics-activity-groups-threat-landscape-2018.pdf",
           "https://www.us-cert.gov/ncas/alerts/TA17-293A",
@@ -1777,7 +1774,7 @@
     {
       "description": "Adversaries may establish command and control capabilities over commonly used application layer protocols such as HTTP(S), OPC, RDP, telnet, DNP3, and modbus. These protocols may be used to disguise adversary actions as benign network traffic. Standard protocols may be seen on their associated port or in some cases over a non-standard port. Adversaries may use these protocols to reach out of the network for command and control, or in some cases to other infected devices within the network. ",
       "meta": {
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "HEXANE communicated with command and control over HTTP and DNS.",
           "OilRig communicated with its command and control using HTTP requests",
           "BlackEnergy uses HTTP POST request to contact external command and control servers.",
@@ -1802,7 +1799,7 @@
     {
       "description": "Adversaries may perform supply chain compromise to gain control systems environment access by means of infected products, software, and workflows. Supply chain compromise is the manipulation of products, such as devices or software, or their delivery mechanisms before receipt by the end consumer. Adversary compromise of these products and mechanisms is done for the goal of data or system compromise, once infected products are introduced to the target environment. Supply chain compromise can occur at all stages of the supply chain, from manipulation of development tools and environments to manipulation of developed products and tools distribution mechanisms. This may involve the compromise and replacement of legitimate software and patches, such as on third party or vendor websites. Targeting of supply chain compromise can be done in attempts to infiltrate the environments of a specific audience. In control systems environments with assets in both the IT and OT networks, it is possible a supply chain compromise affecting the IT environment could enable further access to the OT environment. F-Secure Labs analyzed the approach the adversary used to compromise victim systems with Havex. The adversary planted trojanized software installers available on legitimate ICS/SCADA vendor websites. After being downloaded, this software infected the host computer with a Remote Access Trojan (RAT).",
       "meta": {
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "Dragonfly 2.0 trojanized legitimate software to deliver malware disguised as standard windows applications.",
           "ENOTIME targeted several ICS vendors and manufacturers.",
           "The Backdoor.Oldrea RAT is distributed through trojanized installers planted on compromised vendor sites."
@@ -1814,7 +1811,6 @@
           "T862"
         ],
         "refs": [
-          "https://www.f-secure.com/weblog/archives/00002718.html",
           "https://www.symantec.com/connect/blogs/dragonfly-western-energy-sector-targeted-sophisticated-attack-group",
           "https://dragos.com/wp-content/uploads/Dragos-Oil-and-Gas-Threat-Perspective-2019.pdf",
           "https://www.f-secure.com/weblog/archives/00002718.html"
@@ -1837,7 +1833,7 @@
           "Monitor the network and enforce access control practices, such as whitelisting, to reduce points of contact to and from control system devices, where applicable. Utilize intrusion detection system (IDS) capabilities to assist with detecting and preventing the spread of malicious files",
           "Limit access to the network and require authentication as a barrier. Test access to field devices from outside the network, to help determine if an adversary could reach them."
         ],
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "The malicious shellcode Triton uses is split into two separate pieces -- inject.bin and imain.bin. The former program is more generic code that handles injecting the payload into the running firmware, while the latter is the payload that actually performs the additional malicious functionality. The payload --imain.bin-- is designed to take a TriStation protocol get main processor diagnostic data command, look for a specially crafted packet body, and perform custom actions on demand. It is able to read and write memory on the safety controller and execute code at an arbitrary address within the firmware. In addition, if the memory address it writes to is within the firmware region, it disables address translation, writes the code at the provided address, flushes the instruction cache, and re-enables address translation. This allows the malware to make changes to the running firmware in memory. This allows Triton to change how the device operates and would allow for the modification of other actions that the Triton controller might make"
         ],
         "Tactic": [
@@ -1859,7 +1855,7 @@
     {
       "description": "Adversaries may steal operational information on a production environment as a direct mission outcome for personal gain or to inform future operations. This information may include design documents, schedules, rotational data, or similar artifacts that provide insight on operations. In the Bowman Dam incident, adversaries probed systems for operational data.",
       "meta": {
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "ACAD/Medre.A can collect AutoCad files with drawings. These drawings may contain operational information.",
           "Duqu’s purpose is to gather intelligence data and assets from entities such as industrial infrastructure and system manufacturers, amongst others not in the industrial sector, in order to more easily conduct a future attack against another third party.",
           "Flame can collect AutoCAD design data and visio diagrams as well as other documents that may contain operational information."
@@ -1892,7 +1888,7 @@
           "Antivirus and malicious code detection tools can assist with detecting and preventing impact of malware. Secure Windows, Unix, and Linux, etc.-based systems like traditional IT equipment. Follow vendor recommendations for other computers and services with time-dependent code and changes differentiating them from standard devices.",
           "Leverage Intrusion Detection Systems (IDS) capabilities for event monitoring, such as looking for unusual activity and traffic patterns and detecting abnormal changes to functionality. If timestamps or methods of authentication are associated with commands, these may be useful metrics to determine spoofed sources. For instance, a spoofed message sent with unusual timing or an extra command sent, coinciding with a legitimate source."
         ],
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "The Industroyer IEC 101 module has the capability to communicate with devices (likely RTUs) via the IEC 101 protocol. The module will attempt to find all Information Object Addresses (IOAs) for the device and attempt to change their state in the following sequence: OFF, ON, OFF.",
           "In states 3 and 4 Stuxnet sends two network bursts (done through the DP_SEND primitive). The data in the frames are instructions for the frequency converter drives.",
           "Using Triton, an adversary can manipulate the process into an unsafe state from the DCS while preventing the SIS from functioning appropriately."
@@ -1919,7 +1915,7 @@
     {
       "description": "Adversaries may rely on a targeted organizations’ user interaction for the execution of malicious code. User interaction may consist of installing applications, opening email attachments, or granting higher permissions to documents. Adversaries may embed malicious code or visual basic code into files such as Microsoft Word and Excel documents or software installers. Execution of this code requires that the user enable scripting or write access within the document. Embedded code may not always be noticeable to the user especially in cases of trojanized software",
       "meta": {
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "Execution of Backdoor.Oldrea relies on a user opening a trojanized installer attached to an email.",
           "Bad Rabbit is disguised as an Adobe Flash installer. When the file is opened it starts locking the infected computer."
         ],
@@ -1951,7 +1947,7 @@
           "Protect and restrict physical access to locations, devices, and systems. Lockdown and secure portable devices and removable media. Portable ICS assets should not be used outside of the ICS network",
           "When possible, real-time monitoring and management of ICS devices and the network can help detect anomalous behavior. Always check new device acquisitions for the presence of backdoors and malicious tampering."
         ],
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "Triton is able to modify code if the Triconex SIS Controller is configured with the physical keyswitch in ‘program mode’ during operation. If the controller is placed in Run mode (program changes not permitted), arbitrary changes in logic are not possible substantially reducing the likelihood of manipulation. Once the Triton implant is installed on the SIS it is able to conduct any operation regardless of any future position of the keyswitch."
         ],
         "Tactic": [
@@ -1983,7 +1979,7 @@
           "Antivirus and malware detection should be employed to assist with detecting and preventing malicious code from being run, in the event a Valid Account is compromised.",
           "Network monitoring and intrusion detection systems can be leveraged to observe activity and may help identify suspicious account activity and movement at unexpected times."
         ],
-        "Proceedure Examples": [
+        "Procedure Examples": [
           "ALLANITE utilized credentials collected through phishing and watering hole attacks.",
           "Dragonfly 2.0 used credentials collected through spear phishing and watering hole attacks.",
           "Dragonfly leveraged compromised user credentials to access the targets networks and download tools from a remote server.",
@@ -2029,7 +2025,6 @@
           "https://www.blackhat.com/docs/us-14/materials/us-14-Bolshev-ICSCorsair-How-I-Will-PWN-Your-ERP-Through-4-20mA-Current-Loop-WP.pdf",
           "https://www.slideshare.net/dgpeters/17-bolshev-1-13",
           "https://www.mitre.org/sites/default/files/pdf/08_1145.pdf",
-          "https://www.londonreconnections.com/2017/hacked-cyber-security-railways/",
           "https://www.londonreconnections.com/2017/hacked-cyber-security-railways/",
           "https://inhomelandsecurity.com/teen_hacker_in_poland_plays_tr/",
           "https://www.schneier.com/blog/archives/2008/01/hacking_the_pol.html"
