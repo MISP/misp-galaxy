@@ -6610,7 +6610,11 @@
       "description": "Malware developers have started to use the zero-day exploit for Task Scheduler component in Windows, two days after proof-of-concept code for the vulnerability appeared online.\n\nA security researcher who uses the online name SandboxEscaper on August 27 released the source code for exploiting a security bug in the Advanced Local Procedure Call (ALPC) interface used by Windows Task Scheduler.\n\nMore specifically, the problem is with the SchRpcSetSecurity API function, which fails to properly check user's permissions, allowing write privileges on files in C:\\Windows\\Task.\n\nThe vulnerability affects Windows versions 7 through 10 and can be used by an attacker to escalate their privileges to all-access SYSTEM account level.\n\nA couple of days after the exploit code became available (source and binary), malware researchers at ESET noticed its use in active malicious campaigns from a threat actor they call PowerPool, because of their tendency to use tools mostly written in PowerShell for lateral movement.\n\nThe group appears to have a small number of victims in the following countries: Chile, Germany, India, the Philippines, Poland, Russia, the United Kingdom, the United States, and Ukraine.\n\nThe researchers say that PowerPool developers did not use the binary version of the exploit, deciding instead to make some subtle changes to the source code before recompiling it.",
       "meta": {
         "refs": [
-          "https://www.bleepingcomputer.com/news/security/windows-task-scheduler-zero-day-exploited-by-malware/"
+          "https://www.bleepingcomputer.com/news/security/windows-task-scheduler-zero-day-exploited-by-malware/",
+          "https://twitter.com/craiu/status/1311920398259367942"
+        ],
+        "synonyms": [
+          "IAmTheKing"
         ]
       },
       "uuid": "abd89986-b1b0-11e8-b857-efe290264006",
@@ -8405,5 +8409,5 @@
       "value": "XDSpy"
     }
   ],
-  "version": 183
+  "version": 184
 }
