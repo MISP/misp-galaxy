@@ -1,0 +1,287 @@
+{
+  "authors": [
+    "MITRE"
+  ],
+  "category": "asset",
+  "description": "A list of asset categories that are commonly found in industrial control systems.",
+  "name": "Assets",
+  "source": "https://collaborate.mitre.org/attackics/index.php/All_Assets",
+  "type": "mitre-ics-assets",
+  "uuid": "0594fbc2-6267-479b-85a3-c4be8e044454",
+  "values": [
+    {
+      "description": "A device which acts as both a server and controller, that hosts the control software used in communicating with lower-level control devices in an ICS network (e.g. Remote Terminal Units (RTUs) and Programmable Logic Controllers (PLCs)).",
+      "meta": {
+        "Levels": [
+          "Level 2 https://collaborate.mitre.org/attackics/index.php/Level_2"
+        ],
+        "Notes": [
+          "A control server may also be referred to with these terms in a SCADA system: MTU, supervisory controller, or SCADA server."
+        ],
+        "Techniques That Apply": [
+          "Automated Collection https://collaborate.mitre.org/attackics/index.php/Technique/T802",
+          "Brute Force I/O https://collaborate.mitre.org/attackics/index.php/Technique/T806",
+          "Commonly Used Port https://collaborate.mitre.org/attackics/index.php/Technique/T885",
+          "Data Destruction https://collaborate.mitre.org/attackics/index.php/Technique/T809",
+          "Data from Information Repositories https://collaborate.mitre.org/attackics/index.php/Technique/T811",
+          "Default Credentials https://collaborate.mitre.org/attackics/index.php/Technique/T812",
+          "External Remote Services https://collaborate.mitre.org/attackics/index.php/Technique/T822",
+          "Location Identification https://collaborate.mitre.org/attackics/index.php/Technique/T825",
+          "Man in the Middle https://collaborate.mitre.org/attackics/index.php/Technique/T830",
+          "Masquerading https://collaborate.mitre.org/attackics/index.php/Technique/T849",
+          "Modify Alarm Settings https://collaborate.mitre.org/attackics/index.php/Technique/T838",
+          "Modify Parameter https://collaborate.mitre.org/attackics/index.php/Technique/T836",
+          "Monitor Process State https://collaborate.mitre.org/attackics/index.php/Technique/T801 ",
+          "Point & Tag Identification https://collaborate.mitre.org/attackics/index.php/Technique/T861",
+          "Remote File Copy https://collaborate.mitre.org/attackics/index.php/Technique/T867",
+          "Remote System Discovery https://collaborate.mitre.org/attackics/index.php/Technique/T846",
+          "Replication Through Removable Media https://collaborate.mitre.org/attackics/index.php/Technique/T847",
+          "Rogue Master Device https://collaborate.mitre.org/attackics/index.php/Technique/T848",
+          "Role Identification https://collaborate.mitre.org/attackics/index.php/Technique/T850",
+          "Service Stop https://collaborate.mitre.org/attackics/index.php/Technique/T881",
+          "Spearphishing Attachment https://collaborate.mitre.org/attackics/index.php/Technique/T865",
+          "Spoof Reporting Message https://collaborate.mitre.org/attackics/index.php/Technique/T856",
+          "Standard Application Layer Protocol https://collaborate.mitre.org/attackics/index.php/Technique/T869",
+          "Valid Accounts https://collaborate.mitre.org/attackics/index.php/Technique/T859"
+        ],
+        "refs": [
+          "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-82r2.pdf"
+        ]
+      },
+      "uuid": "834fab50-be52-4611-95b6-6330d1db65c3",
+      "value": "Control Server"
+    },
+    {
+      "description": "A centralized database located on a computer installed in the control system DMZ supporting external corporate user data access for archival and analysis using statistical process control and other techniques.",
+      "meta": {
+        "Levels": [
+          "Level 2 https://collaborate.mitre.org/attackics/index.php/Level_2"
+        ],
+        "Techniques That Apply": [
+          "Data Historian Compromise https://collaborate.mitre.org/attackics/index.php/Technique/T810",
+          "Data from Information Repositories https://collaborate.mitre.org/attackics/index.php/Technique/T811",
+          "Exploitation of Remote Services https://collaborate.mitre.org/attackics/index.php/Technique/T866",
+          "Monitor Process State https://collaborate.mitre.org/attackics/index.php/Technique/T801",
+          "Point & Tag Identification https://collaborate.mitre.org/attackics/index.php/Technique/T861",
+          "Remote File Copy https://collaborate.mitre.org/attackics/index.php/Technique/T867",
+          "Remote System Discovery https://collaborate.mitre.org/attackics/index.php/Technique/T846",
+          "Replication Through Removable Media https://collaborate.mitre.org/attackics/index.php/Technique/T847",
+          "Role Identification https://collaborate.mitre.org/attackics/index.php/Technique/T850",
+          "Service Stop https://collaborate.mitre.org/attackics/index.php/Technique/T881",
+          "Spearphishing Attachment https://collaborate.mitre.org/attackics/index.php/Technique/T865",
+          "Standard Application Layer Protocol https://collaborate.mitre.org/attackics/index.php/Technique/T869",
+          "Valid Accounts https://collaborate.mitre.org/attackics/index.php/Technique/T859"
+        ],
+        "refs": [
+          "https://ics-cert.us-cert.gov/Secure-Architecture-Design-Definitions"
+        ]
+      },
+      "uuid": "da06d4aa-2471-4582-aadf-e1653dd6575c",
+      "value": "Data Historian"
+    },
+    {
+      "description": "The engineering workstation is usually a high-end very reliable computing platform designed for configuration, maintenance and diagnostics of the control system applications and other control system equipment. The system is usually made up of redundant hard disk drives, high speed network interface, reliable CPUs, performance graphics hardware, and applications that provide configuration and monitoring tools to perform control system application development, compilation and distribution of system modifications.",
+      "meta": {
+        "Levels": [
+          "Level 0 https://collaborate.mitre.org/attackics/index.php/Level_0 ",
+          "Level 1 https://collaborate.mitre.org/attackics/index.php/Level_1",
+          "Level 2 https://collaborate.mitre.org/attackics/index.php/Level_2"
+        ],
+        "Notes": [
+          "Many engineering workstations are laptops. Because of their mobile nature, lack of desktop standard, and frequent connection to control system devices and network, engineering workstations can serve as entry points for attacks."
+        ],
+        "Techniques That Apply": [
+          "Commonly Used Port https://collaborate.mitre.org/attackics/index.php/Technique/T885",
+          "Data from Information Repositories https://collaborate.mitre.org/attackics/index.php/Technique/T811",
+          "Default Credentials https://collaborate.mitre.org/attackics/index.php/Technique/T812",
+          "Engineering Workstation Compromise https://collaborate.mitre.org/attackics/index.php/Technique/T818",
+          "Exploitation of Remote Services https://collaborate.mitre.org/attackics/index.php/Technique/T866",
+          "Hooking https://collaborate.mitre.org/attackics/index.php/Technique/T874 ",
+          "Loss of View https://collaborate.mitre.org/attackics/index.php/Technique/T829",
+          "Manipulation of View https://collaborate.mitre.org/attackics/index.php/Technique/T832",
+          "Project File Infection https://collaborate.mitre.org/attackics/index.php/Technique/T873",
+          "Rogue Master Device https://collaborate.mitre.org/attackics/index.php/Technique/T848",
+          "Scripting https://collaborate.mitre.org/attackics/index.php/Technique/T853",
+          "Service Stop https://collaborate.mitre.org/attackics/index.php/Technique/T881",
+          "Spearphishing Attachment https://collaborate.mitre.org/attackics/index.php/Technique/T865",
+          "Standard Application Layer Protocol https://collaborate.mitre.org/attackics/index.php/Technique/T869",
+          "User Execution https://collaborate.mitre.org/attackics/index.php/Technique/T863",
+          "Valid Accounts https://collaborate.mitre.org/attackics/index.php/Technique/T859"
+        ],
+        "refss": [
+          "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-82r2.pdf"
+        ]
+      },
+      "uuid": "b34cba3b-4294-4149-b119-214fadef0d01",
+      "value": "Engineering Workstation"
+    },
+    {
+      "description": "Controller terminology depends on the type of system they are associated with. They provide typical processing capabilities. Controllers, sometimes referred to as Remote Terminal Units (RTU) and Programmable Logic Controllers (PLC), are computerized control units that are typically rack or panel mounted with modular processing and interface cards. The units are collocated with the process equipment and interface through input and output modules to the various sensors and controlled devices. Most utilize a programmable logic-based application that provides scanning and writing of data to and from the IO interface modules and communicates with the control system network via various communications methods, including serial and network communications",
+      "meta": {
+        "Levels": [
+          "Level 0 https://collaborate.mitre.org/attackics/index.php/Level_0",
+          "Level 1 https://collaborate.mitre.org/attackics/index.php/Level_1"
+        ],
+        "Notes": [
+          "Typically programmed in an IEC 61131 programming language, a PLC is designed for real time use in rugged, industrial environments. Connected to sensors and actuators, PLCs are categorized by the number and type of I/O ports they provide and by their I/O scan rate. \nAn RTU is a special purpose field device that supports SCADA remote stations with both wired and wireless communication capabilities, in order to communicate with the supervisory controller. Wireless radio is leveraged in remote situations where wired communications are not available; typically with field equipment. This role may also be fulfilled by PLCs with radio communication capabilities. The PLC may still be referred to as an RTU in this case."
+        ],
+        "Techniques That Apply": [
+          "Activate Firmware Update Mode https://collaborate.mitre.org/attackics/index.php/Technique/T800",
+          "Alarm Suppression https://collaborate.mitre.org/attackics/index.php/Technique/T878",
+          "Automated Collection https://collaborate.mitre.org/attackics/index.php/Technique/T802",
+          "Block Command Message https://collaborate.mitre.org/attackics/index.php/Technique/T803",
+          "Block Reporting Message https://collaborate.mitre.org/attackics/index.php/Technique/T804",
+          "Block Serial COM https://collaborate.mitre.org/attackics/index.php/Technique/T805 ",
+          "Brute Force I/O https://collaborate.mitre.org/attackics/index.php/Technique/T806",
+          "Change Program State https://collaborate.mitre.org/attackics/index.php/Technique/T875",
+          "Commonly Used Port https://collaborate.mitre.org/attackics/index.php/Technique/T885",
+          "Control Device Identification https://collaborate.mitre.org/attackics/index.php/Technique/T808",
+          "Data Destruction https://collaborate.mitre.org/attackics/index.php/Technique/T809",
+          "Default Credentials https://collaborate.mitre.org/attackics/index.php/Technique/T812",
+          "Denial of Service https://collaborate.mitre.org/attackics/index.php/Technique/T814",
+          "Detect Operating Mode https://collaborate.mitre.org/attackics/index.php/Technique/T868",
+          "Detect Program State https://collaborate.mitre.org/attackics/index.php/Technique/T870",
+          "Device Restart/Shutdown https://collaborate.mitre.org/attackics/index.php/Technique/T816",
+          "Execution through API https://collaborate.mitre.org/attackics/index.php/Technique/T871",
+          "Exploitation for Evasion https://collaborate.mitre.org/attackics/index.php/Technique/T820",
+          "I/O Image https://collaborate.mitre.org/attackics/index.php/Technique/T877",
+          "I/O Module Discovery https://collaborate.mitre.org/attackics/index.php/Technique/T824",
+          "Man in the Middle https://collaborate.mitre.org/attackics/index.php/Technique/T830",
+          "Manipulate I/O Image https://collaborate.mitre.org/attackics/index.php/Technique/T835",
+          "Modify Alarm Settings https://collaborate.mitre.org/attackics/index.php/Technique/T838 ",
+          "Modify Control Logic https://collaborate.mitre.org/attackics/index.php/Technique/T833",
+          "Modify Parameter https://collaborate.mitre.org/attackics/index.php/Technique/T836",
+          "Module Firmware https://collaborate.mitre.org/attackics/index.php/Technique/T839",
+          "Monitor Process State https://collaborate.mitre.org/attackics/index.php/Technique/T801",
+          "Network Service Scanning https://collaborate.mitre.org/attackics/index.php/Technique/T841",
+          "Network Sniffing https://collaborate.mitre.org/attackics/index.php/Technique/T842",
+          "Program Download https://collaborate.mitre.org/attackics/index.php/Technique/T843",
+          "Program Organisational Units https://collaborate.mitre.org/attackics/index.php/Technique/T844",
+          "Program Upload https://collaborate.mitre.org/attackics/index.php/Technique/T845",
+          "Remote System Discovery https://collaborate.mitre.org/attackics/index.php/Technique/T846",
+          "Role Identification https://collaborate.mitre.org/attackics/index.php/Technique/T850",
+          "Rootkit https://collaborate.mitre.org/attackics/index.php/Technique/T851",
+          "Serial Connection Enumeration https://collaborate.mitre.org/attackics/index.php/Technique/T854",
+          "System Firmware https://collaborate.mitre.org/attackics/index.php/Technique/T857",
+          "Unauthorised Command Message https://collaborate.mitre.org/attackics/index.php/Technique/T855",
+          "Utilize/Change Operating Mode https://collaborate.mitre.org/attackics/index.php/Technique/T858",
+          "Valid Accounts https://collaborate.mitre.org/attackics/index.php/Technique/T859"
+        ],
+        "refss": [
+          "https://ics-cert.us-cert.gov/Secure-Architecture-Design-Definitions",
+          "http://isa99.isa.org/ISA99%20Wiki/WP-2-1.aspx",
+          "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-82r2.pdf"
+        ]
+      },
+      "uuid": "1de9f3b2-07fc-4614-b07f-d5468e51770a",
+      "value": "Field Controller/RTU/PLC/IED"
+    },
+    {
+      "description": "In computer science and human-computer interaction, the Human-Machine Interface (HMI) refers to the graphical, textual and auditory information the program presents to the user (operator) using computer monitors and audio subsystems, and the control sequences (such as keystrokes with the computer keyboard, movements of the computer mouse, and selections with the touchscreen) the user employs to control the program. Currently the following types of HMI are the most common: \nGraphical user interfaces(GUI) accept input via devices such as computer keyboard and mouse and provide articulated graphical output on the computer monitor. \nWeb-based user interfaces accept input and provide output by generating web pages which are transported via the network and viewed by the user using a web browser program. The operations user must be able to control the system and assess the state of the system. Each control system vendor provides a unique look-and-feel to their basic HMI applications. An older, not gender-neutral version of the term is man-machine interface (MMI). \nThe system may expose several user interfaces to serve different kinds of users. User interface screens may be optimized to provide the appropriate information and control interface to operations users, engineering users and management users.",
+      "meta": {
+        "Levels": [
+          "Level 1 https://collaborate.mitre.org/attackics/index.php/Level_1",
+          "Level 2 https://collaborate.mitre.org/attackics/index.php/Level_2"
+        ],
+        "Notes": [
+          "In many cases, these involve video screens or computer terminals, push buttons, auditory feedback, flashing lights, etc. The human-machine interface provides means of: \nInput - allowing the users to control the machine \nOutput - allowing the machine to inform the users"
+        ],
+        "Techniques That Apply": [
+          "Commonly Used Port https://collaborate.mitre.org/attackics/index.php/Technique/T885",
+          "Data Destruction https://collaborate.mitre.org/attackics/index.php/Technique/T809",
+          "Data from Information Repositories https://collaborate.mitre.org/attackics/index.php/Technique/T811",
+          "Default Credentials https://collaborate.mitre.org/attackics/index.php/Technique/T812",
+          "Exploit of Remote Services https://collaborate.mitre.org/attackics/index.php/Technique/T866",
+          "Graphical User Interface https://collaborate.mitre.org/attackics/index.php/Technique/T823",
+          "Indicator Removal on host https://collaborate.mitre.org/attackics/index.php/Technique/T872",
+          "Loss of View https://collaborate.mitre.org/attackics/index.php/Technique/T829",
+          "Man in the Middle https://collaborate.mitre.org/attackics/index.php/Technique/T830",
+          "Manipulation of View https://collaborate.mitre.org/attackics/index.php/Technique/T832",
+          "Masquerading https://collaborate.mitre.org/attackics/index.php/Technique/T849",
+          "Modify Alarm Settings https://collaborate.mitre.org/attackics/index.php/Technique/T838",
+          "Modify Parameter https://collaborate.mitre.org/attackics/index.php/Technique/T836",
+          "Monitor Process State https://collaborate.mitre.org/attackics/index.php/Technique/T801",
+          "Network Connection Enumeration https://collaborate.mitre.org/attackics/index.php/Technique/T840",
+          "Point and Tag Identification https://collaborate.mitre.org/attackics/index.php/Technique/T861",
+          "Project File Infection https://collaborate.mitre.org/attackics/index.php/Technique/T873",
+          "Remote File Copy https://collaborate.mitre.org/attackics/index.php/Technique/T867",
+          "Remote System Discovery https://collaborate.mitre.org/attackics/index.php/Technique/T846",
+          "Replication Through Removable Media https://collaborate.mitre.org/attackics/index.php/Technique/T847",
+          "Rogue Master Device https://collaborate.mitre.org/attackics/index.php/Technique/T848",
+          "Role Identification https://collaborate.mitre.org/attackics/index.php/Technique/T850",
+          "Screen Capture https://collaborate.mitre.org/attackics/index.php/Technique/T852",
+          "Service Stop https://collaborate.mitre.org/attackics/index.php/Technique/T881",
+          "Spearphishing Attachment https://collaborate.mitre.org/attackics/index.php/Technique/T865",
+          "Standard Application Layer Protocol https://collaborate.mitre.org/attackics/index.php/Technique/T869",
+          "User Execution https://collaborate.mitre.org/attackics/index.php/Technique/T863",
+          "Valid Accounts https://collaborate.mitre.org/attackics/index.php/Technique/T859"
+        ],
+        "refss": [
+          "https://ics-cert.us-cert.gov/Secure-Architecture-Design-Definitions",
+          "http://isa99.isa.org/ISA99%20Wiki/WP-2-1.aspx"
+        ]
+      },
+      "uuid": "3894cc68-79e0-4673-8548-c6e1b57a93e2",
+      "value": "Human-Machine Interface"
+    },
+    {
+      "description": "The Input/Output (I/O) server provides the interface between the control system LAN applications and the field equipment monitored and controlled by the control system applications. The I/O server, sometimes referred to as a Front-End Processor (FEP) or Data Acquisition Server (DAS), converts the control system application data into packets that are transmitted over various types of communications media to the end device locations. The I/O server also converts data received from the various end devices over different communications mediums into data formatted to communicate with the control system networked applications.",
+      "meta": {
+        "Levels": [
+          "Level 2 https://collaborate.mitre.org/attackics/index.php/Level_2"
+        ],
+        "Techniques That Apply": [
+          "Blocking Reporting Message https://collaborate.mitre.org/attackics/index.php/Technique/T804",
+          "Block Serial COM https://collaborate.mitre.org/attackics/index.php/Technique/T805",
+          "External Remote Services https://collaborate.mitre.org/attackics/index.php/Technique/T822",
+          "Serial Connection Enumeration https://collaborate.mitre.org/attackics/index.php/Technique/T854",
+          "System Firmware https://collaborate.mitre.org/attackics/index.php/Technique/T857",
+          "Valid Accounts https://collaborate.mitre.org/attackics/index.php/Technique/T859"
+        ],
+        "refss": [
+          "https://ics-cert.us-cert.gov/Secure-Architecture-Design-Definitions"
+        ]
+      },
+      "uuid": "c98dda59-afe3-4154-b672-96f18cb5991b",
+      "value": "Input/Output Server"
+    },
+    {
+      "description": "A safety instrumented system (SIS) takes automated action to keep a plant in a safe state, or to put it into a safe state, when abnormal conditions are present. The SIS may implement a single function or multiple functions to protect against various process hazards in your plant. The function of protective relaying is to cause the prompt removal from service of an element of a power system when it suffers a short circuit or when it starts to operate in any abnormal manner that might cause damage or otherwise interfere with the effective operation of the rest of the system.",
+      "meta": {
+        "Levels": [
+          "Level 0 https://collaborate.mitre.org/attackics/index.php/Level_0",
+          "Level 1 https://collaborate.mitre.org/attackics/index.php/Level_1"
+        ],
+        "Techniques That Apply": [
+          "Activate Firmware Update Mode https://collaborate.mitre.org/attackics/index.php/Technique/T800",
+          "Alarm Suppression https://collaborate.mitre.org/attackics/index.php/Technique/T878",
+          "Automated Collection https://collaborate.mitre.org/attackics/index.php/Technique/T802",
+          "Commonly Used Port https://collaborate.mitre.org/attackics/index.php/Technique/T885 ",
+          "Default Credentials https://collaborate.mitre.org/attackics/index.php/Technique/T812",
+          "Denial of Service https://collaborate.mitre.org/attackics/index.php/Technique/T814",
+          "Exploitation for Evasion https://collaborate.mitre.org/attackics/index.php/Technique/T820",
+          "Indicator Removal on host https://collaborate.mitre.org/attackics/index.php/Technique/T872",
+          "Modify Alarm Settings https://collaborate.mitre.org/attackics/index.php/Technique/T838",
+          "Modify Control Logic https://collaborate.mitre.org/attackics/index.php/Technique/T833",
+          "Modify Parameter https://collaborate.mitre.org/attackics/index.php/Technique/T836",
+          "Module Firmware https://collaborate.mitre.org/attackics/index.php/Technique/T839 ",
+          "Monitor Process State https://collaborate.mitre.org/attackics/index.php/Technique/T801",
+          "Program Download https://collaborate.mitre.org/attackics/index.php/Technique/T843",
+          "Program Organisation Units https://collaborate.mitre.org/attackics/index.php/Technique/T844",
+          "Program Upload https://collaborate.mitre.org/attackics/index.php/Technique/T845",
+          "Remote System Discovery https://collaborate.mitre.org/attackics/index.php/Technique/T846",
+          "System Firmware https://collaborate.mitre.org/attackics/index.php/Technique/T857",
+          "Utilize/Change Operating Mode https://collaborate.mitre.org/attackics/index.php/Technique/T858",
+          "Valid Accounts https://collaborate.mitre.org/attackics/index.php/Technique/T859 "
+        ],
+        "refss": [
+          "http://sache.org/beacon/files/2009/07/en/read/2009-07-Beacon-s.pdf",
+          "http://www.gegridsolutions.com/multilin/notes/artsci/artsci.pdf"
+        ]
+      },
+      "uuid": "01ce6089-11cb-422f-ab05-ffe61ee4b21c",
+      "value": "Safety Instrumented System/Protection Relay"
+    }
+  ],
+  "version": 1
+}

@@ -143,11 +143,12 @@ for domain in domains:
         # add the relation in the defined way
         rel_source = {
             "dest-uuid": dest_uuid,
-            "tags": [
-                "estimative-language:likelihood-probability=\"almost-certain\""
-            ],
             "type": rel_type
         }
+        if rel_type != 'subtechnique-of':
+            rel_source['tags'] = [
+                "estimative-language:likelihood-probability=\"almost-certain\""
+            ]
         if 'related' not in all_data_uuid[source_uuid]:
             all_data_uuid[source_uuid]['related'] = []
         if rel_source not in all_data_uuid[source_uuid]['related']:

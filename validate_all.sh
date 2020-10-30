@@ -18,7 +18,7 @@ set -x
 
 diffs=`git status --porcelain | wc -l`
 if ! [ $diffs -eq 0 ]; then
-  echo "Please make sure you run ./jq_all_the_things.sh before commiting."
+  echo "ERROR: Please commit your changes, and make sure you run ./jq_all_the_things.sh before committing."
   if [ $# -eq 0 ]; then
     exit 1
   fi
@@ -31,7 +31,7 @@ find -name "*.json" -exec chmod -x "{}" \;
 diffs=`git status --porcelain | wc -l`
 
 if ! [ $diffs -eq 0 ]; then
-    echo "Please make sure you run remove the executable flag on the json files before commiting: find -name "*.json" -exec chmod -x \"{}\" \\;"
+    echo "ERROR: Please make sure you run remove the executable flag on the json files before committing: find -name "*.json" -exec chmod -x \"{}\" \\;"
     exit 1
 fi
 
@@ -43,7 +43,7 @@ do
   jsonschema -i ${dir} schema_clusters.json
   rc=$?
   if [[ $rc != 0 ]]; then
-    echo "Error on ${dir}"
+    echo "ERROR on ${dir}"
     exit $rc
   fi
   echo ''
@@ -55,7 +55,7 @@ do
   jsonschema -i ${dir} schema_galaxies.json
   rc=$?
   if [[ $rc != 0 ]]; then
-    echo "Error on ${dir}"
+    echo "ERROR on ${dir}"
     exit $rc
   fi
   echo ''
@@ -67,7 +67,7 @@ do
   jsonschema -i ${dir} schema_misp.json
   rc=$?
   if [[ $rc != 0 ]]; then
-    echo "Error on ${dir}"
+    echo "ERROR on ${dir}"
     exit $rc
   fi
   echo ''
@@ -79,7 +79,7 @@ do
   jsonschema -i ${dir} schema_vocabularies.json
   rc=$?
   if [[ $rc != 0 ]]; then
-    echo "Error on ${dir}"
+    echo "ERROR on ${dir}"
     exit $rc
   fi
   echo ''
