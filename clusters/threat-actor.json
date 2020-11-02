@@ -8014,6 +8014,9 @@
         "refs": [
           "https://securelist.com/apt-trends-report-q1-2018/85280/",
           "https://blog.trendmicro.com/trendlabs-security-intelligence/first-active-attack-exploiting-cve-2019-2215-found-on-google-play-linked-to-sidewinder-apt-group/"
+        ],
+        "synonyms": [
+          "RAZOR TIGER"
         ]
       },
       "uuid": "c4ce1174-9462-47e9-8038-794f40a184b3",
@@ -8433,7 +8436,63 @@
       },
       "uuid": "c30fbdc8-b66d-4242-a02a-e01946bc86d8",
       "value": "Evil Corp"
+    },
+    {
+      "description": "In April 2020, Crowstrike Falcon OverWatch discovered Iran-based adversary TRACER KITTEN conducting malicious interactive activity against multiple hosts at a telecommunications company in the Europe, Middle East and Africa (EMEA) region. The actor was found operating under valid user accounts, using custom backdoors in combination with SSH tunnels for C2. The adversary leveraged their foothold to conduct a variety of reconnaissance activities, undertake credential harvesting and prepare for data exfiltration.",
+      "meta": {
+        "country": "IR",
+        "refs": [
+          "https://go.crowdstrike.com/rs/281-OBQ-266/images/Report2020OverWatchNowheretoHide.pdf"
+        ]
+      },
+      "uuid": "6cc574c0-3dfa-459c-933a-4c63490c4e93",
+      "value": "TRACER KITTEN"
+    },
+    {
+      "description": "FIN11 is a well-established financial crime group that has recently focused its operations on ransomware and extortion. The group has been active since 2017 and has been tracked under UNC902 and later on as TEMP.Warlok. In some ways, FIN11 is reminiscent of APT1; they are notable not for their sophistication, but for their sheer volume of activity.(FireEye) Mandiant has also responded to numerous FIN11 intrusions, but we’ve only observed the group successfully monetize access in few instances. This could suggest that the actors cast a wide net during their phishing operations, then choose which victims to further exploit based on characteristics such as sector, geolocation or perceived security posture. Recently, FIN11 has deployed CLOP ransomware and threatened to publish exfiltrated data to pressure victims into paying ransom demands. The group’s shifting monetization methods—from point-of-sale (POS) malware in 2018, to ransomware in 2019, and hybrid extortion in 2020—is part of a larger trend in which criminal actors have increasingly focused on post-compromise ransomware deployment and data theft extortion. Notably, FIN11 includes a subset of the activity security researchers call TA505, Graceful Spider, Gold Evergreen, but we do not attribute TA505’s early operations to FIN11 and caution against using the names interchangeably. Attribution of both historic TA505 activity and more recent FIN11 activity is complicated by the actors’ use of criminal service providers. Like most financially motivated actors, FIN11 doesn’t operate in a vacuum. We believe that the group has used services that provide anonymous domain registration, bulletproof hosting, code signing certificates, and private or semi-private malware. Outsourcing work to these criminal service providers likely enables FIN11 to increase the scale and sophistication of their operations.",
+      "meta": {
+        "refs": [
+          "https://www.fireeye.com/blog/threat-research/2019/10/shikata-ga-nai-encoder-still-going-strong.html",
+          "https://www.fireeye.com/blog/threat-research/2020/10/fin11-email-campaigns-precursor-for-ransomware-data-theft.html",
+          "https://www.brighttalk.com/webcast/7451/447347"
+        ],
+        "synonyms": [
+          "TEMP.Warlock"
+        ]
+      },
+      "uuid": "c01aadc6-1087-4e8e-8d5c-a27eba409fe3",
+      "value": "FIN11"
+    },
+    {
+      "description": "UNC1878 is a financially motivated threat actor that monetizes network access via the deployment of RYUK ransomware. Earlier this year, Mandiant published a blog on a fast-moving adversary deploying RYUK ransomware, UNC1878. Shortly after its release, there was a significant decrease in observed UNC1878 intrusions and RYUK activity overall almost completely vanishing over the summer. But beginning in early fall, Mandiant has seen a resurgence of RYUK along with TTP overlaps indicating that UNC1878 has returned from the grave and resumed their operations.",
+      "meta": {
+        "refs": [
+          "https://twitter.com/anthomsec/status/1321865315513520128",
+          "https://www.fireeye.com/blog/threat-research/2020/03/the-cycle-of-adversary-pursuit.html",
+          "https://gist.github.com/aaronst/6aa7f61246f53a8dd4befea86e832456",
+          "https://www.youtube.com/watch?v=CgDtm05qApE",
+          "https://www.fireeye.com/blog/threat-research/2020/03/the-cycle-of-adversary-pursuit.html"
+        ]
+      },
+      "uuid": "3c2bb7d7-a085-4594-adc7-4a20cf724abb",
+      "value": "UNC1878"
+    },
+    {
+      "description": "Throughout 2019, multiple companies in the Taiwan high-tech ecosystem were victims of an advanced persistent threat (APT) attack. Due to these APT attacks having similar behavior profiles (similar adversarial techniques, tactics, and procedures or TTP) with each other and previously documented cyberattacks, CyCraft assess with high confidence these new attacks were conducted by the same foreign threat actor. During their investigation, they dubbed this threat actor Chimera. “Chimera” stands for the synthesis of hacker tools that they’ve seen the group use, such as the skeleton key malware that contained code extracted from both Dumpert and Mimikatz — hence Chimera. Their operation — the entirety of the new attacks utilizing the Skeleton Key attack (described below) from late 2018 to late 2019, CyCraft have dubbed Operation Skeleton Key.",
+      "meta": {
+        "refs": [
+          "https://i.blackhat.com/USA-20/Thursday/us-20-Chen-Operation-Chimera-APT-Operation-Targets-Semiconductor-Vendors.pdf",
+          "https://www.wired.com/story/chinese-hackers-taiwan-semiconductor-industry-skeleton-key/",
+          "https://cycraft.com/download/%5BTLP-White%5D20200415%20Chimera_V4.1.pdf",
+          "https://medium.com/cycraft/taiwan-high-tech-ecosystem-targeted-by-foreign-apt-group-5473d2ad8730"
+        ],
+        "threat-actor-classification": [
+          "operation"
+        ]
+      },
+      "uuid": "c8b961fe-3698-41ac-aba1-002ee3c19531",
+      "value": "Operation Skeleton Key"
     }
   ],
-  "version": 185
+  "version": 186
 }
