@@ -606,17 +606,22 @@
       "value": "Threat Group-1314 - G0028"
     },
     {
-      "description": "[Dragonfly 2.0](https://attack.mitre.org/groups/G0074) is a suspected Russian group that has targeted government entities and multiple U.S. critical infrastructure sectors since at least March 2016. (Citation: US-CERT TA18-074A) (Citation: Symantec Dragonfly Sept 2017) There is debate over the extent of overlap between [Dragonfly 2.0](https://attack.mitre.org/groups/G0074) and [Dragonfly](https://attack.mitre.org/groups/G0035), but there is sufficient evidence to lead to these being tracked as two separate groups. (Citation: Fortune Dragonfly 2.0 Sept 2017)",
+      "description": "[Dragonfly 2.0](https://attack.mitre.org/groups/G0074) is a suspected Russian group that has targeted government entities and multiple U.S. critical infrastructure sectors since at least March 2016. (Citation: US-CERT TA18-074A) (Citation: Symantec Dragonfly Sept 2017) There is debate over the extent of overlap between [Dragonfly 2.0](https://attack.mitre.org/groups/G0074) and [Dragonfly](https://attack.mitre.org/groups/G0035), but there is sufficient evidence to lead to these being tracked as two separate groups. (Citation: Fortune Dragonfly 2.0 Sept 2017)(Citation: Dragos DYMALLOY )",
       "meta": {
         "external_id": "G0074",
         "refs": [
           "https://attack.mitre.org/groups/G0074",
           "https://www.us-cert.gov/ncas/alerts/TA18-074A",
           "https://www.symantec.com/connect/blogs/dragonfly-western-energy-sector-targeted-sophisticated-attack-group",
-          "http://fortune.com/2017/09/06/hack-energy-grid-symantec/"
+          "http://fortune.com/2017/09/06/hack-energy-grid-symantec/",
+          "https://www.dragos.com/threat/dymalloy/",
+          "https://www.secureworks.com/research/mcmd-malware-analysis",
+          "https://www.secureworks.com/research/threat-profiles/iron-liberty"
         ],
         "synonyms": [
           "Dragonfly 2.0",
+          "IRON LIBERTY",
+          "DYMALLOY",
           "Berserk Bear"
         ]
       },
@@ -966,6 +971,27 @@
         },
         {
           "dest-uuid": "1ecfdab8-7d59-4c98-95d4-dc41970f57fc",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "c4810609-7da6-48ec-8057-1b70a7814db0",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "82cb34ba-02b5-432b-b2d2-07f55cbf674d",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "975737f1-b10d-476f-8bda-3ec26ea57172",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
@@ -1788,7 +1814,7 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "aafea02e-ece5-4bb2-91a6-3bf8c7f38a39",
+          "dest-uuid": "a7881f21-e978-4fe4-af56-92c9416a2616",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
@@ -2007,17 +2033,20 @@
       "value": "Deep Panda - G0009"
     },
     {
-      "description": "[Wizard Spider](https://attack.mitre.org/groups/G0102) is financially motivated group that has been conducting ransomware campaigns since at least August 2018, primarily targeting large organizations. (Citation: CrowdStrike Ryuk January 2019)",
+      "description": "[Wizard Spider](https://attack.mitre.org/groups/G0102) is a financially motivated criminal group that has been conducting ransomware campaigns since at least August 2018 against a variety of organizations, ranging from major corporations to hospitals.(Citation: CrowdStrike Ryuk January 2019)(Citation: DHS/CISA Ransomware Targeting Healthcare October 2020)",
       "meta": {
         "external_id": "G0102",
         "refs": [
           "https://attack.mitre.org/groups/G0102",
           "https://www.crowdstrike.com/blog/big-game-hunting-with-ryuk-another-lucrative-targeted-ransomware/",
+          "https://us-cert.cisa.gov/ncas/alerts/aa20-302a",
+          "https://www.fireeye.com/blog/threat-research/2020/10/kegtap-and-singlemalt-with-a-ransomware-chaser.html",
           "https://www.fireeye.com/blog/threat-research/2019/01/a-nasty-trick-from-credential-theft-malware-to-business-disruption.html",
           "https://www.crowdstrike.com/blog/timelining-grim-spiders-big-game-hunting-tactics/"
         ],
         "synonyms": [
           "Wizard Spider",
+          "UNC1878",
           "TEMP.MixMaster",
           "Grim Spider"
         ]
@@ -2088,13 +2117,6 @@
         },
         {
           "dest-uuid": "970a3432-3237-47ad-bcca-7d8cbb217736",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "731f4f55-b6d0-41d1-a7a9-072a66389aea",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
@@ -2207,6 +2229,230 @@
         },
         {
           "dest-uuid": "63c2a130-8a5b-452f-ad96-07cf0af12ffe",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "f4599aa0-4f85-4a32-80ea-fc39dc965945",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "edf91964-b26e-4b4a-9600-ccacd7d7df24",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "ef67e13e-5598-4adc-bdb2-998225874fa9",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "2b742742-28c3-4e1b-bab7-8350d6300fa7",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "f2877f7f-9a4c-4251-879f-1224e3006bee",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "60d0c01d-e2bf-49dd-a453-f8a9c9fa6f65",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "3489cfc5-640f-4bb3-a103-9137b97de79f",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "ac08589e-ee59-4935-8667-d845e38fe579",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "9efb1ea7-c37b-4595-9640-b7680cd84279",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "03d7999c-1f4c-42cc-8373-e7690d318104",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "c3d4bdd9-2cfe-4a80-9d0c-07a29ecdce8f",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "10d51417-ee35-4589-b1ff-b6df1c334e8d",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "20fb2507-d71c-455d-9b6d-6104461cf26b",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "fb8d023d-45be-47e9-bc51-f56bcae6435b",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "d1fcf083-a721-4223-aedf-bf8960798d62",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "354a7f88-63fb-41b5-a801-ce3b377b36f1",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "4f9ca633-15c5-463c-9724-bdcd54fde541",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "f1951e8a-500e-4a26-8803-76d95c4554b4",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "650c784b-7504-4df7-ab2c-4ea882384d1e",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "9db0cf3a-a3c9-4012-8268-123b9db6fd82",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "cba37adb-d6fb-4610-b069-dd04c0643384",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "6836813e-8ec8-4375-b459-abb388cb1a35",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "1644e709-12d2-41e5-a60f-3470991f5011",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "32901740-b42c-4fdd-bc02-345b5dc57082",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "e7cbc1de-1f79-48ee-abfd-da1241c65a15",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "34e793de-0274-4982-9c1a-246ed1c19dee",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "707399d6-ab3e-4963-9315-d9d3818cd6a0",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "21875073-b0ee-49e3-9077-1e2a885359af",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "981acc4c-2ede-4b56-be6e-fa1a75f37acf",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "b77b563c-34bb-4fb8-86a3-3694338f7b47",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "afc079f3-c0ea-4096-b75d-3f05338b7f60",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "a7881f21-e978-4fe4-af56-92c9416a2616",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
@@ -2437,6 +2683,13 @@
         },
         {
           "dest-uuid": "359b00ad-9425-420b-bba5-6de8d600cbc0",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "212306d8-efa4-44c9-8c2d-ed3d2e224aa0",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
@@ -3522,6 +3775,76 @@
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
           "type": "uses"
+        },
+        {
+          "dest-uuid": "3aa169f8-bbf6-44bb-b57d-7f6ada5c2128",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "a04d9a4c-bb52-40bf-98ec-e350c2d6a862",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "f6ad61ee-65f3-4bd0-a3f5-2f0accb36317",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "5095a853-299c-4876-abd7-ac0050fb5462",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "57340c81-c025-4189-8fa0-fc7ede51bae4",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "7bdca9d5-d500-4d7d-8c52-5fd47baf4c0c",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "deb98323-e13f-4b0c-8d94-175379069062",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "dfd7cc1d-e1d8-4394-a198-97c4cab8aa67",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "970a3432-3237-47ad-bcca-7d8cbb217736",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "840a987a-99bd-4a80-a5c9-0cb2baa6cade",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
         }
       ],
       "uuid": "c93fccb1-e8e8-42cf-ae33-2ad1d183913a",
@@ -4530,6 +4853,13 @@
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
           "type": "uses"
+        },
+        {
+          "dest-uuid": "8393dac0-0583-456a-9372-fd81691bca20",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
         }
       ],
       "uuid": "c5947e1c-1cbc-434c-94b8-27c7e3be0fff",
@@ -4762,6 +5092,41 @@
         },
         {
           "dest-uuid": "391d824f-0ef1-47a0-b0ee-c59a75e27670",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "774a3188-6ba9-4dc4-879d-d54ee48a5ce9",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "30208d3e-0d6b-43c8-883e-44462a514619",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "ae676644-d2d2-41b7-af7e-9bed1b55898c",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "045d0922-2310-4e60-b5e4-3302302cb3c5",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "246fd3c7-f5e3-466d-8787-4c13d9e3b61c",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
@@ -5415,12 +5780,73 @@
       "value": "Bouncing Golf - G0097"
     },
     {
+      "description": "[GOLD SOUTHFIELD](https://attack.mitre.org/groups/G0115) is a financially motivated threat group active since at least 2019 that operates the [REvil](https://attack.mitre.org/software/S0496) Ransomware-as-a Service (RaaS). [GOLD SOUTHFIELD](https://attack.mitre.org/groups/G0115) provides backend infrastructure for affiliates recruited on underground forums to perpetrate high value deployments.(Citation: Secureworks REvil September 2019)(Citation: Secureworks GandCrab and REvil September 2019)(Citation: Secureworks GOLD SOUTHFIELD)",
+      "meta": {
+        "external_id": "G0115",
+        "refs": [
+          "https://attack.mitre.org/groups/G0115",
+          "https://www.secureworks.com/research/revil-sodinokibi-ransomware",
+          "https://www.secureworks.com/blog/revil-the-gandcrab-connection",
+          "https://www.secureworks.com/research/threat-profiles/gold-southfield"
+        ],
+        "synonyms": [
+          "GOLD SOUTHFIELD"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "ac61f1f9-7bb1-465e-9b8a-c2ce8e88baf5",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "10d51417-ee35-4589-b1ff-b6df1c334e8d",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "9fa07bef-9c81-421e-a8e5-ad4366c5a925",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "3f886f2a-874f-4333-b794-aa6075009b1c",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "a62a8db3-f23a-4d8f-afd6-9dbc77e7813b",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "bd369cd9-abb8-41ce-b5bb-fff23ee86c00",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        }
+      ],
+      "uuid": "c77c5576-ca19-42ed-a36f-4b4486a84133",
+      "value": "GOLD SOUTHFIELD - G0115"
+    },
+    {
       "description": "[APT-C-36](https://attack.mitre.org/groups/G0099) is a suspected South America espionage group that has been active since at least 2018. The group mainly targets Colombian government institutions as well as important corporations in the financial sector, petroleum industry, and professional manufacturing.(Citation: QiAnXin APT-C-36 Feb2019)",
       "meta": {
         "external_id": "G0099",
         "refs": [
           "https://attack.mitre.org/groups/G0099",
-          "https://ti.360.net/blog/articles/apt-c-36-continuous-attacks-targeting-colombian-government-institutions-and-corporations-en/"
+          "https://web.archive.org/web/20190625182633if_/https://ti.360.net/blog/articles/apt-c-36-continuous-attacks-targeting-colombian-government-institutions-and-corporations-en/"
         ],
         "synonyms": [
           "APT-C-36",
@@ -5647,6 +6073,13 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "79da0971-3147-4af6-a4f5-e8cd447cd795",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
           "dest-uuid": "795c1a92-3a26-453e-b99a-6a566aa94dc6",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
@@ -5844,7 +6277,7 @@
       "value": "APT12 - G0005"
     },
     {
-      "description": "[APT30](https://attack.mitre.org/groups/G0013) is a threat group suspected to be associated with the Chinese government. (Citation: FireEye APT30) While [Naikon](https://attack.mitre.org/groups/G0019) shares some characteristics with [APT30](https://attack.mitre.org/groups/G0013), the two groups do not appear to be exact matches. (Citation: Baumgartner Golovkin Naikon 2015)",
+      "description": "[APT30](https://attack.mitre.org/groups/G0013) is a threat group suspected to be associated with the Chinese government. While [Naikon](https://attack.mitre.org/groups/G0019) shares some characteristics with [APT30](https://attack.mitre.org/groups/G0013), the two groups do not appear to be exact matches.(Citation: FireEye APT30)(Citation: Baumgartner Golovkin Naikon 2015)",
       "meta": {
         "external_id": "G0013",
         "refs": [
@@ -5908,6 +6341,20 @@
         },
         {
           "dest-uuid": "8b880b41-5139-4807-baa9-309690218719",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "232b7f21-adf9-4b42-b936-b9d6f7df856e",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "2e34237d-8574-43f6-aace-ae2915de8597",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
@@ -6167,6 +6614,48 @@
         },
         {
           "dest-uuid": "b4694861-542c-48ea-9eb1-10d356e7140a",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "40f5caa0-4cb7-4117-89fc-d421bb493df3",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "f9cc4d06-775f-4ee1-b401-4e2cc0da30ba",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "2b742742-28c3-4e1b-bab7-8350d6300fa7",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "2e34237d-8574-43f6-aace-ae2915de8597",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "65013dd2-bc61-43e3-afb5-a14c4fa7437a",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "7807d3a4-a885-4639-a786-c1ed41484970",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
@@ -6507,7 +6996,7 @@
       "value": "Inception - G0100"
     },
     {
-      "description": "[Turla](https://attack.mitre.org/groups/G0010) is a Russian-based threat group that has infected victims in over 45 countries, spanning a range of industries including government, embassies, military, education, research and pharmaceutical companies since 2004. Heightened activity was seen in mid-2015. [Turla](https://attack.mitre.org/groups/G0010) is known for conducting watering hole and spearphishing campaigns and leveraging in-house tools and malware. [Turla](https://attack.mitre.org/groups/G0010)’s espionage platform is mainly used against Windows machines, but has also been seen used against macOS and Linux machines. (Citation: Kaspersky Turla) (Citation: ESET Gazer Aug 2017) (Citation: CrowdStrike VENOMOUS BEAR) (Citation: ESET Turla Mosquito Jan 2018)",
+      "description": "[Turla](https://attack.mitre.org/groups/G0010) is a Russian-based threat group that has infected victims in over 45 countries, spanning a range of industries including government, embassies, military, education, research and pharmaceutical companies since 2004. Heightened activity was seen in mid-2015. [Turla](https://attack.mitre.org/groups/G0010) is known for conducting watering hole and spearphishing campaigns and leveraging in-house tools and malware. [Turla](https://attack.mitre.org/groups/G0010)’s espionage platform is mainly used against Windows machines, but has also been seen used against macOS and Linux machines.(Citation: Kaspersky Turla)(Citation: ESET Gazer Aug 2017)(Citation: CrowdStrike VENOMOUS BEAR)(Citation: ESET Turla Mosquito Jan 2018)",
       "meta": {
         "external_id": "G0010",
         "refs": [
@@ -7026,6 +7515,41 @@
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
           "type": "uses"
+        },
+        {
+          "dest-uuid": "7807d3a4-a885-4639-a786-c1ed41484970",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "39cc9f64-cf74-4a48-a4d8-fe98c54a02e0",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "ae797531-3219-49a4-bccf-324ad7a4c7b2",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "e196b5c5-8118-4a1c-ab8a-936586ce3db5",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "212306d8-efa4-44c9-8c2d-ed3d2e224aa0",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
         }
       ],
       "uuid": "7a19ecb1-3c65-4de3-a230-993516aed6a6",
@@ -7205,7 +7729,7 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "aafea02e-ece5-4bb2-91a6-3bf8c7f38a39",
+          "dest-uuid": "a7881f21-e978-4fe4-af56-92c9416a2616",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
@@ -7874,11 +8398,12 @@
       "value": "TA505 - G0092"
     },
     {
-      "description": "[APT28](https://attack.mitre.org/groups/G0007) is a threat group that has been attributed to Russia's Main Intelligence Directorate of the Russian General Staff by a July 2018 U.S. Department of Justice indictment. This group reportedly compromised the Hillary Clinton campaign, the Democratic National Committee, and the Democratic Congressional Campaign Committee in 2016 in an attempt to interfere with the U.S. presidential election. [APT28](https://attack.mitre.org/groups/G0007) has been active since at least 2004.(Citation: DOJ GRU Indictment Jul 2018) (Citation: Ars Technica GRU indictment Jul 2018) (Citation: Crowdstrike DNC June 2016) (Citation: FireEye APT28) (Citation: SecureWorks TG-4127) (Citation: FireEye APT28 January 2017) (Citation: GRIZZLY STEPPE JAR) (Citation: Sofacy DealersChoice) (Citation: Palo Alto Sofacy 06-2018) (Citation: Symantec APT28 Oct 2018) (Citation: ESET Zebrocy May 2019)",
+      "description": "[APT28](https://attack.mitre.org/groups/G0007) is a threat group that has been attributed to Russia's General Staff Main Intelligence Directorate (GRU) 85th Main Special Service Center (GTsSS) military unit 26165.(Citation: NSA/FBI Drovorub August 2020) This group has been active since at least 2004.(Citation: DOJ GRU Indictment Jul 2018) (Citation: Ars Technica GRU indictment Jul 2018) (Citation: Crowdstrike DNC June 2016) (Citation: FireEye APT28) (Citation: SecureWorks TG-4127) (Citation: FireEye APT28 January 2017) (Citation: GRIZZLY STEPPE JAR) (Citation: Sofacy DealersChoice) (Citation: Palo Alto Sofacy 06-2018) (Citation: Symantec APT28 Oct 2018) (Citation: ESET Zebrocy May 2019)\n\n[APT28](https://attack.mitre.org/groups/G0007) reportedly compromised the Hillary Clinton campaign, the Democratic National Committee, and the Democratic Congressional Campaign Committee in 2016 in an attempt to interfere with the U.S. presidential election. (Citation: Crowdstrike DNC June 2016) In 2018, the US indicted five GRU Unit 26165 officers associated with [APT28](https://attack.mitre.org/groups/G0007) for cyber operations (including close-access operations) conducted between 2014 and 2018 against the World Anti-Doping Agency (WADA), the US Anti-Doping Agency, a US nuclear facility, the Organization for the Prohibition of Chemical Weapons (OPCW), the Spiez Swiss Chemicals Laboratory, and other organizations.(Citation: US District Court Indictment GRU Oct 2018) Some of these were conducted with the assistance of GRU Unit 74455, which is also referred to as [Sandworm Team](https://attack.mitre.org/groups/G0034). ",
       "meta": {
         "external_id": "G0007",
         "refs": [
           "https://attack.mitre.org/groups/G0007",
+          "https://media.defense.gov/2020/Aug/13/2002476465/-1/-1/0/CSA_DROVORUB_RUSSIAN_GRU_MALWARE_AUG_2020.PDF",
           "https://www.justice.gov/file/1080281/download",
           "https://arstechnica.com/information-technology/2018/07/from-bitly-to-x-agent-how-gru-hackers-targeted-the-2016-presidential-election/",
           "https://www.crowdstrike.com/blog/bears-midst-intrusion-democratic-national-committee/",
@@ -7890,12 +8415,14 @@
           "https://researchcenter.paloaltonetworks.com/2018/06/unit42-sofacy-groups-parallel-attacks/",
           "https://www.symantec.com/blogs/election-security/apt28-espionage-military-government",
           "https://www.welivesecurity.com/2019/05/22/journey-zebrocy-land/",
+          "https://www.justice.gov/opa/page/file/1098481/download",
           "https://securelist.com/sofacy-apt-hits-high-profile-targets-with-updated-toolset/72924/",
           "http://www.welivesecurity.com/wp-content/uploads/2016/10/eset-sednit-part3.pdf",
           "https://blog.talosintelligence.com/2017/10/cyber-conflict-decoy-document.html",
           "https://securelist.com/a-slice-of-2017-sofacy-activity/83930/",
           "https://www.accenture.com/t20181129T203820Z__w__/us-en/_acnmedia/PDF-90/Accenture-snakemackerel-delivers-zekapab-malware.pdf#zoom=50",
-          "https://msrc-blog.microsoft.com/2019/08/05/corporate-iot-a-path-to-intrusion/"
+          "https://msrc-blog.microsoft.com/2019/08/05/corporate-iot-a-path-to-intrusion/",
+          "https://www.microsoft.com/security/blog/2020/09/10/strontium-detecting-new-patters-credential-harvesting/"
         ],
         "synonyms": [
           "APT28",
@@ -8460,6 +8987,48 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "99164b38-1775-40bc-b77b-a2373b14540a",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "692074ae-bb62-4a5e-a735-02cb6bde458c",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "09c4c11e-4fa1-4f8c-8dad-3cf8e69ad119",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "d74c4a7e-ffbf-432f-9365-7ebf1f787cab",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "3f886f2a-874f-4333-b794-aa6075009b1c",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "40f5caa0-4cb7-4117-89fc-d421bb493df3",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
           "dest-uuid": "56660521-6db4-4e5a-a927-464f22954b7c",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
@@ -8994,6 +9563,27 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "b1ccd744-3f78-4a0e-9bb2-2002057f7928",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "212306d8-efa4-44c9-8c2d-ed3d2e224aa0",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "cabe189c-a0e3-4965-a473-dcff00f17213",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
           "dest-uuid": "c2ffd229-11bb-4fd8-9208-edbe97b14c93",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
@@ -9368,6 +9958,13 @@
         },
         {
           "dest-uuid": "ef67e13e-5598-4adc-bdb2-998225874fa9",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "34b3f738-bd64-40e5-a112-29b0542bc8bf",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
@@ -9843,6 +10440,13 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "e196b5c5-8118-4a1c-ab8a-936586ce3db5",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
           "dest-uuid": "e51398e6-53dc-4e9f-a323-e54683d8672b",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
@@ -9890,6 +10494,20 @@
         },
         {
           "dest-uuid": "d69c8146-ab35-4d50-8382-6fc80e641d43",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "88d31120-5bc7-4ce3-a9c0-7cf147be8e54",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "cdfc5f0a-9bb9-4352-b896-553cfa2d8fd8",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
@@ -10099,6 +10717,8 @@
           "https://www.us-cert.gov/sites/default/files/publications/JAR_16-20296A_GRIZZLY%20STEPPE-2016-1229.pdf",
           "https://www.crowdstrike.com/blog/bears-midst-intrusion-democratic-national-committee/",
           "https://www.fireeye.com/blog/threat-research/2018/11/not-so-cozy-an-uncomfortable-examination-of-a-suspected-apt29-phishing-campaign.html",
+          "https://www.welivesecurity.com/wp-content/uploads/2019/10/ESET_Operation_Ghost_Dukes.pdf",
+          "https://www.ncsc.gov.uk/files/Advisory-APT29-targets-COVID-19-vaccine-development-V1-1.pdf",
           "https://www.microsoft.com/security/blog/2018/12/03/analysis-of-cyberattack-on-u-s-think-tanks-non-profits-public-sector-by-unidentified-attackers/"
         ],
         "synonyms": [
@@ -10356,7 +10976,7 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "aafea02e-ece5-4bb2-91a6-3bf8c7f38a39",
+          "dest-uuid": "a7881f21-e978-4fe4-af56-92c9416a2616",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
@@ -10378,6 +10998,118 @@
         },
         {
           "dest-uuid": "4ab929c6-ee2d-4fb5-aab4-b14be2ed7179",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "c3d4bdd9-2cfe-4a80-9d0c-07a29ecdce8f",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "eec23884-3fa1-4d8a-ac50-6f104d51e235",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "be055942-6e63-49d7-9fa1-9cb7d8a8f3f4",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "cc3502b5-30cc-4473-ad48-42d51a6ef6d1",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "3d57dcc4-be99-4613-9482-d5218f5ec13e",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "47124daf-44be-4530-9c63-038bc64318dd",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "3a4197ae-ec63-4162-907b-9a073d1157e4",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "3f886f2a-874f-4333-b794-aa6075009b1c",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "959f3b19-2dc8-48d5-8942-c66813a5101a",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "2e45723a-31da-4a7e-aaa6-e01998a6788f",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "7fcbc4e8-1989-441f-9ac5-e7b6ff5806f1",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "294e2560-bd48-44b2-9da2-833b5588ad11",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "03342581-f790-4f03-ba41-e82e67392e23",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "e33e4603-afab-402d-b2a1-248d435b5fe0",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "88d31120-5bc7-4ce3-a9c0-7cf147be8e54",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "1cec9319-743b-4840-bb65-431547bce82a",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
@@ -10856,7 +11588,7 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "aafea02e-ece5-4bb2-91a6-3bf8c7f38a39",
+          "dest-uuid": "a7881f21-e978-4fe4-af56-92c9416a2616",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
@@ -11513,7 +12245,7 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "aafea02e-ece5-4bb2-91a6-3bf8c7f38a39",
+          "dest-uuid": "a7881f21-e978-4fe4-af56-92c9416a2616",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
@@ -13637,7 +14369,7 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "aafea02e-ece5-4bb2-91a6-3bf8c7f38a39",
+          "dest-uuid": "a7881f21-e978-4fe4-af56-92c9416a2616",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
@@ -13690,7 +14422,7 @@
       "value": "CopyKittens - G0052"
     },
     {
-      "description": "[Honeybee](https://attack.mitre.org/groups/G0072) is a campaign led by an unknown actor that targets humanitarian aid organizations and has been active in Vietnam, Singapore, Argentina, Japans, Indonesia, and Canada. It has been an active operation since August of 2017 and as recently as February 2018. (Citation: McAfee Honeybee)",
+      "description": "[Honeybee](https://attack.mitre.org/groups/G0072) is a campaign led by an unknown actor that targets humanitarian aid organizations and has been active in Vietnam, Singapore, Argentina, Japan, Indonesia, and Canada. It has been an active operation since August of 2017 and as recently as February 2018. (Citation: McAfee Honeybee)",
       "meta": {
         "external_id": "G0072",
         "refs": [
@@ -14464,17 +15196,24 @@
       "value": "FIN5 - G0053"
     },
     {
-      "description": "[Dragonfly](https://attack.mitre.org/groups/G0035) is a cyber espionage group that has been active since at least 2011. They initially targeted defense and aviation companies but shifted to focus on the energy sector in early 2013. They have also targeted companies related to industrial control systems. (Citation: Symantec Dragonfly)\n\nA similar group emerged in 2015 and was identified by Symantec as [Dragonfly 2.0](https://attack.mitre.org/groups/G0074). There is debate over the extent of the overlap between [Dragonfly](https://attack.mitre.org/groups/G0035) and [Dragonfly 2.0](https://attack.mitre.org/groups/G0074), but there is sufficient evidence to lead to these being tracked as two separate groups. (Citation: Symantec Dragonfly Sept 2017) (Citation: Fortune Dragonfly 2.0 Sept 2017)",
+      "description": "[Dragonfly](https://attack.mitre.org/groups/G0035) Dragonfly is a cyber espionage group that has been active since at least 2011. They initially targeted defense and aviation companies but shifted to focus on the energy sector in early 2013. They have also targeted companies related to industrial control systems. (Citation: Symantec Dragonfly)(Citation: Secureworks IRON LIBERTY July 2019)\n\nA similar group emerged in 2015 and was identified by Symantec as [Dragonfly 2.0](https://attack.mitre.org/groups/G0074). There is debate over the extent of the overlap between [Dragonfly](https://attack.mitre.org/groups/G0035) and [Dragonfly 2.0](https://attack.mitre.org/groups/G0074), but there is sufficient evidence to lead to these being tracked as two separate groups. (Citation: Symantec Dragonfly Sept 2017)(Citation: Fortune Dragonfly 2.0 Sept 2017)(Citation: Dragos DYMALLOY )",
       "meta": {
         "external_id": "G0035",
         "refs": [
           "https://attack.mitre.org/groups/G0035",
           "http://www.symantec.com/content/en/us/enterprise/media/security_response/whitepapers/Dragonfly_Threat_Against_Western_Energy_Suppliers.pdf",
+          "https://www.secureworks.com/research/resurgent-iron-liberty-targeting-energy-sector",
           "https://www.symantec.com/connect/blogs/dragonfly-western-energy-sector-targeted-sophisticated-attack-group",
-          "http://fortune.com/2017/09/06/hack-energy-grid-symantec/"
+          "http://fortune.com/2017/09/06/hack-energy-grid-symantec/",
+          "https://www.dragos.com/threat/dymalloy/",
+          "https://www.secureworks.com/research/mcmd-malware-analysis",
+          "https://www.secureworks.com/research/updated-karagany-malware-targets-energy-sector"
         ],
         "synonyms": [
           "Dragonfly",
+          "TG-4192",
+          "Crouching Yeti",
+          "IRON LIBERTY",
           "Energetic Bear"
         ]
       },
@@ -14495,6 +15234,41 @@
         },
         {
           "dest-uuid": "083bb47b-02c8-4423-81a2-f9ef58572974",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "a62a8db3-f23a-4d8f-afd6-9dbc77e7813b",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "ff6caf67-ea1f-4895-b80e-4bb0fc31c6db",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "afc079f3-c0ea-4096-b75d-3f05338b7f60",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "bd369cd9-abb8-41ce-b5bb-fff23ee86c00",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "d742a578-d70e-4d0e-96a6-02a9c30204e6",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
@@ -14758,7 +15532,7 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "32901740-b42c-4fdd-bc02-345b5dc57082",
+          "dest-uuid": "b4b7458f-81f2-4d38-84be-1c5ba0167a52",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
@@ -14825,10 +15599,14 @@
           "https://attack.mitre.org/groups/G0037",
           "https://www2.fireeye.com/rs/848-DID-242/images/rpt-fin6.pdf",
           "https://www.fireeye.com/blog/threat-research/2019/04/pick-six-intercepting-a-fin6-intrusion.html",
+          "https://securityintelligence.com/posts/itg08-aka-fin6-partners-with-trickbot-gang-uses-anchor-framework/",
+          "https://crowdstrike.lookbookhq.com/global-threat-report-2018-web/cs-2018-global-threat-report",
           "https://securityintelligence.com/posts/more_eggs-anyone-threat-actor-itg08-strikes-again/"
         ],
         "synonyms": [
           "FIN6",
+          "Magecart Group 6",
+          "SKELETON SPIDER",
           "ITG08"
         ]
       },
@@ -14939,13 +15717,6 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "1c34f7aa-9341-4a48-bfab-af22e51aca6c",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
-        },
-        {
           "dest-uuid": "b17a1a56-e99c-403c-8948-561df0cffe81",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
@@ -14974,7 +15745,7 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "aafea02e-ece5-4bb2-91a6-3bf8c7f38a39",
+          "dest-uuid": "a7881f21-e978-4fe4-af56-92c9416a2616",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
@@ -15066,6 +15837,132 @@
         },
         {
           "dest-uuid": "a020a61c-423f-4195-8c46-ba1d21abba37",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "1d24cdee-9ea2-4189-b08e-af110bf2435d",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "dcaa092b-7de9-4a21-977f-7fcb77e89c48",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "ac08589e-ee59-4935-8667-d845e38fe579",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "1cdbbcab-903a-414d-8eb0-439a97343737",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "3c4a2599-71ee-4405-ba1e-0e28414b4bc5",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "d9f7383c-95ec-4080-bbce-121c9384457b",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "232b7f21-adf9-4b42-b936-b9d6f7df856e",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "2e34237d-8574-43f6-aace-ae2915de8597",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "58a3e6aa-4453-4cc8-a51f-4befe80b31a8",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "3fc9b85a-2862-4363-a64d-d692e3ffbee0",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "d63a3fb8-9452-4e9d-a60a-54be68d5998c",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "0f4a0c76-ab2d-4cb0-85d3-3f0efb8cba0d",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "fb8d023d-45be-47e9-bc51-f56bcae6435b",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "432555de-63bf-4f2a-a3fa-f720a4561078",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "d28ef391-8ed4-45dc-bc4a-2f43abf54416",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "c21d5a77-d422-4a69-acd7-2c53c1faa34b",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "d1fcf083-a721-4223-aedf-bf8960798d62",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
@@ -15254,7 +16151,7 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "d1fcf083-a721-4223-aedf-bf8960798d62",
+          "dest-uuid": "7385dfaf-6886-4229-9ecd-6fd678040830",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
@@ -15479,6 +16376,13 @@
         },
         {
           "dest-uuid": "1c4e5d32-1fe9-4116-9d9d-59e3925bd6a2",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "c4810609-7da6-48ec-8057-1b70a7814db0",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
@@ -16134,6 +17038,13 @@
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
           "type": "uses"
+        },
+        {
+          "dest-uuid": "2cd950a6-16c4-404a-aa01-044322395107",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
         }
       ],
       "uuid": "222fbd21-fc4f-4b7e-9f85-0e6e3a76c33f",
@@ -16484,6 +17395,20 @@
         },
         {
           "dest-uuid": "0f4a0c76-ab2d-4cb0-85d3-3f0efb8cba0d",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "bd7a9e13-69fa-4243-a5e5-04326a63f9f2",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "212306d8-efa4-44c9-8c2d-ed3d2e224aa0",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
@@ -17326,6 +18251,13 @@
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
           "type": "uses"
+        },
+        {
+          "dest-uuid": "4b346d12-7f91-48d2-8f06-b26ffa0d825b",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
         }
       ],
       "uuid": "4ca1929c-7d64-4aab-b849-badbfc0c760d",
@@ -17372,16 +18304,19 @@
       "value": "NEODYMIUM - G0055"
     },
     {
-      "description": "[PROMETHIUM](https://attack.mitre.org/groups/G0056) is an activity group that has been active since at least 2012. The group conducted a campaign in May 2016 and has heavily targeted Turkish victims. [PROMETHIUM](https://attack.mitre.org/groups/G0056) has demonstrated similarity to another activity group called [NEODYMIUM](https://attack.mitre.org/groups/G0055) due to overlapping victim and campaign characteristics. (Citation: Microsoft NEODYMIUM Dec 2016) (Citation: Microsoft SIR Vol 21)",
+      "description": "[PROMETHIUM](https://attack.mitre.org/groups/G0056) is an activity group focused on espionage that has been active since at least 2012. The group has conducted operations globally with a heavy emphasis on Turkish targets. [PROMETHIUM](https://attack.mitre.org/groups/G0056) has demonstrated similarity to another activity group called [NEODYMIUM](https://attack.mitre.org/groups/G0055) due to overlapping victim and campaign characteristics.(Citation: Microsoft NEODYMIUM Dec 2016)(Citation: Microsoft SIR Vol 21)(Citation: Talos Promethium June 2020)",
       "meta": {
         "external_id": "G0056",
         "refs": [
           "https://attack.mitre.org/groups/G0056",
           "https://blogs.technet.microsoft.com/mmpc/2016/12/14/twin-zero-day-attacks-promethium-and-neodymium-target-individuals-in-europe/",
-          "http://download.microsoft.com/download/E/B/0/EB0F50CC-989C-4B66-B7F6-68CD3DC90DE3/Microsoft_Security_Intelligence_Report_Volume_21_English.pdf"
+          "http://download.microsoft.com/download/E/B/0/EB0F50CC-989C-4B66-B7F6-68CD3DC90DE3/Microsoft_Security_Intelligence_Report_Volume_21_English.pdf",
+          "https://blog.talosintelligence.com/2020/06/promethium-extends-with-strongpity3.html",
+          "https://www.bitdefender.com/files/News/CaseStudies/study/353/Bitdefender-Whitepaper-StrongPity-APT.pdf"
         ],
         "synonyms": [
-          "PROMETHIUM"
+          "PROMETHIUM",
+          "StrongPity"
         ]
       },
       "related": [
@@ -17401,6 +18336,90 @@
         },
         {
           "dest-uuid": "691c60e2-273d-4d56-9ce6-b67e0f8719ad",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "d742a578-d70e-4d0e-96a6-02a9c30204e6",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "9efb1ea7-c37b-4595-9640-b7680cd84279",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "32901740-b42c-4fdd-bc02-345b5dc57082",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "1c4e5d32-1fe9-4116-9d9d-59e3925bd6a2",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "232b7f21-adf9-4b42-b936-b9d6f7df856e",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "8868cb5b-d575-4a60-acb2-07d37389a2fd",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "fdc47f44-dd32-4b99-af5f-209f556f63c2",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "20945359-3b39-4542-85ef-08ecb4e1c174",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "7bdca9d5-d500-4d7d-8c52-5fd47baf4c0c",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "2959d63f-73fd-46a1-abd2-109d7dcede32",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "1cec9319-743b-4840-bb65-431547bce82a",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "34b3f738-bd64-40e5-a112-29b0542bc8bf",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
@@ -17639,7 +18658,7 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "aafea02e-ece5-4bb2-91a6-3bf8c7f38a39",
+          "dest-uuid": "a7881f21-e978-4fe4-af56-92c9416a2616",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
@@ -17858,13 +18877,6 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "f879d51c-5476-431c-aedf-f14d207e4d1e",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
-        },
-        {
           "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
@@ -17936,6 +18948,13 @@
         },
         {
           "dest-uuid": "ef67e13e-5598-4adc-bdb2-998225874fa9",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "29ba5a15-3b7b-4732-b817-65ea8f6468e6",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
@@ -18664,6 +19683,13 @@
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
           "type": "uses"
+        },
+        {
+          "dest-uuid": "c4810609-7da6-48ec-8057-1b70a7814db0",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
         }
       ],
       "uuid": "269e8108-68c6-4f99-b911-14b2e765dec2",
@@ -18850,7 +19876,7 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "aafea02e-ece5-4bb2-91a6-3bf8c7f38a39",
+          "dest-uuid": "a7881f21-e978-4fe4-af56-92c9416a2616",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
@@ -19078,7 +20104,150 @@
       ],
       "uuid": "afec6dc3-a18e-4b62-b1a4-5510e1a498d1",
       "value": "Windshift - G0112"
+    },
+    {
+      "description": "[Chimera](https://attack.mitre.org/groups/G0114) is a suspected China-based threat group, targeting the semiconductor industry in Taiwan since at least 2018.(Citation: Cycraft Chimera April 2020)",
+      "meta": {
+        "external_id": "G0114",
+        "refs": [
+          "https://attack.mitre.org/groups/G0114",
+          "https://cycraft.com/download/%5BTLP-White%5D20200415%20Chimera_V4.1.pdf"
+        ],
+        "synonyms": [
+          "Chimera"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "eb062747-2193-45de-8fa2-e62549c37ddf",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "830c9528-df21-472c-8c14-a036bf17d665",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "e6919abc-99f9-4c6c-95a5-14761e7b2add",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "b17a1a56-e99c-403c-8948-561df0cffe81",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "01a5a209-b94c-450b-b7f9-946497d91055",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "21875073-b0ee-49e3-9077-1e2a885359af",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "edf91964-b26e-4b4a-9600-ccacd7d7df24",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "1c4e5d32-1fe9-4116-9d9d-59e3925bd6a2",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "d4b96d2c-1032-4b22-9235-2b5b649d0605",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "970a3432-3237-47ad-bcca-7d8cbb217736",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "10d51417-ee35-4589-b1ff-b6df1c334e8d",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "391d824f-0ef1-47a0-b0ee-c59a75e27670",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "a7881f21-e978-4fe4-af56-92c9416a2616",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "afc079f3-c0ea-4096-b75d-3f05338b7f60",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "4f9ca633-15c5-463c-9724-bdcd54fde541",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        }
+      ],
+      "uuid": "8c1f0187-0826-4320-bddc-5f326cfcfe2c",
+      "value": "Chimera - G0114"
     }
   ],
-  "version": 20
+  "version": 21
 }
