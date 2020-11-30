@@ -33,9 +33,20 @@ jobs:
 
     - name: Install Python dependencies
       run: |
-        python -m pip install --upgrade jsonschema pytaxonomies
+        python -m pip install poetry
+
+    - name: Install testing via python module
+      run: |
+        git clone https://github.com/MISP/PyMISPGalaxies.git
+        pushd PyMISPGalaxies
+        git submodule update --init
+        git submodule foreach git pull origin main
+        poetry install
+        popd
 
     - name: Test
       run: |
         ./validate_all.sh
-        pytaxonomies -l MANIFEST.json -a
+        pushd PyMISPGalaxies
+        poetry run nosetests-3.4 --with-coverage --cover-package=pymispgalaxies -d
+        popd
