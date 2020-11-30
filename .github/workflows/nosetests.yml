@@ -28,12 +28,13 @@ jobs:
       run: git submodule update --init --recursive
 
     - name: Install system dependencies
-      run: |
-        sudo apt install jq moreutils
+      run: sudo apt install jq moreutils
+
+    - name: Validate files
+      run: ./validate_all.sh
 
     - name: Install Python dependencies
-      run: |
-        python -m pip install poetry
+      run: python -m pip install poetry
 
     - name: Install testing via python module
       run: |
@@ -44,9 +45,8 @@ jobs:
         poetry install
         popd
 
-    - name: Test
+    - name: Test with Python module
       run: |
-        ./validate_all.sh
         pushd PyMISPGalaxies
         poetry run nosetests-3.4 --with-coverage --cover-package=pymispgalaxies -d
         popd
