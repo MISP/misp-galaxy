@@ -1,0 +1,52 @@
+name: Python application
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.6, 3.7, 3.8, 3.9]
+
+    steps:
+
+    - uses: actions/checkout@v2
+
+    - name: Set up Python ${{matrix.python-version}}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{matrix.python-version}}
+
+    - name: Initialize submodules
+      run: git submodule update --init --recursive
+
+    - name: Install system dependencies
+      run: sudo apt install jq moreutils
+
+    - name: Validate files
+      run: ./validate_all.sh
+
+    - name: Install Python dependencies
+      run: python -m pip install poetry
+
+    - name: Install testing via python module
+      run: |
+        git clone https://github.com/MISP/PyMISPGalaxies.git
+        pushd PyMISPGalaxies
+        git submodule update --init
+        git submodule foreach git pull origin main
+        poetry install
+        popd
+
+    - name: Test with Python module
+      run: |
+        pushd PyMISPGalaxies
+        poetry run nosetests-3.4 --with-coverage --cover-package=pymispgalaxies -d
+        popd
