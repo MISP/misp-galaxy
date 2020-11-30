@@ -1,6 +1,6 @@
 # misp-galaxy
 
-[![Build Status](https://travis-ci.org/MISP/misp-galaxy.svg?branch=master)](https://travis-ci.org/MISP/misp-galaxy)
+![Python application](https://github.com/MISP/misp-galaxy/workflows/Python%20application/badge.svg)
 
 MISP galaxy is a simple method to express a large object called cluster that can be attached to MISP events or
 attributes. A cluster can be composed of one or more elements. Elements are expressed as key-values. There
