@@ -1,0 +1,648 @@
+{
+  "authors": [
+    "Koen Van Impe"
+  ],
+  "category": "rsit",
+  "description": "rsit",
+  "name": "rsit",
+  "source": "https://github.com/enisaeu/Reference-Security-Incident-Taxonomy-Task-Force",
+  "type": "rsit",
+  "uuid": "9da6e48a-5475-4f1b-af54-f917ec72d995",
+  "values": [
+    {
+      "description": "Or 'Unsolicited Bulk Email', this means that the recipient has not granted verifiable permission for the message to be sent and that the message is sent as part of a larger collection of messages, all having a functionally comparable content. This IOC refers to resources, which make up a SPAM infrastructure, be it a harvesters like address verification, URLs in spam e-mails etc.",
+      "meta": {
+        "cfr-type-of-incident": "Spam",
+        "kill_chain": [
+          "RSIT:Abusive Content"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "a62a8db3-f23a-4d8f-afd6-9dbc77e7813b",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "bae9e253-9515-4f1f-b34f-e8fc6747c2e0",
+      "value": "Abusive Content:Spam"
+    },
+    {
+      "description": "Discretization or discrimination of somebody, e.g. cyber stalking, racism or threats against one or more individuals.",
+      "meta": {
+        "cfr-type-of-incident": "Harmful Speech",
+        "kill_chain": [
+          "RSIT:Abusive Content"
+        ]
+      },
+      "uuid": "a54e52f9-0335-43da-8878-bb60a710d56c",
+      "value": "Abusive Content:Harmful Speech"
+    },
+    {
+      "description": "Child Sexual Exploitation (CSE), Sexual content, glorification of violence, etc.",
+      "meta": {
+        "cfr-type-of-incident": "(Child) Sexual Exploitation/Sexual/Violent Content",
+        "kill_chain": [
+          "RSIT:Abusive Content"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "a62a8db3-f23a-4d8f-afd6-9dbc77e7813b",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "15bd72f9-5ebc-4fef-8fbf-32c2d848f076",
+      "value": "Abusive Content:(Child) Sexual Exploitation/Sexual/Violent Content"
+    },
+    {
+      "description": "System infected with malware, e.g. PC, smartphone or server infected with a rootkit. Most often this refers to a connection to a sinkholed C2 server",
+      "meta": {
+        "cfr-type-of-incident": "Infected System",
+        "kill_chain": [
+          "RSIT:Malicious Code"
+        ]
+      },
+      "uuid": "aa3e1167-566c-43c2-afc0-f62f557689c6",
+      "value": "Malicious Code:Infected System"
+    },
+    {
+      "description": "Command-and-control server contacted by malware on infected systems.",
+      "meta": {
+        "cfr-type-of-incident": "C2 Server",
+        "kill_chain": [
+          "RSIT:Malicious Code"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "92d7da27-2d91-488e-a00c-059dc162766d",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "85b1f79e-49e7-4501-9b5c-a39ffce47428",
+      "value": "Malicious Code:C2 Server"
+    },
+    {
+      "description": "URI used for malware distribution, e.g. a download URL included in fake invoice malware spam or exploit-kits (on websites).",
+      "meta": {
+        "cfr-type-of-incident": "Malware Distribution",
+        "kill_chain": [
+          "RSIT:Malicious Code"
+        ]
+      },
+      "uuid": "dd1b8e11-cec5-48d0-aaf2-a3d099a96c42",
+      "value": "Malicious Code:Malware Distribution"
+    },
+    {
+      "description": "URI hosting a malware configuration file, e.g. web-injects for a banking trojan.",
+      "meta": {
+        "cfr-type-of-incident": "Malware Configuration",
+        "kill_chain": [
+          "RSIT:Malicious Code"
+        ]
+      },
+      "uuid": "0a6d604c-e78a-417e-b557-808c2ce260c3",
+      "value": "Malicious Code:Malware Configuration"
+    },
+    {
+      "description": "Attacks that send requests to a system to discover weaknesses. This also includes testing processes to gather information on hosts, services and accounts. Examples: fingerd, DNS querying, ICMP, SMTP (EXPN, RCPT, ...), port scanning.",
+      "meta": {
+        "cfr-type-of-incident": "Scanning",
+        "kill_chain": [
+          "RSIT:Information Gathering"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "e3a12395-188d-4051-9a16-ea8e14d07b88",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        },
+        {
+          "dest-uuid": "67073dde-d720-45ae-83da-b12d5e73ca3b",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        },
+        {
+          "dest-uuid": "5502c4e9-24ef-4d5f-8ee9-9e906c2f82c4",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "5c96ebd0-d77f-479c-bc8f-247038f901f0",
+      "value": "Information Gathering:Scanning"
+    },
+    {
+      "description": "Observing and recording of network traffic (wiretapping).",
+      "meta": {
+        "cfr-type-of-incident": "Sniffing",
+        "kill_chain": [
+          "RSIT:Information Gathering"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "3257eb21-f9a7-4430-8de1-d8b6e288f529",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        },
+        {
+          "dest-uuid": "035bb001-ab69-4a0b-9f6c-2de8b09e1b9d",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "8fda8ab1-077e-43b4-9284-880921ea0b86",
+      "value": "Information Gathering:Sniffing"
+    },
+    {
+      "description": "Gathering information from a human being in a non-technical way (e.g. lies, tricks, bribes, or threats).",
+      "meta": {
+        "cfr-type-of-incident": "Social Engineering",
+        "kill_chain": [
+          "RSIT:Information Gathering"
+        ]
+      },
+      "uuid": "33a950d3-cc97-4589-b8cf-db8ca6140ea2",
+      "value": "Information Gathering:Social Engineering"
+    },
+    {
+      "description": "An attempt to compromise a system or to disrupt any service by exploiting vulnerabilities with a standardised identifier such as CVE name (e.g. buffer overflow, backdoor, cross site scripting, etc.)",
+      "meta": {
+        "cfr-type-of-incident": "Exploitation of known Vulnerabilities",
+        "kill_chain": [
+          "RSIT:Intrusion Attempts"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "3f886f2a-874f-4333-b794-aa6075009b1c",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        },
+        {
+          "dest-uuid": "be2dcee9-a7a7-4e38-afd6-21b31ecc3d63",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        },
+        {
+          "dest-uuid": "fe926152-f431-4baf-956c-4ad3cb0bf23b",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        },
+        {
+          "dest-uuid": "9db0cf3a-a3c9-4012-8268-123b9db6fd82",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "ae99314d-0810-4b46-8ee8-4af7cdb146d0",
+      "value": "Intrusion Attempts:Exploitation of known Vulnerabilities"
+    },
+    {
+      "description": "Multiple login attempts (Guessing / cracking of passwords, brute force). This IOC refers to a resource, which has been observed to perform brute-force attacks over a given application protocol.",
+      "meta": {
+        "cfr-type-of-incident": "Login attempts",
+        "kill_chain": [
+          "RSIT:Intrusion Attempts"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "a93494bb-4b80-4ea1-8695-3236a49916fd",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        },
+        {
+          "dest-uuid": "09c4c11e-4fa1-4f8c-8dad-3cf8e69ad119",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        },
+        {
+          "dest-uuid": "1d24cdee-9ea2-4189-b08e-af110bf2435d",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        },
+        {
+          "dest-uuid": "692074ae-bb62-4a5e-a735-02cb6bde458c",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        },
+        {
+          "dest-uuid": "b2d03cea-aec1-45ca-9744-9ee583c1e1cc",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "0cc1cf66-a838-4bdd-ace1-2da34a93520c",
+      "value": "Intrusion Attempts:Login attempts"
+    },
+    {
+      "description": "An attack using an unknown exploit.",
+      "meta": {
+        "cfr-type-of-incident": "New attack signature",
+        "kill_chain": [
+          "RSIT:Intrusion Attempts"
+        ]
+      },
+      "uuid": "8ae29dc9-a208-4d7e-b79b-2573790df212",
+      "value": "Intrusion Attempts:New attack signature"
+    },
+    {
+      "description": "Compromise of a system where the attacker gained administrative privileges.",
+      "meta": {
+        "cfr-type-of-incident": "Privileged Account Compromise",
+        "kill_chain": [
+          "RSIT:Intrusions"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "b17a1a56-e99c-403c-8948-561df0cffe81",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "dea60439-7e04-4af8-aeab-2840893195f7",
+      "value": "Intrusions:Privileged Account Compromise"
+    },
+    {
+      "description": "Compromise of a system using an unprivileged (user/service) account.",
+      "meta": {
+        "cfr-type-of-incident": "Unprivileged Account Compromise",
+        "kill_chain": [
+          "RSIT:Intrusions"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "b17a1a56-e99c-403c-8948-561df0cffe81",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "f1b691cb-2824-4e3a-9d5b-76aea4a087db",
+      "value": "Intrusions:Unprivileged Account Compromise"
+    },
+    {
+      "description": "Compromise of an application by exploiting (un-)known software vulnerabilities, e.g. SQL injection.",
+      "meta": {
+        "cfr-type-of-incident": "Application Compromise",
+        "kill_chain": [
+          "RSIT:Intrusions"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "3f886f2a-874f-4333-b794-aa6075009b1c",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "b0980068-8827-4bde-83c4-9ad70bc675e9",
+      "value": "Intrusions:Application Compromise"
+    },
+    {
+      "description": "Compromise of a system, e.g. unauthorised logins or commands. This includes compromising attempts on honeypot systems.",
+      "meta": {
+        "cfr-type-of-incident": "System Compromise",
+        "kill_chain": [
+          "RSIT:Intrusions"
+        ]
+      },
+      "uuid": "f380a50f-3cdf-4ceb-ab75-bb046f0c03cc",
+      "value": "Intrusions:System Compromise"
+    },
+    {
+      "description": "Physical intrusion, e.g. into corporate building or data-centre.",
+      "meta": {
+        "cfr-type-of-incident": "Burglary",
+        "kill_chain": [
+          "RSIT:Intrusions"
+        ]
+      },
+      "uuid": "17c92ab0-831f-4fec-944d-1faeb8c55e7b",
+      "value": "Intrusions:Burglary"
+    },
+    {
+      "description": "Denial of Service attack, e.g. sending specially crafted requests to a web application which causes the application to crash or slow down.",
+      "meta": {
+        "cfr-type-of-incident": "Denial of Service",
+        "kill_chain": [
+          "RSIT:Availability"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "d74c4a7e-ffbf-432f-9365-7ebf1f787cab",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "ccec8e6a-c316-485c-99f1-84e2ab0162e7",
+      "value": "Availability:Denial of Service"
+    },
+    {
+      "description": "Distributed Denial of Service attack, e.g. SYN-Flood or UDP-based reflection/amplification attacks.",
+      "meta": {
+        "cfr-type-of-incident": "Distributed Denial of Service",
+        "kill_chain": [
+          "RSIT:Availability"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "d74c4a7e-ffbf-432f-9365-7ebf1f787cab",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "bef4187f-1176-4551-83d8-8a1ba9987379",
+      "value": "Availability:Distributed Denial of Service"
+    },
+    {
+      "description": "Software misconfiguration resulting in service availability issues, e.g. DNS server with outdated DNSSEC Root Zone KSK.",
+      "meta": {
+        "cfr-type-of-incident": "Misconfiguration",
+        "kill_chain": [
+          "RSIT:Availability"
+        ]
+      },
+      "uuid": "6e004e50-54b0-4ad0-aced-b790226a7de9",
+      "value": "Availability:Misconfiguration"
+    },
+    {
+      "description": "Physical sabotage, e.g cutting wires or malicious arson.",
+      "meta": {
+        "cfr-type-of-incident": "Sabotage",
+        "kill_chain": [
+          "RSIT:Availability"
+        ]
+      },
+      "uuid": "bd3d6608-0693-420f-a476-af460e3d0bf1",
+      "value": "Availability:Sabotage"
+    },
+    {
+      "description": "Outage caused e.g. by air condition failure or natural disaster.",
+      "meta": {
+        "cfr-type-of-incident": "Outage",
+        "kill_chain": [
+          "RSIT:Availability"
+        ]
+      },
+      "uuid": "599dd157-848b-4020-ba96-fa2b053be448",
+      "value": "Availability:Outage"
+    },
+    {
+      "description": "Unauthorised access to information, e.g. by abusing stolen login credentials for a system or application, intercepting traffic or gaining access to physical documents.",
+      "meta": {
+        "cfr-type-of-incident": "Unauthorised access to information",
+        "kill_chain": [
+          "RSIT:Information Content Security"
+        ]
+      },
+      "uuid": "3c938a8d-0d0c-4b42-81dd-9c11011596c3",
+      "value": "Information Content Security:Unauthorised access to information"
+    },
+    {
+      "description": "Unauthorised modification of information, e.g. by an attacker abusing stolen login credentials for a system or application or a ransomware encrypting data. Also includes defacements.",
+      "meta": {
+        "cfr-type-of-incident": "Unauthorised modification of information",
+        "kill_chain": [
+          "RSIT:Information Content Security"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "ac9e6b22-11bf-45d7-9181-c1cb08360931",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "02fb1edd-59a5-4a2f-a48c-5f1d66b2c6cf",
+      "value": "Information Content Security:Unauthorised modification of information"
+    },
+    {
+      "description": "Loss of data, e.g. caused by harddisk failure or physical theft.",
+      "meta": {
+        "cfr-type-of-incident": "Data Loss",
+        "kill_chain": [
+          "RSIT:Information Content Security"
+        ]
+      },
+      "uuid": "b0d64016-8546-45a7-8853-6716a2f1f811",
+      "value": "Information Content Security:Data Loss"
+    },
+    {
+      "description": "Leaked confidential information like credentials or personal data.",
+      "meta": {
+        "cfr-type-of-incident": "Leak of confidential information",
+        "kill_chain": [
+          "RSIT:Information Content Security"
+        ]
+      },
+      "uuid": "d3b4c23d-3c4d-4d0a-bf9b-3b4d3b005c66",
+      "value": "Information Content Security:Leak of confidential information"
+    },
+    {
+      "description": "Using resources for unauthorised purposes including profit-making ventures, e.g. the use of e-mail to participate in illegal profit chain letters or pyramid schemes.",
+      "meta": {
+        "cfr-type-of-incident": "Unauthorised use of resources",
+        "kill_chain": [
+          "RSIT:Fraud"
+        ]
+      },
+      "uuid": "6614e73f-dff9-49fb-9a9b-586862bd648f",
+      "value": "Fraud:Unauthorised use of resources"
+    },
+    {
+      "description": "Offering or Installing copies of unlicensed commercial software or other copyright protected materials (Warez).",
+      "meta": {
+        "cfr-type-of-incident": "Copyright",
+        "kill_chain": [
+          "RSIT:Fraud"
+        ]
+      },
+      "uuid": "0f297d48-b06d-47fe-8ab0-3652581c6ade",
+      "value": "Fraud:Copyright"
+    },
+    {
+      "description": "Type of attack in which one entity illegitimately impersonates the identity of another in order to benefit from it.",
+      "meta": {
+        "cfr-type-of-incident": "Masquerade",
+        "kill_chain": [
+          "RSIT:Fraud"
+        ]
+      },
+      "uuid": "06f24b83-7a24-448c-9114-f1b3afcd0b3f",
+      "value": "Fraud:Masquerade"
+    },
+    {
+      "description": "Masquerading as another entity in order to persuade the user to reveal private credentials. This IOC most often refers to a URL, which is used to phish user credentials.",
+      "meta": {
+        "cfr-type-of-incident": "Phishing",
+        "kill_chain": [
+          "RSIT:Fraud"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "a62a8db3-f23a-4d8f-afd6-9dbc77e7813b",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "d6ceeb8e-a17b-43b1-bad6-5a81192e2ebd",
+      "value": "Fraud:Phishing"
+    },
+    {
+      "description": "Publicly accessible services offering weak crypto, e.g. web servers susceptible to POODLE/FREAK attacks.",
+      "meta": {
+        "cfr-type-of-incident": "Weak crypto",
+        "kill_chain": [
+          "RSIT:Vulnerable"
+        ]
+      },
+      "uuid": "13fad3df-5134-49d3-8a1a-efc693f3599c",
+      "value": "Vulnerable:Weak crypto"
+    },
+    {
+      "description": "Publicly accessible services that can be abused for conducting DDoS reflection/amplification attacks, e.g. DNS open-resolvers or NTP servers with monlist enabled.",
+      "meta": {
+        "cfr-type-of-incident": "DDoS amplifier",
+        "kill_chain": [
+          "RSIT:Vulnerable"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "d74c4a7e-ffbf-432f-9365-7ebf1f787cab",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "e476bbab-662a-4318-9b71-9d1862baf727",
+      "value": "Vulnerable:DDoS amplifier"
+    },
+    {
+      "description": "Potentially unwanted publicly accessible services, e.g. Telnet, RDP or VNC.",
+      "meta": {
+        "cfr-type-of-incident": "Potentially unwanted accessible services",
+        "kill_chain": [
+          "RSIT:Vulnerable"
+        ]
+      },
+      "uuid": "7934ae88-0a0a-4e1c-91b4-6d95182b4dbc",
+      "value": "Vulnerable:Potentially unwanted accessible services"
+    },
+    {
+      "description": "Publicly accessible services potentially disclosing sensitive information, e.g. SNMP or Redis.",
+      "meta": {
+        "cfr-type-of-incident": "Information disclosure",
+        "kill_chain": [
+          "RSIT:Vulnerable"
+        ]
+      },
+      "uuid": "67686969-ad06-400b-bed3-1b0126599bd1",
+      "value": "Vulnerable:Information disclosure"
+    },
+    {
+      "description": "A system which is vulnerable to certain attacks. Example: misconfigured client proxy settings (example: WPAD), outdated operating system version, XSS vulnerabilities, etc.",
+      "meta": {
+        "cfr-type-of-incident": "Vulnerable system",
+        "kill_chain": [
+          "RSIT:Vulnerable"
+        ]
+      },
+      "uuid": "1a27c5d3-1920-4d49-89e2-644f8b130380",
+      "value": "Vulnerable:Vulnerable system"
+    },
+    {
+      "description": "All incidents which don't fit in one of the given categories should be put into this class or the incident is not categorised.",
+      "meta": {
+        "cfr-type-of-incident": "Uncategorised",
+        "kill_chain": [
+          "RSIT:Other"
+        ]
+      },
+      "uuid": "fc39b7d5-575c-4a16-8507-d8a1c1e1589c",
+      "value": "Other:Uncategorised"
+    },
+    {
+      "description": "The categorisation of the incident is unknown/undetermined.",
+      "meta": {
+        "cfr-type-of-incident": "Undetermined",
+        "kill_chain": [
+          "RSIT:Other"
+        ]
+      },
+      "uuid": "cf73ef8a-5c48-4341-811c-611c7ff1ec8c",
+      "value": "Other:Undetermined"
+    },
+    {
+      "description": "Meant for testing.",
+      "meta": {
+        "cfr-type-of-incident": "Test",
+        "kill_chain": [
+          "RSIT:Test"
+        ]
+      },
+      "uuid": "10f3f13f-52df-4f38-9940-c879d332261b",
+      "value": "Test:Test"
+    }
+  ],
+  "version": 1
+}
