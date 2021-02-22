@@ -5799,6 +5799,7 @@
     {
       "description": "Ransomware",
       "meta": {
+        "encryption": "AES",
         "extensions": [
           ".crypt",
           "4 random characters, e.g., .PzZs, .MKJL"
@@ -6094,6 +6095,7 @@
     {
       "description": "Ransomware no extension change",
       "meta": {
+        "encryption": "RSA",
         "payment-method": "Bitcoin",
         "price": "0.9 (500$) - 1.9 (1000$) after 4 days",
         "ransomnotes-filenames": [
@@ -6486,8 +6488,9 @@
       "value": "CryptoTrooper"
     },
     {
-      "description": "Ransomware",
+      "description": "Ransomware, Infection by Phishing",
       "meta": {
+        "encryption": "RSA",
         "payment-method": "Bitcoin",
         "price": "1.09 (500$)",
         "ransomnotes-filenames": [
@@ -8935,8 +8938,9 @@
       "value": "Offline ransomware"
     },
     {
-      "description": "Ransomware",
+      "description": "Ransomware. Infection: drive-by-download; Platform: Windows; Extorsion by Prepaid Voucher",
       "meta": {
+        "Encryption": "RSA",
         "extensions": [
           ".LOL!",
           ".OMG!"
@@ -8945,6 +8949,9 @@
         "price": "100 $",
         "ransomnotes-filenames": [
           "how to get data.txt"
+        ],
+        "refs": [
+          "https://arxiv.org/pdf/2102.06249.pdf"
         ],
         "synonyms": [
           "GPCode"
@@ -9530,6 +9537,7 @@
     {
       "description": "Ransomware no extension change, Javascript Ransomware",
       "meta": {
+        "encryption": "AES",
         "payment-method": "Bitcoin",
         "price": "1",
         "refs": [
@@ -11209,6 +11217,7 @@
     {
       "description": "On October 24, 2017, Cisco Talos was alerted to a widescale ransomware campaign affecting organizations across eastern Europe and Russia. As was the case in previous situations, we quickly mobilized to assess the situation and ensure that customers remain protected from this and other threats as they emerge across the threat landscape. There have been several large scale ransomware campaigns over the last several months. This appears to have some similarities to Nyetya in that it is also based on Petya ransomware. Major portions of the code appear to have been rewritten. The distribution does not appear to have the sophistication of the supply chain attacks we have seen recently.",
       "meta": {
+        "encryption": "AES+RSA",
         "payment-method": "Bitcoin",
         "price": "0.05 (300 $)",
         "ransomnotes": [
@@ -14025,7 +14034,33 @@
       },
       "uuid": "dff71334-c173-45b6-8647-af66be0605d7",
       "value": "RansomEXX"
+    },
+    {
+      "description": "Mobile ransomware. The Zscaler ThreatLabZ team recently came across a URL named hxxp://coronavirusapp[.]site/mobile.html, which portrays itself as a download site for an Android app that tracks the coronavirus spread across the globe. In reality, the app is Android ransomware, which locks out the victim and asks for ransom to unlock the device.\nThe app portrays itself as a Coronavirus Tracker. As soon as it starts running, it asks the user for several authorizations, including admin rights.\n In fact, this ransomware does not encrypt nor steal anything and only lock the device with an hard coded code.",
+      "meta": {
+        "ransomnotes-refs": [
+          "https://www.zscaler.com/sites/default/files/images/blogs/covid/covid_lock_screen_edited_4.png",
+          "https://www.zscaler.com/sites/default/files/images/blogs/covid/covid_pastebin_5.png"
+        ],
+        "refs": [
+          "https://www.zscaler.com/blogs/security-research/covidlock-android-ransomware-walkthrough-and-unlocking-routine"
+        ]
+      },
+      "uuid": "b5fe83e9-c5d7-4b0e-99ab-4f1d356d1749",
+      "value": "CovidLock"
+    },
+    {
+      "description": "This malware is written in Java and is named after references in the code. Tycoon has been in the wild since December 2019 and has targeted organizations in the education, SMBs, and software industries.\nTycoon is a multi-platform Java ransomware that targets Windows and Linux systems. This ransomware denies access to the system administrator following an attack on the domain controller and file servers. The initial intrusion occurs through an internet-facing remote desktop protocol (RDP) jump-server.",
+      "meta": {
+        "date": "december 2019",
+        "refs": [
+          "https://cyberflorida.org/threat-advisory/tycoon-ransomware/",
+          "https://usf.app.box.com/s/83xh0t5w99klrsoisorir7kgs14o972s"
+        ]
+      },
+      "uuid": "39781a7a-cd3a-4e24-aeb8-94a767a2551b",
+      "value": "Tycoon"
     }
   ],
-  "version": 91
+  "version": 92
 }
