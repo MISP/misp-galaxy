@@ -5799,6 +5799,7 @@
     {
       "description": "Ransomware",
       "meta": {
+        "encryption": "AES",
         "extensions": [
           ".crypt",
           "4 random characters, e.g., .PzZs, .MKJL"
@@ -6094,6 +6095,7 @@
     {
       "description": "Ransomware no extension change",
       "meta": {
+        "encryption": "RSA",
         "payment-method": "Bitcoin",
         "price": "0.9 (500$) - 1.9 (1000$) after 4 days",
         "ransomnotes-filenames": [
@@ -6486,8 +6488,9 @@
       "value": "CryptoTrooper"
     },
     {
-      "description": "Ransomware",
+      "description": "Ransomware, Infection by Phishing",
       "meta": {
+        "encryption": "RSA",
         "payment-method": "Bitcoin",
         "price": "1.09 (500$)",
         "ransomnotes-filenames": [
@@ -8935,8 +8938,9 @@
       "value": "Offline ransomware"
     },
     {
-      "description": "Ransomware",
+      "description": "Ransomware. Infection: drive-by-download; Platform: Windows; Extorsion by Prepaid Voucher",
       "meta": {
+        "Encryption": "RSA",
         "extensions": [
           ".LOL!",
           ".OMG!"
@@ -8945,6 +8949,9 @@
         "price": "100 $",
         "ransomnotes-filenames": [
           "how to get data.txt"
+        ],
+        "refs": [
+          "https://arxiv.org/pdf/2102.06249.pdf"
         ],
         "synonyms": [
           "GPCode"
@@ -9530,6 +9537,7 @@
     {
       "description": "Ransomware no extension change, Javascript Ransomware",
       "meta": {
+        "encryption": "AES",
         "payment-method": "Bitcoin",
         "price": "1",
         "refs": [
@@ -11209,6 +11217,7 @@
     {
       "description": "On October 24, 2017, Cisco Talos was alerted to a widescale ransomware campaign affecting organizations across eastern Europe and Russia. As was the case in previous situations, we quickly mobilized to assess the situation and ensure that customers remain protected from this and other threats as they emerge across the threat landscape. There have been several large scale ransomware campaigns over the last several months. This appears to have some similarities to Nyetya in that it is also based on Petya ransomware. Major portions of the code appear to have been rewritten. The distribution does not appear to have the sophistication of the supply chain attacks we have seen recently.",
       "meta": {
+        "encryption": "AES+RSA",
         "payment-method": "Bitcoin",
         "price": "0.05 (300 $)",
         "ransomnotes": [
@@ -13609,7 +13618,16 @@
           "https://www.proofpoint.com/us/threat-insight/post/ta2101-plays-government-imposter-distribute-malware-german-italian-and-us"
         ]
       },
-      "uuid": "5d999c23-11cf-4dee-84bb-f447a4f70dc8",
+      "related": [
+        {
+          "dest-uuid": "e69f9836-873a-43d3-92a8-97ab783a4171",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "related-to"
+        }
+      ],
+      "uuid": "c60776a6-91dd-499b-8b4c-7940479e71fc",
       "value": "Maze"
     },
     {
@@ -13900,14 +13918,32 @@
           "RECOVER-FILES.txt"
         ],
         "ransomnotes-refs": [
-          "https://www.bleepstatic.com/images/news/columns/week-in-ransomware/2020/september/25/egregor.jpg"
+          "https://www.bleepstatic.com/images/news/columns/week-in-ransomware/2020/september/25/egregor.jpg",
+          "https://2kjpox12cnap3zv36440iue7-wpengine.netdna-ssl.com/wp-content/uploads/2020/10/egregor-ransom-demanding-message.png"
         ],
         "refs": [
           "https://www.appgate.com/news-press/appgate-labs-analyzes-new-family-of-ransomware-egregor",
           "https://www.bleepingcomputer.com/news/security/crytek-hit-by-egregor-ransomware-ubisoft-data-leaked/",
-          "https://cybersecuritynews.com/egregor-ransomware/"
+          "https://cybersecuritynews.com/egregor-ransomware/",
+          "https://securityboulevard.com/2020/10/egregor-sekhmets-cousin/"
         ]
       },
+      "related": [
+        {
+          "dest-uuid": "6fb1ea9e-5389-4932-8b22-c691b74b75a8",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "variant-of"
+        },
+        {
+          "dest-uuid": "5d999c23-11cf-4dee-84bb-f447a4f70dc8",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "successor-of"
+        }
+      ],
       "uuid": "8bd094a7-103f-465f-8640-18dcc53042e5",
       "value": "Egregor"
     },
@@ -14025,7 +14061,96 @@
       },
       "uuid": "dff71334-c173-45b6-8647-af66be0605d7",
       "value": "RansomEXX"
+    },
+    {
+      "description": "Mobile ransomware. The Zscaler ThreatLabZ team recently came across a URL named hxxp://coronavirusapp[.]site/mobile.html, which portrays itself as a download site for an Android app that tracks the coronavirus spread across the globe. In reality, the app is Android ransomware, which locks out the victim and asks for ransom to unlock the device.\nThe app portrays itself as a Coronavirus Tracker. As soon as it starts running, it asks the user for several authorizations, including admin rights.\n In fact, this ransomware does not encrypt nor steal anything and only lock the device with an hard coded code.",
+      "meta": {
+        "ransomnotes-refs": [
+          "https://www.zscaler.com/sites/default/files/images/blogs/covid/covid_lock_screen_edited_4.png",
+          "https://www.zscaler.com/sites/default/files/images/blogs/covid/covid_pastebin_5.png"
+        ],
+        "refs": [
+          "https://www.zscaler.com/blogs/security-research/covidlock-android-ransomware-walkthrough-and-unlocking-routine"
+        ]
+      },
+      "uuid": "b5fe83e9-c5d7-4b0e-99ab-4f1d356d1749",
+      "value": "CovidLock"
+    },
+    {
+      "description": "This malware is written in Java and is named after references in the code. Tycoon has been in the wild since December 2019 and has targeted organizations in the education, SMBs, and software industries.\nTycoon is a multi-platform Java ransomware that targets Windows and Linux systems. This ransomware denies access to the system administrator following an attack on the domain controller and file servers. The initial intrusion occurs through an internet-facing remote desktop protocol (RDP) jump-server.",
+      "meta": {
+        "date": "december 2019",
+        "refs": [
+          "https://cyberflorida.org/threat-advisory/tycoon-ransomware/",
+          "https://usf.app.box.com/s/83xh0t5w99klrsoisorir7kgs14o972s"
+        ]
+      },
+      "uuid": "39781a7a-cd3a-4e24-aeb8-94a767a2551b",
+      "value": "Tycoon"
+    },
+    {
+      "description": "Ragnar Locker is a ransomware identified in December 2019 that targetscorporate networks inBig Game Huntingtargeted attacks. This reportpresents recent elements regarding this ransomware.",
+      "meta": {
+        "refs": [
+          "https://www.bleepingcomputer.com/news/security/ragnar-locker-ransomware-targets-msp-enterprise-support-tools/",
+          "https://news.sophos.com/en-us/2020/05/21/ragnar-locker-ransomware-deploys-virtual-machine-to-dodge-security/",
+          "https://www.cybersecurity-insiders.com/ransomware-attack-makes-cwt-pay-4-5-million-in-bitcoins-to-hackers/"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "54895630-efd2-4608-9c24-319de972a9eb",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        },
+        {
+          "dest-uuid": "5d999c23-11cf-4dee-84bb-f447a4f70dc8",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "related-to"
+        }
+      ],
+      "uuid": "e69f9836-873a-43d3-92a8-97ab783a4171",
+      "value": "Ragnar Locker"
+    },
+    {
+      "description": "Ransom.Sekhmet not only encrypts a victims files, but also threatens to publish them.",
+      "meta": {
+        "ransomnotes-filenames": [
+          "RECOVER-FILES.txt"
+        ],
+        "ransomnotes-refs": [
+          "https://blog.malwarebytes.com/wp-content/uploads/2020/11/Sekhmet_ransom_note.png"
+        ],
+        "refs": [
+          "https://www.bleepingcomputer.com/news/security/maze-ransomware-is-shutting-down-its-cybercrime-operation/",
+          "https://www.zdnet.com/article/as-maze-ransomware-group-retires-clients-turn-to-sekhmet-ransomware-spin-off-egregor/",
+          "https://blog.malwarebytes.com/detections/ransom-sekhmet/",
+          "https://securityboulevard.com/2020/10/egregor-sekhmets-cousin/"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "8bd094a7-103f-465f-8640-18dcc53042e5",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        },
+        {
+          "dest-uuid": "5d999c23-11cf-4dee-84bb-f447a4f70dc8",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "successor-of"
+        }
+      ],
+      "uuid": "6fb1ea9e-5389-4932-8b22-c691b74b75a8",
+      "value": "Sekhmet"
     }
   ],
-  "version": 92
+  "version": 94
 }
