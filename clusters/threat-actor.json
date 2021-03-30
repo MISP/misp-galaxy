@@ -4778,7 +4778,8 @@
         ],
         "synonyms": [
           "CactusPete",
-          "Karma Panda"
+          "Karma Panda",
+          "BRONZE HUNTLEY"
         ]
       },
       "uuid": "0ab7c8de-fc23-4793-99aa-7ee336199e26",
@@ -7950,6 +7951,9 @@
         "refs": [
           "https://securelist.com/apt-trends-report-q1-2018/85280/",
           "https://blog.trendmicro.com/trendlabs-security-intelligence/first-active-attack-exploiting-cve-2019-2215-found-on-google-play-linked-to-sidewinder-apt-group/",
+          "https://malpedia.caad.fkie.fraunhofer.de/details/win.sidewinder",
+          "https://otx.alienvault.com/pulse/5fd10760f9afb730d37c4742/",
+          "https://www.trendmicro.com/en_us/research/20/l/sidewinder-leverages-south-asian-territorial-issues-for-spear-ph.html",
           "https://s.tencent.com/research/report/659.html",
           "https://www.fireeye.com/content/dam/fireeye-www/global/en/current-threats/pdfs/fireeye-sidewinder-targeted-attack.pdf",
           "https://s.tencent.com/research/report/479.html",
@@ -7962,6 +7966,15 @@
           "T-APT-04"
         ]
       },
+      "related": [
+        {
+          "dest-uuid": "3c43bd4c-8c40-47b5-ae97-3dd0f0c0e8d8",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        }
+      ],
       "uuid": "c4ce1174-9462-47e9-8038-794f40a184b3",
       "value": "SideWinder"
     },
@@ -8431,15 +8444,64 @@
           "https://news.sophos.com/en-us/2020/12/21/how-sunburst-malware-does-defense-evasion/",
           "https://www.microsoft.com/security/blog/2020/12/18/analyzing-solorigate-the-compromised-dll-file-that-started-a-sophisticated-cyberattack-and-how-microsoft-defender-helps-protect/",
           "https://pastebin.com/6EDgCKxd",
-          "https://github.com/fireeye/sunburst_countermeasures"
+          "https://github.com/fireeye/sunburst_countermeasures",
+          "https://www.microsoft.com/security/blog/2021/03/04/goldmax-goldfinder-sibot-analyzing-nobelium-malware",
+          "https://www.fireeye.com/blog/threat-research/2021/03/sunshuttle-second-stage-backdoor-targeting-us-based-entity.html"
         ],
         "synonyms": [
-          "DarkHalo"
+          "DarkHalo",
+          "StellarParticle",
+          "NOBELIUM"
         ]
       },
       "uuid": "2ee5ed7a-c4d0-40be-a837-20817474a15b",
       "value": "UNC2452"
+    },
+    {
+      "description": "In early Febuary, 2021 TeamTNT launched a new campaign against Docker and Kubernetes environments. Using a collection of container images that are hosted in Docker Hub, the attackers are targeting misconfigured docker daemons, Kubeflow dashboards, and Weave Scope, exploiting these environments in order to steal cloud credentials, open backdoors, mine cryptocurrency, and launch a worm that is looking for the next victim.\nThey're linked to the First Crypto-Mining Worm to Steal AWS Credentials and Hildegard Cryptojacking malware.\nTeamTNT is a relatively recent addition to a growing number of threats targeting the cloud. While they employ some of the same tactics as similar groups, TeamTNT stands out with their social media presence and penchant for self-promotion. Tweets from the TeamTNT’s account are in both English and German although it is unknown if they are located in Germany.",
+      "meta": {
+        "refs": [
+          "https://unit42.paloaltonetworks.com/hildegard-malware-teamtnt/",
+          "https://malpedia.caad.fkie.fraunhofer.de/details/elf.teamtnt",
+          "https://blog.aquasec.com/teamtnt-campaign-against-docker-kubernetes-environment",
+          "https://cybersecurity.att.com/blogs/labs-research/teamtnt-delivers-malware-with-new-detection-evasion-tool",
+          "https://www.cadosecurity.com/post/team-tnt-the-first-crypto-mining-worm-to-steal-aws-credentials",
+          "https://www.intezer.com/blog/cloud-security/top-linux-cloud-threats-of-2020/",
+          "https://www.trendmicro.com/en_us/research/20/l/teamtnt-now-deploying-ddos-capable-irc-bot-tntbotinger.html",
+          "https://cyware.com/news/hildegard-teamtnts-new-feature-rich-malware-targeting-kubernetes-6587eb45",
+          "https://www.lacework.com/teamtnt-builds-botnet-from-chinese-cloud-servers/"
+        ]
+      },
+      "uuid": "27de6a09-844b-4dcb-9ff9-7292aad826ba",
+      "value": "TeamTNT"
+    },
+    {
+      "description": "HAFNIUM primarily targets entities in the United States across a number of industry sectors, including infectious disease researchers, law firms, higher education institutions, defense contractors, policy think tanks, and NGOs. Microsoft Threat Intelligence Center (MSTIC) attributes this campaign with high confidence to HAFNIUM, a group assessed to be state-sponsored and operating out of China, based on observed victimology, tactics and procedures. HAFNIUM has previously compromised victims by exploiting vulnerabilities in internet-facing servers, and has used legitimate open-source frameworks, like Covenant, for command and control. Once they’ve gained access to a victim network, HAFNIUM typically exfiltrates data to file sharing sites like MEGA.In campaigns unrelated to these vulnerabilities, Microsoft has observed HAFNIUM interacting with victim Office 365 tenants. While they are often unsuccessful in compromising customer accounts, this reconnaissance activity helps the adversary identify more details about their targets’ environments. HAFNIUM operates primarily from leased virtual private servers (VPS) in the United States.",
+      "meta": {
+        "refs": [
+          "https://www.microsoft.com/security/blog/2021/03/02/hafnium-targeting-exchange-servers",
+          "https://www.volexity.com/blog/2021/03/02/active-exploitation-of-microsoft-exchange-zero-day-vulnerabilities/",
+          "https://www.splunk.com/en_us/blog/security/detecting-hafnium-exchange-server-zero-day-activity-in-splunk.html",
+          "https://www.reddit.com/r/msp/comments/lwmo5c/mass_exploitation_of_onprem_exchange_servers",
+          "https://blog.rapid7.com/2021/03/03/rapid7s-insightidr-enables-detection-and-response-to-microsoft-exchange-0-day",
+          "https://twitter.com/ESETresearch/status/1366862946488451088",
+          "https://www.fireeye.com/blog/threat-research/2021/03/detection-response-to-exploitation-of-microsoft-exchange-zero-day-vulnerabilities.html",
+          "https://us-cert.cisa.gov/ncas/alerts/aa21-062a",
+          "https://discuss.elastic.co/t/detection-and-response-for-hafnium-activity/266289",
+          "https://github.com/microsoft/CSS-Exchange/tree/main/Security",
+          "https://github.com/cert-lv/exchange_webshell_detection",
+          "https://www.crowdstrike.com/blog/falcon-complete-stops-microsoft-exchange-server-zero-day-exploits",
+          "https://msrc-blog.microsoft.com/2021/03/05/microsoft-exchange-server-vulnerabilities-mitigations-march-2021",
+          "https://pastebin.com/J4L3r2RS",
+          "https://www.huntress.com/blog/rapid-response-mass-exploitation-of-on-prem-exchange-servers",
+          "https://github.com/microsoft/Microsoft-365-Defender-Hunting-Queries/blob/master/Execution/exchange-iis-worker-dropping-webshell.md",
+          "https://msrc-blog.microsoft.com/2021/03/02/multiple-security-updates-released-for-exchange-server",
+          "https://www.nextron-systems.com/2021/03/06/scan-for-hafnium-exploitation-evidence-with-thor-lite"
+        ]
+      },
+      "uuid": "4f05d6c1-3fc1-4567-91cd-dd4637cc38b5",
+      "value": "HAFNIUM"
     }
   ],
-  "version": 198
+  "version": 199
 }
