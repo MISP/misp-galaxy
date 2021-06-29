@@ -3710,7 +3710,7 @@
       "value": "TeamXRat"
     },
     {
-      "description": "OilRig is an Iranian threat group operating primarily in the Middle East by targeting organizations in this region that are in a variety of different industries; however, this group has occasionally targeted organizations outside of the Middle East as well. It also appears OilRig carries out supply chain attacks, where the threat group leverages the trust relationship between organizations to attack their primary targets. \r\n\r\nOilRig is an active and organized threat group, which is evident based on their systematic targeting of specific organizations that appear to be carefully chosen for strategic purposes. Attacks attributed to this group primarily rely on social engineering to exploit the human rather than software vulnerabilities; however, on occasion this group has used recently patched vulnerabilities in the delivery phase of their attacks. The lack of software vulnerability exploitation does not necessarily suggest a lack of sophistication, as OilRig has shown maturity in other aspects of their operations. Such maturities involve:\r\n\r\n-Organized evasion testing used the during development of their tools.\r\n-Use of custom DNS Tunneling protocols for command and control (C2) and data exfiltration.\r\n-Custom web-shells and backdoors used to persistently access servers.\r\n\r\nOilRig relies on stolen account credentials for lateral movement. After OilRig gains access to a system, they use credential dumping tools, such as Mimikatz, to steal credentials to accounts logged into the compromised system. The group uses these credentials to access and to move laterally to other systems on the network. After obtaining credentials from a system, operators in this group prefer to use tools other than their backdoors to access the compromised systems, such as remote desktop and putty. OilRig also uses phishing sites to harvest credentials to individuals at targeted organizations to gain access to internet accessible resources, such as Outlook Web Access.",
+      "description": "OilRig is an Iranian threat group operating primarily in the Middle East by targeting organizations in this region that are in a variety of different industries; however, this group has occasionally targeted organizations outside of the Middle East as well. It also appears OilRig carries out supply chain attacks, where the threat group leverages the trust relationship between organizations to attack their primary targets. \r\n\r\nOilRig is an active and organized threat group, which is evident based on their systematic targeting of specific organizations that appear to be carefully chosen for strategic purposes. Attacks attributed to this group primarily rely on social engineering to exploit the human rather than software vulnerabilities; however, on occasion this group has used recently patched vulnerabilities in the delivery phase of their attacks. The lack of software vulnerability exploitation does not necessarily suggest a lack of sophistication, as OilRig has shown maturity in other aspects of their operations. Such maturities involve:\r\n\r\n-Organized evasion testing used the during development of their tools.\r\n-Use of custom DNS Tunneling protocols for command and control (C2) and data exfiltration.\r\n-Custom web-shells and backdoors used to persistently access servers.\r\n\r\nOilRig relies on stolen account credentials for lateral movement. After OilRig gains access to a system, they use credential dumping tools, such as Mimikatz, to steal credentials to accounts logged into the compromised system. The group uses these credentials to access and to move laterally to other systems on the network. After obtaining credentials from a system, operators in this group prefer to use tools other than their backdoors to access the compromised systems, such as remote desktop and putty. OilRig also uses phishing sites to harvest credentials to individuals at targeted organizations to gain access to internet accessible resources, such as Outlook Web Access.\n\n\n\nSince at least 2014, an Iranian threat group tracked by FireEye as APT34 has conducted reconnaissance aligned with the strategic interests of Iran. The group conducts operations primarily in the Middle East, targeting financial, government, energy, chemical, telecommunications and other industries. Repeated targeting of Middle Eastern financial, energy and government organizations leads FireEye to assess that those sectors are a primary concern of APT34. The use of infrastructure tied to Iranian operations, timing and alignment with the national interests of Iran also lead FireEye to assess that APT34 acts on behalf of the Iranian government.",
       "meta": {
         "attribution-confidence": "50",
         "cfr-suspected-state-sponsor": "Iran (Islamic Republic of)",
@@ -3721,7 +3721,8 @@
           "Turkey",
           "Saudi Arabia",
           "Qatar",
-          "Lebanon"
+          "Lebanon",
+          "Middle East"
         ],
         "cfr-target-category": [
           "Government",
@@ -3751,6 +3752,7 @@
           "https://www.forbes.com/sites/thomasbrewster/2017/02/15/oilrig-iran-hackers-cyberespionage-us-turkey-saudi-arabia/#56749aa2468a",
           "https://raw.githubusercontent.com/pan-unit42/playbook_viewer/master/playbook_json/oilrig.json",
           "https://www.cfr.org/interactive/cyber-operations/oilrig",
+          "https://www.cfr.org/interactive/cyber-operations/apt-34",
           "https://www.crowdstrike.com/blog/meet-crowdstrikes-adversary-of-the-month-for-november-helix-kitten/",
           "https://symantec-blogs.broadcom.com/blogs/threat-intelligence/shamoon-destructive-threat-re-emerges-new-sting-its-tail",
           "https://web.archive.org/web/20120818235442/https://www.symantec.com/connect/blogs/shamoon-attacks",
@@ -3759,7 +3761,9 @@
           "https://securingtomorrow.mcafee.com/other-blogs/mcafee-labs/shamoon-attackers-employ-new-tool-kit-to-wipe-infected-systems/",
           "https://attack.mitre.org/groups/G0049/",
           "https://unit42.paloaltonetworks.com/oilrig-novel-c2-channel-steganography/",
-          "https://www.secureworks.com/research/threat-profiles/cobalt-gypsy"
+          "https://www.secureworks.com/research/threat-profiles/cobalt-gypsy",
+          "https://www.fireeye.com/content/dam/collateral/en/mtrends-2018.pdf",
+          "https://www.wired.com/story/apt-34-iranian-hackers-critical-infrastructure-companies/"
         ],
         "synonyms": [
           "Twisted Kitten",
@@ -3844,6 +3848,13 @@
         },
         {
           "dest-uuid": "f873db71-3d53-41d5-b141-530675ade27a",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        },
+        {
+          "dest-uuid": "68ba94ab-78b8-43e7-83e2-aed3466882c6",
           "tags": [
             "estimative-language:likelihood-probability=\"likely\""
           ],
@@ -5763,42 +5774,6 @@
       ],
       "uuid": "5b4b6980-3bc7-11e8-84d6-879aaac37dd9",
       "value": "Leviathan"
-    },
-    {
-      "description": "Since at least 2014, an Iranian threat group tracked by FireEye as APT34 has conducted reconnaissance aligned with the strategic interests of Iran. The group conducts operations primarily in the Middle East, targeting financial, government, energy, chemical, telecommunications and other industries. Repeated targeting of Middle Eastern financial, energy and government organizations leads FireEye to assess that those sectors are a primary concern of APT34. The use of infrastructure tied to Iranian operations, timing and alignment with the national interests of Iran also lead FireEye to assess that APT34 acts on behalf of the Iranian government.",
-      "meta": {
-        "attribution-confidence": "50",
-        "cfr-suspected-state-sponsor": "Iran (Islamic Republic of)",
-        "cfr-suspected-victims": [
-          "Middle East"
-        ],
-        "cfr-target-category": [
-          "Government",
-          "Private sector"
-        ],
-        "cfr-type-of-incident": "Espionage",
-        "country": "IR",
-        "refs": [
-          "https://www.fireeye.com/content/dam/collateral/en/mtrends-2018.pdf",
-          "https://www.wired.com/story/apt-34-iranian-hackers-critical-infrastructure-companies/  ",
-          "https://www.fireeye.com/blog/threat-research/2017/12/targeted-attack-in-middle-east-by-apt34.html",
-          "https://www.cfr.org/interactive/cyber-operations/apt-34"
-        ],
-        "synonyms": [
-          "APT 34"
-        ]
-      },
-      "related": [
-        {
-          "dest-uuid": "68ba94ab-78b8-43e7-83e2-aed3466882c6",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        }
-      ],
-      "uuid": "73a521f6-3bc7-11e8-9e30-df7c90e50dda",
-      "value": "APT34"
     },
     {
       "description": "FireEye has identified APT35 operations dating back to 2014. APT35, also known as the Newscaster Team, is a threat group sponsored by the Iranian government that conducts long term, resource-intensive operations to collect strategic intelligence. APT35 typically targets U.S. and the Middle Eastern military, diplomatic and government personnel, organizations in the media, energy and defense industrial base (DIB), and engineering, business services and telecommunications sectors.",
