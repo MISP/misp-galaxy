@@ -8229,6 +8229,15 @@
           "https://www.crowdstrike.com/blog/sunspot-malware-technical-analysis/"
         ]
       },
+      "related": [
+        {
+          "dest-uuid": "16902832-0118-40f2-b29e-eaba799b2bf4",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "dropped"
+        }
+      ],
       "uuid": "d9b2305e-9802-483c-a95d-2ae8525c7704",
       "value": "SUNSPOT"
     },
@@ -8294,6 +8303,117 @@
       "value": "RDAT"
     },
     {
+      "description": "Loader used in hands-on-keyboard techniques that attackers employed on compromised endpoints using a powerful second-stage payload, one of several custom Cobalt Strike loaders.",
+      "meta": {
+        "refs": [
+          "https://www.microsoft.com/security/blog/2021/05/27/new-sophisticated-email-based-attack-from-nobelium/",
+          "https://www.microsoft.com/security/blog/2021/01/20/deep-dive-into-the-solorigate-second-stage-activation-from-sunburst-to-teardrop-and-raindrop/"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "d7247cf9-13b6-4781-b789-a5f33521633b",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "6c562458-7970-4d61-aded-1fe4a9002404",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "variant-of"
+        }
+      ],
+      "uuid": "aba3fd7d-87cc-4266-82a1-d458ae299266",
+      "value": "TEARDROP"
+    },
+    {
+      "description": "Written in Go, GoldMax acts as command-and-control backdoor for the actor. It uses several different techniques to obfuscate its actions and evade detection. The malware writes an encrypted configuration file to disk, where the file name and AES-256 cipher keys are unique per implant and based on environmental variables and information about the network where it is running.\nGoldMax establishes a secure session key with its C2 and uses that key to securely communicate with the C2, preventing non-GoldMax-initiated connections from receiving and identifying malicious traffic. The C2 can send commands to be launched for various operations, including native OS commands, via psuedo-randomly generated cookies. The hardcoded cookies are unique to each implant, appearing to be random strings but mapping to victims and operations on the actor side.",
+      "meta": {
+        "refs": [
+          "https://www.microsoft.com/security/blog/2021/05/27/new-sophisticated-email-based-attack-from-nobelium/",
+          "https://www.microsoft.com/security/blog/2021/03/04/goldmax-goldfinder-sibot-analyzing-nobelium-malware/"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "d7247cf9-13b6-4781-b789-a5f33521633b",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "1e912590-c879-4a9c-81b9-2d31e82ac718",
+      "value": "GoldMax"
+    },
+    {
+      "description": "Loader used in hands-on-keyboard techniques that attackers employed on compromised endpoints using a powerful second-stage payload, one of several custom Cobalt Strike loaders.",
+      "meta": {
+        "refs": [
+          "https://www.microsoft.com/security/blog/2021/01/20/deep-dive-into-the-solorigate-second-stage-activation-from-sunburst-to-teardrop-and-raindrop/"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "d7247cf9-13b6-4781-b789-a5f33521633b",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "aba3fd7d-87cc-4266-82a1-d458ae299266",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "variant-of"
+        }
+      ],
+      "uuid": "6c562458-7970-4d61-aded-1fe4a9002404",
+      "value": "Raindrop"
+    },
+    {
+      "description": "Tool written in Go, GoldFinder was most likely used as a custom HTTP tracer tool that logs the route or hops that a packet takes to reach a hardcoded C2 server. When launched, the malware issues an HTTP request for a hardcoded IP address (e.g., hxxps://185[.]225[.]69[.]69/) and logs the HTTP response to a plaintext log file (e.g., loglog.txt created in the present working directory). GoldFinder uses the following hardcoded labels to store the request and response information in the log file:",
+      "meta": {
+        "refs": [
+          "https://www.microsoft.com/security/blog/2021/03/04/goldmax-goldfinder-sibot-analyzing-nobelium-malware/"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "d7247cf9-13b6-4781-b789-a5f33521633b",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "235832b0-ee82-4ed9-8cbd-99cd3cc3596c",
+      "value": "GoldFinder"
+    },
+    {
+      "description": "Sibot is a dual-purpose malware implemented in VBScript. It is designed to achieve persistence on the infected machine then download and execute a payload from a remote C2 server.  The VBScript file is given a name that impersonates legitimate Windows tasks and is either stored in the registry of the compromised system or in an obfuscated format on disk. The VBScript is then run via a scheduled task.",
+      "meta": {
+        "refs": [
+          "https://www.microsoft.com/security/blog/2021/03/04/goldmax-goldfinder-sibot-analyzing-nobelium-malware/"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "d7247cf9-13b6-4781-b789-a5f33521633b",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "1422b81c-a3c6-4229-8523-82d705400f46",
+      "value": "Sibot"
+    },
+    {
       "description": "Matanbuchus is a loader promoted by BelialDemon. It can launch an EXE or DLL file in memory, leverage schtasks.exe to add or modify task schedules, and launch custom PowerShell commands, among other capabilities. Attackers use a Microsoft Excel document as the initial vector to drop the Matanbuchus Loader DLL.",
       "meta": {
         "date": "Feb 2021.",
@@ -8308,5 +8428,5 @@
       "value": "Matanbuchus"
     }
   ],
-  "version": 145
+  "version": 146
 }
