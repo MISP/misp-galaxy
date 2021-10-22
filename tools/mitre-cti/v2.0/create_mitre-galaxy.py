@@ -149,10 +149,13 @@ for domain in domains:
             rel_source['tags'] = [
                 "estimative-language:likelihood-probability=\"almost-certain\""
             ]
-        if 'related' not in all_data_uuid[source_uuid]:
-            all_data_uuid[source_uuid]['related'] = []
-        if rel_source not in all_data_uuid[source_uuid]['related']:
-            all_data_uuid[source_uuid]['related'].append(rel_source)
+        try:
+            if 'related' not in all_data_uuid[source_uuid]:
+                all_data_uuid[source_uuid]['related'] = []
+            if rel_source not in all_data_uuid[source_uuid]['related']:
+                all_data_uuid[source_uuid]['related'].append(rel_source)
+        except KeyError:
+            pass  # ignore relations from which we do not know the source
 
         # LATER find the opposite word of "rel_type" and build the relation in the opposite direction
 
