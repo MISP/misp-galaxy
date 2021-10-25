@@ -1,12 +1,14 @@
 {
   "authors": [
     "John Lambert",
-    "Alexandre Dulaunoy"
+    "Alexandre Dulaunoy",
+    "Lina Lau",
+    "Thomas Patzke"
   ],
   "category": "guidelines",
-  "description": "o365-exchange-techniques - Office365/Exchange related techniques by @johnLaT",
+  "description": "o365-exchange-techniques - Office365/Exchange related techniques by @johnLaTwC and @inversecos",
   "name": "o365-exchange-techniques",
-  "source": "Open Sources",
+  "source": "Open Sources, https://www.inversecos.com/2021/09/office365-attacks-bypassing-mfa.html",
   "type": "cloud-security",
   "uuid": "44574c7e-b732-4466-a7be-ef363374013a",
   "values": [
@@ -19,6 +21,36 @@
       },
       "uuid": "fab70361-329a-410a-9dc4-831ecd8df39f",
       "value": "AAD - Dump users and groups with Azure AD"
+    },
+    {
+      "description": "AAD - PowerShell",
+      "meta": {
+        "kill_chain": [
+          "tactics:Recon"
+        ]
+      },
+      "uuid": "dad1c272-e761-45e8-993d-70433417a45e",
+      "value": "AAD - PowerShell"
+    },
+    {
+      "description": "AAD - Enumerate Domains",
+      "meta": {
+        "kill_chain": [
+          "tactics:Recon"
+        ]
+      },
+      "uuid": "926ef557-581d-4117-a095-2571f655a7b4",
+      "value": "AAD - Enumerate Domains"
+    },
+    {
+      "description": "AAD - Enumerate Users",
+      "meta": {
+        "kill_chain": [
+          "tactics:Recon"
+        ]
+      },
+      "uuid": "4f885396-3f4e-451b-ae26-995efd403cf5",
+      "value": "AAD - Enumerate Users"
     },
     {
       "description": "O365 - Get Global Address List: MailSniper",
@@ -111,10 +143,60 @@
       "value": "On-Prem Exchange - OWA version discovery"
     },
     {
+      "description": "Bruteforce via OWA",
+      "meta": {
+        "kill_chain": [
+          "tactics:Initial Access"
+        ]
+      },
+      "uuid": "9bb7b28f-2957-46b4-8814-4126298f4860",
+      "value": "Bruteforce via OWA"
+    },
+    {
+      "description": "Bruteforce EWS",
+      "meta": {
+        "kill_chain": [
+          "tactics:Initial Access"
+        ]
+      },
+      "uuid": "4d0099c5-06e7-40ed-a9a6-2d9f6d8df195",
+      "value": "Bruteforce EWS"
+    },
+    {
+      "description": "Bruteforce OAuth",
+      "meta": {
+        "kill_chain": [
+          "tactics:Initial Access"
+        ]
+      },
+      "uuid": "bb7871fe-abc7-4935-b0fd-3cbf66a4ef0c",
+      "value": "Bruteforce OAuth"
+    },
+    {
+      "description": "Bruteforce via AAD Sign in Form",
+      "meta": {
+        "kill_chain": [
+          "tactics:Initial Access"
+        ]
+      },
+      "uuid": "0889bb82-ddd8-411d-9288-be8d56a05247",
+      "value": "Bruteforce via AAD Sign in Form"
+    },
+    {
+      "description": "Bruteforce through Autologon API",
+      "meta": {
+        "kill_chain": [
+          "tactics:Initial Access"
+        ]
+      },
+      "uuid": "63727b2f-64d6-4d1b-b017-38a3ede510e1",
+      "value": "Bruteforce through Autologon API"
+    },
+    {
       "description": "AAD - Password Spray: MailSniper",
       "meta": {
         "kill_chain": [
-          "tactics:Compromise"
+          "tactics:Initial Access"
         ]
       },
       "uuid": "933ec08d-a6d4-4ced-b732-4cb0331e7799",
@@ -124,7 +206,7 @@
       "description": "AAD - Password Spray: CredKing",
       "meta": {
         "kill_chain": [
-          "tactics:Compromise"
+          "tactics:Initial Access"
         ]
       },
       "uuid": "5670ca90-38cd-4825-bd83-1bdb31fd5ea3",
@@ -134,7 +216,7 @@
       "description": "O365 - Bruteforce of Autodiscover: SensePost Ruler",
       "meta": {
         "kill_chain": [
-          "tactics:Compromise"
+          "tactics:Initial Access"
         ]
       },
       "uuid": "d66c1ead-4dd3-4968-b6fe-faf41b7fb88d",
@@ -144,7 +226,7 @@
       "description": "O365 - Phishing for credentials",
       "meta": {
         "kill_chain": [
-          "tactics:Compromise"
+          "tactics:Initial Access"
         ]
       },
       "uuid": "eda57f15-029c-4465-9401-f9dafc6d366c",
@@ -154,7 +236,7 @@
       "description": "O365 - Phishing using OAuth app",
       "meta": {
         "kill_chain": [
-          "tactics:Compromise"
+          "tactics:Initial Access"
         ]
       },
       "uuid": "61589df6-6848-4866-8613-8a4a7478abef",
@@ -164,17 +246,68 @@
       "description": "O365 - 2FA MITM Phishing: evilginx2",
       "meta": {
         "kill_chain": [
-          "tactics:Compromise"
+          "tactics:Initial Access"
         ]
       },
       "uuid": "fa1087c8-012d-4ef6-9eb3-5b5a6fb94c02",
       "value": "O365 - 2FA MITM Phishing: evilginx2"
     },
     {
+      "description": "O365 - MFA Bypass via IMAP/POP",
+      "meta": {
+        "kill_chain": [
+          "tactics:Initial Access"
+        ]
+      },
+      "uuid": "9043a195-2ac8-4732-a049-f8dee3b98d10",
+      "value": "O365 - MFA Bypass via IMAP/POP"
+    },
+    {
+      "description": "Compromising Pass-Through Authentication",
+      "meta": {
+        "kill_chain": [
+          "tactics:Initial Access"
+        ]
+      },
+      "uuid": "00f0bd50-61f2-401a-96e5-81453a86ec33",
+      "value": "Compromising Pass-Through Authentication"
+    },
+    {
+      "description": "Enumerate Users, Admins, Roles and Permissions",
+      "meta": {
+        "kill_chain": [
+          "tactics:Recon"
+        ]
+      },
+      "uuid": "25e47935-abd5-49b9-8366-b6fe8021cb38",
+      "value": "Enumerate Users, Admins, Roles and Permissions"
+    },
+    {
+      "description": "Enumerate MFA Settings",
+      "meta": {
+        "kill_chain": [
+          "tactics:Recon"
+        ]
+      },
+      "uuid": "fe8ad955-f794-4aa2-b5fb-2e5f241c45e8",
+      "value": "Enumerate MFA Settings"
+    },
+    {
+      "description": "Golden SAML",
+      "meta": {
+        "kill_chain": [
+          "tactics:Initial Access",
+          "tactics:Persistence"
+        ]
+      },
+      "uuid": "4f14c96d-3ffe-42df-9e4c-1e2801e1f1e9",
+      "value": "Golden SAML"
+    },
+    {
       "description": "On-Prem Exchange - Password Spray using Invoke-PasswordSprayOWA, EWS",
       "meta": {
         "kill_chain": [
-          "tactics:Compromise"
+          "tactics:Initial Access"
         ]
       },
       "uuid": "8ffe80b9-0213-40c6-aeca-8877bdca8741",
@@ -184,11 +317,73 @@
       "description": "On-Prem Exchange - Bruteforce of Autodiscover: SensePost Ruler",
       "meta": {
         "kill_chain": [
-          "tactics:Compromise"
+          "tactics:Initial Access"
         ]
       },
       "uuid": "cf8df948-0332-4ec7-94f3-3f6d54bbcbb9",
       "value": "On-Prem Exchange - Bruteforce of Autodiscover: SensePost Ruler"
+    },
+    {
+      "description": "Change MFA Settings",
+      "meta": {
+        "kill_chain": [
+          "tactics:Persistence",
+          "tactics:Actions on Intent"
+        ]
+      },
+      "uuid": "985d69e2-b5bd-41ca-b966-c0fed94e8863",
+      "value": "Change MFA Settings"
+    },
+    {
+      "description": "Change Conditional Access Settings",
+      "meta": {
+        "kill_chain": [
+          "tactics:Persistence"
+        ]
+      },
+      "uuid": "b2719765-02d1-4d60-862a-7cb12498b0bd",
+      "value": "Change Conditional Access Settings"
+    },
+    {
+      "description": "Malicious App Registrations",
+      "meta": {
+        "kill_chain": [
+          "tactics:Initial Access",
+          "tactics:Persistence"
+        ]
+      },
+      "uuid": "3aff26be-f22e-4169-a508-ef2877d67c03",
+      "value": "Malicious App Registrations"
+    },
+    {
+      "description": "Add Service Principal or App Credentials",
+      "meta": {
+        "kill_chain": [
+          "tactics:Persistence"
+        ]
+      },
+      "uuid": "fd6b47aa-2bd2-4a17-bfd7-104188ff4adc",
+      "value": "Add Service Principal or App Credentials"
+    },
+    {
+      "description": "Add Service Principal",
+      "meta": {
+        "kill_chain": [
+          "tactics:Persistence"
+        ]
+      },
+      "uuid": "5148933b-7c65-4229-a545-0cc8d23c0587",
+      "value": "Add Service Principal"
+    },
+    {
+      "description": "Add Federation Trust",
+      "meta": {
+        "kill_chain": [
+          "tactics:Persistence"
+        ]
+      },
+      "uuid": "26af635c-5441-4465-bc98-8d764762bfd5",
+      "value": "Add Federation Trust"
     },
     {
       "description": "O365 - Add Mail forwarding rule",
@@ -201,14 +396,24 @@
       "value": "O365 - Add Mail forwarding rule"
     },
     {
-      "description": "O365 - Add Global admin account",
+      "description": "Add Global admin account",
       "meta": {
         "kill_chain": [
           "tactics:Persistence"
         ]
       },
       "uuid": "a9c1f718-b9bf-4efc-9fa1-852b6c93f725",
-      "value": "O365 - Add Global admin account"
+      "value": "Add Global admin account"
+    },
+    {
+      "description": "Add user account",
+      "meta": {
+        "kill_chain": [
+          "tactics:Persistence"
+        ]
+      },
+      "uuid": "cef7c750-18fb-47b4-8471-b5a8ce4f83d0",
+      "value": "Add user account"
     },
     {
       "description": "O365 - Delegate Tenant Admin",
@@ -241,14 +446,34 @@
       "value": "End Point - Persistence throught custom Outlook form"
     },
     {
-      "description": "End Point - Create Hidden Mailbox Rule",
+      "description": "Mailbox Rule Creation",
       "meta": {
         "kill_chain": [
           "tactics:Persistence"
         ]
       },
       "uuid": "d023f254-466b-436b-acfd-beea54c323b1",
-      "value": "End Point - Create Hidden Mailbox Rule"
+      "value": "Mailbox Rule Creation"
+    },
+    {
+      "description": "Mailbox Folder Permissions",
+      "meta": {
+        "kill_chain": [
+          "tactics:Persistence"
+        ]
+      },
+      "uuid": "2f11c018-cf49-4361-b17c-573dbab1005f",
+      "value": "Mailbox Folder Permissions"
+    },
+    {
+      "description": "Mail Flow (Transport Rules)",
+      "meta": {
+        "kill_chain": [
+          "tactics:Persistence"
+        ]
+      },
+      "uuid": "fe3dbf72-3bfe-4387-b9e0-f0a135a8f21b",
+      "value": "Mail Flow (Transport Rules)"
     },
     {
       "description": "O365 - MailSniper: Search Mailbox for credentials",
@@ -352,14 +577,65 @@
       "value": "O365 - Exfiltration email using EWS APIs with PowerShell"
     },
     {
-      "description": "O365 - Download documents and email",
+      "description": "Downgrade License",
+      "meta": {
+        "kill_chain": [
+          "tactics:Actions on Intent"
+        ]
+      },
+      "uuid": "6407e2b8-2266-496f-b8bd-5757d99d20e9",
+      "value": "Downgrade License"
+    },
+    {
+      "description": "Impersonate Users",
+      "meta": {
+        "kill_chain": [
+          "tactics:Actions on Intent"
+        ]
+      },
+      "uuid": "d4cec16a-ef8e-4c97-aa6a-1d95cd03e10e",
+      "value": "Impersonate Users"
+    },
+    {
+      "description": "Assign Administrative Role to Service Principal",
+      "meta": {
+        "kill_chain": [
+          "tactics:Persistence",
+          "tactics:Actions on Intent"
+        ]
+      },
+      "uuid": "1b302149-dccc-4d63-8d4d-47217ba7fc90",
+      "value": "Assign Administrative Role to Service Principal"
+    },
+    {
+      "description": "Elevate to User Access Administrator Role",
+      "meta": {
+        "kill_chain": [
+          "tactics:Actions on Intent"
+        ]
+      },
+      "uuid": "8d2b6b21-5d20-4ecd-9be0-c71c826cf8a4",
+      "value": "Elevate to User Access Administrator Role"
+    },
+    {
+      "description": "eDiscovery Abuse",
+      "meta": {
+        "kill_chain": [
+          "tactics:Actions on Intent"
+        ]
+      },
+      "uuid": "48592f6a-76cc-4986-b434-1d3342fb30bc",
+      "value": "eDiscovery Abuse"
+    },
+    {
+      "description": "O365 - Download documents, messages and email",
       "meta": {
         "kill_chain": [
           "tactics:Actions on Intent"
         ]
       },
       "uuid": "1ccc00f8-d4b5-4c72-a7c0-a53127497a7c",
-      "value": "O365 - Download documents and email"
+      "value": "O365 - Download documents, messages and email"
     }
   ],
   "version": 2
