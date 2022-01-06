@@ -81,7 +81,7 @@ def header():
     return doc
 
 
-def asciidoc(content=False, t='title', title='', typename=''):
+def asciidoc(content=False, t='title', title='', typename='', uuid=None):
     adoc = []
     adoc += "\n"
     output = ""
@@ -114,6 +114,7 @@ def asciidoc(content=False, t='title', title='', typename=''):
                 pass  # ignore lookup errors
         if output:
             output = '{} has relationships with:\n{}\n'.format(title, output)
+            output = '\nlink:https://www.misp-project.org/graphs/{}.png[View relationships graph]\n\n{}\n'.format(uuid, output)
     adoc += output
     return adoc
 
@@ -139,7 +140,7 @@ for cluster in clusters:
         if 'meta' in v:
             adoc += asciidoc(content=v['meta'], t='meta-synonyms', title=v['value'])
         if 'related' in v:
-            adoc += asciidoc(content=v['related'], t='related', title=v['value'])
+            adoc += asciidoc(content=v['related'], t='related', title=v['value'], uuid=v['uuid'])
         if 'meta' in v:
             adoc += asciidoc(content=v['meta'], t='meta-refs', title=v['value'])
 print(''.join(adoc))
