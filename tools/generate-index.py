@@ -27,11 +27,11 @@ output = ""
 for f in galaxies_fnames:
     with open(os.path.join(pathClusters, f)) as fr:
         cluster = json.load(fr)
-    output = f'{output}\n# {cluster["name"]}\n\n'
+    output = f'{output}\n## {cluster["name"]}\n\n'
     link = cluster["name"].replace(" ", "_").lower()
     total = len(cluster["values"])
     output = f'{output}[{cluster["name"]}](https://www.misp-project.org/galaxy.html#_{link}) - {cluster["description"]}\n'
-    output = f'{output}\nCategory: *{cluster["category"]}* - source: *{cluster["source"]}* - total: *{total}* elements \n'
+    output = f'{output}\nCategory: *{cluster["category"]}* - source: *{cluster["source"]}* - total: *{total}* elements\n'
     output = f'{output}\n[[HTML](https://www.misp-project.org/galaxy.html#_{link})] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/{f})]\n'
 
 print(output)
