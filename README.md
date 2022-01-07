@@ -2,6 +2,8 @@
 
 ![Python application](https://github.com/MISP/misp-galaxy/workflows/Python%20application/badge.svg)
 
+![Screenshot - MISP galaxy integeration in MISP threat intelligence platform](https://raw.githubusercontent.com/MISP/misp-galaxy/aa41337fd78946a60aef3783f58f337d2342430a/doc/images/galaxy.png)
+
 MISP galaxy is a simple method to express a large object called cluster that can be attached to MISP events or
 attributes. A cluster can be composed of one or more elements. Elements are expressed as key-values. There
 are default knowledge base (such as Threat Actors, Tools, Ransomware, ATT&CK matrixes) available in MISP galaxy 
