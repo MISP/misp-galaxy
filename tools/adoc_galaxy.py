@@ -30,12 +30,15 @@ clusters = []
 pathClusters = os.path.join(thisDir, '../clusters')
 pathGalaxies = os.path.join(thisDir, '../galaxies')
 
+skip_list = ["cancer.json"]
+
 for f in os.listdir(pathGalaxies):
     if '.json' in f:
         with open(os.path.join(pathGalaxies, f), 'r') as f_in:
             galaxy_data = json.load(f_in)
             if galaxy_data.get('namespace') != 'deprecated':
-                clusters.append(f)
+                if f not in skip_list:
+                    clusters.append(f)
 
 clusters.sort()
 
