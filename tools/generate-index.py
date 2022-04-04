@@ -14,7 +14,7 @@ def gen_galaxy_tag(galaxy_name, cluster_name):
     return '{}={}'.format(galaxy_name, cluster_name)
 
 galaxies_fnames = []
-files_to_ignore = []
+files_to_ignore = ["cancer.json", "handicap.json"]
 pathClusters = '../clusters'
 
 for f in os.listdir(pathClusters):
