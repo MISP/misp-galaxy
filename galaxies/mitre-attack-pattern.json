@@ -3,6 +3,8 @@
   "icon": "map",
   "kill_chain_order": {
     "mitre-attack": [
+      "reconnaissance",
+      "resource-development",
       "initial-access",
       "execution",
       "persistence",
@@ -18,16 +20,17 @@
     ],
     "mitre-mobile-attack": [
       "initial-access",
+      "execution",
       "persistence",
       "privilege-escalation",
       "defense-evasion",
       "credential-access",
       "discovery",
       "lateral-movement",
-      "effects",
       "collection",
-      "exfiltration",
       "command-and-control",
+      "exfiltration",
+      "impact",
       "network-effects",
       "remote-service-effects"
     ],
@@ -53,5 +56,5 @@
   "namespace": "mitre-attack",
   "type": "mitre-attack-pattern",
   "uuid": "c4e851fa-775f-11e7-8163-b774922098cd",
-  "version": 8
+  "version": 9
 }
