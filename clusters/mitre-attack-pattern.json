@@ -626,7 +626,7 @@
       "value": "Identify vulnerabilities in third-party software libraries - T1389"
     },
     {
-      "description": "Adversaries may achieve persistence by adding a program to a startup folder or referencing it with a Registry run key. Adding an entry to the \"run keys\" in the Registry or startup folder will cause the program referenced to be executed when a user logs in.(Citation: Microsoft Run Key) These programs will be executed under the context of the user and will have the account's associated permissions level.\n\nPlacing a program within a startup folder will also cause that program to execute when a user logs in. There is a startup folder location for individual user accounts as well as a system-wide startup folder that will be checked regardless of which user account logs in. The startup folder path for the current user is <code>C:\\Users\\\\[Username]\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup</code>. The startup folder path for all users is <code>C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\StartUp</code>.\n\nThe following run keys are created by default on Windows systems:\n\n* <code>HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run</code>\n* <code>HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce</code>\n* <code>HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Run</code>\n* <code>HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce</code>\n\nRun keys may exist under multiple hives.(Citation: Microsoft Wow6432Node 2018)(Citation: Malwarebytes Wow6432Node 2016) The <code>HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnceEx</code> is also available but is not created by default on Windows Vista and newer. Registry run key entries can reference programs directly or list them as a dependency.(Citation: Microsoft RunOnceEx APR 2018) For example, it is possible to load a DLL at logon using a \"Depend\" key with RunOnceEx: <code>reg add HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\RunOnceEx\\0001\\Depend /v 1 /d \"C:\\temp\\evil[.]dll\"</code> (Citation: Oddvar Moe RunOnceEx Mar 2018)\n\nThe following Registry keys can be used to set startup folder items for persistence:\n\n* <code>HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders</code>\n* <code>HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders</code>\n* <code>HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders</code>\n* <code>HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders</code>\n\nThe following Registry keys can control automatic startup of services during boot:\n\n* <code>HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\RunServicesOnce</code>\n* <code>HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\RunServicesOnce</code>\n* <code>HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\RunServices</code>\n* <code>HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\RunServices</code>\n\nUsing policy settings to specify startup programs creates corresponding values in either of two Registry keys:\n\n* <code>HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\Run</code>\n* <code>HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\Run</code>\n\nThe Winlogon key controls actions that occur when a user logs on to a computer running Windows 7. Most of these actions are under the control of the operating system, but you can also add custom actions here. The <code>HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\Userinit</code> and <code>HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\Shell</code> subkeys can automatically launch programs.\n\nPrograms listed in the load value of the registry key <code>HKEY_CURRENT_USER\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Windows</code> run when any user logs on.\n\nBy default, the multistring <code>BootExecute</code> value of the registry key <code>HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Control\\Session Manager</code> is set to <code>autocheck autochk *</code>. This value causes Windows, at startup, to check the file-system integrity of the hard disks if the system has been shut down abnormally. Adversaries can add other programs or processes to this registry value which will automatically launch at boot.\n\nAdversaries can use these configuration locations to execute malware, such as remote access tools, to maintain persistence through system reboots. Adversaries may also use [Masquerading](https://attack.mitre.org/techniques/T1036) to make the Registry entries look as if they are associated with legitimate programs.",
+      "description": "Adversaries may achieve persistence by adding a program to a startup folder or referencing it with a Registry run key. Adding an entry to the \"run keys\" in the Registry or startup folder will cause the program referenced to be executed when a user logs in.(Citation: Microsoft Run Key) These programs will be executed under the context of the user and will have the account's associated permissions level.\n\nPlacing a program within a startup folder will also cause that program to execute when a user logs in. There is a startup folder location for individual user accounts as well as a system-wide startup folder that will be checked regardless of which user account logs in. The startup folder path for the current user is <code>C:\\Users\\\\[Username]\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup</code>. The startup folder path for all users is <code>C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\StartUp</code>.\n\nThe following run keys are created by default on Windows systems:\n\n* <code>HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run</code>\n* <code>HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce</code>\n* <code>HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Run</code>\n* <code>HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnce</code>\n\nRun keys may exist under multiple hives.(Citation: Microsoft Wow6432Node 2018)(Citation: Malwarebytes Wow6432Node 2016) The <code>HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\RunOnceEx</code> is also available but is not created by default on Windows Vista and newer. Registry run key entries can reference programs directly or list them as a dependency.(Citation: Microsoft Run Key) For example, it is possible to load a DLL at logon using a \"Depend\" key with RunOnceEx: <code>reg add HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\RunOnceEx\\0001\\Depend /v 1 /d \"C:\\temp\\evil[.]dll\"</code> (Citation: Oddvar Moe RunOnceEx Mar 2018)\n\nThe following Registry keys can be used to set startup folder items for persistence:\n\n* <code>HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders</code>\n* <code>HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders</code>\n* <code>HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders</code>\n* <code>HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Explorer\\User Shell Folders</code>\n\nThe following Registry keys can control automatic startup of services during boot:\n\n* <code>HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\RunServicesOnce</code>\n* <code>HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\RunServicesOnce</code>\n* <code>HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\RunServices</code>\n* <code>HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\RunServices</code>\n\nUsing policy settings to specify startup programs creates corresponding values in either of two Registry keys:\n\n* <code>HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\Run</code>\n* <code>HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Policies\\Explorer\\Run</code>\n\nThe Winlogon key controls actions that occur when a user logs on to a computer running Windows 7. Most of these actions are under the control of the operating system, but you can also add custom actions here. The <code>HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\Userinit</code> and <code>HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Winlogon\\Shell</code> subkeys can automatically launch programs.\n\nPrograms listed in the load value of the registry key <code>HKEY_CURRENT_USER\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Windows</code> run when any user logs on.\n\nBy default, the multistring <code>BootExecute</code> value of the registry key <code>HKEY_LOCAL_MACHINE\\System\\CurrentControlSet\\Control\\Session Manager</code> is set to <code>autocheck autochk *</code>. This value causes Windows, at startup, to check the file-system integrity of the hard disks if the system has been shut down abnormally. Adversaries can add other programs or processes to this registry value which will automatically launch at boot.\n\nAdversaries can use these configuration locations to execute malware, such as remote access tools, to maintain persistence through system reboots. Adversaries may also use [Masquerading](https://attack.mitre.org/techniques/T1036) to make the Registry entries look as if they are associated with legitimate programs.",
       "meta": {
         "external_id": "CAPEC-270",
         "kill_chain": [
@@ -650,7 +650,6 @@
           "https://capec.mitre.org/data/definitions/270.html",
           "https://docs.microsoft.com/en-us/windows/win32/sysinfo/32-bit-and-64-bit-application-data-in-the-registry",
           "https://oddvar.moe/2018/03/21/persistence-using-runonceex-hidden-from-autoruns-exe/",
-          "https://support.microsoft.com/help/310593/description-of-the-runonceex-registry-key",
           "https://technet.microsoft.com/en-us/sysinternals/bb963902"
         ]
       },
@@ -700,7 +699,9 @@
         "kill_chain": [
           "mitre-attack:initial-access"
         ],
-        "mitre_data_sources": [],
+        "mitre_data_sources": [
+          "File: File Metadata"
+        ],
         "mitre_platforms": [
           "Linux",
           "macOS",
@@ -829,7 +830,6 @@
         "kill_chain": [
           "mitre-attack:persistence"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -994,7 +994,6 @@
           "mitre-attack:lateral-movement",
           "mitre-attack:execution"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -2160,7 +2159,6 @@
         "kill_chain": [
           "mitre-attack:persistence"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -2192,7 +2190,6 @@
         "kill_chain": [
           "mitre-attack:command-and-control"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Linux",
           "macOS",
@@ -2269,7 +2266,6 @@
           "mitre-attack:persistence",
           "mitre-attack:defense-evasion"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -2304,7 +2300,6 @@
           "mitre-attack:defense-evasion",
           "mitre-attack:persistence"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -3043,7 +3038,6 @@
         "kill_chain": [
           "mitre-attack:credential-access"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -3276,7 +3270,9 @@
         "kill_chain": [
           "mitre-attack:defense-evasion"
         ],
-        "mitre_data_sources": [],
+        "mitre_data_sources": [
+          "Application Log: Application Log Content"
+        ],
         "mitre_platforms": [
           "Linux",
           "macOS",
@@ -3507,7 +3503,9 @@
         "kill_chain": [
           "mitre-attack:initial-access"
         ],
-        "mitre_data_sources": [],
+        "mitre_data_sources": [
+          "File: File Metadata"
+        ],
         "mitre_platforms": [
           "Linux",
           "macOS",
@@ -3564,7 +3562,9 @@
         "kill_chain": [
           "mitre-attack:initial-access"
         ],
-        "mitre_data_sources": [],
+        "mitre_data_sources": [
+          "Sensor Health: Host Status"
+        ],
         "mitre_platforms": [
           "Linux",
           "macOS",
@@ -4448,7 +4448,7 @@
         ],
         "refs": [
           "https://attack.mitre.org/techniques/T1005",
-          "https://www.mandiant.com/resources/apt41-initiates-global-intrusion-campaign-using-multiple-exploits ",
+          "https://www.mandiant.com/resources/apt41-initiates-global-intrusion-campaign-using-multiple-exploits",
           "https://www.us-cert.gov/ncas/alerts/TA18-106A"
         ]
       },
@@ -4565,7 +4565,7 @@
         "refs": [
           "https://attack.mitre.org/techniques/T1016",
           "https://capec.mitre.org/data/definitions/309.html",
-          "https://www.mandiant.com/resources/apt41-initiates-global-intrusion-campaign-using-multiple-exploits ",
+          "https://www.mandiant.com/resources/apt41-initiates-global-intrusion-campaign-using-multiple-exploits",
           "https://www.us-cert.gov/ncas/alerts/TA18-106A"
         ]
       },
@@ -4626,7 +4626,6 @@
         "kill_chain": [
           "mitre-attack:persistence"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -4822,7 +4821,6 @@
         "kill_chain": [
           "mitre-attack:credential-access"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Linux",
           "macOS",
@@ -4887,7 +4885,6 @@
           "mitre-attack:privilege-escalation",
           "mitre-attack:defense-evasion"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -4956,7 +4953,6 @@
           "mitre-attack:persistence",
           "mitre-attack:privilege-escalation"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows",
           "Linux",
@@ -5147,7 +5143,6 @@
           "mitre-attack:persistence",
           "mitre-attack:privilege-escalation"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -5209,7 +5204,6 @@
         "kill_chain": [
           "mitre-attack:reconnaissance"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "PRE"
         ],
@@ -5230,7 +5224,6 @@
         "kill_chain": [
           "mitre-attack:defense-evasion"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Linux",
           "macOS",
@@ -5286,7 +5279,6 @@
           "mitre-attack:defense-evasion",
           "mitre-attack:privilege-escalation"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -5323,7 +5315,10 @@
         "kill_chain": [
           "mitre-attack:defense-evasion"
         ],
-        "mitre_data_sources": [],
+        "mitre_data_sources": [
+          "Application Log: Application Log Content",
+          "Process: Process Creation"
+        ],
         "mitre_platforms": [
           "Linux",
           "Windows",
@@ -5344,7 +5339,6 @@
           "mitre-attack:defense-evasion",
           "mitre-attack:privilege-escalation"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -5378,7 +5372,11 @@
         "kill_chain": [
           "mitre-attack:credential-access"
         ],
-        "mitre_data_sources": [],
+        "mitre_data_sources": [
+          "Application Log: Application Log Content",
+          "Process: Process Creation",
+          "User Account: User Account Authentication"
+        ],
         "mitre_platforms": [
           "Linux",
           "Windows",
@@ -5401,7 +5399,6 @@
           "mitre-attack:defense-evasion",
           "mitre-attack:persistence"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -5479,7 +5476,6 @@
         "kill_chain": [
           "mitre-attack:persistence"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Linux",
           "macOS"
@@ -5545,7 +5541,6 @@
         "kill_chain": [
           "mitre-attack:defense-evasion"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -5714,7 +5709,6 @@
         "kill_chain": [
           "mitre-attack:privilege-escalation"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "macOS"
         ],
@@ -5764,7 +5758,6 @@
           "mitre-attack:defense-evasion",
           "mitre-attack:persistence"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Linux",
           "macOS",
@@ -5796,7 +5789,6 @@
         "kill_chain": [
           "mitre-attack:reconnaissance"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "PRE"
         ],
@@ -5859,7 +5851,6 @@
         "kill_chain": [
           "mitre-attack:credential-access"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "IaaS"
         ],
@@ -6584,7 +6575,6 @@
         "kill_chain": [
           "mitre-attack:reconnaissance"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "PRE"
         ],
@@ -7550,7 +7540,7 @@
           "https://attack.mitre.org/techniques/T1550/001",
           "https://auth0.com/blog/why-should-use-accesstokens-to-secure-an-api/",
           "https://capec.mitre.org/data/definitions/593.html",
-          "https://cloud.google.com/iam/docs/creating-short-lived-service-account-credentials ",
+          "https://cloud.google.com/iam/docs/creating-short-lived-service-account-credentials",
           "https://cloud.google.com/iam/docs/service-account-monitoring",
           "https://developer.okta.com/blog/2018/06/20/what-happens-if-your-jwt-is-stolen",
           "https://docs.aws.amazon.com/IAM/latest/UserGuide/cloudtrail-integration.html",
@@ -7889,9 +7879,9 @@
         "refs": [
           "http://pages.endgame.com/rs/627-YBU-612/images/EndgameJournal_The%20Masquerade%20Ball_Pages_R2.pdf",
           "https://attack.mitre.org/techniques/T1036/003",
-          "https://blog-assets.f-secure.com/wp-content/uploads/2019/10/15163418/CozyDuke.pdf",
           "https://lolbas-project.github.io/",
-          "https://twitter.com/ItsReallyNick/status/1055321652777619457"
+          "https://twitter.com/ItsReallyNick/status/1055321652777619457",
+          "https://www.f-secure.com/documents/996508/1030745/CozyDuke"
         ]
       },
       "related": [
@@ -8099,7 +8089,6 @@
         "kill_chain": [
           "mitre-attack:reconnaissance"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "PRE"
         ],
@@ -8224,7 +8213,7 @@
         "refs": [
           "https://attack.mitre.org/techniques/T1098/003",
           "https://cloud.google.com/iam/docs/policies",
-          "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html ",
+          "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html",
           "https://docs.microsoft.com/en-us/office365/admin/add-users/about-admin-roles?view=o365-worldwide",
           "https://expel.com/blog/incident-report-from-cli-to-console-chasing-an-attacker-in-aws/",
           "https://posts.specterops.io/azure-privilege-escalation-via-service-principal-abuse-210ae2be2a5",
@@ -8494,7 +8483,6 @@
         "kill_chain": [
           "mitre-attack:reconnaissance"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "PRE"
         ],
@@ -8824,7 +8812,6 @@
         "kill_chain": [
           "mitre-attack:reconnaissance"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "PRE"
         ],
@@ -8993,7 +8980,6 @@
         "kill_chain": [
           "mitre-attack:reconnaissance"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "PRE"
         ],
@@ -9055,7 +9041,9 @@
         "kill_chain": [
           "mitre-attack:defense-evasion"
         ],
-        "mitre_data_sources": [],
+        "mitre_data_sources": [
+          "Process: Process Creation"
+        ],
         "mitre_platforms": [
           "Windows"
         ],
@@ -9170,7 +9158,7 @@
           "https://attack.mitre.org/techniques/T1499/001",
           "https://capec.mitre.org/data/definitions/469.html",
           "https://capec.mitre.org/data/definitions/482.html",
-          "https://web.archive.org/web/20180320005525/https://pages.arbornetworks.com/rs/082-KNA-087/images/13th_Worldwide_Infrastructure_Security_Report.pdf",
+          "https://pages.arbornetworks.com/rs/082-KNA-087/images/13th_Worldwide_Infrastructure_Security_Report.pdf",
           "https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/netflow/configuration/15-mt/nf-15-mt-book/nf-detct-analy-thrts.pdf",
           "https://www.cloudflare.com/learning/ddos/syn-flood-ddos-attack/",
           "https://www.corero.com/resources/ddos-attack-types/syn-flood-ack.html"
@@ -9408,7 +9396,6 @@
         "kill_chain": [
           "mitre-attack:reconnaissance"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "PRE"
         ],
@@ -9518,7 +9505,7 @@
           "https://capec.mitre.org/data/definitions/488.html",
           "https://capec.mitre.org/data/definitions/489.html",
           "https://capec.mitre.org/data/definitions/528.html",
-          "https://web.archive.org/web/20180320005525/https://pages.arbornetworks.com/rs/082-KNA-087/images/13th_Worldwide_Infrastructure_Security_Report.pdf",
+          "https://pages.arbornetworks.com/rs/082-KNA-087/images/13th_Worldwide_Infrastructure_Security_Report.pdf",
           "https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/netflow/configuration/15-mt/nf-15-mt-book/nf-detct-analy-thrts.pdf",
           "https://www.cloudflare.com/learning/ddos/http-flood-ddos-attack/",
           "https://www.netscout.com/blog/asert/ddos-attacks-ssl-something-old-something-new"
@@ -9649,7 +9636,7 @@
           "https://attack.mitre.org/techniques/T1557/002",
           "https://pen-testing.sans.org/resources/papers/gcih/real-world-arp-spoofing-105411",
           "https://tools.ietf.org/html/rfc826",
-          "https://web.archive.org/web/20200302085133/https://www.cylance.com/content/dam/cylance/pages/operation-cleaver/Cylance_Operation_Cleaver_Report.pdf"
+          "https://www.cylance.com/content/dam/cylance/pages/operation-cleaver/Cylance_Operation_Cleaver_Report.pdf"
         ]
       },
       "related": [
@@ -9871,7 +9858,6 @@
         "kill_chain": [
           "mitre-attack:reconnaissance"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "PRE"
         ],
@@ -10052,7 +10038,7 @@
         ],
         "refs": [
           "https://attack.mitre.org/techniques/T1499/003",
-          "https://web.archive.org/web/20180320005525/https://pages.arbornetworks.com/rs/082-KNA-087/images/13th_Worldwide_Infrastructure_Security_Report.pdf",
+          "https://pages.arbornetworks.com/rs/082-KNA-087/images/13th_Worldwide_Infrastructure_Security_Report.pdf",
           "https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/netflow/configuration/15-mt/nf-15-mt-book/nf-detct-analy-thrts.pdf"
         ]
       },
@@ -10311,7 +10297,7 @@
         ],
         "refs": [
           "https://attack.mitre.org/techniques/T1555/004",
-          "https://blog.malwarebytes.com/101/2016/01/the-windows-vaults/ ",
+          "https://blog.malwarebytes.com/101/2016/01/the-windows-vaults/",
           "https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-8.1-and-8/jj554668(v=ws.11)?redirectedfrom=MSDN",
           "https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh994565(v=ws.11)#credential-manager-store",
           "https://docs.microsoft.com/en-us/windows/win32/api/wincred/nf-wincred-credenumeratea",
@@ -10821,7 +10807,6 @@
         "kill_chain": [
           "mitre-attack:reconnaissance"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "PRE"
         ],
@@ -10923,7 +10908,6 @@
         "kill_chain": [
           "mitre-attack:persistence"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -10976,7 +10960,6 @@
         "kill_chain": [
           "mitre-attack:defense-evasion"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Linux",
           "macOS",
@@ -11083,7 +11066,6 @@
         "kill_chain": [
           "mitre-attack:persistence"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -11183,7 +11165,6 @@
         "kill_chain": [
           "mitre-attack:defense-evasion"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Linux",
           "Windows",
@@ -11220,7 +11201,6 @@
         "kill_chain": [
           "mitre-attack:persistence"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -11284,7 +11264,7 @@
         "refs": [
           "https://arxiv.org/ftp/arxiv/papers/1408/1408.1136.pdf",
           "https://attack.mitre.org/techniques/T1105",
-          "https://lolbas-project.github.io/#t1105 ",
+          "https://lolbas-project.github.io/#t1105",
           "https://www.ptsecurity.com/upload/corporate/ww-en/analytics/Cobalt-Snatch-eng.pdf"
         ]
       },
@@ -11298,7 +11278,6 @@
         "kill_chain": [
           "mitre-attack:execution"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Linux",
           "macOS",
@@ -11341,7 +11320,6 @@
         "kill_chain": [
           "mitre-attack:lateral-movement"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Linux",
           "macOS",
@@ -11395,7 +11373,6 @@
         "kill_chain": [
           "mitre-attack:credential-access"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows",
           "IaaS",
@@ -11511,7 +11488,6 @@
         "kill_chain": [
           "mitre-attack:command-and-control"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Linux",
           "macOS",
@@ -11558,7 +11534,6 @@
         "kill_chain": [
           "mitre-attack:command-and-control"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Linux",
           "macOS",
@@ -11611,7 +11586,6 @@
           "mitre-attack:defense-evasion",
           "mitre-attack:privilege-escalation"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -11765,7 +11739,6 @@
           "mitre-attack:execution",
           "mitre-attack:lateral-movement"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -11796,7 +11769,6 @@
         "kill_chain": [
           "mitre-attack:command-and-control"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Linux",
           "macOS",
@@ -11831,7 +11803,6 @@
         "kill_chain": [
           "mitre-attack:discovery"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "macOS",
           "Windows"
@@ -12072,7 +12043,6 @@
           "mitre-attack:defense-evasion",
           "mitre-attack:lateral-movement"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Office 365",
           "SaaS"
@@ -12102,7 +12072,6 @@
         "kill_chain": [
           "mitre-attack:command-and-control"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Linux",
           "macOS",
@@ -12149,7 +12118,6 @@
         "kill_chain": [
           "mitre-attack:lateral-movement"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -12316,7 +12284,6 @@
         "kill_chain": [
           "mitre-attack:lateral-movement"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -12376,7 +12343,6 @@
         "kill_chain": [
           "mitre-attack:defense-evasion"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -12447,7 +12413,6 @@
         "kill_chain": [
           "mitre-attack:lateral-movement"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -12482,7 +12447,6 @@
         "kill_chain": [
           "mitre-attack:lateral-movement"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -12514,7 +12478,6 @@
         "kill_chain": [
           "mitre-attack:defense-evasion"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Linux",
           "macOS",
@@ -12545,7 +12508,6 @@
           "mitre-attack:defense-evasion",
           "mitre-attack:execution"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Linux",
           "macOS"
@@ -12638,7 +12600,6 @@
         "kill_chain": [
           "mitre-attack:credential-access"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -12749,7 +12710,6 @@
         "kill_chain": [
           "mitre-attack:persistence"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -12974,7 +12934,6 @@
         "kill_chain": [
           "mitre-attack:execution"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -13089,7 +13048,6 @@
         "kill_chain": [
           "mitre-attack:defense-evasion"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Linux",
           "macOS"
@@ -13149,7 +13107,6 @@
         "kill_chain": [
           "mitre-attack:credential-access"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -13191,7 +13148,6 @@
         "kill_chain": [
           "mitre-attack:initial-access"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows",
           "macOS",
@@ -13236,7 +13192,7 @@
           "https://attack.mitre.org/techniques/T1615",
           "https://blogs.technet.microsoft.com/musings_of_a_technical_tam/2012/02/13/group-policy-basics-part-1-understanding-the-structure-of-a-group-policy-object/",
           "https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/gpresult",
-          "https://github.com/EmpireProject/Empire"
+          "https://github.com/PowerShellEmpire/Empire"
         ]
       },
       "uuid": "1b20efbf-8063-4fc3-a07d-b575318a301b",
@@ -13249,7 +13205,6 @@
         "kill_chain": [
           "mitre-attack:persistence"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Linux",
           "macOS"
@@ -13304,7 +13259,10 @@
         "kill_chain": [
           "mitre-attack:initial-access"
         ],
-        "mitre_data_sources": [],
+        "mitre_data_sources": [
+          "File: File Metadata",
+          "Sensor Health: Host Status"
+        ],
         "mitre_platforms": [
           "Linux",
           "Windows",
@@ -13335,7 +13293,6 @@
           "mitre-attack:privilege-escalation",
           "mitre-attack:persistence"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Linux",
           "macOS"
@@ -13366,7 +13323,6 @@
           "mitre-attack:persistence",
           "mitre-attack:execution"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Linux",
           "macOS"
@@ -13401,7 +13357,6 @@
           "mitre-attack:defense-evasion",
           "mitre-attack:execution"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -13447,7 +13402,6 @@
           "mitre-attack:defense-evasion",
           "mitre-attack:execution"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -13919,7 +13873,6 @@
         "kill_chain": [
           "mitre-attack:impact"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Linux",
           "macOS",
@@ -14035,7 +13988,6 @@
           "mitre-attack:defense-evasion",
           "mitre-attack:lateral-movement"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "SaaS",
           "Office 365"
@@ -14347,7 +14299,6 @@
         "kill_chain": [
           "mitre-attack:command-and-control"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Linux",
           "macOS",
@@ -14406,7 +14357,6 @@
         "kill_chain": [
           "mitre-attack:impact"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Linux",
           "macOS",
@@ -14469,7 +14419,6 @@
         "kill_chain": [
           "mitre-attack:defense-evasion"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "IaaS"
         ],
@@ -14689,7 +14638,6 @@
         "kill_chain": [
           "mitre-attack:impact"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Linux",
           "macOS",
@@ -14850,7 +14798,6 @@
         "kill_chain": [
           "mitre-attack:impact"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows",
           "macOS",
@@ -14884,7 +14831,6 @@
         "kill_chain": [
           "mitre-attack:impact"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Linux",
           "macOS",
@@ -14989,7 +14935,6 @@
         "kill_chain": [
           "mitre-attack:reconnaissance"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "PRE"
         ],
@@ -15451,7 +15396,6 @@
         "kill_chain": [
           "mitre-attack:defense-evasion"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -15499,7 +15443,6 @@
         "kill_chain": [
           "mitre-attack:persistence"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "macOS"
         ],
@@ -15554,7 +15497,6 @@
         "kill_chain": [
           "mitre-attack:privilege-escalation"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -15587,7 +15529,6 @@
         "kill_chain": [
           "mitre-attack:command-and-control"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Linux",
           "macOS",
@@ -15752,7 +15693,6 @@
         "kill_chain": [
           "mitre-attack:reconnaissance"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "PRE"
         ],
@@ -16106,7 +16046,7 @@
         "refs": [
           "https://attack.mitre.org/techniques/T1110/001",
           "https://capec.mitre.org/data/definitions/49.html",
-          "https://web.archive.org/web/20200302085133/https://www.cylance.com/content/dam/cylance/pages/operation-cleaver/Cylance_Operation_Cleaver_Report.pdf",
+          "https://www.cylance.com/content/dam/cylance/pages/operation-cleaver/Cylance_Operation_Cleaver_Report.pdf",
           "https://www.trendmicro.com/vinfo/us/security/news/cybercrime-and-digital-threats/emotet-now-spreads-via-wi-fi",
           "https://www.us-cert.gov/ncas/alerts/TA18-086A"
         ]
@@ -16440,7 +16380,7 @@
           "https://github.com/nccgroup/demiguise/blob/master/examples/virginkey.js",
           "https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/20134940/kaspersky-lab-gauss.pdf",
           "https://pdfs.semanticscholar.org/2721/3d206bc3c1e8c229fb4820b6af09e7f975da.pdf",
-          "https://research.nccgroup.com/2017/08/08/smuggling-hta-files-in-internet-explorer-edge/",
+          "https://www.nccgroup.trust/uk/about-us/newsroom-and-events/blogs/2017/august/smuggling-hta-files-in-internet-exploreredge/",
           "https://www.proofpoint.com/us/threat-insight/post/home-routers-under-attack-malvertising-windows-android-devices",
           "https://www.schneier.com/academic/paperfiles/paper-clueless-agents.pdf"
         ]
@@ -16461,7 +16401,6 @@
         "kill_chain": [
           "mitre-attack:reconnaissance"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "PRE"
         ],
@@ -16664,8 +16603,8 @@
           "Windows"
         ],
         "refs": [
-          " https://www.bleepingcomputer.com/news/security/psa-dont-open-spam-containing-password-protected-word-docs/",
-          "https://attack.mitre.org/techniques/T1204/002"
+          "https://attack.mitre.org/techniques/T1204/002",
+          "https://www.bleepingcomputer.com/news/security/psa-dont-open-spam-containing-password-protected-word-docs/"
         ]
       },
       "related": [
@@ -17338,7 +17277,6 @@
         "kill_chain": [
           "mitre-attack:reconnaissance"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "PRE"
         ],
@@ -17469,7 +17407,6 @@
         "kill_chain": [
           "mitre-attack:reconnaissance"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "PRE"
         ],
@@ -17994,7 +17931,6 @@
         "kill_chain": [
           "mitre-attack:reconnaissance"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "PRE"
         ],
@@ -18293,7 +18229,6 @@
         "kill_chain": [
           "mitre-attack:reconnaissance"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "PRE"
         ],
@@ -18421,7 +18356,6 @@
         "kill_chain": [
           "mitre-attack:reconnaissance"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "PRE"
         ],
@@ -18804,7 +18738,6 @@
         "kill_chain": [
           "mitre-attack:resource-development"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "PRE"
         ],
@@ -18829,7 +18762,6 @@
         "kill_chain": [
           "mitre-attack:reconnaissance"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "PRE"
         ],
@@ -19071,7 +19003,7 @@
           "https://blog.cloudflare.com/memcrashed-major-amplification-attacks-from-port-11211/",
           "https://blog.cloudflare.com/reflections-on-reflections/",
           "https://capec.mitre.org/data/definitions/490.html",
-          "https://web.archive.org/web/20180320005525/https://pages.arbornetworks.com/rs/082-KNA-087/images/13th_Worldwide_Infrastructure_Security_Report.pdf",
+          "https://pages.arbornetworks.com/rs/082-KNA-087/images/13th_Worldwide_Infrastructure_Security_Report.pdf",
           "https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/netflow/configuration/15-mt/nf-15-mt-book/nf-detct-analy-thrts.pdf",
           "https://www.cloudflare.com/learning/ddos/dns-amplification-ddos-attack/",
           "https://www.cloudflare.com/learning/ddos/ntp-amplification-ddos-attack/"
@@ -19155,7 +19087,6 @@
         "kill_chain": [
           "mitre-attack:resource-development"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "PRE"
         ],
@@ -19310,7 +19241,6 @@
         "kill_chain": [
           "mitre-attack:resource-development"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "PRE"
         ],
@@ -19453,7 +19383,7 @@
           "https://unit42.paloaltonetworks.com/acidbox-rare-malware/",
           "https://www.crowdstrike.com/blog/how-crowdstrike-falcon-protects-against-wiper-malware-used-in-ukraine-attacks/",
           "https://www.welivesecurity.com/wp-content/uploads/2020/06/ESET_InvisiMole.pdf",
-          "https://www.wired.com/images_blogs/threatlevel/2010/11/w32_stuxnet_dossier.pdf "
+          "https://www.wired.com/images_blogs/threatlevel/2010/11/w32_stuxnet_dossier.pdf"
         ]
       },
       "related": [
@@ -19734,7 +19664,6 @@
         "kill_chain": [
           "mitre-attack:reconnaissance"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "PRE"
         ],
@@ -19787,7 +19716,6 @@
         "kill_chain": [
           "mitre-attack:reconnaissance"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "PRE"
         ],
@@ -20217,7 +20145,12 @@
           "mitre-attack:defense-evasion",
           "mitre-attack:persistence"
         ],
-        "mitre_data_sources": [],
+        "mitre_data_sources": [
+          "Active Directory: Active Directory Object Modification",
+          "Command: Command Execution",
+          "Script: Script Execution",
+          "User Account: User Account Metadata"
+        ],
         "mitre_platforms": [
           "Windows"
         ],
@@ -20245,7 +20178,6 @@
         "kill_chain": [
           "mitre-attack:reconnaissance"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "PRE"
         ],
@@ -20664,7 +20596,6 @@
           "mitre-attack:persistence",
           "mitre-attack:privilege-escalation"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Linux",
           "Windows",
@@ -20724,7 +20655,11 @@
         "kill_chain": [
           "mitre-attack:initial-access"
         ],
-        "mitre_data_sources": [],
+        "mitre_data_sources": [
+          "Application Log: Application Log Content",
+          "Drive: Drive Creation",
+          "Network Traffic: Network Traffic Flow"
+        ],
         "mitre_platforms": [
           "Windows",
           "Linux",
@@ -20749,7 +20684,6 @@
         "kill_chain": [
           "mitre-attack:exfiltration"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Linux",
           "Windows",
@@ -20792,13 +20726,13 @@
           "IaaS"
         ],
         "refs": [
-          " https://posts.specterops.io/through-the-looking-glass-part-1-f539ae308512 ",
           "https://attack.mitre.org/techniques/T1040",
           "https://capec.mitre.org/data/definitions/158.html",
-          "https://cloud.google.com/vpc/docs/packet-mirroring ",
+          "https://cloud.google.com/vpc/docs/packet-mirroring",
           "https://docs.aws.amazon.com/vpc/latest/mirroring/traffic-mirroring-how-it-works.html",
           "https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-tap-overview",
-          "https://rhinosecuritylabs.com/aws/abusing-vpc-traffic-mirroring-in-aws/ "
+          "https://posts.specterops.io/through-the-looking-glass-part-1-f539ae308512",
+          "https://rhinosecuritylabs.com/aws/abusing-vpc-traffic-mirroring-in-aws/"
         ]
       },
       "uuid": "3257eb21-f9a7-4430-8de1-d8b6e288f529",
@@ -20812,7 +20746,6 @@
           "mitre-attack:persistence",
           "mitre-attack:privilege-escalation"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -20890,7 +20823,6 @@
         "kill_chain": [
           "mitre-attack:defense-evasion"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Linux",
           "macOS",
@@ -21043,7 +20975,6 @@
           "mitre-attack:persistence",
           "mitre-attack:privilege-escalation"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -21075,7 +21006,6 @@
           "mitre-attack:persistence",
           "mitre-attack:privilege-escalation"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -21106,7 +21036,6 @@
           "mitre-attack:persistence",
           "mitre-attack:privilege-escalation"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -21162,7 +21091,6 @@
           "mitre-attack:persistence",
           "mitre-attack:privilege-escalation"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "macOS"
         ],
@@ -21190,7 +21118,6 @@
         "kill_chain": [
           "mitre-attack:persistence"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Linux"
         ],
@@ -21224,7 +21151,6 @@
         "kill_chain": [
           "mitre-attack:lateral-movement"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -21312,7 +21238,6 @@
           "mitre-attack:persistence",
           "mitre-attack:privilege-escalation"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "macOS"
         ],
@@ -21343,7 +21268,6 @@
         "kill_chain": [
           "mitre-attack:defense-evasion"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Linux",
           "macOS",
@@ -21374,7 +21298,6 @@
           "mitre-attack:defense-evasion",
           "mitre-attack:persistence"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows",
           "Azure AD",
@@ -21400,7 +21323,6 @@
           "mitre-attack:defense-evasion",
           "mitre-attack:persistence"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -21429,7 +21351,6 @@
         "kill_chain": [
           "mitre-attack:persistence"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -21465,7 +21386,6 @@
         "kill_chain": [
           "mitre-attack:exfiltration"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Linux",
           "macOS",
@@ -21510,7 +21430,6 @@
         "kill_chain": [
           "mitre-attack:persistence"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -21640,7 +21559,6 @@
         "kill_chain": [
           "mitre-attack:command-and-control"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Linux",
           "macOS",
@@ -21661,7 +21579,6 @@
         "kill_chain": [
           "mitre-attack:privilege-escalation"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Linux",
           "macOS"
@@ -21691,7 +21608,6 @@
         "kill_chain": [
           "mitre-attack:persistence"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -21762,7 +21678,6 @@
           "mitre-attack:persistence",
           "mitre-attack:privilege-escalation"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -21810,7 +21725,6 @@
         "kill_chain": [
           "mitre-attack:execution"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -21851,7 +21765,6 @@
         "kill_chain": [
           "mitre-attack:defense-evasion"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -21903,7 +21816,6 @@
         "kill_chain": [
           "mitre-attack:defense-evasion"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -21958,7 +21870,6 @@
           "mitre-attack:persistence",
           "mitre-attack:privilege-escalation"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -21989,7 +21900,6 @@
         "kill_chain": [
           "mitre-attack:defense-evasion"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows",
           "macOS"
@@ -22279,7 +22189,6 @@
         "kill_chain": [
           "mitre-attack:command-and-control"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Linux",
           "macOS",
@@ -22381,7 +22290,6 @@
         "kill_chain": [
           "mitre-attack:persistence"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -22520,7 +22428,6 @@
         "kill_chain": [
           "mitre-attack:credential-access"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "macOS",
           "Windows"
@@ -22579,7 +22486,6 @@
         "kill_chain": [
           "mitre-attack:persistence"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "macOS"
         ],
@@ -22608,7 +22514,6 @@
         "kill_chain": [
           "mitre-attack:defense-evasion"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "macOS",
           "Windows"
@@ -22790,7 +22695,6 @@
         "kill_chain": [
           "mitre-attack:persistence"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "macOS"
         ],
@@ -22821,7 +22725,6 @@
         "kill_chain": [
           "mitre-attack:command-and-control"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Linux",
           "macOS",
@@ -22852,7 +22755,6 @@
           "mitre-attack:persistence",
           "mitre-attack:privilege-escalation"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -22882,7 +22784,6 @@
         "kill_chain": [
           "mitre-attack:initial-access"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows",
           "macOS",
@@ -22960,7 +22861,6 @@
         "kill_chain": [
           "mitre-attack:defense-evasion"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "macOS",
           "Windows"
@@ -23043,7 +22943,6 @@
           "mitre-attack:persistence",
           "mitre-attack:privilege-escalation"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -23086,7 +22985,6 @@
         "kill_chain": [
           "mitre-attack:initial-access"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows",
           "macOS",
@@ -23116,7 +23014,6 @@
         "kill_chain": [
           "mitre-attack:credential-access"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Linux",
           "macOS"
@@ -23145,7 +23042,6 @@
         "kill_chain": [
           "mitre-attack:defense-evasion"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "macOS"
         ],
@@ -23199,7 +23095,6 @@
         "kill_chain": [
           "mitre-attack:credential-access"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Linux",
           "macOS",
@@ -23295,7 +23190,6 @@
         "kill_chain": [
           "mitre-attack:defense-evasion"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "macOS"
         ],
@@ -23344,7 +23238,6 @@
         "kill_chain": [
           "mitre-attack:lateral-movement"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Linux",
           "macOS"
@@ -23394,7 +23287,6 @@
         "kill_chain": [
           "mitre-attack:defense-evasion"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "macOS"
         ],
@@ -23464,7 +23356,6 @@
           "mitre-attack:persistence",
           "mitre-attack:privilege-escalation"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "macOS"
         ],
@@ -23513,7 +23404,6 @@
           "mitre-attack:persistence",
           "mitre-attack:privilege-escalation"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "macOS"
         ],
@@ -23575,7 +23465,6 @@
         "kill_chain": [
           "mitre-attack:persistence"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "macOS"
         ],
@@ -23670,7 +23559,6 @@
         "kill_chain": [
           "mitre-attack:credential-access"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "macOS"
         ],
@@ -23700,7 +23588,6 @@
         "kill_chain": [
           "mitre-attack:defense-evasion"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -23751,7 +23638,6 @@
           "mitre-attack:execution",
           "mitre-attack:persistence"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -25215,7 +25101,6 @@
         "kill_chain": [
           "mitre-attack:reconnaissance"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "PRE"
         ],
@@ -25276,7 +25161,6 @@
           "mitre-attack:persistence",
           "mitre-attack:privilege-escalation"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "macOS"
         ],
@@ -25937,7 +25821,6 @@
         "kill_chain": [
           "mitre-attack:reconnaissance"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "PRE"
         ],
@@ -26028,7 +25911,6 @@
         "kill_chain": [
           "mitre-attack:reconnaissance"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "PRE"
         ],
@@ -26115,7 +25997,6 @@
         "kill_chain": [
           "mitre-attack:reconnaissance"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "PRE"
         ],
@@ -26199,7 +26080,6 @@
         "kill_chain": [
           "mitre-attack:resource-development"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "PRE"
         ],
@@ -26325,7 +26205,6 @@
         "kill_chain": [
           "mitre-attack:resource-development"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "PRE"
         ],
@@ -26352,7 +26231,6 @@
         "kill_chain": [
           "mitre-attack:reconnaissance"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "PRE"
         ],
@@ -26377,7 +26255,6 @@
         "kill_chain": [
           "mitre-attack:resource-development"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "PRE"
         ],
@@ -26403,7 +26280,6 @@
         "kill_chain": [
           "mitre-attack:resource-development"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "PRE"
         ],
@@ -26432,7 +26308,6 @@
         "kill_chain": [
           "mitre-attack:resource-development"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "PRE"
         ],
@@ -26504,7 +26379,7 @@
           "https://gist.github.com/NickTyrer/0598b60112eaafe6d07789f7964290d5",
           "https://lolbas-project.github.io/lolbas/Binaries/Verclsid/",
           "https://redcanary.com/blog/verclsid-exe-threat-detection/",
-          "https://www.winosbite.com/verclsid-exe/ "
+          "https://www.winosbite.com/verclsid-exe/"
         ]
       },
       "related": [
@@ -26571,7 +26446,7 @@
           "https://docs.microsoft.com/en-us/windows/win32/com/clsid-key-hklm",
           "https://research.checkpoint.com/2019/microsoft-management-console-mmc-vulnerabilities/",
           "https://www.ghacks.net/2017/06/10/windows-msc-files-overview/",
-          "https://www.virustotal.com/gui/file/0b4c743246478a6a8c9fa3ff8e04f297507c2f0ea5d61a1284fe65387d172f81/detection "
+          "https://www.virustotal.com/gui/file/0b4c743246478a6a8c9fa3ff8e04f297507c2f0ea5d61a1284fe65387d172f81/detection"
         ]
       },
       "related": [
@@ -26630,7 +26505,9 @@
           "mitre-attack:privilege-escalation",
           "mitre-attack:defense-evasion"
         ],
-        "mitre_data_sources": [],
+        "mitre_data_sources": [
+          "Process: OS API Execution"
+        ],
         "mitre_platforms": [
           "Windows"
         ],
@@ -26691,7 +26568,6 @@
         "kill_chain": [
           "mitre-attack:persistence"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "macOS"
         ],
@@ -26721,7 +26597,6 @@
           "mitre-attack:defense-evasion",
           "mitre-attack:execution"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -26809,7 +26684,6 @@
           "mitre-attack:defense-evasion",
           "mitre-attack:execution"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -26844,7 +26718,6 @@
         "kill_chain": [
           "mitre-attack:persistence"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -26874,7 +26747,6 @@
           "mitre-attack:defense-evasion",
           "mitre-attack:execution"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -26903,7 +26775,6 @@
         "kill_chain": [
           "mitre-attack:persistence"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -26926,7 +26797,6 @@
         "kill_chain": [
           "mitre-attack:credential-access"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -26996,7 +26866,6 @@
           "mitre-attack:defense-evasion",
           "mitre-attack:execution"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Linux",
           "macOS",
@@ -27021,7 +26890,6 @@
         "kill_chain": [
           "mitre-attack:persistence"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Linux",
           "Windows"
@@ -27051,7 +26919,6 @@
         "kill_chain": [
           "mitre-attack:execution"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -27086,7 +26953,6 @@
         "kill_chain": [
           "mitre-attack:defense-evasion"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Linux",
           "Windows",
@@ -27117,7 +26983,6 @@
           "mitre-attack:defense-evasion",
           "mitre-attack:execution"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -27149,7 +27014,6 @@
           "mitre-attack:defense-evasion",
           "mitre-attack:execution"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -27179,7 +27043,6 @@
           "mitre-attack:defense-evasion",
           "mitre-attack:execution"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -27212,7 +27075,6 @@
         "kill_chain": [
           "mitre-attack:credential-access"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "macOS"
         ],
@@ -27243,7 +27105,6 @@
           "mitre-attack:execution",
           "mitre-attack:persistence"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "macOS"
         ],
@@ -27271,7 +27132,6 @@
         "kill_chain": [
           "mitre-attack:execution"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Linux",
           "macOS"
@@ -27292,7 +27152,6 @@
           "mitre-attack:execution",
           "mitre-attack:persistence"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Linux",
           "macOS"
@@ -27322,7 +27181,6 @@
         "kill_chain": [
           "mitre-attack:defense-evasion"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Linux",
           "macOS"
@@ -27377,7 +27235,6 @@
         "kill_chain": [
           "mitre-attack:execution"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "macOS"
         ],
@@ -27427,7 +27284,6 @@
           "mitre-attack:persistence",
           "mitre-attack:privilege-escalation"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "macOS"
         ],
@@ -27474,7 +27330,6 @@
         "kill_chain": [
           "mitre-attack:privilege-escalation"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Linux",
           "macOS"
@@ -27505,7 +27360,6 @@
           "mitre-attack:privilege-escalation",
           "mitre-attack:credential-access"
         ],
-        "mitre_data_sources": [],
         "mitre_platforms": [
           "Windows"
         ],
@@ -27607,5 +27461,5 @@
       "value": "Keychain - T1579"
     }
   ],
-  "version": 19
+  "version": 20
 }
