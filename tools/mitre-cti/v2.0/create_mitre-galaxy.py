@@ -177,7 +177,16 @@ for t in types:
         item_2.pop('type', None)
         file_data['values'].append(item_2)
 
-    file_data['values'] = sorted(file_data['values'], key=lambda x: sorted(x['value']))  # FIXME the sort algo needs to be further improved
+    # FIXME the sort algo needs to be further improved, potentially with a recursive deep sort
+    file_data['values'] = sorted(file_data['values'], key=lambda x: sorted(x['value']))
+    for item in file_data['values']:
+        if 'related' in item:
+            item['related'] = sorted(item['related'], key=lambda x: x['dest-uuid'])
+        if 'meta' in item:
+            if 'refs' in item['meta']:
+                item['meta']['refs'] = sorted(item['meta']['refs'])
+            if 'mitre_data_sources' in item['meta']:
+                item['meta']['mitre_data_sources'] = sorted(item['meta']['mitre_data_sources'])
     file_data['version'] += 1
     with open(fname, 'w') as f:
         json.dump(file_data, f, indent=2, sort_keys=True, ensure_ascii=False)

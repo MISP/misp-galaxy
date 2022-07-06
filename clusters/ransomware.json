@@ -21647,7 +21647,7 @@
       "value": "MBR-ONI"
     },
     {
-      "description": "ransomware",
+      "description": "Observed as recently as May 2022, MedusaLocker actors predominantly rely on vulnerabilities in Remote Desktop Protocol (RDP) to access victims’ networks. The MedusaLocker actors encrypt the victim's data and leave a ransom note with communication instructions in every folder containing an encrypted file. The note directs victims to provide ransomware payments to a specific Bitcoin wallet address. MedusaLocker appears to operate as a Ransomware-as-a-Service (RaaS) model based on the observed split of ransom payments. Typical RaaS models involve the ransomware developer and various affiliates that deploy the ransomware on victim systems. MedusaLocker ransomware payments appear to be consistently split between the affiliate, who receives 55 to 60 percent of the ransom; and the developer, who receives the remainder.",
       "meta": {
         "extensions": [
           ".1btc",
@@ -21701,6 +21701,10 @@
           "recovery_instructions.html",
           "HOW_TO_RECOVER_DATA.html",
           "recovery_instruction.html"
+        ],
+        "refs": [
+          "https://www.cisa.gov/uscert/ncas/alerts/aa22-181a",
+          "https://www.cisa.gov/uscert/sites/default/files/publications/AA22-181A_stopransomware_medusalocker.pdf"
         ]
       },
       "uuid": "627d603a-906f-4fbf-b922-f03eea4578fe",
@@ -23633,6 +23637,19 @@
     },
     {
       "description": "ransomware",
+      "meta": {
+        "attribution-confidence": "100",
+        "country": "RU",
+        "extensions": [
+          ".conti"
+        ],
+        "ransomnotes": [
+          "All of your files are currently encrypted by CONTI ransomware."
+        ],
+        "refs": [
+          "https://www.cyber.gov.au/acsc/view-all-content/advisories/2021-010-acsc-ransomware-profile-conti"
+        ]
+      },
       "uuid": "201eff54-d41e-4f70-916c-5dfb9301730a",
       "value": "Conti"
     },
@@ -24296,10 +24313,12 @@
           "https://www.sentinelone.com/labs/blackcat-ransomware-highly-configurable-rust-driven-raas-on-the-prowl-for-victims/",
           "https://www.varonis.com/blog/alphv-blackcat-ransomware",
           "https://www.intrinsec.com/alphv-ransomware-gang-analysis",
-          "https://unit42.paloaltonetworks.com/blackcat-ransomware/"
+          "https://unit42.paloaltonetworks.com/blackcat-ransomware/",
+          "https://www.cyber.gov.au/acsc/view-all-content/advisories/2022-004-acsc-ransomware-profile-alphv-aka-blackcat"
         ],
         "synonyms": [
-          "ALPHV"
+          "ALPHV",
+          "Noberus"
         ]
       },
       "related": [
@@ -24520,5 +24539,5 @@
       "value": "Rook"
     }
   ],
-  "version": 101
+  "version": 102
 }

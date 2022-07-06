@@ -19,8 +19,6 @@ to localized information (which is not shared) or additional information (that c
 
 # Available Galaxy - clusters
 
-
-
 ## Android
 
 [Android](https://www.misp-project.org/galaxy.html#_android) - Android malware galaxy based on multiple open sources.
@@ -65,7 +63,7 @@ Category: *mobile* - source: *https://arxiv.org/pdf/2005.05110.pdf* - total: *47
 
 [Botnet](https://www.misp-project.org/galaxy.html#_botnet) - botnet galaxy
 
-Category: *tool* - source: *MISP Project* - total: *63* elements
+Category: *tool* - source: *MISP Project* - total: *71* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_botnet)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/botnet.json)]
 
@@ -361,7 +359,7 @@ Category: *measure* - source: *MISP Project* - total: *20* elements
 
 [Ransomware](https://www.misp-project.org/galaxy.html#_ransomware) - Ransomware galaxy based on https://docs.google.com/spreadsheets/d/1TWS238xacAto-fLKh1n5uTsdijWdCEsGIM0Y0Hvmc5g/pubhtml and http://pastebin.com/raw/GHgpWjar
 
-Category: *tool* - source: *Various* - total: *1602* elements
+Category: *tool* - source: *Various* - total: *1608* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_ransomware)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/ransomware.json)]
 
@@ -369,7 +367,7 @@ Category: *tool* - source: *Various* - total: *1602* elements
 
 [RAT](https://www.misp-project.org/galaxy.html#_rat) - remote administration tool or remote access tool (RAT), also called sometimes remote access trojan, is a piece of software or programming that allows a remote "operator" to control a system as if they have physical access to that system.
 
-Category: *tool* - source: *MISP Project* - total: *262* elements
+Category: *tool* - source: *MISP Project* - total: *264* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_rat)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/rat.json)]
 
@@ -425,7 +423,7 @@ Category: *tool* - source: *Open Sources* - total: *6* elements
 
 [Surveillance Vendor](https://www.misp-project.org/galaxy.html#_surveillance_vendor) - List of vendors selling surveillance technologies including malware, interception devices or computer exploitation services.
 
-Category: *actor* - source: *MISP Project* - total: *13* elements
+Category: *actor* - source: *MISP Project* - total: *14* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_surveillance_vendor)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/surveillance-vendor.json)]
 
@@ -457,7 +455,7 @@ Category: *tea-matrix* - source: ** - total: *7* elements
 
 [Threat Actor](https://www.misp-project.org/galaxy.html#_threat_actor) - Known or estimated adversary groups targeting organizations and employees. Adversary groups are regularly confused with their initial operation or campaign. threat-actor-classification meta can be used to clarify the understanding of the threat-actor if also considered as operation, campaign or activity group.
 
-Category: *actor* - source: *MISP Project* - total: *366* elements
+Category: *actor* - source: *MISP Project* - total: *379* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_threat_actor)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/threat-actor.json)]
 
@@ -465,7 +463,7 @@ Category: *actor* - source: *MISP Project* - total: *366* elements
 
 [Tool](https://www.misp-project.org/galaxy.html#_tool) - threat-actor-tools is an enumeration of tools used by adversaries. The list includes malware but also common software regularly used by the adversaries.
 
-Category: *tool* - source: *MISP Project* - total: *530* elements
+Category: *tool* - source: *MISP Project* - total: *533* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_tool)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/tool.json)]
 
