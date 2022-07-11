@@ -80,6 +80,9 @@ for domain in domains:
         if item['type'] not in types:
             continue
 
+        if 'revoked' in item and item['revoked']:
+            continue
+
         # print(json.dumps(item, indent=2, sort_keys=True, ensure_ascii=False))
         try:
             # build the new data structure
