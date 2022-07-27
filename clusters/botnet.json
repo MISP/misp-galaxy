@@ -1291,7 +1291,80 @@
       },
       "uuid": "3e40c1af-51f5-4b02-b189-74567125c6e0",
       "value": "Ripprbot"
+    },
+    {
+      "description": "In mid-March [2022], FortiGuard Labs observed a new DDoS botnet calling itself “Enemybot” and attributing itself to Keksec, a threat group that specializes in cryptomining and DDoS attacks.\n\nThis botnet is mainly derived from Gafgyt’s source code but has been observed to borrow several modules from Mirai’s original source code.\n\nIt uses several methods of obfuscation for its strings to hinder analysis and hide itself from other botnets. Furthermore, it connects to a command-and-control (C2) server that is hidden in the Tor network, making its takedown more complicated.\n\nEnemybot has been seen targeting routers from Seowon Intech, D-Link, and exploits a recently reported iRZ router vulnerability to infect more devices.",
+      "meta": {
+        "refs": [
+          "https://www.securonix.com/blog/detecting-the-enemybot-botnet-advisory/",
+          "https://malpedia.caad.fkie.fraunhofer.de/details/elf.enemybot",
+          "https://www.fortinet.com/blog/threat-research/enemybot-a-look-into-keksecs-latest-ddos-botnet",
+          "https://cybersecurity.att.com/blogs/labs-research/rapidly-evolving-iot-malware-enemybot-now-targeting-content-management-system-servers"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "262d18be-7cab-46c2-bcb0-47fff17604aa",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        },
+        {
+          "dest-uuid": "fcdfd4af-da35-49a8-9610-19be8a487185",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "variant-of"
+        },
+        {
+          "dest-uuid": "40795af6-b721-11e8-9fcb-570c0b384135",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "variant-of"
+        },
+        {
+          "dest-uuid": "e878d24d-f122-48c4-930c-f6b6d5f0ee28",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "variant-of"
+        },
+        {
+          "dest-uuid": "421a3805-7741-4315-82c2-6c9aa30d0953",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "variant-of"
+        }
+      ],
+      "uuid": "a5a067c9-c4d7-4f33-8e6f-01b903f89908",
+      "value": "EnemyBot"
+    },
+    {
+      "description": "Discovered in 2008 and under constant development, with gaps in operational use in the wild; operators are occasionally known as GOLD LAGOON. Banking Trojan, steals financial data, browser information/hooks, keystrokes, credentials; described by CheckPoint as a “Swiss Army knife”. Known to leverage many other tools; for example, PowerShell and Mimikatz are used for self-propagation. Attempts obfuscation via legitimate process injection. Known to serve as a dropper for ProLock ransomware. Infection vectors are common, with malspam as the most frequent. Active in 2020 – two big campaigns, one from March to June, second Starting in July and ongoing, as part of latest Emotet campaign. Newer version appeared in August.",
+      "meta": {
+        "refs": [
+          "https://www.cisa.gov/sites/default/files/publications/202010221030_QakBot%20TLPWHITE.pdf"
+        ],
+        "synonyms": [
+          "QakBot",
+          "Pinkslipbot"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "c4417bfb-717f-48d9-bd56-bc9e85d07c19",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "dropped"
+        }
+      ],
+      "uuid": "421a3805-7741-4315-82c2-6c9aa30d0953",
+      "value": "Qbot"
     }
   ],
-  "version": 25
+  "version": 27
 }

@@ -2250,7 +2250,7 @@
           "https://id-ransomware.blogspot.co.il/2017/01/xcrypt-ransomware.html",
           "https://twitter.com/JakubKroustek/status/825790584971472902"
         ],
-        "synonyns": [
+        "synonyms": [
           "XCrypt"
         ]
       },
@@ -21647,7 +21647,64 @@
       "value": "MBR-ONI"
     },
     {
-      "description": "ransomware",
+      "description": "Observed as recently as May 2022, MedusaLocker actors predominantly rely on vulnerabilities in Remote Desktop Protocol (RDP) to access victims’ networks. The MedusaLocker actors encrypt the victim's data and leave a ransom note with communication instructions in every folder containing an encrypted file. The note directs victims to provide ransomware payments to a specific Bitcoin wallet address. MedusaLocker appears to operate as a Ransomware-as-a-Service (RaaS) model based on the observed split of ransom payments. Typical RaaS models involve the ransomware developer and various affiliates that deploy the ransomware on victim systems. MedusaLocker ransomware payments appear to be consistently split between the affiliate, who receives 55 to 60 percent of the ransom; and the developer, who receives the remainder.",
+      "meta": {
+        "extensions": [
+          ".1btc",
+          ".matlock20",
+          ".marlock02",
+          ".readinstructions",
+          ".bec",
+          ".mylock",
+          ".jpz.nz",
+          ".marlock11",
+          ".cn",
+          ".NET1",
+          ".key1",
+          ".fileslocked",
+          ".datalock",
+          ".NZ",
+          ".lock",
+          ".lockfilesUS",
+          ".deadfilesgr",
+          ".tyco",
+          ".lockdata7",
+          ".rs",
+          ".faratak",
+          ".uslockhh",
+          ".lockfiles",
+          ".fileslock",
+          ".zoomzoom",
+          ".perfection",
+          ".marlock13",
+          "n.exe",
+          ".Readinstruction",
+          ".marlock08",
+          ".marlock25",
+          "nt_lock20",
+          ".READINSTRUCTION",
+          ".marlock6",
+          ".marlock01",
+          ".ReadInstructions"
+        ],
+        "ransomnotes-filenames": [
+          "how_to_ recover_data.html",
+          "how_to_recover_data.html.marlock01",
+          "instructions.html",
+          "READINSTRUCTION.html",
+          "!!!HOW_TO_DECRYPT!!!",
+          "How_to_recovery.txt",
+          "readinstructions.html",
+          "readme_to_recover_files",
+          "recovery_instructions.html",
+          "HOW_TO_RECOVER_DATA.html",
+          "recovery_instruction.html"
+        ],
+        "refs": [
+          "https://www.cisa.gov/uscert/ncas/alerts/aa22-181a",
+          "https://www.cisa.gov/uscert/sites/default/files/publications/AA22-181A_stopransomware_medusalocker.pdf"
+        ]
+      },
       "uuid": "627d603a-906f-4fbf-b922-f03eea4578fe",
       "value": "MedusaLocker"
     },
@@ -22083,6 +22140,15 @@
     },
     {
       "description": "ransomware",
+      "related": [
+        {
+          "dest-uuid": "421a3805-7741-4315-82c2-6c9aa30d0953",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "dropped-by"
+        }
+      ],
       "uuid": "c4417bfb-717f-48d9-bd56-bc9e85d07c19",
       "value": "ProLock"
     },
@@ -24478,7 +24544,38 @@
       },
       "uuid": "bb6d933f-7b6d-4694-853d-1ca400f6bd8f",
       "value": "Rook"
+    },
+    {
+      "description": "HelloXD is a ransomware family performing double extortion attacks that surfaced in November 2021. During our research we observed multiple variants impacting Windows and Linux systems. Unlike other ransomware groups, this ransomware family doesn’t have an active leak site; instead it prefers to direct the impacted victim to negotiations through TOX chat and onion-based messenger instances.",
+      "meta": {
+        "date": "Nov. 30, 2021",
+        "extensions": [
+          "hello"
+        ],
+        "ransomnotes-filenames": [
+          "Hello.txt"
+        ],
+        "ransomnotes-refs": [
+          "https://unit42.paloaltonetworks.com/wp-content/uploads/2022/06/image13.png"
+        ],
+        "refs": [
+          "https://unit42.paloaltonetworks.com/helloxd-ransomware/"
+        ]
+      },
+      "uuid": "5617e6fa-4e6a-4011-9385-6b1165786563",
+      "value": "HelloXD"
+    },
+    {
+      "description": "Maui ransomware stand out because of a lack of several key features commonly seen with tooling from RaaS providers, such as an embedded ransom note to provide recovery instructions or automated means of transmitting encryption keys to attackers. Instead, it is believed that Maui is manually operated, in which operators will specify which files to encrypt when executing it and then exfiltrate the resulting runtime artifacts. There are many aspects to Maui ransomware that are unknown, including usage context.",
+      "meta": {
+        "refs": [
+          "https://stairwell.com/wp-content/uploads/2022/07/Stairwell-Threat-Report-Maui-Ransomware.pdf",
+          "https://www.cisa.gov/uscert/ncas/alerts/aa22-187a"
+        ]
+      },
+      "uuid": "995c3772-dbda-4a2a-9e28-c47740d599a3",
+      "value": "Maui ransomware"
     }
   ],
-  "version": 101
+  "version": 105
 }
