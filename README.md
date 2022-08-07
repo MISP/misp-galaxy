@@ -27,6 +27,14 @@ Category: *tool* - source: *Open Sources* - total: *431* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_android)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/android.json)]
 
+## Azure Threat Research Matrix
+
+[Azure Threat Research Matrix](https://www.misp-project.org/galaxy.html#_azure_threat_research_matrix) - The purpose of the Azure Threat Research Matrix (ATRM) is to educate readers on the potential of Azure-based tactics, techniques, and procedures (TTPs). It is not to teach how to weaponize or specifically abuse them. For this reason, some specific commands will be obfuscated or parts will be omitted to prevent abuse.
+
+Category: *atrm* - source: *https://github.com/microsoft/Azure-Threat-Research-Matrix* - total: *80* elements
+
+[[HTML](https://www.misp-project.org/galaxy.html#_azure_threat_research_matrix)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/atrm.json)]
+
 ## attck4fraud
 
 [attck4fraud](https://www.misp-project.org/galaxy.html#_attck4fraud) - attck4fraud - Principles of MITRE ATT&CK in the fraud domain
