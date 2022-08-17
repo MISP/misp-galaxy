@@ -1947,7 +1947,19 @@
       "description": "Our analysis reveals that APT33 is a capable group that has carried out cyber espionage operations since at least 2013. We assess APT33 works at the behest of the Iranian government.",
       "meta": {
         "attribution-confidence": "50",
+        "capabilities": "STONEDRILL wiper, variants of TURNEDUP malware",
+        "cfr-suspected-state-sponsor": "Iran (Islamic Republic of)",
+        "cfr-suspected-victims": [
+          "United States",
+          "Saudi Arabia",
+          "South Korea"
+        ],
+        "cfr-target-category": [
+          "Private sector"
+        ],
+        "cfr-type-of-incident": "Espionage",
         "country": "IR",
+        "mode-of-operation": "IT network limited, information gathering against industrial orgs",
         "refs": [
           "https://www.fireeye.com/blog/threat-research/2017/09/apt33-insights-into-iranian-cyber-espionage.html",
           "https://blog.trendmicro.com/trendlabs-security-intelligence/more-than-a-dozen-obfuscated-apt33-botnets-used-for-extreme-narrow-targeting/",
@@ -1955,7 +1967,10 @@
           "https://symantec-blogs.broadcom.com/blogs/threat-intelligence/elfin-apt33-espionage",
           "https://www.secureworks.com/research/threat-profiles/cobalt-trinity",
           "https://attack.mitre.org/groups/G0064/",
-          "https://threatconnect.com/blog/research-roundup-activity-on-previously-identified-apt33-domains/"
+          "https://threatconnect.com/blog/research-roundup-activity-on-previously-identified-apt33-domains/",
+          "https://www.cfr.org/interactive/cyber-operations/apt-33",
+          "https://dragos.com/media/2017-Review-Industrial-Control-System-Threats.pdf",
+          "https://dragos.com/adversaries.html"
         ],
         "synonyms": [
           "APT 33",
@@ -1966,7 +1981,8 @@
           "COBALT TRINITY",
           "G0064",
           "ATK35"
-        ]
+        ],
+        "victimology": "Petrochemical, Aerospace, Saudi Arabia"
       },
       "related": [
         {
@@ -6128,53 +6144,6 @@
     {
       "description": "Adversaries abusing ICS (based on Dragos Inc adversary list).",
       "meta": {
-        "attribution-confidence": "50",
-        "capabilities": "STONEDRILL wiper, variants of TURNEDUP malware",
-        "cfr-suspected-state-sponsor": "Iran (Islamic Republic of)",
-        "cfr-suspected-victims": [
-          "United States",
-          "Saudi Arabia",
-          "South Korea"
-        ],
-        "cfr-target-category": [
-          "Private sector"
-        ],
-        "cfr-type-of-incident": "Espionage",
-        "country": "IR",
-        "mode-of-operation": "IT network limited, information gathering against industrial orgs",
-        "refs": [
-          "https://dragos.com/adversaries.html",
-          "https://dragos.com/media/2017-Review-Industrial-Control-System-Threats.pdf",
-          "https://www.cfr.org/interactive/cyber-operations/apt-33"
-        ],
-        "since": "2016",
-        "synonyms": [
-          "APT33"
-        ],
-        "victimology": "Petrochemical, Aerospace, Saudi Arabia"
-      },
-      "related": [
-        {
-          "dest-uuid": "fbd29c89-18ba-4c2d-b792-51c0adee049f",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        },
-        {
-          "dest-uuid": "4f69ec6d-cb6b-42af-b8e2-920a2aa4be10",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        }
-      ],
-      "uuid": "accd848b-b8f4-46ba-a408-9063b35cfbf2",
-      "value": "MAGNALLIUM"
-    },
-    {
-      "description": "Adversaries abusing ICS (based on Dragos Inc adversary list).",
-      "meta": {
         "capabilities": "TRISIS, custom credential harvesting",
         "mode-of-operation": "Focused on physical destruction and long-term persistence",
         "refs": [
@@ -10041,5 +10010,5 @@
       "value": "SLIME29"
     }
   ],
-  "version": 239
+  "version": 240
 }
