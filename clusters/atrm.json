@@ -7,6 +7,9 @@
     "Roberto Rodriguez",
     "Manuel Berrueta",
     "Jonny Johnson",
+    "Dor Edry",
+    "Ram Pliskin",
+    "Nikhil Mittal",
     "MITRE ATT&CK"
   ],
   "category": "atrm",
@@ -212,6 +215,19 @@
       },
       "uuid": "fab95406-0d7c-5239-bb94-38e1ca52a70a",
       "value": "AZT202 - Password Spraying"
+    },
+    {
+      "description": "An adversary may lure a victim into giving their access to a malicious application registered in AzureAD.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Initial Access"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/InitialAccess/AZT203/AZT203"
+        ]
+      },
+      "uuid": "8a01a6ea-9fbb-518b-bae0-bafc27a54966",
+      "value": "AZT203 - Malicious Application Consent"
     },
     {
       "description": "Adversaries may abuse access to virtual machines by executing a script through various methods in order to gain access to the Virtual Machine.",
@@ -799,6 +815,45 @@
       "value": "AZT507.2 - Microsoft Partners"
     },
     {
+      "description": "An adversary may transfer a subscription from a target tenant to an attacker-controlled tenant. This retains the billing account setup by the target and the target tenant administrators will no longer have control over the subscription.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Persistence"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Persistence/AZT507/AZT507-3"
+        ]
+      },
+      "uuid": "bcaad79d-3751-569b-97cc-cc21605a83bd",
+      "value": "AZT507.3 - Subscription Hijack"
+    },
+    {
+      "description": "An adversary may add an additional identity provider or domain to maintain a backdoor into the tenant.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Persistence"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Persistence/AZT507/AZT507-4"
+        ]
+      },
+      "uuid": "0c19e4bf-39f4-577e-a722-af289cbe594e",
+      "value": "AZT507.4 - Domain Trust Modification"
+    },
+    {
+      "description": "By configuring a policy with the 'DeployIfNotExists' definition, an adverary may establish persistence by creating a backdoor when the policy is triggered.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Persistence"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Persistence/AZT508/AZT508"
+        ]
+      },
+      "uuid": "3f56cce5-bfd6-5cde-8e64-8142fcce23f4",
+      "value": "AZT508 - Azure Policy"
+    },
+    {
       "description": "An adverary may utilize the resource's functionality to obtain a JWT for the applied Managed Identity Service Principal account.",
       "meta": {
         "kill_chain": [
@@ -994,6 +1049,19 @@
       "value": "AZT605.2 - Automation Account Credential Secret Dump"
     },
     {
+      "description": "By accessing deployment history of a Resource Group, secrets used in the ARM template may be revealed.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Credential Access"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/CredentialAccess/AZT605/AZT605-3"
+        ]
+      },
+      "uuid": "12c8ab19-5265-5ae3-8f16-bf35bc41f94e",
+      "value": "AZT605.3 - Resource Group Deployment History Secret Dump"
+    },
+    {
       "description": "By generating an SAS URI for a resource, an adversary may extract the contents of that resource without authentication at any time.",
       "meta": {
         "kill_chain": [
@@ -1057,7 +1125,59 @@
       },
       "uuid": "ff4276bf-ab9e-5157-a171-5cdd4a3e6002",
       "value": "AZT703 - Replication"
+    },
+    {
+      "description": "An adversary may leverage resources found at a 'soft deletion' state, restore them and advance their attack by retrieving contents meant to be deleted",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Exfiltration"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Exfiltration/AZT704/AZT704"
+        ]
+      },
+      "uuid": "47ded49d-ef4c-57d4-8050-f66f884c4388",
+      "value": "AZT704 - Soft-Delete Recovery"
+    },
+    {
+      "description": "An adversary may recover a key vault object found in a 'soft deletion' state.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Exfiltration"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Exfiltration/AZT704/AZT704-1"
+        ]
+      },
+      "uuid": "d8fc76f2-6776-5a09-bfb3-57852ae1d786",
+      "value": "AZT704.1 - Key Vault"
+    },
+    {
+      "description": "An adversary may recover a storage account object found in a 'soft deletion' state.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Exfiltration"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Exfiltration/AZT704/AZT704-2"
+        ]
+      },
+      "uuid": "cd9f0082-b2c7-53f8-95a6-a4fe746f973e",
+      "value": "AZT704.2 - Storage Account Object"
+    },
+    {
+      "description": "An adversary may recover a virtual machine object found in a 'soft deletion' state.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Exfiltration"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Exfiltration/AZT704/AZT704-3"
+        ]
+      },
+      "uuid": "d333405e-af82-555c-a68f-e723878b5f55",
+      "value": "AZT704.3 - Recovery Services Vault"
     }
   ],
-  "version": 1
+  "version": 2
 }
