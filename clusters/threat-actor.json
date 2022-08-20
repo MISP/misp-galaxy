@@ -805,23 +805,27 @@
           "https://www.fireeye.com/blog/threat-research/2014/03/spear-phishing-the-news-cycle-apt-actors-leverage-interest-in-the-disappearance-of-malaysian-flight-mh-370.html",
           "https://www.cfr.org/interactive/cyber-operations/apt-30",
           "https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/07205555/TheNaikonAPT-MsnMM1.pdf",
+          "https://usa.kaspersky.com/resource-center/threats/naikon-targeted-attacks",
           "https://blog.trendmicro.com/trendlabs-security-intelligence/bkdr_rarstone-new-rat-to-watch-out-for/",
-          "https://securelist.com/the-chronicles-of-the-hellsing-apt-the-empire-strikes-back/69567/",
           "https://threatconnect.com/blog/tag/naikon/",
           "https://attack.mitre.org/groups/G0019/",
-          "https://www.secureworks.com/research/threat-profiles/bronze-geneva"
+          "https://www.secureworks.com/research/threat-profiles/bronze-geneva",
+          "https://cyware.com/news/chinese-naikon-group-back-with-new-espionage-attack-66a8413d",
+          "https://cluster25.io/2022/04/29/lotus-panda-awake-last-strike/",
+          "https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/eagle-eye-is-back-apt30/",
+          "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf",
+          "https://attack.mitre.org/wiki/Group/G0013",
+          "https://www.mandiant.com/sites/default/files/2021-09/rpt-apt30.pdf"
         ],
         "synonyms": [
           "PLA Unit 78020",
-          "APT 30",
-          "APT30",
-          "Override Panda",
+          "OVERRIDE PANDA",
           "Camerashy",
-          "APT.Naikon",
-          "Lotus Panda",
-          "Hellsing",
           "BRONZE GENEVA",
-          "G0019"
+          "G0019",
+          "APT30",
+          "BRONZE STERLING",
+          "G0013"
         ]
       },
       "related": [
@@ -834,13 +838,6 @@
         },
         {
           "dest-uuid": "5e0a7cf2-6107-4d5f-9dd0-9df38b1fcba8",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        },
-        {
-          "dest-uuid": "f26144c5-8593-4e78-831a-11f6452d809b",
           "tags": [
             "estimative-language:likelihood-probability=\"likely\""
           ],
@@ -891,12 +888,12 @@
         "synonyms": [
           "Spring Dragon",
           "ST Group",
-          "Esile",
           "DRAGONFISH",
           "BRONZE ELGIN",
           "ATK1",
           "G0030",
-          "Red Salamander"
+          "Red Salamander",
+          "LOTUS PANDA"
         ]
       },
       "related": [
@@ -910,50 +907,6 @@
       ],
       "uuid": "32fafa69-fe3c-49db-afd4-aac2664bcf0d",
       "value": "Lotus Blossom"
-    },
-    {
-      "meta": {
-        "attribution-confidence": "50",
-        "country": "CN",
-        "refs": [
-          "http://www.crowdstrike.com/blog/rhetoric-foreshadows-cyber-activity-in-the-south-china-sea/"
-        ],
-        "synonyms": [
-          "Elise"
-        ]
-      },
-      "related": [
-        {
-          "dest-uuid": "2a158b0a-7ef8-43cb-9985-bf34d1e12050",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        },
-        {
-          "dest-uuid": "2f1fd017-9df6-4759-91fb-e7039609b5ff",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        },
-        {
-          "dest-uuid": "f26144c5-8593-4e78-831a-11f6452d809b",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        },
-        {
-          "dest-uuid": "f047ee18-7985-4946-8bfb-4ed754d3a0dd",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        }
-      ],
-      "uuid": "5e0a7cf2-6107-4d5f-9dd0-9df38b1fcba8",
-      "value": "Lotus Panda"
     },
     {
       "description": "We have investigated their intrusions since 2013 and have been battling them nonstop over the last year at several large telecommunications and technology companies. The determination of this China-based adversary is truly impressive: they are like a dog with a bone.\nHURRICANE PANDA's preferred initial vector of compromise and persistence is a China Chopper webshell – a tiny and easily obfuscated 70 byte text file that consists of an ‘eval()’ command, which is then used to provide full command execution and file upload/download capabilities to the attackers. This script is typically uploaded to a web server via a SQL injection or WebDAV vulnerability, which is often trivial to uncover in a company with a large external web presence.\nOnce inside, the adversary immediately moves on to execution of a credential theft tool such as Mimikatz (repacked to avoid AV detection). If they are lucky to have caught an administrator who might be logged into that web server at the time, they will have gained domain administrator credentials and can now roam your network at will via ‘net use’ and ‘wmic’ commands executed through the webshell terminal.",
@@ -1184,16 +1137,8 @@
         "cfr-type-of-incident": "Espionage",
         "country": "CN",
         "refs": [
-          "https://securelist.com/analysis/publications/69567/the-chronicles-of-the-hellsing-apt-the-empire-strikes-back/",
           "https://www.cfr.org/interactive/cyber-operations/hellsing",
-          "https://www.crowdstrike.com/blog/meet-crowdstrikes-adversary-of-the-month-for-august-goblin-panda/",
-          "https://securelist.com/cycldek-bridging-the-air-gap/97157/",
-          "https://www.fortinet.com/blog/threat-research/cta-security-playbook--goblin-panda.html"
-        ],
-        "synonyms": [
-          "Goblin Panda",
-          "Conimes",
-          "Cycldek"
+          "https://securelist.com/the-chronicles-of-the-hellsing-apt-the-empire-strikes-back/69567/"
         ]
       },
       "uuid": "af482dde-9e47-48d5-9cb2-cf8f6d6303d3",
@@ -3539,77 +3484,6 @@
       ],
       "uuid": "f3179cfb-9c86-4980-bd6b-e4fa74adaaa7",
       "value": "ProjectSauron"
-    },
-    {
-      "description": "APT 30 is a threat group suspected to be associated with the Chinese government. While Naikon shares some characteristics with APT30, the two groups do not appear to be exact matches.",
-      "meta": {
-        "attribution-confidence": "50",
-        "cfr-suspected-state-sponsor": "China",
-        "cfr-suspected-victims": [
-          "India",
-          "Saudi Arabia",
-          "Vietnam",
-          "Myanmar",
-          "Singapore",
-          "Thailand",
-          "Malaysia",
-          "Cambodia",
-          "China",
-          "Phillipines",
-          "South Korea",
-          "United States",
-          "Indonesia",
-          "Laos"
-        ],
-        "cfr-target-category": [
-          "Government",
-          "Private sector"
-        ],
-        "cfr-type-of-incident": "Espionage",
-        "country": "CN",
-        "refs": [
-          "https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/eagle-eye-is-back-apt30/",
-          "https://www2.fireeye.com/rs/fireye/images/rpt-apt30.pdf",
-          "https://attack.mitre.org/wiki/Group/G0013",
-          "https://www.cfr.org/interactive/cyber-operations/apt-30"
-        ],
-        "synonyms": [
-          "APT30",
-          "G0013"
-        ]
-      },
-      "related": [
-        {
-          "dest-uuid": "2a158b0a-7ef8-43cb-9985-bf34d1e12050",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        },
-        {
-          "dest-uuid": "2f1fd017-9df6-4759-91fb-e7039609b5ff",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        },
-        {
-          "dest-uuid": "5e0a7cf2-6107-4d5f-9dd0-9df38b1fcba8",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        },
-        {
-          "dest-uuid": "f047ee18-7985-4946-8bfb-4ed754d3a0dd",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        }
-      ],
-      "uuid": "f26144c5-8593-4e78-831a-11f6452d809b",
-      "value": "APT 30"
     },
     {
       "description": "TA530, who we previously examined in relation to large-scale personalized phishing campaigns",
@@ -6378,11 +6252,12 @@
           "https://www.cfr.org/interactive/cyber-operations/thrip",
           "https://www.symantec.com/blogs/threat-intelligence/thrip-hits-satellite-telecoms-defense-targets",
           "https://attack.mitre.org/groups/G0076/",
-          "https://go.crowdstrike.com/rs/281-OBQ-266/images/Report2020CrowdStrikeGlobalThreatReport.pdf"
+          "https://go.crowdstrike.com/rs/281-OBQ-266/images/Report2020CrowdStrikeGlobalThreatReport.pdf",
+          "https://cyberthreat.thalesgroup.com/sites/default/files/2022-05/THALES%20THREAT%20HANDBOOK%202022%20Light%20Version_1.pdf"
         ],
         "synonyms": [
-          "LOTUS PANDA",
-          "G0076"
+          "G0076",
+          "ATK78"
         ]
       },
       "uuid": "98be4300-a9ef-11e8-9a95-bb9221083cfc",
@@ -6411,11 +6286,7 @@
         "country": "PK",
         "refs": [
           "https://www.cfr.org/interactive/cyber-operations/stealth-mango-and-tangelo",
-          "https://attack.mitre.org/groups/G0076"
-        ],
-        "synonyms": [
-          "ATK78",
-          "G0076"
+          "https://www.lookout.com/blog/stealth-mango"
         ]
       },
       "uuid": "f82b352e-a9f8-11e8-8be8-fbcf6eddd58c",
@@ -9860,6 +9731,40 @@
       "value": "SLIME29"
     },
     {
+      "description": "Goblin Panda is one of a handful of elite Chinese advanced persistent threat (APT) groups. Most Chinese APTs target the United States and NATO, but Goblin Panda focuses primarily on Southeast Asia.",
+      "meta": {
+        "attribution-confidence": "75",
+        "cfr-suspected-state-sponsor": "China",
+        "cfr-suspected-victims": [
+          "Malaysia",
+          "India",
+          "Indonesia",
+          "Japan",
+          "Philippines",
+          "Southeast Asia",
+          "South Korea",
+          "Vietnam"
+        ],
+        "cfr-target-category": [
+          "Private Sector"
+        ],
+        "country": "CN",
+        "refs": [
+          "https://www.crowdstrike.com/blog/meet-crowdstrikes-adversary-of-the-month-for-august-goblin-panda/",
+          "https://securelist.com/cycldek-bridging-the-air-gap/97157/",
+          "https://www.fortinet.com/blog/threat-research/cta-security-playbook--goblin-panda.html",
+          "https://go.crowdstrike.com/rs/281-OBQ-266/images/Report2020CrowdStrikeGlobalThreatReport.pdf",
+          "https://cyberthreat.thalesgroup.com/sites/default/files/2022-05/THALES%20THREAT%20HANDBOOK%202022%20Light%20Version_1.pdf"
+        ],
+        "synonyms": [
+          "Conimes",
+          "Cycldek"
+        ]
+      },
+      "uuid": "8d73715a-8bbd-4eaa-ae24-2f1b1c84cf21",
+      "value": "Goblin Panda"
+    },
+    {
       "description": "Since 2018, security researchers tracked a financially-motivated cybercrime actor, TA558, targeting hospitality, travel, and related industries located in Latin America and sometimes North America, and western Europe. The actor sends malicious emails written in Portuguese, Spanish, and sometimes English. The emails use reservation-themed lures with business-relevant themes such as hotel room bookings. The emails may contain malicious attachments or URLs aiming to distribute one of at least 15 different malware payloads.",
       "meta": {
         "sources": [
@@ -9870,5 +9775,5 @@
       "value": "TA558"
     }
   ],
-  "version": 241
+  "version": 242
 }
