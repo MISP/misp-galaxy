@@ -31,7 +31,7 @@ Category: *tool* - source: *Open Sources* - total: *431* elements
 
 [Azure Threat Research Matrix](https://www.misp-project.org/galaxy.html#_azure_threat_research_matrix) - The purpose of the Azure Threat Research Matrix (ATRM) is to educate readers on the potential of Azure-based tactics, techniques, and procedures (TTPs). It is not to teach how to weaponize or specifically abuse them. For this reason, some specific commands will be obfuscated or parts will be omitted to prevent abuse.
 
-Category: *atrm* - source: *https://github.com/microsoft/Azure-Threat-Research-Matrix* - total: *80* elements
+Category: *atrm* - source: *https://github.com/microsoft/Azure-Threat-Research-Matrix* - total: *89* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_azure_threat_research_matrix)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/atrm.json)]
 
@@ -151,7 +151,7 @@ Category: *tool* - source: *Malpedia* - total: *2462* elements
 
 [Microsoft Activity Group actor](https://www.misp-project.org/galaxy.html#_microsoft_activity_group_actor) - Activity groups as described by Microsoft
 
-Category: *actor* - source: *MISP Project* - total: *15* elements
+Category: *actor* - source: *MISP Project* - total: *14* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_microsoft_activity_group_actor)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/microsoft-activity-group.json)]
 
@@ -463,7 +463,7 @@ Category: *tea-matrix* - source: ** - total: *7* elements
 
 [Threat Actor](https://www.misp-project.org/galaxy.html#_threat_actor) - Known or estimated adversary groups targeting organizations and employees. Adversary groups are regularly confused with their initial operation or campaign. threat-actor-classification meta can be used to clarify the understanding of the threat-actor if also considered as operation, campaign or activity group.
 
-Category: *actor* - source: *MISP Project* - total: *411* elements
+Category: *actor* - source: *MISP Project* - total: *398* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_threat_actor)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/threat-actor.json)]
 
@@ -471,7 +471,7 @@ Category: *actor* - source: *MISP Project* - total: *411* elements
 
 [Tool](https://www.misp-project.org/galaxy.html#_tool) - threat-actor-tools is an enumeration of tools used by adversaries. The list includes malware but also common software regularly used by the adversaries.
 
-Category: *tool* - source: *MISP Project* - total: *533* elements
+Category: *tool* - source: *MISP Project* - total: *537* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_tool)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/tool.json)]
 
