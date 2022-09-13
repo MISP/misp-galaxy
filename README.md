@@ -18,6 +18,13 @@ The objective is to have a comment set of clusters for organizations starting an
 to localized information (which is not shared) or additional information (that can be shared).
 
 # Available Galaxy - clusters
+## 360.net Threat Actors
+
+[360.net Threat Actors](https://www.misp-project.org/galaxy.html#_360.net_threat_actors) - Known or estimated adversary groups as identified by 360.net.
+
+Category: *actor* - source: *https://apt.360.net/aptlist* - total: *42* elements
+
+[[HTML](https://www.misp-project.org/galaxy.html#_360.net_threat_actors)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/360net.json)]
 
 ## Android
 
@@ -463,7 +470,7 @@ Category: *tea-matrix* - source: ** - total: *7* elements
 
 [Threat Actor](https://www.misp-project.org/galaxy.html#_threat_actor) - Known or estimated adversary groups targeting organizations and employees. Adversary groups are regularly confused with their initial operation or campaign. threat-actor-classification meta can be used to clarify the understanding of the threat-actor if also considered as operation, campaign or activity group.
 
-Category: *actor* - source: *MISP Project* - total: *398* elements
+Category: *actor* - source: *MISP Project* - total: *397* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_threat_actor)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/threat-actor.json)]
 
