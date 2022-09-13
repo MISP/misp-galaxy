@@ -41,7 +41,7 @@ for actor in list_data['data']['list']:
     for ref in actor['recommends']:
         refs.append(ref['url'])
     refs = list(set(refs))
-    clusters.append({
+    cluster = {
         'value': f"{actor['name']} - {actor['code']}",
         'description': actor['description'],
         'uuid': str(uuid.uuid5(uuid.UUID("9319371e-2504-4128-8410-3741cebbcfd3"), actor['code'])),
@@ -49,11 +49,14 @@ for actor in list_data['data']['list']:
             'synonyms': actor['alias'],
             'country': country_code,
             'refs': refs,
-            'target-category': actor['attack_industry'],
-            'suspected-victims': actor['attack_region'],
-            # LATER find a way to convert attack-method to MITRE ATT&CK
         }
-    })
+    }
+    if actor['attack_industry']:
+        cluster['meta']['target-category'] = [i for i in actor['attack_industry'] if i]
+    if actor['attack_region']:
+        cluster['meta']['suspected-victims'] = [i for i in actor['attack_region'] if i]
+    # LATER find a way to convert attack-method to MITRE ATT&CK
+    clusters.append(cluster)
 
 json_galaxy = {
     'icon': "user-secret",
