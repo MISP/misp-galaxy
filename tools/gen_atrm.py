@@ -105,13 +105,16 @@ json_cluster = {
 with open(os.path.join(args.path, 'docs', 'acknowledgments.md'), 'r') as f:
     for line in f:
         if line.startswith('* '):
-            json_cluster['authors'].append(re.search(r'\w+ [\w&]+', line).group())
+            try:
+                json_cluster['authors'].append(re.search(r'\w+ [\w&]+', line).group())
+            except AttributeError:
+                json_cluster['authors'].append(re.search(r'\w+', line).group())
 
 # save the Galaxy and Cluster file
 with open(os.path.join('..', 'galaxies', 'atrm.json'), 'w') as f:
-    json.dump(json_galaxy, f, indent=2)
+    json.dump(json_galaxy, f, indent=2, sort_keys=True)
 
 with open(os.path.join('..', 'clusters', 'atrm.json'), 'w') as f:
-    json.dump(json_cluster, f, indent=2)
+    json.dump(json_cluster, f, indent=2, sort_keys=True)
 
 print("All done, please don't forget to ./jq_all_the_things.sh, commit, and then ./validate_all.sh.")
