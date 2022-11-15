@@ -100,6 +100,7 @@
       "value": "Nitro"
     },
     {
+      "description": "Threat actors behind the Operation Dust Storm have been active since at least 2010, the hackers targeted several organizations in Japan, South Korea, the US, Europe, and other Asian countries.",
       "meta": {
         "refs": [
           "https://www.cylance.com/content/dam/cylance/pdfs/reports/Op_Dust_Storm_Report.pdf",
@@ -871,6 +872,7 @@
       "value": "APT27"
     },
     {
+      "description": "menuPass is a threat group that has been active since at least 2006. Individual members of menuPass are known to have acted in association with the Chinese Ministry of State Security's (MSS) Tianjin State Security Bureau and worked for the Huaying Haitai Science and Technology Development Company.",
       "meta": {
         "attribution-confidence": "50",
         "cfr-suspected-state-sponsor": "China",
@@ -921,7 +923,6 @@
           "Menupass Team",
           "happyyongzi",
           "POTASSIUM",
-          "DustStorm",
           "Red Apollo",
           "CVNX",
           "HOGFISH",
@@ -1644,7 +1645,6 @@
           "Parastoo",
           "iKittens",
           "Group 83",
-          "Newsbeef",
           "NewsBeef",
           "G0058"
         ]
@@ -3399,7 +3399,8 @@
           "https://www.fireeye.com/blog/threat-research/2019/04/pick-six-intercepting-a-fin6-intrusion.html",
           "https://attack.mitre.org/groups/G0037/",
           "https://securityintelligence.com/posts/more_eggs-anyone-threat-actor-itg08-strikes-again/",
-          "http://www.secureworks.com/research/threat-profiles/gold-franklin"
+          "http://www.secureworks.com/research/threat-profiles/gold-franklin",
+          "https://www.crowdstrike.com/resources/reports/2019-crowdstrike-global-threat-report/"
         ],
         "synonyms": [
           "SKELETON SPIDER",
@@ -3418,6 +3419,13 @@
             "estimative-language:likelihood-probability=\"likely\""
           ],
           "type": "similar"
+        },
+        {
+          "dest-uuid": "1cdbbcab-903a-414d-8eb0-439a97343737",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
         }
       ],
       "uuid": "647894f6-1723-4cba-aba4-0ef0966d5302",
@@ -5588,13 +5596,15 @@
           "https://www.cfr.org/interactive/cyber-operations/magic-hound",
           "https://unit42.paloaltonetworks.com/unit42-magic-hound-campaign-attacks-saudi-targets/",
           "https://securityaffairs.co/wordpress/56348/intelligence/magic-hound-campaign.html",
-          "https://www.cfr.org/cyber-operations/apt-35"
+          "https://www.cfr.org/cyber-operations/apt-35",
+          "https://blogs.microsoft.com/on-the-issues/2019/03/27/new-steps-to-protect-customers-from-hacking/",
+          "https://research.checkpoint.com/2022/apt35-exploits-log4j-vulnerability-to-distribute-new-modular-powershell-toolkit/"
         ],
         "synonyms": [
-          "APT 35",
           "Newscaster Team",
           "Magic Hound",
-          "G0059"
+          "G0059",
+          "Phosphorus"
         ]
       },
       "related": [
@@ -5809,16 +5819,6 @@
       },
       "uuid": "a3cc5105-3bc6-498b-8d53-981e12d86909",
       "value": "The Big Bang"
-    },
-    {
-      "description": "In mid-July, Palo Alto Networks Unit 42 identified a small targeted phishing campaign aimed at a government organization. While tracking the activities of this campaign, we identified a repository of additional malware, including a web server that was used to host the payloads used for both this attack as well as others.",
-      "meta": {
-        "refs": [
-          "https://researchcenter.paloaltonetworks.com/2017/10/unit42-tracking-subaat-targeted-phishing-attacks-point-leader-threat-actors-repository/"
-        ]
-      },
-      "uuid": "a7bc4ef2-971a-11e8-9bf0-13aa7d6d8651",
-      "value": "Subaat"
     },
     {
       "description": "Unit 42 researchers have been tracking Subaat, an attacker, since 2017. Recently Subaat drew our attention due to renewed targeted attack activity. Part of monitoring Subaat included realizing the actor was possibly part of a larger crew of individuals responsible for carrying out targeted attacks against worldwide governmental organizations. Technical analysis on some of the attacks as well as attribution links with Pakistan actors have been already depicted by 360 and Tuisec, in which they found interesting connections to a larger group of attackers Unit 42 researchers have been tracking, which we are calling Gorgon Group.",
@@ -6209,20 +6209,6 @@
       },
       "uuid": "bea5e256-bcc0-11e8-a478-bbf7e7585a1e",
       "value": "Unnamed Actor"
-    },
-    {
-      "description": "”A threat group associated with the Iranian government. The threat group created lookalike domains to phish targets and used credentials to steal intellectual property from specific resources, including library systems.”",
-      "meta": {
-        "refs": [
-          "https://www.bleepingcomputer.com/news/security/iranian-hackers-charged-in-march-are-still-actively-phishing-universities/",
-          "https://www.cyberscoop.com/cobalt-dickens-iran-mabna-institiute-dell-secureworks/"
-        ],
-        "synonyms": [
-          "Cobalt Dickens"
-        ]
-      },
-      "uuid": "6c79bd1a-bfde-11e8-8c33-db4d9968671a",
-      "value": "COBALT DICKENS"
     },
     {
       "description": "Digital threat management company RiskIQ tracks the activity of MageCart group and reported their use of web-based card skimmers since 2016.",
@@ -6710,16 +6696,6 @@
       },
       "uuid": "6e899dd4-f95e-42a0-a5a3-e57249f017cf",
       "value": "Flash Kitten"
-    },
-    {
-      "description": "According to CrowdStrike, this actor is using FrameworkPOS, potentially buying access through Dridex infections.",
-      "meta": {
-        "refs": [
-          "https://www.crowdstrike.com/resources/reports/2019-crowdstrike-global-threat-report/"
-        ]
-      },
-      "uuid": "998b0a78-ff3e-4928-802f-b42e3f5cf491",
-      "value": "SKELETON SPIDER"
     },
     {
       "description": "According to CrowdStrike, this actor is using TinyLoader and TinyPOS, potentially buying access through Dridex infections.",
@@ -9886,6 +9862,17 @@
       "value": "APT-Q-12"
     },
     {
+      "description": "RomCom",
+      "meta": {
+        "refs": [
+          "https://blogs.blackberry.com/en/2022/11/romcom-spoofing-solarwinds-keepass",
+          "https://blogs.blackberry.com/en/2022/10/unattributed-romcom-threat-actor-spoofing-popular-apps-now-hits-ukrainian-militaries"
+        ]
+      },
+      "uuid": "ba9e1ed2-e142-48d0-a593-f73ac6d59ccd",
+      "value": "RomCom"
+    },
+    {
       "description": "GOLD PRELUDE is a financially motivated cybercriminal threat group that operates the SocGholish (aka FAKEUPDATES) malware distribution network. GOLD PRELUDE operates a large global network of compromised websites, frequently running vulnerable content management systems (CMS), that redirect into a malicious traffic distribution system (TDS). The TDS, which researchers at Avast have named Parrot TDS, uses opaque criteria to select victims to serve a fake browser update page. These pages, which are customized to the specific visiting browser software, download the JavaScript-based SocGholish payload frequently embedded within a compressed archive.",
       "meta": {
         "refs": [
@@ -9909,5 +9896,5 @@
       "value": "GOLD PRELUDE"
     }
   ],
-  "version": 250
+  "version": 251
 }
