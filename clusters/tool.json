@@ -8575,7 +8575,8 @@
       "description": "BumbleBee is a modular backdoor that comprises two applications, a server and a client application (a master and slaver application, respectively in the malware’s jargon). Once the client application is deployed on the target computer (these are commonly local government devices), threat actors can control the machine using the server module. Let us take a deeper look into this backdoor.",
       "meta": {
         "refs": [
-          "https://www.trendmicro.com/en_us/research/22/i/buzzing-in-the-background-bumblebee-a-new-modular-backdoor-evolv.html"
+          "https://www.trendmicro.com/en_us/research/22/i/buzzing-in-the-background-bumblebee-a-new-modular-backdoor-evolv.html",
+          "https://www.microsoft.com/en-us/security/blog/2022/10/27/raspberry-robin-worm-part-of-larger-ecosystem-facilitating-pre-ransomware-activity/"
         ],
         "type": [
           "backdoor"
@@ -8612,7 +8613,75 @@
       },
       "uuid": "e10ff67f-8b52-4648-9217-da53ff7d52f9",
       "value": "SharPyShell"
+    },
+    {
+      "description": "Raspberry Robin has evolved from being a widely distributed worm with no observed post-infection actions when Red Canary first reported it in May 2022, to one of the largest malware distribution platforms currently active. ",
+      "meta": {
+        "refs": [
+          "https://www.microsoft.com/en-us/security/blog/2022/10/27/raspberry-robin-worm-part-of-larger-ecosystem-facilitating-pre-ransomware-activity/"
+        ],
+        "type": "Worm"
+      },
+      "uuid": "70dc3e92-9b3b-4fc1-abd2-d98985d83225",
+      "value": "Raspberry Robin"
+    },
+    {
+      "description": "The Fauppod malware delivers a JavaScript backdoor to gain unauthorized access to the target system and deploy additional malware.",
+      "meta": {
+        "refs": [
+          "https://www.microsoft.com/en-us/security/blog/2022/10/27/raspberry-robin-worm-part-of-larger-ecosystem-facilitating-pre-ransomware-activity/"
+        ]
+      },
+      "uuid": "9f0224f6-dd46-4a23-a3fd-d295abae5f93",
+      "value": "Fauppod"
+    },
+    {
+      "description": "This threat takes multiple screenshots of your desktop. It saves all screenshots in a .dat file that becomes a collection of bitmap images. According to Group-IB, FlawedAmmyy.downloader and Truebot would have been developed by the same individual",
+      "meta": {
+        "refs": [
+          "https://www.microsoft.com/en-us/security/blog/2022/10/27/raspberry-robin-worm-part-of-larger-ecosystem-facilitating-pre-ransomware-activity/"
+        ],
+        "synonyms": [
+          "Silence"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "ad6d0074-476e-4c05-b0d9-79404f71bbba",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "ad6d0074-476e-4c05-b0d9-79404f71bbba",
+      "value": "Truebot"
+    },
+    {
+      "description": "FAKEUPDATES is a downloader written in JavaScript that communicates via HTTP. Supported payload types include executables and JavaScript. It writes the payloads to disk prior to launching them. FAKEUPDATES has led to further compromise via additional malware families that include CHTHONIC, DRIDEX, EMPIRE, KOADIC, DOPPELPAYMER, and AZORULT.\nFAKEUPDATES has been heavily used by UNC1543,a financially motivated group.\n\nSocGholish, first appearing in late 2017 and rising to prominence in mid-2018, has been used to describe both the web drive-by download network used to infect victims and the JavaScript-based loader malware that targets Windows systems.",
+      "meta": {
+        "refs": [
+          "https://www.malwarebytes.com/blog/news/2018/04/fakeupdates-campaign-leverages-multiple-website-platforms",
+          "https://www.microsoft.com/en-us/security/blog/2022/10/27/raspberry-robin-worm-part-of-larger-ecosystem-facilitating-pre-ransomware-activity/",
+          "https://www.secureworks.com/research/threat-profiles/gold-prelude"
+        ],
+        "synonyms": [
+          "FakeUpdate",
+          "SocGholish"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "8134c96d-d6ed-49cc-99d6-fe74c0636387",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "cd32b19e-c365-4efc-9998-548e50e04a4c",
+      "value": "FakeUpdates"
     }
   ],
-  "version": 156
+  "version": 157
 }
