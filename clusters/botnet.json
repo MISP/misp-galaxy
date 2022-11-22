@@ -1346,7 +1346,9 @@
       "description": "Discovered in 2008 and under constant development, with gaps in operational use in the wild; operators are occasionally known as GOLD LAGOON. Banking Trojan, steals financial data, browser information/hooks, keystrokes, credentials; described by CheckPoint as a “Swiss Army knife”. Known to leverage many other tools; for example, PowerShell and Mimikatz are used for self-propagation. Attempts obfuscation via legitimate process injection. Known to serve as a dropper for ProLock ransomware. Infection vectors are common, with malspam as the most frequent. Active in 2020 – two big campaigns, one from March to June, second Starting in July and ongoing, as part of latest Emotet campaign. Newer version appeared in August.",
       "meta": {
         "refs": [
-          "https://www.cisa.gov/sites/default/files/publications/202010221030_QakBot%20TLPWHITE.pdf"
+          "https://www.cisa.gov/sites/default/files/publications/202010221030_QakBot%20TLPWHITE.pdf",
+          "https://www.trendmicro.com/en_us/research/22/f/black-basta-ransomware-operators-expand-their-attack-arsenal-wit.html",
+          "https://www.cynet.com/blog/orion-threat-alert-qakbot-ttps-arsenal-and-the-black-basta-ransomware/"
         ],
         "synonyms": [
           "QakBot",
@@ -1360,6 +1362,13 @@
             "estimative-language:likelihood-probability=\"likely\""
           ],
           "type": "dropped"
+        },
+        {
+          "dest-uuid": "9db5f425-fe49-4137-8598-840e7290ed0f",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
         }
       ],
       "uuid": "421a3805-7741-4315-82c2-6c9aa30d0953",
@@ -1395,5 +1404,5 @@
       "value": "KmsdBot"
     }
   ],
-  "version": 29
+  "version": 30
 }

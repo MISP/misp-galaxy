@@ -14391,6 +14391,9 @@
           "https://www.digitalshadows.com/blog-and-research/darkside-the-new-ransomware-group-behind-highly-targeted-attacks/",
           "https://www.wired.com/story/ransomware-gone-corporate-darkside-where-will-it-end/",
           "https://darksidedxcftmqa.onion.foundation/"
+        ],
+        "synonyms": [
+          "BlackMatter"
         ]
       },
       "uuid": "f514a46e-53ff-4f07-b75a-aed289cf221f",
@@ -23619,6 +23622,20 @@
     },
     {
       "description": "ransomware",
+      "meta": {
+        "refs": [
+          "https://howtofix.guide/ransom-mountlocket/"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "0ca6ac54-ad2b-4945-9580-ac90e702fd2c",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        }
+      ],
       "uuid": "7513650c-ba09-49bf-b011-d2974c7ae023",
       "value": "Mountlocket"
     },
@@ -23658,7 +23675,7 @@
       "value": "Leakthemall"
     },
     {
-      "description": "ransomware",
+      "description": "Conti ransomware is a RaaS and has been observed encrypting networks since mid-2020.\nConti was developed by the “TrickBot” group, an organized Russian cybercriminal operation. Their reputation has allowed the group to create a strong brand name, attracting many affiliates which has made Conti one of the most widespread ransomware strains in the world.\nOne of the last known “Conti” attacks was against the government of Costa Rica in April 2022 causing the country to declare a state of emergency.\nShortly after this final attack, the “Conti” brand disappeared. The group behind it likely switched to a different brand to avoid sanctions and start over with a new, clean reputation.",
       "meta": {
         "attribution-confidence": "100",
         "country": "RU",
@@ -23669,9 +23686,34 @@
           "All of your files are currently encrypted by CONTI ransomware."
         ],
         "refs": [
-          "https://www.cyber.gov.au/acsc/view-all-content/advisories/2021-010-acsc-ransomware-profile-conti"
+          "https://www.cyber.gov.au/acsc/view-all-content/advisories/2021-010-acsc-ransomware-profile-conti",
+          "https://s3.amazonaws.com/talos-intelligence-site/production/document_files/files/000/095/787/original/ransomware-chats.pdf?1651576098",
+          "https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/ransomware-virtual-machines"
         ]
       },
+      "related": [
+        {
+          "dest-uuid": "0ca6ac54-ad2b-4945-9580-ac90e702fd2c",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "parent-of"
+        },
+        {
+          "dest-uuid": "9db5f425-fe49-4137-8598-840e7290ed0f",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "parent-of"
+        },
+        {
+          "dest-uuid": "1c43524e-0f2e-4468-b6b6-8a37f1d0ea87",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "parent-of"
+        }
+      ],
       "uuid": "201eff54-d41e-4f70-916c-5dfb9301730a",
       "value": "Conti"
     },
@@ -23905,7 +23947,10 @@
     {
       "description": "ransomware",
       "meta": {
-        "date": "November 2020"
+        "date": "November 2020",
+        "synonyms": [
+          "FiveHands"
+        ]
       },
       "uuid": "022c995a-f1ba-498f-b67e-92ef01fd06a3",
       "value": "HelloKitty"
@@ -24603,7 +24648,189 @@
       },
       "uuid": "d513199e-7f21-43fd-9610-ed708c3f6409",
       "value": "Lorenz Ransomware"
+    },
+    {
+      "description": "First observed in June 2021, Hive ransomware was originally written in GoLang but recently, new Hive variants have been seen written in Rust. Targets Healthcare sector.",
+      "meta": {
+        "ransomnotes": [
+          "Your network has been breached and all data were encrypted.\nPersonal data, financial reports and important documents are ready to disclose.\n\n To decrypt all the data and to prevent exfiltrated files to be disclosed at \nhttp://hive[REDACTED].onion/\nyou will need to purchase our decryption software.\n \nPlease contact our sales department at:v \n   http://hive[REDACTED].onion/\n  \n      Login:    [REDACTED]\n      Password: [REDACTED]\n \nTo get an access to .onion websites download and install Tor Browser at:\n   https://www.torproject.org/ (Tor Browser is not related to us)\n \n \nFollow the guidelines below to avoid losing your data:\n \n- Do not modify, rename or delete *.key.abc12 files. Your data will be \n   undecryptable.\n- Do not modify or rename encrypted files. You will lose them.\n- Do not report to the Police, FBI, etc. They don't care about your business.\n   They simply won't allow you to pay. As a result you will lose everything.\n- Do not hire a recovery company. They can't decrypt without the key. \n   They also don't care about your business. They believe that they are \n   good negotiators, but it is not. They usually fail. So speak for yourself.\n- Do not reject to purchase. Exfiltrated files will be publicly disclosed.",
+          "Your network has been breached and all data were encrypted.\nPersonal data, financial reports and important documents are ready to disclose.\n\n To decrypt all the data and to prevent exfiltrated files to be disclosed at \nhttp://hive[REDACTED].onion/\nyou will need to purchase our decryption software.\n \nPlease contact our sales department at:\n \n   http://hive[REDACTED].onion/\n \n      Login:    test_hive_username\n      Password: test_hive_password\n \nTo get an access to .onion websites download and install Tor Browser at:\n   https://www.torproject.org/ (Tor Browser is not related to us)\n \n \nFollow the guidelines below to avoid losing your data:\n \n- Do not delete or reinstall VMs. There will be nothing to decrypt.\n- Do not modify, rename or delete *.key files. Your data will be \n   undecryptable.\n- Do not modify or rename encrypted files. You will lose them.\n- Do not report to the Police, FBI, etc. They don't care about your business.\n   They simply won't allow you to pay. As a result you will lose everything.\n- Do not hire a recovery company. They can't decrypt without the key. \n   They also don't care about your business. They believe that they are \n   good negotiators, but it is not. They usually fail. So speak for yourself.\n- Do not reject to purchase. Exfiltrated files will be publicly disclosed"
+        ],
+        "refs": [
+          "https://malpedia.caad.fkie.fraunhofer.de/details/win.hive",
+          "https://s3.amazonaws.com/talos-intelligence-site/production/document_files/files/000/095/787/original/ransomware-chats.pdf",
+          "https://www.sentinelone.com/labs/hive-attacks-analysis-of-the-human-operated-ransomware-targeting-healthcare/",
+          "https://www.trendmicro.com/vinfo/us/security/news/ransomware-spotlight/ransomware-spotlight-hive",
+          "https://www.microsoft.com/en-us/security/blog/2022/07/05/hive-ransomware-gets-upgrades-in-rust/",
+          "https://yoroi.company/wp-content/uploads/2022/07/Yoroi-On-The-Footsteps-of-Hive-Ransomware.pdf",
+          "https://www.varonis.com/blog/hive-ransomware-analysis"
+        ]
+      },
+      "uuid": "8ce915d3-8c6d-4841-b509-18379d7a8999",
+      "value": "Hive"
+    },
+    {
+      "description": "",
+      "meta": {
+        "ransomnotes-refs": [
+          "https://www.guidepointsecurity.com/wp-content/uploads/2021/04/Anonymized-Ransom-Note-1-1024x655.png"
+        ],
+        "refs": [
+          "https://malpedia.caad.fkie.fraunhofer.de/details/win.mount_locker",
+          "https://securityscorecard.pathfactory.com/research/quantum-ransomware",
+          "https://www.bleepingcomputer.com/news/security/mount-locker-ransomware-joins-the-multi-million-dollar-ransom-game/",
+          "https://www.bleepingcomputer.com/news/security/mount-locker-ransomware-now-targets-your-turbotax-tax-returns/",
+          "https://dissectingmalwa.re/between-a-rock-and-a-hard-place-exploring-mount-locker-ransomware.html",
+          "https://blogs.blackberry.com/en/2020/12/mountlocker-ransomware-as-a-service-offers-double-extortion-capabilities-to-affiliates",
+          "https://github.com/Finch4/Malware-Analysis-Reports/tree/master/MountLocker",
+          "https://chuongdong.com/reverse%20engineering/2021/05/23/MountLockerRansomware/",
+          "https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/ransomware-virtual-machines",
+          "https://kienmanowar.wordpress.com/2021/08/04/quicknote-mountlocker-some-pseudo-code-snippets/",
+          "https://www.cybereason.com/blog/cybereason-vs.-quantum-locker-ransomware",
+          "https://thedfirreport.com/2022/04/25/quantum-ransomware/"
+        ],
+        "synonyms": [
+          "Quantum",
+          "Mount Locker",
+          "DagonLocker"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "7513650c-ba09-49bf-b011-d2974c7ae023",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        },
+        {
+          "dest-uuid": "201eff54-d41e-4f70-916c-5dfb9301730a",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "successor-of"
+        }
+      ],
+      "uuid": "0ca6ac54-ad2b-4945-9580-ac90e702fd2c",
+      "value": "QuantumLocker"
+    },
+    {
+      "description": "Black Basta is a new ransomware strain discovered during April 2022 - looks in dev since at least early February 2022 - and due to their ability to quickly amass new victims and the style of their negotiations, this is likely not a new operation but rather a rebrand of a previous top-tier ransomware gang that brought along their affiliates.",
+      "meta": {
+        "extensions": [
+          ".basta"
+        ],
+        "ransomnotes": [
+          "Your data are stolen and encrypted\nThe data will be published on TOR website if you do not pay the ransom\nYou can contact us and decrypt one file for free on this TOR site (you should download and install TOR browser first https://torproject.org) https://aazsbsgya565y1u2c6Lay6yfiebkcbtvvcytyolt33s77xypi7nypxyd.onion/ \n\nYour company id for log in: [REDACTED]"
+        ],
+        "ransomnotes-files": [
+          "readme.txt"
+        ],
+        "ransomnotes-refs": [
+          "https://www.bleepstatic.com/images/news/ransomware/b/black-basta/wallpaper.jpg",
+          "https://www.bleepstatic.com/images/news/ransomware/b/black-basta/ransom-note.jpg",
+          "https://www.trendmicro.com/content/dam/trendmicro/global/en/research/22/e/examining-the-black-basta-ransomwares-infection-routine/blackbasta07PII.PNG",
+          "https://www.trendmicro.com/content/dam/trendmicro/global/en/research/22/e/examining-the-black-basta-ransomwares-infection-routine/blackbasta08PII.PNG"
+        ],
+        "refs": [
+          "https://malpedia.caad.fkie.fraunhofer.de/details/win.blackbasta",
+          "https://www.bleepingcomputer.com/news/security/american-dental-association-hit-by-new-black-basta-ransomware/",
+          "https://www.bleepingcomputer.com/news/security/new-black-basta-ransomware-springs-into-action-with-a-dozen-breaches/",
+          "https://www.trendmicro.com/en_us/research/22/e/examining-the-black-basta-ransomwares-infection-routine.html",
+          "https://www.advintel.io/post/discontinued-the-end-of-conti-s-brand-marks-new-chapter-for-cybercrime-landscape",
+          "https://securityintelligence.com/posts/black-basta-ransomware-group-besting-network/",
+          "https://www.avertium.com/resources/threat-reports/in-depth-look-at-black-basta-ransomware",
+          "https://research.nccgroup.com/2022/06/06/shining-the-light-on-black-basta/",
+          "https://gbhackers.com/black-basta-ransomware/",
+          "https://www.trendmicro.com/en_us/research/22/f/black-basta-ransomware-operators-expand-their-attack-arsenal-wit.html",
+          "https://securelist.com/luna-black-basta-ransomware/106950/",
+          "https://securityscorecard.com/research/a-deep-dive-into-black-basta-ransomware",
+          "https://unit42.paloaltonetworks.com/threat-assessment-black-basta-ransomware/",
+          "https://www.trendmicro.com/vinfo/us/security/news/ransomware-spotlight/ransomware-spotlight-blackbasta",
+          "https://www.sentinelone.com/labs/crimeware-trends-ransomware-developers-turn-to-intermittent-encryption-to-evade-detection/",
+          "https://www.sentinelone.com/labs/black-basta-ransomware-attacks-deploy-custom-edr-evasion-tools-tied-to-fin7-threat-actor/",
+          "https://www.cynet.com/blog/orion-threat-alert-qakbot-ttps-arsenal-and-the-black-basta-ransomware/",
+          "https://blogs.vmware.com/security/2022/09/esxi-targeting-ransomware-the-threats-that-are-after-your-virtual-machines-part-1.html"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "201eff54-d41e-4f70-916c-5dfb9301730a",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "successor-of"
+        },
+        {
+          "dest-uuid": "421a3805-7741-4315-82c2-6c9aa30d0953",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "uses"
+        }
+      ],
+      "uuid": "9db5f425-fe49-4137-8598-840e7290ed0f",
+      "value": "BlackBasta"
+    },
+    {
+      "description": "Ransomware",
+      "related": [
+        {
+          "dest-uuid": "201eff54-d41e-4f70-916c-5dfb9301730a",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "successor-of"
+        }
+      ],
+      "uuid": "1c43524e-0f2e-4468-b6b6-8a37f1d0ea87",
+      "value": "BlackByte"
+    },
+    {
+      "description": "Ransomware",
+      "uuid": "549c9766-b45d-4d14-86e8-e6a74d69d067",
+      "value": "RedAlert"
+    },
+    {
+      "description": "Ransomware",
+      "uuid": "00638cb0-d8c5-46c2-9c57-39d93d5bfa36",
+      "value": "Cheerscrypt"
+    },
+    {
+      "description": "Ransomware",
+      "uuid": "b4d24c48-c2f7-4ae7-a708-8b321b98075a",
+      "value": "GwisinLocker"
+    },
+    {
+      "description": "Ransomware",
+      "uuid": "2950977b-59bb-464a-8dd8-21728887f72f",
+      "value": "Luna Ransomware"
+    },
+    {
+      "description": "Ransomware",
+      "uuid": "73d3d8f8-83cc-4fdc-a645-d03b9a7b5a9b",
+      "value": "AvosLocker"
+    },
+    {
+      "description": "Ransomware",
+      "uuid": "fec32bbf-c4f8-499d-8e2a-743bcdd071e7",
+      "value": "PLAY Ransomware"
+    },
+    {
+      "description": "Ransomware",
+      "uuid": "1d8cadb9-501c-493e-b89b-b5574ed3f722",
+      "value": "Qyick Ransomware"
+    },
+    {
+      "description": "Ransomware",
+      "uuid": "9796a1a4-b2d7-4e68-bfb4-57093fd32fef",
+      "value": "Agenda Ransomware"
+    },
+    {
+      "description": "Ransomware",
+      "uuid": "a7623a1b-4551-4e5a-a622-2b91dea16b42",
+      "value": "Karakurt"
     }
   ],
-  "version": 109
+  "version": 110
 }
