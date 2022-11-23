@@ -1,0 +1,1183 @@
+{
+  "authors": [
+    "Microsoft",
+    "Karl Fosaaen",
+    "Nestori Syynimaa",
+    "Ryan Cobb",
+    "Roberto Rodriguez",
+    "Manuel Berrueta",
+    "Jonny Johnson",
+    "Dor Edry",
+    "Ram Pliskin",
+    "Nikhil Mittal",
+    "MITRE ATT&CK"
+  ],
+  "category": "atrm",
+  "description": "The purpose of the Azure Threat Research Matrix (ATRM) is to educate readers on the potential of Azure-based tactics, techniques, and procedures (TTPs). It is not to teach how to weaponize or specifically abuse them. For this reason, some specific commands will be obfuscated or parts will be omitted to prevent abuse.",
+  "name": "Azure Threat Research Matrix",
+  "source": "https://github.com/microsoft/Azure-Threat-Research-Matrix",
+  "type": "atrm",
+  "uuid": "b541a056-154c-41e7-8a56-41db3f871c00",
+  "values": [
+    {
+      "description": "It is possible to view the open ports on a virtual machine by viewing the Virtual Network Interface's assigned Network Security Group",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Reconnaissance"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Reconnaissance/AZT101/AZT101"
+        ]
+      },
+      "uuid": "2b95d14b-2af8-53d9-b72b-a15a966fcd7a",
+      "value": "AZT101 - Port Mapping"
+    },
+    {
+      "description": "It is possible to view the IP address on a resource by viewing the Virtual Network Interface",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Reconnaissance"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Reconnaissance/AZT102/AZT102"
+        ]
+      },
+      "uuid": "1c5cdaa4-3e58-5158-8027-7b08c0bd93de",
+      "value": "AZT102 - IP Discovery"
+    },
+    {
+      "description": "A resource within Azure is accessible from the public internet.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Reconnaissance"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Reconnaissance/AZT103/AZT103"
+        ]
+      },
+      "uuid": "6c6052f7-3d6b-503b-99b2-8c32e0ed44cf",
+      "value": "AZT103 - Public Accessible Resource"
+    },
+    {
+      "description": "An adversary may obtain information about a User within Azure Active Directory. Details may include email addresses, first/last names, job information, addresses, and assigned roles. By default, all users are able to read other user's roles and group memberships within AAD.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Reconnaissance"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Reconnaissance/AZT104/AZT104"
+        ]
+      },
+      "uuid": "df3fd847-3947-5ffa-9fc1-3482575a0796",
+      "value": "AZT104 - Gather User Information"
+    },
+    {
+      "description": "An adversary may obtain information about an application within Azure Active Directory.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Reconnaissance"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Reconnaissance/AZT105/AZT105"
+        ]
+      },
+      "uuid": "9a3ef449-a40d-5f65-bbc1-1170dea045d5",
+      "value": "AZT105 - Gather Application Information"
+    },
+    {
+      "description": "An adversary may obtain information about a role within Azure Active Directory or within Azure Resource Manager.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Reconnaissance"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Reconnaissance/AZT106/AZT106"
+        ]
+      },
+      "uuid": "ce93d401-b5aa-55f2-942a-d06541dac19a",
+      "value": "AZT106 - Gather Role Information"
+    },
+    {
+      "description": "An adversary may gather role assignments within Azure Active Directory.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Reconnaissance"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Reconnaissance/AZT106/AZT106-1"
+        ]
+      },
+      "uuid": "b8fc3465-e7d8-5615-a625-f1835d3c313e",
+      "value": "AZT106.1 - Gather AAD Role Information"
+    },
+    {
+      "description": "An adversary may gather information about an application role & it's member assignments within Azure Active Directory.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Reconnaissance"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Reconnaissance/AZT106/AZT106-2"
+        ]
+      },
+      "uuid": "641e1474-3fa2-5851-9c5b-35bac592825e",
+      "value": "AZT106.2 - Gather Application Role Information"
+    },
+    {
+      "description": "An adversary may gather role assignments for a specific Azure Resource, Resource Group, or Subscription.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Reconnaissance"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Reconnaissance/AZT106/AZT106-3"
+        ]
+      },
+      "uuid": "12374642-bb8b-5339-ae75-093390894e98",
+      "value": "AZT106.3 - Gather Azure Resources Role Assignments"
+    },
+    {
+      "description": "An adversary may obtain information and data within a resource.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Reconnaissance"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Reconnaissance/AZT107/AZT107"
+        ]
+      },
+      "uuid": "41439ad7-9877-532a-a289-3fff16707deb",
+      "value": "AZT107 - Gather Resource Data"
+    },
+    {
+      "description": "An adversary may access a user's personal data if their account is compromised. This includes data such as email, OneDrive, Teams, etc.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Reconnaissance"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Reconnaissance/AZT108/AZT108"
+        ]
+      },
+      "uuid": "08444afe-88de-50a9-8396-c9ca035afc22",
+      "value": "AZT108 - Gather Victim Data"
+    },
+    {
+      "description": "Adversaries may login to AzureAD using valid credentials. By logging in with valid credentials to an account or service principal, the adversary will assume all privileges of that account or service principal. If the account is privileged, this may lead to other tactics, such as persistence or privilege escalation.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Initial Access",
+          "ATRM-tactics:Privilege Escalation",
+          "ATRM-tactics:Persistence"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/InitialAccess/AZT201/AZT201"
+        ]
+      },
+      "uuid": "6ac38262-72d7-52a9-b450-a493ae97c7b4",
+      "value": "AZT201 - Valid Credentials"
+    },
+    {
+      "description": "By obtaining valid user credentials, an adversary may login to AzureAD via command line or through the Azure Portal.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Initial Access"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/InitialAccess/AZT201/AZT201-1"
+        ]
+      },
+      "uuid": "6782f12a-7221-5a47-9aae-5eef4e030a02",
+      "value": "AZT201.1 - User Account"
+    },
+    {
+      "description": "By obtaining a valid secret or certificate, an adversary may login to AzureAD via command line.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Initial Access"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/InitialAccess/AZT201/AZT201-2"
+        ]
+      },
+      "uuid": "30478a5c-82fc-5172-8129-0ece37005762",
+      "value": "AZT201.2 - Service Principal"
+    },
+    {
+      "description": "An adversary may potentially gain access to AzureAD by guessing a common password for multiple users.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Initial Access"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/InitialAccess/AZT202/AZT202"
+        ]
+      },
+      "uuid": "fab95406-0d7c-5239-bb94-38e1ca52a70a",
+      "value": "AZT202 - Password Spraying"
+    },
+    {
+      "description": "An adversary may lure a victim into giving their access to a malicious application registered in AzureAD.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Initial Access"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/InitialAccess/AZT203/AZT203"
+        ]
+      },
+      "uuid": "8a01a6ea-9fbb-518b-bae0-bafc27a54966",
+      "value": "AZT203 - Malicious Application Consent"
+    },
+    {
+      "description": "Adversaries may abuse access to virtual machines by executing a script through various methods in order to gain access to the Virtual Machine.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Execution"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Execution/AZT301/AZT301"
+        ]
+      },
+      "uuid": "ac69d8a0-d616-5580-95a5-5abef15c8b81",
+      "value": "AZT301 - Virtual Machine Scripting"
+    },
+    {
+      "description": "By utilizing the 'RunCommand' feature on a Virtual Machine, an attacker can pass:* **Windows**: PowerShell commands to the VM as SYSTEM.* **Linux**: Shell commands to the VM as root.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Execution"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Execution/AZT301/AZT301-1"
+        ]
+      },
+      "uuid": "9369194c-c4d6-5df4-aab1-93c1b3c631c2",
+      "value": "AZT301.1 - RunCommand"
+    },
+    {
+      "description": "By utilizing the 'CustomScriptExtension' extension on a Virtual Machine, an attacker can pass PowerShell commands to the VM as SYSTEM.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Execution"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Execution/AZT301/AZT301-2"
+        ]
+      },
+      "uuid": "04ee0b6c-40dd-5e71-8825-b4ac9acdb0de",
+      "value": "AZT301.2 - CustomScriptExtension"
+    },
+    {
+      "description": "By utilizing the 'Desired State Configuration extension' extension on a Virtual Machine, an attacker can pass PowerShell commands to the VM as SYSTEM.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Execution"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Execution/AZT301/AZT301-3"
+        ]
+      },
+      "uuid": "40233909-2e71-5884-95e6-79b2a06ffa46",
+      "value": "AZT301.3 - Desired State Configuration"
+    },
+    {
+      "description": "By utilizing Compute Gallery Applications, an attacker can pass MS-DOS or PowerShell commands to the VM as SYSTEM.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Execution"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Execution/AZT301/AZT301-4"
+        ]
+      },
+      "uuid": "74db1f38-d26b-576b-abac-b6b2ca53bcc8",
+      "value": "AZT301.4 - Compute Gallery Application"
+    },
+    {
+      "description": "By utilizing 'command invoke' on an Azure Kubernetes Service (AKS) cluster, an attacker can pass commands to the cluster's VM as SYSTEM",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Execution"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Execution/AZT301/AZT301-5"
+        ]
+      },
+      "uuid": "dd442218-8ee7-5601-9fae-9d5ab16fcf62",
+      "value": "AZT301.5 - AKS Command Invoke"
+    },
+    {
+      "description": "By utilizing the 'RunCommand' feature on a virtual machine scale set (Vmss), an attacker can execute a command on an instance or instances of VMs as:* **Windows**: PowerShell commands to the VM as SYSTEM.* **Linux**: Shell commands to the VM as root.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Execution"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Execution/AZT301/AZT301-6"
+        ]
+      },
+      "uuid": "6d141243-f440-54bb-9de3-81b65a01faf4",
+      "value": "AZT301.6 - Vmss Run Command"
+    },
+    {
+      "description": "By utilizing the serial console feature on an Azure Virtual Machine, an adversary can pass arbitrary commands.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Execution"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Execution/AZT301/AZT301-7"
+        ]
+      },
+      "uuid": "b2f70558-6986-5dab-9a49-55fa5a1212bb",
+      "value": "AZT301.7 - Serial Console"
+    },
+    {
+      "description": "Adversaries may abuse access to serverless resources that are able to execute PowerShell or Python scripts on an Azure resource.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Execution"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Execution/AZT302/AZT302"
+        ]
+      },
+      "uuid": "5ff07106-9f9e-5e52-9513-ccc856ea295a",
+      "value": "AZT302 - Serverless Scripting"
+    },
+    {
+      "description": "By utilizing an Automation Account configured with a Hybrid Worker Group, an attacker can execute Azure commands on any Azure VM within that Hybrid Worker Group.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Execution"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Execution/AZT302/AZT302-1"
+        ]
+      },
+      "uuid": "0b61dd42-24af-586a-b910-9c780c12d92a",
+      "value": "AZT302.1 - Automation Account Runbook Hybrid Worker Group"
+    },
+    {
+      "description": "By utilizing an Automation Account configured with a RunAs account, an attacker can execute commands on an Azure VM via RunCommand [(AZT301.1)](../AZT301/AZT301-1.md) if that service principal has the correct role and privileges.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Execution"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Execution/AZT302/AZT302-2"
+        ]
+      },
+      "uuid": "21851b3a-6fd8-563a-8a51-f8ec44313879",
+      "value": "AZT302.2 - Automation Account Runbook RunAs Account"
+    },
+    {
+      "description": "By utilizing an Automation Account configured with a Managed Identity, an attacker can execute commands on an Azure VM via RunCommand [(AZT301.1)](../AZT301/AZT301-1.md) if that service principal has the correct role and privileges.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Execution"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Execution/AZT302/AZT302-3"
+        ]
+      },
+      "uuid": "69c9faf8-2f97-5be1-ac7c-446593e88089",
+      "value": "AZT302.3 - Automation Account Runbook Managed Identity"
+    },
+    {
+      "description": "By utilizing a Function Application, an attacker can execute Azure operations on a given resource.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Execution"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Execution/AZT302/AZT302-4"
+        ]
+      },
+      "uuid": "b38b17be-7adc-529d-8f75-378d5e298f5f",
+      "value": "AZT302.4 - Function Application"
+    },
+    {
+      "description": "Adversaries may abuse access to any managed devices in AzureAD by executing PowerShell or Python scripts on them.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Execution"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Execution/AZT303/AZT303"
+        ]
+      },
+      "uuid": "5f103828-8662-50b7-a7b3-faa546194729",
+      "value": "AZT303 - Managed Device Scripting"
+    },
+    {
+      "description": "An adversary may escalate their privileges if their current account is eligible for role activation via Privileged Identity Management (PIM).",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Privilege Escalation"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/PrivilegeEscalation/AZT401/AZT401"
+        ]
+      },
+      "uuid": "74deaa24-30f1-5642-a1e1-44c8cbea46a7",
+      "value": "AZT401 - Privileged Identity Management Role"
+    },
+    {
+      "description": "An adversary may escalate their privileges from Azure AD to all Azure subscriptions in the tenant if they are a global administrator",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Privilege Escalation"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/PrivilegeEscalation/AZT402/AZT402"
+        ]
+      },
+      "uuid": "f264fd49-c9a1-5ada-ba42-b59cb609d656",
+      "value": "AZT402 - Elevated Access Toggle"
+    },
+    {
+      "description": "By modifying the .bashrc file in a CloudShell .IMG file, an adversary may escalate their privileges by injecting commands that will add an arbitrary user account to a desired role and scope.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Privilege Escalation"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/PrivilegeEscalation/AZT403/AZT403-1"
+        ]
+      },
+      "uuid": "9c190f8f-3ec2-5d7c-b19d-a8f5d40d826e",
+      "value": "AZT403 - Local Resource Hijack"
+    },
+    {
+      "description": "Adversaries may abuse resources that are configured with a service principal or other identity to further their access to the current or other resources.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Privilege Escalation"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/PrivilegeEscalation/AZT404/AZT404"
+        ]
+      },
+      "uuid": "adeea4ca-8ff0-5159-815d-4bd53b0d1877",
+      "value": "AZT404 - Principal Impersonation"
+    },
+    {
+      "description": "By utilizing a Function Application configured with a managed identity or other identity provider, an attacker can execute Azure operations on a given resource.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Privilege Escalation"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/PrivilegeEscalation/AZT404/AZT404-1"
+        ]
+      },
+      "uuid": "7ed04b40-029b-5eb0-8c3d-e021f47e6bfa",
+      "value": "AZT404.1 - Function Application"
+    },
+    {
+      "description": "By utilizing a Logic Application configured with a managed identity or other identity provider, an attacker can execute Azure operations on a given resource.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Privilege Escalation"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/PrivilegeEscalation/AZT404/AZT404-2"
+        ]
+      },
+      "uuid": "a7bf6734-eae0-53d0-8356-be438c3909eb",
+      "value": "AZT404.2 - Logic Application"
+    },
+    {
+      "description": "By utilizing a Automation Account configured with a managed identity or RunAs account, an attacker can execute Azure operations on a given resource.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Privilege Escalation"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/PrivilegeEscalation/AZT404/AZT404-3"
+        ]
+      },
+      "uuid": "d1694a7f-8497-5ce6-b426-b65728778bc2",
+      "value": "AZT404.3 - Automation Account"
+    },
+    {
+      "description": "By utilizing an App Service configured with a managed identity or other identity provider, an attacker can execute Azure operations on a given resource.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Privilege Escalation"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/PrivilegeEscalation/AZT404/AZT404-4"
+        ]
+      },
+      "uuid": "a69ea209-9156-5cfd-8190-c8e7c0d667bc",
+      "value": "AZT404.4 - App Service"
+    },
+    {
+      "description": "Adversaries may abuse the assigned permissions on an Azure AD Application to escalate their privileges.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Privilege Escalation"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/PrivilegeEscalation/AZT405/AZT405"
+        ]
+      },
+      "uuid": "67271cac-5189-56b2-86e3-a40879107eca",
+      "value": "AZT405 - Azure AD Application"
+    },
+    {
+      "description": "By compromising a user, user in a group, or service principal that has an application role over an application, they may be able to escalate their privileges by impersonating the associated service principal and leveraging any privileged assigned application role.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Privilege Escalation"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/PrivilegeEscalation/AZT405/AZT405-1"
+        ]
+      },
+      "uuid": "f46e3cf1-d5d4-540e-b96d-d46ca6c092b9",
+      "value": "AZT405.1 - Application API Permissions"
+    },
+    {
+      "description": "By compromising a service principal whose application has privileged API permissions, an attacker can escalate their privileges to a higher privileged role.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Privilege Escalation"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/PrivilegeEscalation/AZT405/AZT405-2"
+        ]
+      },
+      "uuid": "b00aa43b-033e-5c73-a558-adaf16391169",
+      "value": "AZT405.2 - Application Role"
+    },
+    {
+      "description": "By compromising an account who is an 'Owner' over an application that is configured with additional roles or API permissions, an attacker can escalate their privileges by adding a certificate or credentials & logging in as the service principal.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Privilege Escalation"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/PrivilegeEscalation/AZT405/AZT405-3"
+        ]
+      },
+      "uuid": "c9012720-805b-5765-bb19-117b8844fff7",
+      "value": "AZT405.3 - Application Registration Owner"
+    },
+    {
+      "description": "An adverary may manipulate an account to maintain access in an Azure tenant",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Persistence"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Persistence/AZT501/AZT501"
+        ]
+      },
+      "uuid": "63bdb79b-02b5-53f5-84cd-7af94c28b5f8",
+      "value": "AZT501 - Account Manipulation"
+    },
+    {
+      "description": "An adverary may manipulate a user account to maintain access in an Azure tenant",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Persistence"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Persistence/AZT501/AZT501-1"
+        ]
+      },
+      "uuid": "76b94161-b0c4-58e9-8f2e-38c53e72af71",
+      "value": "AZT501.1 - User Account Manipulation"
+    },
+    {
+      "description": "An adverary may manipulate a service principal to maintain access in an Azure tenant",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Persistence"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Persistence/AZT501/AZT501-2"
+        ]
+      },
+      "uuid": "011f820f-cb51-5118-b491-6b533f907c64",
+      "value": "AZT501.2 - Service Principal Manipulation"
+    },
+    {
+      "description": "An adverary may manipulate the local admin account on an Azure VM",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Persistence"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Persistence/AZT501/AZT501-3"
+        ]
+      },
+      "uuid": "a9e76b8d-9a2e-5635-8d31-2f2782f1b4b1",
+      "value": "AZT501.3 - Azure VM Local Administrator Manipulation"
+    },
+    {
+      "description": "An adversary may create an account in Azure Active Directory.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Persistence"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Persistence/AZT502/AZT502"
+        ]
+      },
+      "uuid": "c3e571e8-9893-5e3c-ac6b-cd2cfdf353b7",
+      "value": "AZT502 - Account Creation"
+    },
+    {
+      "description": "An adversary may create an application & service principal in Azure Active Directory",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Persistence"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Persistence/AZT502/AZT502-1"
+        ]
+      },
+      "uuid": "abfc6aa3-2201-5c2b-8c23-ac50a918d692",
+      "value": "AZT502.1 - User Account Creation"
+    },
+    {
+      "description": "An adversary may create an application & service principal in Azure Active Directory",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Persistence"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Persistence/AZT502/AZT502-2"
+        ]
+      },
+      "uuid": "fa999394-eadd-550a-8d47-50cdc65abe9a",
+      "value": "AZT502.2 - Service Principal Creation"
+    },
+    {
+      "description": "An adversary may create a guest account in Azure Active Directory",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Persistence"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Persistence/AZT502/AZT502-3"
+        ]
+      },
+      "uuid": "9f28935a-4eba-55bf-8f02-93ec6479bd31",
+      "value": "AZT502.3 - Guest Account Creation"
+    },
+    {
+      "description": "Adversaries may configure a resource with an HTTP trigger to run commands without needing authentication.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Persistence"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Persistence/AZT503/AZT503"
+        ]
+      },
+      "uuid": "fbdebeff-4c97-5576-8ca1-edc008c8d6f0",
+      "value": "AZT503 - HTTP Trigger"
+    },
+    {
+      "description": "Adversaries may configure a Logic Application with a user account or managed identity and modify the HTTP trigger to run a command via HTTP request.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Persistence"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Persistence/AZT503/AZT503-1"
+        ]
+      },
+      "uuid": "a540c588-a229-5f06-8e55-aa9936d48d29",
+      "value": "AZT503.1 - Logic Application HTTP Trigger"
+    },
+    {
+      "description": "Adversaries may configure a Function Application with a user account or managed identity and modify the HTTP trigger to run a command via HTTP request.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Persistence"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Persistence/AZT503/AZT503-2"
+        ]
+      },
+      "uuid": "6e223830-9497-5d9d-9e64-2349d8fd7da3",
+      "value": "AZT503.2 - Function App HTTP Trigger"
+    },
+    {
+      "description": "Adversaries may create a webhook to a Runbook which allows unauthenticated access into an Azure subscription or tenant.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Persistence"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Persistence/AZT503/AZT503-3"
+        ]
+      },
+      "uuid": "efe38e61-5580-5b23-b947-f93dfc1c6e1b",
+      "value": "AZT503.3 - Runbook Webhook"
+    },
+    {
+      "description": "Adversaries may create a WebJob on a App Service which allows arbitrary background tasks to be run on a set schedule",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Persistence"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Persistence/AZT503/AZT503-4"
+        ]
+      },
+      "uuid": "3b5e2af6-1e38-562b-8969-048ad7a75262",
+      "value": "AZT503.4 - WebJob"
+    },
+    {
+      "description": "By configurating a watcher task and a Runbook, an adversary can establish persistence by executing the Runbook on a triggered event.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Persistence"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Persistence/AZT504/AZT504"
+        ]
+      },
+      "uuid": "94a052a1-83aa-588c-9d8e-1269e7e9eecf",
+      "value": "AZT504 - Watcher Tasks"
+    },
+    {
+      "description": "Adversaries may create a schedule for a Runbook to run at a defined interval.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Persistence"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Persistence/AZT505/AZT505-1"
+        ]
+      },
+      "uuid": "4818f3d9-39ae-58ba-8e3c-c38610473435",
+      "value": "AZT505 - Scheduled Jobs"
+    },
+    {
+      "description": "Adversaries can modify the rules in a Network Security Group to establish access over additional ports.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Persistence"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Persistence/AZT506/AZT506"
+        ]
+      },
+      "uuid": "b611390f-01b1-5043-8abd-0f37a1edcb14",
+      "value": "AZT506 - Network Security Group Modification"
+    },
+    {
+      "description": "Adversaries may configure the target Azure tenant to be managed by another, externel tenant, or its users.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Persistence"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Persistence/AZT507/AZT507"
+        ]
+      },
+      "uuid": "1a35a003-3f49-560d-a54a-8acfbf203b97",
+      "value": "AZT507 - External Entity Access"
+    },
+    {
+      "description": "Adversaries may utilize Azure Lighthouse to manage the target tenant from an external tenant",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Persistence"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Persistence/AZT507/AZT507-1"
+        ]
+      },
+      "uuid": "dc904434-aac2-5509-8ecf-7ef7d1b22c28",
+      "value": "AZT507.1 - Azure Lighthouse"
+    },
+    {
+      "description": "Adversaries may use Delegated Administrative Privileges to give themselves administrator access to the target tenant.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Persistence"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Persistence/AZT507/AZT507-2"
+        ]
+      },
+      "uuid": "5f12fafa-7f63-5066-968c-d5d82d292623",
+      "value": "AZT507.2 - Microsoft Partners"
+    },
+    {
+      "description": "An adversary may transfer a subscription from a target tenant to an attacker-controlled tenant. This retains the billing account setup by the target and the target tenant administrators will no longer have control over the subscription.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Persistence"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Persistence/AZT507/AZT507-3"
+        ]
+      },
+      "uuid": "bcaad79d-3751-569b-97cc-cc21605a83bd",
+      "value": "AZT507.3 - Subscription Hijack"
+    },
+    {
+      "description": "An adversary may add an additional identity provider or domain to maintain a backdoor into the tenant.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Persistence"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Persistence/AZT507/AZT507-4"
+        ]
+      },
+      "uuid": "0c19e4bf-39f4-577e-a722-af289cbe594e",
+      "value": "AZT507.4 - Domain Trust Modification"
+    },
+    {
+      "description": "By configuring a policy with the 'DeployIfNotExists' definition, an adverary may establish persistence by creating a backdoor when the policy is triggered.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Persistence"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Persistence/AZT508/AZT508"
+        ]
+      },
+      "uuid": "3f56cce5-bfd6-5cde-8e64-8142fcce23f4",
+      "value": "AZT508 - Azure Policy"
+    },
+    {
+      "description": "An adverary may utilize the resource's functionality to obtain a JWT for the applied Managed Identity Service Principal account.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Credential Access"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/CredentialAccess/AZT601/AZT601"
+        ]
+      },
+      "uuid": "8c2dea2c-2bfd-53b0-aca5-1e6d3bf4b369",
+      "value": "AZT601 - Steal Managed Identity JsonWebToken"
+    },
+    {
+      "description": "By utilizing access to IMDS, an attacker can request a JWT for a Managed Identity on an Azure VM if they have access to execute commands on the system.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Credential Access"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/CredentialAccess/AZT601/AZT601-1"
+        ]
+      },
+      "uuid": "e11c90b6-eba6-5f5a-93f6-7c7de1bdd104",
+      "value": "AZT601.1 - Virtual Machine IMDS Request"
+    },
+    {
+      "description": "By utilizing access to IMDS, an attacker can request a JWT for a Managed Identity on an AKS Cluster if they have access to execute commands on the system.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Credential Access"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/CredentialAccess/AZT601/AZT601-2"
+        ]
+      },
+      "uuid": "6c8935d7-037d-568d-86a6-2eeadf5ca385",
+      "value": "AZT601.2 - Azure Kubernetes Service IMDS Request"
+    },
+    {
+      "description": "If a Logic App is using a Managed Identity, an adversary can modify the logic to make an HTTP POST request to reveal the Managed Identity's JWT.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Credential Access"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/CredentialAccess/AZT601/AZT601-3"
+        ]
+      },
+      "uuid": "36c2bbe2-07b7-5601-ae4a-0657a1c75895",
+      "value": "AZT601.3 - Logic Application JWT PUT Request"
+    },
+    {
+      "description": "If a Function App is using a Managed Identity, an adversary can modify the logic respond to an HTTP GET request to reveal the Managed Identity's JWT.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Credential Access"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/CredentialAccess/AZT601/AZT601-4"
+        ]
+      },
+      "uuid": "c64f2172-0dc5-5061-8128-c6c1fc59d3b3",
+      "value": "AZT601.4 - Function Application JWT GET Request"
+    },
+    {
+      "description": "If an Automation Account is using a Managed Identity, an adversary can create a Runbook to request the Managed Identity's JWT.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Credential Access"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/CredentialAccess/AZT601/AZT601-5"
+        ]
+      },
+      "uuid": "d369c182-37cb-55dd-bb0d-af57d277c051",
+      "value": "AZT601.5 - Automation Account Runbook"
+    },
+    {
+      "description": "If a Runbook is utilizing a 'RunAs' account, then an adversary may manipulate the Runbook to reveal the certificate the Service Principal is using for authentication.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Credential Access"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/CredentialAccess/AZT602/AZT602-1"
+        ]
+      },
+      "uuid": "027b05da-cabb-507c-a4b5-3a6c73859390",
+      "value": "AZT602 - Steal Service Principal Certificate"
+    },
+    {
+      "description": "If a Function App is using a service principal for authentication, an adversary may manipulate the function app logic to reveal the service principal's secret in plain text.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Credential Access"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/CredentialAccess/AZT603/AZT603-1"
+        ]
+      },
+      "uuid": "84639ccb-77a5-532f-bdac-a9d347d92304",
+      "value": "AZT603 - Service Principal Secret Reveal"
+    },
+    {
+      "description": "An adverary may access an Azure KeyVault in an attempt to view secrets, certificates, or keys.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Credential Access"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/CredentialAccess/AZT604/AZT604"
+        ]
+      },
+      "uuid": "a23579ef-ddd3-5370-a2aa-2651f93b27d7",
+      "value": "AZT604 - Azure KeyVault Dumping"
+    },
+    {
+      "description": "By accessing an Azure Key Vault, an adversary may dump any or all secrets.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Credential Access"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/CredentialAccess/AZT604/AZT604-1"
+        ]
+      },
+      "uuid": "cfcf7adc-3842-5186-9e6a-d595bcea09f7",
+      "value": "AZT604.1 - Azure KeyVault Secret Dump"
+    },
+    {
+      "description": "By accessing an Azure Key Vault, an adversary may dump any or all certificates.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Credential Access"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/CredentialAccess/AZT604/AZT604-2"
+        ]
+      },
+      "uuid": "05e20b61-81d2-5b29-a7db-2ec6e84eae7e",
+      "value": "AZT604.2 - Azure KeyVault Certificate Dump"
+    },
+    {
+      "description": "By accessing an Azure Key Vault, an adversary may dump any or all public keys. Note that Private keys cannot be retrieved.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Credential Access"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/CredentialAccess/AZT604/AZT604-3"
+        ]
+      },
+      "uuid": "06ec5785-88db-51c1-88f3-f0e6eed32830",
+      "value": "AZT604.3 - Azure KeyVault Key Dump"
+    },
+    {
+      "description": "An adverary may access an Azure KeyVault in an attempt to view secrets, certificates, or keys.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Credential Access"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/CredentialAccess/AZT605/AZT605"
+        ]
+      },
+      "uuid": "ecc40a2a-a85d-5e60-9e21-dffe6d07d85f",
+      "value": "AZT605 - Resource Secret Reveal"
+    },
+    {
+      "description": "By accessing a Storage Account, an adversary may dump access keys pertaining to the Storage Account, which will give them full access to the Storage Account.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Credential Access"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/CredentialAccess/AZT605/AZT605-1"
+        ]
+      },
+      "uuid": "4c22fbc1-60b0-5f4a-af4f-8fc32edcfe8a",
+      "value": "AZT605.1 - Storage Account Access Key Dumping"
+    },
+    {
+      "description": "By editing a Runbook, a credential configured in an Automation Account may be revealed",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Credential Access"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/CredentialAccess/AZT605/AZT605-2"
+        ]
+      },
+      "uuid": "49ec3f4e-7185-5e89-9ac0-3b5b0547f7bd",
+      "value": "AZT605.2 - Automation Account Credential Secret Dump"
+    },
+    {
+      "description": "By accessing deployment history of a Resource Group, secrets used in the ARM template may be revealed.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Credential Access"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/CredentialAccess/AZT605/AZT605-3"
+        ]
+      },
+      "uuid": "12c8ab19-5265-5ae3-8f16-bf35bc41f94e",
+      "value": "AZT605.3 - Resource Group Deployment History Secret Dump"
+    },
+    {
+      "description": "By generating an SAS URI for a resource, an adversary may extract the contents of that resource without authentication at any time.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Exfiltration"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Exfiltration/AZT701/AZT701"
+        ]
+      },
+      "uuid": "9ca7b25c-643a-5e55-a210-684f49fe82d8",
+      "value": "AZT701 - SAS URI Generation"
+    },
+    {
+      "description": "An adversary may create an SAS URI to download the disk attached to a virtual machine.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Exfiltration"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Exfiltration/AZT701/AZT701-1"
+        ]
+      },
+      "uuid": "8805d880-8887-52b6-a113-8c0f4fec4230",
+      "value": "AZT701.1 - VM Disk SAS URI"
+    },
+    {
+      "description": "By generating a Shared Access Signature (SAS) URI, an adversary can access a container in a Storage Account at any time.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Exfiltration"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Exfiltration/AZT701/AZT701-2"
+        ]
+      },
+      "uuid": "aae55a3a-8e32-5a62-8d41-837b2ebb1e69",
+      "value": "AZT701.2 - Storage Account File Share SAS"
+    },
+    {
+      "description": "An adversary can generate a connection string to mount an Azure Storage Account File Share as an NFS or SMB share to their local machine.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Exfiltration"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Exfiltration/AZT702/AZT702-1"
+        ]
+      },
+      "uuid": "dc6f9ee0-55b2-5197-87a5-7474cfc04d72",
+      "value": "AZT702 - File Share Mounting"
+    },
+    {
+      "description": "By setting up cross-tenant replication, an adversary may set up replication from one tenant's storage account to an extrenal tenant's storage account.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Exfiltration"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Exfiltration/AZT703/AZT703-1"
+        ]
+      },
+      "uuid": "ff4276bf-ab9e-5157-a171-5cdd4a3e6002",
+      "value": "AZT703 - Replication"
+    },
+    {
+      "description": "An adversary may leverage resources found at a 'soft deletion' state, restore them and advance their attack by retrieving contents meant to be deleted",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Exfiltration"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Exfiltration/AZT704/AZT704"
+        ]
+      },
+      "uuid": "47ded49d-ef4c-57d4-8050-f66f884c4388",
+      "value": "AZT704 - Soft-Delete Recovery"
+    },
+    {
+      "description": "An adversary may recover a key vault object found in a 'soft deletion' state.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Exfiltration"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Exfiltration/AZT704/AZT704-1"
+        ]
+      },
+      "uuid": "d8fc76f2-6776-5a09-bfb3-57852ae1d786",
+      "value": "AZT704.1 - Key Vault"
+    },
+    {
+      "description": "An adversary may recover a storage account object found in a 'soft deletion' state.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Exfiltration"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Exfiltration/AZT704/AZT704-2"
+        ]
+      },
+      "uuid": "cd9f0082-b2c7-53f8-95a6-a4fe746f973e",
+      "value": "AZT704.2 - Storage Account Object"
+    },
+    {
+      "description": "An adversary may recover a virtual machine object found in a 'soft deletion' state.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Exfiltration"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Exfiltration/AZT704/AZT704-3"
+        ]
+      },
+      "uuid": "d333405e-af82-555c-a68f-e723878b5f55",
+      "value": "AZT704.3 - Recovery Services Vault"
+    }
+  ],
+  "version": 2
+}

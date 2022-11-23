@@ -10,7 +10,7 @@ parser.add_argument("-p", "--path", required=True, help="Path of the mitre/cti f
 args = parser.parse_args()
 
 values = []
-misp_dir = '../../../'
+misp_dir = '../'
 
 
 domains = ['enterprise-attack', 'mobile-attack', 'pre-attack']
@@ -192,4 +192,4 @@ for t in types:
         json.dump(file_data, f, indent=2, sort_keys=True, ensure_ascii=False)
         f.write('\n')  # only needed for the beauty and to be compliant with jq_all_the_things
 
-print("All done, please don't forget to ./validate_all.sh and ./jq_all_the_things.sh")
+print("All done, please don't forget to ./jq_all_the_things.sh, commit, and then ./validate_all.sh.")

@@ -1941,7 +1941,8 @@
         "date": "2005 or 2008",
         "refs": [
           "https://www.lastline.com/labsblog/an-analysis-of-plugx-malware/",
-          "https://www.trendmicro.com/vinfo/us/threat-encyclopedia/malware/PLUGX"
+          "https://www.trendmicro.com/vinfo/us/threat-encyclopedia/malware/PLUGX",
+          "https://secjoes-reports.s3.eu-central-1.amazonaws.com/Dissecting+PlugX+to+Extract+Its+Crown+Jewels.pdf"
         ],
         "synonyms": [
           "Korplug",
@@ -2692,10 +2693,16 @@
       "value": "Revenge-RAT"
     },
     {
+      "description": "“Vengeance Justice Worm” was first discovered in 2016 and is a highly multifunctional, modular, publicly available “commodity malware”, i.e., it can be purchased by those interested through various cybercrime and hacking related forums and channels.\n\nVJwOrm is a JavaScript-based malware and combines characteristics of Worm, Information Stealer, Remote-Access Trojan (RAT), Denial-of-Service (DOS) malware, and spam-bot.\n\nVJw0rm is propagated primarily by malicious email attachments and by infecting removeable storage devices.\n\nOnce executed by the victim, the very heavily obfuscated VJw0rm will enumerate installed drives and, if a removeable drive is found, VJwOrm will infect it if configured to do so.\n\nIt will continue to gather victim information such as operating system details, user’s details, installed anti-virus product details, stored browser cookies, the presence of vbc.exe on the system (Microsoft’s .NET Visual Basic Compiler, this indicates that .NET is installed on the system and can affect the actor’s choice of additional malware delivery), and whether the system has been previously infected.\n\nVJw0rm will then report this information back to its command-and-control server and await further commands, such as downloading and executing additional malware or employing any of its other numerous capabilities.\n\nFinally, VJw0rm establishes persistency in the form of registry auto-runs, system startup folders, a scheduled-task, or any combination of these methods.",
       "meta": {
         "date": "2016",
         "refs": [
           "https://twitter.com/malwrhunterteam/status/816993165119016960?lang=en"
+        ],
+        "synonym": [
+          "Vengeance Justice Worm",
+          "VJw0rm",
+          "VJwOrm"
         ]
       },
       "uuid": "bf86d7a6-80af-4d22-a092-f822bf7201d2",
@@ -3215,6 +3222,13 @@
             "estimative-language:likelihood-probability=\"likely\""
           ],
           "type": "similar"
+        },
+        {
+          "dest-uuid": "ad6d0074-476e-4c05-b0d9-79404f71bbba",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
         }
       ],
       "uuid": "3c1003a2-8364-467a-b9b8-fcc19724a9b5",
@@ -3480,9 +3494,14 @@
       "description": "The campaign spreads via phishing emails posing as invoices, tax reports, invitations and similar types of messages containing a ZIP archive attachment with a malicious LNK file. When a user opens the malicious LNK file, it abuses the Windows Management Instrumentation Command-line tool and silently downloads a malicious XSL file. The XSL file downloads all of Guildma’s modules and executes a first stage loader, which loads the rest of the modules. The malware is then active and waits for commands from the C&C server and/or specific user interactions, such as opening a webpage of one of the targeted banks.",
       "meta": {
         "refs": [
-          "https://www.securityweek.com/guildma-malware-expands-targets-beyond-brazil"
+          "https://www.securityweek.com/guildma-malware-expands-targets-beyond-brazil",
+          "https://www.securityweek.com/extensive-living-land-hides-stealthy-malware-campaign",
+          "https://isc.sans.edu/diary/rss/28962",
+          "https://otx.alienvault.com/pulse/6303804723bccc7e3caad737?utm_userid=alexandre.dulaunoy@circl.lu&utm_medium=InProduct&utm_source=OTX&utm_content=Email&utm_campaign=new_pulse_from_subscribed"
         ],
-        "synonyms": []
+        "synonyms": [
+          "Astaroth"
+        ]
       },
       "uuid": "833ed94d-97c1-4b57-9634-c27bf42eb867",
       "value": "Guildma"
@@ -3531,5 +3550,5 @@
       "value": "Ragnatela"
     }
   ],
-  "version": 38
+  "version": 42
 }

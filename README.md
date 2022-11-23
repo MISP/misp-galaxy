@@ -18,14 +18,29 @@ The objective is to have a comment set of clusters for organizations starting an
 to localized information (which is not shared) or additional information (that can be shared).
 
 # Available Galaxy - clusters
+## 360.net Threat Actors
+
+[360.net Threat Actors](https://www.misp-project.org/galaxy.html#_360.net_threat_actors) - Known or estimated adversary groups as identified by 360.net.
+
+Category: *actor* - source: *https://apt.360.net/aptlist* - total: *42* elements
+
+[[HTML](https://www.misp-project.org/galaxy.html#_360.net_threat_actors)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/360net.json)]
 
 ## Android
 
 [Android](https://www.misp-project.org/galaxy.html#_android) - Android malware galaxy based on multiple open sources.
 
-Category: *tool* - source: *Open Sources* - total: *430* elements
+Category: *tool* - source: *Open Sources* - total: *431* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_android)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/android.json)]
+
+## Azure Threat Research Matrix
+
+[Azure Threat Research Matrix](https://www.misp-project.org/galaxy.html#_azure_threat_research_matrix) - The purpose of the Azure Threat Research Matrix (ATRM) is to educate readers on the potential of Azure-based tactics, techniques, and procedures (TTPs). It is not to teach how to weaponize or specifically abuse them. For this reason, some specific commands will be obfuscated or parts will be omitted to prevent abuse.
+
+Category: *atrm* - source: *https://github.com/microsoft/Azure-Threat-Research-Matrix* - total: *89* elements
+
+[[HTML](https://www.misp-project.org/galaxy.html#_azure_threat_research_matrix)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/atrm.json)]
 
 ## attck4fraud
 
@@ -39,7 +54,7 @@ Category: *guidelines* - source: *Open Sources* - total: *31* elements
 
 [Backdoor](https://www.misp-project.org/galaxy.html#_backdoor) - A list of backdoor malware.
 
-Category: *tool* - source: *Open Sources* - total: *11* elements
+Category: *tool* - source: *Open Sources* - total: *12* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_backdoor)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/backdoor.json)]
 
@@ -63,7 +78,7 @@ Category: *mobile* - source: *https://arxiv.org/pdf/2005.05110.pdf* - total: *47
 
 [Botnet](https://www.misp-project.org/galaxy.html#_botnet) - botnet galaxy
 
-Category: *tool* - source: *MISP Project* - total: *71* elements
+Category: *tool* - source: *MISP Project* - total: *73* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_botnet)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/botnet.json)]
 
@@ -111,7 +126,7 @@ Category: *country* - source: *MISP Project* - total: *252* elements
 
 [Cryptominers](https://www.misp-project.org/galaxy.html#_cryptominers) - A list of cryptominer and cryptojacker malware.
 
-Category: *Cryptominers* - source: *Open Source Intelligence* - total: *2* elements
+Category: *Cryptominers* - source: *Open Source Intelligence* - total: *4* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_cryptominers)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/cryptominers.json)]
 
@@ -135,7 +150,7 @@ Category: *tool* - source: *MISP Project* - total: *52* elements
 
 [Malpedia](https://www.misp-project.org/galaxy.html#_malpedia) - Malware galaxy cluster based on Malpedia.
 
-Category: *tool* - source: *Malpedia* - total: *2194* elements
+Category: *tool* - source: *Malpedia* - total: *2462* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_malpedia)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/malpedia.json)]
 
@@ -143,7 +158,7 @@ Category: *tool* - source: *Malpedia* - total: *2194* elements
 
 [Microsoft Activity Group actor](https://www.misp-project.org/galaxy.html#_microsoft_activity_group_actor) - Activity groups as described by Microsoft
 
-Category: *actor* - source: *MISP Project* - total: *15* elements
+Category: *actor* - source: *MISP Project* - total: *14* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_microsoft_activity_group_actor)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/microsoft-activity-group.json)]
 
@@ -159,7 +174,7 @@ Category: *misinformation-pattern* - source: *https://github.com/misinfosecproje
 
 [Attack Pattern](https://www.misp-project.org/galaxy.html#_attack_pattern) - ATT&CK tactic
 
-Category: *attack-pattern* - source: *https://github.com/mitre/cti* - total: *991* elements
+Category: *attack-pattern* - source: *https://github.com/mitre/cti* - total: *1003* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_attack_pattern)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-attack-pattern.json)]
 
@@ -263,7 +278,7 @@ Category: *attack-pattern* - source: *https://collaborate.mitre.org/attackics/in
 
 [Intrusion Set](https://www.misp-project.org/galaxy.html#_intrusion_set) - Name of ATT&CK Group
 
-Category: *actor* - source: *https://github.com/mitre/cti* - total: *134* elements
+Category: *actor* - source: *https://github.com/mitre/cti* - total: *138* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_intrusion_set)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-intrusion-set.json)]
 
@@ -271,7 +286,7 @@ Category: *actor* - source: *https://github.com/mitre/cti* - total: *134* elemen
 
 [Malware](https://www.misp-project.org/galaxy.html#_malware) - Name of ATT&CK software
 
-Category: *tool* - source: *https://github.com/mitre/cti* - total: *565* elements
+Category: *tool* - source: *https://github.com/mitre/cti* - total: *598* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_malware)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-malware.json)]
 
@@ -335,7 +350,7 @@ Category: *actor* - source: *https://github.com/mitre/cti* - total: *7* elements
 
 [Tool](https://www.misp-project.org/galaxy.html#_tool) - Name of ATT&CK software
 
-Category: *tool* - source: *https://github.com/mitre/cti* - total: *74* elements
+Category: *tool* - source: *https://github.com/mitre/cti* - total: *80* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_tool)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-tool.json)]
 
@@ -359,7 +374,7 @@ Category: *measure* - source: *MISP Project* - total: *20* elements
 
 [Ransomware](https://www.misp-project.org/galaxy.html#_ransomware) - Ransomware galaxy based on https://docs.google.com/spreadsheets/d/1TWS238xacAto-fLKh1n5uTsdijWdCEsGIM0Y0Hvmc5g/pubhtml and http://pastebin.com/raw/GHgpWjar
 
-Category: *tool* - source: *Various* - total: *1608* elements
+Category: *tool* - source: *Various* - total: *1610* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_ransomware)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/ransomware.json)]
 
@@ -423,7 +438,7 @@ Category: *tool* - source: *Open Sources* - total: *6* elements
 
 [Surveillance Vendor](https://www.misp-project.org/galaxy.html#_surveillance_vendor) - List of vendors selling surveillance technologies including malware, interception devices or computer exploitation services.
 
-Category: *actor* - source: *MISP Project* - total: *14* elements
+Category: *actor* - source: *MISP Project* - total: *15* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_surveillance_vendor)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/surveillance-vendor.json)]
 
@@ -455,7 +470,7 @@ Category: *tea-matrix* - source: ** - total: *7* elements
 
 [Threat Actor](https://www.misp-project.org/galaxy.html#_threat_actor) - Known or estimated adversary groups targeting organizations and employees. Adversary groups are regularly confused with their initial operation or campaign. threat-actor-classification meta can be used to clarify the understanding of the threat-actor if also considered as operation, campaign or activity group.
 
-Category: *actor* - source: *MISP Project* - total: *379* elements
+Category: *actor* - source: *MISP Project* - total: *397* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_threat_actor)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/threat-actor.json)]
 
@@ -463,10 +478,9 @@ Category: *actor* - source: *MISP Project* - total: *379* elements
 
 [Tool](https://www.misp-project.org/galaxy.html#_tool) - threat-actor-tools is an enumeration of tools used by adversaries. The list includes malware but also common software regularly used by the adversaries.
 
-Category: *tool* - source: *MISP Project* - total: *533* elements
+Category: *tool* - source: *MISP Project* - total: *537* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_tool)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/tool.json)]
-
 
 # Online documentation 
 

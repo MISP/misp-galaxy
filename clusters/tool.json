@@ -414,6 +414,13 @@
             "estimative-language:likelihood-probability=\"likely\""
           ],
           "type": "similar"
+        },
+        {
+          "dest-uuid": "790cc0e7-4132-4e41-9b6c-11ff757400c0",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
         }
       ],
       "uuid": "a860d257-4a39-47ec-9230-94cac67ebf7e",
@@ -2637,7 +2644,7 @@
       },
       "related": [
         {
-          "dest-uuid": "94466a80-964f-467e-b4b3-0e1375174464",
+          "dest-uuid": "11775f11-03a0-4ba8-932f-c125dfb66e35",
           "tags": [
             "estimative-language:likelihood-probability=\"likely\""
           ],
@@ -3527,6 +3534,15 @@
           "Backdoor"
         ]
       },
+      "related": [
+        {
+          "dest-uuid": "ee7f535d-cc3e-40f3-99f3-c97963cfa250",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
       "uuid": "15949ecb-1f2b-4f59-9cf7-5751694e8fba",
       "value": "darkcomet"
     },
@@ -8484,7 +8500,191 @@
       },
       "uuid": "f43a3828-a3b6-11ec-80e1-55a8e5815c2c",
       "value": "BadPotato"
+    },
+    {
+      "description": "A simple RAT used by Vicious Panda",
+      "meta": {
+        "refs": [
+          "https://securelist.com/microcin-is-here/97353",
+          "https://securelist.com/a-simple-example-of-a-complex-cyberattack/82636",
+          "https://decoded.avast.io/luigicamastra/apt-group-planted-backdoors-targeting-high-profile-networks-in-central-asia",
+          "https://www.welivesecurity.com/2020/05/14/mikroceen-spying-backdoor-high-profile-networks-central-asia",
+          "https://research.checkpoint.com/2020/vicious-panda-the-covid-campaign"
+        ],
+        "synonyms": [
+          "Mikroceen"
+        ],
+        "type": [
+          "RAT"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "68d8c25b-8595-4c20-a5c7-a11a2a34b717",
+          "type": "used-by"
+        }
+      ],
+      "uuid": "7d17dabf-a68e-4eda-a18f-26868ced8e73",
+      "value": "Microcin"
+    },
+    {
+      "description": "The Esile campaign was named after certain strings found in the unpacked malware file that it sends out. All of the malware related to this campaign are detected as BKDR_ESILE variants.",
+      "meta": {
+        "refs": [
+          "https://www.trendmicro.com/vinfo/de/security/news/cyber-attacks/esile-targeted-attack-campaign-hits-apac-governments",
+          "https://www.trendmicro.com/vinfo/us/threat-encyclopedia/malware/esile"
+        ],
+        "synonyms": [
+          "BKDR_ESILE"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "32fafa69-fe3c-49db-afd4-aac2664bcf0d",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "7d34ca56-ce69-465f-b8c8-ffd02c4b619d",
+      "value": "Esile"
+    },
+    {
+      "description": "MOUSEISLAND is a Microsoft Word macro downloader used as the first infection stage and is delivered inside a password-protected zip attached to a phishing email (Figure 2). Based on our intrusion data from responding to ICEDID related incidents, the secondary payload delivered by MOUSEISLAND has been PHOTOLOADER, which acts as an intermediary downloader to install ICEDID. Mandiant attributes the MOUSEISLAND distribution of PHOTOLOADER and other payloads to UNC2420, a distribution threat cluster created by Mandiant’s Threat Pursuit team. UNC2420 activity shares overlaps with the publicly reported nomenclature of “Shathak” or “TA551”.",
+      "meta": {
+        "refs": [
+          "https://www.mandiant.com/resources/blog/melting-unc2198-icedid-to-ransomware-operations"
+        ]
+      },
+      "uuid": "2bea2cc9-c1cc-453d-a483-541b895867d1",
+      "value": "MOUSEISLAND"
+    },
+    {
+      "description": "GootLoader is a malware loader historically associated with the GootKit malware. As its developers updated its capabilities, GootLoader has evolved from a loader downloading a malicious payload into a multi-payload malware platform. As a loader malware, GootLoader is usually the first-stage of a system compromise. By leveraging search engine poisoning, GootLoader’s developers may compromise or create websites that rank highly in search engine results, such as Google search results. How is it delivered? Via Malicious files available for download on compromised websites that rank high as search engine results",
+      "meta": {
+        "refs": [
+          "https://www.cyber.nj.gov/alerts-advisories/gootloader-malware-platform-uses-sophisticated-techniques-to-deliver-malware",
+          "https://blogs.blackberry.com/en/2022/07/gootloader-from-seo-poisoning-to-multi-stage-downloader"
+        ]
+      },
+      "uuid": "0bdb6f1c-1229-4556-a535-7444ddfbd7a9",
+      "value": "GootLoader"
+    },
+    {
+      "description": "BumbleBee is a modular backdoor that comprises two applications, a server and a client application (a master and slaver application, respectively in the malware’s jargon). Once the client application is deployed on the target computer (these are commonly local government devices), threat actors can control the machine using the server module. Let us take a deeper look into this backdoor.",
+      "meta": {
+        "refs": [
+          "https://www.trendmicro.com/en_us/research/22/i/buzzing-in-the-background-bumblebee-a-new-modular-backdoor-evolv.html",
+          "https://www.microsoft.com/en-us/security/blog/2022/10/27/raspberry-robin-worm-part-of-larger-ecosystem-facilitating-pre-ransomware-activity/"
+        ],
+        "type": [
+          "backdoor"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "96b2b31e-b191-43c4-9929-48ba1cbee62c",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "related-to"
+        }
+      ],
+      "uuid": "6fc4beee-b922-4d25-833d-8fb574a3c56e",
+      "value": "BumbleBee"
+    },
+    {
+      "description": "Chisel is a fast TCP/UDP tunnel, transported over HTTP, secured via SSH. Single executable including both client and server. Written in Go (golang). Chisel is mainly useful for passing through firewalls, though it can also be used to provide a secure endpoint into your network. Benign in itself, but used by threat actors.",
+      "meta": {
+        "refs": [
+          "https://github.com/jpillora/chisel"
+        ]
+      },
+      "uuid": "f493dede-9134-44db-a00d-aa4866bfd555",
+      "value": "Chisel"
+    },
+    {
+      "description": "SharPyShell - tiny and obfuscated ASP.NET webshell for C# web applications",
+      "meta": {
+        "refs": [
+          "https://github.com/antonioCoco/SharPyShell"
+        ]
+      },
+      "uuid": "e10ff67f-8b52-4648-9217-da53ff7d52f9",
+      "value": "SharPyShell"
+    },
+    {
+      "description": "Raspberry Robin has evolved from being a widely distributed worm with no observed post-infection actions when Red Canary first reported it in May 2022, to one of the largest malware distribution platforms currently active. ",
+      "meta": {
+        "refs": [
+          "https://www.microsoft.com/en-us/security/blog/2022/10/27/raspberry-robin-worm-part-of-larger-ecosystem-facilitating-pre-ransomware-activity/"
+        ],
+        "type": [
+          "Worm"
+        ]
+      },
+      "uuid": "70dc3e92-9b3b-4fc1-abd2-d98985d83225",
+      "value": "Raspberry Robin"
+    },
+    {
+      "description": "The Fauppod malware delivers a JavaScript backdoor to gain unauthorized access to the target system and deploy additional malware.",
+      "meta": {
+        "refs": [
+          "https://www.microsoft.com/en-us/security/blog/2022/10/27/raspberry-robin-worm-part-of-larger-ecosystem-facilitating-pre-ransomware-activity/"
+        ]
+      },
+      "uuid": "9f0224f6-dd46-4a23-a3fd-d295abae5f93",
+      "value": "Fauppod"
+    },
+    {
+      "description": "This threat takes multiple screenshots of your desktop. It saves all screenshots in a .dat file that becomes a collection of bitmap images. According to Group-IB, FlawedAmmyy.downloader and Truebot would have been developed by the same individual",
+      "meta": {
+        "refs": [
+          "https://www.microsoft.com/en-us/security/blog/2022/10/27/raspberry-robin-worm-part-of-larger-ecosystem-facilitating-pre-ransomware-activity/"
+        ],
+        "synonyms": [
+          "Silence"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "ad6d0074-476e-4c05-b0d9-79404f71bbba",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "ad6d0074-476e-4c05-b0d9-79404f71bbba",
+      "value": "Truebot"
+    },
+    {
+      "description": "FAKEUPDATES is a downloader written in JavaScript that communicates via HTTP. Supported payload types include executables and JavaScript. It writes the payloads to disk prior to launching them. FAKEUPDATES has led to further compromise via additional malware families that include CHTHONIC, DRIDEX, EMPIRE, KOADIC, DOPPELPAYMER, and AZORULT.\nFAKEUPDATES has been heavily used by UNC1543,a financially motivated group.\n\nSocGholish, first appearing in late 2017 and rising to prominence in mid-2018, has been used to describe both the web drive-by download network used to infect victims and the JavaScript-based loader malware that targets Windows systems.",
+      "meta": {
+        "refs": [
+          "https://www.malwarebytes.com/blog/news/2018/04/fakeupdates-campaign-leverages-multiple-website-platforms",
+          "https://www.microsoft.com/en-us/security/blog/2022/10/27/raspberry-robin-worm-part-of-larger-ecosystem-facilitating-pre-ransomware-activity/",
+          "https://www.secureworks.com/research/threat-profiles/gold-prelude",
+          "https://redcanary.com/threat-detection-report/threats/socgholish/"
+        ],
+        "synonyms": [
+          "FakeUpdate",
+          "SocGholish"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "8134c96d-d6ed-49cc-99d6-fe74c0636387",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "cd32b19e-c365-4efc-9998-548e50e04a4c",
+      "value": "FakeUpdates"
     }
   ],
-  "version": 150
+  "version": 158
 }
