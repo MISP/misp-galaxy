@@ -24663,7 +24663,8 @@
           "https://www.trendmicro.com/vinfo/us/security/news/ransomware-spotlight/ransomware-spotlight-hive",
           "https://www.microsoft.com/en-us/security/blog/2022/07/05/hive-ransomware-gets-upgrades-in-rust/",
           "https://yoroi.company/wp-content/uploads/2022/07/Yoroi-On-The-Footsteps-of-Hive-Ransomware.pdf",
-          "https://www.varonis.com/blog/hive-ransomware-analysis"
+          "https://www.varonis.com/blog/hive-ransomware-analysis",
+          "https://www.bleepingcomputer.com/news/security/microsoft-exchange-servers-hacked-to-deploy-hive-ransomware/"
         ]
       },
       "uuid": "8ce915d3-8c6d-4841-b509-18379d7a8999",
@@ -24773,7 +24774,36 @@
       "value": "BlackBasta"
     },
     {
-      "description": "Ransomware",
+      "description": "BlackByte is recently discovered Ransomware with a .NET DLL core payload wrapped in JavaScript. It employs heavy obfuscation both in its JavaScript wrapper and .NET DLL core.\n\nOnce the JavaScript wrapper is executed, the malware will de-obfuscate the core payload and execute it in memory. The core .DLL is loaded and BlackByte will check the installed operating system language and terminate if an eastern European language is found.\n\nIt will proceed to check for the presence of several anti-virus and sandbox-related .DLLs, attempt to bypass AMSI, delete system shadow-copies in order to hinder system recovery, and modify several other system services (including Windows Firewall) in order to “prep” the system for encryption. Once the system is “ready” for encryption, it will download a symmetric key-file which will be used to encrypt files on the system. If this file is not found, the malware will terminate.\n\nUnlike most Ransomware today, BlackByte uses a single symmetric encryption key, and does not generate a unique encryption key for each victim system, meaning the same key can be used to decrypt all files encrypted by the malware.\n\nThis makes for substantially easier key-management for the actors behind BlackByte at the cost of a weaker encryption scheme and easier victim system recovery (as there is only a single online point with a single key to maintain).\n\nAs with most Ransomware today, BlackByte has worming capabilities and can infect additional endpoints on the same network.",
+      "meta": {
+        "ransomnotes": [
+          "BLACKBYTE \n\nAll your files have been encrypted, your confidential data has been stolen, in order to decrypt files and avoid leakage, you must follow our steps.\n\n1) Download and install TOR browser from this site: https://torproject.org/ \n\n2) Paste the URL in TOR browser and you will be redirected to our chat with all information that you need. \n\n3) If you won't contact with us within 4 days, your access to our chat will be removed and you wont be able to restore your system. \n\nYour URL: [LINK]\n\nYour Key: [KEY]",
+          "BLACKBYTE\n\nAll your files have been encrypted, your confidential data has been stolen, \nin order to decrypt files and avoid leakage, you must follow our steps.\n\n\n\n1) Download and install TOR Browser from this site: https://torproject.org/\n\n2) Paste the URL in TOR Browser and you will be redirected to our chat with all information that you need.\n\n3) If you do not contact us within 3 days, your chat access key won't be valid.\nAlso, your company will be posted on our blog, darknet and hacker forums,\nwhich will attract unnecessary attention from Journalists and not only them.\nYou are given 3 days to think over the situation, and take reasonable actions on your part.\n\n\nWarning! Connurtcation with us occurs only through this link, or through our mail on our blog.\nWe also strongly DO NOT recommend using third-party tools to decrypt files,\nas this will simply kill them completely without the possibility of recovery.\nI repeat, in this case, no one can help you!\n\n\n\nYour URL: [LINK]\n\nYour Key to access the chat: [PASSW]\n\nFind our blog here (TOR Browser): http://dlyo7r3n4qy5fzv4645nddjwarj7wjdd6wzckomcyc7akskkxp4glcad.onion/"
+        ],
+        "ransomnotes-refs": [
+          "https://lh5.googleusercontent.com/sw0iG6WGVHRRM7NQsTjmt1ut60TH-_VPe1Fo57XuYeBOMw9PrvI4lCqyCPueiEXvbAZ-ks3KHXmnS81JvGYaMf31tSL1Eejx-BZ973EctAqjb-u3R6k-9UC0GqhkLQxgMC6lqtp7",
+          "https://lh5.googleusercontent.com/sw0iG6WGVHRRM7NQsTjmt1ut60TH-_VPe1Fo57XuYeBOMw9PrvI4lCqyCPueiEXvbAZ-ks3KHXmnS81JvGYaMf31tSL1Eejx-BZ973EctAqjb-u3R6k-9UC0GqhkLQxgMC6lqtp7"
+        ],
+        "refs": [
+          "https://www.deepinstinct.com/blog/understanding-the-windows-javascript-threat-landscape",
+          "https://redcanary.com/blog/blackbyte-ransomware/",
+          "https://www.ic3.gov/Media/News/2022/220211.pdf",
+          "https://therecord.media/san-francisco-49ers-confirm-ransomware-attack/",
+          "https://www.bleepingcomputer.com/news/security/fbi-blackbyte-ransomware-breached-us-critical-infrastructure/",
+          "https://www.picussecurity.com/resource/ttps-used-by-blackbyte-ransomware-targeting-critical-infrastructure",
+          "https://www.trellix.com/en-us/about/newsroom/stories/research/trellix-global-defenders-analysis-and-protections-for-blackbyte-ransomware.html",
+          "https://www.advintel.io/post/enter-karakurt-data-extortion-arm-of-prolific-ransomware-group",
+          "https://www.zscaler.com/blogs/security-research/analysis-blackbyte-ransomwares-go-based-variants",
+          "https://www.advintel.io/post/hydra-with-three-heads-blackbyte-the-future-of-ransomware-subsidiary-groups",
+          "https://blog.talosintelligence.com/the-blackbyte-ransomware-group-is/",
+          "https://www.advintel.io/post/discontinued-the-end-of-conti-s-brand-marks-new-chapter-for-cybercrime-landscape",
+          "https://www.advintel.io/post/discontinued-the-end-of-conti-s-brand-marks-new-chapter-for-cybercrime-landscape",
+          "https://securelist.com/modern-ransomware-groups-ttps/106824/",
+          "https://securelist.com/modern-ransomware-groups-ttps/106824/",
+          "https://research.nccgroup.com/2022/07/13/climbing-mount-everest-black-byte-bytes-back/",
+          "https://news.sophos.com/en-us/2022/10/04/blackbyte-ransomware-returns/"
+        ]
+      },
       "related": [
         {
           "dest-uuid": "201eff54-d41e-4f70-916c-5dfb9301730a",
