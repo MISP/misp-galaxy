@@ -2697,7 +2697,8 @@
       "meta": {
         "date": "2016",
         "refs": [
-          "https://twitter.com/malwrhunterteam/status/816993165119016960?lang=en"
+          "https://twitter.com/malwrhunterteam/status/816993165119016960?lang=en",
+          "https://www.deepinstinct.com/blog/understanding-the-windows-javascript-threat-landscape"
         ],
         "synonyms": [
           "Vengeance Justice Worm",
@@ -3363,9 +3364,24 @@
       "description": "H-worm is a VBS (Visual Basic Script) based RAT written by an individual going by the name Houdini. We believe the author is based in Algeria and has connections to njq8, the author of njw0rm [1] and njRAT/LV [2] through means of a shared or common code base. We have seen the H-worm RAT being employed in targeted attacks against the international energy industry; however, we also see it being employed in a wider context as run of the mill attacks through spammed email attachments and malicious links.",
       "meta": {
         "refs": [
-          "https://www.fireeye.com/blog/threat-research/2013/09/now-you-see-me-h-worm-by-houdini.html"
+          "https://www.fireeye.com/blog/threat-research/2013/09/now-you-see-me-h-worm-by-houdini.html",
+          "https://www.deepinstinct.com/blog/understanding-the-windows-javascript-threat-landscape"
+        ],
+        "synonyms": [
+          "WSHRat",
+          "Houdini",
+          "Dunihi"
         ]
       },
+      "related": [
+        {
+          "dest-uuid": "e5f7bb36-c982-4f5a-9b29-ab73d2c5f70e",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        }
+      ],
       "uuid": "1b6a067b-50b9-4aa7-a49b-823e94e210fe",
       "value": "H-worm"
     },
@@ -3548,7 +3564,17 @@
       ],
       "uuid": "e79cb167-6639-46a3-9646-b12535aa21b6",
       "value": "Ragnatela"
+    },
+    {
+      "description": "STRRAT is a Java-based RAT with a JavaScript wrapper/dropper that was discovered in 2020. Its core payload (a .JAR file) is contained under several layers of obfuscation and encoding inside the JavaScript wrapper/dropper.\n\nSTRRAT is propagated by malicious email attachments. Its capabilities include standard RAT functionalities (remote access, remote command execution), browser and email-client credential harvesting, and a unique ransomware-like functionality – if instructed, it will add a “.crimson” extension to files on the device, rendering them inoperable (though they can be easily recovered because their content is not modified).\n\nUnlike many Java-based malware, STRRAT does not require Java to be installed on the infected system in order to operate. When the JavaScript wrapper/dropper is executed, if a suitable Java runtime installation is not found, one will be downloaded and installed in order to assure the contained Java payload can execute.",
+      "meta": {
+        "refs": [
+          "https://www.deepinstinct.com/blog/understanding-the-windows-javascript-threat-landscape"
+        ]
+      },
+      "uuid": "b30cb6f4-1e0a-4a97-8d88-ca38f83b4422",
+      "value": "STRRAT"
     }
   ],
-  "version": 42
+  "version": 43
 }
