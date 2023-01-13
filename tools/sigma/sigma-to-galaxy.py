@@ -127,7 +127,7 @@ def create_cluster(uuidGalaxy=unique_uuid):
 
     :return cluster: Dict with the basic information needed for the JSON file.
     """
-    version = time.strftime("%Y%m%d")
+    version = int(time.strftime("%Y%m%d"))
     cluster = {
         "authors": ["@Joseliyo_Jstnk"],
         "category": "rules",
