@@ -3,7 +3,7 @@
         Author:         Jose Luis Sanchez Martinez
         Twitter:        @Joseliyo_Jstnk
         date:           2022/11/18
-        Modified:       2022/12/05
+        Modified:       2023/01/03
         GitHub:         https://github.com/jstnk9/MISP
         Description:    This script can create MISP Galaxies from Sigma Rules. It can be done setting the path
                         where you have stored your sigma rules in the system.
@@ -12,7 +12,7 @@
 
 """
 
-import os, json, yaml, argparse, uuid
+import os, json, yaml, argparse, uuid, configparser, time
 
 unique_uuid = '9cf7cd2e-d5f1-48c4-9909-7896ba1c96b2'
 
@@ -22,8 +22,54 @@ def main(args):
     galaxyCluster = create_cluster(uuidGalaxy=unique_uuid)
     valuesData = create_cluster_value(args.inputPath, args.recursive, galaxyCluster)
     galaxyCluster["values"].extend(valuesData)
+    galaxyCluster = createRelations(galaxyCluster)
     create_cluster_json(galaxyCluster)
     check_duplicates(galaxyCluster)
+
+
+def createRelations(galaxyCluster):
+    """
+    :param galaxyCluster: Content of the cluster with all the values related to the Sigma Rules
+
+    :return galaxyCluster: Content of the cluster adding the relation between sigma rule and MITRE technique
+    """
+    for obj in galaxyCluster["values"]:
+        for attack in obj["meta"]["tags"]:
+            if attack.startswith("attack.t"):
+                with open(
+                    config["MISP"]["cluster_path"]
+                    + config["MISP"]["mitre_attack_cluster"],
+                    "r",
+                ) as mitreCluster:
+                    data = json.load(mitreCluster)
+                    for technique in data["values"]:
+                        if (
+                            technique["meta"]["external_id"]
+                            == attack.split(".", 1)[1].upper()
+                        ):
+                            if obj.get("related"):
+                                obj["related"].append(
+                                    {
+                                        "dest-uuid": "%s" % (technique["uuid"]),
+                                        "tags": [
+                                            "estimative-language:likelihood-probability=\"almost-certain\""
+                                        ],
+                                        "type": "related-to",
+                                    }
+                                )
+                            else:
+                                obj["related"] = []
+                                obj["related"].append(
+                                    {
+                                        "dest-uuid": "%s" % (technique["uuid"]),
+                                        "tags": [
+                                            "estimative-language:likelihood-probability=\"almost-certain\""
+                                        ],
+                                        "type": "related-to",
+                                    }
+                                )
+
+    return galaxyCluster
 
 
 def check_duplicates(galaxy):
@@ -81,6 +127,7 @@ def create_cluster(uuidGalaxy=unique_uuid):
 
     :return cluster: Dict with the basic information needed for the JSON file.
     """
+    version = int(time.strftime("%Y%m%d"))
     cluster = {
         "authors": ["@Joseliyo_Jstnk"],
         "category": "rules",
@@ -90,7 +137,7 @@ def create_cluster(uuidGalaxy=unique_uuid):
         "type": "sigma-rules",
         "uuid": uuidGalaxy,
         "values": [],
-        "version": 1,
+        "version": version
     }
 
     return cluster
@@ -197,6 +244,8 @@ def create_galaxy_json():
 
 
 if __name__ == '__main__':
+    config = configparser.ConfigParser()
+    config.read("config.ini")
     parser = argparse.ArgumentParser(
         description="This script can convert your sigma rules in MISP galaxies, generating both files needed for cluster and galaxies. If you need more information about how to import it, please, go to https://github.com/jstnk9/MISP/tree/main/misp-galaxy/sigma"
     )

@@ -29,7 +29,7 @@ for element in os.listdir('.'):
             for reference in temp['external_references']:
                 if 'url' in reference and reference['url'] not in value['meta']['refs']:
                     value['meta']['refs'].append(reference['url'])
-                if 'external_id' in reference and reference['external_id'] not in value['meta']['external_id]:
+                if 'external_id' in reference and reference['external_id'] not in value['meta']['external_id']:
                     value['meta']['external_id'].append(reference['external_id'])
             value['meta']['kill_chain'] = []
             for killchain in temp['kill_chain_phases']:
