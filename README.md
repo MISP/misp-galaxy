@@ -30,7 +30,7 @@ Category: *actor* - source: *https://apt.360.net/aptlist* - total: *42* elements
 
 [Android](https://www.misp-project.org/galaxy.html#_android) - Android malware galaxy based on multiple open sources.
 
-Category: *tool* - source: *Open Sources* - total: *431* elements
+Category: *tool* - source: *Open Sources* - total: *433* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_android)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/android.json)]
 
@@ -54,7 +54,7 @@ Category: *guidelines* - source: *Open Sources* - total: *31* elements
 
 [Backdoor](https://www.misp-project.org/galaxy.html#_backdoor) - A list of backdoor malware.
 
-Category: *tool* - source: *Open Sources* - total: *12* elements
+Category: *tool* - source: *Open Sources* - total: *13* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_backdoor)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/backdoor.json)]
 
@@ -62,7 +62,7 @@ Category: *tool* - source: *Open Sources* - total: *12* elements
 
 [Banker](https://www.misp-project.org/galaxy.html#_banker) - A list of banker malware.
 
-Category: *tool* - source: *Open Sources* - total: *52* elements
+Category: *tool* - source: *Open Sources* - total: *53* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_banker)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/banker.json)]
 
@@ -78,7 +78,7 @@ Category: *mobile* - source: *https://arxiv.org/pdf/2005.05110.pdf* - total: *47
 
 [Botnet](https://www.misp-project.org/galaxy.html#_botnet) - botnet galaxy
 
-Category: *tool* - source: *MISP Project* - total: *73* elements
+Category: *tool* - source: *MISP Project* - total: *75* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_botnet)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/botnet.json)]
 
@@ -126,7 +126,7 @@ Category: *country* - source: *MISP Project* - total: *252* elements
 
 [Cryptominers](https://www.misp-project.org/galaxy.html#_cryptominers) - A list of cryptominer and cryptojacker malware.
 
-Category: *Cryptominers* - source: *Open Source Intelligence* - total: *4* elements
+Category: *Cryptominers* - source: *Open Source Intelligence* - total: *5* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_cryptominers)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/cryptominers.json)]
 
@@ -146,11 +146,19 @@ Category: *tool* - source: *MISP Project* - total: *52* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_exploit-kit)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/exploit-kit.json)]
 
+## FIRST DNS Abuse Techniques Matrix
+
+[FIRST DNS Abuse Techniques Matrix](https://www.misp-project.org/galaxy.html#_first_dns_abuse_techniques_matrix) - The Domain Name System (DNS) is a critical part of the Internet, including mapping domain names to IP addresses. Malicious threat actors use domain names, their corresponding technical resources, and other parts of the DNS infrastructure, including its protocols, for their malicious cyber operations. CERTs are confronted with reported DNS abuse on a continuous basis, and rely heavily on DNS analysis and infrastructure to protect their constituencies. Understanding the international customary norms applicable for detecting and mitigating DNS abuse from the perspective of the global incident response community is critical for the open Internet’s stability, security and resiliency. See also https://www.first.org/global/sigs/dns/ for Tmore information.
+
+Category: *first-dns* - source: *https://www.first.org/global/sigs/dns/* - total: *21* elements
+
+[[HTML](https://www.misp-project.org/galaxy.html#_first_dns_abuse_techniques_matrix)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/first-dns.json)]
+
 ## Malpedia
 
 [Malpedia](https://www.misp-project.org/galaxy.html#_malpedia) - Malware galaxy cluster based on Malpedia.
 
-Category: *tool* - source: *Malpedia* - total: *2462* elements
+Category: *tool* - source: *Malpedia* - total: *2574* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_malpedia)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/malpedia.json)]
 
@@ -174,7 +182,7 @@ Category: *misinformation-pattern* - source: *https://github.com/misinfosecproje
 
 [Attack Pattern](https://www.misp-project.org/galaxy.html#_attack_pattern) - ATT&CK tactic
 
-Category: *attack-pattern* - source: *https://github.com/mitre/cti* - total: *1003* elements
+Category: *attack-pattern* - source: *https://github.com/mitre/cti* - total: *1086* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_attack_pattern)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-attack-pattern.json)]
 
@@ -278,7 +286,7 @@ Category: *attack-pattern* - source: *https://collaborate.mitre.org/attackics/in
 
 [Intrusion Set](https://www.misp-project.org/galaxy.html#_intrusion_set) - Name of ATT&CK Group
 
-Category: *actor* - source: *https://github.com/mitre/cti* - total: *138* elements
+Category: *actor* - source: *https://github.com/mitre/cti* - total: *148* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_intrusion_set)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-intrusion-set.json)]
 
@@ -286,7 +294,7 @@ Category: *actor* - source: *https://github.com/mitre/cti* - total: *138* elemen
 
 [Malware](https://www.misp-project.org/galaxy.html#_malware) - Name of ATT&CK software
 
-Category: *tool* - source: *https://github.com/mitre/cti* - total: *598* elements
+Category: *tool* - source: *https://github.com/mitre/cti* - total: *633* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_malware)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-malware.json)]
 
@@ -350,7 +358,7 @@ Category: *actor* - source: *https://github.com/mitre/cti* - total: *7* elements
 
 [Tool](https://www.misp-project.org/galaxy.html#_tool) - Name of ATT&CK software
 
-Category: *tool* - source: *https://github.com/mitre/cti* - total: *80* elements
+Category: *tool* - source: *https://github.com/mitre/cti* - total: *82* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_tool)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-tool.json)]
 
@@ -374,7 +382,7 @@ Category: *measure* - source: *MISP Project* - total: *20* elements
 
 [Ransomware](https://www.misp-project.org/galaxy.html#_ransomware) - Ransomware galaxy based on https://docs.google.com/spreadsheets/d/1TWS238xacAto-fLKh1n5uTsdijWdCEsGIM0Y0Hvmc5g/pubhtml and http://pastebin.com/raw/GHgpWjar
 
-Category: *tool* - source: *Various* - total: *1610* elements
+Category: *tool* - source: *Various* - total: *1624* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_ransomware)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/ransomware.json)]
 
@@ -382,7 +390,7 @@ Category: *tool* - source: *Various* - total: *1610* elements
 
 [RAT](https://www.misp-project.org/galaxy.html#_rat) - remote administration tool or remote access tool (RAT), also called sometimes remote access trojan, is a piece of software or programming that allows a remote "operator" to control a system as if they have physical access to that system.
 
-Category: *tool* - source: *MISP Project* - total: *264* elements
+Category: *tool* - source: *MISP Project* - total: *265* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_rat)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/rat.json)]
 
@@ -390,7 +398,7 @@ Category: *tool* - source: *MISP Project* - total: *264* elements
 
 [Regions UN M49](https://www.misp-project.org/galaxy.html#_regions_un_m49) - Regions based on UN M49.
 
-Category: *location* - source: *https://unstats.un.org/unsd/methodology/m49/overview/* - total: *31* elements
+Category: *location* - source: *https://unstats.un.org/unsd/methodology/m49/overview/* - total: *32* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_regions_un_m49)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/region.json)]
 
@@ -409,6 +417,14 @@ Category: *rsit* - source: *https://github.com/enisaeu/Reference-Security-Incide
 Category: *sector* - source: *CERT-EU* - total: *117* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_sector)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/sector.json)]
+
+## Sigma-Rules
+
+[Sigma-Rules](https://www.misp-project.org/galaxy.html#_sigma-rules) - MISP galaxy cluster based on Sigma Rules.
+
+Category: *rules* - source: *https://github.com/jstnk9/MISP/tree/main/misp-galaxy/sigma* - total: *2665* elements
+
+[[HTML](https://www.misp-project.org/galaxy.html#_sigma-rules)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/sigma-rules.json)]
 
 ## Dark Patterns
 
@@ -430,7 +446,7 @@ Category: *sod-matrix* - source: *https://github.com/cudeso/SoD-Matrix* - total:
 
 [Stealer](https://www.misp-project.org/galaxy.html#_stealer) - A list of malware stealer.
 
-Category: *tool* - source: *Open Sources* - total: *6* elements
+Category: *tool* - source: *Open Sources* - total: *11* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_stealer)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/stealer.json)]
 
@@ -470,7 +486,7 @@ Category: *tea-matrix* - source: ** - total: *7* elements
 
 [Threat Actor](https://www.misp-project.org/galaxy.html#_threat_actor) - Known or estimated adversary groups targeting organizations and employees. Adversary groups are regularly confused with their initial operation or campaign. threat-actor-classification meta can be used to clarify the understanding of the threat-actor if also considered as operation, campaign or activity group.
 
-Category: *actor* - source: *MISP Project* - total: *397* elements
+Category: *actor* - source: *MISP Project* - total: *408* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_threat_actor)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/threat-actor.json)]
 
@@ -478,9 +494,17 @@ Category: *actor* - source: *MISP Project* - total: *397* elements
 
 [Tool](https://www.misp-project.org/galaxy.html#_tool) - threat-actor-tools is an enumeration of tools used by adversaries. The list includes malware but also common software regularly used by the adversaries.
 
-Category: *tool* - source: *MISP Project* - total: *537* elements
+Category: *tool* - source: *MISP Project* - total: *545* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_tool)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/tool.json)]
+
+## UAVs/UCAVs
+
+[UAVs/UCAVs](https://www.misp-project.org/galaxy.html#_uavs/ucavs) - Unmanned Aerial Vehicles / Unmanned Combat Aerial Vehicles
+
+Category: *military equipment* - source: *Popular Mechanics* - total: *36* elements
+
+[[HTML](https://www.misp-project.org/galaxy.html#_uavs/ucavs)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/uavs.json)]
 
 # Online documentation 
 
