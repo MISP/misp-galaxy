@@ -1,0 +1,228 @@
+{
+  "authors": [
+    "FIRST.org",
+    "Andrey Meshkov (AdGuard)",
+    "Ángel González (INCIBE-CERT)",
+    "Angela Matlapeng (bwCSIRT)",
+    "Benedict Addis (Shadowserver)",
+    "Brett Carr (Nominet)",
+    "Carlos Alvarez (ICANN; founding member)",
+    "David Ruefenacht (Infoguard)",
+    "Gabriel Andrews (FBI)",
+    "John Todd (Quad9; current co-chair of DNS Abuse SIG)",
+    "Jonathan Matkowsky (RiskIQ / Microsoft; former co-chair)",
+    "Jonathan Spring (CISA; current co-chair of DNS Abuse SIG)",
+    "Mark Henderson (IRS)",
+    "Mark Svancarek (Microsoft)",
+    "Merike Kaeo (Double Shot Security)",
+    "Michael Hausding (SWITCH-CERT; former co-chair, current FIRST board member)",
+    "Peter Lowe (DNSFilter; current co-chair of DNS Abuse SIG)",
+    "Shoko Nakai (JPCERT/CC)",
+    "Swapneel Patnekar (Shreshta IT)",
+    "Trey Darley (FIRST board; founding member)"
+  ],
+  "category": "first-dns",
+  "description": "The Domain Name System (DNS) is a critical part of the Internet, including mapping domain names to IP addresses. Malicious threat actors use domain names, their corresponding technical resources, and other parts of the DNS infrastructure, including its protocols, for their malicious cyber operations. CERTs are confronted with reported DNS abuse on a continuous basis, and rely heavily on DNS analysis and infrastructure to protect their constituencies. Understanding the international customary norms applicable for detecting and mitigating DNS abuse from the perspective of the global incident response community is critical for the open Internet’s stability, security and resiliency. See also https://www.first.org/global/sigs/dns/ for more information.",
+  "name": "FIRST DNS Abuse Techniques Matrix",
+  "source": "https://www.first.org/global/sigs/dns/",
+  "type": "first-dns",
+  "uuid": "67d44607-ae1d-4b01-a419-c311e68fb28a",
+  "values": [
+    {
+      "description": "DGAs - Domain Generation Algorithm",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/techniques/T1568/002/"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "7bd9c723-2f78-4309-82c5-47cad406572b",
+          "type": "related-to"
+        }
+      ],
+      "uuid": "bbb63c10-548a-5ddc-8c6d-c5d8712df26d",
+      "value": "DGAs"
+    },
+    {
+      "description": "The wrongfully taking control of a domain name from the rightful name holder. Compromised domains can be used for different kinds of malicious activity like sending spam or phishing, for distributing malware or as botnet command and control.",
+      "meta": {
+        "refs": [
+          "https://www.icann.org/groups/ssac/documents/sac-007-en"
+        ]
+      },
+      "uuid": "1c46402d-ca07-5cd7-a49c-477a4e868d12",
+      "value": "Domain name compromise"
+    },
+    {
+      "description": "Lame delegations occur as a result of expired nameserver domains allowing attackers to take control of the domain resolution by re-registering this expired nameserver domain.",
+      "meta": {
+        "refs": [
+          "https://blog.apnic.net/2021/03/16/the-prevalence-persistence-perils-of-lame-nameservers/"
+        ]
+      },
+      "uuid": "8f013ccd-6697-566d-8b83-9cbfdc802342",
+      "value": "Lame delegations"
+    },
+    {
+      "description": "DNS cache poisoning - also known as DNS spoofing, is a type of cyber attack in which an attacker corrupts a DNS resolver's cache by injecting false DNS records, causing the resolver to records controlled by the attacker.",
+      "meta": {
+        "refs": [
+          "https://capec.mitre.org/data/definitions/142.html"
+        ]
+      },
+      "uuid": "3b236fe5-83c2-563b-8744-bf11e414a6ad",
+      "value": "DNS cache poisoning"
+    },
+    {
+      "description": "DNS rebinding - a type of attack where a malicious website directs a client to a local network address, allowing the attacker to bypass the same-origin policy and gain access to the victim's local resources.",
+      "meta": {
+        "refs": [
+          "https://capec.mitre.org/data/definitions/275.html"
+        ]
+      },
+      "uuid": "8c30074b-e718-5262-86fe-b7a6493cf731",
+      "value": "DNS rebinding"
+    },
+    {
+      "description": "Attacker gains administrative privileges on an open recursive DNS server, authoritative DNS server, organizational recursive DNS server, or ISP-operated recursive DNS server.",
+      "uuid": "094f218e-51fe-5f3b-a202-1cc9b016dedc",
+      "value": "DNS server compromise"
+    },
+    {
+      "description": "The attacker compromises the Operating System of a computer or a phone with malicious code that intercepts and responds to DNS queries with rogue or malicious responses.",
+      "uuid": "9bbd1e65-d11b-5e29-adf2-f0a997c51547",
+      "value": "Stub resolver hijacking"
+    },
+    {
+      "description": "Consumer Premise Equipment (CPE), such as home routers, often provide DNS recursion on the local network. If the CPE device is compromised, the attacker can change the recursive resolver behavior; for example, by changing responses.",
+      "uuid": "ec27edc4-7908-5100-9fc7-4159c283691d",
+      "value": "Local recursive resolver hijacking"
+    },
+    {
+      "description": "Attackers intercept communication between a user and a DNS server and provide different destination IP addresses pointing to malicious sites.",
+      "meta": {
+        "refs": [
+          "https://www.imperva.com/learn/application-security/dns-hijacking-redirection/"
+        ]
+      },
+      "uuid": "dea01e07-c348-56ef-b22f-312a64717431",
+      "value": "On-path DNS attack"
+    },
+    {
+      "description": "Multiple systems sending malicious traffic to a target at the same time.",
+      "uuid": "7cbb69c3-1cf1-5219-97e8-c908cdbedde6",
+      "value": "DoS against the DNS"
+    },
+    {
+      "description": "Adversaries may attempt to cause a denial of service by reflecting a high-volume of network traffic to a target. This type of Network DoS takes advantage of a third-party server intermediary that hosts and will respond to a given spoofed source IP address. This third-party server is commonly termed a reflector. An adversary accomplishes a reflection attack by sending packets to reflectors with the spoofed address of the victim. Two prominent protocols that have enabled Reflection Amplification Floods are DNS and NTP through the use of several others in the wild have been documented. These Reflection and Amplification Floods can be directed against components of the DNS, like authoritative nameservers, rendering them unresponsive.",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/techniques/T1498/002/"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "d74c4a7e-ffbf-432f-9365-7ebf1f787cab",
+          "type": "related-to"
+        }
+      ],
+      "uuid": "735b95e1-bd17-5375-a318-f5bf5ee014e6",
+      "value": "DNS as a vector for DoS"
+    },
+    {
+      "description": "Dynamic DNS resolution (as obfuscation technique) - Adversaries may dynamically establish connections to command and control infrastructure to evade common detections and remediations. This may be achieved by using malware that shares a common algorithm with the infrastructure the adversary uses to receive the malware's communications. These calculations can be used to dynamically adjust parameters such as the domain name IP address or port number the malware uses for command and control.",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/techniques/T1568/"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "7bd9c723-2f78-4309-82c5-47cad406572b",
+          "type": "related-to"
+        }
+      ],
+      "uuid": "3664fb70-5179-5004-828a-1d090b78fa7a",
+      "value": "Dynamic DNS resolution"
+    },
+    {
+      "description": "Dynamic DNS resolution: Fast flux (as obfuscation technique) - Adversaries may use Fast Flux DNS to hide a command and control channel behind an array of rapidly changing IP addresses linked to a single domain resolution. This technique uses a fully qualified domain name with multiple IP addresses assigned to it which are swapped with high frequency using a combination of round robin IP addressing and short Time-To-Live (TTL) for a DNS resource record.",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/techniques/T1568/001/"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "29ba5a15-3b7b-4732-b817-65ea8f6468e6",
+          "type": "related-to"
+        }
+      ],
+      "uuid": "5a99f82a-48c8-5f89-836f-78901e764677",
+      "value": "Dynamic DNS resolution: Fast flux"
+    },
+    {
+      "description": "Exfiltration via the DNS requires a delegated domain or, if the domain does not exist in the public DNS, the operation of a resolver preloaded with that domain's zone file information and configured to receive and respond to the queries sent by the compromised devices.",
+      "uuid": "9e98500e-4a22-578a-9839-69c169079a68",
+      "value": "Infiltration and exfiltration via the DNS"
+    },
+    {
+      "description": "For example, before attacking a victim, adversaries purchase or register domains from an ICANN-accredited registrar that can be used during targeting. See also CAPEC-630.",
+      "meta": {
+        "refs": [
+          "https://capec.mitre.org/data/definitions/630.html"
+        ]
+      },
+      "uuid": "a53e05a5-0931-5975-b16a-2434a0f2356a",
+      "value": "Malicious registration of (effective) second level domains"
+    },
+    {
+      "description": "Before attacking a victim, adversaries purchase or create domains from an entity other than a registrar or registry that provides subdomains under domains they own and control. S",
+      "meta": {
+        "refs": [
+          "https://en.wikipedia.org/wiki/Dynamic_DNS"
+        ]
+      },
+      "uuid": "ed6477e2-426f-5c55-a740-0b6ba4547b77",
+      "value": "Creation of malicious subdomains under dynamic DNS providers"
+    },
+    {
+      "description": " - Internet attack infrastructure is a broad category, and this covers any non-DNS server. Many compromised servers, such as web servers or mail servers, interact with the DNS or may be instrumental in conducting DNS abuse. For example, compromised mail servers are one technique that may be used to send phishing emails.",
+      "uuid": "e4115a11-6975-57f9-aa27-89351e18a402",
+      "value": "Compromise of a non-DNS server to conduct abuse"
+    },
+    {
+      "description": "In a context where a domain name is expected (such as the From header in mail or a URL in a web page or message body), supplying a domain name not controlled by the attacker and that is not controlled by or registered to a legitimate registrant.",
+      "uuid": "bc197790-2b89-56e7-b019-871bdc36323a",
+      "value": "Spoofing or otherwise using unregistered domain names"
+    },
+    {
+      "description": "In a context where a domain name is expected (such as the From header in mail or a URL in a web page or message body), supplying a domain name not controlled by the attacker and that is in fact controlled by or registered to a legitimate registrant.",
+      "uuid": "88d804bc-f3e0-5b33-9c07-d05dfb1806df",
+      "value": "Spoofing of a registered domain"
+    },
+    {
+      "description": "DNS tunneling - tunneling another protocol over DNS - The DNS protocol serves an administrative function in computer networking and thus may be very common in environments. DNS traffic may also be allowed even before network authentication is completed. DNS packets contain many fields and headers in which data can be concealed. Often known as DNS tunneling, adversaries may abuse DNS to communicate with systems under their control within a victim network while also mimicking normal expected traffic.",
+      "meta": {
+        "refs": [
+          "https://attack.mitre.org/techniques/T1071/004/"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "1996eef1-ced3-4d7f-bf94-33298cabbf72",
+          "type": "related-to"
+        }
+      ],
+      "uuid": "b1b60f03-a603-506f-870b-7ea4da0cbeaa",
+      "value": "DNS tunneling"
+    },
+    {
+      "description": "DNS beacons - C2 communication - Successive or periodic DNS queries to a command & control server, either to exfiltrate data or await further commands from the C2.",
+      "uuid": "23f785fa-902f-563a-959f-67d2053cb25a",
+      "value": "DNS beacons - C2 communication"
+    }
+  ],
+  "version": 2
+}

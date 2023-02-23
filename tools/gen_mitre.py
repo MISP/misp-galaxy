@@ -15,6 +15,8 @@ misp_dir = '../'
 
 domains = ['enterprise-attack', 'mobile-attack', 'pre-attack']
 types = ['attack-pattern', 'course-of-action', 'intrusion-set', 'malware', 'tool']
+mitre_sources = ['mitre-attack', 'mitre-ics-attack', 'mitre-pre-attack', 'mitre-mobile-attack']
+
 all_data = {}  # variable that will contain everything
 
 # read in the non-MITRE data
@@ -105,8 +107,13 @@ for domain in domains:
             for reference in item['external_references']:
                 if 'url' in reference and reference['url'] not in value['meta']['refs']:
                     value['meta']['refs'].append(reference['url'])
-                if 'external_id' in reference:
+                # Find Mitre external IDs from allowed sources
+                if 'external_id' in reference and reference.get("source_name", None) in mitre_sources:
                     value['meta']['external_id'] = reference['external_id']
+            if not value['meta'].get('external_id', None):
+                exit("Entry is missing an external ID, please update mitre_sources. Available references: {}".format(
+                    json.dumps(item['external_references'])
+                ))
 
             if 'kill_chain_phases' in item:   # many (but not all) attack-patterns have this
                 value['meta']['kill_chain'] = []

@@ -67,24 +67,17 @@ json_galaxy = {
     'uuid': "20de4abf-f000-48ec-a929-3cdc5c2f3c23",
     'version': 1
 }
+with open(os.path.join('..', 'clusters', '360net.json'), 'r') as f:
+    json_cluster = json.load(f)
 
-json_cluster = {
-    'authors': ["360.net"],
-    'category': 'actor',
-    'name': "360.net Threat Actors",
-    'description': "Known or estimated adversary groups as identified by 360.net.",
-    'source': 'https://apt.360.net/aptlist',
-    'type': "360net-threat-actor",
-    'uuid': "20de4abf-f000-48ec-a929-3cdc5c2f3c23",
-    'values': clusters,
-    'version': 1
-}
+json_cluster['values'] = clusters
+json_cluster['version'] += 1
 
 # save the Galaxy and Cluster file
 with open(os.path.join('..', 'galaxies', '360net.json'), 'w') as f:
-    json.dump(json_galaxy, f, indent=2)
+    json.dump(json_galaxy, f, indent=2, sort_keys=True, ensure_ascii=False)
 
 with open(os.path.join('..', 'clusters', '360net.json'), 'w') as f:
-    json.dump(json_cluster, f, indent=2)
+    json.dump(json_cluster, f, indent=2, sort_keys=True, ensure_ascii=False)
 
 print("All done, please don't forget to ./jq_all_the_things.sh, commit, and then ./validate_all.sh.")
