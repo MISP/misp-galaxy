@@ -8701,7 +8701,60 @@
       },
       "uuid": "55d5853c-393e-449b-ab2b-871e3fe45288",
       "value": "TgToxic"
+    },
+    {
+      "description": "According to Proofpoint, WasabiSeed is a simple VBS downloader which repeatedly uses Windows Installer to connect to the C2 server looking for MSI packages to download and run. Proofpoint showed that it downloads and executes first a second MSI file containing Screenshotter.",
+      "meta": {
+        "refs": [
+          "https://www.proofpoint.com/us/blog/threat-insight/screentime-sometimes-it-feels-like-somebodys-watching-me"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "54c03b3c-6f97-46ea-a93f-f07bfd5cdd36,",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "f3b7e302-152b-4c4e-85c2-82733b78d13f",
+      "value": "WasabiSeed"
+    },
+    {
+      "description": "According to Proofpoint, this is a utility with a single function of taking a JPG screenshot of the user's desktop and submitting it to a remote C2 via a POST to a hardcoded IP address. This is helpful to the threat actor during the reconnaissance and victim profiling stage.",
+      "meta": {
+        "refs": [
+          "https://www.proofpoint.com/us/blog/threat-insight/screentime-sometimes-it-feels-like-somebodys-watching-me"
+        ]
+      },
+      "uuid": "49ca568f-b6e4-49ff-963e-796f8207d185",
+      "value": "Screenshotter"
+    },
+    {
+      "description": "According to Proofpoint, this is a Lua-based malware likely used by a nation-state sponsored attacker used to target European government personnel involved in managing the logistics of refugees fleeing Ukraine.",
+      "meta": {
+        "refs": [
+          "https://www.proofpoint.com/us/blog/threat-insight/asylum-ambuscade-state-actor-uses-compromised-private-ukrainian-military-emails",
+          "https://blogs.blackberry.com/en/2022/03/threat-thursday-sunseed-malware"
+        ]
+      },
+      "uuid": "54c03b3c-6f97-46ea-a93f-f07bfd5cdd36",
+      "value": "SunSeed"
+    },
+    {
+      "description": "According to Proofpoint, the A(uto)H(ot)K(key) Bot is a collection of separate AutoHotKey scripts. The bot's main component is an infinite loop that polls and downloads additional AHK scripts. The bot can load a stealer like Rhadamanthys and can check if the machine is part of an Active Directory domain.",
+      "meta": {
+        "refs": [
+          "https://www.proofpoint.com/us/blog/threat-insight/screentime-sometimes-it-feels-like-somebodys-watching-me",
+          "https://research.checkpoint.com/2019/finteam-trojanized-teamviewer-against-government-targets/",
+          "https://www.trendmicro.com/en_us/research/19/d/potential-targeted-attack-uses-autohotkey-and-malicious-script-embedded-in-excel-file-to-avoid-detection.html",
+          "https://www.trendmicro.com/en_us/research/20/l/stealth-credential-stealer-targets-us-canadian-bank-customers.html"
+        ]
+      },
+      "uuid": "5c7fa5e1-352a-41c3-8e55-744e5fa88793",
+      "value": "AHK Bot"
     }
   ],
-  "version": 160
+  "version": 161
 }
