@@ -2339,7 +2339,8 @@
           "https://www.secureworks.com/research/threat-profiles/iron-hunter",
           "https://www.welivesecurity.com/2020/12/02/turla-crutch-keeping-back-door-open/",
           "https://blog.google/threat-analysis-group/continued-cyber-activity-in-eastern-europe-observed-by-tag",
-          "https://blog.google/threat-analysis-group/fog-of-war-how-the-ukraine-conflict-transformed-the-cyber-threat-landscape/"
+          "https://blog.google/threat-analysis-group/fog-of-war-how-the-ukraine-conflict-transformed-the-cyber-threat-landscape/",
+          "https://services.google.com/fh/files/blogs/google_fog_of_war_research_report.pdf"
         ],
         "synonyms": [
           "Snake",
@@ -2361,7 +2362,8 @@
           "G0010",
           "ITG12",
           "Blue Python",
-          "SUMMIT"
+          "SUMMIT",
+          "UNC4210"
         ]
       },
       "related": [
@@ -4216,12 +4218,14 @@
           "https://blog.google/threat-analysis-group/update-on-cyber-activity-in-eastern-europe",
           "https://blog.google/threat-analysis-group/continued-cyber-activity-in-eastern-europe-observed-by-tag",
           "https://www.microsoft.com/security/blog/2022/08/15/disrupting-seaborgiums-ongoing-phishing-operations",
-          "https://blog.sekoia.io/calisto-continues-its-credential-harvesting-campaign"
+          "https://blog.sekoia.io/calisto-continues-its-credential-harvesting-campaign",
+          "https://services.google.com/fh/files/blogs/google_fog_of_war_research_report.pdf"
         ],
         "synonyms": [
           "COLDRIVER",
           "SEABORGIUM",
-          "TA446"
+          "TA446",
+          "GOSSAMER BEAR"
         ]
       },
       "uuid": "fbd279ab-c095-48dc-ba48-4bece3dd5b0f",
@@ -6069,13 +6073,15 @@
           "https://www.secureworks.com/research/threat-profiles/bronze-president",
           "https://www.darkreading.com/threat-intelligence/chinese-apt-bronze-president-spy-campaign-russian-military",
           "https://www.pwc.co.uk/cyber-security/assets/cyber-threats-2019-retrospect.pdf",
-          "https://www.pwc.co.uk/cyber-security/pdf/pwc-cyber-threats-2020-a-year-in-retrospect.pdf"
+          "https://www.pwc.co.uk/cyber-security/pdf/pwc-cyber-threats-2020-a-year-in-retrospect.pdf",
+          "https://services.google.com/fh/files/blogs/google_fog_of_war_research_report.pdf"
         ],
         "synonyms": [
           "BRONZE PRESIDENT",
           "HoneyMyte",
           "Red Lich",
-          "TEMP.HEX"
+          "TEMP.HEX",
+          "BASIN"
         ]
       },
       "uuid": "78bf726c-a9e6-11e8-9e43-77249a2f7339",
@@ -8462,10 +8468,33 @@
     {
       "description": "GOLD BURLAP is a group of financially motivated criminals responsible for the development of the Pysa ransomware, also referred to as Mespinoza. Pysa is a cross-platform ransomware with known versions written in C++ and Python. As of December 2020, approximately 50 organizations had reportedly been targeted in Pysa ransomware attacks. The operators leverage 'name and shame' tactics to apply additional pressure to victims. As of January 2021, CTU researchers had found no Pysa advertisements on underground forums, which likely indicates that it is not operated as ransomware as a service (RaaS).",
       "meta": {
+        "cfr-target-category": [
+          "Healthcare"
+        ],
         "refs": [
-          "http://www.secureworks.com/research/threat-profiles/gold-burlap"
+          "http://www.secureworks.com/research/threat-profiles/gold-burlap",
+          "https://www.hhs.gov/sites/default/files/mespinoza-goldburlap-cyborgspider-analystnote-tlpwhite.pdf"
+        ],
+        "synonyms": [
+          "CYBORG SPIDER"
         ]
       },
+      "related": [
+        {
+          "dest-uuid": "68a7ca8e-2902-43f2-ad23-a77b4c48221d",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "588fb91d-59c6-4667-b299-94676d48b17b",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        }
+      ],
       "uuid": "d34ca487-1613-4ee5-8930-2ac8a60f945f",
       "value": "GOLD BURLAP"
     },
@@ -8866,11 +8895,13 @@
       "meta": {
         "refs": [
           "https://www.microsoft.com/security/blog/2022/03/22/dev-0537-criminal-actor-targeting-organizations-for-data-exfiltration-and-destruction/",
-          "https://blog.checkpoint.com/2022/03/07/lapsus-ransomware-gang-uses-stolen-source-code-to-disguise-malware-files-as-trustworthy-check-point-customers-remain-protected/"
+          "https://blog.checkpoint.com/2022/03/07/lapsus-ransomware-gang-uses-stolen-source-code-to-disguise-malware-files-as-trustworthy-check-point-customers-remain-protected/",
+          "https://www.crowdstrike.com/adversaries/slippy-spider/"
         ],
         "synonyms": [
           "LAPSUS$",
-          "DEV-0537"
+          "DEV-0537",
+          "SLIPPY SPIDER"
         ]
       },
       "uuid": "d9e5be22-1a04-4956-af6c-37af02330980",
@@ -9008,7 +9039,11 @@
         "country": "CN",
         "refs": [
           "https://blog.google/threat-analysis-group/tracking-cyber-activity-eastern-europe",
-          "https://blog.google/threat-analysis-group/update-on-cyber-activity-in-eastern-europe/"
+          "https://blog.google/threat-analysis-group/update-on-cyber-activity-in-eastern-europe/",
+          "https://services.google.com/fh/files/blogs/google_fog_of_war_research_report.pdf"
+        ],
+        "synonyms": [
+          "UNC3742"
         ]
       },
       "uuid": "6ee284d9-2742-4468-851c-a61366cc9a20",
@@ -10260,7 +10295,324 @@
       ],
       "uuid": "9687a6a9-0a66-4373-b546-60553857a442",
       "value": "TA2536"
+    },
+    {
+      "description": "DEV-0147 is a China-based cyber espionage actor was observed compromising diplomatic targets in South America, a notable expansion of the group's data exfiltration operations that traditionally targeted gov't agencies and think tanks in Asia and Europe. DEV-0147 is known to use tools like ShadowPad, a remote access trojan associated with other China-based actors, to maintain persistent access, and QuasarLoader, a webpack loader, to deploy additional malware. DEV-0147's attacks in South America included post-exploitation activity involving the abuse of on-premises identity infrastructure for recon and lateral movement, and the use of Cobalt Strike for command and control and data exfiltration.",
+      "meta": {
+        "cfr-suspected-victims": [
+          "South America",
+          "Asia",
+          "European Union"
+        ],
+        "country": "CN",
+        "references": [
+          "https://twitter.com/MsftSecIntel/status/1625181255754039318"
+        ]
+      },
+      "uuid": "85f20141-1c8e-49ac-b963-eaa1fb1f4018",
+      "value": "DEV-0147"
+    },
+    {
+      "description": "TA406 is engaging in malware distribution, phishing, intelligence collection, and cryptocurrency theft, resulting in a wide range of criminal activities.",
+      "meta": {
+        "cfr-suspected-victims": [
+          "China",
+          "France",
+          "Germany",
+          "India",
+          "Japan",
+          "North America",
+          "Russia",
+          "South Africa",
+          "South Korea",
+          "United Kingdom"
+        ],
+        "cfr-target-category": [
+          "Government",
+          "Journalists",
+          "NGOs"
+        ],
+        "country": "KR",
+        "references": [
+          "https://www.proofpoint.com/us/blog/threat-insight/triple-threat-north-korea-aligned-ta406-scams-spies-and-steals"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "bcaaad6f-0597-4b89-b69b-84a6be2b7bc3",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "part-of"
+        }
+      ],
+      "uuid": "89f005f9-22e9-4c50-9b48-e94c521266e5",
+      "value": "TA406"
+    },
+    {
+      "description": "Iranian state-sponsored cyber espionage group tasked with conducting information collection and surveillance operations against individuals and organizations of strategic interest to the Iranian government.",
+      "meta": {
+        "attribution-confidence": "50",
+        "cfr-suspected-victims": [
+          "Australia",
+          "Europe",
+          "Middle East",
+          "US"
+        ],
+        "cfr-target-category": [
+          "Education",
+          "Government",
+          "Healthcare",
+          "Legal",
+          "Manufacturing",
+          "Media",
+          "NGOs",
+          "Pharmaceuticals"
+        ],
+        "country": "IR",
+        "references": [
+          "https://www.mandiant.com/resources/blog/apt42-charms-cons-compromises"
+        ],
+        "synonyms": [
+          "UNC788"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "b8967b3c-3bc9-11e8-8701-8b1ead8c099e",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        },
+        {
+          "dest-uuid": "f98bac6b-12fd-4cad-be84-c84666932232",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "35f887ad-6709-4d0b-8e9c-6b3fa09c783f",
+      "value": "APT42"
+    },
+    {
+      "description": "TA453 has employed the use of compromised accounts, malware, and confrontational lures to go after targets with a range of backgrounds from medical researchers to realtors to travel agencies.",
+      "meta": {
+        "country": "IR",
+        "references": [
+          "https://www.proofpoint.com/us/blog/threat-insight/ta453-refuses-be-bound-expectations",
+          "https://www.proofpoint.com/us/blog/threat-insight/badblood-ta453-targets-us-and-israeli-medical-research-personnel-credential"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "35f887ad-6709-4d0b-8e9c-6b3fa09c783f",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        },
+        {
+          "dest-uuid": "b8967b3c-3bc9-11e8-8701-8b1ead8c099e",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        },
+        {
+          "dest-uuid": "f98bac6b-12fd-4cad-be84-c84666932232",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "c1d44f44-425e-48fd-b78b-84b988da8bc3",
+      "value": "TA453"
+    },
+    {
+      "description": "In Q2 2021, the PT Expert Security Center incident response team conducted an investigation in an energy company. The investigation revealed that the company's network had been compromised by an unknown group for the purpose of data theft. They gave the group the name ChamelGang (from the word \"chameleon\"), because the group disguised its malware and network infrastructure under legitimate services of Microsoft, TrendMicro, McAfee, IBM, and Google.",
+      "meta": {
+        "cfr-suspected-victims": [
+          "India",
+          "Japan",
+          "Nepal",
+          "Russia",
+          "Taiwan",
+          "US"
+        ],
+        "cfr-target-category": [
+          "Aviation",
+          "Energy"
+        ],
+        "references": [
+          "https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/new-apt-group-chamelgang/"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "b91e1d34-cabd-404f-84d2-51a4f9840ffb",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "1a1d3ea4-972e-4c48-8d85-08d9db8f1550",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "uses"
+        }
+      ],
+      "uuid": "eafdd27f-a3e2-4bb1-ae03-bf9ca5ff0355",
+      "value": "Chamelgang"
+    },
+    {
+      "description": "Karakurt actors have employed a variety of tactics, techniques, and procedures (TTPs), creating significant challenges for defense and mitigation. Karakurt victims have not reported encryption of compromised machines or files; rather, Karakurt actors have claimed to steal data and threatened to auction it off or release it to the public unless they receive payment of the demanded ransom. Known ransom demands have ranged from $25,000 to $13,000,000 in Bitcoin, with payment deadlines typically set to expire within a week of first contact with the victim.",
+      "meta": {
+        "cfr-suspected-victims": [
+          "Canada",
+          "Germany",
+          "United Kingdom",
+          "United States"
+        ],
+        "cfr-type-of-incident": "Extortion",
+        "references": [
+          "https://www.cisa.gov/news-events/cybersecurity-advisories/aa22-152a",
+          "https://www.advintel.io/post/enter-karakurt-data-extortion-arm-of-prolific-ransomware-group",
+          "https://www.accenture.com/us-en/blogs/cyber-defense/karakurt-threat-mitigation"
+        ],
+        "synonyms": [
+          "Karakurt Lair"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "1a1d3ea4-972e-4c48-8d85-08d9db8f1550",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "588fb91d-59c6-4667-b299-94676d48b17b",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "7d71d21e-68f0-4595-beee-7c353471463d",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "uses"
+        }
+      ],
+      "uuid": "035fbd5c-e4a1-4c7b-80fb-f5a89a361aed",
+      "value": "Karakurt"
+    },
+    {
+      "description": "Microsoft threat intelligence teams have been tracking multiple ransomware campaigns and have tied these attacks to DEV-0270, also known as Nemesis Kitten, a sub-group of Iranian actor PHOSPHORUS. Microsoft assesses with moderate confidence that DEV-0270 conducts malicious network operations, including widespread vulnerability scanning, on behalf of the government of Iran.",
+      "meta": {
+        "country": "IR",
+        "references": [
+          "https://www.microsoft.com/en-us/security/blog/2022/09/07/profiling-dev-0270-phosphorus-ransomware-operations/"
+        ],
+        "synonyms": [
+          "Nemesis Kitten"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "b8967b3c-3bc9-11e8-8701-8b1ead8c099e",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "part-of"
+        }
+      ],
+      "uuid": "7b90319a-9f7b-466d-9f90-7fcc270ed505",
+      "value": "DEV-0270"
+    },
+    {
+      "description": "PROPHET SPIDER is an eCrime actor, active since at least May 2017, that primarily gains access to victims by compromising vulnerable web servers, which commonly involves leveraging a variety of publicly disclosed vulnerabilities. The adversary has likely functioned as an access broker — handing off access to a third party to deploy ransomware — in multiple instances.",
+      "meta": {
+        "country": "",
+        "references": [
+          "https://www.crowdstrike.com/blog/prophet-spider-exploits-oracle-weblogic-to-facilitate-ransomware-activity/",
+          "https://www.crowdstrike.com/blog/prophet-spider-exploits-citrix-sharefile/"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "cd84bc53-8684-4921-89c7-2cf49512bf61",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "b5814e05-532a-4262-a8da-82fd0d7605ee",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "uses"
+        }
+      ],
+      "uuid": "eb0b100c-8a4e-4859-b6f8-eebd66c3d20c",
+      "value": "Prophet Spider"
+    },
+    {
+      "description": "According to Proofpoint, TA866 is a newly identified threat actor that distributes malware via email utilizing both commodity and custom tools. While most of the activity observed occurred since October 2022, Proofpoint researchers identified multiple activity clusters since 2019 that overlap with TA866 activity. Most of the activity recently observed by Proofpoint suggests recent campaigns are financially motivated, however assessment of historic related activities suggests a possible, additional espionage objective.",
+      "meta": {
+        "motive": "mainly financially motivated, additional espionage objective.",
+        "references": [
+          "https://www.proofpoint.com/us/blog/threat-insight/screentime-sometimes-it-feels-like-somebodys-watching-me"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "f3b7e302-152b-4c4e-85c2-82733b78d13f",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "49ca568f-b6e4-49ff-963e-796f8207d185",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "9eb2a417-2bb6-496c-816b-bccb3f3074f6",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "5c7fa5e1-352a-41c3-8e55-744e5fa88793",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "7b956ff0-9021-499c-82a4-24b958cb32d9",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "uses"
+        }
+      ],
+      "uuid": "a3c22f46-5135-4b39-a33f-92906ac12c31",
+      "value": "TA866"
     }
   ],
-  "version": 260
+  "version": 262
 }
