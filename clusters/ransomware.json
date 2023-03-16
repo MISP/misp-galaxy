@@ -13933,9 +13933,18 @@
       "description": "We have dubbed this new ransomware DoppelPaymer because it shares most of its code with the BitPaymer ransomware operated by INDRIK SPIDER. However, there are a number of differences between DoppelPaymer and BitPaymer, which may signify that one or more members of INDRIK SPIDER have split from the group and forked the source code of both Dridex and BitPaymer to start their own Big Game Hunting ransomware operation.",
       "meta": {
         "encryption": "AES",
+        "links": [
+          "http://hpoo4dosa3x4ognfxpqcrjwnsigvslm7kv6hvmhh2yqczaxy3j6qnwad.onion/"
+        ],
         "refs": [
           "https://www.crowdstrike.com/blog/doppelpaymer-ransomware-and-dridex-2/",
           "https://malpedia.caad.fkie.fraunhofer.de/details/win.doppelpaymer"
+        ],
+        "synonyms": [
+          "Pay OR Grief",
+          "BitPaymer",
+          "IEncrypt",
+          "FriedEx"
         ]
       },
       "uuid": "3d8989dc-9a10-4cae-ab24-ff0abed487f4",
@@ -14015,6 +14024,10 @@
           ".Clop",
           ".Ciop",
           ".Clop2"
+        ],
+        "links": [
+          "http://ekbgzchl6x2ias37.onion",
+          "http://santat7kpllt6iyvqbr7q4amdv6dzrh6paatvyrzl7ry3zm72zigf4ad.onion/"
         ],
         "refs": [
           "https://www.cert.ssi.gouv.fr/uploads/CERTFR-2020-CTI-001.pdf",
@@ -14387,6 +14400,10 @@
       "meta": {
         "colt-average": "11d",
         "colt-median": "7d",
+        "links": [
+          "http://blackmax7su6mbwtcyo3xwtpfxpm356jjqrs34y4crcytpw7mifuedyd.onion/",
+          "http://darksidc3iux462n6yunevoag52ntvwp6wulaz3zirkmh4cnz6hhj7id.onion"
+        ],
         "refs": [
           "https://www.digitalshadows.com/blog-and-research/darkside-the-new-ransomware-group-behind-highly-targeted-attacks/",
           "https://www.wired.com/story/ransomware-gone-corporate-darkside-where-will-it-end/",
@@ -21186,6 +21203,15 @@
     },
     {
       "description": "ransomware",
+      "related": [
+        {
+          "dest-uuid": "2019d150-6073-4e3f-b6a5-64b919a87ce9",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        }
+      ],
       "uuid": "2e4f26d6-f220-4877-be0e-45059b0f8eeb",
       "value": "Hydra"
     },
@@ -23677,6 +23703,10 @@
         "extensions": [
           ".conti"
         ],
+        "links": [
+          "http://continewsnv5otx5kaoje7krkto2qbu3gtqef22mnr7eaxw3y6ncz3ad.onion/",
+          "http://continews.click"
+        ],
         "ransomnotes": [
           "All of your files are currently encrypted by CONTI ransomware."
         ],
@@ -24791,6 +24821,10 @@
         "extensions": [
           ".basta"
         ],
+        "links": [
+          "https://stniiomyjliimcgkvdszvgen3eaaoz55hreqqx6o77yvmpwt7gklffqd.onion/",
+          "https://bastad5huzwkepdixedg2gekg7jk22ato24zyllp6lnjx7wdtyctgvyd.onion"
+        ],
         "ransomnotes": [
           "Your data are stolen and encrypted\nThe data will be published on TOR website if you do not pay the ransom\nYou can contact us and decrypt one file for free on this TOR site (you should download and install TOR browser first https://torproject.org) https://aazsbsgya565y1u2c6Lay6yfiebkcbtvvcytyolt33s77xypi7nypxyd.onion/ \n\nYour company id for log in: [REDACTED]"
         ],
@@ -24846,6 +24880,13 @@
     {
       "description": "BlackByte is recently discovered Ransomware with a .NET DLL core payload wrapped in JavaScript. It employs heavy obfuscation both in its JavaScript wrapper and .NET DLL core.\n\nOnce the JavaScript wrapper is executed, the malware will de-obfuscate the core payload and execute it in memory. The core .DLL is loaded and BlackByte will check the installed operating system language and terminate if an eastern European language is found.\n\nIt will proceed to check for the presence of several anti-virus and sandbox-related .DLLs, attempt to bypass AMSI, delete system shadow-copies in order to hinder system recovery, and modify several other system services (including Windows Firewall) in order to “prep” the system for encryption. Once the system is “ready” for encryption, it will download a symmetric key-file which will be used to encrypt files on the system. If this file is not found, the malware will terminate.\n\nUnlike most Ransomware today, BlackByte uses a single symmetric encryption key, and does not generate a unique encryption key for each victim system, meaning the same key can be used to decrypt all files encrypted by the malware.\n\nThis makes for substantially easier key-management for the actors behind BlackByte at the cost of a weaker encryption scheme and easier victim system recovery (as there is only a single online point with a single key to maintain).\n\nAs with most Ransomware today, BlackByte has worming capabilities and can infect additional endpoints on the same network.",
       "meta": {
+        "links": [
+          "http://6iaj3efye3q62xjgfxyegrufhewxew7yt4scxjd45tlfafyja6q4ctqd.onion",
+          "http://f5uzduboq4fa2xkjloprmctk7ve3dm46ff7aniis66cbekakvksxgeqd.onion",
+          "http://dlyo7r3n4qy5fzv4645nddjwarj7wjdd6wzckomcyc7akskkxp4glcad.onion",
+          "http://fl3xpz5bmgzxy4fmebhgsbycgnz24uosp3u4g33oiln627qq3gyw37ad.onion",
+          "http://jbeg2dct2zhku6c2vwnpxtm2psnjo2xnqvvpoiiwr5hxnc6wrp3uhnad.onion/"
+        ],
         "ransomnotes": [
           "BLACKBYTE \n\nAll your files have been encrypted, your confidential data has been stolen, in order to decrypt files and avoid leakage, you must follow our steps.\n\n1) Download and install TOR browser from this site: https://torproject.org/ \n\n2) Paste the URL in TOR browser and you will be redirected to our chat with all information that you need. \n\n3) If you won't contact with us within 4 days, your access to our chat will be removed and you wont be able to restore your system. \n\nYour URL: [LINK]\n\nYour Key: [KEY]",
           "BLACKBYTE\n\nAll your files have been encrypted, your confidential data has been stolen, \nin order to decrypt files and avoid leakage, you must follow our steps.\n\n\n\n1) Download and install TOR Browser from this site: https://torproject.org/\n\n2) Paste the URL in TOR Browser and you will be redirected to our chat with all information that you need.\n\n3) If you do not contact us within 3 days, your chat access key won't be valid.\nAlso, your company will be posted on our blog, darknet and hacker forums,\nwhich will attract unnecessary attention from Journalists and not only them.\nYou are given 3 days to think over the situation, and take reasonable actions on your part.\n\n\nWarning! Connurtcation with us occurs only through this link, or through our mail on our blog.\nWe also strongly DO NOT recommend using third-party tools to decrypt files,\nas this will simply kill them completely without the possibility of recovery.\nI repeat, in this case, no one can help you!\n\n\n\nYour URL: [LINK]\n\nYour Key to access the chat: [PASSW]\n\nFind our blog here (TOR Browser): http://dlyo7r3n4qy5fzv4645nddjwarj7wjdd6wzckomcyc7akskkxp4glcad.onion/"
@@ -25211,7 +25252,213 @@
       },
       "uuid": "18e67723-a0de-4adf-aa28-f3e0b0d6d8ab",
       "value": "Babyduck"
+    },
+    {
+      "description": "BianLian used subtle techniques to exploit, enumerate, and move laterally in victim networks to remain undetected and aggressively worked to counter Endpoint Detection & Response (EDR) protections during the encryption phase of their operations. The group has displayed signs of being new to the practical business aspects of ransomware and associated logistics. Generally they seemed to be experiencing the growing pains of a group of talented hackers new to this aspect of criminal extortion.\n\nInfrastructure associated with the BianLian group first appeared online in December 2021 and their toolset appears to have been under active development since then. Finally, we have observed the BianLian threat actor tripling their known command and control (C2) infrastructure in the month of August, suggesting a possible increase in the actor’s operational tempo.",
+      "meta": {
+        "links": [
+          "http://bianlianlbc5an4kgnay3opdemgcryg2kpfcbgczopmm3dnbz3uaunad.onion/"
+        ],
+        "ransomnotes": [
+          "Your network systems were attacked and encrypted. Contact us in order to restore your data. Don't make any changes in your file structure: touch no files, don't try to recover by yourself, that may lead to it's complete loss.\n\nTo contact us you have to download \"tox\" messenger: https://qtox.github.io/\n\nAdd user with the following ID to get your instructions: \nA4B3B0845DA242A64BF17E0DB4278EDF85855739667D3E2AE8B89D5439015F07E81D12D767FC\n\nAlternative way: swikipedia@onionmail.org\n\nYour ID: wU1VC460GC \n\nYou should know that we have been downloading data from your network for a significant time before the attack: financial, client, business, post, technical and personal files.\nIn 10 days — it will be posted at our site http://bianlianlbc5an4kgnay3opdemgcryg2kpfcbgczopmm3dnbz3uaunad.onion with links send to your clients, partners, competitors and news agencies, that will lead to a negative impact on your company: potential financial, business and reputational loses."
+        ],
+        "ransomnotes-files": [
+          "Look at this instruction.txt"
+        ],
+        "ransomnotes-refs": [
+          "https://redacted.com/blog/bianlian-ransomware-gang-gives-it-a-go/v8_screenshot.png",
+          "https://redacted.com/blog/bianlian-ransomware-gang-gives-it-a-go/v28_screenshot.png",
+          "https://blogs.blackberry.com/content/dam/blogs-blackberry-com/images/blogs/2022/10/bianlian-fig05.png"
+        ],
+        "refs": [
+          "https://blog.cyble.com/2022/08/18/bianlian-new-ransomware-variant-on-the-rise/",
+          "https://blogs.blackberry.com/en/2022/10/bianlian-ransomware-encrypts-files-in-the-blink-of-an-eye",
+          "https://cryptax.medium.com/android-bianlian-payload-61febabed00a",
+          "https://cryptax.medium.com/bianlian-c-c-domain-name-4f226a29e221",
+          "https://cryptax.medium.com/creating-a-safe-dummy-c-c-to-test-android-bots-ffa6e7a3dce5",
+          "https://cryptax.medium.com/multidex-trick-to-unpack-android-bianlian-ed52eb791e56",
+          "https://cryptax.medium.com/quick-look-into-a-new-sample-of-android-bianlian-bc5619efa726",
+          "https://redacted.com/blog/bianlian-ransomware-gang-gives-it-a-go/",
+          "https://rhisac.org/threat-intelligence/bianlian-ransomware-expanding-c2-infrastructure-and-operational-tempo/",
+          "https://twitter.com/malwrhunterteam/status/1558548947584548865",
+          "https://www.fortinet.com/blog/threat-research/new-wave-bianlian-malware",
+          "https://www.threatfabric.com/blogs/bianlian_from_rags_to_riches_the_malware_dropper_that_had_a_dream.html",
+          "https://www.virusbulletin.com/uploads/pdf/conference/vb2022/slides/VB2022-Hunting-the-Android-BianLian-botnet.pdf",
+          "https://www.virusbulletin.com/uploads/pdf/conference/vb2022/papers/VB2022-Hunting-the-Android-BianLian-botnet.pdf",
+          "https://www.youtube.com/watch?v=DPFcvSy4OZk"
+        ],
+        "synonyms": [
+          "Hydra"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "2e4f26d6-f220-4877-be0e-45059b0f8eeb",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "2019d150-6073-4e3f-b6a5-64b919a87ce9",
+      "value": "Bianlian"
+    },
+    {
+      "meta": {
+        "links": [
+          "http://544corkfh5hwhtn4.onion",
+          "http://blackshadow.cc"
+        ]
+      },
+      "uuid": "d9561bfc-08a0-4e9f-9189-d079bae4f9b7",
+      "value": "Blackshadow"
+    },
+    {
+      "meta": {
+        "links": [
+          "http://bl%40ckt0r:bl%40ckt0r@bl4cktorpms2gybrcyt52aakcxt6yn37byb65uama5cimhifcscnqkid.onion/0x00/data-breach.html"
+        ]
+      },
+      "uuid": "25bd46bf-b4f5-4c34-b451-90a7809fa03a",
+      "value": "Blacktor"
+    },
+    {
+      "meta": {
+        "links": [
+          "http://ccpyeuptrlatb2piua4ukhnhi7lrxgerrcrj4p2b5uhbzqm2xgdjaqid.onion"
+        ]
+      },
+      "uuid": "1f369229-a68d-4e08-aee4-f251111fa186",
+      "value": "Bluesky"
+    },
+    {
+      "meta": {
+        "links": [
+          "http://bonacifryrxr4siz6ptvokuihdzmjzpveruklxumflz5thmkgauty2qd.onion"
+        ]
+      },
+      "uuid": "ef47092c-d86e-4db5-b0bf-e7676e85873f",
+      "value": "Bonacigroup"
+    },
+    {
+      "meta": {
+        "links": [
+          "http://rwiajgajdr4kzlnrj5zwebbukpcbrjhupjmk6gufxv6tg7myx34iocad.onion/"
+        ]
+      },
+      "uuid": "eac9a5d5-509b-421a-a2d2-d91f7b27383a",
+      "value": "Cheers"
+    },
+    {
+      "meta": {
+        "links": [
+          "http://z6mikrtphid5fmn52nbcbg25tj57sowlm3oc25g563yvsfmygkcxqbyd.onion",
+          "http://teo7aj5mfgzxyeme.onion"
+        ]
+      },
+      "uuid": "4ecf9aa9-69c8-4347-a9c6-cb4a5481ac8c",
+      "value": "Cooming"
+    },
+    {
+      "meta": {
+        "links": [
+          "http://d57uremugxjrafyg.onion"
+        ],
+        "synonyms": [
+          "Cryakl"
+        ]
+      },
+      "uuid": "e7b3c590-78a7-4318-8607-69d53dc7dfbf",
+      "value": "Crylock"
+    },
+    {
+      "meta": {
+        "links": [
+          "http://cuba4mp6ximo2zlo.onion",
+          "http://cuba4ikm4jakjgmkezytyawtdgr2xymvy6nvzgw5cglswg3si76icnqd.onion/"
+        ],
+        "synonyms": [
+          "COLDDRAW"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "2a95f6b9-3ce7-40b9-bda8-0832e0d9d07f",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "82ed1669-89ba-4432-bc97-148a25c15fdf",
+      "value": "Cuba"
+    },
+    {
+      "meta": {
+        "links": [
+          "http://7ukmkdtyxdkdivtjad57klqnd3kdsmq6tp45rrsxqnu76zzv3jvitlqd.onion/"
+        ]
+      },
+      "uuid": "a1a445c4-708e-42f2-afdf-6d904328dafb",
+      "value": "Daixin"
+    },
+    {
+      "meta": {
+        "links": [
+          "http://powerj7kmpzkdhjg4szvcxxgktgk36ezpjxvtosylrpey7svpmrjyuyd.onion/"
+        ]
+      },
+      "uuid": "64d155a9-8e33-4c3f-8f58-0a483475c65d",
+      "value": "Dark Power"
+    },
+    {
+      "meta": {
+        "links": [
+          "https://wemo2ysyeq6km2nqhcrz63dkdhez3j25yw2nvn7xba2z4h7v7gyrfgid.onion/"
+        ]
+      },
+      "uuid": "5276ed20-c9fa-4028-9272-3f5c0e4bc9b6",
+      "value": "Darkangel"
+    },
+    {
+      "meta": {
+        "links": [
+          "http://iw6v2p3cruy7tqfup3yl4dgt4pfibfa3ai4zgnu5df2q3hus3lm7c7ad.onion",
+          "http://iw6v2p3cruy7tqfup3yl4dgt4pfibfa3ai4zgnu5df2q3hus3lm7c7ad.onion/support/"
+        ]
+      },
+      "uuid": "69e2ce57-67bb-4d53-a8c4-00b3501f45a3",
+      "value": "Darkbit01"
+    },
+    {
+      "meta": {
+        "links": [
+          "http://woqjumaahi662ka26jzxyx7fznbp4kg3bsjar4b52tqkxgm2pylcjlad.onion/",
+          "http://woqjumaahi662ka26jzxyx7fznbp4kg3bsjar4b52tqkxgm2pylcjlad.onion/atom.xml"
+        ]
+      },
+      "uuid": "80a634ae-519f-46e3-8e24-8eb733dfd22f",
+      "value": "Dataleak"
+    },
+    {
+      "meta": {
+        "links": [
+          "https://7ypnbv3snejqmgce4kbewwvym4cm5j6lkzf2hra2hyhtsvwjaxwipkyd.onion"
+        ]
+      },
+      "uuid": "6c4b88a4-64d6-4fa2-a552-99974794de16",
+      "value": "Diavol"
+    },
+    {
+      "meta": {
+        "links": [
+          "https://sbc2zv2qnz5vubwtx3aobfpkeao6l4igjegm3xx7tk5suqhjkp5jxtqd.onion/",
+          "https://doq32rjiuomfghm5a4lyf3lwwakt2774tkv4ppsos6ueo5mhx7662gid.onion"
+        ]
+      },
+      "uuid": "50fdc311-e6c5-4843-9b91-24d66afbdb8d",
+      "value": "Donutleaks"
     }
   ],
-  "version": 115
+  "version": 116
 }
