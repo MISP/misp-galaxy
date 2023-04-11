@@ -18,6 +18,7 @@ The objective is to have a comment set of clusters for organizations starting an
 to localized information (which is not shared) or additional information (that can be shared).
 
 # Available Galaxy - clusters
+
 ## 360.net Threat Actors
 
 [360.net Threat Actors](https://www.misp-project.org/galaxy.html#_360.net_threat_actors) - Known or estimated adversary groups as identified by 360.net.
@@ -148,7 +149,7 @@ Category: *tool* - source: *MISP Project* - total: *52* elements
 
 ## FIRST DNS Abuse Techniques Matrix
 
-[FIRST DNS Abuse Techniques Matrix](https://www.misp-project.org/galaxy.html#_first_dns_abuse_techniques_matrix) - The Domain Name System (DNS) is a critical part of the Internet, including mapping domain names to IP addresses. Malicious threat actors use domain names, their corresponding technical resources, and other parts of the DNS infrastructure, including its protocols, for their malicious cyber operations. CERTs are confronted with reported DNS abuse on a continuous basis, and rely heavily on DNS analysis and infrastructure to protect their constituencies. Understanding the international customary norms applicable for detecting and mitigating DNS abuse from the perspective of the global incident response community is critical for the open Internet’s stability, security and resiliency. See also https://www.first.org/global/sigs/dns/ for Tmore information.
+[FIRST DNS Abuse Techniques Matrix](https://www.misp-project.org/galaxy.html#_first_dns_abuse_techniques_matrix) - The Domain Name System (DNS) is a critical part of the Internet, including mapping domain names to IP addresses. Malicious threat actors use domain names, their corresponding technical resources, and other parts of the DNS infrastructure, including its protocols, for their malicious cyber operations. CERTs are confronted with reported DNS abuse on a continuous basis, and rely heavily on DNS analysis and infrastructure to protect their constituencies. Understanding the international customary norms applicable for detecting and mitigating DNS abuse from the perspective of the global incident response community is critical for the open Internet’s stability, security and resiliency. See also https://www.first.org/global/sigs/dns/ for more information.
 
 Category: *first-dns* - source: *https://www.first.org/global/sigs/dns/* - total: *21* elements
 
@@ -382,7 +383,7 @@ Category: *measure* - source: *MISP Project* - total: *20* elements
 
 [Ransomware](https://www.misp-project.org/galaxy.html#_ransomware) - Ransomware galaxy based on https://docs.google.com/spreadsheets/d/1TWS238xacAto-fLKh1n5uTsdijWdCEsGIM0Y0Hvmc5g/pubhtml and http://pastebin.com/raw/GHgpWjar
 
-Category: *tool* - source: *Various* - total: *1624* elements
+Category: *tool* - source: *Various* - total: *1649* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_ransomware)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/ransomware.json)]
 
@@ -422,7 +423,7 @@ Category: *sector* - source: *CERT-EU* - total: *117* elements
 
 [Sigma-Rules](https://www.misp-project.org/galaxy.html#_sigma-rules) - MISP galaxy cluster based on Sigma Rules.
 
-Category: *rules* - source: *https://github.com/jstnk9/MISP/tree/main/misp-galaxy/sigma* - total: *2665* elements
+Category: *rules* - source: *https://github.com/jstnk9/MISP/tree/main/misp-galaxy/sigma* - total: *2696* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_sigma-rules)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/sigma-rules.json)]
 
@@ -446,7 +447,7 @@ Category: *sod-matrix* - source: *https://github.com/cudeso/SoD-Matrix* - total:
 
 [Stealer](https://www.misp-project.org/galaxy.html#_stealer) - A list of malware stealer.
 
-Category: *tool* - source: *Open Sources* - total: *11* elements
+Category: *tool* - source: *Open Sources* - total: *12* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_stealer)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/stealer.json)]
 
@@ -470,7 +471,7 @@ Category: *target* - source: *Various* - total: *240* elements
 
 [TDS](https://www.misp-project.org/galaxy.html#_tds) - TDS is a list of Traffic Direction System used by adversaries
 
-Category: *tool* - source: *MISP Project* - total: *10* elements
+Category: *tool* - source: *MISP Project* - total: *11* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_tds)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/tds.json)]
 
@@ -486,7 +487,7 @@ Category: *tea-matrix* - source: ** - total: *7* elements
 
 [Threat Actor](https://www.misp-project.org/galaxy.html#_threat_actor) - Known or estimated adversary groups targeting organizations and employees. Adversary groups are regularly confused with their initial operation or campaign. threat-actor-classification meta can be used to clarify the understanding of the threat-actor if also considered as operation, campaign or activity group.
 
-Category: *actor* - source: *MISP Project* - total: *408* elements
+Category: *actor* - source: *MISP Project* - total: *418* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_threat_actor)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/threat-actor.json)]
 
@@ -494,7 +495,7 @@ Category: *actor* - source: *MISP Project* - total: *408* elements
 
 [Tool](https://www.misp-project.org/galaxy.html#_tool) - threat-actor-tools is an enumeration of tools used by adversaries. The list includes malware but also common software regularly used by the adversaries.
 
-Category: *tool* - source: *MISP Project* - total: *545* elements
+Category: *tool* - source: *MISP Project* - total: *549* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_tool)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/tool.json)]
 
