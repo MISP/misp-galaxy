@@ -3878,6 +3878,9 @@
         "extensions": [
           ".karma"
         ],
+        "links": [
+          "http://3nvzqyo6l4wkrzumzu5aod7zbosq4ipgf7ifgj3hsvbcr5vcasordvqd.onion"
+        ],
         "payment-method": "Bitcoin",
         "price": "0.5",
         "ransomnotes-filenames": [
@@ -3891,8 +3894,7 @@
           "https://id-ransomware.blogspot.co.il/2016/11/karma-ransomware.html",
           "https://www.bleepingcomputer.com/news/security/researcher-finds-the-karma-ransomware-being-distributed-via-pay-per-install-network/",
           "https://www.bleepingcomputer.com/news/security/the-week-in-ransomware-november-18th-2016-crysis-cryptoluck-chip-and-more/"
-        ],
-        "links": ["http://3nvzqyo6l4wkrzumzu5aod7zbosq4ipgf7ifgj3hsvbcr5vcasordvqd.onion"]
+        ]
       },
       "uuid": "51596eaa-6df7-4aa3-8df4-cec3aeffb1b5",
       "value": "Karma Ransomware"
@@ -11476,6 +11478,9 @@
     {
       "description": "The ransomware does not use a customized desktop wallpaper to signal its presence, and the only way to discover that SynAck has infected your PC is by the ransom notes dropped on the user's desktop, named in the format: RESTORE_INFO-[id].txt. For example: RESTORE_INFO-4ABFA0EF.txt\n In addition, SynAck also appends its own extension at the end of all files it encrypted. This file extensions format is ten random alpha characters for each file. For example: test.jpg.XbMiJQiuoh. Experts believe the group behind SynAck uses RDP brute-force attacks to access remote computers and manually download and install the ransomware.",
       "meta": {
+        "links": [
+          "http://xqkz2rmrqkeqf6sjbrb47jfwnqxcd4o2zvaxxzrpbh2piknms37rw2ad.onion/"
+        ],
         "payment-method": "Bitcoin",
         "price": "2 100 $",
         "ransomnotes-filenames": [
@@ -11488,8 +11493,7 @@
         ],
         "synonyms": [
           "Syn Ack"
-        ],
-        "links": ["http://xqkz2rmrqkeqf6sjbrb47jfwnqxcd4o2zvaxxzrpbh2piknms37rw2ad.onion/"]
+        ]
       },
       "related": [
         {
@@ -13832,14 +13836,18 @@
     {
       "description": "Attackers are actively exploiting a recently disclosed vulnerability in Oracle WebLogic to install a new variant of ransomware called \"Sodinokibi.\" Sodinokibi attempts to encrypt data in a user's directory and delete shadow copy backups to make data recovery more difficult. Oracle first patched the issue on April 26, outside of their normal patch cycle, and assigned it CVE-2019-2725. This vulnerability is easy for attackers to exploit, as anyone with HTTP access to the WebLogic server could carry out an attack. Because of this, the bug has a CVSS score of 9.8/10. Attackers have been making use of this exploit in the wild since at least April 17. Cisco's Incident Response (IR) team, along with Cisco Talos, are actively investigating these attacks and Sodinokibi.",
       "meta": {
+        "links": [
+          "http://dnpscnbaix6nkwvystl3yxglz7nteicqrou3t75tpcc5532cztc46qyd.onion/",
+          "http://aplebzu47wgazapdqks6vrcv6zcnjppkbxbr6wketf56nf6aq2nmyoyd.onion/",
+          "http://blogxxu75w63ujqarv476otld7cyjkq4yoswzt4ijadkjwvg3vrvd5yd.onion/Blog"
+        ],
         "refs": [
           "https://blog.talosintelligence.com/2019/04/sodinokibi-ransomware-exploits-weblogic.html"
         ],
         "synonyms": [
           "REvil",
           "Revil"
-        ],
-        "links": ["http://dnpscnbaix6nkwvystl3yxglz7nteicqrou3t75tpcc5532cztc46qyd.onion/","http://aplebzu47wgazapdqks6vrcv6zcnjppkbxbr6wketf56nf6aq2nmyoyd.onion/","http://blogxxu75w63ujqarv476otld7cyjkq4yoswzt4ijadkjwvg3vrvd5yd.onion/Blog"]
+        ]
       },
       "uuid": "24bd9a4b-2b66-428b-8e1c-6b280b056c00",
       "value": "Sodinokibi"
@@ -13873,15 +13881,15 @@
     {
       "description": "A new ransomware family dubbed “Nemty” for the extension it adds to encrypted files has recently surfaced in the wild. According to a report from Bleeping Computer, New York-based reverse engineer Vitali Kremez posits that Nemty is possibly delivered through exposed remote desktop connections.",
       "meta": {
+        "links": [
+          "http://zjoxyw5mkacojk5ptn2iprkivg5clow72mjkyk5ttubzxprjjnwapkad.onion"
+        ],
         "payment-method": "Bitcoin",
         "price": "1000 $",
         "refs": [
           "https://www.trendmicro.com/vinfo/us/security/news/cyber-attacks/nemty-ransomware-possibly-spreads-through-exposed-remote-desktop-connections"
-        ],
-        "links": ["http://zjoxyw5mkacojk5ptn2iprkivg5clow72mjkyk5ttubzxprjjnwapkad.onion"]
+        ]
       },
-      "uuid": "5fb75933-1ed5-4512-a062-d39865eedab0",
-      "value": "Nemty",
       "related": [
         {
           "dest-uuid": "d12f369c-f776-468a-8abf-8000b1b30642",
@@ -13890,6 +13898,9 @@
           ],
           "type": "related-to"
         }
+      ],
+      "uuid": "5fb75933-1ed5-4512-a062-d39865eedab0",
+      "value": "Nemty"
     },
     {
       "description": "Buran is a new version of the Vega ransomware strain (a.k.a. Jamper, Ghost, Buhtrap) that attacked accountants from February through April 2019. The new Buran ransomware first was discovered by nao_sec in June 2019, delivered by the RIG Exploit Kit, as reported by BleepingComputer.",
@@ -13977,12 +13988,14 @@
       "description": "Maze Ransomware encrypts files and makes them inaccessible while adding a custom extension containing part of the ID of the victim. The ransom note is placed inside a text file and an htm file. There are a few different extensions appended to files which are randomly generated.",
       "meta": {
         "encryption": "ChaCha20 and RSA",
+        "links": [
+          "http://xfr3txoorcyy7tikjgj5dk3rvo3vsrpyaxnclyohkbfp3h277ap4tiad.onion"
+        ],
         "refs": [
           "https://malpedia.caad.fkie.fraunhofer.de/details/win.maze",
           "https://www.bleepingcomputer.com/news/security/maze-ransomware-now-delivered-by-spelevo-exploit-kit/",
           "https://www.proofpoint.com/us/threat-insight/post/ta2101-plays-government-imposter-distribute-malware-german-italian-and-us"
-        ],
-        "links": ["http://xfr3txoorcyy7tikjgj5dk3rvo3vsrpyaxnclyohkbfp3h277ap4tiad.onion"]
+        ]
       },
       "related": [
         {
@@ -14144,13 +14157,15 @@
     {
       "description": "Detected in April 2019. Known for paralyzing the cities of Baltimore and Greenville. Probably also exfiltrate data",
       "meta": {
+        "links": [
+          "https://robinhoodleaks.tumblr.com"
+        ],
         "refs": [
           "https://www.cert.ssi.gouv.fr/uploads/CERTFR-2020-CTI-001.pdf"
         ],
         "synonyms": [
           "HelpYemen"
-        ],
-        "links": ["https://robinhoodleaks.tumblr.com"]
+        ]
       },
       "uuid": "000fb0bf-8be3-4ff1-8bbd-cc0513bcdd89",
       "value": "RobinHood"
@@ -14226,6 +14241,9 @@
           ".locked",
           ".pysa"
         ],
+        "links": [
+          "http://pysa2bitc5ldeyfak4seeruqymqs4sj5wt5qkcq7aoyg4h2acqieywad.onion/partners.html"
+        ],
         "ransomnotes-filenames": [
           "RECOVER_YOUR_DATA.txt"
         ],
@@ -14237,8 +14255,7 @@
         "synonyms": [
           "Pyza",
           "Pysa"
-        ],
-        "links": ["http://pysa2bitc5ldeyfak4seeruqymqs4sj5wt5qkcq7aoyg4h2acqieywad.onion/partners.html"]
+        ]
       },
       "uuid": "deed3c10-93b6-41b9-b150-f4dd1b665d87",
       "value": "Mespinoza"
@@ -14285,6 +14302,9 @@
         "extensions": [
           ".encrypt"
         ],
+        "links": [
+          "http://veqlxhq7ub5qze3qy56zx2cig2e6tzsgxdspkubwbayqije6oatma6id.onion"
+        ],
         "ransomnotes": [
           "All your data has been locked(crypted).\n​How to unclock(decrypt) instruction located in this TOR website:\nhttp://sg3dwqfpnr4sl5hh.onion/order/[Bitcoin address]\nUse TOR browser for access .onion websites.\nhttps://duckduckgo.com/html?q=tor+browser+how+to\n\nDo NOT remove this file and NOT remove last line in this file!\n[base64 encoded encrypted data]"
         ],
@@ -14294,9 +14314,6 @@
         "refs": [
           "https://www.bleepingcomputer.com/news/security/ongoing-ech0raix-ransomware-campaign-targets-qnap-nas-devices/",
           "https://www.anomali.com/blog/the-ech0raix-ransomware"
-        ],
-        "links": [
-          "http://veqlxhq7ub5qze3qy56zx2cig2e6tzsgxdspkubwbayqije6oatma6id.onion"
         ]
       },
       "uuid": "f3ded787-783e-4c6b-909a-8da01254380c",
@@ -14341,6 +14358,10 @@
     {
       "description": "SunCrypt ransomware was discovered in October 2019 and in August 2020 it was added to Maze ransomware’s cartel. It also follows some of Maze’s tactics, techniques, and procedures. SunCrypt is launched and installed using an obfuscated PowerShell script. Infected email attachments (macros), torrent websites, malicious ads act as carriers for this ransomware.",
       "meta": {
+        "links": [
+          "http://x2miyuiwpib2imjr5ykyjngdu7v6vprkkhjltrk4qafymtawey4qzwid.onion/",
+          "http://nbzzb6sa6xuura2z.onion"
+        ],
         "ransomnotes-filenames": [
           "YOUR_FILES_ARE_ENCRYPTED.HTML"
         ],
@@ -14355,8 +14376,7 @@
         "synonyms": [
           "Sun",
           "Suncrypt"
-        ],
-        "links": ["http://x2miyuiwpib2imjr5ykyjngdu7v6vprkkhjltrk4qafymtawey4qzwid.onion/","http://nbzzb6sa6xuura2z.onion"]
+        ]
       },
       "uuid": "4fa25527-99f6-42ee-aaf2-7ca395e5fabc",
       "value": "SunCrypt"
@@ -14367,6 +14387,9 @@
         "extensions": [
           ".abcd",
           ".LockBit"
+        ],
+        "links": [
+          "http://lockbitkodidilol.onion"
         ],
         "ransomnotes-filenames": [
           "Restore-My-Files.txt"
@@ -14380,11 +14403,8 @@
         ],
         "synonyms": [
           "ABCD ransomware"
-        ],
-        "links": ["http://lockbitkodidilol.onion"]
+        ]
       },
-      "uuid": "8eda8bf1-db5a-412d-8511-45e2f7621d51",
-      "value": "LockBit",
       "related": [
         {
           "dest-uuid": "c09f73fd-c3c3-42b1-b355-b03ca4941110",
@@ -14393,6 +14413,9 @@
           ],
           "type": "similar"
         }
+      ],
+      "uuid": "8eda8bf1-db5a-412d-8511-45e2f7621d51",
+      "value": "LockBit"
     },
     {
       "description": "WastedLocker primarily targets corporate networks. Upon initial compromise, often using a fake browser update containing SocGholish, the actor then takes advantage of dual-use and LoLBin tools in an attempt to evade detection.\n Key observations include lateral movement and privilege escalation.  The WastedLocker ransomware has been tied back to EvilCorp.",
@@ -14455,6 +14478,9 @@
           ".dbe",
           ".0s"
         ],
+        "links": [
+          "http://rnsm777cdsjrsdlbs4v5qoeppu3px6sb2igmh53jzrx7ipcrbjz5b2ad.onion/"
+        ],
         "ransomnotes": [
           "Greetings, Texas Department of Transportation!\nRead this message CAREFULLY and contact someone from IT department..\nYour files are securely ENCRYPTED.\nNo third party decryption software EXISTS.\nMODIFICATION or RENAMING encrypted files may cause decryption failure.\nYou can send us an encrypted file (not greater than 400KB) and we will decrypt it FOR FREE, so you have no doubts in possibility to restore all Files\nFrom all aFFected systems ANY TIME.\nEncrypted File SHOULD NOT contain sensitive inFormation (technical, backups, databases, large documents).\nThe rest oF data will be available aFter the PAYMENT.\ninfrastructure rebuild will cost you MUCH more.\nContact us ONLY if you officially represent the whole affected network.\nThe ONLY attachments we accept are non archived encrypted files For test decryption.\nSpeak ENGLISH when contacting us.\nMail us: ***@protonmail.com\nWe kindly ask you not to use GMAIL, YAHOO or LIVE to contact us.\nThe PRICE depends on how quickly you do it. "
         ],
@@ -14481,9 +14507,6 @@
           "Defray777",
           "Defray-777",
           "Defray 2018"
-        ],
-        "links": [
-          "http://rnsm777cdsjrsdlbs4v5qoeppu3px6sb2igmh53jzrx7ipcrbjz5b2ad.onion/"
         ]
       },
       "uuid": "dff71334-c173-45b6-8647-af66be0605d7",
@@ -14518,6 +14541,11 @@
     {
       "description": "Ragnar Locker is a ransomware identified in December 2019 that targetscorporate networks inBig Game Huntingtargeted attacks. This reportpresents recent elements regarding this ransomware.",
       "meta": {
+        "links": [
+          "http://rgleak7op734elep.onion",
+          "http://rgleaktxuey67yrgspmhvtnrqtgogur35lwdrup4d3igtbm3pupc4lyd.onion/",
+          "http://p6o7m73ujalhgkiv.onion"
+        ],
         "refs": [
           "https://www.bleepingcomputer.com/news/security/ragnar-locker-ransomware-targets-msp-enterprise-support-tools/",
           "https://news.sophos.com/en-us/2020/05/21/ragnar-locker-ransomware-deploys-virtual-machine-to-dodge-security/",
@@ -14525,9 +14553,6 @@
         ],
         "synonyms": [
           "RagnarLocker"
-        ],
-        "links": [
-          "http://rgleak7op734elep.onion","http://rgleaktxuey67yrgspmhvtnrqtgogur35lwdrup4d3igtbm3pupc4lyd.onion/","http://p6o7m73ujalhgkiv.onion"
         ]
       },
       "related": [
@@ -21152,7 +21177,9 @@
       "description": "ransomware",
       "meta": {
         "date": "December 2020",
-        "links": ["http://ixltdyumdlthrtgx.onion"]
+        "links": [
+          "http://ixltdyumdlthrtgx.onion"
+        ]
       },
       "related": [
         {
@@ -21761,6 +21788,11 @@
           ".marlock01",
           ".ReadInstructions"
         ],
+        "links": [
+          "https://qd7pcafncosqfqu3ha6fcx4h6sr7tzwagzpcdcnytiw3b6varaeqv5yd.onion",
+          "http://qd7pcafncosqfqu3ha6fcx4h6sr7tzwagzpcdcnytiw3b6varaeqv5yd.onion/",
+          "http://medusaxko7jxtrojdkxo66j7ck4q5tgktf7uqsqyfry4ebnxlcbkccyd.onion"
+        ],
         "ransomnotes-filenames": [
           "how_to_ recover_data.html",
           "how_to_recover_data.html.marlock01",
@@ -21777,8 +21809,7 @@
         "refs": [
           "https://www.cisa.gov/uscert/ncas/alerts/aa22-181a",
           "https://www.cisa.gov/uscert/sites/default/files/publications/AA22-181A_stopransomware_medusalocker.pdf"
-        ],
-        "links": ["https://qd7pcafncosqfqu3ha6fcx4h6sr7tzwagzpcdcnytiw3b6varaeqv5yd.onion","http://qd7pcafncosqfqu3ha6fcx4h6sr7tzwagzpcdcnytiw3b6varaeqv5yd.onion/","http://medusaxko7jxtrojdkxo66j7ck4q5tgktf7uqsqyfry4ebnxlcbkccyd.onion"]
+        ]
       },
       "uuid": "627d603a-906f-4fbf-b922-f03eea4578fe",
       "value": "MedusaLocker"
@@ -21920,10 +21951,10 @@
     },
     {
       "description": "According to Vitali Kremez and Michael Gillespie, this ransomware shares much code with Nemty 2.5. A difference is removal of the RaaS component, which was switched to email communications for payments. Uses AES-128, which is then protected RSA2048.",
-      "uuid": "d12f369c-f776-468a-8abf-8000b1b30642",
-      "value": "Nefilim",
       "meta": {
-        "links": ["http://hxt254aygrsziejn.onion"]
+        "links": [
+          "http://hxt254aygrsziejn.onion"
+        ]
       },
       "related": [
         {
@@ -21933,6 +21964,9 @@
           ],
           "type": "related-to"
         }
+      ],
+      "uuid": "d12f369c-f776-468a-8abf-8000b1b30642",
+      "value": "Nefilim"
     },
     {
       "description": "ransomware",
@@ -22226,6 +22260,11 @@
     },
     {
       "description": "PwndLocker is a ransomware that was observed in late 2019 and is reported to have been used to target businesses and local governments/cities. According to one source, ransom amounts demanded as part of PwndLocker activity range from $175k USD to $650k USD depending on the size of the network. PwndLocker attempts to disable a variety of Windows services so that their data can be encrypted. Various processes will also be targeted, such as web browsers and software related to security, backups, and databases. Shadow copies are cleared by the ransomware, and encryption of files occurs once the system has been prepared in this way. Executable files and those that are likely to be important for the system to continue to function appear to be skipped by the ransomware, and a large number of folders mostly related to Microsoft Windows system files are also ignored. As of March 2020, encrypted files have been observed with the added extensions of .key and .pwnd. Ransom notes are dropped in folders where encrypted files are found and also on the user's desktop.",
+      "meta": {
+        "links": [
+          "http://msaoyrayohnp32tcgwcanhjouetb5k54aekgnwg7dcvtgtecpumrxpqd.onion"
+        ]
+      },
       "related": [
         {
           "dest-uuid": "421a3805-7741-4315-82c2-6c9aa30d0953",
@@ -22236,10 +22275,7 @@
         }
       ],
       "uuid": "c4417bfb-717f-48d9-bd56-bc9e85d07c19",
-      "value": "ProLock",
-      "meta": {
-        "links": ["http://msaoyrayohnp32tcgwcanhjouetb5k54aekgnwg7dcvtgtecpumrxpqd.onion"]
-      }
+      "value": "ProLock"
     },
     {
       "description": "ransomware",
@@ -22783,13 +22819,14 @@
     },
     {
       "description": "ransomware",
-      "uuid": "1a58eeac-26dc-40e6-8182-22cd461ba736",
-      "value": "Snatch",
       "meta": {
         "links": [
-          "http://hl66646wtlp2naoqnhattngigjp5palgqmbwixepcjyq5i534acgqyad.onion","https://snatch.press/"
+          "http://hl66646wtlp2naoqnhattngigjp5palgqmbwixepcjyq5i534acgqyad.onion",
+          "https://snatch.press/"
         ]
-      }
+      },
+      "uuid": "1a58eeac-26dc-40e6-8182-22cd461ba736",
+      "value": "Snatch"
     },
     {
       "description": "ransomware",
@@ -23638,13 +23675,13 @@
     },
     {
       "description": "ransomware",
-      "uuid": "b8b0933a-896a-45d1-8284-ebc55dff1f98",
-      "value": "Exorcist",
       "meta": {
         "links": [
-          "http://7iulpt5i6whht6zo2r52f7vptxtjxs3vfcdxxazllikrtqpupn4epnqd.onion",
+          "http://7iulpt5i6whht6zo2r52f7vptxtjxs3vfcdxxazllikrtqpupn4epnqd.onion"
         ]
-      }
+      },
+      "uuid": "b8b0933a-896a-45d1-8284-ebc55dff1f98",
+      "value": "Exorcist"
     },
     {
       "description": "ransomware",
@@ -23956,7 +23993,9 @@
       "description": "ransomware",
       "meta": {
         "date": "November 2020",
-        "links": ["http://pay2key2zkg7arp3kv3cuugdaqwuesifnbofun4j6yjdw5ry7zw2asid.onion/"]
+        "links": [
+          "http://pay2key2zkg7arp3kv3cuugdaqwuesifnbofun4j6yjdw5ry7zw2asid.onion/"
+        ]
       },
       "uuid": "678bc24d-a5c3-4ddd-9292-40958afa3492",
       "value": "Pay2Key"
@@ -24029,10 +24068,12 @@
       "description": "ransomware",
       "meta": {
         "date": "November 2020",
+        "links": [
+          "http://3r6n77mpe737w4sbxxxrpc5phbluv6xhtdl5ujpnlvmck5tc7blq2rqd.onion"
+        ],
         "synonyms": [
           "FiveHands"
-        ],
-        "links":["http://3r6n77mpe737w4sbxxxrpc5phbluv6xhtdl5ujpnlvmck5tc7blq2rqd.onion"]
+        ]
       },
       "uuid": "022c995a-f1ba-498f-b67e-92ef01fd06a3",
       "value": "HelloKitty"
@@ -24493,12 +24534,13 @@
           ".ragnarok",
           ".ragnarok_cry"
         ],
+        "links": [
+          "http://wobpitin77vdsdiswr43duntv6eqw4rvphedutpaxycjdie6gg3binad.onion",
+          "http://sushlnty2j7qdzy64qnvyb6ajkwg7resd3p6agc2widnawodtcedgjid.onion/"
+        ],
         "refs": [
           "https://malpedia.caad.fkie.fraunhofer.de/details/win.ragnaro",
           "https://borncity.com/win/2021/03/27/tu-darmstadt-opfer-der-ragnarok-ransomware/"
-        ],
-        "links": [
-          "http://wobpitin77vdsdiswr43duntv6eqw4rvphedutpaxycjdie6gg3binad.onion","http://sushlnty2j7qdzy64qnvyb6ajkwg7resd3p6agc2widnawodtcedgjid.onion/"
         ]
       },
       "uuid": "fe7e4df0-97b9-4dd2-b3f8-79404fc8272d",
@@ -24724,14 +24766,16 @@
     {
       "description": "Ransomware",
       "meta": {
+        "links": [
+          "http://mountnewsokhwilx.onion"
+        ],
         "refs": [
           "https://www.cyclonis.com/mount-locker-ransomware-more-dangerous",
           "https://www.bleepingcomputer.com/news/security/mount-locker-ransomware-joins-the-multi-million-dollar-ransom-game"
         ],
         "synonyms": [
           "Mount-Locker"
-        ].
-        "links": ["http://mountnewsokhwilx.onion"]
+        ]
       },
       "uuid": "1da28691-684a-4cd2-b2f8-e80a123e150c",
       "value": "Mount Locker"
@@ -24750,11 +24794,13 @@
     {
       "description": "Ransomware",
       "meta": {
+        "links": [
+          "http://vbfqeh5nugm6r2u2qvghsdxm3fotf5wbxb5ltv6vw77vus5frdpuaiid.onion/"
+        ],
         "refs": [
           "https://twitter.com/malwrhunterteam/status/1501857263493001217",
           "https://dissectingmalwa.re/blog/pandora"
-        ],
-        "links": ["http://vbfqeh5nugm6r2u2qvghsdxm3fotf5wbxb5ltv6vw77vus5frdpuaiid.onion/"]
+        ]
       },
       "uuid": "4d37a857-fef2-496d-9992-49f6da11e3cb",
       "value": "Pandora"
@@ -24762,11 +24808,13 @@
     {
       "description": "Ransomware",
       "meta": {
+        "links": [
+          "http://gamol6n6p2p4c3ad7gxmx3ur7wwdwlywebo2azv3vv5qlmjmole2zbyd.onion"
+        ],
         "refs": [
           "https://www.sentinelone.com/labs/new-rook-ransomware-feeds-off-the-code-of-babuk",
           "https://twitter.com/techyteachme/status/1464317136944435209"
-        ],
-        "links": ["http://gamol6n6p2p4c3ad7gxmx3ur7wwdwlywebo2azv3vv5qlmjmole2zbyd.onion"]
+        ]
       },
       "uuid": "bb6d933f-7b6d-4694-853d-1ca400f6bd8f",
       "value": "Rook"
@@ -24805,13 +24853,15 @@
     {
       "description": "Lorenz is a ransomware group that has been active since at least February 2021 and like many ransomware groups, performs double-extortion by exfiltrating data before encrypting systems.",
       "meta": {
+        "links": [
+          "http://lorenzmlwpzgxq736jzseuterytjueszsvznuibanxomlpkyxk6ksoyd.onion/"
+        ],
         "ransomnotes-refs": [
           "https://marvel-b1-cdn.bc0a.com/f00000000241276/arcticwolf.com/wp-content/uploads/2022/09/Screen-Shot-2022-09-12-at-11.18.04-AM-1024x246.png"
         ],
         "refs": [
           "https://arcticwolf.com/resources/blog/lorenz-ransomware-chiseling-in/"
-        ],
-        "links": ["http://lorenzmlwpzgxq736jzseuterytjueszsvznuibanxomlpkyxk6ksoyd.onion/"]
+        ]
       },
       "uuid": "d513199e-7f21-43fd-9610-ed708c3f6409",
       "value": "Lorenz Ransomware"
@@ -24819,6 +24869,11 @@
     {
       "description": "First observed in June 2021, Hive ransomware was originally written in GoLang but recently, new Hive variants have been seen written in Rust. Targets Healthcare sector.",
       "meta": {
+        "links": [
+          "http://hiveleakdbtnp76ulyhi52eag6c6tyc3xw7ez7iqy6wc34gd2nekazyd.onion/",
+          "http://hivecust6vhekztbqgdnkks64ucehqacge3dij3gyrrpdp57zoq3ooqd.onion",
+          "http://hiveapi4nyabjdfz2hxdsr7otrcv6zq6m4rk5i2w7j64lrtny4b7vjad.onion/v1/companies/disclosed"
+        ],
         "ransomnotes": [
           "Your network has been breached and all data were encrypted.\nPersonal data, financial reports and important documents are ready to disclose.\n\n To decrypt all the data and to prevent exfiltrated files to be disclosed at \nhttp://hive[REDACTED].onion/\nyou will need to purchase our decryption software.\n \nPlease contact our sales department at:v \n   http://hive[REDACTED].onion/\n  \n      Login:    [REDACTED]\n      Password: [REDACTED]\n \nTo get an access to .onion websites download and install Tor Browser at:\n   https://www.torproject.org/ (Tor Browser is not related to us)\n \n \nFollow the guidelines below to avoid losing your data:\n \n- Do not modify, rename or delete *.key.abc12 files. Your data will be \n   undecryptable.\n- Do not modify or rename encrypted files. You will lose them.\n- Do not report to the Police, FBI, etc. They don't care about your business.\n   They simply won't allow you to pay. As a result you will lose everything.\n- Do not hire a recovery company. They can't decrypt without the key. \n   They also don't care about your business. They believe that they are \n   good negotiators, but it is not. They usually fail. So speak for yourself.\n- Do not reject to purchase. Exfiltrated files will be publicly disclosed.",
           "Your network has been breached and all data were encrypted.\nPersonal data, financial reports and important documents are ready to disclose.\n\n To decrypt all the data and to prevent exfiltrated files to be disclosed at \nhttp://hive[REDACTED].onion/\nyou will need to purchase our decryption software.\n \nPlease contact our sales department at:\n \n   http://hive[REDACTED].onion/\n \n      Login:    test_hive_username\n      Password: test_hive_password\n \nTo get an access to .onion websites download and install Tor Browser at:\n   https://www.torproject.org/ (Tor Browser is not related to us)\n \n \nFollow the guidelines below to avoid losing your data:\n \n- Do not delete or reinstall VMs. There will be nothing to decrypt.\n- Do not modify, rename or delete *.key files. Your data will be \n   undecryptable.\n- Do not modify or rename encrypted files. You will lose them.\n- Do not report to the Police, FBI, etc. They don't care about your business.\n   They simply won't allow you to pay. As a result you will lose everything.\n- Do not hire a recovery company. They can't decrypt without the key. \n   They also don't care about your business. They believe that they are \n   good negotiators, but it is not. They usually fail. So speak for yourself.\n- Do not reject to purchase. Exfiltrated files will be publicly disclosed"
@@ -24832,8 +24887,7 @@
           "https://yoroi.company/wp-content/uploads/2022/07/Yoroi-On-The-Footsteps-of-Hive-Ransomware.pdf",
           "https://www.varonis.com/blog/hive-ransomware-analysis",
           "https://www.bleepingcomputer.com/news/security/microsoft-exchange-servers-hacked-to-deploy-hive-ransomware/"
-        ],
-        "links": ["http://hiveleakdbtnp76ulyhi52eag6c6tyc3xw7ez7iqy6wc34gd2nekazyd.onion/","http://hivecust6vhekztbqgdnkks64ucehqacge3dij3gyrrpdp57zoq3ooqd.onion","http://hiveapi4nyabjdfz2hxdsr7otrcv6zq6m4rk5i2w7j64lrtny4b7vjad.onion/v1/companies/disclosed"]
+        ]
       },
       "uuid": "8ce915d3-8c6d-4841-b509-18379d7a8999",
       "value": "Hive"
@@ -24841,6 +24895,10 @@
     {
       "description": "",
       "meta": {
+        "links": [
+          "http://quantum445bh3gzuyilxdzs5xdepf3b7lkcupswvkryf3n7hgzpxebid.onion/",
+          "http://quantum445bh3gzuyilxdzs5xdepf3b7lkcupswvkryf3n7hgzpxebid.onion"
+        ],
         "ransomnotes-refs": [
           "https://www.guidepointsecurity.com/wp-content/uploads/2021/04/Anonymized-Ransom-Note-1-1024x655.png"
         ],
@@ -24862,9 +24920,6 @@
           "Quantum",
           "Mount Locker",
           "DagonLocker"
-        ],
-        "links": [
-          "http://quantum445bh3gzuyilxdzs5xdepf3b7lkcupswvkryf3n7hgzpxebid.onion/","http://quantum445bh3gzuyilxdzs5xdepf3b7lkcupswvkryf3n7hgzpxebid.onion"
         ]
       },
       "related": [
@@ -24998,13 +25053,13 @@
     },
     {
       "description": "Ransomware",
-      "uuid": "549c9766-b45d-4d14-86e8-e6a74d69d067",
-      "value": "RedAlert",
       "meta": {
         "links": [
           "http://blog2hkbm6gogpv2b3uytzi3bj5d5zmc4asbybumjkhuqhas355janyd.onion/"
         ]
-      }
+      },
+      "uuid": "549c9766-b45d-4d14-86e8-e6a74d69d067",
+      "value": "RedAlert"
     },
     {
       "description": "Ransomware",
@@ -25076,12 +25131,14 @@
     },
     {
       "description": "Ransomware",
-      "uuid": "fec32bbf-c4f8-499d-8e2a-743bcdd071e7",
-      "value": "PLAY Ransomware",
       "meta": {
-        "links": "http://mbrlkbtq5jonaqkurjwmxftytyn2ethqvbxfu4rgjbkkknndqwae6byd.onion",
-        "http://k7kg3jqxang3wh7hnmaiokchk7qoebupfgoik6rha6mjpzwupwtj25yd.onion"
-      }
+        "links": [
+          "http://mbrlkbtq5jonaqkurjwmxftytyn2ethqvbxfu4rgjbkkknndqwae6byd.onion",
+          "http://k7kg3jqxang3wh7hnmaiokchk7qoebupfgoik6rha6mjpzwupwtj25yd.onion"
+        ]
+      },
+      "uuid": "fec32bbf-c4f8-499d-8e2a-743bcdd071e7",
+      "value": "PLAY Ransomware"
     },
     {
       "description": "Ransomware",
@@ -25095,15 +25152,16 @@
     },
     {
       "description": "Ransomware",
-      "uuid": "a7623a1b-4551-4e5a-a622-2b91dea16b42",
-      "value": "Karakurt"      ,
       "meta": {
         "links": [
-          "https://3f7nxkjway3d223j27lyad7v5cgmyaifesycvmwq7i7cbs23lb6llryd.onion/","https://www.karanews.live","https://karakurt.tech","https://karaleaks.com",
+          "https://3f7nxkjway3d223j27lyad7v5cgmyaifesycvmwq7i7cbs23lb6llryd.onion/",
+          "https://www.karanews.live",
+          "https://karakurt.tech",
+          "https://karaleaks.com"
         ]
-      }
-
-
+      },
+      "uuid": "a7623a1b-4551-4e5a-a622-2b91dea16b42",
+      "value": "Karakurt"
     },
     {
       "description": "0mega, a new ransomware operation, has been observed targeting organizations around the world. The ransomware operators are launching double-extortion attacks and demanding millions of dollars as ransom.\n\n0mega ransomware operation launched in May and has already claimed multiple victims.\n0mega maintains a dedicated data leak site that the attackers use to post stolen data if the demanded ransom is not paid.\nThe leak site currently hosts 152 GB of data stolen from an electronics repair firm in an attack that happened in May.\nHowever, an additional victim has since been removed, implying that they might have paid the ransom to the 0mega group.\n\nHow does it work?\nHackers add the .0mega extension to the encrypted file’s names and create ransom notes (DECRYPT-FILES[.]txt).\nThe ransom note has a link to a Tor payment negotiation site with a support chat to reach out to the ransomware group.\nTo log in to this site, the victims are asked to upload their ransom notes with a unique Base64-encoded blob identity.",
@@ -25547,146 +25605,163 @@
       "value": "Donutleaks"
     },
     {
+      "meta": {
+        "links": [
+          "http://h44jyyfomcbnnw5dha7zgwgkvpzbzbdyx2onu4fxaa5smxrgbjgq7had.onion/"
+        ]
+      },
       "uuid": "14658178-6fea-43bb-ae11-4ae5c2f14560",
-      "value": "Endurance",
-      "meta": {
-        "links": [
-          "http://h44jyyfomcbnnw5dha7zgwgkvpzbzbdyx2onu4fxaa5smxrgbjgq7had.onion/",
-        ]
-      }
+      "value": "Endurance"
     },
     {
+      "meta": {
+        "links": [
+          "http://leaksv7sroztl377bbohzl42i3ddlfsxopcb6355zc7olzigedm5agad.onion/posts"
+        ]
+      },
       "uuid": "11a458b9-df9c-486f-8556-2ae662df2802",
-      "value": "Entropy",
-      "meta": {
-        "links": [
-          "http://leaksv7sroztl377bbohzl42i3ddlfsxopcb6355zc7olzigedm5agad.onion/posts",
-        ]
-      }
+      "value": "Entropy"
     },
     {
+      "meta": {
+        "links": [
+          "http://dg5fyig37abmivryrxlordrczn6d6r5wzcfe2msuo5mbbu2exnu46fid.onion"
+        ]
+      },
       "uuid": "3a074223-6c97-48ca-b019-50a16a37e956",
-      "value": "Ep918",
-      "meta": {
-        "links": [
-          "http://dg5fyig37abmivryrxlordrczn6d6r5wzcfe2msuo5mbbu2exnu46fid.onion",
-        ]
-      }
+      "value": "Ep918"
     },
     {
+      "meta": {
+        "links": [
+          "http://ransomocmou6mnbquqz44ewosbkjk3o5qjsl3orawojexfook2j7esad.onion/"
+        ]
+      },
       "uuid": "3c2835b1-53de-4755-ac0f-48dff1e53745",
-      "value": "Everest",
-      "meta": {
-        "links": [
-          "http://ransomocmou6mnbquqz44ewosbkjk3o5qjsl3orawojexfook2j7esad.onion/",
-        ]
-      }
+      "value": "Everest"
     },
     {
+      "meta": {
+        "links": [
+          "http://gcbejm2rcjftouqbxuhimj5oroouqcuxb2my4raxqa7efkz5bd5464id.onion/"
+        ]
+      },
       "uuid": "34c540d5-70ad-44cc-b5a2-cd8ec7e2efd6",
-      "value": "Freecivilian",
-      "meta": {
-        "links": [
-          "http://gcbejm2rcjftouqbxuhimj5oroouqcuxb2my4raxqa7efkz5bd5464id.onion/",
-        ]
-      }
+      "value": "Freecivilian"
     },
     {
+      "meta": {
+        "links": [
+          "http://hkk62og3s2tce2gipcdxg3m27z4b62mrmml6ugctzdxs25o26q3a4mid.onion/"
+        ]
+      },
       "uuid": "29408532-b5d3-47ab-9b31-1ea63a084e45",
-      "value": "Fsteam",
-      "meta": {
-        "links": [
-          "http://hkk62og3s2tce2gipcdxg3m27z4b62mrmml6ugctzdxs25o26q3a4mid.onion/",
-        ]
-      }
+      "value": "Fsteam"
     },
     {
+      "meta": {
+        "links": [
+          "http://griefcameifmv4hfr3auozmovz5yi6m3h3dwbuqw7baomfxoxz4qteid.onion/"
+        ]
+      },
       "uuid": "506716cf-7e60-46e5-a853-c8a67fe696f9",
-      "value": "Grief",
-      "meta": {
-        "links": [
-          "http://griefcameifmv4hfr3auozmovz5yi6m3h3dwbuqw7baomfxoxz4qteid.onion/",
-        ]
-      }
+      "value": "Grief"
     },
     {
+      "meta": {
+        "links": [
+          "http://ws3dh6av66sjbxxkjpw5ao3wqzmtejnkzheswm4dz5rrwvular7xvkqd.onion/"
+        ]
+      },
       "uuid": "267b7b61-ed82-4809-aafe-9d2487c56f19",
-      "value": "Groove",
-      "meta": {
-        "links": [
-          "http://ws3dh6av66sjbxxkjpw5ao3wqzmtejnkzheswm4dz5rrwvular7xvkqd.onion/",
-        ]
-      }
+      "value": "Groove"
     },
     {
+      "meta": {
+        "links": [
+          "http://ft4zr2jzlqoyob7yg4fcpwyt37hox3ajajqnfkdvbfrkjioyunmqnpad.onion/login.php",
+          "http://midasbkic5eyfox4dhnijkzc7v7e4hpmsb2qgux7diqbpna4up4rtdad.onion/blog.php"
+        ]
+      },
       "uuid": "949fe61d-6df6-4f36-996b-c58bbbc5140f",
-      "value": "Haron",
-      "meta": {
-        "links": [
-          "http://ft4zr2jzlqoyob7yg4fcpwyt37hox3ajajqnfkdvbfrkjioyunmqnpad.onion/login.php","http://midasbkic5eyfox4dhnijkzc7v7e4hpmsb2qgux7diqbpna4up4rtdad.onion/blog.php",
-        ]
-      }
+      "value": "Haron"
     },
     {
+      "meta": {
+        "links": [
+          "http://r6d636w47ncnaukrpvlhmtdbvbeltc6enfcuuow3jclpmyga7cz374qd.onion"
+        ]
+      },
       "uuid": "3c5832ae-3961-423e-8331-218a7aa6e5db",
-      "value": "Hotarus",
-      "meta": {
-        "links": [
-          "http://r6d636w47ncnaukrpvlhmtdbvbeltc6enfcuuow3jclpmyga7cz374qd.onion",
-        ]
-      }
+      "value": "Hotarus"
     },
     {
+      "meta": {
+        "links": [
+          "http://kf6x3mjeqljqxjznaw65jixin7dpcunfxbbakwuitizytcpzn4iy5bad.onion/board/leak_list/",
+          "http://7kstc545azxeahkduxmefgwqkrrhq3mzohkzqvrv7aekob7z3iwkqvyd.onion/board/victim_list/"
+        ]
+      },
       "uuid": "deea56de-1237-46bf-9ea7-4e1a3b3acd10",
-      "value": "Icefire",
-      "meta": {
-        "links": [
-          "http://kf6x3mjeqljqxjznaw65jixin7dpcunfxbbakwuitizytcpzn4iy5bad.onion/board/leak_list/","http://7kstc545azxeahkduxmefgwqkrrhq3mzohkzqvrv7aekob7z3iwkqvyd.onion/board/victim_list/",
-        ]
-      }
+      "value": "Icefire"
     },
     {
+      "meta": {
+        "links": [
+          "https://justice-blade.io"
+        ]
+      },
       "uuid": "71a6edfe-9764-4c9b-b528-e0ee7b73c110",
-      "value": "Justice_Blade",
-      "meta": {
-        "links": [
-          "https://justice-blade.io ",
-        ]
-      }
+      "value": "Justice_Blade"
     },
     {
+      "meta": {
+        "links": [
+          "https://kelvinsecteamcyber.wixsite.com/my-site/items"
+        ]
+      },
       "uuid": "3c61d677-a2a6-40fb-aadd-72974f68e62c",
-      "value": "Kelvin Security",
-      "meta": {
-        "links": [
-          "https://kelvinsecteamcyber.wixsite.com/my-site/items",
-        ]
-      }
+      "value": "Kelvin Security"
     },
     {
+      "meta": {
+        "links": [
+          "https://t.me/minsaudebr"
+        ]
+      },
       "uuid": "e2e035aa-eb95-48af-98a7-f18ddfcc347b",
-      "value": "Lapsus$",
-      "meta": {
-        "links": [
-          "https://t.me/minsaudebr",
-        ]
-      }
+      "value": "Lapsus$"
     },
     {
+      "meta": {
+        "links": [
+          "http://yeuajcizwytgmrntijhxphs6wn5txp2prs6rpndafbsapek3zd4ubcid.onion/"
+        ]
+      },
       "uuid": "7dea3669-5ec4-4bdf-898f-c3a9f796365e",
-      "value": "Lilith",
-      "meta": {
-        "links": [
-          "http://yeuajcizwytgmrntijhxphs6wn5txp2prs6rpndafbsapek3zd4ubcid.onion/",
-        ]
-      }
+      "value": "Lilith"
     },
     {
-      "uuid": "c09f73fd-c3c3-42b1-b355-b03ca4941110",
-      "value": "Lockbit3",
       "meta": {
         "links": [
-          "http://lockbitapt6vx57t3eeqjofwgcglmutr3a35nygvokja5uuccip4ykyd.onion/","http://zqaflhty5hyziovsxgqvj2mrz5e5rs6oqxzb54zolccfnvtn5w2johad.onion","http://lockbitapt2yfbt7lchxejug47kmqvqqxvvjpqkmevv4l3azl3gy6pyd.onion","http://lockbitapt34kvrip6xojylohhxrwsvpzdffgs5z4pbbsywnzsbdguqd.onion","http://lockbitapt5x4zkjbcqmz6frdhecqqgadevyiwqxukksspnlidyvd7qd.onion","http://lockbitaptc2iq4atewz2ise62q63wfktyrl4qtwuk5qax262kgtzjqd.onion","http://yq43odyrmzqvyezdindg2tokgogf3pn6bcdtvgczpz5a74tdxjbtk2yd.onion","http://oyarbnujct53bizjguvolxou3rmuda2vr72osyexngbdkhqebwrzsnad.onion","http://lockbitaptstzf3er2lz6ku3xuifafq2yh5lmiqj5ncur6rtlmkteiqd.onion","http://lockbitapt.uz","http://yq43odyrmzqvyezdindg2tokgogf3pn6bcdtvgczpz5a74tdxjbtk2yd.onion","http://lockbitaptq7ephv2oigdncfhtwhpqgwmqojnxqdyhprxxfpcllqdxad.onion","http://lockbitapt2d73krlbewgv27tquljgxr33xbwwsp6rkyieto7u4ncead.onion","http://lockbitapt6vx57t3eeqjofwgcglmutr3a35nygvokja5uuccip4ykyd.onion","http://lockbitapt72iw55njgnqpymggskg5yp75ry7rirtdg4m7i42artsbqd.onion","http://lockbitaptawjl6udhpd323uehekiyatj6ftcxmkwe5sezs4fqgpjpid.onion","http://lockbitaptbdiajqtplcrigzgdjprwugkkut63nbvy2d5r4w2agyekqd.onion","http://lockbit7z2jwcskxpbokpemdxmltipntwlkmidcll2qirbu7ykg46eyd.onion",
+          "http://lockbitapt6vx57t3eeqjofwgcglmutr3a35nygvokja5uuccip4ykyd.onion/",
+          "http://zqaflhty5hyziovsxgqvj2mrz5e5rs6oqxzb54zolccfnvtn5w2johad.onion",
+          "http://lockbitapt2yfbt7lchxejug47kmqvqqxvvjpqkmevv4l3azl3gy6pyd.onion",
+          "http://lockbitapt34kvrip6xojylohhxrwsvpzdffgs5z4pbbsywnzsbdguqd.onion",
+          "http://lockbitapt5x4zkjbcqmz6frdhecqqgadevyiwqxukksspnlidyvd7qd.onion",
+          "http://lockbitaptc2iq4atewz2ise62q63wfktyrl4qtwuk5qax262kgtzjqd.onion",
+          "http://yq43odyrmzqvyezdindg2tokgogf3pn6bcdtvgczpz5a74tdxjbtk2yd.onion",
+          "http://oyarbnujct53bizjguvolxou3rmuda2vr72osyexngbdkhqebwrzsnad.onion",
+          "http://lockbitaptstzf3er2lz6ku3xuifafq2yh5lmiqj5ncur6rtlmkteiqd.onion",
+          "http://lockbitapt.uz",
+          "http://yq43odyrmzqvyezdindg2tokgogf3pn6bcdtvgczpz5a74tdxjbtk2yd.onion",
+          "http://lockbitaptq7ephv2oigdncfhtwhpqgwmqojnxqdyhprxxfpcllqdxad.onion",
+          "http://lockbitapt2d73krlbewgv27tquljgxr33xbwwsp6rkyieto7u4ncead.onion",
+          "http://lockbitapt6vx57t3eeqjofwgcglmutr3a35nygvokja5uuccip4ykyd.onion",
+          "http://lockbitapt72iw55njgnqpymggskg5yp75ry7rirtdg4m7i42artsbqd.onion",
+          "http://lockbitaptawjl6udhpd323uehekiyatj6ftcxmkwe5sezs4fqgpjpid.onion",
+          "http://lockbitaptbdiajqtplcrigzgdjprwugkkut63nbvy2d5r4w2agyekqd.onion",
+          "http://lockbit7z2jwcskxpbokpemdxmltipntwlkmidcll2qirbu7ykg46eyd.onion"
         ]
       },
       "related": [
@@ -25697,384 +25772,408 @@
           ],
           "type": "similar"
         }
+      ],
+      "uuid": "c09f73fd-c3c3-42b1-b355-b03ca4941110",
+      "value": "Lockbit3"
     },
     {
+      "meta": {
+        "links": [
+          "http://mmeeiix2ejdwkmseycljetmpiwebdvgjts75c63camjofn2cjdoulzqd.onion",
+          "http://obzuqvr5424kkc4unbq2p2i67ny3zngce3tbdr37nicjqesgqcgomfqd.onion",
+          "http://nclen75pwlgebpxpsqhlcnxsmdvpyrr7ogz36ehhatfmkvakeyden6ad.onion"
+        ]
+      },
       "uuid": "9886732d-76a2-4fbb-86b7-9e6a80669fb5",
-      "value": "Lolnek",
-      "meta": {
-        "links": [
-          "http://mmeeiix2ejdwkmseycljetmpiwebdvgjts75c63camjofn2cjdoulzqd.onion","http://obzuqvr5424kkc4unbq2p2i67ny3zngce3tbdr37nicjqesgqcgomfqd.onion","http://nclen75pwlgebpxpsqhlcnxsmdvpyrr7ogz36ehhatfmkvakeyden6ad.onion",
-        ]
-      }
+      "value": "Lolnek"
     },
     {
+      "meta": {
+        "links": [
+          "http://rbvuetuneohce3ouxjlbxtimyyxokb4btncxjbo44fbgxqy7tskinwad.onion/",
+          "http://4qbxi3i2oqmyzxsjg4fwe4aly3xkped52gq5orp6efpkeskvchqe27id.onion/"
+        ]
+      },
       "uuid": "46d56775-5f8c-411e-adbe-2acd07bf99ac",
-      "value": "Lv",
-      "meta": {
-        "links": [
-          "http://rbvuetuneohce3ouxjlbxtimyyxokb4btncxjbo44fbgxqy7tskinwad.onion/","http://4qbxi3i2oqmyzxsjg4fwe4aly3xkped52gq5orp6efpkeskvchqe27id.onion/",
-        ]
-      }
+      "value": "Lv"
     },
     {
+      "meta": {
+        "links": [
+          "http://wtyafjyhwqrgo4a45wdvvwhen3cx4euie73qvlhkhvlrexljoyuklaad.onion"
+        ]
+      },
       "uuid": "95891bae-09a4-4d02-990e-2477cb09b9c2",
-      "value": "Mallox",
-      "meta": {
-        "links": [
-          "http://wtyafjyhwqrgo4a45wdvvwhen3cx4euie73qvlhkhvlrexljoyuklaad.onion",
-        ]
-      }
+      "value": "Mallox"
     },
     {
+      "meta": {
+        "links": [
+          "http://xembshruusobgbvxg4tcjs3jpdnks6xrr6nbokfxadcnlc53yxir22ad.onion"
+        ]
+      },
       "uuid": "7ecd6452-d521-4095-8fd7-eecdeb6c8d96",
-      "value": "Mbc",
-      "meta": {
-        "links": [
-          "http://xembshruusobgbvxg4tcjs3jpdnks6xrr6nbokfxadcnlc53yxir22ad.onion",
-        ]
-      }
+      "value": "Mbc"
     },
     {
+      "meta": {
+        "links": [
+          "http://midasbkic5eyfox4dhnijkzc7v7e4hpmsb2qgux7diqbpna4up4rtdad.onion/blog.php"
+        ]
+      },
       "uuid": "c0ce34c6-13b9-41ef-847c-840b090f2bfc",
-      "value": "Midas",
-      "meta": {
-        "links": [
-          "http://midasbkic5eyfox4dhnijkzc7v7e4hpmsb2qgux7diqbpna4up4rtdad.onion/blog.php",
-        ]
-      }
+      "value": "Midas"
     },
     {
+      "meta": {
+        "links": [
+          "http://moishddxqnpdxpababec6exozpl2yr7idfhdldiz5525ao25bmasxhid.onion"
+        ]
+      },
       "uuid": "b2e44cc2-2df9-4210-a0ee-9ae913278c00",
-      "value": "Moisha",
-      "meta": {
-        "links": [
-          "http://moishddxqnpdxpababec6exozpl2yr7idfhdldiz5525ao25bmasxhid.onion",
-        ]
-      }
+      "value": "Moisha"
     },
     {
+      "meta": {
+        "links": [
+          "http://monteoamwxlutyovf7oxeviwjlbu3vbgdmkncecl2ydteqncrmcv67yd.onion/",
+          "http://monteoamwxlutyovf7oxeviwjlbu3vbgdmkncecl2ydteqncrmcv67yd.onion/catalog/"
+        ]
+      },
       "uuid": "814f656d-7107-41d3-a934-1667e427ad8a",
-      "value": "Monte",
-      "meta": {
-        "links": [
-          "http://monteoamwxlutyovf7oxeviwjlbu3vbgdmkncecl2ydteqncrmcv67yd.onion/","http://monteoamwxlutyovf7oxeviwjlbu3vbgdmkncecl2ydteqncrmcv67yd.onion/catalog/",
-        ]
-      }
+      "value": "Monte"
     },
     {
+      "meta": {
+        "links": [
+          "http://4s4lnfeujzo67fy2jebz2dxskez2gsqj2jeb35m75ktufxensdicqxad.onion/",
+          "http://mblogci3rudehaagbryjznltdp33ojwzkq6hn2pckvjq33rycmzczpid.onion/"
+        ]
+      },
       "uuid": "0ea4daa9-0b83-4acb-bc54-420635b7bfea",
-      "value": "Monti",
-      "meta": {
-        "links": [
-          "http://4s4lnfeujzo67fy2jebz2dxskez2gsqj2jeb35m75ktufxensdicqxad.onion/","http://mblogci3rudehaagbryjznltdp33ojwzkq6hn2pckvjq33rycmzczpid.onion/",
-        ]
-      }
+      "value": "Monti"
     },
     {
+      "meta": {
+        "links": [
+          "http://58b87e60649ccc808ac8mstiejnj.5s4ixqul2enwxrqv.onion"
+        ]
+      },
       "uuid": "8b726e6a-ed85-4a5b-a501-6bc06dab288d",
-      "value": "Mydecryptor",
-      "meta": {
-        "links": [
-          "http://58b87e60649ccc808ac8mstiejnj.5s4ixqul2enwxrqv.onion",
-        ]
-      }
+      "value": "Mydecryptor"
     },
     {
+      "meta": {
+        "links": [
+          "http://n3twormruynhn3oetmxvasum2miix2jgg56xskdoyihra4wthvlgyeyd.onion"
+        ]
+      },
       "uuid": "815b13b2-2b94-4ea9-adc2-8193936a1c61",
-      "value": "N3Tworm",
-      "meta": {
-        "links": [
-          "http://n3twormruynhn3oetmxvasum2miix2jgg56xskdoyihra4wthvlgyeyd.onion",
-        ]
-      }
+      "value": "N3Tworm"
     },
     {
+      "meta": {
+        "links": [
+          "http://rnfdsgm6wb6j6su5txkekw4u4y47kp2eatvu7d6xhyn5cs4lt4pdrqqd.onion"
+        ]
+      },
       "uuid": "a449e5a4-a835-419e-af3e-d223c74d0536",
-      "value": "Netwalker",
-      "meta": {
-        "links": [
-          "http://rnfdsgm6wb6j6su5txkekw4u4y47kp2eatvu7d6xhyn5cs4lt4pdrqqd.onion",
-        ]
-      }
+      "value": "Netwalker"
     },
     {
+      "meta": {
+        "links": [
+          "http://nevcorps5cvivjf6i2gm4uia7cxng5ploqny2rgrinctazjlnqr2yiyd.onion/",
+          "http://nevbackvzwfu5yu3gszap77bg66koadds6eln37gxdhdk4jdsbkayrid.onion/",
+          "http://nevaffcwswjosddmw55qhn4u4secw42wlppzvf26k5onrlxjevm6avad.onion/"
+        ]
+      },
       "uuid": "9c517547-8002-4a9a-a360-8d836d2fe3e3",
-      "value": "Nevada",
-      "meta": {
-        "links": [
-          "http://nevcorps5cvivjf6i2gm4uia7cxng5ploqny2rgrinctazjlnqr2yiyd.onion/","http://nevbackvzwfu5yu3gszap77bg66koadds6eln37gxdhdk4jdsbkayrid.onion/","http://nevaffcwswjosddmw55qhn4u4secw42wlppzvf26k5onrlxjevm6avad.onion/",
-        ]
-      }
+      "value": "Nevada"
     },
     {
+      "meta": {
+        "links": [
+          "http://gg5ryfgogainisskdvh4y373ap3b2mxafcibeh2lvq5x7fx76ygcosad.onion"
+        ]
+      },
       "uuid": "886a2d59-2e8d-4357-b70f-a6dd3d034dfd",
-      "value": "Nightsky",
-      "meta": {
-        "links": [
-          "http://gg5ryfgogainisskdvh4y373ap3b2mxafcibeh2lvq5x7fx76ygcosad.onion",
-        ]
-      }
+      "value": "Nightsky"
     },
     {
+      "meta": {
+        "links": [
+          "http://lirncvjfmdhv6samxvvlohfqx7jklfxoxj7xn3fh7qeabs3taemdsdqd.onion",
+          "http://lirncvjfmdhv6samxvvlohfqx7jklfxoxj7xn3fh7qeabs3taemdsdqd.onion/",
+          "http://6yofnrq7evqrtz3tzi3dkbrdovtywd35lx3iqbc5dyh367nrdh4jgfyd.onion/"
+        ]
+      },
       "uuid": "2b2f2e07-f764-4cc2-86ac-cc087a953cbb",
-      "value": "Nokoyawa",
-      "meta": {
-        "links": [
-          "http://lirncvjfmdhv6samxvvlohfqx7jklfxoxj7xn3fh7qeabs3taemdsdqd.onion","http://lirncvjfmdhv6samxvvlohfqx7jklfxoxj7xn3fh7qeabs3taemdsdqd.onion/","http://6yofnrq7evqrtz3tzi3dkbrdovtywd35lx3iqbc5dyh367nrdh4jgfyd.onion/",
-        ]
-      }
+      "value": "Nokoyawa"
     },
     {
+      "meta": {
+        "links": [
+          "http://5mvifa3xq5m7sou3xzaajfz7h6eserp5fnkwotohns5pgbb5oxty3zad.onion"
+        ]
+      },
       "uuid": "e9e810e3-a919-4417-85d0-fcab700e45de",
-      "value": "Onepercent",
-      "meta": {
-        "links": [
-          "http://5mvifa3xq5m7sou3xzaajfz7h6eserp5fnkwotohns5pgbb5oxty3zad.onion",
-        ]
-      }
+      "value": "Onepercent"
     },
     {
+      "meta": {
+        "links": [
+          "http://vbmisqjshn4yblehk2vbnil53tlqklxsdaztgphcilto3vdj4geao5qd.onion/"
+        ]
+      },
       "uuid": "fd2161a9-cd88-4d12-94d9-52b93b28eb5b",
-      "value": "Payloadbin",
-      "meta": {
-        "links": [
-          "http://vbmisqjshn4yblehk2vbnil53tlqklxsdaztgphcilto3vdj4geao5qd.onion/",
-        ]
-      }
+      "value": "Payloadbin"
     },
     {
+      "meta": {
+        "links": [
+          "http://promethw27cbrcot.onion/blog/"
+        ]
+      },
       "uuid": "bcf0a9da-dca3-42c0-b875-59d434564fbb",
-      "value": "Prometheus",
-      "meta": {
-        "links": [
-          "http://promethw27cbrcot.onion/blog/",
-        ]
-      }
+      "value": "Prometheus"
     },
     {
+      "meta": {
+        "links": [
+          "http://ozsxj4hwxub7gio347ac7tyqqozvfioty37skqilzo2oqfs4cw2mgtyd.onion/",
+          "http://24kckepr3tdbcomkimbov5nqv2alos6vmrmlxdr76lfmkgegukubctyd.onion",
+          "http://wlh3dpptx2gt7nsxcor37a3kiyaiy6qwhdv7o6nl6iuniu5ycze5ydid.onion/blog",
+          "http://kbsqoivihgdmwczmxkbovk7ss2dcynitwhhfu5yw725dboqo5kthfaad.onion/"
+        ]
+      },
       "uuid": "d5b3ce3d-59e2-4e56-a29a-42fb8b733a51",
-      "value": "Qilin",
-      "meta": {
-        "links": [
-          "http://ozsxj4hwxub7gio347ac7tyqqozvfioty37skqilzo2oqfs4cw2mgtyd.onion/","http://24kckepr3tdbcomkimbov5nqv2alos6vmrmlxdr76lfmkgegukubctyd.onion","http://wlh3dpptx2gt7nsxcor37a3kiyaiy6qwhdv7o6nl6iuniu5ycze5ydid.onion/blog","http://kbsqoivihgdmwczmxkbovk7ss2dcynitwhhfu5yw725dboqo5kthfaad.onion/",
-        ]
-      }
+      "value": "Qilin"
     },
     {
+      "meta": {
+        "links": [
+          "http://gvka2m4qt5fod2fltkjmdk4gxh5oxemhpgmnmtjptms6fkgfzdd62tad.onion",
+          "http://gvka2m4qt5fod2fltkjmdk4gxh5oxemhpgmnmtjptms6fkgfzdd62tad.onion/"
+        ]
+      },
       "uuid": "065110c5-574a-4466-a336-e6c5f3ef86c4",
-      "value": "Qlocker",
-      "meta": {
-        "links": [
-          "http://gvka2m4qt5fod2fltkjmdk4gxh5oxemhpgmnmtjptms6fkgfzdd62tad.onion","http://gvka2m4qt5fod2fltkjmdk4gxh5oxemhpgmnmtjptms6fkgfzdd62tad.onion/",
-        ]
-      }
+      "value": "Qlocker"
     },
     {
+      "meta": {
+        "links": [
+          "http://wavbeudogz6byhnardd2lkp2jafims3j7tj6k6qnywchn2csngvtffqd.onion",
+          "http://rampjcdlqvgkoz5oywutpo6ggl7g6tvddysustfl6qzhr5osr24xxqqd.onion",
+          "http://ramp4u5iz4xx75vmt6nk5xfrs5mrmtokzszqxhhkjqlk7pbwykaz7zid.onion"
+        ]
+      },
       "uuid": "824f225c-7cd9-47e3-9f5b-c3194e4a26ea",
-      "value": "Ramp",
-      "meta": {
-        "links": [
-          "http://wavbeudogz6byhnardd2lkp2jafims3j7tj6k6qnywchn2csngvtffqd.onion","http://rampjcdlqvgkoz5oywutpo6ggl7g6tvddysustfl6qzhr5osr24xxqqd.onion","http://ramp4u5iz4xx75vmt6nk5xfrs5mrmtokzszqxhhkjqlk7pbwykaz7zid.onion",
-        ]
-      }
+      "value": "Ramp"
     },
     {
+      "meta": {
+        "links": [
+          "http://u67aylig7i6l657wxmp274eoilaowhp3boljowa6bli63rxyzfzsbtyd.onion/"
+        ]
+      },
       "uuid": "62e56597-01c8-4721-abd2-c7efa37fb566",
-      "value": "Ransomcartel",
-      "meta": {
-        "links": [
-          "http://u67aylig7i6l657wxmp274eoilaowhp3boljowa6bli63rxyzfzsbtyd.onion/",
-        ]
-      }
+      "value": "Ransomcartel"
     },
     {
+      "meta": {
+        "links": [
+          "http://xw7au5pnwtl6lozbsudkmyd32n6gnqdngitjdppybudan3x3pjgpmpid.onion",
+          "http://zohlm7ahjwegcedoz7lrdrti7bvpofymcayotp744qhx6gjmxbuo2yid.onion/"
+        ]
+      },
       "uuid": "00a6fc79-8a29-417b-a298-adc8e17d8aba",
-      "value": "Ransomhouse",
-      "meta": {
-        "links": [
-          "http://xw7au5pnwtl6lozbsudkmyd32n6gnqdngitjdppybudan3x3pjgpmpid.onion","http://zohlm7ahjwegcedoz7lrdrti7bvpofymcayotp744qhx6gjmxbuo2yid.onion/",
-        ]
-      }
+      "value": "Ransomhouse"
     },
     {
+      "meta": {
+        "links": [
+          "http://37rckgo66iydpvgpwve7b2el5q2zhjw4tv4lmyewufnpx4lhkekxkoqd.onion"
+        ]
+      },
       "uuid": "840d5e7b-e96f-426d-8cf0-a5a10f5e4a46",
-      "value": "Ranzy",
-      "meta": {
-        "links": [
-          "http://37rckgo66iydpvgpwve7b2el5q2zhjw4tv4lmyewufnpx4lhkekxkoqd.onion",
-        ]
-      }
+      "value": "Ranzy"
     },
     {
+      "meta": {
+        "links": [
+          "http://relic5zqwemjnu4veilml6prgyedj6phs7de3udhicuq53z37klxm6qd.onion"
+        ]
+      },
       "uuid": "f4340cdb-ed0c-411e-ae11-b14ee151886a",
-      "value": "Relic",
-      "meta": {
-        "links": [
-          "http://relic5zqwemjnu4veilml6prgyedj6phs7de3udhicuq53z37klxm6qd.onion",
-        ]
-      }
+      "value": "Relic"
     },
     {
+      "meta": {
+        "links": [
+          "http://royal2xthig3ou5hd7zsliqagy6yygk2cdelaxtni2fyad6dpmpxedid.onion",
+          "http://royal4ezp7xrbakkus3oofjw6gszrohpodmdnfbe5e4w3og5sm7vb3qd.onion"
+        ]
+      },
       "uuid": "9a970739-24e3-4eb5-9154-d0ac6b2c378d",
-      "value": "Royal",
-      "meta": {
-        "links": [
-          "http://royal2xthig3ou5hd7zsliqagy6yygk2cdelaxtni2fyad6dpmpxedid.onion","http://royal4ezp7xrbakkus3oofjw6gszrohpodmdnfbe5e4w3og5sm7vb3qd.onion",
-        ]
-      }
+      "value": "Royal"
     },
     {
+      "meta": {
+        "links": [
+          "http://t2tqvp4pctcr7vxhgz5yd5x4ino5tw7jzs3whbntxirhp32djhi7q3id.onion"
+        ]
+      },
       "uuid": "470306b5-5a3b-4b63-9c02-0dc917584e72",
-      "value": "Rransom",
-      "meta": {
-        "links": [
-          "http://t2tqvp4pctcr7vxhgz5yd5x4ino5tw7jzs3whbntxirhp32djhi7q3id.onion",
-        ]
-      }
+      "value": "Rransom"
     },
     {
+      "meta": {
+        "links": [
+          "http://54bb47h5qu4k7l4d7v5ix3i6ak6elysn3net4by4ihmvrhu7cvbskoqd.onion/blog",
+          "http://54bb47h.blog"
+        ]
+      },
       "uuid": "efdf315c-e85c-4d87-b816-ec29dbea67b5",
-      "value": "Sabbath",
-      "meta": {
-        "links": [
-          "http://54bb47h5qu4k7l4d7v5ix3i6ak6elysn3net4by4ihmvrhu7cvbskoqd.onion/blog","http://54bb47h.blog",
-        ]
-      }
+      "value": "Sabbath"
     },
     {
+      "meta": {
+        "links": [
+          "http://solidb2jco63vbhx4sfimnqmwhtdjk4jbbgq7a24cmzzkfse4rduxgid.onion/login"
+        ]
+      },
       "uuid": "70719914-dc82-4ab0-b925-da837b337c89",
-      "value": "Solidbit",
-      "meta": {
-        "links": [
-          "http://solidb2jco63vbhx4sfimnqmwhtdjk4jbbgq7a24cmzzkfse4rduxgid.onion/login",
-        ]
-      }
+      "value": "Solidbit"
     },
     {
+      "meta": {
+        "links": [
+          "http://zj2ex44e2b2xi43m2txk4uwi3l55aglsarre7repw7rkfwpj54j46iqd.onion"
+        ]
+      },
       "uuid": "ce4eb745-e341-4f5d-be93-2af23b9ad756",
-      "value": "Sparta",
-      "meta": {
-        "links": [
-          "http://zj2ex44e2b2xi43m2txk4uwi3l55aglsarre7repw7rkfwpj54j46iqd.onion",
-        ]
-      }
+      "value": "Sparta"
     },
     {
+      "meta": {
+        "links": [
+          "http://spookuhvfyxzph54ikjfwf2mwmxt572krpom7reyayrmxbkizbvkpaid.onion/blog/"
+        ]
+      },
       "uuid": "0d4a8359-d607-4e5a-b85c-c8248cfa520a",
-      "value": "Spook",
-      "meta": {
-        "links": [
-          "http://spookuhvfyxzph54ikjfwf2mwmxt572krpom7reyayrmxbkizbvkpaid.onion/blog/",
-        ]
-      }
+      "value": "Spook"
     },
     {
+      "meta": {
+        "links": [
+          "http://3slz4povugieoi3tw7sblxoowxhbzxeju427cffsst5fo2tizepwatid.onion"
+        ]
+      },
       "uuid": "6e20bdd2-31ac-4429-8aa7-4ce8cb7dc7b5",
-      "value": "Stormous",
-      "meta": {
-        "links": [
-          "http://3slz4povugieoi3tw7sblxoowxhbzxeju427cffsst5fo2tizepwatid.onion",
-        ]
-      }
+      "value": "Stormous"
     },
     {
+      "meta": {
+        "links": [
+          "http://tdoe2fiiamwkiadhx2a4dfq56ztlqhzl2vckgwmjtoanfaya4kqvvvyd.onion"
+        ]
+      },
       "uuid": "0e2d3ead-3de9-4089-b7a3-10790b6f70f2",
-      "value": "Unknown",
-      "meta": {
-        "links": [
-          "http://tdoe2fiiamwkiadhx2a4dfq56ztlqhzl2vckgwmjtoanfaya4kqvvvyd.onion",
-        ]
-      }
+      "value": "Unknown"
     },
     {
+      "meta": {
+        "links": [
+          "http://unsafeipw6wbkzzmj7yqp7bz6j7ivzynggmwxsm6u2wwfmfqrxqrrhyd.onion/"
+        ]
+      },
       "uuid": "df2b1358-b3f1-4af4-8153-02f4fc018b03",
-      "value": "Unsafe",
-      "meta": {
-        "links": [
-          "http://unsafeipw6wbkzzmj7yqp7bz6j7ivzynggmwxsm6u2wwfmfqrxqrrhyd.onion/",
-        ]
-      }
+      "value": "Unsafe"
     },
     {
-      "uuid": "f4b870cb-8c61-40ab-865b-b8304a120ba5",
-      "value": "V Is Vendetta",
       "meta": {
         "links": [
-          "http://test.cuba4ikm4jakjgmkezytyawtdgr2xymvy6nvzgw5cglswg3si76icnqd.onion",
+          "http://test.cuba4ikm4jakjgmkezytyawtdgr2xymvy6nvzgw5cglswg3si76icnqd.onion"
         ]
       },
       "related": [
-      {
-        "dest-uuid": "731e4a5e-35f2-47b1-80ba-150b95fdc14d",
-        "tags": [
-          "estimative-language:likelihood-probability=\"likely\""
-        ],
-        "type": "similar"
-      }
-      ,
-              {
-        "dest-uuid": "7fd558de-1dfe-432a-834b-3e2691ee7283",
-        "tags": [
-          "estimative-language:likelihood-probability=\"likely\""
-        ],
-        "type": "similar"
-      }
-
-      ]
+        {
+          "dest-uuid": "731e4a5e-35f2-47b1-80ba-150b95fdc14d",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        },
+        {
+          "dest-uuid": "7fd558de-1dfe-432a-834b-3e2691ee7283",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "f4b870cb-8c61-40ab-865b-b8304a120ba5",
+      "value": "V Is Vendetta"
     },
     {
+      "meta": {
+        "links": [
+          "http://vfokxcdzjbpehgit223vzdzwte47l3zcqtafj34qrr26htjo4uf3obid.onion",
+          "http://746pbrxl7acvrlhzshosye3b3udk4plurpxt2pp27pojfhkkaooqiiqd.onion"
+        ]
+      },
       "uuid": "465828ea-6e81-4851-b02c-458d696629c1",
-      "value": "Vfokx",
-      "meta": {
-        "links": [
-          "http://vfokxcdzjbpehgit223vzdzwte47l3zcqtafj34qrr26htjo4uf3obid.onion","http://746pbrxl7acvrlhzshosye3b3udk4plurpxt2pp27pojfhkkaooqiiqd.onion",
-        ]
-      }
+      "value": "Vfokx"
     },
     {
+      "meta": {
+        "links": [
+          "http://4hzyuotli6maqa4u.onion",
+          "http://vsociethok6sbprvevl4dlwbqrzyhxcxaqpvcqt5belwvsuxaxsutyad.onion",
+          "http://ml3mjpuhnmse4kjij7ggupenw34755y4uj7t742qf7jg5impt5ulhkid.onion/",
+          "http://ssq4zimieeanazkzc5ld4v5hdibi2nzwzdibfh5n5w4pw5mcik76lzyd.onion/",
+          "http://wmp2rvrkecyx72i3x7ejhyd3yr6fn5uqo7wfus7cz7qnwr6uzhcbrwad.onion"
+        ]
+      },
       "uuid": "41979767-bfb8-4633-af1f-3946a599f922",
-      "value": "Vicesociety",
-      "meta": {
-        "links": [
-          "http://4hzyuotli6maqa4u.onion","http://vsociethok6sbprvevl4dlwbqrzyhxcxaqpvcqt5belwvsuxaxsutyad.onion","http://ml3mjpuhnmse4kjij7ggupenw34755y4uj7t742qf7jg5impt5ulhkid.onion/","http://ssq4zimieeanazkzc5ld4v5hdibi2nzwzdibfh5n5w4pw5mcik76lzyd.onion/","http://wmp2rvrkecyx72i3x7ejhyd3yr6fn5uqo7wfus7cz7qnwr6uzhcbrwad.onion",
-        ]
-      }
+      "value": "Vicesociety"
     },
     {
+      "meta": {
+        "links": [
+          "http://mrdxtxy6vqeqbmb4rvbvueh2kukb3e3mhu3wdothqn7242gztxyzycid.onion/"
+        ]
+      },
       "uuid": "8b2e6391-05b4-439e-b318-1c3ace388c2d",
-      "value": "Vsop",
-      "meta": {
-        "links": [
-          "http://mrdxtxy6vqeqbmb4rvbvueh2kukb3e3mhu3wdothqn7242gztxyzycid.onion/",
-        ]
-      }
+      "value": "Vsop"
     },
     {
+      "meta": {
+        "links": [
+          "http://xingnewj6m4qytljhfwemngm7r7rogrindbq7wrfeepejgxc3bwci7qd.onion/"
+        ]
+      },
       "uuid": "e92d5c00-81ae-4909-9994-74bf48180f22",
-      "value": "Xinglocker",
-      "meta": {
-        "links": [
-          "http://xingnewj6m4qytljhfwemngm7r7rogrindbq7wrfeepejgxc3bwci7qd.onion/",
-        ]
-      }
+      "value": "Xinglocker"
     },
     {
+      "meta": {
+        "links": [
+          "http://wj3b2wtj7u2bzup75tzhnso56bin6bnvsxcbwbfcuvzpc4vcixbywlid.onion"
+        ]
+      },
       "uuid": "64b7dc11-a627-43b2-91cd-38608784c53f",
-      "value": "Xinof",
-      "meta": {
-        "links": [
-          "http://wj3b2wtj7u2bzup75tzhnso56bin6bnvsxcbwbfcuvzpc4vcixbywlid.onion",
-        ]
-      }
+      "value": "Xinof"
     },
     {
-      "uuid": "476de1fe-d9b7-441a-8cb9-e6648189be3b",
-      "value": "Yanluowang",
       "meta": {
         "links": [
-          "http://jukswsxbh3jsxuddvidrjdvwuohtsy4kxg2axbppiyclomt2qciyfoad.onion/",
+          "http://jukswsxbh3jsxuddvidrjdvwuohtsy4kxg2axbppiyclomt2qciyfoad.onion/"
         ]
-      }
+      },
+      "uuid": "476de1fe-d9b7-441a-8cb9-e6648189be3b",
+      "value": "Yanluowang"
     }
   ],
   "version": 118
