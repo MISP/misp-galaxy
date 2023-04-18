@@ -8798,7 +8798,7 @@
       "value": "SNOWYAMBER"
     },
     {
-      "description": "Used for the first time in February 2023. This tool is distinguished from the others by the embedded code that runs the COBALT STRIKE tool.",
+      "description": "Used for the first time in February 2023. This tool is distinguished from the others by the embedded code that runs the COBALT STRIKE tool.\n\nHALFRIG is a stager for CobaltStrike Beacon that was used in an espionage campaign significantly overlapping with publicly described activity linked to the APT29 and NOBELIUM activity sets. HALFRIG has significant code overlap with the QUARTERRIG and it is highly probable that it was developed by the same team.",
       "meta": {
         "refs": [
           "https://www.gov.pl/web/baza-wiedzy/espionage-campaign-linked-to-russian-intelligence-services",
@@ -8806,11 +8806,34 @@
           "https://www.gov.pl/attachment/6e085a2c-ac05-4b62-9423-5d6e9ef730bf"
         ]
       },
+      "related": [
+        {
+          "dest-uuid": "b2056ff0-00b9-482e-b11c-c771daa5f28a",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "d7247cf9-13b6-4781-b789-a5f33521633b",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "2ee5ed7a-c4d0-40be-a837-20817474a15b",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
       "uuid": "f169f0b3-fe4d-40e5-a443-2561c98eb67e",
       "value": "HALFRIG"
     },
     {
-      "description": "A tool first used in March 2023, sharing part of the code with HALFRIG. Two versions of this tool were observed.",
+      "description": "A tool first used in March 2023, sharing part of the code with HALFRIG. Two versions of this tool were observed.\n\nQUARTERRIG is a dropper that was used in an espionage campaign significantly overlapping with publicly described activity linked to the APT29 and NOBELIUM activity sets. QUARTERRIG does not contain any other capabilities aside from downloading and executing 2nd stage. To bypass security products, QUARTERRIG heavily relies on obfuscation based on opaque predicates and multi-stage execution, interweaving shellcode and PE files. HALFRIG and QUARTERRIG share some of the codebase, suggesting that QUARTERRIG authors have access to both HALFRIG source code and the same obfuscation libraries.",
       "meta": {
         "refs": [
           "https://www.gov.pl/web/baza-wiedzy/espionage-campaign-linked-to-russian-intelligence-services",
@@ -8818,9 +8841,32 @@
           "https://www.gov.pl/attachment/6e085a2c-ac05-4b62-9423-5d6e9ef730bf"
         ]
       },
+      "related": [
+        {
+          "dest-uuid": "b2056ff0-00b9-482e-b11c-c771daa5f28a",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "d7247cf9-13b6-4781-b789-a5f33521633b",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "2ee5ed7a-c4d0-40be-a837-20817474a15b",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
       "uuid": "2d5072db-64e2-4d81-9b3a-3aa76cfa978b",
       "value": "QUARTERRIG"
     }
   ],
-  "version": 163
+  "version": 164
 }
