@@ -55,7 +55,7 @@ Category: *guidelines* - source: *Open Sources* - total: *31* elements
 
 [Backdoor](https://www.misp-project.org/galaxy.html#_backdoor) - A list of backdoor malware.
 
-Category: *tool* - source: *Open Sources* - total: *13* elements
+Category: *tool* - source: *Open Sources* - total: *14* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_backdoor)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/backdoor.json)]
 
@@ -79,7 +79,7 @@ Category: *mobile* - source: *https://arxiv.org/pdf/2005.05110.pdf* - total: *47
 
 [Botnet](https://www.misp-project.org/galaxy.html#_botnet) - botnet galaxy
 
-Category: *tool* - source: *MISP Project* - total: *75* elements
+Category: *tool* - source: *MISP Project* - total: *76* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_botnet)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/botnet.json)]
 
@@ -167,7 +167,7 @@ Category: *tool* - source: *Malpedia* - total: *2574* elements
 
 [Microsoft Activity Group actor](https://www.misp-project.org/galaxy.html#_microsoft_activity_group_actor) - Activity groups as described by Microsoft
 
-Category: *actor* - source: *MISP Project* - total: *14* elements
+Category: *actor* - source: *MISP Project* - total: *79* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_microsoft_activity_group_actor)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/microsoft-activity-group.json)]
 
@@ -371,6 +371,14 @@ Category: *guidelines* - source: *Open Sources, https://www.inversecos.com/2021/
 
 [[HTML](https://www.misp-project.org/galaxy.html#_o365-exchange-techniques)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/o365-exchange-techniques.json)]
 
+## online-service
+
+[online-service](https://www.misp-project.org/galaxy.html#_online-service) - Known public online services.
+
+Category: *tool* - source: *Open Sources* - total: *1* elements
+
+[[HTML](https://www.misp-project.org/galaxy.html#_online-service)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/online-service.json)]
+
 ## Preventive Measure
 
 [Preventive Measure](https://www.misp-project.org/galaxy.html#_preventive_measure) - Preventive measures based on the ransomware document overview as published in https://docs.google.com/spreadsheets/d/1TWS238xacAto-fLKh1n5uTsdijWdCEsGIM0Y0Hvmc5g/pubhtml# . The preventive measures are quite generic and can fit any standard Windows infrastructure and their security measures.
@@ -383,7 +391,7 @@ Category: *measure* - source: *MISP Project* - total: *20* elements
 
 [Ransomware](https://www.misp-project.org/galaxy.html#_ransomware) - Ransomware galaxy based on https://docs.google.com/spreadsheets/d/1TWS238xacAto-fLKh1n5uTsdijWdCEsGIM0Y0Hvmc5g/pubhtml and http://pastebin.com/raw/GHgpWjar
 
-Category: *tool* - source: *Various* - total: *1649* elements
+Category: *tool* - source: *Various* - total: *1705* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_ransomware)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/ransomware.json)]
 
@@ -423,7 +431,7 @@ Category: *sector* - source: *CERT-EU* - total: *117* elements
 
 [Sigma-Rules](https://www.misp-project.org/galaxy.html#_sigma-rules) - MISP galaxy cluster based on Sigma Rules.
 
-Category: *rules* - source: *https://github.com/jstnk9/MISP/tree/main/misp-galaxy/sigma* - total: *2696* elements
+Category: *rules* - source: *https://github.com/jstnk9/MISP/tree/main/misp-galaxy/sigma* - total: *2703* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_sigma-rules)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/sigma-rules.json)]
 
@@ -447,7 +455,7 @@ Category: *sod-matrix* - source: *https://github.com/cudeso/SoD-Matrix* - total:
 
 [Stealer](https://www.misp-project.org/galaxy.html#_stealer) - A list of malware stealer.
 
-Category: *tool* - source: *Open Sources* - total: *12* elements
+Category: *tool* - source: *Open Sources* - total: *13* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_stealer)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/stealer.json)]
 
@@ -487,7 +495,7 @@ Category: *tea-matrix* - source: ** - total: *7* elements
 
 [Threat Actor](https://www.misp-project.org/galaxy.html#_threat_actor) - Known or estimated adversary groups targeting organizations and employees. Adversary groups are regularly confused with their initial operation or campaign. threat-actor-classification meta can be used to clarify the understanding of the threat-actor if also considered as operation, campaign or activity group.
 
-Category: *actor* - source: *MISP Project* - total: *418* elements
+Category: *actor* - source: *MISP Project* - total: *419* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_threat_actor)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/threat-actor.json)]
 
@@ -495,7 +503,7 @@ Category: *actor* - source: *MISP Project* - total: *418* elements
 
 [Tool](https://www.misp-project.org/galaxy.html#_tool) - threat-actor-tools is an enumeration of tools used by adversaries. The list includes malware but also common software regularly used by the adversaries.
 
-Category: *tool* - source: *MISP Project* - total: *549* elements
+Category: *tool* - source: *MISP Project* - total: *552* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_tool)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/tool.json)]
 
