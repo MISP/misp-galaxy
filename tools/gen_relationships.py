@@ -68,7 +68,7 @@ class AtLeastTwoItemsAction(argparse.Action):
             setattr(namespace, self.dest, filenames)
 
 
-parser = argparse.ArgumentParser(description="MISP Galaxy relationship tool.")
+parser = argparse.ArgumentParser(description="MISP Galaxy relationship creation tool.")
 parser.add_argument("files", nargs='+',
                     help="The names of the clusters. (filename or cluster-name)",
                     action=AtLeastTwoItemsAction)
@@ -80,7 +80,7 @@ parser.add_argument("-sd", "--synonyms-destination",
                     action='store_true')
 parser.add_argument("-y", "--yes",
                     help="Assume yes to all the questions, so create relationships without asking.",
-                    action='store_true')  # FIXME develop this feature
+                    action='store_true')
 parser.add_argument('-v', '--verbose', action='count', default=0)
 args = parser.parse_args()
 
@@ -144,7 +144,6 @@ try:
                                 create_relationship = True
                             else:
                                 # interactive prompt to ask what to do
-                                # TODO add question which tags and relationship type and more
                                 print(f"Found non-existing match for {cluster_filename} {values_to_lookup} in {lookup_cluster_filename} {lookup_cluster_values}.")
                                 while True:
                                     user_input = input(f"Create relation? [\u0332yes] / \u0332no / \u0332details / \u0332tags / \u0332relation: ").lower().strip()
