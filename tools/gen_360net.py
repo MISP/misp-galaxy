@@ -76,8 +76,10 @@ json_cluster['version'] += 1
 # save the Galaxy and Cluster file
 with open(os.path.join('..', 'galaxies', '360net.json'), 'w') as f:
     json.dump(json_galaxy, f, indent=2, sort_keys=True, ensure_ascii=False)
+    f.write('\n')  # only needed for the beauty and to be compliant with jq_all_the_things
 
 with open(os.path.join('..', 'clusters', '360net.json'), 'w') as f:
     json.dump(json_cluster, f, indent=2, sort_keys=True, ensure_ascii=False)
+    f.write('\n')  # only needed for the beauty and to be compliant with jq_all_the_things
 
 print("All done, please don't forget to ./jq_all_the_things.sh, commit, and then ./validate_all.sh.")
