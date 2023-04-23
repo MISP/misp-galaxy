@@ -149,7 +149,7 @@ try:
                                     user_input = input(f"Create relation? [\u0332yes] / \u0332no / \u0332details / \u0332tags / \u0332relation: ").lower().strip()
                                     if user_input in ['yes', 'y', '']:
                                         create_relationship = True
-                                        logging.info("  creating it.")
+                                        print("  creating it.")
                                         break
                                     if user_input in ['no', 'n']:
                                         create_relationship = False
@@ -195,6 +195,7 @@ try:
                                 if create_relation(lookup_cluster, cluster, rel_type=rel_type, tags=tags):
                                     cluster_files_changed_tracking[lookup_cluster_filename] = True
 except KeyboardInterrupt:
+    print("")
     pass
 
 # save all to file, and increment version number if something changed
