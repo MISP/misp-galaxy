@@ -1,6 +1,7 @@
 {
   "authors": [
-    "Francesco Bigarella"
+    "Francesco Bigarella",
+    "Christophe Vandeplas"
   ],
   "category": "guidelines",
   "description": "attck4fraud - Principles of MITRE ATT&CK in the fraud domain",
@@ -24,7 +25,8 @@
         "mitigation": "Implementation of DKIM and SPF authentication to detected spoofed email senders; anti-phishing solutions.",
         "refs": [
           "https://blog.malwarebytes.com/cybercrime/2015/02/amazon-notice-ticket-number-phish-seeks-card-details/",
-          "https://www.bleepingcomputer.com/news/security/widespread-apple-id-phishing-attack-pretends-to-be-app-store-receipts/"
+          "https://www.bleepingcomputer.com/news/security/widespread-apple-id-phishing-attack-pretends-to-be-app-store-receipts/",
+          "https://www.association-secure-transactions.eu/industry-information/fraud-definitions/"
         ],
         "victim": "end customer, enterprise"
       },
@@ -46,7 +48,8 @@
         "mitigation": "Implementation of DKIM and SPF authentication to detected spoofed email senders; flagging email coming from outside the enterprise (enterprise); anti-phishing solutions; awareness training (enterprise).",
         "refs": [
           "http://fortune.com/2017/04/27/facebook-google-rimasauskas/",
-          "https://www.ibtimes.co.uk/russian-hackers-fancy-bear-likely-breached-olympic-drug-testing-agency-dnc-experts-say-1577508"
+          "https://www.ibtimes.co.uk/russian-hackers-fancy-bear-likely-breached-olympic-drug-testing-agency-dnc-experts-say-1577508",
+          "https://www.association-secure-transactions.eu/industry-information/fraud-definitions/"
         ],
         "victim": "end customer, enterprise"
       },
@@ -77,7 +80,8 @@
           "https://krebsonsecurity.com/2014/11/skimmer-innovation-wiretapping-atms/",
           "https://krebsonsecurity.com/2016/09/secret-service-warns-of-periscope-skimmers/",
           "https://krebsonsecurity.com/2011/03/green-skimmers-skimming-green",
-          "https://blog.dieboldnixdorf.com/have-you-asked-yourself-this-question-about-skimming/"
+          "https://blog.dieboldnixdorf.com/have-you-asked-yourself-this-question-about-skimming/",
+          "https://www.association-secure-transactions.eu/industry-information/fraud-definitions/"
         ],
         "victim": "end customer, enterprise"
       },
@@ -91,7 +95,8 @@
           "fraud-tactics:Initiation"
         ],
         "refs": [
-          "https://medium.com/@netsentries/beware-of-atm-cash-trapping-9421e498dfcf"
+          "https://medium.com/@netsentries/beware-of-atm-cash-trapping-9421e498dfcf",
+          "https://www.association-secure-transactions.eu/industry-information/fraud-definitions/"
         ]
       },
       "uuid": "1e709b6e-ff4a-4645-adec-42f9636d38f8",
@@ -122,20 +127,26 @@
       "value": "ATM Shimming"
     },
     {
-      "description": "Vishing",
+      "description": "Also known as voice phishing, is the criminal practice of using social engineering over the telephone system to gain access to private personal and financial information from the public for the purpose of financial reward. It is also employed by attackers for reconnaissance purposes to gather more detailed intelligence on a target organisation.",
       "meta": {
         "kill_chain": [
           "fraud-tactics:Initiation"
+        ],
+        "refs": [
+          "https://www.association-secure-transactions.eu/industry-information/fraud-definitions/"
         ]
       },
       "uuid": "308fb88c-412a-4468-91ed-468d07fe4170",
       "value": "Vishing"
     },
     {
-      "description": "POS Skimming",
+      "description": "CPP analysis identifies the likely merchant, POS or ATM location from where card numbers were stolen so that banks can mitigate fraud on other compromised cards.",
       "meta": {
         "kill_chain": [
           "fraud-tactics:Initiation"
+        ],
+        "refs": [
+          "https://www.association-secure-transactions.eu/industry-information/fraud-definitions/"
         ]
       },
       "uuid": "c33778e5-b5cc-4d12-8e4e-a329156d988c",
@@ -152,10 +163,13 @@
       "value": "Social Media Scams"
     },
     {
-      "description": "Malware",
+      "description": "Software which is specifically designed to disrupt, damage, or gain authorised access to a computer system.",
       "meta": {
         "kill_chain": [
           "fraud-tactics:Target Compromise"
+        ],
+        "refs": [
+          "https://www.association-secure-transactions.eu/industry-information/fraud-definitions/"
         ]
       },
       "uuid": "6ee0f7cd-a0ef-46c5-9d80-f0fbac2a9140",
@@ -172,10 +186,13 @@
       "value": "Account-Checking Services"
     },
     {
-      "description": "ATM Black Box Attack",
+      "description": "Type of Jackpotting attack. Connection of an unauthorized device which sends dispense commands directly to the ATM cash dispenser in order to “cash out” the ATM.",
       "meta": {
         "kill_chain": [
           "fraud-tactics:Target Compromise"
+        ],
+        "refs": [
+          "https://www.association-secure-transactions.eu/industry-information/fraud-definitions/"
         ]
       },
       "uuid": "6bec22cb-9aed-426a-bffc-b0a78db6527a",
@@ -192,20 +209,26 @@
       "value": "Insider Trading"
     },
     {
-      "description": "Investment Fraud",
+      "description": "A deceptive practice in the stock or commodities markets that induces investors to make purchase or sale decisions on the basis of false information, frequently resulting in losses, in violation of securities laws.",
       "meta": {
         "kill_chain": [
           "fraud-tactics:Perform Fraud"
+        ],
+        "refs": [
+          "https://www.association-secure-transactions.eu/industry-information/fraud-definitions/"
         ]
       },
       "uuid": "92f5f46f-c506-45de-9a7f-f1128e40d47c",
       "value": "Investment Fraud"
     },
     {
-      "description": "Romance Scam",
+      "description": "Romance scam is a confidence trick involving feigning romantic intentions towards a victim, gaining their affection, and then using that goodwill to commit fraud. Fraudulent acts may involve access to the victim's money, bank accounts, credit cards, passports, e-mail accounts, or national identification numbers; or forcing the victims to commit financial fraud on their behalf.",
       "meta": {
         "kill_chain": [
           "fraud-tactics:Perform Fraud"
+        ],
+        "refs": [
+          "https://www.association-secure-transactions.eu/industry-information/fraud-definitions/"
         ]
       },
       "uuid": "8ac64815-52c0-4d14-a4e4-4a19b2a6057d",
@@ -232,10 +255,13 @@
       "value": "Cash Recovery Scam"
     },
     {
-      "description": "Fake Invoice Fraud",
+      "description": "Invoice fraud happens when a company or organisation is tricked into changing bank account payee details for a payment. Criminals pose as regular suppliers to the company or organisation and will make a formal request for bank account details to be changed or emit false invoices.",
       "meta": {
         "kill_chain": [
           "fraud-tactics:Perform Fraud"
+        ],
+        "refs": [
+          "https://www.association-secure-transactions.eu/industry-information/fraud-definitions/"
         ]
       },
       "uuid": "a0f764d1-b541-4ee7-bb30-21b9a735f644",
@@ -393,5 +419,5 @@
       "value": "ATM Explosive Attack"
     }
   ],
-  "version": 4
+  "version": 5
 }
