@@ -47,7 +47,7 @@ Category: *atrm* - source: *https://github.com/microsoft/Azure-Threat-Research-M
 
 [attck4fraud](https://www.misp-project.org/galaxy.html#_attck4fraud) - attck4fraud - Principles of MITRE ATT&CK in the fraud domain
 
-Category: *guidelines* - source: *Open Sources* - total: *31* elements
+Category: *guidelines* - source: *Open Sources* - total: *32* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_attck4fraud)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/attck4fraud.json)]
 
@@ -55,7 +55,7 @@ Category: *guidelines* - source: *Open Sources* - total: *31* elements
 
 [Backdoor](https://www.misp-project.org/galaxy.html#_backdoor) - A list of backdoor malware.
 
-Category: *tool* - source: *Open Sources* - total: *14* elements
+Category: *tool* - source: *Open Sources* - total: *16* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_backdoor)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/backdoor.json)]
 
@@ -183,7 +183,7 @@ Category: *misinformation-pattern* - source: *https://github.com/misinfosecproje
 
 [Attack Pattern](https://www.misp-project.org/galaxy.html#_attack_pattern) - ATT&CK tactic
 
-Category: *attack-pattern* - source: *https://github.com/mitre/cti* - total: *1086* elements
+Category: *attack-pattern* - source: *https://github.com/mitre/cti* - total: *1099* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_attack_pattern)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-attack-pattern.json)]
 
@@ -287,7 +287,7 @@ Category: *attack-pattern* - source: *https://collaborate.mitre.org/attackics/in
 
 [Intrusion Set](https://www.misp-project.org/galaxy.html#_intrusion_set) - Name of ATT&CK Group
 
-Category: *actor* - source: *https://github.com/mitre/cti* - total: *148* elements
+Category: *actor* - source: *https://github.com/mitre/cti* - total: *151* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_intrusion_set)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-intrusion-set.json)]
 
@@ -295,7 +295,7 @@ Category: *actor* - source: *https://github.com/mitre/cti* - total: *148* elemen
 
 [Malware](https://www.misp-project.org/galaxy.html#_malware) - Name of ATT&CK software
 
-Category: *tool* - source: *https://github.com/mitre/cti* - total: *633* elements
+Category: *tool* - source: *https://github.com/mitre/cti* - total: *653* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_malware)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-malware.json)]
 
@@ -359,7 +359,7 @@ Category: *actor* - source: *https://github.com/mitre/cti* - total: *7* elements
 
 [Tool](https://www.misp-project.org/galaxy.html#_tool) - Name of ATT&CK software
 
-Category: *tool* - source: *https://github.com/mitre/cti* - total: *82* elements
+Category: *tool* - source: *https://github.com/mitre/cti* - total: *84* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_tool)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-tool.json)]
 
@@ -431,7 +431,7 @@ Category: *sector* - source: *CERT-EU* - total: *117* elements
 
 [Sigma-Rules](https://www.misp-project.org/galaxy.html#_sigma-rules) - MISP galaxy cluster based on Sigma Rules.
 
-Category: *rules* - source: *https://github.com/jstnk9/MISP/tree/main/misp-galaxy/sigma* - total: *2703* elements
+Category: *rules* - source: *https://github.com/jstnk9/MISP/tree/main/misp-galaxy/sigma* - total: *2568* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_sigma-rules)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/sigma-rules.json)]
 
@@ -495,7 +495,7 @@ Category: *tea-matrix* - source: ** - total: *7* elements
 
 [Threat Actor](https://www.misp-project.org/galaxy.html#_threat_actor) - Known or estimated adversary groups targeting organizations and employees. Adversary groups are regularly confused with their initial operation or campaign. threat-actor-classification meta can be used to clarify the understanding of the threat-actor if also considered as operation, campaign or activity group.
 
-Category: *actor* - source: *MISP Project* - total: *419* elements
+Category: *actor* - source: *MISP Project* - total: *420* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_threat_actor)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/threat-actor.json)]
 
@@ -503,7 +503,7 @@ Category: *actor* - source: *MISP Project* - total: *419* elements
 
 [Tool](https://www.misp-project.org/galaxy.html#_tool) - threat-actor-tools is an enumeration of tools used by adversaries. The list includes malware but also common software regularly used by the adversaries.
 
-Category: *tool* - source: *MISP Project* - total: *552* elements
+Category: *tool* - source: *MISP Project* - total: *557* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_tool)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/tool.json)]
 
@@ -532,12 +532,12 @@ The MISP galaxy (JSON files) are dual-licensed under:
 or
 
 ~~~~
- Copyright (c) 2015-2022 Alexandre Dulaunoy - a@foo.be
- Copyright (c) 2015-2022 CIRCL - Computer Incident Response Center Luxembourg
- Copyright (c) 2015-2022 Andras Iklody
- Copyright (c) 2015-2022 Raphael Vinot
- Copyright (c) 2015-2022 Deborah Servili
- Copyright (c) 2016-2022 Various contributors to MISP Project
+ Copyright (c) 2015-2023 Alexandre Dulaunoy - a@foo.be
+ Copyright (c) 2015-2023 CIRCL - Computer Incident Response Center Luxembourg
+ Copyright (c) 2015-2023 Andras Iklody
+ Copyright (c) 2015-2023 Raphael Vinot
+ Copyright (c) 2015-2023 Deborah Servili
+ Copyright (c) 2016-2023 Various contributors to MISP Project
 
  Redistribution and use in source and binary forms, with or without modification,
  are permitted provided that the following conditions are met:
