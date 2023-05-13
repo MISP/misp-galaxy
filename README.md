@@ -47,7 +47,7 @@ Category: *atrm* - source: *https://github.com/microsoft/Azure-Threat-Research-M
 
 [attck4fraud](https://www.misp-project.org/galaxy.html#_attck4fraud) - attck4fraud - Principles of MITRE ATT&CK in the fraud domain
 
-Category: *guidelines* - source: *Open Sources* - total: *32* elements
+Category: *guidelines* - source: *Open Sources* - total: *71* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_attck4fraud)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/attck4fraud.json)]
 
@@ -159,7 +159,7 @@ Category: *first-dns* - source: *https://www.first.org/global/sigs/dns/* - total
 
 [Malpedia](https://www.misp-project.org/galaxy.html#_malpedia) - Malware galaxy cluster based on Malpedia.
 
-Category: *tool* - source: *Malpedia* - total: *2574* elements
+Category: *tool* - source: *Malpedia* - total: *2823* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_malpedia)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/malpedia.json)]
 
@@ -514,6 +514,7 @@ Category: *tool* - source: *MISP Project* - total: *557* elements
 Category: *military equipment* - source: *Popular Mechanics* - total: *36* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_uavs/ucavs)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/uavs.json)]
+
 
 # Online documentation 
 
