@@ -1096,10 +1096,11 @@
       "value": "DHS2015"
     },
     {
-      "description": "Gh0st Rat is a well-known Chinese remote access trojan which was originally made by C.Rufus Security Team several years ago.",
+      "description": "Gh0st Rat is a well-known Chinese remote access trojan which was originally made by C.Rufus Security Team several years ago. GH0ST is a backdoor written in C++ that communicates via a custom binary protocol over TCP or UDP. It typically features a packet signature at the start of each message that varies between samples. Availability: Public",
       "meta": {
         "refs": [
-          "http://download01.norman.no/documents/ThemanyfacesofGh0stRat.pdf"
+          "http://download01.norman.no/documents/ThemanyfacesofGh0stRat.pdf",
+          "https://mandiant.widen.net/s/zvmfw5fnjs/apt43-report"
         ],
         "synonyms": [
           "Gh0stRat, GhostRat"
@@ -1108,6 +1109,13 @@
       "related": [
         {
           "dest-uuid": "c82c904f-b3b4-40a2-bf0d-008912953104",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "aac49b4e-74e9-49fa-84f9-e340cf8bafbc",
           "tags": [
             "estimative-language:likelihood-probability=\"likely\""
           ],
@@ -5280,13 +5288,23 @@
       "value": "SNUGRIDE"
     },
     {
-      "description": "QUASARRAT is an open-source RAT available at https://github.com/quasar/QuasarRat . The versions used by APT10 (1.3.4.0, 2.0.0.0, and 2.0.0.1) are not available via the public GitHub page, indicating that APT10 has further customized the open source version. The 2.0 versions require a dropper to decipher and launch the AES encrypted QUASARRAT payload. QUASARRAT is a fully functional .NET backdoor that has been used by multiple cyber espionage groups in the past.",
+      "description": "QUASARRAT is an open-source RAT available at https://github.com/quasar/QuasarRat . The versions used by APT10 (1.3.4.0, 2.0.0.0, and 2.0.0.1) are not available via the public GitHub page, indicating that APT10 has further customized the open source version. The 2.0 versions require a dropper to decipher and launch the AES encrypted QUASARRAT payload. QUASARRAT is a fully functional .NET backdoor that has been used by multiple cyber espionage groups in the past.\nQUASARRAT is a publicly available Windows backdoor. It may visit a website, download, upload, and execute files. QUASARRAT may acquire system information, act as a remote desktop or shell, or remotely activate the webcam. The backdoor may also log keystrokes and steal passwords from commonly used browsers and FTP clients. QUASARRAT was originally named xRAT before it was renamed by the developers in August 2015. Availability: Public",
       "meta": {
         "refs": [
           "https://www.fireeye.com/blog/threat-research/2017/04/apt10_menupass_grou.html",
-          "https://researchcenter.paloaltonetworks.com/2017/10/unit42-tracking-subaat-targeted-phishing-attacks-point-leader-threat-actors-repository/"
+          "https://researchcenter.paloaltonetworks.com/2017/10/unit42-tracking-subaat-targeted-phishing-attacks-point-leader-threat-actors-repository/",
+          "https://mandiant.widen.net/s/zvmfw5fnjs/apt43-report"
         ]
       },
+      "related": [
+        {
+          "dest-uuid": "aac49b4e-74e9-49fa-84f9-e340cf8bafbc",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
       "uuid": "4d58ad7d-b5ee-4efb-b6af-6c70aadb326a",
       "value": "QUASARRAT"
     },
@@ -9129,7 +9147,8 @@
       "description": "Penetration testing framework.",
       "meta": {
         "refs": [
-          "https://www.metasploit.com"
+          "https://www.metasploit.com",
+          "https://mandiant.widen.net/s/zvmfw5fnjs/apt43-report"
         ],
         "synonyms": [],
         "type": [
@@ -9138,7 +9157,7 @@
       },
       "related": [],
       "uuid": "be419332-61ab-45f0-979e-56f78a223c8e",
-      "value": "metasploit"
+      "value": "METASPLOIT is a penetration testing framework whose features include vulnerability testing, network enumeration, payload generation and execution, and defense evasion. Availability: Public"
     },
     {
       "description": "A swiss army knife for pentesting networks.",
@@ -10080,7 +10099,502 @@
       },
       "uuid": "90ced040-3507-4b81-9e6d-131acde085ab",
       "value": "TAXHAUL"
+    },
+    {
+      "description": "downloader (?)",
+      "meta": {
+        "refs": [
+          "https://www.mandiant.com/resources/blog/3cx-software-supply-chain-compromise"
+        ]
+      },
+      "uuid": "1e7167b1-b7cc-4808-9817-69d7cbcc82a2",
+      "value": "SUDDENICON"
+    },
+    {
+      "description": "AMADEY is a downloader written in C that retrieves payloads via HTTP. Downloaded payloads are written to disk and executed. Availability: Public",
+      "meta": {
+        "refs": [
+          "https://mandiant.widen.net/s/zvmfw5fnjs/apt43-report"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "aac49b4e-74e9-49fa-84f9-e340cf8bafbc",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "996c0284-cd30-4ecc-9bde-29bbc4018118",
+      "value": "AMADEY"
+    },
+    {
+      "description": "BENCHMARK is a dropper written in C/C++ that reads a filename and extracts a Base64 encoded payload from a hard-coded path, decodes the payload and drops it to disk. Availability: Non-public",
+      "meta": {
+        "refs": [
+          "https://mandiant.widen.net/s/zvmfw5fnjs/apt43-report"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "aac49b4e-74e9-49fa-84f9-e340cf8bafbc",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "b9c0633d-27a8-49ac-a2c0-376e266e1123",
+      "value": "BENCHMARK"
+    },
+    {
+      "description": "BITTERSWEET is a C/C++ Windows downloader. It collects basic system information before downloading the next stage to disk and executing. Availability: Non-public",
+      "meta": {
+        "refs": [
+          "https://mandiant.widen.net/s/zvmfw5fnjs/apt43-report"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "aac49b4e-74e9-49fa-84f9-e340cf8bafbc",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "2cda0b1d-ac45-48a2-a582-a24d9d3c185d",
+      "value": "BITTERSWEET"
+    },
+    {
+      "description": "BRAVEPRINCE is a C/C++ downloader. It uses the Daum email service to upload collected system information and download files. Availability: Public",
+      "meta": {
+        "refs": [
+          "https://mandiant.widen.net/s/zvmfw5fnjs/apt43-report"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "aac49b4e-74e9-49fa-84f9-e340cf8bafbc",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "d7596e75-34c6-46f0-badc-3cb26b41475d",
+      "value": "BRAVEPRINCE"
+    },
+    {
+      "description": "COINTOSS is a C/C++ downloader. It uses the Windows Management Instrumentation command-line (WMIC) utility to download the payload over FTP. COINTOSS then creates and runs a batch script to uninstall itself. Availability: Non-public",
+      "meta": {
+        "refs": [
+          "https://mandiant.widen.net/s/zvmfw5fnjs/apt43-report"
+        ],
+        "synonyms": [
+          "COINTOSS.XLM"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "aac49b4e-74e9-49fa-84f9-e340cf8bafbc",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "3006e4ea-a518-48df-a3f2-4ad9c17773d2",
+      "value": "COINTOSS"
+    },
+    {
+      "description": "DINOLAB is a C/C++ builder. It is used to encrypt and decrypt files, obfuscate VBSscripts, and infect files. Availability: Non-public",
+      "meta": {
+        "refs": [
+          "https://mandiant.widen.net/s/zvmfw5fnjs/apt43-report"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "aac49b4e-74e9-49fa-84f9-e340cf8bafbc",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "c95933da-0b83-4324-bd2d-b2cf891ea1b4",
+      "value": "DINOLAB"
+    },
+    {
+      "description": "DRIVEDOWN is a C/C++ Windows downloader capable of executing embedded scripts and downloading stages from OneDrive. Availability: Non-public",
+      "meta": {
+        "refs": [
+          "https://mandiant.widen.net/s/zvmfw5fnjs/apt43-report"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "aac49b4e-74e9-49fa-84f9-e340cf8bafbc",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "89ff8321-110f-44bb-b4d9-532b234bd06d",
+      "value": "DRIVEDOWN"
+    },
+    {
+      "description": "GOLDDRAGON is a downloader written in C that retrieves a payload from a remote server via HTTP. The downloaded payload is written to disk and executed. GOLDDRAGON also extracts a payload from a Hangul Word Processor document and writes it to a startup directory. As a result, the new file is executed when the current user logs in. Availability: Non-public",
+      "meta": {
+        "refs": [
+          "https://mandiant.widen.net/s/zvmfw5fnjs/apt43-report"
+        ],
+        "synonyms": [
+          "GOLDDRAGON.POWERSHELL"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "aac49b4e-74e9-49fa-84f9-e340cf8bafbc",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "2297799c-f93c-4903-b9af-32b6b599912c",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "170c57a6-326b-4d6a-9f3f-158a0e29abf2",
+      "value": "GOLDDRAGON"
+    },
+    {
+      "description": "EGGHATCH is a C/C++ Windows downloader. It uses mshta.exe to download and execute a script. Availability: Non-public",
+      "meta": {
+        "refs": [
+          "https://mandiant.widen.net/s/zvmfw5fnjs/apt43-report"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "aac49b4e-74e9-49fa-84f9-e340cf8bafbc",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "97b32dd9-c39f-4043-ae6b-edde96584e20",
+      "value": "EGGHATCH"
+    },
+    {
+      "description": "GOLDDROP is a C/C++ Windows dropper. It decrypts a resource file, saves it to the file system, and injects it into another process. Availability: Non-public",
+      "meta": {
+        "refs": [
+          "https://mandiant.widen.net/s/zvmfw5fnjs/apt43-report"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "aac49b4e-74e9-49fa-84f9-e340cf8bafbc",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "e8428747-7bb6-4f71-bfb1-2e90139ca5db",
+      "value": "GOLDDROP"
+    },
+    {
+      "description": "GOLDSMELT is a C/C++ utility used to close the rundll32.exe process and delete a file likely used for logs. Availability: Non-public",
+      "meta": {
+        "refs": [
+          "https://mandiant.widen.net/s/zvmfw5fnjs/apt43-report"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "aac49b4e-74e9-49fa-84f9-e340cf8bafbc",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "396525b4-3d78-4557-87dd-b86e7df0bdf9",
+      "value": "GOLDSMELT"
+    },
+    {
+      "description": "Invoke-Mimikatz is PowerShell script that reflectively loads a Mimikatz credential-stealing DLL into memory. Availability: Public",
+      "meta": {
+        "refs": [
+          "https://mandiant.widen.net/s/zvmfw5fnjs/apt43-report"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "aac49b4e-74e9-49fa-84f9-e340cf8bafbc",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "7f3a035d-d83a-45b8-8111-412aa8ade802",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "uses"
+        }
+      ],
+      "uuid": "0562d52e-a971-4601-bee6-477707df4218",
+      "value": "Invoke-Mimikatz"
+    },
+    {
+      "description": "JURASSICSHELL is a PHP file management web shell that allows the actor to download and upload files. Availability: Non-public",
+      "meta": {
+        "refs": [
+          "https://mandiant.widen.net/s/zvmfw5fnjs/apt43-report"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "aac49b4e-74e9-49fa-84f9-e340cf8bafbc",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "5142fb67-0f1f-4d56-9e18-c4525ee37916",
+      "value": "JURASSICSHELL"
+    },
+    {
+      "description": "LANDMARK is a C/C++ Windows launcher that loads and executes a file on disk stored as desktop.r5u. Availability: Non-public",
+      "meta": {
+        "refs": [
+          "https://mandiant.widen.net/s/zvmfw5fnjs/apt43-report"
+        ],
+        "synonyms": [
+          "LANDMARK.NET"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "aac49b4e-74e9-49fa-84f9-e340cf8bafbc",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "3ae8fbe4-6bcb-4a49-9931-c62532bf0499",
+      "value": "LANDMARK"
+    },
+    {
+      "description": "LATEOP is a datamine VisualBasic script that can enumerate a variety of characteristics of a target system as well as execute additional arbitrary VisualBasic content. Some deployments of LATEOP have led to the download and execution of the PASSMARK credential theft payload. In contrast, somedeployments of LATEOP.v2 have originated from BENCHMARK sourced infections. Availability: Non-public",
+      "meta": {
+        "refs": [
+          "https://mandiant.widen.net/s/zvmfw5fnjs/apt43-report"
+        ],
+        "synonyms": [
+          "LATEOP.V2"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "aac49b4e-74e9-49fa-84f9-e340cf8bafbc",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "f8ce3bfe-529b-4fcf-b854-16be80021024",
+      "value": "LATEOP"
+    },
+    {
+      "description": "LONEJOGGER is a downloader/dropper which has been observed targeting cryptocurrency services (including exchanges and investment companies), and uses a .lnk shortcut to download guardrailed HTML Application payloads. Availability: Non-public",
+      "meta": {
+        "refs": [
+          "https://mandiant.widen.net/s/zvmfw5fnjs/apt43-report"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "aac49b4e-74e9-49fa-84f9-e340cf8bafbc",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "5bdf163b-0a6e-40b1-a69c-1e306de93db6",
+      "value": "LONEJOGGER"
+    },
+    {
+      "description": "PASSMARK is a credential harvester that steals usernames and passwords from web browsers and email applications. PASSMARK is likely derived from the tool PassView. Availability: Public",
+      "meta": {
+        "refs": [
+          "https://mandiant.widen.net/s/zvmfw5fnjs/apt43-report"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "aac49b4e-74e9-49fa-84f9-e340cf8bafbc",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "e1b2425b-f80b-46e8-a788-db62ce592b6b",
+      "value": "PASSMARK"
+    },
+    {
+      "description": "PENCILDOWN is a C/C++ Windows based downloader. PENCILDOWN collects basic system information and sends it to the C2 server before receiving the next stage. The next stage is then loaded in memory or executed directly based off a flag in the response. Availability: Non-public",
+      "meta": {
+        "refs": [
+          "https://mandiant.widen.net/s/zvmfw5fnjs/apt43-report"
+        ],
+        "synonyms": [
+          "PENCILDOWN.ANDROID"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "aac49b4e-74e9-49fa-84f9-e340cf8bafbc",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "aa4ba5b8-1dbc-47ac-9645-653f6e421721",
+      "value": "PENCILDOWN"
+    },
+    {
+      "description": "PENDOWN is a downloader written in C++ that retrieves a payload via HTTP. The downloaded file is saved to disk and executed.  Availability: Non-public",
+      "meta": {
+        "refs": [
+          "https://mandiant.widen.net/s/zvmfw5fnjs/apt43-report"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "aac49b4e-74e9-49fa-84f9-e340cf8bafbc",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "d8799cef-775c-4625-871d-8fb17dde8b62",
+      "value": "PENDOWN"
+    },
+    {
+      "description": "PUMPKINBAR is a C/C++ dropper. PUMPKINBAR can contain multiple payloads encoded and embedded within itself. The key to decode each payload is appended at the end of the PUMPKINBAR executable. The payloads are dropped to disk and executed. Availability: Non-public",
+      "meta": {
+        "refs": [
+          "https://mandiant.widen.net/s/zvmfw5fnjs/apt43-report"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "aac49b4e-74e9-49fa-84f9-e340cf8bafbc",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "9df0243f-61f5-45da-b8d8-9f61e78242ec",
+      "value": "PUMPKINBAR"
+    },
+    {
+      "description": "SLIMCURL is a C/C++ downloader. It contains the next stage as a Base64 encoded Google Drive link. The next stage is downloaded using cURL. Availability: Non-public",
+      "meta": {
+        "refs": [
+          "https://mandiant.widen.net/s/zvmfw5fnjs/apt43-report"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "aac49b4e-74e9-49fa-84f9-e340cf8bafbc",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "b12eb4e9-1c73-4394-91cd-1b2ee59ca8f5",
+      "value": "SLIMCURL"
+    },
+    {
+      "description": "SPICYTUNA is a VBA downloader. It collects basic system information and is capable of downloading and executing additional stages. Availability: Non-public",
+      "meta": {
+        "refs": [
+          "https://mandiant.widen.net/s/zvmfw5fnjs/apt43-report"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "aac49b4e-74e9-49fa-84f9-e340cf8bafbc",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "d6a07a16-d986-4e26-9338-d6ce24732e07",
+      "value": "SPICYTUNA"
+    },
+    {
+      "description": "SWEETDROP is a C/C++ Windows dropper. It drops an embedded binary resource to the file system and executes it. Availability: Non-public",
+      "meta": {
+        "refs": [
+          "https://mandiant.widen.net/s/zvmfw5fnjs/apt43-report"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "aac49b4e-74e9-49fa-84f9-e340cf8bafbc",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "6fb05366-be31-4b43-a501-3cc5f7ffd234",
+      "value": "SWEETDROP"
+    },
+    {
+      "description": "VENOMBITE is a C/C++ Windows downloader that has evolved from PENDOWN. It uses the same custom encoding routine, but the network functionality has been moved to an embedded executable. The downloaded file is loaded and executed in memory. Availability: Non-public",
+      "meta": {
+        "refs": [
+          "https://mandiant.widen.net/s/zvmfw5fnjs/apt43-report"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "aac49b4e-74e9-49fa-84f9-e340cf8bafbc",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "7b002b6e-442c-4c0a-b173-873820c7c731",
+      "value": "VENOMBITE"
     }
   ],
-  "version": 166
+  "version": 167
 }
