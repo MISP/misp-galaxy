@@ -85,5 +85,7 @@ do
   echo ''
 done
 
-# check for empyt strings in clusters
+# check for empty strings in clusters
 python3 -m tools.chk_empty_strings
+
+echo "If you see this message, all is probably well."

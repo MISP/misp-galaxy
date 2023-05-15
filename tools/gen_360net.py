@@ -40,7 +40,7 @@ for actor in list_data['data']['list']:
         refs = []
     for ref in actor['recommends']:
         refs.append(ref['url'])
-    refs = list(set(refs))
+    refs = sorted(list(set(refs)))
     cluster = {
         'value': f"{actor['name']} - {actor['code']}",
         'description': actor['description'],
@@ -67,9 +67,9 @@ json_galaxy = {
     'uuid': "20de4abf-f000-48ec-a929-3cdc5c2f3c23",
     'version': 1
 }
+
 with open(os.path.join('..', 'clusters', '360net.json'), 'r') as f:
     json_cluster = json.load(f)
-
 json_cluster['values'] = clusters
 json_cluster['version'] += 1
 
