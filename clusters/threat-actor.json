@@ -11374,7 +11374,43 @@
       },
       "uuid": "f02679fa-5e85-4050-8eb5-c2677d93306f",
       "value": "Volt Typhoon"
+    },
+    {
+      "description": "The campaign, called SmugX, overlaps with previously reported activity by Chinese APT actors RedDelta and Mustang Panda. Although those two correlate to some extent with Camaro Dragon, there is insufficient evidence to link the SmugX campaign to the Camaro Dragon group.\n\nThe campaign uses new delivery methods to deploy (most notably – HTML Smuggling) a new variant of PlugX, an implant commonly associated with a wide variety of Chinese threat actors. Although the payload itself remains similar to the one found in older PlugX variants, its delivery methods results in low detection rates, which until recently helped the campaign fly under the radar.",
+      "meta": {
+        "refs": [
+          "https://research.checkpoint.com/2023/chinese-threat-actors-targeting-europe-in-smugx-campaign/"
+        ]
+      },
+      "uuid": "c95520c1-0a27-42aa-9853-bf5f0f3bc074",
+      "value": "SmugX"
+    },
+    {
+      "description": "Likely Chinese state-sponsored threat activity group RedDelta targeting organizations within Europe and Southeast Asia using a customized variant of the PlugX backdoor. Since at least 2019, RedDelta has been consistently active within Southeast Asia, particularly in Myanmar and Vietnam, but has also routinely adapted its targeting in response to global geopolitical events. This is historically evident through the group’s targeting of the Vatican and other Catholic organizations in the lead-up to 2021 talks between Chinese Communist Party (CCP) and Vatican officials, as well as throughout 2022 through the group’s shift towards increased targeting of European government and diplomatic entities following Russia’s invasion of Ukraine.\n\nDuring the 3-month period from September through November 2022, RedDelta has regularly used an infection chain employing malicious shortcut (LNK) files, which trigger a dynamic-link library (DLL) search-order-hijacking execution chain to load consistently updated PlugX versions. Throughout this period, the group repeatedly employed decoy documents specific to government and migration policy within Europe. Of note, we identified a European government department focused on trade communicating with RedDelta command-and-control (C2) infrastructure in early August 2022. This activity commenced on the same day that a RedDelta PlugX sample using this C2 infrastructure and featuring an EU trade-themed decoy document surfaced on public malware repositories. We also identified additional probable victim entities within Myanmar and Vietnam regularly communicating with RedDelta C2 infrastructure.\n\nRedDelta closely overlaps with public industry reporting under the aliases BRONZE PRESIDENT, Mustang Panda, TA416, Red Lich, and HoneyMyte.",
+      "meta": {
+        "refs": [
+          "https://go.recordedfuture.com/hubfs/reports/cta-2022-1223.pdf"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "78bf726c-a9e6-11e8-9e43-77249a2f7339",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "overlaps"
+        },
+        {
+          "dest-uuid": "420ac20b-f2b9-42b8-aa1a-6d4b72895ca4",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "overlaps"
+        }
+      ],
+      "uuid": "fceed509-938e-4f9e-acd4-76e6c28dc6f1",
+      "value": "RedDelta"
     }
   ],
-  "version": 274
+  "version": 275
 }
