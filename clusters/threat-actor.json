@@ -7129,6 +7129,31 @@
     {
       "description": "TA505, the name given by Proofpoint, has been in the cybercrime business for at least four years. This is the group behind the infamous Dridex banking trojan and Locky ransomware, delivered through malicious email campaigns via Necurs botnet. Other malware associated with TA505 include Philadelphia and GlobeImposter ransomware families.",
       "meta": {
+        "cfr-suspected-victims": [
+          "Australia",
+          "Canada",
+          "Czech Republic",
+          "Germany",
+          "Hungary",
+          "India",
+          "Japan",
+          "Romania",
+          "Serbia",
+          "Singapore",
+          "South Korea",
+          "Spain",
+          "Thailand",
+          "Turkey",
+          "United Kingdom",
+          "United States"
+        ],
+        "cfr-target-category": [
+          "Education",
+          "Finance",
+          "Health",
+          "Retail",
+          "Hospitality"
+        ],
         "country": "RU",
         "refs": [
           "https://www.bleepingcomputer.com/news/security/ta505-group-adopts-new-servhelper-backdoor-and-flawedgrace-rat/",
@@ -11519,7 +11544,13 @@
         "country": "",
         "references": [
           "https://www.crowdstrike.com/blog/prophet-spider-exploits-oracle-weblogic-to-facilitate-ransomware-activity/",
-          "https://www.crowdstrike.com/blog/prophet-spider-exploits-citrix-sharefile/"
+          "https://www.crowdstrike.com/blog/prophet-spider-exploits-citrix-sharefile/",
+          "https://www.secureworks.com/research/gold-melody-profile-of-an-initial-access-broker",
+          "https://www.mandiant.com/resources/blog/unc961-multiverse-financially-motivated"
+        ],
+        "synonyms": [
+          "GOLD MELODY",
+          "UNC961"
         ]
       },
       "related": [
@@ -11796,7 +11827,63 @@
       },
       "uuid": "01ac8b25-492e-444b-891b-968f2694e7b2",
       "value": "MoustachedBouncer"
+    },
+    {
+      "description": "The threat actor that Microsoft tracks as Storm-0324 is a financially motivated group known to gain initial access using email-based initial infection vectors and then hand off access to compromised networks to other threat actors. These handoffs frequently lead to ransomware deployment.",
+      "meta": {
+        "references": [
+          "https://www.microsoft.com/en-us/security/blog/2023/09/12/malware-distributor-storm-0324-facilitates-ransomware-access/",
+          "https://www.proofpoint.com/us/blog/threat-insight/jssloader-recoded-and-reloaded"
+        ],
+        "synonyms": [
+          "DEV-0324",
+          "Sagrid",
+          "TA543"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "5db89188-568d-40d2-9320-5fb4a06fbd51",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "uses"
+        }
+      ],
+      "uuid": "8cb6f57b-9ebb-45a6-a89f-9efdb8065d70",
+      "value": "Storm-0324"
+    },
+    {
+      "description": "When the first member of Scattered Canary, who, for the purposes of this report, we call\nAlpha, began his operations, he was a lone wolf—working mostly Craigslist scams as he learned\nthe tricks of the trade from a mentor. However, within a few years, he had honed his craft\nenough to expand into romance scams, where he met his first “employee,” Beta. Once they\nhad secured enough mules via their romance scams to launder their stolen money, they shifted\nfrom targeting individuals to targeting enterprises, and the group’s BEC operation was born.",
+      "meta": {
+        "country": "NG",
+        "motive": "Cybercrime",
+        "references": [
+          "https://cofense.com/blog/gift-card-fraud-ecosystem-shifts-what-paxfuls-closing-means-for-business-email-compromise/",
+          "https://static.fortra.com/agari/pdfs/guide/ag-scattered-canary-gd.pdf",
+          "https://www.agari.com/blog/covid-19-unemployment-fraud-cares-act?_gl=1%2Ayzg6ns%2A_ga%2AMTkyMzIyOTI4MC4xNjk2MjUyMDA2%2A_ga_NHMHGJWX49%2AMTY5NjI1MjAwNS4xLjAuMTY5NjI1MjAwNS42MC4wLjA.&utm_source=press-release&utm_medium=prnewswire&utm_campaign=scattered20"
+        ]
+      },
+      "uuid": "fde2d0f9-ed23-4cdc-96d3-f0a01f804707",
+      "value": "Scattered Canary"
+    },
+    {
+      "description": "Scattered Spider, a highly active hacking group, has made headlines by targeting more than 130 organizations, with the number of victims steadily increasing.",
+      "meta": {
+        "references": [
+          "https://www.cybersecurity-insiders.com/scattered-spider-managed-mgm-resort-network-outage-brings-8m-loss-daily/",
+          "https://www.loginradius.com/blog/identity/oktapus-phishing-targets-okta-identity-credentials/"
+        ],
+        "synonyms": [
+          "UNC3944",
+          "Muddled Libra",
+          "Oktapus",
+          "Scattered Swine"
+        ]
+      },
+      "uuid": "3b238f3a-c67a-4a9e-b474-dc3897e00129",
+      "value": "Scattered Spider"
     }
   ],
-  "version": 282
+  "version": 284
 }
