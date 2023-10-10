@@ -10623,7 +10623,59 @@
       },
       "uuid": "978e5adc-e6e4-49a9-822f-0c130ac983a3",
       "value": "DarkGate"
+    },
+    {
+      "description": "This is a loader Trojan used by AtlasCross in this activity. Its main function is to detect the host environment and execute a built-in shellcode in its own process, and then the shellcode loads and runs subsequent Trojan programs.\nDangerAds writes major malicious code to the .NET dll program’s HelpText method, so it starts when an external program invokes Help from that dll program. It should be noted that the user name and local domain name of the host will be collected before the main malicious functions of DangerAds are executed, and subsequent codes will be executed only when one of these two names contains the keyword “danger” or “ads-wcf”. Therefore, it can be judged that this attack is a targeted attack against the domain or user name containing “ads-wcf”.\nThe main body of DangerAds malicious code will determine the number of program version bits and selectively decrypt and execute an x86 or x64 shellcode. DangerAds uses multi-byte XOR for decryption, while shellcode is loaded directly in the process.\nIn the shellcode stage, DangerAds uses a set of open-source scheme sRDI (https://github.com/monoxgas/sRDI/blob/master/shellcodeRDI/shellcodeRDI.c)) to load and execute DLL programs. The shellcode finally loads the attached DLL program at its tail and calls the export function EnumWinEvent.\nThe DLL program loaded by this shellcode is the AtlasAgent Trojan developed by AtlasCross.",
+      "meta": {
+        "refs": [
+          "https://nsfocusglobal.com/warning-newly-discovered-apt-attacker-atlascross-exploits-red-cross-blood-drive-phishing-for-cyberattack/"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "32eebd31-5e0f-4fb9-b478-26ff4e48aaf4",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "f162df7a-725b-40ef-add2-43ce74eb50a4",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "executes"
+        }
+      ],
+      "uuid": "e7628f0e-e4ae-4dde-988b-07e93a4c20e3",
+      "value": "DangerAds"
+    },
+    {
+      "description": "AtlasAgent used in this attack activity is Trojan horse program developed by AtlasCross. The main functions of the Trojan are to obtain host information, process information, prevent opening of multi-programs, inject specified shellcode and download files from CnC servers. The Trojan communicates with the CnC through HTTP protocol, encrypts communication data using Base64 encoding after RC4 encryption, and encrypts key APIs using two encryption methods at the same time.",
+      "meta": {
+        "refs": [
+          "https://nsfocusglobal.com/warning-newly-discovered-apt-attacker-atlascross-exploits-red-cross-blood-drive-phishing-for-cyberattack/"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "32eebd31-5e0f-4fb9-b478-26ff4e48aaf4",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "e7628f0e-e4ae-4dde-988b-07e93a4c20e3",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "executed-by"
+        }
+      ],
+      "uuid": "f162df7a-725b-40ef-add2-43ce74eb50a4",
+      "value": "AtlasAgent"
     }
   ],
-  "version": 169
+  "version": 170
 }
