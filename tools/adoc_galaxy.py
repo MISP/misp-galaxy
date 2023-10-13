@@ -30,7 +30,7 @@ clusters = []
 pathClusters = os.path.join(thisDir, '../clusters')
 pathGalaxies = os.path.join(thisDir, '../galaxies')
 
-skip_list = ["cancer.json", "handicap.json"]
+skip_list = ["cancer.json", "handicap.json", "ammunitions.json", "firearms.json"]
 
 for f in os.listdir(pathGalaxies):
     if '.json' in f:
