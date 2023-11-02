@@ -210,6 +210,30 @@
       "value": "DIZZY PANDA"
     },
     {
+      "description": "Grayling activity was first observed in early 2023, when a number of victims were identified with distinctive malicious DLL side-loading activity. Grayling appears to target organisations in Asia, however one unknown organisation in the United States was also targeted. Industries targeted include Biomedical, Government and Information Technology. Grayling use a variety of tools during their attacks, including well known tools such as Cobalt Strike and Havoc and also some others.",
+      "meta": {
+        "attribution-confidence": "50",
+        "cfr-suspected-state-sponsor": "China",
+        "cfr-suspected-victims": [
+          "Taiwan",
+          "United States",
+          "Vietnam",
+          "Solomon Islands"
+        ],
+        "cfr-target-category": [
+          "Biomedical",
+          "Government",
+          "Information technology"
+        ],
+        "country": "CN",
+        "refs": [
+          "https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/grayling-taiwan-cyber-attacks"
+        ]
+      },
+      "uuid": "6714de29-4dd8-463c-99a3-77c9e80fa47d",
+      "value": "Grayling"
+    },
+    {
       "description": "Putter Panda were the subject of an extensive report by CrowdStrike, which stated: 'The CrowdStrike Intelligence team has been tracking this particular unit since2012, under the codename PUTTER PANDA, and has documented activity dating back to 2007. The report identifies Chen Ping, aka cpyy, and the primary location of Unit 61486.'",
       "meta": {
         "attribution-confidence": "50",
@@ -6190,7 +6214,8 @@
           "https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RWMFIi",
           "https://decoded.avast.io/threatintel/outbreak-of-follina-in-australia",
           "https://www.proofpoint.com/us/blog/threat-insight/chasing-currents-espionage-south-china-sea",
-          "https://www.accenture.com/_acnmedia/pdf-96/accenture-security-mudcarp.pdf"
+          "https://www.accenture.com/_acnmedia/pdf-96/accenture-security-mudcarp.pdf",
+          "https://blog.google/threat-analysis-group/government-backed-actors-exploiting-winrar-vulnerability/"
         ],
         "synonyms": [
           "TEMP.Periscope",
@@ -6204,7 +6229,8 @@
           "TA423",
           "Red Ladon",
           "ITG09",
-          "MUDCARP"
+          "MUDCARP",
+          "ISLANDDREAMS"
         ]
       },
       "related": [
@@ -6246,13 +6272,19 @@
           "https://securityaffairs.co/wordpress/56348/intelligence/magic-hound-campaign.html",
           "https://www.cfr.org/cyber-operations/apt-35",
           "https://blogs.microsoft.com/on-the-issues/2019/03/27/new-steps-to-protect-customers-from-hacking/",
-          "https://research.checkpoint.com/2022/apt35-exploits-log4j-vulnerability-to-distribute-new-modular-powershell-toolkit/"
+          "https://research.checkpoint.com/2022/apt35-exploits-log4j-vulnerability-to-distribute-new-modular-powershell-toolkit/",
+          "https://www.microsoft.com/en-us/security/blog/2021/11/16/evolving-trends-in-iranian-threat-actor-activity-mstic-presentation-at-cyberwarcon-2021/",
+          "https://www.sentinelone.com/labs/log4j2-in-the-wild-iranian-aligned-threat-actor-tunnelvision-actively-exploiting-vmware-horizon/",
+          "https://www.secureworks.com/blog/cobalt-mirage-conducts-ransomware-operations-in-us"
         ],
         "synonyms": [
           "Newscaster Team",
           "Magic Hound",
           "G0059",
-          "Phosphorus"
+          "Phosphorus",
+          "Mint Sandstorm",
+          "TunnelVision",
+          "COBALT MIRAGE"
         ]
       },
       "related": [
@@ -7522,8 +7554,29 @@
     {
       "description": "Since April 2018, an APT group (Blind Eagle, APT-C-36) suspected coming from South America carried out continuous targeted attacks against Colombian government institutions as well as important corporations in financial sector, petroleum industry, professional manufacturing, etc.",
       "meta": {
+        "cfr-suspected-victims": [
+          "Ecuador",
+          "Colombia",
+          "Spain",
+          "Panama",
+          "Chile"
+        ],
+        "cfr-target-category": [
+          "Petroleum",
+          "Manufacturing",
+          "Financial",
+          "Private sector",
+          "Government"
+        ],
+        "cfr-type-of-incident": "Espionage",
         "refs": [
-          "https://ti.360.net/blog/articles/apt-c-36-continuous-attacks-targeting-colombian-government-institutions-and-corporations-en/"
+          "https://ti.360.net/blog/articles/apt-c-36-continuous-attacks-targeting-colombian-government-institutions-and-corporations-en/",
+          "https://www.ecucert.gob.ec/wp-content/uploads/2022/03/alerta-APTs-2022-03-23.pdf",
+          "https://blogs.blackberry.com/en/2023/02/blind-eagle-apt-c-36-targets-colombia",
+          "https://lab52.io/blog/apt-c-36-recent-activity-analysis/",
+          "https://www.trendmicro.com/en_ph/research/21/i/apt-c-36-updates-its-long-term-spam-campaign-against-south-ameri.html",
+          "https://research.checkpoint.com/2023/blindeagle-targeting-ecuador-with-sharpened-tools/",
+          "https://attack.mitre.org/groups/G0099/"
         ],
         "synonyms": [
           "Blind Eagle"
@@ -11573,7 +11626,8 @@
           "https://www.microsoft.com/en-us/security/blog/2022/09/07/profiling-dev-0270-phosphorus-ransomware-operations/"
         ],
         "synonyms": [
-          "Nemesis Kitten"
+          "Nemesis Kitten",
+          "Storm-0270"
         ]
       },
       "related": [
@@ -11961,6 +12015,74 @@
       "value": "AtlasCross"
     },
     {
+      "description": "Void Rabisu is an intrusion set associated with both financially motivated ransomware attacks and targeted campaigns on Ukraine and countries supporting Ukraine.",
+      "meta": {
+        "cfr-suspected-victims": [
+          "Ukraine",
+          "European Union"
+        ],
+        "references": [
+          "https://www.trendmicro.com/en_us/research/23/j/void-rabisu-targets-female-leaders-with-new-romcom-variant.html",
+          "https://www.trendmicro.com/en_za/research/23/e/void-rabisu-s-use-of-romcom-backdoor-shows-a-growing-shift-in-th.html"
+        ],
+        "synonyms": [
+          "Tropical Scorpius"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "6d9dfc5f-4ebf-404b-ab5e-e6497867fe65",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "5f1c11d3-c6ac-4368-a801-cced88a9d93b",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "uses"
+        }
+      ],
+      "uuid": "9766d52e-0e5d-4997-9c31-7f2291dcda9e",
+      "value": "Void Rabisu"
+    },
+    {
+      "description": "In early 2023, the Check Point Incident Response Team (CPIRT) team investigated a malware incident at a European healthcare institution involving a set of tools mentioned in the Avast report in late 2022. The incident was attributed to Camaro Dragon, a Chinese-based espionage threat actor whose activities overlap with activities tracked by different researchers as Mustang Panda and LuminousMoth, whose focus is primarily on Southeast Asian countries and their close peers.",
+      "meta": {
+        "country": "CN",
+        "references": [
+          "https://research.checkpoint.com/2023/the-dragon-who-sold-his-camaro-analyzing-custom-router-implant/",
+          "https://research.checkpoint.com/2023/beyond-the-horizon-traveling-the-world-on-camaro-dragons-usb-flash-drives/"
+        ]
+      },
+      "uuid": "9ee446fd-b0cd-4662-9cd1-a60b429192db",
+      "value": "Camaro Dragon"
+    },
+    {
+      "description": "Storm-0558 is a China-based threat actor with espionage objectives. While there are some minimal overlaps with other Chinese groups such as Violet Typhoon (ZIRCONIUM, APT31), Microsoft maintain high confidence that Storm-0558 operates as its own distinct group",
+      "meta": {
+        "attribution-confidence": "50",
+        "cfr-suspected-state-sponsor": "China",
+        "cfr-suspected-victims": [
+          "United States"
+        ],
+        "cfr-target-category": [
+          "Government"
+        ],
+        "cfr-type-of-incident": "Espionage",
+        "country": "CN",
+        "references": [
+          "https://www.microsoft.com/en-us/security/blog/2023/07/14/analysis-of-storm-0558-techniques-for-unauthorized-email-access/",
+          "https://www.wiz.io/blog/storm-0558-compromised-microsoft-key-enables-authentication-of-countless-micr",
+          "https://msrc.microsoft.com/blog/2023/09/results-of-major-technical-investigations-for-storm-0558-key-acquisition/"
+        ]
+      },
+      "uuid": "5b30bcb8-4923-45cc-bc89-29651ca5d54e",
+      "value": "Storm-0558"
+    },
+    {
       "description": "Scarred Manticore has been pursuing high-value targets for years, utilizing a variety of IIS-based backdoors to attack Windows servers. These include a variety of custom web shells, custom DLL backdoors, and driver-based implants.",
       "meta": {
         "refs": [
@@ -11972,5 +12094,5 @@
       "value": "Scarred Manticore"
     }
   ],
-  "version": 285
+  "version": 288
 }
