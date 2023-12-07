@@ -11185,11 +11185,19 @@
       "value": "APT-C-60"
     },
     {
-      "description": "RomCom",
+      "description": "ROMCOM is an evolving and sophisticated threat actor group that has been using the malware tool ROMCOM for espionage and financially motivated attacks. They have targeted organizations in Ukraine and NATO countries, including military personnel, government agencies, and political leaders. The ROMCOM backdoor is capable of stealing sensitive information and deploying other malware, showcasing the group's adaptability and growing sophistication.",
       "meta": {
+        "country": "RU",
         "refs": [
           "https://blogs.blackberry.com/en/2022/11/romcom-spoofing-solarwinds-keepass",
-          "https://blogs.blackberry.com/en/2022/10/unattributed-romcom-threat-actor-spoofing-popular-apps-now-hits-ukrainian-militaries"
+          "https://blogs.blackberry.com/en/2022/10/unattributed-romcom-threat-actor-spoofing-popular-apps-now-hits-ukrainian-militaries",
+          "https://www.trendmicro.com/en_us/research/23/j/void-rabisu-targets-female-leaders-with-new-romcom-variant.html",
+          "https://labs.k7computing.com/index.php/romcom-rat-not-your-typical-love-story/",
+          "https://blogs.blackberry.com/en/2023/07/decoding-romcom-behaviors-and-opportunities-for-detection",
+          "https://www.trendmicro.com/en_us/research/23/e/void-rabisu-s-use-of-romcom-backdoor-shows-a-growing-shift-in-th.html"
+        ],
+        "synonyms": [
+          "Storm-0978"
         ]
       },
       "uuid": "ba9e1ed2-e142-48d0-a593-f73ac6d59ccd",
@@ -13644,6 +13652,128 @@
       },
       "uuid": "5e32baed-f4b5-4149-8540-7515ad8c4dc0",
       "value": "Daixin Team"
+    },
+    {
+      "description": "UNC2717 is a threat actor that engages in espionage activities aligned with Chinese government priorities. They demonstrate advanced tradecraft and take measures to avoid detection, making it challenging for network defenders to identify their tools and intrusion methods. UNC2717, along with other Chinese APT actors, has been observed stealing credentials, email communications, and intellectual property. They have targeted global government agencies using malware such as HARDPULSE, QUIETPULSE, and PULSEJUMP.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://www.fireeye.com/blog/threat-research/2021/05/updates-on-chinese-apt-compromising-pulse-secure-vpn-devices.html",
+          "http://internal-www.fireeye.com/blog/threat-research/2021/04/suspected-apt-actors-leverage-bypass-techniques-pulse-secure-zero-day.html"
+        ]
+      },
+      "uuid": "f1d90b54-4821-41ff-8e07-ac650e0454b7",
+      "value": "UNC2717"
+    },
+    {
+      "description": "UNC2659 has been active since at least January 2021. We have observed the threat actor move through the whole attack lifecycle in under 10 days. UNC2659 is notable given their use of an exploit in the SonicWall SMA100 SSL VPN product, which has since been patched by SonicWall. The threat actor appeared to download several tools used for various phases of the attack lifecycle directly from those tools’ legitimate public websites.",
+      "meta": {
+        "refs": [
+          "http://internal-www.fireeye.com/blog/threat-research/2021/05/shining-a-light-on-darkside-ransomware-operations.html"
+        ]
+      },
+      "uuid": "697cb051-5315-4026-bf4c-553b49f817a9",
+      "value": "UNC2659"
+    },
+    {
+      "description": "AeroBlade is a previously unknown threat actor that has been targeting an aerospace organization in the United States. Their objective appears to be conducting commercial and competitive cyber espionage. They employ spear-phishing as a delivery mechanism, using weaponized documents with embedded remote template injection techniques and malicious VBA macro code. The attacks have been ongoing since September 2022, with multiple phases identified in the attack chain. The origin and precise objective of AeroBlade remain unknown.",
+      "meta": {
+        "refs": [
+          "https://blogs.blackberry.com/en/2023/11/aeroblade-on-the-hunt-targeting-us-aerospace-industry"
+        ]
+      },
+      "uuid": "47739f40-c80c-435a-bedc-0d2b38e87ddc",
+      "value": "AeroBlade"
+    },
+    {
+      "description": "WIP19 is a Chinese-speaking threat group involved in espionage targeting the Middle East and Asia. They utilize a stolen certificate to sign their malware, including SQLMaggie, ScreenCap, and a credential dumper. The group has been observed targeting telecommunications and IT service providers, using toolsets authored by WinEggDrop. WIP19's activities suggest they are after specific information and are part of the broader Chinese espionage landscape.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://www.sentinelone.com/labs/wip19-espionage-new-chinese-apt-targets-it-service-providers-and-telcos-with-signed-malware/"
+        ]
+      },
+      "uuid": "21bb2dab-4125-4ae8-8966-c7381659e180",
+      "value": "WIP19"
+    },
+    {
+      "description": "UNC2447 is a financially motivated threat actor with ties to multiple hacker groups. They have been observed deploying ransomware, including FiveHands and Hello Kitty, and engaging in double extortion tactics. They have been active since at least May 2020 and target organizations in Europe and North America.",
+      "meta": {
+        "refs": [
+          "https://www.esentire.com/blog/hacker-infrastructure-used-in-cisco-breach-discovered-attacking-a-top-workforce-management-corporation-russias-evil-corp-gang-suspected-reports-esentire",
+          "https://blog.talosintelligence.com/2022/08/recent-cyber-attack.html",
+          "http://internal-www.fireeye.com/blog/threat-research/2021/04/unc2447-sombrat-and-fivehands-ransomware-sophisticated-financial-threat.html",
+          "https://www.rewterz.com/rewterz-news/rewterz-threat-alert-financially-motivated-aggressive-group-carrying-out-ransomware-campaigns-active-iocs"
+        ]
+      },
+      "uuid": "590ecec6-4047-4d0f-9143-2e367700423d",
+      "value": "UNC2447"
+    },
+    {
+      "description": "UNC215 is a Chinese nation-state threat actor that has been active since at least 2014. They have targeted organizations in various sectors, including government, technology, telecommunications, defense, finance, entertainment, and healthcare. UNC215 has been observed using tools such as Mimikatz, FOCUSFJORD, and HYPERBRO for initial access and post-compromise activities. They have demonstrated a focus on evading detection and have employed tactics such as using trusted third parties, minimizing forensic evidence, and incorporating false flags. UNC215's targets are located globally, with a particular focus on the Middle East, Europe, Asia, and North America.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://www.esentire.com/security-advisories/ransomware-hackers-attack-a-top-safety-testing-org-using-tactics-and-techniques-borrowed-from-chinese-espionage-groups",
+          "https://www.fireeye.com/blog/threat-research/2021/08/unc215-chinese-espionage-campaign-in-israel.html"
+        ]
+      },
+      "uuid": "9795249f-8954-4632-830f-7e1f0ebc1dd5",
+      "value": "UNC215"
+    },
+    {
+      "description": "DEV-0569, also known as Storm-0569, is a threat actor group that has been observed deploying the Royal ransomware. They utilize malicious ads and phishing techniques to distribute malware and gain initial access to networks. The group has been linked to the distribution of payloads such as Batloader and has forged relationships with other threat actors. DEV-0569 has targeted various sectors, including healthcare, communications, manufacturing, and education in the United States and Brazil.",
+      "meta": {
+        "refs": [
+          "https://www.microsoft.com/en-us/security/blog/2022/11/17/dev-0569-finds-new-ways-to-deliver-royal-ransomware-various-payloads/"
+        ],
+        "synonyms": [
+          "Storm-0569"
+        ]
+      },
+      "uuid": "e883458d-496f-4a94-b916-4b7b83e3d525",
+      "value": "DEV-0569"
+    },
+    {
+      "description": "From Russia with Love, is a threat actor group that emerged during the Russia-Ukraine war in 2022. They primarily engage in DDoS attacks and have targeted critical infrastructure, media, energy, and government entities. FRwL has been linked to the use of the Somnia ransomware, which they employ as a wiper rather than for financial gain. While there is no direct evidence linking FRwL to the Russian Main Intelligence Directorate, it is possible that they coordinate activities with state-aligned hacktivist groups.",
+      "meta": {
+        "refs": [
+          "https://socprime.com/blog/somnia-malware-detection-uac-0118-aka-frwl-launches-cyber-attacks-against-organizations-in-ukraine-using-enhanced-malware-strains/",
+          "https://spixnet.at/cybersecurity-blog/2022/11/15/russian-hacktivists-hit-ukrainian-orgs-with-ransomware-but-no-ransom-demands/",
+          "https://outpost24.com/blog/ics-attack-classifications/"
+        ],
+        "synonyms": [
+          "FRwL",
+          "FromRussiaWithLove"
+        ]
+      },
+      "uuid": "d869486a-ec70-4a74-897e-31aa7b3df48d",
+      "value": "UAC-0118"
+    },
+    {
+      "description": "UAC-0050 is a threat actor that has been active since 2020, targeting government agencies in Ukraine. They have been distributing the Remcos RAT malware through phishing campaigns, using tactics such as impersonating the Security Service of Ukraine and sending emails with malicious attachments. The group has also been linked to other hacking collectives, such as UAC-0096, and has previously used remote administration tools like Remote Utilities. The motive behind their attacks is likely espionage.",
+      "meta": {
+        "refs": [
+          "https://cert.gov.ua/article/3931296",
+          "https://socprime.com/blog/remcos-rat-detection-uac-0050-hackers-launch-phishing-attacks-impersonating-the-security-service-of-ukraine/",
+          "https://socprime.com/blog/new-phishing-attack-detection-attributed-to-the-uac-0050-and-uac-0096-groups-spreading-remcos-spyware/",
+          "https://cert.gov.ua/article/3804703"
+        ]
+      },
+      "uuid": "e3ff56b6-2663-46bd-9e5c-017a350896d9",
+      "value": "UAC-0050"
+    },
+    {
+      "description": "UNC2630 is a threat actor believed to be affiliated with the Chinese government. They engage in cyber espionage activities, targeting organizations aligned with Beijing's strategic objectives. UNC2630 demonstrates advanced tradecraft and employs various malware families, including SLOWPULSE and RADIALPULSE, to compromise Pulse Secure VPN appliances. They also utilize modified binaries and scripts to maintain persistence and move laterally within compromised networks.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://www.fireeye.com/blog/threat-research/2021/05/updates-on-chinese-apt-compromising-pulse-secure-vpn-devices.html",
+          "http://internal-www.fireeye.com/blog/threat-research/2021/04/suspected-apt-actors-leverage-bypass-techniques-pulse-secure-zero-day.html"
+        ]
+      },
+      "uuid": "86dfe64e-7101-4d45-bb94-efc40c5e14fe",
+      "value": "UNC2630"
     }
   ],
   "version": 295
