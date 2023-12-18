@@ -87,7 +87,7 @@ Category: *mobile* - source: *https://arxiv.org/pdf/2005.05110.pdf* - total: *47
 
 [Botnet](https://www.misp-project.org/galaxy.html#_botnet) - botnet galaxy
 
-Category: *tool* - source: *MISP Project* - total: *76* elements
+Category: *tool* - source: *MISP Project* - total: *130* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_botnet)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/botnet.json)]
 
@@ -139,6 +139,14 @@ Category: *Cryptominers* - source: *Open Source Intelligence* - total: *5* eleme
 
 [[HTML](https://www.misp-project.org/galaxy.html#_cryptominers)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/cryptominers.json)]
 
+## DISARM Techniques
+
+[DISARM Techniques](https://www.misp-project.org/galaxy.html#_disarm_techniques) - DISARM is a framework designed for describing and understanding disinformation incidents.
+
+Category: *disarm* - source: *https://github.com/misinfosecproject/amitt_framework* - total: *294* elements
+
+[[HTML](https://www.misp-project.org/galaxy.html#_disarm_techniques)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/disarm-techniques.json)]
+
 ## Election guidelines
 
 [Election guidelines](https://www.misp-project.org/galaxy.html#_election_guidelines) - Universal Development and Security Guidelines as Applicable to Election Technology.
@@ -175,7 +183,7 @@ Category: *first-dns* - source: *https://www.first.org/global/sigs/dns/* - total
 
 [Malpedia](https://www.misp-project.org/galaxy.html#_malpedia) - Malware galaxy cluster based on Malpedia.
 
-Category: *tool* - source: *Malpedia* - total: *2947* elements
+Category: *tool* - source: *Malpedia* - total: *2972* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_malpedia)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/malpedia.json)]
 
@@ -195,11 +203,27 @@ Category: *misinformation-pattern* - source: *https://github.com/misinfosecproje
 
 [[HTML](https://www.misp-project.org/galaxy.html#_misinformation_pattern)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/misinfosec-amitt-misinformation-pattern.json)]
 
+## MITRE ATLAS Attack Pattern
+
+[MITRE ATLAS Attack Pattern](https://www.misp-project.org/galaxy.html#_mitre_atlas_attack_pattern) - MITRE ATLAS Attack Pattern - Adversarial Threat Landscape for Artificial-Intelligence Systems
+
+Category: *attack-pattern* - source: *https://github.com/mitre-atlas/atlas-navigator-data* - total: *82* elements
+
+[[HTML](https://www.misp-project.org/galaxy.html#_mitre_atlas_attack_pattern)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-atlas-attack-pattern.json)]
+
+## MITRE ATLAS Course of Action
+
+[MITRE ATLAS Course of Action](https://www.misp-project.org/galaxy.html#_mitre_atlas_course_of_action) - MITRE ATLAS Mitigation - Adversarial Threat Landscape for Artificial-Intelligence Systems
+
+Category: *course-of-action* - source: *https://github.com/mitre-atlas/atlas-navigator-data* - total: *19* elements
+
+[[HTML](https://www.misp-project.org/galaxy.html#_mitre_atlas_course_of_action)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-atlas-course-of-action.json)]
+
 ## Attack Pattern
 
 [Attack Pattern](https://www.misp-project.org/galaxy.html#_attack_pattern) - ATT&CK tactic
 
-Category: *attack-pattern* - source: *https://github.com/mitre/cti* - total: *1099* elements
+Category: *attack-pattern* - source: *https://github.com/mitre/cti* - total: *1124* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_attack_pattern)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-attack-pattern.json)]
 
@@ -207,7 +231,7 @@ Category: *attack-pattern* - source: *https://github.com/mitre/cti* - total: *10
 
 [Course of Action](https://www.misp-project.org/galaxy.html#_course_of_action) - ATT&CK Mitigation
 
-Category: *course-of-action* - source: *https://github.com/mitre/cti* - total: *279* elements
+Category: *course-of-action* - source: *https://github.com/mitre/cti* - total: *280* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_course_of_action)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-course-of-action.json)]
 
@@ -303,7 +327,7 @@ Category: *attack-pattern* - source: *https://collaborate.mitre.org/attackics/in
 
 [Intrusion Set](https://www.misp-project.org/galaxy.html#_intrusion_set) - Name of ATT&CK Group
 
-Category: *actor* - source: *https://github.com/mitre/cti* - total: *151* elements
+Category: *actor* - source: *https://github.com/mitre/cti* - total: *157* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_intrusion_set)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-intrusion-set.json)]
 
@@ -311,7 +335,7 @@ Category: *actor* - source: *https://github.com/mitre/cti* - total: *151* elemen
 
 [Malware](https://www.misp-project.org/galaxy.html#_malware) - Name of ATT&CK software
 
-Category: *tool* - source: *https://github.com/mitre/cti* - total: *653* elements
+Category: *tool* - source: *https://github.com/mitre/cti* - total: *671* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_malware)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-malware.json)]
 
@@ -371,13 +395,21 @@ Category: *actor* - source: *https://github.com/mitre/cti* - total: *7* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_pre_attack_-_intrusion_set)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-pre-attack-intrusion-set.json)]
 
-## Tool
+## mitre-tool
 
-[Tool](https://www.misp-project.org/galaxy.html#_tool) - Name of ATT&CK software
+[mitre-tool](https://www.misp-project.org/galaxy.html#_mitre-tool) - Name of ATT&CK software
 
-Category: *tool* - source: *https://github.com/mitre/cti* - total: *84* elements
+Category: *tool* - source: *https://github.com/mitre/cti* - total: *87* elements
 
-[[HTML](https://www.misp-project.org/galaxy.html#_tool)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-tool.json)]
+[[HTML](https://www.misp-project.org/galaxy.html#_mitre-tool)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-tool.json)]
+
+## NAICS
+
+[NAICS](https://www.misp-project.org/galaxy.html#_naics) - The North American Industry Classification System or NAICS is a classification of business establishments by type of economic activity (the process of production).
+
+Category: *sector* - source: *North American Industry Classification System - NAICS* - total: *2125* elements
+
+[[HTML](https://www.misp-project.org/galaxy.html#_naics)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/naics.json)]
 
 ## o365-exchange-techniques
 
@@ -447,7 +479,7 @@ Category: *sector* - source: *CERT-EU* - total: *118* elements
 
 [Sigma-Rules](https://www.misp-project.org/galaxy.html#_sigma-rules) - MISP galaxy cluster based on Sigma Rules.
 
-Category: *rules* - source: *https://github.com/jstnk9/MISP/tree/main/misp-galaxy/sigma* - total: *2776* elements
+Category: *rules* - source: *https://github.com/jstnk9/MISP/tree/main/misp-galaxy/sigma* - total: *2814* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_sigma-rules)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/sigma-rules.json)]
 
@@ -479,7 +511,7 @@ Category: *tool* - source: *Open Sources* - total: *13* elements
 
 [Surveillance Vendor](https://www.misp-project.org/galaxy.html#_surveillance_vendor) - List of vendors selling surveillance technologies including malware, interception devices or computer exploitation services.
 
-Category: *actor* - source: *MISP Project* - total: *15* elements
+Category: *actor* - source: *MISP Project* - total: *49* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_surveillance_vendor)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/surveillance-vendor.json)]
 
@@ -511,7 +543,7 @@ Category: *tea-matrix* - source: ** - total: *7* elements
 
 [Threat Actor](https://www.misp-project.org/galaxy.html#_threat_actor) - Known or estimated adversary groups targeting organizations and employees. Adversary groups are regularly confused with their initial operation or campaign. threat-actor-classification meta can be used to clarify the understanding of the threat-actor if also considered as operation, campaign or activity group.
 
-Category: *actor* - source: *MISP Project* - total: *432* elements
+Category: *actor* - source: *MISP Project* - total: *557* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_threat_actor)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/threat-actor.json)]
 
@@ -519,7 +551,7 @@ Category: *actor* - source: *MISP Project* - total: *432* elements
 
 [Tool](https://www.misp-project.org/galaxy.html#_tool) - threat-actor-tools is an enumeration of tools used by adversaries. The list includes malware but also common software regularly used by the adversaries.
 
-Category: *tool* - source: *MISP Project* - total: *585* elements
+Category: *tool* - source: *MISP Project* - total: *588* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_tool)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/tool.json)]
 
@@ -530,7 +562,6 @@ Category: *tool* - source: *MISP Project* - total: *585* elements
 Category: *military equipment* - source: *Popular Mechanics* - total: *36* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_uavs/ucavs)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/uavs.json)]
-
 
 # Online documentation 
 
