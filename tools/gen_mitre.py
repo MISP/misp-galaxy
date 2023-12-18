@@ -4,7 +4,7 @@ import re
 import os
 import argparse
 
-parser = argparse.ArgumentParser(description='Create a couple galaxy/cluster with cti\'s intrusion-sets\nMust be in the mitre/cti/enterprise-attack/intrusion-set folder')
+parser = argparse.ArgumentParser(description='Create a couple galaxy/cluster with cti\'s intrusion-sets\nMust be in the tools folder')
 parser.add_argument("-p", "--path", required=True, help="Path of the mitre/cti folder")
 
 args = parser.parse_args()
