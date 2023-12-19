@@ -10,151 +10,6 @@
   "uuid": "951d5a45-43c2-422b-90af-059014f15714",
   "values": [
     {
-      "description": "Establish access controls on internal model registries and limit internal access to production models. Limit access to training data only to approved users.\n",
-      "meta": {
-        "external_id": "AML.M0005",
-        "refs": [
-          "https://atlas.mitre.org/mitigations/AML.M0005"
-        ]
-      },
-      "related": [
-        {
-          "dest-uuid": "0d002b6b-d006-4aab-a7f9-fa69f4a1e675",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "2792e1f0-3132-4876-878d-a900b8a40e7d",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "481486ed-846c-43ce-931b-86b8a18556b0",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "666f4d33-1a62-4ad7-9bf9-6387cd3f1fd7",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "68034561-a079-4052-9b64-427bfcff76ff",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "6945b742-f1d5-4a83-ba4a-d0e0de6620c3",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "822cb1e2-f35f-4b35-a650-59b7770d4abc",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        }
-      ],
-      "uuid": "da785068-ece5-4c52-b77d-39e1b24cb6d7",
-      "value": "Control Access to ML Models and Data at Rest"
-    },
-    {
-      "description": "Limit the total number and rate of queries a user can perform.\n",
-      "meta": {
-        "external_id": "AML.M0004",
-        "refs": [
-          "https://atlas.mitre.org/mitigations/AML.M0004"
-        ]
-      },
-      "related": [
-        {
-          "dest-uuid": "1cc7f877-cb60-419a-bd1e-32b704b534d0",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "3247b43f-1888-4158-b3da-5b7c7dfaa4e2",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "3b829988-8bdb-4c4e-a4dd-500a3d3fd3e4",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "569d6edd-0140-4ab2-97b1-3635d62f40cc",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "65c5e3b8-9296-46a2-ae7d-1b68a79cbe54",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "79cdc11c-2ca9-4a6a-96a0-18bd84943086",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "83c5ba15-5312-4c7d-bbb4-f9c4f2c6ffca",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "8a115a02-2b88-4a3e-9212-a39dc086320b",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "b5d1fd4f-861f-43e0-b1ca-ee8a3b47f7e1",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "ba5645e5-d1ab-4f1f-8b82-cb0792543fa8",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        }
-      ],
-      "uuid": "4a048bfe-dab5-434b-86cc-f4586951ec0d",
-      "value": "Restrict Number of ML Model Queries"
-    },
-    {
       "description": "Limit the public release of technical information about the machine learning stack used in an organization's products or services. Technical knowledge of how machine learning is used can be leveraged by adversaries to perform targeting and tailor attacks to the target system. Additionally, consider limiting the release of organizational information - including physical locations, researcher names, and department structures - from which technical details such as machine learning techniques, model architectures, or datasets may be inferred.\n",
       "meta": {
         "external_id": "AML.M0000",
@@ -271,55 +126,14 @@
       "value": "Passive ML Output Obfuscation"
     },
     {
-      "description": "Incorporate multiple sensors to integrate varying perspectives and modalities to avoid a single point of failure susceptible to physical attacks.\n",
+      "description": "Use techniques to make machine learning models robust to adversarial inputs such as adversarial training or network distillation.\n",
       "meta": {
-        "external_id": "AML.M0009",
+        "external_id": "AML.M0003",
         "refs": [
-          "https://atlas.mitre.org/mitigations/AML.M0009"
+          "https://atlas.mitre.org/mitigations/AML.M0003"
         ]
       },
       "related": [
-        {
-          "dest-uuid": "bb747632-d988-45ff-9cb3-97d827b4d9db",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "e0958449-a880-4410-bbb1-fa102030a883",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        }
-      ],
-      "uuid": "532918ce-83cf-4f6f-86fa-8ad4024e91ab",
-      "value": "Use Multi-Modal Sensors"
-    },
-    {
-      "description": "Detect and block adversarial inputs or atypical queries that deviate from known benign behavior, exhibit behavior patterns observed in previous attacks or that come from potentially malicious IPs.\nIncorporate adversarial detection algorithms into the ML system prior to the ML model.\n",
-      "meta": {
-        "external_id": "AML.M0015",
-        "refs": [
-          "https://atlas.mitre.org/mitigations/AML.M0015"
-        ]
-      },
-      "related": [
-        {
-          "dest-uuid": "1cc7f877-cb60-419a-bd1e-32b704b534d0",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "79cdc11c-2ca9-4a6a-96a0-18bd84943086",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
         {
           "dest-uuid": "8bcf7648-2683-421d-b623-bc539de59cb3",
           "tags": [
@@ -335,52 +149,108 @@
           "type": "mitigates"
         }
       ],
-      "uuid": "825f21ab-f3c9-46ce-b539-28f295f519f8",
-      "value": "Adversarial Input Detection"
+      "uuid": "04e9bb75-1b7e-4825-bc3f-774850d3c1ef",
+      "value": "Model Hardening"
     },
     {
-      "description": "Verify the cryptographic checksum of all machine learning artifacts to verify that the file was not modified by an attacker.\n",
+      "description": "Limit the total number and rate of queries a user can perform.\n",
       "meta": {
-        "external_id": "AML.M0014",
+        "external_id": "AML.M0004",
         "refs": [
-          "https://atlas.mitre.org/mitigations/AML.M0014"
+          "https://atlas.mitre.org/mitigations/AML.M0004"
         ]
       },
       "related": [
         {
-          "dest-uuid": "0799f2f2-1038-4391-ba1f-4117595db45a",
+          "dest-uuid": "1cc7f877-cb60-419a-bd1e-32b704b534d0",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
           "type": "mitigates"
         },
         {
-          "dest-uuid": "b6697dbf-3e3f-41ce-a212-361d1c0ca0e9",
+          "dest-uuid": "3247b43f-1888-4158-b3da-5b7c7dfaa4e2",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
           "type": "mitigates"
         },
         {
-          "dest-uuid": "d52b913b-808c-461d-8969-94cd5c9fe07b",
+          "dest-uuid": "3b829988-8bdb-4c4e-a4dd-500a3d3fd3e4",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "569d6edd-0140-4ab2-97b1-3635d62f40cc",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "65c5e3b8-9296-46a2-ae7d-1b68a79cbe54",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "79cdc11c-2ca9-4a6a-96a0-18bd84943086",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "83c5ba15-5312-4c7d-bbb4-f9c4f2c6ffca",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "8a115a02-2b88-4a3e-9212-a39dc086320b",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "b5d1fd4f-861f-43e0-b1ca-ee8a3b47f7e1",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "ba5645e5-d1ab-4f1f-8b82-cb0792543fa8",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
           "type": "mitigates"
         }
       ],
-      "uuid": "a861f658-4203-48ba-bdca-fe068518eefb",
-      "value": "Verify ML Artifacts"
+      "uuid": "4a048bfe-dab5-434b-86cc-f4586951ec0d",
+      "value": "Restrict Number of ML Model Queries"
     },
     {
-      "description": "Deploying ML models to edge devices can increase the attack surface of the system. Consider serving models in the cloud to reduce the level of access the adversary has to the model.\n",
+      "description": "Establish access controls on internal model registries and limit internal access to production models. Limit access to training data only to approved users.\n",
       "meta": {
-        "external_id": "AML.M0017",
+        "external_id": "AML.M0005",
         "refs": [
-          "https://atlas.mitre.org/mitigations/AML.M0017"
+          "https://atlas.mitre.org/mitigations/AML.M0005"
         ]
       },
       "related": [
+        {
+          "dest-uuid": "0d002b6b-d006-4aab-a7f9-fa69f4a1e675",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
         {
           "dest-uuid": "2792e1f0-3132-4876-878d-a900b8a40e7d",
           "tags": [
@@ -389,34 +259,21 @@
           "type": "mitigates"
         },
         {
-          "dest-uuid": "51c95da5-d7f1-4b57-9229-869b80305b37",
+          "dest-uuid": "481486ed-846c-43ce-931b-86b8a18556b0",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
           "type": "mitigates"
         },
         {
-          "dest-uuid": "afcd723a-e5ff-4c09-8f72-fe16f7345af7",
+          "dest-uuid": "666f4d33-1a62-4ad7-9bf9-6387cd3f1fd7",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
           "type": "mitigates"
-        }
-      ],
-      "uuid": "79316871-3bf9-4a59-b517-b0156e84fcb4",
-      "value": "Model Distribution Methods"
-    },
-    {
-      "description": "Detect and remove or remediate poisoned training data.  Training data should be sanitized prior to model training and recurrently for an active learning model.\n\nImplement a filter to limit ingested training data.  Establish a content policy that would remove unwanted content such as certain explicit or offensive language from being used.\n",
-      "meta": {
-        "external_id": "AML.M0007",
-        "refs": [
-          "https://atlas.mitre.org/mitigations/AML.M0007"
-        ]
-      },
-      "related": [
+        },
         {
-          "dest-uuid": "666f4d33-1a62-4ad7-9bf9-6387cd3f1fd7",
+          "dest-uuid": "68034561-a079-4052-9b64-427bfcff76ff",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
@@ -437,42 +294,8 @@
           "type": "mitigates"
         }
       ],
-      "uuid": "7e20b527-6299-4ee3-863e-59fee7cdaa9a",
-      "value": "Sanitize Training Data"
-    },
-    {
-      "description": "Encrypt sensitive data such as ML models to protect against adversaries attempting to access sensitive data.\n",
-      "meta": {
-        "external_id": "AML.M0012",
-        "refs": [
-          "https://atlas.mitre.org/mitigations/AML.M0012"
-        ]
-      },
-      "related": [
-        {
-          "dest-uuid": "0d002b6b-d006-4aab-a7f9-fa69f4a1e675",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "529fac49-5f88-4a3c-829f-eb50cb90bcf1",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "b67fc223-fecf-4ee6-9de7-9392d9f04060",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        }
-      ],
-      "uuid": "8bba19a7-fc6f-4381-8b34-2d43cdc14627",
-      "value": "Encrypt Sensitive Information"
+      "uuid": "da785068-ece5-4c52-b77d-39e1b24cb6d7",
+      "value": "Control Access to ML Models and Data at Rest"
     },
     {
       "description": "Use an ensemble of models for inference to increase robustness to adversarial inputs. Some attacks may effectively evade one model or model family but be ineffective against others.\n",
@@ -523,24 +346,38 @@
       "value": "Use Ensemble Methods"
     },
     {
-      "description": "Prevent abuse of library loading mechanisms in the operating system and software to load untrusted code by configuring appropriate library loading mechanisms and investigating potential vulnerable software.\n\nFile formats such as pickle files that are commonly used to store machine learning models can contain exploits that allow for loading of malicious libraries.\n",
+      "description": "Detect and remove or remediate poisoned training data.  Training data should be sanitized prior to model training and recurrently for an active learning model.\n\nImplement a filter to limit ingested training data.  Establish a content policy that would remove unwanted content such as certain explicit or offensive language from being used.\n",
       "meta": {
-        "external_id": "AML.M0011",
+        "external_id": "AML.M0007",
         "refs": [
-          "https://atlas.mitre.org/mitigations/AML.M0011"
+          "https://atlas.mitre.org/mitigations/AML.M0007"
         ]
       },
       "related": [
         {
-          "dest-uuid": "d52b913b-808c-461d-8969-94cd5c9fe07b",
+          "dest-uuid": "666f4d33-1a62-4ad7-9bf9-6387cd3f1fd7",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "6945b742-f1d5-4a83-ba4a-d0e0de6620c3",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "822cb1e2-f35f-4b35-a650-59b7770d4abc",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
           "type": "mitigates"
         }
       ],
-      "uuid": "6cd8c9ca-bd46-489f-9ccb-5b76b8ef580e",
-      "value": "Restrict Library Loading"
+      "uuid": "7e20b527-6299-4ee3-863e-59fee7cdaa9a",
+      "value": "Sanitize Training Data"
     },
     {
       "description": "Validate that machine learning models perform as intended by testing for backdoor triggers or adversarial bias.\n",
@@ -577,65 +414,31 @@
       "value": "Validate ML Model"
     },
     {
-      "description": "Enforce binary and application integrity with digital signature verification to prevent untrusted code from executing. Adversaries can embed malicious code in ML software or models. Enforcement of code signing can prevent the compromise of the machine learning supply chain and prevent execution of malicious code.\n",
+      "description": "Incorporate multiple sensors to integrate varying perspectives and modalities to avoid a single point of failure susceptible to physical attacks.\n",
       "meta": {
-        "external_id": "AML.M0013",
+        "external_id": "AML.M0009",
         "refs": [
-          "https://atlas.mitre.org/mitigations/AML.M0013"
+          "https://atlas.mitre.org/mitigations/AML.M0009"
         ]
       },
       "related": [
-        {
-          "dest-uuid": "2792e1f0-3132-4876-878d-a900b8a40e7d",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "4627c4e6-fb06-4bfa-add5-dc46e0043aff",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "d52b913b-808c-461d-8969-94cd5c9fe07b",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        }
-      ],
-      "uuid": "c55ed072-eca7-41d6-b5e0-68c10753544d",
-      "value": "Code Signing"
-    },
-    {
-      "description": "Use techniques to make machine learning models robust to adversarial inputs such as adversarial training or network distillation.\n",
-      "meta": {
-        "external_id": "AML.M0003",
-        "refs": [
-          "https://atlas.mitre.org/mitigations/AML.M0003"
-        ]
-      },
-      "related": [
-        {
-          "dest-uuid": "8bcf7648-2683-421d-b623-bc539de59cb3",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "mitigates"
-        },
         {
           "dest-uuid": "bb747632-d988-45ff-9cb3-97d827b4d9db",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
           "type": "mitigates"
+        },
+        {
+          "dest-uuid": "e0958449-a880-4410-bbb1-fa102030a883",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
         }
       ],
-      "uuid": "04e9bb75-1b7e-4825-bc3f-774850d3c1ef",
-      "value": "Model Hardening"
+      "uuid": "532918ce-83cf-4f6f-86fa-8ad4024e91ab",
+      "value": "Use Multi-Modal Sensors"
     },
     {
       "description": "Preprocess all inference data to nullify or reverse potential adversarial perturbations.\n",
@@ -672,6 +475,169 @@
       "value": "Input Restoration"
     },
     {
+      "description": "Prevent abuse of library loading mechanisms in the operating system and software to load untrusted code by configuring appropriate library loading mechanisms and investigating potential vulnerable software.\n\nFile formats such as pickle files that are commonly used to store machine learning models can contain exploits that allow for loading of malicious libraries.\n",
+      "meta": {
+        "external_id": "AML.M0011",
+        "refs": [
+          "https://atlas.mitre.org/mitigations/AML.M0011"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "d52b913b-808c-461d-8969-94cd5c9fe07b",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "6cd8c9ca-bd46-489f-9ccb-5b76b8ef580e",
+      "value": "Restrict Library Loading"
+    },
+    {
+      "description": "Encrypt sensitive data such as ML models to protect against adversaries attempting to access sensitive data.\n",
+      "meta": {
+        "external_id": "AML.M0012",
+        "refs": [
+          "https://atlas.mitre.org/mitigations/AML.M0012"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "0d002b6b-d006-4aab-a7f9-fa69f4a1e675",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "529fac49-5f88-4a3c-829f-eb50cb90bcf1",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "b67fc223-fecf-4ee6-9de7-9392d9f04060",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "8bba19a7-fc6f-4381-8b34-2d43cdc14627",
+      "value": "Encrypt Sensitive Information"
+    },
+    {
+      "description": "Enforce binary and application integrity with digital signature verification to prevent untrusted code from executing. Adversaries can embed malicious code in ML software or models. Enforcement of code signing can prevent the compromise of the machine learning supply chain and prevent execution of malicious code.\n",
+      "meta": {
+        "external_id": "AML.M0013",
+        "refs": [
+          "https://atlas.mitre.org/mitigations/AML.M0013"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "2792e1f0-3132-4876-878d-a900b8a40e7d",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "4627c4e6-fb06-4bfa-add5-dc46e0043aff",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "d52b913b-808c-461d-8969-94cd5c9fe07b",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "c55ed072-eca7-41d6-b5e0-68c10753544d",
+      "value": "Code Signing"
+    },
+    {
+      "description": "Verify the cryptographic checksum of all machine learning artifacts to verify that the file was not modified by an attacker.\n",
+      "meta": {
+        "external_id": "AML.M0014",
+        "refs": [
+          "https://atlas.mitre.org/mitigations/AML.M0014"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "0799f2f2-1038-4391-ba1f-4117595db45a",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "b6697dbf-3e3f-41ce-a212-361d1c0ca0e9",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "d52b913b-808c-461d-8969-94cd5c9fe07b",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "a861f658-4203-48ba-bdca-fe068518eefb",
+      "value": "Verify ML Artifacts"
+    },
+    {
+      "description": "Detect and block adversarial inputs or atypical queries that deviate from known benign behavior, exhibit behavior patterns observed in previous attacks or that come from potentially malicious IPs.\nIncorporate adversarial detection algorithms into the ML system prior to the ML model.\n",
+      "meta": {
+        "external_id": "AML.M0015",
+        "refs": [
+          "https://atlas.mitre.org/mitigations/AML.M0015"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "1cc7f877-cb60-419a-bd1e-32b704b534d0",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "79cdc11c-2ca9-4a6a-96a0-18bd84943086",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "8bcf7648-2683-421d-b623-bc539de59cb3",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "bb747632-d988-45ff-9cb3-97d827b4d9db",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "825f21ab-f3c9-46ce-b539-28f295f519f8",
+      "value": "Adversarial Input Detection"
+    },
+    {
       "description": "Vulnerability scanning is used to find potentially exploitable software vulnerabilities to remediate them.\n\nFile formats such as pickle files that are commonly used to store machine learning models can contain exploits that allow for arbitrary code execution.\n",
       "meta": {
         "external_id": "AML.M0016",
@@ -690,6 +656,40 @@
       ],
       "uuid": "e2cb599d-2714-4673-bc1a-976c471d7c58",
       "value": "Vulnerability Scanning"
+    },
+    {
+      "description": "Deploying ML models to edge devices can increase the attack surface of the system. Consider serving models in the cloud to reduce the level of access the adversary has to the model.\n",
+      "meta": {
+        "external_id": "AML.M0017",
+        "refs": [
+          "https://atlas.mitre.org/mitigations/AML.M0017"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "2792e1f0-3132-4876-878d-a900b8a40e7d",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "51c95da5-d7f1-4b57-9229-869b80305b37",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "afcd723a-e5ff-4c09-8f72-fe16f7345af7",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "79316871-3bf9-4a59-b517-b0156e84fcb4",
+      "value": "Model Distribution Methods"
     },
     {
       "description": "Educate ML model developers on secure coding practices and ML vulnerabilities.\n",
@@ -719,5 +719,5 @@
       "value": "User Training"
     }
   ],
-  "version": 8
+  "version": 10
 }

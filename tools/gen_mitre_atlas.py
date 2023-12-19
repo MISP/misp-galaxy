@@ -181,7 +181,7 @@ for t in types:
         file_data['values'].append(item_2)
 
     # FIXME the sort algo needs to be further improved, potentially with a recursive deep sort
-    file_data['values'] = sorted(file_data['values'], key=lambda x: sorted(x['value']))
+    file_data['values'] = sorted(file_data['values'], key=lambda x: x['meta']['external_id'])
     for item in file_data['values']:
         if 'related' in item:
             item['related'] = sorted(item['related'], key=lambda x: x['dest-uuid'])
