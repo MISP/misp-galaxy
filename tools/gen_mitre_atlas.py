@@ -95,7 +95,7 @@ for item in attack_data['objects']:
 
         if 'description' in item:
             value['description'] = item['description']
-        value['value'] = item['name'] + ' - ' + item['external_references'][0]['external_id']
+        value['value'] = item['name']
         value['meta'] = {}
         value['meta']['refs'] = []
         value['uuid'] = re.search('--(.*)$', item['id']).group(0)[2:]
