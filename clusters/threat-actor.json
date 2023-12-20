@@ -8160,10 +8160,13 @@
       "meta": {
         "refs": [
           "https://www.trendmicro.de/cloud-content/us/pdfs/security-intelligence/white-papers/wp_the_taidoor_campaign.pdf",
-          "https://attack.mitre.org/groups/G0015/"
+          "https://attack.mitre.org/groups/G0015/",
+          "https://www.trendmicro.com/en_us/research/22/j/tracking-earth-aughiskys-malware-and-changes.html",
+          "https://blog.reversinglabs.com/blog/taidoor-a-truly-persistent-threat"
         ],
         "synonyms": [
-          "G0015"
+          "G0015",
+          "Earth Aughisky"
         ]
       },
       "uuid": "e6669606-91ad-11e9-b6f5-374843911989",
@@ -8533,12 +8536,20 @@
     {
       "description": "A previously undocumented attack group is using both custom and off-the-shelf malware to target IT providers in Saudi Arabia in what appear to be supply chain attacks with the end goal of compromising the IT providers’ customers.\nThe group, which we are calling Tortoiseshell, has been active since at least July 2018. Symantec has identified a total of 11 organizations hit by the group, the majority of which are based in Saudi Arabia. In at least two organizations, evidence suggests that the attackers gained domain admin-level access.",
       "meta": {
+        "country": "IR",
         "refs": [
           "https://www.symantec.com/blogs/threat-intelligence/tortoiseshell-apt-supply-chain",
-          "https://www.darkreading.com/threat-intelligence/iranian-government-hackers-target-us-veterans/d/d-id/1335897"
+          "https://www.darkreading.com/threat-intelligence/iranian-government-hackers-target-us-veterans/d/d-id/1335897",
+          "https://ctoatncsc.substack.com/p/cto-at-ncsc-summary-week-ending-october",
+          "https://www.pwc.com/gx/en/issues/cybersecurity/cyber-threat-intelligence/yellow-liderc-ships-its-scripts-delivers-imaploader-malware.html",
+          "https://ics-cert.kaspersky.com/publications/reports/2023/09/25/apt-and-financial-attacks-on-industrial-organizations-in-h1-2023/"
         ],
         "synonyms": [
-          "IMPERIAL KITTEN"
+          "IMPERIAL KITTEN",
+          "Yellow Liderc",
+          "Imperial Kitten",
+          "TA456",
+          "Crimson Sandstorm"
         ]
       },
       "uuid": "5f108484-db7f-11e9-aaa4-fb0176425734",
@@ -13825,6 +13836,63 @@
       },
       "uuid": "00b84012-fa25-4942-ad64-c76be24828a8",
       "value": "Sandman APT"
+    },
+    {
+      "description": "A pro-Hamas hacktivist group developed a wiper called BiBi-Linux to target and destroy data on Israeli systems. The malware impersonates ransomware but operates solely to corrupt and delete files, indicating no data theft. A Windows variant, BiBi-Windows, was also discovered, sharing similarities with BiBi-Linux but targeting all files except executables. ESET researchers have named the group behind the wipers BiBiGun. The group's TTPs have shown overlaps with Moses Staff, which is believed to have an Iran nexus.",
+      "meta": {
+        "country": "PS",
+        "refs": [
+          "https://twitter.com/ESETresearch/status/1719437301900595444",
+          "https://github.com/knight0x07/BiBi-Windows-Wiper-Analysis?tab=readme-ov-file",
+          "https://thehackernews.com/2023/11/new-bibi-windows-wiper-targets-windows.html",
+          "https://www.securityjoes.com/post/bibi-linux-a-new-wiper-dropped-by-pro-hamas-hacktivist-group"
+        ]
+      },
+      "uuid": "f8054f5b-45e5-4624-b8d0-1b9c30aa084e",
+      "value": "BiBiGun"
+    },
+    {
+      "description": "Storm-1283 is a threat actor that targeted Microsoft Azure cloud platform. They gained access to user accounts and created OAuth applications using stolen credentials, allowing them to control resources and deploy virtual machines for cryptomining. The targeted organizations incurred significant financial losses ranging from $10,000 to $1.5 million. Storm-1283 utilized compromised accounts and subscriptions to carry out their illicit activities.",
+      "meta": {
+        "refs": [
+          "https://www.microsoft.com/en-us/security/blog/2023/12/12/threat-actors-misuse-oauth-applications-to-automate-financially-driven-attacks/"
+        ]
+      },
+      "uuid": "c9ffcc82-f7ac-46ce-9ea2-91e51d14e11b",
+      "value": "Storm-1283"
+    },
+    {
+      "description": "Solntsepek is a threat actor group with ties to the Russian military unit GRU. They have claimed responsibility for a cyberattack on Kyivstar, a Ukrainian mobile operator, and have been linked to previous attacks on Ukrainian infrastructure. Solntsepek has been associated with the Sandworm hacking group, known for their destructive cyberattacks, including the NotPetya worm. They have also engaged in hostile activities, such as revealing personal details of Ukrainian soldiers.",
+      "meta": {
+        "country": "RU",
+        "refs": [
+          "https://kyivindependent.com/sbu-russian-hacker-group-reponsible-for-kyiv-star-cyberattack/",
+          "https://dev.ua/ru/news/atakovali-suspilne-provaiderov-i-minrazvitiya-obschin-kto-stoit-za-rossiiskoi-gruppirovkoi-solntsepek-kotoraya-aktivizirovala-napadeniya-na-ukrainskie-struktury"
+        ]
+      },
+      "uuid": "0b792fbe-87c2-42c5-8d0d-97c7d47078b5",
+      "value": "Solntsepek"
+    },
+    {
+      "description": "UNC4736 is a North Korean threat actor that has been involved in supply chain attacks targeting software chains of 3CX and X_TRADER. They have used malware strains such as TAXHAUL, Coldcat, and VEILEDSIGNAL to compromise Windows and macOS systems. UNC4736 has been linked to financially motivated cybercrime operations, particularly focused on cryptocurrency and fintech-related services. They have also demonstrated infrastructure overlap with other North Korean and APT43 activity.",
+      "meta": {
+        "country": "KP",
+        "refs": [
+          "https://www.mandiant.com/resources/blog/3cx-software-supply-chain-compromise"
+        ]
+      },
+      "uuid": "afe5526e-e5e4-4b05-bc69-2bfb6785fc7e",
+      "value": "UNC4736"
+    },
+    {
+      "description": "GambleForce is a threat actor specializing in SQL injection attacks. They have targeted over 20 websites in various sectors across multiple countries, compromising six companies. GambleForce utilizes publicly available pentesting tools and has been active since mid-September 2023.",
+      "meta": {
+        "refs": [
+          "https://www.group-ib.com/blog/gambleforce-gang/"
+        ]
+      },
+      "uuid": "94ce7925-1a37-4b02-a25b-b87a389c92b3",
+      "value": "GambleForce"
     }
   ],
   "version": 296
