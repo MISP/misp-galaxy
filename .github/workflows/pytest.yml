@@ -44,7 +44,7 @@ jobs:
         git submodule foreach git pull origin main
         poetry install
         popd
-        mount --bind . PyMISPGalaxies/pymispgalaxies/data/misp-galaxy
+        sudo mount --bind . PyMISPGalaxies/pymispgalaxies/data/misp-galaxy
 
     - name: Test with Python module
       run: |
