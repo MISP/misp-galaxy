@@ -3,6 +3,8 @@
 import json
 import os
 
+import validators
+
 pathClusters = '../../clusters'
 pathSite = './site/docs'
 
@@ -40,13 +42,62 @@ for f in galaxies_fnames:
         cluster = json.load(fr)
     cluster_filename = f.split('.')[0]
     index_output += f'- [{cluster["name"]}](./{cluster_filename}/index.md)\n'
-    galaxy_output[cluster_filename] = ""
+    galaxy_output[cluster_filename] = "---"
+    galaxy_output[cluster_filename] += f'title: {cluster["name"]}\n'
+    meta_description = cluster["description"].replace("\"", "-")
+    galaxy_output[cluster_filename] += f'description: {meta_description}\n'
+    galaxy_output[cluster_filename] += "---\n"
     galaxy_output[cluster_filename] += f'# {cluster["name"]}\n'
     galaxy_output[cluster_filename] += f'{cluster["description"]}\n'
     for value in cluster["values"]:
         galaxy_output[cluster_filename] += f'## {value["value"]}\n'
+        galaxy_output[cluster_filename] += f'\n'
         if 'description' in value:
            galaxy_output[cluster_filename] += f'{value["description"]}\n'
+
+        if 'meta' in value:
+            if 'synonyms' in value['meta']:
+                if value['meta']['synonyms']: # some cluster have an empty list of synomyms
+                    galaxy_output[cluster_filename] += f'\n'
+                    galaxy_output[cluster_filename] += f'??? info "Synonyms"\n'
+                    galaxy_output[cluster_filename] += f'\n'
+                    galaxy_output[cluster_filename] += f'     "synonyms" in the meta part typically refer to alternate names or labels that are associated with a particular {cluster["name"]}.\n\n'
+                    galaxy_output[cluster_filename] += f'    | Known Synonyms      |\n'
+                    galaxy_output[cluster_filename] += f'    |---------------------|\n'
+                    for synonym in sorted(value['meta']['synonyms']):
+                        galaxy_output[cluster_filename] += f'     | `{synonym}`      |\n'
+
+        if 'uuid' in value:
+           galaxy_output[cluster_filename] += f'\n'
+           galaxy_output[cluster_filename] += f'??? tip "Internal MISP references"\n'
+           galaxy_output[cluster_filename] += f'\n'
+           galaxy_output[cluster_filename] += f'    UUID `{value["uuid"]}` which can be used as unique global reference for `{value["value"]}` in MISP communities and other software using the MISP galaxy\n'
+           galaxy_output[cluster_filename] += f'\n'
+
+        if 'meta' in value:
+            if 'refs' in value['meta']:
+               galaxy_output[cluster_filename] += f'\n'
+               galaxy_output[cluster_filename] += f'??? info "External references"\n'
+               galaxy_output[cluster_filename] += f'\n'
+
+               for ref in value["meta"]["refs"]:
+                   if validators.url(ref): # some ref are not actual URL (TODO: check galaxy cluster sources)
+                      galaxy_output[cluster_filename] += f'     - [{ref}]({ref}) - :material-archive: :material-arrow-right: [webarchive](https://web.archive.org/web/*/{ref})\n'
+                   else:
+                      galaxy_output[cluster_filename] += f'     - {ref}\n'
+
+               galaxy_output[cluster_filename] += f'\n'
+            excluded_meta = ['synonyms', 'refs']
+            galaxy_output[cluster_filename] += f'\n'
+            galaxy_output[cluster_filename] += f'??? info "Associated metadata"\n'
+            galaxy_output[cluster_filename] += f'\n'
+            galaxy_output[cluster_filename] += f'    |Metadata key      |Value|\n'
+            galaxy_output[cluster_filename] += f'    |---------------------|-----|\n'
+            for meta in sorted(value['meta']):
+                if meta in excluded_meta:
+                    continue
+                galaxy_output[cluster_filename] += f'     | `{meta}`      |{value["meta"][meta]}|\n'
+
 
 with open(os.path.join(pathSite, 'index.md'), "w") as index:
     index.write(index_output)
