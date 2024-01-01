@@ -42,7 +42,7 @@ for f in galaxies_fnames:
         cluster = json.load(fr)
     cluster_filename = f.split('.')[0]
     index_output += f'- [{cluster["name"]}](./{cluster_filename}/index.md)\n'
-    galaxy_output[cluster_filename] = "---"
+    galaxy_output[cluster_filename] = "---\n"
     galaxy_output[cluster_filename] += f'title: {cluster["name"]}\n'
     meta_description = cluster["description"].replace("\"", "-")
     galaxy_output[cluster_filename] += f'description: {meta_description}\n'
