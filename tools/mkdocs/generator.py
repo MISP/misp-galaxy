@@ -34,6 +34,15 @@ Clusters serve as an open and freely accessible knowledge base, which can be uti
 ## Publicly available clusters
 
 """
+index_contributing = """
+
+# Contributing
+
+In the dynamic realm of threat intelligence, a variety of models and approaches exist to systematically organize, categorize, and delineate threat actors, hazards, or activity groups. We embrace innovative methodologies for articulating threat intelligence. The galaxy model is particularly versatile, enabling you to leverage and integrate methodologies that you trust and are already utilizing within your organization or community.
+
+We encourage collaboration and contributions to the [MISP Galaxy JSON files](https://github.com/MISP/misp-galaxy/). Feel free to fork the project, enhance existing elements or clusters, or introduce new ones. Your insights are valuable - share them with us through a pull-request.
+
+"""
 
 galaxy_output = {}
 
@@ -98,6 +107,7 @@ for f in galaxies_fnames:
                     continue
                 galaxy_output[cluster_filename] += f'     | `{meta}`      |{value["meta"][meta]}|\n'
 
+index_output += index_contributing
 
 with open(os.path.join(pathSite, 'index.md'), "w") as index:
     index.write(index_output)
