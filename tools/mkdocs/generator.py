@@ -58,6 +58,17 @@ for f in galaxies_fnames:
     galaxy_output[cluster_filename] += "---\n"
     galaxy_output[cluster_filename] += f'# {cluster["name"]}\n'
     galaxy_output[cluster_filename] += f'{cluster["description"]}\n'
+
+    if 'authors' in cluster:
+        if cluster["authors"]:
+            galaxy_output[cluster_filename] += f'\n'
+            galaxy_output[cluster_filename] += f'??? info "Authors"\n'
+            galaxy_output[cluster_filename] += f'\n'
+            galaxy_output[cluster_filename] += f'     | Authors and/or Contributors|\n'
+            galaxy_output[cluster_filename] += f'     |----------------------------|\n'
+            for author in cluster["authors"]:
+                galaxy_output[cluster_filename] += f'     |{author}|\n'
+
     for value in cluster["values"]:
         galaxy_output[cluster_filename] += f'## {value["value"]}\n'
         galaxy_output[cluster_filename] += f'\n'
