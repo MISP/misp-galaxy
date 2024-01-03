@@ -31,6 +31,8 @@ The aim is to provide a core set of clusters for organizations embarking on anal
 
 Clusters serve as an open and freely accessible knowledge base, which can be utilized and expanded within [MISP](https://www.misp-project.org/) or other threat intelligence platforms.
 
+![Overview of the integration of MISP galaxy in the MISP Threat Intelligence Sharing Platform](https://raw.githubusercontent.com/MISP/misp-galaxy/aa41337fd78946a60aef3783f58f337d2342430a/doc/images/galaxy.png)
+
 ## Publicly available clusters
 
 """
