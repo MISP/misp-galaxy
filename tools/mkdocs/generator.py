@@ -2,6 +2,7 @@
 
 import json
 import os
+from typing import List
 
 import validators
 
@@ -16,9 +17,9 @@ for f in os.listdir(pathClusters):
         galaxies_fnames.append(f)
 
 galaxies_fnames.sort()
+galaxy_output = {}
 
-index_output = ""
-index_output += """
+intro = """
 # MISP Galaxy
 
 The MISP galaxy offers a streamlined approach for representing large entities, known as clusters, which can be linked to MISP events or attributes. Each cluster consists of one or more elements, represented as key-value pairs. MISP galaxy comes with a default knowledge base, encompassing areas like Threat Actors, Tools, Ransomware, and ATT&CK matrices. However, users have the flexibility to modify, update, replace, or share these elements according to their needs.
@@ -36,7 +37,7 @@ Clusters serve as an open and freely accessible knowledge base, which can be uti
 ## Publicly available clusters
 
 """
-index_contributing = """
+contributing = """
 
 # Contributing
 
@@ -46,89 +47,181 @@ We encourage collaboration and contributions to the [MISP Galaxy JSON files](htt
 
 """
 
-galaxy_output = {}
+class Galaxy():
+    def __init__(self, cluster_list: List[dict], authors, description, name, json_file_name):
+        self.cluster_list = cluster_list
+        self.authors = authors
+        self.description = description
+        self.name = name
+        self.json_file_name = json_file_name
+        self.clusters = self._create_clusters()
+        self.entry = ""
 
-for f in galaxies_fnames:
-    with open(os.path.join(pathClusters, f)) as fr:
-        cluster = json.load(fr)
-    cluster_filename = f.split('.')[0]
-    index_output += f'- [{cluster["name"]}](./{cluster_filename}/index.md)\n'
-    galaxy_output[cluster_filename] = "---\n"
-    galaxy_output[cluster_filename] += f'title: {cluster["name"]}\n'
-    meta_description = cluster["description"].replace("\"", "-")
-    galaxy_output[cluster_filename] += f'description: {meta_description}\n'
-    galaxy_output[cluster_filename] += "---\n"
-    galaxy_output[cluster_filename] += f'# {cluster["name"]}\n'
-    galaxy_output[cluster_filename] += f'{cluster["description"]}\n'
+    def _create_metadata_entry(self):
+        self.entry += "---\n"
+        self.entry += f'title: {self.name}\n'
+        meta_description = self.description.replace("\"", "-")
+        self.entry += f'description: {meta_description}\n'
+        self.entry += "---\n"
 
-    if 'authors' in cluster:
-        if cluster["authors"]:
-            galaxy_output[cluster_filename] += f'\n'
-            galaxy_output[cluster_filename] += f'??? info "Authors"\n'
-            galaxy_output[cluster_filename] += f'\n'
-            galaxy_output[cluster_filename] += f'     | Authors and/or Contributors|\n'
-            galaxy_output[cluster_filename] += f'     |----------------------------|\n'
-            for author in cluster["authors"]:
-                galaxy_output[cluster_filename] += f'     |{author}|\n'
+    def _create_title_entry(self):
+        self.entry += f'# {self.name}\n'
 
-    for value in cluster["values"]:
-        galaxy_output[cluster_filename] += f'## {value["value"]}\n'
-        galaxy_output[cluster_filename] += f'\n'
-        if 'description' in value:
-           galaxy_output[cluster_filename] += f'{value["description"]}\n'
+    def _create_description_entry(self):
+        self.entry += f'{self.description}\n'
 
-        if 'meta' in value:
-            if 'synonyms' in value['meta']:
-                if value['meta']['synonyms']: # some cluster have an empty list of synomyms
-                    galaxy_output[cluster_filename] += f'\n'
-                    galaxy_output[cluster_filename] += f'??? info "Synonyms"\n'
-                    galaxy_output[cluster_filename] += f'\n'
-                    galaxy_output[cluster_filename] += f'     "synonyms" in the meta part typically refer to alternate names or labels that are associated with a particular {cluster["name"]}.\n\n'
-                    galaxy_output[cluster_filename] += f'    | Known Synonyms      |\n'
-                    galaxy_output[cluster_filename] += f'    |---------------------|\n'
-                    for synonym in sorted(value['meta']['synonyms']):
-                        galaxy_output[cluster_filename] += f'     | `{synonym}`      |\n'
+    def _create_authors_entry(self):
+        if self.authors:
+            self.entry += f'\n'
+            self.entry += f'??? info "Authors"\n'
+            self.entry += f'\n'
+            self.entry += f'     | Authors and/or Contributors|\n'
+            self.entry += f'     |----------------------------|\n'
+            for author in self.authors:
+                self.entry += f'     |{author}|\n'
 
-        if 'uuid' in value:
-           galaxy_output[cluster_filename] += f'\n'
-           galaxy_output[cluster_filename] += f'??? tip "Internal MISP references"\n'
-           galaxy_output[cluster_filename] += f'\n'
-           galaxy_output[cluster_filename] += f'    UUID `{value["uuid"]}` which can be used as unique global reference for `{value["value"]}` in MISP communities and other software using the MISP galaxy\n'
-           galaxy_output[cluster_filename] += f'\n'
+    def _create_clusters(self):
+        clusters = []
+        for cluster in self.cluster_list:
+            clusters.append(Cluster(
+                value=cluster.get('value', None),
+                description=cluster.get('description', None),
+                uuid=cluster.get('uuid', None),
+                date=cluster.get('date', None),
+                related=cluster.get('related', None),
+                meta=cluster.get('meta', None)
+            ))
+        return clusters
+    
+    def _create_clusters_entry(self):
+        for cluster in self.clusters:
+            self.entry += cluster.create_entry()
 
-        if 'meta' in value:
-            if 'refs' in value['meta']:
-               galaxy_output[cluster_filename] += f'\n'
-               galaxy_output[cluster_filename] += f'??? info "External references"\n'
-               galaxy_output[cluster_filename] += f'\n'
+    def create_entry(self):
+        self._create_metadata_entry()
+        self._create_title_entry()
+        self._create_description_entry()
+        self._create_authors_entry()
+        self._create_clusters_entry()
+        return self.entry
 
-               for ref in value["meta"]["refs"]:
-                   if validators.url(ref): # some ref are not actual URL (TODO: check galaxy cluster sources)
-                      galaxy_output[cluster_filename] += f'     - [{ref}]({ref}) - :material-archive: :material-arrow-right: [webarchive](https://web.archive.org/web/*/{ref})\n'
-                   else:
-                      galaxy_output[cluster_filename] += f'     - {ref}\n'
+class Cluster():
+    def __init__(self, description, uuid, date, value, related, meta):
+        self.description = description
+        self.uuid = uuid
+        self.date = date
+        self.value = value
+        self.related = related
+        self.meta = meta
+        self.entry = ""
 
-               galaxy_output[cluster_filename] += f'\n'
+    def _create_title_entry(self):
+        self.entry += f'## {self.value}\n'
+        self.entry += f'\n'
+
+    def _create_description_entry(self):
+        if self.description:
+            self.entry += f'{self.description}\n'
+
+    def _create_synonyms_entry(self):
+        if isinstance(self.meta, dict) and self.meta.get('synonyms'):
+            self.entry += f'\n'
+            self.entry += f'??? info "Synonyms"\n'
+            self.entry += f'\n'
+            self.entry += f'     "synonyms" in the meta part typically refer to alternate names or labels that are associated with a particular {self.value}.\n\n'
+            self.entry += f'    | Known Synonyms      |\n'
+            self.entry += f'    |---------------------|\n'
+            for synonym in sorted(self.meta['synonyms']):
+                self.entry += f'     | `{synonym}`      |\n'
+
+    def _create_uuid_entry(self):
+        if self.uuid:
+            self.entry += f'\n'
+            self.entry += f'??? tip "Internal MISP references"\n'
+            self.entry += f'\n'
+            self.entry += f'    UUID `{self.uuid}` which can be used as unique global reference for `{self.value}` in MISP communities and other software using the MISP galaxy\n'
+            self.entry += f'\n'
+
+    def _create_refs_entry(self):
+        if isinstance(self.meta, dict) and self.meta.get('refs'):
+            self.entry += f'\n'
+            self.entry += f'??? info "External references"\n'
+            self.entry += f'\n'
+
+            for ref in self.meta['refs']:
+                if validators.url(ref):
+                    self.entry += f'     - [{ref}]({ref}) - :material-archive: :material-arrow-right: [webarchive](https://web.archive.org/web/*/{ref})\n'
+                else:
+                    self.entry += f'     - {ref}\n'
+            
+            self.entry += f'\n'
+
+    def _create_associated_metadata_entry(self):
+        if isinstance(self.meta, dict):
             excluded_meta = ['synonyms', 'refs']
-            galaxy_output[cluster_filename] += f'\n'
-            galaxy_output[cluster_filename] += f'??? info "Associated metadata"\n'
-            galaxy_output[cluster_filename] += f'\n'
-            galaxy_output[cluster_filename] += f'    |Metadata key      |Value|\n'
-            galaxy_output[cluster_filename] += f'    |---------------------|-----|\n'
-            for meta in sorted(value['meta']):
-                if meta in excluded_meta:
-                    continue
-                galaxy_output[cluster_filename] += f'     | `{meta}`      |{value["meta"][meta]}|\n'
+            self.entry += f'\n'
+            self.entry += f'??? info "Associated metadata"\n'
+            self.entry += f'\n'
+            self.entry += f'    |Metadata key      |Value|\n'
+            self.entry += f'    |------------------|-----|\n'
+            for meta in sorted(self.meta.keys()):
+                if meta not in excluded_meta:
+                    self.entry += f'    | {meta} | {self.meta[meta]} |\n'
 
-index_output += index_contributing
+    def _create_related_entry(self):
+        if self.related:
+            self.entry += f'\n'
+            self.entry += f'??? info "Related clusters"\n'
+            self.entry += f'\n'
+            self.entry += f'```mermaid\n'
+            self.entry += f'graph TD\n'
+            for related in self.related:
+                self.entry += f'    {self.value} --> {related}\n'
+            self.entry += f'```\n'
+            
 
-with open(os.path.join(pathSite, 'index.md'), "w") as index:
-    index.write(index_output)
+    def create_entry(self):
+        self._create_title_entry()
+        self._create_description_entry()
+        self._create_synonyms_entry()
+        self._create_uuid_entry()
+        self._create_refs_entry()
+        self._create_associated_metadata_entry()
+        self._create_related_entry()
+        return self.entry
 
-for f in galaxies_fnames:
-    cluster_filename = f.split('.')[0]
-    pathSiteCluster = os.path.join(pathSite, cluster_filename)
-    if not os.path.exists(pathSiteCluster):
-        os.mkdir(pathSiteCluster)
-    with open(os.path.join(pathSiteCluster, 'index.md'), "w") as index:
-        index.write(galaxy_output[cluster_filename])
+cluster_dict = {}
+
+galaxies = []
+for galaxy in galaxies_fnames:
+    with open(os.path.join(pathClusters, galaxy)) as fr:
+        galaxie_json = json.load(fr)
+        galaxies.append(Galaxy(galaxie_json['values'], galaxie_json['authors'], galaxie_json['description'], galaxie_json['name'], galaxy.split('.')[0]))
+
+def create_index(intro, contributing, galaxies):
+    index_output = intro
+    for galaxie in galaxies:
+        index_output += f'- [{galaxie.name}](./{galaxie.json_file_name}/index.md)\n'
+    index_output += contributing
+    return index_output
+
+def create_galaxies(galaxies):
+    galaxy_output = {}
+    for galaxie in galaxies:
+        galaxy_output[galaxie.json_file_name] = galaxie.create_entry()
+    return galaxy_output
+
+if __name__ == "__main__":
+    index_output = create_index(intro, contributing, galaxies)
+    galaxy_output = create_galaxies(galaxies)
+
+    with open(os.path.join(pathSite, 'index.md'), "w") as index:
+        index.write(index_output)
+
+    for f in galaxies_fnames:
+        cluster_filename = f.split('.')[0]
+        pathSiteCluster = os.path.join(pathSite, cluster_filename)
+        if not os.path.exists(pathSiteCluster):
+            os.mkdir(pathSiteCluster)
+        with open(os.path.join(pathSiteCluster, 'index.md'), "w") as index:
+            index.write(galaxy_output[cluster_filename])
