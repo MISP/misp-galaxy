@@ -88,7 +88,7 @@ class Galaxy():
                 description=cluster.get('description', None),
                 uuid=cluster.get('uuid', None),
                 date=cluster.get('date', None),
-                related=cluster.get('related', None),
+                related_list=cluster.get('related', None),
                 meta=cluster.get('meta', None)
             ))
         return clusters
@@ -106,12 +106,12 @@ class Galaxy():
         return self.entry
 
 class Cluster():
-    def __init__(self, description, uuid, date, value, related, meta):
+    def __init__(self, description, uuid, date, value, related_list, meta):
         self.description = description
         self.uuid = uuid
         self.date = date
         self.value = value
-        self.related = related
+        self.related_list = related_list
         self.meta = meta
         self.entry = ""
 
@@ -168,14 +168,35 @@ class Cluster():
                 if meta not in excluded_meta:
                     self.entry += f'    | {meta} | {self.meta[meta]} |\n'
 
+    def _get_related_clusters(self, depht=4):
+        if depht == 0:
+            return []
+        related_clusters = []
+        if self.related_list:
+            for cluster in self.related_list:
+                if cluster["dest-uuid"] not in cluster_dict:
+                    print(f'Cluster {cluster} not found in dictionary')
+                related_clusters.append(cluster_dict[cluster["dest-uuid"]])
+                if depht > 1:
+                    related_clusters += cluster_dict[cluster["dest-uuid"]]._get_related_clusters(depht=depht-1)
+        return related_clusters
+
     def _create_related_entry(self):
-        if self.related:
+        if self.related_list and cluster_dict:
+            related_clusters = []
+            for cluster in self.related_list:
+                if cluster["dest-uuid"] not in cluster_dict:
+                    print(f'Cluster {cluster} not found in dictionary')
+                related_clusters.append(cluster_dict[cluster["dest-uuid"]].value)
+
+
+
             self.entry += f'\n'
             self.entry += f'??? info "Related clusters"\n'
             self.entry += f'\n'
             self.entry += f'```mermaid\n'
             self.entry += f'graph TD\n'
-            for related in self.related:
+            for related in self.related_list:
                 self.entry += f'    {self.value} --> {related}\n'
             self.entry += f'```\n'
             
@@ -190,13 +211,21 @@ class Cluster():
         self._create_related_entry()
         return self.entry
 
-cluster_dict = {}
+
 
 galaxies = []
 for galaxy in galaxies_fnames:
     with open(os.path.join(pathClusters, galaxy)) as fr:
         galaxie_json = json.load(fr)
         galaxies.append(Galaxy(galaxie_json['values'], galaxie_json['authors'], galaxie_json['description'], galaxie_json['name'], galaxy.split('.')[0]))
+
+cluster_dict = {}
+for galaxy in galaxies:
+    for cluster in galaxy.clusters:
+        cluster_dict[cluster.uuid] = cluster
+
+test = cluster_dict['f0ec2df5-2e38-4df3-970d-525352006f2e']
+print(test._get_related_clusters())
 
 def create_index(intro, contributing, galaxies):
     index_output = intro
@@ -211,17 +240,17 @@ def create_galaxies(galaxies):
         galaxy_output[galaxie.json_file_name] = galaxie.create_entry()
     return galaxy_output
 
-if __name__ == "__main__":
-    index_output = create_index(intro, contributing, galaxies)
-    galaxy_output = create_galaxies(galaxies)
+# if __name__ == "__main__":
+#     index_output = create_index(intro, contributing, galaxies)
+#     galaxy_output = create_galaxies(galaxies)
 
-    with open(os.path.join(pathSite, 'index.md'), "w") as index:
-        index.write(index_output)
+#     with open(os.path.join(pathSite, 'index.md'), "w") as index:
+#         index.write(index_output)
 
-    for f in galaxies_fnames:
-        cluster_filename = f.split('.')[0]
-        pathSiteCluster = os.path.join(pathSite, cluster_filename)
-        if not os.path.exists(pathSiteCluster):
-            os.mkdir(pathSiteCluster)
-        with open(os.path.join(pathSiteCluster, 'index.md'), "w") as index:
-            index.write(galaxy_output[cluster_filename])
+#     for f in galaxies_fnames:
+#         cluster_filename = f.split('.')[0]
+#         pathSiteCluster = os.path.join(pathSite, cluster_filename)
+#         if not os.path.exists(pathSiteCluster):
+#             os.mkdir(pathSiteCluster)
+#         with open(os.path.join(pathSiteCluster, 'index.md'), "w") as index:
+#             index.write(galaxy_output[cluster_filename])
