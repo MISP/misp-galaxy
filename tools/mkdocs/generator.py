@@ -102,7 +102,8 @@ class Galaxy():
                 uuid=cluster.get('uuid', None),
                 date=cluster.get('date', None),
                 related_list=cluster.get('related', None),
-                meta=cluster.get('meta', None)
+                meta=cluster.get('meta', None),
+                galaxie=self.name
             ))
         return clusters
     
@@ -119,7 +120,7 @@ class Galaxy():
         return self.entry
 
 class Cluster():
-    def __init__(self, description, uuid, date, value, related_list, meta):
+    def __init__(self, description, uuid, date, value, related_list, meta, galaxie):
         self.description = description
         self.uuid = uuid
         self.date = date
@@ -127,6 +128,7 @@ class Cluster():
         self.related_list = related_list
         self.meta = meta
         self.entry = ""
+        self.galaxie = galaxie
 
     def _create_title_entry(self):
         self.entry += f'## {self.value}\n'
@@ -198,11 +200,15 @@ class Cluster():
             visited = set()
 
         related_clusters = []
-        if depth == 0 or not self.related_list:
+        if depth == 0 or not self.related_list or self.uuid in visited:
             return related_clusters
+
+        visited.add(self.uuid)
 
         for cluster in self.related_list:
             dest_uuid = cluster["dest-uuid"]
+
+            # Cluster is private
             if dest_uuid not in cluster_dict:
                 # Check if UUID is empty
                 if not dest_uuid:
@@ -211,27 +217,28 @@ class Cluster():
                 private_relations_count += 1
                 if dest_uuid not in private_clusters:
                     private_clusters.append(dest_uuid)
-                related_clusters.append((self, Cluster(value="Private Cluster", uuid=dest_uuid, date=None, description=None, related_list=None, meta=None)))
+                related_clusters.append((self, Cluster(value="Private Cluster", uuid=dest_uuid, date=None, description=None, related_list=None, meta=None, galaxie=None)))
                 continue
-            if dest_uuid in visited:
-                continue
-            visited.add(dest_uuid)
+
             related_cluster = cluster_dict[dest_uuid]
 
             public_relations_count += 1
             if dest_uuid not in public_clusters:
                 public_clusters.append(dest_uuid)
-            related_clusters.append((self, related_cluster))
 
-            if depth > 1 or depth == -1:
+            related_clusters.append((self, related_cluster))
+            
+            if (depth > 1 or depth == -1) and related_cluster.uuid not in visited:
                 new_depth = depth - 1 if depth > 1 else -1
                 related_clusters += related_cluster.get_related_clusters(depth=new_depth, visited=visited)
 
         if empty_uuids > 0:
             empty_uuids_dict[self.value] = empty_uuids
+
         for cluster in related_clusters:
             if (cluster[1], cluster[0]) in related_clusters:
                 related_clusters.remove(cluster)
+                
         return related_clusters
 
     def _create_related_entry(self):
@@ -276,9 +283,6 @@ cluster_dict = {}
 for galaxy in galaxies:
     for cluster in galaxy.clusters:
         cluster_dict[cluster.uuid] = cluster
-
-# test = cluster_dict['f0ec2df5-2e38-4df3-970d-525352006f2e']
-# print(test.get_related_clusters())
 
 def create_index(intro, contributing, galaxies):
     index_output = intro
@@ -327,3 +331,13 @@ if __name__ == "__main__":
     print(f"Number of empty UUIDs: {sum(empty_uuids_dict.values())}")
     print(f"Empty UUIDs per cluster: {empty_uuids_dict}")
 
+    # test = cluster_dict['f0ec2df5-2e38-4df3-970d-525352006f2e']
+    # test = cluster_dict['d7247cf9-13b6-4781-b789-a5f33521633b']
+    # clusters = test.get_related_clusters()
+    # print(clusters)
+    # print(len(clusters))
+    # print("```mermaid")
+    # print(f"graph TD")
+    # for cluster in clusters:
+    #     print(f"{cluster[0].uuid}[{cluster[0].value}] --- {cluster[1].uuid}[{cluster[1].value}]")
+    # print("```")
