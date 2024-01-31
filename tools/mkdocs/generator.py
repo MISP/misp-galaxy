@@ -19,6 +19,19 @@ for f in os.listdir(pathClusters):
 galaxies_fnames.sort()
 galaxy_output = {}
 
+# Variables for statistics
+public_relations_count = 0
+private_relations_count = 0
+
+private_clusters = []
+public_clusters = []
+
+relation_count_dict = {}
+synonyms_count_dict = {}
+
+empty_uuids_dict = {}
+
+
 intro = """
 # MISP Galaxy
 
@@ -131,8 +144,12 @@ class Cluster():
             self.entry += f'     "synonyms" in the meta part typically refer to alternate names or labels that are associated with a particular {self.value}.\n\n'
             self.entry += f'    | Known Synonyms      |\n'
             self.entry += f'    |---------------------|\n'
+            global synonyms_count_dict
+            synonyms_count = 0
             for synonym in sorted(self.meta['synonyms']):
+                synonyms_count += 1
                 self.entry += f'     | `{synonym}`      |\n'
+            synonyms_count_dict[self.value] = synonyms_count
 
     def _create_uuid_entry(self):
         if self.uuid:
@@ -167,40 +184,78 @@ class Cluster():
             for meta in sorted(self.meta.keys()):
                 if meta not in excluded_meta:
                     self.entry += f'    | {meta} | {self.meta[meta]} |\n'
+    
 
-    def _get_related_clusters(self, depht=4):
-        if depht == 0:
-            return []
+    def get_related_clusters(self, depth=-1, visited=None):
+        global public_relations_count
+        global private_relations_count
+        global public_clusters
+        global private_clusters
+        global empty_uuids_dict
+        empty_uuids = 0
+
+        if visited is None:
+            visited = set()
+
         related_clusters = []
-        if self.related_list:
-            for cluster in self.related_list:
-                if cluster["dest-uuid"] not in cluster_dict:
-                    print(f'Cluster {cluster} not found in dictionary')
-                related_clusters.append(cluster_dict[cluster["dest-uuid"]])
-                if depht > 1:
-                    related_clusters += cluster_dict[cluster["dest-uuid"]]._get_related_clusters(depht=depht-1)
+        if depth == 0 or not self.related_list:
+            return related_clusters
+
+        for cluster in self.related_list:
+            dest_uuid = cluster["dest-uuid"]
+            if dest_uuid not in cluster_dict:
+                # Check if UUID is empty
+                if not dest_uuid:
+                    empty_uuids += 1
+                    continue
+                private_relations_count += 1
+                if dest_uuid not in private_clusters:
+                    private_clusters.append(dest_uuid)
+                related_clusters.append((self, Cluster(value="Private Cluster", uuid=dest_uuid, date=None, description=None, related_list=None, meta=None)))
+                continue
+            if dest_uuid in visited:
+                continue
+            visited.add(dest_uuid)
+            related_cluster = cluster_dict[dest_uuid]
+
+            public_relations_count += 1
+            if dest_uuid not in public_clusters:
+                public_clusters.append(dest_uuid)
+            related_clusters.append((self, related_cluster))
+
+            if depth > 1 or depth == -1:
+                new_depth = depth - 1 if depth > 1 else -1
+                related_clusters += related_cluster.get_related_clusters(depth=new_depth, visited=visited)
+
+        if empty_uuids > 0:
+            empty_uuids_dict[self.value] = empty_uuids
+        for cluster in related_clusters:
+            if (cluster[1], cluster[0]) in related_clusters:
+                related_clusters.remove(cluster)
         return related_clusters
 
     def _create_related_entry(self):
         if self.related_list and cluster_dict:
-            related_clusters = []
-            for cluster in self.related_list:
-                if cluster["dest-uuid"] not in cluster_dict:
-                    print(f'Cluster {cluster} not found in dictionary')
-                related_clusters.append(cluster_dict[cluster["dest-uuid"]].value)
-
-
-
+            related_clusters = self.get_related_clusters()
             self.entry += f'\n'
             self.entry += f'??? info "Related clusters"\n'
             self.entry += f'\n'
-            self.entry += f'```mermaid\n'
-            self.entry += f'graph TD\n'
-            for related in self.related_list:
-                self.entry += f'    {self.value} --> {related}\n'
-            self.entry += f'```\n'
-            
+            self.entry += f'    ```mermaid\n'
+            self.entry += f'    graph TD\n'
 
+            global relation_count_dict
+            relation_count = 0
+
+            for relation in related_clusters:
+                relation_count += 1
+                # print(self.value)
+                # print(relation)
+                # print(relation[0].value)
+                # print(relation[1].value)
+                self.entry += f'    {relation[0].uuid}[{relation[0].value}] --- {relation[1].uuid}[{relation[1].value}]\n'
+            self.entry += f'    ```\n'
+            relation_count_dict[self.value] = relation_count
+            
     def create_entry(self):
         self._create_title_entry()
         self._create_description_entry()
@@ -210,8 +265,6 @@ class Cluster():
         self._create_associated_metadata_entry()
         self._create_related_entry()
         return self.entry
-
-
 
 galaxies = []
 for galaxy in galaxies_fnames:
@@ -224,8 +277,8 @@ for galaxy in galaxies:
     for cluster in galaxy.clusters:
         cluster_dict[cluster.uuid] = cluster
 
-test = cluster_dict['f0ec2df5-2e38-4df3-970d-525352006f2e']
-print(test._get_related_clusters())
+# test = cluster_dict['f0ec2df5-2e38-4df3-970d-525352006f2e']
+# print(test.get_related_clusters())
 
 def create_index(intro, contributing, galaxies):
     index_output = intro
@@ -240,17 +293,37 @@ def create_galaxies(galaxies):
         galaxy_output[galaxie.json_file_name] = galaxie.create_entry()
     return galaxy_output
 
-# if __name__ == "__main__":
-#     index_output = create_index(intro, contributing, galaxies)
-#     galaxy_output = create_galaxies(galaxies)
+if __name__ == "__main__":
+    index_output = create_index(intro, contributing, galaxies)
+    galaxy_output = create_galaxies(galaxies)
 
-#     with open(os.path.join(pathSite, 'index.md'), "w") as index:
-#         index.write(index_output)
+    if not os.path.exists(pathSite):
+        os.mkdir(pathSite)
+    with open(os.path.join(pathSite, 'index.md'), "w") as index:
+        index.write(index_output)
 
-#     for f in galaxies_fnames:
-#         cluster_filename = f.split('.')[0]
-#         pathSiteCluster = os.path.join(pathSite, cluster_filename)
-#         if not os.path.exists(pathSiteCluster):
-#             os.mkdir(pathSiteCluster)
-#         with open(os.path.join(pathSiteCluster, 'index.md'), "w") as index:
-#             index.write(galaxy_output[cluster_filename])
+    for f in galaxies_fnames:
+        cluster_filename = f.split('.')[0]
+        pathSiteCluster = os.path.join(pathSite, cluster_filename)
+        if not os.path.exists(pathSiteCluster):
+            os.mkdir(pathSiteCluster)
+        with open(os.path.join(pathSiteCluster, 'index.md'), "w") as index:
+            index.write(galaxy_output[cluster_filename])
+
+    print(f"Public relations: {public_relations_count}")
+    print(f"Private relations: {private_relations_count}")
+    print(f"Total relations: {public_relations_count + private_relations_count}")
+    print(f"Percetage of private relations: {private_relations_count / (public_relations_count + private_relations_count) * 100}%")
+    print(f"Private clusters: {len(private_clusters)}")
+    print(f"Public clusters: {len(public_clusters)}")
+    print(f"Total clusters: {len(private_clusters) + len(public_clusters)}")
+    print(f"Percentage of private clusters: {len(private_clusters) / (len(private_clusters) + len(public_clusters)) * 100}%")
+    print(f"Average number of relations per cluster: {sum(relation_count_dict.values()) / len(relation_count_dict)}")
+    print(f"Max number of relations per cluster: {max(relation_count_dict.values())} from {max(relation_count_dict, key=relation_count_dict.get)}")
+    print(f"Min number of relations per cluster: {min(relation_count_dict.values())} from {min(relation_count_dict, key=relation_count_dict.get)}")
+    print(f"Average number of synonyms per cluster: {sum(synonyms_count_dict.values()) / len(synonyms_count_dict)}")
+    print(f"Max number of synonyms per cluster: {max(synonyms_count_dict.values())} from {max(synonyms_count_dict, key=synonyms_count_dict.get)}")
+    print(f"Min number of synonyms per cluster: {min(synonyms_count_dict.values())} from {min(synonyms_count_dict, key=synonyms_count_dict.get)}") 
+    print(f"Number of empty UUIDs: {sum(empty_uuids_dict.values())}")
+    print(f"Empty UUIDs per cluster: {empty_uuids_dict}")
+
