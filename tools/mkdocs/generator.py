@@ -6,14 +6,15 @@ from typing import List
 
 import validators
 
-pathClusters = '../../clusters'
-pathSite = './site/docs'
+CLUSTER_PATH = '../../clusters'
+SITE_PATH = './site/docs'
+PROJECTS_PATH = './site/projects'
 
 galaxies_fnames = []
-files_to_ignore = [] # if you want to skip a specific cluster in the generation
+FILES_TO_IGNORE = [] # if you want to skip a specific cluster in the generation
 
-for f in os.listdir(pathClusters):
-    if '.json' in f and f not in files_to_ignore:
+for f in os.listdir(CLUSTER_PATH):
+    if '.json' in f and f not in FILES_TO_IGNORE:
         galaxies_fnames.append(f)
 
 galaxies_fnames.sort()
@@ -275,7 +276,7 @@ class Cluster():
 
 galaxies = []
 for galaxy in galaxies_fnames:
-    with open(os.path.join(pathClusters, galaxy)) as fr:
+    with open(os.path.join(CLUSTER_PATH, galaxy)) as fr:
         galaxie_json = json.load(fr)
         galaxies.append(Galaxy(galaxie_json['values'], galaxie_json['authors'], galaxie_json['description'], galaxie_json['name'], galaxy.split('.')[0]))
 
@@ -301,14 +302,14 @@ if __name__ == "__main__":
     index_output = create_index(intro, contributing, galaxies)
     galaxy_output = create_galaxies(galaxies)
 
-    if not os.path.exists(pathSite):
-        os.mkdir(pathSite)
-    with open(os.path.join(pathSite, 'index.md'), "w") as index:
+    if not os.path.exists(SITE_PATH):
+        os.mkdir(SITE_PATH)
+    with open(os.path.join(SITE_PATH, 'index.md'), "w") as index:
         index.write(index_output)
 
     for f in galaxies_fnames:
         cluster_filename = f.split('.')[0]
-        pathSiteCluster = os.path.join(pathSite, cluster_filename)
+        pathSiteCluster = os.path.join(SITE_PATH, cluster_filename)
         if not os.path.exists(pathSiteCluster):
             os.mkdir(pathSiteCluster)
         with open(os.path.join(pathSiteCluster, 'index.md'), "w") as index:
