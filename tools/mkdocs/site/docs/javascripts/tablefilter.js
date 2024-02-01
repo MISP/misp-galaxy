@@ -6,8 +6,11 @@ document$.subscribe(function () {
             highlight_keywords: true,
             // col_0: "select",
             // col_1: "select",
+            col_2: "checklist",
+            col_widths: ["350px", "350px", "100px"],
+            col_types: ["string", "string", "number"],
             grid_layout: false,
-            responsive: true,
+            responsive: false,
             watermark: ["Filter table ...", "Filter table ..."],
 
             auto_filter: {

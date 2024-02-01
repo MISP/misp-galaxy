@@ -200,7 +200,7 @@ class Cluster():
                     self.entry += f'    | {meta} | {self.meta[meta]} |\n'
     
 
-    def get_related_clusters(self, cluster_dict, depth=-1, visited=None):
+    def get_related_clusters(self, cluster_dict, depth=-1, visited=None, level=1):
         global public_relations_count
         global private_relations_count
         global private_clusters
@@ -228,26 +228,26 @@ class Cluster():
                 private_relations_count += 1
                 if dest_uuid not in private_clusters:
                     private_clusters.append(dest_uuid)
-                related_clusters.append((self, Cluster(value="Private Cluster", uuid=dest_uuid, date=None, description=None, related_list=None, meta=None, galaxie=None)))
+                related_clusters.append((self, Cluster(value="Private Cluster", uuid=dest_uuid, date=None, description=None, related_list=None, meta=None, galaxie=None), level))
                 continue
 
             related_cluster = cluster_dict[dest_uuid]
 
             public_relations_count += 1
 
-            related_clusters.append((self, related_cluster))
+            related_clusters.append((self, related_cluster, level))
             
             if (depth > 1 or depth == -1) and related_cluster.uuid not in visited:
                 new_depth = depth - 1 if depth > 1 else -1
-                related_clusters += related_cluster.get_related_clusters(depth=new_depth, visited=visited, cluster_dict=cluster_dict)
+                related_clusters += related_cluster.get_related_clusters(depth=new_depth, visited=visited, cluster_dict=cluster_dict, level=level+1)
 
         if empty_uuids > 0:
             empty_uuids_dict[self.value] = empty_uuids
 
         for cluster in related_clusters:
-            if (cluster[1], cluster[0]) in related_clusters:
+            if (cluster[1], cluster[0], level) in related_clusters:
                 related_clusters.remove(cluster)
-                
+        
         return related_clusters
 
     def _create_related_entry(self):
@@ -255,16 +255,16 @@ class Cluster():
         self.entry += f'??? info "Related clusters"\n'
         self.entry += f'\n'
         # self.entry += f'To see the related clusters, click [here](./{self.galaxie}/{self.uuid}.md).\n'
-        self.entry += f'To see the related clusters, click [here](./relations/{self.uuid}.md).\n'
+        self.entry += f'    To see the related clusters, click [here](./relations/{self.uuid}.md).\n'
 
     def _get_related_entry(self, relations):
         output = ""
         output += f'## Related clusters for {self.value}\n'
         output += f'\n'
-        output += f'    | Cluster A | Cluster B |\n'
-        output += f'    |-----------|-----------|\n'
+        output += f'| Cluster A | Cluster B | Level |\n'
+        output += f'|-----------|-----------|-------|\n'
         for relation in relations:
-            output += f'    | {relation[0].value}  ({relation[0].uuid}) | {relation[1].value}  ({relation[1].uuid}) |\n'
+            output += f'| {relation[0].value}  ({relation[0].uuid}) | {relation[1].value}  ({relation[1].uuid}) | {relation[2]} |\n'
         return output
      
     def create_entry(self, cluster_dict):
@@ -438,15 +438,15 @@ def main():
     if not os.path.exists(SITE_PATH):
         os.mkdir(SITE_PATH)
 
-    for galaxy in galaxies:
-        galaxy.write_entry(SITE_PATH, cluster_dict)
-        
-    # count = 3
     # for galaxy in galaxies:
     #     galaxy.write_entry(SITE_PATH, cluster_dict)
-    #     count -= 1
-    #     if count == 0:
-    #         break
+        
+    count = 3
+    for galaxy in galaxies:
+        galaxy.write_entry(SITE_PATH, cluster_dict)
+        count -= 1
+        if count == 0:
+            break
 
     index_output = create_index(galaxies)
     statistic_output = create_statistics()
