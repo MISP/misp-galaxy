@@ -250,28 +250,21 @@ class Cluster():
                 
         return related_clusters
 
-    # def _create_related_entry(self, cluster_dict):
-    #     if self.related_list and cluster_dict:
-    #         related_clusters = self.get_related_clusters(cluster_dict)
-    #         self.entry += f'\n'
-    #         self.entry += f'??? info "Related clusters"\n'
-    #         self.entry += f'\n'
-    #         self.entry += f'    ```mermaid\n'
-    #         self.entry += f'    graph TD\n'
-
-    #         global relation_count_dict
-    #         relation_count = 0
-
-    #         for relation in related_clusters:
-    #             relation_count += 1
-    #             self.entry += f'    {relation[0].uuid}[{relation[0].value}] --- {relation[1].uuid}[{relation[1].value}]\n'
-    #         self.entry += f'    ```\n'
-    #         relation_count_dict[self.value] = relation_count
+    def _create_related_entry(self):
+        self.entry += f'\n'
+        self.entry += f'??? info "Related clusters"\n'
+        self.entry += f'\n'
+        # self.entry += f'To see the related clusters, click [here](./{self.galaxie}/{self.uuid}.md).\n'
+        self.entry += f'To see the related clusters, click [here](./relations/{self.uuid}.md).\n'
 
     def _get_related_entry(self, relations):
         output = ""
         output += f'## Related clusters for {self.value}\n'
         output += f'\n'
+        output += f'    | Cluster A | Cluster B |\n'
+        output += f'    |-----------|-----------|\n'
+        for relation in relations:
+            output += f'    | {relation[0].value}  ({relation[0].uuid}) | {relation[1].value}  ({relation[1].uuid}) |\n'
         return output
      
     def create_entry(self, cluster_dict):
@@ -281,8 +274,8 @@ class Cluster():
         self._create_uuid_entry()
         self._create_refs_entry()
         self._create_associated_metadata_entry()
-        # self._create_related_entry(cluster_dict)
         if self.related_list:
+            self._create_related_entry()
             self._write_relations(cluster_dict, SITE_PATH)
         return self.entry
     
@@ -293,7 +286,12 @@ class Cluster():
         galaxy_path = os.path.join(path, self.galaxie)
         if not os.path.exists(galaxy_path):
             os.mkdir(galaxy_path)
-        with open(os.path.join(galaxy_path, f'{self.uuid}.md'), "w") as index:
+        relation_path = os.path.join(galaxy_path, 'relations')
+        if not os.path.exists(relation_path):
+            os.mkdir(relation_path)
+        with open(os.path.join(relation_path, ".pages"), "w") as index:
+            index.write(f'hide: true\n')
+        with open(os.path.join(relation_path, f'{self.uuid}.md'), "w") as index:
             index.write(self._get_related_entry(related_clusters))
         
 def create_index(galaxies):
@@ -328,35 +326,41 @@ def create_xy_chart(title, width, height, x_axis, y_axis, bar):
     output += f'\n'
     return output
 
+def create_pie_chart(title, cakepieces):
+    output = ""
+    output += f'```mermaid\n'
+    output += f'pie showData\n'
+    output += f'  title {title}\n'
+    for cakepiece in cakepieces:
+        output += f'  "{cakepiece[0]}" : {cakepiece[1]}\n'
+    output += f'```\n'
+    output += f'\n'
+    return output
+    
+def get_top_x(dict, x, big_to_small=True):
+    sorted_dict = sorted(dict.items(), key=operator.itemgetter(1), reverse=big_to_small)[:x]
+    top_x = [re.sub(r"[^A-Za-z0-9 ]", "", key) for key, value in sorted_dict]
+    top_x = ", ".join(top_x)
+    top_x_values = sorted(dict.values(), reverse=big_to_small)[:x]
+    return top_x, top_x_values
+
 def create_statistics():
     statistic_output = ""
 
     statistic_output += f'# Cluster statistics\n'
     statistic_output += f'## Number of clusters\n'
-    statistic_output += f'```mermaid\n'  
-    statistic_output += f"pie showData\n"
-    statistic_output += f'  title Number of clusters\n'
-    statistic_output += f'  "Public clusters" : {len(public_clusters_dict)}\n'
-    statistic_output += f'  "Private clusters" : {len(private_clusters)}\n'
-    statistic_output += f'```\n'
-    statistic_output += f'\n'
+    statistic_output += create_pie_chart("Number of clusters", [("Public clusters", len(public_clusters_dict)), ("Private clusters", len(private_clusters))])
 
     statistic_output += f'## Galaxies with the most clusters\n'
     galaxy_counts = {}
     for galaxy in public_clusters_dict.values():
         galaxy_counts[galaxy] = galaxy_counts.get(galaxy, 0) + 1
-    sorted_galaxies = sorted(galaxy_counts, key=galaxy_counts.get, reverse=True)[:15]
-    top_15_galaxies = [re.sub(r"[^A-Za-z0-9 ]", "", galaxy) for galaxy in sorted_galaxies]
-    top_15_galaxies = ", ".join(top_15_galaxies)
-    top_15_galaxies_values = sorted(galaxy_counts.values(), reverse=True)[:15]
-    statistic_output += create_xy_chart("Galaxies with the most clusters", 1800, 500, top_15_galaxies, "Number of clusters", top_15_galaxies_values)
+    top_galaxies, top_galaxies_values = get_top_x(galaxy_counts, 25)
+    statistic_output += create_xy_chart("Galaxies with the most clusters", 2500, 500, top_galaxies, "Number of clusters", top_galaxies_values)
 
     statistic_output += f'## Galaxies with the least clusters\n'
-    sorted_galaxies = sorted(galaxy_counts, key=galaxy_counts.get)[:15]
-    top_15_galaxies = [re.sub(r"[^A-Za-z0-9 ]", "", galaxy) for galaxy in sorted_galaxies]
-    top_15_galaxies = ", ".join(top_15_galaxies)
-    top_15_galaxies_values = sorted(galaxy_counts.values())[:15]
-    statistic_output += create_xy_chart("Galaxies with the least clusters", 1800, 500, top_15_galaxies, "Number of clusters", top_15_galaxies_values)
+    flop_galaxies, flop_galaxies_values = get_top_x(galaxy_counts, 25, False)
+    statistic_output += create_xy_chart("Galaxies with the least clusters", 2500, 500, flop_galaxies, "Number of clusters", flop_galaxies_values)
     
     galaxy_number = 0
     for galaxy in public_clusters_dict.values():
@@ -365,44 +369,26 @@ def create_statistics():
 
     statistic_output += f'# Relation statistics\n'
     statistic_output += f'## Number of relations\n'
-    statistic_output += f'```mermaid\n'
-    statistic_output += f"pie showData\n"
-    statistic_output += f'  title Number of relations\n'
-    statistic_output += f'  "Public relations" : {public_relations_count}\n'
-    statistic_output += f'  "Private relations" : {private_relations_count}\n'
-    statistic_output += f'```\n'
-    statistic_output += f'\n'
+    statistic_output += create_pie_chart("Number of relations", [("Public relations", public_relations_count), ("Private relations", private_relations_count)])
 
     statistic_output += f'**Average number of relations per cluster**: {sum(relation_count_dict.values()) / len(relation_count_dict)}\n'
 
     statistic_output += f'## Cluster with the most relations\n'
-    sorted_relation = sorted(relation_count_dict.items(), key=operator.itemgetter(1), reverse=True)[:15]
-    top_15_relation = [re.sub(r"[^A-Za-z0-9 ]", "", key) for key, value in sorted_relation]
-    top_15_relation = ", ".join(top_15_relation)
-    top_15_relation_values = sorted(relation_count_dict.values(), reverse=True)[:15]
-    statistic_output += create_xy_chart("Cluster with the most relations", 2000, 500, top_15_relation, "Number of relations", top_15_relation_values)
+    top_25_relation, top_25_relation_values = get_top_x(relation_count_dict, 25)
+    statistic_output += create_xy_chart("Cluster with the most relations", 2500, 500, top_25_relation, "Number of relations", top_25_relation_values)
 
     statistic_output += f'## Cluster with the least relations\n'
-    sorted_relation = sorted(relation_count_dict.items(), key=operator.itemgetter(1))[:15]
-    top_15_relation = [re.sub(r"[^A-Za-z0-9 ]", "", key) for key, value in sorted_relation]
-    top_15_relation = ", ".join(top_15_relation)
-    top_15_relation_values = sorted(relation_count_dict.values())[:15]
-    statistic_output += create_xy_chart("Cluster with the least relations", 2000, 500, top_15_relation, "Number of relations", top_15_relation_values)
+    top_25_relation, top_25_relation_values = get_top_x(relation_count_dict, 25, False)
+    statistic_output += create_xy_chart("Cluster with the least relations", 2500, 500, top_25_relation, "Number of relations", top_25_relation_values)
 
     statistic_output += f'# Synonyms statistics\n'
     statistic_output += f'## Cluster with the most synonyms\n'
-    sorted_synonyms = sorted(synonyms_count_dict.items(), key=operator.itemgetter(1), reverse=True)[:15]
-    top_15_synonyms = [re.sub(r"[^A-Za-z0-9 ]", "", key) for key, value in sorted_synonyms]
-    top_15_synonyms = ", ".join(top_15_synonyms)
-    top_15_synonyms_values = sorted(synonyms_count_dict.values(), reverse=True)[:15]
-    statistic_output += create_xy_chart("Cluster with the most synonyms", 1800, 500, top_15_synonyms, "Number of synonyms", top_15_synonyms_values)
+    top_25_synonyms, top_25_synonyms_values = get_top_x(synonyms_count_dict, 25)
+    statistic_output += create_xy_chart("Cluster with the most synonyms", 2500, 500, top_25_synonyms, "Number of synonyms", top_25_synonyms_values)
 
     statistic_output += f'## Cluster with the least synonyms\n'
-    sorted_synonyms = sorted(synonyms_count_dict.items(), key=operator.itemgetter(1))[:15]
-    top_15_synonyms = [re.sub(r"[^A-Za-z0-9 ]", "", key) for key, value in sorted_synonyms]
-    top_15_synonyms = ", ".join(top_15_synonyms)
-    top_15_synonyms_values = sorted(synonyms_count_dict.values())[:15]
-    statistic_output += create_xy_chart("Cluster with the least synonyms", 1800, 500, top_15_synonyms, "Number of synonyms", top_15_synonyms_values)
+    top_25_synonyms, top_25_synonyms_values = get_top_x(synonyms_count_dict, 25, False)
+    statistic_output += create_xy_chart("Cluster with the least synonyms", 2500, 500, top_25_synonyms, "Number of synonyms", top_25_synonyms_values)
 
     statistic_output += f'# Empty UUIDs statistics\n'
     statistic_output += f'**Number of empty UUIDs**: {sum(empty_uuids_dict.values())}\n'
@@ -427,9 +413,6 @@ def create_statistics():
     print(f"Number of empty UUIDs: {sum(empty_uuids_dict.values())}")
     print(f"Empty UUIDs per cluster: {empty_uuids_dict}")
     print(sorted(relation_count_dict.items(), key=operator.itemgetter(1), reverse=True)[:30])
-    lol = [re.sub(r"[^A-Za-z0-9 ]", "", key) for key, value in sorted_relation]
-    print(", ".join(lol))
-
 
     return statistic_output
 
@@ -438,9 +421,7 @@ def main():
     for f in os.listdir(CLUSTER_PATH):
         if '.json' in f and f not in FILES_TO_IGNORE:
             galaxies_fnames.append(f)
-
     galaxies_fnames.sort()
-    galaxy_output = {}
 
     galaxies = []
     for galaxy in galaxies_fnames:
@@ -459,9 +440,15 @@ def main():
 
     for galaxy in galaxies:
         galaxy.write_entry(SITE_PATH, cluster_dict)
+        
+    # count = 3
+    # for galaxy in galaxies:
+    #     galaxy.write_entry(SITE_PATH, cluster_dict)
+    #     count -= 1
+    #     if count == 0:
+    #         break
 
     index_output = create_index(galaxies)
-    # galaxy_output = create_galaxies(galaxies, cluster_dict)
     statistic_output = create_statistics()
 
     with open(os.path.join(SITE_PATH, 'index.md'), "w") as index:
@@ -469,18 +456,6 @@ def main():
 
     with open(os.path.join(SITE_PATH, 'statistics.md'), "w") as index:
         index.write(statistic_output)
-
-    # for f in galaxies_fnames:
-    #     cluster_filename = f.split('.')[0]
-    #     pathSiteCluster = os.path.join(SITE_PATH, cluster_filename)
-    #     if not os.path.exists(pathSiteCluster):
-    #         os.mkdir(pathSiteCluster)
-    #     with open(os.path.join(pathSiteCluster, 'index.md'), "w") as index:
-    #         index.write(galaxy_output[cluster_filename])
-    
-
-    # for cluster in cluster_dict.values():
-    #     print(cluster.uuid)
 
 if __name__ == "__main__":
     main()

@@ -23,6 +23,7 @@ theme:
     - navigation.footer
     - search.highlight
     - search.share
+    - navigation.instant.preview
   palette:
 
     # Palette toggle for automatic mode
@@ -46,7 +47,10 @@ theme:
 markdown_extensions:
   - admonition
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
   - tables
   - attr_list
   - pymdownx.emoji:
@@ -61,8 +65,13 @@ extra:
       link: https://github.com/misp
   generator: false
 
+extra_javascript:
+  - javascripts/tablefilter.js
+  - "https://unpkg.com/tablefilter@0.7.3/dist/tablefilter/tablefilter.js"
+
 plugins:
   - search
   - rss
+  - awesome-pages
     #- git-committers:
 #    branch: main
