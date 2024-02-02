@@ -103,7 +103,8 @@ class Galaxy():
                 date=cluster.get('date', None),
                 related_list=cluster.get('related', None),
                 meta=cluster.get('meta', None),
-                galaxie=self.json_file_name
+                galaxie=self.name,
+                galaxie_file_name=self.json_file_name
             ))
         return clusters
     
@@ -128,7 +129,7 @@ class Galaxy():
             index.write(self.entry)
 
 class Cluster():
-    def __init__(self, description, uuid, date, value, related_list, meta, galaxie):
+    def __init__(self, description, uuid, date, value, related_list, meta, galaxie, galaxie_file_name):
         self.description = description
         self.uuid = uuid
         self.date = date
@@ -137,6 +138,7 @@ class Cluster():
         self.meta = meta
         self.entry = ""
         self.galaxie = galaxie
+        self.galaxie_file_name = galaxie_file_name
         
         global public_clusters_dict
         if self.galaxie:
@@ -193,11 +195,17 @@ class Cluster():
             self.entry += f'\n'
             self.entry += f'??? info "Associated metadata"\n'
             self.entry += f'\n'
-            self.entry += f'    |Metadata key      |Value|\n'
-            self.entry += f'    |------------------|-----|\n'
+            self.entry += f'    <div class="no-filter">\n'
+            self.entry += f'    \n'
+            self.entry += f'    |Metadata key {{ .no-filter }}      |Value|\n'
+            self.entry += f'    |-----------------------------------|-----|\n'
             for meta in sorted(self.meta.keys()):
                 if meta not in excluded_meta:
                     self.entry += f'    | {meta} | {self.meta[meta]} |\n'
+            # self.entry += "    {: .no-filter }\n"
+            self.entry += f'    \n'
+            self.entry += f'    </div>\n'
+            self.entry += f'\n'
     
 
     def get_related_clusters(self, cluster_dict, depth=-1, visited=None, level=1):
@@ -228,7 +236,7 @@ class Cluster():
                 private_relations_count += 1
                 if dest_uuid not in private_clusters:
                     private_clusters.append(dest_uuid)
-                related_clusters.append((self, Cluster(value="Private Cluster", uuid=dest_uuid, date=None, description=None, related_list=None, meta=None, galaxie=None), level))
+                related_clusters.append((self, Cluster(value="Private Cluster", uuid=dest_uuid, date=None, description=None, related_list=None, meta=None, galaxie=None, galaxie_file_name=None), level))
                 continue
 
             related_cluster = cluster_dict[dest_uuid]
@@ -261,10 +269,12 @@ class Cluster():
         output = ""
         output += f'## Related clusters for {self.value}\n'
         output += f'\n'
-        output += f'| Cluster A | Cluster B | Level |\n'
+        output += f'| Cluster A | Cluster B | Level {{ .graph }} |\n'
         output += f'|-----------|-----------|-------|\n'
         for relation in relations:
-            output += f'| {relation[0].value}  ({relation[0].uuid}) | {relation[1].value}  ({relation[1].uuid}) | {relation[2]} |\n'
+            cluster_a_section = relation[0].value.lower().replace(" ", "+").replace("/", "").replace(":", "")
+            cluster_b_section = relation[1].value.lower().replace(" ", "+").replace("/", "").replace(":", "")
+            output += f'| [{relation[0].value}  ({relation[0].uuid})](../../{relation[0].galaxie_file_name}/index.md#{cluster_a_section}) | [{relation[1].value}  ({relation[1].uuid})](../../{relation[1].galaxie_file_name}/index.md#{cluster_b_section}) | {relation[2]} |\n'
         return output
      
     def create_entry(self, cluster_dict):
@@ -283,7 +293,7 @@ class Cluster():
         related_clusters = self.get_related_clusters(cluster_dict)
         global relation_count_dict
         relation_count_dict[self.value] = len(related_clusters)
-        galaxy_path = os.path.join(path, self.galaxie)
+        galaxy_path = os.path.join(path, self.galaxie_file_name)
         if not os.path.exists(galaxy_path):
             os.mkdir(galaxy_path)
         relation_path = os.path.join(galaxy_path, 'relations')
@@ -356,16 +366,23 @@ def create_statistics():
     for galaxy in public_clusters_dict.values():
         galaxy_counts[galaxy] = galaxy_counts.get(galaxy, 0) + 1
     top_galaxies, top_galaxies_values = get_top_x(galaxy_counts, 25)
-    statistic_output += create_xy_chart("Galaxies with the most clusters", 2500, 500, top_galaxies, "Number of clusters", top_galaxies_values)
+    statistic_output += create_xy_chart("Galaxies with the most clusters", 3000, 1000, top_galaxies, "Number of clusters", top_galaxies_values)
+    for i, galaxy in enumerate(top_galaxies.split(", "), 1):
+        statistic_output += f'{i}. [{galaxy}](./{galaxy}/index.md)\n'
+    statistic_output += f'\n'
 
     statistic_output += f'## Galaxies with the least clusters\n'
     flop_galaxies, flop_galaxies_values = get_top_x(galaxy_counts, 25, False)
-    statistic_output += create_xy_chart("Galaxies with the least clusters", 2500, 500, flop_galaxies, "Number of clusters", flop_galaxies_values)
+    statistic_output += create_xy_chart("Galaxies with the least clusters", 3000, 1000, flop_galaxies, "Number of clusters", flop_galaxies_values)
+    for i, galaxy in enumerate(flop_galaxies.split(", "), 1):
+        statistic_output += f'{i}. [{galaxy}](./{galaxy}/index.md)\n'
+    statistic_output += f'\n'
     
-    galaxy_number = 0
-    for galaxy in public_clusters_dict.values():
-        galaxy_number += 1
-    statistic_output += f'**Average number of clusters per galaxy**: {len(public_clusters_dict) / galaxy_number}\n'
+    # galaxy_number = 0
+    # global galaxies
+    # for galaxy in galaxies:
+    #     galaxy_number += 1
+    # statistic_output += f'**Average number of clusters per galaxy**: {len(public_clusters_dict) / galaxy_number}\n'
 
     statistic_output += f'# Relation statistics\n'
     statistic_output += f'## Number of relations\n'
@@ -375,20 +392,20 @@ def create_statistics():
 
     statistic_output += f'## Cluster with the most relations\n'
     top_25_relation, top_25_relation_values = get_top_x(relation_count_dict, 25)
-    statistic_output += create_xy_chart("Cluster with the most relations", 2500, 500, top_25_relation, "Number of relations", top_25_relation_values)
+    statistic_output += create_xy_chart("Cluster with the most relations", 3000, 1000, top_25_relation, "Number of relations", top_25_relation_values)
 
     statistic_output += f'## Cluster with the least relations\n'
     top_25_relation, top_25_relation_values = get_top_x(relation_count_dict, 25, False)
-    statistic_output += create_xy_chart("Cluster with the least relations", 2500, 500, top_25_relation, "Number of relations", top_25_relation_values)
+    statistic_output += create_xy_chart("Cluster with the least relations", 3000, 1000, top_25_relation, "Number of relations", top_25_relation_values)
 
     statistic_output += f'# Synonyms statistics\n'
     statistic_output += f'## Cluster with the most synonyms\n'
     top_25_synonyms, top_25_synonyms_values = get_top_x(synonyms_count_dict, 25)
-    statistic_output += create_xy_chart("Cluster with the most synonyms", 2500, 500, top_25_synonyms, "Number of synonyms", top_25_synonyms_values)
+    statistic_output += create_xy_chart("Cluster with the most synonyms", 3000, 1000, top_25_synonyms, "Number of synonyms", top_25_synonyms_values)
 
     statistic_output += f'## Cluster with the least synonyms\n'
     top_25_synonyms, top_25_synonyms_values = get_top_x(synonyms_count_dict, 25, False)
-    statistic_output += create_xy_chart("Cluster with the least synonyms", 2500, 500, top_25_synonyms, "Number of synonyms", top_25_synonyms_values)
+    statistic_output += create_xy_chart("Cluster with the least synonyms", 3000, 1000, top_25_synonyms, "Number of synonyms", top_25_synonyms_values)
 
     statistic_output += f'# Empty UUIDs statistics\n'
     statistic_output += f'**Number of empty UUIDs**: {sum(empty_uuids_dict.values())}\n'
@@ -441,7 +458,7 @@ def main():
     # for galaxy in galaxies:
     #     galaxy.write_entry(SITE_PATH, cluster_dict)
         
-    count = 3
+    count = 10
     for galaxy in galaxies:
         galaxy.write_entry(SITE_PATH, cluster_dict)
         count -= 1
