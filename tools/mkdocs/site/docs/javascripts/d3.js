@@ -1,29 +1,25 @@
 document$.subscribe(function () {
-    // Function to parse table and return data
-    // function parseTable(table) {
-    //     var data = [];
-    //     var rows = table.querySelectorAll("tr");
-    //     rows.forEach((row, i) => {
-    //         // Skipping header row and filter row
-    //         if (i > 1) {
-    //             var cells = row.querySelectorAll("td");
-    //             data.push({ source: cells[0].textContent, target: cells[1].textContent, level: cells[2].textContent });
-    //         }
-    //     });
-    //     return data;
-    // }
 
+    const NODE_RADIUS = 8;
+
+    // Function to parse the table data
     function parseFilteredTable(tf) {
         var data = [];
         tf.getFilteredData().forEach((row, i) => {
-            // console.log("Row");
-            // console.log(row);
             data.push({ source: row[1][0], target: row[1][1], level: row[1][2] });
-            // console.log("Data");
-            // console.log(data);
         }
         );
         return data;
+    }
+
+    function processNewData(newData) {
+        // Extracting new nodes
+        var newNodes = Array.from(new Set(newData.flatMap(d => [d.source, d.target])))
+            .map(id => ({ id }));
+
+        // Preparing the links in the required format
+        var newLinks = newData.map(d => ({ source: d.source, target: d.target }));
+        return { newNodes, newLinks };
     }
 
     // Function to create Force-Directed Graph
@@ -33,8 +29,11 @@ document$.subscribe(function () {
             .map(id => ({ id }));
 
         var links = data.map(d => ({ source: d.source, target: d.target }));
-        // console.log("Nodes");
-        // console.log(nodes);
+
+        console.log("Nodes")
+        console.log(nodes);
+        console.log("Links")
+        console.log(links);
 
         // Set up the dimensions of the graph
         var width = 1000, height = 1000;
@@ -48,7 +47,8 @@ document$.subscribe(function () {
         var simulation = d3.forceSimulation(nodes)
             .force("link", d3.forceLink(links).id(d => d.id))
             .force("charge", d3.forceManyBody())
-            .force("center", d3.forceCenter(width / 2, height / 2));
+            .force("center", d3.forceCenter(width / 2, height / 2))
+            .alphaDecay(0.02); // A lower value, adjust as needed
 
         // Create links
         var link = svg.append("g")
@@ -66,8 +66,34 @@ document$.subscribe(function () {
             .selectAll("circle")
             .data(nodes)
             .enter().append("circle")
-            .attr("r", 5)
+            .attr("r", NODE_RADIUS)
             .attr("fill", "#69b3a2");
+
+        // Define drag behavior
+        var drag = d3.drag()
+            .on("start", dragstarted)
+            .on("drag", dragged)
+            .on("end", dragended);
+
+        // Apply drag behavior to nodes
+        node.call(drag);
+
+        // Drag functions
+        function dragstarted(event, d) {
+            if (!event.active) simulation.alphaTarget(0.3).restart();
+            d.fx = d.x;
+            d.fy = d.y;
+        }
+
+        function dragged(event, d) {
+            d.fx = event.x;
+            d.fy = event.y;
+        }
+
+        function dragended(event, d) {
+            // Do not reset the fixed positions
+            if (!event.active) simulation.alphaTarget(0);
+        }
 
         // Update positions on each simulation 'tick'
         simulation.on("tick", () => {
@@ -82,8 +108,6 @@ document$.subscribe(function () {
                 .attr("cy", d => d.y);
         });
 
-        // return simulation;
-        // invalidation.then(() => simulation.stop());
         return Object.assign(svg.node(), {
             update({ newNodes, newLinks }) {
                 // Process new nodes and maintain the existing ones
@@ -94,11 +118,13 @@ document$.subscribe(function () {
                 node = node.data(nodes, d => d.id)
                     .join(
                         enter => enter.append("circle")
-                            .attr("r", 5)
+                            .attr("r", NODE_RADIUS)
                             .attr("fill", "#69b3a2"),
                         update => update,
                         exit => exit.remove()
                     );
+
+                node.call(drag);
 
                 // Process new links
                 const oldLinksMap = new Map(link.data().map(d => [`${d.source.id},${d.target.id}`, d]));
@@ -125,19 +151,8 @@ document$.subscribe(function () {
     document.querySelectorAll("table").forEach((table, index) => {
         var graphHeader = table.querySelector("th.graph");
         if (graphHeader) {
-            // var data = parseTable(table);
-            // //var data = parseFilteredTable(table);
-            // // console.log("Data");
-            // // console.log(data);
-            // var graphId = "graph" + index;
-            // var div = document.createElement("div");
-            // div.id = graphId;
-            // table.after(div);
-            // var simulation = createForceDirectedGraph(data, "#" + graphId);
-
             // Initialize TableFilter for the table
             var tf = new TableFilter(table, {
-                // Define filter options for each column (customize as needed)
                 base_path: "https://unpkg.com/tablefilter@0.7.3/dist/tablefilter/",
                 highlight_keywords: true,
                 col_2: "checklist",
@@ -172,10 +187,7 @@ document$.subscribe(function () {
             });
 
             tf.init();
-            //var data = parseTable(table);
             var data = parseFilteredTable(tf);
-            // console.log("Data");
-            // console.log(data);
             var graphId = "graph" + index;
             var div = document.createElement("div");
             div.id = graphId;
@@ -185,24 +197,10 @@ document$.subscribe(function () {
             // Function to filter the table data and update the graph
             function filterTableAndGraph() {
                 var filteredData = parseFilteredTable(tf);
-                // console.log("Filtered Data");
-                // console.log(filteredData);
                 var { newNodes, newLinks } = processNewData(filteredData);
 
                 // Restart the simulation with filtered data
                 simulation.update({ newNodes: newNodes, newLinks: newLinks });
-            }
-
-            function processNewData(newData) {
-                // Extracting new nodes
-                var newNodes = Array.from(new Set(newData.flatMap(d => [d.source, d.target])))
-                    .map(id => ({ id }));
-
-                // Preparing the links in the required format
-                var newLinks = newData.map(d => ({ source: d.source, target: d.target }));
-                // console.log("New Nodes");
-                // console.log(newNodes);
-                return { newNodes, newLinks };
             }
 
             // Listen for table filtering events
