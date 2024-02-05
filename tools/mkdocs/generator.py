@@ -266,7 +266,10 @@ class Cluster():
         for relation in relations:
             cluster_a_section = relation[0].value.lower().replace(" ", "+").replace("/", "").replace(":", "")
             cluster_b_section = relation[1].value.lower().replace(" ", "+").replace("/", "").replace(":", "")
-            output += f'| [{relation[0].value}  ({relation[0].uuid})](../../{relation[0].galaxie_file_name}/index.md#{cluster_a_section}) | [{relation[1].value}  ({relation[1].uuid})](../../{relation[1].galaxie_file_name}/index.md#{cluster_b_section}) | {relation[2]} |\n'
+            if cluster_b_section != "private+cluster":
+                output += f'| [{relation[0].value}  ({relation[0].uuid})](../../{relation[0].galaxie_file_name}/index.md#{cluster_a_section}) | [{relation[1].value}  ({relation[1].uuid})](../../{relation[1].galaxie_file_name}/index.md#{cluster_b_section}) | {relation[2]} |\n'
+            else:
+                output += f'| [{relation[0].value}  ({relation[0].uuid})](../../{relation[0].galaxie_file_name}/index.md#{cluster_a_section}) | {relation[1].value}  ({relation[1].uuid}) | {relation[2]} |\n'
         return output
      
     def create_entry(self, cluster_dict):
@@ -348,80 +351,77 @@ def get_top_x(dict, x, big_to_small=True):
 
 def create_statistics():
     statistic_output = ""
+    statistic_output += f'# MISP Galaxy statistics\n'
+    statistic_output +='The MISP galaxy statistics are automatically generated based on the MISP galaxy JSON files. Therefore the statistics only include detailed infomration about public clusters and relations.\n'
 
     statistic_output += f'# Cluster statistics\n'
     statistic_output += f'## Number of clusters\n'
-    statistic_output += create_pie_chart("Number of clusters", [("Public clusters", len(public_clusters_dict)), ("Private clusters", len(private_clusters))])
+    statistic_output += f'Here you can find the total number of clusters including public and private clusters. The number of public clusters has been calculated based on the number of unique Clusters in the MISP galaxy JSON files. The number of private clusters could only be approximated based on the number of relations to non-existing clusters. Therefore the number of private clusters is not accurate and only an approximation.\n'
+    statistic_output += f'\n'
+    statistic_output += f'| No. | Type | Count {{ .pie-chart }}|\n'
+    statistic_output += f'|----|------|-------|\n'
+    statistic_output += f'| 1 | Public clusters | {len(public_clusters_dict)} |\n'
+    statistic_output += f'| 2 | Private clusters | {len(private_clusters)} |\n'
+    statistic_output += f'\n'
 
     statistic_output += f'## Galaxies with the most clusters\n'
     galaxy_counts = {}
     for galaxy in public_clusters_dict.values():
         galaxy_counts[galaxy] = galaxy_counts.get(galaxy, 0) + 1
-    top_galaxies, top_galaxies_values = get_top_x(galaxy_counts, 25)
-    statistic_output += create_xy_chart("Galaxies with the most clusters", 3000, 1000, top_galaxies, "Number of clusters", top_galaxies_values)
+    top_galaxies, top_galaxies_values = get_top_x(galaxy_counts, 20)
+    # statistic_output += create_xy_chart("Galaxies with the most clusters", 3000, 1000, top_galaxies, "Number of clusters", top_galaxies_values)
+    statistic_output += f' | No. | Galaxy | Count {{ .bar-chart }}|\n'
+    statistic_output += f' |----|--------|-------|\n'
     for i, galaxy in enumerate(top_galaxies.split(", "), 1):
-        statistic_output += f'{i}. [{galaxy}](./{galaxy}/index.md)\n'
+        # statistic_output += f'{i}. [{galaxy}](./{galaxy}/index.md)\n'
+        statistic_output += f' | {i} | [{galaxy}](./{galaxy}/index.md) | {top_galaxies_values[i-1]} |\n'
     statistic_output += f'\n'
 
     statistic_output += f'## Galaxies with the least clusters\n'
-    flop_galaxies, flop_galaxies_values = get_top_x(galaxy_counts, 25, False)
-    statistic_output += create_xy_chart("Galaxies with the least clusters", 3000, 1000, flop_galaxies, "Number of clusters", flop_galaxies_values)
+    flop_galaxies, flop_galaxies_values = get_top_x(galaxy_counts, 20, False)
+    # statistic_output += create_xy_chart("Galaxies with the least clusters", 3000, 1000, flop_galaxies, "Number of clusters", flop_galaxies_values)
+    statistic_output += f' | No. | Galaxy | Count {{ .bar-chart }}|\n'
+    statistic_output += f' |----|--------|-------|\n'
     for i, galaxy in enumerate(flop_galaxies.split(", "), 1):
-        statistic_output += f'{i}. [{galaxy}](./{galaxy}/index.md)\n'
+        # statistic_output += f'{i}. [{galaxy}](./{galaxy}/index.md)\n'
+        statistic_output += f' | {i} | [{galaxy}](./{galaxy}/index.md) | {flop_galaxies_values[i-1]} |\n'
     statistic_output += f'\n'
-    
-    # galaxy_number = 0
-    # global galaxies
-    # for galaxy in galaxies:
-    #     galaxy_number += 1
-    # statistic_output += f'**Average number of clusters per galaxy**: {len(public_clusters_dict) / galaxy_number}\n'
 
     statistic_output += f'# Relation statistics\n'
     statistic_output += f'## Number of relations\n'
-    statistic_output += create_pie_chart("Number of relations", [("Public relations", public_relations_count), ("Private relations", private_relations_count)])
+    statistic_output += f'| No. | Type | Count {{ .pie-chart }}|\n'
+    statistic_output += f'|----|------|-------|\n'
+    statistic_output += f'| 1 | Public relations | {public_relations_count} |\n'
+    statistic_output += f'| 2 | Private relations | {private_relations_count} |\n'
+    statistic_output += f'\n'
 
-    statistic_output += f'**Average number of relations per cluster**: {sum(relation_count_dict.values()) / len(relation_count_dict)}\n'
+    statistic_output += f'**Average number of relations per cluster**: {int(sum(relation_count_dict.values()) / len(relation_count_dict))}\n'
 
     statistic_output += f'## Cluster with the most relations\n'
-    top_25_relation, top_25_relation_values = get_top_x(relation_count_dict, 25)
-    statistic_output += create_xy_chart("Cluster with the most relations", 3000, 1000, top_25_relation, "Number of relations", top_25_relation_values)
-
-    statistic_output += f'## Cluster with the least relations\n'
-    top_25_relation, top_25_relation_values = get_top_x(relation_count_dict, 25, False)
-    statistic_output += create_xy_chart("Cluster with the least relations", 3000, 1000, top_25_relation, "Number of relations", top_25_relation_values)
+    top_25_relation, top_25_relation_values = get_top_x(relation_count_dict, 20)
+    # statistic_output += create_xy_chart("Cluster with the most relations", 3000, 1000, top_25_relation, "Number of relations", top_25_relation_values)
+    statistic_output += f' | No. | Cluster | Count {{ .bar-chart }}|\n'
+    statistic_output += f' |----|--------|-------|\n'
+    for i, cluster in enumerate(top_25_relation.split(", "), 1):
+        # statistic_output += f'{i}. [{cluster}](./{cluster}/index.md)\n'
+        statistic_output += f' | {i} | [{cluster}](./{cluster}/index.md) | {top_25_relation_values[i-1]} |\n'
+    statistic_output += f'\n'
 
     statistic_output += f'# Synonyms statistics\n'
     statistic_output += f'## Cluster with the most synonyms\n'
-    top_25_synonyms, top_25_synonyms_values = get_top_x(synonyms_count_dict, 25)
-    statistic_output += create_xy_chart("Cluster with the most synonyms", 3000, 1000, top_25_synonyms, "Number of synonyms", top_25_synonyms_values)
-
-    statistic_output += f'## Cluster with the least synonyms\n'
-    top_25_synonyms, top_25_synonyms_values = get_top_x(synonyms_count_dict, 25, False)
-    statistic_output += create_xy_chart("Cluster with the least synonyms", 3000, 1000, top_25_synonyms, "Number of synonyms", top_25_synonyms_values)
+    top_synonyms, top_synonyms_values = get_top_x(synonyms_count_dict, 20)
+    # statistic_output += create_xy_chart("Cluster with the most synonyms", 3000, 1000, top_synonyms, "Number of synonyms", top_synonyms_values)
+    statistic_output += f' | No. | Cluster | Count {{ .bar-chart }}|\n'
+    statistic_output += f' |----|--------|-------|\n'
+    for i, cluster in enumerate(top_synonyms.split(", "), 1):
+        # statistic_output += f'{i}. [{cluster}](./{cluster}/index.md)\n'
+        statistic_output += f' | {i} | [{cluster}](./{cluster}/index.md) | {top_synonyms_values[i-1]} |\n'
+    statistic_output += f'\n'
 
     statistic_output += f'# Empty UUIDs statistics\n'
     statistic_output += f'**Number of empty UUIDs**: {sum(empty_uuids_dict.values())}\n'
     statistic_output += f'\n'
     statistic_output += f'**Empty UUIDs per cluster**: {empty_uuids_dict}\n'
-
-
-    print(f"Public relations: {public_relations_count}")
-    print(f"Private relations: {private_relations_count}")
-    print(f"Total relations: {public_relations_count + private_relations_count}")
-    print(f"Percetage of private relations: {private_relations_count / (public_relations_count + private_relations_count) * 100}%")
-    print(f"Private clusters: {len(private_clusters)}")
-    print(f"Public clusters: {len(public_clusters_dict)}")
-    print(f"Total clusters: {len(private_clusters) + len(public_clusters_dict)}")
-    print(f"Percentage of private clusters: {len(private_clusters) / (len(private_clusters) + len(public_clusters_dict)) * 100}%")
-    print(f"Average number of relations per cluster: {sum(relation_count_dict.values()) / len(relation_count_dict)}")
-    print(f"Max number of relations per cluster: {max(relation_count_dict.values())} from {max(relation_count_dict, key=relation_count_dict.get)}")
-    print(f"Min number of relations per cluster: {min(relation_count_dict.values())} from {min(relation_count_dict, key=relation_count_dict.get)}")
-    print(f"Average number of synonyms per cluster: {sum(synonyms_count_dict.values()) / len(synonyms_count_dict)}")
-    print(f"Max number of synonyms per cluster: {max(synonyms_count_dict.values())} from {max(synonyms_count_dict, key=synonyms_count_dict.get)}")
-    print(f"Min number of synonyms per cluster: {min(synonyms_count_dict.values())} from {min(synonyms_count_dict, key=synonyms_count_dict.get)}") 
-    print(f"Number of empty UUIDs: {sum(empty_uuids_dict.values())}")
-    print(f"Empty UUIDs per cluster: {empty_uuids_dict}")
-    print(sorted(relation_count_dict.items(), key=operator.itemgetter(1), reverse=True)[:30])
 
     return statistic_output
 
