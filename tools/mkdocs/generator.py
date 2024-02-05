@@ -93,7 +93,6 @@ class Galaxy():
                 self.entry += f'     |{author}|\n'
 
     def _create_clusters(self):
-        # global public_clusters_dict
         clusters = []
         for cluster in self.cluster_list:
             clusters.append(Cluster(
@@ -195,18 +194,11 @@ class Cluster():
             self.entry += f'\n'
             self.entry += f'??? info "Associated metadata"\n'
             self.entry += f'\n'
-            self.entry += f'    <div class="no-filter">\n'
-            self.entry += f'    \n'
             self.entry += f'    |Metadata key {{ .no-filter }}      |Value|\n'
             self.entry += f'    |-----------------------------------|-----|\n'
             for meta in sorted(self.meta.keys()):
                 if meta not in excluded_meta:
                     self.entry += f'    | {meta} | {self.meta[meta]} |\n'
-            # self.entry += "    {: .no-filter }\n"
-            self.entry += f'    \n'
-            self.entry += f'    </div>\n'
-            self.entry += f'\n'
-    
 
     def get_related_clusters(self, cluster_dict, depth=-1, visited=None, level=1):
         global public_relations_count

@@ -32,9 +32,9 @@ document$.subscribe(function () {
                     tooltip: "Reset",
                     toolbar_position: "right",
                 },
-                no_results_message: {
-                    content: "No matching records found",
-                },
+                // no_results_message: {
+                //     content: "No matching records found",
+                // },
                 toolbar: true,
                 extensions: [{
                     name: "sort",
