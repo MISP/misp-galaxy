@@ -11,7 +11,8 @@
     "Ram Pliskin",
     "Nikhil Mittal",
     "MITRE ATT&CK",
-    "AlertIQ"
+    "AlertIQ",
+    "Craig Fretwell"
   ],
   "category": "atrm",
   "description": "The purpose of the Azure Threat Research Matrix (ATRM) is to educate readers on the potential of Azure-based tactics, techniques, and procedures (TTPs). It is not to teach how to weaponize or specifically abuse them. For this reason, some specific commands will be obfuscated or parts will be omitted to prevent abuse.",
@@ -491,7 +492,7 @@
       "value": "AZT404.2 - Logic Application"
     },
     {
-      "description": "By utilizing a Automation Account configured with a managed identity or RunAs account, an attacker can execute Azure operations on a given resource.",
+      "description": "By utilizing a Function Application, an attacker can execute Azure operations on a given resource.",
       "meta": {
         "kill_chain": [
           "ATRM-tactics:Privilege Escalation"
@@ -1066,10 +1067,10 @@
       "description": "By generating an SAS URI for a resource, an adversary may extract the contents of that resource without authentication at any time.",
       "meta": {
         "kill_chain": [
-          "ATRM-tactics:Exfiltration"
+          "ATRM-tactics:Impact"
         ],
         "refs": [
-          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Exfiltration/AZT701/AZT701"
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Impact/AZT701/AZT701"
         ]
       },
       "uuid": "9ca7b25c-643a-5e55-a210-684f49fe82d8",
@@ -1079,10 +1080,10 @@
       "description": "An adversary may create an SAS URI to download the disk attached to a virtual machine.",
       "meta": {
         "kill_chain": [
-          "ATRM-tactics:Exfiltration"
+          "ATRM-tactics:Impact"
         ],
         "refs": [
-          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Exfiltration/AZT701/AZT701-1"
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Impact/AZT701/AZT701-1"
         ]
       },
       "uuid": "8805d880-8887-52b6-a113-8c0f4fec4230",
@@ -1092,10 +1093,10 @@
       "description": "By generating a Shared Access Signature (SAS) URI, an adversary can access a container in a Storage Account at any time.",
       "meta": {
         "kill_chain": [
-          "ATRM-tactics:Exfiltration"
+          "ATRM-tactics:Impact"
         ],
         "refs": [
-          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Exfiltration/AZT701/AZT701-2"
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Impact/AZT701/AZT701-2"
         ]
       },
       "uuid": "aae55a3a-8e32-5a62-8d41-837b2ebb1e69",
@@ -1105,23 +1106,23 @@
       "description": "An adversary can generate a connection string to mount an Azure Storage Account File Share as an NFS or SMB share to their local machine.",
       "meta": {
         "kill_chain": [
-          "ATRM-tactics:Exfiltration"
+          "ATRM-tactics:Impact"
         ],
         "refs": [
-          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Exfiltration/AZT702/AZT702-1"
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Impact/AZT702/AZT702-1"
         ]
       },
       "uuid": "dc6f9ee0-55b2-5197-87a5-7474cfc04d72",
       "value": "AZT702 - File Share Mounting"
     },
     {
-      "description": "By setting up cross-tenant replication, an adversary may set up replication from one tenant's storage account to an external tenant's storage account.",
+      "description": "",
       "meta": {
         "kill_chain": [
-          "ATRM-tactics:Exfiltration"
+          "ATRM-tactics:Impact"
         ],
         "refs": [
-          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Exfiltration/AZT703/AZT703-1"
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Impact/AZT703/AZT703-1"
         ]
       },
       "uuid": "ff4276bf-ab9e-5157-a171-5cdd4a3e6002",
@@ -1131,10 +1132,10 @@
       "description": "An adversary may leverage resources found at a 'soft deletion' state, restore them and advance their attack by retrieving contents meant to be deleted",
       "meta": {
         "kill_chain": [
-          "ATRM-tactics:Exfiltration"
+          "ATRM-tactics:Impact"
         ],
         "refs": [
-          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Exfiltration/AZT704/AZT704"
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Impact/AZT704/AZT704"
         ]
       },
       "uuid": "47ded49d-ef4c-57d4-8050-f66f884c4388",
@@ -1144,10 +1145,10 @@
       "description": "An adversary may recover a key vault object found in a 'soft deletion' state.",
       "meta": {
         "kill_chain": [
-          "ATRM-tactics:Exfiltration"
+          "ATRM-tactics:Impact"
         ],
         "refs": [
-          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Exfiltration/AZT704/AZT704-1"
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Impact/AZT704/AZT704-1"
         ]
       },
       "uuid": "d8fc76f2-6776-5a09-bfb3-57852ae1d786",
@@ -1157,10 +1158,10 @@
       "description": "An adversary may recover a storage account object found in a 'soft deletion' state.",
       "meta": {
         "kill_chain": [
-          "ATRM-tactics:Exfiltration"
+          "ATRM-tactics:Impact"
         ],
         "refs": [
-          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Exfiltration/AZT704/AZT704-2"
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Impact/AZT704/AZT704-2"
         ]
       },
       "uuid": "cd9f0082-b2c7-53f8-95a6-a4fe746f973e",
@@ -1170,15 +1171,28 @@
       "description": "An adversary may recover a virtual machine object found in a 'soft deletion' state.",
       "meta": {
         "kill_chain": [
-          "ATRM-tactics:Exfiltration"
+          "ATRM-tactics:Impact"
         ],
         "refs": [
-          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Exfiltration/AZT704/AZT704-3"
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Impact/AZT704/AZT704-3"
         ]
       },
       "uuid": "d333405e-af82-555c-a68f-e723878b5f55",
       "value": "AZT704.3 - Recovery Services Vault"
+    },
+    {
+      "description": "An adversary may recover a virtual machine object found in a 'soft deletion' state.",
+      "meta": {
+        "kill_chain": [
+          "ATRM-tactics:Impact"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Azure-Threat-Research-Matrix/Impact/AZT704/AZT704-3"
+        ]
+      },
+      "uuid": "9d181c95-ccf7-5c94-8f4a-f6a2df62d760",
+      "value": "AZT705 - Azure Backup Delete"
     }
   ],
-  "version": 1
+  "version": 2
 }
