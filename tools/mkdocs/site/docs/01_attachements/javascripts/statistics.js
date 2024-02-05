@@ -65,7 +65,7 @@ document$.subscribe(function () {
     function createBarChart(data, elementId) {
         // Set up the dimensions of the graph
         var svgWidth = 1000, svgHeight = 1500;
-        var margin = { top: 20, right: 200, bottom: 400, left: 60 }, // Increase bottom margin for x-axis labels
+        var margin = { top: 20, right: 200, bottom: 450, left: 60 }, // Increase bottom margin for x-axis labels
             width = svgWidth - margin.left - margin.right,
             height = svgHeight - margin.top - margin.bottom;
 

@@ -369,21 +369,17 @@ def create_statistics():
     for galaxy in public_clusters_dict.values():
         galaxy_counts[galaxy] = galaxy_counts.get(galaxy, 0) + 1
     top_galaxies, top_galaxies_values = get_top_x(galaxy_counts, 20)
-    # statistic_output += create_xy_chart("Galaxies with the most clusters", 3000, 1000, top_galaxies, "Number of clusters", top_galaxies_values)
     statistic_output += f' | No. | Galaxy | Count {{ .bar-chart }}|\n'
     statistic_output += f' |----|--------|-------|\n'
     for i, galaxy in enumerate(top_galaxies.split(", "), 1):
-        # statistic_output += f'{i}. [{galaxy}](./{galaxy}/index.md)\n'
         statistic_output += f' | {i} | [{galaxy}](./{galaxy}/index.md) | {top_galaxies_values[i-1]} |\n'
     statistic_output += f'\n'
 
     statistic_output += f'## Galaxies with the least clusters\n'
     flop_galaxies, flop_galaxies_values = get_top_x(galaxy_counts, 20, False)
-    # statistic_output += create_xy_chart("Galaxies with the least clusters", 3000, 1000, flop_galaxies, "Number of clusters", flop_galaxies_values)
     statistic_output += f' | No. | Galaxy | Count {{ .bar-chart }}|\n'
     statistic_output += f' |----|--------|-------|\n'
     for i, galaxy in enumerate(flop_galaxies.split(", "), 1):
-        # statistic_output += f'{i}. [{galaxy}](./{galaxy}/index.md)\n'
         statistic_output += f' | {i} | [{galaxy}](./{galaxy}/index.md) | {flop_galaxies_values[i-1]} |\n'
     statistic_output += f'\n'
 
@@ -399,22 +395,18 @@ def create_statistics():
 
     statistic_output += f'## Cluster with the most relations\n'
     top_25_relation, top_25_relation_values = get_top_x(relation_count_dict, 20)
-    # statistic_output += create_xy_chart("Cluster with the most relations", 3000, 1000, top_25_relation, "Number of relations", top_25_relation_values)
     statistic_output += f' | No. | Cluster | Count {{ .bar-chart }}|\n'
     statistic_output += f' |----|--------|-------|\n'
     for i, cluster in enumerate(top_25_relation.split(", "), 1):
-        # statistic_output += f'{i}. [{cluster}](./{cluster}/index.md)\n'
         statistic_output += f' | {i} | [{cluster}](./{cluster}/index.md) | {top_25_relation_values[i-1]} |\n'
     statistic_output += f'\n'
 
     statistic_output += f'# Synonyms statistics\n'
     statistic_output += f'## Cluster with the most synonyms\n'
     top_synonyms, top_synonyms_values = get_top_x(synonyms_count_dict, 20)
-    # statistic_output += create_xy_chart("Cluster with the most synonyms", 3000, 1000, top_synonyms, "Number of synonyms", top_synonyms_values)
     statistic_output += f' | No. | Cluster | Count {{ .bar-chart }}|\n'
     statistic_output += f' |----|--------|-------|\n'
     for i, cluster in enumerate(top_synonyms.split(", "), 1):
-        # statistic_output += f'{i}. [{cluster}](./{cluster}/index.md)\n'
         statistic_output += f' | {i} | [{cluster}](./{cluster}/index.md) | {top_synonyms_values[i-1]} |\n'
     statistic_output += f'\n'
 
