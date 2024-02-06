@@ -62,10 +62,10 @@ document$.subscribe(function () {
             .style("font-size", 17);
     }
 
-    function createBarChart(data, elementId) {
+    function createBarChart(data, elementId, mode) {
         // Set up the dimensions of the graph
-        var svgWidth = 1000, svgHeight = 1500;
-        var margin = { top: 20, right: 200, bottom: 450, left: 60 }, // Increase bottom margin for x-axis labels
+        var svgWidth = 1000, svgHeight = 1000;
+        var margin = { top: 20, right: 200, bottom: 350, left: 60 }, // Increase bottom margin for x-axis labels
             width = svgWidth - margin.left - margin.right,
             height = svgHeight - margin.top - margin.bottom;
 
@@ -79,13 +79,18 @@ document$.subscribe(function () {
         // Set up the scales
         var x = d3.scaleBand()
             .range([0, width])
-            .padding(0.1)
+            .padding(0.2)
             .domain(data.map(d => d.name));
 
         var maxYValue = d3.max(data, d => d.value);
-        var y = d3.scaleLinear()
-            .range([height, 0])
-            .domain([0, maxYValue + maxYValue * 0.1]); // Add padding to the max value
+        if (mode == "log") {
+            var minYValue = d3.min(data, d => d.value);
+            if (minYValue <= 0) {
+                console.error("Logarithmic scale requires strictly positive values");
+                return;
+            }
+        }
+        var y = mode == "log" ? d3.scaleLog().range([height, 0]).domain([1, maxYValue]) : d3.scaleLinear().range([height, 0]).domain([0, maxYValue + maxYValue * 0.1]);
 
         // Set up the color scale
         var color = d3.scaleOrdinal()
@@ -104,10 +109,23 @@ document$.subscribe(function () {
             .enter().append("rect")
             .attr("class", "bar")
             .attr("x", d => x(d.name))
-            .attr("y", d => y(d.value))
+            .attr("y", d => {
+                if (mode == "log") {
+                    return y(Math.max(1, d.value));
+                } else if (mode == "linear") {
+                    return y(d.value);
+                }
+            })
             .attr("width", x.bandwidth())
-            .attr("height", d => height - y(d.value))
+            .attr("height", d => {
+                if (mode == "log") {
+                    return height - y(Math.max(1, d.value));
+                } else if (mode == "linear") {
+                    return height - y(d.value);
+                }
+            })
             .attr("fill", d => color(d.name));
+
 
         // Add and rotate x-axis labels
         svg.append("g")
@@ -128,6 +146,7 @@ document$.subscribe(function () {
     document.querySelectorAll("table").forEach((table, index) => {
         var pieChart = table.querySelector("th.pie-chart");
         var barChart = table.querySelector("th.bar-chart");
+        var logBarChart = table.querySelector("th.log-bar-chart");
         graphId = "graph" + index;
         var div = document.createElement("div");
         div.id = graphId;
@@ -138,7 +157,11 @@ document$.subscribe(function () {
         }
         if (barChart) {
             var data = parseTable(table);
-            createBarChart(data, "#" + graphId);
+            createBarChart(data, "#" + graphId, "linear");
+        }
+        if (logBarChart) {
+            var data = parseTable(table);
+            createBarChart(data, "#" + graphId, "log");
         }
     })
 

@@ -164,7 +164,7 @@ class Cluster():
             for synonym in sorted(self.meta['synonyms']):
                 synonyms_count += 1
                 self.entry += f'     | `{synonym}`      |\n'
-            synonyms_count_dict[self.value] = synonyms_count
+            synonyms_count_dict[self.uuid] = synonyms_count
 
     def _create_uuid_entry(self):
         if self.uuid:
@@ -289,9 +289,26 @@ class Cluster():
         output += f'| Cluster A | Cluster B | Level {{ .graph }} |\n'
         output += f'|-----------|-----------|-------|\n'
         for relation in relations:
-            cluster_a_section = relation[0].value.lower().replace(" ", "-").replace("/", "").replace(":", "")
-            cluster_b_section = relation[1].value.lower().replace(" ", "-").replace("/", "").replace(":", "")
-            if cluster_b_section != "private+cluster":
+            # cluster_a_section = relation[0].value.lower().replace(" ", "-").replace("/", "").replace(":", "")
+            # cluster_b_section = relation[1].value.lower().replace(" ", "-").replace("/", "").replace(":", "")
+            # Use a unique placeholder for " - "
+            placeholder = "__TMP__"
+
+            cluster_a_section = (relation[0].value.lower()
+                                .replace(" - ", placeholder)  # Replace " - " first
+                                .replace(" ", "-")
+                                .replace("/", "")
+                                .replace(":", "")
+                                .replace(placeholder, "-"))  # Replace the placeholder with "-"
+
+            cluster_b_section = (relation[1].value.lower()
+                                .replace(" - ", placeholder)  # Replace " - " first
+                                .replace(" ", "-")
+                                .replace("/", "")
+                                .replace(":", "")
+                                .replace(placeholder, "-"))  # Replace the placeholder with "-"
+
+            if cluster_b_section != "private-cluster":
                 output += f'| [{relation[0].value}  ({relation[0].uuid})](../../{relation[0].galaxie_file_name}/index.md#{cluster_a_section}) | [{relation[1].value}  ({relation[1].uuid})](../../{relation[1].galaxie_file_name}/index.md#{cluster_b_section}) | {relation[2]} |\n'
             else:
                 output += f'| [{relation[0].value}  ({relation[0].uuid})](../../{relation[0].galaxie_file_name}/index.md#{cluster_a_section}) | {relation[1].value}  ({relation[1].uuid}) | {relation[2]} |\n'
@@ -312,7 +329,7 @@ class Cluster():
     def _write_relations(self, cluster_dict, path):
         related_clusters = self.get_related_clusters(cluster_dict)
         global relation_count_dict
-        relation_count_dict[self.value] = len(related_clusters)
+        relation_count_dict[self.uuid] = len(related_clusters)
         galaxy_path = os.path.join(path, self.galaxie_file_name)
         if not os.path.exists(galaxy_path):
             os.mkdir(galaxy_path)
@@ -369,12 +386,22 @@ def create_pie_chart(title, cakepieces):
     
 def get_top_x(dict, x, big_to_small=True):
     sorted_dict = sorted(dict.items(), key=operator.itemgetter(1), reverse=big_to_small)[:x]
-    top_x = [re.sub(r"[^A-Za-z0-9 ]", "", key) for key, value in sorted_dict]
+    # top_x = [re.sub(r"[^A-Za-z0-9 ]", "", key) for key, value in sorted_dict]
+    top_x = [key for key, value in sorted_dict]
     top_x = ", ".join(top_x)
     top_x_values = sorted(dict.values(), reverse=big_to_small)[:x]
     return top_x, top_x_values
 
-def create_statistics():
+def cluster_name_to_section(name):
+    placeholder = "__TMP__"
+    return (name.lower()
+            .replace(" - ", placeholder)  # Replace " - " first
+            .replace(" ", "-")
+            .replace("/", "")
+            .replace(":", "")
+            .replace(placeholder, "-"))  # Replace the placeholder with "-"
+
+def create_statistics(cluster_dict):
     statistic_output = ""
     statistic_output += f'# MISP Galaxy statistics\n'
     statistic_output +='The MISP galaxy statistics are automatically generated based on the MISP galaxy JSON files. Therefore the statistics only include detailed infomration about public clusters and relations.\n'
@@ -394,10 +421,10 @@ def create_statistics():
     for galaxy in public_clusters_dict.values():
         galaxy_counts[galaxy] = galaxy_counts.get(galaxy, 0) + 1
     top_galaxies, top_galaxies_values = get_top_x(galaxy_counts, 20)
-    statistic_output += f' | No. | Galaxy | Count {{ .bar-chart }}|\n'
+    statistic_output += f' | No. | Galaxy | Count {{ .log-bar-chart }}|\n'
     statistic_output += f' |----|--------|-------|\n'
     for i, galaxy in enumerate(top_galaxies.split(", "), 1):
-        statistic_output += f' | {i} | [{galaxy}](./{galaxy}/index.md) | {top_galaxies_values[i-1]} |\n'
+        statistic_output += f' | {i} | [{galaxy}](../{galaxy.lower()}) | {top_galaxies_values[i-1]} |\n'
     statistic_output += f'\n'
 
     statistic_output += f'## Galaxies with the least clusters\n'
@@ -405,7 +432,7 @@ def create_statistics():
     statistic_output += f' | No. | Galaxy | Count {{ .bar-chart }}|\n'
     statistic_output += f' |----|--------|-------|\n'
     for i, galaxy in enumerate(flop_galaxies.split(", "), 1):
-        statistic_output += f' | {i} | [{galaxy}](./{galaxy}/index.md) | {flop_galaxies_values[i-1]} |\n'
+        statistic_output += f' | {i} | [{galaxy}](../{galaxy.lower()}) | {flop_galaxies_values[i-1]} |\n'
     statistic_output += f'\n'
 
     statistic_output += f'# Relation statistics\n'
@@ -419,26 +446,36 @@ def create_statistics():
     statistic_output += f'**Average number of relations per cluster**: {int(sum(relation_count_dict.values()) / len(relation_count_dict))}\n'
 
     statistic_output += f'## Cluster with the most relations\n'
-    top_25_relation, top_25_relation_values = get_top_x(relation_count_dict, 20)
+    relation_count_dict_names = {cluster_dict[uuid].value: count for uuid, count in relation_count_dict.items()}
+    top_25_relation, top_25_relation_values = get_top_x(relation_count_dict_names, 20)
     statistic_output += f' | No. | Cluster | Count {{ .bar-chart }}|\n'
     statistic_output += f' |----|--------|-------|\n'
+    relation_count_dict_galaxies = {cluster_dict[uuid].value: cluster_dict[uuid].galaxie_file_name for uuid in relation_count_dict.keys()}
+    print(relation_count_dict_names)
+    print(relation_count_dict_galaxies)
     for i, cluster in enumerate(top_25_relation.split(", "), 1):
-        statistic_output += f' | {i} | [{cluster}](./{cluster}/index.md) | {top_25_relation_values[i-1]} |\n'
+        # statistic_output += f' | {i} | [{cluster}](./{cluster}/index.md) | {top_25_relation_values[i-1]} |\n'
+        cluster_section = cluster_name_to_section(cluster)
+        statistic_output += f' | {i} | [{cluster}](../{relation_count_dict_galaxies[cluster]}/#{cluster_section}.md) | {top_25_relation_values[i-1]} |\n'
     statistic_output += f'\n'
 
     statistic_output += f'# Synonyms statistics\n'
     statistic_output += f'## Cluster with the most synonyms\n'
-    top_synonyms, top_synonyms_values = get_top_x(synonyms_count_dict, 20)
+    synonyms_count_dict_names = {cluster_dict[uuid].value: count for uuid, count in synonyms_count_dict.items()}
+    top_synonyms, top_synonyms_values = get_top_x(synonyms_count_dict_names, 20)
     statistic_output += f' | No. | Cluster | Count {{ .bar-chart }}|\n'
     statistic_output += f' |----|--------|-------|\n'
+    synonyms_count_dict_galaxies = {cluster_dict[uuid].value: cluster_dict[uuid].galaxie_file_name for uuid in synonyms_count_dict.keys()}
     for i, cluster in enumerate(top_synonyms.split(", "), 1):
-        statistic_output += f' | {i} | [{cluster}](./{cluster}/index.md) | {top_synonyms_values[i-1]} |\n'
+        # statistic_output += f' | {i} | [{cluster}](./{cluster}/index.md) | {top_synonyms_values[i-1]} |\n'
+        cluster_section = cluster_name_to_section(cluster)
+        statistic_output += f' | {i} | [{cluster}](../{synonyms_count_dict_galaxies[cluster]}/#{cluster_section}.md) | {top_synonyms_values[i-1]} |\n'
     statistic_output += f'\n'
 
-    statistic_output += f'# Empty UUIDs statistics\n'
-    statistic_output += f'**Number of empty UUIDs**: {sum(empty_uuids_dict.values())}\n'
-    statistic_output += f'\n'
-    statistic_output += f'**Empty UUIDs per cluster**: {empty_uuids_dict}\n'
+    # statistic_output += f'# Empty UUIDs statistics\n'
+    # statistic_output += f'**Number of empty UUIDs**: {sum(empty_uuids_dict.values())}\n'
+    # statistic_output += f'\n'
+    # statistic_output += f'**Empty UUIDs per cluster**: {empty_uuids_dict}\n'
 
     return statistic_output
 
@@ -475,7 +512,7 @@ def main():
     #         break
 
     index_output = create_index(galaxies)
-    statistic_output = create_statistics()
+    statistic_output = create_statistics(cluster_dict=cluster_dict)
 
     with open(os.path.join(SITE_PATH, 'index.md'), "w") as index:
         index.write(index_output)
