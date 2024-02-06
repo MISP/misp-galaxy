@@ -10,7 +10,6 @@ import validators
 
 CLUSTER_PATH = '../../clusters'
 SITE_PATH = './site/docs'
-# PROJECTS_PATH = './site/projects'
 
 FILES_TO_IGNORE = [] # if you want to skip a specific cluster in the generation
 
@@ -279,7 +278,6 @@ class Cluster():
         self.entry += f'\n'
         self.entry += f'??? info "Related clusters"\n'
         self.entry += f'\n'
-        # self.entry += f'To see the related clusters, click [here](./{self.galaxie}/{self.uuid}.md).\n'
         self.entry += f'    To see the related clusters, click [here](./relations/{self.uuid}.md).\n'
 
     def _get_related_entry(self, relations):
@@ -289,9 +287,6 @@ class Cluster():
         output += f'| Cluster A | Cluster B | Level {{ .graph }} |\n'
         output += f'|-----------|-----------|-------|\n'
         for relation in relations:
-            # cluster_a_section = relation[0].value.lower().replace(" ", "-").replace("/", "").replace(":", "")
-            # cluster_b_section = relation[1].value.lower().replace(" ", "-").replace("/", "").replace(":", "")
-            # Use a unique placeholder for " - "
             placeholder = "__TMP__"
 
             cluster_a_section = (relation[0].value.lower()
@@ -386,7 +381,6 @@ def create_pie_chart(title, cakepieces):
     
 def get_top_x(dict, x, big_to_small=True):
     sorted_dict = sorted(dict.items(), key=operator.itemgetter(1), reverse=big_to_small)[:x]
-    # top_x = [re.sub(r"[^A-Za-z0-9 ]", "", key) for key, value in sorted_dict]
     top_x = [key for key, value in sorted_dict]
     top_x = ", ".join(top_x)
     top_x_values = sorted(dict.values(), reverse=big_to_small)[:x]
@@ -451,10 +445,7 @@ def create_statistics(cluster_dict):
     statistic_output += f' | No. | Cluster | Count {{ .bar-chart }}|\n'
     statistic_output += f' |----|--------|-------|\n'
     relation_count_dict_galaxies = {cluster_dict[uuid].value: cluster_dict[uuid].galaxie_file_name for uuid in relation_count_dict.keys()}
-    print(relation_count_dict_names)
-    print(relation_count_dict_galaxies)
     for i, cluster in enumerate(top_25_relation.split(", "), 1):
-        # statistic_output += f' | {i} | [{cluster}](./{cluster}/index.md) | {top_25_relation_values[i-1]} |\n'
         cluster_section = cluster_name_to_section(cluster)
         statistic_output += f' | {i} | [{cluster}](../{relation_count_dict_galaxies[cluster]}/#{cluster_section}.md) | {top_25_relation_values[i-1]} |\n'
     statistic_output += f'\n'
@@ -467,15 +458,9 @@ def create_statistics(cluster_dict):
     statistic_output += f' |----|--------|-------|\n'
     synonyms_count_dict_galaxies = {cluster_dict[uuid].value: cluster_dict[uuid].galaxie_file_name for uuid in synonyms_count_dict.keys()}
     for i, cluster in enumerate(top_synonyms.split(", "), 1):
-        # statistic_output += f' | {i} | [{cluster}](./{cluster}/index.md) | {top_synonyms_values[i-1]} |\n'
         cluster_section = cluster_name_to_section(cluster)
         statistic_output += f' | {i} | [{cluster}](../{synonyms_count_dict_galaxies[cluster]}/#{cluster_section}.md) | {top_synonyms_values[i-1]} |\n'
     statistic_output += f'\n'
-
-    # statistic_output += f'# Empty UUIDs statistics\n'
-    # statistic_output += f'**Number of empty UUIDs**: {sum(empty_uuids_dict.values())}\n'
-    # statistic_output += f'\n'
-    # statistic_output += f'**Empty UUIDs per cluster**: {empty_uuids_dict}\n'
 
     return statistic_output
 
@@ -503,13 +488,6 @@ def main():
 
     for galaxy in galaxies:
         galaxy.write_entry(SITE_PATH, cluster_dict)
-        
-    # count = 7
-    # for galaxy in galaxies:
-    #     galaxy.write_entry(SITE_PATH, cluster_dict)
-    #     count -= 1
-    #     if count == 0:
-    #         break
 
     index_output = create_index(galaxies)
     statistic_output = create_statistics(cluster_dict=cluster_dict)
@@ -522,14 +500,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-    # test = cluster_dict['f0ec2df5-2e38-4df3-970d-525352006f2e']
-    # test = cluster_dict['d7247cf9-13b6-4781-b789-a5f33521633b']
-    # clusters = test.get_related_clusters()
-    # print(clusters)
-    # print(len(clusters))
-    # print("```mermaid")
-    # print(f"graph TD")
-    # for cluster in clusters:
-    #     print(f"{cluster[0].uuid}[{cluster[0].value}] --- {cluster[1].uuid}[{cluster[1].value}]")
-    # print("```")
