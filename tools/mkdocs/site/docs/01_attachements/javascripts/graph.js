@@ -216,7 +216,7 @@ document$.subscribe(function () {
         if (graphHeader) {
             // Initialize TableFilter for the table
             var tf = new TableFilter(table, {
-                base_path: "https://unpkg.com/tablefilter@0.7.3/dist/tablefilter/",
+                base_path: "../../../../node_modules/tablefilter/dist/tablefilter/",
                 highlight_keywords: true,
                 col_2: "checklist",
                 col_widths: ["350px", "350px", "100px"],
