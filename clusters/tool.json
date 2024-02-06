@@ -9230,11 +9230,12 @@
       "value": "metasploit"
     },
     {
-      "description": "A swiss army knife for pentesting networks.",
+      "description": "A swiss army knife for pentesting networks. CRACKMAPEXEC is a post-exploitation tool against Microsoft Windows environments. It is recognized for its lateral movement capabilities.",
       "meta": {
         "refs": [
           "https://github.com/byt3bl33d3r/CrackMapExec",
-          "https://bitdefender.com/files/News/CaseStudies/study/332/Bitdefender-Whitepaper-Chafer-creat4491-en-EN-interactive.pdf"
+          "https://bitdefender.com/files/News/CaseStudies/study/332/Bitdefender-Whitepaper-Chafer-creat4491-en-EN-interactive.pdf",
+          "https://www.mandiant.com/resources/blog/investigating-ivanti-zero-day-exploitation"
         ],
         "synonyms": [],
         "type": [
@@ -10794,7 +10795,96 @@
       ],
       "uuid": "cdd432b0-8899-4e7d-ad4a-b18741ade11d",
       "value": "RevClient"
+    },
+    {
+      "description": "Colibri Loader is a piece of malware that first appeared on underground forums in August 2021 and was advertised to “people who have large volumes of traffic and lack of time to work out the material“. As it names suggests, it is meant to deliver and manage payloads onto infected computers.",
+      "meta": {
+        "refs": [
+          "https://www.malwarebytes.com/blog/threat-intelligence/2022/04/colibri-loader-combines-task-scheduler-and-powershell-in-clever-persistence-technique"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "64e51712-89d6-4c91-98ac-8907eafe98c6",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "delivers"
+        }
+      ],
+      "uuid": "63615901-dd49-4541-801f-327a6963c88b",
+      "value": "Colibri Loader"
+    },
+    {
+      "description": "A mitigation bypass technique was recently identified that led to the deployment of a custom webshell tracked as BUSHWALK. Successful exploitation would bypass the initial mitigation provided by Ivanti on Jan. 10, 2024. At this time, Mandiant assesses the mitigation bypass activity is highly targeted, limited, and is distinct from the post-advisory mass exploitation activity. BUSHWALK is written in Perl and is embedded into a legitimate CS file, querymanifest.cgi. BUSHWALK provides a threat actor the ability to execute arbitrary commands or write files to a server. BUSHWALK executes its malicious Perl function, validateVersion, if the web request platform parameter is SafariiOS. It uses Base64 and RC4 to decode and decrypt the threat actor’s payload in the web request’s command parameter.",
+      "meta": {
+        "refs": [
+          "https://www.mandiant.com/resources/blog/investigating-ivanti-zero-day-exploitation"
+        ]
+      },
+      "uuid": "0752d766-2c2a-43ce-aebd-6a4e214cd43c",
+      "value": "BUSHWALK"
+    },
+    {
+      "description": "The original LIGHTWIRE webshell sample contains a simpler obfuscation routine. It will initialize an RC4 object and then immediately use the RC4 object to decrypt the issued command./nMandiant has identified an additional variant of the LIGHTWIRE web shell that inserts itself into a legitimate component of the VPN gateway, compcheckresult.cgi./nThe new sample utilizes the same GET parameters as the original LIGHTWIRE sample./nThe new variant of LIGHTWIRE features a different obfuscation routine. It first assigns a string scalar variable to $useCompOnly. Next, it will use the Perl tr operator to transform the string using a character-by-character translation. The key is then Base64-decoded and used to RC4 decrypt the incoming request. Finally, the issued command is executed by calling eval.",
+      "meta": {
+        "refs": [
+          "https://www.mandiant.com/resources/blog/investigating-ivanti-zero-day-exploitation"
+        ]
+      },
+      "uuid": "5b9d5714-9eb9-4e3b-b437-26a9b50a633e",
+      "value": "LIGHTWIRE"
+    },
+    {
+      "description": "CHAINLINE is a Python webshell backdoor that is embedded in a Ivanti Connect Secure Python package that enables arbitrary command execution./nCHAINLINE was identified in the CAV Python package in the following path: /home/venv3/lib/python3.6/site-packages/cav-0.1-py3.6.egg/cav/api/resources/health.py. This is the same Python package modified to support the WIREFIRE web shell./nUnlike WIREFIRE, which modifies an existing file, CHAINLINE creates a new file called health.py, which is not a legitimate filename in the CAV Python package. The existence of this filename or an associated compiled Python cache file may indicate the presence of CHAINLINE./nUNC5221 registered a new API resource path to support the access of CHAINLINE at the REST endpoint /api/v1/cav/client/health. This was accomplished by importing the maliciously created Health API resource and then calling the add_resource() class method on the FLASK-RESTful Api object within /home/venv3/lib/python3.6/site-packages/cav-0.1-py3.6.egg/cav/api/__init__.py.",
+      "meta": {
+        "refs": [
+          "https://www.mandiant.com/resources/blog/investigating-ivanti-zero-day-exploitation"
+        ]
+      },
+      "uuid": "87e353c6-e0e8-427a-b55f-61cbd2853c57",
+      "value": "CHAINLINE"
+    },
+    {
+      "description": "FRAMESTING is a Python webshell embedded in a Ivanti Connect Secure Python package that enables arbitrary command execution./nFRAMESTING was identified in the CAV Python package in the following path: /home/venv3/lib/python3.6/site-packages/cav-0.1-py3.6.egg/cav/api/resources/category.py. Note that this is the same Python package modified to support the WIREFIRE and CHAINLINE web shells./nWhen installed, the threat actor can access FRAMESTING web shell at the REST endpoint /api/v1/cav/client/categories with a POST request. Note that the legitimate categories endpoint only accepts GET requests./nThe web shell employs two methods of accepting commands from an attacker. It first attempts to retrieve the command stored in the value of a cookie named DSID from the current HTTP request. If the cookie is not present or is not of the expected length, it will attempt to decompress zlib data within the request's POST data. Lastly, FRAMESTING will then pass the decrypted POST data into a Python exec() statement to dynamically execute additional Python code./nNote that DSID is also the name of a cookie used by Ivanti Connect Secure appliances for maintaining user VPN sessions. FRAMESTING likely uses the same cookie name to blend in with network traffic.",
+      "meta": {
+        "refs": [
+          "https://www.mandiant.com/resources/blog/investigating-ivanti-zero-day-exploitation"
+        ]
+      },
+      "uuid": "a9470d3d-ecfd-408b-ba1e-f3ca65791e0d",
+      "value": "FRAMESTING"
+    },
+    {
+      "description": "IMPACKET is a Python library that allows for interaction with various network protocols. It is particularly effective in environments that rely on Active Directory and related Microsoft Windows network services.",
+      "meta": {
+        "refs": [
+          "https://www.mandiant.com/resources/blog/investigating-ivanti-zero-day-exploitation"
+        ]
+      },
+      "uuid": "7b02521e-422e-49a2-96fc-ad6c13057a6c",
+      "value": "IMPACKET"
+    },
+    {
+      "description": "IODINE is a network traffic tunneler that allows for tunneling of IPv4 traffic over DNS.",
+      "meta": {
+        "refs": [
+          "https://www.mandiant.com/resources/blog/investigating-ivanti-zero-day-exploitation"
+        ]
+      },
+      "uuid": "94ae63e7-7f92-4657-812c-2f27bf50ca21",
+      "value": "IODINE"
+    },
+    {
+      "description": "ENUM4LINUX is a Linux Perl script for enumerating data from Windows and Samba hosts.",
+      "meta": {
+        "refs": [
+          "https://www.mandiant.com/resources/blog/investigating-ivanti-zero-day-exploitation"
+        ]
+      },
+      "uuid": "c44c5c54-435a-453a-a128-43ca18b82c37",
+      "value": "ENUM4LINUX"
     }
   ],
-  "version": 171
+  "version": 172
 }
