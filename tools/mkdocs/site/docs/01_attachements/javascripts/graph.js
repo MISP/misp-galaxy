@@ -158,13 +158,36 @@ document$.subscribe(function () {
                 node = node.data(nodes, d => d.id)
                     .join(
                         enter => enter.append("circle")
-                            .attr("r", NODE_RADIUS)
-                            .attr("fill", NODE_COLOR),
+                            .attr("r", function (d, i) {
+                                return i === 0 ? NODE_RADIUS + 5 : NODE_RADIUS;
+                            })
+                            .attr("fill", function (d, i) {
+                                return i === 0 ? Parent_Node_COLOR : NODE_COLOR;
+                            }),
                         update => update,
                         exit => exit.remove()
                     );
 
                 node.call(drag);
+
+                // Apply tooltip on nodes
+                node.on("mouseover", function (event, d) {
+                    tooltip.transition()
+                        .duration(200)
+                        .style("opacity", .9);
+                    tooltip.html(d.id)
+                        .style("left", (event.pageX) + "px")
+                        .style("top", (event.pageY - 28) + "px");
+                })
+                    .on("mousemove", function (event) {
+                        tooltip.style("left", (event.pageX) + "px")
+                            .style("top", (event.pageY - 28) + "px");
+                    })
+                    .on("mouseout", function (d) {
+                        tooltip.transition()
+                            .duration(500)
+                            .style("opacity", 0);
+                    });
 
                 // Process new links
                 const oldLinksMap = new Map(link.data().map(d => [`${d.source.id},${d.target.id}`, d]));
