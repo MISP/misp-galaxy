@@ -3,7 +3,7 @@
 import json
 import operator
 import os
-import re
+import time
 from typing import List
 
 import validators
@@ -140,7 +140,7 @@ class Cluster():
         
         global public_clusters_dict
         if self.galaxie:
-            public_clusters_dict[self.uuid] = self.galaxie
+            public_clusters_dict[self.uuid] = self.galaxie_file_name
 
     def _create_title_entry(self):
         self.entry += f'## {self.value}\n'
@@ -344,40 +344,40 @@ def create_index(galaxies):
     index_output += CONTRIBUTING
     return index_output
 
-def create_galaxies(galaxies, cluster_dict):
-    galaxy_output = {}
-    for galaxie in galaxies:
-        galaxy_output[galaxie.json_file_name] = galaxie.create_entry(cluster_dict)
-    return galaxy_output
+# def create_galaxies(galaxies, cluster_dict):
+#     galaxy_output = {}
+#     for galaxie in galaxies:
+#         galaxy_output[galaxie.json_file_name] = galaxie.create_entry(cluster_dict)
+#     return galaxy_output
 
-def create_xy_chart(title, width, height, x_axis, y_axis, bar):
-    output = ""
-    output += f'```mermaid\n'
-    output += f'---\n'
-    output += f'config:\n'
-    output += f'  xyChart:\n'
-    output += f'    width: {width}\n'
-    output += f'    height: {height}\n'
-    output += f'---\n'
-    output += f'xychart-beta\n'
-    output += f'  title "{title}"\n'
-    output += f'  x-axis [{x_axis}]\n'
-    output += f'  y-axis "{y_axis}"\n'
-    output += f'  bar {bar}\n'
-    output += f'```\n'
-    output += f'\n'
-    return output
+# def create_xy_chart(title, width, height, x_axis, y_axis, bar):
+#     output = ""
+#     output += f'```mermaid\n'
+#     output += f'---\n'
+#     output += f'config:\n'
+#     output += f'  xyChart:\n'
+#     output += f'    width: {width}\n'
+#     output += f'    height: {height}\n'
+#     output += f'---\n'
+#     output += f'xychart-beta\n'
+#     output += f'  title "{title}"\n'
+#     output += f'  x-axis [{x_axis}]\n'
+#     output += f'  y-axis "{y_axis}"\n'
+#     output += f'  bar {bar}\n'
+#     output += f'```\n'
+#     output += f'\n'
+#     return output
 
-def create_pie_chart(title, cakepieces):
-    output = ""
-    output += f'```mermaid\n'
-    output += f'pie showData\n'
-    output += f'  title {title}\n'
-    for cakepiece in cakepieces:
-        output += f'  "{cakepiece[0]}" : {cakepiece[1]}\n'
-    output += f'```\n'
-    output += f'\n'
-    return output
+# def create_pie_chart(title, cakepieces):
+#     output = ""
+#     output += f'```mermaid\n'
+#     output += f'pie showData\n'
+#     output += f'  title {title}\n'
+#     for cakepiece in cakepieces:
+#         output += f'  "{cakepiece[0]}" : {cakepiece[1]}\n'
+#     output += f'```\n'
+#     output += f'\n'
+#     return output
     
 def get_top_x(dict, x, big_to_small=True):
     sorted_dict = sorted(dict.items(), key=operator.itemgetter(1), reverse=big_to_small)[:x]
@@ -386,7 +386,7 @@ def get_top_x(dict, x, big_to_small=True):
     top_x_values = sorted(dict.values(), reverse=big_to_small)[:x]
     return top_x, top_x_values
 
-def cluster_name_to_section(name):
+def name_to_section(name):
     placeholder = "__TMP__"
     return (name.lower()
             .replace(" - ", placeholder)  # Replace " - " first
@@ -418,7 +418,8 @@ def create_statistics(cluster_dict):
     statistic_output += f' | No. | Galaxy | Count {{ .log-bar-chart }}|\n'
     statistic_output += f' |----|--------|-------|\n'
     for i, galaxy in enumerate(top_galaxies.split(", "), 1):
-        statistic_output += f' | {i} | [{galaxy}](../{galaxy.lower()}) | {top_galaxies_values[i-1]} |\n'
+        galaxy_section = name_to_section(galaxy)
+        statistic_output += f' | {i} | [{galaxy}](../{galaxy_section}) | {top_galaxies_values[i-1]} |\n'
     statistic_output += f'\n'
 
     statistic_output += f'## Galaxies with the least clusters\n'
@@ -426,7 +427,8 @@ def create_statistics(cluster_dict):
     statistic_output += f' | No. | Galaxy | Count {{ .bar-chart }}|\n'
     statistic_output += f' |----|--------|-------|\n'
     for i, galaxy in enumerate(flop_galaxies.split(", "), 1):
-        statistic_output += f' | {i} | [{galaxy}](../{galaxy.lower()}) | {flop_galaxies_values[i-1]} |\n'
+        galaxy_section = name_to_section(galaxy)
+        statistic_output += f' | {i} | [{galaxy}](../{galaxy_section}) | {flop_galaxies_values[i-1]} |\n'
     statistic_output += f'\n'
 
     statistic_output += f'# Relation statistics\n'
@@ -446,8 +448,8 @@ def create_statistics(cluster_dict):
     statistic_output += f' |----|--------|-------|\n'
     relation_count_dict_galaxies = {cluster_dict[uuid].value: cluster_dict[uuid].galaxie_file_name for uuid in relation_count_dict.keys()}
     for i, cluster in enumerate(top_25_relation.split(", "), 1):
-        cluster_section = cluster_name_to_section(cluster)
-        statistic_output += f' | {i} | [{cluster}](../{relation_count_dict_galaxies[cluster]}/#{cluster_section}.md) | {top_25_relation_values[i-1]} |\n'
+        cluster_section = name_to_section(cluster)
+        statistic_output += f' | {i} | [{cluster}](../{relation_count_dict_galaxies[cluster]}/#{cluster_section}) | {top_25_relation_values[i-1]} |\n'
     statistic_output += f'\n'
 
     statistic_output += f'# Synonyms statistics\n'
@@ -458,13 +460,14 @@ def create_statistics(cluster_dict):
     statistic_output += f' |----|--------|-------|\n'
     synonyms_count_dict_galaxies = {cluster_dict[uuid].value: cluster_dict[uuid].galaxie_file_name for uuid in synonyms_count_dict.keys()}
     for i, cluster in enumerate(top_synonyms.split(", "), 1):
-        cluster_section = cluster_name_to_section(cluster)
-        statistic_output += f' | {i} | [{cluster}](../{synonyms_count_dict_galaxies[cluster]}/#{cluster_section}.md) | {top_synonyms_values[i-1]} |\n'
+        cluster_section = name_to_section(cluster)
+        statistic_output += f' | {i} | [{cluster}](../{synonyms_count_dict_galaxies[cluster]}/#{cluster_section}) | {top_synonyms_values[i-1]} |\n'
     statistic_output += f'\n'
 
     return statistic_output
 
 def main():
+    start_time = time.time()
     galaxies_fnames = []
     for f in os.listdir(CLUSTER_PATH):
         if '.json' in f and f not in FILES_TO_IGNORE:
@@ -497,6 +500,8 @@ def main():
 
     with open(os.path.join(SITE_PATH, 'statistics.md'), "w") as index:
         index.write(statistic_output)
+
+    print(f"Finished file creation in {time.time() - start_time} seconds")
 
 if __name__ == "__main__":
     main()
