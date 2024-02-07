@@ -4,7 +4,6 @@ document$.subscribe(function () {
     const NODE_COLOR = "#69b3a2";
     const Parent_Node_COLOR = "#ff0000";
 
-    // Function to parse the table data
     function parseFilteredTable(tf) {
         var data = [];
         tf.getFilteredData().forEach((row, i) => {
@@ -14,7 +13,6 @@ document$.subscribe(function () {
         return data;
     }
 
-    // Function to parse table data wthout filtering
     function parseTable(table) {
         var data = [];
         table.querySelectorAll("tr").forEach((row, i) => {
@@ -27,16 +25,20 @@ document$.subscribe(function () {
     }
 
     function processNewData(newData) {
-        // Extracting new nodes
         var newNodes = Array.from(new Set(newData.flatMap(d => [d.source, d.target])))
             .map(id => ({ id }));
 
-        // Preparing the links in the required format
         var newLinks = newData.map(d => ({ source: d.source, target: d.target }));
         return { newNodes, newLinks };
     }
 
-    // Function to create Force-Directed Graph
+    function filterTableAndGraph(tf, simulation) {
+        var filteredData = parseFilteredTable(tf);
+        var { newNodes, newLinks } = processNewData(filteredData);
+
+        simulation.update({ newNodes: newNodes, newLinks: newLinks });
+    }
+
     function createForceDirectedGraph(data, elementId) {
         // Extract nodes and links
         var nodes = Array.from(new Set(data.flatMap(d => [d.source, d.target])))
@@ -51,7 +53,6 @@ document$.subscribe(function () {
         // Set up the dimensions of the graph
         var width = 1000, height = 1000;
 
-        // Append SVG for the graph
         var svg = d3.select(elementId).append("svg")
             .attr("width", width)
             .attr("height", height);
@@ -114,7 +115,6 @@ document$.subscribe(function () {
         // Apply drag behavior to nodes
         node.call(drag);
 
-        // Drag functions
         function dragstarted(event, d) {
             if (!event.active) simulation.alphaTarget(0.3).restart();
             d.fx = d.x;
@@ -250,26 +250,17 @@ document$.subscribe(function () {
             });
 
             tf.init();
-            // var data = parseFilteredTable(tf);
             var data = parseTable(table);
             var graphId = "graph" + index;
             var div = document.createElement("div");
             div.id = graphId;
-            // table.after(div);
             table.parentNode.insertBefore(div, table);
             var simulation = createForceDirectedGraph(data, "#" + graphId);
 
-            // Function to filter the table data and update the graph
-            function filterTableAndGraph() {
-                var filteredData = parseFilteredTable(tf);
-                var { newNodes, newLinks } = processNewData(filteredData);
-
-                // Restart the simulation with filtered data
-                simulation.update({ newNodes: newNodes, newLinks: newLinks });
-            }
-
             // Listen for table filtering events
-            tf.emitter.on(['after-filtering'], filterTableAndGraph);
+            tf.emitter.on(['after-filtering'], function () {
+                filterTableAndGraph(tf, simulation);
+            });
         }
     });
 });
