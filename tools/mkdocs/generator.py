@@ -341,41 +341,6 @@ def create_index(galaxies):
         index_output += f'- [{galaxie.name}](./{galaxie.json_file_name}/index.md)\n'
     index_output += CONTRIBUTING
     return index_output
-
-# def create_galaxies(galaxies, cluster_dict):
-#     galaxy_output = {}
-#     for galaxie in galaxies:
-#         galaxy_output[galaxie.json_file_name] = galaxie.create_entry(cluster_dict)
-#     return galaxy_output
-
-# def create_xy_chart(title, width, height, x_axis, y_axis, bar):
-#     output = ""
-#     output += f'```mermaid\n'
-#     output += f'---\n'
-#     output += f'config:\n'
-#     output += f'  xyChart:\n'
-#     output += f'    width: {width}\n'
-#     output += f'    height: {height}\n'
-#     output += f'---\n'
-#     output += f'xychart-beta\n'
-#     output += f'  title "{title}"\n'
-#     output += f'  x-axis [{x_axis}]\n'
-#     output += f'  y-axis "{y_axis}"\n'
-#     output += f'  bar {bar}\n'
-#     output += f'```\n'
-#     output += f'\n'
-#     return output
-
-# def create_pie_chart(title, cakepieces):
-#     output = ""
-#     output += f'```mermaid\n'
-#     output += f'pie showData\n'
-#     output += f'  title {title}\n'
-#     for cakepiece in cakepieces:
-#         output += f'  "{cakepiece[0]}" : {cakepiece[1]}\n'
-#     output += f'```\n'
-#     output += f'\n'
-#     return output
     
 def get_top_x(dict, x, big_to_small=True):
     sorted_dict = sorted(dict.items(), key=operator.itemgetter(1), reverse=big_to_small)[:x]
