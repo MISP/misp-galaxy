@@ -361,7 +361,7 @@ def name_to_section(name):
 def create_statistics(cluster_dict):
     statistic_output = ""
     statistic_output += f'# MISP Galaxy statistics\n'
-    statistic_output +='The MISP galaxy statistics are automatically generated based on the MISP galaxy JSON files. Therefore the statistics only include detailed infomration about public clusters and relations.\n'
+    statistic_output +='The MISP galaxy statistics are automatically generated based on the MISP galaxy JSON files. Therefore the statistics only include detailed infomration about public clusters and relations. Some statistics about private clusters and relations is included but only as an approximation based on the information gathered from the public clusters.\n'
 
     statistic_output += f'# Cluster statistics\n'
     statistic_output += f'## Number of clusters\n'
@@ -395,6 +395,8 @@ def create_statistics(cluster_dict):
     statistic_output += f'\n'
 
     statistic_output += f'# Relation statistics\n'
+    statistic_output += f'Here you can find the total number of relations including public and private relations. The number includes relations between public clusters and relations between public and private clusters. Therefore relatons between private clusters are not included in the statistics.\n'
+    statistic_output += f'\n'
     statistic_output += f'## Number of relations\n'
     statistic_output += f'| No. | Type | Count {{ .pie-chart }}|\n'
     statistic_output += f'|----|------|-------|\n'
