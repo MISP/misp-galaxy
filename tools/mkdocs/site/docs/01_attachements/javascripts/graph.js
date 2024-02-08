@@ -4,12 +4,20 @@ document$.subscribe(function () {
     const NODE_COLOR = "#69b3a2";
     const Parent_Node_COLOR = "#ff0000";
 
-    function parseFilteredTable(tf) {
+
+    function parseFilteredTable(tf, allData) {
         var data = [];
         tf.getFilteredData().forEach((row, i) => {
-            data.push({ source: row[1][0], target: row[1][1], level: row[1][2] });
-        }
-        );
+            sourcePath = allData[row[0] - 2].sourcePath;
+            targetPath = allData[row[0] - 2].targetPath;
+            data.push({
+                source: row[1][0],
+                sourcePath: sourcePath,
+                target: row[1][1],
+                targetPath: targetPath,
+                level: row[1][2]
+            });
+        });
         return data;
     }
 
@@ -18,31 +26,57 @@ document$.subscribe(function () {
         table.querySelectorAll("tr").forEach((row, i) => {
             if (i > 1) {
                 var cells = row.querySelectorAll("td");
-                data.push({ source: cells[0].textContent, target: cells[1].textContent, level: cells[2].textContent });
+                var sourceAnchor = cells[0].querySelector("a");
+                var sourcePath = sourceAnchor ? sourceAnchor.getAttribute("href") : null;
+                var targetAnchor = cells[1].querySelector("a");
+                var targetPath = targetAnchor ? targetAnchor.getAttribute("href") : null;
+                data.push({
+                    source: cells[0].textContent,
+                    target: cells[1].textContent,
+                    sourcePath: sourcePath,
+                    targetPath: targetPath,
+                    level: cells[2].textContent
+                });
             }
         });
         return data;
     }
 
     function processNewData(newData) {
+        var nodePaths = {};
+        newData.forEach(d => {
+            nodePaths[d.source] = d.sourcePath || null;
+            nodePaths[d.target] = d.targetPath || null;
+        });
         var newNodes = Array.from(new Set(newData.flatMap(d => [d.source, d.target])))
-            .map(id => ({ id }));
+            .map(id => ({
+                id,
+                path: nodePaths[id]
+            }));
 
         var newLinks = newData.map(d => ({ source: d.source, target: d.target }));
         return { newNodes, newLinks };
     }
 
-    function filterTableAndGraph(tf, simulation) {
-        var filteredData = parseFilteredTable(tf);
+    function filterTableAndGraph(tf, simulation, data) {
+        var filteredData = parseFilteredTable(tf, data);
         var { newNodes, newLinks } = processNewData(filteredData);
 
         simulation.update({ newNodes: newNodes, newLinks: newLinks });
     }
 
     function createForceDirectedGraph(data, elementId) {
-        // Extract nodes and links
+        var nodePaths = {};
+        data.forEach(d => {
+            nodePaths[d.source] = d.sourcePath || null;
+            nodePaths[d.target] = d.targetPath || null;
+        });
+
         var nodes = Array.from(new Set(data.flatMap(d => [d.source, d.target])))
-            .map(id => ({ id }));
+            .map(id => ({
+                id,
+                path: nodePaths[id]
+            }));
 
         var links = data.map(d => ({ source: d.source, target: d.target }));
 
@@ -51,16 +85,18 @@ document$.subscribe(function () {
             .style("opacity", 0);
 
         // Set up the dimensions of the graph
-        var width = 1000, height = 1000;
+        var width = 800, height = 1000;
 
         var svg = d3.select(elementId).append("svg")
             .attr("width", width)
             .attr("height", height);
 
         // Create a force simulation
+        linkDistance = Math.sqrt((width * height) / nodes.length);
+
         var simulation = d3.forceSimulation(nodes)
-            .force("link", d3.forceLink(links).id(d => d.id).distance(10))
-            .force("charge", d3.forceManyBody().strength(-20))
+            .force("link", d3.forceLink(links).id(d => d.id).distance(linkDistance))
+            .force("charge", d3.forceManyBody().strength(-50))
             .force("center", d3.forceCenter(width / 2, height / 2))
             .alphaDecay(0.02); // A lower value, adjust as needed
 
@@ -106,6 +142,11 @@ document$.subscribe(function () {
                     .style("opacity", 0);
             });
 
+        // Apply links on nodes
+        node.on("dblclick", function (event, d) {
+            location.href = d.path;
+        });
+
         // Define drag behavior
         var drag = d3.drag()
             .on("start", dragstarted)
@@ -150,7 +191,6 @@ document$.subscribe(function () {
 
         return Object.assign(svg.node(), {
             update({ newNodes, newLinks }) {
-                // Process new nodes and maintain the existing ones
                 const oldNodesMap = new Map(node.data().map(d => [d.id, d]));
                 nodes = newNodes.map(d => Object.assign(oldNodesMap.get(d.id) || {}, d));
 
@@ -189,6 +229,14 @@ document$.subscribe(function () {
                             .style("opacity", 0);
                     });
 
+                // Apply links on nodes
+                node.on("dblclick", function (event, d) {
+                    console.log("Node: " + d.id);
+                    console.log(d);
+                    console.log("Source Path: " + d.sourcePath);
+                    location.href = d.path;
+                });
+
                 // Process new links
                 const oldLinksMap = new Map(link.data().map(d => [`${d.source.id},${d.target.id}`, d]));
                 links = newLinks.map(d => Object.assign(oldLinksMap.get(`${d.source.id},${d.target.id}`) || {}, d));
@@ -214,7 +262,6 @@ document$.subscribe(function () {
     document.querySelectorAll("table").forEach((table, index) => {
         var graphHeader = table.querySelector("th.graph");
         if (graphHeader) {
-            // Initialize TableFilter for the table
             var tf = new TableFilter(table, {
                 base_path: "../../../../01_attachements/modules/tablefilter/",
                 highlight_keywords: true,
@@ -259,7 +306,7 @@ document$.subscribe(function () {
 
             // Listen for table filtering events
             tf.emitter.on(['after-filtering'], function () {
-                filterTableAndGraph(tf, simulation);
+                filterTableAndGraph(tf, simulation, data);
             });
         }
     });
