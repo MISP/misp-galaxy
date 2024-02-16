@@ -370,9 +370,9 @@ class Cluster:
 
 def create_index(galaxies):
     index_output = INTRO
-    index_output += STATISTICS
     for galaxie in galaxies:
         index_output += f"- [{galaxie.name}](./{galaxie.json_file_name}/index.md)\n"
+    index_output += STATISTICS
     index_output += CONTRIBUTING
     return index_output
 
