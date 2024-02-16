@@ -144,7 +144,6 @@ class Cluster:
         self.meta = meta
         self.entry = ""
         self.galaxie = galaxie
-        self.related_clusters = []
 
         global public_clusters_dict
         if self.galaxie:
@@ -207,7 +206,9 @@ class Cluster:
                 if meta not in excluded_meta:
                     self.entry += f"    | {meta} | {self.meta[meta]} |\n"
 
-    def get_related_clusters(self, cluster_dict, depth=-1, visited=None, level=1):
+    def get_related_clusters(
+        self, cluster_dict, depth=-1, visited=None, level=1, related_private_clusters={}
+    ):
         global public_relations_count
         global private_relations_count
         global private_clusters
@@ -238,21 +239,31 @@ class Cluster:
                 private_relations_count += 1
                 if dest_uuid not in private_clusters:
                     private_clusters.append(dest_uuid)
-                related_clusters.append(
-                    (
-                        self,
-                        Cluster(
-                            value="Private Cluster",
-                            uuid=dest_uuid,
-                            date=None,
-                            description=None,
-                            related_list=None,
-                            meta=None,
-                            galaxie=None,
-                        ),
-                        level,
+                if dest_uuid in related_private_clusters:
+                    related_clusters.append(
+                        (
+                            self,
+                            related_private_clusters[dest_uuid],
+                            level,
+                        )
                     )
-                )
+                else:
+                    related_clusters.append(
+                        (
+                            self,
+                            Cluster(
+                                value="Private Cluster",
+                                uuid=dest_uuid,
+                                date=None,
+                                description=None,
+                                related_list=None,
+                                meta=None,
+                                galaxie=None,
+                            ),
+                            level,
+                        )
+                    )
+                    related_private_clusters[dest_uuid] = related_clusters[-1][1]
                 continue
 
             related_cluster = cluster_dict[dest_uuid]
@@ -269,7 +280,13 @@ class Cluster:
                 if cluster["dest-uuid"] in cluster_dict:
                     related_clusters += cluster_dict[
                         cluster["dest-uuid"]
-                    ].get_related_clusters(cluster_dict, new_depth, visited, level + 1)
+                    ].get_related_clusters(
+                        cluster_dict,
+                        new_depth,
+                        visited,
+                        level + 1,
+                        related_private_clusters,
+                    )
 
         if empty_uuids > 0:
             empty_uuids_dict[self.value] = empty_uuids
@@ -301,7 +318,6 @@ class Cluster:
             cluster for cluster in related_clusters if cluster not in to_remove
         ]
 
-        self.related_clusters = related_clusters
         return related_clusters
 
     def _create_related_entry(self):
