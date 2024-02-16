@@ -12,6 +12,7 @@ CLUSTER_PATH = "../../clusters"
 SITE_PATH = "./site/docs"
 GALAXY_PATH = "../../galaxies"
 
+
 FILES_TO_IGNORE = []  # if you want to skip a specific cluster in the generation
 
 # Variables for statistics
@@ -61,7 +62,10 @@ We encourage collaboration and contributions to the [MISP Galaxy JSON files](htt
 
 
 class Galaxy:
-    def __init__(self, cluster_list: List[dict], authors, description, name, json_file_name):
+    def __init__(
+        self, cluster_list: List[dict], authors, description, name, json_file_name
+    ):
+
         self.cluster_list = cluster_list
         self.authors = authors
         self.description = description
@@ -141,6 +145,7 @@ class Cluster:
         self.entry = ""
         self.galaxie = galaxie
         self.related_clusters = []
+
 
         global public_clusters_dict
         if self.galaxie:
@@ -296,6 +301,7 @@ class Cluster:
         related_clusters = [
             cluster for cluster in related_clusters if cluster not in to_remove
         ]
+
         self.related_clusters = related_clusters
         return related_clusters
 
@@ -525,7 +531,7 @@ def main():
     if not os.path.exists(SITE_PATH):
         os.mkdir(SITE_PATH)
 
-    for galaxy in galaxies[:7]:
+    for galaxy in galaxies:
         galaxy.write_entry(SITE_PATH, cluster_dict)
 
     index_output = create_index(galaxies)
