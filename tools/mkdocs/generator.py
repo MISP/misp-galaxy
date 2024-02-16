@@ -146,7 +146,6 @@ class Cluster:
         self.galaxie = galaxie
         self.related_clusters = []
 
-
         global public_clusters_dict
         if self.galaxie:
             public_clusters_dict[self.uuid] = self.galaxie
@@ -486,6 +485,7 @@ def create_statistics(cluster_dict):
     statistic_output += f"\n"
 
     return statistic_output
+
 
 def get_deprecated_galaxy_files():
     deprecated_galaxy_files = []
