@@ -10,6 +10,8 @@ import validators
 
 CLUSTER_PATH = "../../clusters"
 SITE_PATH = "./site/docs"
+GALAXY_PATH = "../../galaxies"
+
 
 FILES_TO_IGNORE = []  # if you want to skip a specific cluster in the generation
 
@@ -63,6 +65,7 @@ class Galaxy:
     def __init__(
         self, cluster_list: List[dict], authors, description, name, json_file_name
     ):
+
         self.cluster_list = cluster_list
         self.authors = authors
         self.description = description
@@ -141,6 +144,8 @@ class Cluster:
         self.meta = meta
         self.entry = ""
         self.galaxie = galaxie
+        self.related_clusters = []
+
 
         global public_clusters_dict
         if self.galaxie:
@@ -297,6 +302,7 @@ class Cluster:
             cluster for cluster in related_clusters if cluster not in to_remove
         ]
 
+        self.related_clusters = related_clusters
         return related_clusters
 
     def _create_related_entry(self):
@@ -370,9 +376,9 @@ class Cluster:
 
 def create_index(galaxies):
     index_output = INTRO
-    index_output += STATISTICS
     for galaxie in galaxies:
         index_output += f"- [{galaxie.name}](./{galaxie.json_file_name}/index.md)\n"
+    index_output += STATISTICS
     index_output += CONTRIBUTING
     return index_output
 
@@ -481,9 +487,21 @@ def create_statistics(cluster_dict):
 
     return statistic_output
 
+def get_deprecated_galaxy_files():
+    deprecated_galaxy_files = []
+    for f in os.listdir(GALAXY_PATH):
+        with open(os.path.join(GALAXY_PATH, f)) as fr:
+            galaxy_json = json.load(fr)
+            if "namespace" in galaxy_json and galaxy_json["namespace"] == "deprecated":
+                deprecated_galaxy_files.append(f)
+
+    return deprecated_galaxy_files
+
 
 def main():
     start_time = time.time()
+
+    FILES_TO_IGNORE.extend(get_deprecated_galaxy_files())
     galaxies_fnames = []
     for f in os.listdir(CLUSTER_PATH):
         if ".json" in f and f not in FILES_TO_IGNORE:
