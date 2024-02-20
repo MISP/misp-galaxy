@@ -26,13 +26,27 @@ def create_cluster(galaxy, data):
 
         value["description"] = campaigns["description"]
 
+        # Metadata fields
+        source = campaigns["source"]
+        campaign_attack_id = campaigns["campaign_attack_id"]
+        first_seen = campaigns["first_seen"]
+        last_seen = campaigns["last_seen"]
+        tags = campaigns["tags"]
+        owner = campaigns["owner_name"]
+
         value["meta"] = {}
-        value["meta"]["source"] = campaigns["source"]
-        value["meta"]["campaign-attack-id"] = campaigns["campaign_attack_id"]
-        value["meta"]["first-seen"] = campaigns["first_seen"]
-        value["meta"]["last-seen"] = campaigns["last_seen"]
-        value["meta"]["tags"] = campaigns["tags"]
-        value["meta"]["owner"] = campaigns["owner_name"]
+        if source:
+            value["meta"]["source"] = source
+        if campaign_attack_id:
+            value["meta"]["campaign-attack-id"] = campaign_attack_id
+        if first_seen:
+            value["meta"]["first-seen"] = first_seen
+        if last_seen:
+            value["meta"]["last-seen"] = last_seen
+        if tags:
+            value["meta"]["tags"] = tags
+        if owner:
+            value["meta"]["owner"] = owner
 
         value["related"] = relations
         value["uuid"] = campaigns["id"]

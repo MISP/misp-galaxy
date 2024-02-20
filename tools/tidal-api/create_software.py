@@ -37,13 +37,27 @@ def create_cluster(galaxy, data):
 
         value["description"] = software["description"]
 
+        # Metadata fields
+        source = software["source"]
+        type = software["type"]
+        software_attack_id = software["software_attack_id"]
+        platforms = software["platforms"]
+        tags = software["tags"]
+        owner = software["owner_name"]
+
         value["meta"] = {}
-        value["meta"]["source"] = software["source"]
-        value["meta"]["type"] = software["type"]
-        value["meta"]["software-attack-id"] = software["software_attack_id"]
-        value["meta"]["platforms"] = software["platforms"]
-        value["meta"]["tags"] = software["tags"]
-        value["meta"]["owner"] = software["owner_name"]
+        if source:
+            value["meta"]["source"] = source
+        if type:
+            value["meta"]["type"] = type
+        if software_attack_id:
+            value["meta"]["software-attack-id"] = software_attack_id
+        if platforms:
+            value["meta"]["platforms"] = platforms
+        if tags:
+            value["meta"]["tags"] = tags
+        if owner:
+            value["meta"]["owner"] = owner
 
         value["related"] = relations
         value["uuid"] = software["id"]

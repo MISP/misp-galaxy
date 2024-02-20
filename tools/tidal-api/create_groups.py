@@ -33,15 +33,33 @@ def create_cluster(galaxy, data):
 
         value["description"] = group["description"]
 
+        # Metadata fields
+        source = group["source"]
+        group_attack_id = group["group_attack_id"]
+        country = [country["country_name"] for country in group["country"]]
+        observed_country = [country["country_code"] for country in group["observed_country"]]
+        motive = [motive["name"] for motive in group["observed_motivation"]]
+        target_category = [sector["name"] for sector in group["observed_sector"]]
+        tags = group["tags"]
+        owner = group["owner_name"]
+
         value["meta"] = {}
-        value["meta"]["source"] = group["source"]
-        value["meta"]["group-attack-id"] = group["group_attack_id"]
-        value["meta"]["country"] = [country["country_code"] for country in group["country"]]
-        value["meta"]["observed_country"] = [country["country_code"] for country in group["observed_country"]]
-        value["meta"]["motive"] = [motive["name"] for motive in group["observed_motivation"]]
-        value["meta"]["target-category"] = [sector["name"] for sector in group["observed_sector"]]
-        value["meta"]["tags"] = group["tags"]
-        value["meta"]["owner"] = group["owner_name"]
+        if source:
+            value["meta"]["source"] = source
+        if group_attack_id:
+            value["meta"]["group-attack-id"] = group_attack_id
+        if country:
+            value["meta"]["country"] = country
+        if observed_country:
+            value["meta"]["observed_country"] = observed_country
+        if motive:
+            value["meta"]["motive"] = motive
+        if target_category:
+            value["meta"]["target-category"] = target_category
+        if tags:
+            value["meta"]["tags"] = tags
+        if owner:
+            value["meta"]["owner"] = owner
 
         value["related"] = relations
         value["uuid"] = group["id"]
