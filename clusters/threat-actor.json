@@ -1810,7 +1810,8 @@
           "https://blogs.microsoft.com/on-the-issues/2019/03/27/new-steps-to-protect-customers-from-hacking/",
           "https://www.clearskysec.com/wp-content/uploads/2017/12/Charming_Kitten_2017.pdf",
           "https://attack.mitre.org/groups/G0058/",
-          "https://go.crowdstrike.com/rs/281-OBQ-266/images/Report2020CrowdStrikeGlobalThreatReport.pdf"
+          "https://go.crowdstrike.com/rs/281-OBQ-266/images/Report2020CrowdStrikeGlobalThreatReport.pdf",
+          "https://www.volexity.com/blog/2024/02/13/charmingcypress-innovating-persistence/"
         ],
         "synonyms": [
           "Newscaster",
@@ -1818,7 +1819,8 @@
           "iKittens",
           "Group 83",
           "NewsBeef",
-          "G0058"
+          "G0058",
+          "CharmingCypress"
         ],
         "targeted-sector": [
           "Defense",
@@ -12582,16 +12584,21 @@
     {
       "description": "Winter Vivern is a cyberespionage group first revealed by DomainTools in 2021. It is thought to have been active since at least 2020 and it targets governments in Europe and Central Asia. To compromise its targets, the group uses malicious documents, phishing websites, and a custom PowerShell backdoor.",
       "meta": {
+        "country": "RU",
         "refs": [
           "https://www.sentinelone.com/labs/winter-vivern-uncovering-a-wave-of-global-espionage/",
           "https://www.domaintools.com/resources/blog/winter-vivern-a-look-at-re-crafted-government-maldocs",
           "https://www.welivesecurity.com/en/eset-research/winter-vivern-exploits-zero-day-vulnerability-roundcube-webmail-servers/",
           "https://www.proofpoint.com/us/blog/threat-insight/exploitation-dish-best-served-cold-winter-vivern-uses-known-zimbra-vulnerability",
-          "https://socprime.com/blog/uac-0114-group-aka-winter-vivern-attack-detection-hackers-launch-malicious-phishing-campaigns-targeting-government-entities-of-ukraine-and-poland/"
+          "https://socprime.com/blog/uac-0114-group-aka-winter-vivern-attack-detection-hackers-launch-malicious-phishing-campaigns-targeting-government-entities-of-ukraine-and-poland/",
+          "https://cybersecuritynews.com/russian-hackers-xss-flaw/",
+          "https://www.recordedfuture.com/russia-aligned-tag-70-targets-european-government-and-military-mail"
         ],
         "synonyms": [
           "UAC-0114",
-          "TA473"
+          "TA473",
+          "TAG-70",
+          "TA-473"
         ]
       },
       "uuid": "b7497d28-02de-4722-8b97-1fc53e1d1b68",
@@ -15196,6 +15203,72 @@
       },
       "uuid": "3682a08e-c1d9-4dff-ae08-774883dddba6",
       "value": "BANISHED KITTEN"
+    },
+    {
+      "description": "ProCC is a threat actor targeting the hospitality sector with remote access Trojan malware. They use email attachments to exploit vulnerabilities like CVE-2017-0199 and deploy customized versions of RATs such as RevengeRAT, NjRAT, NanoCoreRAT, and 888 RAT. ProCC's malware is capable of collecting data from the clipboard and printer spooler, as well as capturing screenshots on infected machines.",
+      "meta": {
+        "refs": [
+          "https://securelist.com/revengehotels/95229/"
+        ]
+      },
+      "uuid": "c74f78d1-3728-4bb9-b84f-0e46d2e870b2",
+      "value": "ProCC"
+    },
+    {
+      "description": "Since the beginning of 2023, ResumeLooters have been able to compromise at least 65 websites. The group employs a variety of simple techniques, including SQL injection and XSS. The threat actor attempted to insert XSS scripts into all available forms, aiming to execute it on the administrators’ device to obtain admin credentials. While the group was able to execute the XSS script on some visitors’ devices with administrative access, allowing ResumeLooters to steal the HTML code of the pages the victims were visiting, Group-IB did not find any confirmation of admin credential thefts.",
+      "meta": {
+        "refs": [
+          "https://www.group-ib.com/blog/resumelooters/"
+        ]
+      },
+      "uuid": "76dbe26b-8b39-40f5-bc2b-9620004f388e",
+      "value": "ResumeLooters"
+    },
+    {
+      "description": "ShadowSyndicate is a threat actor associated with various ransomware groups, using a consistent Secure Shell fingerprint across multiple servers. They have been linked to ransomware families such as Quantum, Nokoyawa, and ALPHV. ShadowSyndicate's infrastructure overlaps with that of Cl0p, suggesting potential connections between the two groups. Their activities indicate they may be a Ransomware-as-a-Service affiliate.",
+      "meta": {
+        "refs": [
+          "https://www.group-ib.com/blog/shadowsyndicate-raas/"
+        ]
+      },
+      "uuid": "24a7e1eb-b7c7-486b-96b2-8d313d65bf70",
+      "value": "ShadowSyndicate"
+    },
+    {
+      "description": "LabHost is a threat actor group targeting Canadian Banks with Phishing-as-a-Service attacks. They have been observed using tools like LabRat and LabSend for real-time campaign management and SMS lures. LabHost's phishing campaigns have similarities to Frappo campaigns, but they operate separately and offer different subscription packages.",
+      "meta": {
+        "refs": [
+          "https://www.phishlabs.com/blog/phishing-service-profile-labhost-threat-actor-group"
+        ]
+      },
+      "uuid": "583cdea6-1d72-44d4-824f-f965e8a23f3e",
+      "value": "LabHost"
+    },
+    {
+      "description": "Cyber Anarchy Squad is a pro-Ukrainian hacktivist group known for targeting Russian companies and infrastructure. They have carried out cyberattacks on Russian telecom providers, financial institutions, and government agencies, causing disruptions to services and leaking stolen data. The group has used techniques such as wiping network equipment, defacing websites, and leaking sensitive documents to support their cause. Cyber Anarchy Squad has been active for at least four years, evolving from cyber-bullying to more sophisticated hacking activities.",
+      "meta": {
+        "country": "UA",
+        "refs": [
+          "https://srslyriskybiz.substack.com/p/russias-extradition-wars-are-not",
+          "https://therecord.media/proukraine-hackers-claim-to-take-down-russian-isp"
+        ],
+        "synonyms": [
+          "Cyber Anarchy Squad"
+        ]
+      },
+      "uuid": "264d9a4b-9b0b-416f-9b09-819e96967a30",
+      "value": "Cyber.Anarchy.Squad"
+    },
+    {
+      "description": "GoldFactory is a threat actor group attributed to developing sophisticated mobile banking malware targeting victims primarily in the Asia-Pacific region, specifically Vietnam and Thailand. They utilize social engineering to deliver malware to victims' devices and have close connections to the Gigabud malware family. GoldFactory's Trojans, such as GoldPickaxe and GoldDigger, employ tactics like smishing, phishing, and fake login screens to compromise victims' phones and steal sensitive information. Their evolving malware suite demonstrates a high level of operational maturity and ingenuity, requiring a proactive and multi-faceted cybersecurity approach to detect and mitigate their threats.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://www.group-ib.com/blog/goldfactory-ios-trojan/"
+        ]
+      },
+      "uuid": "74268518-8dd9-4223-9f7f-54421463cdb3",
+      "value": "GoldFactory"
     }
   ],
   "version": 301
