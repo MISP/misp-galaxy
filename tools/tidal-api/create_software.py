@@ -1,5 +1,6 @@
 from api import TidalAPI
 import json
+import re
 
 VERSION = 1
 GALAXY_PATH = "../../galaxies/"
@@ -38,6 +39,7 @@ def create_cluster(galaxy, data):
         value["description"] = software["description"]
 
         # Metadata fields
+        links = extract_links(software["description"])
         source = software["source"]
         type = software["type"]
         software_attack_id = software["software_attack_id"]
@@ -46,6 +48,8 @@ def create_cluster(galaxy, data):
         owner = software["owner_name"]
 
         value["meta"] = {}
+        if links:
+            value["meta"]["refs"] = list(links)
         if source:
             value["meta"]["source"] = source
         if type:
@@ -73,6 +77,21 @@ def create_cluster(galaxy, data):
     cluster["uuid"] = galaxy["uuid"]
     cluster["values"] = values
     return cluster
+
+def extract_links(text):
+    # extract markdown links and return text without links and the links
+    # urls = re.findall(r'https?://[^\s\)]+', text)
+    regular_links = re.findall(r'\[([^\]]+)\]\((https?://[^\s\)]+)\)', text)
+    # sup_links = re.findall(r'<sup>\[\[([^\]]+)\]\((https?://[^\s\)]+)\)\]</sup>', text)
+
+    # Extracting URLs from the tuples
+    regular_links_urls = set([url for text, url in regular_links])
+    # sup_links_urls = [url for text, url in sup_links]
+
+    # text_without_links = re.sub(r'\[([^\]]+)\]\(https?://[^\s\)]+\)', r'\1', text)
+    # text_without_sup = re.sub(r'<sup>.*<\/sup>', '', text_without_links)
+
+    return regular_links_urls
 
 if __name__ == "__main__":
     api = TidalAPI()

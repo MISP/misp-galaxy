@@ -84,8 +84,8 @@ if __name__ == "__main__":
     galaxy = create_galaxy()
     cluster = create_cluster(galaxy, data)
 
-    with open(GALAXY_PATH + "tidal-threat-group.json", "w") as galaxy_file:
+    with open(GALAXY_PATH + "tidal-threat-groups.json", "w") as galaxy_file:
         json.dump(galaxy, galaxy_file, indent=4)
 
-    with open(CLUSTER_PATH + "tidal-threat-group.json", "w") as cluster_file:
+    with open(CLUSTER_PATH + "tidal-threat-groups.json", "w") as cluster_file:
         json.dump(cluster, cluster_file, indent=4)
