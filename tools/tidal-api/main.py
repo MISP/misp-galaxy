@@ -16,7 +16,7 @@ CLUSTER_CONFIGS = config["CLUSTER_CONFIGS"]
 VALUE_FIELDS = config["VALUE_FIELDS"]
 
 
-def create_cluster_values(data, cluster):
+def create_cluster_values(data, cluster, add_private):
     value_fields = VALUE_FIELDS[cluster.internal_type]
     for entry in data["data"]:
         values = {}
@@ -28,7 +28,7 @@ def create_cluster_values(data, cluster):
                     metadata = create_metadata(entry, value)
                     values["meta"] = metadata
                 case "related":
-                    relations = create_relations(entry, value)
+                    relations = create_relations(entry, value, add_private)
                     values["related"] = relations
                 case "uuid":
                     values[key] = entry.get(value)
@@ -63,13 +63,17 @@ def create_metadata(data, format):
     return metadata
 
 
-def create_relations(data, format):
+def create_relations(data, format, add_private):
     relations = []
     for i in range(len(list(format))):
         for relation in data[list(format)[i]]:
+            if not add_private and list(format.values())[i].get("mode") == "private":
+                continue
             relation_entry = {}
             for relation_key, relation_value in list(format.values())[i].items():
                 if relation_key != "type":
+                    if relation_key == "mode":
+                        continue
                     relation_entry[relation_key] = relation.get(relation_value)
                 else:
                     relation_entry[relation_key] = relation_value
@@ -77,14 +81,14 @@ def create_relations(data, format):
     return relations
 
 
-def create_galaxy_and_cluster(galaxy_type, version):
+def create_galaxy_and_cluster(galaxy_type, version, add_private=False):
     api = TidalAPI()
     galaxy = Galaxy(**GALAXY_CONFIGS[galaxy_type], version=version)
     galaxy.save_to_file(f"{GALAXY_PATH}/tidal-{galaxy_type}.json")
 
     cluster = Cluster(**CLUSTER_CONFIGS[galaxy_type], internal_type=galaxy_type)
     data = api.get_data(galaxy_type)
-    create_cluster_values(data, cluster)
+    create_cluster_values(data, cluster, add_private)
     cluster.save_to_file(f"{CLUSTER_PATH}/tidal-{galaxy_type}.json")
 
     print(f"Galaxy tidal-{galaxy_type} created")
@@ -93,9 +97,9 @@ def create_galaxy_and_cluster(galaxy_type, version):
 def create_galaxy(args):
     if args.all:
         for galaxy_type in GALAXY_CONFIGS:
-            create_galaxy_and_cluster(galaxy_type, args.version)
+            create_galaxy_and_cluster(galaxy_type, args.version, args.addprivate)
     else:
-        create_galaxy_and_cluster(args.type, args.version)
+        create_galaxy_and_cluster(args.type, args.version, args.addprivate)
 
 
 if __name__ == "__main__":
@@ -117,6 +121,9 @@ if __name__ == "__main__":
     )
     galaxy_parser.add_argument(
         "--all", action="store_true", help="Flag to create all predefined galaxy types"
+    )
+    galaxy_parser.add_argument(
+        "--addprivate", action="store_true", help="Flag to add private relations"
     )
     galaxy_parser.set_defaults(func=create_galaxy)
 

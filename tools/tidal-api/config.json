@@ -134,10 +134,12 @@
             },
             "related": {
                 "groups": {
+                    "mode": "private",
                     "dest-uuid": "group_id",
                     "type": "used-by"
                 },
                 "associated_software": {
+                    "mode": "private",
                     "dest-uuid": "id",
                     "type": "related-to"
                 }
@@ -175,6 +177,7 @@
             },
             "related": {
                 "associated_groups": {
+                    "mode": "private",
                     "dest-uuid": "id",
                     "type": "related-to"
                 }
@@ -214,10 +217,12 @@
             },
             "related": {
                 "tactic": {
+                    "mode": "public",
                     "dest-uuid": "tactic_id",
                     "type": "uses"
                 },
                 "sub_technique": {
+                    "mode": "private",
                     "dest-uuid": "id",
                     "type": "sub-technique-of"
                 }
@@ -236,6 +241,7 @@
             },
             "related": {
                 "techniques": {
+                    "mode": "public",
                     "dest-uuid": "technique_id",
                     "type": "uses"
                 }

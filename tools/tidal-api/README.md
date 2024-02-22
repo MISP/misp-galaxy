@@ -42,7 +42,7 @@ The configuration file is located in `config.json` and maps the fields of the Ti
   >Note: The fields `meta` can be formatted as the format of the data the API provides sometimes does not match the format defined by the [MISP galaxy format](https://www.misp-standard.org/rfc/misp-standard-galaxy-format.html#name-conventions-and-terminology). You can configure this using an extraction configuration.
 
 ### Extraction Configuration
-The extraction configuration is a dictionary that maps the fields of the Tidal Cyber API to the fields of the MISP galaxy. It can be used to extract data stored in a array or object in the API response. The extraction configuration looks like this:
+The extraction configuration is a dictionary that maps the fields of the Tidal Cyber API to the fields of the MISP galaxy. It can be used to extract data stored in an object in the API response. The extraction configuration looks like this:
 ```json
 {
   "extract": "<mode>",
@@ -55,6 +55,23 @@ The extraction configuration is a dictionary that maps the fields of the Tidal C
 - `single`: Extracts a single value from the API response
 - `multiple`: Extracts multiple values from the API response
 - `reverse`: Gets the value of the key and writes it into an array (no subkey needed)
+
+### "Private" Relations
+The Tidal Cyber API provides relations between different objects. Some of these relations point to objects that are not part of the galaxies created based on the API response nor are they part of the MISP galaxy. These relations can be marked as `private` in the config file. For example:
+```json
+    "related": {
+                "tactic": {
+                    "mode": "public",
+                    "dest-uuid": "tactic_id",
+                    "type": "uses"
+                },
+                "sub_technique": {
+                    "mode": "private",
+                    "dest-uuid": "id",
+                    "type": "sub-technique-of"
+                }
+            },
+```
 
 ## Usage
 ```bash
