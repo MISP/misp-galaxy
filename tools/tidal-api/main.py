@@ -2,135 +2,18 @@ from api.api import TidalAPI
 from models.galaxy import Galaxy
 from models.cluster import Cluster
 from utils.extractor import extract_links
+from utils.config import load_config
 import argparse
 
 CLUSTER_PATH = "../../clusters/"
 GALAXY_PATH = "../../galaxies/"
 
-UUIDS = {
-    "software": "38d62d8b-4c49-489a-9bc4-8e294c4f04f7",
-    "groups": "41c3e5c0-de5c-4edb-b48b-48cd8e7519e6",
-    "campaigns": "43a8fce6-08d3-46c2-957d-53606efe2c48",
-}
+config = load_config('./config.json')
 
-GALAXY_CONFIGS = {
-    "software": {
-        "name": "Tidal Software",
-        "namespace": "tidal",
-        "description": "Tidal Software Galaxy",
-        "type": "software",
-        "uuid": UUIDS["software"],
-    },
-    "groups": {
-        "name": "Tidal Groups",
-        "namespace": "tidal",
-        "description": "Tidal Groups Galaxy",
-        "type": "groups",
-        "uuid": UUIDS["groups"],
-    },
-    "campaigns": {
-        "name": "Tidal Campaigns",
-        "namespace": "tidal",
-        "description": "Tidal Campaigns Galaxy",
-        "type": "campaigns",
-        "uuid": UUIDS["campaigns"],
-    }
-}
-
-CLUSTER_CONFIGS = {
-    "software": {
-        "authors": "Tidal",
-        "category": "Software",
-        "description": "Tidal Software Cluster",
-        "name": "Tidal Software",
-        "source": "Tidal",
-        "type": "software",
-        "uuid": UUIDS["software"],
-        "values": []
-    },
-    "groups": {
-        "authors": "Tidal",
-        "category": "Threat Groups",
-        "description": "Tidal Threat Groups Cluster",
-        "name": "Tidal Threat Groups",
-        "source": "Tidal",
-        "type": "groups",
-        "uuid": UUIDS["groups"],
-        "values": []
-    },
-    "campaigns": {
-        "authors": "Tidal",
-        "category": "Campaigns",
-        "description": "Tidal Campaigns Cluster",
-        "name": "Tidal Campaigns",
-        "source": "Tidal",
-        "type": "campaigns",
-        "uuid": UUIDS["campaigns"],
-        "values": []
-    }
-}
-
-VALUE_FIELDS = {
-    "software": {
-        "description": "description",
-        "meta": {
-            "source": "source",
-            "type": "type",
-            "software-attack-id": "software_attack_id",
-            "platforms": "platforms",
-            "tags": "tags",
-            "owner": "owner_name"
-        },
-        "related": {
-            "groups": {
-                "dest-uuid": "group_id",
-                "type": "used-by"
-            },
-            "associated_software": {
-                "dest-uuid": "id",
-                "type": "related-to"
-            }
-        },
-        "uuid": "id",
-        "value": "name"
-    },
-    "groups": {
-        "description": "description",
-        "meta": {
-            "source": "source",
-            "group-attack-id": "group_attack_id",
-            "country": {"extract": "single", "key": "country", "subkey": "country_code"},
-            "observed_country": {"extract": "multiple", "key": "observed_country", "subkey": "country_code"},
-            "observed_motivation": {"extract": "multiple", "key": "observed_motivation", "subkey": "name"},
-            "target-category": {"extract": "multiple", "key": "observed_sector", "subkey": "name"},
-            "tags": "tags",
-            "owner": "owner_name"
-        },
-        "related": {
-            "associated_groups": {
-                "dest-uuid": "id",
-                "type": "related-to"
-            }
-        },
-        "uuid": "id",
-        "value": "name"
-    },
-    "campaigns": {
-        "description": "description",
-        "meta": {
-            "source": "source",
-            "campaign-attack-id": "campaign_attack_id",
-            "first_seen": "first_seen",
-            "last_seen": "last_seen",
-            "tags": "tags",
-            "owner": "owner_name"
-        },
-        "related": {},
-        "uuid": "id",
-        "value": "name"
-    }
-    
-}
+UUIDS = config['UUIDS']
+GALAXY_CONFIGS = config['GALAXY_CONFIGS']
+CLUSTER_CONFIGS = config['CLUSTER_CONFIGS']
+VALUE_FIELDS = config['VALUE_FIELDS']
 
 def create_cluster_values(data, cluster):
     value_fields = VALUE_FIELDS[cluster.internal_type]
@@ -162,6 +45,8 @@ def create_metadata(data, format):
                 metadata[meta_key] = data.get(meta_value["key"])[0].get(meta_value["subkey"])
             elif meta_value.get("extract") == "multiple" and data.get(meta_value["key"]):
                 metadata[meta_key] = [entry.get(meta_value["subkey"]) for entry in data.get(meta_value["key"])]
+            elif meta_value.get("extract") == "reverse" and data.get(meta_value["key"]):
+                metadata[meta_key] = [data.get(meta_value["key"])]
         elif data.get(meta_value):
             metadata[meta_key] = data.get(meta_value)
     return metadata
@@ -191,7 +76,7 @@ def create_galaxy_and_cluster(galaxy_type, version):
     create_cluster_values(data, cluster)
     cluster.save_to_file(f"{CLUSTER_PATH}/tidal-{galaxy_type}.json")
 
-    print(f"Galaxy {galaxy_type} created")
+    print(f"Galaxy tidal-{galaxy_type} created")
 
 def create_galaxy(args):
     if args.all:
