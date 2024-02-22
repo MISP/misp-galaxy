@@ -8,12 +8,13 @@ import argparse
 CLUSTER_PATH = "../../clusters/"
 GALAXY_PATH = "../../galaxies/"
 
-config = load_config('./config.json')
+config = load_config("./config.json")
 
-UUIDS = config['UUIDS']
-GALAXY_CONFIGS = config['GALAXY_CONFIGS']
-CLUSTER_CONFIGS = config['CLUSTER_CONFIGS']
-VALUE_FIELDS = config['VALUE_FIELDS']
+UUIDS = config["UUIDS"]
+GALAXY_CONFIGS = config["GALAXY_CONFIGS"]
+CLUSTER_CONFIGS = config["CLUSTER_CONFIGS"]
+VALUE_FIELDS = config["VALUE_FIELDS"]
+
 
 def create_cluster_values(data, cluster):
     value_fields = VALUE_FIELDS[cluster.internal_type]
@@ -34,23 +35,33 @@ def create_cluster_values(data, cluster):
                 case "value":
                     values[key] = entry.get(value)
                 case _:
-                    print(f"Error: Invalid configuration for {key} in {cluster.internal_type} value fields.")
+                    print(
+                        f"Error: Invalid configuration for {key} in {cluster.internal_type} value fields."
+                    )
         cluster.add_value(values)
+
 
 def create_metadata(data, format):
     metadata = {}
     for meta_key, meta_value in format.items():
         if isinstance(meta_value, dict):
             if meta_value.get("extract") == "single" and data.get(meta_value["key"]):
-                metadata[meta_key] = data.get(meta_value["key"])[0].get(meta_value["subkey"])
-            elif meta_value.get("extract") == "multiple" and data.get(meta_value["key"]):
-                metadata[meta_key] = [entry.get(meta_value["subkey"]) for entry in data.get(meta_value["key"])]
+                metadata[meta_key] = data.get(meta_value["key"])[0].get(
+                    meta_value["subkey"]
+                )
+            elif meta_value.get("extract") == "multiple" and data.get(
+                meta_value["key"]
+            ):
+                metadata[meta_key] = [
+                    entry.get(meta_value["subkey"])
+                    for entry in data.get(meta_value["key"])
+                ]
             elif meta_value.get("extract") == "reverse" and data.get(meta_value["key"]):
                 metadata[meta_key] = [data.get(meta_value["key"])]
         elif data.get(meta_value):
             metadata[meta_key] = data.get(meta_value)
     return metadata
-    
+
 
 def create_relations(data, format):
     relations = []
@@ -64,7 +75,7 @@ def create_relations(data, format):
                     relation_entry[relation_key] = relation_value
             relations.append(relation_entry)
     return relations
-    
+
 
 def create_galaxy_and_cluster(galaxy_type, version):
     api = TidalAPI()
@@ -78,6 +89,7 @@ def create_galaxy_and_cluster(galaxy_type, version):
 
     print(f"Galaxy tidal-{galaxy_type} created")
 
+
 def create_galaxy(args):
     if args.all:
         for galaxy_type in GALAXY_CONFIGS:
@@ -85,19 +97,31 @@ def create_galaxy(args):
     else:
         create_galaxy_and_cluster(args.type, args.version)
 
+
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Create a galaxy and cluster for Tidal API")
+    parser = argparse.ArgumentParser(
+        description="Create a galaxy and cluster for Tidal API"
+    )
     subparsers = parser.add_subparsers(dest="command")
 
-    galaxy_parser = subparsers.add_parser("create_galaxy", help="Create a galaxy from the Tidal API")
-    galaxy_parser.add_argument("--type", choices=list(GALAXY_CONFIGS.keys()) + ['all'], help="The type of the galaxy")
-    galaxy_parser.add_argument("-v", "--version", type=int, required=True, help="The version of the galaxy")
-    galaxy_parser.add_argument("--all", action="store_true", help="Flag to create all predefined galaxy types")
+    galaxy_parser = subparsers.add_parser(
+        "create_galaxy", help="Create a galaxy from the Tidal API"
+    )
+    galaxy_parser.add_argument(
+        "--type",
+        choices=list(GALAXY_CONFIGS.keys()) + ["all"],
+        help="The type of the galaxy",
+    )
+    galaxy_parser.add_argument(
+        "-v", "--version", type=int, required=True, help="The version of the galaxy"
+    )
+    galaxy_parser.add_argument(
+        "--all", action="store_true", help="Flag to create all predefined galaxy types"
+    )
     galaxy_parser.set_defaults(func=create_galaxy)
 
     args = parser.parse_args()
-    if hasattr(args, 'func'):
+    if hasattr(args, "func"):
         args.func(args)
     else:
         parser.print_help()
-

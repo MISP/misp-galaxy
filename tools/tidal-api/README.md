@@ -45,9 +45,9 @@ The configuration file is located in `config.json` and maps the fields of the Ti
 The extraction configuration is a dictionary that maps the fields of the Tidal Cyber API to the fields of the MISP galaxy. It can be used to extract data stored in a array or object in the API response. The extraction configuration looks like this:
 ```json
 {
-  "extract": <mode>,
-  "key": <key>,
-  "subkey": <subkey>
+  "extract": "<mode>",
+  "key": "<key>",
+  "subkey": "<subkey>"
 }
 ```
 **Extract modes**:
