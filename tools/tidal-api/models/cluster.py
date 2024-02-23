@@ -1,4 +1,5 @@
 from dataclasses import dataclass, field, asdict
+from typing import Type
 import json
 
 
@@ -20,12 +21,26 @@ class GroupsMeta(Meta):
 
 
 @dataclass
+class AssociatedGroupsMeta(Meta):
+    id: str = None
+    owner_id: str = None
+    owner: str = None
+
+
+@dataclass
 class SoftwareMeta(Meta):
     source: str = None
     type: str = None
     software_attack_id: str = None
     platforms: list = None
     tags: list = None
+    owner: str = None
+
+
+@dataclass
+class AssociatedSoftwareMeta(Meta):
+    id: str = None
+    owner_id: str = None
     owner: str = None
 
 
@@ -108,9 +123,10 @@ class Cluster:
         self.type = type
         self.uuid = uuid
         self.values = []
+        self.CLUSTER_PATH = "../../clusters"
 
-    def add_values(self):
-        print("This method should be implemented in the child class")
+    def add_values(self, data: dict, meta_class: Type[Meta]):
+        pass
 
     def save_to_file(self, path):
         with open(path, "w") as file:
@@ -131,6 +147,24 @@ class Cluster:
             "values": self.values,
         }
 
+    def _get_relation_from_mitre_id(
+        self, mitre_id: str, cluster: str, meta_key: str, array: bool = False
+    ):
+        with open(f"{self.CLUSTER_PATH}/{cluster}.json", "r") as file:
+            mitre = json.load(file)
+        for entry in mitre["values"]:
+            try:
+                if array:
+                    for id in entry["meta"][meta_key]:
+                        if id == mitre_id:
+                            return entry["uuid"]
+                else:
+                    if entry["meta"][meta_key] == mitre_id:
+                        return entry["uuid"]
+            except KeyError:
+                continue
+        return None
+
 
 class GroupCluster(Cluster):
     def __init__(
@@ -142,8 +176,10 @@ class GroupCluster(Cluster):
         source: str,
         type: str,
         uuid: str,
+        enrichment: bool = False,
     ):
         super().__init__(authors, category, description, name, source, type, uuid)
+        self.enrichment = enrichment
 
     def add_values(self, data):
         for entry in data["data"]:
@@ -166,13 +202,39 @@ class GroupCluster(Cluster):
                 owner=entry.get("owner_name"),
             )
             related = []
-            for relation in entry.get("associated_groups"):
+            if self.enrichment:
+                related_cluster = self._get_relation_from_mitre_id(
+                    entry.get("group_attack_id"), "threat-actor", "synonyms", True
+                )
+                if related_cluster:
+                    related.append(
+                        {
+                            "dest-uuid": related_cluster,
+                            "type": "similar",
+                        }
+                    )
+
+            for associated_group in entry.get("associated_groups"):
+                meta = AssociatedGroupsMeta(
+                    id=associated_group.get("id"),
+                    owner_id=associated_group.get("owner_id"),
+                    owner=associated_group.get("owner_name"),
+                )
+                value = ClusterValue(
+                    description=associated_group.get("description"),
+                    meta=meta,
+                    related=[],
+                    uuid=associated_group.get("associated_group_id"),
+                    value=associated_group.get("name"),
+                )
+                self.values.append(value.return_value())
                 related.append(
                     {
-                        "dest-uuid": relation.get("id"),
-                        "type": "related-to",
+                        "dest-uuid": associated_group.get("associated_group_id"),
+                        "type": "similar",
                     }
                 )
+
             value = ClusterValue(
                 description=entry.get("description"),
                 meta=meta,
@@ -193,8 +255,10 @@ class SoftwareCluster(Cluster):
         source: str,
         type: str,
         uuid: str,
+        enrichment: bool = False,
     ):
         super().__init__(authors, category, description, name, source, type, uuid)
+        self.enrichment = enrichment
 
     def add_values(self, data):
         for entry in data["data"]:
@@ -214,13 +278,50 @@ class SoftwareCluster(Cluster):
                         "type": "used-by",
                     }
                 )
-            for relation in entry.get("associated_software"):
+            if self.enrichment:
+                related_cluster = self._get_relation_from_mitre_id(
+                    entry.get("software_attack_id"), "mitre-tool", "external_id"
+                )
+                if related_cluster:
+                    related.append(
+                        {
+                            "dest-uuid": related_cluster,
+                            "type": "similar",
+                        }
+                    )
+
+                related_cluster = self._get_relation_from_mitre_id(
+                    entry.get("software_attack_id"), "mitre-malware", "external_id"
+                )
+                if related_cluster:
+                    related.append(
+                        {
+                            "dest-uuid": related_cluster,
+                            "type": "similar",
+                        }
+                    )
+
+            for associated_software in entry.get("associated_software"):
+                meta = AssociatedSoftwareMeta(
+                    id=associated_software.get("id"),
+                    owner_id=associated_software.get("owner_id"),
+                    owner=associated_software.get("owner_name"),
+                )
+                value = ClusterValue(
+                    description=associated_software.get("description"),
+                    meta=meta,
+                    related=[],
+                    uuid=associated_software.get("associated_software_id"),
+                    value=associated_software.get("name"),
+                )
+                self.values.append(value.return_value())
                 related.append(
                     {
-                        "dest-uuid": relation.get("id"),
-                        "type": "related-to",
+                        "dest-uuid": associated_software.get("associated_software_id"),
+                        "type": "similar",
                     }
                 )
+
             value = ClusterValue(
                 description=entry.get("description"),
                 meta=meta,
@@ -260,6 +361,35 @@ class TechniqueCluster(Cluster):
                         "type": "uses",
                     }
                 )
+
+            for sub_technique in entry.get("sub_technique"):
+                meta = SubTechniqueMeta(
+                    source=sub_technique.get("source"),
+                    technique_attack_id=sub_technique.get("technique_attack_id"),
+                )
+                sub_related = []
+                for relation in sub_technique.get("tactic"):
+                    sub_related.append(
+                        {
+                            "dest-uuid": relation.get("tactic_id"),
+                            "type": "uses",
+                        }
+                    )
+                sub_value = ClusterValue(
+                    description=sub_technique.get("description"),
+                    meta=meta,
+                    related=sub_related,
+                    uuid=sub_technique.get("id"),
+                    value=sub_technique.get("name"),
+                )
+                self.values.append(sub_value.return_value())
+                related.append(
+                    {
+                        "dest-uuid": sub_technique.get("id"),
+                        "type": "similar",
+                    }
+                )
+
             value = ClusterValue(
                 description=entry.get("description"),
                 meta=meta,
@@ -268,28 +398,6 @@ class TechniqueCluster(Cluster):
                 value=entry.get("name"),
             )
             self.values.append(value.return_value())
-
-            for sub_technique in entry.get("sub_technique"):
-                meta = SubTechniqueMeta(
-                    source=sub_technique.get("source"),
-                    technique_attack_id=sub_technique.get("technique_attack_id"),
-                )
-                related = []
-                for relation in sub_technique.get("tactic"):
-                    related.append(
-                        {
-                            "dest-uuid": relation.get("tactic_id"),
-                            "type": "uses",
-                        }
-                    )
-                value = ClusterValue(
-                    description=sub_technique.get("description"),
-                    meta=meta,
-                    related=related,
-                    uuid=sub_technique.get("id"),
-                    value=sub_technique.get("name"),
-                )
-                self.values.append(value.return_value())
 
 
 class TacticCluster(Cluster):

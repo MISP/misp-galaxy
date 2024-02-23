@@ -17,7 +17,7 @@ GALAXY_PATH = "../../galaxies"
 CLUSTER_PATH = "../../clusters"
 
 
-def create_galaxy(endpoint: str, version: int):
+def create_galaxy(endpoint: str, version: int, extended_relations: bool = False):
     api = TidalAPI()
     data = api.get_data(endpoint)
     with open(f"{CONFIG}/{endpoint}.json", "r") as file:
@@ -28,10 +28,10 @@ def create_galaxy(endpoint: str, version: int):
 
     match endpoint:
         case "groups":
-            cluster = GroupCluster(**config["cluster"], uuid=galaxy.uuid)
+            cluster = GroupCluster(**config["cluster"], uuid=galaxy.uuid, enrichment=extended_relations)
             cluster.add_values(data)
         case "software":
-            cluster = SoftwareCluster(**config["cluster"], uuid=galaxy.uuid)
+            cluster = SoftwareCluster(**config["cluster"], uuid=galaxy.uuid, enrichment=extended_relations)
             cluster.add_values(data)
         case "campaigns":
             cluster = CampaignsCluster(**config["cluster"], uuid=galaxy.uuid)
@@ -56,9 +56,9 @@ def create_galaxy(endpoint: str, version: int):
 def main(args, galaxies):
     if args.all:
         for galaxy in galaxies:
-            create_galaxy(galaxy, args.version)
+            create_galaxy(galaxy, args.version, args.extended_relations)
     else:
-        create_galaxy(args.type, args.version)
+        create_galaxy(args.type, args.version, args.extended_relations)
 
 
 if __name__ == "__main__":
@@ -72,6 +72,7 @@ if __name__ == "__main__":
         description="Create galaxy and cluster json files from Tidal API"
     )
     parser.add_argument(
+        "-a",
         "--all",
         action="store_true",
         help="Create all galaxies and clusters",
@@ -87,6 +88,11 @@ if __name__ == "__main__":
         type=int,
         required=True,
         help="The version of the galaxy",
+    )
+    parser.add_argument(
+        "--extended-relations",
+        action="store_true",
+        help="Create extended relations in the cluster",
     )
     parser.set_defaults(func=main)
 
