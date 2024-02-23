@@ -1,134 +1,89 @@
 from api.api import TidalAPI
 from models.galaxy import Galaxy
-from models.cluster import Cluster
-from utils.extractor import extract_links
-from utils.config import load_config
+from models.cluster import GroupCluster, SoftwareCluster, CampaignsCluster, TechniqueCluster, TacticCluster, ReferencesCluster
 import argparse
+import json
+import os
 
-CLUSTER_PATH = "../../clusters/"
-GALAXY_PATH = "../../galaxies/"
+CONFIG = "./config"
+GALAXY_PATH = "../../galaxies"
+CLUSTER_PATH = "../../clusters"
 
-config = load_config("./config.json")
-
-UUIDS = config["UUIDS"]
-GALAXY_CONFIGS = config["GALAXY_CONFIGS"]
-CLUSTER_CONFIGS = config["CLUSTER_CONFIGS"]
-VALUE_FIELDS = config["VALUE_FIELDS"]
-
-
-def create_cluster_values(data, cluster, add_private):
-    value_fields = VALUE_FIELDS[cluster.internal_type]
-    for entry in data["data"]:
-        values = {}
-        for key, value in value_fields.items():
-            match key:
-                case "description":
-                    values[value] = entry.get(key)
-                case "meta":
-                    metadata = create_metadata(entry, value)
-                    values["meta"] = metadata
-                case "related":
-                    relations = create_relations(entry, value, add_private)
-                    values["related"] = relations
-                case "uuid":
-                    values[key] = entry.get(value)
-                case "value":
-                    values[key] = entry.get(value)
-                case _:
-                    print(
-                        f"Error: Invalid configuration for {key} in {cluster.internal_type} value fields."
-                    )
-        cluster.add_value(values)
-
-
-def create_metadata(data, format):
-    metadata = {}
-    for meta_key, meta_value in format.items():
-        if isinstance(meta_value, dict):
-            if meta_value.get("extract") == "single" and data.get(meta_value["key"]):
-                metadata[meta_key] = data.get(meta_value["key"])[0].get(
-                    meta_value["subkey"]
-                )
-            elif meta_value.get("extract") == "multiple" and data.get(
-                meta_value["key"]
-            ):
-                metadata[meta_key] = [
-                    entry.get(meta_value["subkey"])
-                    for entry in data.get(meta_value["key"])
-                ]
-            elif meta_value.get("extract") == "reverse" and data.get(meta_value["key"]):
-                metadata[meta_key] = [data.get(meta_value["key"])]
-        elif data.get(meta_value):
-            metadata[meta_key] = data.get(meta_value)
-    return metadata
-
-
-def create_relations(data, format, add_private):
-    relations = []
-    for i in range(len(list(format))):
-        for relation in data[list(format)[i]]:
-            if not add_private and list(format.values())[i].get("mode") == "private":
-                continue
-            relation_entry = {}
-            for relation_key, relation_value in list(format.values())[i].items():
-                if relation_key != "type":
-                    if relation_key == "mode":
-                        continue
-                    relation_entry[relation_key] = relation.get(relation_value)
-                else:
-                    relation_entry[relation_key] = relation_value
-            relations.append(relation_entry)
-    return relations
-
-
-def create_galaxy_and_cluster(galaxy_type, version, add_private=False):
+def create_galaxy(endpoint: str, version: int):
     api = TidalAPI()
-    galaxy = Galaxy(**GALAXY_CONFIGS[galaxy_type], version=version)
-    galaxy.save_to_file(f"{GALAXY_PATH}/tidal-{galaxy_type}.json")
+    data = api.get_data(endpoint)
+    with open(f"{CONFIG}/{endpoint}.json", "r") as file:
+        config = json.load(file)
 
-    cluster = Cluster(**CLUSTER_CONFIGS[galaxy_type], internal_type=galaxy_type)
-    data = api.get_data(galaxy_type)
-    create_cluster_values(data, cluster, add_private)
-    cluster.save_to_file(f"{CLUSTER_PATH}/tidal-{galaxy_type}.json")
+    galaxy = Galaxy(**config["galaxy"], version=version)
+    galaxy.save_to_file(f"{GALAXY_PATH}/tidal-{endpoint}.json")
+    
+    match endpoint:
+        case "groups":
+            cluster = GroupCluster(**config["cluster"], uuid=galaxy.uuid)
+            cluster.add_values(data)
+        case "software":
+            cluster = SoftwareCluster(**config["cluster"], uuid=galaxy.uuid)
+            cluster.add_values(data)
+        case "campaigns":
+            cluster = CampaignsCluster(**config["cluster"], uuid=galaxy.uuid)
+            cluster.add_values(data)
+        case "technique":
+            cluster = TechniqueCluster(**config["cluster"], uuid=galaxy.uuid)
+            cluster.add_values(data)
+        case "tactic":
+            cluster = TacticCluster(**config["cluster"], uuid=galaxy.uuid)
+            cluster.add_values(data)
+        case "references":
+            cluster = ReferencesCluster(**config["cluster"], uuid=galaxy.uuid)
+            cluster.add_values(data)
+        case _:
+            print("Error: Invalid endpoint")
+            return
 
-    print(f"Galaxy tidal-{galaxy_type} created")
+    cluster.save_to_file(f"{CLUSTER_PATH}/tidal-{endpoint}.json")
+    print(f"Galaxy tidal-{endpoint} created")
 
-
-def create_galaxy(args):
+def main(args, galaxies):
     if args.all:
-        for galaxy_type in GALAXY_CONFIGS:
-            create_galaxy_and_cluster(galaxy_type, args.version, args.addprivate)
+        for galaxy in galaxies:
+            create_galaxy(galaxy, args.version)
     else:
-        create_galaxy_and_cluster(args.type, args.version, args.addprivate)
-
+        create_galaxy(args.type, args.version)
+    
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(
-        description="Create a galaxy and cluster for Tidal API"
-    )
-    subparsers = parser.add_subparsers(dest="command")
 
-    galaxy_parser = subparsers.add_parser(
-        "create_galaxy", help="Create a galaxy from the Tidal API"
+    galaxies = []
+    for f in os.listdir(CONFIG):
+        if f.endswith(".json"):
+            galaxies.append(f.split(".")[0])
+
+
+    parser = argparse.ArgumentParser(
+        description="Create galaxy and cluster json files from Tidal API"
     )
-    galaxy_parser.add_argument(
+    parser.add_argument(
+        "--all",
+        action="store_true",
+        help="Create all galaxies and clusters",
+    )
+    parser.add_argument(
         "--type",
-        choices=list(GALAXY_CONFIGS.keys()) + ["all"],
-        help="The type of the galaxy",
+        choices=galaxies,
+        help="The type of the file to create",
     )
-    galaxy_parser.add_argument(
-        "-v", "--version", type=int, required=True, help="The version of the galaxy"
+    parser.add_argument(
+        "-v",
+        "--version",
+        type=int,
+        required=True,
+        help="The version of the galaxy",
     )
-    galaxy_parser.add_argument(
-        "--all", action="store_true", help="Flag to create all predefined galaxy types"
-    )
-    galaxy_parser.add_argument(
-        "--addprivate", action="store_true", help="Flag to add private relations"
-    )
-    galaxy_parser.set_defaults(func=create_galaxy)
+    parser.set_defaults(func=main)
 
     args = parser.parse_args()
     if hasattr(args, "func"):
-        args.func(args)
+        args.func(args, galaxies=galaxies)
     else:
         parser.print_help()

@@ -1,14 +1,15 @@
 import json
+from dataclasses import dataclass, asdict
 
+@dataclass
 class Galaxy():
-    def __init__(self, description, name, namespace, type, uuid, version):
-        self.description = description
-        self.name = name
-        self.namespace = namespace
-        self.type = type
-        self.uuid = uuid
-        self.version = version
+    description: str
+    name: str
+    namespace: str
+    type: str
+    uuid: str
+    version: str
 
-    def save_to_file(self, path):
+    def save_to_file(self, path: str):
         with open(path, "w") as file:
-            file.write(json.dumps(self.__dict__, indent=4))
+            file.write(json.dumps(asdict(self), indent=4))
