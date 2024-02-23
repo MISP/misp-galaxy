@@ -1,12 +1,14 @@
 from dataclasses import dataclass, field, asdict
 import json
 
+
 @dataclass
 class Meta:
     pass
 
+
 @dataclass
-class GroupsMeta():
+class GroupsMeta(Meta):
     source: str = None
     group_attack_id: str = None
     country: str = None
@@ -16,8 +18,9 @@ class GroupsMeta():
     tags: list = None
     owner: str = None
 
+
 @dataclass
-class SoftwareMeta():
+class SoftwareMeta(Meta):
     source: str = None
     type: str = None
     software_attack_id: str = None
@@ -25,23 +28,32 @@ class SoftwareMeta():
     tags: list = None
     owner: str = None
 
+
 @dataclass
-class TechniqueMeta():
+class TechniqueMeta(Meta):
     source: str = None
     platforms: list = None
     tags: list = None
     owner: str = None
 
+
 @dataclass
-class TacticMeta():
+class SubTechniqueMeta(Meta):
+    source: str = None
+    technique_attack_id: str = None
+
+
+@dataclass
+class TacticMeta(Meta):
     source: str = None
     tactic_attack_id: str = None
     ordinal_position: int = None
     tags: list = None
     owner: str = None
 
+
 @dataclass
-class ReferencesMeta():
+class ReferencesMeta(Meta):
     source: str = None
     refs: list = None
     title: str = None
@@ -50,14 +62,16 @@ class ReferencesMeta():
     date_published: str = None
     owner: str = None
 
+
 @dataclass
-class CampaignsMeta():
+class CampaignsMeta(Meta):
     source: str = None
     campaign_attack_id: str = None
     first_seen: str = None
     last_seen: str = None
     tags: list = None
     owner: str = None
+
 
 @dataclass
 class ClusterValue:
@@ -69,11 +83,23 @@ class ClusterValue:
 
     def return_value(self):
         value_dict = asdict(self)
-        value_dict['meta'] = {k: v for k, v in asdict(self.meta).items() if v is not None}
+        value_dict["meta"] = {
+            k: v for k, v in asdict(self.meta).items() if v is not None
+        }
         return value_dict
 
-class Cluster():
-    def __init__(self, authors: str, category: str, description: str, name: str, source: str, type: str, uuid: str):
+
+class Cluster:
+    def __init__(
+        self,
+        authors: str,
+        category: str,
+        description: str,
+        name: str,
+        source: str,
+        type: str,
+        uuid: str,
+    ):
         self.authors = authors
         self.category = category
         self.description = description
@@ -85,7 +111,7 @@ class Cluster():
 
     def add_values(self):
         print("This method should be implemented in the child class")
-        
+
     def save_to_file(self, path):
         with open(path, "w") as file:
             file.write(json.dumps(self.__dict__(), indent=4))
@@ -104,29 +130,48 @@ class Cluster():
             "uuid": self.uuid,
             "values": self.values,
         }
-    
+
+
 class GroupCluster(Cluster):
-    def __init__(self, authors: str, category: str, description: str, name: str, source: str, type: str, uuid: str):
+    def __init__(
+        self,
+        authors: str,
+        category: str,
+        description: str,
+        name: str,
+        source: str,
+        type: str,
+        uuid: str,
+    ):
         super().__init__(authors, category, description, name, source, type, uuid)
-    
+
     def add_values(self, data):
         for entry in data["data"]:
             meta = GroupsMeta(
                 source=entry.get("source"),
                 group_attack_id=entry.get("group_attack_id"),
-                country=entry.get("country")[0].get("country_code") if entry.get("country") else None,
-                observed_countries=[x.get("country_code") for x in entry.get("observed_country")],
-                observed_motivations=[x.get("name") for x in entry.get("observed_motivation")],
+                country=(
+                    entry.get("country")[0].get("country_code")
+                    if entry.get("country")
+                    else None
+                ),
+                observed_countries=[
+                    x.get("country_code") for x in entry.get("observed_country")
+                ],
+                observed_motivations=[
+                    x.get("name") for x in entry.get("observed_motivation")
+                ],
                 target_categories=[x.get("name") for x in entry.get("observed_sector")],
                 tags=[x.get("tag") for x in entry.get("tags")],
                 owner=entry.get("owner_name"),
             )
             related = []
             for relation in entry.get("associated_groups"):
-                related.append({
-                    "dest-uuid": relation.get("id"),
-                    "type": "related-to",
-                }
+                related.append(
+                    {
+                        "dest-uuid": relation.get("id"),
+                        "type": "related-to",
+                    }
                 )
             value = ClusterValue(
                 description=entry.get("description"),
@@ -139,9 +184,18 @@ class GroupCluster(Cluster):
 
 
 class SoftwareCluster(Cluster):
-    def __init__(self, authors: str, category: str, description: str, name: str, source: str, type: str, uuid: str):
+    def __init__(
+        self,
+        authors: str,
+        category: str,
+        description: str,
+        name: str,
+        source: str,
+        type: str,
+        uuid: str,
+    ):
         super().__init__(authors, category, description, name, source, type, uuid)
-    
+
     def add_values(self, data):
         for entry in data["data"]:
             meta = SoftwareMeta(
@@ -154,16 +208,18 @@ class SoftwareCluster(Cluster):
             )
             related = []
             for relation in entry.get("groups"):
-                related.append({
-                    "dest-uuid": relation.get("group_id"),
-                    "type": "used-by",
-                }
+                related.append(
+                    {
+                        "dest-uuid": relation.get("group_id"),
+                        "type": "used-by",
+                    }
                 )
             for relation in entry.get("associated_software"):
-                related.append({
-                    "dest-uuid": relation.get("id"),
-                    "type": "related-to",
-                }
+                related.append(
+                    {
+                        "dest-uuid": relation.get("id"),
+                        "type": "related-to",
+                    }
                 )
             value = ClusterValue(
                 description=entry.get("description"),
@@ -174,10 +230,20 @@ class SoftwareCluster(Cluster):
             )
             self.values.append(value.return_value())
 
+
 class TechniqueCluster(Cluster):
-    def __init__(self, authors: str, category: str, description: str, name: str, source: str, type: str, uuid: str):
+    def __init__(
+        self,
+        authors: str,
+        category: str,
+        description: str,
+        name: str,
+        source: str,
+        type: str,
+        uuid: str,
+    ):
         super().__init__(authors, category, description, name, source, type, uuid)
-    
+
     def add_values(self, data):
         for entry in data["data"]:
             meta = TechniqueMeta(
@@ -188,10 +254,11 @@ class TechniqueCluster(Cluster):
             )
             related = []
             for relation in entry.get("tactic"):
-                related.append({
-                    "dest-uuid": relation.get("tactic_id"),
-                    "type": "uses",
-                }
+                related.append(
+                    {
+                        "dest-uuid": relation.get("tactic_id"),
+                        "type": "uses",
+                    }
                 )
             value = ClusterValue(
                 description=entry.get("description"),
@@ -202,10 +269,42 @@ class TechniqueCluster(Cluster):
             )
             self.values.append(value.return_value())
 
+            for sub_technique in entry.get("sub_technique"):
+                meta = SubTechniqueMeta(
+                    source=sub_technique.get("source"),
+                    technique_attack_id=sub_technique.get("technique_attack_id"),
+                )
+                related = []
+                for relation in sub_technique.get("tactic"):
+                    related.append(
+                        {
+                            "dest-uuid": relation.get("tactic_id"),
+                            "type": "uses",
+                        }
+                    )
+                value = ClusterValue(
+                    description=sub_technique.get("description"),
+                    meta=meta,
+                    related=related,
+                    uuid=sub_technique.get("id"),
+                    value=sub_technique.get("name"),
+                )
+                self.values.append(value.return_value())
+
+
 class TacticCluster(Cluster):
-    def __init__(self, authors: str, category: str, description: str, name: str, source: str, type: str, uuid: str):
+    def __init__(
+        self,
+        authors: str,
+        category: str,
+        description: str,
+        name: str,
+        source: str,
+        type: str,
+        uuid: str,
+    ):
         super().__init__(authors, category, description, name, source, type, uuid)
-    
+
     def add_values(self, data):
         for entry in data["data"]:
             meta = TacticMeta(
@@ -217,10 +316,11 @@ class TacticCluster(Cluster):
             )
             related = []
             for relation in entry.get("techniques"):
-                related.append({
-                    "dest-uuid": relation.get("technique_id"),
-                    "type": "uses",
-                }
+                related.append(
+                    {
+                        "dest-uuid": relation.get("technique_id"),
+                        "type": "uses",
+                    }
                 )
             value = ClusterValue(
                 description=entry.get("description"),
@@ -231,10 +331,20 @@ class TacticCluster(Cluster):
             )
             self.values.append(value.return_value())
 
+
 class ReferencesCluster(Cluster):
-    def __init__(self, authors: str, category: str, description: str, name: str, source: str, type: str, uuid: str):
+    def __init__(
+        self,
+        authors: str,
+        category: str,
+        description: str,
+        name: str,
+        source: str,
+        type: str,
+        uuid: str,
+    ):
         super().__init__(authors, category, description, name, source, type, uuid)
-    
+
     def add_values(self, data):
         for entry in data["data"]:
             meta = ReferencesMeta(
@@ -255,8 +365,18 @@ class ReferencesCluster(Cluster):
             )
             self.values.append(value.return_value())
 
+
 class CampaignsCluster(Cluster):
-    def __init__(self, authors: str, category: str, description: str, name: str, source: str, type: str, uuid: str):
+    def __init__(
+        self,
+        authors: str,
+        category: str,
+        description: str,
+        name: str,
+        source: str,
+        type: str,
+        uuid: str,
+    ):
         super().__init__(authors, category, description, name, source, type, uuid)
 
     def add_values(self, data):

@@ -1,6 +1,13 @@
 from api.api import TidalAPI
 from models.galaxy import Galaxy
-from models.cluster import GroupCluster, SoftwareCluster, CampaignsCluster, TechniqueCluster, TacticCluster, ReferencesCluster
+from models.cluster import (
+    GroupCluster,
+    SoftwareCluster,
+    CampaignsCluster,
+    TechniqueCluster,
+    TacticCluster,
+    ReferencesCluster,
+)
 import argparse
 import json
 import os
@@ -8,6 +15,7 @@ import os
 CONFIG = "./config"
 GALAXY_PATH = "../../galaxies"
 CLUSTER_PATH = "../../clusters"
+
 
 def create_galaxy(endpoint: str, version: int):
     api = TidalAPI()
@@ -17,7 +25,7 @@ def create_galaxy(endpoint: str, version: int):
 
     galaxy = Galaxy(**config["galaxy"], version=version)
     galaxy.save_to_file(f"{GALAXY_PATH}/tidal-{endpoint}.json")
-    
+
     match endpoint:
         case "groups":
             cluster = GroupCluster(**config["cluster"], uuid=galaxy.uuid)
@@ -44,13 +52,14 @@ def create_galaxy(endpoint: str, version: int):
     cluster.save_to_file(f"{CLUSTER_PATH}/tidal-{endpoint}.json")
     print(f"Galaxy tidal-{endpoint} created")
 
+
 def main(args, galaxies):
     if args.all:
         for galaxy in galaxies:
             create_galaxy(galaxy, args.version)
     else:
         create_galaxy(args.type, args.version)
-    
+
 
 if __name__ == "__main__":
 
@@ -58,7 +67,6 @@ if __name__ == "__main__":
     for f in os.listdir(CONFIG):
         if f.endswith(".json"):
             galaxies.append(f.split(".")[0])
-
 
     parser = argparse.ArgumentParser(
         description="Create galaxy and cluster json files from Tidal API"
