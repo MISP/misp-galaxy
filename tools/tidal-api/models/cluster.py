@@ -215,15 +215,22 @@ class GroupCluster(Cluster):
                     )
 
             for associated_group in entry.get("associated_groups"):
-                meta = AssociatedGroupsMeta(
+                associated_meta = AssociatedGroupsMeta(
                     id=associated_group.get("id"),
                     owner_id=associated_group.get("owner_id"),
                     owner=associated_group.get("owner_name"),
                 )
+                associated_related = []
+                associated_related.append(
+                    {
+                        "dest-uuid": entry.get("id"),
+                        "type": "similar",
+                    }
+                )
                 value = ClusterValue(
                     description=associated_group.get("description"),
-                    meta=meta,
-                    related=[],
+                    meta=associated_meta,
+                    related=associated_related,
                     uuid=associated_group.get("associated_group_id"),
                     value=associated_group.get("name"),
                 )
@@ -302,15 +309,22 @@ class SoftwareCluster(Cluster):
                     )
 
             for associated_software in entry.get("associated_software"):
-                meta = AssociatedSoftwareMeta(
+                associated_meta = AssociatedSoftwareMeta(
                     id=associated_software.get("id"),
                     owner_id=associated_software.get("owner_id"),
                     owner=associated_software.get("owner_name"),
                 )
+                associated_related = []
+                associated_related.append(
+                    {
+                        "dest-uuid": entry.get("id"),
+                        "type": "similar",
+                    }
+                )
                 value = ClusterValue(
                     description=associated_software.get("description"),
-                    meta=meta,
-                    related=[],
+                    meta=associated_meta,
+                    related=associated_related,
                     uuid=associated_software.get("associated_software_id"),
                     value=associated_software.get("name"),
                 )
@@ -363,7 +377,7 @@ class TechniqueCluster(Cluster):
                 )
 
             for sub_technique in entry.get("sub_technique"):
-                meta = SubTechniqueMeta(
+                sub_meta = SubTechniqueMeta(
                     source=sub_technique.get("source"),
                     technique_attack_id=sub_technique.get("technique_attack_id"),
                 )
@@ -377,7 +391,7 @@ class TechniqueCluster(Cluster):
                     )
                 sub_value = ClusterValue(
                     description=sub_technique.get("description"),
-                    meta=meta,
+                    meta=sub_meta,
                     related=sub_related,
                     uuid=sub_technique.get("id"),
                     value=sub_technique.get("name"),
