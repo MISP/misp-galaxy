@@ -82,6 +82,8 @@ document$.subscribe(function () {
                 path: nodePaths[id]
             }));
 
+        const Parent_Node = nodes[0];
+
         var links = data.map(d => ({ source: d.source, target: d.target }));
 
         var tooltip = d3.select("body").append("div")
@@ -121,10 +123,10 @@ document$.subscribe(function () {
             .data(nodes)
             .enter().append("circle")
             .attr("r", function (d, i) {
-                return i === 0 ? NODE_RADIUS + 5 : NODE_RADIUS;
+                return d.id === Parent_Node.id ? NODE_RADIUS + 5 : NODE_RADIUS;
             })
             .attr("fill", function (d, i) {
-                return i === 0 ? Parent_Node_COLOR : NODE_COLOR;
+                return d.id === Parent_Node.id ? Parent_Node_COLOR : NODE_COLOR;
             });
 
         // Apply tooltip on nodes
@@ -203,10 +205,10 @@ document$.subscribe(function () {
                     .join(
                         enter => enter.append("circle")
                             .attr("r", function (d, i) {
-                                return i === 0 ? NODE_RADIUS + 5 : NODE_RADIUS;
+                                return d.id === Parent_Node.id ? NODE_RADIUS + 5 : NODE_RADIUS;
                             })
                             .attr("fill", function (d, i) {
-                                return i === 0 ? Parent_Node_COLOR : NODE_COLOR;
+                                return d.id === Parent_Node.id ? Parent_Node_COLOR : NODE_COLOR;
                             }),
                         update => update,
                         exit => exit.remove()
