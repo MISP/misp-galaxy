@@ -12,9 +12,13 @@ class Cluster:
         self.value = value
         self.related_list = related_list
         self.meta = meta
-        self.entry = ""
         self.galaxy = galaxy
+
+        self.entry = ""
         self.statistics = None
+
+    def __lt__(self, other):
+        return self.uuid < other.uuid
 
     def set_statistics(self, statistics):
         self.statistics = statistics
@@ -156,32 +160,19 @@ class Cluster:
         if empty_uuids > 0:
             self.statistics.empty_uuids_dict[self.value] = empty_uuids
 
-        # Remove duplicates
-        to_remove = set()
+        return self._remove_duplicates(related_clusters)
+    
+    def _remove_duplicates(self, related_clusters):
         cluster_dict = {}
         for cluster in related_clusters:
-            key1 = (cluster[0], cluster[1])
-            key2 = (cluster[1], cluster[0])
+            key = tuple(sorted((cluster[0], cluster[1])))
 
-            if key1 in cluster_dict:
-                if cluster_dict[key1][2] > cluster[2]:
-                    to_remove.add(cluster_dict[key1])
-                    cluster_dict[key1] = cluster
-                else:
-                    to_remove.add(cluster)
-
-            elif key2 in cluster_dict:
-                if cluster_dict[key2][2] > cluster[2]:
-                    to_remove.add(cluster_dict[key2])
-                    cluster_dict[key2] = cluster
-                else:
-                    to_remove.add(cluster)
-
+            if key in cluster_dict:
+                if cluster_dict[key][2] > cluster[2]:
+                    cluster_dict[key] = cluster
             else:
-                cluster_dict[key1] = cluster
-        related_clusters = [
-            cluster for cluster in related_clusters if cluster not in to_remove
-        ]
+                cluster_dict[key] = cluster
+        related_clusters = list(cluster_dict.values())
 
         return related_clusters
 
