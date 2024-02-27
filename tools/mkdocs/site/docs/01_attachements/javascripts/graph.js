@@ -13,9 +13,11 @@ document$.subscribe(function () {
             data.push({
                 source: row[1][0],
                 sourcePath: sourcePath,
-                target: row[1][1],
+                sourceGalaxy: row[1][1],
+                target: row[1][2],
                 targetPath: targetPath,
-                level: row[1][2]
+                targetGalaxy: row[1][3],
+                level: row[1][4]
             });
         });
         return data;
@@ -28,14 +30,16 @@ document$.subscribe(function () {
                 var cells = row.querySelectorAll("td");
                 var sourceAnchor = cells[0].querySelector("a");
                 var sourcePath = sourceAnchor ? sourceAnchor.getAttribute("href") : null;
-                var targetAnchor = cells[1].querySelector("a");
+                var targetAnchor = cells[2].querySelector("a");
                 var targetPath = targetAnchor ? targetAnchor.getAttribute("href") : null;
                 data.push({
                     source: cells[0].textContent,
-                    target: cells[1].textContent,
+                    sourceGalaxy: cells[1].textContent,
+                    target: cells[2].textContent,
+                    targetGalaxy: cells[3].textContent,
                     sourcePath: sourcePath,
                     targetPath: targetPath,
-                    level: cells[2].textContent
+                    level: cells[4].textContent
                 });
             }
         });
@@ -265,12 +269,14 @@ document$.subscribe(function () {
             var tf = new TableFilter(table, {
                 base_path: "../../../../01_attachements/modules/tablefilter/",
                 highlight_keywords: true,
-                col_2: "checklist",
-                col_widths: ["350px", "350px", "100px"],
-                col_types: ["string", "string", "number"],
+                col_1: "checklist",
+                col_3: "checklist",
+                col_4: "checklist",
+                col_widths: ["180px", "180px", "180px", "180px", "100px"],
+                col_types: ["string", "string", "string", "string", "number"],
                 grid_layout: false,
                 responsive: false,
-                watermark: ["Filter table ...", "Filter table ..."],
+                watermark: ["Filter table ...", "Filter table ...", "Filter table ...", "Filter table ..."],
                 auto_filter: {
                     delay: 100 //milliseconds
                 },

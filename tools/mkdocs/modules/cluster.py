@@ -186,8 +186,8 @@ class Cluster:
         output = ""
         output += f"## Related clusters for {self.value}\n"
         output += f"\n"
-        output += f"| Cluster A | Cluster B | Level {{ .graph }} |\n"
-        output += f"|-----------|-----------|-------|\n"
+        output += f"| Cluster A | Galaxy A | Cluster B | Galaxy B | Level {{ .graph }} |\n"
+        output += f"|-----------|----------|-----------|----------|-------------------|\n"
         for relation in relations:
             placeholder = "__TMP__"
 
@@ -212,9 +212,9 @@ class Cluster:
             )  # Replace the placeholder with "-"
 
             if cluster_b_section != "private-cluster":
-                output += f"| [{relation[0].value}  ({relation[0].uuid})](../../{relation[0].galaxy.json_file_name}/index.md#{cluster_a_section}) | [{relation[1].value}  ({relation[1].uuid})](../../{relation[1].galaxy.json_file_name}/index.md#{cluster_b_section}) | {relation[2]} |\n"
+                output += f"| [{relation[0].value}  ({relation[0].uuid})](../../{relation[0].galaxy.json_file_name}/index.md#{cluster_a_section}) | [{relation[0].galaxy.name}](../../{relation[0].galaxy.json_file_name}/index.md) | [{relation[1].value}  ({relation[1].uuid})](../../{relation[1].galaxy.json_file_name}/index.md#{cluster_b_section}) |  [{relation[1].galaxy.name}](../../{relation[1].galaxy.json_file_name}/index.md) | {relation[2]} |\n"
             else:
-                output += f"| [{relation[0].value}  ({relation[0].uuid})](../../{relation[0].galaxy.json_file_name}/index.md#{cluster_a_section}) | {relation[1].value}  ({relation[1].uuid}) | {relation[2]} |\n"
+                output += f"| [{relation[0].value}  ({relation[0].uuid})](../../{relation[0].galaxy.json_file_name}/index.md#{cluster_a_section}) | [{relation[0].galaxy.name}](../../{relation[0].galaxy.json_file_name}/index.md) |{relation[1].value}  ({relation[1].uuid}) | unknown | {relation[2]} |\n"
         return output
 
     def create_entry(self, cluster_dict, path):
