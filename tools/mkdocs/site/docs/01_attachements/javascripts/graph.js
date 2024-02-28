@@ -147,6 +147,7 @@ document$.subscribe(function () {
             tooltip.html(d.id)
                 .style("left", (event.pageX) + "px")
                 .style("top", (event.pageY - 28) + "px");
+            d3.select(this).attr("r", parseFloat(d3.select(this).attr("r")) + 5);
         })
             .on("mousemove", function (event) {
                 tooltip.style("left", (event.pageX) + "px")
@@ -156,6 +157,9 @@ document$.subscribe(function () {
                 tooltip.transition()
                     .duration(500)
                     .style("opacity", 0);
+                d3.select(this).attr("r", function (d, i) {
+                    return d.id === Parent_Node.id ? NODE_RADIUS + 5 : NODE_RADIUS;
+                });
             });
 
         // Apply links on nodes
@@ -223,7 +227,10 @@ document$.subscribe(function () {
             .on("mouseover", function (event, d) {
                 // Highlight all nodes associated with this galaxy
                 svg.selectAll(".galaxy-" + d.name.replace(/\s+/g, '-').replace(/[\s.]/g, '-'))
-                    .attr("r", NODE_RADIUS + 5);
+                    .each(function () {
+                        var currentRadius = d3.select(this).attr("r");
+                        d3.select(this).attr("r", parseFloat(currentRadius) + 5);
+                    });
                 tooltip.transition()
                     .duration(200)
                     .style("opacity", .9);
@@ -252,11 +259,8 @@ document$.subscribe(function () {
             // .text(d => d.name);
             .text(d => d.name.length > maxCharLength ? d.name.substring(0, maxCharLength) + "..." : d.name)
             .on("mouseover", function (event, d) {
-                // Repeat the highlight effect here for consistency
                 svg.selectAll(".galaxy-" + d.name.replace(/\s+/g, '-').replace(/[\s.]/g, '-'))
-                    // .attr("r", NODE_RADIUS + 5);
                     .each(function () {
-                        // 'this' refers to the individual SVG circle elements
                         var currentRadius = d3.select(this).attr("r");
                         d3.select(this).attr("r", parseFloat(currentRadius) + 5);
                     });
@@ -325,6 +329,7 @@ document$.subscribe(function () {
                     tooltip.html(d.id)
                         .style("left", (event.pageX) + "px")
                         .style("top", (event.pageY - 28) + "px");
+                    d3.select(this).attr("r", parseFloat(d3.select(this).attr("r")) + 5);
                 })
                     .on("mousemove", function (event) {
                         tooltip.style("left", (event.pageX) + "px")
@@ -334,6 +339,9 @@ document$.subscribe(function () {
                         tooltip.transition()
                             .duration(500)
                             .style("opacity", 0);
+                        d3.select(this).attr("r", function (d, i) {
+                            return d.id === Parent_Node.id ? NODE_RADIUS + 5 : NODE_RADIUS;
+                        });
                     });
 
                 // Apply links on nodes
