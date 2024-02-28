@@ -1,7 +1,7 @@
 document$.subscribe(function () {
 
     const NODE_RADIUS = 8;
-    const NODE_COLOR = "#69b3a2";
+    // const NODE_COLOR = "#69b3a2";
     const Parent_Node_COLOR = "#ff0000";
 
 
@@ -55,7 +55,8 @@ document$.subscribe(function () {
         var newNodes = Array.from(new Set(newData.flatMap(d => [d.source, d.target])))
             .map(id => ({
                 id,
-                path: nodePaths[id]
+                path: nodePaths[id],
+                galaxy: newData.find(d => d.source === id) ? newData.find(d => d.source === id).sourceGalaxy : newData.find(d => d.target === id).targetGalaxy
             }));
 
         var newLinks = newData.map(d => ({ source: d.source, target: d.target }));
@@ -76,10 +77,18 @@ document$.subscribe(function () {
             nodePaths[d.target] = d.targetPath || null;
         });
 
+        // Extract unique galaxy names from data
+        const galaxies = Array.from(new Set(data.flatMap(d => [d.sourceGalaxy, d.targetGalaxy])));
+
+        // Create a color scale using D3's scaleOrdinal and a color scheme
+        const colorScale = d3.scaleOrdinal(d3.schemeTableau10)
+            .domain(galaxies); // Maps galaxy names to colors in the scheme
+
         var nodes = Array.from(new Set(data.flatMap(d => [d.source, d.target])))
             .map(id => ({
                 id,
-                path: nodePaths[id]
+                path: nodePaths[id],
+                galaxy: data.find(d => d.source === id) ? data.find(d => d.source === id).sourceGalaxy : data.find(d => d.target === id).targetGalaxy
             }));
 
         const Parent_Node = nodes[0];
@@ -102,7 +111,7 @@ document$.subscribe(function () {
 
         var simulation = d3.forceSimulation(nodes)
             .force("link", d3.forceLink(links).id(d => d.id).distance(linkDistance))
-            .force("charge", d3.forceManyBody().strength(-50))
+            .force("charge", d3.forceManyBody().strength(-30))
             .force("center", d3.forceCenter(width / 2, height / 2))
             .alphaDecay(0.02); // A lower value, adjust as needed
 
@@ -126,8 +135,9 @@ document$.subscribe(function () {
                 return d.id === Parent_Node.id ? NODE_RADIUS + 5 : NODE_RADIUS;
             })
             .attr("fill", function (d, i) {
-                return d.id === Parent_Node.id ? Parent_Node_COLOR : NODE_COLOR;
-            });
+                return d.id === Parent_Node.id ? Parent_Node_COLOR : colorScale(d.galaxy);
+            })
+            .attr("class", d => "node galaxy-" + d.galaxy.replace(/\s+/g, '-'));
 
         // Apply tooltip on nodes
         node.on("mouseover", function (event, d) {
@@ -178,6 +188,87 @@ document$.subscribe(function () {
             if (!event.active) simulation.alphaTarget(0);
         }
 
+        // Prepare legend data
+        const legendData = galaxies.map(galaxy => ({
+            name: galaxy,
+            color: colorScale(galaxy)
+        }));
+
+        const maxCharLength = 10; // Maximum number of characters to display in legend
+        // Create legend
+        const legend = svg.append("g")
+            .attr("class", "legend")
+            .attr("transform", "translate(" + (width - 100) + ",20)"); // Adjust position as needed
+
+        // Add legend title
+        legend.append("text")
+            .attr("x", 0)
+            .attr("y", -10)
+            .style("font-size", "13px")
+            .style("text-anchor", "start")
+            .style("fill", "grey")
+            .text("Galaxy Colors");
+
+        // Add colored rectangles and text labels for each galaxy
+        const legendItem = legend.selectAll(".legend-item")
+            .data(legendData)
+            .enter().append("g")
+            .attr("class", "legend-item")
+            .attr("transform", (d, i) => `translate(0, ${i * 20})`);
+
+        legendItem.append("rect")
+            .attr("width", 12)
+            .attr("height", 12)
+            .style("fill", d => d.color)
+            .on("mouseover", function (event, d) {
+                // Highlight all nodes associated with this galaxy
+                svg.selectAll(".galaxy-" + d.name.replace(/\s+/g, '-'))
+                    .attr("r", NODE_RADIUS + 5);
+                tooltip.transition()
+                    .duration(200)
+                    .style("opacity", .9);
+                tooltip.html(d.name)
+                    .style("left", (event.pageX) + "px")
+                    .style("top", (event.pageY - 28) + "px");
+            })
+            .on("mouseout", function (event, d) {
+                // Remove highlight from all nodes
+                svg.selectAll(".galaxy-" + d.name.replace(/\s+/g, '-'))
+                    .attr("r", NODE_RADIUS);
+                tooltip.transition()
+                    .duration(500)
+                    .style("opacity", 0);
+            });
+
+        legendItem.append("text")
+            .attr("x", 24)
+            .attr("y", 9)
+            .attr("dy", "0.35em")
+            .style("text-anchor", "start")
+            .style("fill", "grey")
+            .style("font-size", "12px")
+            // .text(d => d.name);
+            .text(d => d.name.length > maxCharLength ? d.name.substring(0, maxCharLength) + "..." : d.name)
+            .on("mouseover", function (event, d) {
+                // Repeat the highlight effect here for consistency
+                svg.selectAll(".galaxy-" + d.name.replace(/\s+/g, '-'))
+                    .attr("r", NODE_RADIUS + 5);
+                tooltip.transition()
+                    .duration(200)
+                    .style("opacity", .9);
+                tooltip.html(d.name)
+                    .style("left", (event.pageX) + "px")
+                    .style("top", (event.pageY - 28) + "px");
+            })
+            .on("mouseout", function (event, d) {
+                svg.selectAll(".galaxy-" + d.name.replace(/\s+/g, '-'))
+                    .attr("r", NODE_RADIUS);
+                tooltip.transition()
+                    .duration(500)
+                    .style("opacity", 0);
+            });
+
+
         // Update positions on each simulation 'tick'
         simulation.on("tick", () => {
             nodes.forEach(d => {
@@ -208,8 +299,9 @@ document$.subscribe(function () {
                                 return d.id === Parent_Node.id ? NODE_RADIUS + 5 : NODE_RADIUS;
                             })
                             .attr("fill", function (d, i) {
-                                return d.id === Parent_Node.id ? Parent_Node_COLOR : NODE_COLOR;
-                            }),
+                                return d.id === Parent_Node.id ? Parent_Node_COLOR : colorScale(d.galaxy);
+                            })
+                            .attr("class", d => "node galaxy-" + d.galaxy.replace(/\s+/g, '-')),
                         update => update,
                         exit => exit.remove()
                     );
