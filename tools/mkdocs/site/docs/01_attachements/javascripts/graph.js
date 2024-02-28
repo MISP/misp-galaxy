@@ -137,7 +137,7 @@ document$.subscribe(function () {
             .attr("fill", function (d, i) {
                 return d.id === Parent_Node.id ? Parent_Node_COLOR : colorScale(d.galaxy);
             })
-            .attr("class", d => "node galaxy-" + d.galaxy.replace(/\s+/g, '-'));
+            .attr("class", d => "node galaxy-" + d.galaxy.replace(/\s+/g, '-').replace(/[\s.]/g, '-'));
 
         // Apply tooltip on nodes
         node.on("mouseover", function (event, d) {
@@ -216,13 +216,13 @@ document$.subscribe(function () {
             .attr("class", "legend-item")
             .attr("transform", (d, i) => `translate(0, ${i * 20})`);
 
-        legendItem.append("rect")
+        legendItem.append("rect") // change node radius info TODO
             .attr("width", 12)
             .attr("height", 12)
             .style("fill", d => d.color)
             .on("mouseover", function (event, d) {
                 // Highlight all nodes associated with this galaxy
-                svg.selectAll(".galaxy-" + d.name.replace(/\s+/g, '-'))
+                svg.selectAll(".galaxy-" + d.name.replace(/\s+/g, '-').replace(/[\s.]/g, '-'))
                     .attr("r", NODE_RADIUS + 5);
                 tooltip.transition()
                     .duration(200)
@@ -233,8 +233,10 @@ document$.subscribe(function () {
             })
             .on("mouseout", function (event, d) {
                 // Remove highlight from all nodes
-                svg.selectAll(".galaxy-" + d.name.replace(/\s+/g, '-'))
-                    .attr("r", NODE_RADIUS);
+                svg.selectAll(".galaxy-" + d.name.replace(/\s+/g, '-').replace(/[\s.]/g, '-'))
+                    .attr("r", function (d, i) {
+                        return d.id === Parent_Node.id ? NODE_RADIUS + 5 : NODE_RADIUS;
+                    });
                 tooltip.transition()
                     .duration(500)
                     .style("opacity", 0);
@@ -251,8 +253,13 @@ document$.subscribe(function () {
             .text(d => d.name.length > maxCharLength ? d.name.substring(0, maxCharLength) + "..." : d.name)
             .on("mouseover", function (event, d) {
                 // Repeat the highlight effect here for consistency
-                svg.selectAll(".galaxy-" + d.name.replace(/\s+/g, '-'))
-                    .attr("r", NODE_RADIUS + 5);
+                svg.selectAll(".galaxy-" + d.name.replace(/\s+/g, '-').replace(/[\s.]/g, '-'))
+                    // .attr("r", NODE_RADIUS + 5);
+                    .each(function () {
+                        // 'this' refers to the individual SVG circle elements
+                        var currentRadius = d3.select(this).attr("r");
+                        d3.select(this).attr("r", parseFloat(currentRadius) + 5);
+                    });
                 tooltip.transition()
                     .duration(200)
                     .style("opacity", .9);
@@ -261,8 +268,10 @@ document$.subscribe(function () {
                     .style("top", (event.pageY - 28) + "px");
             })
             .on("mouseout", function (event, d) {
-                svg.selectAll(".galaxy-" + d.name.replace(/\s+/g, '-'))
-                    .attr("r", NODE_RADIUS);
+                svg.selectAll(".galaxy-" + d.name.replace(/\s+/g, '-').replace(/[\s.]/g, '-'))
+                    .attr("r", function (d, i) {
+                        return d.id === Parent_Node.id ? NODE_RADIUS + 5 : NODE_RADIUS;
+                    });
                 tooltip.transition()
                     .duration(500)
                     .style("opacity", 0);
@@ -301,7 +310,7 @@ document$.subscribe(function () {
                             .attr("fill", function (d, i) {
                                 return d.id === Parent_Node.id ? Parent_Node_COLOR : colorScale(d.galaxy);
                             })
-                            .attr("class", d => "node galaxy-" + d.galaxy.replace(/\s+/g, '-')),
+                            .attr("class", d => "node galaxy-" + d.galaxy.replace(/\s+/g, '-').replace(/[\s.]/g, '-')),
                         update => update,
                         exit => exit.remove()
                     );
