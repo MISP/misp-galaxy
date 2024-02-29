@@ -80,9 +80,30 @@ document$.subscribe(function () {
         // Extract unique galaxy names from data
         const galaxies = Array.from(new Set(data.flatMap(d => [d.sourceGalaxy, d.targetGalaxy])));
 
-        // Create a color scale using D3's scaleOrdinal and a color scheme
-        const colorScale = d3.scaleOrdinal(d3.schemeTableau10)
-            .domain(galaxies); // Maps galaxy names to colors in the scheme
+        const colorScheme = [
+            '#E63946', // Red
+            '#F1FAEE', // Off White
+            '#A8DADC', // Light Blue
+            '#457B9D', // Medium Blue
+            '#1D3557', // Dark Blue
+            '#F4A261', // Sandy Brown
+            '#2A9D8F', // Teal
+            '#E9C46A', // Saffron
+            '#F77F00', // Orange
+            '#D62828', // Dark Red
+            '#023E8A', // Royal Blue
+            '#0077B6', // Light Sea Blue
+            '#0096C7', // Sky Blue
+            '#00B4D8', // Bright Sky Blue
+            '#48CAE4', // Light Blue
+            '#90E0EF', // Powder Blue
+            '#ADE8F4', // Pale Cerulean
+            '#CAF0F8', // Blithe Blue
+            '#FFBA08', // Selective Yellow
+            '#FFD60A'  // Naples Yellow
+        ];
+        const colorScale = d3.scaleOrdinal(colorScheme)
+            .domain(galaxies);
 
         var nodes = Array.from(new Set(data.flatMap(d => [d.source, d.target])))
             .map(id => ({
@@ -113,7 +134,7 @@ document$.subscribe(function () {
             .force("link", d3.forceLink(links).id(d => d.id).distance(linkDistance))
             .force("charge", d3.forceManyBody().strength(-30))
             .force("center", d3.forceCenter(width / 2, height / 2))
-            .alphaDecay(0.02); // A lower value, adjust as needed
+            .alphaDecay(0.05); // A lower value, adjust as needed
 
         // Create links
         var link = svg.append("g")
@@ -148,18 +169,24 @@ document$.subscribe(function () {
                 .style("left", (event.pageX) + "px")
                 .style("top", (event.pageY - 28) + "px");
             d3.select(this).attr("r", parseFloat(d3.select(this).attr("r")) + 5);
+            svg.selectAll(".legend-text.galaxy-" + d.galaxy.replace(/\s+/g, '-').replace(/[\s.]/g, '-'))
+                .style("font-weight", "bold")
+                .style("font-size", "14px");
         })
             .on("mousemove", function (event) {
                 tooltip.style("left", (event.pageX) + "px")
                     .style("top", (event.pageY - 28) + "px");
             })
-            .on("mouseout", function (d) {
+            .on("mouseout", function (event, d) {
                 tooltip.transition()
                     .duration(500)
                     .style("opacity", 0);
                 d3.select(this).attr("r", function (d, i) {
                     return d.id === Parent_Node.id ? NODE_RADIUS + 5 : NODE_RADIUS;
                 });
+                svg.selectAll(".legend-text.galaxy-" + d.galaxy.replace(/\s+/g, '-').replace(/[\s.]/g, '-'))
+                    .style("font-weight", "normal")
+                    .style("font-size", "12px");
             });
 
         // Apply links on nodes
@@ -256,7 +283,7 @@ document$.subscribe(function () {
             .style("text-anchor", "start")
             .style("fill", "grey")
             .style("font-size", "12px")
-            // .text(d => d.name);
+            .attr("class", d => "legend-text galaxy-" + d.name.replace(/\s+/g, '-').replace(/[\s.]/g, '-'))
             .text(d => d.name.length > maxCharLength ? d.name.substring(0, maxCharLength) + "..." : d.name)
             .on("mouseover", function (event, d) {
                 svg.selectAll(".galaxy-" + d.name.replace(/\s+/g, '-').replace(/[\s.]/g, '-'))
@@ -330,18 +357,24 @@ document$.subscribe(function () {
                         .style("left", (event.pageX) + "px")
                         .style("top", (event.pageY - 28) + "px");
                     d3.select(this).attr("r", parseFloat(d3.select(this).attr("r")) + 5);
+                    svg.selectAll(".legend-text.galaxy-" + d.galaxy.replace(/\s+/g, '-').replace(/[\s.]/g, '-'))
+                        .style("font-weight", "bold")
+                        .style("font-size", "14px");
                 })
                     .on("mousemove", function (event) {
                         tooltip.style("left", (event.pageX) + "px")
                             .style("top", (event.pageY - 28) + "px");
                     })
-                    .on("mouseout", function (d) {
+                    .on("mouseout", function (event, d) {
                         tooltip.transition()
                             .duration(500)
                             .style("opacity", 0);
                         d3.select(this).attr("r", function (d, i) {
                             return d.id === Parent_Node.id ? NODE_RADIUS + 5 : NODE_RADIUS;
                         });
+                        svg.selectAll(".legend-text.galaxy-" + d.galaxy.replace(/\s+/g, '-').replace(/[\s.]/g, '-'))
+                            .style("font-weight", "normal")
+                            .style("font-size", "12px");
                     });
 
                 // Apply links on nodes
