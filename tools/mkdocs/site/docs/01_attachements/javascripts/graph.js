@@ -5,6 +5,12 @@ document$.subscribe(function () {
     const Parent_Node_COLOR = "#ff0000";
 
 
+    function applyTableFilter(tf) {
+        var valuesToSelect = ['1', '2', '3'];
+        tf.setFilterValue(4, valuesToSelect);
+        tf.filter();
+    };
+
     function parseFilteredTable(tf, allData) {
         var data = [];
         tf.getFilteredData().forEach((row, i) => {
@@ -427,6 +433,8 @@ document$.subscribe(function () {
                 // Restart the simulation with new data
                 simulation.nodes(nodes);
                 simulation.force("link").links(links);
+                linkDistance = Math.sqrt((width * height) / nodes.length);
+                simulation.force("link").distance(linkDistance);
                 simulation.alpha(1).restart();
             }
         });
@@ -473,7 +481,13 @@ document$.subscribe(function () {
             });
 
             tf.init();
-            var data = parseTable(table);
+            var allData = parseTable(table);
+            if (allData.length > 1000) {
+                applyTableFilter(tf);
+                data = parseFilteredTable(tf, allData);
+            } else {
+                data = allData;
+            }
             var graphId = "graph" + index;
             var div = document.createElement("div");
             div.id = graphId;
@@ -482,7 +496,7 @@ document$.subscribe(function () {
 
             // Listen for table filtering events
             tf.emitter.on(['after-filtering'], function () {
-                filterTableAndGraph(tf, simulation, data);
+                filterTableAndGraph(tf, simulation, allData);
             });
         }
     });
