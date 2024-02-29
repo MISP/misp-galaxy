@@ -132,7 +132,7 @@ document$.subscribe(function () {
 
         var simulation = d3.forceSimulation(nodes)
             .force("link", d3.forceLink(links).id(d => d.id).distance(linkDistance))
-            .force("charge", d3.forceManyBody().strength(-30))
+            .force("charge", d3.forceManyBody().strength(-50).distanceMax(500))
             .force("center", d3.forceCenter(width / 2, height / 2))
             .alphaDecay(0.05); // A lower value, adjust as needed
 
@@ -143,7 +143,7 @@ document$.subscribe(function () {
             .selectAll("line")
             .data(links)
             .enter().append("line")
-            .attr("stroke-width", d => Math.sqrt(d.value));
+            .attr("stroke-width", 1);
 
         // Create nodes
         var node = svg.append("g")
@@ -168,10 +168,19 @@ document$.subscribe(function () {
             tooltip.html(d.id)
                 .style("left", (event.pageX) + "px")
                 .style("top", (event.pageY - 28) + "px");
-            d3.select(this).attr("r", parseFloat(d3.select(this).attr("r")) + 5);
+            node.style("opacity", 0.1);
+            link.style("opacity", 0.1);
+            d3.select(this)
+                .attr("r", parseFloat(d3.select(this).attr("r")) + 5)
+                .style("opacity", 1);
             svg.selectAll(".legend-text.galaxy-" + d.galaxy.replace(/\s+/g, '-').replace(/[\s.]/g, '-'))
                 .style("font-weight", "bold")
                 .style("font-size", "14px");
+            link.filter(l => l.source.id === d.id || l.target.id === d.id)
+                .attr("stroke-width", 3)
+                .style("opacity", 1);
+            node.filter(n => n.id === d.id || links.some(l => (l.source.id === d.id && l.target.id === n.id) || (l.target.id === d.id && l.source.id === n.id)))
+                .style("opacity", 1);
         })
             .on("mousemove", function (event) {
                 tooltip.style("left", (event.pageX) + "px")
@@ -181,13 +190,19 @@ document$.subscribe(function () {
                 tooltip.transition()
                     .duration(500)
                     .style("opacity", 0);
+                node.style("opacity", 1);
+                link.style("opacity", 1);
                 d3.select(this).attr("r", function (d, i) {
                     return d.id === Parent_Node.id ? NODE_RADIUS + 5 : NODE_RADIUS;
                 });
                 svg.selectAll(".legend-text.galaxy-" + d.galaxy.replace(/\s+/g, '-').replace(/[\s.]/g, '-'))
                     .style("font-weight", "normal")
                     .style("font-size", "12px");
+                link.filter(l => l.source.id === d.id || l.target.id === d.id)
+                    .attr("stroke-width", 1);
+                node.filter(n => n.id === d.id || links.some(l => (l.source.id === d.id && l.target.id === n.id) || (l.target.id === d.id && l.source.id === n.id)))
             });
+
 
         // Apply links on nodes
         node.on("dblclick", function (event, d) {
@@ -247,16 +262,17 @@ document$.subscribe(function () {
             .attr("class", "legend-item")
             .attr("transform", (d, i) => `translate(0, ${i * 20})`);
 
-        legendItem.append("rect") // change node radius info TODO
+        legendItem.append("rect")
             .attr("width", 12)
             .attr("height", 12)
             .style("fill", d => d.color)
             .on("mouseover", function (event, d) {
-                // Highlight all nodes associated with this galaxy
+                node.style("opacity", 0.1);
+                link.style("opacity", 0.1);
                 svg.selectAll(".galaxy-" + d.name.replace(/\s+/g, '-').replace(/[\s.]/g, '-'))
                     .each(function () {
                         var currentRadius = d3.select(this).attr("r");
-                        d3.select(this).attr("r", parseFloat(currentRadius) + 5);
+                        d3.select(this).style("opacity", 1);
                     });
                 tooltip.transition()
                     .duration(200)
@@ -266,11 +282,8 @@ document$.subscribe(function () {
                     .style("top", (event.pageY - 28) + "px");
             })
             .on("mouseout", function (event, d) {
-                // Remove highlight from all nodes
-                svg.selectAll(".galaxy-" + d.name.replace(/\s+/g, '-').replace(/[\s.]/g, '-'))
-                    .attr("r", function (d, i) {
-                        return d.id === Parent_Node.id ? NODE_RADIUS + 5 : NODE_RADIUS;
-                    });
+                node.style("opacity", 1);
+                link.style("opacity", 1);
                 tooltip.transition()
                     .duration(500)
                     .style("opacity", 0);
@@ -286,10 +299,11 @@ document$.subscribe(function () {
             .attr("class", d => "legend-text galaxy-" + d.name.replace(/\s+/g, '-').replace(/[\s.]/g, '-'))
             .text(d => d.name.length > maxCharLength ? d.name.substring(0, maxCharLength) + "..." : d.name)
             .on("mouseover", function (event, d) {
+                node.style("opacity", 0.1);
+                link.style("opacity", 0.1);
                 svg.selectAll(".galaxy-" + d.name.replace(/\s+/g, '-').replace(/[\s.]/g, '-'))
                     .each(function () {
-                        var currentRadius = d3.select(this).attr("r");
-                        d3.select(this).attr("r", parseFloat(currentRadius) + 5);
+                        d3.select(this).style("opacity", 1);
                     });
                 tooltip.transition()
                     .duration(200)
@@ -299,10 +313,8 @@ document$.subscribe(function () {
                     .style("top", (event.pageY - 28) + "px");
             })
             .on("mouseout", function (event, d) {
-                svg.selectAll(".galaxy-" + d.name.replace(/\s+/g, '-').replace(/[\s.]/g, '-'))
-                    .attr("r", function (d, i) {
-                        return d.id === Parent_Node.id ? NODE_RADIUS + 5 : NODE_RADIUS;
-                    });
+                node.style("opacity", 1);
+                link.style("opacity", 1);
                 tooltip.transition()
                     .duration(500)
                     .style("opacity", 0);
@@ -356,10 +368,19 @@ document$.subscribe(function () {
                     tooltip.html(d.id)
                         .style("left", (event.pageX) + "px")
                         .style("top", (event.pageY - 28) + "px");
-                    d3.select(this).attr("r", parseFloat(d3.select(this).attr("r")) + 5);
+                    node.style("opacity", 0.1);
+                    link.style("opacity", 0.1);
+                    d3.select(this)
+                        .attr("r", parseFloat(d3.select(this).attr("r")) + 5)
+                        .style("opacity", 1);
                     svg.selectAll(".legend-text.galaxy-" + d.galaxy.replace(/\s+/g, '-').replace(/[\s.]/g, '-'))
                         .style("font-weight", "bold")
                         .style("font-size", "14px");
+                    link.filter(l => l.source.id === d.id || l.target.id === d.id)
+                        .attr("stroke-width", 3)
+                        .style("opacity", 1);
+                    node.filter(n => n.id === d.id || links.some(l => (l.source.id === d.id && l.target.id === n.id) || (l.target.id === d.id && l.source.id === n.id)))
+                        .style("opacity", 1);
                 })
                     .on("mousemove", function (event) {
                         tooltip.style("left", (event.pageX) + "px")
@@ -369,12 +390,17 @@ document$.subscribe(function () {
                         tooltip.transition()
                             .duration(500)
                             .style("opacity", 0);
+                        node.style("opacity", 1);
+                        link.style("opacity", 1);
                         d3.select(this).attr("r", function (d, i) {
                             return d.id === Parent_Node.id ? NODE_RADIUS + 5 : NODE_RADIUS;
                         });
                         svg.selectAll(".legend-text.galaxy-" + d.galaxy.replace(/\s+/g, '-').replace(/[\s.]/g, '-'))
                             .style("font-weight", "normal")
                             .style("font-size", "12px");
+                        link.filter(l => l.source.id === d.id || l.target.id === d.id)
+                            .attr("stroke-width", 1);
+                        node.filter(n => n.id === d.id || links.some(l => (l.source.id === d.id && l.target.id === n.id) || (l.target.id === d.id && l.source.id === n.id)))
                     });
 
                 // Apply links on nodes
