@@ -4,6 +4,7 @@ from dataclasses import dataclass, asdict
 @dataclass
 class Galaxy():
     description: str
+    icon: str
     name: str
     namespace: str
     type: str
