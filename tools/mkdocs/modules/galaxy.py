@@ -3,72 +3,66 @@ from typing import List
 import os
 
 class Galaxy:
-    def __init__(
-        self, cluster_list: List[dict], authors, description, name, json_file_name
-    ):
-        self.cluster_list = cluster_list
+    def __init__(self, galaxy_name: str, json_file_name: str, authors: List[str], description: str):
+        self.galaxy_name = galaxy_name
+        self.json_file_name = json_file_name
         self.authors = authors
         self.description = description
-        self.name = name
-        self.json_file_name = json_file_name
-        self.clusters = self._create_clusters()
-        self.entry = ""
 
+        self.clusters = {}  # Maps uuid to Cluster objects
+
+    def add_cluster(self, uuid, description, value, meta):
+        if uuid not in self.clusters:
+            self.clusters[uuid] = Cluster(uuid=uuid, galaxy=self, description=description, value=value, meta=meta)
+
+    def write_entry(self, path):
+        if not os.path.exists(path):
+            os.mkdir(path)
+        with open(os.path.join(path, f"{self.galaxy_name}.md"), "w") as index:
+            index.write(self.generate_entry())
+
+    def generate_entry(self):
+        entry = ""
+        entry += self._create_metadata_entry()
+        entry += self._create_title_entry()
+        entry += self._create_description_entry()
+        entry += self._create_authors_entry()
+        entry += self._create_clusters_entry()
+        return entry
+    
     def _create_metadata_entry(self):
-        self.entry += "---\n"
-        self.entry += f"title: {self.name}\n"
+        entry = ""
+        entry += "---\n"
+        entry += f"title: {self.galaxy_name}\n"
         meta_description = self.description.replace('"', "-")
-        self.entry += f"description: {meta_description}\n"
-        self.entry += "---\n"
+        entry += f"description: {meta_description}\n"
+        entry += "---\n"
+        return entry
 
     def _create_title_entry(self):
-        self.entry += f"# {self.name}\n"
+        entry = ""
+        entry += f"# {self.galaxy_name}\n"
+        return entry
 
     def _create_description_entry(self):
-        self.entry += f"{self.description}\n"
+        entry = ""
+        entry += f"{self.description}\n"
+        return entry
 
     def _create_authors_entry(self):
+        entry = ""
         if self.authors:
-            self.entry += f"\n"
-            self.entry += f'??? info "Authors"\n'
-            self.entry += f"\n"
-            self.entry += f"     | Authors and/or Contributors|\n"
-            self.entry += f"     |----------------------------|\n"
+            entry += f"\n"
+            entry += f'??? info "Authors"\n'
+            entry += f"\n"
+            entry += f"     | Authors and/or Contributors|\n"
+            entry += f"     |----------------------------|\n"
             for author in self.authors:
-                self.entry += f"     |{author}|\n"
+                entry += f"     |{author}|\n"
+        return entry
 
-    def _create_clusters(self):
-        clusters = []
-        for cluster in self.cluster_list:
-            clusters.append(
-                Cluster(
-                    value=cluster.get("value", None),
-                    description=cluster.get("description", None),
-                    uuid=cluster.get("uuid", None),
-                    date=cluster.get("date", None),
-                    related_list=cluster.get("related", None),
-                    meta=cluster.get("meta", None),
-                    galaxy=self,
-                )
-            )
-        return clusters
-
-    def _create_clusters_entry(self, cluster_dict, path):
-        for cluster in self.clusters:
-            self.entry += cluster.create_entry(cluster_dict, path)
-
-    def create_entry(self, cluster_dict, path):
-        self._create_metadata_entry()
-        self._create_title_entry()
-        self._create_description_entry()
-        self._create_authors_entry()
-        self._create_clusters_entry(cluster_dict, path)
-        return self.entry
-
-    def write_entry(self, path, cluster_dict):
-        self.create_entry(cluster_dict, path)
-        galaxy_path = os.path.join(path, self.json_file_name)
-        if not os.path.exists(galaxy_path):
-            os.mkdir(galaxy_path)
-        with open(os.path.join(galaxy_path, "index.md"), "w") as index:
-            index.write(self.entry)
+    def _create_clusters_entry(self):
+        entry = ""
+        for cluster in self.clusters.values():
+            entry += cluster.generate_entry()
+        return entry
