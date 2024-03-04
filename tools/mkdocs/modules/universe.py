@@ -5,8 +5,9 @@ from collections import defaultdict, deque
 
 
 class Universe:
-    def __init__(self):
+    def __init__(self, add_inbound_relationship=False):
         self.galaxies = {}  # Maps galaxy_name to Galaxy objects
+        self.add_inbound_relationship = add_inbound_relationship
 
     def add_galaxy(self, galaxy_name, json_file_name, authors, description):
         if galaxy_name not in self.galaxies:
@@ -36,98 +37,10 @@ class Universe:
         else:
             # If Cluster B is not found, create a private cluster relationship for Cluster A
             if cluster_a:
-                private_cluster = Cluster(uuid=cluster_b_id, galaxy=None)
+                private_cluster = Cluster(uuid=cluster_b_id, galaxy=None, description=None, value="Private Cluster", meta=None)
                 cluster_a.add_outbound_relationship(private_cluster)
             else:
-                print("Cluster A not found in any galaxy")
-
-    # def get_relationships_with_levels(self, galaxy, cluster):
-    #     start_galaxy = self.galaxies[galaxy]
-    #     start_cluster = start_galaxy.clusters[cluster]
-
-    #     def bfs_with_inbound_outbound(start_cluster):
-    #         visited = set()  # To keep track of visited clusters
-    #         linked = set()  # To keep track of linked clusters
-    #         queue = deque([(start_cluster, 0, 'outbound')])  # Include direction of relationship
-    #         relationships = []
-
-    #         while queue:
-    #             current_cluster, level, direction = queue.popleft()
-    #             if (current_cluster, direction) not in visited:  # Check visited with direction
-    #                 visited.add((current_cluster, direction))
-
-    #                 # Process outbound relationships
-    #                 if direction == 'outbound':
-    #                     for to_cluster in current_cluster.outbound_relationships:
-    #                         if (to_cluster, 'outbound') not in visited:
-    #                             # relationships.append((current_cluster, to_cluster, level + 1, 'outbound'))
-    #                             queue.append((to_cluster, level + 1, 'outbound'))
-    #                             relationships.append((current_cluster, to_cluster, level + 1, 'outbound'))
-                            
-                    
-    #                 # Process inbound relationships
-    #                 for from_cluster in current_cluster.inbound_relationships:
-    #                     if (from_cluster, 'inbound') not in visited:
-    #                         relationships.append((from_cluster, current_cluster, level + 1, 'inbound'))
-    #                         queue.append((from_cluster, level + 1, 'inbound'))
-
-    #         return relationships
-
-
-    #     return bfs_with_inbound_outbound(start_cluster)
-
-    # def get_relationships_with_levels(self, galaxy, cluster):
-    #     start_galaxy = self.galaxies[galaxy]
-    #     start_cluster = start_galaxy.clusters[cluster]
-
-    #     def bfs_with_inbound_outbound(start_cluster):
-    #         visited = set()  # To keep track of visited clusters
-    #         relationships = defaultdict(lambda: (float('inf'), ''))  # Store lowest level for each link
-
-    #         queue = deque([(start_cluster, 0, 'outbound')])  # Include direction of relationship
-
-    #         while queue:
-    #             print(f"Queue: {[c.uuid for c, l, d in queue]}")
-    #             current_cluster, level, direction = queue.popleft()
-    #             if (current_cluster, direction) not in visited:  # Check visited with direction
-    #                 visited.add((current_cluster, direction))
-                    
-    #                 if current_cluster.uuid == "a5a067c9-c4d7-4f33-8e6f-01b903f89908":
-    #                     print(f"Current cluster: {current_cluster.uuid}, Level: {level}, Direction: {direction}")
-    #                     print(f"outbound relationships: {[x.uuid for x in current_cluster.outbound_relationships]}")
-
-
-    #                 # Process outbound relationships
-    #                 if direction == 'outbound':
-    #                     for to_cluster in current_cluster.outbound_relationships:
-    #                         if (to_cluster, 'outbound') not in visited:
-    #                             queue.append((to_cluster, level + 1, 'outbound'))
-
-    #                         link = frozenset([current_cluster, to_cluster])
-    #                         if relationships[link][0] > level + 1:
-    #                             relationships[link] = (level + 1, 'outbound')
-
-    #                 # Process inbound relationships
-    #                 for from_cluster in current_cluster.inbound_relationships:
-    #                     if (from_cluster, 'inbound') not in visited:
-    #                         queue.append((from_cluster, level + 1, 'inbound'))
-
-    #                     link = frozenset([from_cluster, current_cluster])
-    #                     if relationships[link][0] > level + 1:
-    #                         relationships[link] = (level + 1, 'inbound')
-
-    #         # Convert defaultdict to list of tuples for compatibility with your existing structure
-    #         processed_relationships = []
-    #         for link, (lvl, dir) in relationships.items():
-    #             clusters = list(link)
-    #             if dir == 'outbound':
-    #                 processed_relationships.append((clusters[0], clusters[1], lvl, dir))
-    #             else:
-    #                 processed_relationships.append((clusters[1], clusters[0], lvl, dir))
-
-    #         return processed_relationships
-
-    #     return bfs_with_inbound_outbound(start_cluster)
+                raise ValueError(f"Cluster {cluster_a} not found in any galaxy")
     
     def get_relationships_with_levels(self, start_cluster):
 
@@ -143,26 +56,37 @@ class Universe:
                     visited.add(current_cluster)
 
                     # Process all relationships regardless of direction
-                    neighbors = current_cluster.outbound_relationships.union(current_cluster.inbound_relationships)
+                    if self.add_inbound_relationship:
+                        neighbors = current_cluster.outbound_relationships.union(current_cluster.inbound_relationships)
+                    else:
+                        neighbors = current_cluster.outbound_relationships
                     for neighbor in neighbors:
                         link = frozenset([current_cluster, neighbor])
                         if level + 1 < relationships[link]:
                             relationships[link] = level + 1
-                            if neighbor not in visited:
+                            if neighbor not in visited and neighbor.value != "Private Cluster":
                                 queue.append((neighbor, level + 1))
-
+            
+            # count = 0
             # Convert the defaultdict to a list of tuples, ignoring direction
             processed_relationships = []
             for link, lvl in relationships.items():
                 # Extract clusters from the frozenset; direction is irrelevant
                 clusters = list(link)
+                if len(clusters) != 2:
+                    # count += 1
+                    continue
                 
                 # Arbitrarily choose the first cluster as 'source' for consistency
-                try: 
+                if clusters[0].value == "Private Cluster":
+                    processed_relationships.append((clusters[1], clusters[0], lvl))
+                else:
+                
                     processed_relationships.append((clusters[0], clusters[1], lvl))
-                except:
-                    processed_relationships.append((clusters[0], Cluster(uuid=0, galaxy=None), lvl))
+                # except:
+                #     processed_relationships.append((clusters[0], clusters[0], lvl)) # This is wrong just for testing!!!
 
+            # print(f"Count: {count}")
             return processed_relationships
 
         return bfs_with_undirected_relationships(start_cluster)

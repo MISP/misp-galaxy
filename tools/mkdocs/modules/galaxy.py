@@ -16,9 +16,10 @@ class Galaxy:
             self.clusters[uuid] = Cluster(uuid=uuid, galaxy=self, description=description, value=value, meta=meta)
 
     def write_entry(self, path):
-        if not os.path.exists(path):
-            os.mkdir(path)
-        with open(os.path.join(path, f"{self.galaxy_name}.md"), "w") as index:
+        galaxy_path = os.path.join(path, f"{self.json_file_name}".replace(".json", ""))
+        if not os.path.exists(galaxy_path):
+            os.mkdir(galaxy_path)
+        with open(os.path.join(galaxy_path, "index.md"), "w") as index:
             index.write(self.generate_entry())
 
     def generate_entry(self):
