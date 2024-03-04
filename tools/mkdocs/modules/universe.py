@@ -21,13 +21,16 @@ class Universe:
         cluster_a = None
         cluster_b = None
 
+        if cluster_a_id == cluster_b_id:
+            return
+
         # Search for Cluster A and Cluster B in all galaxies
         for galaxy in self.galaxies.values():
             if cluster_a_id in galaxy.clusters:
                 cluster_a = galaxy.clusters[cluster_a_id]
             if cluster_b_id in galaxy.clusters:
                 cluster_b = galaxy.clusters[cluster_b_id]
-            if cluster_a and cluster_b:  # Both clusters found
+            if cluster_a and cluster_b:
                 break
 
         # If both clusters are found, define the relationship
@@ -35,7 +38,6 @@ class Universe:
             cluster_a.add_outbound_relationship(cluster_b)
             cluster_b.add_inbound_relationship(cluster_a)
         else:
-            # If Cluster B is not found, create a private cluster relationship for Cluster A
             if cluster_a:
                 private_cluster = Cluster(uuid=cluster_b_id, galaxy=None, description=None, value="Private Cluster", meta=None)
                 cluster_a.add_outbound_relationship(private_cluster)
@@ -67,26 +69,18 @@ class Universe:
                             if neighbor not in visited and neighbor.value != "Private Cluster":
                                 queue.append((neighbor, level + 1))
             
-            # count = 0
             # Convert the defaultdict to a list of tuples, ignoring direction
             processed_relationships = []
             for link, lvl in relationships.items():
                 # Extract clusters from the frozenset; direction is irrelevant
                 clusters = list(link)
-                if len(clusters) != 2:
-                    # count += 1
-                    continue
                 
                 # Arbitrarily choose the first cluster as 'source' for consistency
                 if clusters[0].value == "Private Cluster":
                     processed_relationships.append((clusters[1], clusters[0], lvl))
                 else:
-                
                     processed_relationships.append((clusters[0], clusters[1], lvl))
-                # except:
-                #     processed_relationships.append((clusters[0], clusters[0], lvl)) # This is wrong just for testing!!!
 
-            # print(f"Count: {count}")
             return processed_relationships
 
         return bfs_with_undirected_relationships(start_cluster)
