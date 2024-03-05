@@ -119,8 +119,9 @@ document$.subscribe(function () {
             }));
 
         let header = document.querySelector('h1').textContent;
-        const parentUUID = header.replace(/\s+/g, '-').charAt(0).toLowerCase() + header.replace(/\s+/g, '-').slice(1);
-        const Parent_Node = nodes.find(node => node.id.includes(parentUUID));
+        // const parentUUID = header.replace(/\s+/g, '-').charAt(0).toLowerCase() + header.replace(/\s+/g, '-').slice(1);
+        // console.log("Parent UUID: " + parentUUID);
+        const Parent_Node = nodes.find(node => node.id.includes(header));
 
         var links = data.map(d => ({ source: d.source, target: d.target }));
 
@@ -140,7 +141,7 @@ document$.subscribe(function () {
 
         var simulation = d3.forceSimulation(nodes)
             .force("link", d3.forceLink(links).id(d => d.id).distance(linkDistance))
-            .force("charge", d3.forceManyBody().strength(-50).distanceMax(500))
+            .force("charge", d3.forceManyBody().strength(-70))
             .force("center", d3.forceCenter(width / 2, height / 2))
             .alphaDecay(0.05); // A lower value, adjust as needed
 

@@ -24,7 +24,7 @@ def write_relations_table(cluster):
     if cluster.relationships:
         print(f"Writing {cluster.uuid}.md")
         with open(os.path.join(relation_path, f"{cluster.uuid}.md"), "w") as index:
-            index.write(generate_relations_table(cluster.relationships))
+            index.write(generate_relations_table(cluster))
 
 
 def get_cluster_relationships(cluster_data):

@@ -67,8 +67,11 @@ def galaxy_transform_to_link(galaxy):
     return f"[{galaxy.galaxy_name}](../../{galaxy_folder}/index.md)"
 
 
-def generate_relations_table(relationships):
-    markdown = "|Cluster A | Galaxy A | Cluster B | Galaxy B | Level { .graph } |\n"
+def generate_relations_table(cluster):
+    relationships = cluster.relationships
+    markdown = f"# {cluster.value} \n\n"
+    markdown += f"{cluster.description} \n\n"
+    markdown += "|Cluster A | Galaxy A | Cluster B | Galaxy B | Level { .graph } |\n"
     markdown += "| --- | --- | --- | --- | --- |\n"
     for from_cluster, to_cluster, level in relationships:
         from_galaxy = from_cluster.galaxy
@@ -76,5 +79,5 @@ def generate_relations_table(relationships):
             to_galaxy = to_cluster.galaxy
             markdown += f"{cluster_transform_to_link(from_cluster, uuid=True)} | {galaxy_transform_to_link(from_galaxy)} | {cluster_transform_to_link(to_cluster, uuid=True)} | {galaxy_transform_to_link(to_galaxy)} | {level}\n"
         else:
-            markdown += f"{cluster_transform_to_link(from_cluster, uuid=True)} | {galaxy_transform_to_link(from_galaxy)} | {to_cluster.value} | Unknown | {level}\n"
+            markdown += f"{cluster_transform_to_link(from_cluster, uuid=True)} | {galaxy_transform_to_link(from_galaxy)} | {to_cluster.value} ({to_cluster.uuid}) | Unknown | {level}\n"
     return markdown
