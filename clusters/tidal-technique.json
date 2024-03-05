@@ -321,7 +321,7 @@
         }
       ],
       "uuid": "d76c3dde-dba5-4748-8d51-c93fc34f885e",
-      "value": "Cloud Account"
+      "value": "Cloud Account - Duplicate"
     },
     {
       "description": "Adversaries may attempt to get a listing of domain accounts. This information can help adversaries determine which domain accounts exist to aid in follow-on behavior such as targeting specific accounts which possess particular privileges.\n\nCommands such as <code>net user /domain</code> and <code>net group /domain</code> of the [Net](https://app.tidalcyber.com/software/c9b8522f-126d-40ff-b44e-1f46098bd8cc) utility, <code>dscacheutil -q group</code>on macOS, and <code>ldapsearch</code> on Linux can list domain users and groups. [PowerShell](https://app.tidalcyber.com/technique/6ca7838a-e8ad-43e8-9da6-15b640d1cbde) cmdlets including <code>Get-ADUser</code> and <code>Get-ADGroupMember</code> may enumerate members of Active Directory groups.  ",
@@ -2215,7 +2215,7 @@
         }
       ],
       "uuid": "4b187604-88ab-4972-9836-90a04c705e10",
-      "value": "Cloud Account - Duplicate"
+      "value": "Cloud Accounts - Duplicate2"
     },
     {
       "description": "Adversaries may compromise email accounts that can be used during targeting. Adversaries can use compromised email accounts to further their operations, such as leveraging them to conduct [Phishing for Information](https://app.tidalcyber.com/technique/b6fe2fda-9c05-4f05-b049-7bb5b9ba5b06), [Phishing](https://app.tidalcyber.com/technique/d4a36624-50cb-43d3-95af-a2e10878a533), or large-scale spam email campaigns. Utilizing an existing persona with a compromised email account may engender a level of trust in a potential victim if they have a relationship with, or knowledge of, the compromised persona. Compromised email accounts can also be used in the acquisition of infrastructure (ex: [Domains](https://app.tidalcyber.com/technique/b9f5f6b7-ecff-48c8-a23e-c58fd9e41a0d)).\n\nA variety of methods exist for compromising email accounts, such as gathering credentials via [Phishing for Information](https://app.tidalcyber.com/technique/b6fe2fda-9c05-4f05-b049-7bb5b9ba5b06), purchasing credentials from third-party sites, brute forcing credentials (ex: password reuse from breach credential dumps), or paying employees, suppliers or business partners for access to credentials.<sup>[[AnonHBGary](https://app.tidalcyber.com/references/19ab02ea-883f-441c-bebf-4be64855374a)]</sup><sup>[[Microsoft DEV-0537](https://app.tidalcyber.com/references/2f7a59f3-620d-4e2e-8595-af96cd4e16c3)]</sup> Prior to compromising email accounts, adversaries may conduct Reconnaissance to inform decisions about which accounts to compromise to further their operation. Adversaries may target compromising well-known email accounts or domains from which malicious spam or [Phishing](https://app.tidalcyber.com/technique/d4a36624-50cb-43d3-95af-a2e10878a533) emails may evade reputation-based email filtering rules.\n\nAdversaries can use a compromised email account to hijack existing email threads with targets of interest.",
@@ -12321,7 +12321,7 @@
         }
       ],
       "uuid": "3c4a2f3a-5877-4a27-a417-76318523657e",
-      "value": "Cloud Account - Duplicate"
+      "value": "Cloud Accounts - Duplicate"
     },
     {
       "description": "Adversaries may obtain and abuse credentials of a default account as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion. Default accounts are those that are built-into an OS, such as the Guest or Administrator accounts on Windows systems. Default accounts also include default factory/provider set accounts on other types of systems, software, or devices, including the root user account in AWS and the default service account in Kubernetes.<sup>[[Microsoft Local Accounts Feb 2019](https://app.tidalcyber.com/references/6ae7487c-cb61-4f10-825f-4ef9ef050b7c)]</sup><sup>[[AWS Root User](https://app.tidalcyber.com/references/5f315c21-f02f-4c9e-aac6-d648deff3ff9)]</sup><sup>[[Threat Matrix for Kubernetes](https://app.tidalcyber.com/references/43fab719-e348-4902-8df3-8807765b95f0)]</sup>\n\nDefault accounts are not limited to client machines, rather also include accounts that are preset for equipment such as network devices and computer applications whether they are internal, open source, or commercial. Appliances that come preset with a username and password combination pose a serious threat to organizations that do not change it post installation, as they are easy targets for an adversary. Similarly, adversaries may also utilize publicly disclosed or stolen [Private Keys](https://app.tidalcyber.com/technique/e493bf4a-0eba-4e60-a7a6-c699084dc98a) or credential materials to legitimately connect to remote environments via [Remote Services](https://app.tidalcyber.com/technique/30ef3f13-5e9b-4712-9adf-f0da4ef157a1).<sup>[[Metasploit SSH Module](https://app.tidalcyber.com/references/e4ae69e5-67ba-4a3e-8101-5e7f073bd312)]</sup>",

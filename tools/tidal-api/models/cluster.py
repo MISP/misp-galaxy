@@ -433,16 +433,16 @@ class TechniqueCluster(Cluster):
                         sub_value.value = "Virtual Private Server - Duplicate"
                     elif sub_value.uuid == "2e883e0d-1108-431a-a2dd-98ba98b69417":
                         sub_value.value = "Web Services - Duplicate"
-                    elif sub_value.uuid == "4b187604-88ab-4972-9836-90a04c705e10":
+                    elif sub_value.uuid == "d76c3dde-dba5-4748-8d51-c93fc34f885e":
                         sub_value.value = "Cloud Account - Duplicate"
                     elif sub_value.uuid == "12908bde-a5eb-40a5-ae27-d93960d0bfdc":
                         sub_value.value = "Domain Account - Duplicate"
                     elif sub_value.uuid == "df5f6835-ca0a-4ef5-bb3a-b011e4025545":
                         sub_value.value = "Local Account - Duplicate"
                     elif sub_value.uuid == "3c4a2f3a-5877-4a27-a417-76318523657e":
-                        sub_value.value = "Cloud Account - Duplicate"
+                        sub_value.value = "Cloud Accounts - Duplicate"
                     elif sub_value.uuid == "4b187604-88ab-4972-9836-90a04c705e10":
-                        sub_value.value = "Cloud Account - Duplicate2"
+                        sub_value.value = "Cloud Accounts - Duplicate2"
                     elif sub_value.uuid == "49ae7bf1-a313-41d6-ad4c-74efc4c80ab6":
                         sub_value.value = "Email Accounts - Duplicate"
                     elif sub_value.uuid == "3426077d-3b9c-4f77-a1c6-d68f0dea670e":
