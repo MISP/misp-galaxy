@@ -1,8 +1,11 @@
 from modules.universe import Universe
 from modules.site import IndexSite, StatisticsSite
+from utils.helper import generate_relations_table
 
 import multiprocessing
 from multiprocessing import Pool
+
+from concurrent.futures import ThreadPoolExecutor
 
 import json
 import os
@@ -15,6 +18,12 @@ FILES_TO_IGNORE = []
 CLUSTER_PATH = "../../clusters"
 SITE_PATH = "./site/docs"
 GALAXY_PATH = "../../galaxies"
+
+def write_relations_table(cluster):
+    if cluster.relationships:
+        print(f"Writing {cluster.uuid}.md")
+        with open(os.path.join(relation_path, f"{cluster.uuid}.md"), "w") as index:
+            index.write(generate_relations_table(cluster.relationships))
 
 def get_cluster_relationships(cluster_data):
     galaxy, cluster = cluster_data
@@ -31,36 +40,6 @@ def get_deprecated_galaxy_files():
                 deprecated_galaxy_files.append(f)
 
     return deprecated_galaxy_files
-
-def cluster_transform_to_link(cluster):
-    placeholder = "__TMP__"
-    section = (
-        cluster
-        .value.lower()
-        .replace(" - ", placeholder)  # Replace " - " first
-        .replace(" ", "-")
-        .replace("/", "")
-        .replace(":", "")
-        .replace(placeholder, "-")
-    )
-    galaxy_folder = cluster.galaxy.json_file_name.replace(".json", "")
-    return f"[{cluster.value} ({cluster.uuid})](../../{galaxy_folder}/index.md#{section})"
-
-def galaxy_transform_to_link(galaxy):
-    galaxy_folder = galaxy.json_file_name.replace(".json", "")
-    return f"[{galaxy.galaxy_name}](../../{galaxy_folder}/index.md)"
-
-def generate_relations_table(relationships):
-    markdown = "|Cluster A | Galaxy A | Cluster B | Galaxy B | Level { .graph } |\n"
-    markdown += "| --- | --- | --- | --- | --- |\n"
-    for from_cluster, to_cluster, level in relationships:
-        from_galaxy = from_cluster.galaxy
-        if to_cluster.value != "Private Cluster":
-            to_galaxy = to_cluster.galaxy
-            markdown += f"{cluster_transform_to_link(from_cluster)} | {galaxy_transform_to_link(from_galaxy)} | {cluster_transform_to_link(to_cluster)} | {galaxy_transform_to_link(to_galaxy)} | {level}\n"
-        else:
-            markdown += f"{cluster_transform_to_link(from_cluster)} | {galaxy_transform_to_link(from_galaxy)} | {to_cluster.value} | Unknown | {level}\n"
-    return markdown
 
 if __name__ == "__main__":
     start_time = time.time()
@@ -123,9 +102,10 @@ if __name__ == "__main__":
     index.write_entry()
 
     statistics = StatisticsSite(SITE_PATH)
+    statistics.add_cluster_statistics(len([cluster for galaxy in universe.galaxies.values() for cluster in galaxy.clusters.values()]), len(universe.private_clusters))
     statistics.add_galaxy_statistics(universe.galaxies.values())
-    statistics.add_cluster_statistics([cluster for galaxy in universe.galaxies.values() for cluster in galaxy.clusters.values()])
     statistics.add_relation_statistics([cluster for galaxy in universe.galaxies.values() for cluster in galaxy.clusters.values()])
+    statistics.add_synonym_statistics([cluster for galaxy in universe.galaxies.values() for cluster in galaxy.clusters.values()])
     statistics.write_entry()
 
     for galaxy in universe.galaxies.values():
@@ -141,10 +121,8 @@ if __name__ == "__main__":
         with open(os.path.join(relation_path, ".pages"), "w") as index:
             index.write(f"hide: true\n")
 
-        for cluster in galaxy.clusters.values():
-            if cluster.relationships:
-                print(f"Writing {cluster.uuid}.md")
-                with open(os.path.join(relation_path, f"{cluster.uuid}.md"), "w") as index:
-                    index.write(generate_relations_table(cluster.relationships))
+        with ThreadPoolExecutor(max_workers=(multiprocessing.cpu_count() * 4)) as executor:
+            executor.map(write_relations_table, galaxy.clusters.values())
+
 
     print(f"Finished in {time.time() - start_time} seconds")

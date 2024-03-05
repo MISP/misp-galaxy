@@ -8,6 +8,7 @@ class Universe:
     def __init__(self, add_inbound_relationship=False):
         self.galaxies = {}  # Maps galaxy_name to Galaxy objects
         self.add_inbound_relationship = add_inbound_relationship
+        self.private_clusters = {}
 
     def add_galaxy(self, galaxy_name, json_file_name, authors, description):
         if galaxy_name not in self.galaxies:
@@ -39,7 +40,9 @@ class Universe:
             cluster_b.add_inbound_relationship(cluster_a)
         else:
             if cluster_a:
+                # private_cluster = self.add_cluster(uuid=cluster_b_id, galaxy_name="Unknown", description=None, value="Private Cluster", meta=None)
                 private_cluster = Cluster(uuid=cluster_b_id, galaxy=None, description=None, value="Private Cluster", meta=None)
+                self.private_clusters[cluster_b_id] = private_cluster
                 cluster_a.add_outbound_relationship(private_cluster)
             else:
                 raise ValueError(f"Cluster {cluster_a} not found in any galaxy")
