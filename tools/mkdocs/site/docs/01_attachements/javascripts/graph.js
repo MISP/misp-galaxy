@@ -9,7 +9,7 @@ document$.subscribe(function () {
         var valuesToSelect = ['1', '2', '3'];
         tf.setFilterValue(4, valuesToSelect);
         tf.filter();
-    };
+    }
 
     function parseFilteredTable(tf, allData) {
         var data = [];
