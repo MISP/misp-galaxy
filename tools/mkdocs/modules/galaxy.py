@@ -2,8 +2,15 @@ from modules.cluster import Cluster
 from typing import List
 import os
 
+
 class Galaxy:
-    def __init__(self, galaxy_name: str, json_file_name: str, authors: List[str], description: str):
+    def __init__(
+        self,
+        galaxy_name: str,
+        json_file_name: str,
+        authors: List[str],
+        description: str,
+    ):
         self.galaxy_name = galaxy_name
         self.json_file_name = json_file_name
         self.authors = authors
@@ -13,7 +20,9 @@ class Galaxy:
 
     def add_cluster(self, uuid, description, value, meta):
         if uuid not in self.clusters:
-            self.clusters[uuid] = Cluster(uuid=uuid, galaxy=self, description=description, value=value, meta=meta)
+            self.clusters[uuid] = Cluster(
+                uuid=uuid, galaxy=self, description=description, value=value, meta=meta
+            )
 
     def write_entry(self, path):
         galaxy_path = os.path.join(path, f"{self.json_file_name}".replace(".json", ""))
@@ -30,7 +39,7 @@ class Galaxy:
         entry += self._create_authors_entry()
         entry += self._create_clusters_entry()
         return entry
-    
+
     def _create_metadata_entry(self):
         entry = ""
         entry += "---\n"

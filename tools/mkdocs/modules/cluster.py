@@ -1,5 +1,6 @@
 import validators
 
+
 class Cluster:
     def __init__(self, uuid, galaxy, description=None, value=None, meta=None):
         self.uuid = uuid
@@ -8,9 +9,9 @@ class Cluster:
         self.meta = meta
 
         self.galaxy = galaxy  # Reference to the Galaxy object this cluster belongs to
-        self.outbound_relationships = set() 
-        self.inbound_relationships = set()  
-        self.relationships = set()  
+        self.outbound_relationships = set()
+        self.inbound_relationships = set()
+        self.relationships = set()
 
     def add_outbound_relationship(self, cluster):
         self.outbound_relationships.add(cluster)
@@ -32,7 +33,7 @@ class Cluster:
         if self.relationships:
             entry += self._create_related_entry()
         return entry
-    
+
     def _create_title_entry(self):
         entry = ""
         entry += f"## {self.value}\n"
