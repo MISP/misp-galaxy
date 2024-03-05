@@ -156,7 +156,7 @@ document$.subscribe(function () {
 
         // Create nodes
         var node = svg.append("g")
-            .attr("stroke", "#fff")
+            .attr("stroke", "#D3D3D3")
             .attr("stroke-width", 1.5)
             .selectAll("circle")
             .data(nodes)

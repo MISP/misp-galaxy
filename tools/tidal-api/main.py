@@ -17,7 +17,7 @@ GALAXY_PATH = "../../galaxies"
 CLUSTER_PATH = "../../clusters"
 
 
-def create_galaxy(endpoint: str, version: int, extended_relations: bool = False):
+def create_galaxy(endpoint: str, version: int, extended_relations: bool = False, create_subs: bool = False):
     api = TidalAPI()
     data = api.get_data(endpoint)
     with open(f"{CONFIG}/{endpoint}.json", "r") as file:
@@ -28,16 +28,16 @@ def create_galaxy(endpoint: str, version: int, extended_relations: bool = False)
 
     match endpoint:
         case "groups":
-            cluster = GroupCluster(**config["cluster"], uuid=galaxy.uuid, enrichment=extended_relations)
+            cluster = GroupCluster(**config["cluster"], uuid=galaxy.uuid, enrichment=extended_relations, subs=create_subs)
             cluster.add_values(data)
         case "software":
-            cluster = SoftwareCluster(**config["cluster"], uuid=galaxy.uuid, enrichment=extended_relations)
+            cluster = SoftwareCluster(**config["cluster"], uuid=galaxy.uuid, enrichment=extended_relations, subs=create_subs)
             cluster.add_values(data)
         case "campaigns":
             cluster = CampaignsCluster(**config["cluster"], uuid=galaxy.uuid)
             cluster.add_values(data)
         case "technique":
-            cluster = TechniqueCluster(**config["cluster"], uuid=galaxy.uuid)
+            cluster = TechniqueCluster(**config["cluster"], uuid=galaxy.uuid, subs=create_subs)
             cluster.add_values(data)
         case "tactic":
             cluster = TacticCluster(**config["cluster"], uuid=galaxy.uuid)
@@ -56,9 +56,9 @@ def create_galaxy(endpoint: str, version: int, extended_relations: bool = False)
 def main(args, galaxies):
     if args.all:
         for galaxy in galaxies:
-            create_galaxy(galaxy, args.version, args.extended_relations)
+            create_galaxy(galaxy, args.version, args.extended_relations, args.create_subs)
     else:
-        create_galaxy(args.type, args.version, args.extended_relations)
+        create_galaxy(args.type, args.version, args.extended_relations, args.create_subs)
 
 
 if __name__ == "__main__":
@@ -92,7 +92,12 @@ if __name__ == "__main__":
     parser.add_argument(
         "--extended-relations",
         action="store_true",
-        help="Create extended relations in the cluster",
+        help="Create extended relations for the clusters",
+    )
+    parser.add_argument(
+        "--create-subs",
+        action="store_true",
+        help="Create subclusters from the API",
     )
     parser.set_defaults(func=main)
 
