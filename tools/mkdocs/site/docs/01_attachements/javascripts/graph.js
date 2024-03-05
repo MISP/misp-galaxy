@@ -82,7 +82,9 @@ document$.subscribe(function () {
                 path: nodePaths[id]
             }));
 
-        const Parent_Node = nodes[0];
+        let header = document.querySelector('h1').textContent;
+        const parentUUID = header.replace(/\s+/g, '-').charAt(0).toLowerCase() + header.replace(/\s+/g, '-').slice(1);
+        const Parent_Node = nodes.find(node => node.id.includes(parentUUID));
 
         var links = data.map(d => ({ source: d.source, target: d.target }));
 
