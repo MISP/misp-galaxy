@@ -238,7 +238,7 @@ class GroupCluster(Cluster):
                         meta=associated_meta,
                         related=associated_related,
                         uuid=associated_group.get("associated_group_id"),
-                        value=associated_group.get("name"),
+                        value=associated_group.get("name") + " - Associated Group",
                     )
                     self.values.append(value.return_value())
                     related.append(
@@ -339,7 +339,7 @@ class SoftwareCluster(Cluster):
                         meta=associated_meta,
                         related=associated_related,
                         uuid=associated_software.get("associated_software_id"),
-                        value=associated_software.get("name"),
+                        value=associated_software.get("name") + " - Associated Software",
                     )
                     self.values.append(value.return_value())
                     related.append(
