@@ -487,7 +487,7 @@ class ReferencesCluster(Cluster):
         for entry in data["data"]:
             meta = ReferencesMeta(
                 source=entry.get("source"),
-                refs=[entry.get("url")],
+                refs=[entry.get("url")] if entry.get("url") != "" else None,
                 title=entry.get("title"),
                 author=entry.get("author"),
                 date_accessed=entry.get("date_accessed"),
