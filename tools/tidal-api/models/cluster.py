@@ -415,6 +415,59 @@ class TechniqueCluster(Cluster):
                         uuid=sub_technique.get("id"),
                         value=sub_technique.get("name"),
                     )
+
+                    # Code for handling duplicate from Tidal API data (hopefully only temporary)
+                    if sub_value.uuid == "be637d66-5110-4872-bc15-63b062c3f290":
+                        sub_value.value = "Botnet - Duplicate"
+                    elif sub_value.uuid == "5c6c3492-5dbc-43ee-a3f2-ba1976d3b379":
+                        sub_value.value = "DNS - Duplicate"
+                    elif sub_value.uuid == "83e4f633-67fb-4d87-b1b3-8a7a2e60778b":
+                        sub_value.value = "DNS Server - Duplicate"
+                    elif sub_value.uuid == "b9f5f6b7-ecff-48c8-a23e-c58fd9e41a0d":
+                        sub_value.value = "Domains - Duplicate"
+                    elif sub_value.uuid == "6e4a0960-dcdc-4e42-9aa1-70d6fc3677b2":
+                        sub_value.value = "Server - Duplicate"
+                    elif sub_value.uuid == "c30faf84-496b-4f27-a4bc-aa36d583c69f":
+                        sub_value.value = "Serverless - Duplicate"
+                    elif sub_value.uuid == "2c04d7c8-67a3-4b1a-bd71-47b7c5a54b23":
+                        sub_value.value = "Virtual Private Server - Duplicate"
+                    elif sub_value.uuid == "2e883e0d-1108-431a-a2dd-98ba98b69417":
+                        sub_value.value = "Web Services - Duplicate"
+                    elif sub_value.uuid == "4b187604-88ab-4972-9836-90a04c705e10":
+                        sub_value.value = "Cloud Account - Duplicate"
+                    elif sub_value.uuid == "12908bde-a5eb-40a5-ae27-d93960d0bfdc":
+                        sub_value.value = "Domain Account - Duplicate"
+                    elif sub_value.uuid == "df5f6835-ca0a-4ef5-bb3a-b011e4025545":
+                        sub_value.value = "Local Account - Duplicate"
+                    elif sub_value.uuid == "3c4a2f3a-5877-4a27-a417-76318523657e":
+                        sub_value.value = "Cloud Account - Duplicate"
+                    elif sub_value.uuid == "4b187604-88ab-4972-9836-90a04c705e10":
+                        sub_value.value = "Cloud Account - Duplicate2"
+                    elif sub_value.uuid == "49ae7bf1-a313-41d6-ad4c-74efc4c80ab6":
+                        sub_value.value = "Email Accounts - Duplicate"
+                    elif sub_value.uuid == "3426077d-3b9c-4f77-a1c6-d68f0dea670e":
+                        sub_value.value = "Social Media Accounts - Duplicate"
+                    elif sub_value.uuid == "fe595943-f264-4d05-a8c7-7afc8985bfc3":
+                        sub_value.value = "Code Repositories - Duplicate"
+                    elif sub_value.uuid == "2735f8d1-0e46-4cd7-bfbb-78941bb266fd":
+                        sub_value.value = "Steganography - Duplicate"
+                    elif sub_value.uuid == "6f152555-36a5-4ec9-8b9b-f0b32c3ccef8":
+                        sub_value.value = "Code Signing Certificates - Duplicate"
+                    elif sub_value.uuid == "5bcbb0c5-7061-481f-a677-09028a6c59f7":
+                        sub_value.value = "Digital Certificates - Duplicate"
+                    elif sub_value.uuid == "4c0db4e5-14e0-4fb7-88b0-bb391ce5ad58":
+                        sub_value.value = "Digital Certificates - Duplicate2"
+                    elif sub_value.uuid == "5a57d258-0b23-431b-b50e-3150d2c0e52c":
+                        sub_value.value = "Exploits - Duplicate"
+                    elif sub_value.uuid == "0f77a14a-d450-4885-b81f-23eeffa53a7e":
+                        sub_value.value = "Malware - Duplicate"
+                    elif sub_value.uuid == "ba553ad4-5699-4458-ae4e-76e1faa43291":
+                        sub_value.value = "Spearphishing Attachment - Duplicate"
+                    elif sub_value.uuid == "d08a9977-9fc2-46bb-84f9-dbb5187c426d":
+                        sub_value.value = "Spearphishing Link - Duplicate"
+                    elif sub_value.uuid == "350c12a3-33f6-5942-8892-4d6e70abbfc1":
+                        sub_value.value = "Spearphishing Voice - Duplicate"
+                    
                     self.values.append(sub_value.return_value())
                     related.append(
                         {

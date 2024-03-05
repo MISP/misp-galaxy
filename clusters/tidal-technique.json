@@ -336,7 +336,7 @@
         }
       ],
       "uuid": "12908bde-a5eb-40a5-ae27-d93960d0bfdc",
-      "value": "Domain Account"
+      "value": "Domain Account - Duplicate"
     },
     {
       "description": "Adversaries may attempt to get a listing of email addresses and accounts. Adversaries may try to dump Exchange address lists such as global address lists (GALs).<sup>[[Microsoft Exchange Address Lists](https://app.tidalcyber.com/references/138ec24a-4361-4ce0-b78e-508c11db397c)]</sup>\n\nIn on-premises Exchange and Exchange Online, the<code>Get-GlobalAddressList</code> PowerShell cmdlet can be used to obtain email addresses and accounts from a domain using an authenticated session.<sup>[[Microsoft getglobaladdresslist](https://app.tidalcyber.com/references/a4948a80-d11c-44ed-ae63-e3f5660463f9)]</sup><sup>[[Black Hills Attacking Exchange MailSniper, 2016](https://app.tidalcyber.com/references/adedfddc-29b7-4245-aa67-cc590acb7434)]</sup>\n\nIn Google Workspace, the GAL is shared with Microsoft Outlook users through the Google Workspace Sync for Microsoft Outlook (GWSMO) service. Additionally, the Google Workspace Directory allows for users to get a listing of other users within the organization.<sup>[[Google Workspace Global Access List](https://app.tidalcyber.com/references/5104f0ea-1fb6-4260-a9b6-95922b3a8e5b)]</sup>",
@@ -366,7 +366,7 @@
         }
       ],
       "uuid": "df5f6835-ca0a-4ef5-bb3a-b011e4025545",
-      "value": "Local Account"
+      "value": "Local Account - Duplicate"
     },
     {
       "description": "Adversaries may attempt to get a listing of valid accounts, usernames, or email addresses on a system or within a compromised environment. This information can help adversaries determine which accounts exist, which can aid in follow-on behavior such as brute-forcing, spear-phishing attacks, or account takeovers (e.g., [Valid Accounts](https://app.tidalcyber.com/technique/a9b7eb2f-63e7-41bc-9d77-f7c4cede5406)).\n\nAdversaries may use several methods to enumerate accounts, including abuse of existing tools, built-in commands, and potential misconfigurations that leak account names and roles or permissions in the targeted environment.\n\nFor examples, cloud environments typically provide easily accessible interfaces to obtain user lists. On hosts, adversaries can use default [PowerShell](https://app.tidalcyber.com/technique/6ca7838a-e8ad-43e8-9da6-15b640d1cbde) and other command line functionality to identify accounts. Information about email addresses and accounts may also be extracted by searching an infected system’s files.",
@@ -606,7 +606,7 @@
         }
       ],
       "uuid": "be637d66-5110-4872-bc15-63b062c3f290",
-      "value": "Botnet"
+      "value": "Botnet - Duplicate"
     },
     {
       "description": "Adversaries may set up their own Domain Name System (DNS) servers that can be used during targeting. During post-compromise activity, adversaries may utilize DNS traffic for various tasks, including for Command and Control (ex: [Application Layer Protocol](https://app.tidalcyber.com/technique/8a7afe43-b814-41b3-8bd8-e1301b8ba5b4)). Instead of hijacking existing DNS servers, adversaries may opt to configure and run their own DNS servers in support of operations.\n\nBy running their own DNS servers, adversaries can have more control over how they administer server-side DNS C2 traffic ([DNS](https://app.tidalcyber.com/technique/5c6c3492-5dbc-43ee-a3f2-ba1976d3b379)). With control over a DNS server, adversaries can configure DNS applications to provide conditional responses to malware and, generally, have more flexibility in the structure of the DNS-based C2 channel.<sup>[[Unit42 DNS Mar 2019](https://app.tidalcyber.com/references/e41fde80-5ced-4f66-9852-392d1ef79520)]</sup>",
@@ -636,7 +636,7 @@
         }
       ],
       "uuid": "b9f5f6b7-ecff-48c8-a23e-c58fd9e41a0d",
-      "value": "Domains"
+      "value": "Domains - Duplicate"
     },
     {
       "description": "Adversaries may purchase online advertisements that can be abused to distribute malware to victims. Ads can be purchased to plant as well as favorably position artifacts in specific locations  online, such as prominently placed within search engine results. These ads may make it more difficult for users to distinguish between actual search results and advertisements.<sup>[[spamhaus-malvertising](https://app.tidalcyber.com/references/15a4d429-28c3-52be-aeb8-d94ad2743866)]</sup> Purchased ads may also target specific audiences using the advertising network’s capabilities, potentially further taking advantage of the trust inherently given to search engines and popular websites. \n\nAdversaries may purchase ads and other resources to help distribute artifacts containing malicious code to victims. Purchased ads may attempt to impersonate or spoof well-known brands. For example, these spoofed ads may trick victims into clicking the ad which could then send them to a malicious domain that may be a clone of official websites containing trojanized versions of the advertised software.<sup>[[Masquerads-Guardio](https://app.tidalcyber.com/references/e11492f4-f9a3-5489-b2bb-a28b19ef88b5)]</sup><sup>[[FBI-search](https://app.tidalcyber.com/references/deea5b42-bfab-50af-8d85-cc04fd317a82)]</sup> Adversary’s efforts to create malicious domains and purchase advertisements may also be automated at scale to better resist cleanup efforts.<sup>[[sentinelone-malvertising](https://app.tidalcyber.com/references/7989f0de-90b8-5e6d-bc20-1764610d1568)]</sup> \n\nMalvertising may be used to support [Drive-by Target](https://app.tidalcyber.com/technique/f2661f07-9027-4d19-9028-d07b7511f3d5) and [Drive-by Compromise](https://app.tidalcyber.com/technique/d4e46fe1-cc6d-4ef0-af72-a4e8dcd71381), potentially requiring limited interaction from the user if the ad contains code/exploits that infect the target system's web browser.<sup>[[BBC-malvertising](https://app.tidalcyber.com/references/425775e4-2948-5a73-a2d8-9a3edca74b1b)]</sup>\n\nAdversaries may also employ several techniques to evade detection by the advertising network. For example, adversaries may dynamically route ad clicks to send automated crawler/policy enforcer traffic to benign sites while validating potential targets then sending victims referred from real ad clicks to malicious pages. This infection vector may therefore remain hidden from the ad network as well as any visitor not reaching the malicious sites with a valid identifier from clicking on the advertisement.<sup>[[Masquerads-Guardio](https://app.tidalcyber.com/references/e11492f4-f9a3-5489-b2bb-a28b19ef88b5)]</sup> Other tricks, such as intentional typos to avoid brand reputation monitoring, may also be used to evade automated detection.<sup>[[spamhaus-malvertising](https://app.tidalcyber.com/references/15a4d429-28c3-52be-aeb8-d94ad2743866)]</sup> ",
@@ -666,7 +666,7 @@
         }
       ],
       "uuid": "6e4a0960-dcdc-4e42-9aa1-70d6fc3677b2",
-      "value": "Server"
+      "value": "Server - Duplicate"
     },
     {
       "description": "Adversaries may purchase and configure serverless cloud infrastructure, such as Cloudflare Workers or AWS Lambda functions, that can be used during targeting. By utilizing serverless infrastructure, adversaries can make it more difficult to attribute infrastructure used during operations back to them.\n\nOnce acquired, the serverless runtime environment can be leveraged to either respond directly to infected machines or to [Proxy](https://app.tidalcyber.com/technique/ba6a869a-c870-4be6-bc08-e078f0efdc3b) traffic to an adversary-owned command and control server.<sup>[[BlackWater Malware Cloudflare Workers](https://app.tidalcyber.com/references/053895e8-da3f-4291-a728-2198fde774e7)]</sup><sup>[[AWS Lambda Redirector](https://app.tidalcyber.com/references/9ba87a5d-a140-4959-9905-c4a80e684d56)]</sup> As traffic generated by these functions will appear to come from subdomains of common cloud providers, it may be difficult to distinguish from ordinary traffic to these providers.<sup>[[Detecting Command & Control in the Cloud](https://app.tidalcyber.com/references/b12e0288-48cd-46ec-8305-0f4d050782f2)]</sup><sup>[[BlackWater Malware Cloudflare Workers](https://app.tidalcyber.com/references/053895e8-da3f-4291-a728-2198fde774e7)]</sup>",
@@ -681,7 +681,7 @@
         }
       ],
       "uuid": "c30faf84-496b-4f27-a4bc-aa36d583c69f",
-      "value": "Serverless"
+      "value": "Serverless - Duplicate"
     },
     {
       "description": "Adversaries may rent Virtual Private Servers (VPSs) that can be used during targeting. There exist a variety of cloud service providers that will sell virtual machines/containers as a service. By utilizing a VPS, adversaries can make it difficult to physically tie back operations to them. The use of cloud infrastructure can also make it easier for adversaries to rapidly provision, modify, and shut down their infrastructure.\n\nAcquiring a VPS for use in later stages of the adversary lifecycle, such as Command and Control, can allow adversaries to benefit from the ubiquity and trust associated with higher reputation cloud service providers. Adversaries may also acquire infrastructure from VPS service providers that are known for renting VPSs with minimal registration information, allowing for more anonymous acquisitions of infrastructure.<sup>[[TrendmicroHideoutsLease](https://app.tidalcyber.com/references/527de869-3c76-447c-98c4-c37a2acf75e2)]</sup>",
@@ -696,7 +696,7 @@
         }
       ],
       "uuid": "2c04d7c8-67a3-4b1a-bd71-47b7c5a54b23",
-      "value": "Virtual Private Server"
+      "value": "Virtual Private Server - Duplicate"
     },
     {
       "description": "Adversaries may register for web services that can be used during targeting. A variety of popular websites exist for adversaries to register for a web-based service that can be abused during later stages of the adversary lifecycle, such as during Command and Control ([Web Service](https://app.tidalcyber.com/technique/a729feee-8e21-444e-8eea-2ec595b09931)), [Exfiltration Over Web Service](https://app.tidalcyber.com/technique/66768217-acdd-4b52-902f-e29483630ad6), or [Phishing](https://app.tidalcyber.com/technique/d4a36624-50cb-43d3-95af-a2e10878a533). Using common services, such as those offered by Google or Twitter, makes it easier for adversaries to hide in expected noise. By utilizing a web service, adversaries can make it difficult to physically tie back operations to them.",
@@ -711,7 +711,7 @@
         }
       ],
       "uuid": "2e883e0d-1108-431a-a2dd-98ba98b69417",
-      "value": "Web Services"
+      "value": "Web Services - Duplicate"
     },
     {
       "description": "Adversaries may buy, lease, or rent infrastructure that can be used during targeting. A wide variety of infrastructure exists for hosting and orchestrating adversary operations. Infrastructure solutions include physical or cloud servers, domains, and third-party web services.<sup>[[TrendmicroHideoutsLease](https://app.tidalcyber.com/references/527de869-3c76-447c-98c4-c37a2acf75e2)]</sup> Additionally, botnets are available for rent or purchase.\n\nUse of these infrastructure solutions allows adversaries to stage, launch, and execute operations. Solutions may help adversary operations blend in with traffic that is seen as normal, such as contacting third-party web services or acquiring infrastructure to support [Proxy](https://app.tidalcyber.com/technique/ba6a869a-c870-4be6-bc08-e078f0efdc3b), including from residential proxy services.<sup>[[amnesty_nso_pegasus](https://app.tidalcyber.com/references/9e40d93a-fe91-504a-a6f2-e6546067ba53)]</sup><sup>[[FBI Proxies Credential Stuffing](https://app.tidalcyber.com/references/17f9b7b0-3e1a-5d75-9030-da79fcccdb49)]</sup><sup>[[Mandiant APT29 Microsoft 365 2022](https://app.tidalcyber.com/references/e141408e-d22b-58e4-884f-0cbff25444da)]</sup> Depending on the implementation, adversaries may use infrastructure that makes it difficult to physically tie back to them as well as utilize infrastructure that can be rapidly provisioned, modified, and shut down.",
@@ -942,7 +942,7 @@
         }
       ],
       "uuid": "5c6c3492-5dbc-43ee-a3f2-ba1976d3b379",
-      "value": "DNS"
+      "value": "DNS - Duplicate"
     },
     {
       "description": "Adversaries may communicate using application layer protocols associated with transferring files to avoid detection/network filtering by blending in with existing traffic. Commands to the remote system, and often the results of those commands, will be embedded within the protocol traffic between the client and server. \n\nProtocols such as SMB, FTP, FTPS, and TFTP that transfer files may be very common in environments.  Packets produced from these protocols may have many fields and headers in which data can be concealed. Data could also be concealed within the transferred files. An adversary may abuse these protocols to communicate with systems under their control within a victim network while also mimicking normal, expected traffic. ",
@@ -2215,7 +2215,7 @@
         }
       ],
       "uuid": "4b187604-88ab-4972-9836-90a04c705e10",
-      "value": "Cloud Accounts"
+      "value": "Cloud Account - Duplicate"
     },
     {
       "description": "Adversaries may compromise email accounts that can be used during targeting. Adversaries can use compromised email accounts to further their operations, such as leveraging them to conduct [Phishing for Information](https://app.tidalcyber.com/technique/b6fe2fda-9c05-4f05-b049-7bb5b9ba5b06), [Phishing](https://app.tidalcyber.com/technique/d4a36624-50cb-43d3-95af-a2e10878a533), or large-scale spam email campaigns. Utilizing an existing persona with a compromised email account may engender a level of trust in a potential victim if they have a relationship with, or knowledge of, the compromised persona. Compromised email accounts can also be used in the acquisition of infrastructure (ex: [Domains](https://app.tidalcyber.com/technique/b9f5f6b7-ecff-48c8-a23e-c58fd9e41a0d)).\n\nA variety of methods exist for compromising email accounts, such as gathering credentials via [Phishing for Information](https://app.tidalcyber.com/technique/b6fe2fda-9c05-4f05-b049-7bb5b9ba5b06), purchasing credentials from third-party sites, brute forcing credentials (ex: password reuse from breach credential dumps), or paying employees, suppliers or business partners for access to credentials.<sup>[[AnonHBGary](https://app.tidalcyber.com/references/19ab02ea-883f-441c-bebf-4be64855374a)]</sup><sup>[[Microsoft DEV-0537](https://app.tidalcyber.com/references/2f7a59f3-620d-4e2e-8595-af96cd4e16c3)]</sup> Prior to compromising email accounts, adversaries may conduct Reconnaissance to inform decisions about which accounts to compromise to further their operation. Adversaries may target compromising well-known email accounts or domains from which malicious spam or [Phishing](https://app.tidalcyber.com/technique/d4a36624-50cb-43d3-95af-a2e10878a533) emails may evade reputation-based email filtering rules.\n\nAdversaries can use a compromised email account to hijack existing email threads with targets of interest.",
@@ -2230,7 +2230,7 @@
         }
       ],
       "uuid": "49ae7bf1-a313-41d6-ad4c-74efc4c80ab6",
-      "value": "Email Accounts"
+      "value": "Email Accounts - Duplicate"
     },
     {
       "description": "Adversaries may compromise social media accounts that can be used during targeting. For operations incorporating social engineering, the utilization of an online persona may be important. Rather than creating and cultivating social media profiles (i.e. [Social Media Accounts](https://app.tidalcyber.com/technique/fe0bf22c-efb2-4bc6-96d8-e0e909502fd7)), adversaries may compromise existing social media accounts. Utilizing an existing persona may engender a level of trust in a potential victim if they have a relationship, or knowledge of, the compromised persona. \n\nA variety of methods exist for compromising social media accounts, such as gathering credentials via [Phishing for Information](https://app.tidalcyber.com/technique/b6fe2fda-9c05-4f05-b049-7bb5b9ba5b06), purchasing credentials from third-party sites, or by brute forcing credentials (ex: password reuse from breach credential dumps).<sup>[[AnonHBGary](https://app.tidalcyber.com/references/19ab02ea-883f-441c-bebf-4be64855374a)]</sup> Prior to compromising social media accounts, adversaries may conduct Reconnaissance to inform decisions about which accounts to compromise to further their operation.\n\nPersonas may exist on a single site or across multiple sites (ex: Facebook, LinkedIn, Twitter, etc.). Compromised social media accounts may require additional development, this could include filling out or modifying profile information, further developing social networks, or incorporating photos.\n\nAdversaries can use a compromised social media profile to create new, or hijack existing, connections to targets of interest. These connections may be direct or may include trying to connect through others.<sup>[[NEWSCASTER2014](https://app.tidalcyber.com/references/9abb4bbb-bad3-4d22-b235-c8a35465f2ce)]</sup><sup>[[BlackHatRobinSage](https://app.tidalcyber.com/references/82068e93-a3f8-4d05-9358-6fe76a0055bb)]</sup> Compromised profiles may be leveraged during other phases of the adversary lifecycle, such as during Initial Access (ex: [Spearphishing via Service](https://app.tidalcyber.com/technique/165ba336-3eab-4809-b6fd-d0dcc5478f7f)).",
@@ -2245,7 +2245,7 @@
         }
       ],
       "uuid": "3426077d-3b9c-4f77-a1c6-d68f0dea670e",
-      "value": "Social Media Accounts"
+      "value": "Social Media Accounts - Duplicate"
     },
     {
       "description": "Adversaries may compromise accounts with services that can be used during targeting. For operations incorporating social engineering, the utilization of an online persona may be important. Rather than creating and cultivating accounts (i.e. [Establish Accounts](https://app.tidalcyber.com/technique/9a2d6628-0dd7-4f25-a242-b752fcf47ff4)), adversaries may compromise existing accounts. Utilizing an existing persona may engender a level of trust in a potential victim if they have a relationship, or knowledge of, the compromised persona. \n\nA variety of methods exist for compromising accounts, such as gathering credentials via [Phishing for Information](https://app.tidalcyber.com/technique/b6fe2fda-9c05-4f05-b049-7bb5b9ba5b06), purchasing credentials from third-party sites, brute forcing credentials (ex: password reuse from breach credential dumps), or paying employees, suppliers or business partners for access to credentials.<sup>[[AnonHBGary](https://app.tidalcyber.com/references/19ab02ea-883f-441c-bebf-4be64855374a)]</sup><sup>[[Microsoft DEV-0537](https://app.tidalcyber.com/references/2f7a59f3-620d-4e2e-8595-af96cd4e16c3)]</sup> Prior to compromising accounts, adversaries may conduct Reconnaissance to inform decisions about which accounts to compromise to further their operation.\n\nPersonas may exist on a single site or across multiple sites (ex: Facebook, LinkedIn, Twitter, Google, etc.). Compromised accounts may require additional development, this could include filling out or modifying profile information, further developing social networks, or incorporating photos.\n\nAdversaries may directly leverage compromised email accounts for [Phishing for Information](https://app.tidalcyber.com/technique/b6fe2fda-9c05-4f05-b049-7bb5b9ba5b06) or [Phishing](https://app.tidalcyber.com/technique/d4a36624-50cb-43d3-95af-a2e10878a533).",
@@ -2323,7 +2323,7 @@
         }
       ],
       "uuid": "83e4f633-67fb-4d87-b1b3-8a7a2e60778b",
-      "value": "DNS Server"
+      "value": "DNS Server - Duplicate"
     },
     {
       "description": "Adversaries may hijack domains and/or subdomains that can be used during targeting. Domain registration hijacking is the act of changing the registration of a domain name without the permission of the original registrant.<sup>[[ICANNDomainNameHijacking](https://app.tidalcyber.com/references/96c5ec6c-d53d-49c3-bca1-0b6abe0080e6)]</sup> Adversaries may gain access to an email account for the person listed as the owner of the domain. The adversary can then claim that they forgot their password in order to make changes to the domain registration. Other possibilities include social engineering a domain registration help desk to gain access to an account or taking advantage of renewal process gaps.<sup>[[Krebs DNS Hijack 2019](https://app.tidalcyber.com/references/9bdc618d-ff55-4ac8-8967-6039c6c24cb1)]</sup>\n\nSubdomain hijacking can occur when organizations have DNS entries that point to non-existent or deprovisioned resources. In such cases, an adversary may take control of a subdomain to conduct operations with the benefit of the trust associated with that domain.<sup>[[Microsoft Sub Takeover 2020](https://app.tidalcyber.com/references/b8005a55-7e77-4dc1-abed-f75a0a3d8afb)]</sup>\n\nAdversaries who compromise a domain may also engage in domain shadowing by creating malicious subdomains under their control while keeping any existing DNS records. As service will not be disrupted, the malicious subdomains may go unnoticed for long periods of time.<sup>[[Palo Alto Unit 42 Domain Shadowing 2022](https://app.tidalcyber.com/references/ec460017-fd25-5975-b697-c8c11fee960d)]</sup>",
@@ -3020,7 +3020,7 @@
         }
       ],
       "uuid": "fe595943-f264-4d05-a8c7-7afc8985bfc3",
-      "value": "Code Repositories"
+      "value": "Code Repositories - Duplicate"
     },
     {
       "description": "\nAdversaries may leverage Confluence repositories to mine valuable information. Often found in development environments alongside Atlassian JIRA, Confluence is generally used to store development-related documentation, however, in general may contain more diverse categories of useful information, such as:\n\n* Policies, procedures, and standards\n* Physical / logical network diagrams\n* System architecture diagrams\n* Technical system documentation\n* Testing / development credentials\n* Work / project schedules\n* Source code snippets\n* Links to network shares and other internal resources\n",
@@ -3264,7 +3264,7 @@
         }
       ],
       "uuid": "2735f8d1-0e46-4cd7-bfbb-78941bb266fd",
-      "value": "Steganography"
+      "value": "Steganography - Duplicate"
     },
     {
       "description": "Adversaries may obfuscate command and control traffic to make it more difficult to detect. Command and control (C2) communications are hidden (but not necessarily encrypted) in an attempt to make the content more difficult to discover or decipher and to make the communication less conspicuous and hide commands from being seen. This encompasses many methods, such as adding junk data to protocol traffic, using steganography, or impersonating legitimate protocols. ",
@@ -3508,7 +3508,7 @@
         }
       ],
       "uuid": "6f152555-36a5-4ec9-8b9b-f0b32c3ccef8",
-      "value": "Code Signing Certificates"
+      "value": "Code Signing Certificates - Duplicate"
     },
     {
       "description": "Adversaries may create self-signed SSL/TLS certificates that can be used during targeting. SSL/TLS certificates are designed to instill trust. They include information about the key, information about its owner's identity, and the digital signature of an entity that has verified the certificate's contents are correct. If the signature is valid, and the person examining the certificate trusts the signer, then they know they can use that key to communicate with its owner. In the case of self-signing, digital certificates will lack the element of trust associated with the signature of a third-party certificate authority (CA).\n\nAdversaries may create self-signed SSL/TLS certificates that can be used to further their operations, such as encrypting C2 traffic (ex: [Asymmetric Cryptography](https://app.tidalcyber.com/technique/ce822cce-f7f1-4753-bff1-12e5bef66d53) with [Web Protocols](https://app.tidalcyber.com/technique/9a21ec7b-9714-4073-9bf3-4df41995c698)) or even enabling [Adversary-in-the-Middle](https://app.tidalcyber.com/technique/d98dbf30-c454-42ff-a9f3-2cd3319cc0d9) if added to the root of trust (i.e. [Install Root Certificate](https://app.tidalcyber.com/technique/3a956db0-a3f0-442a-a981-db2ee20d60b2)).\n\nAfter creating a digital certificate, an adversary may then install that certificate (see [Install Digital Certificate](https://app.tidalcyber.com/technique/0b2a9df9-65c8-4a01-a0e6-d411e54a4c7b)) on infrastructure under their control.",
@@ -3523,7 +3523,7 @@
         }
       ],
       "uuid": "5bcbb0c5-7061-481f-a677-09028a6c59f7",
-      "value": "Digital Certificates"
+      "value": "Digital Certificates - Duplicate"
     },
     {
       "description": "Adversaries may develop exploits that can be used during targeting. An exploit takes advantage of a bug or vulnerability in order to cause unintended or unanticipated behavior to occur on computer hardware or software. Rather than finding/modifying exploits from online or purchasing them from exploit vendors, an adversary may develop their own exploits.<sup>[[NYTStuxnet](https://app.tidalcyber.com/references/38b0cf78-88d0-487f-b2b0-81264f457dd0)]</sup> Adversaries may use information acquired via [Vulnerabilities](https://app.tidalcyber.com/technique/fe96475a-3090-449d-91fd-ae73cb4d9c7c) to focus exploit development efforts. As part of the exploit development process, adversaries may uncover exploitable vulnerabilities through methods such as fuzzing and patch analysis.<sup>[[Irongeek Sims BSides 2017](https://app.tidalcyber.com/references/ce11568a-36a8-4da2-972f-9cd67cc337d8)]</sup>\n\nAs with legitimate development efforts, different skill sets may be required for developing exploits. The skills needed may be located in-house, or may need to be contracted out. Use of a contractor may be considered an extension of that adversary's exploit development capabilities, provided the adversary plays a role in shaping requirements and maintains an initial degree of exclusivity to the exploit.\n\nAdversaries may use exploits during various phases of the adversary lifecycle (i.e. [Exploit Public-Facing Application](https://app.tidalcyber.com/technique/4695fd01-43a5-4aa9-ab1a-501fc0dfbd6a), [Exploitation for Client Execution](https://app.tidalcyber.com/technique/068df3d7-f788-44e4-9e6b-2ae443af1609), [Exploitation for Privilege Escalation](https://app.tidalcyber.com/technique/9cc715d7-9969-485f-87a2-c9f7ed3cc44c), [Exploitation for Defense Evasion](https://app.tidalcyber.com/technique/15b65bf2-dbe5-47bc-be09-ed97684bf391), [Exploitation for Credential Access](https://app.tidalcyber.com/technique/afdfa503-0464-4b42-a79c-a6fc828492ef), [Exploitation of Remote Services](https://app.tidalcyber.com/technique/51ff4ada-8a71-4801-9cb8-a6e216eaa4e4), and [Application or System Exploitation](https://app.tidalcyber.com/technique/2109de05-5b45-4519-94a2-6c04f7d88286)).",
@@ -3538,7 +3538,7 @@
         }
       ],
       "uuid": "5a57d258-0b23-431b-b50e-3150d2c0e52c",
-      "value": "Exploits"
+      "value": "Exploits - Duplicate"
     },
     {
       "description": "Adversaries may develop malware and malware components that can be used during targeting. Building malicious software can include the development of payloads, droppers, post-compromise tools, backdoors (including backdoored images), packers, C2 protocols, and the creation of infected removable media. Adversaries may develop malware to support their operations, creating a means for maintaining control of remote machines, evading defenses, and executing post-compromise behaviors.<sup>[[Mandiant APT1](https://app.tidalcyber.com/references/865eba93-cf6a-4e41-bc09-de9b0b3c2669)]</sup><sup>[[Kaspersky Sofacy](https://app.tidalcyber.com/references/46226f98-c762-48e3-9bcd-19ff14184bb5)]</sup><sup>[[ActiveMalwareEnergy](https://app.tidalcyber.com/references/f2ef73c6-5d4c-423e-a3f5-194cba121eb1)]</sup><sup>[[FBI Flash FIN7 USB](https://app.tidalcyber.com/references/42dc957c-007b-4f90-88c6-1afd6d1032e8)]</sup>\n\nAs with legitimate development efforts, different skill sets may be required for developing malware. The skills needed may be located in-house, or may need to be contracted out. Use of a contractor may be considered an extension of that adversary's malware development capabilities, provided the adversary plays a role in shaping requirements and maintains a degree of exclusivity to the malware.\n\nSome aspects of malware development, such as C2 protocol development, may require adversaries to obtain additional infrastructure. For example, malware developed that will communicate with Twitter for C2, may require use of [Web Services](https://app.tidalcyber.com/technique/2e883e0d-1108-431a-a2dd-98ba98b69417).<sup>[[FireEye APT29](https://app.tidalcyber.com/references/78ead31e-7450-46e8-89cf-461ae1981994)]</sup>",
@@ -3553,7 +3553,7 @@
         }
       ],
       "uuid": "0f77a14a-d450-4885-b81f-23eeffa53a7e",
-      "value": "Malware"
+      "value": "Malware - Duplicate"
     },
     {
       "description": "Adversaries may build capabilities that can be used during targeting. Rather than purchasing, freely downloading, or stealing capabilities, adversaries may develop their own capabilities in-house. This is the process of identifying development requirements and building solutions such as malware, exploits, and self-signed certificates. Adversaries may develop capabilities to support their operations throughout numerous phases of the adversary lifecycle.<sup>[[Mandiant APT1](https://app.tidalcyber.com/references/865eba93-cf6a-4e41-bc09-de9b0b3c2669)]</sup><sup>[[Kaspersky Sofacy](https://app.tidalcyber.com/references/46226f98-c762-48e3-9bcd-19ff14184bb5)]</sup><sup>[[Bitdefender StrongPity June 2020](https://app.tidalcyber.com/references/7d2e20f2-20ba-4d51-9495-034c07be41a8)]</sup><sup>[[Talos Promethium June 2020](https://app.tidalcyber.com/references/188d990e-f0be-40f2-90f3-913dfe687d27)]</sup>\n\nAs with legitimate development efforts, different skill sets may be required for developing capabilities. The skills needed may be located in-house, or may need to be contracted out. Use of a contractor may be considered an extension of that adversary's development capabilities, provided the adversary plays a role in shaping requirements and maintains a degree of exclusivity to the capability.",
@@ -8228,7 +8228,7 @@
         }
       ],
       "uuid": "4c0db4e5-14e0-4fb7-88b0-bb391ce5ad58",
-      "value": "Digital Certificates"
+      "value": "Digital Certificates - Duplicate2"
     },
     {
       "description": "Adversaries may buy, steal, or download exploits that can be used during targeting. An exploit takes advantage of a bug or vulnerability in order to cause unintended or unanticipated behavior to occur on computer hardware or software. Rather than developing their own exploits, an adversary may find/modify exploits from online or purchase them from exploit vendors.<sup>[[Exploit Database](https://app.tidalcyber.com/references/38f7b3ea-9959-4dfb-8216-a745d071e7e2)]</sup><sup>[[TempertonDarkHotel](https://app.tidalcyber.com/references/4de7960b-bd62-452b-9e64-b52a0d580858)]</sup><sup>[[NationsBuying](https://app.tidalcyber.com/references/a3e224e7-fe22-48d6-9ff5-35900f06c060)]</sup>\n\nIn addition to downloading free exploits from the internet, adversaries may purchase exploits from third-party entities. Third-party entities can include technology companies that specialize in exploit development, criminal marketplaces (including exploit kits), or from individuals.<sup>[[PegasusCitizenLab](https://app.tidalcyber.com/references/d248e284-37d3-4425-a29e-5a0c814ae803)]</sup><sup>[[Wired SandCat Oct 2019](https://app.tidalcyber.com/references/5f28adee-1313-48ec-895c-27341bd1071f)]</sup> In addition to purchasing exploits, adversaries may steal and repurpose exploits from third-party entities (including other adversaries).<sup>[[TempertonDarkHotel](https://app.tidalcyber.com/references/4de7960b-bd62-452b-9e64-b52a0d580858)]</sup>\n\nAn adversary may monitor exploit provider forums to understand the state of existing, as well as newly discovered, exploits. There is usually a delay between when an exploit is discovered and when it is made public. An adversary may target the systems of those known to conduct exploit research and development in order to gain that knowledge for use during a subsequent operation.\n\nAdversaries may use exploits during various phases of the adversary lifecycle (i.e. [Exploit Public-Facing Application](https://app.tidalcyber.com/technique/4695fd01-43a5-4aa9-ab1a-501fc0dfbd6a), [Exploitation for Client Execution](https://app.tidalcyber.com/technique/068df3d7-f788-44e4-9e6b-2ae443af1609), [Exploitation for Privilege Escalation](https://app.tidalcyber.com/technique/9cc715d7-9969-485f-87a2-c9f7ed3cc44c), [Exploitation for Defense Evasion](https://app.tidalcyber.com/technique/15b65bf2-dbe5-47bc-be09-ed97684bf391), [Exploitation for Credential Access](https://app.tidalcyber.com/technique/afdfa503-0464-4b42-a79c-a6fc828492ef), [Exploitation of Remote Services](https://app.tidalcyber.com/technique/51ff4ada-8a71-4801-9cb8-a6e216eaa4e4), and [Application or System Exploitation](https://app.tidalcyber.com/technique/2109de05-5b45-4519-94a2-6c04f7d88286)).",
@@ -8769,7 +8769,7 @@
         }
       ],
       "uuid": "ba553ad4-5699-4458-ae4e-76e1faa43291",
-      "value": "Spearphishing Attachment"
+      "value": "Spearphishing Attachment - Duplicate"
     },
     {
       "description": "Adversaries may send spearphishing emails with a malicious link in an attempt to gain access to victim systems. Spearphishing with a link is a specific variant of spearphishing. It is different from other forms of spearphishing in that it employs the use of links to download malware contained in email, instead of attaching malicious files to the email itself, to avoid defenses that may inspect email attachments. Spearphishing may also involve social engineering techniques, such as posing as a trusted source.\n\nAll forms of spearphishing are electronically delivered social engineering targeted at a specific individual, company, or industry. In this case, the malicious emails contain links. Generally, the links will be accompanied by social engineering text and require the user to actively click or copy and paste a URL into a browser, leveraging [User Execution](https://app.tidalcyber.com/technique/b84435ab-2ff4-4b6f-ba71-b4b815474872). The visited website may compromise the web browser using an exploit, or the user will be prompted to download applications, documents, zip files, or even executables depending on the pretext for the email in the first place.\n\nAdversaries may also include links that are intended to interact directly with an email reader, including embedded images intended to exploit the end system directly. Additionally, adversaries may use seemingly benign links that abuse special characters to mimic legitimate websites (known as an \"IDN homograph attack\").<sup>[[CISA IDN ST05-016](https://app.tidalcyber.com/references/3cc2c996-10e9-4e25-999c-21dc2c69e4af)]</sup> URLs may also be obfuscated by taking advantage of quirks in the URL schema, such as the acceptance of integer- or hexadecimal-based hostname formats and the automatic discarding of text before an “@” symbol: for example, `hxxp://google.com@1157586937`.<sup>[[Mandiant URL Obfuscation 2023](https://app.tidalcyber.com/references/b63f5934-2ace-5326-89be-7a850469a563)]</sup>\n\nAdversaries may also utilize links to perform consent phishing, typically with OAuth 2.0 request URLs that when accepted by the user provide permissions/access for malicious applications, allowing adversaries to  [Steal Application Access Token](https://app.tidalcyber.com/technique/f78f2c87-626a-468f-93a5-31b61be17727)s.<sup>[[Trend Micro Pawn Storm OAuth 2017](https://app.tidalcyber.com/references/7d12c764-facd-4086-acd0-5c0287344520)]</sup> These stolen access tokens allow the adversary to perform various actions on behalf of the user via API calls. <sup>[[Microsoft OAuth 2.0 Consent Phishing 2021](https://app.tidalcyber.com/references/393e44fe-cf52-4c39-a79f-f7cdd9d8e16a)]</sup>",
@@ -8784,7 +8784,7 @@
         }
       ],
       "uuid": "d08a9977-9fc2-46bb-84f9-dbb5187c426d",
-      "value": "Spearphishing Link"
+      "value": "Spearphishing Link - Duplicate"
     },
     {
       "description": "Adversaries may send spearphishing messages via third-party services in an attempt to gain access to victim systems. Spearphishing via service is a specific variant of spearphishing. It is different from other forms of spearphishing in that it employs the use of third party services rather than directly via enterprise email channels. \n\nAll forms of spearphishing are electronically delivered social engineering targeted at a specific individual, company, or industry. In this scenario, adversaries send messages through various social media services, personal webmail, and other non-enterprise controlled services. These services are more likely to have a less-strict security policy than an enterprise. As with most kinds of spearphishing, the goal is to generate rapport with the target or get the target's interest in some way. Adversaries will create fake social media accounts and message employees for potential job opportunities. Doing so allows a plausible reason for asking about services, policies, and software that's running in an environment. The adversary can then send malicious links or attachments through these services.\n\nA common example is to build rapport with a target via social media, then send content to a personal webmail service that the target uses on their work computer. This allows an adversary to bypass some email restrictions on the work account, and the target is more likely to open the file since it's something they were expecting. If the payload doesn't work as expected, the adversary can continue normal communications and troubleshoot with the target on how to get it working.",
@@ -8814,7 +8814,7 @@
         }
       ],
       "uuid": "350c12a3-33f6-5942-8892-4d6e70abbfc1",
-      "value": "Spearphishing Voice"
+      "value": "Spearphishing Voice - Duplicate"
     },
     {
       "description": "Adversaries may send phishing messages to gain access to victim systems. All forms of phishing are electronically delivered social engineering. Phishing can be targeted, known as spearphishing. In spearphishing, a specific individual, company, or industry will be targeted by the adversary. More generally, adversaries can conduct non-targeted phishing, such as in mass malware spam campaigns.\n\nAdversaries may send victims emails containing malicious attachments or links, typically to execute malicious code on victim systems. Phishing may also be conducted via third-party services, like social media platforms. Phishing may also involve social engineering techniques, such as posing as a trusted source, as well as evasive techniques such as removing or manipulating emails or metadata/headers from compromised accounts being abused to send messages (e.g., [Email Hiding Rules](https://app.tidalcyber.com/technique/01505d46-8675-408d-881e-68f4d8743d47)).<sup>[[Microsoft OAuth Spam 2022](https://app.tidalcyber.com/references/086c06a0-3960-5fa8-b034-cef37a3aee90)]</sup><sup>[[Palo Alto Unit 42 VBA Infostealer 2014](https://app.tidalcyber.com/references/c3eccab6-b12b-513a-9a04-396f7b3dcf63)]</sup> Another way to accomplish this is by forging or spoofing<sup>[[Proofpoint-spoof](https://app.tidalcyber.com/references/fe9f7542-bbf0-5e34-b3a9-8596cc5aa754)]</sup> the identity of the sender which can be used to fool both the human recipient as well as automated security tools.<sup>[[cyberproof-double-bounce](https://app.tidalcyber.com/references/4406d688-c392-5244-b438-6995f38dfc61)]</sup> \n\nVictims may also receive phishing messages that instruct them to call a phone number where they are directed to visit a malicious URL, download malware,<sup>[[sygnia Luna Month](https://app.tidalcyber.com/references/3e1c2a64-8446-538d-a148-2de87991955a)]</sup><sup>[[CISA Remote Monitoring and Management Software](https://app.tidalcyber.com/references/1ee55a8c-9e9d-520a-a3d3-1d2da57e0265)]</sup> or install adversary-accessible remote management tools onto their computer (i.e., [User Execution](https://app.tidalcyber.com/technique/b84435ab-2ff4-4b6f-ba71-b4b815474872)).<sup>[[Unit42 Luna Moth](https://app.tidalcyber.com/references/ec52bcc9-6a56-5b94-8534-23c8e7ce740f)]</sup>",
@@ -12321,7 +12321,7 @@
         }
       ],
       "uuid": "3c4a2f3a-5877-4a27-a417-76318523657e",
-      "value": "Cloud Accounts"
+      "value": "Cloud Account - Duplicate"
     },
     {
       "description": "Adversaries may obtain and abuse credentials of a default account as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion. Default accounts are those that are built-into an OS, such as the Guest or Administrator accounts on Windows systems. Default accounts also include default factory/provider set accounts on other types of systems, software, or devices, including the root user account in AWS and the default service account in Kubernetes.<sup>[[Microsoft Local Accounts Feb 2019](https://app.tidalcyber.com/references/6ae7487c-cb61-4f10-825f-4ef9ef050b7c)]</sup><sup>[[AWS Root User](https://app.tidalcyber.com/references/5f315c21-f02f-4c9e-aac6-d648deff3ff9)]</sup><sup>[[Threat Matrix for Kubernetes](https://app.tidalcyber.com/references/43fab719-e348-4902-8df3-8807765b95f0)]</sup>\n\nDefault accounts are not limited to client machines, rather also include accounts that are preset for equipment such as network devices and computer applications whether they are internal, open source, or commercial. Appliances that come preset with a username and password combination pose a serious threat to organizations that do not change it post installation, as they are easy targets for an adversary. Similarly, adversaries may also utilize publicly disclosed or stolen [Private Keys](https://app.tidalcyber.com/technique/e493bf4a-0eba-4e60-a7a6-c699084dc98a) or credential materials to legitimately connect to remote environments via [Remote Services](https://app.tidalcyber.com/technique/30ef3f13-5e9b-4712-9adf-f0da4ef157a1).<sup>[[Metasploit SSH Module](https://app.tidalcyber.com/references/e4ae69e5-67ba-4a3e-8101-5e7f073bd312)]</sup>",
