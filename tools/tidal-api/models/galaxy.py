@@ -1,8 +1,9 @@
 import json
 from dataclasses import dataclass, asdict
 
+
 @dataclass
-class Galaxy():
+class Galaxy:
     description: str
     icon: str
     name: str

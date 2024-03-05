@@ -334,7 +334,9 @@ class SoftwareCluster(Cluster):
                     self.values.append(value.return_value())
                     related.append(
                         {
-                            "dest-uuid": associated_software.get("associated_software_id"),
+                            "dest-uuid": associated_software.get(
+                                "associated_software_id"
+                            ),
                             "type": "similar",
                         }
                     )

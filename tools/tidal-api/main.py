@@ -17,7 +17,12 @@ GALAXY_PATH = "../../galaxies"
 CLUSTER_PATH = "../../clusters"
 
 
-def create_galaxy(endpoint: str, version: int, extended_relations: bool = False, create_subs: bool = False):
+def create_galaxy(
+    endpoint: str,
+    version: int,
+    extended_relations: bool = False,
+    create_subs: bool = False,
+):
     api = TidalAPI()
     data = api.get_data(endpoint)
     with open(f"{CONFIG}/{endpoint}.json", "r") as file:
@@ -28,16 +33,28 @@ def create_galaxy(endpoint: str, version: int, extended_relations: bool = False,
 
     match endpoint:
         case "groups":
-            cluster = GroupCluster(**config["cluster"], uuid=galaxy.uuid, enrichment=extended_relations, subs=create_subs)
+            cluster = GroupCluster(
+                **config["cluster"],
+                uuid=galaxy.uuid,
+                enrichment=extended_relations,
+                subs=create_subs,
+            )
             cluster.add_values(data)
         case "software":
-            cluster = SoftwareCluster(**config["cluster"], uuid=galaxy.uuid, enrichment=extended_relations, subs=create_subs)
+            cluster = SoftwareCluster(
+                **config["cluster"],
+                uuid=galaxy.uuid,
+                enrichment=extended_relations,
+                subs=create_subs,
+            )
             cluster.add_values(data)
         case "campaigns":
             cluster = CampaignsCluster(**config["cluster"], uuid=galaxy.uuid)
             cluster.add_values(data)
         case "technique":
-            cluster = TechniqueCluster(**config["cluster"], uuid=galaxy.uuid, subs=create_subs)
+            cluster = TechniqueCluster(
+                **config["cluster"], uuid=galaxy.uuid, subs=create_subs
+            )
             cluster.add_values(data)
         case "tactic":
             cluster = TacticCluster(**config["cluster"], uuid=galaxy.uuid)
@@ -56,9 +73,13 @@ def create_galaxy(endpoint: str, version: int, extended_relations: bool = False,
 def main(args, galaxies):
     if args.all:
         for galaxy in galaxies:
-            create_galaxy(galaxy, args.version, args.extended_relations, args.create_subs)
+            create_galaxy(
+                galaxy, args.version, args.extended_relations, args.create_subs
+            )
     else:
-        create_galaxy(args.type, args.version, args.extended_relations, args.create_subs)
+        create_galaxy(
+            args.type, args.version, args.extended_relations, args.create_subs
+        )
 
 
 if __name__ == "__main__":
