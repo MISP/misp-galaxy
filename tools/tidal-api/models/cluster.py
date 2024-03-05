@@ -99,7 +99,7 @@ class ClusterValue:
     def return_value(self):
         value_dict = asdict(self)
         value_dict["meta"] = {
-            k: v for k, v in asdict(self.meta).items() if v is not None
+            k: v for k, v in asdict(self.meta).items() if v is not None and v != []
         }
         return value_dict
 
