@@ -254,6 +254,11 @@ class GroupCluster(Cluster):
                 uuid=entry.get("id"),
                 value=entry.get("name"),
             )
+
+            # Code Block for handling duplicate from Tidal API data (hopefully only temporary)
+            if value.uuid == "3290dcb9-5781-4b87-8fa0-6ae820e152cd":
+                value.value = "Volt Typhoon - Tidal" 
+
             self.values.append(value.return_value())
 
 
