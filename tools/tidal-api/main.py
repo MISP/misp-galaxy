@@ -38,29 +38,31 @@ def create_galaxy(
                 uuid=galaxy.uuid,
                 enrichment=extended_relations,
                 subs=create_subs,
+                version=version,
             )
             cluster.add_values(data)
         case "software":
             cluster = SoftwareCluster(
                 **config["cluster"],
                 uuid=galaxy.uuid,
+                version=version,
                 enrichment=extended_relations,
                 subs=create_subs,
             )
             cluster.add_values(data)
         case "campaigns":
-            cluster = CampaignsCluster(**config["cluster"], uuid=galaxy.uuid)
+            cluster = CampaignsCluster(**config["cluster"], uuid=galaxy.uuid, version=version)
             cluster.add_values(data)
         case "technique":
             cluster = TechniqueCluster(
-                **config["cluster"], uuid=galaxy.uuid, subs=create_subs
+                **config["cluster"], uuid=galaxy.uuid, subs=create_subs, version=version
             )
             cluster.add_values(data)
         case "tactic":
-            cluster = TacticCluster(**config["cluster"], uuid=galaxy.uuid)
+            cluster = TacticCluster(**config["cluster"], uuid=galaxy.uuid, version=version)
             cluster.add_values(data)
         case "references":
-            cluster = ReferencesCluster(**config["cluster"], uuid=galaxy.uuid)
+            cluster = ReferencesCluster(**config["cluster"], uuid=galaxy.uuid, version=version)
             cluster.add_values(data)
         case _:
             print("Error: Invalid endpoint")

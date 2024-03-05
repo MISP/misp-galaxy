@@ -114,6 +114,7 @@ class Cluster:
         source: str,
         type: str,
         uuid: str,
+        version: int,
     ):
         self.authors = authors
         self.category = category
@@ -122,6 +123,7 @@ class Cluster:
         self.source = source
         self.type = type
         self.uuid = uuid
+        self.version = version
         self.values = []
         self.CLUSTER_PATH = "../../clusters"
 
@@ -145,6 +147,7 @@ class Cluster:
             "type": self.type,
             "uuid": self.uuid,
             "values": self.values,
+            "version": self.version,
         }
 
     def _get_relation_from_mitre_id(
@@ -176,10 +179,11 @@ class GroupCluster(Cluster):
         source: str,
         type: str,
         uuid: str,
+        version: int,
         enrichment: bool = False,
         subs: bool = False,
     ):
-        super().__init__(authors, category, description, name, source, type, uuid)
+        super().__init__(authors, category, description, name, source, type, uuid, version)
         self.enrichment = enrichment
         self.subs = subs
 
@@ -263,10 +267,11 @@ class SoftwareCluster(Cluster):
         source: str,
         type: str,
         uuid: str,
+        version: int,
         enrichment: bool = False,
         subs: bool = False,
     ):
-        super().__init__(authors, category, description, name, source, type, uuid)
+        super().__init__(authors, category, description, name, source, type, uuid, version)
         self.enrichment = enrichment
         self.subs = subs
 
@@ -361,9 +366,10 @@ class TechniqueCluster(Cluster):
         source: str,
         type: str,
         uuid: str,
+        version: int,
         subs: bool = False,
     ):
-        super().__init__(authors, category, description, name, source, type, uuid)
+        super().__init__(authors, category, description, name, source, type, uuid, version)
         self.subs = subs
 
     def add_values(self, data):
@@ -432,8 +438,9 @@ class TacticCluster(Cluster):
         source: str,
         type: str,
         uuid: str,
+        version: int,
     ):
-        super().__init__(authors, category, description, name, source, type, uuid)
+        super().__init__(authors, category, description, name, source, type, uuid, version)
 
     def add_values(self, data):
         for entry in data["data"]:
@@ -472,8 +479,9 @@ class ReferencesCluster(Cluster):
         source: str,
         type: str,
         uuid: str,
+        version: int,
     ):
-        super().__init__(authors, category, description, name, source, type, uuid)
+        super().__init__(authors, category, description, name, source, type, uuid, version)
 
     def add_values(self, data):
         for entry in data["data"]:
@@ -506,8 +514,9 @@ class CampaignsCluster(Cluster):
         source: str,
         type: str,
         uuid: str,
+        version: int,
     ):
-        super().__init__(authors, category, description, name, source, type, uuid)
+        super().__init__(authors, category, description, name, source, type, uuid, version)
 
     def add_values(self, data):
         for entry in data["data"]:
