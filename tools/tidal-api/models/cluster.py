@@ -30,7 +30,7 @@ class AssociatedGroupsMeta(Meta):
 @dataclass
 class SoftwareMeta(Meta):
     source: str = None
-    type: str = None
+    type: list = None
     software_attack_id: str = None
     platforms: list = None
     tags: list = None
@@ -279,7 +279,7 @@ class SoftwareCluster(Cluster):
         for entry in data["data"]:
             meta = SoftwareMeta(
                 source=entry.get("source"),
-                type=entry.get("type"),
+                type=[entry.get("type")],
                 software_attack_id=entry.get("software_attack_id"),
                 platforms=[x.get("name") for x in entry.get("platforms")],
                 tags=[x.get("tag") for x in entry.get("tags")],
