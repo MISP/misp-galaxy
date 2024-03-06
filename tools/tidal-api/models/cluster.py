@@ -221,6 +221,19 @@ class GroupCluster(Cluster):
                     )
             if self.subs:
                 for associated_group in entry.get("associated_groups"):
+                    found = False
+                    for x in self.values:
+                        if associated_group.get("associated_group_id") == x.get("uuid"):
+                            x["related"].append(
+                                {
+                                    "dest-uuid": entry.get("id"),
+                                    "type": "similar",
+                                }
+                            )
+                            found = True
+                            break
+                    if found:
+                        continue
                     associated_meta = AssociatedGroupsMeta(
                         id=associated_group.get("id"),
                         owner_id=associated_group.get("owner_id"),
@@ -322,6 +335,19 @@ class SoftwareCluster(Cluster):
                     )
             if self.subs:
                 for associated_software in entry.get("associated_software"):
+                    found = False
+                    for x in self.values:
+                        if associated_software.get("associated_software_id") == x.get("uuid"):
+                            x["related"].append(
+                                {
+                                    "dest-uuid": entry.get("id"),
+                                    "type": "similar",
+                                }
+                            )
+                            found = True
+                            break
+                    if found:
+                        continue
                     associated_meta = AssociatedSoftwareMeta(
                         id=associated_software.get("id"),
                         owner_id=associated_software.get("owner_id"),
