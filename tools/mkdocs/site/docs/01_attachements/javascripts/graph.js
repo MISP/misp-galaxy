@@ -1,9 +1,15 @@
 document$.subscribe(function () {
 
     const NODE_RADIUS = 8;
-    const NODE_COLOR = "#69b3a2";
+    // const NODE_COLOR = "#69b3a2";
     const Parent_Node_COLOR = "#ff0000";
 
+
+    function applyTableFilter(tf) {
+        var valuesToSelect = ['1', '2', '3'];
+        tf.setFilterValue(4, valuesToSelect);
+        tf.filter();
+    }
 
     function parseFilteredTable(tf, allData) {
         var data = [];
@@ -13,9 +19,11 @@ document$.subscribe(function () {
             data.push({
                 source: row[1][0],
                 sourcePath: sourcePath,
-                target: row[1][1],
+                sourceGalaxy: row[1][1],
+                target: row[1][2],
                 targetPath: targetPath,
-                level: row[1][2]
+                targetGalaxy: row[1][3],
+                level: row[1][4]
             });
         });
         return data;
@@ -28,14 +36,16 @@ document$.subscribe(function () {
                 var cells = row.querySelectorAll("td");
                 var sourceAnchor = cells[0].querySelector("a");
                 var sourcePath = sourceAnchor ? sourceAnchor.getAttribute("href") : null;
-                var targetAnchor = cells[1].querySelector("a");
+                var targetAnchor = cells[2].querySelector("a");
                 var targetPath = targetAnchor ? targetAnchor.getAttribute("href") : null;
                 data.push({
                     source: cells[0].textContent,
-                    target: cells[1].textContent,
+                    sourceGalaxy: cells[1].textContent,
+                    target: cells[2].textContent,
+                    targetGalaxy: cells[3].textContent,
                     sourcePath: sourcePath,
                     targetPath: targetPath,
-                    level: cells[2].textContent
+                    level: cells[4].textContent
                 });
             }
         });
@@ -51,7 +61,8 @@ document$.subscribe(function () {
         var newNodes = Array.from(new Set(newData.flatMap(d => [d.source, d.target])))
             .map(id => ({
                 id,
-                path: nodePaths[id]
+                path: nodePaths[id],
+                galaxy: newData.find(d => d.source === id) ? newData.find(d => d.source === id).sourceGalaxy : newData.find(d => d.target === id).targetGalaxy
             }));
 
         var newLinks = newData.map(d => ({ source: d.source, target: d.target }));
@@ -72,11 +83,45 @@ document$.subscribe(function () {
             nodePaths[d.target] = d.targetPath || null;
         });
 
+        // Extract unique galaxy names from data
+        const galaxies = Array.from(new Set(data.flatMap(d => [d.sourceGalaxy, d.targetGalaxy])));
+
+        const colorScheme = [
+            '#E63946', // Red
+            '#F1FAEE', // Off White
+            '#A8DADC', // Light Blue
+            '#457B9D', // Medium Blue
+            '#1D3557', // Dark Blue
+            '#F4A261', // Sandy Brown
+            '#2A9D8F', // Teal
+            '#E9C46A', // Saffron
+            '#F77F00', // Orange
+            '#D62828', // Dark Red
+            '#023E8A', // Royal Blue
+            '#0077B6', // Light Sea Blue
+            '#0096C7', // Sky Blue
+            '#00B4D8', // Bright Sky Blue
+            '#48CAE4', // Light Blue
+            '#90E0EF', // Powder Blue
+            '#ADE8F4', // Pale Cerulean
+            '#CAF0F8', // Blithe Blue
+            '#FFBA08', // Selective Yellow
+            '#FFD60A'  // Naples Yellow
+        ];
+        const colorScale = d3.scaleOrdinal(colorScheme)
+            .domain(galaxies);
+
         var nodes = Array.from(new Set(data.flatMap(d => [d.source, d.target])))
             .map(id => ({
                 id,
-                path: nodePaths[id]
+                path: nodePaths[id],
+                galaxy: data.find(d => d.source === id) ? data.find(d => d.source === id).sourceGalaxy : data.find(d => d.target === id).targetGalaxy
             }));
+
+        let header = document.querySelector('h1').textContent;
+        // const parentUUID = header.replace(/\s+/g, '-').charAt(0).toLowerCase() + header.replace(/\s+/g, '-').slice(1);
+        // console.log("Parent UUID: " + parentUUID);
+        const Parent_Node = nodes.find(node => node.id.includes(header));
 
         var links = data.map(d => ({ source: d.source, target: d.target }));
 
@@ -96,9 +141,9 @@ document$.subscribe(function () {
 
         var simulation = d3.forceSimulation(nodes)
             .force("link", d3.forceLink(links).id(d => d.id).distance(linkDistance))
-            .force("charge", d3.forceManyBody().strength(-50))
+            .force("charge", d3.forceManyBody().strength(-70))
             .force("center", d3.forceCenter(width / 2, height / 2))
-            .alphaDecay(0.02); // A lower value, adjust as needed
+            .alphaDecay(0.05); // A lower value, adjust as needed
 
         // Create links
         var link = svg.append("g")
@@ -107,21 +152,22 @@ document$.subscribe(function () {
             .selectAll("line")
             .data(links)
             .enter().append("line")
-            .attr("stroke-width", d => Math.sqrt(d.value));
+            .attr("stroke-width", 1);
 
         // Create nodes
         var node = svg.append("g")
-            .attr("stroke", "#fff")
+            .attr("stroke", "#D3D3D3")
             .attr("stroke-width", 1.5)
             .selectAll("circle")
             .data(nodes)
             .enter().append("circle")
             .attr("r", function (d, i) {
-                return i === 0 ? NODE_RADIUS + 5 : NODE_RADIUS;
+                return d.id === Parent_Node.id ? NODE_RADIUS + 5 : NODE_RADIUS;
             })
             .attr("fill", function (d, i) {
-                return i === 0 ? Parent_Node_COLOR : NODE_COLOR;
-            });
+                return d.id === Parent_Node.id ? Parent_Node_COLOR : colorScale(d.galaxy);
+            })
+            .attr("class", d => "node galaxy-" + d.galaxy.replace(/\s+/g, '-').replace(/[\s.]/g, '-'));
 
         // Apply tooltip on nodes
         node.on("mouseover", function (event, d) {
@@ -131,16 +177,41 @@ document$.subscribe(function () {
             tooltip.html(d.id)
                 .style("left", (event.pageX) + "px")
                 .style("top", (event.pageY - 28) + "px");
+            node.style("opacity", 0.1);
+            link.style("opacity", 0.1);
+            d3.select(this)
+                .attr("r", parseFloat(d3.select(this).attr("r")) + 5)
+                .style("opacity", 1);
+            svg.selectAll(".legend-text.galaxy-" + d.galaxy.replace(/\s+/g, '-').replace(/[\s.]/g, '-'))
+                .style("font-weight", "bold")
+                .style("font-size", "14px");
+            link.filter(l => l.source.id === d.id || l.target.id === d.id)
+                .attr("stroke-width", 3)
+                .style("opacity", 1);
+            node.filter(n => n.id === d.id || links.some(l => (l.source.id === d.id && l.target.id === n.id) || (l.target.id === d.id && l.source.id === n.id)))
+                .style("opacity", 1);
         })
             .on("mousemove", function (event) {
                 tooltip.style("left", (event.pageX) + "px")
                     .style("top", (event.pageY - 28) + "px");
             })
-            .on("mouseout", function (d) {
+            .on("mouseout", function (event, d) {
                 tooltip.transition()
                     .duration(500)
                     .style("opacity", 0);
+                node.style("opacity", 1);
+                link.style("opacity", 1);
+                d3.select(this).attr("r", function (d, i) {
+                    return d.id === Parent_Node.id ? NODE_RADIUS + 5 : NODE_RADIUS;
+                });
+                svg.selectAll(".legend-text.galaxy-" + d.galaxy.replace(/\s+/g, '-').replace(/[\s.]/g, '-'))
+                    .style("font-weight", "normal")
+                    .style("font-size", "12px");
+                link.filter(l => l.source.id === d.id || l.target.id === d.id)
+                    .attr("stroke-width", 1);
+                node.filter(n => n.id === d.id || links.some(l => (l.source.id === d.id && l.target.id === n.id) || (l.target.id === d.id && l.source.id === n.id)))
             });
+
 
         // Apply links on nodes
         node.on("dblclick", function (event, d) {
@@ -172,6 +243,93 @@ document$.subscribe(function () {
             if (!event.active) simulation.alphaTarget(0);
         }
 
+        // Prepare legend data
+        const legendData = galaxies.map(galaxy => ({
+            name: galaxy,
+            color: colorScale(galaxy)
+        }));
+
+        const maxCharLength = 10; // Maximum number of characters to display in legend
+        // Create legend
+        const legend = svg.append("g")
+            .attr("class", "legend")
+            .attr("transform", "translate(" + (width - 100) + ",20)"); // Adjust position as needed
+
+        // Add legend title
+        legend.append("text")
+            .attr("x", 0)
+            .attr("y", -10)
+            .style("font-size", "13px")
+            .style("text-anchor", "start")
+            .style("fill", "grey")
+            .text("Galaxy Colors");
+
+        // Add colored rectangles and text labels for each galaxy
+        const legendItem = legend.selectAll(".legend-item")
+            .data(legendData)
+            .enter().append("g")
+            .attr("class", "legend-item")
+            .attr("transform", (d, i) => `translate(0, ${i * 20})`);
+
+        legendItem.append("rect")
+            .attr("width", 12)
+            .attr("height", 12)
+            .style("fill", d => d.color)
+            .on("mouseover", function (event, d) {
+                node.style("opacity", 0.1);
+                link.style("opacity", 0.1);
+                svg.selectAll(".galaxy-" + d.name.replace(/\s+/g, '-').replace(/[\s.]/g, '-'))
+                    .each(function () {
+                        var currentRadius = d3.select(this).attr("r");
+                        d3.select(this).style("opacity", 1);
+                    });
+                tooltip.transition()
+                    .duration(200)
+                    .style("opacity", .9);
+                tooltip.html(d.name)
+                    .style("left", (event.pageX) + "px")
+                    .style("top", (event.pageY - 28) + "px");
+            })
+            .on("mouseout", function (event, d) {
+                node.style("opacity", 1);
+                link.style("opacity", 1);
+                tooltip.transition()
+                    .duration(500)
+                    .style("opacity", 0);
+            });
+
+        legendItem.append("text")
+            .attr("x", 24)
+            .attr("y", 9)
+            .attr("dy", "0.35em")
+            .style("text-anchor", "start")
+            .style("fill", "grey")
+            .style("font-size", "12px")
+            .attr("class", d => "legend-text galaxy-" + d.name.replace(/\s+/g, '-').replace(/[\s.]/g, '-'))
+            .text(d => d.name.length > maxCharLength ? d.name.substring(0, maxCharLength) + "..." : d.name)
+            .on("mouseover", function (event, d) {
+                node.style("opacity", 0.1);
+                link.style("opacity", 0.1);
+                svg.selectAll(".galaxy-" + d.name.replace(/\s+/g, '-').replace(/[\s.]/g, '-'))
+                    .each(function () {
+                        d3.select(this).style("opacity", 1);
+                    });
+                tooltip.transition()
+                    .duration(200)
+                    .style("opacity", .9);
+                tooltip.html(d.name)
+                    .style("left", (event.pageX) + "px")
+                    .style("top", (event.pageY - 28) + "px");
+            })
+            .on("mouseout", function (event, d) {
+                node.style("opacity", 1);
+                link.style("opacity", 1);
+                tooltip.transition()
+                    .duration(500)
+                    .style("opacity", 0);
+            });
+
+
         // Update positions on each simulation 'tick'
         simulation.on("tick", () => {
             nodes.forEach(d => {
@@ -199,11 +357,12 @@ document$.subscribe(function () {
                     .join(
                         enter => enter.append("circle")
                             .attr("r", function (d, i) {
-                                return i === 0 ? NODE_RADIUS + 5 : NODE_RADIUS;
+                                return d.id === Parent_Node.id ? NODE_RADIUS + 5 : NODE_RADIUS;
                             })
                             .attr("fill", function (d, i) {
-                                return i === 0 ? Parent_Node_COLOR : NODE_COLOR;
-                            }),
+                                return d.id === Parent_Node.id ? Parent_Node_COLOR : colorScale(d.galaxy);
+                            })
+                            .attr("class", d => "node galaxy-" + d.galaxy.replace(/\s+/g, '-').replace(/[\s.]/g, '-')),
                         update => update,
                         exit => exit.remove()
                     );
@@ -218,15 +377,39 @@ document$.subscribe(function () {
                     tooltip.html(d.id)
                         .style("left", (event.pageX) + "px")
                         .style("top", (event.pageY - 28) + "px");
+                    node.style("opacity", 0.1);
+                    link.style("opacity", 0.1);
+                    d3.select(this)
+                        .attr("r", parseFloat(d3.select(this).attr("r")) + 5)
+                        .style("opacity", 1);
+                    svg.selectAll(".legend-text.galaxy-" + d.galaxy.replace(/\s+/g, '-').replace(/[\s.]/g, '-'))
+                        .style("font-weight", "bold")
+                        .style("font-size", "14px");
+                    link.filter(l => l.source.id === d.id || l.target.id === d.id)
+                        .attr("stroke-width", 3)
+                        .style("opacity", 1);
+                    node.filter(n => n.id === d.id || links.some(l => (l.source.id === d.id && l.target.id === n.id) || (l.target.id === d.id && l.source.id === n.id)))
+                        .style("opacity", 1);
                 })
                     .on("mousemove", function (event) {
                         tooltip.style("left", (event.pageX) + "px")
                             .style("top", (event.pageY - 28) + "px");
                     })
-                    .on("mouseout", function (d) {
+                    .on("mouseout", function (event, d) {
                         tooltip.transition()
                             .duration(500)
                             .style("opacity", 0);
+                        node.style("opacity", 1);
+                        link.style("opacity", 1);
+                        d3.select(this).attr("r", function (d, i) {
+                            return d.id === Parent_Node.id ? NODE_RADIUS + 5 : NODE_RADIUS;
+                        });
+                        svg.selectAll(".legend-text.galaxy-" + d.galaxy.replace(/\s+/g, '-').replace(/[\s.]/g, '-'))
+                            .style("font-weight", "normal")
+                            .style("font-size", "12px");
+                        link.filter(l => l.source.id === d.id || l.target.id === d.id)
+                            .attr("stroke-width", 1);
+                        node.filter(n => n.id === d.id || links.some(l => (l.source.id === d.id && l.target.id === n.id) || (l.target.id === d.id && l.source.id === n.id)))
                     });
 
                 // Apply links on nodes
@@ -253,6 +436,8 @@ document$.subscribe(function () {
                 // Restart the simulation with new data
                 simulation.nodes(nodes);
                 simulation.force("link").links(links);
+                linkDistance = Math.sqrt((width * height) / nodes.length);
+                simulation.force("link").distance(linkDistance);
                 simulation.alpha(1).restart();
             }
         });
@@ -265,12 +450,14 @@ document$.subscribe(function () {
             var tf = new TableFilter(table, {
                 base_path: "../../../../01_attachements/modules/tablefilter/",
                 highlight_keywords: true,
-                col_2: "checklist",
-                col_widths: ["350px", "350px", "100px"],
-                col_types: ["string", "string", "number"],
+                col_1: "checklist",
+                col_3: "checklist",
+                col_4: "checklist",
+                col_widths: ["180px", "180px", "180px", "180px", "100px"],
+                col_types: ["string", "string", "string", "string", "number"],
                 grid_layout: false,
                 responsive: false,
-                watermark: ["Filter table ...", "Filter table ..."],
+                watermark: ["Filter table ...", "Filter table ...", "Filter table ...", "Filter table ..."],
                 auto_filter: {
                     delay: 100 //milliseconds
                 },
@@ -297,7 +484,13 @@ document$.subscribe(function () {
             });
 
             tf.init();
-            var data = parseTable(table);
+            var allData = parseTable(table);
+            if (allData.length > 1000) {
+                applyTableFilter(tf);
+                data = parseFilteredTable(tf, allData);
+            } else {
+                data = allData;
+            }
             var graphId = "graph" + index;
             var div = document.createElement("div");
             div.id = graphId;
@@ -306,7 +499,7 @@ document$.subscribe(function () {
 
             // Listen for table filtering events
             tf.emitter.on(['after-filtering'], function () {
-                filterTableAndGraph(tf, simulation, data);
+                filterTableAndGraph(tf, simulation, allData);
             });
         }
     });
