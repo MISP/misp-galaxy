@@ -7,12 +7,12 @@
   "name": "Tidal Tactic",
   "source": "https://app-api.tidalcyber.com/api/v1/tactic/",
   "type": "tactic",
-  "uuid": "43a8fce6-08d3-46c2-957d-53606efe2c48",
+  "uuid": "16b963e7-4b88-44e0-b184-16bf9e71fdc9",
   "values": [
     {
       "description": "The adversary is trying to gather information they can use to plan future operations.\n\nReconnaissance consists of techniques that involve adversaries actively or passively gathering information that can be used to support targeting. Such information may include details of the victim organization, infrastructure, or staff/personnel. This information can be leveraged by the adversary to aid in other phases of the adversary lifecycle, such as using gathered information to plan and execute Initial Access, to scope and prioritize post-compromise objectives, or to drive and lead further Reconnaissance efforts.",
       "meta": {
-        "ordinal_position": 1,
+        "ordinal_position": "1",
         "source": "MITRE",
         "tactic_attack_id": "TA0043"
       },
@@ -200,7 +200,7 @@
     {
       "description": "The adversary is trying to establish resources they can use to support operations.\n\nResource Development consists of techniques that involve adversaries creating, purchasing, or compromising/stealing resources that can be used to support targeting. Such resources include infrastructure, accounts, or capabilities. These resources can be leveraged by the adversary to aid in other phases of the adversary lifecycle, such as using purchased domains to support Command and Control, email accounts for phishing as a part of Initial Access, or stealing code signing certificates to help with Defense Evasion.",
       "meta": {
-        "ordinal_position": 2,
+        "ordinal_position": "2",
         "source": "MITRE",
         "tactic_attack_id": "TA0042"
       },
@@ -392,7 +392,7 @@
     {
       "description": "The adversary is trying to get into your network.\n\nInitial Access consists of techniques that use various entry vectors to gain their initial foothold within a network. Techniques used to gain a foothold include targeted spearphishing and exploiting weaknesses on public-facing web servers. Footholds gained through initial access may allow for continued access, like valid accounts and use of external remote services, or may be limited-use due to changing passwords.",
       "meta": {
-        "ordinal_position": 3,
+        "ordinal_position": "3",
         "source": "MITRE",
         "tactic_attack_id": "TA0001"
       },
@@ -488,7 +488,7 @@
     {
       "description": "The adversary is trying to run malicious code.\n\nExecution consists of techniques that result in adversary-controlled code running on a local or remote system. Techniques that run malicious code are often paired with techniques from all other tactics to achieve broader goals, like exploring a network or stealing data. For example, an adversary might use a remote access tool to run a PowerShell script that does Remote System Discovery. ",
       "meta": {
-        "ordinal_position": 4,
+        "ordinal_position": "4",
         "source": "MITRE",
         "tactic_attack_id": "TA0002"
       },
@@ -644,7 +644,7 @@
     {
       "description": "The adversary is trying to maintain their foothold.\n\nPersistence consists of techniques that adversaries use to keep access to systems across restarts, changed credentials, and other interruptions that could cut off their access. Techniques used for persistence include any access, action, or configuration changes that let them maintain their foothold on systems, such as replacing or hijacking legitimate code or adding startup code. ",
       "meta": {
-        "ordinal_position": 5,
+        "ordinal_position": "5",
         "source": "MITRE",
         "tactic_attack_id": "TA0003"
       },
@@ -1116,7 +1116,7 @@
     {
       "description": "The adversary is trying to gain higher-level permissions.\n\nPrivilege Escalation consists of techniques that adversaries use to gain higher-level permissions on a system or network. Adversaries can often enter and explore a network with unprivileged access but require elevated permissions to follow through on their objectives. Common approaches are to take advantage of system weaknesses, misconfigurations, and vulnerabilities. Examples of elevated access include: \n\n* SYSTEM/root level\n* local administrator\n* user account with admin-like access \n* user accounts with access to specific system or perform specific function\n\nThese techniques often overlap with Persistence techniques, as OS features that let an adversary persist can execute in an elevated context.  ",
       "meta": {
-        "ordinal_position": 6,
+        "ordinal_position": "6",
         "source": "MITRE",
         "tactic_attack_id": "TA0004"
       },
@@ -1544,7 +1544,7 @@
     {
       "description": "The adversary is trying to avoid being detected.\n\nDefense Evasion consists of techniques that adversaries use to avoid detection throughout their compromise. Techniques used for defense evasion include uninstalling/disabling security software or obfuscating/encrypting data and scripts. Adversaries also leverage and abuse trusted processes to hide and masquerade their malware. Other tactics’ techniques are cross-listed here when those techniques include the added benefit of subverting defenses. ",
       "meta": {
-        "ordinal_position": 7,
+        "ordinal_position": "7",
         "source": "MITRE",
         "tactic_attack_id": "TA0005"
       },
@@ -2320,7 +2320,7 @@
     {
       "description": "The adversary is trying to steal account names and passwords.\n\nCredential Access consists of techniques for stealing credentials like account names and passwords. Techniques used to get credentials include keylogging or credential dumping. Using legitimate credentials can give adversaries access to systems, make them harder to detect, and provide the opportunity to create more accounts to help achieve their goals.",
       "meta": {
-        "ordinal_position": 8,
+        "ordinal_position": "8",
         "source": "MITRE",
         "tactic_attack_id": "TA0006"
       },
@@ -2588,7 +2588,7 @@
     {
       "description": "The adversary is trying to figure out your environment.\n\nDiscovery consists of techniques an adversary may use to gain knowledge about the system and internal network. These techniques help adversaries observe the environment and orient themselves before deciding how to act. They also allow adversaries to explore what they can control and what’s around their entry point in order to discover how it could benefit their current objective. Native operating system tools are often used toward this post-compromise information-gathering objective. ",
       "meta": {
-        "ordinal_position": 9,
+        "ordinal_position": "9",
         "source": "MITRE",
         "tactic_attack_id": "TA0007"
       },
@@ -2784,7 +2784,7 @@
     {
       "description": "The adversary is trying to move through your environment.\n\nLateral Movement consists of techniques that adversaries use to enter and control remote systems on a network. Following through on their primary objective often requires exploring the network to find their target and subsequently gaining access to it. Reaching their objective often involves pivoting through multiple systems and accounts to gain. Adversaries might install their own remote access tools to accomplish Lateral Movement or use legitimate credentials with native network and operating system tools, which may be stealthier. ",
       "meta": {
-        "ordinal_position": 10,
+        "ordinal_position": "10",
         "source": "MITRE",
         "tactic_attack_id": "TA0008"
       },
@@ -2888,7 +2888,7 @@
     {
       "description": "The adversary is trying to gather data of interest to their goal.\n\nCollection consists of techniques adversaries may use to gather information and the sources information is collected from that are relevant to following through on the adversary's objectives. Frequently, the next goal after collecting data is to steal (exfiltrate) the data. Common target sources include various drive types, browsers, audio, video, and email. Common collection methods include capturing screenshots and keyboard input.",
       "meta": {
-        "ordinal_position": 11,
+        "ordinal_position": "11",
         "source": "MITRE",
         "tactic_attack_id": "TA0009"
       },
@@ -3048,7 +3048,7 @@
     {
       "description": "The adversary is trying to communicate with compromised systems to control them.\n\nCommand and Control consists of techniques that adversaries may use to communicate with systems under their control within a victim network. Adversaries commonly attempt to mimic normal, expected traffic to avoid detection. There are many ways an adversary can establish command and control with various levels of stealth depending on the victim’s network structure and defenses.",
       "meta": {
-        "ordinal_position": 12,
+        "ordinal_position": "12",
         "source": "MITRE",
         "tactic_attack_id": "TA0011"
       },
@@ -3220,7 +3220,7 @@
     {
       "description": "The adversary is trying to steal data.\n\nExfiltration consists of techniques that adversaries may use to steal data from your network. Once they’ve collected data, adversaries often package it to avoid detection while removing it. This can include compression and encryption. Techniques for getting data out of a target network typically include transferring it over their command and control channel or an alternate channel and may also include putting size limits on the transmission.",
       "meta": {
-        "ordinal_position": 13,
+        "ordinal_position": "13",
         "source": "MITRE",
         "tactic_attack_id": "TA0010"
       },
@@ -3308,7 +3308,7 @@
     {
       "description": "The adversary is trying to manipulate, interrupt, or destroy your systems and data.\n \nImpact consists of techniques that adversaries use to disrupt availability or compromise integrity by manipulating business and operational processes. Techniques used for impact can include destroying or tampering with data. In some cases, business processes can look fine, but may have been altered to benefit the adversaries’ goals. These techniques might be used by adversaries to follow through on their end goal or to provide cover for a confidentiality breach.",
       "meta": {
-        "ordinal_position": 14,
+        "ordinal_position": "14",
         "source": "MITRE",
         "tactic_attack_id": "TA0040"
       },

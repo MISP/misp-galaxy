@@ -62,7 +62,7 @@ class SubTechniqueMeta(Meta):
 class TacticMeta(Meta):
     source: str = None
     tactic_attack_id: str = None
-    ordinal_position: int = None
+    ordinal_position: str = None
     tags: list = None
     owner: str = None
 
@@ -531,7 +531,7 @@ class TacticCluster(Cluster):
             meta = TacticMeta(
                 source=entry.get("source"),
                 tactic_attack_id=entry.get("tactic_attack_id"),
-                ordinal_position=entry.get("ordinal_position"),
+                ordinal_position=str(entry.get("ordinal_position")),
                 tags=[x.get("tag") for x in entry.get("tags")],
                 owner=entry.get("owner_name"),
             )
