@@ -69,7 +69,7 @@ def galaxy_transform_to_link(galaxy):
 
 def generate_relations_table(cluster):
     relationships = cluster.relationships
-    markdown = f"# {cluster.value} \n\n"
+    markdown = f"# {cluster.value} ({cluster.uuid}) \n\n"
     markdown += f"{cluster.description} \n\n"
     markdown += "|Cluster A | Galaxy A | Cluster B | Galaxy B | Level { .graph } |\n"
     markdown += "| --- | --- | --- | --- | --- |\n"
