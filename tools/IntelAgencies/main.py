@@ -5,12 +5,35 @@ import uuid
 import json
 
 from bs4 import BeautifulSoup
+import pycountry
 
 CLUSTER_PATH = '../../clusters'
 GALAXY_PATH = '../../galaxies'
 GALAXY_NAME = 'intelligence-agencies'
 UUID = "3ef969e7-96cd-4048-aa83-191ac457d0db"
 WIKIPEDIA_URL = "https://en.wikipedia.org"
+
+COUNTRY_CODES = {
+    "Brunei": "BN",
+    "People's Republic of China": "CN",
+    "Democratic Republic of the Congo": "CD",  # Note: This is for the Democratic Republic of the Congo, not to be confused with the Republic of the Congo (CG)
+    "Czech Republic": "CZ",
+    "Iran": "IR",
+    "Moldova": "MD",  # Officially known as the Republic of Moldova
+    "North Korea": "KP",  # Officially the Democratic People's Republic of Korea (DPRK)
+    "Palestine": "PS",
+    "Russia": "RU",  # Officially the Russian Federation
+    "South Korea": "KR",  # Officially the Republic of Korea (ROK)
+    "Syria": "SY",  # Officially the Syrian Arab Republic
+    "Taiwan": "TW",  # ISO code is assigned as "Taiwan, Province of China"
+    "Tanzania": "TZ",  # Officially the United Republic of Tanzania
+    "Trinidad & Tobago": "TT",
+    "Turkey": "TR",
+    "Venezuela": "VE",  # Officially the Bolivarian Republic of Venezuela
+    "Vietnam": "VN",  # Officially the Socialist Republic of Vietnam
+    "European Union": None,  # Not a country, no ISO code
+    "Shanghai Cooperation Organisation": None  # Not a country, no ISO code
+}
 
 def get_UUIDs():
     if f"{GALAXY_NAME}.json" in os.listdir(CLUSTER_PATH):
@@ -85,10 +108,23 @@ def get_agencies_from_country(heading, current_country, uuids):
     for content in contents:
         agency_names = get_notes_on_lower_level(content)
         for name, links, description, synonyms in agency_names:
-            if uuids and name in uuids:
-                agencies.append(IntelAgency(value=name, uuid=uuids[name], meta=Meta(country=current_country, refs=[links], synonyms=[synonyms]), description=description))
+            country_code = pycountry.countries.get(name=current_country)
+
+            # Set country
+            country_name = current_country
+
+            if country_code:
+                country_code = country_code.alpha_2
             else:
-                agencies.append(IntelAgency(value=name, meta=Meta(country=current_country, refs=[links], synonyms=[synonyms]), uuid=str(uuid.uuid4()), description=description))
+                country_code = COUNTRY_CODES.get(current_country)
+
+            if current_country in ["European Union", "Shanghai Cooperation Organisation"]: # Not a country
+                country_name = None
+            
+            if uuids and name in uuids:
+                agencies.append(IntelAgency(value=name, uuid=uuids[name], meta=Meta(country=country_code, country_name=country_name, refs=[links], synonyms=[synonyms]), description=description))
+            else:
+                agencies.append(IntelAgency(value=name, meta=Meta(country=country_code, country_name=country_name, refs=[links], synonyms=[synonyms]), uuid=str(uuid.uuid4()), description=description))
     
     return agencies
     
@@ -110,7 +146,6 @@ if __name__ == '__main__':
     wiki = WikipediaAPI()
     page_title = 'List of intelligence agencies'
     content = wiki.get_page_html(page_title)
-    # print(content)
     uuids = get_UUIDs()
     if content and uuids:
         agencies = extract_info(content, uuids)
