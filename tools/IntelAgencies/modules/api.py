@@ -54,3 +54,19 @@ class WikipediaAPI():
         except Exception as e:
             print(f'Error: {e}')
             return None
+        
+    def get_authors(self, page_title):
+        params = {
+            'action': 'query',
+            'format': 'json',
+            'titles': page_title,
+            'prop': 'contributors',
+        }
+        try:
+            response = requests.get(self.base_url, params=params)
+            data = response.json()
+            page_id = next(iter(data['query']['pages']))
+            return data['query']['pages'][page_id]['contributors']
+        except Exception as e:
+            print(f'Error: {e}')
+            return None

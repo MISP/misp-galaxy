@@ -155,6 +155,7 @@ if __name__ == '__main__':
     else:
         print(f'Error: {content}')
 
+    authors = [x['name'] for x in wiki.get_authors(page_title)]
     # Write to files
     galaxy = Galaxy(
         description="List of intelligence agencies",
@@ -168,7 +169,7 @@ if __name__ == '__main__':
     galaxy.save_to_file(os.path.join(GALAXY_PATH, f'{GALAXY_NAME}.json'))
 
     cluster = Cluster(
-        authors="Wikipedia",
+        authors=authors,
         category="Intelligence Agencies",
         description="List of intelligence agencies",
         name="Intelligence Agencies",
