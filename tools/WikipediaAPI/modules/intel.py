@@ -1,9 +1,30 @@
-from dataclasses import dataclass, field, asdict
+from dataclasses import dataclass, field, asdict, is_dataclass
 import json
 
 @dataclass
 class Meta:
     country: str = ""
+    refs: list = field(default_factory=list)
+    synonyms: list = field(default_factory=list)
+
+def custom_asdict(obj):
+    if is_dataclass(obj):
+        result = {}
+        for field_name, field_def in obj.__dataclass_fields__.items():
+            value = getattr(obj, field_name)
+            if field_name == 'meta': 
+                meta_value = custom_asdict(value) 
+                meta_value = {k: v for k, v in meta_value.items() if not (k in ['refs', 'synonyms'] and (not v or all(e is None for e in v)))}
+                value = meta_value
+            elif isinstance(value, (list, tuple)) and all(is_dataclass(i) for i in value):
+                value = [custom_asdict(i) for i in value]
+            elif isinstance(value, list) and all(e is None for e in value): 
+                continue 
+            result[field_name] = value
+        return result
+    else:
+        return obj
+
 
 @dataclass
 class IntelAgency:
@@ -34,31 +55,20 @@ class Galaxy:
             file.write(json.dumps(asdict(self), indent=4))
 
 @dataclass
-class Cluster():
-    def __init__(
-        self,
-        authors: str,
-        category: str,
-        description: str,
-        name: str,
-        source: str,
-        type: str,
-        uuid: str,
-        version: int,
-    ):
-        self.authors = authors
-        self.category = category
-        self.description = description
-        self.name = name
-        self.source = source
-        self.type = type
-        self.uuid = uuid
-        self.version = version
-        self.values = []
+class Cluster:
+    authors: str
+    category: str
+    description: str
+    name: str
+    source: str
+    type: str
+    uuid: str
+    version: int
+    values: list = field(default_factory=list)
 
     def add_value(self, value: IntelAgency):
         self.values.append(value)
 
     def save_to_file(self, path: str):
         with open(path, "w") as file:
-            file.write(json.dumps(asdict(self), indent=4))
+            file.write(json.dumps(custom_asdict(self), indent=4, ensure_ascii=False))

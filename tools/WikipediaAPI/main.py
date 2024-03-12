@@ -3,19 +3,19 @@ from modules.intel import IntelAgency, Meta, Galaxy, Cluster
 import os
 import uuid
 import json
-import re
 
 from bs4 import BeautifulSoup
 
 CLUSTER_PATH = '../../clusters'
 GALAXY_PATH = '../../galaxies'
 GALAXY_NAME = 'intelligence-agencies'
-UUID = str(uuid.uuid4())
+UUID = "3ef969e7-96cd-4048-aa83-191ac457d0db"
+WIKIPEDIA_URL = "https://en.wikipedia.org"
 
 def get_UUIDs():
-    if GALAXY_NAME in os.listdir(CLUSTER_PATH):
+    if f"{GALAXY_NAME}.json" in os.listdir(CLUSTER_PATH):
         uuids = {}
-        with open(os.path.join(CLUSTER_PATH, GALAXY_NAME)) as fr:
+        with open(os.path.join(CLUSTER_PATH, f"{GALAXY_NAME}.json")) as fr:
             galaxy_json = json.load(fr)
             for cluster in galaxy_json["values"]:
                 uuids[cluster["value"]] = cluster["uuid"]
@@ -28,18 +28,29 @@ def get_notes_on_lower_level(content):
         if li.find('ul'):
             notes.extend(get_notes_on_lower_level(li.find('ul')))
         else:
-            notes.append(li.text)
+            a_tag = li.find('a')
+
+            title = li.text
+            link_href = None
+            description = li.text
+
+            if a_tag:
+                title = a_tag.get('title', description)
+                if a_tag.has_attr('href'):
+                    link_href = f'{WIKIPEDIA_URL}{a_tag["href"]}'
+
+            notes.append((title, link_href, description, None))
     return notes
 
 def get_agencies_from_country(heading, current_country, uuids):
     agencies = []
     content = heading.find_next('ul')
     agency_names = get_notes_on_lower_level(content)
-    for name in agency_names:
+    for name, links, description, synonyms in agency_names:
         if uuids and name in uuids:
-            agencies.append(IntelAgency(value=name, uuid=uuids[name], meta=Meta(country=current_country)))
+            agencies.append(IntelAgency(value=name, uuid=uuids[name], meta=Meta(country=current_country, refs=[links]), description=description))
         else:
-            agencies.append(IntelAgency(value=name, meta=Meta(country=current_country), uuid=str(uuid.uuid4())))
+            agencies.append(IntelAgency(value=name, meta=Meta(country=current_country, refs=[links]), uuid=str(uuid.uuid4()), description=description))
     return agencies
     
 def extract_info(content, uuids):
@@ -93,6 +104,5 @@ if __name__ == '__main__':
     )
     for agency in agencies:
         cluster.add_value(agency)
-    print(cluster.values)
-    print(cluster.uuid)
+
     cluster.save_to_file(os.path.join(CLUSTER_PATH, f'{GALAXY_NAME}.json'))
