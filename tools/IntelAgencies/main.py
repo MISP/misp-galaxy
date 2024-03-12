@@ -28,29 +28,68 @@ def get_notes_on_lower_level(content):
         if li.find('ul'):
             notes.extend(get_notes_on_lower_level(li.find('ul')))
         else:
+
+            if li.text in ["Islamic Republic of Iran Army:", "Islamic Revolutionary Guard Corps:", "FARAJA", "Judicial system of the Islamic Republic of Iran", "Intelligence [12]", "Intelligence org"]: # These are not intelligence agencies but Iran's entry is broken
+                continue
+
             a_tag = li.find('a')
 
             title = li.text
             link_href = None
             description = li.text
 
+            i_tag = li.find_all('i')
+            synonyms = [i.text for i in i_tag]
+            
             if a_tag:
                 title = a_tag.get('title', description)
                 if a_tag.has_attr('href'):
                     link_href = f'{WIKIPEDIA_URL}{a_tag["href"]}'
 
-            notes.append((title, link_href, description, None))
+            if len(synonyms) == 0 or synonyms[0] == title:
+                synonyms = None
+
+            notes.append((title, link_href, description, synonyms))
     return notes
 
 def get_agencies_from_country(heading, current_country, uuids):
     agencies = []
-    content = heading.find_next('ul')
-    agency_names = get_notes_on_lower_level(content)
-    for name, links, description, synonyms in agency_names:
-        if uuids and name in uuids:
-            agencies.append(IntelAgency(value=name, uuid=uuids[name], meta=Meta(country=current_country, refs=[links]), description=description))
-        else:
-            agencies.append(IntelAgency(value=name, meta=Meta(country=current_country, refs=[links]), uuid=str(uuid.uuid4()), description=description))
+    contents = []
+    if current_country != "Gambia": # Gambia has a mistake on the wikipedia page
+        contents.append(heading.find_next('ul'))
+    else:
+        soup = BeautifulSoup(str(heading), 'html.parser')
+        ul_tag = soup.new_tag('ul')
+        li_tag = soup.new_tag('li')
+        a_tag = heading.find_next('p').find('a')
+        li_tag.append(a_tag)
+        ul_tag.append(li_tag)
+        contents.append(ul_tag)
+     
+    current_content = contents[0]
+    while True:
+        next_sibling = current_content.find_next_sibling()
+
+        if next_sibling is None or next_sibling.name == 'h2':
+            break
+
+        if current_country == "Bahamas" and next_sibling.name == 'h2': # Bahamas has a mistake on the wikipedia page
+            current_country = None 
+            continue
+
+        if next_sibling.name == 'ul':
+            contents.append(next_sibling)
+
+        current_content = next_sibling
+    
+    for content in contents:
+        agency_names = get_notes_on_lower_level(content)
+        for name, links, description, synonyms in agency_names:
+            if uuids and name in uuids:
+                agencies.append(IntelAgency(value=name, uuid=uuids[name], meta=Meta(country=current_country, refs=[links], synonyms=[synonyms]), description=description))
+            else:
+                agencies.append(IntelAgency(value=name, meta=Meta(country=current_country, refs=[links], synonyms=[synonyms]), uuid=str(uuid.uuid4()), description=description))
+    
     return agencies
     
 def extract_info(content, uuids):
@@ -71,6 +110,7 @@ if __name__ == '__main__':
     wiki = WikipediaAPI()
     page_title = 'List of intelligence agencies'
     content = wiki.get_page_html(page_title)
+    # print(content)
     uuids = get_UUIDs()
     if content and uuids:
         agencies = extract_info(content, uuids)
@@ -84,7 +124,7 @@ if __name__ == '__main__':
     galaxy = Galaxy(
         description="List of intelligence agencies",
         icon="ninja",
-        name="intelligence-agencies",
+        name="Intelligence Agencies",
         namespace="intelligence-agency",
         type="intelligence-agency",
         uuid=UUID,
@@ -96,7 +136,7 @@ if __name__ == '__main__':
         authors="Wikipedia",
         category="Intelligence Agencies",
         description="List of intelligence agencies",
-        name="intelligence-agencies",
+        name="Intelligence Agencies",
         source="https://en.wikipedia.org/wiki/List_of_intelligence_agencies",
         type="intelligence-agency",
         uuid=UUID,
