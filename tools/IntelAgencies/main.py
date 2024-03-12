@@ -120,6 +120,10 @@ def get_agencies_from_country(heading, current_country, uuids):
 
             if current_country in ["European Union", "Shanghai Cooperation Organisation"]: # Not a country
                 country_name = None
+
+            # Set names for duplicates
+            if name in ['Special Branch', 'Financial Intelligence Unit']:
+                name = f'{name} ({current_country})'
             
             if uuids and name in uuids:
                 agencies.append(IntelAgency(value=name, uuid=uuids[name], meta=Meta(country=country_code, country_name=country_name, refs=[links], synonyms=synonyms), description=description))
