@@ -122,9 +122,9 @@ def get_agencies_from_country(heading, current_country, uuids):
                 country_name = None
             
             if uuids and name in uuids:
-                agencies.append(IntelAgency(value=name, uuid=uuids[name], meta=Meta(country=country_code, country_name=country_name, refs=[links], synonyms=[synonyms]), description=description))
+                agencies.append(IntelAgency(value=name, uuid=uuids[name], meta=Meta(country=country_code, country_name=country_name, refs=[links], synonyms=synonyms), description=description))
             else:
-                agencies.append(IntelAgency(value=name, meta=Meta(country=country_code, country_name=country_name, refs=[links], synonyms=[synonyms]), uuid=str(uuid.uuid4()), description=description))
+                agencies.append(IntelAgency(value=name, meta=Meta(country=country_code, country_name=country_name, refs=[links], synonyms=synonyms), uuid=str(uuid.uuid4()), description=description))
     
     return agencies
     
