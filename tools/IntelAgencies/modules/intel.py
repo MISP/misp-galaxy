@@ -7,24 +7,6 @@ class Meta:
     country_name: str = None
     refs: list = field(default_factory=list)
     synonyms: list = field(default_factory=list)
-
-# def custom_asdict(obj):
-#     if is_dataclass(obj):
-#         result = {}
-#         for field_name, field_def in obj.__dataclass_fields__.items():
-#             value = getattr(obj, field_name)
-#             if field_name == 'meta': 
-#                 meta_value = custom_asdict(value) 
-#                 meta_value = {k: v for k, v in meta_value.items() if not (k in ['refs', 'synonyms'] and (not v or all(e is None for e in v)))}
-#                 value = meta_value
-#             elif isinstance(value, (list, tuple)) and all(is_dataclass(i) for i in value):
-#                 value = [custom_asdict(i) for i in value]
-#             elif isinstance(value, list) and all(e is None for e in value): 
-#                 continue 
-#             result[field_name] = value
-#         return result
-#     else:
-#         return obj
     
 def custom_asdict(obj):
     if is_dataclass(obj):
@@ -33,14 +15,12 @@ def custom_asdict(obj):
             value = getattr(obj, field_name)
             if field_name == 'meta': 
                 meta_value = custom_asdict(value)
-                # Filter out 'refs', 'synonyms', 'country', and 'country_name' if they are None or if 'refs' and 'synonyms' are empty
                 meta_value = {k: v for k, v in meta_value.items() if v is not None and not (k in ['refs', 'synonyms'] and (not v or all(e is None for e in v)))}
                 value = meta_value
             elif isinstance(value, (list, tuple)) and all(is_dataclass(i) for i in value):
                 value = [custom_asdict(i) for i in value]
             elif isinstance(value, list) and all(e is None for e in value):
                 continue
-            # Skip the field if the value is None (specifically for 'country' and 'country_name')
             if value is None and field_name in ['country', 'country_name']:
                 continue
             result[field_name] = value
