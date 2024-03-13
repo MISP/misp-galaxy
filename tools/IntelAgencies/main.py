@@ -35,15 +35,8 @@ COUNTRY_CODES = {
     "Shanghai Cooperation Organisation": None  # Not a country, no ISO code
 }
 
-def get_UUIDs():
-    if f"{GALAXY_NAME}.json" in os.listdir(CLUSTER_PATH):
-        uuids = {}
-        with open(os.path.join(CLUSTER_PATH, f"{GALAXY_NAME}.json")) as fr:
-            galaxy_json = json.load(fr)
-            for cluster in galaxy_json["values"]:
-                uuids[cluster["value"]] = cluster["uuid"]
-        return uuids
-    return None
+def compute_uuid(value, namespace=UUID):
+    return str(uuid.uuid5(uuid.UUID(namespace), value))
 
 def get_notes_on_lower_level(content):
     notes = []
@@ -75,7 +68,7 @@ def get_notes_on_lower_level(content):
             notes.append((title, link_href, description, synonyms))
     return notes
 
-def get_agencies_from_country(heading, current_country, uuids):
+def get_agencies_from_country(heading, current_country):
     agencies = []
     contents = []
     if current_country != "Gambia": # Gambia has a mistake on the wikipedia page
@@ -125,14 +118,11 @@ def get_agencies_from_country(heading, current_country, uuids):
             if name in ['Special Branch', 'Financial Intelligence Unit']:
                 name = f'{name} ({current_country})'
             
-            if uuids and name in uuids:
-                agencies.append(IntelAgency(value=name, uuid=uuids[name], meta=Meta(country=country_code, country_name=country_name, refs=[links], synonyms=synonyms), description=description))
-            else:
-                agencies.append(IntelAgency(value=name, meta=Meta(country=country_code, country_name=country_name, refs=[links], synonyms=synonyms), uuid=str(uuid.uuid4()), description=description))
-    
+            agencies.append(IntelAgency(value=name, uuid=compute_uuid(name), meta=Meta(country=country_code, country_name=country_name, refs=[links], synonyms=synonyms), description=description))
+                
     return agencies
     
-def extract_info(content, uuids):
+def extract_info(content):
     IGNORE = ["See also", "References", "External links", "Further reading"]
     soup = BeautifulSoup(content, 'html.parser')
     agencies = []
@@ -141,7 +131,7 @@ def extract_info(content, uuids):
         span = h2.find('span', {'class': 'mw-headline'})
         if span and span.text not in IGNORE:
             current_country = span.text.strip()
-            agencies.extend(get_agencies_from_country(h2, current_country, uuids))
+            agencies.extend(get_agencies_from_country(h2, current_country))
         else:
             continue
     return agencies
@@ -150,14 +140,10 @@ if __name__ == '__main__':
     wiki = WikipediaAPI()
     page_title = 'List of intelligence agencies'
     content = wiki.get_page_html(page_title)
-    uuids = get_UUIDs()
-    if content and uuids:
-        agencies = extract_info(content, uuids)
-    elif not uuids:
-        print(f'No UUIDs found for {GALAXY_NAME}')
-        agencies = extract_info(content, None)
+    if content:
+        agencies = extract_info(content)
     else:
-        print(f'Error: {content}')
+        raise ValueError("Error: No content found: ", content)
 
     authors = [x['name'] for x in wiki.get_authors(page_title)]
     # Write to files
