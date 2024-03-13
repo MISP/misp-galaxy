@@ -44,10 +44,6 @@ def get_notes_on_lower_level(content):
         if li.find('ul'):
             notes.extend(get_notes_on_lower_level(li.find('ul')))
         else:
-
-            if li.text in ["Islamic Republic of Iran Army:", "Islamic Revolutionary Guard Corps:", "FARAJA", "Judicial system of the Islamic Republic of Iran", "Intelligence [12]", "Intelligence org"]: # These are not intelligence agencies but Iran's entry is broken
-                continue
-
             a_tag = li.find('a')
 
             title = li.text
@@ -71,27 +67,14 @@ def get_notes_on_lower_level(content):
 def get_agencies_from_country(heading, current_country):
     agencies = []
     contents = []
-    if current_country != "Gambia": # Gambia has a mistake on the wikipedia page
-        contents.append(heading.find_next('ul'))
-    else:
-        soup = BeautifulSoup(str(heading), 'html.parser')
-        ul_tag = soup.new_tag('ul')
-        li_tag = soup.new_tag('li')
-        a_tag = heading.find_next('p').find('a')
-        li_tag.append(a_tag)
-        ul_tag.append(li_tag)
-        contents.append(ul_tag)
-     
+    contents.append(heading.find_next('ul'))
+    
     current_content = contents[0]
     while True:
         next_sibling = current_content.find_next_sibling()
 
         if next_sibling is None or next_sibling.name == 'h2':
             break
-
-        if current_country == "Bahamas" and next_sibling.name == 'h2': # Bahamas has a mistake on the wikipedia page
-            current_country = None 
-            continue
 
         if next_sibling.name == 'ul':
             contents.append(next_sibling)
