@@ -51,6 +51,7 @@ class Galaxy:
 
     def _create_title_entry(self):
         entry = ""
+        entry += f"[Edit :material-pencil:](https://github.com/MISP/misp-galaxy/edit/main/clusters/{self.json_file_name}){{ .md-button }}\n"
         entry += f"# {self.galaxy_name}\n"
         return entry
 
