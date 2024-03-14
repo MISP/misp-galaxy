@@ -76,16 +76,15 @@ document$.subscribe(function () {
         simulation.update({ newNodes: newNodes, newLinks: newLinks });
     }
 
-    function createForceDirectedGraph(data, elementId) {
-        var nodePaths = {};
-        data.forEach(d => {
-            nodePaths[d.source] = d.sourcePath || null;
-            nodePaths[d.target] = d.targetPath || null;
-        });
+    function extractNodePaths(data) {
+        return data.reduce((acc, d) => ({
+            ...acc,
+            [d.source]: d.sourcePath || null,
+            [d.target]: d.targetPath || null,
+        }), {});
+    }
 
-        // Extract unique galaxy names from data
-        const galaxies = Array.from(new Set(data.flatMap(d => [d.sourceGalaxy, d.targetGalaxy])));
-
+    function defineColorScale(galaxies) {
         const colorScheme = [
             '#E63946', // Red
             '#F1FAEE', // Off White
@@ -108,8 +107,171 @@ document$.subscribe(function () {
             '#FFBA08', // Selective Yellow
             '#FFD60A'  // Naples Yellow
         ];
-        const colorScale = d3.scaleOrdinal(colorScheme)
+        return d3.scaleOrdinal(colorScheme)
             .domain(galaxies);
+    }
+
+    function initializeNodeInteractions(node, link, tooltip, simulation, links, Parent_Node, NODE_RADIUS) {
+        // Mouseover event handler
+        node.on("mouseover", function (event, d) {
+            tooltip.transition()
+                .duration(200)
+                .style("opacity", .9);
+            tooltip.html(d.id)
+                .style("left", (event.pageX) + "px")
+                .style("top", (event.pageY - 28) + "px");
+            node.style("opacity", 0.1);
+            link.style("opacity", 0.1);
+            d3.select(this)
+                .attr("r", parseFloat(d3.select(this).attr("r")) + 5)
+                .style("opacity", 1);
+            d3.selectAll(".legend-text.galaxy-" + d.galaxy.replace(/\s+/g, '-').replace(/[\s.]/g, '-'))
+                .style("font-weight", "bold")
+                .style("font-size", "14px");
+            link.filter(l => l.source.id === d.id || l.target.id === d.id)
+                .attr("stroke-width", 3)
+                .style("opacity", 1);
+            node.filter(n => n.id === d.id || links.some(l => (l.source.id === d.id && l.target.id === n.id) || (l.target.id === d.id && l.source.id === n.id)))
+                .style("opacity", 1);
+        })
+            .on("mousemove", function (event) {
+                tooltip.style("left", (event.pageX) + "px")
+                    .style("top", (event.pageY - 28) + "px");
+            })
+            .on("mouseout", function (event, d) {
+                tooltip.transition()
+                    .duration(500)
+                    .style("opacity", 0);
+                node.style("opacity", 1);
+                link.style("opacity", 1);
+                d3.select(this).attr("r", d => d.id === Parent_Node.id ? NODE_RADIUS + 5 : NODE_RADIUS);
+                d3.selectAll(".legend-text.galaxy-" + d.galaxy.replace(/\s+/g, '-').replace(/[\s.]/g, '-'))
+                    .style("font-weight", "normal")
+                    .style("font-size", "12px");
+                link.filter(l => l.source.id === d.id || l.target.id === d.id)
+                    .attr("stroke-width", 1);
+                node.filter(n => n.id === d.id || links.some(l => (l.source.id === d.id && l.target.id === n.id) || (l.target.id === d.id && l.source.id === n.id)));
+            })
+            .on("dblclick", function (event, d) {
+                location.href = d.path;
+            });
+
+        // Define drag behavior
+        var drag = d3.drag()
+            .on("start", dragstarted)
+            .on("drag", dragged)
+            .on("end", dragended);
+
+        // Apply drag behavior to nodes
+        node.call(drag);
+
+        function dragstarted(event, d) {
+            if (!event.active) simulation.alphaTarget(0.3).restart();
+            d.fx = d.x;
+            d.fy = d.y;
+        }
+
+        function dragged(event, d) {
+            d.fx = event.x;
+            d.fy = event.y;
+        }
+
+        function dragended(event, d) {
+            if (!event.active) simulation.alphaTarget(0);
+        }
+    }
+
+
+
+    function createGalaxyColorLegend(svg, width, galaxies, colorScale, node, link, tooltip) {
+        // Prepare legend data
+        const legendData = galaxies.map(galaxy => ({
+            name: galaxy,
+            color: colorScale(galaxy)
+        }));
+
+        const maxCharLength = 10; // Maximum number of characters to display in legend
+
+        // Create legend
+        const legend = svg.append("g")
+            .attr("class", "legend")
+            .attr("transform", "translate(" + (width - 100) + ",20)"); // Adjust position as needed
+
+        // Add legend title
+        legend.append("text")
+            .attr("x", 0)
+            .attr("y", -10)
+            .style("font-size", "13px")
+            .style("text-anchor", "start")
+            .style("fill", "grey")
+            .text("Galaxy Colors");
+
+        // Add colored rectangles and text labels for each galaxy
+        const legendItem = legend.selectAll(".legend-item")
+            .data(legendData)
+            .enter().append("g")
+            .attr("class", "legend-item")
+            .attr("transform", (d, i) => `translate(0, ${i * 20})`);
+
+        legendItem.append("rect")
+            .attr("width", 12)
+            .attr("height", 12)
+            .style("fill", d => d.color)
+            .on("mouseover", mouseoverEffect)
+            .on("mouseout", mouseoutEffect);
+
+        legendItem.append("text")
+            .attr("x", 24)
+            .attr("y", 9)
+            .attr("dy", "0.35em")
+            .style("text-anchor", "start")
+            .style("fill", "grey")
+            .style("font-size", "12px")
+            .attr("class", d => "legend-text galaxy-" + d.name.replace(/\s+/g, '-').replace(/[\s.]/g, '-'))
+            .text(d => d.name.length > maxCharLength ? d.name.substring(0, maxCharLength) + "..." : d.name)
+            .on("mouseover", mouseoverEffect)
+            .on("mouseout", mouseoutEffect);
+
+        function mouseoverEffect(event, d) {
+            // Dim the opacity of all nodes and links
+            node.style("opacity", 0.1);
+            link.style("opacity", 0.1);
+
+            // Highlight elements associated with the hovered galaxy
+            svg.selectAll(".galaxy-" + d.name.replace(/\s+/g, '-').replace(/[\s.]/g, '-'))
+                .each(function () {
+                    d3.select(this).style("opacity", 1); // Increase opacity for related elements
+                });
+
+            // Show tooltip
+            tooltip.transition()
+                .duration(200)
+                .style("opacity", .9);
+            tooltip.html(d.name)
+                .style("left", (event.pageX) + "px")
+                .style("top", (event.pageY - 28) + "px");
+        }
+
+        function mouseoutEffect(event, d) {
+            // Restore the opacity of nodes and links
+            node.style("opacity", 1);
+            link.style("opacity", 1);
+
+            // Hide tooltip
+            tooltip.transition()
+                .duration(500)
+                .style("opacity", 0);
+        }
+
+    }
+
+
+    function createForceDirectedGraph(data, elementId) {
+        const nodePaths = extractNodePaths(data);
+
+        // // Extract unique galaxy names from data
+        const galaxies = Array.from(new Set(data.flatMap(d => [d.sourceGalaxy, d.targetGalaxy])));
+        const colorScale = defineColorScale(data);
 
         var nodes = Array.from(new Set(data.flatMap(d => [d.source, d.target])))
             .map(id => ({
@@ -119,8 +281,6 @@ document$.subscribe(function () {
             }));
 
         let header = document.querySelector('h1').textContent;
-        // const parentUUID = header.replace(/\s+/g, '-').charAt(0).toLowerCase() + header.replace(/\s+/g, '-').slice(1);
-        // console.log("Parent UUID: " + parentUUID);
         const Parent_Node = nodes.find(node => node.id.includes(header));
 
         var links = data.map(d => ({ source: d.source, target: d.target }));
@@ -130,15 +290,22 @@ document$.subscribe(function () {
             .style("opacity", 0);
 
         // Set up the dimensions of the graph
-        var width = 800, height = 1000;
+        var height = 1000;
+        var width = document.querySelector('.md-content__inner').offsetWidth;
 
-        var svg = d3.select(elementId).append("svg")
-            .attr("width", width)
-            .attr("height", height);
+
+        // var svg = d3.select(elementId).append("svg")
+        //     .attr("width", width)
+        //     .attr("height", height)
+
+        var svg = d3.select("div#container")
+            .append("svg")
+            .attr("preserveAspectRatio", "xMinYMin meet")
+            .attr("viewBox", "0 0 825 1000")
+            .classed("svg-content", true);
 
         // Create a force simulation
         linkDistance = Math.sqrt((width * height) / nodes.length);
-
         var simulation = d3.forceSimulation(nodes)
             .force("link", d3.forceLink(links).id(d => d.id).distance(linkDistance))
             .force("charge", d3.forceManyBody().strength(-70))
@@ -169,165 +336,9 @@ document$.subscribe(function () {
             })
             .attr("class", d => "node galaxy-" + d.galaxy.replace(/\s+/g, '-').replace(/[\s.]/g, '-'));
 
-        // Apply tooltip on nodes
-        node.on("mouseover", function (event, d) {
-            tooltip.transition()
-                .duration(200)
-                .style("opacity", .9);
-            tooltip.html(d.id)
-                .style("left", (event.pageX) + "px")
-                .style("top", (event.pageY - 28) + "px");
-            node.style("opacity", 0.1);
-            link.style("opacity", 0.1);
-            d3.select(this)
-                .attr("r", parseFloat(d3.select(this).attr("r")) + 5)
-                .style("opacity", 1);
-            svg.selectAll(".legend-text.galaxy-" + d.galaxy.replace(/\s+/g, '-').replace(/[\s.]/g, '-'))
-                .style("font-weight", "bold")
-                .style("font-size", "14px");
-            link.filter(l => l.source.id === d.id || l.target.id === d.id)
-                .attr("stroke-width", 3)
-                .style("opacity", 1);
-            node.filter(n => n.id === d.id || links.some(l => (l.source.id === d.id && l.target.id === n.id) || (l.target.id === d.id && l.source.id === n.id)))
-                .style("opacity", 1);
-        })
-            .on("mousemove", function (event) {
-                tooltip.style("left", (event.pageX) + "px")
-                    .style("top", (event.pageY - 28) + "px");
-            })
-            .on("mouseout", function (event, d) {
-                tooltip.transition()
-                    .duration(500)
-                    .style("opacity", 0);
-                node.style("opacity", 1);
-                link.style("opacity", 1);
-                d3.select(this).attr("r", function (d, i) {
-                    return d.id === Parent_Node.id ? NODE_RADIUS + 5 : NODE_RADIUS;
-                });
-                svg.selectAll(".legend-text.galaxy-" + d.galaxy.replace(/\s+/g, '-').replace(/[\s.]/g, '-'))
-                    .style("font-weight", "normal")
-                    .style("font-size", "12px");
-                link.filter(l => l.source.id === d.id || l.target.id === d.id)
-                    .attr("stroke-width", 1);
-                node.filter(n => n.id === d.id || links.some(l => (l.source.id === d.id && l.target.id === n.id) || (l.target.id === d.id && l.source.id === n.id)))
-            });
+        initializeNodeInteractions(node, link, tooltip, simulation, links, Parent_Node, NODE_RADIUS);
 
-
-        // Apply links on nodes
-        node.on("dblclick", function (event, d) {
-            location.href = d.path;
-        });
-
-        // Define drag behavior
-        var drag = d3.drag()
-            .on("start", dragstarted)
-            .on("drag", dragged)
-            .on("end", dragended);
-
-        // Apply drag behavior to nodes
-        node.call(drag);
-
-        function dragstarted(event, d) {
-            if (!event.active) simulation.alphaTarget(0.3).restart();
-            d.fx = d.x;
-            d.fy = d.y;
-        }
-
-        function dragged(event, d) {
-            d.fx = event.x;
-            d.fy = event.y;
-        }
-
-        function dragended(event, d) {
-            // Do not reset the fixed positions
-            if (!event.active) simulation.alphaTarget(0);
-        }
-
-        // Prepare legend data
-        const legendData = galaxies.map(galaxy => ({
-            name: galaxy,
-            color: colorScale(galaxy)
-        }));
-
-        const maxCharLength = 10; // Maximum number of characters to display in legend
-        // Create legend
-        const legend = svg.append("g")
-            .attr("class", "legend")
-            .attr("transform", "translate(" + (width - 100) + ",20)"); // Adjust position as needed
-
-        // Add legend title
-        legend.append("text")
-            .attr("x", 0)
-            .attr("y", -10)
-            .style("font-size", "13px")
-            .style("text-anchor", "start")
-            .style("fill", "grey")
-            .text("Galaxy Colors");
-
-        // Add colored rectangles and text labels for each galaxy
-        const legendItem = legend.selectAll(".legend-item")
-            .data(legendData)
-            .enter().append("g")
-            .attr("class", "legend-item")
-            .attr("transform", (d, i) => `translate(0, ${i * 20})`);
-
-        legendItem.append("rect")
-            .attr("width", 12)
-            .attr("height", 12)
-            .style("fill", d => d.color)
-            .on("mouseover", function (event, d) {
-                node.style("opacity", 0.1);
-                link.style("opacity", 0.1);
-                svg.selectAll(".galaxy-" + d.name.replace(/\s+/g, '-').replace(/[\s.]/g, '-'))
-                    .each(function () {
-                        var currentRadius = d3.select(this).attr("r");
-                        d3.select(this).style("opacity", 1);
-                    });
-                tooltip.transition()
-                    .duration(200)
-                    .style("opacity", .9);
-                tooltip.html(d.name)
-                    .style("left", (event.pageX) + "px")
-                    .style("top", (event.pageY - 28) + "px");
-            })
-            .on("mouseout", function (event, d) {
-                node.style("opacity", 1);
-                link.style("opacity", 1);
-                tooltip.transition()
-                    .duration(500)
-                    .style("opacity", 0);
-            });
-
-        legendItem.append("text")
-            .attr("x", 24)
-            .attr("y", 9)
-            .attr("dy", "0.35em")
-            .style("text-anchor", "start")
-            .style("fill", "grey")
-            .style("font-size", "12px")
-            .attr("class", d => "legend-text galaxy-" + d.name.replace(/\s+/g, '-').replace(/[\s.]/g, '-'))
-            .text(d => d.name.length > maxCharLength ? d.name.substring(0, maxCharLength) + "..." : d.name)
-            .on("mouseover", function (event, d) {
-                node.style("opacity", 0.1);
-                link.style("opacity", 0.1);
-                svg.selectAll(".galaxy-" + d.name.replace(/\s+/g, '-').replace(/[\s.]/g, '-'))
-                    .each(function () {
-                        d3.select(this).style("opacity", 1);
-                    });
-                tooltip.transition()
-                    .duration(200)
-                    .style("opacity", .9);
-                tooltip.html(d.name)
-                    .style("left", (event.pageX) + "px")
-                    .style("top", (event.pageY - 28) + "px");
-            })
-            .on("mouseout", function (event, d) {
-                node.style("opacity", 1);
-                link.style("opacity", 1);
-                tooltip.transition()
-                    .duration(500)
-                    .style("opacity", 0);
-            });
+        createGalaxyColorLegend(svg, width, galaxies, colorScale, node, link, tooltip);
 
 
         // Update positions on each simulation 'tick'
@@ -367,59 +378,6 @@ document$.subscribe(function () {
                         exit => exit.remove()
                     );
 
-                node.call(drag);
-
-                // Apply tooltip on nodes
-                node.on("mouseover", function (event, d) {
-                    tooltip.transition()
-                        .duration(200)
-                        .style("opacity", .9);
-                    tooltip.html(d.id)
-                        .style("left", (event.pageX) + "px")
-                        .style("top", (event.pageY - 28) + "px");
-                    node.style("opacity", 0.1);
-                    link.style("opacity", 0.1);
-                    d3.select(this)
-                        .attr("r", parseFloat(d3.select(this).attr("r")) + 5)
-                        .style("opacity", 1);
-                    svg.selectAll(".legend-text.galaxy-" + d.galaxy.replace(/\s+/g, '-').replace(/[\s.]/g, '-'))
-                        .style("font-weight", "bold")
-                        .style("font-size", "14px");
-                    link.filter(l => l.source.id === d.id || l.target.id === d.id)
-                        .attr("stroke-width", 3)
-                        .style("opacity", 1);
-                    node.filter(n => n.id === d.id || links.some(l => (l.source.id === d.id && l.target.id === n.id) || (l.target.id === d.id && l.source.id === n.id)))
-                        .style("opacity", 1);
-                })
-                    .on("mousemove", function (event) {
-                        tooltip.style("left", (event.pageX) + "px")
-                            .style("top", (event.pageY - 28) + "px");
-                    })
-                    .on("mouseout", function (event, d) {
-                        tooltip.transition()
-                            .duration(500)
-                            .style("opacity", 0);
-                        node.style("opacity", 1);
-                        link.style("opacity", 1);
-                        d3.select(this).attr("r", function (d, i) {
-                            return d.id === Parent_Node.id ? NODE_RADIUS + 5 : NODE_RADIUS;
-                        });
-                        svg.selectAll(".legend-text.galaxy-" + d.galaxy.replace(/\s+/g, '-').replace(/[\s.]/g, '-'))
-                            .style("font-weight", "normal")
-                            .style("font-size", "12px");
-                        link.filter(l => l.source.id === d.id || l.target.id === d.id)
-                            .attr("stroke-width", 1);
-                        node.filter(n => n.id === d.id || links.some(l => (l.source.id === d.id && l.target.id === n.id) || (l.target.id === d.id && l.source.id === n.id)))
-                    });
-
-                // Apply links on nodes
-                node.on("dblclick", function (event, d) {
-                    console.log("Node: " + d.id);
-                    console.log(d);
-                    console.log("Source Path: " + d.sourcePath);
-                    location.href = d.path;
-                });
-
                 // Process new links
                 const oldLinksMap = new Map(link.data().map(d => [`${d.source.id},${d.target.id}`, d]));
                 links = newLinks.map(d => Object.assign(oldLinksMap.get(`${d.source.id},${d.target.id}`) || {}, d));
@@ -432,6 +390,9 @@ document$.subscribe(function () {
                         update => update,
                         exit => exit.remove()
                     );
+
+                initializeNodeInteractions(node, link, tooltip, simulation, links, Parent_Node, NODE_RADIUS);
+                createGalaxyColorLegend(svg, width, galaxies, colorScale, node, link, tooltip);
 
                 // Restart the simulation with new data
                 simulation.nodes(nodes);
@@ -491,9 +452,11 @@ document$.subscribe(function () {
             } else {
                 data = allData;
             }
-            var graphId = "graph" + index;
+            var graphId = "container";
             var div = document.createElement("div");
+            // div.id = graphId;
             div.id = graphId;
+            div.className = "svg-container";
             table.parentNode.insertBefore(div, table);
             var simulation = createForceDirectedGraph(data, "#" + graphId);
 

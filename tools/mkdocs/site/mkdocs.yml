@@ -24,6 +24,8 @@ theme:
     - search.highlight
     - search.share
     - navigation.instant.preview
+    - navigation.instant.prefetch
+    - navigation.top
   palette:
 
     # Palette toggle for automatic mode
@@ -66,19 +68,16 @@ extra:
   generator: false
 
 extra_javascript:
-  # - javascripts/tablefilter.js
-  # - "https://unpkg.com/tablefilter@0.7.3/dist/tablefilter/tablefilter.js"
-  # - "https://d3js.org/d3.v6.min.js"
   - 01_attachements/javascripts/graph.js
   - 01_attachements/javascripts/statistics.js
-  # - node_modules/tablefilter/dist/tablefilter/tablefilter.js
-  # - node_modules/d3/dist/d3.min.js
   - 01_attachements/modules/d3.min.js
   - 01_attachements/modules/tablefilter/tablefilter.js
+  - 01_attachements/javascripts/navigation.js
 
 extra_css:
   - 01_attachements/stylesheets/graph.css
   - 01_attachements/stylesheets/buttons.css
+  - 01_attachements/stylesheets/navigation.css
 
 plugins:
   - search
