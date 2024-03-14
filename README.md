@@ -47,7 +47,7 @@ Category: *tool* - source: *Open Sources* - total: *433* elements
 
 [Azure Threat Research Matrix](https://www.misp-project.org/galaxy.html#_azure_threat_research_matrix) - The purpose of the Azure Threat Research Matrix (ATRM) is to educate readers on the potential of Azure-based tactics, techniques, and procedures (TTPs). It is not to teach how to weaponize or specifically abuse them. For this reason, some specific commands will be obfuscated or parts will be omitted to prevent abuse.
 
-Category: *atrm* - source: *https://github.com/microsoft/Azure-Threat-Research-Matrix* - total: *89* elements
+Category: *atrm* - source: *https://github.com/microsoft/Azure-Threat-Research-Matrix* - total: *90* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_azure_threat_research_matrix)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/atrm.json)]
 
@@ -63,7 +63,7 @@ Category: *guidelines* - source: *Open Sources* - total: *71* elements
 
 [Backdoor](https://www.misp-project.org/galaxy.html#_backdoor) - A list of backdoor malware.
 
-Category: *tool* - source: *Open Sources* - total: *23* elements
+Category: *tool* - source: *Open Sources* - total: *24* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_backdoor)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/backdoor.json)]
 
@@ -139,13 +139,37 @@ Category: *Cryptominers* - source: *Open Source Intelligence* - total: *5* eleme
 
 [[HTML](https://www.misp-project.org/galaxy.html#_cryptominers)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/cryptominers.json)]
 
-## DISARM Techniques
+## Actor Types
 
-[DISARM Techniques](https://www.misp-project.org/galaxy.html#_disarm_techniques) - DISARM is a framework designed for describing and understanding disinformation incidents.
+[Actor Types](https://www.misp-project.org/galaxy.html#_actor_types) - DISARM is a framework designed for describing and understanding disinformation incidents.
 
-Category: *disarm* - source: *https://github.com/misinfosecproject/amitt_framework* - total: *294* elements
+Category: *disarm* - source: *https://github.com/DISARMFoundation/DISARMframeworks* - total: *33* elements
 
-[[HTML](https://www.misp-project.org/galaxy.html#_disarm_techniques)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/disarm-techniques.json)]
+[[HTML](https://www.misp-project.org/galaxy.html#_actor_types)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/disarm-actortypes.json)]
+
+## Countermeasures
+
+[Countermeasures](https://www.misp-project.org/galaxy.html#_countermeasures) - DISARM is a framework designed for describing and understanding disinformation incidents.
+
+Category: *disarm* - source: *https://github.com/DISARMFoundation/DISARMframeworks* - total: *139* elements
+
+[[HTML](https://www.misp-project.org/galaxy.html#_countermeasures)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/disarm-countermeasures.json)]
+
+## Detections
+
+[Detections](https://www.misp-project.org/galaxy.html#_detections) - DISARM is a framework designed for describing and understanding disinformation incidents.
+
+Category: *disarm* - source: *https://github.com/DISARMFoundation/DISARMframeworks* - total: *94* elements
+
+[[HTML](https://www.misp-project.org/galaxy.html#_detections)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/disarm-detections.json)]
+
+## Techniques
+
+[Techniques](https://www.misp-project.org/galaxy.html#_techniques) - DISARM is a framework designed for describing and understanding disinformation incidents.
+
+Category: *disarm* - source: *https://github.com/DISARMFoundation/DISARMframeworks* - total: *292* elements
+
+[[HTML](https://www.misp-project.org/galaxy.html#_techniques)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/disarm-techniques.json)]
 
 ## Election guidelines
 
@@ -179,11 +203,19 @@ Category: *first-dns* - source: *https://www.first.org/global/sigs/dns/* - total
 
 [[HTML](https://www.misp-project.org/galaxy.html#_first_dns_abuse_techniques_matrix)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/first-dns.json)]
 
+## Intelligence Agencies
+
+[Intelligence Agencies](https://www.misp-project.org/galaxy.html#_intelligence_agencies) - List of intelligence agencies
+
+Category: *Intelligence Agencies* - source: *https://en.wikipedia.org/wiki/List_of_intelligence_agencies* - total: *436* elements
+
+[[HTML](https://www.misp-project.org/galaxy.html#_intelligence_agencies)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/intelligence-agencies.json)]
+
 ## Malpedia
 
 [Malpedia](https://www.misp-project.org/galaxy.html#_malpedia) - Malware galaxy cluster based on Malpedia.
 
-Category: *tool* - source: *Malpedia* - total: *2972* elements
+Category: *tool* - source: *Malpedia* - total: *3039* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_malpedia)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/malpedia.json)]
 
@@ -234,6 +266,22 @@ Category: *attack-pattern* - source: *https://github.com/mitre/cti* - total: *11
 Category: *course-of-action* - source: *https://github.com/mitre/cti* - total: *280* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_course_of_action)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-course-of-action.json)]
+
+## mitre-data-component
+
+[mitre-data-component](https://www.misp-project.org/galaxy.html#_mitre-data-component) - Data components are parts of data sources. 
+
+Category: *data-component* - source: *https://github.com/mitre/cti* - total: *116* elements
+
+[[HTML](https://www.misp-project.org/galaxy.html#_mitre-data-component)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-data-component.json)]
+
+## mitre-data-source
+
+[mitre-data-source](https://www.misp-project.org/galaxy.html#_mitre-data-source) - Data sources represent the various subjects/topics of information that can be collected by sensors/logs. 
+
+Category: *data-source* - source: *https://github.com/mitre/cti* - total: *40* elements
+
+[[HTML](https://www.misp-project.org/galaxy.html#_mitre-data-source)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-data-source.json)]
 
 ## Enterprise Attack - Attack Pattern
 
@@ -435,6 +483,14 @@ Category: *measure* - source: *MISP Project* - total: *20* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_preventive_measure)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/preventive-measure.json)]
 
+## Producer
+
+[Producer](https://www.misp-project.org/galaxy.html#_producer) - List of threat intelligence producer from security vendors to CERTs including any producer of intelligence at large.
+
+Category: *actor* - source: *MISP Project* - total: *15* elements
+
+[[HTML](https://www.misp-project.org/galaxy.html#_producer)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/producer.json)]
+
 ## Ransomware
 
 [Ransomware](https://www.misp-project.org/galaxy.html#_ransomware) - Ransomware galaxy based on https://docs.google.com/spreadsheets/d/1TWS238xacAto-fLKh1n5uTsdijWdCEsGIM0Y0Hvmc5g/pubhtml and http://pastebin.com/raw/GHgpWjar
@@ -447,7 +503,7 @@ Category: *tool* - source: *Various* - total: *1705* elements
 
 [RAT](https://www.misp-project.org/galaxy.html#_rat) - remote administration tool or remote access tool (RAT), also called sometimes remote access trojan, is a piece of software or programming that allows a remote "operator" to control a system as if they have physical access to that system.
 
-Category: *tool* - source: *MISP Project* - total: *265* elements
+Category: *tool* - source: *MISP Project* - total: *266* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_rat)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/rat.json)]
 
@@ -479,7 +535,7 @@ Category: *sector* - source: *CERT-EU* - total: *118* elements
 
 [Sigma-Rules](https://www.misp-project.org/galaxy.html#_sigma-rules) - MISP galaxy cluster based on Sigma Rules.
 
-Category: *rules* - source: *https://github.com/jstnk9/MISP/tree/main/misp-galaxy/sigma* - total: *2814* elements
+Category: *rules* - source: *https://github.com/jstnk9/MISP/tree/main/misp-galaxy/sigma* - total: *2840* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_sigma-rules)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/sigma-rules.json)]
 
@@ -503,7 +559,7 @@ Category: *sod-matrix* - source: *https://github.com/cudeso/SoD-Matrix* - total:
 
 [Stealer](https://www.misp-project.org/galaxy.html#_stealer) - A list of malware stealer.
 
-Category: *tool* - source: *Open Sources* - total: *13* elements
+Category: *tool* - source: *Open Sources* - total: *16* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_stealer)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/stealer.json)]
 
@@ -511,7 +567,7 @@ Category: *tool* - source: *Open Sources* - total: *13* elements
 
 [Surveillance Vendor](https://www.misp-project.org/galaxy.html#_surveillance_vendor) - List of vendors selling surveillance technologies including malware, interception devices or computer exploitation services.
 
-Category: *actor* - source: *MISP Project* - total: *49* elements
+Category: *actor* - source: *MISP Project* - total: *50* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_surveillance_vendor)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/surveillance-vendor.json)]
 
@@ -543,15 +599,63 @@ Category: *tea-matrix* - source: ** - total: *7* elements
 
 [Threat Actor](https://www.misp-project.org/galaxy.html#_threat_actor) - Known or estimated adversary groups targeting organizations and employees. Adversary groups are regularly confused with their initial operation or campaign. threat-actor-classification meta can be used to clarify the understanding of the threat-actor if also considered as operation, campaign or activity group.
 
-Category: *actor* - source: *MISP Project* - total: *557* elements
+Category: *actor* - source: *MISP Project* - total: *644* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_threat_actor)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/threat-actor.json)]
+
+## Tidal Campaigns
+
+[Tidal Campaigns](https://www.misp-project.org/galaxy.html#_tidal_campaigns) - Tidal Campaigns Cluster
+
+Category: *Campaigns* - source: *https://app-api.tidalcyber.com/api/v1/campaigns/* - total: *41* elements
+
+[[HTML](https://www.misp-project.org/galaxy.html#_tidal_campaigns)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/tidal-campaigns.json)]
+
+## Tidal Groups
+
+[Tidal Groups](https://www.misp-project.org/galaxy.html#_tidal_groups) - Tidal Groups Galaxy
+
+Category: *Threat Groups* - source: *https://app-api.tidalcyber.com/api/v1/groups/* - total: *441* elements
+
+[[HTML](https://www.misp-project.org/galaxy.html#_tidal_groups)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/tidal-groups.json)]
+
+## Tidal References
+
+[Tidal References](https://www.misp-project.org/galaxy.html#_tidal_references) - Tidal References Cluster
+
+Category: *References* - source: *https://app-api.tidalcyber.com/api/v1/references/* - total: *3848* elements
+
+[[HTML](https://www.misp-project.org/galaxy.html#_tidal_references)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/tidal-references.json)]
+
+## Tidal Software
+
+[Tidal Software](https://www.misp-project.org/galaxy.html#_tidal_software) - Tidal Software Cluster
+
+Category: *Software* - source: *https://app-api.tidalcyber.com/api/v1/software/* - total: *1386* elements
+
+[[HTML](https://www.misp-project.org/galaxy.html#_tidal_software)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/tidal-software.json)]
+
+## Tidal Tactic
+
+[Tidal Tactic](https://www.misp-project.org/galaxy.html#_tidal_tactic) - Tidal Tactic Cluster
+
+Category: *Tactic* - source: *https://app-api.tidalcyber.com/api/v1/tactic/* - total: *14* elements
+
+[[HTML](https://www.misp-project.org/galaxy.html#_tidal_tactic)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/tidal-tactic.json)]
+
+## Tidal Technique
+
+[Tidal Technique](https://www.misp-project.org/galaxy.html#_tidal_technique) - Tidal Technique Cluster
+
+Category: *Technique* - source: *https://app-api.tidalcyber.com/api/v1/technique/* - total: *625* elements
+
+[[HTML](https://www.misp-project.org/galaxy.html#_tidal_technique)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/tidal-technique.json)]
 
 ## Tool
 
 [Tool](https://www.misp-project.org/galaxy.html#_tool) - threat-actor-tools is an enumeration of tools used by adversaries. The list includes malware but also common software regularly used by the adversaries.
 
-Category: *tool* - source: *MISP Project* - total: *588* elements
+Category: *tool* - source: *MISP Project* - total: *596* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_tool)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/tool.json)]
 
@@ -564,6 +668,8 @@ Category: *military equipment* - source: *Popular Mechanics* - total: *36* eleme
 [[HTML](https://www.misp-project.org/galaxy.html#_uavs/ucavs)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/uavs.json)]
 
 # Online documentation 
+
+The [misp-galaxy.org](https://misp-galaxy.org) website provides an easily navigable resource for all MISP galaxy clusters. 
 
 A [readable PDF overview of the MISP galaxy is available](https://www.misp.software/galaxy.pdf) or [HTML](https://www.misp.software/galaxy.html) and generated from the JSON.
 
@@ -580,12 +686,12 @@ The MISP galaxy (JSON files) are dual-licensed under:
 or
 
 ~~~~
- Copyright (c) 2015-2023 Alexandre Dulaunoy - a@foo.be
- Copyright (c) 2015-2023 CIRCL - Computer Incident Response Center Luxembourg
- Copyright (c) 2015-2023 Andras Iklody
- Copyright (c) 2015-2023 Raphael Vinot
- Copyright (c) 2015-2023 Deborah Servili
- Copyright (c) 2016-2023 Various contributors to MISP Project
+ Copyright (c) 2015-2024 Alexandre Dulaunoy - a@foo.be
+ Copyright (c) 2015-2024 CIRCL - Computer Incident Response Center Luxembourg
+ Copyright (c) 2015-2024 Andras Iklody
+ Copyright (c) 2015-2024 Raphael Vinot
+ Copyright (c) 2015-2024 Deborah Servili
+ Copyright (c) 2016-2024 Various contributors to MISP Project
 
  Redistribution and use in source and binary forms, with or without modification,
  are permitted provided that the following conditions are met:
