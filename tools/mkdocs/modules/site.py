@@ -7,7 +7,7 @@ class Site:
     def __init__(self, path, name) -> None:
         self.path = path
         self.name = name
-        self.content = ""
+        self.content = '[Hide Navigation](#){ .md-button #toggle-navigation }\n[Hide TOC](#){ .md-button #toggle-toc }\n<div class="clearfix"></div> \n\n'
 
     def add_content(self, content):
         self.content += content
