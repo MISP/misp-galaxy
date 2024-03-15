@@ -51,6 +51,10 @@ class Galaxy:
 
     def _create_title_entry(self):
         entry = ""
+        entry += f"[Hide Navigation](#){{ .md-button #toggle-navigation }}\n"
+        entry += f"[Hide TOC](#){{ .md-button #toggle-toc }}\n"
+        entry += f"<div class=\"clearfix\"></div>\n"
+        entry += f"[Edit :material-pencil:](https://github.com/MISP/misp-galaxy/edit/main/clusters/{self.json_file_name}){{ .md-button }}\n"
         entry += f"# {self.galaxy_name}\n"
         return entry
 
