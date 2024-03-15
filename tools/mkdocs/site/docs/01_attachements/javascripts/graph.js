@@ -290,18 +290,13 @@ document$.subscribe(function () {
             .style("opacity", 0);
 
         // Set up the dimensions of the graph
-        var height = 1000;
         var width = document.querySelector('.md-content__inner').offsetWidth;
-
-
-        // var svg = d3.select(elementId).append("svg")
-        //     .attr("width", width)
-        //     .attr("height", height)
+        var height = width;
 
         var svg = d3.select("div#container")
             .append("svg")
             .attr("preserveAspectRatio", "xMinYMin meet")
-            .attr("viewBox", "0 0 825 1000")
+            .attr("viewBox", "0 0 " + width + " " + height)
             .classed("svg-content", true);
 
         // Create a force simulation
@@ -337,9 +332,7 @@ document$.subscribe(function () {
             .attr("class", d => "node galaxy-" + d.galaxy.replace(/\s+/g, '-').replace(/[\s.]/g, '-'));
 
         initializeNodeInteractions(node, link, tooltip, simulation, links, Parent_Node, NODE_RADIUS);
-
         createGalaxyColorLegend(svg, width, galaxies, colorScale, node, link, tooltip);
-
 
         // Update positions on each simulation 'tick'
         simulation.on("tick", () => {
@@ -414,10 +407,9 @@ document$.subscribe(function () {
                 col_1: "checklist",
                 col_3: "checklist",
                 col_4: "checklist",
-                col_widths: ["180px", "180px", "180px", "180px", "100px"],
                 col_types: ["string", "string", "string", "string", "number"],
                 grid_layout: false,
-                responsive: false,
+                responsive: true,
                 watermark: ["Filter table ...", "Filter table ...", "Filter table ...", "Filter table ..."],
                 auto_filter: {
                     delay: 100 //milliseconds
