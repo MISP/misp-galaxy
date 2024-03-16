@@ -86,7 +86,8 @@ for nav_item in mkdocs_data['nav']:
                                     'uuid': str(uuid.uuid5(uuid.UUID("9319371e-2504-4128-8410-3741cebbcfd3"), technique)),
                                     'meta': {
                                         'kill_chain': [],
-                                        'refs': [f"https://microsoft.github.io/Threat-matrix-for-storage-services/{fname[:-3]}"]
+                                        'refs': [f"https://microsoft.github.io/Threat-matrix-for-storage-services/{fname[:-3]}"],
+                                        'external_id': technique_id
                                     }
                                 }
                                 if mitre_technique_uuid:
