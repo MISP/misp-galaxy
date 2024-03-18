@@ -132,7 +132,7 @@ json_cluster = {
     'version': 1
 }
 # add authors based on the Acknowledgements page
-authors = ('Microsoft', 'Evgeny Bogokovsky', 'Ram Pliskin')
+authors = ('Evgeny Bogokovsky', 'Ram Pliskin')
 for author in authors:
     json_cluster['authors'].append(author)
 
