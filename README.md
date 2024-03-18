@@ -167,7 +167,7 @@ Category: *disarm* - source: *https://github.com/DISARMFoundation/DISARMframewor
 
 [Techniques](https://www.misp-project.org/galaxy.html#_techniques) - DISARM is a framework designed for describing and understanding disinformation incidents.
 
-Category: *disarm* - source: *https://github.com/DISARMFoundation/DISARMframeworks* - total: *292* elements
+Category: *disarm* - source: *https://github.com/DISARMFoundation/DISARMframeworks* - total: *298* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_techniques)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/disarm-techniques.json)]
 
@@ -651,6 +651,14 @@ Category: *Technique* - source: *https://app-api.tidalcyber.com/api/v1/technique
 
 [[HTML](https://www.misp-project.org/galaxy.html#_tidal_technique)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/tidal-technique.json)]
 
+## Threat Matrix for storage services
+
+[Threat Matrix for storage services](https://www.misp-project.org/galaxy.html#_threat_matrix_for_storage_services) - Microsoft Defender for Cloud threat matrix for storage services contains attack tactics, techniques and mitigations relevant storage services delivered by cloud providers.
+
+Category: *tmss* - source: *https://github.com/microsoft/Threat-matrix-for-storage-services* - total: *40* elements
+
+[[HTML](https://www.misp-project.org/galaxy.html#_threat_matrix_for_storage_services)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/tmss.json)]
+
 ## Tool
 
 [Tool](https://www.misp-project.org/galaxy.html#_tool) - threat-actor-tools is an enumeration of tools used by adversaries. The list includes malware but also common software regularly used by the adversaries.
@@ -664,6 +672,8 @@ Category: *tool* - source: *MISP Project* - total: *596* elements
 [UAVs/UCAVs](https://www.misp-project.org/galaxy.html#_uavs/ucavs) - Unmanned Aerial Vehicles / Unmanned Combat Aerial Vehicles
 
 Category: *military equipment* - source: *Popular Mechanics* - total: *36* elements
+
+[[HTML](https://www.misp-project.org/galaxy.html#_uavs/ucavs)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/uavs.json)]
 
 [[HTML](https://www.misp-project.org/galaxy.html#_uavs/ucavs)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/uavs.json)]
 
