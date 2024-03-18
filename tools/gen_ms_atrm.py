@@ -84,7 +84,7 @@ json_galaxy = {
     },
     'name': "Azure Threat Research Matrix",
     'description': "The purpose of the Azure Threat Research Matrix (ATRM) is to educate readers on the potential of Azure-based tactics, techniques, and procedures (TTPs). It is not to teach how to weaponize or specifically abuse them. For this reason, some specific commands will be obfuscated or parts will be omitted to prevent abuse.",
-    'namespace': "atrm",
+    'namespace': "microsoft",
     'type': "atrm",
     'uuid': "b541a056-154c-41e7-8a56-41db3f871c00",
     'version': 1

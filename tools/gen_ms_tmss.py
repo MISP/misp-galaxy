@@ -114,7 +114,7 @@ json_galaxy = {
     },
     'name': galaxy_name,
     'description': galaxy_description,
-    'namespace': "tmss",
+    'namespace': "microsoft",
     'type': galaxy_type,
     'uuid': "d6532b58-99e0-44a9-93c8-affe055e4443",
     'version': 1
