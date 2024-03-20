@@ -6285,7 +6285,8 @@
           "https://attack.mitre.org/groups/G0069/",
           "http://www.secureworks.com/research/threat-profiles/cobalt-ulster",
           "https://unit42.paloaltonetworks.com/atoms/boggyserpens/",
-          "https://www.sentinelone.com/blog/the-new-frontline-of-geopolitics-understanding-the-rise-of-state-sponsored-cyber-attacks/"
+          "https://www.sentinelone.com/blog/the-new-frontline-of-geopolitics-understanding-the-rise-of-state-sponsored-cyber-attacks/",
+          "https://www.trendmicro.com/en_us/research/21/c/earth-vetala---muddywater-continues-to-target-organizations-in-t.html"
         ],
         "synonyms": [
           "TEMP.Zagros",
@@ -6297,7 +6298,8 @@
           "ATK51",
           "Boggy Serpens",
           "Mango Sandstorm",
-          "TA450"
+          "TA450",
+          "Earth Vetala"
         ]
       },
       "related": [
@@ -15340,6 +15342,43 @@
       },
       "uuid": "69a944ef-4962-432e-a1b9-575b646ee2ed",
       "value": "R00tK1T"
+    },
+    {
+      "description": "UNC5325 is a suspected Chinese cyber espionage operator that exploited CVE-2024-21893 to compromise Ivanti Connect Secure appliances. UNC5325 leveraged code from open-source projects, installed custom malware, and modified the appliance's settings in order to evade detection and attempt to maintain persistence. UNC5325 has been observed deploying LITTLELAMB.WOOLTEA, PITSTOP, PITDOG, PITJET, and PITHOOK. Mandiant identified TTPs and malware code overlaps in LITTLELAMB.WOOLTEA and PITHOOK with malware leveraged by UNC3886. Mandiant assesses with moderate confidence that UNC5325 is associated with UNC3886.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://www.mandiant.com/resources/blog/investigating-ivanti-exploitation-persistence"
+        ]
+      },
+      "uuid": "ffb28c09-16a6-483a-817a-89c89751c9d4",
+      "value": "UNC5325"
+    },
+    {
+      "description": "Earth Kapre is an APT group specializing in cyberespionage. They target organizations in various countries through phishing campaigns using malicious attachments to infect machines. Earth Kapre employs techniques like abusing PowerShell, curl, and Program Compatibility Assistant to execute malicious commands and evade detection within targeted networks. The group has been active since at least 2018 and has been linked to multiple incidents involving data theft and espionage.",
+      "meta": {
+        "refs": [
+          "https://www.trendmicro.com/en_us/research/24/c/unveiling-earth-kapre-aka-redcurls-cyberespionage-tactics-with-t.html"
+        ],
+        "synonyms": [
+          "RedCurl",
+          "Red Wolf"
+        ]
+      },
+      "uuid": "d4004926-bf12-4cfe-b141-563c8ffb304a",
+      "value": "Earth Kapre"
+    },
+    {
+      "description": "Earth Krahang is an APT group targeting government organizations worldwide. They use spear-phishing emails, weak internet-facing servers, and custom backdoors like Cobalt Strike, RESHELL, and XDealer to conduct cyber espionage. The group creates VPN servers on infected systems, employs brute force attacks on email accounts, and exploits compromised government infrastructure to attack other governments. Earth Krahang has been linked to another China-linked actor, Earth Lusca, and is believed to be part of a specialized task force for cyber espionage against government institutions.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://www.rewterz.com/rewterz-news/rewterz-threat-alert-china-linked-earth-krahang-apt-breached-70-organizations-in-23-nations-active-iocs",
+          "https://www.trendmicro.com/en_us/research/24/c/earth-krahang.html"
+        ]
+      },
+      "uuid": "8cfc9653-51bc-40f1-a267-78a1b8c763f6",
+      "value": "Earth Krahang"
     }
   ],
   "version": 304
