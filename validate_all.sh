@@ -26,7 +26,7 @@ fi
 
 
 # remove the exec flag on the json files
-find . -name "*.json" -exec chmod -x "{}" \;
+find -name "*.json" -exec chmod -x "{}" \;
 
 diffs=`git status --porcelain | wc -l`
 
