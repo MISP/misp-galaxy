@@ -14406,13 +14406,37 @@
           "https://quointelligence.eu/2024/01/unc5221-unreported-and-undetected-wirefire-web-shell-variant/",
           "https://www.volexity.com/blog/2024/01/18/ivanti-connect-secure-vpn-exploitation-new-observations/",
           "https://www.mandiant.com/resources/blog/investigating-ivanti-zero-day-exploitation",
-          "https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Cyber-Sicherheitslage/Analysen-und-Prognosen/Threat-Intelligence/Aktive_APT-Gruppen/aktive-apt-gruppen_node.html"
+          "https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Cyber-Sicherheitslage/Analysen-und-Prognosen/Threat-Intelligence/Aktive_APT-Gruppen/aktive-apt-gruppen_node.html",
+          "https://cloud.google.com/blog/topics/threat-intelligence/ivanti-post-exploitation-lateral-movement"
         ],
         "synonyms": [
           "UNC5221",
           "Red Dev 61"
         ]
       },
+      "related": [
+        {
+          "dest-uuid": "6fcf8d1f-2e68-4982-a579-2ca5595e4990",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        },
+        {
+          "dest-uuid": "69d0512d-c12a-4e17-a335-deba012a8499",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "deploys"
+        },
+        {
+          "dest-uuid": "64a0e3ab-e201-4fdc-9836-85365dfa84bb",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "uses"
+        }
+      ],
       "uuid": "f288f686-b5b3-4c86-9960-5f8fb18709a3",
       "value": "UTA0178"
     },
@@ -15510,7 +15534,213 @@
       },
       "uuid": "0b158297-ee47-48ef-9346-0cb0f9cb348a",
       "value": "UNC5174"
+    },
+    {
+      "description": "",
+      "meta": {
+        "refs": []
+      },
+      "related": [
+        {
+          "dest-uuid": "ceee219c-8af2-4cea-8382-6ef6c311eac8",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "e496af6a-1f1b-47fd-b908-fc369e32ffba",
+      "value": "Cyber Army of Russia Reborn"
+    },
+    {
+      "description": "",
+      "meta": {
+        "refs": []
+      },
+      "related": [
+        {
+          "dest-uuid": "e496af6a-1f1b-47fd-b908-fc369e32ffba",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "ceee219c-8af2-4cea-8382-6ef6c311eac8",
+      "value": "People's Cyber Army of Russia"
+    },
+    {
+      "description": "RGB-TEAM is a previously unknown Russian-speaking threat actor. They describe themselves as “a community of anonymous hacktivists fighting for freedom.” The group stated that it doesn’t have enemies in the U.S., Europe, “in the East, or in the West.”",
+      "meta": {
+        "cfr-suspected-victims": [
+          "Russia"
+        ],
+        "refs": [
+          "https://therecord.media/hackers-claim-to-breach-russia-prosecutor-general-database"
+        ]
+      },
+      "uuid": "9b670978-f346-48dc-a292-7ae05b6f90a0",
+      "value": "RGB-TEAM"
+    },
+    {
+      "description": "Mandiant created UNC5266 to track post-disclosure exploitation leading to deployment of Bishop Fox's SLIVER implant framework, a WARPWIRE variant, and a new malware family that Mandiant has named TERRIBLETEA. At this time, based on observed infrastructure usage similarities, Mandiant suspects with moderate confidence that UNC5266 overlaps in part with UNC3569, a China-nexus espionage actor that has been observed exploiting vulnerabilities in Aspera Faspex, Microsoft Exchange, and Oracle Web Applications Desktop Integrator, among others, to gain initial access to target environments. ",
+      "meta": {
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/ivanti-post-exploitation-lateral-movement"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "84c2d789-64be-429b-aeee-253a4e0e2aff",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "deploys"
+        },
+        {
+          "dest-uuid": "4838b37b-2d1f-4cb8-945d-7185580f0bff",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "deploys"
+        }
+      ],
+      "uuid": "083a637b-c58c-4ccb-ab59-81d783873e80",
+      "value": "UNC5266"
+    },
+    {
+      "description": "UNC5330 is a suspected China-nexus espionage actor. UNC5330 has been observed chaining CVE-2024-21893 and CVE-2024-21887 to compromise Ivanti Connect Secure VPN appliances as early as Feb. 2024. Post-compromise activity by UNC5330 includes deployment of PHANTOMNET and TONERJAM. UNC5330 has employed Windows Management Instrumentation (WMI) to perform reconnaissance, move laterally, manipulate registry entries, and establish persistence.\nMandiant observed UNC5330 operating a server since Dec. 6, 2021, which the group used as a GOST proxy to help facilitate malicious tool deployment to endpoints. The default certificate for GOST proxy was observed from Sept. 1, 2022 through Jan. 1, 2024. UNC5330 also attempted to download Fast Reverse Proxy (FRP) from this server on Feb. 3, 2024, from a compromised Ivanti Connect Secure device. Given the SSH key reuse in conjunction with the temporal proximity of these events, Mandiant assesses with moderate confidence UNC5330 has been operating through this server since at least 2021.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/ivanti-post-exploitation-lateral-movement"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "f97ea150-a727-4d47-823a-41de07a43ea9",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "deploys"
+        },
+        {
+          "dest-uuid": "540b3e66-edbf-40ee-ae05-474b27c1ff40",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "deploys"
+        },
+        {
+          "dest-uuid": "c9f26173-ba82-4ed2-adbd-e2e07f582f31",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "uses"
+        }
+      ],
+      "uuid": "c5ea778c-df2f-4c63-b401-dded9cb2419c",
+      "value": "UNC5330"
+    },
+    {
+      "description": "UNC5337 is a suspected China-nexus espionage actor that compromised Ivanti Connect Secure VPN appliances as early as Jan. 2024. UNC5337 is suspected to exploit CVE-2023-46805 (authentication bypass) and CVE-2024-21887 (command injection) for infecting Ivanti Connect Secure appliances. UNC5337 leveraged multiple custom malware families including the SPAWNSNAIL passive backdoor, SPAWNMOLE tunneler, SPAWNANT installer, and SPAWNSLOTH log tampering utility. Mandiant suspects with medium confidence that UNC5337 is UNC5221.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/ivanti-post-exploitation-lateral-movement"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "f288f686-b5b3-4c86-9960-5f8fb18709a3",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        },
+        {
+          "dest-uuid": "de390f3e-c0d1-4c70-b121-a7a98f7326aa",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "6c89c51f-1b97-4966-abc1-9cf526bb2892",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "e6cf28a6-94a9-4aab-b919-ad2f6a7e3b87",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "2c237974-edc2-460a-90b5-20f699560da3",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "uses"
+        }
+      ],
+      "uuid": "6fcf8d1f-2e68-4982-a579-2ca5595e4990",
+      "value": "UNC5337"
+    },
+    {
+      "description": "UNC5291 is a cluster of targeted probing activity that we assess with moderate confidence is associated with UNC3236, also known publicly as Volt Typhoon. Activity for this cluster started in December 2023 focusing on Citrix Netscaler ADC and then shifted to focus on Ivanti Connect Secure devices after details were made public in mid-Jan. 2024. Probing has been observed against the academic, energy, defense, and health sectors, which aligns with past Volt Typhoon interest in critical infrastructure. In Feb. 2024, the Cybersecurity and Infrastructure Security Agency (CISA) released an advisory warning that Volt Typhoon was targeting critical infrastructure and was potentially interested in Ivanti Connect Secure devices for initial access.",
+      "meta": {
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/ivanti-post-exploitation-lateral-movement"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "97c6d972-a3af-4a21-94a2-0f5e09c7320e",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "associated-with"
+        }
+      ],
+      "uuid": "b2535333-629d-4cd6-a98b-14c86f6a57ee",
+      "value": "UNC5291"
+    },
+    {
+      "description": "China-nexus espionage actor that has been observed exploiting vulnerabilities in Aspera Faspex, Microsoft Exchange, and Oracle Web Applications Desktop Integrator, among others, to gain initial access to target environments. ",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/ivanti-post-exploitation-lateral-movement"
+        ]
+      },
+      "uuid": "dd0063e0-2d44-4798-9e6d-ef0eaa2c2508",
+      "value": "UNC3569"
+    },
+    {
+      "meta": {
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/ivanti-post-exploitation-lateral-movement"
+        ],
+        "synonyms": [
+          "Volt Typhoon"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "b2535333-629d-4cd6-a98b-14c86f6a57ee",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "associated-with"
+        }
+      ],
+      "uuid": "97c6d972-a3af-4a21-94a2-0f5e09c7320e",
+      "value": "UNC3236"
     }
   ],
-  "version": 305
+  "version": 306
 }
