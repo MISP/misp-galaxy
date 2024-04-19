@@ -10884,7 +10884,196 @@
       },
       "uuid": "c44c5c54-435a-453a-a128-43ca18b82c37",
       "value": "ENUM4LINUX"
+    },
+    {
+      "description": "SPAWNANT is an installer that leverages a coreboot installer function to establish persistence for the SPAWNMOLE tunneler and SPAWNSNAIL backdoor. It hijacks a legitimate dspkginstall installer process and exports an sprintf function adding a malicious code to it before redirecting a flow back to vsnprintf.",
+      "meta": {
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/ivanti-post-exploitation-lateral-movement"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "6fcf8d1f-2e68-4982-a579-2ca5595e4990",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "6c89c51f-1b97-4966-abc1-9cf526bb2892",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "followed-by"
+        },
+        {
+          "dest-uuid": "de390f3e-c0d1-4c70-b121-a7a98f7326aa",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "followed-by"
+        }
+      ],
+      "uuid": "e6cf28a6-94a9-4aab-b919-ad2f6a7e3b87",
+      "value": "SPAWNANT"
+    },
+    {
+      "description": "SPAWNMOLE is a tunneler that injects into the web process. It hijacks the accept function in the web process to monitor traffic and filter out malicious traffic originating from the attacker. The remainder of the benign traffic is passed unmodified to the legitimate web server functions. The malicious traffic is tunneled to a host provided by an attacker in the buffer. Mandiant assesses the attacker would most likely pass a local port where SPAWNSNAIL is operating to access the backdoor.",
+      "meta": {
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/ivanti-post-exploitation-lateral-movement"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "6fcf8d1f-2e68-4982-a579-2ca5595e4990",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "e6cf28a6-94a9-4aab-b919-ad2f6a7e3b87",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "preceded-by"
+        },
+        {
+          "dest-uuid": "de390f3e-c0d1-4c70-b121-a7a98f7326aa",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "interacts-with"
+        }
+      ],
+      "uuid": "6c89c51f-1b97-4966-abc1-9cf526bb2892",
+      "value": "SPAWNMOLE"
+    },
+    {
+      "description": "SPAWNSLOTH is a log tampering utility injected into the dslogserver process. It can disable logging and disable log forwarding to an external syslog server when the SPAWNSNAIL backdoor is operating.",
+      "meta": {
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/ivanti-post-exploitation-lateral-movement"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "6fcf8d1f-2e68-4982-a579-2ca5595e4990",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "de390f3e-c0d1-4c70-b121-a7a98f7326aa",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "is-injected-by"
+        },
+        {
+          "dest-uuid": "de390f3e-c0d1-4c70-b121-a7a98f7326aa",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "communicates-with"
+        }
+      ],
+      "uuid": "2c237974-edc2-460a-90b5-20f699560da3",
+      "value": "SPAWNSLOTH"
+    },
+    {
+      "description": "ROOTROT is a web shell written in Perl embedded into a legitimate Connect Secure .ttc file located at /data/runtime/tmp/tt/setcookie.thtml.ttc by exploiting CVE-2023-46805 and CVE-2024-21887. ",
+      "meta": {
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/ivanti-post-exploitation-lateral-movement"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "f288f686-b5b3-4c86-9960-5f8fb18709a3",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "is-deployed-by"
+        }
+      ],
+      "uuid": "69d0512d-c12a-4e17-a335-deba012a8499",
+      "value": "ROOTROT"
+    },
+    {
+      "description": "TONERJAM is a launcher that decrypts and executes a shellcode payload, in this case PHANTOMNET, stored as an encrypted local file and decrypts it using an AES key derived from a SHA hash of the final 16 bytes of the encrypted payload. TONERJAM maintains persistence via the Run registry key or by hijacking COM objects depending on the permissions granted to it upon execution.",
+      "meta": {
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/ivanti-post-exploitation-lateral-movement"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "c5ea778c-df2f-4c63-b401-dded9cb2419c",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "is-deployed-by"
+        },
+        {
+          "dest-uuid": "f97ea150-a727-4d47-823a-41de07a43ea9",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "executes"
+        }
+      ],
+      "uuid": "540b3e66-edbf-40ee-ae05-474b27c1ff40",
+      "value": "TONERJAM"
+    },
+    {
+      "description": "A simple security tunnel written in Golang. Features: Listening on multiple ports, Multi-level forward proxy - proxy chain, Standard HTTP/HTTPS/HTTP2/SOCKS4(A)/SOCKS5 proxy protocols support, Probing resistance support for web proxy, Support multiple tunnel types, TLS encryption via negotiation support for SOCKS5 proxy, Tunnel UDP over TCP, TCP/UDP Transparent proxy, Local/remote TCP/UDP port forwarding, Shadowsocks protocol, SNI proxy, Permission control, Load balancing, Routing control, DNS resolver and proxy, TUN/TAP device",
+      "meta": {
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/ivanti-post-exploitation-lateral-movement",
+          "https://github.com/ginuerzh/gost/blob/master/README_en.md",
+          "https://v2.gost.run/en/",
+          "https://gost.run/en/"
+        ],
+        "synonyms": [
+          "GO Simple Tunnel"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "c5ea778c-df2f-4c63-b401-dded9cb2419c",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "c9f26173-ba82-4ed2-adbd-e2e07f582f31",
+      "value": "GOST"
+    },
+    {
+      "description": "Sliver is an open source cross-platform adversary emulation/red team framework, it can be used by organizations of all sizes to perform security testing. Sliver's implants support C2 over Mutual TLS (mTLS), WireGuard, HTTP(S), and DNS and are dynamically compiled with per-binary asymmetric encryption keys.",
+      "meta": {
+        "refs": [
+          "https://github.com/BishopFox/sliver",
+          "https://bishopfox.com/tools/sliver"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "083a637b-c58c-4ccb-ab59-81d783873e80",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "is-deployed-by "
+        }
+      ],
+      "uuid": "84c2d789-64be-429b-aeee-253a4e0e2aff",
+      "value": "SLIVER"
     }
   ],
-  "version": 172
+  "version": 173
 }
