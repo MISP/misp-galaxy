@@ -28,16 +28,16 @@ import uuid
 From https://www.culturecollections.org.uk/search/?searchScope=Product&pageNumber=1&filter.collectionGroup=0&filter.collection=0&filter.sorting=DateCreated
 JSON is loaded, needs to be paginated
 
-Culturecollections.org.uk is published under the Open Government Licence, allowing the reproduction of information as 
-long as the license terms are obeyed. Material on this website is subject to Crown copyright protection unless otherwise 
-indicated. Users should be aware that information provided to third parties through feeds may be edited or cached, and 
+Culturecollections.org.uk is published under the Open Government Licence, allowing the reproduction of information as
+long as the license terms are obeyed. Material on this website is subject to Crown copyright protection unless otherwise
+indicated. Users should be aware that information provided to third parties through feeds may be edited or cached, and
 we do not guarantee the accuracy of such third-party products.
 https://www.culturecollections.org.uk/training-and-support/policies/terms-and-conditions-of-use/
 
-The Culture Collections represent deposits of cultures from world-wide sources. While every effort is made to ensure 
-details distributed by Culture Collections are accurate, Culture Collections cannot be held responsible for any 
-inaccuracies in the data supplied. References where quoted are mainly attributed to the establishment of the cell 
-culture and not for any specific property of the cell line, therefore further references should be obtained regarding 
+The Culture Collections represent deposits of cultures from world-wide sources. While every effort is made to ensure
+details distributed by Culture Collections are accurate, Culture Collections cannot be held responsible for any
+inaccuracies in the data supplied. References where quoted are mainly attributed to the establishment of the cell
+culture and not for any specific property of the cell line, therefore further references should be obtained regarding
 cell culture characteristics. Passage numbers where given act only as a guide and Culture Collections does not guarantee
 the passage number stated will be the passage number received by the customer.
 '''
@@ -81,29 +81,38 @@ def load_saved_items():
     return d
 
 data = download_items()
-save_items(data)
+# save_items(data)
 # data = load_saved_items()
 
-clusters = []
-collections = set()
+clusters_dict = {}
 for item in data['items']:
+    # create a cluster
     cluster = {
         'value': f"{item['name']}",
-        'uuid': str(uuid.uuid5(uuid.UUID("bbe11c06-1d6a-477e-88f1-cdda2d71de56"), item['catalogueNumber'])),
+        'uuid': str(uuid.uuid5(uuid.UUID("bbe11c06-1d6a-477e-88f1-cdda2d71de56"), item['name'])),
         'meta': {
             'refs': [item['url']],
-            'external_id': item['catalogueNumber']
+            'external_id': [item['catalogueNumber']]
         }
     }
+    # add all properties of the culture
     for p in item['properties']:
         if p['value']:
             p_name = p['name'].lower().replace(' ', '_')
             if p['name'] not in cluster['meta']:
                 cluster['meta'][p_name] = []
             cluster['meta'][p_name].append(p['value'])
+    # merge if the collection already exists
+    if cluster['value'] in clusters_dict:
+        clusters_dict[cluster['value']]['meta']['refs'].extend(cluster['meta']['refs'])
+        clusters_dict[cluster['value']]['meta']['external_id'].extend(cluster['meta']['external_id'])
+    else:
+        clusters_dict[cluster['value']] = cluster
 
-    clusters.append(cluster)
-
+# transform dict to list
+clusters = []
+for item in clusters_dict.values():
+    clusters.append(item)
 
 
 json_galaxy = {
@@ -116,17 +125,17 @@ json_galaxy = {
     'version': 1
 }
 
-with open(os.path.join('', 'clusters', 'ukhsa-culture-collections.json'), 'r') as f:  # FIXME add .. to path
+with open(os.path.join('..', 'clusters', 'ukhsa-culture-collections.json'), 'r') as f:
     json_cluster = json.load(f)
 json_cluster['values'] = clusters
 json_cluster['version'] += 1
 
 # save the Galaxy and Cluster file
-with open(os.path.join('', 'galaxies', 'ukhsa-culture-collections.json'), 'w') as f:  # FIXME add .. to path
+with open(os.path.join('..', 'galaxies', 'ukhsa-culture-collections.json'), 'w') as f:
     json.dump(json_galaxy, f, indent=2, sort_keys=True, ensure_ascii=False)
     f.write('\n')  # only needed for the beauty and to be compliant with jq_all_the_things
 
-with open(os.path.join('', 'clusters', 'ukhsa-culture-collections.json'), 'w') as f:  # FIXME add .. to path
+with open(os.path.join('..', 'clusters', 'ukhsa-culture-collections.json'), 'w') as f:
     json.dump(json_cluster, f, indent=2, sort_keys=True, ensure_ascii=False)
     f.write('\n')  # only needed for the beauty and to be compliant with jq_all_the_things
 
