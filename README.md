@@ -211,13 +211,13 @@ Category: *Intelligence Agencies* - source: *https://en.wikipedia.org/wiki/List_
 
 [[HTML](https://www.misp-project.org/galaxy.html#_intelligence_agencies)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/intelligence-agencies.json)]
 
-## INTERPOL DWVA Entity Taxonomy
+## INTERPOL DWVA Taxonomy
 
-[INTERPOL DWVA Entity Taxonomy](https://www.misp-project.org/galaxy.html#_interpol_dwva_entity_taxonomy) - This taxonomy defines entities that represent real-world actors and service that are part of a larger Darknet- and Cryptoasset Ecosystems.
+[INTERPOL DWVA Taxonomy](https://www.misp-project.org/galaxy.html#_interpol_dwva_taxonomy) - This taxonomy defines common forms of abuses and entities that represent real-world actors and service that are part of a larger Darknet- and Cryptoasset Ecosystems.
 
-Category: *interpol-dwva-entities* - source: *https://interpol-innovation-centre.github.io/DW-VA-Taxonomy/* - total: *88* elements
+Category: *dwva* - source: *https://interpol-innovation-centre.github.io/DW-VA-Taxonomy/* - total: *94* elements
 
-[[HTML](https://www.misp-project.org/galaxy.html#_interpol_dwva_entity_taxonomy)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/interpol-dwva-entities.json)]
+[[HTML](https://www.misp-project.org/galaxy.html#_interpol_dwva_taxonomy)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/interpol-dwva.json)]
 
 ## Malpedia
 
@@ -607,7 +607,7 @@ Category: *tea-matrix* - source: ** - total: *7* elements
 
 [Threat Actor](https://www.misp-project.org/galaxy.html#_threat_actor) - Known or estimated adversary groups targeting organizations and employees. Adversary groups are regularly confused with their initial operation or campaign. threat-actor-classification meta can be used to clarify the understanding of the threat-actor if also considered as operation, campaign or activity group.
 
-Category: *actor* - source: *MISP Project* - total: *668* elements
+Category: *actor* - source: *MISP Project* - total: *671* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_threat_actor)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/threat-actor.json)]
 
@@ -690,7 +690,6 @@ Category: *military equipment* - source: *Popular Mechanics* - total: *36* eleme
 Category: *virus* - source: *https://www.culturecollections.org.uk* - total: *6667* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_ukhsa_culture_collections)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/ukhsa-culture-collections.json)]
-
 
 # Online documentation
 
