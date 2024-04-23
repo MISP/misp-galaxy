@@ -42,7 +42,7 @@ contains _data folder with
 '''
 
 with open(os.path.join(args.path, '_data', 'entities.yaml'), 'r') as f:
-    entities_data = yaml.load(f, Loader=yaml.BaseLoader)
+    entities_data = yaml.safe_load(f)
 
 try:
     with open(os.path.join('..', 'galaxies', 'interpol-entities.json'), 'r') as f:
