@@ -6,7 +6,7 @@
 
 MISP galaxy is a simple method to express a large object called cluster that can be attached to MISP events or
 attributes. A cluster can be composed of one or more elements. Elements are expressed as key-values. There
-are default knowledge base (such as Threat Actors, Tools, Ransomware, ATT&CK matrixes) available in MISP galaxy 
+are default knowledge base (such as Threat Actors, Tools, Ransomware, ATT&CK matrixes) available in MISP galaxy
 but those can be overwritten, replaced, updated, forked and shared as you wish.
 
 Existing clusters and vocabularies can be used as-is or as a common knowledge base. MISP distribution can be applied
@@ -63,7 +63,7 @@ Category: *guidelines* - source: *Open Sources* - total: *71* elements
 
 [Backdoor](https://www.misp-project.org/galaxy.html#_backdoor) - A list of backdoor malware.
 
-Category: *tool* - source: *Open Sources* - total: *24* elements
+Category: *tool* - source: *Open Sources* - total: *28* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_backdoor)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/backdoor.json)]
 
@@ -211,6 +211,14 @@ Category: *Intelligence Agencies* - source: *https://en.wikipedia.org/wiki/List_
 
 [[HTML](https://www.misp-project.org/galaxy.html#_intelligence_agencies)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/intelligence-agencies.json)]
 
+## INTERPOL DWVA Taxonomy
+
+[INTERPOL DWVA Taxonomy](https://www.misp-project.org/galaxy.html#_interpol_dwva_taxonomy) - This taxonomy defines common forms of abuses and entities that represent real-world actors and service that are part of a larger Darknet- and Cryptoasset Ecosystems.
+
+Category: *dwva* - source: *https://interpol-innovation-centre.github.io/DW-VA-Taxonomy/* - total: *94* elements
+
+[[HTML](https://www.misp-project.org/galaxy.html#_interpol_dwva_taxonomy)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/interpol-dwva.json)]
+
 ## Malpedia
 
 [Malpedia](https://www.misp-project.org/galaxy.html#_malpedia) - Malware galaxy cluster based on Malpedia.
@@ -269,7 +277,7 @@ Category: *course-of-action* - source: *https://github.com/mitre/cti* - total: *
 
 ## mitre-data-component
 
-[mitre-data-component](https://www.misp-project.org/galaxy.html#_mitre-data-component) - Data components are parts of data sources. 
+[mitre-data-component](https://www.misp-project.org/galaxy.html#_mitre-data-component) - Data components are parts of data sources.
 
 Category: *data-component* - source: *https://github.com/mitre/cti* - total: *116* elements
 
@@ -277,7 +285,7 @@ Category: *data-component* - source: *https://github.com/mitre/cti* - total: *11
 
 ## mitre-data-source
 
-[mitre-data-source](https://www.misp-project.org/galaxy.html#_mitre-data-source) - Data sources represent the various subjects/topics of information that can be collected by sensors/logs. 
+[mitre-data-source](https://www.misp-project.org/galaxy.html#_mitre-data-source) - Data sources represent the various subjects/topics of information that can be collected by sensors/logs.
 
 Category: *data-source* - source: *https://github.com/mitre/cti* - total: *40* elements
 
@@ -495,7 +503,7 @@ Category: *actor* - source: *MISP Project* - total: *15* elements
 
 [Ransomware](https://www.misp-project.org/galaxy.html#_ransomware) - Ransomware galaxy based on https://docs.google.com/spreadsheets/d/1TWS238xacAto-fLKh1n5uTsdijWdCEsGIM0Y0Hvmc5g/pubhtml and http://pastebin.com/raw/GHgpWjar
 
-Category: *tool* - source: *Various* - total: *1705* elements
+Category: *tool* - source: *Various* - total: *1706* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_ransomware)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/ransomware.json)]
 
@@ -535,7 +543,7 @@ Category: *sector* - source: *CERT-EU* - total: *118* elements
 
 [Sigma-Rules](https://www.misp-project.org/galaxy.html#_sigma-rules) - MISP galaxy cluster based on Sigma Rules.
 
-Category: *rules* - source: *https://github.com/jstnk9/MISP/tree/main/misp-galaxy/sigma* - total: *2840* elements
+Category: *rules* - source: *https://github.com/jstnk9/MISP/tree/main/misp-galaxy/sigma* - total: *2873* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_sigma-rules)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/sigma-rules.json)]
 
@@ -575,7 +583,7 @@ Category: *actor* - source: *MISP Project* - total: *50* elements
 
 [Target Information](https://www.misp-project.org/galaxy.html#_target_information) - Description of targets of threat actors.
 
-Category: *target* - source: *Various* - total: *240* elements
+Category: *target* - source: *Various* - total: *241* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_target_information)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/target-information.json)]
 
@@ -599,7 +607,7 @@ Category: *tea-matrix* - source: ** - total: *7* elements
 
 [Threat Actor](https://www.misp-project.org/galaxy.html#_threat_actor) - Known or estimated adversary groups targeting organizations and employees. Adversary groups are regularly confused with their initial operation or campaign. threat-actor-classification meta can be used to clarify the understanding of the threat-actor if also considered as operation, campaign or activity group.
 
-Category: *actor* - source: *MISP Project* - total: *644* elements
+Category: *actor* - source: *MISP Project* - total: *671* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_threat_actor)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/threat-actor.json)]
 
@@ -663,7 +671,7 @@ Category: *tmss* - source: *https://github.com/microsoft/Threat-matrix-for-stora
 
 [Tool](https://www.misp-project.org/galaxy.html#_tool) - threat-actor-tools is an enumeration of tools used by adversaries. The list includes malware but also common software regularly used by the adversaries.
 
-Category: *tool* - source: *MISP Project* - total: *596* elements
+Category: *tool* - source: *MISP Project* - total: *603* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_tool)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/tool.json)]
 
@@ -675,11 +683,17 @@ Category: *military equipment* - source: *Popular Mechanics* - total: *36* eleme
 
 [[HTML](https://www.misp-project.org/galaxy.html#_uavs/ucavs)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/uavs.json)]
 
-[[HTML](https://www.misp-project.org/galaxy.html#_uavs/ucavs)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/uavs.json)]
+## UKHSA Culture Collections
 
-# Online documentation 
+[UKHSA Culture Collections](https://www.misp-project.org/galaxy.html#_ukhsa_culture_collections) - UK Health Security Agency Culture Collections represent deposits of cultures that consist of expertly preserved, authenticated cell lines and microbial strains of known provenance.
 
-The [misp-galaxy.org](https://misp-galaxy.org) website provides an easily navigable resource for all MISP galaxy clusters. 
+Category: *virus* - source: *https://www.culturecollections.org.uk* - total: *6667* elements
+
+[[HTML](https://www.misp-project.org/galaxy.html#_ukhsa_culture_collections)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/ukhsa-culture-collections.json)]
+
+# Online documentation
+
+The [misp-galaxy.org](https://misp-galaxy.org) website provides an easily navigable resource for all MISP galaxy clusters.
 
 A [readable PDF overview of the MISP galaxy is available](https://www.misp.software/galaxy.pdf) or [HTML](https://www.misp.software/galaxy.html) and generated from the JSON.
 
