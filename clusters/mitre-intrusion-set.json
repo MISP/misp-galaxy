@@ -173,6 +173,10 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "0d91b3c0-5e50-47c3-949a-2a796f04d144",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "10d51417-ee35-4589-b1ff-b6df1c334e8d",
           "type": "uses"
         },
@@ -396,10 +400,6 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
-          "type": "uses"
-        },
-        {
           "dest-uuid": "b63970b7-ddfb-4aee-97b1-80d335e033a8",
           "type": "uses"
         },
@@ -478,27 +478,6 @@
         {
           "dest-uuid": "f3d95a1f-bba2-44ce-9af7-37866cd63fd0",
           "type": "uses"
-        },
-        {
-          "dest-uuid": "f1b9f7d6-6ab1-404b-91a6-a1ed1845c045",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        },
-        {
-          "dest-uuid": "4af45fea-72d3-11e8-846c-d37699506c8d",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        },
-        {
-          "dest-uuid": "294e2560-bd48-44b2-9da2-833b5588ad11",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "fb366179-766c-4a4a-afa1-52bff1fd601c",
@@ -541,13 +520,6 @@
         {
           "dest-uuid": "ff6caf67-ea1f-4895-b80e-4bb0fc31c6db",
           "type": "uses"
-        },
-        {
-          "dest-uuid": "92a78814-b191-47ca-909c-1ccfe3777414",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "d519164e-f5fa-4b8c-a1fb-cf0172ad0983",
@@ -588,6 +560,7 @@
         "external_id": "G0030",
         "refs": [
           "https://attack.mitre.org/groups/G0030",
+          "https://learn.microsoft.com/en-us/microsoft-365/security/intelligence/microsoft-threat-actor-naming?view=o365-worldwide",
           "https://securelist.com/the-spring-dragon-apt/70726/",
           "https://www.accenture.com/t20180127T003755Z_w_/us-en/_acnmedia/PDF-46/Accenture-Security-Dragonfish-Threat-Analysis.pdf",
           "https://www.paloaltonetworks.com/resources/research/unit42-operation-lotus-blossom.html"
@@ -595,7 +568,9 @@
         "synonyms": [
           "Lotus Blossom",
           "DRAGONFISH",
-          "Spring Dragon"
+          "Spring Dragon",
+          "RADIUM",
+          "Raspberry Typhoon"
         ]
       },
       "related": [
@@ -612,13 +587,6 @@
         },
         {
           "dest-uuid": "7551188b-8f91-4d34-8350-0d0c57b2b913",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "0f862b01-99da-47cc-9bdb-db4a86a95bb1",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
           "type": "uses"
         }
       ],
@@ -865,13 +833,6 @@
         {
           "dest-uuid": "f7827069-0bf2-4764-af4f-23fae0d181b7",
           "type": "uses"
-        },
-        {
-          "dest-uuid": "9422fc14-1c43-410d-ab0f-a709b76c72dc",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "93f52415-0fe4-4d3d-896c-fc9b8e88ab90",
@@ -892,6 +853,10 @@
       "related": [
         {
           "dest-uuid": "0259baeb-9f63-4c69-bf10-eb038c390688",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "0d91b3c0-5e50-47c3-949a-2a796f04d144",
           "type": "uses"
         },
         {
@@ -928,10 +893,6 @@
         },
         {
           "dest-uuid": "a6937325-9321-4e2e-bb2b-3ed2d40b2a9d",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
           "type": "uses"
         },
         {
@@ -1255,24 +1216,90 @@
         {
           "dest-uuid": "fbb470da-1d44-4f29-bbb3-9efbe20f94a3",
           "type": "uses"
-        },
-        {
-          "dest-uuid": "103ebfd8-4280-4027-b61a-69bd9967ad6c",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        },
-        {
-          "dest-uuid": "f4882e23-8aa7-4b12-b28a-b349c12ee9e0",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "a653431d-6a5e-4600-8ad3-609b5af57064",
       "value": "Deep Panda - G0009"
+    },
+    {
+      "description": "[Mustard Tempest](https://attack.mitre.org/groups/G1020) is an initial access broker that has operated the [SocGholish](https://attack.mitre.org/software/S1124) distribution network since at least 2017. [Mustard Tempest](https://attack.mitre.org/groups/G1020) has partnered with [Indrik Spider](https://attack.mitre.org/groups/G0119) to provide access for the download of additional malware including LockBit, [WastedLocker](https://attack.mitre.org/software/S0612), and remote access tools.(Citation: Microsoft Ransomware as a Service)(Citation: Microsoft Threat Actor Naming July 2023)(Citation: Secureworks Gold Prelude Profile)(Citation: SocGholish-update)",
+      "meta": {
+        "external_id": "G1020",
+        "refs": [
+          "https://attack.mitre.org/groups/G1020",
+          "https://learn.microsoft.com/en-us/microsoft-365/security/intelligence/microsoft-threat-actor-naming?view=o365-worldwide",
+          "https://www.microsoft.com/en-us/security/blog/2022/05/09/ransomware-as-a-service-understanding-the-cybercrime-gig-economy-and-how-to-protect-yourself/",
+          "https://www.proofpoint.com/us/blog/threat-insight/part-1-socgholish-very-real-threat-very-fake-update",
+          "https://www.secureworks.com/research/threat-profiles/gold-prelude"
+        ],
+        "synonyms": [
+          "Mustard Tempest",
+          "DEV-0206",
+          "TA569",
+          "GOLD PRELUDE",
+          "UNC1543"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "155207c0-7f53-4f13-a06b-0a9907ef5096",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "1c4e5d32-1fe9-4116-9d9d-59e3925bd6a2",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "2b742742-28c3-4e1b-bab7-8350d6300fa7",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "31fe0ba2-62fd-4fd9-9293-4043d84f7fe9",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "354a7f88-63fb-41b5-a801-ce3b377b36f1",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "3ee16395-03f0-4690-a32e-69ce9ada0f9e",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "5911d2ca-64f6-49b3-b94f-29b5d185085c",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "60c4b628-4807-4b0b-bbf5-fdac8643c337",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "a7881f21-e978-4fe4-af56-92c9416a2616",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "d742a578-d70e-4d0e-96a6-02a9c30204e6",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "e5d550f3-2202-4634-85f2-4a200a1d49b3",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "e6919abc-99f9-4c6c-95a5-14761e7b2add",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "ef67e13e-5598-4adc-bdb2-998225874fa9",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "f9cc4d06-775f-4ee1-b401-4e2cc0da30ba",
+          "type": "uses"
+        }
+      ],
+      "uuid": "0d4ac089-ced4-4cc4-a989-174d08e6d030",
+      "value": "Mustard Tempest - G1020"
     },
     {
       "description": "[Wizard Spider](https://attack.mitre.org/groups/G0102) is a Russia-based financially motivated threat group originally known for the creation and deployment of [TrickBot](https://attack.mitre.org/software/S0266) since at least 2016. [Wizard Spider](https://attack.mitre.org/groups/G0102) possesses a diverse aresenal of tools and has conducted ransomware campaigns against a variety of organizations, ranging from major corporations to hospitals.(Citation: CrowdStrike Ryuk January 2019)(Citation: DHS/CISA Ransomware Targeting Healthcare October 2020)(Citation: CrowdStrike Wizard Spider October 2020)",
@@ -1280,6 +1307,7 @@
         "external_id": "G0102",
         "refs": [
           "https://attack.mitre.org/groups/G0102",
+          "https://learn.microsoft.com/en-us/microsoft-365/security/intelligence/microsoft-threat-actor-naming?view=o365-worldwide",
           "https://securityintelligence.com/posts/trickbot-gang-doubles-down-enterprise-infection/",
           "https://us-cert.cisa.gov/ncas/alerts/aa20-302a",
           "https://www.crowdstrike.com/blog/big-game-hunting-with-ryuk-another-lucrative-targeted-ransomware/",
@@ -1298,7 +1326,8 @@
           "FIN12",
           "GOLD BLACKBURN",
           "ITG23",
-          "Periwinkle Tempest"
+          "Periwinkle Tempest",
+          "DEV-0193"
         ]
       },
       "related": [
@@ -1407,6 +1436,10 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "4e9bdf9a-4957-47f6-87b3-c76898d3f623",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "4f9ca633-15c5-463c-9724-bdcd54fde541",
           "type": "uses"
         },
@@ -1416,6 +1449,10 @@
         },
         {
           "dest-uuid": "57340c81-c025-4189-8fa0-fc7ede51bae4",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "5f1d4579-4e8f-48e7-860e-2da773ae432e",
           "type": "uses"
         },
         {
@@ -1774,13 +1811,6 @@
             "estimative-language:likelihood-probability=\"likely\""
           ],
           "type": "similar"
-        },
-        {
-          "dest-uuid": "7bc57495-ea59-4380-be31-a64af124ef18",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "ae41895a-243f-4a65-b99b-d85022326c31",
@@ -1817,20 +1847,6 @@
             "estimative-language:likelihood-probability=\"likely\""
           ],
           "type": "similar"
-        },
-        {
-          "dest-uuid": "88c621a7-aef9-4ae0-94e3-1fc87123eb24",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "b17a1a56-e99c-403c-8948-561df0cffe81",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "23b6a0f5-fa95-46f9-a6f3-4549c5e45ec8",
@@ -1842,12 +1858,17 @@
         "external_id": "G1006",
         "refs": [
           "https://attack.mitre.org/groups/G1006",
+          "https://go.recordedfuture.com/hubfs/reports/cta-2023-0808.pdf",
+          "https://learn.microsoft.com/en-us/microsoft-365/security/intelligence/microsoft-threat-actor-naming?view=o365-worldwide",
           "https://www.recordedfuture.com/chinese-group-tag-22-targets-nepal-philippines-taiwan",
           "https://www.trendmicro.com/content/dam/trendmicro/global/en/research/22/a/earth-lusca-employs-sophisticated-infrastructure-varied-tools-and-techniques/technical-brief-delving-deep-an-analysis-of-earth-lusca-operations.pdf"
         ],
         "synonyms": [
           "Earth Lusca",
-          "TAG-22"
+          "TAG-22",
+          "Charcoal Typhoon",
+          "CHROMIUM",
+          "ControlX"
         ]
       },
       "related": [
@@ -2154,6 +2175,10 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "0d91b3c0-5e50-47c3-949a-2a796f04d144",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "1c4e5d32-1fe9-4116-9d9d-59e3925bd6a2",
           "type": "uses"
         },
@@ -2199,10 +2224,6 @@
         },
         {
           "dest-uuid": "afc079f3-c0ea-4096-b75d-3f05338b7f60",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
           "type": "uses"
         },
         {
@@ -2261,6 +2282,10 @@
         },
         {
           "dest-uuid": "04fd5427-79c7-44ea-ae13-11b24778ff1c",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "0d91b3c0-5e50-47c3-949a-2a796f04d144",
           "type": "uses"
         },
         {
@@ -2356,10 +2381,6 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
-          "type": "uses"
-        },
-        {
           "dest-uuid": "b42378e0-f147-496f-992a-26a49705395b",
           "type": "uses"
         },
@@ -2445,14 +2466,21 @@
         "external_id": "G1009",
         "refs": [
           "https://attack.mitre.org/groups/G1009",
+          "https://learn.microsoft.com/en-us/microsoft-365/security/intelligence/microsoft-threat-actor-naming?view=o365-worldwide",
           "https://research.checkpoint.com/2021/mosesstaff-targeting-israeli-companies/",
           "https://www.cybereason.com/blog/research/strifewater-rat-iranian-apt-moses-staff-adds-new-trojan-to-ransomware-operations"
         ],
         "synonyms": [
-          "Moses Staff"
+          "Moses Staff",
+          "DEV-0500",
+          "Marigold Sandstorm"
         ]
       },
       "related": [
+        {
+          "dest-uuid": "0d91b3c0-5e50-47c3-949a-2a796f04d144",
+          "type": "uses"
+        },
         {
           "dest-uuid": "212306d8-efa4-44c9-8c2d-ed3d2e224aa0",
           "type": "uses"
@@ -2502,10 +2530,6 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
-          "type": "uses"
-        },
-        {
           "dest-uuid": "e6919abc-99f9-4c6c-95a5-14761e7b2add",
           "type": "uses"
         },
@@ -2522,13 +2546,14 @@
       "value": "Moses Staff - G1009"
     },
     {
-      "description": "[Lazarus Group](https://attack.mitre.org/groups/G0032) is a North Korean state-sponsored cyber threat group that has been attributed to the Reconnaissance General Bureau.(Citation: US-CERT HIDDEN COBRA June 2017)(Citation: Treasury North Korean Cyber Groups September 2019) The group has been active since at least 2009 and was reportedly responsible for the November 2014 destructive wiper attack against Sony Pictures Entertainment as part of a campaign named Operation Blockbuster by Novetta. Malware used by [Lazarus Group](https://attack.mitre.org/groups/G0032) correlates to other reported campaigns, including Operation Flame, Operation 1Mission, Operation Troy, DarkSeoul, and Ten Days of Rain. (Citation: Novetta Blockbuster)\n\nNorth Korean group definitions are known to have significant overlap, and some security researchers report all North Korean state-sponsored cyber activity under the name [Lazarus Group](https://attack.mitre.org/groups/G0032) instead of tracking clusters or subgroups, such as [Andariel](https://attack.mitre.org/groups/G0138), [APT37](https://attack.mitre.org/groups/G0067), [APT38](https://attack.mitre.org/groups/G0082), and [Kimsuky](https://attack.mitre.org/groups/G0094).   ",
+      "description": "[Lazarus Group](https://attack.mitre.org/groups/G0032) is a North Korean state-sponsored cyber threat group that has been attributed to the Reconnaissance General Bureau.(Citation: US-CERT HIDDEN COBRA June 2017)(Citation: Treasury North Korean Cyber Groups September 2019) The group has been active since at least 2009 and was reportedly responsible for the November 2014 destructive wiper attack against Sony Pictures Entertainment as part of a campaign named Operation Blockbuster by Novetta. Malware used by [Lazarus Group](https://attack.mitre.org/groups/G0032) correlates to other reported campaigns, including Operation Flame, Operation 1Mission, Operation Troy, DarkSeoul, and Ten Days of Rain.(Citation: Novetta Blockbuster)\n\nNorth Korean group definitions are known to have significant overlap, and some security researchers report all North Korean state-sponsored cyber activity under the name [Lazarus Group](https://attack.mitre.org/groups/G0032) instead of tracking clusters or subgroups, such as [Andariel](https://attack.mitre.org/groups/G0138), [APT37](https://attack.mitre.org/groups/G0067), [APT38](https://attack.mitre.org/groups/G0082), and [Kimsuky](https://attack.mitre.org/groups/G0094).   ",
       "meta": {
         "external_id": "G0032",
         "refs": [
           "https://attack.mitre.org/groups/G0032",
           "https://blogs.microsoft.com/on-the-issues/2017/12/19/microsoft-facebook-disrupt-zinc-malware-attack-protect-customers-internet-ongoing-cyberthreats/",
           "https://home.treasury.gov/news/press-releases/sm774",
+          "https://learn.microsoft.com/en-us/microsoft-365/security/intelligence/microsoft-threat-actor-naming?view=o365-worldwide",
           "https://web.archive.org/web/20160226161828/https://www.operationblockbuster.com/wp-content/uploads/2016/02/Operation-Blockbuster-Report.pdf",
           "https://web.archive.org/web/20210723190317/https://adversary.crowdstrike.com/en-US/adversary/labyrinth-chollima/",
           "https://www.secureworks.com/about/press/media-alert-secureworks-discovers-north-korean-cyber-threat-group-lazarus-spearphishing",
@@ -2541,7 +2566,8 @@
           "HIDDEN COBRA",
           "Guardians of Peace",
           "ZINC",
-          "NICKEL ACADEMY"
+          "NICKEL ACADEMY",
+          "Diamond Sleet"
         ]
       },
       "related": [
@@ -2579,6 +2605,10 @@
         },
         {
           "dest-uuid": "0af0ca99-357d-4ba1-805f-674fdfb7bef9",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "0d91b3c0-5e50-47c3-949a-2a796f04d144",
           "type": "uses"
         },
         {
@@ -2885,10 +2915,6 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
-          "type": "uses"
-        },
-        {
           "dest-uuid": "bd0536d7-b081-43ae-a773-cfb057c5b988",
           "type": "uses"
         },
@@ -3015,20 +3041,6 @@
         {
           "dest-uuid": "ff73aa03-0090-4464-83ac-f89e233c02bc",
           "type": "uses"
-        },
-        {
-          "dest-uuid": "027a1428-6e79-4a4b-82b9-e698e8525c2b",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        },
-        {
-          "dest-uuid": "ffe742ed-9100-4686-9e00-c331da544787",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "c93fccb1-e8e8-42cf-ae33-2ad1d183913a",
@@ -3058,6 +3070,10 @@
           "type": "similar"
         },
         {
+          "dest-uuid": "0d91b3c0-5e50-47c3-949a-2a796f04d144",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "7bec698a-7e20-4fd3-bb6a-12787770fb1a",
           "type": "uses"
         },
@@ -3078,22 +3094,11 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
-          "type": "uses"
-        },
-        {
           "dest-uuid": "e8268361-a599-4e45-bd3f-71c8c7e700c0",
           "type": "uses"
         },
         {
           "dest-uuid": "f4599aa0-4f85-4a32-80ea-fc39dc965945",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "7bec698a-7e20-4fd3-bb6a-12787770fb1a",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
           "type": "uses"
         }
       ],
@@ -3138,13 +3143,6 @@
         },
         {
           "dest-uuid": "dfb5fa9b-3051-4b97-8035-08f80aef945b",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "dfb5fa9b-3051-4b97-8035-08f80aef945b",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
           "type": "uses"
         }
       ],
@@ -3202,13 +3200,6 @@
         {
           "dest-uuid": "970a3432-3237-47ad-bcca-7d8cbb217736",
           "type": "uses"
-        },
-        {
-          "dest-uuid": "322bad5a-1c49-4d23-ab79-76d641794afa",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "7ecc3b4f-5cdb-457e-b55a-df376b359446",
@@ -3222,6 +3213,8 @@
           "https://2017-2021.state.gov/the-united-states-condemns-russian-cyber-attack-against-the-country-of-georgia//index.html",
           "https://attack.mitre.org/groups/G0034",
           "https://blog-assets.f-secure.com/wp-content/uploads/2019/10/15163408/BlackEnergy_Quedagh.pdf",
+          "https://blog.google/threat-analysis-group/ukraine-remains-russias-biggest-cyber-focus-in-2023/",
+          "https://learn.microsoft.com/en-us/microsoft-365/security/intelligence/microsoft-threat-actor-naming?view=o365-worldwide",
           "https://www.crowdstrike.com/blog/meet-crowdstrikes-adversary-of-the-month-for-january-voodoo-bear/",
           "https://www.dragos.com/resource/electrum/",
           "https://www.fireeye.com/blog/threat-research/2016/01/ukraine-and-sandworm-team.html",
@@ -3241,7 +3234,9 @@
           "BlackEnergy (Group)",
           "Quedagh",
           "Voodoo Bear",
-          "IRIDIUM"
+          "IRIDIUM",
+          "Seashell Blizzard",
+          "FROZENBARENTS"
         ]
       },
       "related": [
@@ -3258,7 +3253,15 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "0458aab9-ad42-4eac-9e22-706a95bafee2",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "045d0922-2310-4e60-b5e4-3302302cb3c5",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "04cecafd-cb5f-4daf-aa1f-73899116c4a2",
           "type": "uses"
         },
         {
@@ -3283,6 +3286,10 @@
         },
         {
           "dest-uuid": "10d51417-ee35-4589-b1ff-b6df1c334e8d",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "10ffac09-e42d-4f56-ab20-db94c67d76ff",
           "type": "uses"
         },
         {
@@ -3315,6 +3322,10 @@
         },
         {
           "dest-uuid": "26c87906-d750-42c5-946c-d4162c73fc7b",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "274770e0-2612-4ccf-a678-ef8e7bad365d",
           "type": "uses"
         },
         {
@@ -3362,11 +3373,19 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "3f886f2a-874f-4333-b794-aa6075009b1c",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "4061e78c-1284-44b4-9116-73e4ac3912f7",
           "type": "uses"
         },
         {
           "dest-uuid": "40f5caa0-4cb7-4117-89fc-d421bb493df3",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "42e8de7b-37b2-4258-905a-6897815e58e0",
           "type": "uses"
         },
         {
@@ -3534,6 +3553,10 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "d28ef391-8ed4-45dc-bc4a-2f43abf54416",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "d45a3d09-b3cf-48f4-9f0f-f521ee5cb05c",
           "type": "uses"
         },
@@ -3546,11 +3569,19 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "defc1257-4db1-4fb3-8ef5-bb77f63146df",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "df8b2a25-8bdf-4856-953c-a04372b1c161",
           "type": "uses"
         },
         {
           "dest-uuid": "dfd7cc1d-e1d8-4394-a198-97c4cab8aa67",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "e196b5c5-8118-4a1c-ab8a-936586ce3db5",
           "type": "uses"
         },
         {
@@ -3590,27 +3621,6 @@
         },
         {
           "dest-uuid": "ff6caf67-ea1f-4895-b80e-4bb0fc31c6db",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "b47250ec-2094-4d06-b658-11456e05fe89",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        },
-        {
-          "dest-uuid": "feac86e4-6bb2-4ba0-ac99-806aeb0a776c",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        },
-        {
-          "dest-uuid": "54cc1d4f-5c53-4f0e-9ef5-11b4998e82e4",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
           "type": "uses"
         }
       ],
@@ -3700,13 +3710,6 @@
         {
           "dest-uuid": "df8b2a25-8bdf-4856-953c-a04372b1c161",
           "type": "uses"
-        },
-        {
-          "dest-uuid": "01a5a209-b94c-450b-b7f9-946497d91055",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "894aab42-3371-47b1-8859-a4a074c804c8",
@@ -3772,34 +3775,6 @@
         {
           "dest-uuid": "e6919abc-99f9-4c6c-95a5-14761e7b2add",
           "type": "uses"
-        },
-        {
-          "dest-uuid": "24110866-cb22-4c85-a7d2-0413e126694b",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        },
-        {
-          "dest-uuid": "a0cb9370-e39b-44d5-9f50-ef78e412b973",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        },
-        {
-          "dest-uuid": "090242d7-73fc-4738-af68-20162f7a5aae",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        },
-        {
-          "dest-uuid": "8f4a33ec-8b1f-4b80-a2f6-642b2e479580",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "c5947e1c-1cbc-434c-94b8-27c7e3be0fff",
@@ -3812,6 +3787,7 @@
         "refs": [
           "https://attack.mitre.org/groups/G0047",
           "https://blog.trendmicro.com/trendlabs-security-intelligence/gamaredon-apt-group-use-covid-19-lure-in-campaigns/",
+          "https://learn.microsoft.com/en-us/microsoft-365/security/intelligence/microsoft-threat-actor-naming?view=o365-worldwide",
           "https://researchcenter.paloaltonetworks.com/2017/02/unit-42-title-gamaredon-group-toolset-evolution/",
           "https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/shuckworm-gamaredon-espionage-ukraine",
           "https://unit42.paloaltonetworks.com/gamaredon-primitive-bear-ukraine-update-2021/",
@@ -3827,7 +3803,8 @@
           "ACTINIUM",
           "Armageddon",
           "Shuckworm",
-          "DEV-0157"
+          "DEV-0157",
+          "Aqua Blizzard"
         ]
       },
       "related": [
@@ -4045,13 +4022,6 @@
         {
           "dest-uuid": "e6919abc-99f9-4c6c-95a5-14761e7b2add",
           "type": "uses"
-        },
-        {
-          "dest-uuid": "7fd87010-3a00-4da3-b905-410525e8ec44",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "2e290bfe-93b5-48ce-97d6-edcd6d32b7cf",
@@ -4088,6 +4058,7 @@
           "https://blog.certfa.com/posts/charming-kitten-christmas-gift/",
           "https://blogs.microsoft.com/on-the-issues/2019/03/27/new-steps-to-protect-customers-from-hacking/",
           "https://blogs.microsoft.com/on-the-issues/2020/10/28/cyberattacks-phosphorus-t20-munich-security-conference/",
+          "https://learn.microsoft.com/en-us/microsoft-365/security/intelligence/microsoft-threat-actor-naming?view=o365-worldwide",
           "https://noticeofpleadings.com/phosphorus/files/Complaint.pdf",
           "https://research.checkpoint.com/2022/apt35-exploits-log4j-vulnerability-to-distribute-new-modular-powershell-toolkit/",
           "https://researchcenter.paloaltonetworks.com/2017/02/unit42-magic-hound-campaign-attacks-saudi-targets/",
@@ -4108,7 +4079,8 @@
           "ITG18",
           "Phosphorus",
           "Newscaster",
-          "APT35"
+          "APT35",
+          "Mint Sandstorm"
         ]
       },
       "related": [
@@ -4142,6 +4114,10 @@
         },
         {
           "dest-uuid": "09a60ea3-a8d1-4ae5-976e-5783248b72a4",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "0d91b3c0-5e50-47c3-949a-2a796f04d144",
           "type": "uses"
         },
         {
@@ -4378,10 +4354,6 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
-          "type": "uses"
-        },
-        {
           "dest-uuid": "b4694861-542c-48ea-9eb1-10d356e7140a",
           "type": "uses"
         },
@@ -4519,27 +4491,6 @@
         },
         {
           "dest-uuid": "ff6caf67-ea1f-4895-b80e-4bb0fc31c6db",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "8f5e8dc7-739d-4f5e-a8a1-a66e004d7063",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        },
-        {
-          "dest-uuid": "b96e02f1-4037-463f-b158-5a964352f8d9",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        },
-        {
-          "dest-uuid": "03d7999c-1f4c-42cc-8373-e7690d318104",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
           "type": "uses"
         }
       ],
@@ -4775,6 +4726,143 @@
       "value": "EXOTIC LILY - G1011"
     },
     {
+      "description": "[Cinnamon Tempest](https://attack.mitre.org/groups/G1021) is a China-based threat group that has been active since at least 2021 deploying multiple strains of ransomware based on the leaked [Babuk](https://attack.mitre.org/software/S0638) source code. [Cinnamon Tempest](https://attack.mitre.org/groups/G1021) does not operate their ransomware on an affiliate model or purchase access but appears to act independently in all stages of the attack lifecycle. Based on victimology, the short lifespan of each ransomware variant, and use of malware attributed to government-sponsored threat groups, [Cinnamon Tempest](https://attack.mitre.org/groups/G1021) may be motivated by intellectual property theft or cyberespionage rather than financial gain.(Citation: Microsoft Ransomware as a Service)(Citation: Microsoft Threat Actor Naming July 2023)(Citation: Trend Micro Cheerscrypt May 2022)(Citation: SecureWorks BRONZE STARLIGHT Ransomware Operations June 2022)",
+      "meta": {
+        "external_id": "G1021",
+        "refs": [
+          "https://attack.mitre.org/groups/G1021",
+          "https://blog.sygnia.co/revealing-emperor-dragonfly-a-chinese-ransomware-group",
+          "https://learn.microsoft.com/en-us/microsoft-365/security/intelligence/microsoft-threat-actor-naming?view=o365-worldwide",
+          "https://www.microsoft.com/en-us/security/blog/2022/05/09/ransomware-as-a-service-understanding-the-cybercrime-gig-economy-and-how-to-protect-yourself/",
+          "https://www.secureworks.com/research/bronze-starlight-ransomware-operations-use-hui-loader",
+          "https://www.secureworks.com/research/threat-profiles/bronze-starlight",
+          "https://www.trendmicro.com/en_se/research/22/e/new-linux-based-ransomware-cheerscrypt-targets-exsi-devices.html"
+        ],
+        "synonyms": [
+          "Cinnamon Tempest",
+          "DEV-0401",
+          "Emperor Dragonfly",
+          "BRONZE STARLIGHT"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "01a5a209-b94c-450b-b7f9-946497d91055",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "11f8d7eb-1927-4806-9267-3a11d4d4d6be",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "246fd3c7-f5e3-466d-8787-4c13d9e3b61c",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "26c87906-d750-42c5-946c-d4162c73fc7b",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "2959d63f-73fd-46a1-abd2-109d7dcede32",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "2fee9321-3e71-4cf4-af24-d4d40d355b34",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "3ccef7ae-cb5e-48f6-8302-897105fbf55c",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "3f886f2a-874f-4333-b794-aa6075009b1c",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "4f9ca633-15c5-463c-9724-bdcd54fde541",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "4fe28b27-b13c-453e-a386-c2ef362a573b",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "54089fba-8662-4f37-9a44-6ad25a5f630a",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "59096109-a1dd-463b-87e7-a8d110fe3a79",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "5d2be8b9-d24c-4e98-83bf-2f5f79477163",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "5d3fa1db-5041-4560-b87b-8f61cc225c52",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "64fa0de0-6240-41f4-8638-f4ca7ed528fd",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "731f4f55-b6d0-41d1-a7a9-072a66389aea",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "851e071f-208d-4c79-adc6-5974c85c78f3",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "970a3432-3237-47ad-bcca-7d8cbb217736",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "a2fdce72-04b2-409a-ac10-cc1695f4fce0",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "a545456a-f9a7-47ad-9ea6-8b017def38d1",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "a7881f21-e978-4fe4-af56-92c9416a2616",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "b17a1a56-e99c-403c-8948-561df0cffe81",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "bf1b6176-597c-4600-bfcd-ac989670f96b",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "c3d4bdd9-2cfe-4a80-9d0c-07a29ecdce8f",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "cc3502b5-30cc-4473-ad48-42d51a6ef6d1",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "d1fcf083-a721-4223-aedf-bf8960798d62",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "e64c62cf-9cd7-4a14-94ec-cdaac43ab44b",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "e6919abc-99f9-4c6c-95a5-14761e7b2add",
+          "type": "uses"
+        }
+      ],
+      "uuid": "8b1e16f6-e7c8-4b7a-a5df-f81232c13e2f",
+      "value": "Cinnamon Tempest - G1021"
+    },
+    {
       "description": "[Tonto Team](https://attack.mitre.org/groups/G0131) is a suspected Chinese state-sponsored cyber espionage threat group that has primarily targeted South Korea, Japan, Taiwan, and the United States since at least 2009; by 2020 they expanded operations to include other Asian as well as Eastern European countries. [Tonto Team](https://attack.mitre.org/groups/G0131) has targeted government, military, energy, mining, financial, education, healthcare, and technology organizations, including through the Heartbeat Campaign (2009-2012) and Operation Bitter Biscuit (2017).(Citation: Kaspersky CactusPete Aug 2020)(Citation: ESET Exchange Mar 2021)(Citation: FireEye Chinese Espionage October 2019)(Citation: ARS Technica China Hack SK April 2017)(Citation: Trend Micro HeartBeat Campaign January 2013)(Citation: Talos Bisonal 10 Years March 2020)",
       "meta": {
         "external_id": "G0131",
@@ -4953,23 +5041,56 @@
       "value": "GOLD SOUTHFIELD - G0115"
     },
     {
-      "description": "[Scattered Spider](https://attack.mitre.org/groups/G1015) is a cybercriminal group that has been active since at least 2022 targeting customer relationship management and business-process outsourcing (BPO) firms as well as  telecommunications and technology companies. During campaigns [Scattered Spider](https://attack.mitre.org/groups/G1015) has leveraged targeted social-engineering techniques and attempted to bypass popular endpoint security tools.(Citation: CrowdStrike Scattered Spider Profile)(Citation: CrowdStrike Scattered Spider BYOVD January 2023)(Citation: Crowdstrike TELCO BPO Campaign December 2022)",
+      "description": "[Scattered Spider](https://attack.mitre.org/groups/G1015) is a native English-speaking cybercriminal group that has been active since at least 2022.(Citation: CrowdStrike Scattered Spider Profile)(Citation: MSTIC Octo Tempest Operations October 2023) The group initially targeted customer relationship management and business-process outsourcing (BPO) firms as well as telecommunications and technology companies. Beginning in 2023, [Scattered Spider](https://attack.mitre.org/groups/G1015) expanded its operations to compromise victims in the gaming, hospitality, retail, MSP, manufacturing, and financial sectors.(Citation: MSTIC Octo Tempest Operations October 2023) During campaigns, [Scattered Spider](https://attack.mitre.org/groups/G1015) has leveraged targeted social-engineering techniques, attempted to bypass popular endpoint security tools, and more recently, deployed ransomware for financial gain.(Citation: CISA Scattered Spider Advisory November 2023)(Citation: CrowdStrike Scattered Spider BYOVD January 2023)(Citation: CrowdStrike Scattered Spider Profile)(Citation: MSTIC Octo Tempest Operations October 2023)(Citation: Crowdstrike TELCO BPO Campaign December 2022)",
       "meta": {
         "external_id": "G1015",
         "refs": [
           "https://attack.mitre.org/groups/G1015",
+          "https://learn.microsoft.com/en-us/microsoft-365/security/intelligence/microsoft-threat-actor-naming?view=o365-worldwide",
+          "https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-320a",
           "https://www.crowdstrike.com/adversaries/scattered-spider/",
           "https://www.crowdstrike.com/blog/analysis-of-intrusion-campaign-targeting-telecom-and-bpo-companies/",
-          "https://www.crowdstrike.com/blog/scattered-spider-attempts-to-avoid-detection-with-bring-your-own-vulnerable-driver-tactic/"
+          "https://www.crowdstrike.com/blog/scattered-spider-attempts-to-avoid-detection-with-bring-your-own-vulnerable-driver-tactic/",
+          "https://www.microsoft.com/en-us/security/blog/2023/10/25/octo-tempest-crosses-boundaries-to-facilitate-extortion-encryption-and-destruction/"
         ],
         "synonyms": [
           "Scattered Spider",
-          "Roasted 0ktapus"
+          "Roasted 0ktapus",
+          "Octo Tempest",
+          "Storm-0875"
         ]
       },
       "related": [
         {
+          "dest-uuid": "0c8ab3eb-df48-4b9c-ace7-beacaac81cc5",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "0cf55441-b176-4332-89e7-2c4c7799d0ff",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "10d51417-ee35-4589-b1ff-b6df1c334e8d",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "10ffac09-e42d-4f56-ab20-db94c67d76ff",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "21875073-b0ee-49e3-9077-1e2a885359af",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "24769ab5-14bd-4f4e-a752-cfb185da53ee",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "2dbbdcd5-92cf-44c0-aea2-fe24783a6bc3",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "2f7f03bb-f367-4a5a-ad9b-310a12a48906",
           "type": "uses"
         },
         {
@@ -4977,7 +5098,63 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "3298ce88-1628-43b1-87d9-0b5336b193d7",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "4061e78c-1284-44b4-9116-73e4ac3912f7",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "50c44c34-3abb-48ae-9433-a2337de5b0bc",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "57a3d31a-d04f-4663-b2da-7df8ec3f8c9d",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "5e4a2073-9643-44cb-a0b5-e7f4048446c7",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "60b508a1-6a5e-46b1-821a-9f7b78752abf",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "6a5d222a-a7e0-4656-b110-782c33098289",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "7bc57495-ea59-4380-be31-a64af124ef18",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "7dd95ff6-712e-4056-9626-312ea4ab4c5e",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "837f9164-50af-4ac0-8219-379d8a74cefc",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "851e071f-208d-4c79-adc6-5974c85c78f3",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "8861073d-d1b8-4941-82ce-dce621d398f0",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "8c32eb4d-805f-4fc5-bf60-c4d476c131b5",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "954a1639-f2d6-407d-aef3-4917622ca493",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "afc079f3-c0ea-4096-b75d-3f05338b7f60",
           "type": "uses"
         },
         {
@@ -4985,7 +5162,63 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "b4409cd8-0da9-46e1-a401-a241afd4d1cc",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "b76b2d94-60e4-4107-a903-4a3a7622fb3b",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "b80d107d-fa0d-4b60-9684-b0433e8bdba0",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "bf1b6176-597c-4600-bfcd-ac989670f96b",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "c9e0c59e-162e-40a4-b8b1-78fab4329ada",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "cca0ccb6-a068-4574-a722-b1556f86833a",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "ceaeb6d8-95ee-4da2-9d42-dc6aa6ca43ae",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "cf1c2504-433f-4c4e-a1f8-91de45a0318c",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "cff94884-3b1c-4987-a70b-6d5643c621c3",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "defc1257-4db1-4fb3-8ef5-bb77f63146df",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "e01be9c5-e763-4caf-aeb7-000b416aef67",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "e358d692-23c0-4a31-9eb6-ecc13a8d7735",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "e49920b0-6c54-40c1-9571-73723653205f",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "edf91964-b26e-4b4a-9600-ccacd7d7df24",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "fde19a18-e502-467f-be14-58c71b4e7f4b",
           "type": "uses"
         }
       ],
@@ -5014,6 +5247,7 @@
         "external_id": "G0117",
         "refs": [
           "https://attack.mitre.org/groups/G0117",
+          "https://learn.microsoft.com/en-us/microsoft-365/security/intelligence/microsoft-threat-actor-naming?view=o365-worldwide",
           "https://us-cert.cisa.gov/ncas/alerts/aa20-259a",
           "https://www.clearskysec.com/fox-kitten/",
           "https://www.clearskysec.com/wp-content/uploads/2020/12/Pay2Kitten.pdf",
@@ -5024,7 +5258,9 @@
           "Fox Kitten",
           "UNC757",
           "Parisite",
-          "Pioneer Kitten"
+          "Pioneer Kitten",
+          "RUBIDIUM",
+          "Lemon Sandstorm"
         ]
       },
       "related": [
@@ -5038,6 +5274,10 @@
         },
         {
           "dest-uuid": "01327cde-66c4-4123-bf34-5f258d59457b",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "0d91b3c0-5e50-47c3-949a-2a796f04d144",
           "type": "uses"
         },
         {
@@ -5161,10 +5401,6 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
-          "type": "uses"
-        },
-        {
           "dest-uuid": "c32f7008-9fea-41f7-8366-5eb9b74bd896",
           "type": "uses"
         },
@@ -5246,6 +5482,10 @@
         },
         {
           "dest-uuid": "0a68f1f1-da74-4d28-8d9a-696c082706cc",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "149b477f-f364-4824-b1b5-aa1d56115869",
           "type": "uses"
         },
         {
@@ -5345,10 +5585,6 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "810d8072-afb6-4a56-9ee7-86379ac4a6f3",
-          "type": "uses"
-        },
-        {
           "dest-uuid": "866d0d6d-02c6-42bd-aa2f-02907fdc0969",
           "type": "uses"
         },
@@ -5435,12 +5671,15 @@
         "refs": [
           "https://attack.mitre.org/groups/G0119",
           "https://home.treasury.gov/news/press-releases/sm845",
+          "https://learn.microsoft.com/en-us/microsoft-365/security/intelligence/microsoft-threat-actor-naming?view=o365-worldwide",
           "https://www.crowdstrike.com/blog/big-game-hunting-the-evolution-of-indrik-spider-from-dridex-wire-fraud-to-bitpaymer-targeted-ransomware/",
           "https://www.crowdstrike.com/blog/hades-ransomware-successor-to-indrik-spiders-wastedlocker/"
         ],
         "synonyms": [
           "Indrik Spider",
-          "Evil Corp"
+          "Evil Corp",
+          "Manatee Tempest",
+          "DEV-0243"
         ]
       },
       "related": [
@@ -6076,6 +6315,10 @@
           "type": "similar"
         },
         {
+          "dest-uuid": "0d91b3c0-5e50-47c3-949a-2a796f04d144",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "1c4e5d32-1fe9-4116-9d9d-59e3925bd6a2",
           "type": "uses"
         },
@@ -6117,10 +6360,6 @@
         },
         {
           "dest-uuid": "7bd9c723-2f78-4309-82c5-47cad406572b",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
           "type": "uses"
         },
         {
@@ -6210,13 +6449,15 @@
         "external_id": "G1004",
         "refs": [
           "https://attack.mitre.org/groups/G1004",
+          "https://learn.microsoft.com/en-us/microsoft-365/security/intelligence/microsoft-threat-actor-naming?view=o365-worldwide",
           "https://unit42.paloaltonetworks.com/lapsus-group/",
           "https://www.bbc.com/news/technology-60953527",
           "https://www.microsoft.com/security/blog/2022/03/22/dev-0537-criminal-actor-targeting-organizations-for-data-exfiltration-and-destruction/"
         ],
         "synonyms": [
           "LAPSUS$",
-          "DEV-0537"
+          "DEV-0537",
+          "Strawberry Tempest"
         ]
       },
       "related": [
@@ -6459,6 +6700,62 @@
       "value": "APT-C-36 - G0099"
     },
     {
+      "description": "[APT-C-23](https://attack.mitre.org/groups/G1028) is a threat group that has been active since at least 2014.(Citation: symantec_mantis) [APT-C-23](https://attack.mitre.org/groups/G1028) has primarily focused its operations on the Middle East, including Israeli military assets. [APT-C-23](https://attack.mitre.org/groups/G1028) has developed mobile spyware targeting Android and iOS devices since 2017.(Citation: welivesecurity_apt-c-23)",
+      "meta": {
+        "external_id": "G1028",
+        "refs": [
+          "https://attack.mitre.org/groups/G1028",
+          "https://web.archive.org/web/20201123042131/www.welivesecurity.com/2020/09/30/aptc23-group-evolves-its-android-spyware/",
+          "https://web.archive.org/web/20230604112435/https://research.checkpoint.com/2018/interactive-mapping-of-apt-c-23/",
+          "https://web.archive.org/web/20231126111812/https://about.fb.com/wp-content/uploads/2021/04/Technical-threat-report-Arid-Viper-April-2021.pdf",
+          "https://web.archive.org/web/20231227054130/https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/mantis-palestinian-attacks",
+          "https://web.archive.org/web/20240208234008/www.sentinelone.com/labs/the-israel-hamas-war-cyber-domain-state-sponsored-activity-of-interest/"
+        ],
+        "synonyms": [
+          "APT-C-23",
+          "Mantis",
+          "Arid Viper",
+          "Desert Falcon",
+          "TAG-63",
+          "Grey Karkadann",
+          "Big Bang APT",
+          "Two-tailed Scorpion"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "114fed8b-7eed-4136-8b9c-411c5c7fff4b",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "3271c107-92c4-442e-9506-e76d62230ee8",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "8c050cea-86e1-4b63-bf21-7af4fa483349",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "96ea1e13-d50f-45f1-b0cf-4ac9bc5a2d62",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "d4536441-1bcc-49fa-80ae-a596ed3f7ffd",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "defc1257-4db1-4fb3-8ef5-bb77f63146df",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "f97e2718-af50-41df-811f-215ebab45691",
+          "type": "uses"
+        }
+      ],
+      "uuid": "8332952e-b86b-486b-acc3-1c2a85d39394",
+      "value": "APT-C-23 - G1028"
+    },
+    {
       "description": "[TEMP.Veles](https://attack.mitre.org/groups/G0088) is a Russia-based threat group that has targeted critical infrastructure. The group has been observed utilizing TRITON, a malware framework designed to manipulate industrial safety systems.(Citation: FireEye TRITON 2019)(Citation: FireEye TEMP.Veles 2018)(Citation: FireEye TEMP.Veles JSON April 2019)",
       "meta": {
         "external_id": "G0088",
@@ -6477,43 +6774,7 @@
       },
       "related": [
         {
-          "dest-uuid": "005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "10d51417-ee35-4589-b1ff-b6df1c334e8d",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "1c34f7aa-9341-4a48-bfab-af22e51aca6c",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "1c4e5d32-1fe9-4116-9d9d-59e3925bd6a2",
-          "type": "uses"
-        },
-        {
           "dest-uuid": "20a66013-8dab-4ca3-a67d-766c842c561c",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "2db31dcd-54da-405d-acef-b9129b816ed6",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "47f2d673-ca62-47e9-929b-1b0be9657611",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "5d0d3609-d06d-49e1-b9c9-b544e0c618cb",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "65f2d882-3f41-4d48-8a06-29af77ec9f90",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "6d4a7fb3-5a24-42be-ae61-6728a2b581f6",
           "type": "uses"
         },
         {
@@ -6521,39 +6782,7 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "79da0971-3147-4af6-a4f5-e8cd447cd795",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "970a3432-3237-47ad-bcca-7d8cbb217736",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "a2fdce72-04b2-409a-ac10-cc1695f4fce0",
-          "type": "uses"
-        },
-        {
           "dest-uuid": "afc079f3-c0ea-4096-b75d-3f05338b7f60",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "b0533c6e-8fea-4788-874f-b799cacc4b92",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "b17a1a56-e99c-403c-8948-561df0cffe81",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "b18eae87-b469-4e14-b454-b171b416bc18",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "d63a3fb8-9452-4e9d-a60a-54be68d5998c",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "eb062747-2193-45de-8fa2-e62549c37ddf",
           "type": "uses"
         },
         {
@@ -6624,20 +6853,6 @@
         {
           "dest-uuid": "fdc47f44-dd32-4b99-af5f-209f556f63c2",
           "type": "uses"
-        },
-        {
-          "dest-uuid": "6c74fda2-bb04-40bd-a166-8c2d4b952d33",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        },
-        {
-          "dest-uuid": "f4882e23-8aa7-4b12-b28a-b349c12ee9e0",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "fbe9387f-34e6-4828-ac28-3080020c597b",
@@ -6699,27 +6914,6 @@
         {
           "dest-uuid": "d5e96a35-7b0b-4c6a-9533-d63ecbda563e",
           "type": "uses"
-        },
-        {
-          "dest-uuid": "8beac7c2-48d2-4cd9-9b15-6c452f38ac06",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "ad4f146f-e3ec-444a-ba71-24bffd7f0f8e",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "830c9528-df21-472c-8c14-a036bf17d665",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "c47f937f-1022-4f42-8525-e7a4779a14cb",
@@ -6772,27 +6966,6 @@
         },
         {
           "dest-uuid": "fb261c56-b80e-43a9-8351-c84081e7213d",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "2a158b0a-7ef8-43cb-9985-bf34d1e12050",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        },
-        {
-          "dest-uuid": "5e0a7cf2-6107-4d5f-9dd0-9df38b1fcba8",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        },
-        {
-          "dest-uuid": "fb261c56-b80e-43a9-8351-c84081e7213d",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
           "type": "uses"
         }
       ],
@@ -7002,27 +7175,6 @@
         {
           "dest-uuid": "ff6caf67-ea1f-4895-b80e-4bb0fc31c6db",
           "type": "uses"
-        },
-        {
-          "dest-uuid": "1608f3e1-598a-42f4-a01a-2e252e81728f",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "0a3ead4e-6d47-4ccb-854c-a6a4f9d96b22",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "72b74d71-8169-42aa-92e0-e7b04b9f5a08",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "6a2e693f-24e5-451a-9f88-b36a108e5662",
@@ -7148,34 +7300,6 @@
         {
           "dest-uuid": "fb28627c-d6ea-4c35-b138-ab5e96ae5445",
           "type": "uses"
-        },
-        {
-          "dest-uuid": "c5947e1c-1cbc-434c-94b8-27c7e3be0fff",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        },
-        {
-          "dest-uuid": "24110866-cb22-4c85-a7d2-0413e126694b",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        },
-        {
-          "dest-uuid": "090242d7-73fc-4738-af68-20162f7a5aae",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        },
-        {
-          "dest-uuid": "3f886f2a-874f-4333-b794-aa6075009b1c",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "a0cb9370-e39b-44d5-9f50-ef78e412b973",
@@ -7198,6 +7322,10 @@
         ]
       },
       "related": [
+        {
+          "dest-uuid": "0d91b3c0-5e50-47c3-949a-2a796f04d144",
+          "type": "uses"
+        },
         {
           "dest-uuid": "232b7f21-adf9-4b42-b936-b9d6f7df856e",
           "type": "uses"
@@ -7267,10 +7395,6 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
-          "type": "uses"
-        },
-        {
           "dest-uuid": "b76b2d94-60e4-4107-a903-4a3a7622fb3b",
           "type": "uses"
         },
@@ -7310,6 +7434,7 @@
           "http://www.secureworks.com/research/threat-profiles/iron-hunter",
           "https://attack.mitre.org/groups/G0010",
           "https://blog.talosintelligence.com/2021/09/tinyturla.html",
+          "https://learn.microsoft.com/en-us/microsoft-365/security/intelligence/microsoft-threat-actor-naming?view=o365-worldwide",
           "https://securelist.com/introducing-whitebear/81638/",
           "https://securelist.com/the-epic-turla-operation/65545/",
           "https://www.accenture.com/us-en/blogs/cyber-defense/turla-belugasturgeon-compromises-government-entity",
@@ -7325,12 +7450,13 @@
           "Turla",
           "IRON HUNTER",
           "Group 88",
-          "Belugasturgeon",
           "Waterbug",
           "WhiteBear",
           "Snake",
           "Krypton",
-          "Venomous Bear"
+          "Venomous Bear",
+          "Secret Blizzard",
+          "BELUGASTURGEON"
         ]
       },
       "related": [
@@ -7719,13 +7845,6 @@
         {
           "dest-uuid": "ff6caf67-ea1f-4895-b80e-4bb0fc31c6db",
           "type": "uses"
-        },
-        {
-          "dest-uuid": "6b62e336-176f-417b-856a-8552dd8c44e1",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "7a19ecb1-3c65-4de3-a230-993516aed6a6",
@@ -7737,6 +7856,7 @@
         "external_id": "G0050",
         "refs": [
           "https://attack.mitre.org/groups/G0050",
+          "https://learn.microsoft.com/en-us/microsoft-365/security/intelligence/microsoft-threat-actor-naming?view=o365-worldwide",
           "https://www.amnestyusa.org/wp-content/uploads/2021/02/Click-and-Bait_Vietnamese-Human-Rights-Defenders-Targeted-with-Spyware-Attacks.pdf",
           "https://www.cybereason.com/blog/operation-cobalt-kitty-apt",
           "https://www.fireeye.com/blog/threat-research/2017/05/cyber-espionage-apt32.html",
@@ -7748,7 +7868,9 @@
           "APT32",
           "SeaLotus",
           "OceanLotus",
-          "APT-C-00"
+          "APT-C-00",
+          "Canvas Cyclone",
+          "BISMUTH"
         ]
       },
       "related": [
@@ -7794,6 +7916,10 @@
         },
         {
           "dest-uuid": "0a3ead4e-6d47-4ccb-854c-a6a4f9d96b22",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "0d91b3c0-5e50-47c3-949a-2a796f04d144",
           "type": "uses"
         },
         {
@@ -8031,10 +8157,6 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
-          "type": "uses"
-        },
-        {
           "dest-uuid": "b97f1d35-4249-4486-a6b5-ee60ccf24fab",
           "type": "uses"
         },
@@ -8137,20 +8259,6 @@
         {
           "dest-uuid": "fdc47f44-dd32-4b99-af5f-209f556f63c2",
           "type": "uses"
-        },
-        {
-          "dest-uuid": "7e5a571f-dee2-4cae-a960-f8ab8a8fb1cf",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        },
-        {
-          "dest-uuid": "35dd844a-b219-4e2b-a6bb-efa9a75995a9",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "247cb30b-955f-42eb-97a5-a89fef69341e",
@@ -8162,6 +8270,7 @@
         "external_id": "G0092",
         "refs": [
           "https://attack.mitre.org/groups/G0092",
+          "https://learn.microsoft.com/en-us/microsoft-365/security/intelligence/microsoft-threat-actor-naming?view=o365-worldwide",
           "https://research.nccgroup.com/2020/11/18/ta505-a-brief-history-of-their-time/",
           "https://securityintelligence.com/posts/ta505-continues-to-infect-networks-with-sdbbot-rat/",
           "https://www.fsec.or.kr/user/bbs/fsec/163/344/bbsDataView/1382.do?page=1&column=&search=&searchSDate=&searchEDate=&bbsDataCategory=",
@@ -8171,7 +8280,9 @@
         ],
         "synonyms": [
           "TA505",
-          "Hive0065"
+          "Hive0065",
+          "Spandex Tempest",
+          "CHIMBORAZO"
         ]
       },
       "related": [
@@ -8197,6 +8308,10 @@
         },
         {
           "dest-uuid": "099ecff2-41b8-436d-843c-038a9aa9aa69",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "0d91b3c0-5e50-47c3-949a-2a796f04d144",
           "type": "uses"
         },
         {
@@ -8313,10 +8428,6 @@
         },
         {
           "dest-uuid": "afc079f3-c0ea-4096-b75d-3f05338b7f60",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
           "type": "uses"
         },
         {
@@ -8463,11 +8574,19 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "0d91b3c0-5e50-47c3-949a-2a796f04d144",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "0f20e3cb-245b-4a61-8a91-2d93f7cb0e9b",
           "type": "uses"
         },
         {
           "dest-uuid": "10d51417-ee35-4589-b1ff-b6df1c334e8d",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "149b477f-f364-4824-b1b5-aa1d56115869",
           "type": "uses"
         },
         {
@@ -8656,6 +8775,10 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "79da0971-3147-4af6-a4f5-e8cd447cd795",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "7bc57495-ea59-4380-be31-a64af124ef18",
           "type": "uses"
         },
@@ -8753,10 +8876,6 @@
         },
         {
           "dest-uuid": "b21c3b2d-02e6-45b1-980b-e69051040839",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
           "type": "uses"
         },
         {
@@ -8902,20 +9021,6 @@
         {
           "dest-uuid": "fe926152-f431-4baf-956c-4ad3cb0bf23b",
           "type": "uses"
-        },
-        {
-          "dest-uuid": "62b8c999-dcc0-4755-bd69-09442d9359f5",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "6aac77c4-eaf2-4366-8c13-ce50ab951f38",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "bef4c620-0787-42a8-a96d-b7eb6e85917c",
@@ -8949,13 +9054,6 @@
         {
           "dest-uuid": "f244b8dd-af6c-4391-a497-fc03627ce995",
           "type": "uses"
-        },
-        {
-          "dest-uuid": "10d5f3b7-6be6-4da5-9a77-0f1e2bbfcc44",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "96e239be-ad99-49eb-b127-3007b8c1bec9",
@@ -8988,20 +9086,6 @@
         {
           "dest-uuid": "b42378e0-f147-496f-992a-26a49705395b",
           "type": "uses"
-        },
-        {
-          "dest-uuid": "f3bdec95-3d62-42d9-a840-29630f6cdc1a",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        },
-        {
-          "dest-uuid": "519630c5-f03f-4882-825c-3af924935817",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "2e5d3a83-fe00-41a5-9b60-237efc84832f",
@@ -9013,6 +9097,7 @@
         "external_id": "G0004",
         "refs": [
           "https://attack.mitre.org/groups/G0004",
+          "https://learn.microsoft.com/en-us/microsoft-365/security/intelligence/microsoft-threat-actor-naming?view=o365-worldwide",
           "https://research.nccgroup.com/2018/03/10/apt15-is-alive-and-strong-an-analysis-of-royalcli-and-royaldns/",
           "https://web.archive.org/web/20180615122133/https://www.intezer.com/miragefox-apt15-resurfaces-with-new-tools-based-on-old-ones/",
           "https://www.fireeye.com/content/dam/fireeye-www/global/en/current-threats/pdfs/wp-operation-ke3chang.pdf",
@@ -9027,7 +9112,8 @@
           "GREF",
           "Playful Dragon",
           "RoyalAPT",
-          "NICKEL"
+          "NICKEL",
+          "Nylon Typhoon"
         ]
       },
       "related": [
@@ -9254,13 +9340,6 @@
         {
           "dest-uuid": "f232fa7a-025c-4d43-abc7-318e81a73d65",
           "type": "uses"
-        },
-        {
-          "dest-uuid": "72b74d71-8169-42aa-92e0-e7b04b9f5a08",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "6713ab67-e25b-49cc-808d-2b36d4fbc35c",
@@ -9388,41 +9467,6 @@
         },
         {
           "dest-uuid": "ff6caf67-ea1f-4895-b80e-4bb0fc31c6db",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "b96e02f1-4037-463f-b158-5a964352f8d9",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        },
-        {
-          "dest-uuid": "f9d6633a-55e6-4adc-9263-6ae080421a13",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        },
-        {
-          "dest-uuid": "b96e02f1-4037-463f-b158-5a964352f8d9",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        },
-        {
-          "dest-uuid": "f9d6633a-55e6-4adc-9263-6ae080421a13",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        },
-        {
-          "dest-uuid": "c0c45d38-fe57-4cd4-b2b2-9ecd0ddd4ca9",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
           "type": "uses"
         }
       ],
@@ -9660,20 +9704,6 @@
         {
           "dest-uuid": "f7827069-0bf2-4764-af4f-23fae0d181b7",
           "type": "uses"
-        },
-        {
-          "dest-uuid": "9559ecaf-2e75-48a7-aee8-9974020bc772",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        },
-        {
-          "dest-uuid": "cc7b8c4e-9be0-47ca-b0bb-83915ec3ee2f",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "17862c7d-9e60-48a0-b48e-da4dc4c3f6b0",
@@ -9762,20 +9792,6 @@
         },
         {
           "dest-uuid": "ff6caf67-ea1f-4895-b80e-4bb0fc31c6db",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "3753cc21-2dae-4dfb-8481-d004e74502cc",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        },
-        {
-          "dest-uuid": "4061e78c-1284-44b4-9116-73e4ac3912f7",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
           "type": "uses"
         }
       ],
@@ -9981,6 +9997,10 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "910906dd-8c0a-475a-9cc1-5e029e2fad58",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "970a3432-3237-47ad-bcca-7d8cbb217736",
           "type": "uses"
         },
@@ -10132,13 +10152,6 @@
         {
           "dest-uuid": "b42378e0-f147-496f-992a-26a49705395b",
           "type": "uses"
-        },
-        {
-          "dest-uuid": "afc079f3-c0ea-4096-b75d-3f05338b7f60",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "fe98767f-9df8-42b9-83c9-004b1dec8647",
@@ -10171,13 +10184,6 @@
         },
         {
           "dest-uuid": "e51398e6-53dc-4e9f-a323-e54683d8672b",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "3cab1b76-2f40-4cd0-8d2c-7ed16eeb909c",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
           "type": "uses"
         }
       ],
@@ -10228,55 +10234,6 @@
         {
           "dest-uuid": "d69c8146-ab35-4d50-8382-6fc80e641d43",
           "type": "uses"
-        },
-        {
-          "dest-uuid": "c5947e1c-1cbc-434c-94b8-27c7e3be0fff",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        },
-        {
-          "dest-uuid": "24110866-cb22-4c85-a7d2-0413e126694b",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        },
-        {
-          "dest-uuid": "a0cb9370-e39b-44d5-9f50-ef78e412b973",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        },
-        {
-          "dest-uuid": "c5947e1c-1cbc-434c-94b8-27c7e3be0fff",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        },
-        {
-          "dest-uuid": "24110866-cb22-4c85-a7d2-0413e126694b",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        },
-        {
-          "dest-uuid": "a0cb9370-e39b-44d5-9f50-ef78e412b973",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        },
-        {
-          "dest-uuid": "d69c8146-ab35-4d50-8382-6fc80e641d43",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "090242d7-73fc-4738-af68-20162f7a5aae",
@@ -10300,6 +10257,10 @@
         ]
       },
       "related": [
+        {
+          "dest-uuid": "0d91b3c0-5e50-47c3-949a-2a796f04d144",
+          "type": "uses"
+        },
         {
           "dest-uuid": "10d51417-ee35-4589-b1ff-b6df1c334e8d",
           "type": "uses"
@@ -10354,10 +10315,6 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
-          "type": "uses"
-        },
-        {
           "dest-uuid": "b96680d1-5eb3-4f07-b95c-00ab904ac236",
           "type": "uses"
         },
@@ -10388,13 +10345,6 @@
         {
           "dest-uuid": "f3d95a1f-bba2-44ce-9af7-37866cd63fd0",
           "type": "uses"
-        },
-        {
-          "dest-uuid": "56fca983-1cf1-4fd1-bda0-5e170a37ab59",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "38fd6a28-3353-4f2b-bb2b-459fecd5c648",
@@ -10408,6 +10358,7 @@
           "http://www.secureworks.com/research/threat-profiles/iron-hemlock",
           "https://attack.mitre.org/groups/G0016",
           "https://labs.sentinelone.com/noblebaron-new-poisoned-installers-could-be-used-in-supply-chain-attacks/",
+          "https://learn.microsoft.com/en-us/microsoft-365/security/intelligence/microsoft-threat-actor-naming?view=o365-worldwide",
           "https://media.defense.gov/2021/Apr/15/2002621240/-1/-1/0/CSA_SVR_TARGETS_US_ALLIES_UOO13234021.PDF/CSA_SVR_TARGETS_US_ALLIES_UOO13234021.PDF",
           "https://msrc-blog.microsoft.com/2021/06/25/new-nobelium-activity/",
           "https://unit42.paloaltonetworks.com/solarstorm-supply-chain-attack-timeline/",
@@ -10450,7 +10401,8 @@
           "CozyDuke",
           "SolarStorm",
           "Blue Kitsune",
-          "UNC3524"
+          "UNC3524",
+          "Midnight Blizzard"
         ]
       },
       "related": [
@@ -10655,6 +10607,10 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "69b8fd78-40e8-4600-ae4d-662c9d7afdb3",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "6dbdc657-d8e0-4f2f-909b-7251b3e72c6d",
           "type": "uses"
         },
@@ -10700,6 +10656,10 @@
         },
         {
           "dest-uuid": "88d31120-5bc7-4ce3-a9c0-7cf147be8e54",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "890c9858-598c-401d-a4d5-c67ebcdd703a",
           "type": "uses"
         },
         {
@@ -10760,10 +10720,6 @@
         },
         {
           "dest-uuid": "a8839c95-029f-44cf-8f3d-a3cf2039e927",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "ac08589e-ee59-4935-8667-d845e38fe579",
           "type": "uses"
         },
         {
@@ -10830,6 +10786,10 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "cacc40da-4c9e-462c-80d5-fd70a178b12d",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "cbf646f1-7db5-4dc6-808b-0094313949df",
           "type": "uses"
         },
@@ -10878,6 +10838,10 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "eb897572-8979-4242-a089-56f294f4c91d",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "ed7d0cb1-87a6-43b4-9f46-ef1bc56d6c68",
           "type": "uses"
         },
@@ -10898,14 +10862,11 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "ff6caf67-ea1f-4895-b80e-4bb0fc31c6db",
+          "dest-uuid": "fdc47f44-dd32-4b99-af5f-209f556f63c2",
           "type": "uses"
         },
         {
-          "dest-uuid": "ca1a3f50-5ebd-41f8-8320-2c7d6a6e88be",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
+          "dest-uuid": "ff6caf67-ea1f-4895-b80e-4bb0fc31c6db",
           "type": "uses"
         }
       ],
@@ -10913,7 +10874,7 @@
       "value": "APT29 - G0016"
     },
     {
-      "description": "[BITTER](https://attack.mitre.org/groups/G1002) is a suspected South Asian cyber espionage threat group that has been active since at least 2013. [BITTER](https://attack.mitre.org/groups/G1002) has primarily targeted government, energy, and engineering organizations in Pakistan, China, Bangladesh, and Saudi Arabia.(Citation: Cisco Talos Bitter Bangladesh May 2022)(Citation: Forcepoint BITTER Pakistan Oct 2016)",
+      "description": "[BITTER](https://attack.mitre.org/groups/G1002) is a suspected South Asian cyber espionage threat group that has been active since at least 2013. [BITTER](https://attack.mitre.org/groups/G1002) has targeted government, energy, and engineering organizations in Pakistan, China, Bangladesh, and Saudi Arabia.(Citation: Cisco Talos Bitter Bangladesh May 2022)(Citation: Forcepoint BITTER Pakistan Oct 2016)",
       "meta": {
         "external_id": "G1002",
         "refs": [
@@ -10929,6 +10890,10 @@
       "related": [
         {
           "dest-uuid": "005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "0d91b3c0-5e50-47c3-949a-2a796f04d144",
           "type": "uses"
         },
         {
@@ -10972,10 +10937,6 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
-          "type": "uses"
-        },
-        {
           "dest-uuid": "b8902400-e6c5-4ba2-95aa-2d35b442b118",
           "type": "uses"
         },
@@ -10985,6 +10946,10 @@
         },
         {
           "dest-uuid": "c21d5a77-d422-4a69-acd7-2c53c1faa34b",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "defc1257-4db1-4fb3-8ef5-bb77f63146df",
           "type": "uses"
         },
         {
@@ -11005,6 +10970,7 @@
         "external_id": "G0012",
         "refs": [
           "https://attack.mitre.org/groups/G0012",
+          "https://learn.microsoft.com/en-us/microsoft-365/security/intelligence/microsoft-threat-actor-naming?view=o365-worldwide",
           "https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08070903/darkhotel_kl_07.11.pdf",
           "https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RWxPuf",
           "https://securelist.com/darkhotels-attacks-in-2015/71713/",
@@ -11014,12 +10980,17 @@
         ],
         "synonyms": [
           "Darkhotel",
-          "DUBNIUM"
+          "DUBNIUM",
+          "Zigzag Hail"
         ]
       },
       "related": [
         {
           "dest-uuid": "09a60ea3-a8d1-4ae5-976e-5783248b72a4",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "0d91b3c0-5e50-47c3-949a-2a796f04d144",
           "type": "uses"
         },
         {
@@ -11087,10 +11058,6 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
-          "type": "uses"
-        },
-        {
           "dest-uuid": "be2dcee9-a7a7-4e38-afd6-21b31ecc3d63",
           "type": "uses"
         },
@@ -11120,13 +11087,6 @@
             "estimative-language:likelihood-probability=\"likely\""
           ],
           "type": "similar"
-        },
-        {
-          "dest-uuid": "9422fc14-1c43-410d-ab0f-a709b76c72dc",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "9e729a7e-0dd6-4097-95bf-db8d64911383",
@@ -11237,6 +11197,10 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "0d91b3c0-5e50-47c3-949a-2a796f04d144",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "0f4a0c76-ab2d-4cb0-85d3-3f0efb8cba0d",
           "type": "uses"
         },
@@ -11293,10 +11257,6 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
-          "type": "uses"
-        },
-        {
           "dest-uuid": "b42378e0-f147-496f-992a-26a49705395b",
           "type": "uses"
         },
@@ -11318,13 +11278,6 @@
             "estimative-language:likelihood-probability=\"likely\""
           ],
           "type": "similar"
-        },
-        {
-          "dest-uuid": "8f4a33ec-8b1f-4b80-a2f6-642b2e479580",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "df71bb3b-813c-45eb-a8bc-f2a419837411",
@@ -11425,13 +11378,6 @@
         {
           "dest-uuid": "d1fcf083-a721-4223-aedf-bf8960798d62",
           "type": "uses"
-        },
-        {
-          "dest-uuid": "b42378e0-f147-496f-992a-26a49705395b",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "16ade1aa-0ea1-4bb7-88cc-9079df2ae756",
@@ -11468,6 +11414,10 @@
         },
         {
           "dest-uuid": "04fd5427-79c7-44ea-ae13-11b24778ff1c",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "0d91b3c0-5e50-47c3-949a-2a796f04d144",
           "type": "uses"
         },
         {
@@ -11523,10 +11473,6 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
-          "type": "uses"
-        },
-        {
           "dest-uuid": "b97f1d35-4249-4486-a6b5-ee60ccf24fab",
           "type": "uses"
         },
@@ -11568,6 +11514,10 @@
       },
       "related": [
         {
+          "dest-uuid": "0d91b3c0-5e50-47c3-949a-2a796f04d144",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "115f88dd-0618-4389-83cb-98d33ae81848",
           "type": "uses"
         },
@@ -11588,10 +11538,6 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
-          "type": "uses"
-        },
-        {
           "dest-uuid": "ef67e13e-5598-4adc-bdb2-998225874fa9",
           "type": "uses"
         }
@@ -11606,12 +11552,15 @@
         "refs": [
           "https://attack.mitre.org/groups/G0096",
           "https://go.crowdstrike.com/rs/281-OBQ-266/images/Report2020CrowdStrikeGlobalThreatReport.pdf",
+          "https://learn.microsoft.com/en-us/microsoft-365/security/intelligence/microsoft-threat-actor-naming?view=o365-worldwide",
           "https://www.group-ib.com/blog/colunmtk-apt41/",
           "https://www.mandiant.com/sites/default/files/2022-02/rt-apt41-dual-operation.pdf"
         ],
         "synonyms": [
           "APT41",
-          "Wicked Panda"
+          "Wicked Panda",
+          "Brass Typhoon",
+          "BARIUM"
         ]
       },
       "related": [
@@ -11664,6 +11613,14 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "15dbf668-795c-41e6-8219-f0447c0e64ce",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "1644e709-12d2-41e5-a60f-3470991f5011",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "1996eef1-ced3-4d7f-bf94-33298cabbf72",
           "type": "uses"
         },
@@ -11677,6 +11634,14 @@
         },
         {
           "dest-uuid": "1d24cdee-9ea2-4189-b08e-af110bf2435d",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "21875073-b0ee-49e3-9077-1e2a885359af",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "25659dd6-ea12-45c4-97e6-381e3e4b593e",
           "type": "uses"
         },
         {
@@ -11708,6 +11673,10 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "354a7f88-63fb-41b5-a801-ce3b377b36f1",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "38952eac-cb1b-4a71-bad2-ee8223a1c8fe",
           "type": "uses"
         },
@@ -11736,11 +11705,19 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "5502c4e9-24ef-4d5f-8ee9-9e906c2f82c4",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "56f46b17-8cfa-46c0-b501-dd52fef394e2",
           "type": "uses"
         },
         {
           "dest-uuid": "57340c81-c025-4189-8fa0-fc7ede51bae4",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "58a3e6aa-4453-4cc8-a51f-4befe80b31a8",
           "type": "uses"
         },
         {
@@ -11788,6 +11765,14 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "74d2a63f-3c7b-4852-92da-02d8fbab16da",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "76551c52-b111-4884-bc47-ff3e728f0156",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "7bc57495-ea59-4380-be31-a64af124ef18",
           "type": "uses"
         },
@@ -11817,6 +11802,10 @@
         },
         {
           "dest-uuid": "970a3432-3237-47ad-bcca-7d8cbb217736",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "9a2640c2-9f43-46fe-b13f-bde881e55555",
           "type": "uses"
         },
         {
@@ -11876,11 +11865,31 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "bc76d0a4-db11-4551-9ac4-01a469cfb161",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "bd369cd9-abb8-41ce-b5bb-fff23ee86c00",
           "type": "uses"
         },
         {
           "dest-uuid": "be2dcee9-a7a7-4e38-afd6-21b31ecc3d63",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "bed04f7d-e48a-4e76-bd0f-4c57fe31fc46",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "bf90d72c-c00b-45e3-b3aa-68560560d4c5",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "c32f7008-9fea-41f7-8366-5eb9b74bd896",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "c3888c54-775d-4b2f-b759-75a2ececcbfd",
           "type": "uses"
         },
         {
@@ -11904,6 +11913,10 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "cff94884-3b1c-4987-a70b-6d5643c621c3",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "d1fcf083-a721-4223-aedf-bf8960798d62",
           "type": "uses"
         },
@@ -11920,11 +11933,19 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "deb98323-e13f-4b0c-8d94-175379069062",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "df8b2a25-8bdf-4856-953c-a04372b1c161",
           "type": "uses"
         },
         {
           "dest-uuid": "e3a12395-188d-4051-9a16-ea8e14d07b88",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "e624264c-033a-424d-9fd7-fc9c3bbdb03e",
           "type": "uses"
         },
         {
@@ -11940,7 +11961,15 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "ec4be82f-940c-4dcb-87fe-2bbdd17c692f",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "ec9e00dd-0313-4d5b-8105-c20aa47abffc",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "edf91964-b26e-4b4a-9600-ccacd7d7df24",
           "type": "uses"
         },
         {
@@ -12149,13 +12178,6 @@
         {
           "dest-uuid": "f6dacc85-b37d-458e-b58d-74fc4bbf5755",
           "type": "uses"
-        },
-        {
-          "dest-uuid": "69d6f4a9-fcf0-4f51-bca7-597c51ad0bb8",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "277d2f87-2ae5-4730-a3aa-50c1fdff9656",
@@ -12232,10 +12254,12 @@
         "external_id": "G1005",
         "refs": [
           "https://attack.mitre.org/groups/G1005",
+          "https://learn.microsoft.com/en-us/microsoft-365/security/intelligence/microsoft-threat-actor-naming?view=o365-worldwide",
           "https://www.microsoft.com/security/blog/2022/06/02/exposing-polonium-activity-and-infrastructure-targeting-israeli-organizations/"
         ],
         "synonyms": [
-          "POLONIUM"
+          "POLONIUM",
+          "Plaid Rain"
         ]
       },
       "related": [
@@ -12290,15 +12314,7 @@
           "Taidoor"
         ]
       },
-      "related": [
-        {
-          "dest-uuid": "4b74a1d4-b0e9-4ef1-93f1-14ecc6e2f5b5",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
-        }
-      ],
+      "related": [],
       "uuid": "59140a2e-d117-4206-9b2c-2a8662bd9d46",
       "value": "Taidoor - G0015"
     },
@@ -12513,13 +12529,6 @@
         {
           "dest-uuid": "ff6caf67-ea1f-4895-b80e-4bb0fc31c6db",
           "type": "uses"
-        },
-        {
-          "dest-uuid": "ffe742ed-9100-4686-9e00-c331da544787",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "fd19bd82-1b14-49a1-a176-6cdc46b8a826",
@@ -12714,31 +12723,18 @@
         {
           "dest-uuid": "b42378e0-f147-496f-992a-26a49705395b",
           "type": "uses"
-        },
-        {
-          "dest-uuid": "2e5d3a83-fe00-41a5-9b60-237efc84832f",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        },
-        {
-          "dest-uuid": "b42378e0-f147-496f-992a-26a49705395b",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "f3bdec95-3d62-42d9-a840-29630f6cdc1a",
       "value": "DragonOK - G0017"
     },
     {
-      "description": "[Orangeworm](https://attack.mitre.org/groups/G0071) is a group that has targeted organizations in the healthcare sector in the United States, Europe, and Asia since at least 2015, likely for the purpose of corporate espionage.(Citation: Symantec Orangeworm April 2018)",
+      "description": "[Orangeworm](https://attack.mitre.org/groups/G0071) is a group that has targeted organizations in the healthcare sector in the United States, Europe, and Asia since at least 2015, likely for the purpose of corporate espionage.(Citation: Symantec Orangeworm April 2018) Reverse engineering of [Kwampirs](https://attack.mitre.org/software/S0236), directly associated with [Orangeworm](https://attack.mitre.org/groups/G0071) activity, indicates significant functional and development overlaps with [Shamoon](https://attack.mitre.org/software/S0140).(Citation: Cylera Kwampirs 2022)",
       "meta": {
         "external_id": "G0071",
         "refs": [
           "https://attack.mitre.org/groups/G0071",
+          "https://resources.cylera.com/hubfs/Cylera%20Labs/Cylera%20Labs%20Kwampirs%20Shamoon%20Technical%20Report.pdf",
           "https://www.symantec.com/blogs/threat-intelligence/orangeworm-targets-healthcare-us-europe-asia"
         ],
         "synonyms": [
@@ -12804,6 +12800,10 @@
       },
       "related": [
         {
+          "dest-uuid": "0d91b3c0-5e50-47c3-949a-2a796f04d144",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "1c4e5d32-1fe9-4116-9d9d-59e3925bd6a2",
           "type": "uses"
         },
@@ -12833,10 +12833,6 @@
         },
         {
           "dest-uuid": "b21c3b2d-02e6-45b1-980b-e69051040839",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
           "type": "uses"
         },
         {
@@ -13073,27 +13069,6 @@
         {
           "dest-uuid": "ff6caf67-ea1f-4895-b80e-4bb0fc31c6db",
           "type": "uses"
-        },
-        {
-          "dest-uuid": "5e0a7cf2-6107-4d5f-9dd0-9df38b1fcba8",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        },
-        {
-          "dest-uuid": "f047ee18-7985-4946-8bfb-4ed754d3a0dd",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        },
-        {
-          "dest-uuid": "5a63f900-5e7e-4928-a746-dd4558e1df71",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "2a158b0a-7ef8-43cb-9985-bf34d1e12050",
@@ -13244,13 +13219,12 @@
       "value": "Silence - G0091"
     },
     {
-      "description": "[APT3](https://attack.mitre.org/groups/G0022) is a China-based threat group that researchers have attributed to China's Ministry of State Security.(Citation: FireEye Clandestine Wolf)(Citation: Recorded Future APT3 May 2017) This group is responsible for the campaigns known as Operation Clandestine Fox, Operation Clandestine Wolf, and Operation Double Tap.(Citation: FireEye Clandestine Wolf)(Citation: FireEye Operation Double Tap) As of June 2015, the group appears to have shifted from targeting primarily US victims to primarily political organizations in Hong Kong.(Citation: Symantec Buckeye)\n\nIn 2017, MITRE developed an APT3 Adversary Emulation Plan.(Citation: APT3 Adversary Emulation Plan)",
+      "description": "[APT3](https://attack.mitre.org/groups/G0022) is a China-based threat group that researchers have attributed to China's Ministry of State Security.(Citation: FireEye Clandestine Wolf)(Citation: Recorded Future APT3 May 2017) This group is responsible for the campaigns known as Operation Clandestine Fox, Operation Clandestine Wolf, and Operation Double Tap.(Citation: FireEye Clandestine Wolf)(Citation: FireEye Operation Double Tap) As of June 2015, the group appears to have shifted from targeting primarily US victims to primarily political organizations in Hong Kong.(Citation: Symantec Buckeye)",
       "meta": {
         "external_id": "G0022",
         "refs": [
           "http://pwc.blogs.com/cyber_security_updates/2015/07/pirpi-scanbox.html",
           "http://www.symantec.com/connect/blogs/buckeye-cyberespionage-group-shifts-gaze-us-hong-kong",
-          "https://attack.mitre.org/docs/APT3_Adversary_Emulation_Plan.pdf",
           "https://attack.mitre.org/groups/G0022",
           "https://www.fireeye.com/blog/threat-research/2014/11/operation_doubletap.html",
           "https://www.fireeye.com/blog/threat-research/2015/06/operation-clandestine-wolf-adobe-flash-zero-day.html",
@@ -13469,26 +13443,20 @@
         {
           "dest-uuid": "f6d1d2cb-12f5-4221-9636-44606ea1f3f8",
           "type": "uses"
-        },
-        {
-          "dest-uuid": "64fa0de0-6240-41f4-8638-f4ca7ed528fd",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "0bbdf25b-30ff-4894-a1cd-49260d0dd2d9",
       "value": "APT3 - G0022"
     },
     {
-      "description": "[APT38](https://attack.mitre.org/groups/G0082) is a North Korean state-sponsored threat group that specializes in financial cyber operations; it has been attributed to the Reconnaissance General Bureau.(Citation: CISA AA20-239A BeagleBoyz August 2020) Active since at least 2014, [APT38](https://attack.mitre.org/groups/G0082) has targeted banks, financial institutions, casinos, cryptocurrency exchanges, SWIFT system endpoints, and ATMs in at least 38 countries worldwide. Significant operations include the 2016 Bank of Bangladesh heist, during which [APT38](https://attack.mitre.org/groups/G0082) stole $81 million, as well as attacks against Bancomext (2018) and Banco de Chile (2018); some of their attacks have been destructive.(Citation: CISA AA20-239A BeagleBoyz August 2020)(Citation: FireEye APT38 Oct 2018)(Citation: DOJ North Korea Indictment Feb 2021)(Citation: Kaspersky Lazarus Under The Hood Blog 2017)\n\nNorth Korean group definitions are known to have significant overlap, and some security researchers report all North Korean state-sponsored cyber activity under the name [Lazarus Group](https://attack.mitre.org/groups/G0032) instead of tracking clusters or subgroups.",
+      "description": "[APT38](https://attack.mitre.org/groups/G0082) is a North Korean state-sponsored threat group that specializes in financial cyber operations; it has been attributed to the Reconnaissance General Bureau.(Citation: CISA AA20-239A BeagleBoyz August 2020) Active since at least 2014, [APT38](https://attack.mitre.org/groups/G0082) has targeted banks, financial institutions, casinos, cryptocurrency exchanges, SWIFT system endpoints, and ATMs in at least 38 countries worldwide. Significant operations include the 2016 Bank of Bangladesh heist, during which [APT38](https://attack.mitre.org/groups/G0082) stole $81 million, as well as attacks against Bancomext (Citation: FireEye APT38 Oct 2018) and Banco de Chile (Citation: FireEye APT38 Oct 2018); some of their attacks have been destructive.(Citation: CISA AA20-239A BeagleBoyz August 2020)(Citation: FireEye APT38 Oct 2018)(Citation: DOJ North Korea Indictment Feb 2021)(Citation: Kaspersky Lazarus Under The Hood Blog 2017)\n\nNorth Korean group definitions are known to have significant overlap, and some security researchers report all North Korean state-sponsored cyber activity under the name [Lazarus Group](https://attack.mitre.org/groups/G0032) instead of tracking clusters or subgroups.",
       "meta": {
         "external_id": "G0082",
         "refs": [
           "https://attack.mitre.org/groups/G0082",
           "https://content.fireeye.com/apt/rpt-apt38",
           "https://go.crowdstrike.com/rs/281-OBQ-266/images/Report2021GTR.pdf",
+          "https://learn.microsoft.com/en-us/microsoft-365/security/intelligence/microsoft-threat-actor-naming?view=o365-worldwide",
           "https://securelist.com/lazarus-under-the-hood/77908/",
           "https://us-cert.cisa.gov/ncas/alerts/aa20-239a",
           "https://www.crowdstrike.com/blog/meet-crowdstrikes-adversary-of-the-month-for-april-stardust-chollima/",
@@ -13500,7 +13468,9 @@
           "NICKEL GLADSTONE",
           "BeagleBoyz",
           "Bluenoroff",
-          "Stardust Chollima"
+          "Stardust Chollima",
+          "Sapphire Sleet",
+          "COPERNICIUM"
         ]
       },
       "related": [
@@ -13766,13 +13736,6 @@
         {
           "dest-uuid": "dfd7cc1d-e1d8-4394-a198-97c4cab8aa67",
           "type": "uses"
-        },
-        {
-          "dest-uuid": "64fa0de0-6240-41f4-8638-f4ca7ed528fd",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "62a64fd3-aaf7-4d09-a375-d6f8bb118481",
@@ -13792,13 +13755,6 @@
         },
         {
           "dest-uuid": "18d473a5-831b-47a5-97a1-a32156299825",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        },
-        {
-          "dest-uuid": "17862c7d-9e60-48a0-b48e-da4dc4c3f6b0",
           "tags": [
             "estimative-language:likelihood-probability=\"likely\""
           ],
@@ -13877,13 +13833,6 @@
         {
           "dest-uuid": "cbb66055-0325-4111-aca0-40547b6ad5b0",
           "type": "uses"
-        },
-        {
-          "dest-uuid": "f4882e23-8aa7-4b12-b28a-b349c12ee9e0",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "dcd81c6e-ebf7-4a16-93e0-9a97fa49c88a",
@@ -13906,11 +13855,12 @@
       "value": "Honeybee - G0072"
     },
     {
-      "description": "[APT33](https://attack.mitre.org/groups/G0064) is a suspected Iranian threat group that has carried out operations since at least 2013. The group has targeted organizations across multiple industries in the United States, Saudi Arabia, and South Korea, with a particular interest in the aviation and energy sectors. (Citation: FireEye APT33 Sept 2017) (Citation: FireEye APT33 Webinar Sept 2017)",
+      "description": "[APT33](https://attack.mitre.org/groups/G0064) is a suspected Iranian threat group that has carried out operations since at least 2013. The group has targeted organizations across multiple industries in the United States, Saudi Arabia, and South Korea, with a particular interest in the aviation and energy sectors.(Citation: FireEye APT33 Sept 2017)(Citation: FireEye APT33 Webinar Sept 2017)",
       "meta": {
         "external_id": "G0064",
         "refs": [
           "https://attack.mitre.org/groups/G0064",
+          "https://learn.microsoft.com/en-us/microsoft-365/security/intelligence/microsoft-threat-actor-naming?view=o365-worldwide",
           "https://www.brighttalk.com/webcast/10703/275683",
           "https://www.fireeye.com/blog/threat-research/2017/09/apt33-insights-into-iranian-cyber-espionage.html",
           "https://www.microsoft.com/security/blog/2020/06/18/inside-microsoft-threat-protection-mapping-attack-chains-from-cloud-to-endpoint/",
@@ -13919,7 +13869,8 @@
         "synonyms": [
           "APT33",
           "HOLMIUM",
-          "Elfin"
+          "Elfin",
+          "Peach Sandstorm"
         ]
       },
       "related": [
@@ -13937,6 +13888,10 @@
         },
         {
           "dest-uuid": "04fd5427-79c7-44ea-ae13-11b24778ff1c",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "0d91b3c0-5e50-47c3-949a-2a796f04d144",
           "type": "uses"
         },
         {
@@ -14055,10 +14010,6 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
-          "type": "uses"
-        },
-        {
           "dest-uuid": "b4d80f8b-d2b9-4448-8844-4bef777ed676",
           "type": "uses"
         },
@@ -14113,20 +14064,6 @@
         {
           "dest-uuid": "fb8d023d-45be-47e9-bc51-f56bcae6435b",
           "type": "uses"
-        },
-        {
-          "dest-uuid": "accd848b-b8f4-46ba-a408-9063b35cfbf2",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        },
-        {
-          "dest-uuid": "20138b9d-1aac-4a26-8654-a36b6bbf2bba",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "fbd29c89-18ba-4c2d-b792-51c0adee049f",
@@ -14144,20 +14081,6 @@
         {
           "dest-uuid": "4ca1929c-7d64-4aab-b849-badbfc0c760d",
           "type": "revoked-by"
-        },
-        {
-          "dest-uuid": "73a521f6-3bc7-11e8-9e30-df7c90e50dda",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        },
-        {
-          "dest-uuid": "f4882e23-8aa7-4b12-b28a-b349c12ee9e0",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "68ba94ab-78b8-43e7-83e2-aed3466882c6",
@@ -14185,7 +14108,7 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
+          "dest-uuid": "0d91b3c0-5e50-47c3-949a-2a796f04d144",
           "type": "uses"
         },
         {
@@ -14198,13 +14121,6 @@
         },
         {
           "dest-uuid": "d906e6f7-434c-44c0-b51a-ed50af8f7945",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
           "type": "uses"
         }
       ],
@@ -14293,13 +14209,6 @@
         {
           "dest-uuid": "ff6caf67-ea1f-4895-b80e-4bb0fc31c6db",
           "type": "uses"
-        },
-        {
-          "dest-uuid": "0e18b800-906c-4e44-a143-b11c72b3448b",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "85403903-15e0-4f9f-9be4-a259ecad4022",
@@ -14314,6 +14223,7 @@
           "https://attack.mitre.org/groups/G0035",
           "https://community.broadcom.com/symantecenterprise/communities/community-home/librarydocuments/viewdocument?DocumentKey=7382dce7-0260-4782-84cc-890971ed3f17&CommunityKey=1ecf5f55-9545-44d6-b0f4-4e4a7f5f5e68&tab=librarydocuments",
           "https://docs.broadcom.com/doc/dragonfly_threat_against_western_energy_suppliers",
+          "https://learn.microsoft.com/en-us/microsoft-365/security/intelligence/microsoft-threat-actor-naming?view=o365-worldwide",
           "https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/dragonfly-energy-sector-cyber-attacks",
           "https://vblocalhost.com/uploads/VB2021-Slowik.pdf",
           "https://www.cisa.gov/uscert/ncas/alerts/aa20-296a#revisions",
@@ -14333,7 +14243,9 @@
           "TG-4192",
           "Crouching Yeti",
           "IRON LIBERTY",
-          "Energetic Bear"
+          "Energetic Bear",
+          "Ghost Blizzard",
+          "BROMINE"
         ]
       },
       "related": [
@@ -14607,13 +14519,6 @@
         {
           "dest-uuid": "ff6caf67-ea1f-4895-b80e-4bb0fc31c6db",
           "type": "uses"
-        },
-        {
-          "dest-uuid": "82cb34ba-02b5-432b-b2d2-07f55cbf674d",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "1c63d4ec-0a75-4daa-b1df-0d11af3d3cc1",
@@ -14824,20 +14729,6 @@
         {
           "dest-uuid": "ff73aa03-0090-4464-83ac-f89e233c02bc",
           "type": "uses"
-        },
-        {
-          "dest-uuid": "bb446dc2-4fee-4212-8b2c-3ffa2917e338",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        },
-        {
-          "dest-uuid": "f72eb8a8-cd4c-461d-a814-3f862befbf00",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "4a2ce82e-1a74-468a-a6fb-bbead541383c",
@@ -14850,6 +14741,7 @@
         "refs": [
           "https://attack.mitre.org/groups/G0037",
           "https://crowdstrike.lookbookhq.com/global-threat-report-2018-web/cs-2018-global-threat-report",
+          "https://learn.microsoft.com/en-us/microsoft-365/security/intelligence/microsoft-threat-actor-naming?view=o365-worldwide",
           "https://securityintelligence.com/posts/itg08-aka-fin6-partners-with-trickbot-gang-uses-anchor-framework/",
           "https://securityintelligence.com/posts/more_eggs-anyone-threat-actor-itg08-strikes-again/",
           "https://www.fireeye.com/blog/threat-research/2019/04/pick-six-intercepting-a-fin6-intrusion.html",
@@ -14859,7 +14751,9 @@
           "FIN6",
           "Magecart Group 6",
           "ITG08",
-          "Skeleton Spider"
+          "Skeleton Spider",
+          "TAAL",
+          "Camouflage Tempest"
         ]
       },
       "related": [
@@ -15077,13 +14971,6 @@
         {
           "dest-uuid": "ff6caf67-ea1f-4895-b80e-4bb0fc31c6db",
           "type": "uses"
-        },
-        {
-          "dest-uuid": "9422fc14-1c43-410d-ab0f-a709b76c72dc",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "2a7914cf-dff3-428d-ab0f-1014d1c28aeb",
@@ -15116,13 +15003,6 @@
             "estimative-language:likelihood-probability=\"likely\""
           ],
           "type": "similar"
-        },
-        {
-          "dest-uuid": "54a649ff-439a-41a4-9856-8d144a2551ba",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "0ea72cd5-ca30-46ba-bc04-378f701c658f",
@@ -15145,13 +15025,6 @@
       "related": [
         {
           "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
           "type": "uses"
         }
       ],
@@ -15205,6 +15078,10 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "0d91b3c0-5e50-47c3-949a-2a796f04d144",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "1996eef1-ced3-4d7f-bf94-33298cabbf72",
           "type": "uses"
         },
@@ -15242,6 +15119,10 @@
         },
         {
           "dest-uuid": "3489cfc5-640f-4bb3-a103-9137b97de79f",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "3a32740a-11b0-4bcf-b0a9-3abd0f6d3cd5",
           "type": "uses"
         },
         {
@@ -15334,10 +15215,6 @@
         },
         {
           "dest-uuid": "b17a1a56-e99c-403c-8948-561df0cffe81",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
           "type": "uses"
         },
         {
@@ -15491,18 +15368,19 @@
       "value": "SilverTerrier - G0083"
     },
     {
-      "description": "[GALLIUM](https://attack.mitre.org/groups/G0093) is a cyberespionage group that has been active since at least 2012, primarily targeting telecommunications companies, financial institutions, and government entities in Afghanistan, Australia, Belgium, Cambodia, Malaysia, Mozambique, the Philippines, Russia, and Vietnam. Security researchers have identified [GALLIUM](https://attack.mitre.org/groups/G0093) as a likely Chinese state-sponsored group, based in part on tools used and TTPs commonly associated with Chinese threat actors.(Citation: Cybereason Soft Cell June 2019)(Citation: Microsoft GALLIUM December 2019)(Citation: Unit 42 PingPull Jun 2022)",
+      "description": "[GALLIUM](https://attack.mitre.org/groups/G0093) is a cyberespionage group that has been active since at least 2012, primarily targeting telecommunications companies, financial institutions, and government entities in Afghanistan, Australia, Belgium, Cambodia, Malaysia, Mozambique, the Philippines, Russia, and Vietnam. This group is particularly known for launching Operation Soft Cell, a long-term campaign targeting telecommunications providers.(Citation: Cybereason Soft Cell June 2019) Security researchers have identified [GALLIUM](https://attack.mitre.org/groups/G0093) as a likely Chinese state-sponsored group, based in part on tools used and TTPs commonly associated with Chinese threat actors.(Citation: Cybereason Soft Cell June 2019)(Citation: Microsoft GALLIUM December 2019)(Citation: Unit 42 PingPull Jun 2022)",
       "meta": {
         "external_id": "G0093",
         "refs": [
           "https://attack.mitre.org/groups/G0093",
+          "https://learn.microsoft.com/en-us/microsoft-365/security/intelligence/microsoft-threat-actor-naming?view=o365-worldwide",
           "https://unit42.paloaltonetworks.com/pingpull-gallium/",
           "https://www.cybereason.com/blog/operation-soft-cell-a-worldwide-campaign-against-telecommunications-providers",
           "https://www.microsoft.com/security/blog/2019/12/12/gallium-targeting-global-telecom/"
         ],
         "synonyms": [
           "GALLIUM",
-          "Operation Soft Cell"
+          "Granite Typhoon"
         ]
       },
       "related": [
@@ -15742,13 +15620,6 @@
         {
           "dest-uuid": "e3a12395-188d-4051-9a16-ea8e14d07b88",
           "type": "uses"
-        },
-        {
-          "dest-uuid": "1b84d551-6de8-4b96-9930-d177677c3b1d",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "5cbe0d3b-6fb1-471f-b591-4b192915116d",
@@ -15836,6 +15707,7 @@
           "https://www.fireeye.com/content/dam/fireeye-www/global/en/current-threats/pdfs/rpt-poison-ivy.pdf",
           "https://www.justice.gov/opa/page/file/1122671/download",
           "https://www.justice.gov/opa/pr/two-chinese-hackers-associated-ministry-state-security-charged-global-computer-intrusion",
+          "https://www.secureworks.com/research/bronze-starlight-ransomware-operations-use-hui-loader",
           "https://www.slideshare.net/CrowdStrike/crowd-casts-monthly-you-have-an-adversary-problem"
         ],
         "synonyms": [
@@ -15846,7 +15718,8 @@
           "APT10",
           "Red Apollo",
           "CVNX",
-          "HOGFISH"
+          "HOGFISH",
+          "BRONZE RIVERSIDE"
         ]
       },
       "related": [
@@ -15872,6 +15745,10 @@
         },
         {
           "dest-uuid": "0a68f1f1-da74-4d28-8d9a-696c082706cc",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "0d91b3c0-5e50-47c3-949a-2a796f04d144",
           "type": "uses"
         },
         {
@@ -15991,6 +15868,10 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "54089fba-8662-4f37-9a44-6ad25a5f630a",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "56b37b05-72e7-4a89-ba8a-61ce45269a8c",
           "tags": [
             "estimative-language:likelihood-probability=\"likely\""
@@ -16066,10 +15947,6 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
-          "type": "uses"
-        },
-        {
           "dest-uuid": "b42378e0-f147-496f-992a-26a49705395b",
           "type": "uses"
         },
@@ -16140,13 +16017,6 @@
         {
           "dest-uuid": "ff6caf67-ea1f-4895-b80e-4bb0fc31c6db",
           "type": "uses"
-        },
-        {
-          "dest-uuid": "01a5a209-b94c-450b-b7f9-946497d91055",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "222fbd21-fc4f-4b7e-9f85-0e6e3a76c33f",
@@ -16215,13 +16085,6 @@
         {
           "dest-uuid": "d1fcf083-a721-4223-aedf-bf8960798d62",
           "type": "uses"
-        },
-        {
-          "dest-uuid": "bb5a00de-e086-4859-a231-fa793f6797e2",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "d1acfbb3-647b-4723-9154-800ec119006e",
@@ -16234,6 +16097,7 @@
         "refs": [
           "http://blog.morphisec.com/fin7-attacks-restaurant-industry",
           "https://attack.mitre.org/groups/G0046",
+          "https://learn.microsoft.com/en-us/microsoft-365/security/intelligence/microsoft-threat-actor-naming?view=o365-worldwide",
           "https://securityintelligence.com/posts/ransomware-2020-attack-trends-new-techniques-affecting-organizations-worldwide/",
           "https://web.archive.org/web/20180808125108/https:/www.fireeye.com/blog/threat-research/2017/03/fin7_spear_phishing.html",
           "https://www.crowdstrike.com/blog/carbon-spider-embraces-big-game-hunting-part-1/",
@@ -16242,13 +16106,16 @@
           "https://www.fireeye.com/blog/threat-research/2017/06/behind-the-carbanak-backdoor.html",
           "https://www.fireeye.com/blog/threat-research/2018/08/fin7-pursuing-an-enigmatic-and-evasive-global-criminal-operation.html",
           "https://www.mandiant.com/resources/evolution-of-fin7",
+          "https://www.microsoft.com/en-us/security/blog/2022/05/09/ransomware-as-a-service-understanding-the-cybercrime-gig-economy-and-how-to-protect-yourself/",
           "https://www.secureworks.com/research/threat-profiles/gold-niagara"
         ],
         "synonyms": [
           "FIN7",
           "GOLD NIAGARA",
           "ITG14",
-          "Carbon Spider"
+          "Carbon Spider",
+          "ELBRUS",
+          "Sangria Tempest"
         ]
       },
       "related": [
@@ -16365,6 +16232,10 @@
         },
         {
           "dest-uuid": "3ee16395-03f0-4690-a32e-69ce9ada0f9e",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "3f886f2a-874f-4333-b794-aa6075009b1c",
           "type": "uses"
         },
         {
@@ -16492,6 +16363,10 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "d9f7383c-95ec-4080-bbce-121c9384457b",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "dfd7cc1d-e1d8-4394-a198-97c4cab8aa67",
           "type": "uses"
         },
@@ -16528,17 +16403,7 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "55033a4d-3ffe-46b2-99b4-2c1541e9ce1c",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        },
-        {
-          "dest-uuid": "35dd844a-b219-4e2b-a6bb-efa9a75995a9",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
+          "dest-uuid": "fdc47f44-dd32-4b99-af5f-209f556f63c2",
           "type": "uses"
         }
       ],
@@ -16630,13 +16495,6 @@
         {
           "dest-uuid": "f7827069-0bf2-4764-af4f-23fae0d181b7",
           "type": "uses"
-        },
-        {
-          "dest-uuid": "92ec0cbd-2c30-44a2-b270-73f4ec949841",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "c416b28c-103b-4df1-909e-78089a7e0e5f",
@@ -16654,6 +16512,7 @@
           "https://blog.malwarebytes.com/threat-analysis/2021/06/kimsuky-apt-continues-to-target-south-korean-government-using-appleseed-backdoor/",
           "https://brica.de/alerts/alert/public/1255063/kimsuky-unveils-apt-campaign-smoke-screen-aimed-at-korea-and-america/",
           "https://global.ahnlab.com/global/upload/download/techreport/%5BAnalysis_Report%5DOperation%20Kabar%20Cobra.pdf",
+          "https://learn.microsoft.com/en-us/microsoft-365/security/intelligence/microsoft-threat-actor-naming?view=o365-worldwide",
           "https://securelist.com/the-kimsuky-operation-a-north-korean-apt/57915/",
           "https://threatconnect.com/blog/kimsuky-phishing-operations-putting-in-work/",
           "https://us-cert.cisa.gov/ncas/alerts/aa20-301a",
@@ -16662,10 +16521,10 @@
         ],
         "synonyms": [
           "Kimsuky",
-          "STOLEN PENCIL",
-          "Thallium",
           "Black Banshee",
-          "Velvet Chollima"
+          "Velvet Chollima",
+          "Emerald Sleet",
+          "THALLIUM"
         ]
       },
       "related": [
@@ -16795,10 +16654,6 @@
         },
         {
           "dest-uuid": "40f5caa0-4cb7-4117-89fc-d421bb493df3",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "42e8de7b-37b2-4258-905a-6897815e58e0",
           "type": "uses"
         },
         {
@@ -17070,7 +16925,7 @@
       "value": "Kimsuky - G0094"
     },
     {
-      "description": "[OilRig](https://attack.mitre.org/groups/G0049) is a suspected Iranian threat group that has targeted Middle Eastern and international victims since at least 2014. The group has targeted a variety of sectors, including financial, government, energy, chemical, and telecommunications. It appears the group carries out supply chain attacks, leveraging the trust relationship between organizations to attack their primary targets. FireEye assesses that the group works on behalf of the Iranian government based on infrastructure details that contain references to Iran, use of Iranian infrastructure, and targeting that aligns with nation-state interests.(Citation: Palo Alto OilRig April 2017)(Citation: ClearSky OilRig Jan 2017)(Citation: Palo Alto OilRig May 2016)(Citation: Palo Alto OilRig Oct 2016)(Citation: Unit42 OilRig Playbook 2023)(Citation: FireEye APT34 Dec 2017)(Citation: Unit 42 QUADAGENT July 2018)",
+      "description": "[OilRig](https://attack.mitre.org/groups/G0049) is a suspected Iranian threat group that has targeted Middle Eastern and international victims since at least 2014. The group has targeted a variety of sectors, including financial, government, energy, chemical, and telecommunications. It appears the group carries out supply chain attacks, leveraging the trust relationship between organizations to attack their primary targets. The group works on behalf of the Iranian government based on infrastructure details that contain references to Iran, use of Iranian infrastructure, and targeting that aligns with nation-state interests.(Citation: FireEye APT34 Dec 2017)(Citation: Palo Alto OilRig April 2017)(Citation: ClearSky OilRig Jan 2017)(Citation: Palo Alto OilRig May 2016)(Citation: Palo Alto OilRig Oct 2016)(Citation: Unit42 OilRig Playbook 2023)(Citation: Unit 42 QUADAGENT July 2018)",
       "meta": {
         "external_id": "G0049",
         "refs": [
@@ -17079,6 +16934,7 @@
           "http://researchcenter.paloaltonetworks.com/2017/04/unit42-oilrig-actors-provide-glimpse-development-testing-efforts/",
           "http://www.clearskysec.com/oilrig/",
           "https://attack.mitre.org/groups/G0049",
+          "https://learn.microsoft.com/en-us/microsoft-365/security/intelligence/microsoft-threat-actor-naming?view=o365-worldwide",
           "https://pan-unit42.github.io/playbook_viewer/",
           "https://pan-unit42.github.io/playbook_viewer/?pb=evasive-serpens",
           "https://research.checkpoint.com/2021/irans-apt34-returns-with-an-updated-arsenal/",
@@ -17093,7 +16949,9 @@
           "IRN2",
           "APT34",
           "Helix Kitten",
-          "Evasive Serpens"
+          "Evasive Serpens",
+          "Hazel Sandstorm",
+          "EUROPIUM"
         ]
       },
       "related": [
@@ -17131,6 +16989,10 @@
         },
         {
           "dest-uuid": "0a68f1f1-da74-4d28-8d9a-696c082706cc",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "0d91b3c0-5e50-47c3-949a-2a796f04d144",
           "type": "uses"
         },
         {
@@ -17320,10 +17182,6 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
-          "type": "uses"
-        },
-        {
           "dest-uuid": "b6075259-dba3-44e9-87c7-e954f37ec0d5",
           "type": "uses"
         },
@@ -17418,20 +17276,6 @@
         {
           "dest-uuid": "ff6caf67-ea1f-4895-b80e-4bb0fc31c6db",
           "type": "uses"
-        },
-        {
-          "dest-uuid": "b96e02f1-4037-463f-b158-5a964352f8d9",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "similar"
-        },
-        {
-          "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "4ca1929c-7d64-4aab-b849-badbfc0c760d",
@@ -17469,13 +17313,6 @@
             "estimative-language:likelihood-probability=\"likely\""
           ],
           "type": "similar"
-        },
-        {
-          "dest-uuid": "a8d3d497-2da9-4797-8e0b-ed176be08654",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "025bdaa9-897d-4bad-afa6-013ba5734653",
@@ -17563,13 +17400,6 @@
         {
           "dest-uuid": "fdc47f44-dd32-4b99-af5f-209f556f63c2",
           "type": "uses"
-        },
-        {
-          "dest-uuid": "691c60e2-273d-4d56-9ce6-b67e0f8719ad",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "efed95ba-d7e8-47ff-8c53-99c42426ee7c",
@@ -17581,6 +17411,7 @@
         "external_id": "G0065",
         "refs": [
           "https://attack.mitre.org/groups/G0065",
+          "https://learn.microsoft.com/en-us/microsoft-365/security/intelligence/microsoft-threat-actor-naming?view=o365-worldwide",
           "https://us-cert.cisa.gov/ncas/alerts/aa21-200a",
           "https://www.accenture.com/us-en/blogs/cyber-defense/mudcarps-focus-on-submarine-technologies",
           "https://www.crowdstrike.com/blog/two-birds-one-stone-panda/",
@@ -17598,7 +17429,8 @@
           "BRONZE MOHAWK",
           "TEMP.Jumper",
           "APT40",
-          "TEMP.Periscope"
+          "TEMP.Periscope",
+          "Gingham Typhoon"
         ]
       },
       "related": [
@@ -17624,6 +17456,10 @@
         },
         {
           "dest-uuid": "0c8465c0-d0b4-4670-992e-4eee8d7ff952",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "0d91b3c0-5e50-47c3-949a-2a796f04d144",
           "type": "uses"
         },
         {
@@ -17794,10 +17630,6 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
-          "type": "uses"
-        },
-        {
           "dest-uuid": "b97f1d35-4249-4486-a6b5-ee60ccf24fab",
           "type": "uses"
         },
@@ -17852,13 +17684,6 @@
         {
           "dest-uuid": "f4599aa0-4f85-4a32-80ea-fc39dc965945",
           "type": "uses"
-        },
-        {
-          "dest-uuid": "e906ae4d-1d3a-4675-be23-22f7311c0da4",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "7113eaa5-ba79-4fb3-b68a-398ee9cd698e",
@@ -17899,6 +17724,10 @@
         },
         {
           "dest-uuid": "365be77f-fc0e-42ee-bac8-4faf806d9336",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "910906dd-8c0a-475a-9cc1-5e029e2fad58",
           "type": "uses"
         },
         {
@@ -18029,6 +17858,10 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "0d91b3c0-5e50-47c3-949a-2a796f04d144",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "232b7f21-adf9-4b42-b936-b9d6f7df856e",
           "type": "uses"
         },
@@ -18050,10 +17883,6 @@
         },
         {
           "dest-uuid": "79499993-a8d6-45eb-b343-bf58dea5bdde",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
           "type": "uses"
         },
         {
@@ -18101,13 +17930,6 @@
         },
         {
           "dest-uuid": "f4d8a2d6-c684-453a-8a14-cf4a94f755c5",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "d742a578-d70e-4d0e-96a6-02a9c30204e6",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
           "type": "uses"
         }
       ],
@@ -18241,13 +18063,6 @@
         {
           "dest-uuid": "f5946b5e-9408-485f-a7f7-b5efc88909b6",
           "type": "uses"
-        },
-        {
-          "dest-uuid": "bb5a00de-e086-4859-a231-fa793f6797e2",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
-          "type": "uses"
         }
       ],
       "uuid": "f9c06633-dcff-48a1-8588-759e7cec5694",
@@ -18260,6 +18075,7 @@
         "refs": [
           "https://attack.mitre.org/groups/G0069",
           "https://blog.talosintelligence.com/2022/01/iranian-apt-muddywater-targets-turkey.html",
+          "https://learn.microsoft.com/en-us/microsoft-365/security/intelligence/microsoft-threat-actor-naming?view=o365-worldwide",
           "https://reaqta.com/2017/11/muddywater-apt-targeting-middle-east/",
           "https://researchcenter.paloaltonetworks.com/2017/11/unit42-muddying-the-water-targeted-attacks-in-the-middle-east/",
           "https://www.anomali.com/blog/probable-iranian-cyber-actors-static-kitten-conducting-cyberespionage-campaign-targeting-uae-and-kuwait-government-agencies",
@@ -18268,6 +18084,7 @@
           "https://www.clearskysec.com/wp-content/uploads/2019/06/Clearsky-Iranian-APT-group-%E2%80%98MuddyWater%E2%80%99-Adds-Exploits-to-Their-Arsenal.pdf",
           "https://www.cybercom.mil/Media/News/Article/2897570/iranian-intel-cyber-suite-of-malware-uses-open-source-tools/",
           "https://www.fireeye.com/blog/threat-research/2018/03/iranian-threat-group-updates-ttps-in-spear-phishing-campaign.html",
+          "https://www.proofpoint.com/us/blog/threat-insight/security-brief-ta450-uses-embedded-links-pdf-attachments-latest-campaign",
           "https://www.symantec.com/blogs/threat-intelligence/seedworm-espionage-group",
           "https://www.trendmicro.com/en_us/research/21/c/earth-vetala---muddywater-continues-to-target-organizations-in-t.html"
         ],
@@ -18277,7 +18094,9 @@
           "MERCURY",
           "Static Kitten",
           "Seedworm",
-          "TEMP.Zagros"
+          "TEMP.Zagros",
+          "Mango Sandstorm",
+          "TA450"
         ]
       },
       "related": [
@@ -18403,10 +18222,6 @@
         },
         {
           "dest-uuid": "69b8fd78-40e8-4600-ae4d-662c9d7afdb3",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "69f897fd-12a9-4c89-ad6a-46d2f3c38262",
           "type": "uses"
         },
         {
@@ -18582,13 +18397,6 @@
         },
         {
           "dest-uuid": "ff41b9b6-4c1d-407b-a7e2-835109c8dbc5",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "a127c32c-cbb0-4f9d-be07-881a792408ec",
-          "tags": [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-          ],
           "type": "uses"
         }
       ],
@@ -18880,6 +18688,10 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "0d91b3c0-5e50-47c3-949a-2a796f04d144",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "132d5b37-aac5-4378-a8dc-3127b18a73dc",
           "type": "uses"
         },
@@ -18965,10 +18777,6 @@
         },
         {
           "dest-uuid": "b200542e-e877-4395-875b-cf1a44537ca4",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
           "type": "uses"
         },
         {
@@ -19392,10 +19200,15 @@
         "external_id": "G1012",
         "refs": [
           "https://attack.mitre.org/groups/G1012",
-          "https://www.microsoft.com/en-us/security/blog/2021/11/16/evolving-trends-in-iranian-threat-actor-activity-mstic-presentation-at-cyberwarcon-2021"
+          "https://learn.microsoft.com/en-us/microsoft-365/security/intelligence/microsoft-threat-actor-naming?view=o365-worldwide",
+          "https://www.microsoft.com/en-us/security/blog/2021/11/16/evolving-trends-in-iranian-threat-actor-activity-mstic-presentation-at-cyberwarcon-2021",
+          "https://www.proofpoint.com/us/blog/threat-insight/i-knew-you-were-trouble-ta456-targets-defense-contractor-alluring-social-media"
         ],
         "synonyms": [
-          "CURIUM"
+          "CURIUM",
+          "Crimson Sandstorm",
+          "TA456",
+          "Tortoise Shell"
         ]
       },
       "related": [
@@ -19438,6 +19251,10 @@
       "related": [
         {
           "dest-uuid": "03d7999c-1f4c-42cc-8373-e7690d318104",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "0d91b3c0-5e50-47c3-949a-2a796f04d144",
           "type": "uses"
         },
         {
@@ -19517,10 +19334,6 @@
         },
         {
           "dest-uuid": "9efb1ea7-c37b-4595-9640-b7680cd84279",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
           "type": "uses"
         },
         {
@@ -19716,6 +19529,10 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "ea132c68-b518-4478-ae8d-1763cda26ee3",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "ef67e13e-5598-4adc-bdb2-998225874fa9",
           "type": "uses"
         },
@@ -19745,6 +19562,10 @@
       },
       "related": [
         {
+          "dest-uuid": "0d91b3c0-5e50-47c3-949a-2a796f04d144",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "3be1fb7a-0f7e-415e-8e3a-74a80d596e68",
           "type": "uses"
         },
@@ -19758,10 +19579,6 @@
         },
         {
           "dest-uuid": "a2fdce72-04b2-409a-ac10-cc1695f4fce0",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
           "type": "uses"
         },
         {
@@ -20289,6 +20106,353 @@
       "value": "MoustachedBouncer - G1019"
     },
     {
+      "description": "[ToddyCat](https://attack.mitre.org/groups/G1022) is a sophisticated threat group that has been active since at least 2020 using custom loaders and malware in multi-stage infection chains against government and military targets across Europe and Asia.(Citation: Kaspersky ToddyCat June 2022)(Citation: Kaspersky ToddyCat Check Logs October 2023)",
+      "meta": {
+        "external_id": "G1022",
+        "refs": [
+          "https://attack.mitre.org/groups/G1022",
+          "https://securelist.com/toddycat-keep-calm-and-check-logs/110696/",
+          "https://securelist.com/toddycat/106799/"
+        ],
+        "synonyms": [
+          "ToddyCat"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "01a5a209-b94c-450b-b7f9-946497d91055",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "023254de-caaf-4a05-b2c7-e4e2f283f7a5",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "03342581-f790-4f03-ba41-e82e67392e23",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "1c4e5d32-1fe9-4116-9d9d-59e3925bd6a2",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "21875073-b0ee-49e3-9077-1e2a885359af",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "2aed01ad-3df3-4410-a8cb-11ea4ded587c",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "354a7f88-63fb-41b5-a801-ce3b377b36f1",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "359b00ad-9425-420b-bba5-6de8d600cbc0",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "391d824f-0ef1-47a0-b0ee-c59a75e27670",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "3c4a2599-71ee-4405-ba1e-0e28414b4bc5",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "3f886f2a-874f-4333-b794-aa6075009b1c",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "452da2d9-706c-4185-ad6f-f5edaf4b9f48",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "4664b683-f578-434f-919b-1c1aad2a1111",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "4f9ca633-15c5-463c-9724-bdcd54fde541",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "5372c5fe-f424-4def-bcd5-d3a8e770f07b",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "5a3a31fe-5a8f-48e1-bff0-a753e5b1be70",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "7bc57495-ea59-4380-be31-a64af124ef18",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "7e150503-88e7-4861-866b-ff1ac82c4475",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "8f4a33ec-8b1f-4b80-a2f6-642b2e479580",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "970a3432-3237-47ad-bcca-7d8cbb217736",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "a7881f21-e978-4fe4-af56-92c9416a2616",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "ae91fb8f-5031-4f57-9839-e3be3ed503f0",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "b77b563c-34bb-4fb8-86a3-3694338f7b47",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "bf1b6176-597c-4600-bfcd-ac989670f96b",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "c21d5a77-d422-4a69-acd7-2c53c1faa34b",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "c3d4bdd9-2cfe-4a80-9d0c-07a29ecdce8f",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "cba37adb-d6fb-4610-b069-dd04c0643384",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "cbb66055-0325-4111-aca0-40547b6ad5b0",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "d1fcf083-a721-4223-aedf-bf8960798d62",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "e358d692-23c0-4a31-9eb6-ecc13a8d7735",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "e4feffc2-53d1-45c9-904e-adb9faca0d15",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "f6ad61ee-65f3-4bd0-a3f5-2f0accb36317",
+          "type": "uses"
+        }
+      ],
+      "uuid": "b516b235-fc7d-4635-aca5-3d33312339c3",
+      "value": "ToddyCat - G1022"
+    },
+    {
+      "description": "[APT5](https://attack.mitre.org/groups/G1023) is a China-based espionage actor that has been active since at least 2007 primarily targeting the telecommunications, aerospace, and defense industries throughout the U.S., Europe, and Asia. [APT5](https://attack.mitre.org/groups/G1023) has displayed advanced tradecraft and significant interest in compromising networking devices and their underlying software including through the use of zero-day exploits.(Citation: NSA APT5 Citrix Threat Hunting December 2022)(Citation: Microsoft East Asia Threats September 2023)(Citation: Mandiant Pulse Secure Zero-Day April 2021)(Citation: Mandiant Pulse Secure Update May 2021)(Citation: FireEye Southeast Asia Threat Landscape March 2015)(Citation: Mandiant Advanced Persistent Threats)  ",
+      "meta": {
+        "external_id": "G1023",
+        "refs": [
+          "https://attack.mitre.org/groups/G1023",
+          "https://learn.microsoft.com/en-us/microsoft-365/security/intelligence/microsoft-threat-actor-naming?view=o365-worldwide",
+          "https://media.defense.gov/2022/Dec/13/2003131586/-1/-1/0/CSA-APT5-CITRIXADC-V1.PDF",
+          "https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RW1aFyW",
+          "https://web.archive.org/web/20220122121143/https://www.fireeye.com/content/dam/fireeye-www/current-threats/pdfs/rpt-southeast-asia-threat-landscape.pdf",
+          "https://www.mandiant.com/resources/blog/suspected-apt-actors-leverage-bypass-techniques-pulse-secure-zero-day",
+          "https://www.mandiant.com/resources/blog/updates-on-chinese-apt-compromising-pulse-secure-vpn-devices",
+          "https://www.mandiant.com/resources/insights/apt-groups",
+          "https://www.secureworks.com/research/threat-profiles/bronze-fleetwood"
+        ],
+        "synonyms": [
+          "APT5",
+          "Mulberry Typhoon",
+          "MANGANESE",
+          "BRONZE FLEETWOOD",
+          "Keyhole Panda",
+          "UNC2630"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "03342581-f790-4f03-ba41-e82e67392e23",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "09a60ea3-a8d1-4ae5-976e-5783248b72a4",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "1644e709-12d2-41e5-a60f-3470991f5011",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "1c34f7aa-9341-4a48-bfab-af22e51aca6c",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "1c4e5d32-1fe9-4116-9d9d-59e3925bd6a2",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "2acf44aa-542f-4366-b4eb-55ef5747759c",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "2db31dcd-54da-405d-acef-b9129b816ed6",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "2e45723a-31da-4a7e-aaa6-e01998a6788f",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "3a53b207-aba2-4a2b-9cdb-273d633669e7",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "3aef9463-9a7a-43ba-8957-a867e07c1e6a",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "3f886f2a-874f-4333-b794-aa6075009b1c",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "43e7dc91-05b2-474c-b9ac-2ed4fe101f4d",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "4664b683-f578-434f-919b-1c1aad2a1111",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "47f2d673-ca62-47e9-929b-1b0be9657611",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "5d0d3609-d06d-49e1-b9c9-b544e0c618cb",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "635cbe30-392d-4e27-978e-66774357c762",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "647215dd-29a6-4528-b354-ca8b5e08fca1",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "65f2d882-3f41-4d48-8a06-29af77ec9f90",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "74d2a63f-3c7b-4852-92da-02d8fbab16da",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "799ace7f-e227-4411-baa0-8868704f2a69",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "7bc57495-ea59-4380-be31-a64af124ef18",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "7e150503-88e7-4861-866b-ff1ac82c4475",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "866d0d6d-02c6-42bd-aa2f-02907fdc0969",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "880f7b3e-ad27-4158-8b03-d44c9357950b",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "88c621a7-aef9-4ae0-94e3-1fc87123eb24",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "89f63ae4-f229-4a5c-95ad-6f22ed2b5c49",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "8f4a33ec-8b1f-4b80-a2f6-642b2e479580",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "960c3c86-1480-4d72-b4e0-8c242e84a5c5",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "970a3432-3237-47ad-bcca-7d8cbb217736",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "9a097d18-d15f-4635-a4f1-189df7efdc40",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "a10641f4-87b4-45a3-a906-92a149cb2c27",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "afc079f3-c0ea-4096-b75d-3f05338b7f60",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "b42378e0-f147-496f-992a-26a49705395b",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "c3d4bdd9-2cfe-4a80-9d0c-07a29ecdce8f",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "d1008b78-960c-4b36-bdc4-39a734e1e4e3",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "d1fcf083-a721-4223-aedf-bf8960798d62",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "d63a3fb8-9452-4e9d-a60a-54be68d5998c",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "eb062747-2193-45de-8fa2-e62549c37ddf",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "f232fa7a-025c-4d43-abc7-318e81a73d65",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "f8fc98ac-ad6d-44db-b6e2-f0c6eb4eace4",
+          "type": "uses"
+        }
+      ],
+      "uuid": "c1aab4c9-4c34-4f4f-8541-d529e46a07f9",
+      "value": "APT5 - G1023"
+    },
+    {
       "description": "[CostaRicto](https://attack.mitre.org/groups/G0132) is a suspected hacker-for-hire cyber espionage campaign that has targeted multiple industries worldwide since at least 2019. [CostaRicto](https://attack.mitre.org/groups/G0132)'s targets, a large portion of which are financial institutions, are scattered across Europe, the Americas, Asia, Australia, and Africa, with a large concentration in South Asia.(Citation: BlackBerry CostaRicto November 2020)",
       "meta": {
         "external_id": "G0132",
@@ -20303,6 +20467,96 @@
       "related": [],
       "uuid": "bb82e0b0-6e9c-439f-970a-4c917a74c5f2",
       "value": "CostaRicto - G0132"
+    },
+    {
+      "description": "[Akira](https://attack.mitre.org/groups/G1024) is a ransomware variant and ransomware deployment entity active since at least March 2023.(Citation: Arctic Wolf Akira 2023) [Akira](https://attack.mitre.org/groups/G1024) uses compromised credentials to access single-factor external access mechanisms such as VPNs for initial access, then various publicly-available tools and techniques for lateral movement.(Citation: Arctic Wolf Akira 2023)(Citation: Secureworks GOLD SAHARA) [Akira](https://attack.mitre.org/groups/G1024) operations are associated with \"double extortion\" ransomware activity, where data is exfiltrated from victim environments prior to encryption, with threats to publish files if a ransom is not paid. Technical analysis of [Akira](https://attack.mitre.org/software/S1129) ransomware indicates multiple overlaps with and similarities to [Conti](https://attack.mitre.org/software/S0575) malware.(Citation: BushidoToken Akira 2023)",
+      "meta": {
+        "external_id": "G1024",
+        "refs": [
+          "https://arcticwolf.com/resources/blog/conti-and-akira-chained-together/",
+          "https://attack.mitre.org/groups/G1024",
+          "https://blog.bushidotoken.net/2023/09/tracking-adversaries-akira-another.html",
+          "https://www.crowdstrike.com/adversaries/punk-spider/",
+          "https://www.secureworks.com/research/threat-profiles/gold-sahara"
+        ],
+        "synonyms": [
+          "Akira",
+          "GOLD SAHARA",
+          "PUNK SPIDER"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "0c4b4fda-9062-47da-98b9-ceae2dcf052a",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "10d51417-ee35-4589-b1ff-b6df1c334e8d",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "4061e78c-1284-44b4-9116-73e4ac3912f7",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "59096109-a1dd-463b-87e7-a8d110fe3a79",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "6f6b2353-4b39-40ce-9d6d-d00b7a61e656",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "767dbf9e-df3f-45cb-8998-4903ab5f80c0",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "851e071f-208d-4c79-adc6-5974c85c78f3",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "afc079f3-c0ea-4096-b75d-3f05338b7f60",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "b17a1a56-e99c-403c-8948-561df0cffe81",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "b24e2a20-3b3d-4bf0-823b-1ed765398fb0",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "b76b2d94-60e4-4107-a903-4a3a7622fb3b",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "b80d107d-fa0d-4b60-9684-b0433e8bdba0",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "bf1b6176-597c-4600-bfcd-ac989670f96b",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "e358d692-23c0-4a31-9eb6-ecc13a8d7735",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "f59508a6-3615-47c3-b493-6676e1a39a87",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "ff6caf67-ea1f-4895-b80e-4bb0fc31c6db",
+          "type": "uses"
+        }
+      ],
+      "uuid": "46bb06cb-f2d9-4b37-8c92-a27e224ad90d",
+      "value": "Akira - G1024"
     },
     {
       "description": "[Confucius](https://attack.mitre.org/groups/G0142) is a cyber espionage group that has primarily targeted military personnel, high-profile personalities, business persons, and government organizations in South Asia since at least 2013. Security researchers have noted similarities between [Confucius](https://attack.mitre.org/groups/G0142) and [Patchwork](https://attack.mitre.org/groups/G0040), particularly in their respective custom malware code and targets.(Citation: TrendMicro Confucius APT Feb 2018)(Citation: TrendMicro Confucius APT Aug 2021)(Citation: Uptycs Confucius APT Jan 2021)",
@@ -20468,12 +20722,14 @@
         "external_id": "G0125",
         "refs": [
           "https://attack.mitre.org/groups/G0125",
+          "https://learn.microsoft.com/en-us/microsoft-365/security/intelligence/microsoft-threat-actor-naming?view=o365-worldwide",
           "https://www.microsoft.com/security/blog/2021/03/02/hafnium-targeting-exchange-servers/",
           "https://www.volexity.com/blog/2021/03/02/active-exploitation-of-microsoft-exchange-zero-day-vulnerabilities/"
         ],
         "synonyms": [
           "HAFNIUM",
-          "Operation Exchange Marauder"
+          "Operation Exchange Marauder",
+          "Silk Typhoon"
         ]
       },
       "related": [
@@ -20649,6 +20905,10 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "0d91b3c0-5e50-47c3-949a-2a796f04d144",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "0f4a0c76-ab2d-4cb0-85d3-3f0efb8cba0d",
           "type": "uses"
         },
@@ -20713,10 +20973,6 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
-          "type": "uses"
-        },
-        {
           "dest-uuid": "be2dcee9-a7a7-4e38-afd6-21b31ecc3d63",
           "type": "uses"
         },
@@ -20761,17 +21017,113 @@
       "value": "Higaisa - G0126"
     },
     {
+      "description": "[Malteiro](https://attack.mitre.org/groups/G1026) is a financially motivated criminal group that is likely based in Brazil and has been active since at least November 2019. The group operates and distributes the [Mispadu](https://attack.mitre.org/software/S1122)  banking trojan via a Malware-as-a-Service (MaaS) business model. [Malteiro](https://attack.mitre.org/groups/G1026) mainly targets victims throughout Latin America (particularly Mexico) and Europe (particularly Spain and Portugal).(Citation: SCILabs Malteiro 2021)",
+      "meta": {
+        "external_id": "G1026",
+        "refs": [
+          "https://attack.mitre.org/groups/G1026",
+          "https://blog.scilabs.mx/en/cyber-threat-profile-malteiro/"
+        ],
+        "synonyms": [
+          "Malteiro"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "0d91b3c0-5e50-47c3-949a-2a796f04d144",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "232b7f21-adf9-4b42-b936-b9d6f7df856e",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "2e34237d-8574-43f6-aace-ae2915de8597",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "354a7f88-63fb-41b5-a801-ce3b377b36f1",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "3ccef7ae-cb5e-48f6-8302-897105fbf55c",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "3fc9b85a-2862-4363-a64d-d692e3ffbee0",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "4e6464d2-69df-4e56-8d4c-1973f84d7b80",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "58a3e6aa-4453-4cc8-a51f-4befe80b31a8",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "851e071f-208d-4c79-adc6-5974c85c78f3",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "c1b68a96-3c48-49ea-a6c0-9b27359f9c19",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "cba37adb-d6fb-4610-b069-dd04c0643384",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "dfd7cc1d-e1d8-4394-a198-97c4cab8aa67",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "f4599aa0-4f85-4a32-80ea-fc39dc965945",
+          "type": "uses"
+        }
+      ],
+      "uuid": "bf668120-e9a6-4017-a014-bfc0f5232656",
+      "value": "Malteiro - G1026"
+    },
+    {
+      "description": "[UNC788](https://attack.mitre.org/groups/G1029) is a group of hackers from Iran that has targeted people in the Middle East.(Citation: Meta Adversarial Threat Report 2022)",
+      "meta": {
+        "external_id": "G1029",
+        "refs": [
+          "https://about.fb.com/wp-content/uploads/2022/04/Meta-Quarterly-Adversarial-Threat-Report_Q1-2022.pdf",
+          "https://attack.mitre.org/groups/G1029"
+        ],
+        "synonyms": [
+          "UNC788"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "55714f87-6178-4b89-b3e5-d3a643f647ca",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "defc1257-4db1-4fb3-8ef5-bb77f63146df",
+          "type": "uses"
+        }
+      ],
+      "uuid": "1f322d74-4822-4d60-8f64-414eea8a9258",
+      "value": "UNC788 - G1029"
+    },
+    {
       "description": "[ZIRCONIUM](https://attack.mitre.org/groups/G0128) is a threat group operating out of China, active since at least 2017, that has targeted individuals associated with the 2020 US presidential election and prominent leaders in the international affairs community.(Citation: Microsoft Targeting Elections September 2020)(Citation: Check Point APT31 February 2021)",
       "meta": {
         "external_id": "G0128",
         "refs": [
           "https://attack.mitre.org/groups/G0128",
           "https://blogs.microsoft.com/on-the-issues/2020/09/10/cyberattacks-us-elections-trump-biden/",
+          "https://learn.microsoft.com/en-us/microsoft-365/security/intelligence/microsoft-threat-actor-naming?view=o365-worldwide",
           "https://research.checkpoint.com/2021/the-story-of-jian/"
         ],
         "synonyms": [
           "ZIRCONIUM",
-          "APT31"
+          "APT31",
+          "Violet Typhoon"
         ]
       },
       "related": [
@@ -21049,12 +21401,15 @@
           "https://adversary.crowdstrike.com/en-US/adversary/silent-chollima/",
           "https://attack.mitre.org/groups/G0138",
           "https://home.treasury.gov/news/press-releases/sm774",
+          "https://learn.microsoft.com/en-us/microsoft-365/security/intelligence/microsoft-threat-actor-naming?view=o365-worldwide",
           "https://www.fsec.or.kr/user/bbs/fsec/163/344/bbsDataView/1680.do",
           "https://www.trendmicro.com/en_us/research/18/g/new-andariel-reconnaissance-tactics-hint-at-next-targets.html"
         ],
         "synonyms": [
           "Andariel",
-          "Silent Chollima"
+          "Silent Chollima",
+          "PLUTONIUM",
+          "Onyx Sleet"
         ]
       },
       "related": [
@@ -21145,6 +21500,10 @@
         },
         {
           "dest-uuid": "09b130a2-a77e-4af0-a361-f46f9aad1345",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "0d91b3c0-5e50-47c3-949a-2a796f04d144",
           "type": "uses"
         },
         {
@@ -21320,10 +21679,6 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
-          "type": "uses"
-        },
-        {
           "dest-uuid": "b76b2d94-60e4-4107-a903-4a3a7622fb3b",
           "type": "uses"
         },
@@ -21376,5 +21731,5 @@
       "value": "TeamTNT - G0139"
     }
   ],
-  "version": 33
+  "version": 34
 }
