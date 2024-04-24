@@ -263,7 +263,7 @@ Category: *course-of-action* - source: *https://github.com/mitre-atlas/atlas-nav
 
 [Attack Pattern](https://www.misp-project.org/galaxy.html#_attack_pattern) - ATT&CK tactic
 
-Category: *attack-pattern* - source: *https://github.com/mitre/cti* - total: *1124* elements
+Category: *attack-pattern* - source: *https://github.com/mitre/cti* - total: *1141* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_attack_pattern)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-attack-pattern.json)]
 
@@ -271,21 +271,21 @@ Category: *attack-pattern* - source: *https://github.com/mitre/cti* - total: *11
 
 [Course of Action](https://www.misp-project.org/galaxy.html#_course_of_action) - ATT&CK Mitigation
 
-Category: *course-of-action* - source: *https://github.com/mitre/cti* - total: *280* elements
+Category: *course-of-action* - source: *https://github.com/mitre/cti* - total: *281* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_course_of_action)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-course-of-action.json)]
 
 ## mitre-data-component
 
-[mitre-data-component](https://www.misp-project.org/galaxy.html#_mitre-data-component) - Data components are parts of data sources.
+[mitre-data-component](https://www.misp-project.org/galaxy.html#_mitre-data-component) - Data components are parts of data sources. 
 
-Category: *data-component* - source: *https://github.com/mitre/cti* - total: *116* elements
+Category: *data-component* - source: *https://github.com/mitre/cti* - total: *117* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_mitre-data-component)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-data-component.json)]
 
 ## mitre-data-source
 
-[mitre-data-source](https://www.misp-project.org/galaxy.html#_mitre-data-source) - Data sources represent the various subjects/topics of information that can be collected by sensors/logs.
+[mitre-data-source](https://www.misp-project.org/galaxy.html#_mitre-data-source) - Data sources represent the various subjects/topics of information that can be collected by sensors/logs. 
 
 Category: *data-source* - source: *https://github.com/mitre/cti* - total: *40* elements
 
@@ -383,7 +383,7 @@ Category: *attack-pattern* - source: *https://collaborate.mitre.org/attackics/in
 
 [Intrusion Set](https://www.misp-project.org/galaxy.html#_intrusion_set) - Name of ATT&CK Group
 
-Category: *actor* - source: *https://github.com/mitre/cti* - total: *157* elements
+Category: *actor* - source: *https://github.com/mitre/cti* - total: *165* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_intrusion_set)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-intrusion-set.json)]
 
@@ -391,7 +391,7 @@ Category: *actor* - source: *https://github.com/mitre/cti* - total: *157* elemen
 
 [Malware](https://www.misp-project.org/galaxy.html#_malware) - Name of ATT&CK software
 
-Category: *tool* - source: *https://github.com/mitre/cti* - total: *671* elements
+Category: *tool* - source: *https://github.com/mitre/cti* - total: *705* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_malware)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-malware.json)]
 
@@ -543,7 +543,7 @@ Category: *sector* - source: *CERT-EU* - total: *118* elements
 
 [Sigma-Rules](https://www.misp-project.org/galaxy.html#_sigma-rules) - MISP galaxy cluster based on Sigma Rules.
 
-Category: *rules* - source: *https://github.com/jstnk9/MISP/tree/main/misp-galaxy/sigma* - total: *2873* elements
+Category: *rules* - source: *https://github.com/jstnk9/MISP/tree/main/misp-galaxy/sigma* - total: *2876* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_sigma-rules)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/sigma-rules.json)]
 
@@ -623,7 +623,7 @@ Category: *Campaigns* - source: *https://app-api.tidalcyber.com/api/v1/campaigns
 
 [Tidal Groups](https://www.misp-project.org/galaxy.html#_tidal_groups) - Tidal Groups Galaxy
 
-Category: *Threat Groups* - source: *https://app-api.tidalcyber.com/api/v1/groups/* - total: *441* elements
+Category: *Threat Groups* - source: *https://app-api.tidalcyber.com/api/v1/groups/* - total: *163* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_tidal_groups)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/tidal-groups.json)]
 
@@ -631,7 +631,7 @@ Category: *Threat Groups* - source: *https://app-api.tidalcyber.com/api/v1/group
 
 [Tidal References](https://www.misp-project.org/galaxy.html#_tidal_references) - Tidal References Cluster
 
-Category: *References* - source: *https://app-api.tidalcyber.com/api/v1/references/* - total: *3848* elements
+Category: *References* - source: *https://app-api.tidalcyber.com/api/v1/references/* - total: *3872* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_tidal_references)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/tidal-references.json)]
 
@@ -639,7 +639,7 @@ Category: *References* - source: *https://app-api.tidalcyber.com/api/v1/referenc
 
 [Tidal Software](https://www.misp-project.org/galaxy.html#_tidal_software) - Tidal Software Cluster
 
-Category: *Software* - source: *https://app-api.tidalcyber.com/api/v1/software/* - total: *1386* elements
+Category: *Software* - source: *https://app-api.tidalcyber.com/api/v1/software/* - total: *931* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_tidal_software)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/tidal-software.json)]
 
@@ -655,7 +655,7 @@ Category: *Tactic* - source: *https://app-api.tidalcyber.com/api/v1/tactic/* - t
 
 [Tidal Technique](https://www.misp-project.org/galaxy.html#_tidal_technique) - Tidal Technique Cluster
 
-Category: *Technique* - source: *https://app-api.tidalcyber.com/api/v1/technique/* - total: *625* elements
+Category: *Technique* - source: *https://app-api.tidalcyber.com/api/v1/technique/* - total: *201* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_tidal_technique)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/tidal-technique.json)]
 
