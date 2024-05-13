@@ -107,9 +107,11 @@ for item in attack_data['objects']:
             if 'external_id' in reference and reference.get("source_name", None) in mitre_sources:
                 value['meta']['external_id'] = reference['external_id']
         if not value['meta'].get('external_id', None):
-            exit("Entry is missing an external ID, please update mitre_sources. Available references: {}".format(
-                json.dumps(item['external_references'])
-            ))
+            # dataset also contains MITRE ATT&CK, whenever we don't find external ID from the allowed sources it's a sign that the entry is not of the type of interest
+            continue
+            # exit("Entry is missing an external ID, please update mitre_sources. Available references: {}".format(
+            #     json.dumps(item['external_references'])
+            # ))
 
         if 'kill_chain_phases' in item:   # many (but not all) attack-patterns have this
             value['meta']['kill_chain'] = []
@@ -127,7 +129,7 @@ for item in attack_data['objects']:
 
         all_data_uuid[uuid] = value
 
-    except Exception as e:
+    except Exception:
         print(json.dumps(item, sort_keys=True, indent=2))
         import traceback
         traceback.print_exc()
