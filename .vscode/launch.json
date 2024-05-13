@@ -2,6 +2,15 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "gen_mitre",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": "-p ../../MITRE-ATTACK",
+            "cwd": "${fileDirname}"
+        },
+        {
             "name": "gen_interpol_dwvat",
             "type": "debugpy",
             "request": "launch",
@@ -9,7 +18,6 @@
             "console": "integratedTerminal",
             "args": "-p ../../DW-VA-Taxonomy",
             "cwd": "${fileDirname}"
-
         },
         {
             "name": "Python Debugger: Current File",

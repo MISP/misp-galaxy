@@ -25,6 +25,62 @@ types = {'data-source': 'x-mitre-data-source',
          }
 mitre_sources = ['mitre-attack', 'mitre-ics-attack', 'mitre-pre-attack', 'mitre-mobile-attack']
 
+
+kill_chain_order_sort_order = {
+    "attack": [
+        "reconnaissance",
+        "resource-development",
+        "initial-access",
+        "execution",
+        "persistence",
+        "privilege-escalation",
+        "defense-evasion",
+        "credential-access",
+        "discovery",
+        "lateral-movement",
+        "collection",
+        "command-and-control",
+        "exfiltration",
+        "impact"
+    ],
+    "mobile-attack": [
+        "initial-access",
+        "execution",
+        "persistence",
+        "privilege-escalation",
+        "defense-evasion",
+        "credential-access",
+        "discovery",
+        "lateral-movement",
+        "collection",
+        "command-and-control",
+        "exfiltration",
+        "impact",
+        "network-effects",
+        "remote-service-effects"
+    ],
+    "pre-attack": [
+        "priority-definition-planning",
+        "priority-definition-direction",
+        "target-selection",
+        "technical-information-gathering",
+        "people-information-gathering",
+        "organizational-information-gathering",
+        "technical-weakness-identification",
+        "people-weakness-identification",
+        "organizational-weakness-identification",
+        "adversary-opsec",
+        "establish-&-maintain-infrastructure",
+        "persona-development",
+        "build-capabilities",
+        "test-capabilities",
+        "stage-capabilities",
+        "launch",     # added manually
+        "compromise"  # added manually
+    ]
+}
+
+
 all_data = {}  # variable that will contain everything
 
 # read in the non-MITRE data
@@ -90,6 +146,12 @@ for domain in domains:
         if item['type'] not in types.values():
             continue
 
+        # skip deprecated and/or revoked
+        # if 'revoked' in item and item['revoked']:
+        #     continue
+        # if 'x_mitre_deprecated' in item and item['x_mitre_deprecated']:
+        #     continue
+
         # print(json.dumps(item, indent=2, sort_keys=True, ensure_ascii=False))
         try:
             # build the new data structure
@@ -97,6 +159,7 @@ for domain in domains:
             uuid = re.search('--(.*)$', item['id']).group(0)[2:]
             # item exist already in the all_data set
             update = False
+
             if uuid in all_data_uuid:
                 value = all_data_uuid[uuid]
 
@@ -130,12 +193,28 @@ for domain in domains:
             if 'kill_chain_phases' in item:   # many (but not all) attack-patterns have this
                 value['meta']['kill_chain'] = []
                 for killchain in item['kill_chain_phases']:
-                    value['meta']['kill_chain'].append(killchain['kill_chain_name'] + ':' + killchain['phase_name'])
+                    kill_chain_name = killchain['kill_chain_name'][6:]
+                    phase_name = killchain['phase_name']
+                    if 'x_mitre_platforms' in item:
+                        for platform in item['x_mitre_platforms']:
+                            platform = platform.replace(' ', '-')
+                            value['meta']['kill_chain'].append(f"{kill_chain_name}-{platform}:{phase_name}")
+                    else:
+                        value['meta']['kill_chain'].append(f"{kill_chain_name}:{phase_name}")
             if 'x_mitre_data_sources' in item:
                 value['meta']['mitre_data_sources'] = item['x_mitre_data_sources']
             if 'x_mitre_platforms' in item:
                 value['meta']['mitre_platforms'] = item['x_mitre_platforms']
             # TODO add the other x_mitre elements dynamically
+            # x_mitre_fields = [key for key in item.keys() if key.startswith('x_mitre')]
+            # skip_x_mitre_fields = ['x_mitre_aliases', 'x_mitre_version', 'x_mitre_old_attack_id', 'mitre_attack_spec_version']
+            # for skip_field in skip_x_mitre_fields:
+            #     try:
+            #         x_mitre_fields.remove(skip_field)
+            #     except ValueError:
+            #         pass
+            # for x_mitre_field in x_mitre_fields:
+            #     value['meta'][x_mitre_field[2:]] = item[x_mitre_field]
 
             # relationships will be build separately afterwards
             value['type'] = item['type']  # remove this before dump to json
@@ -144,7 +223,7 @@ for domain in domains:
             # FIXME if 'x_mitre_deprecated' , 'revoked'
             all_data_uuid[uuid] = value
 
-        except Exception as e:
+        except Exception:
             print(json.dumps(item, sort_keys=True, indent=2))
             import traceback
             traceback.print_exc()
@@ -208,6 +287,8 @@ for domain in domains:
 
 # dump all_data to their respective file
 for t, meta_t in types.items():
+    kill_chain_order = {}
+
     fname = os.path.join(misp_dir, 'clusters', 'mitre-{}.json'.format(t))
     if not os.path.exists(fname):
         exit("File {} does not exist, this is unexpected.".format(fname))
@@ -222,6 +303,11 @@ for t, meta_t in types.items():
         item_2 = item.copy()
         item_2.pop('type', None)
         file_data['values'].append(item_2)
+        for kill_chains in item['meta'].get('kill_chain', []):
+            kill_chain_name, kill_chain_phase = kill_chains.split(':')
+            if kill_chain_name not in kill_chain_order:
+                kill_chain_order[kill_chain_name] = set()
+            kill_chain_order[kill_chain_name].add(kill_chain_phase)
 
     # FIXME the sort algo needs to be further improved, potentially with a recursive deep sort
     file_data['values'] = sorted(file_data['values'], key=lambda x: sorted(x['value']))
@@ -237,5 +323,37 @@ for t, meta_t in types.items():
     with open(fname, 'w') as f:
         json.dump(file_data, f, indent=2, sort_keys=True, ensure_ascii=False)
         f.write('\n')  # only needed for the beauty and to be compliant with jq_all_the_things
+
+    # rebuild the galaxies file with kill_chains
+    # OK, this is really inefficient, but just the easiest way to get it done now
+    fname_galaxy = os.path.join(misp_dir, 'galaxies', 'mitre-{}.json'.format(t))
+    if not os.path.exists(fname_galaxy):
+        exit("File {} does not exist, this is unexpected.".format(fname_galaxy))
+    with open(fname_galaxy) as f_galaxy:
+        file_data_galaxy = json.load(f_galaxy)
+
+    # sort the kill chain order in the right way, using the kill_chain_order_sort_order
+    kill_chain_order_sorted = {}
+    for kill_chain_name, kill_chain_phases in kill_chain_order.items():
+        for kill_chain_order_sort_order_key in kill_chain_order_sort_order.keys():
+            if kill_chain_name.startswith(kill_chain_order_sort_order_key):
+                try:
+                    kill_chain_order_sorted[kill_chain_name] = sorted(
+                        list(kill_chain_phases),
+                        key=kill_chain_order_sort_order[kill_chain_order_sort_order_key].index)
+                except ValueError as e:
+                    print("ERROR:")
+                    print(f"- Kill chain: {kill_chain_name}")
+                    print(f"- Kill chain phases: {kill_chain_phases}")
+                    print(f"- Kill chain order sort order: {kill_chain_order_sort_order[kill_chain_order_sort_order_key]}")
+                    exit(f"ERROR: kill_chain_order_sort_order does not contain a key for {kill_chain_name} - {e}. Please add it manually in the code.")
+
+    if kill_chain_order_sorted:
+        file_data_galaxy['kill_chain_order'] = dict(sorted(kill_chain_order_sorted.items()))
+        file_data_galaxy['version'] += 1
+    with open(fname_galaxy, 'w') as f_galaxy:
+        json.dump(file_data_galaxy, f_galaxy, indent=2, sort_keys=True, ensure_ascii=False)
+        f_galaxy.write('\n')  # only needed for the beauty and to be compliant with jq_all_the_things
+
 
 print("All done, please don't forget to ./jq_all_the_things.sh, commit, and then ./validate_all.sh.")
