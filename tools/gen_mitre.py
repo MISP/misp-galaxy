@@ -146,12 +146,6 @@ for domain in domains:
         if item['type'] not in types.values():
             continue
 
-        # skip deprecated and/or revoked
-        # if 'revoked' in item and item['revoked']:
-        #     continue
-        # if 'x_mitre_deprecated' in item and item['x_mitre_deprecated']:
-        #     continue
-
         # print(json.dumps(item, indent=2, sort_keys=True, ensure_ascii=False))
         try:
             # build the new data structure
@@ -177,6 +171,12 @@ for domain in domains:
                 value['meta']['synonyms'] = item['aliases']
             if 'x_mitre_aliases' in item:
                 value['meta']['synonyms'] = item['x_mitre_aliases']
+
+            # handle deprecated and/or revoked
+            # if 'x_mitre_deprecated' in item and item['x_mitre_deprecated']:
+            #     value['deprecated'] = True
+            # if 'revoked' in item and item['revoked']:
+            #     value['revoked'] = True
 
             if 'external_references' in item:
                 for reference in item['external_references']:
@@ -205,9 +205,9 @@ for domain in domains:
                 value['meta']['mitre_data_sources'] = item['x_mitre_data_sources']
             if 'x_mitre_platforms' in item:
                 value['meta']['mitre_platforms'] = item['x_mitre_platforms']
-            # TODO add the other x_mitre elements dynamically
+            # TODO add the other x_mitre elements dynamically, but now it seems to break the tests
             # x_mitre_fields = [key for key in item.keys() if key.startswith('x_mitre')]
-            # skip_x_mitre_fields = ['x_mitre_aliases', 'x_mitre_version', 'x_mitre_old_attack_id', 'mitre_attack_spec_version']
+            # skip_x_mitre_fields = ['x_mitre_deprecated', 'x_mitre_aliases', 'x_mitre_version', 'x_mitre_old_attack_id', 'x_mitre_attack_spec_version']
             # for skip_field in skip_x_mitre_fields:
             #     try:
             #         x_mitre_fields.remove(skip_field)
@@ -220,7 +220,6 @@ for domain in domains:
             value['type'] = item['type']  # remove this before dump to json
             # print(json.dumps(value, sort_keys=True, indent=2))
 
-            # FIXME if 'x_mitre_deprecated' , 'revoked'
             all_data_uuid[uuid] = value
 
         except Exception:
