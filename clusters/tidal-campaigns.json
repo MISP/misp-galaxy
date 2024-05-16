@@ -34,6 +34,18 @@
       "value": "2016 Ukraine Electric Power Attack"
     },
     {
+      "description": "The [2022 Ukraine Electric Power Attack](https://app.tidalcyber.com/campaigns/a79e06d1-df08-5c72-9180-2c373274f889) was a [Sandworm Team](https://app.tidalcyber.com/groups/16a65ee9-cd60-4f04-ba34-f2f45fcfc666) campaign that used a combination of GOGETTER, Neo-REGEORG, [CaddyWiper](https://app.tidalcyber.com/software/62d0ddcd-790d-4d2d-9d94-276f54b40cf0), and living of the land (LotL) techniques to gain access to a Ukrainian electric utility to send unauthorized commands from their SCADA system.<sup>[[Mandiant-Sandworm-Ukraine-2022](https://app.tidalcyber.com/references/7ad64744-2790-54e4-97cd-e412423f6ada)]</sup><sup>[[Dragos-Sandworm-Ukraine-2022](https://app.tidalcyber.com/references/a17aa1b1-cda4-5aeb-b401-f4fd47d29f93)]</sup> ",
+      "meta": {
+        "campaign_attack_id": "C0034",
+        "first_seen": "2022-06-01T04:00:00Z",
+        "last_seen": "2022-10-01T04:00:00Z",
+        "source": "MITRE"
+      },
+      "related": [],
+      "uuid": "a79e06d1-df08-5c72-9180-2c373274f889",
+      "value": "2022 Ukraine Electric Power Attack"
+    },
+    {
       "description": "In July 2023, U.S. authorities released joint Cybersecurity Advisory AA23-187A, which detailed increased observations of new variants of the Truebot botnet malware infecting organizations in the United States and Canada. Authorities assessed that Truebot infections are primarily motivated around collection and exfiltration of sensitive victim data for financial gain. Officials also assessed that actors were using both spearphishing emails containing malicious hyperlinks and exploitation of CVE-2022-31199 in the IT system auditing application Netwrix Auditor to deliver Truebot during these attacks. Additional tools associated with the attacks included Raspberry Robin for initial infections, FlawedGrace and Cobalt Strike for various post-exploitation activities, and Teleport, a custom tool for data exfiltration.<sup>[[U.S. CISA Increased Truebot Activity July 6 2023](/references/6f9b8f72-c55f-4268-903e-1f8a82efa5bb)]</sup>\n\nThe Advisory did not provide specific impacted victim sectors. The Advisory referred to activity taking place “in recent months” prior to July 2023 but did not provide an estimated date when the summarized activity began. A public threat report referenced in the Advisory reported an observed increase in Truebot infections beginning in August 2022, including several compromises involving education sector organizations.<sup>[[U.S. CISA Increased Truebot Activity July 6 2023](/references/6f9b8f72-c55f-4268-903e-1f8a82efa5bb)]</sup><sup>[[Cisco Talos Blog December 08 2022](/references/bcf92374-48a3-480f-a679-9fd34b67bcdd)]</sup>\n\n**Related Vulnerabilities**: CVE-2022-31199<sup>[[U.S. CISA Increased Truebot Activity July 6 2023](/references/6f9b8f72-c55f-4268-903e-1f8a82efa5bb)]</sup>",
       "meta": {
         "campaign_attack_id": "C5000",
@@ -167,6 +179,29 @@
       "value": "APT29 TeamCity Exploits"
     },
     {
+      "description": "ArcaneDoor was a campaign, which likely ran from November 2023 until around February 2024, that targeted Cisco Adaptive Security Appliances (ASAs). ASAs are network devices that combine firewall, VPN, and other functionality. The campaign targeted unspecified government institutions around the world and was believed to have been conducted for espionage purposes.<sup>[[Cisco Talos ArcaneDoor April 24 2024](/references/531c3f6f-2d2b-4774-b069-e2b7a13602c1)]</sup>\n\nResearchers attributed the campaign to UAT4356 (aka Storm-1849), a possible China-linked adversary.<sup>[[Wired ArcaneDoor April 24 2024](/references/05a8afd3-0173-41ca-b23b-196ea0f3b1c1)]</sup> The initial access vector for the ArcaneDoor attacks remains unclear. After gaining a foothold, actors used the Line Dancer tool to upload Line Runner, a persistence and arbitrary code execution capability, to compromised ASAs (Cisco assigned two vulnerabilities, CVE-2024-20359 and CVE-2024-20353, to these activities). Responders observed various actions on objectives during the attacks, including device configuration modification, network traffic capture, and possible lateral movement.<sup>[[Cisco Talos ArcaneDoor April 24 2024](/references/531c3f6f-2d2b-4774-b069-e2b7a13602c1)]</sup>",
+      "meta": {
+        "campaign_attack_id": "C5019",
+        "first_seen": "2023-11-01T00:00:00Z",
+        "last_seen": "2024-02-29T00:00:00Z",
+        "owner": "TidalCyberIan",
+        "source": "Tidal Cyber",
+        "tags": [
+          "a159c91c-5258-49ea-af7d-e803008d97d3",
+          "af5e9be5-b86e-47af-91dd-966a5e34a186",
+          "15787198-6c8b-4f79-bf50-258d55072fee",
+          "6bb2f579-a5cd-4647-9dcd-eff05efe3679",
+          "c25f341a-7030-4688-a00b-6d637298e52e",
+          "9768aada-9d63-4d46-ab9f-d41b8c8e4010",
+          "2e85babc-77cd-4455-9c6e-312223a956de",
+          "0d3ca5b9-2ea9-4daf-b3b5-11f1c6f9ebd3"
+        ]
+      },
+      "related": [],
+      "uuid": "ccc6401a-b79f-424b-8617-3c2d55475584",
+      "value": "ArcaneDoor"
+    },
+    {
       "description": "[C0010](https://app.tidalcyber.com/campaigns/a1e33caf-6eb0-442f-b97a-f6042f21df48) was a cyber espionage campaign conducted by UNC3890 that targeted Israeli shipping, government, aviation, energy, and healthcare organizations. Security researcher assess UNC3890 conducts operations in support of Iranian interests, and noted several limited technical connections to Iran, including PDB strings and Farsi language artifacts. [C0010](https://app.tidalcyber.com/campaigns/a1e33caf-6eb0-442f-b97a-f6042f21df48) began by at least late 2020, and was still ongoing as of mid-2022.<sup>[[Mandiant UNC3890 Aug 2022](https://app.tidalcyber.com/references/7b3fda0b-d327-4f02-bebe-2b8974f9959d)]</sup>",
       "meta": {
         "campaign_attack_id": "C0010",
@@ -274,6 +309,30 @@
       "value": "C0027"
     },
     {
+      "description": "[C0032](https://app.tidalcyber.com/campaigns/c26b3156-8472-5b87-971f-41a7a4702268) was an extended campaign suspected to involve the [Triton](https://app.tidalcyber.com/software/) adversaries with related capabilities and techniques focused on gaining a foothold within IT environments. This campaign occurred in 2019 and was distinctly different from the [Triton Safety Instrumented System Attack](https://app.tidalcyber.com/campaigns/6c7185e1-bd46-5a80-9a76-a376b16fbc7b).<sup>[[FireEye TRITON 2019](https://app.tidalcyber.com/references/49c97b85-ca22-400a-9dc4-6290cc117f04)]</sup>",
+      "meta": {
+        "campaign_attack_id": "C0032",
+        "first_seen": "2014-10-01T04:00:00Z",
+        "last_seen": "2017-01-01T05:00:00Z",
+        "source": "MITRE"
+      },
+      "related": [],
+      "uuid": "c26b3156-8472-5b87-971f-41a7a4702268",
+      "value": "C0032"
+    },
+    {
+      "description": "[C0033](https://app.tidalcyber.com/campaigns/c5d35d8d-fe96-5210-bb57-4692081a25a9) was a [PROMETHIUM](https://app.tidalcyber.com/groups/cc798766-8662-4b55-8536-6d057fbc58f0) campaign during which they used [StrongPity](https://app.tidalcyber.com/software/ed563524-235e-4e06-8c69-3f9d8ddbfd8a) to target Android users. [C0033](https://app.tidalcyber.com/campaigns/c5d35d8d-fe96-5210-bb57-4692081a25a9) was the first publicly documented mobile campaign for [PROMETHIUM](https://app.tidalcyber.com/groups/cc798766-8662-4b55-8536-6d057fbc58f0), who previously used Windows-based techniques.<sup>[[welivesec_strongpity](https://app.tidalcyber.com/references/1b89df2c-e756-599a-9f7f-a5230db9de46)]</sup>",
+      "meta": {
+        "campaign_attack_id": "C0033",
+        "first_seen": "2016-05-01T07:00:00Z",
+        "last_seen": "2023-01-01T08:00:00Z",
+        "source": "MITRE"
+      },
+      "related": [],
+      "uuid": "c5d35d8d-fe96-5210-bb57-4692081a25a9",
+      "value": "C0033"
+    },
+    {
       "description": "In June 2023, U.S. authorities released Cybersecurity Advisory AA23-158A, which detailed observed exploits of a zero-day SQL injection vulnerability (CVE-2023-34362) affecting Progress Software's managed file transfer (MFT) solution, MOVEit Transfer. According to the Advisory, exploit activity began on May 27, 2023, as threat actors, which the Advisory attributed to \"CL0P Ransomware Gang, also known as TA505\", began compromising internet-facing MOVEit Transfer web applications. Actors deployed web shells, dubbed LEMURLOOT, on compromised MOVEit applications, which enabled persistence, discovery of files and folders stored on MOVEit servers, and staging and exfiltration of compressed victim data. Authorities indicated they expected to see \"widespread exploitation of unpatched software services in both private and public networks\".<sup>[[U.S. CISA CL0P CVE-2023-34362 Exploitation](/references/07e48ca8-b965-4234-b04a-dfad45d58b22)]</sup> Progress Software acknowledged the vulnerability and issued guidance on known affected versions, software upgrades, and patching.<sup>[[Progress Software MOVEit Transfer Critical Vulnerability](/references/9f364e22-b73c-4f3a-902c-a3f0eb01a2b9)]</sup>\n\n**Related Vulnerabilities**: CVE-2023-34362<sup>[[U.S. CISA CL0P CVE-2023-34362 Exploitation](/references/07e48ca8-b965-4234-b04a-dfad45d58b22)]</sup>",
       "meta": {
         "campaign_attack_id": "C5002",
@@ -302,6 +361,29 @@
       "related": [],
       "uuid": "fb011ed2-bfb9-4f0f-bd88-8b3fa0cf9b48",
       "value": "CostaRicto"
+    },
+    {
+      "description": "[Cutting Edge](https://app.tidalcyber.com/campaigns/4e605e33-57fe-5bb2-b0ad-ec146aac041b) was a campaign conducted by suspected China-nexus espionage actors, variously identified as UNC5221/UTA0178 and UNC5325, that began as early as December 2023 with the exploitation of zero-day vulnerabilities in Ivanti Connect Secure (previously Pulse Secure) VPN appliances. [Cutting Edge](https://app.tidalcyber.com/campaigns/4e605e33-57fe-5bb2-b0ad-ec146aac041b) targeted the U.S. defense industrial base and multiple sectors globally including  telecommunications, financial, aerospace, and technology. [Cutting Edge](https://app.tidalcyber.com/campaigns/4e605e33-57fe-5bb2-b0ad-ec146aac041b) featured the use of defense evasion and living-off-the-land (LoTL) techniques along with the deployment of web shells and other custom malware.<sup>[[Mandiant Cutting Edge January 2024](https://app.tidalcyber.com/references/9d9ec923-89c1-5155-ae6e-98d4776d4250)]</sup><sup>[[Volexity Ivanti Zero-Day Exploitation January 2024](https://app.tidalcyber.com/references/93eda380-ea21-59e0-97e8-5bec1f9a0e71)]</sup><sup>[[Volexity Ivanti Global Exploitation January 2024](https://app.tidalcyber.com/references/b96fa4f2-864d-5d88-9a29-b117da8f8c5c)]</sup><sup>[[Mandiant Cutting Edge Part 2 January 2024](https://app.tidalcyber.com/references/5209d259-4293-58c0-bbdc-f30ff77d57f7)]</sup><sup>[[Mandiant Cutting Edge Part 3 February 2024](https://app.tidalcyber.com/references/49e5b125-5503-5cb0-9a56-a93f82b55753)]</sup>",
+      "meta": {
+        "campaign_attack_id": "C0029",
+        "first_seen": "2023-12-01T05:00:00Z",
+        "last_seen": "2024-02-01T05:00:00Z",
+        "source": "MITRE",
+        "tags": [
+          "9768aada-9d63-4d46-ab9f-d41b8c8e4010",
+          "758c3085-2f79-40a8-ab95-f8a684737927",
+          "af5e9be5-b86e-47af-91dd-966a5e34a186",
+          "35e694ec-5133-46e3-b7e1-5831867c3b55",
+          "1dc8fd1e-0737-405a-98a1-111dd557f1b5",
+          "15787198-6c8b-4f79-bf50-258d55072fee",
+          "d1ab6bd6-2688-4e54-a1d3-d180bb8fd41a",
+          "1ff4614e-0ee6-4e04-921d-61abba7fcdb7",
+          "e00b65fc-8f56-4a9e-9f09-ccf3124a3272"
+        ]
+      },
+      "related": [],
+      "uuid": "4e605e33-57fe-5bb2-b0ad-ec146aac041b",
+      "value": "Cutting Edge"
     },
     {
       "description": "German and South Korean cybersecurity authorities published an advisory highlighting recent attempts by North Korea-linked cyber actors to target enterprises and research centers in the defense sector. The advisory detailed a supply chain attack, attributed to an unnamed threat group, in which actors compromised a company that maintained a defense sector research center's web servers, then used stolen SSH credentials to remotely access the research center's network. The actors then used various methods to evade defenses, including impersonating security staff, deployed malware via a patch management system, and stole account information and email contents before being evicted from the network.<sup>[[BfV North Korea February 17 2024](/references/cc76be15-6d9d-40b2-b7f3-196bb0a7106a)]</sup>",
@@ -431,6 +513,8 @@
         "owner": "TidalCyberIan",
         "source": "Tidal Cyber",
         "tags": [
+          "fe984a01-910d-4e39-9c49-179aa03f75ab",
+          "9768aada-9d63-4d46-ab9f-d41b8c8e4010",
           "758c3085-2f79-40a8-ab95-f8a684737927",
           "af5e9be5-b86e-47af-91dd-966a5e34a186",
           "35e694ec-5133-46e3-b7e1-5831867c3b55",
@@ -454,6 +538,7 @@
         "owner": "TidalCyberIan",
         "source": "Tidal Cyber",
         "tags": [
+          "fe984a01-910d-4e39-9c49-179aa03f75ab",
           "a98d7a43-f227-478e-81de-e7299639a355",
           "c475ad68-3fdc-4725-8abc-784c56125e96"
         ]
@@ -493,6 +578,19 @@
       "related": [],
       "uuid": "85f136b3-d5a3-4c4c-a37c-40e4418dc989",
       "value": "Night Dragon"
+    },
+    {
+      "description": "\"Operation Bearded Barbie\" was a suspected AridViper (aka APT-C-23/Desert Falcon) campaign that appeared to target Israeli individuals, especially \"high-profile\" defense, law enforcement, and other government service personnel. The campaign heavily relied upon social engineering techniques, including the use of well-developed social media personas, aimed at tricking targets into installing backdoors for Windows and Android devices. The campaign appeared to be motivated by information collection for espionage purposes.<sup>[[Cybereason Operation Bearded Barbie April 5 2022](/references/7d71b7c9-531e-4e4f-ab85-df2380555b7a)]</sup>",
+      "meta": {
+        "campaign_attack_id": "C5018",
+        "first_seen": "2022-03-01T00:00:00Z",
+        "last_seen": "2022-04-01T00:00:00Z",
+        "owner": "TidalCyberIan",
+        "source": "Tidal Cyber"
+      },
+      "related": [],
+      "uuid": "0496e076-1813-4f51-86e6-8f551983e8f8",
+      "value": "Operation Bearded Barbie"
     },
     {
       "description": "[Operation CuckooBees](https://app.tidalcyber.com/campaigns/81bf4e45-f0d3-4fec-a9d4-1259cf8542a1) was a cyber espionage campaign targeting technology and manufacturing companies in East Asia, Western Europe, and North America since at least 2019. Security researchers noted the goal of [Operation CuckooBees](https://app.tidalcyber.com/campaigns/81bf4e45-f0d3-4fec-a9d4-1259cf8542a1), which was still ongoing as of May 2022, was likely the theft of proprietary information, research and development documents, source code, and blueprints for various technologies. Researchers assessed [Operation CuckooBees](https://app.tidalcyber.com/campaigns/81bf4e45-f0d3-4fec-a9d4-1259cf8542a1) was conducted by actors affiliated with [Winnti Group](https://app.tidalcyber.com/groups/6932662a-53a7-4e43-877f-6e940e2d744b), [APT41](https://app.tidalcyber.com/groups/502223ee-8947-42f8-a532-a3b3da12b7d9), and BARIUM.<sup>[[Cybereason OperationCuckooBees May 2022](https://app.tidalcyber.com/references/fe3e2c7e-2287-406c-b717-cf7721b5843a)]</sup>",
@@ -641,6 +739,18 @@
       "related": [],
       "uuid": "8bde8146-0656-5800-82e6-e24e008e4f4a",
       "value": "SolarWinds Compromise"
+    },
+    {
+      "description": "[Triton Safety Instrumented System Attack](https://app.tidalcyber.com/campaigns/6c7185e1-bd46-5a80-9a76-a376b16fbc7b) was a campaign employed by [TEMP.Veles](https://app.tidalcyber.com/groups/3a54b8dc-a231-4db8-96da-1c0c1aa396f6) which leveraged the [Triton](https://app.tidalcyber.com/software/) malware framework against a petrochemical organization.<sup>[[Triton-EENews-2017](https://app.tidalcyber.com/references/5cc54d85-ee53-579d-a8fb-9b54b3540dc0)]</sup> The malware and techniques used within this campaign targeted specific Triconex [Safety Controller](https://attack.mitre.org/assets/A0010)s within the environment.<sup>[[FireEye TRITON 2018](https://app.tidalcyber.com/references/bfa5886a-a7f4-40d1-98d0-c3358abcf265)]</sup> The incident was eventually discovered due to a safety trip that occurred as a result of an issue in the malware.<sup>[[FireEye TRITON 2017](https://app.tidalcyber.com/references/597a4d8b-ffb2-4551-86db-b319f5a5b707)]</sup>\n",
+      "meta": {
+        "campaign_attack_id": "C0030",
+        "first_seen": "2017-06-01T04:00:00Z",
+        "last_seen": "2017-08-01T04:00:00Z",
+        "source": "MITRE"
+      },
+      "related": [],
+      "uuid": "6c7185e1-bd46-5a80-9a76-a376b16fbc7b",
+      "value": "Triton Safety Instrumented System Attack"
     }
   ],
   "version": 1
