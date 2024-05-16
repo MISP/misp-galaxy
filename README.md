@@ -179,6 +179,14 @@ Category: *guidelines* - source: *Open Sources* - total: *23* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_election_guidelines)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/election-guidelines.json)]
 
+## Entity
+
+[Entity](https://www.misp-project.org/galaxy.html#_entity) - Description of entities that can be involved in events.
+
+Category: *actor* - source: *MISP Project* - total: *4* elements
+
+[[HTML](https://www.misp-project.org/galaxy.html#_entity)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/entity.json)]
+
 ## Exploit-Kit
 
 [Exploit-Kit](https://www.misp-project.org/galaxy.html#_exploit-kit) - Exploit-Kit is an enumeration of some exploitation kits used by adversaries. The list includes document, browser and router exploit kits.It's not meant to be totally exhaustive but aim at covering the most seen in the past 5 years
@@ -255,7 +263,7 @@ Category: *attack-pattern* - source: *https://github.com/mitre-atlas/atlas-navig
 
 [MITRE ATLAS Course of Action](https://www.misp-project.org/galaxy.html#_mitre_atlas_course_of_action) - MITRE ATLAS Mitigation - Adversarial Threat Landscape for Artificial-Intelligence Systems
 
-Category: *course-of-action* - source: *https://github.com/mitre-atlas/atlas-navigator-data* - total: *19* elements
+Category: *course-of-action* - source: *https://github.com/mitre-atlas/atlas-navigator-data* - total: *20* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_mitre_atlas_course_of_action)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-atlas-course-of-action.json)]
 
@@ -495,7 +503,7 @@ Category: *measure* - source: *MISP Project* - total: *20* elements
 
 [Producer](https://www.misp-project.org/galaxy.html#_producer) - List of threat intelligence producer from security vendors to CERTs including any producer of intelligence at large.
 
-Category: *actor* - source: *MISP Project* - total: *15* elements
+Category: *actor* - source: *MISP Project* - total: *21* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_producer)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/producer.json)]
 
@@ -543,7 +551,7 @@ Category: *sector* - source: *CERT-EU* - total: *118* elements
 
 [Sigma-Rules](https://www.misp-project.org/galaxy.html#_sigma-rules) - MISP galaxy cluster based on Sigma Rules.
 
-Category: *rules* - source: *https://github.com/jstnk9/MISP/tree/main/misp-galaxy/sigma* - total: *2876* elements
+Category: *rules* - source: *https://github.com/jstnk9/MISP/tree/main/misp-galaxy/sigma* - total: *2888* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_sigma-rules)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/sigma-rules.json)]
 
@@ -607,7 +615,7 @@ Category: *tea-matrix* - source: ** - total: *7* elements
 
 [Threat Actor](https://www.misp-project.org/galaxy.html#_threat_actor) - Known or estimated adversary groups targeting organizations and employees. Adversary groups are regularly confused with their initial operation or campaign. threat-actor-classification meta can be used to clarify the understanding of the threat-actor if also considered as operation, campaign or activity group.
 
-Category: *actor* - source: *MISP Project* - total: *671* elements
+Category: *actor* - source: *MISP Project* - total: *675* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_threat_actor)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/threat-actor.json)]
 
@@ -615,7 +623,7 @@ Category: *actor* - source: *MISP Project* - total: *671* elements
 
 [Tidal Campaigns](https://www.misp-project.org/galaxy.html#_tidal_campaigns) - Tidal Campaigns Cluster
 
-Category: *Campaigns* - source: *https://app-api.tidalcyber.com/api/v1/campaigns/* - total: *41* elements
+Category: *Campaigns* - source: *https://app-api.tidalcyber.com/api/v1/campaigns/* - total: *48* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_tidal_campaigns)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/tidal-campaigns.json)]
 
@@ -623,7 +631,7 @@ Category: *Campaigns* - source: *https://app-api.tidalcyber.com/api/v1/campaigns
 
 [Tidal Groups](https://www.misp-project.org/galaxy.html#_tidal_groups) - Tidal Groups Galaxy
 
-Category: *Threat Groups* - source: *https://app-api.tidalcyber.com/api/v1/groups/* - total: *163* elements
+Category: *Threat Groups* - source: *https://app-api.tidalcyber.com/api/v1/groups/* - total: *172* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_tidal_groups)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/tidal-groups.json)]
 
@@ -631,7 +639,7 @@ Category: *Threat Groups* - source: *https://app-api.tidalcyber.com/api/v1/group
 
 [Tidal References](https://www.misp-project.org/galaxy.html#_tidal_references) - Tidal References Cluster
 
-Category: *References* - source: *https://app-api.tidalcyber.com/api/v1/references/* - total: *3872* elements
+Category: *References* - source: *https://app-api.tidalcyber.com/api/v1/references/* - total: *4104* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_tidal_references)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/tidal-references.json)]
 
@@ -639,7 +647,7 @@ Category: *References* - source: *https://app-api.tidalcyber.com/api/v1/referenc
 
 [Tidal Software](https://www.misp-project.org/galaxy.html#_tidal_software) - Tidal Software Cluster
 
-Category: *Software* - source: *https://app-api.tidalcyber.com/api/v1/software/* - total: *931* elements
+Category: *Software* - source: *https://app-api.tidalcyber.com/api/v1/software/* - total: *962* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_tidal_software)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/tidal-software.json)]
 
@@ -655,7 +663,7 @@ Category: *Tactic* - source: *https://app-api.tidalcyber.com/api/v1/tactic/* - t
 
 [Tidal Technique](https://www.misp-project.org/galaxy.html#_tidal_technique) - Tidal Technique Cluster
 
-Category: *Technique* - source: *https://app-api.tidalcyber.com/api/v1/technique/* - total: *201* elements
+Category: *Technique* - source: *https://app-api.tidalcyber.com/api/v1/technique/* - total: *202* elements
 
 [[HTML](https://www.misp-project.org/galaxy.html#_tidal_technique)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/tidal-technique.json)]
 
