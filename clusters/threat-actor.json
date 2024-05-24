@@ -2288,7 +2288,6 @@
         "attribution-confidence": "50",
         "country": "TN",
         "motive": "Hacktivists-Nationalists",
-        "cfr-type-of-incident": "Defacement",
         "synonyms": [
           "FallagaTeam"
         ]
@@ -2916,7 +2915,6 @@
         "attribution-confidence": "50",
         "country": "RU",
         "motive": "Cybercrime",
-        "cfr-type-of-incident": "Financial Theft",
         "refs": [
           "https://en.wikipedia.org/wiki/Carbanak",
           "https://app.box.com/s/p7qzcury97tuwk26694uutujwqmwqyhe",
@@ -4430,8 +4428,7 @@
       "meta": {
         "attribution-confidence": "50",
         "country": "TR",
-        "motive": "Hacktivists-Nationalists",
-        "cfr-type-of-incident": "Denial of service"
+        "motive": "Hacktivists-Nationalists"
       },
       "uuid": "a03e2b4b-617f-4d28-ac4b-9943f792aa22",
       "value": "Sath-ı Müdafaa"
@@ -4442,7 +4439,6 @@
         "attribution-confidence": "50",
         "country": "TR",
         "motive": "Hacktivists-Nationalists",
-        "cfr-type-of-incident": "Denial of service",
         "synonyms": [
           "Lion Soldiers Team",
           "Phantom Turk"
@@ -4461,7 +4457,6 @@
         "attribution-confidence": "50",
         "country": "TR",
         "motive": "Hacktivists-Nationalists",
-        "cfr-type-of-incident": "Denial of service",
         "synonyms": [
           "Crescent and Star"
         ],
@@ -5680,7 +5675,9 @@
           "https://asec.ahnlab.com/en/61082/",
           "https://www.rewterz.com/rewterz-news/rewterz-threat-alert-north-korean-apt-kimsuky-aka-black-banshee-active-iocs-29/",
           "https://www.sentinelone.com/labs/a-glimpse-into-future-scarcruft-campaigns-attackers-gather-strategic-intelligence-and-target-cybersecurity-professionals/",
-          "https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Cyber-Sicherheitslage/Analysen-und-Prognosen/Threat-Intelligence/Aktive_APT-Gruppen/aktive-apt-gruppen_node.html"
+          "https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Cyber-Sicherheitslage/Analysen-und-Prognosen/Threat-Intelligence/Aktive_APT-Gruppen/aktive-apt-gruppen_node.html",
+          "https://ctoatncsc.substack.com/p/cto-at-ncsc-summary-week-ending-may-16b",
+          "https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/springtail-kimsuky-backdoor-espionage"
         ],
         "synonyms": [
           "Velvet Chollima",
@@ -5690,7 +5687,8 @@
           "G0086",
           "APT43",
           "Emerald Sleet",
-          "THALLIUM"
+          "THALLIUM",
+          "Springtail"
         ],
         "targeted-sector": [
           "Research - Innovation",
@@ -8969,19 +8967,6 @@
     {
       "description": "An actor mainly targeting Pakistan military targets, active since at least 2012. We have low confidence that this malware might be authored by an Indian company. To spread the malware, they use unique implementations to leverage the exploits of known vulnerabilities (such as CVE-2017-11882) and later deploy a Powershell payload in the final stages.",
       "meta": {
-        "country": "IN",
-        "cfr-suspected-state-sponsor": "India",
-        "cfr-suspected-victims": [
-          "China",
-          "Pakistan",
-          "Nepal",
-          "Afghanistan"
-        ],
-        "cfr-target-category": [
-          "Government",
-          "Military",
-          "Private Sector"
-        ],
         "refs": [
           "https://securelist.com/apt-trends-report-q1-2018/85280/",
           "https://blog.trendmicro.com/trendlabs-security-intelligence/first-active-attack-exploiting-cve-2019-2215-found-on-google-play-linked-to-sidewinder-apt-group/",
@@ -12227,7 +12212,6 @@
       "description": "According to Proofpoint, TA866 is a newly identified threat actor that distributes malware via email utilizing both commodity and custom tools. While most of the activity observed occurred since October 2022, Proofpoint researchers identified multiple activity clusters since 2019 that overlap with TA866 activity. Most of the activity recently observed by Proofpoint suggests recent campaigns are financially motivated, however assessment of historic related activities suggests a possible, additional espionage objective.",
       "meta": {
         "motive": "mainly financially motivated, additional espionage objective.",
-        "cfr-type-of-incident": "Financial Theft",
         "refs": [
           "https://www.proofpoint.com/us/blog/threat-insight/screentime-sometimes-it-feels-like-somebodys-watching-me"
         ]
@@ -12305,10 +12289,6 @@
         ],
         "country": "CN",
         "motive": "state-sponsored espionage and financially motivated",
-        "cfr-type-of-incident": [
-          "Financial Theft",
-          "Espionage"
-        ],
         "refs": [
           "https://go.recordedfuture.com/hubfs/reports/cta-2023-0330.pdf",
           "https://www.justice.gov/opa/pr/seven-international-cyber-defendants-including-apt41-actors-charged-connection-computer"
@@ -15968,7 +15948,40 @@
       },
       "uuid": "19ddf2b0-9cfb-430f-8919-49205cbec863",
       "value": "Water Orthrus"
+    },
+    {
+      "description": "PhantomCore is a threat actor group known for using a remote access malware called PhantomRAT. They have been observed executing malicious code through specially crafted RAR archives, different from previous attacks exploiting vulnerabilities. The attribution of their campaign to Ukraine is uncertain due to limited visibility inside Russian networks. PhantomCore's use of RAR archives in their attack chain has been previously observed in other threat actor groups like Forest Blizzard.",
+      "meta": {
+        "refs": [
+          "https://therecord.media/russian-researchers-winrar-bug-ukraine-espionage",
+          "https://www.facct.ru/blog/phantomdl-loader"
+        ]
+      },
+      "uuid": "485947c7-edb6-4a07-9276-2114dc767551",
+      "value": "PhantomCore"
+    },
+    {
+      "description": "CiberInteligenciaSV is a threat actor that leaked 5.1 million Salvadoran records on Breach Forums. They have also compromised El Salvador's state Bitcoin wallet, Chivo, leaking its source code and VPN credentials. The group aims to obscure their involvement by associating with the Guacamaya group and its proxies.",
+      "meta": {
+        "refs": [
+          "https://securityaffairs.com/162790/data-breach/el-salvador-massive-leak-biometric-data.html",
+          "https://www.cysecurity.news/2024/04/cryptocurrency-chaos-el-salvadors.html"
+        ]
+      },
+      "uuid": "0558bc64-21d9-43e4-8b12-18172d9b5c7d",
+      "value": "CiberInteligenciaSV"
+    },
+    {
+      "description": "Void Manticore is an Iranian APT group affiliated with MOIS, known for conducting destructive wiping attacks and influence operations. They collaborate with Scarred Manticore, sharing targets and conducting disruptive operations using custom wipers. Void Manticore's TTPs involve manual file deletion, lateral movement via RDP, and the deployment of custom wipers like the BiBi wiper. The group utilizes online personas like 'Karma' and 'Homeland Justice' to leak information and amplify the impact of their attacks.",
+      "meta": {
+        "country": "IR",
+        "refs": [
+          "https://research.checkpoint.com/2024/bad-karma-no-justice-void-manticore-destructive-activities-in-israel/"
+        ]
+      },
+      "uuid": "53ac2695-35ba-4ab2-a5cd-48ca533f1b72",
+      "value": "Void Manticore"
     }
   ],
-  "version": 308
+  "version": 309
 }
