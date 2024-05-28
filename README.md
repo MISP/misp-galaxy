@@ -293,7 +293,7 @@ Category: *d3fend* - source: *https://d3fend.mitre.org/* - total: *171* elements
 
 ## mitre-data-component
 
-[mitre-data-component](https://www.misp-galaxy.org/mitre-data-component) - Data components are parts of data sources.
+[mitre-data-component](https://www.misp-galaxy.org/mitre-data-component) - Data components are parts of data sources. 
 
 Category: *data-component* - source: *https://github.com/mitre/cti* - total: *117* elements
 
@@ -301,51 +301,11 @@ Category: *data-component* - source: *https://github.com/mitre/cti* - total: *11
 
 ## mitre-data-source
 
-[mitre-data-source](https://www.misp-galaxy.org/mitre-data-source) - Data sources represent the various subjects/topics of information that can be collected by sensors/logs.
+[mitre-data-source](https://www.misp-galaxy.org/mitre-data-source) - Data sources represent the various subjects/topics of information that can be collected by sensors/logs. 
 
 Category: *data-source* - source: *https://github.com/mitre/cti* - total: *40* elements
 
 [[HTML](https://www.misp-galaxy.org/mitre-data-source)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-data-source.json)]
-
-## Enterprise Attack - Attack Pattern
-
-[Enterprise Attack - Attack Pattern](https://www.misp-galaxy.org/mitre-enterprise-attack-attack-pattern) - ATT&CK tactic
-
-Category: *attack-pattern* - source: *https://github.com/mitre/cti* - total: *219* elements
-
-[[HTML](https://www.misp-galaxy.org/mitre-enterprise-attack-attack-pattern)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-enterprise-attack-attack-pattern.json)]
-
-## Enterprise Attack - Course of Action
-
-[Enterprise Attack - Course of Action](https://www.misp-galaxy.org/mitre-enterprise-attack-course-of-action) - ATT&CK Mitigation
-
-Category: *course-of-action* - source: *https://github.com/mitre/cti* - total: *215* elements
-
-[[HTML](https://www.misp-galaxy.org/mitre-enterprise-attack-course-of-action)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-enterprise-attack-course-of-action.json)]
-
-## Enterprise Attack - Intrusion Set
-
-[Enterprise Attack - Intrusion Set](https://www.misp-galaxy.org/mitre-enterprise-attack-intrusion-set) - Name of ATT&CK Group
-
-Category: *actor* - source: *https://github.com/mitre/cti* - total: *69* elements
-
-[[HTML](https://www.misp-galaxy.org/mitre-enterprise-attack-intrusion-set)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-enterprise-attack-intrusion-set.json)]
-
-## Enterprise Attack - Malware
-
-[Enterprise Attack - Malware](https://www.misp-galaxy.org/mitre-enterprise-attack-malware) - Name of ATT&CK software
-
-Category: *tool* - source: *https://github.com/mitre/cti* - total: *188* elements
-
-[[HTML](https://www.misp-galaxy.org/mitre-enterprise-attack-malware)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-enterprise-attack-malware.json)]
-
-## Enterprise Attack - Tool
-
-[Enterprise Attack - Tool](https://www.misp-galaxy.org/mitre-enterprise-attack-tool) - Name of ATT&CK software
-
-Category: *tool* - source: *https://github.com/mitre/cti* - total: *45* elements
-
-[[HTML](https://www.misp-galaxy.org/mitre-enterprise-attack-tool)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-enterprise-attack-tool.json)]
 
 ## Assets
 
@@ -410,62 +370,6 @@ Category: *actor* - source: *https://github.com/mitre/cti* - total: *165* elemen
 Category: *tool* - source: *https://github.com/mitre/cti* - total: *705* elements
 
 [[HTML](https://www.misp-galaxy.org/mitre-malware)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-malware.json)]
-
-## Mobile Attack - Attack Pattern
-
-[Mobile Attack - Attack Pattern](https://www.misp-galaxy.org/mitre-mobile-attack-attack-pattern) - ATT&CK tactic
-
-Category: *attack-pattern* - source: *https://github.com/mitre/cti* - total: *76* elements
-
-[[HTML](https://www.misp-galaxy.org/mitre-mobile-attack-attack-pattern)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-mobile-attack-attack-pattern.json)]
-
-## Mobile Attack - Course of Action
-
-[Mobile Attack - Course of Action](https://www.misp-galaxy.org/mitre-mobile-attack-course-of-action) - ATT&CK Mitigation
-
-Category: *course-of-action* - source: *https://github.com/mitre/cti* - total: *14* elements
-
-[[HTML](https://www.misp-galaxy.org/mitre-mobile-attack-course-of-action)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-mobile-attack-course-of-action.json)]
-
-## Mobile Attack - Intrusion Set
-
-[Mobile Attack - Intrusion Set](https://www.misp-galaxy.org/mitre-mobile-attack-intrusion-set) - Name of ATT&CK Group
-
-Category: *actor* - source: *https://github.com/mitre/cti* - total: *1* elements
-
-[[HTML](https://www.misp-galaxy.org/mitre-mobile-attack-intrusion-set)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-mobile-attack-intrusion-set.json)]
-
-## Mobile Attack - Malware
-
-[Mobile Attack - Malware](https://www.misp-galaxy.org/mitre-mobile-attack-malware) - Name of ATT&CK software
-
-Category: *tool* - source: *https://github.com/mitre/cti* - total: *35* elements
-
-[[HTML](https://www.misp-galaxy.org/mitre-mobile-attack-malware)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-mobile-attack-malware.json)]
-
-## Mobile Attack - Tool
-
-[Mobile Attack - Tool](https://www.misp-galaxy.org/mitre-mobile-attack-tool) - Name of ATT&CK software
-
-Category: *tool* - source: *https://github.com/mitre/cti* - total: *1* elements
-
-[[HTML](https://www.misp-galaxy.org/mitre-mobile-attack-tool)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-mobile-attack-tool.json)]
-
-## Pre Attack - Attack Pattern
-
-[Pre Attack - Attack Pattern](https://www.misp-galaxy.org/mitre-pre-attack-attack-pattern) - ATT&CK tactic
-
-Category: *attack-pattern* - source: *https://github.com/mitre/cti* - total: *174* elements
-
-[[HTML](https://www.misp-galaxy.org/mitre-pre-attack-attack-pattern)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-pre-attack-attack-pattern.json)]
-
-## Pre Attack - Intrusion Set
-
-[Pre Attack - Intrusion Set](https://www.misp-galaxy.org/mitre-pre-attack-intrusion-set) - Name of ATT&CK Group
-
-Category: *actor* - source: *https://github.com/mitre/cti* - total: *7* elements
-
-[[HTML](https://www.misp-galaxy.org/mitre-pre-attack-intrusion-set)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-pre-attack-intrusion-set.json)]
 
 ## mitre-tool
 
@@ -706,6 +610,7 @@ Category: *military equipment* - source: *Popular Mechanics* - total: *36* eleme
 Category: *virus* - source: *https://www.culturecollections.org.uk* - total: *6667* elements
 
 [[HTML](https://www.misp-galaxy.org/ukhsa-culture-collections)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/ukhsa-culture-collections.json)]
+
 
 # Online documentation
 
