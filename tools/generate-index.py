@@ -13,6 +13,7 @@ def gen_galaxy_tag(galaxy_name, cluster_name):
     # return 'misp-galaxy:{}="{}"'.format(galaxy_name, cluster_name)
     return '{}={}'.format(galaxy_name, cluster_name)
 
+
 galaxies_fnames = []
 files_to_ignore = ["cancer.json", "handicap.json"]
 pathClusters = '../clusters'
@@ -28,10 +29,10 @@ for f in galaxies_fnames:
     with open(os.path.join(pathClusters, f)) as fr:
         cluster = json.load(fr)
     output = f'{output}\n## {cluster["name"]}\n\n'
-    link = cluster["name"].replace(" ", "_").lower()
+    link = f.split(".")[0]
     total = len(cluster["values"])
-    output = f'{output}[{cluster["name"]}](https://www.misp-project.org/galaxy.html#_{link}) - {cluster["description"]}\n'
+    output = f'{output}[{cluster["name"]}](https://www.misp-galaxy.org/{link}) - {cluster["description"]}\n'
     output = f'{output}\nCategory: *{cluster["category"]}* - source: *{cluster["source"]}* - total: *{total}* elements\n'
-    output = f'{output}\n[[HTML](https://www.misp-project.org/galaxy.html#_{link})] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/{f})]\n'
+    output = f'{output}\n[[HTML](https://www.misp-galaxy.org/{link})] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/{f})]\n'
 
 print(output)
