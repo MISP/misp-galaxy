@@ -1,4 +1,22 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+#
+#    A simple convertor of the MITRE D3FEND to a MISP Galaxy datastructure.
+#    Copyright (C) 2024 Christophe Vandeplas
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU Affero General Public License as
+#    published by the Free Software Foundation, either version 3 of the
+#    License, or (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU Affero General Public License for more details.
+#
+#    You should have received a copy of the GNU Affero General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
 import json
 import os
 import requests
@@ -7,15 +25,16 @@ import uuid
 d3fend_url = 'https://d3fend.mitre.org/ontologies/d3fend.json'
 d3fend_full_mappings_url = 'https://d3fend.mitre.org/api/ontology/inference/d3fend-full-mappings.json'
 
+# we love eating lots of memory
+r = requests.get(d3fend_url)
+d3fend_json = r.json()
 
-try:
-    with open('d3fend.json', 'r') as f:
-        d3fend_json = json.load(f)
-except Exception:
-    r = requests.get(d3fend_url)
-    with open('d3fend.json', 'w') as f:
-        f.write(r.text)
-    d3fend_json = r.json()
+r = requests.get(d3fend_full_mappings_url)
+d3fend_mappings_json = r.json()
+
+with open('../clusters/mitre-attack-pattern.json', 'r') as mitre_f:
+    mitre = json.load(mitre_f)
+
 
 uuid_seed = '35527064-12b4-4b73-952b-6d76b9f1b1e3'
 
@@ -23,6 +42,7 @@ tactics = {}   # key = tactic, value = phases
 phases_ids = []
 techniques_ids = []
 techniques = []
+relations = {}
 
 
 def get_as_list(item):
@@ -103,6 +123,33 @@ def find_kill_chain_of(original_item):
             return find_kill_chain_of(data[parent_class])
 
 
+def find_mitre_uuid_from_technique_id(technique_id):
+    for item in mitre['values']:
+        if item['meta']['external_id'] == technique_id:
+            return item['uuid']
+    print("No MITRE UUID found for technique_id: ", technique_id)
+    return None
+
+
+# relationships
+for item in d3fend_mappings_json['results']['bindings']:
+    d3fend_technique = item['def_tech_label']['value']
+    attack_technique = item['off_tech_label']['value']
+    attack_technique_id = item['off_tech']['value'].split('#')[-1]
+    # print(f"Mapping: {d3fend_technique} -> {attack_technique} ({attack_technique_id})")
+    dest_uuid = find_mitre_uuid_from_technique_id(attack_technique_id)
+    if dest_uuid:
+        rel_type = item['def_artifact_rel_label']['value']
+        if d3fend_technique not in relations:
+            relations[d3fend_technique] = []
+        relations[d3fend_technique].append(
+            {
+                'dest-uuid': dest_uuid,
+                'type': rel_type
+            }
+        )
+
+
 # first convert as dict with key = @id
 data = {}
 for item in d3fend_json['@graph']:
@@ -162,7 +209,9 @@ while seen_new:
                 # synonyms
                 if 'd3f:synonym' in item:
                     technique['meta']['synonyms'] = get_as_list(item['d3f:synonym'])
-                # TODO relations
+                # relations
+                if item['rdfs:label'] in relations:
+                    technique['related'] = relations[item['rdfs:label']]
 
                 techniques.append(technique)
                 print(f"Technique: {item['rdfs:label']} - {item['d3f:d3fend-id']}")
@@ -175,7 +224,7 @@ galaxy_description = 'A knowledge graph of cybersecurity countermeasures.'
 galaxy_source = 'https://d3fend.mitre.org/'
 json_galaxy = {
     'description': galaxy_description,
-    'icon': "map",
+    'icon': "user-shield",
     'kill_chain_order': kill_chain_tactics,
     'name': galaxy_name,
     'namespace': "mitre",
@@ -208,4 +257,3 @@ with open(os.path.join('..', 'clusters', galaxy_fname), 'w') as f:
     f.write('\n')  # only needed for the beauty and to be compliant with jq_all_the_things
 
 print("All done, please don't forget to ./jq_all_the_things.sh, commit, and then ./validate_all.sh.")
-
