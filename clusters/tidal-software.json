@@ -199,6 +199,31 @@
       "value": "AccountRestore"
     },
     {
+      "description": "[AcidRain](https://app.tidalcyber.com/software/cf465790-3d6d-5767-bb8c-63a429f95d83) is an ELF binary targeting modems and routers using MIPS architecture.<sup>[[AcidRain JAGS 2022](https://app.tidalcyber.com/references/bd4a7b2e-a387-5e1b-9d9e-52464a8e25c9)]</sup> [AcidRain](https://app.tidalcyber.com/software/cf465790-3d6d-5767-bb8c-63a429f95d83) is associated with the ViaSat KA-SAT communication outage that took place during the initial phases of the 2022 full-scale invasion of Ukraine. Analysis indicates overlap with another network device-targeting malware, VPNFilter, associated with [Sandworm Team](https://app.tidalcyber.com/groups/16a65ee9-cd60-4f04-ba34-f2f45fcfc666).<sup>[[AcidRain JAGS 2022](https://app.tidalcyber.com/references/bd4a7b2e-a387-5e1b-9d9e-52464a8e25c9)]</sup> US and European government sources linked [AcidRain](https://app.tidalcyber.com/software/cf465790-3d6d-5767-bb8c-63a429f95d83) to Russian government entities, while Ukrainian government sources linked [AcidRain](https://app.tidalcyber.com/software/cf465790-3d6d-5767-bb8c-63a429f95d83) specifically to [Sandworm Team](https://app.tidalcyber.com/groups/16a65ee9-cd60-4f04-ba34-f2f45fcfc666).<sup>[[AcidRain State Department 2022](https://app.tidalcyber.com/references/9d514c52-9def-5b11-aa06-fdf3ee9923ed)]</sup><sup>[[Vincens AcidPour 2024](https://app.tidalcyber.com/references/742c8a5c-21e5-58d8-a90d-f4c186c0699a)]</sup>",
+      "meta": {
+        "platforms": [
+          "Network",
+          "Linux"
+        ],
+        "software_attack_id": "S1125",
+        "source": "MITRE",
+        "tags": [
+          "b20e7912-6a8d-46e3-8e13-9a3fc4813852"
+        ],
+        "type": [
+          "malware"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "16a65ee9-cd60-4f04-ba34-f2f45fcfc666",
+          "type": "used-by"
+        }
+      ],
+      "uuid": "cf465790-3d6d-5767-bb8c-63a429f95d83",
+      "value": "AcidRain"
+    },
+    {
       "description": "[Action RAT](https://app.tidalcyber.com/software/202781a3-d481-4984-9e5a-31caafc20135) is a  remote access tool written in Delphi that has been used by [SideCopy](https://app.tidalcyber.com/groups/31bc763e-623f-4870-9780-86e43d732594) since at least December 2021 against Indian and Afghani government personnel.<sup>[[MalwareBytes SideCopy Dec 2021](https://app.tidalcyber.com/references/466569a7-1ef8-4824-bd9c-d25301184ea4)]</sup>",
       "meta": {
         "platforms": [
@@ -270,6 +295,9 @@
         "software_attack_id": "S0552",
         "source": "MITRE",
         "tags": [
+          "c5a258ce-9045-48d9-b254-ec2bf6437bb5",
+          "cc4ea215-87ce-4351-9579-cf527caf5992",
+          "e551ae97-d1b4-484e-9267-89f33829ec2c",
           "e1af18e3-3224-4e4c-9d0f-533768474508",
           "ed2b3f47-3e07-4019-a9bf-ec9d87f28c96",
           "3a633b73-9c2c-4293-8577-fb97be0cda37",
@@ -288,15 +316,11 @@
       },
       "related": [
         {
+          "dest-uuid": "4348c510-50fc-4448-ab8d-c8cededd19ff",
+          "type": "used-by"
+        },
+        {
           "dest-uuid": "4c3e48b9-4426-4271-a7af-c3dfad79f447",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "fb93231d-2ae4-45da-9dea-4c372a11f322",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "b3220638-6682-4a4e-ab64-e7dc4202a3f1",
           "type": "used-by"
         },
         {
@@ -304,11 +328,7 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "fcaadc12-7c17-4946-a9dc-976ed610854c",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "4348c510-50fc-4448-ab8d-c8cededd19ff",
+          "dest-uuid": "fb93231d-2ae4-45da-9dea-4c372a11f322",
           "type": "used-by"
         },
         {
@@ -316,7 +336,15 @@
           "type": "used-by"
         },
         {
+          "dest-uuid": "fcaadc12-7c17-4946-a9dc-976ed610854c",
+          "type": "used-by"
+        },
+        {
           "dest-uuid": "33159d02-a1ce-49ec-a381-60b069db66f7",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "923f478c-7ad1-516f-986d-61f96b9c553e",
           "type": "used-by"
         },
         {
@@ -325,6 +353,10 @@
         },
         {
           "dest-uuid": "6eb50f82-86cc-4eff-b1d1-66e1c6fd74f3",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "b3220638-6682-4a4e-ab64-e7dc4202a3f1",
           "type": "used-by"
         },
         {
@@ -394,6 +426,9 @@
         "software_attack_id": "S5024",
         "source": "Tidal Cyber",
         "tags": [
+          "c5a258ce-9045-48d9-b254-ec2bf6437bb5",
+          "cc4ea215-87ce-4351-9579-cf527caf5992",
+          "e551ae97-d1b4-484e-9267-89f33829ec2c",
           "e1af18e3-3224-4e4c-9d0f-533768474508",
           "cd1b5d44-226e-4405-8985-800492cf2865",
           "ed2b3f47-3e07-4019-a9bf-ec9d87f28c96",
@@ -411,6 +446,10 @@
         ]
       },
       "related": [
+        {
+          "dest-uuid": "923f478c-7ad1-516f-986d-61f96b9c553e",
+          "type": "used-by"
+        },
         {
           "dest-uuid": "d0f3353c-fbdd-4bd5-8793-a42e1f319b59",
           "type": "used-by"
@@ -620,16 +659,46 @@
       },
       "related": [
         {
-          "dest-uuid": "e47ae2a7-d34d-4528-ba67-c9c07daa91ba",
+          "dest-uuid": "1bfbb1e1-022c-57e9-b70e-711c601640be",
           "type": "used-by"
         },
         {
-          "dest-uuid": "1bfbb1e1-022c-57e9-b70e-711c601640be",
+          "dest-uuid": "e47ae2a7-d34d-4528-ba67-c9c07daa91ba",
           "type": "used-by"
         }
       ],
       "uuid": "304650b1-a0b5-460c-9210-23a5b53815a4",
       "value": "Agent Tesla"
+    },
+    {
+      "description": "[Akira](https://app.tidalcyber.com/software/96ae0e1e-975a-5e11-adbe-c79ee17cee11) ransomware, written in C++, is most prominently (but not exclusively) associated with the a ransomware-as-a-service entity [Akira](https://app.tidalcyber.com/groups/923f478c-7ad1-516f-986d-61f96b9c553e).<sup>[[Kersten Akira 2023](https://app.tidalcyber.com/references/df191993-a2cb-5d26-960c-11d1c6d3d73b)]</sup>",
+      "meta": {
+        "platforms": [
+          "Windows"
+        ],
+        "software_attack_id": "S1129",
+        "source": "MITRE",
+        "tags": [
+          "c5a258ce-9045-48d9-b254-ec2bf6437bb5",
+          "cc4ea215-87ce-4351-9579-cf527caf5992",
+          "e551ae97-d1b4-484e-9267-89f33829ec2c",
+          "15787198-6c8b-4f79-bf50-258d55072fee",
+          "5e7433ad-a894-4489-93bc-41e90da90019",
+          "7e7b0c67-bb85-4996-a289-da0e792d7172",
+          "562e535e-19f5-4d6c-81ed-ce2aec544f09"
+        ],
+        "type": [
+          "malware"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "923f478c-7ad1-516f-986d-61f96b9c553e",
+          "type": "used-by"
+        }
+      ],
+      "uuid": "96ae0e1e-975a-5e11-adbe-c79ee17cee11",
+      "value": "Akira"
     },
     {
       "description": "A ransomware binary designed to encrypt victim files. More details about the TTPs typically observed during Akira ransomware attacks can be found in the associated Group object, \"Akira Ransomware Actors\".",
@@ -702,7 +771,12 @@
           "malware"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "0b431229-036f-4157-a1da-ff16dfc095f8",
+          "type": "used-by"
+        }
+      ],
       "uuid": "9521c535-1043-4b82-ba5d-e5eaeca500ee",
       "value": "Anchor"
     },
@@ -765,6 +839,9 @@
         "software_attack_id": "S5007",
         "source": "Tidal Cyber",
         "tags": [
+          "c5a258ce-9045-48d9-b254-ec2bf6437bb5",
+          "cc4ea215-87ce-4351-9579-cf527caf5992",
+          "e551ae97-d1b4-484e-9267-89f33829ec2c",
           "e1af18e3-3224-4e4c-9d0f-533768474508",
           "509a90c7-9ca9-4b23-bca2-cd38ef6a6207",
           "fb06d216-f535-45c1-993a-8c1b7aa2111c",
@@ -793,6 +870,10 @@
         },
         {
           "dest-uuid": "0060bb76-6713-4942-a4c0-d4ae01ec2866",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "923f478c-7ad1-516f-986d-61f96b9c553e",
           "type": "used-by"
         },
         {
@@ -958,11 +1039,11 @@
       },
       "related": [
         {
-          "dest-uuid": "863b7013-133d-4a82-93d2-51b53a8fd30e",
+          "dest-uuid": "4ea1245f-3f35-5168-bd10-1fc49142fd4e",
           "type": "used-by"
         },
         {
-          "dest-uuid": "4ea1245f-3f35-5168-bd10-1fc49142fd4e",
+          "dest-uuid": "863b7013-133d-4a82-93d2-51b53a8fd30e",
           "type": "used-by"
         },
         {
@@ -970,11 +1051,11 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "47ae4fb1-fc61-4e8e-9310-66dda706e1a2",
+          "dest-uuid": "c0fe9859-e8de-4ce1-bc3c-b489e914a145",
           "type": "used-by"
         },
         {
-          "dest-uuid": "c0fe9859-e8de-4ce1-bc3c-b489e914a145",
+          "dest-uuid": "47ae4fb1-fc61-4e8e-9310-66dda706e1a2",
           "type": "used-by"
         }
       ],
@@ -1019,15 +1100,15 @@
       },
       "related": [
         {
+          "dest-uuid": "502223ee-8947-42f8-a532-a3b3da12b7d9",
+          "type": "used-by"
+        },
+        {
           "dest-uuid": "1bcc9382-ccfe-4b04-91f3-ef1250df5e5b",
           "type": "used-by"
         },
         {
           "dest-uuid": "a57b52c7-9f64-4ffe-a7c3-0de738fb2af1",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "502223ee-8947-42f8-a532-a3b3da12b7d9",
           "type": "used-by"
         },
         {
@@ -1075,11 +1156,11 @@
       },
       "related": [
         {
-          "dest-uuid": "153c14a6-31b7-44f2-892e-6d9fdc152267",
+          "dest-uuid": "1bfbb1e1-022c-57e9-b70e-711c601640be",
           "type": "used-by"
         },
         {
-          "dest-uuid": "1bfbb1e1-022c-57e9-b70e-711c601640be",
+          "dest-uuid": "153c14a6-31b7-44f2-892e-6d9fdc152267",
           "type": "used-by"
         }
       ],
@@ -1107,15 +1188,15 @@
       },
       "related": [
         {
+          "dest-uuid": "15ff1ce0-44f0-4f1d-a4ef-83444570e572",
+          "type": "used-by"
+        },
+        {
           "dest-uuid": "eadd78e3-3b5d-430a-b994-4360b172c871",
           "type": "used-by"
         },
         {
           "dest-uuid": "5825a840-5577-4ffc-a08d-3f48d64395cb",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "15ff1ce0-44f0-4f1d-a4ef-83444570e572",
           "type": "used-by"
         }
       ],
@@ -1542,6 +1623,9 @@
         "software_attack_id": "S5026",
         "source": "Tidal Cyber",
         "tags": [
+          "d903e38b-600d-4736-9e3b-cf1a6e436481",
+          "e551ae97-d1b4-484e-9267-89f33829ec2c",
+          "d819ae1a-e385-49fd-88d5-f66660729ecb",
           "d469efcf-4feb-4149-9c0f-c4b7821960bd",
           "e1af18e3-3224-4e4c-9d0f-533768474508",
           "39d6e8b7-6c8a-4ec5-a584-54ca32aa29fb",
@@ -1560,6 +1644,10 @@
         ]
       },
       "related": [
+        {
+          "dest-uuid": "7f52cadb-7a12-4b9d-9290-1ef02123fbe4",
+          "type": "used-by"
+        },
         {
           "dest-uuid": "d0f3353c-fbdd-4bd5-8793-a42e1f319b59",
           "type": "used-by"
@@ -1819,11 +1907,11 @@
       },
       "related": [
         {
-          "dest-uuid": "396a4361-3e84-47bc-9544-58e287c05799",
+          "dest-uuid": "6d6ed42c-760c-4964-a81e-1d4df06a8800",
           "type": "used-by"
         },
         {
-          "dest-uuid": "6d6ed42c-760c-4964-a81e-1d4df06a8800",
+          "dest-uuid": "396a4361-3e84-47bc-9544-58e287c05799",
           "type": "used-by"
         },
         {
@@ -1889,7 +1977,12 @@
           "malware"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "528ab2ea-b8f1-44d8-8831-2a89fefd97cb",
+          "type": "used-by"
+        }
+      ],
       "uuid": "a114a498-fcfd-4e0a-9d1e-e26750d71af8",
       "value": "BendyBear"
     },
@@ -2020,6 +2113,10 @@
         "software_attack_id": "S0190",
         "source": "MITRE",
         "tags": [
+          "d903e38b-600d-4736-9e3b-cf1a6e436481",
+          "e551ae97-d1b4-484e-9267-89f33829ec2c",
+          "d819ae1a-e385-49fd-88d5-f66660729ecb",
+          "15787198-6c8b-4f79-bf50-258d55072fee",
           "e1af18e3-3224-4e4c-9d0f-533768474508",
           "fdd53e62-5bf1-41f1-8bd6-b970a866c39d",
           "d431939f-2dc0-410b-83f7-86c458125444",
@@ -2037,6 +2134,14 @@
           "type": "used-by"
         },
         {
+          "dest-uuid": "eecf7289-294f-48dd-a747-7705820f4735",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "7f52cadb-7a12-4b9d-9290-1ef02123fbe4",
+          "type": "used-by"
+        },
+        {
           "dest-uuid": "0a245c5e-c1a8-480f-8655-bb2594e3266b",
           "type": "used-by"
         },
@@ -2050,10 +2155,6 @@
         },
         {
           "dest-uuid": "0b431229-036f-4157-a1da-ff16dfc095f8",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "eecf7289-294f-48dd-a747-7705820f4735",
           "type": "used-by"
         }
       ],
@@ -2069,6 +2170,10 @@
         "software_attack_id": "S1070",
         "source": "MITRE",
         "tags": [
+          "d903e38b-600d-4736-9e3b-cf1a6e436481",
+          "e551ae97-d1b4-484e-9267-89f33829ec2c",
+          "d819ae1a-e385-49fd-88d5-f66660729ecb",
+          "15787198-6c8b-4f79-bf50-258d55072fee",
           "562e535e-19f5-4d6c-81ed-ce2aec544f09",
           "fdd53e62-5bf1-41f1-8bd6-b970a866c39d",
           "d431939f-2dc0-410b-83f7-86c458125444",
@@ -2081,7 +2186,12 @@
           "malware"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "7f52cadb-7a12-4b9d-9290-1ef02123fbe4",
+          "type": "used-by"
+        }
+      ],
       "uuid": "0d5b24ba-68dc-50fa-8268-3012180fe374",
       "value": "Black Basta"
     },
@@ -2106,6 +2216,10 @@
         ]
       },
       "related": [
+        {
+          "dest-uuid": "3d77fb6c-cfb4-5563-b0be-7aa1ad535337",
+          "type": "used-by"
+        },
         {
           "dest-uuid": "6d6ed42c-760c-4964-a81e-1d4df06a8800",
           "type": "used-by"
@@ -2136,15 +2250,15 @@
       },
       "related": [
         {
+          "dest-uuid": "502223ee-8947-42f8-a532-a3b3da12b7d9",
+          "type": "used-by"
+        },
+        {
           "dest-uuid": "5f083251-f5dc-459a-abfc-47a1aa7f5094",
           "type": "used-by"
         },
         {
           "dest-uuid": "eadd78e3-3b5d-430a-b994-4360b172c871",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "502223ee-8947-42f8-a532-a3b3da12b7d9",
           "type": "used-by"
         }
       ],
@@ -2243,19 +2357,11 @@
       },
       "related": [
         {
+          "dest-uuid": "0b431229-036f-4157-a1da-ff16dfc095f8",
+          "type": "used-by"
+        },
+        {
           "dest-uuid": "6d6ed42c-760c-4964-a81e-1d4df06a8800",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "b3220638-6682-4a4e-ab64-e7dc4202a3f1",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "4c3e48b9-4426-4271-a7af-c3dfad79f447",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "ca93af75-0ffa-4df4-b86a-92d4d50e496e",
           "type": "used-by"
         },
         {
@@ -2279,7 +2385,15 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "0b431229-036f-4157-a1da-ff16dfc095f8",
+          "dest-uuid": "b3220638-6682-4a4e-ab64-e7dc4202a3f1",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "4c3e48b9-4426-4271-a7af-c3dfad79f447",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "ca93af75-0ffa-4df4-b86a-92d4d50e496e",
           "type": "used-by"
         }
       ],
@@ -2610,6 +2724,22 @@
       "related": [],
       "uuid": "e9873bf1-9619-4c62-b4cf-1009e83de186",
       "value": "Bundlore"
+    },
+    {
+      "description": "[BUSHWALK](https://app.tidalcyber.com/software/44ed9567-2cb6-590e-b332-154557fb93f9) is a web shell written in Perl that was inserted into the legitimate querymanifest.cgi file on compromised Ivanti Connect Secure VPNs during [Cutting Edge](https://app.tidalcyber.com/campaigns/4e605e33-57fe-5bb2-b0ad-ec146aac041b).<sup>[[Mandiant Cutting Edge Part 2 January 2024](https://app.tidalcyber.com/references/5209d259-4293-58c0-bbdc-f30ff77d57f7)]</sup><sup>[[Mandiant Cutting Edge Part 3 February 2024](https://app.tidalcyber.com/references/49e5b125-5503-5cb0-9a56-a93f82b55753)]</sup>",
+      "meta": {
+        "platforms": [
+          "Network"
+        ],
+        "software_attack_id": "S1118",
+        "source": "MITRE",
+        "type": [
+          "malware"
+        ]
+      },
+      "related": [],
+      "uuid": "44ed9567-2cb6-590e-b332-154557fb93f9",
+      "value": "BUSHWALK"
     },
     {
       "description": "[Cachedump](https://app.tidalcyber.com/software/7c03fb92-3cd8-4ce4-a1e0-75e47465e4bc) is a publicly-available tool that program extracts cached password hashes from a system’s registry. <sup>[[Mandiant APT1](https://app.tidalcyber.com/references/865eba93-cf6a-4e41-bc09-de9b0b3c2669)]</sup>",
@@ -3067,11 +3197,31 @@
       },
       "related": [
         {
+          "dest-uuid": "fb93231d-2ae4-45da-9dea-4c372a11f322",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "f1477581-d485-403f-a95f-c56bf88c5d1e",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "47ae4fb1-fc61-4e8e-9310-66dda706e1a2",
+          "type": "used-by"
+        },
+        {
           "dest-uuid": "5b1a5b9e-4722-41fc-a15d-196a549e3ac5",
           "type": "used-by"
         },
         {
-          "dest-uuid": "fb93231d-2ae4-45da-9dea-4c372a11f322",
+          "dest-uuid": "3290dcb9-5781-4b87-8fa0-6ae820e152cd",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "4ea1245f-3f35-5168-bd10-1fc49142fd4e",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "502223ee-8947-42f8-a532-a3b3da12b7d9",
           "type": "used-by"
         },
         {
@@ -3084,26 +3234,6 @@
         },
         {
           "dest-uuid": "021b3c71-6467-4e46-a413-8b726f066f2c",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "f1477581-d485-403f-a95f-c56bf88c5d1e",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "3290dcb9-5781-4b87-8fa0-6ae820e152cd",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "47ae4fb1-fc61-4e8e-9310-66dda706e1a2",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "4ea1245f-3f35-5168-bd10-1fc49142fd4e",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "502223ee-8947-42f8-a532-a3b3da12b7d9",
           "type": "used-by"
         },
         {
@@ -3203,6 +3333,27 @@
       "value": "ChChes"
     },
     {
+      "description": "[Cheerscrypt](https://app.tidalcyber.com/software/6475bc8c-b95d-5cb3-92f0-aa7e2f18859a) is a ransomware that was developed by [Cinnamon Tempest](https://app.tidalcyber.com/groups/8e059c6b-d278-5454-a234-a8ad69feb66c) and has been used in attacks against ESXi and Windows environments since at least 2022. [Cheerscrypt](https://app.tidalcyber.com/software/6475bc8c-b95d-5cb3-92f0-aa7e2f18859a) was derived from the leaked [Babuk](https://app.tidalcyber.com/software/0dc07eb9-66df-4116-b1bc-7020ca6395a1) source code and has infrastructure overlaps with deployments of Night Sky ransomware, which was also derived from [Babuk](https://app.tidalcyber.com/software/0dc07eb9-66df-4116-b1bc-7020ca6395a1).<sup>[[Sygnia Emperor Dragonfly October 2022](https://app.tidalcyber.com/references/f9e40a71-c963-53de-9266-13f9f326c5bf)]</sup><sup>[[Trend Micro Cheerscrypt May 2022](https://app.tidalcyber.com/references/ca7ccf2c-37f3-522a-acfb-09daa16e23d8)]</sup>",
+      "meta": {
+        "platforms": [
+          "Windows"
+        ],
+        "software_attack_id": "S1096",
+        "source": "MITRE",
+        "type": [
+          "malware"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "8e059c6b-d278-5454-a234-a8ad69feb66c",
+          "type": "used-by"
+        }
+      ],
+      "uuid": "6475bc8c-b95d-5cb3-92f0-aa7e2f18859a",
+      "value": "Cheerscrypt"
+    },
+    {
       "description": "[Cherry Picker](https://app.tidalcyber.com/software/2fd6f564-918e-4ee7-920a-2b4be858d11a) is a point of sale (PoS) memory scraper. <sup>[[Trustwave Cherry Picker](https://app.tidalcyber.com/references/e09f639e-bdd3-4e88-8032-f665e347272b)]</sup>",
       "meta": {
         "platforms": [
@@ -3236,14 +3387,6 @@
       },
       "related": [
         {
-          "dest-uuid": "eadd78e3-3b5d-430a-b994-4360b172c871",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "15ff1ce0-44f0-4f1d-a4ef-83444570e572",
-          "type": "used-by"
-        },
-        {
           "dest-uuid": "502223ee-8947-42f8-a532-a3b3da12b7d9",
           "type": "used-by"
         },
@@ -3252,11 +3395,23 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "e5b0da2b-12bc-4113-9459-9c51329c9ae0",
+          "dest-uuid": "15ff1ce0-44f0-4f1d-a4ef-83444570e572",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "eadd78e3-3b5d-430a-b994-4360b172c871",
           "type": "used-by"
         },
         {
           "dest-uuid": "79be2f31-5626-425e-844c-fd9c99e38fe5",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "e5b0da2b-12bc-4113-9459-9c51329c9ae0",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "0f41da7d-1e47-58fe-ba6e-ee658a985e1b",
           "type": "used-by"
         },
         {
@@ -3566,6 +3721,10 @@
           "type": "used-by"
         },
         {
+          "dest-uuid": "a0c31021-b281-4c41-9855-436768299fe7",
+          "type": "used-by"
+        },
+        {
           "dest-uuid": "15ff1ce0-44f0-4f1d-a4ef-83444570e572",
           "type": "used-by"
         },
@@ -3575,14 +3734,6 @@
         },
         {
           "dest-uuid": "863b7013-133d-4a82-93d2-51b53a8fd30e",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "5825a840-5577-4ffc-a08d-3f48d64395cb",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "a0c31021-b281-4c41-9855-436768299fe7",
           "type": "used-by"
         },
         {
@@ -3688,6 +3839,10 @@
         {
           "dest-uuid": "79be2f31-5626-425e-844c-fd9c99e38fe5",
           "type": "used-by"
+        },
+        {
+          "dest-uuid": "5825a840-5577-4ffc-a08d-3f48d64395cb",
+          "type": "used-by"
         }
       ],
       "uuid": "98d89476-63ec-4baf-b2b3-86c52170f5d8",
@@ -3770,6 +3925,23 @@
       "value": "Cmstp"
     },
     {
+      "description": "[COATHANGER](https://app.tidalcyber.com/software/fbd3f71a-e123-5527-908c-9e7ea0d646e8) is a remote access tool (RAT) targeting FortiGate networking appliances. First used in 2023 in targeted intrusions against military and government entities in the Netherlands along with other victims, [COATHANGER](https://app.tidalcyber.com/software/fbd3f71a-e123-5527-908c-9e7ea0d646e8) was disclosed in early 2024, with a high confidence assessment linking this malware to a state-sponsored entity in the People's Republic of China. [COATHANGER](https://app.tidalcyber.com/software/fbd3f71a-e123-5527-908c-9e7ea0d646e8) is delivered after gaining access to a FortiGate device, with in-the-wild observations linked to exploitation of CVE-2022-42475. The name [COATHANGER](https://app.tidalcyber.com/software/fbd3f71a-e123-5527-908c-9e7ea0d646e8) is based on a unique string in the malware used to encrypt configuration files on disk: <code>“She took his coat and hung it up”</code>.<sup>[[NCSC-NL COATHANGER Feb 2024](https://app.tidalcyber.com/references/e8e60112-a08d-5316-b80f-f601e7e5c973)]</sup>",
+      "meta": {
+        "platforms": [
+          "Network",
+          "Linux"
+        ],
+        "software_attack_id": "S1105",
+        "source": "MITRE",
+        "type": [
+          "malware"
+        ]
+      },
+      "related": [],
+      "uuid": "fbd3f71a-e123-5527-908c-9e7ea0d646e8",
+      "value": "COATHANGER"
+    },
+    {
       "description": "[Cobalt Strike](https://app.tidalcyber.com/software/9b6bcbba-3ab4-4a4c-a233-cd12254823f6) is a commercial, full-featured, remote access tool that bills itself as “adversary simulation software designed to execute targeted attacks and emulate the post-exploitation actions of advanced threat actors”. Cobalt Strike’s interactive post-exploit capabilities cover the full range of ATT&CK tactics, all executed within a single, integrated system.<sup>[[cobaltstrike manual](https://app.tidalcyber.com/references/43277d05-0aa4-4cee-ac41-6f03a49851a9)]</sup>\n\nIn addition to its own capabilities, [Cobalt Strike](https://app.tidalcyber.com/software/9b6bcbba-3ab4-4a4c-a233-cd12254823f6) leverages the capabilities of other well-known tools such as Metasploit and [Mimikatz](https://app.tidalcyber.com/software/b8e7c0b4-49e4-4e8d-9467-b17f305ddf16).<sup>[[cobaltstrike manual](https://app.tidalcyber.com/references/43277d05-0aa4-4cee-ac41-6f03a49851a9)]</sup>",
       "meta": {
         "platforms": [
@@ -3780,6 +3952,9 @@
         "software_attack_id": "S0154",
         "source": "MITRE",
         "tags": [
+          "d903e38b-600d-4736-9e3b-cf1a6e436481",
+          "e551ae97-d1b4-484e-9267-89f33829ec2c",
+          "d819ae1a-e385-49fd-88d5-f66660729ecb",
           "e1af18e3-3224-4e4c-9d0f-533768474508",
           "fdd53e62-5bf1-41f1-8bd6-b970a866c39d",
           "d431939f-2dc0-410b-83f7-86c458125444",
@@ -3795,6 +3970,22 @@
       },
       "related": [
         {
+          "dest-uuid": "502223ee-8947-42f8-a532-a3b3da12b7d9",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "c0fe9859-e8de-4ce1-bc3c-b489e914a145",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "ca93af75-0ffa-4df4-b86a-92d4d50e496e",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "4a4641b1-7686-49da-8d83-00d8013f4b47",
+          "type": "used-by"
+        },
+        {
           "dest-uuid": "b8a349a6-cde1-4d95-b20f-44c62bbfc786",
           "type": "used-by"
         },
@@ -3807,23 +3998,7 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "ca93af75-0ffa-4df4-b86a-92d4d50e496e",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "b10aa4c0-10a1-5e08-8d9d-82ce95d45e6a",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "502223ee-8947-42f8-a532-a3b3da12b7d9",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "c0fe9859-e8de-4ce1-bc3c-b489e914a145",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "4a4641b1-7686-49da-8d83-00d8013f4b47",
+          "dest-uuid": "0f41da7d-1e47-58fe-ba6e-ee658a985e1b",
           "type": "used-by"
         },
         {
@@ -3843,15 +4018,7 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "eadd78e3-3b5d-430a-b994-4360b172c871",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "b3220638-6682-4a4e-ab64-e7dc4202a3f1",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "3c7ad595-1940-40fc-b9ca-3e649c1e5d87",
+          "dest-uuid": "7f52cadb-7a12-4b9d-9290-1ef02123fbe4",
           "type": "used-by"
         },
         {
@@ -3859,19 +4026,15 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "fb93231d-2ae4-45da-9dea-4c372a11f322",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "fcaadc12-7c17-4946-a9dc-976ed610854c",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "4348c510-50fc-4448-ab8d-c8cededd19ff",
+          "dest-uuid": "0898e7cb-118e-5eeb-b856-04e56ed18182",
           "type": "used-by"
         },
         {
           "dest-uuid": "2e2d3e75-1160-4ba5-80cc-8e7685fcfc44",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "fb93231d-2ae4-45da-9dea-4c372a11f322",
           "type": "used-by"
         },
         {
@@ -3883,7 +4046,11 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "6eb50f82-86cc-4eff-b1d1-66e1c6fd74f3",
+          "dest-uuid": "fcaadc12-7c17-4946-a9dc-976ed610854c",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "4348c510-50fc-4448-ab8d-c8cededd19ff",
           "type": "used-by"
         },
         {
@@ -3891,7 +4058,31 @@
           "type": "used-by"
         },
         {
+          "dest-uuid": "6eb50f82-86cc-4eff-b1d1-66e1c6fd74f3",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "3c7ad595-1940-40fc-b9ca-3e649c1e5d87",
+          "type": "used-by"
+        },
+        {
           "dest-uuid": "33159d02-a1ce-49ec-a381-60b069db66f7",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "eadd78e3-3b5d-430a-b994-4360b172c871",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "b3220638-6682-4a4e-ab64-e7dc4202a3f1",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "8e059c6b-d278-5454-a234-a8ad69feb66c",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "b10aa4c0-10a1-5e08-8d9d-82ce95d45e6a",
           "type": "used-by"
         },
         {
@@ -4166,6 +4357,9 @@
         "software_attack_id": "S0591",
         "source": "MITRE",
         "tags": [
+          "d903e38b-600d-4736-9e3b-cf1a6e436481",
+          "e551ae97-d1b4-484e-9267-89f33829ec2c",
+          "d819ae1a-e385-49fd-88d5-f66660729ecb",
           "e1af18e3-3224-4e4c-9d0f-533768474508",
           "fdd53e62-5bf1-41f1-8bd6-b970a866c39d",
           "d431939f-2dc0-410b-83f7-86c458125444",
@@ -4186,11 +4380,15 @@
       },
       "related": [
         {
-          "dest-uuid": "dcb260d8-9d53-404f-9ff5-dbee2c6effe6",
+          "dest-uuid": "7f52cadb-7a12-4b9d-9290-1ef02123fbe4",
           "type": "used-by"
         },
         {
           "dest-uuid": "3d77fb6c-cfb4-5563-b0be-7aa1ad535337",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "dcb260d8-9d53-404f-9ff5-dbee2c6effe6",
           "type": "used-by"
         },
         {
@@ -4437,7 +4635,7 @@
       },
       "related": [
         {
-          "dest-uuid": "472080b0-e3d4-4546-9272-c4359fe856e1",
+          "dest-uuid": "dcb260d8-9d53-404f-9ff5-dbee2c6effe6",
           "type": "used-by"
         },
         {
@@ -4445,15 +4643,15 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "dcb260d8-9d53-404f-9ff5-dbee2c6effe6",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "4348c510-50fc-4448-ab8d-c8cededd19ff",
+          "dest-uuid": "472080b0-e3d4-4546-9272-c4359fe856e1",
           "type": "used-by"
         },
         {
           "dest-uuid": "33159d02-a1ce-49ec-a381-60b069db66f7",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "4348c510-50fc-4448-ab8d-c8cededd19ff",
           "type": "used-by"
         }
       ],
@@ -4873,11 +5071,11 @@
       },
       "related": [
         {
-          "dest-uuid": "e47ae2a7-d34d-4528-ba67-c9c07daa91ba",
+          "dest-uuid": "dfbce236-735c-436d-b433-933bd6eae17b",
           "type": "used-by"
         },
         {
-          "dest-uuid": "dfbce236-735c-436d-b433-933bd6eae17b",
+          "dest-uuid": "e47ae2a7-d34d-4528-ba67-c9c07daa91ba",
           "type": "used-by"
         },
         {
@@ -4889,14 +5087,13 @@
       "value": "DarkComet"
     },
     {
-      "description": "*Operationalize this intelligence by pivoting to relevant defensive resources via the Techniques below. Alternatively, use the **Add to Matrix** button above, then overlay entire sets of capabilities from your own defensive stack to identify threat overlaps & potential gaps (watch a [60-second tutorial here](https://www.youtube.com/watch?v=4jBo3XLO01E)).*\n\nDarkGate is a commodity downloader. Researchers have often observed DarkGate samples making use of legitimate copies of AutoIt, a freeware BASIC-like scripting language, using it to run AutoIt scripts as part of its execution chain. Reports of DarkGate infections surged following the announcement of the disruption of the QakBot botnet by international authorities in late August 2023.<sup>[[Bleeping Computer DarkGate October 14 2023](/references/313e5558-d8f9-4457-9004-810d9fa5340c)]</sup> The delivery of DarkGate payloads via instant messaging platforms including Microsoft Teams and Skype was reported in September and October 2023.<sup>[[DarkGate Loader delivered via Teams - Truesec](/references/4222a06f-9528-4076-8037-a27012c2930c)]</sup><sup>[[Trend Micro DarkGate October 12 2023](/references/81650f5b-628b-4e76-80d6-2c15cf70d37a)]</sup>",
+      "description": "[DarkGate](https://app.tidalcyber.com/software/39d81c48-8f7c-54cb-8fac-485598e31a55) first emerged in 2018 and has evolved into an initial access and data gathering tool associated with various criminal cyber operations. Written in Delphi and named \"DarkGate\" by its author, [DarkGate](https://app.tidalcyber.com/software/39d81c48-8f7c-54cb-8fac-485598e31a55) is associated with credential theft, cryptomining, cryptotheft, and pre-ransomware actions.<sup>[[Ensilo Darkgate 2018](https://app.tidalcyber.com/references/31796564-4154-54c0-958a-7d6802dfefad)]</sup> DarkGate use increased significantly starting in 2022 and is under active development by its author, who provides it as a Malware-as-a-Service offering.<sup>[[Trellix Darkgate 2023](https://app.tidalcyber.com/references/83fb92d8-1245-5d68-b9f2-0915c10401c6)]</sup>",
       "meta": {
-        "owner": "TidalCyberIan",
         "platforms": [
           "Windows"
         ],
-        "software_attack_id": "S5266",
-        "source": "Tidal Cyber",
+        "software_attack_id": "S1111",
+        "source": "MITRE",
         "tags": [
           "84615fe0-c2a5-4e07-8957-78ebc29b4635"
         ],
@@ -4910,7 +5107,7 @@
           "type": "used-by"
         }
       ],
-      "uuid": "7144b703-f471-4bde-bedc-e8b274854de5",
+      "uuid": "39d81c48-8f7c-54cb-8fac-485598e31a55",
       "value": "DarkGate"
     },
     {
@@ -5433,7 +5630,7 @@
       "value": "Diantz"
     },
     {
-      "description": "[Diavol](https://app.tidalcyber.com/software/d057b6e7-1de4-4f2f-b374-7e879caecd67) is a ransomware variant first observed in June 2021 that is capable of prioritizing file types to encrypt based on a pre-configured list of extensions defined by the attacker. [Diavol](https://app.tidalcyber.com/software/d057b6e7-1de4-4f2f-b374-7e879caecd67) has been deployed by [Bazar](https://app.tidalcyber.com/software/b35d9817-6ead-4dbd-a2fa-4b8e217f8eac) and is thought to have potential ties to [Wizard Spider](https://app.tidalcyber.com/groups/0b431229-036f-4157-a1da-ff16dfc095f8).<sup>[[Fortinet Diavol July 2021](https://app.tidalcyber.com/references/28c650f2-8ce8-4c78-ab4a-cae56c1548ed)]</sup><sup>[[FBI Flash Diavol January 2022](https://app.tidalcyber.com/references/a1691741-9ecd-4b20-8cc9-b9bdfc1592b5)]</sup><sup>[[DFIR Diavol Ransomware December 2021](https://app.tidalcyber.com/references/eb89f18d-684c-4220-b2a8-967f1f8f9162)]</sup>",
+      "description": "[Diavol](https://app.tidalcyber.com/software/d057b6e7-1de4-4f2f-b374-7e879caecd67) is a ransomware variant first observed in June 2021 that is capable of prioritizing file types to encrypt based on a pre-configured list of extensions defined by the attacker.  The [Diavol](https://app.tidalcyber.com/software/d057b6e7-1de4-4f2f-b374-7e879caecd67) Ransomware-as-a Service (RaaS) program is managed by [Wizard Spider](https://app.tidalcyber.com/groups/0b431229-036f-4157-a1da-ff16dfc095f8) and it has been observed being deployed by [Bazar](https://app.tidalcyber.com/software/b35d9817-6ead-4dbd-a2fa-4b8e217f8eac).<sup>[[Fortinet Diavol July 2021](https://app.tidalcyber.com/references/28c650f2-8ce8-4c78-ab4a-cae56c1548ed)]</sup><sup>[[FBI Flash Diavol January 2022](https://app.tidalcyber.com/references/a1691741-9ecd-4b20-8cc9-b9bdfc1592b5)]</sup><sup>[[DFIR Diavol Ransomware December 2021](https://app.tidalcyber.com/references/eb89f18d-684c-4220-b2a8-967f1f8f9162)]</sup><sup>[[Microsoft Ransomware as a Service](https://app.tidalcyber.com/references/833018b5-6ef6-5327-9af5-1a551df25cd2)]</sup>",
       "meta": {
         "platforms": [
           "Windows"
@@ -5448,7 +5645,12 @@
           "malware"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "0b431229-036f-4157-a1da-ff16dfc095f8",
+          "type": "used-by"
+        }
+      ],
       "uuid": "d057b6e7-1de4-4f2f-b374-7e879caecd67",
       "value": "Diavol"
     },
@@ -6332,15 +6534,15 @@
       },
       "related": [
         {
+          "dest-uuid": "502223ee-8947-42f8-a532-a3b3da12b7d9",
+          "type": "used-by"
+        },
+        {
           "dest-uuid": "47ae4fb1-fc61-4e8e-9310-66dda706e1a2",
           "type": "used-by"
         },
         {
-          "dest-uuid": "12279b62-289e-49ee-97cb-c780edd3d091",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "73da066d-b25f-45ba-862b-1a69228c6baa",
+          "dest-uuid": "b534349f-55a4-41b8-9623-6707765c3c50",
           "type": "used-by"
         },
         {
@@ -6348,19 +6550,15 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "eadd78e3-3b5d-430a-b994-4360b172c871",
+          "dest-uuid": "99bbbe25-45af-492f-a7ff-7cbc57828bac",
           "type": "used-by"
         },
         {
-          "dest-uuid": "3c7ad595-1940-40fc-b9ca-3e649c1e5d87",
+          "dest-uuid": "570198e3-b59c-5772-b1ee-15d7ea14d48a",
           "type": "used-by"
         },
         {
-          "dest-uuid": "502223ee-8947-42f8-a532-a3b3da12b7d9",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "dcb260d8-9d53-404f-9ff5-dbee2c6effe6",
+          "dest-uuid": "713e2963-fbf4-406f-a8cf-6a4489d90439",
           "type": "used-by"
         },
         {
@@ -6368,7 +6566,19 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "b534349f-55a4-41b8-9623-6707765c3c50",
+          "dest-uuid": "dcb260d8-9d53-404f-9ff5-dbee2c6effe6",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "3c7ad595-1940-40fc-b9ca-3e649c1e5d87",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "eadd78e3-3b5d-430a-b994-4360b172c871",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "12279b62-289e-49ee-97cb-c780edd3d091",
           "type": "used-by"
         },
         {
@@ -6384,19 +6594,11 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "99bbbe25-45af-492f-a7ff-7cbc57828bac",
+          "dest-uuid": "73da066d-b25f-45ba-862b-1a69228c6baa",
           "type": "used-by"
         },
         {
           "dest-uuid": "345e553a-164d-4c9d-8bf9-19fcf8a51533",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "570198e3-b59c-5772-b1ee-15d7ea14d48a",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "713e2963-fbf4-406f-a8cf-6a4489d90439",
           "type": "used-by"
         }
       ],
@@ -6987,6 +7189,9 @@
         "software_attack_id": "S5031",
         "source": "Tidal Cyber",
         "tags": [
+          "c5a258ce-9045-48d9-b254-ec2bf6437bb5",
+          "cc4ea215-87ce-4351-9579-cf527caf5992",
+          "e551ae97-d1b4-484e-9267-89f33829ec2c",
           "e1af18e3-3224-4e4c-9d0f-533768474508",
           "8bf128ad-288b-41bc-904f-093f4fdde745",
           "ed2b3f47-3e07-4019-a9bf-ec9d87f28c96",
@@ -7004,6 +7209,10 @@
         ]
       },
       "related": [
+        {
+          "dest-uuid": "923f478c-7ad1-516f-986d-61f96b9c553e",
+          "type": "used-by"
+        },
         {
           "dest-uuid": "d0f3353c-fbdd-4bd5-8793-a42e1f319b59",
           "type": "used-by"
@@ -7222,11 +7431,11 @@
       },
       "related": [
         {
-          "dest-uuid": "b3220638-6682-4a4e-ab64-e7dc4202a3f1",
+          "dest-uuid": "fcaadc12-7c17-4946-a9dc-976ed610854c",
           "type": "used-by"
         },
         {
-          "dest-uuid": "fcaadc12-7c17-4946-a9dc-976ed610854c",
+          "dest-uuid": "b3220638-6682-4a4e-ab64-e7dc4202a3f1",
           "type": "used-by"
         }
       ],
@@ -7374,16 +7583,32 @@
       },
       "related": [
         {
-          "dest-uuid": "5b1a5b9e-4722-41fc-a15d-196a549e3ac5",
+          "dest-uuid": "0bc66e95-de93-4de7-b415-4041b7191f08",
           "type": "used-by"
         },
         {
-          "dest-uuid": "0bc66e95-de93-4de7-b415-4041b7191f08",
+          "dest-uuid": "5b1a5b9e-4722-41fc-a15d-196a549e3ac5",
           "type": "used-by"
         }
       ],
       "uuid": "c6dc67a6-587d-4700-a7de-bee043a0031a",
       "value": "Forfiles"
+    },
+    {
+      "description": "[FRAMESTING](https://app.tidalcyber.com/software/83721b89-df58-50bf-be2a-0b696fb0da78) is a Python web shell that was used during [Cutting Edge](https://app.tidalcyber.com/campaigns/4e605e33-57fe-5bb2-b0ad-ec146aac041b) to embed into an Ivanti Connect Secure Python package for command execution.<sup>[[Mandiant Cutting Edge Part 2 January 2024](https://app.tidalcyber.com/references/5209d259-4293-58c0-bbdc-f30ff77d57f7)]</sup>",
+      "meta": {
+        "platforms": [
+          "Network"
+        ],
+        "software_attack_id": "S1120",
+        "source": "MITRE",
+        "type": [
+          "malware"
+        ]
+      },
+      "related": [],
+      "uuid": "83721b89-df58-50bf-be2a-0b696fb0da78",
+      "value": "FRAMESTING"
     },
     {
       "description": "[FrameworkPOS](https://app.tidalcyber.com/software/aef7cbbc-5163-419c-8e4b-3f73bed50474) is a point of sale (POS) malware used by [FIN6](https://app.tidalcyber.com/groups/fcaadc12-7c17-4946-a9dc-976ed610854c) to steal payment card data from sytems that run physical POS devices.<sup>[[SentinelOne FrameworkPOS September 2019](https://app.tidalcyber.com/references/054d7827-3d0c-40a7-b2a0-1428ad7729ea)]</sup>",
@@ -7559,11 +7784,11 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "d01abdb1-0378-4654-aa38-1a4a292703e2",
+          "dest-uuid": "a57b52c7-9f64-4ffe-a7c3-0de738fb2af1",
           "type": "used-by"
         },
         {
-          "dest-uuid": "a57b52c7-9f64-4ffe-a7c3-0de738fb2af1",
+          "dest-uuid": "d01abdb1-0378-4654-aa38-1a4a292703e2",
           "type": "used-by"
         },
         {
@@ -7762,11 +7987,27 @@
       },
       "related": [
         {
-          "dest-uuid": "e343c1f1-458c-467b-bc4a-c1b97b2127e3",
+          "dest-uuid": "a0c31021-b281-4c41-9855-436768299fe7",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "2cc997b5-5076-4eef-9974-f54387614f46",
           "type": "used-by"
         },
         {
           "dest-uuid": "f1477581-d485-403f-a95f-c56bf88c5d1e",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "e343c1f1-458c-467b-bc4a-c1b97b2127e3",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "60936d3c-37ed-4116-a407-868da3aa4446",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "502223ee-8947-42f8-a532-a3b3da12b7d9",
           "type": "used-by"
         },
         {
@@ -7778,28 +8019,32 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "502223ee-8947-42f8-a532-a3b3da12b7d9",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "a0c31021-b281-4c41-9855-436768299fe7",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "2cc997b5-5076-4eef-9974-f54387614f46",
+          "dest-uuid": "f46d6ee9-9d1d-586a-9f2d-6bff8fb92910",
           "type": "used-by"
         },
         {
           "dest-uuid": "79be2f31-5626-425e-844c-fd9c99e38fe5",
           "type": "used-by"
-        },
-        {
-          "dest-uuid": "60936d3c-37ed-4116-a407-868da3aa4446",
-          "type": "used-by"
         }
       ],
       "uuid": "269ef8f5-35c8-44ba-afe4-63f4c6431427",
       "value": "gh0st RAT"
+    },
+    {
+      "description": "[GLASSTOKEN](https://app.tidalcyber.com/software/5c1a1ce5-927c-5c79-8a14-2789756d41ee) is a custom web shell used by threat actors during [Cutting Edge](https://app.tidalcyber.com/campaigns/4e605e33-57fe-5bb2-b0ad-ec146aac041b) to execute commands on compromised Ivanti Secure Connect VPNs.<sup>[[Volexity Ivanti Zero-Day Exploitation January 2024](https://app.tidalcyber.com/references/93eda380-ea21-59e0-97e8-5bec1f9a0e71)]</sup>",
+      "meta": {
+        "platforms": [
+          "Network"
+        ],
+        "software_attack_id": "S1117",
+        "source": "MITRE",
+        "type": [
+          "malware"
+        ]
+      },
+      "related": [],
+      "uuid": "5c1a1ce5-927c-5c79-8a14-2789756d41ee",
+      "value": "GLASSTOKEN"
     },
     {
       "description": "[GLOOXMAIL](https://app.tidalcyber.com/software/09fdec78-5253-433d-8680-294ba6847be9) is malware used by [APT1](https://app.tidalcyber.com/groups/5307bba1-2674-4fbd-bfd5-1db1ae06fc5f) that mimics legitimate Jabber/XMPP traffic. <sup>[[Mandiant APT1](https://app.tidalcyber.com/references/865eba93-cf6a-4e41-bc09-de9b0b3c2669)]</sup>",
@@ -8185,15 +8430,11 @@
       },
       "related": [
         {
-          "dest-uuid": "5307bba1-2674-4fbd-bfd5-1db1ae06fc5f",
-          "type": "used-by"
-        },
-        {
           "dest-uuid": "5825a840-5577-4ffc-a08d-3f48d64395cb",
           "type": "used-by"
         },
         {
-          "dest-uuid": "79be2f31-5626-425e-844c-fd9c99e38fe5",
+          "dest-uuid": "5307bba1-2674-4fbd-bfd5-1db1ae06fc5f",
           "type": "used-by"
         },
         {
@@ -8202,6 +8443,10 @@
         },
         {
           "dest-uuid": "60936d3c-37ed-4116-a407-868da3aa4446",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "79be2f31-5626-425e-844c-fd9c99e38fe5",
           "type": "used-by"
         }
       ],
@@ -8786,11 +9031,11 @@
       },
       "related": [
         {
-          "dest-uuid": "a0c31021-b281-4c41-9855-436768299fe7",
+          "dest-uuid": "79be2f31-5626-425e-844c-fd9c99e38fe5",
           "type": "used-by"
         },
         {
-          "dest-uuid": "79be2f31-5626-425e-844c-fd9c99e38fe5",
+          "dest-uuid": "a0c31021-b281-4c41-9855-436768299fe7",
           "type": "used-by"
         }
       ],
@@ -8817,6 +9062,31 @@
       ],
       "uuid": "bf19eba4-7ea1-4c24-95c6-6bcfb44f4c49",
       "value": "httpclient"
+    },
+    {
+      "description": "[HUI Loader](https://app.tidalcyber.com/software/2df88e4e-5a89-5535-ae1a-4c68b19d9078) is a custom DLL loader that has been used since at least 2015 by China-based threat groups including [Cinnamon Tempest](https://app.tidalcyber.com/groups/8e059c6b-d278-5454-a234-a8ad69feb66c) and [menuPass](https://app.tidalcyber.com/groups/fb93231d-2ae4-45da-9dea-4c372a11f322) to deploy malware on compromised hosts. [HUI Loader](https://app.tidalcyber.com/software/2df88e4e-5a89-5535-ae1a-4c68b19d9078) has been observed in campaigns loading [SodaMaster](https://app.tidalcyber.com/software/6ecd970c-427b-4421-a831-69f46047d22a), [PlugX](https://app.tidalcyber.com/software/070b56f4-7810-4dad-b85f-bdfce9c08c10), [Cobalt Strike](https://app.tidalcyber.com/software/9b6bcbba-3ab4-4a4c-a233-cd12254823f6), [Komplex](https://app.tidalcyber.com/software/2cf1be0d-2fba-4fd0-ab2f-3695716d1735), and several strains of ransomware.<sup>[[SecureWorks BRONZE STARLIGHT Ransomware Operations June 2022](https://app.tidalcyber.com/references/0b275cf9-a885-58cc-b859-112090a711e3)]</sup>",
+      "meta": {
+        "platforms": [
+          "Windows"
+        ],
+        "software_attack_id": "S1097",
+        "source": "MITRE",
+        "type": [
+          "malware"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "8e059c6b-d278-5454-a234-a8ad69feb66c",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "fb93231d-2ae4-45da-9dea-4c372a11f322",
+          "type": "used-by"
+        }
+      ],
+      "uuid": "2df88e4e-5a89-5535-ae1a-4c68b19d9078",
+      "value": "HUI Loader"
     },
     {
       "description": "[Hydraq](https://app.tidalcyber.com/software/4ffbca79-358a-4ba5-bfbb-dc1694c45646) is a data-theft trojan first used by [Elderwood](https://app.tidalcyber.com/groups/51146bb6-7478-44a3-8f08-19adcdceffca) in the 2009 Google intrusion known as Operation Aurora, though variations of this trojan have been used in more recent campaigns by other Chinese actors, possibly including [APT17](https://app.tidalcyber.com/groups/5f083251-f5dc-459a-abfc-47a1aa7f5094).<sup>[[MicroFocus 9002 Aug 2016](https://app.tidalcyber.com/references/a4d6bdd1-e70c-491b-a569-72708095c809)]</sup><sup>[[Symantec Elderwood Sept 2012](https://app.tidalcyber.com/references/5e908748-d260-42f1-a599-ac38b4e22559)]</sup><sup>[[Symantec Trojan.Hydraq Jan 2010](https://app.tidalcyber.com/references/10bed842-400f-4276-972d-5fca794ea778)]</sup><sup>[[ASERT Seven Pointed Dagger Aug 2015](https://app.tidalcyber.com/references/a8f323c7-82bc-46e6-bd6c-0b631abc644a)]</sup><sup>[[FireEye DeputyDog 9002 November 2013](https://app.tidalcyber.com/references/68b5a913-b696-4ca5-89ed-63453023d2a2)]</sup><sup>[[ProofPoint GoT 9002 Aug 2017](https://app.tidalcyber.com/references/b796f889-400c-440b-86b2-1588fd15f3ae)]</sup><sup>[[FireEye Sunshop Campaign May 2013](https://app.tidalcyber.com/references/ec246c7a-3396-46f9-acc4-a100cb5e5fe6)]</sup><sup>[[PaloAlto 3102 Sept 2015](https://app.tidalcyber.com/references/db340043-43a7-4b16-a570-92a0d879b2bf)]</sup>",
@@ -9183,7 +9453,15 @@
           "type": "used-by"
         },
         {
+          "dest-uuid": "472080b0-e3d4-4546-9272-c4359fe856e1",
+          "type": "used-by"
+        },
+        {
           "dest-uuid": "fb93231d-2ae4-45da-9dea-4c372a11f322",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "4c3e48b9-4426-4271-a7af-c3dfad79f447",
           "type": "used-by"
         },
         {
@@ -9195,7 +9473,7 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "4c3e48b9-4426-4271-a7af-c3dfad79f447",
+          "dest-uuid": "b3061284-0335-4dcb-9f8e-a3b0412fd46f",
           "type": "used-by"
         },
         {
@@ -9203,7 +9481,7 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "472080b0-e3d4-4546-9272-c4359fe856e1",
+          "dest-uuid": "3d77fb6c-cfb4-5563-b0be-7aa1ad535337",
           "type": "used-by"
         },
         {
@@ -9211,15 +9489,15 @@
           "type": "used-by"
         },
         {
+          "dest-uuid": "33159d02-a1ce-49ec-a381-60b069db66f7",
+          "type": "used-by"
+        },
+        {
           "dest-uuid": "16a65ee9-cd60-4f04-ba34-f2f45fcfc666",
           "type": "used-by"
         },
         {
-          "dest-uuid": "3d77fb6c-cfb4-5563-b0be-7aa1ad535337",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "33159d02-a1ce-49ec-a381-60b069db66f7",
+          "dest-uuid": "8e059c6b-d278-5454-a234-a8ad69feb66c",
           "type": "used-by"
         },
         {
@@ -9228,10 +9506,6 @@
         },
         {
           "dest-uuid": "79be2f31-5626-425e-844c-fd9c99e38fe5",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "b3061284-0335-4dcb-9f8e-a3b0412fd46f",
           "type": "used-by"
         },
         {
@@ -9483,11 +9757,7 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "5307bba1-2674-4fbd-bfd5-1db1ae06fc5f",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "15ff1ce0-44f0-4f1d-a4ef-83444570e572",
+          "dest-uuid": "3290dcb9-5781-4b87-8fa0-6ae820e152cd",
           "type": "used-by"
         },
         {
@@ -9499,15 +9769,7 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "3290dcb9-5781-4b87-8fa0-6ae820e152cd",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "26c0925f-1a3c-4df6-b27a-62b9731299b8",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "4c3e48b9-4426-4271-a7af-c3dfad79f447",
+          "dest-uuid": "5307bba1-2674-4fbd-bfd5-1db1ae06fc5f",
           "type": "used-by"
         },
         {
@@ -9536,6 +9798,18 @@
         },
         {
           "dest-uuid": "d01abdb1-0378-4654-aa38-1a4a292703e2",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "26c0925f-1a3c-4df6-b27a-62b9731299b8",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "15ff1ce0-44f0-4f1d-a4ef-83444570e572",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "4c3e48b9-4426-4271-a7af-c3dfad79f447",
           "type": "used-by"
         },
         {
@@ -9625,6 +9899,7 @@
         "software_attack_id": "S5061",
         "source": "Tidal Cyber",
         "tags": [
+          "b20e7912-6a8d-46e3-8e13-9a3fc4813852",
           "af5e9be5-b86e-47af-91dd-966a5e34a186",
           "15787198-6c8b-4f79-bf50-258d55072fee",
           "f01290d9-7160-44cb-949f-ee4947d04b6f",
@@ -10124,11 +10399,11 @@
       },
       "related": [
         {
-          "dest-uuid": "dcb260d8-9d53-404f-9ff5-dbee2c6effe6",
+          "dest-uuid": "12279b62-289e-49ee-97cb-c780edd3d091",
           "type": "used-by"
         },
         {
-          "dest-uuid": "12279b62-289e-49ee-97cb-c780edd3d091",
+          "dest-uuid": "dcb260d8-9d53-404f-9ff5-dbee2c6effe6",
           "type": "used-by"
         },
         {
@@ -10263,7 +10538,7 @@
       "value": "KOPILUWAK"
     },
     {
-      "description": "[Kwampirs](https://app.tidalcyber.com/software/35ac4018-8506-4025-a9e3-bd017700b3b3) is a backdoor Trojan used by [Orangeworm](https://app.tidalcyber.com/groups/863b7013-133d-4a82-93d2-51b53a8fd30e). It has been found on machines which had software installed for the use and control of high-tech imaging devices such as X-Ray and MRI machines. <sup>[[Symantec Orangeworm April 2018](https://app.tidalcyber.com/references/eee5efa1-bbc6-44eb-8fae-23002f351605)]</sup>",
+      "description": "[Kwampirs](https://app.tidalcyber.com/software/35ac4018-8506-4025-a9e3-bd017700b3b3) is a backdoor Trojan used by [Orangeworm](https://app.tidalcyber.com/groups/863b7013-133d-4a82-93d2-51b53a8fd30e). [Kwampirs](https://app.tidalcyber.com/software/35ac4018-8506-4025-a9e3-bd017700b3b3) has been found on machines which had software installed for the use and control of high-tech imaging devices such as X-Ray and MRI machines.<sup>[[Symantec Orangeworm April 2018](https://app.tidalcyber.com/references/eee5efa1-bbc6-44eb-8fae-23002f351605)]</sup> [Kwampirs](https://app.tidalcyber.com/software/35ac4018-8506-4025-a9e3-bd017700b3b3) has multiple technical overlaps with [Shamoon](https://app.tidalcyber.com/software/840db1db-e262-4d6f-b6e3-2a64696a41c5) based on reverse engineering analysis.<sup>[[Cylera Kwampirs 2022](https://app.tidalcyber.com/references/06442111-2c71-5efb-9530-cabeba159a91)]</sup>",
       "meta": {
         "platforms": [
           "Windows"
@@ -10316,6 +10591,8 @@
         "software_attack_id": "S0349",
         "source": "MITRE",
         "tags": [
+          "c5a258ce-9045-48d9-b254-ec2bf6437bb5",
+          "cc4ea215-87ce-4351-9579-cf527caf5992",
           "d819ae1a-e385-49fd-88d5-f66660729ecb",
           "e551ae97-d1b4-484e-9267-89f33829ec2c",
           "e1af18e3-3224-4e4c-9d0f-533768474508",
@@ -10340,7 +10617,15 @@
           "type": "used-by"
         },
         {
+          "dest-uuid": "9da726e6-af02-49b8-8ebe-7ea4235513c9",
+          "type": "used-by"
+        },
+        {
           "dest-uuid": "d7c58e7f-f0b0-44c6-b205-5adcfb56f0e6",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "99bbbe25-45af-492f-a7ff-7cbc57828bac",
           "type": "used-by"
         },
         {
@@ -10352,7 +10637,7 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "9da726e6-af02-49b8-8ebe-7ea4235513c9",
+          "dest-uuid": "4bdc62c9-af6a-4377-8431-58a6f39235dd",
           "type": "used-by"
         },
         {
@@ -10360,15 +10645,15 @@
           "type": "used-by"
         },
         {
+          "dest-uuid": "33159d02-a1ce-49ec-a381-60b069db66f7",
+          "type": "used-by"
+        },
+        {
           "dest-uuid": "b5c28235-d441-40d9-8da2-d49ba2f2568b",
           "type": "used-by"
         },
         {
-          "dest-uuid": "4bdc62c9-af6a-4377-8431-58a6f39235dd",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "33159d02-a1ce-49ec-a381-60b069db66f7",
+          "dest-uuid": "3d77fb6c-cfb4-5563-b0be-7aa1ad535337",
           "type": "used-by"
         },
         {
@@ -10376,11 +10661,15 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "0fcb2205-e75b-46c9-ac54-00f218d5e331",
+          "dest-uuid": "923f478c-7ad1-516f-986d-61f96b9c553e",
           "type": "used-by"
         },
         {
           "dest-uuid": "d01abdb1-0378-4654-aa38-1a4a292703e2",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "0fcb2205-e75b-46c9-ac54-00f218d5e331",
           "type": "used-by"
         },
         {
@@ -10389,10 +10678,6 @@
         },
         {
           "dest-uuid": "0b431229-036f-4157-a1da-ff16dfc095f8",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "99bbbe25-45af-492f-a7ff-7cbc57828bac",
           "type": "used-by"
         }
       ],
@@ -10512,6 +10797,22 @@
       "value": "LightNeuron"
     },
     {
+      "description": "[LIGHTWIRE](https://app.tidalcyber.com/software/1b3af76f-f9a1-58ce-8c7d-aec535f8d0c0) is a web shell written in Perl that was used during [Cutting Edge](https://app.tidalcyber.com/campaigns/4e605e33-57fe-5bb2-b0ad-ec146aac041b) to maintain access and enable command execution by imbedding into the legitimate compcheckresult.cgi component of Ivanti Secure Connect VPNs.<sup>[[Mandiant Cutting Edge Part 2 January 2024](https://app.tidalcyber.com/references/5209d259-4293-58c0-bbdc-f30ff77d57f7)]</sup><sup>[[Mandiant Cutting Edge January 2024](https://app.tidalcyber.com/references/9d9ec923-89c1-5155-ae6e-98d4776d4250)]</sup>",
+      "meta": {
+        "platforms": [
+          "Network"
+        ],
+        "software_attack_id": "S1119",
+        "source": "MITRE",
+        "type": [
+          "malware"
+        ]
+      },
+      "related": [],
+      "uuid": "1b3af76f-f9a1-58ce-8c7d-aec535f8d0c0",
+      "value": "LIGHTWIRE"
+    },
+    {
       "description": "Ligolo is a tool used to establish SOCKS5 or TCP tunnels from a reverse connection.<sup>[[U.S. CISA Understanding LockBit June 2023](/references/9c03b801-2ebe-4c7b-aa29-1b7a3625964a)]</sup>",
       "meta": {
         "owner": "TidalCyberIan",
@@ -10549,6 +10850,57 @@
       ],
       "uuid": "3113cb05-23b4-4f90-ab7a-623b800302ce",
       "value": "Ligolo"
+    },
+    {
+      "description": "Line Dancer is one of the two key tools used during the ArcaneDoor network device intrusions, serving as an in-memory implant used to upload capabilities permitting arbitrary code execution and persistence (Line Runner).<sup>[[Cisco Talos ArcaneDoor April 24 2024](/references/531c3f6f-2d2b-4774-b069-e2b7a13602c1)]</sup>",
+      "meta": {
+        "owner": "TidalCyberIan",
+        "platforms": [
+          "Network"
+        ],
+        "software_attack_id": "S5284",
+        "source": "Tidal Cyber",
+        "tags": [
+          "a159c91c-5258-49ea-af7d-e803008d97d3",
+          "af5e9be5-b86e-47af-91dd-966a5e34a186",
+          "15787198-6c8b-4f79-bf50-258d55072fee",
+          "6bb2f579-a5cd-4647-9dcd-eff05efe3679",
+          "9768aada-9d63-4d46-ab9f-d41b8c8e4010",
+          "0d3ca5b9-2ea9-4daf-b3b5-11f1c6f9ebd3"
+        ],
+        "type": [
+          "malware"
+        ]
+      },
+      "related": [],
+      "uuid": "80412b83-74e4-4bea-b05b-84b00f41db69",
+      "value": "Line Dancer"
+    },
+    {
+      "description": "Line Runner is one of the two key tools (along with Line Dancer) used during the ArcaneDoor network device intrusion. Line Runner is used to maintain persistence and execute commands on compromised devices.<sup>[[Cisco Talos ArcaneDoor April 24 2024](/references/531c3f6f-2d2b-4774-b069-e2b7a13602c1)]</sup>",
+      "meta": {
+        "owner": "TidalCyberIan",
+        "platforms": [
+          "Network"
+        ],
+        "software_attack_id": "S5285",
+        "source": "Tidal Cyber",
+        "tags": [
+          "a159c91c-5258-49ea-af7d-e803008d97d3",
+          "af5e9be5-b86e-47af-91dd-966a5e34a186",
+          "15787198-6c8b-4f79-bf50-258d55072fee",
+          "c25f341a-7030-4688-a00b-6d637298e52e",
+          "9768aada-9d63-4d46-ab9f-d41b8c8e4010",
+          "0d3ca5b9-2ea9-4daf-b3b5-11f1c6f9ebd3",
+          "2e85babc-77cd-4455-9c6e-312223a956de"
+        ],
+        "type": [
+          "malware"
+        ]
+      },
+      "related": [],
+      "uuid": "60bb6282-9eb8-4640-9d79-69c0c8ee0e0b",
+      "value": "Line Runner"
     },
     {
       "description": "[Linfo](https://app.tidalcyber.com/software/925975f8-e8ff-411f-a40e-f799968046f7) is a rootkit trojan used by [Elderwood](https://app.tidalcyber.com/groups/51146bb6-7478-44a3-8f08-19adcdceffca) to open a backdoor on compromised hosts. <sup>[[Symantec Elderwood Sept 2012](https://app.tidalcyber.com/references/5e908748-d260-42f1-a599-ac38b4e22559)]</sup> <sup>[[Symantec Linfo May 2012](https://app.tidalcyber.com/references/e6b88cd4-a58e-4139-b266-48d0f5957407)]</sup>",
@@ -10637,6 +10989,22 @@
       "value": "LitePower"
     },
     {
+      "description": "[LITTLELAMB.WOOLTEA](https://app.tidalcyber.com/software/c9c5e7ad-6e95-5d53-b4db-f6b51c7167ca) is a backdoor that was used by UNC5325 during [Cutting Edge](https://app.tidalcyber.com/campaigns/4e605e33-57fe-5bb2-b0ad-ec146aac041b) to deploy malware on targeted Ivanti Connect Secure VPNs and to establish persistence across system upgrades and patches.<sup>[[Mandiant Cutting Edge Part 3 February 2024](https://app.tidalcyber.com/references/49e5b125-5503-5cb0-9a56-a93f82b55753)]</sup>",
+      "meta": {
+        "platforms": [
+          "Network"
+        ],
+        "software_attack_id": "S1121",
+        "source": "MITRE",
+        "type": [
+          "malware"
+        ]
+      },
+      "related": [],
+      "uuid": "c9c5e7ad-6e95-5d53-b4db-f6b51c7167ca",
+      "value": "LITTLELAMB.WOOLTEA"
+    },
+    {
       "description": "[Lizar](https://app.tidalcyber.com/software/65d46aab-b3ce-4f5b-b1fc-871db2573fa1) is a modular remote access tool written using the .NET Framework that shares structural similarities to [Carbanak](https://app.tidalcyber.com/software/4cb9294b-9e4c-41b9-b640-46213a01952d). It has likely been used by [FIN7](https://app.tidalcyber.com/groups/4348c510-50fc-4448-ab8d-c8cededd19ff) since at least February 2021.<sup>[[BiZone Lizar May 2021](https://app.tidalcyber.com/references/315f47e1-69e5-4dcb-94b2-59583e91dd26)]</sup><sup>[[Threatpost Lizar May 2021](https://app.tidalcyber.com/references/1b89f62f-586d-4dee-b6dd-e5a5cd090a0e)]</sup><sup>[[Gemini FIN7 Oct 2021](https://app.tidalcyber.com/references/bbaef178-8577-4398-8e28-604faf0950b4)]</sup>",
       "meta": {
         "platforms": [
@@ -10656,11 +11024,11 @@
       },
       "related": [
         {
-          "dest-uuid": "393da13e-016c-41a3-9d89-b33173adecbf",
+          "dest-uuid": "4348c510-50fc-4448-ab8d-c8cededd19ff",
           "type": "used-by"
         },
         {
-          "dest-uuid": "4348c510-50fc-4448-ab8d-c8cededd19ff",
+          "dest-uuid": "393da13e-016c-41a3-9d89-b33173adecbf",
           "type": "used-by"
         }
       ],
@@ -10727,6 +11095,27 @@
       ],
       "uuid": "65bc8e81-0a08-49f6-9d04-a2d63d512342",
       "value": "LockerGoga"
+    },
+    {
+      "description": "[LoFiSe](https://app.tidalcyber.com/software/d28c3706-df25-59e2-939f-131abaf8a1eb) has been used by [ToddyCat](https://app.tidalcyber.com/groups/0f41da7d-1e47-58fe-ba6e-ee658a985e1b) since at least 2023 to identify and collect files of interest on targeted systems.<sup>[[Kaspersky ToddyCat Check Logs October 2023](https://app.tidalcyber.com/references/dbdaf320-eada-5bbb-95ab-aaa987ed7960)]</sup>",
+      "meta": {
+        "platforms": [
+          "Windows"
+        ],
+        "software_attack_id": "S1101",
+        "source": "MITRE",
+        "type": [
+          "malware"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "0f41da7d-1e47-58fe-ba6e-ee658a985e1b",
+          "type": "used-by"
+        }
+      ],
+      "uuid": "d28c3706-df25-59e2-939f-131abaf8a1eb",
+      "value": "LoFiSe"
     },
     {
       "description": "LogMeIn provides multiple freely available tools that can be used for remote access to systems, including the flagship Rescue tool.<sup>[[LogMeIn Homepage](/references/e113b544-82ad-4099-ab4e-7fc8b78f54bd)]</sup> Adversary groups, including the Royal ransomware operation and LAPSUS$, have used LogMeIn remote access software for initial access to and persistence within victim networks.<sup>[[CISA Royal AA23-061A March 2023](/references/81baa61e-13c3-51e0-bf22-08383dbfb2a1)]</sup><sup>[[CSRB LAPSUS$ July 24 2023](/references/f8311977-303c-4d05-a7f4-25b3ae36318b)]</sup>",
@@ -11184,6 +11573,10 @@
       },
       "related": [
         {
+          "dest-uuid": "923f478c-7ad1-516f-986d-61f96b9c553e",
+          "type": "used-by"
+        },
+        {
           "dest-uuid": "0fcb2205-e75b-46c9-ac54-00f218d5e331",
           "type": "used-by"
         }
@@ -11260,6 +11653,10 @@
       "related": [
         {
           "dest-uuid": "fcaadc12-7c17-4946-a9dc-976ed610854c",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "4348c510-50fc-4448-ab8d-c8cededd19ff",
           "type": "used-by"
         }
       ],
@@ -11393,6 +11790,8 @@
         "software_attack_id": "S5005",
         "source": "Tidal Cyber",
         "tags": [
+          "c5a258ce-9045-48d9-b254-ec2bf6437bb5",
+          "cc4ea215-87ce-4351-9579-cf527caf5992",
           "d819ae1a-e385-49fd-88d5-f66660729ecb",
           "e551ae97-d1b4-484e-9267-89f33829ec2c",
           "e1af18e3-3224-4e4c-9d0f-533768474508",
@@ -11414,6 +11813,10 @@
       "related": [
         {
           "dest-uuid": "a2add2a0-2b54-4623-a380-a9ad91f1f2dd",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "923f478c-7ad1-516f-986d-61f96b9c553e",
           "type": "used-by"
         },
         {
@@ -11594,7 +11997,12 @@
           "malware"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "e3c5164e-49cf-5bb1-955d-6775585abb14",
+          "type": "used-by"
+        }
+      ],
       "uuid": "5879efc1-f122-43ec-a80d-e25aa449594d",
       "value": "Micropsia"
     },
@@ -11675,6 +12083,9 @@
         "software_attack_id": "S0002",
         "source": "MITRE",
         "tags": [
+          "d903e38b-600d-4736-9e3b-cf1a6e436481",
+          "c5a258ce-9045-48d9-b254-ec2bf6437bb5",
+          "cc4ea215-87ce-4351-9579-cf527caf5992",
           "d819ae1a-e385-49fd-88d5-f66660729ecb",
           "e551ae97-d1b4-484e-9267-89f33829ec2c",
           "e1af18e3-3224-4e4c-9d0f-533768474508",
@@ -11697,39 +12108,15 @@
       },
       "related": [
         {
-          "dest-uuid": "f2b31240-0b4a-4fa4-82a4-6bb00e146e75",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "b82c6ed1-c74a-4128-8b4d-18d1e17e1134",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "47ae4fb1-fc61-4e8e-9310-66dda706e1a2",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "4c3e48b9-4426-4271-a7af-c3dfad79f447",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "ca93af75-0ffa-4df4-b86a-92d4d50e496e",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "5825a840-5577-4ffc-a08d-3f48d64395cb",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "dfbce236-735c-436d-b433-933bd6eae17b",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "15ff1ce0-44f0-4f1d-a4ef-83444570e572",
+          "dest-uuid": "37f317d8-02f0-43d4-8a7d-7a65ce8aadf1",
           "type": "used-by"
         },
         {
           "dest-uuid": "502223ee-8947-42f8-a532-a3b3da12b7d9",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "472080b0-e3d4-4546-9272-c4359fe856e1",
           "type": "used-by"
         },
         {
@@ -11741,7 +12128,7 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "4348c510-50fc-4448-ab8d-c8cededd19ff",
+          "dest-uuid": "b5c28235-d441-40d9-8da2-d49ba2f2568b",
           "type": "used-by"
         },
         {
@@ -11749,15 +12136,35 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "646e35d2-75de-4c1d-8ad3-616d3e155c5e",
-          "type": "used-by"
-        },
-        {
           "dest-uuid": "d01abdb1-0378-4654-aa38-1a4a292703e2",
           "type": "used-by"
         },
         {
-          "dest-uuid": "72d9bea7-9ca1-43e6-8702-2fb7fb1355de",
+          "dest-uuid": "3c7ad595-1940-40fc-b9ca-3e649c1e5d87",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "5307bba1-2674-4fbd-bfd5-1db1ae06fc5f",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "47ae4fb1-fc61-4e8e-9310-66dda706e1a2",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "5825a840-5577-4ffc-a08d-3f48d64395cb",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "e5b0da2b-12bc-4113-9459-9c51329c9ae0",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "f46d6ee9-9d1d-586a-9f2d-6bff8fb92910",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "0060bb76-6713-4942-a4c0-d4ae01ec2866",
           "type": "used-by"
         },
         {
@@ -11769,11 +12176,95 @@
           "type": "used-by"
         },
         {
+          "dest-uuid": "79be2f31-5626-425e-844c-fd9c99e38fe5",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "7c3ef21c-0e1c-43d5-afb0-3a07c5a66937",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "3d77fb6c-cfb4-5563-b0be-7aa1ad535337",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "7f52cadb-7a12-4b9d-9290-1ef02123fbe4",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "d0f3353c-fbdd-4bd5-8793-a42e1f319b59",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "4ea1245f-3f35-5168-bd10-1fc49142fd4e",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "fb93231d-2ae4-45da-9dea-4c372a11f322",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "86b97a39-49c3-431e-bcc8-f4e13dbfcdf5",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "fcaadc12-7c17-4946-a9dc-976ed610854c",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "4348c510-50fc-4448-ab8d-c8cededd19ff",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "16a65ee9-cd60-4f04-ba34-f2f45fcfc666",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "3d77fb6c-cfb4-5563-b0be-7aa1ad535337",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "f138c814-48c0-4638-a4d6-edc48e7ac23a",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "923f478c-7ad1-516f-986d-61f96b9c553e",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "72d9bea7-9ca1-43e6-8702-2fb7fb1355de",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "0fcb2205-e75b-46c9-ac54-00f218d5e331",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "6eb50f82-86cc-4eff-b1d1-66e1c6fd74f3",
+          "type": "used-by"
+        },
+        {
           "dest-uuid": "26c0925f-1a3c-4df6-b27a-62b9731299b8",
           "type": "used-by"
         },
         {
-          "dest-uuid": "5307bba1-2674-4fbd-bfd5-1db1ae06fc5f",
+          "dest-uuid": "dfbce236-735c-436d-b433-933bd6eae17b",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "15ff1ce0-44f0-4f1d-a4ef-83444570e572",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "33159d02-a1ce-49ec-a381-60b069db66f7",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "f2b31240-0b4a-4fa4-82a4-6bb00e146e75",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "b82c6ed1-c74a-4128-8b4d-18d1e17e1134",
           "type": "used-by"
         },
         {
@@ -11781,7 +12272,11 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "7c3ef21c-0e1c-43d5-afb0-3a07c5a66937",
+          "dest-uuid": "4c3e48b9-4426-4271-a7af-c3dfad79f447",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "ca93af75-0ffa-4df4-b86a-92d4d50e496e",
           "type": "used-by"
         },
         {
@@ -11793,67 +12288,7 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "e5b0da2b-12bc-4113-9459-9c51329c9ae0",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "3d77fb6c-cfb4-5563-b0be-7aa1ad535337",
-          "type": "used-by"
-        },
-        {
           "dest-uuid": "f0943620-7bbb-4239-8ed3-c541c36baaa1",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "d0f3353c-fbdd-4bd5-8793-a42e1f319b59",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "3c7ad595-1940-40fc-b9ca-3e649c1e5d87",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "37f317d8-02f0-43d4-8a7d-7a65ce8aadf1",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "4ea1245f-3f35-5168-bd10-1fc49142fd4e",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "472080b0-e3d4-4546-9272-c4359fe856e1",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "fb93231d-2ae4-45da-9dea-4c372a11f322",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "fcaadc12-7c17-4946-a9dc-976ed610854c",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "b5c28235-d441-40d9-8da2-d49ba2f2568b",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "16a65ee9-cd60-4f04-ba34-f2f45fcfc666",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "79be2f31-5626-425e-844c-fd9c99e38fe5",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "86b97a39-49c3-431e-bcc8-f4e13dbfcdf5",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "f138c814-48c0-4638-a4d6-edc48e7ac23a",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "0fcb2205-e75b-46c9-ac54-00f218d5e331",
           "type": "used-by"
         },
         {
@@ -11861,23 +12296,15 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "6eb50f82-86cc-4eff-b1d1-66e1c6fd74f3",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "33159d02-a1ce-49ec-a381-60b069db66f7",
-          "type": "used-by"
-        },
-        {
           "dest-uuid": "9f5c5672-5e7e-4440-afc8-3fdf46a1bb6c",
           "type": "used-by"
         },
         {
-          "dest-uuid": "a3b39b07-0bfa-4c69-9f01-acf7dc6033b4",
+          "dest-uuid": "646e35d2-75de-4c1d-8ad3-616d3e155c5e",
           "type": "used-by"
         },
         {
-          "dest-uuid": "0060bb76-6713-4942-a4c0-d4ae01ec2866",
+          "dest-uuid": "a3b39b07-0bfa-4c69-9f01-acf7dc6033b4",
           "type": "used-by"
         },
         {
@@ -12012,6 +12439,30 @@
       "related": [],
       "uuid": "4048afa2-79c8-4d38-8219-2207adddd884",
       "value": "Misdat"
+    },
+    {
+      "description": "[Mispadu](https://app.tidalcyber.com/software/758e5226-6015-5cc7-af4b-20fa35c9bac1) is a banking trojan written in Delphi that was first observed in 2019 and uses a Malware-as-a-Service (MaaS) business model.<sup>[[ESET Security Mispadu Facebook Ads 2019](https://app.tidalcyber.com/references/e1b945f4-20e0-5b69-8fd7-f05afce8c0ba)]</sup><sup>[[SCILabs Malteiro 2021](https://app.tidalcyber.com/references/c6948dfc-b133-556b-a8ac-b3a4dba09c0e)]</sup> This malware is operated, managed, and sold by the [Malteiro](https://app.tidalcyber.com/groups/803f8018-6e45-5b0f-978f-1fe96b217120) cybercriminal group.<sup>[[SCILabs Malteiro 2021](https://app.tidalcyber.com/references/c6948dfc-b133-556b-a8ac-b3a4dba09c0e)]</sup> [Mispadu](https://app.tidalcyber.com/software/758e5226-6015-5cc7-af4b-20fa35c9bac1) has mainly been used to target victims in Brazil and Mexico, and has also had confirmed operations throughout Latin America and Europe.<sup>[[SCILabs Malteiro 2021](https://app.tidalcyber.com/references/c6948dfc-b133-556b-a8ac-b3a4dba09c0e)]</sup><sup>[[SCILabs URSA/Mispadu Evolution 2023](https://app.tidalcyber.com/references/a7a0db8d-bc1c-5e89-8c42-a3a6cc2cf28d)]</sup><sup>[[Segurança Informática URSA Sophisticated Loader 2020](https://app.tidalcyber.com/references/29d25b85-ae13-57d6-9e6f-d0f65783b5ac)]</sup> ",
+      "meta": {
+        "platforms": [
+          "Windows"
+        ],
+        "software_attack_id": "S1122",
+        "source": "MITRE",
+        "tags": [
+          "f8669b82-2194-49a9-8e20-92e7f9ab0a6f"
+        ],
+        "type": [
+          "malware"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "803f8018-6e45-5b0f-978f-1fe96b217120",
+          "type": "used-by"
+        }
+      ],
+      "uuid": "758e5226-6015-5cc7-af4b-20fa35c9bac1",
+      "value": "Mispadu"
     },
     {
       "description": "[Mis-Type](https://app.tidalcyber.com/software/fe554d2e-f974-41d6-8e7a-701bd758355d) is a backdoor hybrid that was used in [Operation Dust Storm](https://app.tidalcyber.com/campaigns/af0c0f55-dc4f-4cb5-9350-3a2d7c07595f) by 2012.<sup>[[Cylance Dust Storm](https://app.tidalcyber.com/references/001dd53c-74e6-4add-aeb7-da76b0d2afe8)]</sup>",
@@ -12171,15 +12622,15 @@
       },
       "related": [
         {
-          "dest-uuid": "58db02e6-d908-47c2-bc82-ed58ada61331",
-          "type": "used-by"
-        },
-        {
           "dest-uuid": "4bdc62c9-af6a-4377-8431-58a6f39235dd",
           "type": "used-by"
         },
         {
           "dest-uuid": "fcaadc12-7c17-4946-a9dc-976ed610854c",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "58db02e6-d908-47c2-bc82-ed58ada61331",
           "type": "used-by"
         }
       ],
@@ -12733,7 +13184,11 @@
       },
       "related": [
         {
-          "dest-uuid": "99bbbe25-45af-492f-a7ff-7cbc57828bac",
+          "dest-uuid": "e47ae2a7-d34d-4528-ba67-c9c07daa91ba",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "efb3b5ac-cd86-44a2-9de1-02e4612b8cc2",
           "type": "used-by"
         },
         {
@@ -12741,11 +13196,7 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "e47ae2a7-d34d-4528-ba67-c9c07daa91ba",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "efb3b5ac-cd86-44a2-9de1-02e4612b8cc2",
+          "dest-uuid": "99bbbe25-45af-492f-a7ff-7cbc57828bac",
           "type": "used-by"
         }
       ],
@@ -12820,15 +13271,7 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "e5b0da2b-12bc-4113-9459-9c51329c9ae0",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "646e35d2-75de-4c1d-8ad3-616d3e155c5e",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "15ff1ce0-44f0-4f1d-a4ef-83444570e572",
+          "dest-uuid": "79be2f31-5626-425e-844c-fd9c99e38fe5",
           "type": "used-by"
         },
         {
@@ -12840,11 +13283,19 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "79be2f31-5626-425e-844c-fd9c99e38fe5",
+          "dest-uuid": "15ff1ce0-44f0-4f1d-a4ef-83444570e572",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "e5b0da2b-12bc-4113-9459-9c51329c9ae0",
           "type": "used-by"
         },
         {
           "dest-uuid": "9f5c5672-5e7e-4440-afc8-3fdf46a1bb6c",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "646e35d2-75de-4c1d-8ad3-616d3e155c5e",
           "type": "used-by"
         }
       ],
@@ -12965,6 +13416,9 @@
         "software_attack_id": "S0039",
         "source": "MITRE",
         "tags": [
+          "c5a258ce-9045-48d9-b254-ec2bf6437bb5",
+          "cc4ea215-87ce-4351-9579-cf527caf5992",
+          "e551ae97-d1b4-484e-9267-89f33829ec2c",
           "e1af18e3-3224-4e4c-9d0f-533768474508",
           "cd1b5d44-226e-4405-8985-800492cf2865",
           "ed2b3f47-3e07-4019-a9bf-ec9d87f28c96",
@@ -12982,90 +13436,6 @@
       },
       "related": [
         {
-          "dest-uuid": "26c0925f-1a3c-4df6-b27a-62b9731299b8",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "b3220638-6682-4a4e-ab64-e7dc4202a3f1",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "4c3e48b9-4426-4271-a7af-c3dfad79f447",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "ca93af75-0ffa-4df4-b86a-92d4d50e496e",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "5825a840-5577-4ffc-a08d-3f48d64395cb",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "43f826a1-e8c8-47b8-9b00-38e1b3e4293b",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "8567136b-f84a-45ed-8cce-46324c7da60e",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "4ea1245f-3f35-5168-bd10-1fc49142fd4e",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "a80c00b2-b8b6-4780-99bb-df8fe921947d",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "0b431229-036f-4157-a1da-ff16dfc095f8",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "7a9d653c-8812-4b96-81d1-b0a27ca918b4",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "3290dcb9-5781-4b87-8fa0-6ae820e152cd",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "863b7013-133d-4a82-93d2-51b53a8fd30e",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "5307bba1-2674-4fbd-bfd5-1db1ae06fc5f",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "eadd78e3-3b5d-430a-b994-4360b172c871",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "47ae4fb1-fc61-4e8e-9310-66dda706e1a2",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "7c3ef21c-0e1c-43d5-afb0-3a07c5a66937",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "5b1a5b9e-4722-41fc-a15d-196a549e3ac5",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "a2add2a0-2b54-4623-a380-a9ad91f1f2dd",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "dfbce236-735c-436d-b433-933bd6eae17b",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "15ff1ce0-44f0-4f1d-a4ef-83444570e572",
-          "type": "used-by"
-        },
-        {
           "dest-uuid": "502223ee-8947-42f8-a532-a3b3da12b7d9",
           "type": "used-by"
         },
@@ -13078,11 +13448,71 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "c0fe9859-e8de-4ce1-bc3c-b489e914a145",
+          "dest-uuid": "26c0925f-1a3c-4df6-b27a-62b9731299b8",
           "type": "used-by"
         },
         {
-          "dest-uuid": "16a65ee9-cd60-4f04-ba34-f2f45fcfc666",
+          "dest-uuid": "5307bba1-2674-4fbd-bfd5-1db1ae06fc5f",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "b3220638-6682-4a4e-ab64-e7dc4202a3f1",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "5825a840-5577-4ffc-a08d-3f48d64395cb",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "43f826a1-e8c8-47b8-9b00-38e1b3e4293b",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "0f41da7d-1e47-58fe-ba6e-ee658a985e1b",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "0b431229-036f-4157-a1da-ff16dfc095f8",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "3290dcb9-5781-4b87-8fa0-6ae820e152cd",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "7a9d653c-8812-4b96-81d1-b0a27ca918b4",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "79be2f31-5626-425e-844c-fd9c99e38fe5",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "923f478c-7ad1-516f-986d-61f96b9c553e",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "7c3ef21c-0e1c-43d5-afb0-3a07c5a66937",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "a2add2a0-2b54-4623-a380-a9ad91f1f2dd",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "dfbce236-735c-436d-b433-933bd6eae17b",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "8567136b-f84a-45ed-8cce-46324c7da60e",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "4ea1245f-3f35-5168-bd10-1fc49142fd4e",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "c0fe9859-e8de-4ce1-bc3c-b489e914a145",
           "type": "used-by"
         },
         {
@@ -13090,7 +13520,11 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "0fcb2205-e75b-46c9-ac54-00f218d5e331",
+          "dest-uuid": "a80c00b2-b8b6-4780-99bb-df8fe921947d",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "16a65ee9-cd60-4f04-ba34-f2f45fcfc666",
           "type": "used-by"
         },
         {
@@ -13098,11 +13532,43 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "0f86e871-0c6c-4227-ae28-3f3696d6ae9d",
+          "dest-uuid": "863b7013-133d-4a82-93d2-51b53a8fd30e",
           "type": "used-by"
         },
         {
-          "dest-uuid": "79be2f31-5626-425e-844c-fd9c99e38fe5",
+          "dest-uuid": "0fcb2205-e75b-46c9-ac54-00f218d5e331",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "15ff1ce0-44f0-4f1d-a4ef-83444570e572",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "eadd78e3-3b5d-430a-b994-4360b172c871",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "47ae4fb1-fc61-4e8e-9310-66dda706e1a2",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "4c3e48b9-4426-4271-a7af-c3dfad79f447",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "ca93af75-0ffa-4df4-b86a-92d4d50e496e",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "5b1a5b9e-4722-41fc-a15d-196a549e3ac5",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "f46d6ee9-9d1d-586a-9f2d-6bff8fb92910",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "0f86e871-0c6c-4227-ae28-3f3696d6ae9d",
           "type": "used-by"
         },
         {
@@ -13192,15 +13658,15 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "72d9bea7-9ca1-43e6-8702-2fb7fb1355de",
-          "type": "used-by"
-        },
-        {
           "dest-uuid": "3290dcb9-5781-4b87-8fa0-6ae820e152cd",
           "type": "used-by"
         },
         {
           "dest-uuid": "a2add2a0-2b54-4623-a380-a9ad91f1f2dd",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "472080b0-e3d4-4546-9272-c4359fe856e1",
           "type": "used-by"
         },
         {
@@ -13212,11 +13678,11 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "472080b0-e3d4-4546-9272-c4359fe856e1",
+          "dest-uuid": "4c3e48b9-4426-4271-a7af-c3dfad79f447",
           "type": "used-by"
         },
         {
-          "dest-uuid": "4c3e48b9-4426-4271-a7af-c3dfad79f447",
+          "dest-uuid": "72d9bea7-9ca1-43e6-8702-2fb7fb1355de",
           "type": "used-by"
         },
         {
@@ -13250,15 +13716,7 @@
       },
       "related": [
         {
-          "dest-uuid": "863b7013-133d-4a82-93d2-51b53a8fd30e",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "26c0925f-1a3c-4df6-b27a-62b9731299b8",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "47ae4fb1-fc61-4e8e-9310-66dda706e1a2",
+          "dest-uuid": "8567136b-f84a-45ed-8cce-46324c7da60e",
           "type": "used-by"
         },
         {
@@ -13266,15 +13724,19 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "eecf7289-294f-48dd-a747-7705820f4735",
+          "dest-uuid": "26c0925f-1a3c-4df6-b27a-62b9731299b8",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "0f41da7d-1e47-58fe-ba6e-ee658a985e1b",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "f46d6ee9-9d1d-586a-9f2d-6bff8fb92910",
           "type": "used-by"
         },
         {
           "dest-uuid": "3290dcb9-5781-4b87-8fa0-6ae820e152cd",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "8567136b-f84a-45ed-8cce-46324c7da60e",
           "type": "used-by"
         },
         {
@@ -13283,6 +13745,18 @@
         },
         {
           "dest-uuid": "502223ee-8947-42f8-a532-a3b3da12b7d9",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "863b7013-133d-4a82-93d2-51b53a8fd30e",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "47ae4fb1-fc61-4e8e-9310-66dda706e1a2",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "eecf7289-294f-48dd-a747-7705820f4735",
           "type": "used-by"
         },
         {
@@ -13412,6 +13886,22 @@
       "value": "Network Scanner"
     },
     {
+      "description": "[NGLite](https://app.tidalcyber.com/software/48b161fe-3ae1-5551-9f26-d6f2d6b5afb9) is a backdoor Trojan that is only capable of running commands received through its C2 channel. While the capabilities are standard for a backdoor, NGLite uses a novel C2 channel that leverages a decentralized network based on the legitimate NKN to communicate between the backdoor and the actors.<sup>[[NGLite Trojan](https://app.tidalcyber.com/references/7cdd99d2-bbb2-5c81-ad09-92b581f33ffe)]</sup>",
+      "meta": {
+        "platforms": [
+          "Windows"
+        ],
+        "software_attack_id": "S1106",
+        "source": "MITRE",
+        "type": [
+          "malware"
+        ]
+      },
+      "related": [],
+      "uuid": "48b161fe-3ae1-5551-9f26-d6f2d6b5afb9",
+      "value": "NGLite"
+    },
+    {
       "description": "[ngrok](https://app.tidalcyber.com/software/316ecd9d-ac0b-58c7-8083-5d9214c770f6) is a legitimate reverse proxy tool that can create a secure tunnel to servers located behind firewalls or on local machines that do not have a public IP. [ngrok](https://app.tidalcyber.com/software/316ecd9d-ac0b-58c7-8083-5d9214c770f6) has been leveraged by threat actors in several campaigns including use for lateral movement and data exfiltration.<sup>[[Zdnet Ngrok September 2018](https://app.tidalcyber.com/references/3edb88be-2ca6-4925-ba2e-a5a4ac5f9ab0)]</sup><sup>[[FireEye Maze May 2020](https://app.tidalcyber.com/references/02338a66-6820-4505-8239-a1f1fcc60d32)]</sup><sup>[[Cyware Ngrok May 2019](https://app.tidalcyber.com/references/583a01b6-cb4e-41e7-aade-ac2fd19bda4e)]</sup><sup>[[MalwareBytes LazyScripter Feb 2021](https://app.tidalcyber.com/references/078837a7-82cd-4e26-9135-43b612e911fe)]</sup>",
       "meta": {
         "platforms": [
@@ -13420,6 +13910,9 @@
         "software_attack_id": "S0508",
         "source": "MITRE",
         "tags": [
+          "c5a258ce-9045-48d9-b254-ec2bf6437bb5",
+          "cc4ea215-87ce-4351-9579-cf527caf5992",
+          "e551ae97-d1b4-484e-9267-89f33829ec2c",
           "e1af18e3-3224-4e4c-9d0f-533768474508",
           "ed2b3f47-3e07-4019-a9bf-ec9d87f28c96",
           "509a90c7-9ca9-4b23-bca2-cd38ef6a6207",
@@ -13453,7 +13946,7 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "12279b62-289e-49ee-97cb-c780edd3d091",
+          "dest-uuid": "923f478c-7ad1-516f-986d-61f96b9c553e",
           "type": "used-by"
         },
         {
@@ -13465,11 +13958,19 @@
           "type": "used-by"
         },
         {
+          "dest-uuid": "3d77fb6c-cfb4-5563-b0be-7aa1ad535337",
+          "type": "used-by"
+        },
+        {
           "dest-uuid": "0fcb2205-e75b-46c9-ac54-00f218d5e331",
           "type": "used-by"
         },
         {
           "dest-uuid": "33159d02-a1ce-49ec-a381-60b069db66f7",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "12279b62-289e-49ee-97cb-c780edd3d091",
           "type": "used-by"
         },
         {
@@ -13523,6 +14024,27 @@
       "value": "NightClub"
     },
     {
+      "description": "[Ninja](https://app.tidalcyber.com/software/2dd26ff0-22d6-591b-9054-78e84fa3e05c) is a malware developed in C++ that has been used by [ToddyCat](https://app.tidalcyber.com/groups/0f41da7d-1e47-58fe-ba6e-ee658a985e1b) to penetrate networks and control remote systems since at least 2020.  [Ninja](https://app.tidalcyber.com/software/2dd26ff0-22d6-591b-9054-78e84fa3e05c) is possibly part of a post exploitation toolkit exclusively used by [ToddyCat](https://app.tidalcyber.com/groups/0f41da7d-1e47-58fe-ba6e-ee658a985e1b) and allows multiple operators to work simultaneously on the same machine. [Ninja](https://app.tidalcyber.com/software/2dd26ff0-22d6-591b-9054-78e84fa3e05c) has been used against government and military entities in Europe and Asia and observed in specific infection chains being deployed by [Samurai](https://app.tidalcyber.com/software/bd75c822-7be6-5e6f-bd2e-0512be6d38d9).<sup>[[Kaspersky ToddyCat June 2022](https://app.tidalcyber.com/references/285c038b-e5fc-57ef-9a98-d9e24c52e2cf)]</sup>",
+      "meta": {
+        "platforms": [
+          "Windows"
+        ],
+        "software_attack_id": "S1100",
+        "source": "MITRE",
+        "type": [
+          "malware"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "0f41da7d-1e47-58fe-ba6e-ee658a985e1b",
+          "type": "used-by"
+        }
+      ],
+      "uuid": "2dd26ff0-22d6-591b-9054-78e84fa3e05c",
+      "value": "Ninja"
+    },
+    {
       "description": "NirSoft is a self-described \"freeware\" utility that can be used to recover passwords.<sup>[[NirSoft Website](/references/024e4e25-aab7-4231-bb4b-5e399d02d7b2)]</sup> According to U.S. cybersecurity authorities, ransomware actors such as those associated with the Royal ransomware operation have used the NirSoft utility to harvest passwords for malicious purposes.<sup>[[#StopRansomware: Royal Ransomware | CISA](/references/dd094572-da2e-4e54-9e54-b243dd4fcd2b)]</sup>",
       "meta": {
         "owner": "TidalCyberIan",
@@ -13571,15 +14093,11 @@
       },
       "related": [
         {
+          "dest-uuid": "1bfbb1e1-022c-57e9-b70e-711c601640be",
+          "type": "used-by"
+        },
+        {
           "dest-uuid": "fcc6d937-8cd6-4f2c-adb8-48caedbde70a",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "b8a349a6-cde1-4d95-b20f-44c62bbfc786",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "12279b62-289e-49ee-97cb-c780edd3d091",
           "type": "used-by"
         },
         {
@@ -13591,7 +14109,11 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "1bfbb1e1-022c-57e9-b70e-711c601640be",
+          "dest-uuid": "b8a349a6-cde1-4d95-b20f-44c62bbfc786",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "12279b62-289e-49ee-97cb-c780edd3d091",
           "type": "used-by"
         },
         {
@@ -13603,6 +14125,24 @@
       "value": "njRAT"
     },
     {
+      "description": "[NKAbuse](https://app.tidalcyber.com/software/e26988e0-e755-54a4-8234-e8f961266d82) is a Go-based, multi-platform malware abusing NKN (New Kind of Network) technology for data exchange between peers, functioning as a potent implant, and equipped with both flooder and backdoor capabilities.<sup>[[NKAbuse BC](https://app.tidalcyber.com/references/7c0fea50-a125-57eb-9a86-dd0d6693abce)]</sup><sup>[[NKAbuse SL](https://app.tidalcyber.com/references/96e199f8-1d33-574f-a507-05303db728e1)]</sup>",
+      "meta": {
+        "platforms": [
+          "macOS",
+          "Linux",
+          "Windows"
+        ],
+        "software_attack_id": "S1107",
+        "source": "MITRE",
+        "type": [
+          "malware"
+        ]
+      },
+      "related": [],
+      "uuid": "e26988e0-e755-54a4-8234-e8f961266d82",
+      "value": "NKAbuse"
+    },
+    {
       "description": "[Nltest](https://app.tidalcyber.com/software/fbb1546a-f288-4e43-9e5c-14c94423c4f6) is a Windows command-line utility used to list domain controllers and enumerate domain trusts.<sup>[[Nltest Manual](https://app.tidalcyber.com/references/4bb113a8-7e2c-4656-86f4-c30b08705ffa)]</sup>",
       "meta": {
         "platforms": [
@@ -13611,6 +14151,9 @@
         "software_attack_id": "S0359",
         "source": "MITRE",
         "tags": [
+          "c5a258ce-9045-48d9-b254-ec2bf6437bb5",
+          "cc4ea215-87ce-4351-9579-cf527caf5992",
+          "e551ae97-d1b4-484e-9267-89f33829ec2c",
           "e1af18e3-3224-4e4c-9d0f-533768474508",
           "24f6ba0e-9230-4410-a9fb-b0f3b55de326",
           "15787198-6c8b-4f79-bf50-258d55072fee",
@@ -13627,7 +14170,19 @@
           "type": "used-by"
         },
         {
+          "dest-uuid": "646e35d2-75de-4c1d-8ad3-616d3e155c5e",
+          "type": "used-by"
+        },
+        {
           "dest-uuid": "0b431229-036f-4157-a1da-ff16dfc095f8",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "b3061284-0335-4dcb-9f8e-a3b0412fd46f",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "923f478c-7ad1-516f-986d-61f96b9c553e",
           "type": "used-by"
         },
         {
@@ -13644,14 +14199,6 @@
         },
         {
           "dest-uuid": "6eb50f82-86cc-4eff-b1d1-66e1c6fd74f3",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "646e35d2-75de-4c1d-8ad3-616d3e155c5e",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "b3061284-0335-4dcb-9f8e-a3b0412fd46f",
           "type": "used-by"
         }
       ],
@@ -14321,6 +14868,28 @@
       "value": "P8RAT"
     },
     {
+      "description": "[PACEMAKER](https://app.tidalcyber.com/software/13856c51-d81c-5d75-bb6a-0bbdcc857cdd) is a credential stealer that was used by [APT5](https://app.tidalcyber.com/groups/f46d6ee9-9d1d-586a-9f2d-6bff8fb92910) as early as 2020 including activity against US Defense Industrial Base (DIB) companies.<sup>[[Mandiant Pulse Secure Zero-Day April 2021](https://app.tidalcyber.com/references/0760480c-97be-5fc9-a6aa-f1df91a314a3)]</sup>",
+      "meta": {
+        "platforms": [
+          "Network",
+          "Linux"
+        ],
+        "software_attack_id": "S1109",
+        "source": "MITRE",
+        "type": [
+          "malware"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "f46d6ee9-9d1d-586a-9f2d-6bff8fb92910",
+          "type": "used-by"
+        }
+      ],
+      "uuid": "13856c51-d81c-5d75-bb6a-0bbdcc857cdd",
+      "value": "PACEMAKER"
+    },
+    {
       "description": "Pacu is an open-source AWS exploitation framework. The tool is written in Python and publicly available on GitHub.<sup>[[GitHub Pacu](https://app.tidalcyber.com/references/bda43b1b-ea8d-4371-9984-6d8a7cc24965)]</sup>",
       "meta": {
         "platforms": [
@@ -14364,6 +14933,10 @@
         ]
       },
       "related": [
+        {
+          "dest-uuid": "8e059c6b-d278-5454-a234-a8ad69feb66c",
+          "type": "used-by"
+        },
         {
           "dest-uuid": "79be2f31-5626-425e-844c-fd9c99e38fe5",
           "type": "used-by"
@@ -14519,6 +15092,27 @@
       "value": "Pcalua"
     },
     {
+      "description": "[Pcexter](https://app.tidalcyber.com/software/873ede85-548b-5fc0-a29e-80bd5afc5bf4) is an uploader that has been used by [ToddyCat](https://app.tidalcyber.com/groups/0f41da7d-1e47-58fe-ba6e-ee658a985e1b) since at least 2023 to exfiltrate stolen files.<sup>[[Kaspersky ToddyCat Check Logs October 2023](https://app.tidalcyber.com/references/dbdaf320-eada-5bbb-95ab-aaa987ed7960)]</sup>",
+      "meta": {
+        "platforms": [
+          "Windows"
+        ],
+        "software_attack_id": "S1102",
+        "source": "MITRE",
+        "type": [
+          "malware"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "0f41da7d-1e47-58fe-ba6e-ee658a985e1b",
+          "type": "used-by"
+        }
+      ],
+      "uuid": "873ede85-548b-5fc0-a29e-80bd5afc5bf4",
+      "value": "Pcexter"
+    },
+    {
       "description": "PCHunter is a tool used to enable advanced task management, including for system processes and kernels.<sup>[[U.S. CISA Understanding LockBit June 2023](/references/9c03b801-2ebe-4c7b-aa29-1b7a3625964a)]</sup>",
       "meta": {
         "owner": "TidalCyberIan",
@@ -14528,6 +15122,9 @@
         "software_attack_id": "S5038",
         "source": "Tidal Cyber",
         "tags": [
+          "c5a258ce-9045-48d9-b254-ec2bf6437bb5",
+          "cc4ea215-87ce-4351-9579-cf527caf5992",
+          "e551ae97-d1b4-484e-9267-89f33829ec2c",
           "e1af18e3-3224-4e4c-9d0f-533768474508",
           "39d6e8b7-6c8a-4ec5-a584-54ca32aa29fb",
           "ed2b3f47-3e07-4019-a9bf-ec9d87f28c96",
@@ -14545,6 +15142,10 @@
         ]
       },
       "related": [
+        {
+          "dest-uuid": "923f478c-7ad1-516f-986d-61f96b9c553e",
+          "type": "used-by"
+        },
         {
           "dest-uuid": "d0f3353c-fbdd-4bd5-8793-a42e1f319b59",
           "type": "used-by"
@@ -14572,7 +15173,12 @@
           "tool"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "f46d6ee9-9d1d-586a-9f2d-6bff8fb92910",
+          "type": "used-by"
+        }
+      ],
       "uuid": "71eb2211-39aa-4b89-bd51-9dcabd363149",
       "value": "PcShare"
     },
@@ -14855,11 +15461,31 @@
       },
       "related": [
         {
+          "dest-uuid": "a80c00b2-b8b6-4780-99bb-df8fe921947d",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "15ff1ce0-44f0-4f1d-a4ef-83444570e572",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "eecf7289-294f-48dd-a747-7705820f4735",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "4ea1245f-3f35-5168-bd10-1fc49142fd4e",
+          "type": "used-by"
+        },
+        {
           "dest-uuid": "502223ee-8947-42f8-a532-a3b3da12b7d9",
           "type": "used-by"
         },
         {
           "dest-uuid": "fb93231d-2ae4-45da-9dea-4c372a11f322",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "41e8b4a4-2d31-46ee-bc56-12375084d067",
           "type": "used-by"
         },
         {
@@ -14871,27 +15497,11 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "15ff1ce0-44f0-4f1d-a4ef-83444570e572",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "4ea1245f-3f35-5168-bd10-1fc49142fd4e",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "a80c00b2-b8b6-4780-99bb-df8fe921947d",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "41e8b4a4-2d31-46ee-bc56-12375084d067",
+          "dest-uuid": "0f41da7d-1e47-58fe-ba6e-ee658a985e1b",
           "type": "used-by"
         },
         {
           "dest-uuid": "0b431229-036f-4157-a1da-ff16dfc095f8",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "eecf7289-294f-48dd-a747-7705820f4735",
           "type": "used-by"
         },
         {
@@ -15009,6 +15619,22 @@
       ],
       "uuid": "14e65c5d-5164-41a3-92de-67fdd1d529d2",
       "value": "Pisloader"
+    },
+    {
+      "description": "[PITSTOP](https://app.tidalcyber.com/software/c0e56f14-9768-5547-abcb-aa3f220d0e40) is a backdoor that was deployed on compromised Ivanti Connect Secure VPNs during [Cutting Edge](https://app.tidalcyber.com/campaigns/4e605e33-57fe-5bb2-b0ad-ec146aac041b) to enable command execution and file read/write.<sup>[[Mandiant Cutting Edge Part 3 February 2024](https://app.tidalcyber.com/references/49e5b125-5503-5cb0-9a56-a93f82b55753)]</sup>",
+      "meta": {
+        "platforms": [
+          "Network"
+        ],
+        "software_attack_id": "S1123",
+        "source": "MITRE",
+        "type": [
+          "malware"
+        ]
+      },
+      "related": [],
+      "uuid": "c0e56f14-9768-5547-abcb-aa3f220d0e40",
+      "value": "PITSTOP"
     },
     {
       "description": "This object contains information sourced from the [Living Off The Land Binaries, Scripts and Libraries (LOLBAS)](https://github.com/LOLBAS-Project/LOLBAS) project, which is licensed under [GNU General Public License v3.0](https://github.com/LOLBAS-Project/LOLBAS/blob/master/LICENSE).\n\n**Description:** Capture Network Packets on the windows 10 with October 2018 Update or later.\n\n**Author:** Derek Johnson\n\n**Paths:**\n* c:\\windows\\system32\\pktmon.exe\n* c:\\windows\\syswow64\\pktmon.exe\n\n**Resources:**\n* [https://binar-x79.com/windows-10-secret-sniffer/](https://binar-x79.com/windows-10-secret-sniffer/)\n\n**Detection:**\n* Sigma: [proc_creation_win_lolbin_pktmon.yml](https://github.com/SigmaHQ/sigma/blob/c04bef2fbbe8beff6c7620d5d7ea6872dbe7acba/rules/windows/process_creation/proc_creation_win_lolbin_pktmon.yml)\n* IOC: .etl files found on system<sup>[[Pktmon.exe - LOLBAS Project](/references/8f0ad4ed-869b-4332-b091-7551262cff29)]</sup>",
@@ -15135,7 +15761,43 @@
       },
       "related": [
         {
+          "dest-uuid": "fb93231d-2ae4-45da-9dea-4c372a11f322",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "4a4641b1-7686-49da-8d83-00d8013f4b47",
+          "type": "used-by"
+        },
+        {
           "dest-uuid": "90f4d3f9-3fe3-4a64-8dc1-172c6d037dca",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "b10aa4c0-10a1-5e08-8d9d-82ce95d45e6a",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "4173c301-0307-458d-89dd-2583e94247ec",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "f2c2db08-624c-46b9-b7ed-b22c21b81813",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "79be2f31-5626-425e-844c-fd9c99e38fe5",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "502223ee-8947-42f8-a532-a3b3da12b7d9",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "f1477581-d485-403f-a95f-c56bf88c5d1e",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "e343c1f1-458c-467b-bc4a-c1b97b2127e3",
           "type": "used-by"
         },
         {
@@ -15147,43 +15809,11 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "fb93231d-2ae4-45da-9dea-4c372a11f322",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "4a4641b1-7686-49da-8d83-00d8013f4b47",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "f1477581-d485-403f-a95f-c56bf88c5d1e",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "4173c301-0307-458d-89dd-2583e94247ec",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "79be2f31-5626-425e-844c-fd9c99e38fe5",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "e343c1f1-458c-467b-bc4a-c1b97b2127e3",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "b10aa4c0-10a1-5e08-8d9d-82ce95d45e6a",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "502223ee-8947-42f8-a532-a3b3da12b7d9",
+          "dest-uuid": "8e059c6b-d278-5454-a234-a8ad69feb66c",
           "type": "used-by"
         },
         {
           "dest-uuid": "6932662a-53a7-4e43-877f-6e940e2d744b",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "f2c2db08-624c-46b9-b7ed-b22c21b81813",
           "type": "used-by"
         }
       ],
@@ -15266,15 +15896,7 @@
       },
       "related": [
         {
-          "dest-uuid": "4510ce41-27b9-479c-9bf3-a328b77bae29",
-          "type": "used-by"
-        },
-        {
           "dest-uuid": "90f4d3f9-3fe3-4a64-8dc1-172c6d037dca",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "fb93231d-2ae4-45da-9dea-4c372a11f322",
           "type": "used-by"
         },
         {
@@ -15282,15 +15904,23 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "988f5312-834e-48ea-93b7-e6e01ee0938d",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "f2c2db08-624c-46b9-b7ed-b22c21b81813",
-          "type": "used-by"
-        },
-        {
           "dest-uuid": "4173c301-0307-458d-89dd-2583e94247ec",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "8567136b-f84a-45ed-8cce-46324c7da60e",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "fb93231d-2ae4-45da-9dea-4c372a11f322",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "4510ce41-27b9-479c-9bf3-a328b77bae29",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "4a4641b1-7686-49da-8d83-00d8013f4b47",
           "type": "used-by"
         },
         {
@@ -15310,11 +15940,15 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "8567136b-f84a-45ed-8cce-46324c7da60e",
+          "dest-uuid": "f46d6ee9-9d1d-586a-9f2d-6bff8fb92910",
           "type": "used-by"
         },
         {
-          "dest-uuid": "4a4641b1-7686-49da-8d83-00d8013f4b47",
+          "dest-uuid": "988f5312-834e-48ea-93b7-e6e01ee0938d",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "f2c2db08-624c-46b9-b7ed-b22c21b81813",
           "type": "used-by"
         },
         {
@@ -15408,11 +16042,11 @@
       },
       "related": [
         {
-          "dest-uuid": "eecf7289-294f-48dd-a747-7705820f4735",
+          "dest-uuid": "99bbbe25-45af-492f-a7ff-7cbc57828bac",
           "type": "used-by"
         },
         {
-          "dest-uuid": "99bbbe25-45af-492f-a7ff-7cbc57828bac",
+          "dest-uuid": "eecf7289-294f-48dd-a747-7705820f4735",
           "type": "used-by"
         }
       ],
@@ -15610,7 +16244,7 @@
       },
       "related": [
         {
-          "dest-uuid": "eadd78e3-3b5d-430a-b994-4360b172c871",
+          "dest-uuid": "32385eba-7bbf-439e-acf2-83040e97165a",
           "type": "used-by"
         },
         {
@@ -15626,15 +16260,15 @@
           "type": "used-by"
         },
         {
+          "dest-uuid": "eadd78e3-3b5d-430a-b994-4360b172c871",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "646e35d2-75de-4c1d-8ad3-616d3e155c5e",
+          "type": "used-by"
+        },
+        {
           "dest-uuid": "33159d02-a1ce-49ec-a381-60b069db66f7",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "b3220638-6682-4a4e-ab64-e7dc4202a3f1",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "32385eba-7bbf-439e-acf2-83040e97165a",
           "type": "used-by"
         },
         {
@@ -15642,15 +16276,15 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "99bbbe25-45af-492f-a7ff-7cbc57828bac",
-          "type": "used-by"
-        },
-        {
           "dest-uuid": "4c3e48b9-4426-4271-a7af-c3dfad79f447",
           "type": "used-by"
         },
         {
-          "dest-uuid": "646e35d2-75de-4c1d-8ad3-616d3e155c5e",
+          "dest-uuid": "b3220638-6682-4a4e-ab64-e7dc4202a3f1",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "99bbbe25-45af-492f-a7ff-7cbc57828bac",
           "type": "used-by"
         }
       ],
@@ -15736,6 +16370,8 @@
         "software_attack_id": "S5039",
         "source": "Tidal Cyber",
         "tags": [
+          "c5a258ce-9045-48d9-b254-ec2bf6437bb5",
+          "cc4ea215-87ce-4351-9579-cf527caf5992",
           "d819ae1a-e385-49fd-88d5-f66660729ecb",
           "e551ae97-d1b4-484e-9267-89f33829ec2c",
           "e1af18e3-3224-4e4c-9d0f-533768474508",
@@ -15755,6 +16391,10 @@
         ]
       },
       "related": [
+        {
+          "dest-uuid": "923f478c-7ad1-516f-986d-61f96b9c553e",
+          "type": "used-by"
+        },
         {
           "dest-uuid": "d0f3353c-fbdd-4bd5-8793-a42e1f319b59",
           "type": "used-by"
@@ -16139,6 +16779,9 @@
         "software_attack_id": "S0029",
         "source": "MITRE",
         "tags": [
+          "d903e38b-600d-4736-9e3b-cf1a6e436481",
+          "e551ae97-d1b4-484e-9267-89f33829ec2c",
+          "d819ae1a-e385-49fd-88d5-f66660729ecb",
           "e1af18e3-3224-4e4c-9d0f-533768474508",
           "5cd85fec-0e37-4892-9cd2-bb8c70139072",
           "0d3ca5b9-2ea9-4daf-b3b5-11f1c6f9ebd3",
@@ -16160,22 +16803,6 @@
       },
       "related": [
         {
-          "dest-uuid": "7902f5cc-d6a5-4a57-8d54-4c75e0c58b83",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "3a54b8dc-a231-4db8-96da-1c0c1aa396f6",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "3c7ad595-1940-40fc-b9ca-3e649c1e5d87",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "15ff1ce0-44f0-4f1d-a4ef-83444570e572",
-          "type": "used-by"
-        },
-        {
           "dest-uuid": "472080b0-e3d4-4546-9272-c4359fe856e1",
           "type": "used-by"
         },
@@ -16188,43 +16815,11 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "a57b52c7-9f64-4ffe-a7c3-0de738fb2af1",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "d01abdb1-0378-4654-aa38-1a4a292703e2",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "a3b39b07-0bfa-4c69-9f01-acf7dc6033b4",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "0b431229-036f-4157-a1da-ff16dfc095f8",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "a2add2a0-2b54-4623-a380-a9ad91f1f2dd",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "72d9bea7-9ca1-43e6-8702-2fb7fb1355de",
-          "type": "used-by"
-        },
-        {
           "dest-uuid": "5307bba1-2674-4fbd-bfd5-1db1ae06fc5f",
           "type": "used-by"
         },
         {
-          "dest-uuid": "528ab2ea-b8f1-44d8-8831-2a89fefd97cb",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "d428f9be-6faf-4d57-b677-4a927fea5f7e",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "4c3e48b9-4426-4271-a7af-c3dfad79f447",
+          "dest-uuid": "a57b52c7-9f64-4ffe-a7c3-0de738fb2af1",
           "type": "used-by"
         },
         {
@@ -16232,7 +16827,23 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "c8cc6ce8-d421-42e6-a6eb-2ea9d2d9ab07",
+          "dest-uuid": "15ff1ce0-44f0-4f1d-a4ef-83444570e572",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "0f86e871-0c6c-4227-ae28-3f3696d6ae9d",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "a3b39b07-0bfa-4c69-9f01-acf7dc6033b4",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "a2add2a0-2b54-4623-a380-a9ad91f1f2dd",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "7f52cadb-7a12-4b9d-9290-1ef02123fbe4",
           "type": "used-by"
         },
         {
@@ -16240,15 +16851,31 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "37f317d8-02f0-43d4-8a7d-7a65ce8aadf1",
-          "type": "used-by"
-        },
-        {
           "dest-uuid": "55b20209-c04a-47ab-805d-ace83522ef6a",
           "type": "used-by"
         },
         {
+          "dest-uuid": "3d77fb6c-cfb4-5563-b0be-7aa1ad535337",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "37f317d8-02f0-43d4-8a7d-7a65ce8aadf1",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "2e2d3e75-1160-4ba5-80cc-8e7685fcfc44",
+          "type": "used-by"
+        },
+        {
           "dest-uuid": "1bcc9382-ccfe-4b04-91f3-ef1250df5e5b",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "0610cd57-2511-467a-97e3-3c810384074f",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "86b97a39-49c3-431e-bcc8-f4e13dbfcdf5",
           "type": "used-by"
         },
         {
@@ -16264,23 +16891,19 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "3d77fb6c-cfb4-5563-b0be-7aa1ad535337",
+          "dest-uuid": "923f478c-7ad1-516f-986d-61f96b9c553e",
           "type": "used-by"
         },
         {
-          "dest-uuid": "2e2d3e75-1160-4ba5-80cc-8e7685fcfc44",
+          "dest-uuid": "a41725c5-eb3a-4772-8d1e-17c3bbade79c",
           "type": "used-by"
         },
         {
-          "dest-uuid": "0610cd57-2511-467a-97e3-3c810384074f",
+          "dest-uuid": "d01abdb1-0378-4654-aa38-1a4a292703e2",
           "type": "used-by"
         },
         {
-          "dest-uuid": "86b97a39-49c3-431e-bcc8-f4e13dbfcdf5",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "47ae4fb1-fc61-4e8e-9310-66dda706e1a2",
+          "dest-uuid": "72d9bea7-9ca1-43e6-8702-2fb7fb1355de",
           "type": "used-by"
         },
         {
@@ -16292,7 +16915,35 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "a41725c5-eb3a-4772-8d1e-17c3bbade79c",
+          "dest-uuid": "3c7ad595-1940-40fc-b9ca-3e649c1e5d87",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "528ab2ea-b8f1-44d8-8831-2a89fefd97cb",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "47ae4fb1-fc61-4e8e-9310-66dda706e1a2",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "d428f9be-6faf-4d57-b677-4a927fea5f7e",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "7902f5cc-d6a5-4a57-8d54-4c75e0c58b83",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "4c3e48b9-4426-4271-a7af-c3dfad79f447",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "c8cc6ce8-d421-42e6-a6eb-2ea9d2d9ab07",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "3a54b8dc-a231-4db8-96da-1c0c1aa396f6",
           "type": "used-by"
         },
         {
@@ -16300,11 +16951,11 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "0f86e871-0c6c-4227-ae28-3f3696d6ae9d",
+          "dest-uuid": "58db02e6-d908-47c2-bc82-ed58ada61331",
           "type": "used-by"
         },
         {
-          "dest-uuid": "58db02e6-d908-47c2-bc82-ed58ada61331",
+          "dest-uuid": "0b431229-036f-4157-a1da-ff16dfc095f8",
           "type": "used-by"
         },
         {
@@ -16412,6 +17063,28 @@
       ],
       "uuid": "58883c83-d5be-42fc-b4bd-9287e55cd499",
       "value": "Pubprn"
+    },
+    {
+      "description": "[PULSECHECK](https://app.tidalcyber.com/software/d777204c-f93c-54d9-b80e-41641a3d55ce) is a web shell written in Perl that was used by [APT5](https://app.tidalcyber.com/groups/f46d6ee9-9d1d-586a-9f2d-6bff8fb92910) as early as 2020 including against Pulse Secure VPNs at US Defense Industrial Base (DIB) companies.<sup>[[Mandiant Pulse Secure Zero-Day April 2021](https://app.tidalcyber.com/references/0760480c-97be-5fc9-a6aa-f1df91a314a3)]</sup>",
+      "meta": {
+        "platforms": [
+          "Network",
+          "Linux"
+        ],
+        "software_attack_id": "S1108",
+        "source": "MITRE",
+        "type": [
+          "malware"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "f46d6ee9-9d1d-586a-9f2d-6bff8fb92910",
+          "type": "used-by"
+        }
+      ],
+      "uuid": "d777204c-f93c-54d9-b80e-41641a3d55ce",
+      "value": "PULSECHECK"
     },
     {
       "description": "According to joint Cybersecurity Advisory AA23-320A (November 2023), Pulseway is a publicly available, legitimate tool that \"enables remote monitoring and management of systems\". According to the Advisory, Scattered Spider threat actors are known to abuse the tool during their intrusions.<sup>[[U.S. CISA Scattered Spider November 16 2023](/references/9c242265-c28c-4580-8e6a-478d8700b092)]</sup>",
@@ -16565,11 +17238,7 @@
       },
       "related": [
         {
-          "dest-uuid": "5307bba1-2674-4fbd-bfd5-1db1ae06fc5f",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "7902f5cc-d6a5-4a57-8d54-4c75e0c58b83",
+          "dest-uuid": "79be2f31-5626-425e-844c-fd9c99e38fe5",
           "type": "used-by"
         },
         {
@@ -16585,7 +17254,11 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "79be2f31-5626-425e-844c-fd9c99e38fe5",
+          "dest-uuid": "5307bba1-2674-4fbd-bfd5-1db1ae06fc5f",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "7902f5cc-d6a5-4a57-8d54-4c75e0c58b83",
           "type": "used-by"
         }
       ],
@@ -16645,6 +17318,10 @@
         "software_attack_id": "S0650",
         "source": "MITRE",
         "tags": [
+          "d903e38b-600d-4736-9e3b-cf1a6e436481",
+          "e551ae97-d1b4-484e-9267-89f33829ec2c",
+          "d819ae1a-e385-49fd-88d5-f66660729ecb",
+          "15787198-6c8b-4f79-bf50-258d55072fee",
           "e096f0dd-fa2c-4771-8270-128c97c09f5b",
           "e809d252-12cc-494d-94f5-954c49eb87ce"
         ],
@@ -16654,11 +17331,15 @@
       },
       "related": [
         {
-          "dest-uuid": "8951bff3-c444-4374-8a9e-b2115d9125b2",
+          "dest-uuid": "7f52cadb-7a12-4b9d-9290-1ef02123fbe4",
           "type": "used-by"
         },
         {
           "dest-uuid": "28f3dbcc-b248-442f-9ff3-234210bb2f2a",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "8951bff3-c444-4374-8a9e-b2115d9125b2",
           "type": "used-by"
         }
       ],
@@ -16706,6 +17387,14 @@
       },
       "related": [
         {
+          "dest-uuid": "efb3b5ac-cd86-44a2-9de1-02e4612b8cc2",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "fb93231d-2ae4-45da-9dea-4c372a11f322",
+          "type": "used-by"
+        },
+        {
           "dest-uuid": "12279b62-289e-49ee-97cb-c780edd3d091",
           "type": "used-by"
         },
@@ -16714,15 +17403,7 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "fb93231d-2ae4-45da-9dea-4c372a11f322",
-          "type": "used-by"
-        },
-        {
           "dest-uuid": "e5b0da2b-12bc-4113-9459-9c51329c9ae0",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "efb3b5ac-cd86-44a2-9de1-02e4612b8cc2",
           "type": "used-by"
         }
       ],
@@ -16866,6 +17547,10 @@
         "software_attack_id": "S5281",
         "source": "Tidal Cyber",
         "tags": [
+          "c5a258ce-9045-48d9-b254-ec2bf6437bb5",
+          "cc4ea215-87ce-4351-9579-cf527caf5992",
+          "e551ae97-d1b4-484e-9267-89f33829ec2c",
+          "15787198-6c8b-4f79-bf50-258d55072fee",
           "e1af18e3-3224-4e4c-9d0f-533768474508",
           "509a90c7-9ca9-4b23-bca2-cd38ef6a6207",
           "e727eaa6-ef41-4965-b93a-8ad0c51d0236",
@@ -16876,6 +17561,14 @@
         ]
       },
       "related": [
+        {
+          "dest-uuid": "923f478c-7ad1-516f-986d-61f96b9c553e",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "b534349f-55a4-41b8-9623-6707765c3c50",
+          "type": "used-by"
+        },
         {
           "dest-uuid": "0fcb2205-e75b-46c9-ac54-00f218d5e331",
           "type": "used-by"
@@ -16971,6 +17664,28 @@
       "related": [],
       "uuid": "dc307b3c-9bc5-4624-b0bc-4807fa1fc57b",
       "value": "Ramsay"
+    },
+    {
+      "description": "[RAPIDPULSE](https://app.tidalcyber.com/software/129abb68-7992-554e-92fa-fa376279c0b6) is a web shell that exists as a modification to a legitimate Pulse Secure file that has been used by [APT5](https://app.tidalcyber.com/groups/f46d6ee9-9d1d-586a-9f2d-6bff8fb92910) since at least 2021.<sup>[[Mandiant Pulse Secure Update May 2021](https://app.tidalcyber.com/references/5620adaf-c2a7-5f0f-ae70-554ce720426e)]</sup>",
+      "meta": {
+        "platforms": [
+          "Network",
+          "Linux"
+        ],
+        "software_attack_id": "S1113",
+        "source": "MITRE",
+        "type": [
+          "malware"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "f46d6ee9-9d1d-586a-9f2d-6bff8fb92910",
+          "type": "used-by"
+        }
+      ],
+      "uuid": "129abb68-7992-554e-92fa-fa376279c0b6",
+      "value": "RAPIDPULSE"
     },
     {
       "description": "[RARSTONE](https://app.tidalcyber.com/software/a9c9fda8-c156-44f2-bc7e-1b696f3fbaa2) is malware used by the [Naikon](https://app.tidalcyber.com/groups/a80c00b2-b8b6-4780-99bb-df8fe921947d) group that has some characteristics similar to [PlugX](https://app.tidalcyber.com/software/070b56f4-7810-4dad-b85f-bdfce9c08c10). <sup>[[Aquino RARSTONE](https://app.tidalcyber.com/references/2327592e-4e8a-481e-bdf9-d548c776adee)]</sup>",
@@ -17113,6 +17828,11 @@
         "software_attack_id": "S1040",
         "source": "MITRE",
         "tags": [
+          "d903e38b-600d-4736-9e3b-cf1a6e436481",
+          "d819ae1a-e385-49fd-88d5-f66660729ecb",
+          "c5a258ce-9045-48d9-b254-ec2bf6437bb5",
+          "cc4ea215-87ce-4351-9579-cf527caf5992",
+          "e551ae97-d1b4-484e-9267-89f33829ec2c",
           "e1af18e3-3224-4e4c-9d0f-533768474508",
           "ed2b3f47-3e07-4019-a9bf-ec9d87f28c96",
           "a40b7316-bef6-4186-9764-58ce6f033850",
@@ -17136,6 +17856,10 @@
           "type": "used-by"
         },
         {
+          "dest-uuid": "7f52cadb-7a12-4b9d-9290-1ef02123fbe4",
+          "type": "used-by"
+        },
+        {
           "dest-uuid": "d0f3353c-fbdd-4bd5-8793-a42e1f319b59",
           "type": "used-by"
         },
@@ -17152,7 +17876,15 @@
           "type": "used-by"
         },
         {
+          "dest-uuid": "923f478c-7ad1-516f-986d-61f96b9c553e",
+          "type": "used-by"
+        },
+        {
           "dest-uuid": "0fcb2205-e75b-46c9-ac54-00f218d5e331",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "8e059c6b-d278-5454-a234-a8ad69feb66c",
           "type": "used-by"
         }
       ],
@@ -17176,11 +17908,11 @@
       },
       "related": [
         {
-          "dest-uuid": "4a4641b1-7686-49da-8d83-00d8013f4b47",
+          "dest-uuid": "79be2f31-5626-425e-844c-fd9c99e38fe5",
           "type": "used-by"
         },
         {
-          "dest-uuid": "79be2f31-5626-425e-844c-fd9c99e38fe5",
+          "dest-uuid": "4a4641b1-7686-49da-8d83-00d8013f4b47",
           "type": "used-by"
         }
       ],
@@ -17371,6 +18103,14 @@
       },
       "related": [
         {
+          "dest-uuid": "d01abdb1-0378-4654-aa38-1a4a292703e2",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "15ff1ce0-44f0-4f1d-a4ef-83444570e572",
+          "type": "used-by"
+        },
+        {
           "dest-uuid": "4ea1245f-3f35-5168-bd10-1fc49142fd4e",
           "type": "used-by"
         },
@@ -17379,7 +18119,7 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "47ae4fb1-fc61-4e8e-9310-66dda706e1a2",
+          "dest-uuid": "021b3c71-6467-4e46-a413-8b726f066f2c",
           "type": "used-by"
         },
         {
@@ -17387,19 +18127,11 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "15ff1ce0-44f0-4f1d-a4ef-83444570e572",
-          "type": "used-by"
-        },
-        {
           "dest-uuid": "472080b0-e3d4-4546-9272-c4359fe856e1",
           "type": "used-by"
         },
         {
-          "dest-uuid": "d01abdb1-0378-4654-aa38-1a4a292703e2",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "021b3c71-6467-4e46-a413-8b726f066f2c",
+          "dest-uuid": "47ae4fb1-fc61-4e8e-9310-66dda706e1a2",
           "type": "used-by"
         }
       ],
@@ -17820,11 +18552,11 @@
       },
       "related": [
         {
-          "dest-uuid": "830079fe-9824-405b-93e0-c28592155c49",
+          "dest-uuid": "1bfbb1e1-022c-57e9-b70e-711c601640be",
           "type": "used-by"
         },
         {
-          "dest-uuid": "1bfbb1e1-022c-57e9-b70e-711c601640be",
+          "dest-uuid": "830079fe-9824-405b-93e0-c28592155c49",
           "type": "used-by"
         }
       ],
@@ -18481,15 +19213,15 @@
       },
       "related": [
         {
-          "dest-uuid": "fcaadc12-7c17-4946-a9dc-976ed610854c",
-          "type": "used-by"
-        },
-        {
           "dest-uuid": "0b431229-036f-4157-a1da-ff16dfc095f8",
           "type": "used-by"
         },
         {
           "dest-uuid": "6d6ed42c-760c-4964-a81e-1d4df06a8800",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "fcaadc12-7c17-4946-a9dc-976ed610854c",
           "type": "used-by"
         }
       ],
@@ -18565,6 +19297,27 @@
       "value": "SamSam"
     },
     {
+      "description": "[Samurai](https://app.tidalcyber.com/software/bd75c822-7be6-5e6f-bd2e-0512be6d38d9) is a passive backdoor that has been used by [ToddyCat](https://app.tidalcyber.com/groups/0f41da7d-1e47-58fe-ba6e-ee658a985e1b) since at least 2020. [Samurai](https://app.tidalcyber.com/software/bd75c822-7be6-5e6f-bd2e-0512be6d38d9) allows arbitrary C# code execution and is used with multiple modules for remote administration and lateral movement.<sup>[[Kaspersky ToddyCat June 2022](https://app.tidalcyber.com/references/285c038b-e5fc-57ef-9a98-d9e24c52e2cf)]</sup>",
+      "meta": {
+        "platforms": [
+          "Windows"
+        ],
+        "software_attack_id": "S1099",
+        "source": "MITRE",
+        "type": [
+          "malware"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "0f41da7d-1e47-58fe-ba6e-ee658a985e1b",
+          "type": "used-by"
+        }
+      ],
+      "uuid": "bd75c822-7be6-5e6f-bd2e-0512be6d38d9",
+      "value": "Samurai"
+    },
+    {
       "description": "[Sardonic](https://app.tidalcyber.com/software/9ab0d523-3496-5e64-9ca1-bb756f5e64e0) is a backdoor written in C and C++ that is known to be used by [FIN8](https://app.tidalcyber.com/groups/b3061284-0335-4dcb-9f8e-a3b0412fd46f), as early as August 2021 to target a financial institution in the United States. [Sardonic](https://app.tidalcyber.com/software/9ab0d523-3496-5e64-9ca1-bb756f5e64e0) has a plugin system that can load specially made DLLs and execute their functions.<sup>[[Bitdefender Sardonic Aug 2021](https://app.tidalcyber.com/references/8e9d05c9-6783-5738-ac85-a444810a8074)]</sup><sup>[[Symantec FIN8 Jul 2023](https://app.tidalcyber.com/references/9b08b7f0-1a33-5d76-817f-448fac0d165a)]</sup>",
       "meta": {
         "platforms": [
@@ -18632,10 +19385,6 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "5825a840-5577-4ffc-a08d-3f48d64395cb",
-          "type": "used-by"
-        },
-        {
           "dest-uuid": "a2add2a0-2b54-4623-a380-a9ad91f1f2dd",
           "type": "used-by"
         },
@@ -18665,6 +19414,10 @@
         },
         {
           "dest-uuid": "021b3c71-6467-4e46-a413-8b726f066f2c",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "5825a840-5577-4ffc-a08d-3f48d64395cb",
           "type": "used-by"
         }
       ],
@@ -18754,15 +19507,15 @@
       },
       "related": [
         {
+          "dest-uuid": "7902f5cc-d6a5-4a57-8d54-4c75e0c58b83",
+          "type": "used-by"
+        },
+        {
           "dest-uuid": "4c3e48b9-4426-4271-a7af-c3dfad79f447",
           "type": "used-by"
         },
         {
           "dest-uuid": "b534349f-55a4-41b8-9623-6707765c3c50",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "7902f5cc-d6a5-4a57-8d54-4c75e0c58b83",
           "type": "used-by"
         },
         {
@@ -19047,6 +19800,10 @@
           "type": "used-by"
         },
         {
+          "dest-uuid": "646e35d2-75de-4c1d-8ad3-616d3e155c5e",
+          "type": "used-by"
+        },
+        {
           "dest-uuid": "0a245c5e-c1a8-480f-8655-bb2594e3266b",
           "type": "used-by"
         },
@@ -19057,17 +19814,13 @@
         {
           "dest-uuid": "9f5c5672-5e7e-4440-afc8-3fdf46a1bb6c",
           "type": "used-by"
-        },
-        {
-          "dest-uuid": "646e35d2-75de-4c1d-8ad3-616d3e155c5e",
-          "type": "used-by"
         }
       ],
       "uuid": "5190f50d-7e54-410a-9961-79ab751ddbab",
       "value": "ShadowPad"
     },
     {
-      "description": "[Shamoon](https://app.tidalcyber.com/software/840db1db-e262-4d6f-b6e3-2a64696a41c5) is wiper malware that was first used by an Iranian group known as the \"Cutting Sword of Justice\" in 2012. Other versions known as Shamoon 2 and Shamoon 3 were observed in 2016 and 2018. [Shamoon](https://app.tidalcyber.com/software/840db1db-e262-4d6f-b6e3-2a64696a41c5) has also been seen leveraging [RawDisk](https://app.tidalcyber.com/software/d86a562d-d235-4481-9a3f-273fa3ebe89a) and Filerase to carry out data wiping tasks. The term Shamoon is sometimes used to refer to the group using the malware as well as the malware itself.<sup>[[Palo Alto Shamoon Nov 2016](https://app.tidalcyber.com/references/15007a87-a281-41ae-b203-fdafe02a885f)]</sup><sup>[[Unit 42 Shamoon3 2018](https://app.tidalcyber.com/references/c2148166-faf4-4ab7-a37e-deae0c88c08d)]</sup><sup>[[Symantec Shamoon 2012](https://app.tidalcyber.com/references/ac634e99-d951-402b-bb1c-e575753dfda8)]</sup><sup>[[FireEye Shamoon Nov 2016](https://app.tidalcyber.com/references/44b2eb6b-4902-4ca0-80e5-7333d620e075)]</sup>",
+      "description": "[Shamoon](https://app.tidalcyber.com/software/840db1db-e262-4d6f-b6e3-2a64696a41c5) is wiper malware that was first used by an Iranian group known as the \"Cutting Sword of Justice\" in 2012. Other versions known as Shamoon 2 and Shamoon 3 were observed in 2016 and 2018. [Shamoon](https://app.tidalcyber.com/software/840db1db-e262-4d6f-b6e3-2a64696a41c5) has also been seen leveraging [RawDisk](https://app.tidalcyber.com/software/d86a562d-d235-4481-9a3f-273fa3ebe89a) and Filerase to carry out data wiping tasks. Analysis has linked [Shamoon](https://app.tidalcyber.com/software/840db1db-e262-4d6f-b6e3-2a64696a41c5) with [Kwampirs](https://app.tidalcyber.com/software/35ac4018-8506-4025-a9e3-bd017700b3b3) based on multiple shared artifacts and coding patterns.<sup>[[Cylera Kwampirs 2022](https://app.tidalcyber.com/references/06442111-2c71-5efb-9530-cabeba159a91)]</sup> The term Shamoon is sometimes used to refer to the group using the malware as well as the malware itself.<sup>[[Palo Alto Shamoon Nov 2016](https://app.tidalcyber.com/references/15007a87-a281-41ae-b203-fdafe02a885f)]</sup><sup>[[Unit 42 Shamoon3 2018](https://app.tidalcyber.com/references/c2148166-faf4-4ab7-a37e-deae0c88c08d)]</sup><sup>[[Symantec Shamoon 2012](https://app.tidalcyber.com/references/ac634e99-d951-402b-bb1c-e575753dfda8)]</sup><sup>[[FireEye Shamoon Nov 2016](https://app.tidalcyber.com/references/44b2eb6b-4902-4ca0-80e5-7333d620e075)]</sup>",
       "meta": {
         "platforms": [
           "Windows"
@@ -19165,6 +19918,8 @@
         "software_attack_id": "S5275",
         "source": "Tidal Cyber",
         "tags": [
+          "c5a258ce-9045-48d9-b254-ec2bf6437bb5",
+          "cc4ea215-87ce-4351-9579-cf527caf5992",
           "d819ae1a-e385-49fd-88d5-f66660729ecb",
           "e551ae97-d1b4-484e-9267-89f33829ec2c",
           "15787198-6c8b-4f79-bf50-258d55072fee",
@@ -19178,6 +19933,10 @@
         ]
       },
       "related": [
+        {
+          "dest-uuid": "923f478c-7ad1-516f-986d-61f96b9c553e",
+          "type": "used-by"
+        },
         {
           "dest-uuid": "f138c814-48c0-4638-a4d6-edc48e7ac23a",
           "type": "used-by"
@@ -19551,7 +20310,12 @@
           "malware"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "f46d6ee9-9d1d-586a-9f2d-6bff8fb92910",
+          "type": "used-by"
+        }
+      ],
       "uuid": "206453a4-a298-4cab-9fdf-f136a4e0c761",
       "value": "Skeleton Key"
     },
@@ -19570,6 +20334,28 @@
       "related": [],
       "uuid": "cc91d3d4-bbf5-4a9c-b43a-2ba034db4858",
       "value": "Skidmap"
+    },
+    {
+      "description": "[SLIGHTPULSE](https://app.tidalcyber.com/software/c8fed4fc-5721-5db2-b107-b2a9b677244e) is a web shell that was used by [APT5](https://app.tidalcyber.com/groups/f46d6ee9-9d1d-586a-9f2d-6bff8fb92910) as early as 2020 including against Pulse Secure VPNs at US Defense Industrial Base (DIB) entities.<sup>[[Mandiant Pulse Secure Zero-Day April 2021](https://app.tidalcyber.com/references/0760480c-97be-5fc9-a6aa-f1df91a314a3)]</sup>",
+      "meta": {
+        "platforms": [
+          "Network",
+          "Linux"
+        ],
+        "software_attack_id": "S1110",
+        "source": "MITRE",
+        "type": [
+          "malware"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "f46d6ee9-9d1d-586a-9f2d-6bff8fb92910",
+          "type": "used-by"
+        }
+      ],
+      "uuid": "c8fed4fc-5721-5db2-b107-b2a9b677244e",
+      "value": "SLIGHTPULSE"
     },
     {
       "description": "[Sliver](https://app.tidalcyber.com/software/bbd16b7b-7e35-4a11-86ff-9b19e17bdab3) is an open source, cross-platform, red team command and control framework written in Golang.<sup>[[Bishop Fox Sliver Framework August 2019](https://app.tidalcyber.com/references/51e67e37-2d61-4228-999b-bec6f80cf106)]</sup>",
@@ -19591,6 +20377,10 @@
       "related": [
         {
           "dest-uuid": "4c3e48b9-4426-4271-a7af-c3dfad79f447",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "8e059c6b-d278-5454-a234-a8ad69feb66c",
           "type": "used-by"
         }
       ],
@@ -19633,6 +20423,27 @@
       ],
       "uuid": "7c047a54-93cf-4dfc-ab20-d905791aebb2",
       "value": "SLOWDRIFT"
+    },
+    {
+      "description": "[SLOWPULSE](https://app.tidalcyber.com/software/37e264a6-5ad3-5a79-bf2c-db725622206e) is a malware that was used by [APT5](https://app.tidalcyber.com/groups/f46d6ee9-9d1d-586a-9f2d-6bff8fb92910) as early as 2020 including against U.S. Defense Industrial Base (DIB) companies. [SLOWPULSE](https://app.tidalcyber.com/software/37e264a6-5ad3-5a79-bf2c-db725622206e) has several variants and can modify legitimate Pulse Secure VPN files in order to log credentials and bypass single and two-factor authentication flows.<sup>[[Mandiant Pulse Secure Zero-Day April 2021](https://app.tidalcyber.com/references/0760480c-97be-5fc9-a6aa-f1df91a314a3)]</sup>",
+      "meta": {
+        "platforms": [
+          "Network"
+        ],
+        "software_attack_id": "S1104",
+        "source": "MITRE",
+        "type": [
+          "malware"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "f46d6ee9-9d1d-586a-9f2d-6bff8fb92910",
+          "type": "used-by"
+        }
+      ],
+      "uuid": "37e264a6-5ad3-5a79-bf2c-db725622206e",
+      "value": "SLOWPULSE"
     },
     {
       "description": "[Small Sieve](https://app.tidalcyber.com/software/c58028b9-2e79-4bc9-9b04-d24ea4dd4948) is a Telegram Bot API-based Python backdoor that has been distributed using a Nullsoft Scriptable Install System (NSIS) Installer; it has been used by [MuddyWater](https://app.tidalcyber.com/groups/dcb260d8-9d53-404f-9ff5-dbee2c6effe6) since at least January 2022.<sup>[[DHS CISA AA22-055A MuddyWater February 2022](https://app.tidalcyber.com/references/e76570e1-43ab-4819-80bc-895ede67a205)]</sup><sup>[[NCSC GCHQ Small Sieve Jan 2022](https://app.tidalcyber.com/references/0edb8946-be38-45f5-a27c-bdbebc383d72)]</sup>\n\nSecurity researchers have also noted [Small Sieve](https://app.tidalcyber.com/software/c58028b9-2e79-4bc9-9b04-d24ea4dd4948)'s use by UNC3313, which may be associated with [MuddyWater](https://app.tidalcyber.com/groups/dcb260d8-9d53-404f-9ff5-dbee2c6effe6).<sup>[[Mandiant UNC3313 Feb 2022](https://app.tidalcyber.com/references/ac1a1262-1254-4ab2-a940-2d08b6558e9e)]</sup>",
@@ -19747,6 +20558,30 @@
       "value": "SNUGRIDE"
     },
     {
+      "description": "[SocGholish](https://app.tidalcyber.com/software/ab84f259-9b9a-51d8-a68a-2bcd7512d760) is a JavaScript-based loader malware that has been used since at least 2017. It has been observed in use against multiple sectors globally for initial access, primarily through drive-by-downloads masquerading as software updates. SocGholish is operated by [Mustard Tempest](https://app.tidalcyber.com/groups/0898e7cb-118e-5eeb-b856-04e56ed18182) and its access has been sold to groups including [Indrik Spider](https://app.tidalcyber.com/groups/3c7ad595-1940-40fc-b9ca-3e649c1e5d87) for downloading secondary RAT and ransomware payloads.<sup>[[SentinelOne SocGholish Infrastructure November 2022](https://app.tidalcyber.com/references/8a26eeb6-6f80-58f1-b773-b38835c6781d)]</sup><sup>[[SocGholish-update](https://app.tidalcyber.com/references/01d9c3ba-29e2-5090-b399-0e7adf50a6b9)]</sup><sup>[[Red Canary SocGholish March 2024](https://app.tidalcyber.com/references/70fa26e4-109c-5a48-b9fd-ac8b9acf2cf3)]</sup><sup>[[Secureworks Gold Prelude Profile](https://app.tidalcyber.com/references/b16ae37d-5244-5c1e-92a9-e494b5a9ef49)]</sup> ",
+      "meta": {
+        "platforms": [
+          "Windows"
+        ],
+        "software_attack_id": "S1124",
+        "source": "MITRE",
+        "tags": [
+          "84615fe0-c2a5-4e07-8957-78ebc29b4635"
+        ],
+        "type": [
+          "malware"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "0898e7cb-118e-5eeb-b856-04e56ed18182",
+          "type": "used-by"
+        }
+      ],
+      "uuid": "ab84f259-9b9a-51d8-a68a-2bcd7512d760",
+      "value": "SocGholish"
+    },
+    {
       "description": "[Socksbot](https://app.tidalcyber.com/software/c1906bb6-0b5b-4916-8b29-37f7e272f6b3) is a backdoor that  abuses Socket Secure (SOCKS) proxies. <sup>[[TrendMicro Patchwork Dec 2017](https://app.tidalcyber.com/references/15465b26-99e1-4956-8c81-cda3388169b8)]</sup>",
       "meta": {
         "platforms": [
@@ -19796,6 +20631,11 @@
         "software_attack_id": "S5008",
         "source": "Tidal Cyber",
         "tags": [
+          "d903e38b-600d-4736-9e3b-cf1a6e436481",
+          "d819ae1a-e385-49fd-88d5-f66660729ecb",
+          "c5a258ce-9045-48d9-b254-ec2bf6437bb5",
+          "cc4ea215-87ce-4351-9579-cf527caf5992",
+          "e551ae97-d1b4-484e-9267-89f33829ec2c",
           "e1af18e3-3224-4e4c-9d0f-533768474508",
           "cd1b5d44-226e-4405-8985-800492cf2865",
           "ed2b3f47-3e07-4019-a9bf-ec9d87f28c96",
@@ -19820,6 +20660,14 @@
         },
         {
           "dest-uuid": "6d6ed42c-760c-4964-a81e-1d4df06a8800",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "923f478c-7ad1-516f-986d-61f96b9c553e",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "7f52cadb-7a12-4b9d-9290-1ef02123fbe4",
           "type": "used-by"
         },
         {
@@ -20020,6 +20868,9 @@
         "software_attack_id": "S5009",
         "source": "Tidal Cyber",
         "tags": [
+          "d903e38b-600d-4736-9e3b-cf1a6e436481",
+          "e551ae97-d1b4-484e-9267-89f33829ec2c",
+          "d819ae1a-e385-49fd-88d5-f66660729ecb",
           "e1af18e3-3224-4e4c-9d0f-533768474508",
           "509a90c7-9ca9-4b23-bca2-cd38ef6a6207",
           "9bc47297-864d-4f39-be37-ad9379102853",
@@ -20044,6 +20895,10 @@
         },
         {
           "dest-uuid": "33159d02-a1ce-49ec-a381-60b069db66f7",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "7f52cadb-7a12-4b9d-9290-1ef02123fbe4",
           "type": "used-by"
         },
         {
@@ -20115,6 +20970,10 @@
         ]
       },
       "related": [
+        {
+          "dest-uuid": "502223ee-8947-42f8-a532-a3b3da12b7d9",
+          "type": "used-by"
+        },
         {
           "dest-uuid": "e38bcb42-12c1-4202-a794-ec26cd830caa",
           "type": "used-by"
@@ -20317,6 +21176,22 @@
       ],
       "uuid": "764c6121-2d15-4a10-ac53-b1c431dc8b47",
       "value": "STARWHALE"
+    },
+    {
+      "description": "[STEADYPULSE](https://app.tidalcyber.com/software/ea561f0b-b891-5735-aa99-97cc8818fbef) is a web shell that infects targeted Pulse Secure VPN servers through modification of a legitimate Perl script that was used as early as 2020 including in activity against US Defense Industrial Base (DIB) entities.<sup>[[Mandiant Pulse Secure Zero-Day April 2021](https://app.tidalcyber.com/references/0760480c-97be-5fc9-a6aa-f1df91a314a3)]</sup>",
+      "meta": {
+        "platforms": [
+          "Network"
+        ],
+        "software_attack_id": "S1112",
+        "source": "MITRE",
+        "type": [
+          "malware"
+        ]
+      },
+      "related": [],
+      "uuid": "ea561f0b-b891-5735-aa99-97cc8818fbef",
+      "value": "STEADYPULSE"
     },
     {
       "description": "[StoneDrill](https://app.tidalcyber.com/software/9eee52a2-5ac1-4561-826c-23ec7fbc7876) is wiper malware discovered in destructive campaigns against both Middle Eastern and European targets in association with [APT33](https://app.tidalcyber.com/groups/99bbbe25-45af-492f-a7ff-7cbc57828bac).<sup>[[FireEye APT33 Sept 2017](https://app.tidalcyber.com/references/70610469-db0d-45ab-a790-6e56309a39ec)]</sup><sup>[[Kaspersky StoneDrill 2017](https://app.tidalcyber.com/references/e2637cb3-c449-4609-af7b-ac78a900cc8b)]</sup>",
@@ -20800,15 +21675,11 @@
       },
       "related": [
         {
-          "dest-uuid": "26c0925f-1a3c-4df6-b27a-62b9731299b8",
-          "type": "used-by"
-        },
-        {
           "dest-uuid": "8567136b-f84a-45ed-8cce-46324c7da60e",
           "type": "used-by"
         },
         {
-          "dest-uuid": "47ae4fb1-fc61-4e8e-9310-66dda706e1a2",
+          "dest-uuid": "26c0925f-1a3c-4df6-b27a-62b9731299b8",
           "type": "used-by"
         },
         {
@@ -20816,19 +21687,7 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "a80c00b2-b8b6-4780-99bb-df8fe921947d",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "7a9d653c-8812-4b96-81d1-b0a27ca918b4",
-          "type": "used-by"
-        },
-        {
           "dest-uuid": "3290dcb9-5781-4b87-8fa0-6ae820e152cd",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "863b7013-133d-4a82-93d2-51b53a8fd30e",
           "type": "used-by"
         },
         {
@@ -20836,7 +21695,23 @@
           "type": "used-by"
         },
         {
+          "dest-uuid": "a80c00b2-b8b6-4780-99bb-df8fe921947d",
+          "type": "used-by"
+        },
+        {
           "dest-uuid": "d01abdb1-0378-4654-aa38-1a4a292703e2",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "863b7013-133d-4a82-93d2-51b53a8fd30e",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "47ae4fb1-fc61-4e8e-9310-66dda706e1a2",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "7a9d653c-8812-4b96-81d1-b0a27ca918b4",
           "type": "used-by"
         },
         {
@@ -21058,19 +21933,15 @@
       },
       "related": [
         {
-          "dest-uuid": "5307bba1-2674-4fbd-bfd5-1db1ae06fc5f",
-          "type": "used-by"
-        },
-        {
           "dest-uuid": "4ea1245f-3f35-5168-bd10-1fc49142fd4e",
           "type": "used-by"
         },
         {
-          "dest-uuid": "a80c00b2-b8b6-4780-99bb-df8fe921947d",
+          "dest-uuid": "d01abdb1-0378-4654-aa38-1a4a292703e2",
           "type": "used-by"
         },
         {
-          "dest-uuid": "d01abdb1-0378-4654-aa38-1a4a292703e2",
+          "dest-uuid": "a80c00b2-b8b6-4780-99bb-df8fe921947d",
           "type": "used-by"
         },
         {
@@ -21079,6 +21950,10 @@
         },
         {
           "dest-uuid": "26c0925f-1a3c-4df6-b27a-62b9731299b8",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "5307bba1-2674-4fbd-bfd5-1db1ae06fc5f",
           "type": "used-by"
         },
         {
@@ -21091,6 +21966,10 @@
         },
         {
           "dest-uuid": "43f826a1-e8c8-47b8-9b00-38e1b3e4293b",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "f46d6ee9-9d1d-586a-9f2d-6bff8fb92910",
           "type": "used-by"
         },
         {
@@ -21366,6 +22245,10 @@
         ]
       },
       "related": [
+        {
+          "dest-uuid": "923f478c-7ad1-516f-986d-61f96b9c553e",
+          "type": "used-by"
+        },
         {
           "dest-uuid": "0fcb2205-e75b-46c9-ac54-00f218d5e331",
           "type": "used-by"
@@ -21643,14 +22526,6 @@
       },
       "related": [
         {
-          "dest-uuid": "eadd78e3-3b5d-430a-b994-4360b172c871",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "4c3e48b9-4426-4271-a7af-c3dfad79f447",
-          "type": "used-by"
-        },
-        {
           "dest-uuid": "393da13e-016c-41a3-9d89-b33173adecbf",
           "type": "used-by"
         },
@@ -21660,6 +22535,14 @@
         },
         {
           "dest-uuid": "33159d02-a1ce-49ec-a381-60b069db66f7",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "eadd78e3-3b5d-430a-b994-4360b172c871",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "4c3e48b9-4426-4271-a7af-c3dfad79f447",
           "type": "used-by"
         },
         {
@@ -22243,15 +23126,15 @@
       },
       "related": [
         {
-          "dest-uuid": "8951bff3-c444-4374-8a9e-b2115d9125b2",
-          "type": "used-by"
-        },
-        {
           "dest-uuid": "86b97a39-49c3-431e-bcc8-f4e13dbfcdf5",
           "type": "used-by"
         },
         {
           "dest-uuid": "28f3dbcc-b248-442f-9ff3-234210bb2f2a",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "8951bff3-c444-4374-8a9e-b2115d9125b2",
           "type": "used-by"
         }
       ],
@@ -22727,6 +23610,22 @@
       "value": "WannaCry"
     },
     {
+      "description": "[WARPWIRE](https://app.tidalcyber.com/software/9a592b49-1701-5e4c-95cf-9b8c98b80527) is a Javascript credential stealer that targets plaintext passwords and usernames for exfiltration that was used during [Cutting Edge](https://app.tidalcyber.com/campaigns/4e605e33-57fe-5bb2-b0ad-ec146aac041b) to target Ivanti Connect Secure VPNs.<sup>[[Mandiant Cutting Edge January 2024](https://app.tidalcyber.com/references/9d9ec923-89c1-5155-ae6e-98d4776d4250)]</sup><sup>[[Mandiant Cutting Edge Part 2 January 2024](https://app.tidalcyber.com/references/5209d259-4293-58c0-bbdc-f30ff77d57f7)]</sup>",
+      "meta": {
+        "platforms": [
+          "Network"
+        ],
+        "software_attack_id": "S1116",
+        "source": "MITRE",
+        "type": [
+          "malware"
+        ]
+      },
+      "related": [],
+      "uuid": "9a592b49-1701-5e4c-95cf-9b8c98b80527",
+      "value": "WARPWIRE"
+    },
+    {
       "description": "[WarzoneRAT](https://app.tidalcyber.com/software/cfebe868-15cb-4be5-b7ed-38b52f2a0722) is a malware-as-a-service remote access tool (RAT) written in C++ that has been publicly available for purchase since at least late 2018.<sup>[[Check Point Warzone Feb 2020](https://app.tidalcyber.com/references/c214c36e-2bc7-4b98-a74e-529aae99f9cf)]</sup><sup>[[Uptycs Warzone UAC Bypass November 2020](https://app.tidalcyber.com/references/1324b314-a4d9-43e7-81d6-70b6917fe527)]</sup>",
       "meta": {
         "platforms": [
@@ -22744,6 +23643,10 @@
       "related": [
         {
           "dest-uuid": "d0f29889-7a9c-44d8-abdc-480b371f7b2b",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "3d77fb6c-cfb4-5563-b0be-7aa1ad535337",
           "type": "used-by"
         },
         {
@@ -22902,11 +23805,11 @@
       },
       "related": [
         {
-          "dest-uuid": "3290dcb9-5781-4b87-8fa0-6ae820e152cd",
+          "dest-uuid": "5b1a5b9e-4722-41fc-a15d-196a549e3ac5",
           "type": "used-by"
         },
         {
-          "dest-uuid": "5b1a5b9e-4722-41fc-a15d-196a549e3ac5",
+          "dest-uuid": "3290dcb9-5781-4b87-8fa0-6ae820e152cd",
           "type": "used-by"
         },
         {
@@ -23005,7 +23908,15 @@
       },
       "related": [
         {
-          "dest-uuid": "5825a840-5577-4ffc-a08d-3f48d64395cb",
+          "dest-uuid": "fcaadc12-7c17-4946-a9dc-976ed610854c",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "a57b52c7-9f64-4ffe-a7c3-0de738fb2af1",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "15ff1ce0-44f0-4f1d-a4ef-83444570e572",
           "type": "used-by"
         },
         {
@@ -23017,15 +23928,7 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "15ff1ce0-44f0-4f1d-a4ef-83444570e572",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "fcaadc12-7c17-4946-a9dc-976ed610854c",
-          "type": "used-by"
-        },
-        {
-          "dest-uuid": "a57b52c7-9f64-4ffe-a7c3-0de738fb2af1",
+          "dest-uuid": "5825a840-5577-4ffc-a08d-3f48d64395cb",
           "type": "used-by"
         },
         {
@@ -23197,11 +24100,11 @@
       },
       "related": [
         {
-          "dest-uuid": "646e35d2-75de-4c1d-8ad3-616d3e155c5e",
+          "dest-uuid": "502223ee-8947-42f8-a532-a3b3da12b7d9",
           "type": "used-by"
         },
         {
-          "dest-uuid": "502223ee-8947-42f8-a532-a3b3da12b7d9",
+          "dest-uuid": "646e35d2-75de-4c1d-8ad3-616d3e155c5e",
           "type": "used-by"
         }
       ],
@@ -23239,6 +24142,10 @@
         "software_attack_id": "S5081",
         "source": "Tidal Cyber",
         "tags": [
+          "c5a258ce-9045-48d9-b254-ec2bf6437bb5",
+          "cc4ea215-87ce-4351-9579-cf527caf5992",
+          "e551ae97-d1b4-484e-9267-89f33829ec2c",
+          "15787198-6c8b-4f79-bf50-258d55072fee",
           "e1af18e3-3224-4e4c-9d0f-533768474508",
           "c45ce044-b5b9-426a-866c-130e9f2a4427",
           "ed2b3f47-3e07-4019-a9bf-ec9d87f28c96",
@@ -23250,6 +24157,10 @@
         ]
       },
       "related": [
+        {
+          "dest-uuid": "923f478c-7ad1-516f-986d-61f96b9c553e",
+          "type": "used-by"
+        },
         {
           "dest-uuid": "0fcb2205-e75b-46c9-ac54-00f218d5e331",
           "type": "used-by"
@@ -23294,6 +24205,9 @@
         "software_attack_id": "S5046",
         "source": "Tidal Cyber",
         "tags": [
+          "d903e38b-600d-4736-9e3b-cf1a6e436481",
+          "c5a258ce-9045-48d9-b254-ec2bf6437bb5",
+          "cc4ea215-87ce-4351-9579-cf527caf5992",
           "d819ae1a-e385-49fd-88d5-f66660729ecb",
           "e551ae97-d1b4-484e-9267-89f33829ec2c",
           "e1af18e3-3224-4e4c-9d0f-533768474508",
@@ -23313,6 +24227,14 @@
         ]
       },
       "related": [
+        {
+          "dest-uuid": "923f478c-7ad1-516f-986d-61f96b9c553e",
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "7f52cadb-7a12-4b9d-9290-1ef02123fbe4",
+          "type": "used-by"
+        },
         {
           "dest-uuid": "d0f3353c-fbdd-4bd5-8793-a42e1f319b59",
           "type": "used-by"
@@ -23380,6 +24302,22 @@
       "related": [],
       "uuid": "627e05c2-c02e-433e-9288-c2d78bce156f",
       "value": "Wiper"
+    },
+    {
+      "description": "[WIREFIRE](https://app.tidalcyber.com/software/93b02819-8acc-5d7d-ad11-abb33f9309cc) is a web shell written in Python that exists as trojanized logic to the visits.py component of Ivanti Connect Secure VPN appliances. [WIREFIRE](https://app.tidalcyber.com/software/93b02819-8acc-5d7d-ad11-abb33f9309cc) was used during [Cutting Edge](https://app.tidalcyber.com/campaigns/4e605e33-57fe-5bb2-b0ad-ec146aac041b) for downloading files and command execution.<sup>[[Mandiant Cutting Edge January 2024](https://app.tidalcyber.com/references/9d9ec923-89c1-5155-ae6e-98d4776d4250)]</sup>",
+      "meta": {
+        "platforms": [
+          "Network"
+        ],
+        "software_attack_id": "S1115",
+        "source": "MITRE",
+        "type": [
+          "malware"
+        ]
+      },
+      "related": [],
+      "uuid": "93b02819-8acc-5d7d-ad11-abb33f9309cc",
+      "value": "WIREFIRE"
     },
     {
       "description": "Wireshark is a popular open-source packet analyzer utility.",
@@ -24021,6 +24959,22 @@
       "value": "Zipfldr"
     },
     {
+      "description": "[ZIPLINE](https://app.tidalcyber.com/software/976a7797-3008-5316-9e28-19c9a05959d0) is a passive backdoor that was used during [Cutting Edge](https://app.tidalcyber.com/campaigns/4e605e33-57fe-5bb2-b0ad-ec146aac041b) on compromised Secure Connect VPNs for reverse shell and proxy functionality.<sup>[[Mandiant Cutting Edge January 2024](https://app.tidalcyber.com/references/9d9ec923-89c1-5155-ae6e-98d4776d4250)]</sup>",
+      "meta": {
+        "platforms": [
+          "Network"
+        ],
+        "software_attack_id": "S1114",
+        "source": "MITRE",
+        "type": [
+          "malware"
+        ]
+      },
+      "related": [],
+      "uuid": "976a7797-3008-5316-9e28-19c9a05959d0",
+      "value": "ZIPLINE"
+    },
+    {
       "description": "[ZLib](https://app.tidalcyber.com/software/1ac8d363-2903-43da-9c1d-2b28179638c8) is a full-featured backdoor that was used as a second-stage implant during [Operation Dust Storm](https://app.tidalcyber.com/campaigns/af0c0f55-dc4f-4cb5-9350-3a2d7c07595f) since at least 2014. [ZLib](https://app.tidalcyber.com/software/1ac8d363-2903-43da-9c1d-2b28179638c8) is malware and should not be confused with the legitimate compression library from which its name is derived.<sup>[[Cylance Dust Storm](https://app.tidalcyber.com/references/001dd53c-74e6-4add-aeb7-da76b0d2afe8)]</sup>",
       "meta": {
         "platforms": [
@@ -24097,11 +25051,11 @@
           "type": "used-by"
         },
         {
-          "dest-uuid": "502223ee-8947-42f8-a532-a3b3da12b7d9",
+          "dest-uuid": "4173c301-0307-458d-89dd-2583e94247ec",
           "type": "used-by"
         },
         {
-          "dest-uuid": "4173c301-0307-458d-89dd-2583e94247ec",
+          "dest-uuid": "502223ee-8947-42f8-a532-a3b3da12b7d9",
           "type": "used-by"
         },
         {
