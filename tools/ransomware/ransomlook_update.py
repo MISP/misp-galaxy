@@ -1,6 +1,5 @@
 import requests
 import json
-from pprint import pprint
 import time
 import uuid
 import re
@@ -76,7 +75,6 @@ for rlookgroup in ransomlook_groups:
                         cluster['meta']['links'].append(location['slug'])
 
             if synonym:
-                print("check " + synonym)
                 if 'synonyms' not in cluster['meta']:
                     cluster['meta']['synonyms'] = []
                     cluster['meta']['synonyms'].append(synonym)
@@ -117,10 +115,8 @@ for rlookgroup in ransomlook_groups:
                     new_cluster['meta']["links"].append(location['slug'])
 
         if synonym:
-            print("check " + synonym)
             new_cluster['meta']['synonyms'] = []
             new_cluster['meta']['synonyms'].append(synonym)
-            pprint(new_cluster)
 
         new_cluster['meta']["refs"] = []
 
