@@ -248,8 +248,8 @@ json_cluster = {
 
 # save the Galaxy and Cluster file
 with open(os.path.join('..', 'galaxies', galaxy_fname), 'w') as f:
-    # do not sort_keys as it would break the kill_chain_order
-    json.dump(json_galaxy, f, indent=2, ensure_ascii=False)
+    # sort_keys, even if it breaks the kill_chain_order , but jq_all_the_things requires sorted keys
+    json.dump(json_galaxy, f, indent=2, sort_keys=True, ensure_ascii=False)
     f.write('\n')  # only needed for the beauty and to be compliant with jq_all_the_things
 
 with open(os.path.join('..', 'clusters', galaxy_fname), 'w') as f:
