@@ -1,0 +1,800 @@
+{
+  "authors": [
+    "GSMA"
+  ],
+  "category": "attack-pattern",
+  "description": "Mobile Threat Intelligence Framework (MoTIF) Principles. ",
+  "name": "GSMA MoTIF",
+  "source": "https://www.gsma.com/solutions-and-impact/technologies/security/latest-news/establishing-motif-the-mobile-threat-intelligence-framework/",
+  "type": "gsma-motif",
+  "uuid": "02cb3863-ecb2-4a93-a5ed-18bb6dfd5c89",
+  "values": [
+    {
+      "description": "The adversaries may monitor radio interface traffic to passively collect information about the radio network configuration or about subscribers in close vicinity of the adversary. (1), (2), (3), (4).",
+      "meta": {
+        "external_id": "MOT3001",
+        "kill_chain": [
+          "Techniques:Reconnaissance"
+        ],
+        "refs": [
+          "page 14 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) Borgaonkar, R. & Shaik, A. (2015). LTE and IMSI Catcher Myths. Black Hat USA 2015 (2) Electronic Frontier Foundation. (2019). Gotta Catch 'Em All: Understanding How IMSI-Catchers Exploit Cell Networks. (3) Kumar, P. et.al. (2021). Murat: Multi-RAT False Base Station Detector (Section IIB) (4) Rupprecht, D. et.al. (2018). On Security Research Towards Future Mobile Network Generations. (Section III D)"
+        ]
+      },
+      "uuid": "ef315196-4c0f-50d5-85b7-eb5fe3757ba3",
+      "value": "Monitor Radio Interface"
+    },
+    {
+      "description": "In mobile networks the adversary needs to obtain information about the cell configuration parameters that will be used to prepare for the next phase of an attack that is utilizing the radio interface. Example of configuration could be the physical cell ID (PCI), neighbouring cells, frequencies used, Tracking Area Codes (TAC). (1), (2), (3), (4)",
+      "meta": {
+        "external_id": "MOT3001.301",
+        "kill_chain": [
+          "Techniques:Reconnaissance"
+        ],
+        "refs": [
+          "page 15 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) Li, Z. et al. (2017). FBS-Radar: Uncovering Fake Base Stations at Scale in the Wild. (2) Borgaonkar, R. & Shaik, A. (2015). LTE and IMSI Catcher Myths. Black Hat USA 2015 (3) Electronic Frontier Foundation. (2019). Gotta Catch 'Em All: Understanding How IMSI-Catchers Exploit Cell Networks. (4) Quintin, C. (2020). Detecting Fake 4G Base Stations in Real Time. Black Hat USA 2020."
+        ]
+      },
+      "uuid": "7dcf1eaa-a0c6-51c8-8e5f-dfd2e033cd50",
+      "value": "Broadcast Channel"
+    },
+    {
+      "description": "Adversaries may gather information about the victim's identity that can be used during targeting. Information about identities may include a variety of details, including personal data (ex: employee names, email addresses, etc.) as well as sensitive details such as credentials. In mobile networks, the adversary wants to obtain information about subscriber and phone identities to conduct more targeted attacks. Subscriber identity can be, for example, MSISDN, IMSI, GUTI, TMSI.",
+      "meta": {
+        "external_id": "MOT1589",
+        "kill_chain": [
+          "Techniques:Reconnaissance"
+        ],
+        "refs": [
+          "page 16 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) The Register. (2017). After years of warnings, mobile network hackers exploit SS7 flaws to drain bank accounts",
+          "ATT&CK Enterprise: Gather Victim Identity Information (T1589)"
+        ]
+      },
+      "uuid": "c2993424-1861-5fab-8bd8-4b3f19082e42",
+      "value": "Gather Victim Identity Information"
+    },
+    {
+      "description": "In mobile networks, targeted attacks towards subscribers have to be done using the subscriber identity. Obtaining the identity would allow the attacker to gather more information or initiate more targeted attacks. The adversary gathers phone or subscription related information about subscriber(s). Examples are phone number (MSISDN), IMSI (International Mobile Subscriber Identity), home mobile network operator, S@T browser availability on the UICC, IMEI (International Mobile Equipment Identity). The data might be acquired through interconnection, social engineering, social media or otherwise. (1)",
+      "meta": {
+        "external_id": "MOT1589.301",
+        "kill_chain": [
+          "Techniques:Reconnaissance"
+        ],
+        "refs": [
+          "page 17 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) The Register. (2017). After years of warnings, mobile network hackers exploit SS7 flaws to drain bank accounts",
+          "ATT&CK Enterprise: Gather Employee Names (T1589.003),"
+        ]
+      },
+      "uuid": "6a035f24-73f0-5244-bc30-eb8cf5275ef7",
+      "value": "Phone and Subscription Information"
+    },
+    {
+      "description": "An adversary may discover operator network related information (identifiers). Adversaries may attempt to get a listing of services running on remote hosts and local network infrastructure devices, including those that may be vulnerable to remote software exploitation. Common methods to acquire this information include port and/or vulnerability scans using tools that are brought onto a system. In mobile networks, the adversary wants to obtain information about subscriber, signalling addresses, supported service at a certain server. The scan may take place from the Internet or the interconnection network or the radio network. Often automated mass scanning events take place.",
+      "meta": {
+        "external_id": "MOT1046",
+        "kill_chain": [
+          "Techniques:Discovery"
+        ],
+        "refs": [
+          "page 17 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) GSMA PRD IR.70 - SMS SS7 Fraud (Public)",
+          "ATT&CK Enterprise: Network Service Discovery (T1046),\nFiGHT: Network Service Scanning (FGT1046)\nNOTE: These two MITRE techniques are actually the same, however due to an\nerror the FiGHT technique was renamed."
+        ]
+      },
+      "uuid": "19d9aa24-5b2d-5cd9-bf61-4a50ccabafed",
+      "value": "Network Service Scanning"
+    },
+    {
+      "description": "By sending signalling messages to the network, the adversary tries to check if mobile network nodes leak node or network related information, or bypasses defences ((1) (2) below). Using this sub-technique as a preparatory step, the adversary can then tune his further attack steps to send specific attack messages based on this scan. Examples are SS7 scans to evaluate if a Global Title is in use or not. The adversary may also probe which PLMN-ID values are accepted by the HPLMN in Diameter Authentication Information Request (AIR).",
+      "meta": {
+        "external_id": "MOT1046.301",
+        "kill_chain": [
+          "Techniques:Discovery"
+        ],
+        "refs": [
+          "page 18 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) Enea. (2017). Designated Attacker - Evolving SS7 Attack Tools (2) Enea. (2018). Diameter Signalling Security - Protecting 4G Networks",
+          "ATT&CK Enterprise: IP Block Scanning (T1595.001)"
+        ]
+      },
+      "uuid": "827add59-8d04-57e3-b72a-22484d8ea618",
+      "value": "Scan Signalling Addresses"
+    },
+    {
+      "description": "Adversaries may search and gather information about victims from closed sources that can be used during targeting. Information about victims may be available for purchase from reputable private sources and databases, such as paid subscriptions to feeds of technical/threat intelligence data. Adversaries may also purchase information from less-reputable sources such as dark web or cybercrime black markets. Adversaries may search and collect information about the mobile network operator from closed or semi-closed sources. Typical examples are GSMA IR.21, IR.85, FS.30 or T-ISAC, information from insiders or partners. The information acquisition might be done legally or illegally.",
+      "meta": {
+        "external_id": "MOT1597",
+        "kill_chain": [
+          "Techniques:Reconnaissance"
+        ],
+        "refs": [
+          "page 19 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) The Intercept. (2014). Operation AURORAGOLD: How the NSA Hacks Cellphone Networks Worldwide. (2) https://www.wikileaks.org/hackingteam/emails/emailid/72166",
+          "ATT&CK Enterprise: Search Closed Sources (T1597)"
+        ]
+      },
+      "uuid": "0c536c66-1918-59f9-9f51-c1460c69c917",
+      "value": "Search Closed Sources"
+    },
+    {
+      "description": "The adversary may gather information about the mobile network operator to be used in initial access or for preparation of the attack. This can be network architecture, protocols, ports, Global Titles, roaming partners, suppliers. The adversary may search in closed sources like GSMA roaming database RAEX IR.21 (1), IMEI database (2) or IR.85.",
+      "meta": {
+        "external_id": "MOT1597.301",
+        "kill_chain": [
+          "Techniques:Reconnaissance"
+        ],
+        "refs": [
+          "page 20 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) The Intercept. (2014). Operation AURORAGOLD: How the NSA Hacks Cellphone Networks Worldwide. (2) https://www.wikileaks.org/hackingteam/emails/emailid/72166"
+        ]
+      },
+      "uuid": "82018f31-afeb-5452-918e-f47e1379d717",
+      "value": "Mobile Network Operator Sources"
+    },
+    {
+      "description": "Adversaries may buy, lease, or rent infrastructure that can be used during targeting. For example, commercial service providers exist that offer access to signalling infrastructure or sell False Base Station solutions. Use of these infrastructure solutions allows an adversary to stage, launch, and execute operations. Solutions may help adversary operations blend in with traffic that is seen as normal.",
+      "meta": {
+        "external_id": "MOT1583",
+        "kill_chain": [
+          "Techniques:Resource-Development"
+        ],
+        "refs": [
+          "page 20 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) TBIJ. (2020) Spy companies using Channel Islands to track phones around the world.",
+          "ATT&CK Enterprise: Acquire Infrastructure (T1583)"
+        ]
+      },
+      "uuid": "653c42ec-68ae-5372-a2d8-65353df704cf",
+      "value": "Acquire Infrastructure"
+    },
+    {
+      "description": "Adversaries may buy, lease, or rent SS7, Diameter, GTP-C signalling infrastructure access or services that can be used during targeting (1), (2), (3). Targeted attacks to mobile network operators may use ‘surveillance as a service’ specialists to achieve their goals (2). Their attacks often blend in with normal traffic coming from partners of the victim mobile network operator and make attribution difficult. Fraudsters and spammers may use specific partner gateways or access to messaging servers for their purposes.",
+      "meta": {
+        "external_id": "MOT1583.301",
+        "kill_chain": [
+          "Techniques:Resource-Development"
+        ],
+        "refs": [
+          "page 21 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) TBIJ. (2020) Spy companies using Channel Islands to track phones around the world. (2) CitizenLab. (2020). Running in Circles Uncovering the Clients of Cyberespionage Firm Circles. (3) TBIJ. (2021). Swiss tech company boss accused of selling mobile network access for spying. (4) Enea (2021) 5G Network Slicing Security in 5G Core Networks (5) Mobileum (2023) OAuth2.0 Security and Protocol Exploit Analysis in 5G Ecosystem"
+        ]
+      },
+      "uuid": "a7a503d3-cfcb-52f0-b76b-ce5d1604efb6",
+      "value": "Core Signalling Infrastructure Access"
+    },
+    {
+      "description": "Adversaries may buy, lease, or obtain physical access to a mobile operator network base station or use their own rogue cellular base (Stingray) station for launching an attack (2) (3). The adversary could set up a rogue cellular base station infrastructure and then use it to eavesdrop on or manipulate cellular device communication. A compromised cellular femtocell could be used to carry out this technique (1).",
+      "meta": {
+        "external_id": "MOT1583.302",
+        "kill_chain": [
+          "Techniques:Resource-Development"
+        ],
+        "refs": [
+          "page 22 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) DePerry, D. & Ritter T. (2013). I Can Hear You Now - Traffic Interception and Remote Mobile Phone Cloning with a Compromised CDMA Femtocell. Black Hat USA2013 (2) Wired (2016). Here's How Much a StingRay Cell Phone Surveillance Tool Costs (3) Alibaba.com. Wholesale imsi catcher 4g For Online Communication"
+        ]
+      },
+      "uuid": "f165ba28-bf24-5151-ac17-ae9ffa96f124",
+      "value": "Radio Interface Access"
+    },
+    {
+      "description": "Adversaries may build capabilities that can be used during targeting. Rather than purchasing, freely downloading, or stealing capabilities, adversaries may develop their own capabilities in-house. This is the process of identifying development requirements and building solutions such as malware, exploits, and self-signed certificates. Adversaries may develop capabilities to support their operations throughout numerous phases of the adversary lifecycle. In mobile networks adversary may develop false base stations (1), mobile exploits, core signalling exploitation tools (2), SIM card exploits, radio exploitation tools and other tools to initiate attacks.",
+      "meta": {
+        "external_id": "MOT1587",
+        "kill_chain": [
+          "Techniques:Resource-Development"
+        ],
+        "refs": [
+          "page 23 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) Motherboard. (2018). Here's How Easy It Is to Make Your Own IMSI-Catcher (2) Lighthouse Reports. (2022). Revealing Europe's NSO.",
+          "ATT&CK Enterprise: Develop Capabilities (T1587)."
+        ]
+      },
+      "uuid": "eb832cc6-e988-52f8-9a22-391ed593dfe1",
+      "value": "Develop Capabilities"
+    },
+    {
+      "description": "Adversary develops special tools for mobile networks that carry out and deliver mobile network targeted exploits. (1) (2)",
+      "meta": {
+        "external_id": "MOT1587.301",
+        "kill_chain": [
+          "Techniques:Resource-Development"
+        ],
+        "refs": [
+          "page 24 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) Motherboard. (2018). Here's How Easy It Is to Make Your Own IMSI-Catcher (2) Lighthouse Reports. (2022). Revealing Europe's NSO. (3) Mobileum. (2023) OAuth2.0 Security and Protocol Exploit Analysis in 5G Ecosystem",
+          "N/A"
+        ]
+      },
+      "uuid": "61b1a6a4-2140-5479-9ac0-386d4e91839f",
+      "value": "Mobile Network Tool"
+    },
+    {
+      "description": "The adversary may get access to the target network via the interconnection interface.",
+      "meta": {
+        "external_id": "MOT3002",
+        "kill_chain": [
+          "Techniques:Initial-Access"
+        ],
+        "refs": [
+          "page 24 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) P1 Security. (2021). All authentication vectors are not made equal."
+        ]
+      },
+      "uuid": "48318fd2-a653-581e-8c13-7f3846dfbb8f",
+      "value": "Exploit Interconnection Link"
+    },
+    {
+      "description": "The adversary may get access to the target network via a direct signalling link connected to the international exchange.",
+      "meta": {
+        "external_id": "MOT3002.301",
+        "kill_chain": [
+          "Techniques:Initial-Access"
+        ],
+        "refs": [
+          "page 25 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) Enea. (2022). HiddenArt - A Russian-linked SS7 Threat Actor (2) P1 Security. (2021). All authentication vectors are not made equal."
+        ]
+      },
+      "uuid": "b4dfe23b-1e4e-5979-b4e4-9b3dcecfddb2",
+      "value": "International Direct Signalling Link"
+    },
+    {
+      "description": "The adversary may get access to the target network via a direct signalling link connected to the national exchange.",
+      "meta": {
+        "external_id": "MOT3002.302",
+        "kill_chain": [
+          "Techniques:Initial-Access"
+        ],
+        "refs": [
+          "page 25 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) P1 Security. (2014). SS7map: mapping vulnerability of the international mobile roaming infrastructure"
+        ]
+      },
+      "uuid": "43af1748-6207-54d4-a402-a4371fcdd5cd",
+      "value": "National Direct Signalling Link"
+    },
+    {
+      "description": "The adversary may access the target network by exploiting signalling (i.e. control plane) protocols.",
+      "meta": {
+        "external_id": "MOT3003",
+        "kill_chain": [
+          "Techniques:Initial-Access"
+        ],
+        "refs": [
+          "page 26 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) P1 Security. (2021). All authentication vectors are not made equal."
+        ]
+      },
+      "uuid": "acd147cf-5a45-5bbf-b74d-7a59175b4c64",
+      "value": "Exploit via Core Signalling Interface"
+    },
+    {
+      "description": "The adversary may access the target network by using SS7 protocol.",
+      "meta": {
+        "external_id": "MOT3003.301",
+        "kill_chain": [
+          "Techniques:Initial-Access"
+        ],
+        "refs": [
+          "page 27 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) The Washington Post. (2014). For sale: Systems that can secretly track where cellphone users go around the globe. (2) Lighthouse Reports. (2022). Revealing Europe's NSO. (3) Mc Daid, C. (2020) Watching the Watchers - How Surveillance Companies track you using Mobile Networks. #rC3 2020."
+        ]
+      },
+      "uuid": "139f89a6-7727-5e80-a3a5-c33ba1e66775",
+      "value": "SS7 Protocol"
+    },
+    {
+      "description": "The adversary may access the target network by using Diameter protocol.",
+      "meta": {
+        "external_id": "MOT3003.302",
+        "kill_chain": [
+          "Techniques:Initial-Access"
+        ],
+        "refs": [
+          "page 27 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) P1 Security. (2021). All authentication vectors are not made equal. (2) Mc Daid, C. (2020) Watching the Watchers - How Surveillance Companies track you using Mobile Networks. #rC3 2020."
+        ]
+      },
+      "uuid": "0bae4fc7-da2e-5b93-91aa-9a3a975db351",
+      "value": "Diameter Protocol"
+    },
+    {
+      "description": "The adversary may access the target network by using HTTPS/2 protocol.",
+      "meta": {
+        "external_id": "MOT3003.303",
+        "kill_chain": [
+          "Techniques:Initial-Access"
+        ],
+        "refs": [
+          "page 28 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) Mc Daid, C. (2020) Watching the Watchers - How Surveillance Companies track you using Mobile Networks. #rC3 2020.."
+        ]
+      },
+      "uuid": "2c5d4f4f-7bf8-5b99-b9d9-4b3509ed468f",
+      "value": "HTTPS/2 Protocol"
+    },
+    {
+      "description": "Adversaries may breach or otherwise leverage organizations who have access to intended victims. Access through trusted third-party relationship exploits an existing connection that may not be protected or requires more complicated defence mechanisms to detect and prevent unauthorized access to a network. (1) (2)",
+      "meta": {
+        "external_id": "MOT1199",
+        "kill_chain": [
+          "Techniques:Initial-Access"
+        ],
+        "refs": [
+          "page 28 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) The Washington Post. (2014). For sale: Systems that can secretly track where cellphone users go around the globe. (2) Lighthouse Reports. (2022). Revealing Europe's NSO",
+          "ATT&CK Enterprise: Trusted Relationship (T1199)"
+        ]
+      },
+      "uuid": "231c6854-14a3-5b1c-974b-2f33107274de",
+      "value": "Trusted Relationship"
+    },
+    {
+      "description": "The technique can be conducted by malicious partner or adversaries with access to interconnection networks or roaming partner’s mobile network. The adversary can remotely conduct the attacks by launching signalling messages e.g. related to location tracking, communication interception, or subscriber identify retrieval. (1), (2), (3)",
+      "meta": {
+        "external_id": "MOT1199.301",
+        "kill_chain": [
+          "Techniques:Initial-Access"
+        ],
+        "refs": [
+          "page 29 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) P1 Security (2021). All authentication vectors are not made equal. (2) The Washington Post. (2014). For sale: Systems that can secretly track where cellphone users go around the globe. (3) Lighthouse Reports. (2022). Revealing Europe's NSO (4) Enea. (2022). HiddenArt - A Russian-linked SS7 Threat Actor"
+        ]
+      },
+      "uuid": "cb5103d5-5852-5184-8dbf-3f40f5ec0b9f",
+      "value": "Exploit Interconnection Agreements"
+    },
+    {
+      "description": "Adversaries may use the radio access network to initiate attacks towards the UE or the mobile network.(1) (2) (3) The adversary may leverage vulnerabilities in the protocols that make up the signalling procedures in a radio network, for example network information (SIB1) messages, or the RRC protocol, or NAS protocols to initiate attacks towards the UE or the mobile network.",
+      "meta": {
+        "external_id": "MOT3006",
+        "kill_chain": [
+          "Techniques:Initial-Access",
+          "Techniques:Discovery"
+        ],
+        "refs": [
+          "page 30 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) Borgaonkar, R. & Shaik, A. (2015). LTE and IMSI Catcher Myths. Black Hat USA 2015 (2) Electronic Frontier Foundation. (2019). Gotta Catch 'Em All: Understanding How IMSI-Catchers Exploit Cell Networks. (3) Quintin, C. (2020). Detecting Fake 4G Base Stations in Real Time. Black Hat USA 2020.",
+          "ATT&CK Mobile: Exploit via Radio Interfaces (T1477). Note: Deprecated"
+        ]
+      },
+      "uuid": "71f277f6-ded8-5a7e-84d3-fee99280bc66",
+      "value": "Exploit via Radio Interface"
+    },
+    {
+      "description": "Adversaries may modify or trigger control plane procedures on the radio interface control plane using Access Stratum (AS) signalling that occurs between the UE and the base station.",
+      "meta": {
+        "external_id": "MOT1477.301",
+        "kill_chain": [
+          "Techniques:Initial-Access"
+        ],
+        "refs": [
+          "page 31 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) Electronic Frontier Foundation. (2019). Gotta Catch 'Em All: Understanding How IMSI-Catchers Exploit Cell Networks"
+        ]
+      },
+      "uuid": "fc78b217-a914-52fe-a139-3bcdc9a07f5c",
+      "value": "AS Signalling"
+    },
+    {
+      "description": "Adversaries may modify or trigger Non-Access-Stratum (NAS) signalling related procedures that is generated from a false base station infrastructure. The adversary may impersonate core network elements (such as MME) towards the UE or UE towards the core network elements.",
+      "meta": {
+        "external_id": "MOT1477.302",
+        "kill_chain": [
+          "Techniques:Initial-Access",
+          "Techniques:Discovery"
+        ],
+        "refs": [
+          "page 32 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) CableLabs: (2019). False Base Station or IMSI Catcher: What You Need to Know. (2) Electronic Frontier Foundation. (2019). Gotta Catch 'Em All: Understanding How IMSI-Catchers Exploit Cell Networks"
+        ]
+      },
+      "uuid": "fd65d912-3ab1-5543-b488-9d328d56c2e5",
+      "value": "NAS Signalling"
+    },
+    {
+      "description": "The adversary leverages the radio broadcast System Information Block1 messages (SIB1) to advertise to the target UEs new cell configuration that in return forces the UE to initiate different procedures like for example, cell re- selection or Tracking Area Update.(1), (2), (3)",
+      "meta": {
+        "external_id": "MOT1477.303",
+        "kill_chain": [
+          "Techniques:Initial-Access"
+        ],
+        "refs": [
+          "page 32 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) Aftenposten (2015). New report: Clear signs of mobile surveillance in Oslo, despite denial from Police Security Service. (2) CableLabs: (2019). False Base Station or IMSI Catcher: What You Need to Know. (3) Quintin, C. (2020). Detecting Fake 4G Base Stations in Real Time. Black Hat USA 2020."
+        ]
+      },
+      "uuid": "ce4ae0c9-9d83-5285-8b3f-40475aff0d19",
+      "value": "Radio Broadcast Channel (SIB1)"
+    },
+    {
+      "description": "An adversary may obtain a subscriber permanent or temporary identifier via various means. An adversary may obtain the subscriber identifier by using HLR Lookup, or by monitoring the radio interface. An adversary may obtain identifying information from 5G UEs only after the UE has been bid down (downgraded) to a lower security protocol e.g. 4G, since in 4G and 3G it is possible for the network to ask the UE to send its IMSI (International Subscriber Identifier) in the clear over the radio interface. The 5G UE sends an encrypted permanent identifier (called Subscriber Concealed Identifier (SUCI)) over the radio interface as part of the initial registration to the 5G network. Some non-UE specific information is part of the Subscriber Permanent Identifier or SUPI and is not encrypted (e.g., home network name).",
+      "meta": {
+        "external_id": "MOT5019",
+        "kill_chain": [
+          "Techniques:Discovery",
+          "Techniques:Collection"
+        ],
+        "refs": [
+          "page 33 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) Enea. (2016). Tracking the Trackers: Advanced Rogue Systems Exploiting the SS7 Network",
+          "Subscriber Profile Identifier Discovery: Intercept bid-down SUPI | MITRE\nFiGHT™\n*= This is the same Technique as MITRE FiGHT, however a different name is\nused, MITRE FiGHT may potentially update in the future"
+        ]
+      },
+      "uuid": "79253aa8-a5a9-5bda-bd8a-062b1eece315",
+      "value": "Identify Subscriber"
+    },
+    {
+      "description": "The adversary can trigger mobile terminating activity, such as making calls to the subscriber’s profile (1), sending silent SMS (2), or trigger notifications from the instant messengers (1), to trigger paging of the subscriber. The technique can be made more stealthy by using silent phone calls or silent SMSs (2) (3), The adversary can monitor the paging activity in the radio network and use that information to correlate the paging with the for identifying the target subscriber identifier.",
+      "meta": {
+        "external_id": "MOT5019.301",
+        "kill_chain": [
+          "Techniques:Discovery"
+        ],
+        "refs": [
+          "page 34 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) Shaik, A. et al. (2016). Practical Attacks Against Privacy and Availability in 4G/LTE Mobile Communication Systems. (2) Nohl, K. & Munaut, S. (2010) GSM Sniffing. 27th CCC. (3) Hussain, S. et al. (2019) Privacy Attacks to the 4G and 5G Cellular Paging Protocols Using Side Channel Information.",
+          "N/A"
+        ]
+      },
+      "uuid": "aa7dc324-0f5d-5ce8-b0d2-1d872f180693",
+      "value": "Trigger Subscriber Terminated Activity"
+    },
+    {
+      "description": "The adversary can retrieve subscriber information such as the IMSI, MSISDN, SUPI, SUCI etc",
+      "meta": {
+        "external_id": "MOT5019.302",
+        "kill_chain": [
+          "Techniques:Discovery",
+          "Techniques:Collection"
+        ],
+        "refs": [
+          "page 35 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) Enea. (2016). Tracking the Trackers: Advanced Rogue Systems Exploiting the SS7 Network",
+          "N/A"
+        ]
+      },
+      "uuid": "ca405a15-74d0-575e-9774-253d40c74e53",
+      "value": "Retrieve Subscriber Identity Information"
+    },
+    {
+      "description": "The adversary can retrieve subscriber network information such as the current serving network element(s)",
+      "meta": {
+        "external_id": "MOT5019.303",
+        "kill_chain": [
+          "Techniques:Discovery",
+          "Techniques:Collection"
+        ],
+        "refs": [
+          "page 35 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) Enea. (2016). Tracking the Trackers: Advanced Rogue Systems Exploiting the SS7 Network",
+          "N/A"
+        ]
+      },
+      "uuid": "2ac5c163-9e09-5d4a-bf32-bad2ad3e2882",
+      "value": "Retrieve Subscriber Network Information"
+    },
+    {
+      "description": "Adversaries may attempt to manipulate parameters in the control signalling to make them appear legitimate or benign to mobile subscribers, end nodes and/or security tools. Masquerading occurs when the parameter value is manipulated or abused for the sake of evading defences, or convincing the target to believe it is communicating with a spoofed entity. A typical masquerading operating is manipulation of the source node address.",
+      "meta": {
+        "external_id": "MOT1036",
+        "kill_chain": [
+          "Techniques:Defence-Evasion"
+        ],
+        "refs": [
+          "page 36 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) P1 Security. (2021). All authentication vectors are not made equal. (2) Aftenposten (2015). New report: Clear signs of mobile surveillance in Oslo, despite denial from Police Security Service.",
+          "ATT&CK Enterprise: Masquerading (T1036),"
+        ]
+      },
+      "uuid": "9518c6e3-152f-5e9c-9321-acce8347a19d",
+      "value": "Masquerading"
+    },
+    {
+      "description": "The adversary may attempt to manipulate the originating address information, such as Global Title Address, Diameter Host or Realm information for the sake of evading defences. The adversary may attempt to manipulate the configured cell ID on the false base station to configure it to a known cell ID in the network to evade detection.",
+      "meta": {
+        "external_id": "MOT1036.301",
+        "kill_chain": [
+          "Techniques:Defence-Evasion"
+        ],
+        "refs": [
+          "page 37 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) P1 Security. (2021). All authentication vectors are not made equal. (2) Aftenposten (2015). New report: Clear signs of mobile surveillance in Oslo, despite denial from Police Security Service. (3) Enea. (2022). HiddenArt - A Russian-linked SS7 Threat Actor"
+        ]
+      },
+      "uuid": "87cce0fb-1e5a-5b8b-aae5-58fcd4b3186a",
+      "value": "Originating Entity Spoofing"
+    },
+    {
+      "description": "The adversary can disguise its signalling messages in order to avoid detection and blocking of their attacks. Examples include using unexpected addresses, unexpected message format or unexpected message encoding.",
+      "meta": {
+        "external_id": "MOT3005",
+        "kill_chain": [
+          "Techniques:Defence-Evasion"
+        ],
+        "refs": [
+          "page 37 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) Symsoft & P1 Security. (2018). SS7 and Diameter: Exploit Delivery over signalling protocols. (2) Mc Daid, C. (2019). Simjacker – the next frontier in mobile espionage. VB2019"
+        ]
+      },
+      "uuid": "7258f576-72e9-5f27-ad69-f84e24a0eb18",
+      "value": "Disguise Signalling Messages"
+    },
+    {
+      "description": "The adversary may use an unexpected encoding of the signalling message in order to bypass detection and any defences which may be in place.",
+      "meta": {
+        "external_id": "MOT3005.301",
+        "kill_chain": [
+          "Techniques:Defence-Evasion"
+        ],
+        "refs": [
+          "page 38 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) Puzankov, K. (2019) Hidden Agendas: bypassing GSMA recommendations on SS7 networks. HITB AMS SecConf May 2019"
+        ]
+      },
+      "uuid": "d6e3a64e-518d-59df-89d1-522ebc81c49d",
+      "value": "Unexpected Encoding"
+    },
+    {
+      "description": "The adversary can collect several types of user-specific data. Such data include, for instance, subscriber identities, subscribed services, subscriber location or status.",
+      "meta": {
+        "external_id": "MOT3004",
+        "kill_chain": [
+          "Techniques:Credential-Access",
+          "Techniques:Collection"
+        ],
+        "refs": [
+          "page 38 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) P1 Security. (2021). All authentication vectors are not made equal. (2) Mc Daid, C. (2019). Simjacker – the next frontier in mobile espionage. VB2019"
+        ]
+      },
+      "uuid": "c1a47611-44fc-5e82-a05e-4958366ba9e3",
+      "value": "Access Subscriber Data"
+    },
+    {
+      "description": "The adversary may acquire subscriber authentication information from mobile network registers, such as HLR/HSS/AuC or MSC/VLR, SGSN, MME. For example, the adversary may query subscriber keys, authentication vectors etc. and use this information to tailor further phases of the attack.",
+      "meta": {
+        "external_id": "MOT3004.301",
+        "kill_chain": [
+          "Techniques:Credential-Access",
+          "Techniques:Collection"
+        ],
+        "refs": [
+          "page 39 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) P1 Security. (2021). All authentication vectors are not made equal."
+        ]
+      },
+      "uuid": "8161ff0c-485f-5941-854f-e0bd1d1f9b99",
+      "value": "Subscriber Authentication Data"
+    },
+    {
+      "description": "Adversaries may sniff network traffic to capture information about an environment, including authentication material, base station configuration and user plane traffic passed over the network.",
+      "meta": {
+        "external_id": "MOT1040",
+        "kill_chain": [
+          "Techniques:Collection"
+        ],
+        "refs": [
+          "page 40 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) Kotuliak, M. et al. (2022) LTrack : Stealthy Tracking of Mobile Phones in LTE",
+          "Network Sniffing, Technique T1040 - Enterprise | MITRE ATT&CK®\nNetwork Sniffing | MITRE FiGHT™ (FGT1040)"
+        ]
+      },
+      "uuid": "d5712f47-879c-531e-96f7-c46aa1fd591c",
+      "value": "Network Sniffing"
+    },
+    {
+      "description": "An adversary may eavesdrop on unencrypted or encrypted traffic to capture information to and from a UE. An adversary may employ a back-to-back false base station to eavesdrop on the communication and relay communication between the intended recipient and the intended source, over the radio interface. The adversary may also passively sniff the radio traffic and capture specific traffic that can be then, if possible, analyzed.(1) When operating a false base station the adversary needs to obtain information about the cell configuration parameters that will be used to prepare for the next phase of an attack that is utilizing the radio interface. Example of configuration could be the Physical Cell ID (PCI), neighbouring cells, frequencies used, Location Area Codes/Tracking Area Codes (LAC/TAC).(2) The adversary may use methods of capturing control plane or user plane traffic on the radio interface.",
+      "meta": {
+        "external_id": "MOT1040.501",
+        "kill_chain": [
+          "Techniques:Collection"
+        ],
+        "refs": [
+          "page 41 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) Borgaonkar, R. & Shaik, A. (2015). LTE and IMSI Catcher Myths. Black Hat USA 2015 (2) Li, Z. et al. (2017). FBS-Radar: Uncovering Fake Base Stations at Scale in the Wild. (3) P1 Security. (2021). All authentication vectors are not made equal.",
+          "Network Sniffing: Radio interface | MITRE FiGHT™ (FGT1040.501)"
+        ]
+      },
+      "uuid": "c0ec2969-4985-57e1-a11d-1e5c157cef3e",
+      "value": "Radio Interface"
+    },
+    {
+      "description": "An adversary may obtain the UE location using radio access or core network. Adversary may employ various means to obtain UE location (coarse, fine) using radio access or core network.",
+      "meta": {
+        "external_id": "MOT5012",
+        "kill_chain": [
+          "Techniques:Collection"
+        ],
+        "refs": [
+          "page 41 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) Enea. (2022). HiddenArt - A Russian-linked SS7 Threat Actor (2) Mc Daid, C. (2019). Simjacker – the next frontier in mobile espionage. VB2019 (3) The Washington Post. (2014). For sale: Systems that can secretly track where cellphone users go around the globe",
+          "Location Tracking, Technique T1430 - Mobile | MITRE ATT&CK®\nLocate UE | MITRE FiGHT™ (FGT5012)"
+        ]
+      },
+      "uuid": "d14aa06e-105d-5fd8-a521-040564fdb756",
+      "value": "Locate Subscriber"
+    },
+    {
+      "description": "An adversary in the core network exploits signalling protocols to obtain the location of the UE. User location tracking is part of normal cellular operation. Adversaries with access to core network or a core network function (NF) can misuse signalling protocols (e.g., SS7, GTP and Diameter or the SBI API calls), or exploit vulnerabilities in the signalling plane, in order to obtain location information for a given UE.",
+      "meta": {
+        "external_id": "MOT5012.501",
+        "kill_chain": [
+          "Techniques:Collection"
+        ],
+        "refs": [
+          "page 42 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) Enea. (2022). HiddenArt - A Russian-linked SS7 Threat Actor. (2) Mc Daid, C. (2020) Watching the Watchers - How Surveillance Companies track you using Mobile Networks. #rC3 2020..",
+          "Locate UE: Core Network Function Signaling | MITRE FiGHT™\n(FGT5012.004)"
+        ]
+      },
+      "uuid": "6e07b027-229c-5581-b079-633bc8f73a8c",
+      "value": "Core Network Function Signalling"
+    },
+    {
+      "description": "Adversaries may search freely available websites and/or domains for information about victims that can be used during targeting. Information about victims may be available in various online sites, such as social media, new sites, or those hosting information about business operations such as hiring or requested/rewarded contracts.(1)(2)(3) Adversaries may gather subscription or residence related information about subscriber(s). Examples are phone number (MSISDN), home address, home mobile network operator. Adversaries may gather information about the mobile network operator to be used in initial access or for preparation of the attack. This can be network architecture, protocols, ports, Global Titles, roaming partners, or suppliers (4).",
+      "meta": {
+        "external_id": "MOT1593",
+        "kill_chain": [
+          "Techniques:Reconnaissance"
+        ],
+        "refs": [
+          "page 43 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) Cyware Hacker News. (2019). How Hackers Exploit Social Media To Break Into Your Company. (2) Security Trails. (2019). Exploring Google Hacking Techniques. (3) Offensive Security. (n.d.). Google Hacking Database. Retrieved October 23, 2020. (4) Holtmanns, S. (2018). Secure Interworking Between Networks in 5G Service Based Architecture. ETSI Security Week 2018.",
+          "Search Open Websites/Domains, Technique T1593 - Enterprise | MITRE\nATT&CK®\nGSMA Non-public materials"
+        ]
+      },
+      "uuid": "3cbac245-ee47-5892-b031-0618fff739b4",
+      "value": "Search Open Websites/Domains"
+    },
+    {
+      "description": "Adversaries may search social media for information about victims that can be used during targeting. Social media sites may contain various information about a victim organization, such as business announcements as well as information about the roles, locations, and interests of staff. Adversaries may search in different social media sites depending on what information they seek to gather. Threat actors may passively harvest data from these sites, as well as use information gathered to create fake profiles/groups to elicit victim’s into revealing specific information (i.e. Spearphishing Service)(1). Information from these sources may reveal opportunities for other forms of reconnaissance, establishing operational resources, and/or initial access. Social media sites may contain information about subscriber phone numbers, address etc, which can be used e.g. when installing false base stations in close vicinity of the victim. (2)",
+      "meta": {
+        "external_id": "MOT1593.001",
+        "kill_chain": [
+          "Techniques:Reconnaissance"
+        ],
+        "refs": [
+          "page 44 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) Cyware Hacker News. (2019). How Hackers Exploit Social Media To Break Into Your Company. (2) Equifax UK. (2022). The risks of sharing your location on social media.",
+          "Search Open Websites/Domains: Social Media, Sub-technique\nT1593.001 - Enterprise | MITRE ATT&CK®"
+        ]
+      },
+      "uuid": "8463c2cd-cc58-5537-a083-62a80671e1f4",
+      "value": "Social Media"
+    },
+    {
+      "description": "Adversaries may attempt to position themselves between two or more networked devices using an adversary-in-the-middle (AiTM) technique to support follow-on behaviors such as Network Sniffing (1) (2). Adversaries may leverage the AiTM position to attempt to monitor traffic.",
+      "meta": {
+        "external_id": "MOT1557",
+        "kill_chain": [
+          "Techniques:Persistence"
+        ],
+        "refs": [
+          "page 44 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) Electronic Frontier Foundation. (2019). Gotta Catch 'Em All: Understanding How IMSI-Catchers Exploit Cell Networks (2) P1 Security. (2021). All authentication vectors are not made equal.",
+          "Adversary-in-the-Middle, Technique T1557 - Enterprise | MITRE\nATT&CK®\nAdversary-in-the-Middle | MITRE FiGHT™ (FGT1557)"
+        ]
+      },
+      "uuid": "2c7b4a8d-ce6f-5244-ac52-871b0eb5136f",
+      "value": "Adversary-in-the-Middle"
+    },
+    {
+      "description": "An adversary positions itself on the radio interface to capture information to and from the UE. Adversary can deploy a false base station as a back-to-back base station - UE combination to impersonate UE towards the real eNB or core network element (such as MME), and impersonate base station or core network element towards the target UE (1) (2).",
+      "meta": {
+        "external_id": "MOT1557.301",
+        "kill_chain": [
+          "Techniques:Persistence"
+        ],
+        "refs": [
+          "page 45 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) Electronic Frontier Foundation. (2019). Gotta Catch 'Em All: Understanding How IMSI-Catchers Exploit Cell Networks (2) P1 Security. (2021). All authentication vectors are not made equal. https://labs.p1sec.com/2021/09/30/all-authentication-vectors-are-not-made-equal/",
+          "Adversary-in-the-Middle: Radio interface | MITRE FiGHT™"
+        ]
+      },
+      "uuid": "b3278450-e723-54ad-85fa-4e97868c3a1c",
+      "value": "Radio Interface Authentication Relay"
+    },
+    {
+      "description": "Adversaries may manipulate products or product delivery mechanisms prior to receipt by a final consumer for the purpose of data or system compromise. Supply chain compromise can take place at any stage of the supply chain including: • Manipulation of development tools • Manipulation of a development environment • Manipulation of source code repositories (public or private) • Manipulation of source code in open-source dependencies • Manipulation of software update/distribution mechanisms • Compromised/infected system images (multiple cases of removable media infected at the factory)(1) (2) • Replacement of legitimate software with modified versions • Sales of modified/counterfeit products to legitimate distributors • Shipment interdiction While supply chain compromise can impact any component of hardware or software, adversaries looking to gain execution have often focused on malicious additions to legitimate software in software distribution or update channels.",
+      "meta": {
+        "external_id": "MOT1195",
+        "kill_chain": [
+          "Techniques:Initial-Access"
+        ],
+        "refs": [
+          "page 46 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) The Register. (2023). Millions of mobile phones come pre-infected with Malware (2) Schneider Electric. (2018). Security Notification – USB Removable Media Provided With Conext Combox and Conext Battery Monitor.",
+          "Supply Chain Compromise, Technique T1195 - Enterprise | MITRE\nATT&CK®"
+        ]
+      },
+      "uuid": "4131a562-0ac0-5985-af11-b14cd4c4fe57",
+      "value": "Supply Chain Compromise"
+    },
+    {
+      "description": "Adversaries may manipulate application software prior to receipt by a final consumer for the purpose of data or system compromise. Supply chain compromise of software can take place in a number of ways, including manipulation of the application source code, manipulation of the update/distribution mechanism for that software, or replacing compiled releases with a modified version.",
+      "meta": {
+        "external_id": "MOT1195.002",
+        "kill_chain": [
+          "Techniques:Initial-Access"
+        ],
+        "refs": [
+          "page 47 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) The Register (2023). Millions of mobile phones come pre-infected with Malware",
+          "Supply Chain Compromise: Compromise Software Supply Chain, Sub-\ntechnique T1195.002 - Enterprise | MITRE ATT&CK®"
+        ]
+      },
+      "uuid": "52769709-9c9f-5cf7-8a50-3d5422b0fc03",
+      "value": "Compromise Software Supply Chain"
+    },
+    {
+      "description": "An adversary may query the Network Repository Function (NRF) to discover restricted Network Function (NF) services to further target that NF.",
+      "meta": {
+        "external_id": "MOT5003",
+        "kill_chain": [
+          "Techniques:Discovery"
+        ],
+        "refs": [
+          "page 47 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) R. Pell, S. Moschoyiannis, E. Panaousis, R. Heartfield. (2021). Towards dynamic threat modelling in 5G core networks based on MITRE ATT&CK. (2) Mobileum (2023) OAuth2.0 Security and Protocol Exploit Analysis in 5G Ecosystem",
+          "Network Function Service Discovery | MITRE FiGHT™ (FGT5003)"
+        ]
+      },
+      "uuid": "6beb2c07-a10e-566a-b2d4-fe08ad6b7ab8",
+      "value": "Network Function Service Discovery"
+    },
+    {
+      "description": "Adversaries may exploit software vulnerabilities in an attempt to collect credentials. Exploitation of a software vulnerability occurs when an adversary takes advantage of a programming error in a program, service, or within the operating system software or kernel itself to execute adversary-controlled code.",
+      "meta": {
+        "external_id": "MOT1212",
+        "kill_chain": [
+          "Techniques:Credential-Access"
+        ],
+        "refs": [
+          "page 48 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) Mobileum (2023) OAuth2.0 Security and Protocol Exploit Analysis in 5G Ecosystem",
+          "Exploitation for Credential Access, Technique T1212 - Enterprise |\nMITRE ATT&CK® https://fight.mitre.org/techniques/FGT5003/"
+        ]
+      },
+      "uuid": "8d9a29cc-d66c-5cc6-9500-4426765d6b7e",
+      "value": "Exploitation for Credential Access"
+    },
+    {
+      "description": "Adversaries may insert, delete, or manipulate data in order to influence external outcomes or hide activity, thus threatening the integrity of the data.",
+      "meta": {
+        "external_id": "MOT1565",
+        "kill_chain": [
+          "Techniques:Impact"
+        ],
+        "refs": [
+          "page 49 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) The Register. (2017). After years of warnings, mobile network hackers exploit SS7 flaws to drain bank accounts (2) Mobileum (2023) OAuth2.0 Security and Protocol Exploit Analysis in 5G Ecosystem",
+          "Data Manipulation, Technique T1565 - Enterprise | MITRE ATT&CK®\nData Manipulation | MITRE FiGHT™ (FGT1565)"
+        ]
+      },
+      "uuid": "ed3417df-6918-545f-8986-e967e1924b7f",
+      "value": "Data Manipulation"
+    },
+    {
+      "description": "Adversaries may insert, delete, or manipulate data at rest in order to influence external outcomes or hide activity, thus threatening the integrity of the data",
+      "meta": {
+        "external_id": "MOT1565.001",
+        "kill_chain": [
+          "Techniques:Impact"
+        ],
+        "refs": [
+          "page 49 of https://www.gsma.com/solutions-and-impact/technologies/security/wp-content/uploads/2024/04/FS.57-MoTIF-Principles-v1.0.pdf",
+          "(1) Mobileum (2023) OAuth2.0 Security and Protocol Exploit Analysis in 5G Ecosystem",
+          "Data Manipulation: Stored Data Manipulation, Sub-technique T1565.001\n- Enterprise | MITRE ATT&CK®"
+        ]
+      },
+      "uuid": "e63a74cc-381c-51c4-870c-94c5a70ea851",
+      "value": "Stored Data Manipulation"
+    }
+  ],
+  "version": 1
+}

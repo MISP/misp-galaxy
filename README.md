@@ -211,6 +211,14 @@ Category: *first-dns* - source: *https://www.first.org/global/sigs/dns/* - total
 
 [[HTML](https://www.misp-galaxy.org/first-dns)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/first-dns.json)]
 
+## GSMA MoTIF
+
+[GSMA MoTIF](https://www.misp-galaxy.org/gsma-motif) - Mobile Threat Intelligence Framework (MoTIF) Principles. 
+
+Category: *attack-pattern* - source: *https://www.gsma.com/solutions-and-impact/technologies/security/latest-news/establishing-motif-the-mobile-threat-intelligence-framework/* - total: *50* elements
+
+[[HTML](https://www.misp-galaxy.org/gsma-motif)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/gsma-motif.json)]
+
 ## Intelligence Agencies
 
 [Intelligence Agencies](https://www.misp-galaxy.org/intelligence-agencies) - List of intelligence agencies
@@ -415,7 +423,7 @@ Category: *measure* - source: *MISP Project* - total: *20* elements
 
 [Producer](https://www.misp-galaxy.org/producer) - List of threat intelligence producer from security vendors to CERTs including any producer of intelligence at large.
 
-Category: *actor* - source: *MISP Project* - total: *21* elements
+Category: *actor* - source: *MISP Project* - total: *22* elements
 
 [[HTML](https://www.misp-galaxy.org/producer)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/producer.json)]
 
@@ -423,7 +431,7 @@ Category: *actor* - source: *MISP Project* - total: *21* elements
 
 [Ransomware](https://www.misp-galaxy.org/ransomware) - Ransomware galaxy based on https://docs.google.com/spreadsheets/d/1TWS238xacAto-fLKh1n5uTsdijWdCEsGIM0Y0Hvmc5g/pubhtml and http://pastebin.com/raw/GHgpWjar
 
-Category: *tool* - source: *Various* - total: *1706* elements
+Category: *tool* - source: *Various* - total: *1777* elements
 
 [[HTML](https://www.misp-galaxy.org/ransomware)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/ransomware.json)]
 
@@ -463,7 +471,7 @@ Category: *sector* - source: *CERT-EU* - total: *118* elements
 
 [Sigma-Rules](https://www.misp-galaxy.org/sigma-rules) - MISP galaxy cluster based on Sigma Rules.
 
-Category: *rules* - source: *https://github.com/jstnk9/MISP/tree/main/misp-galaxy/sigma* - total: *2888* elements
+Category: *rules* - source: *https://github.com/jstnk9/MISP/tree/main/misp-galaxy/sigma* - total: *2892* elements
 
 [[HTML](https://www.misp-galaxy.org/sigma-rules)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/sigma-rules.json)]
 
@@ -527,7 +535,7 @@ Category: *tea-matrix* - source: ** - total: *7* elements
 
 [Threat Actor](https://www.misp-galaxy.org/threat-actor) - Known or estimated adversary groups targeting organizations and employees. Adversary groups are regularly confused with their initial operation or campaign. threat-actor-classification meta can be used to clarify the understanding of the threat-actor if also considered as operation, campaign or activity group.
 
-Category: *actor* - source: *MISP Project* - total: *678* elements
+Category: *actor* - source: *MISP Project* - total: *686* elements
 
 [[HTML](https://www.misp-galaxy.org/threat-actor)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/threat-actor.json)]
 
