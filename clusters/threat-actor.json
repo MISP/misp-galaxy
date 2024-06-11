@@ -2397,7 +2397,8 @@
           "https://unit42.paloaltonetworks.com/atoms/fighting-ursa/",
           "https://blog.google/threat-analysis-group/continued-cyber-activity-in-eastern-europe-observed-by-tag",
           "https://blog.google/threat-analysis-group/fog-of-war-how-the-ukraine-conflict-transformed-the-cyber-threat-landscape/",
-          "https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Cyber-Sicherheitslage/Analysen-und-Prognosen/Threat-Intelligence/Aktive_APT-Gruppen/aktive-apt-gruppen_node.html"
+          "https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Cyber-Sicherheitslage/Analysen-und-Prognosen/Threat-Intelligence/Aktive_APT-Gruppen/aktive-apt-gruppen_node.html",
+          "https://bluepurple.binaryfirefly.com/p/bluepurple-pulse-week-ending-june-64e"
         ],
         "synonyms": [
           "Pawn Storm",
@@ -2423,7 +2424,9 @@
           "UAC-0028",
           "FROZENLAKE",
           "Sofacy",
-          "Forest Blizzard"
+          "Forest Blizzard",
+          "BlueDelta",
+          "Fancy Bear"
         ],
         "targeted-sector": [
           "Military",
@@ -8967,6 +8970,19 @@
     {
       "description": "An actor mainly targeting Pakistan military targets, active since at least 2012. We have low confidence that this malware might be authored by an Indian company. To spread the malware, they use unique implementations to leverage the exploits of known vulnerabilities (such as CVE-2017-11882) and later deploy a Powershell payload in the final stages.",
       "meta": {
+        "cfr-suspected-state-sponsor": "India",
+        "cfr-suspected-victims": [
+          "China",
+          "Pakistan",
+          "Nepal",
+          "Afghanistan"
+        ],
+        "cfr-target-category": [
+          "Government",
+          "Military",
+          "Private Sector"
+        ],
+        "country": "IN",
         "refs": [
           "https://securelist.com/apt-trends-report-q1-2018/85280/",
           "https://blog.trendmicro.com/trendlabs-security-intelligence/first-active-attack-exploiting-cve-2019-2215-found-on-google-play-linked-to-sidewinder-apt-group/",
@@ -15981,7 +15997,99 @@
       },
       "uuid": "53ac2695-35ba-4ab2-a5cd-48ca533f1b72",
       "value": "Void Manticore"
+    },
+    {
+      "description": "ALPHA SPIDER is a threat actor known for developing and operating the Alphv ransomware as a service. They have been observed using novel offensive techniques, such as exploiting software vulnerabilities and leveraging legitimate administration tools for malicious activities. ALPHA SPIDER affiliates have demonstrated persistence in exfiltrating data and have shown the ability to bypass security measures like DNS-based filtering and multifactor authentication. Despite lacking specific operational security measures, defenders have opportunities to detect and respond to ALPHA SPIDER's operations effectively.",
+      "meta": {
+        "refs": [
+          "https://www.crowdstrike.com/blog/anatomy-of-alpha-spider-ransomware/"
+        ],
+        "synonyms": [
+          "ALPHV Ransomware Group"
+        ]
+      },
+      "uuid": "6149f3b6-510d-4e45-bf88-cd25c7193702",
+      "value": "Alpha Spider"
+    },
+    {
+      "description": "RansomHub is a rapidly growing ransomware group believed to be an updated version of the older Knight ransomware. They have been linked to attacks exploiting the Zerologon vulnerability to gain initial access. RansomHub has attracted former affiliates of the ALPHV ransomware group and operates as a Ransomware-as-a-Service with a unique affiliate prepayment model. The group has been active in extorting victims and leaking sensitive data to pressure for ransom payments.",
+      "meta": {
+        "refs": [
+          "https://symantec-enterprise-blogs.security.com/threat-intelligence/ransomhub-knight-ransomware",
+          "https://forescoutstage.wpengine.com/blog/analysis-a-new-ransomware-group-emerges-from-the-change-healthcare-cyber-attack/",
+          "https://www.sentinelone.com/blog/ransomware-evolution-how-cheated-affiliates-are-recycling-victim-data-for-profit/"
+        ]
+      },
+      "uuid": "9d218bb3-fc59-43e0-a273-a0a0fb5c463e",
+      "value": "RansomHub"
+    },
+    {
+      "description": "Unfading Sea Haze is a threat actor focused on espionage, targeting government and military organizations in the South China Sea region since 2018. They employ spear-phishing emails with malicious attachments to gain initial access, followed by the deployment of custom malware such as Gh0st RAT variants and SharpJSHandler. The group utilizes scheduled tasks and manipulates local administrator accounts for persistence, while also incorporating Remote Monitoring and Management tools into their attacks. Unfading Sea Haze demonstrates a sophisticated and patient approach, remaining undetected for years and showing adaptability through evolving exfiltration tactics and malware arsenal.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://www.securityweek.com/newly-detected-chinese-group-targeting-military-government-entities/",
+          "https://www.bleepingcomputer.com/news/security/unfading-sea-haze-hackers-hide-on-military-and-govt-networks-for-6-years/"
+        ]
+      },
+      "uuid": "58e75098-8edc-48ce-b1de-c1a8647e33d3",
+      "value": "Unfading Sea Haze"
+    },
+    {
+      "description": "Stucx is a threat actor known for targeting Israeli systems, including SCADA systems and the Red Alert missile protection system. Stucx Team has also developed a mobile application called MyOPECS for coordinating attacks, which includes features like DDoS attacks and is expected to add more capabilities in the future. Additionally, they have been observed using VPNs and proxy software to conceal their activities and have a history of making threats against those who cooperate with Israel.",
+      "meta": {
+        "refs": [
+          "https://socradar.io/reflections-of-the-israel-palestine-conflict-on-the-cyber-world/",
+          "https://www.darkowl.com/blog-content/2-month-review-of-cyber-activities-in-the-israel-hamas-conflict/"
+        ]
+      },
+      "uuid": "ee13ddb3-e8c0-4568-b56c-82d82c30f48b",
+      "value": "StucxTeam"
+    },
+    {
+      "description": "FlyingYeti is a Russia-aligned threat actor targeting Ukrainian military entities. They conduct reconnaissance activities and launch phishing campaigns using malware like COOKBOX. FlyingYeti exploits the WinRAR vulnerability CVE-2023-38831 to infect targets with malicious payloads. Cloudforce One has successfully disrupted their operations and provided recommendations for defense against their phishing campaigns.",
+      "meta": {
+        "country": "RU",
+        "refs": [
+          "https://blog.cloudflare.com/disrupting-flyingyeti-campaign-targeting-ukraine"
+        ]
+      },
+      "uuid": "1dcbad05-c5b7-4ec3-8920-45f396554f7a",
+      "value": "FlyingYeti"
+    },
+    {
+      "description": "SEXi is a ransomware group that targets VMware ESXi servers, encrypting data and demanding ransom payments. They have been observed encrypting virtual machines and backups, causing significant disruptions to services. The group's name is a play on the word \"ESXi,\" indicating a deliberate focus on these systems. SEXi has been linked to other ransomware variants based on the Babuk source code.",
+      "meta": {
+        "refs": [
+          "https://www.cybersecurity-insiders.com/proven-data-restores-powerhosts-vmware-backups-after-sexi-ransomware-attack/",
+          "https://heimdalsecurity.com/blog/powerhosts-esxi-servers-encrypted-with-new-sexi-ransomware/",
+          "https://www.darkreading.com/threat-intelligence/sexi-ransomware-desires-vmware-hypervisors"
+        ]
+      },
+      "uuid": "1bd2034f-a135-4c71-b08f-867b7f9e7998",
+      "value": "SEXi"
+    },
+    {
+      "description": "LilacSquid is an APT actor targeting a variety of industries worldwide since at least 2021. They use tactics such as exploiting vulnerabilities and compromised RDP credentials to gain access to victim organizations. Their post-compromise activities involve deploying MeshAgent and a customized version of QuasarRAT known as PurpleInk to maintain control over infected systems. LilacSquid has been observed using tools like Secure Socket Funneling for data exfiltration.",
+      "meta": {
+        "refs": [
+          "https://blog.talosintelligence.com/lilacsquid/"
+        ]
+      },
+      "uuid": "efacc258-fa0e-4686-99d2-03bab14a640e",
+      "value": "LilacSquid"
+    },
+    {
+      "description": "Hunt3r Kill3rs is a newly emerged threat group claiming expertise in cyber operations, including ICS breaches and web application vulnerabilities exploitation. They have discussed using Java fuzzing in their exploits and have made unverified claims of joint attacks with other threat actors.",
+      "meta": {
+        "country": "RU",
+        "refs": [
+          "https://socradar.io/dark-web-profile-hunt3r-kill3rs/"
+        ]
+      },
+      "uuid": "4b32ad58-972e-4aa2-be3d-ff875ed06eba",
+      "value": "Hunt3r Kill3rs"
     }
   ],
-  "version": 309
+  "version": 310
 }
