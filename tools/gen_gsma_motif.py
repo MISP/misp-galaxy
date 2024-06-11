@@ -199,8 +199,6 @@ with tempfile.TemporaryFile() as tmp_f:
     tmp_f.write(r.content)
     print("Parsing PDF ... this takes time")
     items = parse_pdf(tmp_f)
-    with open('items.json', 'w') as f:
-        json.dump(items, f, indent=2, ensure_ascii=False)
 
 print("Converting to MISP Galaxy ...")
 # now convert and extract data to have something clean and usable
@@ -233,13 +231,15 @@ for item in items.values():
         'meta': {
             'kill_chain': kill_chain,
             'refs': [
-                f"page {item['page']} of {pdf_url}",
-                item['References'],
-                item['Analogous technique in other frameworks']
+                f"page {item['page']} of {pdf_url}"
             ],
             'external_id': item['ID'],
         }
     }
+    if item['References']:
+        technique['meta']['refs'].append(item['References'])
+    if item['Analogous technique in other frameworks']:
+        technique['meta']['refs'].append(item['Analogous technique in other frameworks'])
     techniques.append(technique)
     # TODO relations + refs as subtechniques
 
