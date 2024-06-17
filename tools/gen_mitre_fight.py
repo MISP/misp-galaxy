@@ -17,13 +17,14 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+from bs4 import BeautifulSoup
+from markdown import markdown
 import json
 import os
+import re
 import requests
 import uuid
 import yaml
-from bs4 import BeautifulSoup
-from markdown import markdown
 
 
 uuid_seed = '8666d04b-977a-434b-82b4-f36271ec1cfb'
@@ -42,6 +43,18 @@ fight = yaml.safe_load(r.text)
 #     f.write(r.text)
 # with open('fight.yaml', 'r') as f:
 #     fight = yaml.safe_load(f)
+
+
+with open('../clusters/mitre-attack-pattern.json', 'r') as mitre_f:
+    mitre = json.load(mitre_f)
+
+
+def find_mitre_uuid_from_technique_id(technique_id):
+    for item in mitre['values']:
+        if item['meta']['external_id'] == technique_id:
+            return item['uuid']
+    print("No MITRE UUID found for technique_id: ", technique_id)
+    return None
 
 
 def clean_ref(text: str) -> str:
@@ -82,10 +95,27 @@ for item in fight['techniques']:
         },
         'related': []
     }
-    keys_to_skip = ['id', 'name', 'references', 'tactics']
+    keys_to_skip = ['id', 'name', 'references', 'tactics', 'description']
     for keys in item.keys():
         if keys not in keys_to_skip:
             element['meta'][keys] = item[keys]
+
+    if 'https://attack.mitre.org/techniques/' in item['description']:
+        # extract the references from the description
+        # add it as ref and build the relationship to the technique using uuid
+        url = re.search(r'(https?://[^\)]+)/(T[^\)]+)', item['description'])
+        if url:
+            extracted_url = url.group(0)
+            element['meta']['refs'].append(extracted_url)
+            technique_uuid = find_mitre_uuid_from_technique_id(url.group(2).replace('/', '.'))
+            if technique_uuid:
+                element['related'].append({
+                    'dest-uuid': technique_uuid,
+                    'type': 'related-to'
+                })
+            else:
+                print("WARNING: No MITRE UUID found for technique_id: ", url.group(2))
+        pass
 
     try:
         for ref in item['references']:
