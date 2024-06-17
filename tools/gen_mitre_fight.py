@@ -120,6 +120,9 @@ for item in fight['techniques']:
     except KeyError:
         pass
 
+    element['meta']['refs'] = list(set(element['meta']['refs']))
+    element['meta']['refs'].sort()
+
     techniques.append(element)
 
 
