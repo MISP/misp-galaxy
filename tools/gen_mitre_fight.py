@@ -83,7 +83,15 @@ for item in fight['tactics']:
     tactics[item['id']] = item['name'].replace(' ', '-')
 
 # techniques
+technique_strings = []
+
 for item in fight['techniques']:
+    technique_string = item['name'].strip().lower()
+    if technique_string in technique_strings:
+        print(f"Skipping: Duplicate technique name found: {item['name']} - {item['id']}")
+        continue
+    technique_strings.append(technique_string)
+
     element = {
         'value': item['name'].strip(),
         'description': item['description'].strip(),
