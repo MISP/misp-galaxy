@@ -31,7 +31,7 @@ Category: *actor* - source: *https://apt.360.net/aptlist* - total: *42* elements
 
 [Ammunitions](https://www.misp-galaxy.org/ammunitions) - Common ammunitions galaxy
 
-Category: *firearm* - source: *https://ammo.com/* - total: *410* elements
+Category: *firearm* - source: *https://ammo.com/* - total: *409* elements
 
 [[HTML](https://www.misp-galaxy.org/ammunitions)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/ammunitions.json)]
 
@@ -239,7 +239,7 @@ Category: *dwva* - source: *https://interpol-innovation-centre.github.io/DW-VA-T
 
 [Malpedia](https://www.misp-galaxy.org/malpedia) - Malware galaxy cluster based on Malpedia.
 
-Category: *tool* - source: *Malpedia* - total: *3039* elements
+Category: *tool* - source: *Malpedia* - total: *3038* elements
 
 [[HTML](https://www.misp-galaxy.org/malpedia)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/malpedia.json)]
 
@@ -431,7 +431,7 @@ Category: *actor* - source: *MISP Project* - total: *22* elements
 
 [Ransomware](https://www.misp-galaxy.org/ransomware) - Ransomware galaxy based on https://docs.google.com/spreadsheets/d/1TWS238xacAto-fLKh1n5uTsdijWdCEsGIM0Y0Hvmc5g/pubhtml and http://pastebin.com/raw/GHgpWjar
 
-Category: *tool* - source: *Various* - total: *1777* elements
+Category: *tool* - source: *Various* - total: *1775* elements
 
 [[HTML](https://www.misp-galaxy.org/ransomware)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/ransomware.json)]
 
@@ -439,7 +439,7 @@ Category: *tool* - source: *Various* - total: *1777* elements
 
 [RAT](https://www.misp-galaxy.org/rat) - remote administration tool or remote access tool (RAT), also called sometimes remote access trojan, is a piece of software or programming that allows a remote "operator" to control a system as if they have physical access to that system.
 
-Category: *tool* - source: *MISP Project* - total: *266* elements
+Category: *tool* - source: *MISP Project* - total: *265* elements
 
 [[HTML](https://www.misp-galaxy.org/rat)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/rat.json)]
 
@@ -559,7 +559,7 @@ Category: *Threat Groups* - source: *https://app-api.tidalcyber.com/api/v1/group
 
 [Tidal References](https://www.misp-galaxy.org/tidal-references) - Tidal References Cluster
 
-Category: *References* - source: *https://app-api.tidalcyber.com/api/v1/references/* - total: *4104* elements
+Category: *References* - source: *https://app-api.tidalcyber.com/api/v1/references/* - total: *4261* elements
 
 [[HTML](https://www.misp-galaxy.org/tidal-references)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/tidal-references.json)]
 
@@ -567,7 +567,7 @@ Category: *References* - source: *https://app-api.tidalcyber.com/api/v1/referenc
 
 [Tidal Software](https://www.misp-galaxy.org/tidal-software) - Tidal Software Cluster
 
-Category: *Software* - source: *https://app-api.tidalcyber.com/api/v1/software/* - total: *961* elements
+Category: *Software* - source: *https://app-api.tidalcyber.com/api/v1/software/* - total: *1003* elements
 
 [[HTML](https://www.misp-galaxy.org/tidal-software)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/tidal-software.json)]
 
@@ -615,7 +615,7 @@ Category: *military equipment* - source: *Popular Mechanics* - total: *36* eleme
 
 [UKHSA Culture Collections](https://www.misp-galaxy.org/ukhsa-culture-collections) - UK Health Security Agency Culture Collections represent deposits of cultures that consist of expertly preserved, authenticated cell lines and microbial strains of known provenance.
 
-Category: *virus* - source: *https://www.culturecollections.org.uk* - total: *6667* elements
+Category: *virus* - source: *https://www.culturecollections.org.uk* - total: *6638* elements
 
 [[HTML](https://www.misp-galaxy.org/ukhsa-culture-collections)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/ukhsa-culture-collections.json)]
 
