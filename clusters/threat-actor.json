@@ -13279,11 +13279,13 @@
         "refs": [
           "https://www.mandiant.com/resources/blog/north-korea-supply-chain",
           "https://us-cert.cisa.gov/ncas/alerts/aa22-108a",
-          "https://www.mandiant.com/resources/blog/north-korea-cyber-structure-alignment-2023"
+          "https://www.mandiant.com/resources/blog/north-korea-cyber-structure-alignment-2023",
+          "https://cloud.google.com/blog/topics/threat-intelligence/cyber-threats-targeting-brazil"
         ],
         "synonyms": [
           "Jade Sleet",
-          "UNC4899"
+          "UNC4899",
+          "Pukchong"
         ]
       },
       "uuid": "825abfd9-7238-4438-a9e7-c08791f4df4e",
@@ -16089,6 +16091,89 @@
       },
       "uuid": "4b32ad58-972e-4aa2-be3d-ff875ed06eba",
       "value": "Hunt3r Kill3rs"
+    },
+    {
+      "description": "UTG-Q-008 is a threat actor targeting Linux platforms, primarily focusing on government and enterprise entities in China. They utilize a massive botnet network for espionage activities, including reconnaissance, brute-forcing, and Trojan component delivery. The actor has a history of compromising thousands of servers in China using a password dictionary based on Chinese Pinyin. UTG-Q-008 operates during standard working hours in the UTC+8 time zone, with potential ties to Eastern Europe.",
+      "meta": {
+        "refs": [
+          "https://ti.qianxin.com/blog/articles/Operation-Veles-Decade-Long-Espionage-Targeting-the-Global-Research-and-Education-Sector-EN/"
+        ]
+      },
+      "uuid": "fd17cd3c-5131-4907-be7d-83a0c7dabd36",
+      "value": "UTG-Q-008"
+    },
+    {
+      "description": "Gitloker is a threat actor group targeting GitHub repositories, wiping their contents, and extorting victims for their data. They use stolen credentials to compromise accounts, claim to have created a backup, and instruct victims to contact them on Telegram. The attackers leave a ransom note in the form of a README file, urging victims to negotiate the return of their data. GitHub is working to combat these evolving attacks and the vulnerabilities they exploit.",
+      "meta": {
+        "refs": [
+          "https://www.itsecurityguru.org/2024/06/13/guest-blog-proactive-application-security-learning-from-the-recent-github-extortion-campaigns/",
+          "https://www.bleepingcomputer.com/news/security/new-gitloker-attacks-wipe-github-repos-in-extortion-scheme/"
+        ]
+      },
+      "uuid": "75cc313a-6a95-4ab8-b7f8-bfd7e4a7fe00",
+      "value": "Gitloker"
+    },
+    {
+      "description": "UNC5537 is a financially motivated threat actor targeting Snowflake customer databases. They use stolen credentials obtained from infostealer malware to access and exfiltrate large volumes of data. The compromised accounts lack multi-factor authentication, allowing UNC5537 to conduct data theft and extortion.",
+      "meta": {
+        "refs": [
+          "https://research.checkpoint.com/2024/17th-june-threat-intelligence-report/",
+          "https://cloud.google.com/blog/topics/threat-intelligence/unc5537-snowflake-data-theft-extortion"
+        ]
+      },
+      "uuid": "b8c6da46-4c9a-4075-b9f3-3b5ef7bd3534",
+      "value": "UNC5537"
+    },
+    {
+      "description": "Sp1d3r, a threat actor, has been involved in multiple data breaches targeting companies like Truist Bank, Cylance, and Advance Auto Parts. They have stolen and attempted to sell sensitive information, including customer and employee emails, account numbers, and source code. Sp1d3r has also claimed to have obtained data from a third-party platform and a cloud storage vendor. They have utilized hacking forums to sell the stolen data for significant sums of money.",
+      "meta": {
+        "refs": [
+          "https://www.cysecurity.news/2024/06/truist-bank-confirms-data-breach-after.html",
+          "https://research.checkpoint.com/2024/17th-june-threat-intelligence-report/"
+        ]
+      },
+      "uuid": "2be04e23-4376-4333-87df-27d635e43a98",
+      "value": "Sp1d3r"
+    },
+    {
+      "description": "TA571 is a spam distributor actor known for delivering a variety of malware, including DarkGate, NetSupport RAT, and information stealers. They use phishing emails with macro-enabled attachments to spread malicious PDFs containing rogue OneDrive links. TA571 has been observed using unique filtering techniques with intermediary \"gates\" to target specific users and bypass automated sandboxing. Proofpoint assesses with high confidence that TA571 infections can lead to ransomware.",
+      "meta": {
+        "refs": [
+          "https://www.proofpoint.com/us/blog/threat-insight/security-brief-ta571-delivers-icedid-forked-loader",
+          "https://www.proofpoint.com/us/blog/threat-insight/clipboard-compromise-powershell-self-pwn"
+        ]
+      },
+      "uuid": "0245113e-cef3-4638-9532-3bf235b07d49",
+      "value": "TA571"
+    },
+    {
+      "description": "Bondnet is a threat actor that deploys backdoors and cryptocurrency miners. They use high-performance bots as C2 servers and configure reverse RDP environments on compromised systems. Bondnet has infected over 15,000 Windows server machines worldwide, primarily targeting Windows Server 2008 R2 systems. The botnet is used for mining cryptocurrencies like Monero, ByteCoin, RieCoin, and ZCash, potentially earning the operator thousands of dollars per day.",
+      "meta": {
+        "refs": [
+          "https://asec.ahnlab.com/en/66662/",
+          "https://www.akamai.com/blog/security/the-bondnet-army",
+          "https://thedfirreport.com/2022/07/11/select-xmrig-from-sqlserver/"
+        ]
+      },
+      "uuid": "78e8bc1a-0be3-4792-a911-9d4813dd7bc3",
+      "value": "Bondnet"
+    },
+    {
+      "description": "Vermin is a threat actor group linked to the Luhansk People’s Republic and believed to be acting on behalf of the Kremlin. They have targeted Ukrainian government infrastructure using malware like Spectr and legitimate tools like SyncThing for data exfiltration. Vermin has been active since at least 2018, using custom-made RATs like Vermin and open-source tools like Quasar for cyber-espionage. The group has resurfaced after periods of inactivity to conduct espionage operations against Ukraine's military and defense sectors.",
+      "meta": {
+        "country": "RU",
+        "refs": [
+          "https://socprime.com/blog/vermin-uac-0020-hacking-collective-hits-ukrainian-government-and-military-with-spectr-malware/",
+          "https://therecord.media/russian-vermin-hackers-target-ukraine",
+          "https://cert.gov.ua/article/6279600"
+        ],
+        "synonyms": [
+          "Vermin",
+          "SickSync"
+        ]
+      },
+      "uuid": "318be739-26fd-4f4d-bac8-aa20ec8273b7",
+      "value": "UAC-0020"
     }
   ],
   "version": 310
