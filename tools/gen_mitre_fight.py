@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-#    A simple convertor of the MITRE D3FEND to a MISP Galaxy datastructure.
+#    A simple convertor of the MITRE FiGHT to a MISP Galaxy datastructure.
 #    Copyright (C) 2024 Christophe Vandeplas
 #
 #    This program is free software: you can redistribute it and/or modify
@@ -25,16 +25,16 @@ import re
 import requests
 import uuid
 import yaml
-
+from pymispgalaxies import Cluster, Galaxy
 
 uuid_seed = '8666d04b-977a-434b-82b4-f36271ec1cfb'
 
 fight_url = 'https://fight.mitre.org/fight.yaml'
 
-tactics = {}   # key = ID, value = tactic
-techniques = []
-mitigations = []
-data_sources = []
+galaxy_type = "mitre-fight"
+galaxy_description = 'MITRE Five-G Hierarchy of Threats (FiGHT™) is a globally accessible knowledge base of adversary tactics and techniques that are used or could be used against 5G networks.'
+galaxy_source = 'https://fight.mitre.org/'
+
 
 r = requests.get(fight_url)
 fight = yaml.safe_load(r.text)
@@ -45,16 +45,15 @@ fight = yaml.safe_load(r.text)
 #     fight = yaml.safe_load(f)
 
 
-with open('../clusters/mitre-attack-pattern.json', 'r') as mitre_f:
-    mitre = json.load(mitre_f)
+mitre_attack_pattern = Cluster('mitre-attack-pattern')
 
 
 def find_mitre_uuid_from_technique_id(technique_id):
-    for item in mitre['values']:
-        if item['meta']['external_id'] == technique_id:
-            return item['uuid']
-    print("No MITRE UUID found for technique_id: ", technique_id)
-    return None
+    try:
+        return mitre_attack_pattern.get_by_external_id(technique_id).uuid
+    except KeyError:
+        print("No MITRE UUID found for technique_id: ", technique_id)
+        return None
 
 
 def clean_ref(text: str) -> str:
@@ -79,19 +78,27 @@ def save_galaxy_and_cluster(json_galaxy, json_cluster, galaxy_fname):
 
 
 # tactics
+tactics = {}   # key = ID, value = tactic
 for item in fight['tactics']:
     tactics[item['id']] = item['name'].replace(' ', '-')
 
+#
 # techniques
-technique_strings = []
+#
+technique_galaxy_name = "MITRE FiGHT Techniques"
+technique_cluster = Cluster({
+    'authors': ["MITRE"],
+    'category': 'attack-pattern',
+    'name': technique_galaxy_name,
+    'description': galaxy_description,
+    'source': galaxy_source,
+    'type': galaxy_type,
+    'uuid': "6a1fa29f-85a5-4b1c-956b-ebb7df314486",
+    'version': 1
+})
 
 for item in fight['techniques']:
     technique_string = item['name'].strip().lower()
-    if technique_string in technique_strings:
-        print(f"Skipping: Duplicate technique name found: {item['name']} - {item['id']}")
-        continue
-    technique_strings.append(technique_string)
-
     element = {
         'value': item['name'].strip(),
         'description': item['description'].strip(),
@@ -161,10 +168,57 @@ for item in fight['techniques']:
     element['meta']['refs'] = list(set(element['meta']['refs']))
     element['meta']['refs'].sort()
 
-    techniques.append(element)
+    technique_cluster.append(element, skip_duplicates=True)
+
+technique_cluster.save('mitre-fight-techniques')
+
+for cluster, duplicate in technique_cluster.duplicates:
+    print(f"Skipped duplicate: {duplicate} in cluster {cluster}")
+
+kill_chain_tactics = technique_cluster.get_kill_chain_tactics()
 
 
+try:
+    technique_galaxy = Galaxy('mitre-fight-techniques')
+    # check if new kill_chain_tactics are present, add them if needed
+    for key, values in kill_chain_tactics.items():
+        if key not in technique_galaxy.kill_chain_order:
+            technique_galaxy.kill_chain_order[key] = []
+        for value in values:
+            if key not in technique_galaxy.kill_chain_order:
+                print(f"New kill_chain_tactic found: {key}:{value}")
+                technique_galaxy.kill_chain_order.append(tactic)
+except KeyError:
+    technique_galaxy = Galaxy({
+        'description': galaxy_description,
+        'icon': "map",
+        'kill_chain_order': kill_chain_tactics,
+        'name': technique_galaxy_name,
+        'namespace': "mitre",
+        'type': galaxy_type,
+        'uuid': "c22c8c18-0ccd-4033-b2dd-804ad26af4b9",
+        'version': 1
+    })
+
+technique_galaxy.save('mitre-fight-techniques')
+
+
+
+#
 # mitigations
+#
+mitigation_galaxy_name = "MITRE FiGHT Mitigations"
+mitigation_cluster = Cluster({
+    'authors': ["MITRE"],
+    'category': 'mitigation',
+    'name': mitigation_galaxy_name,
+    'description': galaxy_description,
+    'source': galaxy_source,
+    'type': galaxy_type,
+    'uuid': "fe20707f-2dfb-4436-8520-8fedb8c79668",
+    'version': 1
+})
+
 for item in fight['mitigations']:
     element = {
         'value': item['name'].strip(),
@@ -183,9 +237,43 @@ for item in fight['mitigations']:
             'dest-uuid': str(uuid.uuid5(uuid.UUID(uuid_seed), technique)),
             'type': 'mitigates'
         })
-    mitigations.append(element)
+    mitigation_cluster.append(element, skip_duplicates=True)
 
+mitigation_cluster.save('mitre-fight-mitigations')
+
+for cluster, duplicate in mitigation_cluster.duplicates:
+    print(f"Skipped duplicate: {duplicate} in cluster {cluster}")
+
+try:
+    mitigation_galaxy = Galaxy('mitre-fight-mitigations')
+except KeyError:
+    mitigation_galaxy = Galaxy({
+        'description': galaxy_description,
+        'icon': "shield-alt",
+        'name': mitigation_galaxy_name,
+        'namespace': "mitre",
+        'type': galaxy_type,
+        'uuid': "bcd85ca5-5ed7-4536-bca6-d16fb51adf55",
+        'version': 1
+    })
+
+mitigation_galaxy.save('mitre-fight-mitigations')
+
+#
 # data sources / detections
+#
+detection_galaxy_name = "MITRE FiGHT Data Sources"
+detection_cluster = Cluster({
+    'authors': ["MITRE"],
+    'category': 'data-source',
+    'name': detection_galaxy_name,
+    'description': galaxy_description,
+    'source': galaxy_source,
+    'type': galaxy_type,
+    'uuid': "fb4410a1-5a39-4b30-934a-9cdfbcd4d2ad",
+    'version': 1
+})
+
 for item in fight['data sources']:
     element = {
         'value': item['name'].strip(),
@@ -204,95 +292,27 @@ for item in fight['data sources']:
             'dest-uuid': str(uuid.uuid5(uuid.UUID(uuid_seed), technique)),
             'type': 'detects'
         })
-    data_sources.append(element)
+    detection_cluster.append(element, skip_duplicates=True)
 
+detection_cluster.save('mitre-fight-datasources')
 
-kill_chain_tactics = {'fight': []}
-for tactic_id, value in tactics.items():
-    kill_chain_tactics['fight'].append(value)
+for cluster, duplicate in detection_cluster.duplicates:
+    print(f"Skipped duplicate: {duplicate} in cluster {cluster}")
 
+try:
+    detection_galaxy = Galaxy('mitre-fight-datasources')
+except KeyError:
+    detection_galaxy = Galaxy({
+        'description': galaxy_description,
+        'icon': "bell",
+        'name': detection_galaxy_name,
+        'namespace': "mitre",
+        'type': galaxy_type,
+        'uuid': "4ccc2400-55e4-42c2-bb8d-1d41883cef46",
+        'version': 1
+    })
 
-galaxy_type = "mitre-fight"
-galaxy_description = 'MITRE Five-G Hierarchy of Threats (FiGHT™) is a globally accessible knowledge base of adversary tactics and techniques that are used or could be used against 5G networks.'
-galaxy_source = 'https://fight.mitre.org/'
-
-# techniques
-galaxy_name = "MITRE FiGHT Techniques"
-json_galaxy = {
-    'description': galaxy_description,
-    'icon': "map",
-    'kill_chain_order': kill_chain_tactics,
-    'name': galaxy_name,
-    'namespace': "mitre",
-    'type': galaxy_type,
-    'uuid': "c22c8c18-0ccd-4033-b2dd-804ad26af4b9",
-    'version': 1
-}
-
-json_cluster = {
-    'authors': ["MITRE"],
-    'category': 'attack-pattern',
-    'name': galaxy_name,
-    'description': galaxy_description,
-    'source': galaxy_source,
-    'type': galaxy_type,
-    'uuid': "6a1fa29f-85a5-4b1c-956b-ebb7df314486",
-    'values': list(techniques),
-    'version': 1
-}
-save_galaxy_and_cluster(json_galaxy, json_cluster, 'mitre-fight-techniques.json')
-
-# mitigations
-galaxy_name = "MITRE FiGHT Mitigations"
-json_galaxy = {
-    'description': galaxy_description,
-    'icon': "shield-alt",
-    # 'kill_chain_order': kill_chain_tactics,
-    'name': galaxy_name,
-    'namespace': "mitre",
-    'type': galaxy_type,
-    'uuid': "bcd85ca5-5ed7-4536-bca6-d16fb51adf55",
-    'version': 1
-}
-
-json_cluster = {
-    'authors': ["MITRE"],
-    'category': 'mitigation',
-    'name': galaxy_name,
-    'description': galaxy_description,
-    'source': galaxy_source,
-    'type': galaxy_type,
-    'uuid': "fe20707f-2dfb-4436-8520-8fedb8c79668",
-    'values': list(mitigations),
-    'version': 1
-}
-save_galaxy_and_cluster(json_galaxy, json_cluster, 'mitre-fight-mitigations.json')
-
-# data sources / detections
-galaxy_name = "MITRE FiGHT Data Sources"
-json_galaxy = {
-    'description': galaxy_description,
-    'icon': "bell",
-    # 'kill_chain_order': kill_chain_tactics,
-    'name': galaxy_name,
-    'namespace': "mitre",
-    'type': galaxy_type,
-    'uuid': "4ccc2400-55e4-42c2-bb8d-1d41883cef46",
-    'version': 1
-}
-
-json_cluster = {
-    'authors': ["MITRE"],
-    'category': 'data-source',
-    'name': galaxy_name,
-    'description': galaxy_description,
-    'source': galaxy_source,
-    'type': galaxy_type,
-    'uuid': "fb4410a1-5a39-4b30-934a-9cdfbcd4d2ad",
-    'values': list(data_sources),
-    'version': 1
-}
-save_galaxy_and_cluster(json_galaxy, json_cluster, 'mitre-fight-datasources.json')
+detection_galaxy.save('mitre-fight-datasources')
 
 
 print("All done, please don't forget to ./jq_all_the_things.sh, commit, and then ./validate_all.sh.")

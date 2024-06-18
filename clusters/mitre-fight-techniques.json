@@ -2655,124 +2655,121 @@
       "value": "5G-GUTI reuse"
     },
     {
-      "description": "An adversary may alter network signaling so as to disable encryption over the radio interface, thus allowing for eavesdropping of user data or signaling on that interface.\r\n\r\nThe protection of the radio interface link is chosen by the network when the User Equipment (UE) first registers to the network. Normally, all data and signaling is encrypted. However, under some circumstances (e.g. emergency calls, when the UE is not registered in the serving network), no encryption keys can be derived and so no encryption is applied—in this case the algorithm is called NULL. \r\n\r\nSeveral procedures and interfaces can be implemented incorrectly or misused and may result in use of the NULL encryption algorithm to protect user signaling -- Non-Access Stratum (NAS) or Access Stratum (AS) Control Plane (CP) -- ; or user data -- AS User Pane (UP) -- over the radio interface. These can be followed by another adversarial behavior whereby eavesdropping can be done over the air interface for data and signaling.",
+      "description": "An adversary may alter or spoof network signaling so as to enable the NULL integrity algorithm thus allowing for manipulation of user data or signaling over the radio interface, for example to redirect traffic. \r\n\r\nSeveral procedures and interfaces can be implemented incorrectly or misused by an adversary in control over a gNB or NF and may result in a configuration that calls for the NULL integrity algorithm to protect data sent over the radio interface. The data sent is user signaling -- Non-Access Stratum (NAS) or Access Stratum (AS) Control Plane (CP) -- or subscriber data -- AS User Plane (UP)). These actions can be followed by another adversarial behavior whereby data and signaling sent over the radio interface is manipulated or tampered with.",
       "meta": {
-        "access-required": "None",
-        "architecture-segment": "RAN, Control Plane, User Plane",
-        "bluf": "An adversary may alter network signaling so as to disable encryption over the radio interface, thus allowing for eavesdropping of user data or signaling on that interface.",
+        "architecture-segment": "RAN",
+        "bluf": "An adversary may alter or spoof network signaling so as to enable the NULL integrity algorithm thus allowing for manipulation of user data or signaling over the radio interface, for example to redirect traffic.",
         "criticalassets": [
           {
-            "Description": "UE user plane data privacy.",
+            "Description": "UE signaling and subscriber (user plane) data integrity.",
             "Name": "UE data"
-          },
-          {
-            "Description": "UE signaling data privacy",
-            "Name": "UE signaling"
           }
         ],
         "detections": [
           {
-            "detects": "Check configuration changes in gNB, SMF, AMF; Configuration audits by OSS/BSS.",
+            "detects": "Check for unusual changes in gNB, SMF, AMF user profile, policy, and configuration data. Configuration audits by OSS/BSS to detect for example, user session redirects.",
             "fgdsid": "DS0015",
             "name": "Application Log"
           },
           {
-            "detects": "Inspect radio traffic and watch for unauthorized changes as the packets move through the interfaces.",
+            "detects": "Radio traffic content\nInspect radio traffic and watch for unauthorized changes as the packets move through the interfaces.",
             "fgdsid": "DS0029",
             "name": "Network Traffic"
           }
         ],
-        "external_id": "FGT1600.501",
+        "external_id": "FGT5009.001",
         "kill_chain": [
           "fight:Defense-Evasion"
         ],
         "mitigations": [
           {
+            "fgmid": "FGM5024",
+            "mitigates": "Ensure gNB implementation and SMF implementations are both checking the UE CP and UP security policy against the most trustworthy source and taking action to not enable NULL integrity except for emergency calls.",
+            "name": "Integrity protection of data communication"
+          },
+          {
+            "fgmid": "FGM5006",
+            "mitigates": "UE should refuse to set up radio bearer and PDU session without integrity protection.",
+            "name": "Restrictive user profile"
+          },
+          {
             "fgmid": "M1018",
-            "mitigates": "Network element security safeguards for gNBs, AMFs and SMFs. Includes measures in clause 5.3.4 of [2] for gNBs (e.g. software updates, OA&M access security, secure boot)",
+            "mitigates": "Network element security safeguards for gNBs, AMFs and SMFs. Includes measures in clause 5.3.4 of [2] (e.g. software updates, OA&M access security, secure boot).",
             "name": "User Account Management"
           },
           {
             "fgmid": "M1031",
-            "mitigates": "Implement network intrusion prevention methods",
+            "mitigates": "Implement network intrusion prevention methods.",
             "name": "Network Intrusion Prevention"
           },
           {
-            "fgmid": "M1041",
-            "mitigates": "Ensure gNB implementation and SMF implementations are both checking the UE CP and UP security policy against the most trustworthy source and taking action to not enable NULL encryption except for emergency calls",
-            "name": "Encrypt Sensitive Information"
-          },
-          {
             "fgmid": "M1043",
-            "mitigates": "Implement credential access protection methods",
+            "mitigates": "Implement credential access protection methods.",
             "name": "Credential Access Protection"
-          },
-          {
-            "fgmid": "M1046",
-            "mitigates": "Network element security safeguards for gNBs, AMFs and SMFs. Includes measures in clause 5.3.4 of [2] for gNBs (e.g. software updates, OA&M access security, secure boot)",
-            "name": "Boot Integrity"
-          },
-          {
-            "fgmid": "M1051",
-            "mitigates": "Network element security safeguards for gNBs, AMFs and SMFs. Includes measures in clause 5.3.4 of [2] for gNBs (e.g. software updates, OA&M access security, secure boot)",
-            "name": "Update Software"
           }
         ],
         "object-type": "technique",
-        "platforms": "5G",
+        "platforms": "5G Radio",
         "postconditions": [
           {
-            "Description": "Control Plane: All UE signaling data may be revealed if both NAS and AS CP (RRC) security algorithms are weakened.\n\nUser Plane: Subscriber (user plane) data may be revealed if AS UP security algorithms are weakened.",
-            "Name": "UE data unprotected on air interface"
+            "Description": "Control Plane (CP): All UE signaling data may be tampered with if both NAS and AS CP (i.e., RRC) algorithms are weakened. \n\nUser Plane (UP): Subscriber (user) data may be tampered with if AS UP algorithms are weakened.\n\nAs a result, subscriber data session does not get setup (DoS attack) or gets interrupted during an active session.",
+            "Name": "UE data not integrity protected on air interface"
           }
         ],
         "preconditions": [
           {
-            "Description": "A rogue gNB may be required to change the UE’s CP and UP supported algorithms to NULL. It’s easier to achieve control over a gNB than over the AMF or SMF itself. But then if the AMF and SMF are not rogue just not configured to do these additional checks, then control over a rogue gNB is sufficient.\nThis attack is possible with only control over the AMF, in which case the algorithm for CP and UP protection is changed to NULL.",
-            "Name": "Rogue or misconfigured AMF or SMF or gNB"
+            "Description": "A rogue gNB may be required to change the UE’s CP & UP supported algorithms to NULL. It’s easier to achieve control over a gNB than over the AMF or SMF itself. But then if the AMF and SMF are not rogue just not configured to do these additional checks, then control over a rogue gNB is sufficient.\nThis attack is possible with only control over the AMF, in which case the algorithm for CP and UP protection may be changed to NULL.",
+            "Name": "Rogue or misconfigured AMF or SMF or gNB or MME"
           }
         ],
         "procedureexamples": [
           {
-            "Description": "Adversary (e.g. with fake gNB) intentionally configures NULL encryption algorithm to have highest priority in gNB. These algorithms are sent to the UE in the (Access Stratum) AS Security Mode Command. Normally the activation of algorithms for the AS is done by the gNB based on that policy received from the SMF, but a fake gNB can ignore the SMF. Clauses 6.7.3 & D.1 of [2].\n\nAdversary with control over a legitimate gNB, and who currently serves the UE, tells the SMF that the UE Control Plane (CP) and User Plane (UP) policy is NULL encryption, and the (legitimate but not correctly implemented) SMF doesn’t check that against the locally-stored UE UP policy and lets the CP and UP data be transmitted with NULL encryption. Clause 6.6.1 of [2]",
+            "Description": "Adversary (e.g. with fake gNB) intentionally configures NULL integrity algorithm to have highest priority in gNB. These algorithms are sent to the UE in the Access Stratum (AS) Security Mode Command (SMC). Normally the activation of algorithms for the AS is done by the gNB based on that policy received from the SMF, but a fake gNB can ignore the SMF. Clauses 6.7.3 & D.1 of [2].\n\nAdversary with control over a legitimate gNB, and who currently serves the UE, tells the SMF that the UE Control Plane (CP) and User Plane (UP) policy is NULL integrity, and the (legit but not correctly implemented) SMF doesn’t check that against the locally configured UE CP & UP policy and lets the CP and UP data use NULL integrity. Clause 6.6.1 of [2].",
             "Name": "Fake or misconfigured base station"
           },
           {
-            "Description": "Adversary makes the unauthorized change in the SMF CP and UP local policy to enable NULL encryption for CP & UP traffic.\nAlternatively, adversary exploits an SMF that is not implemented to check (for every UE it serves) that the algorithm received from gNB (which may be compromised or fake) matches the (more trusted) local policy. That local policy in turn should be checked that it is the same as the UE policy stored in the UDM, which has the higher trust. Any of these failures can result in the SMF enabling the CP and UP traffic over the radio interface to use NULL encryption.",
-            "Name": "Rogue or misconfigured Session Management Function (SMF)"
+            "Description": "Adversary makes the unauthorized change in the SMF CP & UP local policy to enable NULL integrity for CP & UP traffic.\nAlternatively, adversary exploits an SMF that is not implemented to check (for every UE it serves) that the algorithm received from gNB- (which may be compromised or fake) matches the local policy. That local policy in turn should be checked that it is the same as the UE policy stored in the UDM. Any of these failures can result in the SMF enabling the CP and UP traffic over the radio interface to use NULL integrity.",
+            "Name": "Rogue or misconfigured SMF"
           },
           {
-            "Description": "Adversary with control over AMF (or control over the configuration of AMF) can affect UE procedures such as NAS Security Mode Command, such that the UE's NAS data is not protected, i.e. prioritize NULL algorithm for either NAS encryption or integrity.\n \nThis can be followed by another attack behavior whereby eavesdropping can be done over the air interface for data and signaling. Clauses 5.3.2 and 5.5.1 of [2]",
-            "Name": "Rogue or misconfigured Access and Mobility Management Function (AMF) non-roaming"
+            "Description": "Adversary with control over AMF (or control over the configuration of AMF) can affect UE procedures such as NAS Security Mode Command, such that the UE's NAS data is not protected, i.e. prioritize NULL algorithm for either NAS encryption or integrity. Clause K.2.3.3. of [1]. \n\nThis can be followed by another attack behavior whereby data manipulation can be done over the air interface for signaling data. Clauses 5.3.2, 5.3.3 & 5.5.1, 5.5.2 of [2].",
+            "Name": "Rogue or misconfigured AMF non-roaming"
           },
           {
-            "Description": "Compromised source AMF sends incorrect UE context information to legitimate target AMF during either (a) Initial registration and roaming or (b) Handover (N2 based). \nThe source AMF sends NULL  encryption algorithm information as part of the “UEContextTransfer” (initial registration and roaming) or “CreateUEContext” (N2 handover) service request messages. All UE data will be sent in cleartext after registration or handover is completed. Clauses 4.2.2.2.2, 4.9.1.3.1 and 5.2.2.1 of [3] The element in the UE context is the ueSecurityCapability which the rogue AMF sets to NULL only.",
+            "Description": "Compromised source AMF sends incorrect UE context information to legitimate target AMF during\nInitial registration & roaming or\nHandover (N2 based)\n\nSource AMF sends null integrity algorithm information as part of the “UEContextTransfer” (initial registration & roaming) or “CreateUEContext” (N2 handover) service request messages. All UE data will be sent without integrity protection after registration or handover is completed. Clauses 4.2.2.2.2, 4.9.1.3.1 & 5.2.2.1 of [3] The element in the UE context is the ueSecurityCapability which the rogue AMF sets to NULL only.",
             "Name": "Rogue or misconfigured AMF during roaming/handover"
           },
           {
-            "Description": "Compromised source MME/AMF sends incorrect UE context information to legitimate target AMF during EPS to 5GS handover and roaming with and without N26 interface.\n\nSource AMF sends NULL encryption algorithm information as part of the “UEContextTransfer” or \n“RelocateUEContext” service request messages. All UE data will be sent in clear text after roaming or handover is completed. Clauses 4.11.1.2.2.2, 4.11.1.3.3, 4.11.2.3 and 5.2.2.1 of [3] The element in the UE context is the ueSecurityCapability which the rogue AMF sets to NULL only.",
-            "Name": "Rogue or misconfigured AMF/MME during EPS roaming/handover"
+            "Description": "Compromised source MME sends incorrect UE context information to legitimate target AMF during EPS to 5GS handover and roaming with and without N26 interface.\n\nSource AMF sends NULL integrity algorithm information as part of the “UEContextTransfer” or \n“RelocateUEContext” service request messages. All UE data will be sent without integrity protection  after roaming or handover is completed. Clauses 4.11.1.2.2.2, 4.11.1.3.3, 4.11.2.3 & 5.2.2.1 of [3] The element in the UE context is the ueSecurityCapability which the rogue AMF sets to NULL only.",
+            "Name": "Rogue or misconfigured MME during EPS roaming/handover"
           }
         ],
         "refs": [
-          "[1] 3GPP TR 33.926 “Security Assurance Specification (SCAS  threats and critical assets in 3GPP network product classes”. - https://www.3gpp.org/DynaReport/33926.htm",
-          "[2] 3GPP TS 33.501 “Security architecture and procedures for 5G System”. - https://www.3gpp.org/DynaReport/33501.htm",
-          "[3] 3GPP TS 23.502 “Procedures for the 5G System (5GS ”. - https://www.3gpp.org/DynaReport/23502.htm",
+          "[1] 3GPP TR 33.926 “Security Assurance Specification (SCAS  threats and critical assets in 3GPP network product classes”, v17.4.0, June 2022 - https://www.3gpp.org/DynaReport/33926.htm",
+          "[2] 3GPP TS 33.501 “Security architecture and procedures for 5G System”, v 17.6.0, June 2022 - https://www.3gpp.org/DynaReport/33501.htm",
+          "[3] 3GPP TS 23.502 “Procedures for the 5G System (5GS ”, v17.5.0, June 2022 - https://www.3gpp.org/DynaReport/23502.htm",
           "https://fight.mitre.org/data%20sources/DS0015",
           "https://fight.mitre.org/data%20sources/DS0029",
+          "https://fight.mitre.org/mitigations/FGM5006",
+          "https://fight.mitre.org/mitigations/FGM5024",
           "https://fight.mitre.org/mitigations/M1018",
           "https://fight.mitre.org/mitigations/M1031",
-          "https://fight.mitre.org/mitigations/M1041",
           "https://fight.mitre.org/mitigations/M1043",
-          "https://fight.mitre.org/mitigations/M1046",
-          "https://fight.mitre.org/mitigations/M1051",
-          "https://fight.mitre.org/techniques/FGT1600.501"
+          "https://fight.mitre.org/techniques/FGT5009.001"
         ],
-        "status": "This is a theoretical behavior in context of 5G systems.",
-        "subtechnique-of": "FGT1600",
-        "typecode": "fight_subtechnique_to_attack_technique"
+        "status": "This is a theoretical behavior",
+        "subtechnique-of": "FGT5009",
+        "typecode": "fight_subtechnique"
       },
       "related": [
+        {
+          "dest-uuid": "cccb021c-dd96-5d72-904f-c55ad24598de",
+          "type": "mitigated-by"
+        },
+        {
+          "dest-uuid": "cce626f3-b774-5f29-b1d2-5fb96a5befef",
+          "type": "mitigated-by"
+        },
         {
           "dest-uuid": "686a3700-8ee3-52d3-954f-d2ec4abf14aa",
           "type": "mitigated-by"
@@ -2782,19 +2779,7 @@
           "type": "mitigated-by"
         },
         {
-          "dest-uuid": "71801a06-41bd-5336-a539-e8bea9d647f7",
-          "type": "mitigated-by"
-        },
-        {
           "dest-uuid": "4d882eab-1588-508e-b3fc-f7221cad2db8",
-          "type": "mitigated-by"
-        },
-        {
-          "dest-uuid": "3ea67e5f-f46e-5b5d-a987-0008b66fddfc",
-          "type": "mitigated-by"
-        },
-        {
-          "dest-uuid": "f54f2c17-0cf6-536a-b52e-a886652815d6",
           "type": "mitigated-by"
         },
         {
@@ -2806,11 +2791,11 @@
           "type": "detected-by"
         },
         {
-          "dest-uuid": "bb3c722d-a179-5bb9-bb66-0298fa30876d",
+          "dest-uuid": "4d8acf53-2350-5390-af4d-7ba1f5f9dc13",
           "type": "subtechnique-of"
         }
       ],
-      "uuid": "801f5dad-f3a6-5f2f-9ae5-c11d82006659",
+      "uuid": "955b7c23-35a9-57df-a223-ed9d9b3d14ad",
       "value": "Radio Interface"
     },
     {
@@ -6139,7 +6124,6 @@
         "status": "Observed in earlier 3GPP generations and expected in 5G.",
         "typecode": "fight_technique"
       },
-      "related": [],
       "uuid": "0eaef533-4472-5d77-a665-3a40de657c70",
       "value": "Subscriber Profile Identifier Discovery"
     },
@@ -6471,6 +6455,90 @@
       ],
       "uuid": "0551e810-74ac-5a51-82c1-abaebeb3dfd4",
       "value": "Self Location Measurement"
+    },
+    {
+      "description": "An adversary may position itself on the radio interface, to support follow-on behaviors such as [Network Sniffing](/techniques/FGT1040) or [Transmitted Data Manipulation](/techniques/FGT1565.002).\r\n\r\nAdversary can deploy a fake gNB, eNB (a 4G base station) or WiFi access point, or a back-to-back fake gNB-UE combination to act as an adversary-in-the-middle, in order to intercept, inject and possibly modify communication and relay communication to and from intended recipient over the radio interface. \r\n\r\nThis attack assumes the following to have taken place: the UE has been bid-down (see [Bid down UE](/techniques/FGT1562.501)) to a less secure Radio Access Network such as 4G, or the UE connects to an eNB because the network is 5G Non-Standalone, or due to EPS fallback, or the UE connects to a WiFi access point (to access 5G services).",
+      "meta": {
+        "architecture-segment": "RAN",
+        "bluf": "An adversary may position itself on the radio interface, to support follow-on behaviors such as  [Network Sniffing](/techniques/FGT1040) or [Transmitted Data Manipulation](/techniques/FGT1565.002).",
+        "criticalassets": [
+          {
+            "Description": "All signaling transmitted to and from subscriber can be modified or intercepted in the clear",
+            "Name": "Subscriber signaling"
+          },
+          {
+            "Description": "UE/subscriber geographical location can be intercepted.",
+            "Name": "UE location"
+          },
+          {
+            "Description": "All data and voice transmitted to and from subscriber can be modified or intercepted in the clear",
+            "Name": "Subscriber traffic"
+          }
+        ],
+        "detections": [
+          {
+            "detects": "UE measurements of received power levels from all base stations nearby, and their identifiers Reference clause 6.24 of [3]",
+            "fgdsid": "FGDS5002",
+            "name": "UE signal measurements"
+          }
+        ],
+        "external_id": "FGT1557.501",
+        "kill_chain": [
+          "fight:Collection",
+          "fight:Credential-Access"
+        ],
+        "mitigations": [],
+        "object-type": "technique",
+        "platforms": "5G",
+        "postconditions": [
+          {
+            "Description": "Transient technique; works only as long as adversary-in-the-middle is able to retain connection.",
+            "Name": "Temporary loss of subscriber data confidentiality or integrity."
+          }
+        ],
+        "preconditions": [
+          {
+            "Description": "Subscriber security profile must allow bidding down to less secure service OR system must employ null integrity or encryption.",
+            "Name": "Permissive subscriber security profile OR system employs null integrity or encryption."
+          }
+        ],
+        "procedureexamples": [
+          {
+            "Description": "The adversary employs a back to back gNB-UE combination. When UE security profile allows bidding down, or the UE connects to 4G due to EPS fallback, or to WiFi, an adversary acts as an adversary-in-the-middle to intercept and possibly modify communication to and from intended recipient.",
+            "Name": "Adversary-in-the-Middle on air interface for a given UE"
+          },
+          {
+            "Description": "Alternatively, if the 5G system employs null integrity or encryption, subscriber data traffic can be eavesdropped or modified in transit over the air interface",
+            "Name": "Adversary-in-the-Middle on air interface for any UE"
+          },
+          {
+            "Description": "Adversary uses a fake base station to broadcast spoofed configuration messages to UEs nearby. Reference [3] (appendix B) contains a taxonomy of attacks against 5G UEs, passive and active. One concerns message attacks (fake MIB/SIB – Master Information Block/System Information Block)",
+            "Name": "Spoofed configuration messages from fake base station"
+          }
+        ],
+        "refs": [
+          "[1] European Union Agency for Cybersecurity (ENISA : “ENISA Threat Landscape for 5G Networks” Report, section 4.4, December 2020. - https://www.enisa.europa.eu/publications/enisa-threat-landscape-report-for-5g-networks",
+          "[2] Hu, X. et al: “A Systematic Analysis Method for 5G Non-Access Stratum Signalling Security”, August 2019 - https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=8817957",
+          "[3] 3rd Generation Partnership Project (3GPP  TR 33.809: “Study on  5G security enhancements against False Base Stations (FBS ”, Technical Report, v0.18.0, February 2022. - https://www.3gpp.org/DynaReport/33809.htm",
+          "https://fight.mitre.org/data%20sources/FGDS5002",
+          "https://fight.mitre.org/techniques/FGT1557.501"
+        ],
+        "status": "Observed in earlier 3GPP generations and expected in 5G.",
+        "subtechnique-of": "FGT1557",
+        "typecode": "fight_subtechnique_to_attack_technique"
+      },
+      "related": [
+        {
+          "dest-uuid": "fa9ee8fb-7f25-554c-9682-0e50e774812d",
+          "type": "detected-by"
+        },
+        {
+          "dest-uuid": "5ecccab0-9d6d-504c-92c4-408091a3c114",
+          "type": "subtechnique-of"
+        }
+      ],
+      "uuid": "125336d2-ca71-57b5-a46e-faca5013c555",
+      "value": "Radio interface"
     },
     {
       "description": "A malicious app consumes subscriber data allocation to deny or degrade service to that UE. \r\n\r\nA malicious application might consume a UE's limited data plan, denying or throttling service.",
@@ -7415,7 +7483,6 @@
         "status": "Observed in earlier 3GPP generations and expected in 5G.",
         "typecode": "fight_technique"
       },
-      "related": [],
       "uuid": "f940f548-256a-5559-83bc-7fea99d051bf",
       "value": "Locate UE"
     },
@@ -8246,7 +8313,6 @@
         "status": "This is a theoretical behavior in context of 5G systems.",
         "typecode": "fight_technique"
       },
-      "related": [],
       "uuid": "663f3425-dd8c-58aa-82d0-07389cf49175",
       "value": "gNodeB Component Manipulation"
     },
@@ -9068,191 +9134,32 @@
       "value": "Exploit Public-Facing Application"
     },
     {
-      "description": "Adversaries may perform Endpoint Denial of Service (DoS) attacks to degrade or block the availability of services to users.\r\n[To read more, please see the MITRE ATT&CK page for this technique](https://attack.mitre.org/techniques/T1499)",
+      "description": "Adversaries may perform Endpoint Denial of Service (DoS) attacks to degrade or block the availability of services to users.\n\nOn Android versions prior to 7, apps can abuse Device Administrator access to reset the device lock passcode, preventing the user from unlocking the device.\r\n[To read more, please see the MITRE ATT&CK page for this technique](https://attack.mitre.org/techniques/T1642)",
       "meta": {
-        "access-required": "N/A, N/A",
-        "addendums": [
-          "#### Addendum Name: Interworking Denial of Service\r\n##### Architecture Segments: Control Plane, Roaming\r\n An adversary on a semi-public/roaming partner network may exploit weaknesses in Application Programming (API) interfaces on Network Functions (NF) that are exposed to the semi-public network, i.e. roaming partner network, which can lead to denial of service of the exposed NF.\r\n\r\nSome 5G functions such as the SEPP and UPF have API’s that are exposed and accessible to other providers over an interworking network that is not Internet accessible. An adversary with a position on another organization, outside the targeted operator’s trust zone, could exploit a previously identified weakness in the target API to cause the NF to crash resulting in denial of service. The adversary may also potentially use volumetric techniques to degrade or deny service.\r\n\r\n",
-          "#### Addendum Name: Public Function Denial of Service\r\n##### Architecture Segments: Control Plane, User Plane\r\n An adversary may exploit weaknesses in Application Programming (API) interfaces on Network Functions (NF) that are exposed to the public Internet, which exposes those functions to potential adversary denial of service of the NF.\r\n\r\nSome 5G functions such as the Network Exposure Function (NEF) have APIs that are public facing and are subject to potential exploit by adversaries similarly to public facing websites and services. The adversary could exploit a previously identified weakness in the API to cause the NF to crash, resulting in denial of service. The adversary may also potentially use volumetric techniques to degrade or deny service.\r\n\r\n"
-        ],
-        "architecture-segment": "Control Plane, User Plane",
-        "bluf": "Adversaries may perform Endpoint Denial of Service (DoS) attacks to degrade or block the availability of services to users.",
-        "criticalassets": [
-          {
-            "Description": "Security Edge Protection Proxy function which provides roaming interface for signaling traffic to roaming partner (MNO) networks",
-            "Name": "SEPP"
-          },
-          {
-            "Description": "User Plane Function which provides roaming interface for user plane traffic to roaming partner (MNO) networks",
-            "Name": "UPF"
-          },
-          {
-            "Description": "Access and Mobility Function which provides roaming interface for signaling traffic to 4G networks via N26 interface and mobility function to 5G networks via N2 interface",
-            "Name": "AMF"
-          },
-          {
-            "Description": "Network Exposure Function which provides API access to external (to the operator) Application Functions (AF)",
-            "Name": "NEF"
-          }
-        ],
-        "detections": [
-          {
-            "detects": "Monitor application logs for unusual requests or rate of requests",
-            "fgdsid": "DS0015",
-            "name": "Application Log"
-          },
-          {
-            "detects": "Monitor for unusual volumes or sources of requests to the service",
-            "fgdsid": "DS0029",
-            "name": "Network Traffic"
-          },
-          {
-            "detects": "Monitor application logs for unusual requests or rate of requests",
-            "fgdsid": "DS0015",
-            "name": "Application Log"
-          },
-          {
-            "detects": "Monitor for unusual volumes or sources of requests to the service",
-            "fgdsid": "DS0029",
-            "name": "Network Traffic"
-          }
-        ],
-        "external_id": "FGT1499",
+        "architecture-segment": "5G",
+        "bluf": "Adversaries may perform Endpoint Denial of Service (DoS) attacks to degrade or block the availability of services to users.\n\nOn Android versions prior to 7, apps can abuse Device Administrator access to reset the device lock passcode, preventing the user from unlocking the device.",
+        "detections": [],
+        "external_id": "FGT1642",
         "kill_chain": [
           "fight:Impact"
         ],
-        "mitigations": [
-          {
-            "fgmid": "M1016",
-            "mitigates": "Vulnerability scanning of public APIs",
-            "name": "Vulnerability Scanning"
-          },
-          {
-            "fgmid": "M1037",
-            "mitigates": "Use of network based DDoS mitigation capabilities to filter traffic upstream",
-            "name": "Filter Network Traffic"
-          },
-          {
-            "fgmid": "M1050",
-            "mitigates": "Use Web Application Firewall (WAF) to minimize potential exploit of vulnerabilities",
-            "name": "Exploit Protection"
-          },
-          {
-            "fgmid": "M1016",
-            "mitigates": "Vulnerability scanning of public APIs",
-            "name": "Vulnerability Scanning"
-          },
-          {
-            "fgmid": "M1037",
-            "mitigates": "Use of network based DDoS mitigation capabilities to filter traffic upstream",
-            "name": "Filter Network Traffic"
-          },
-          {
-            "fgmid": "M1050",
-            "mitigates": "Use Web Application Firewall (WAF) to minimize potential exploit of vulnerabilities",
-            "name": "Exploit Protection"
-          }
-        ],
+        "mitigations": [],
         "object-type": "technique",
-        "platforms": "5G, 5G",
-        "preconditions": [
-          {
-            "Description": "Adversary may need to identify vulnerabilities in the API to obtain initial-access, unauthorized information, or perform a denial of service",
-            "Name": "API vulnerability"
-          },
-          {
-            "Description": "Adversary may need to obtain credentials to collect unauthorized information",
-            "Name": "API credentials"
-          },
-          {
-            "Description": "Adversary may need to identify vulnerabilities in the API to obtain initial-access, unauthorized information, or perform a denial of service",
-            "Name": "API vulnerability"
-          },
-          {
-            "Description": "Adversary may need to obtain credentials to collect unauthorized information",
-            "Name": "API credentials"
-          }
-        ],
-        "procedureexamples": [
-          {
-            "Description": "Adversary uses a vulnerability to cause the NF to crash",
-            "Name": "Vulnerability Exploit"
-          },
-          {
-            "Description": "Adversary uses one or more volumetric techniques to degrade or deny availability of the NF",
-            "Name": "Volumetric attack"
-          },
-          {
-            "Description": "Adversary uses a vulnerability to cause the NF to crash",
-            "Name": "Vulnerability Exploit"
-          },
-          {
-            "Description": "Adversary uses one or more volumetric techniques to degrade or deny availability of the NF",
-            "Name": "Volumetric attack"
-          }
-        ],
+        "platforms": "5G",
         "refs": [
-          "[1] European Union Agency for Cybersecurity (ENISA : “ENISA Threat Landscape for 5G Networks” Report, December 2020. - https://www.enisa.europa.eu/publications/enisa-threat-landscape-report-for-5g-networks",
-          "[2] R. Pell, S. Moschoyiannis, E. Panaousis, R. Heartfield, “Towards dynamic threat modelling in 5G core networks based on MITRE ATT&CK”,  October 2021 - https://arxiv.org/abs/2108.11206",
-          "[3] TOP 7 REST API Security Threats, blog January 2019 - https://blog.restcase.com/top-7-rest-api-security-threats/",
-          "https://attack.mitre.org/techniques/T1499",
-          "https://fight.mitre.org/data%20sources/DS0015",
-          "https://fight.mitre.org/data%20sources/DS0029",
-          "https://fight.mitre.org/mitigations/M1016",
-          "https://fight.mitre.org/mitigations/M1037",
-          "https://fight.mitre.org/mitigations/M1050",
-          "https://fight.mitre.org/techniques/FGT1499"
+          "https://attack.mitre.org/techniques/T1642",
+          "https://fight.mitre.org/techniques/FGT1642"
         ],
-        "status": "This is an observed behavior in Enterprise networks, and is theoretical in context of 5G systems.",
-        "typecode": "attack_technique_addendum"
+        "status": "This is an observed behavior in Enterprise networks.",
+        "typecode": "attack_technique_with_fight_subs"
       },
       "related": [
         {
-          "dest-uuid": "c675646d-e204-4aa8-978d-e3d6d65885c4",
+          "dest-uuid": "eb6cf439-1bcb-4d10-bc68-1eed844ed7b3",
           "type": "related-to"
-        },
-        {
-          "dest-uuid": "182337e0-b8d6-55da-9e9b-141029f9eb9b",
-          "type": "mitigated-by"
-        },
-        {
-          "dest-uuid": "ed391833-59f3-5049-9017-66427a8d8a17",
-          "type": "mitigated-by"
-        },
-        {
-          "dest-uuid": "3338eab7-16f1-5ba8-8e82-5faf0ed9b31a",
-          "type": "mitigated-by"
-        },
-        {
-          "dest-uuid": "182337e0-b8d6-55da-9e9b-141029f9eb9b",
-          "type": "mitigated-by"
-        },
-        {
-          "dest-uuid": "ed391833-59f3-5049-9017-66427a8d8a17",
-          "type": "mitigated-by"
-        },
-        {
-          "dest-uuid": "3338eab7-16f1-5ba8-8e82-5faf0ed9b31a",
-          "type": "mitigated-by"
-        },
-        {
-          "dest-uuid": "3c23d0f7-d55c-5891-90b9-c744e976f0ef",
-          "type": "detected-by"
-        },
-        {
-          "dest-uuid": "becdcf31-3d2a-53bb-8251-51e9da4a0df6",
-          "type": "detected-by"
-        },
-        {
-          "dest-uuid": "3c23d0f7-d55c-5891-90b9-c744e976f0ef",
-          "type": "detected-by"
-        },
-        {
-          "dest-uuid": "becdcf31-3d2a-53bb-8251-51e9da4a0df6",
-          "type": "detected-by"
         }
       ],
-      "uuid": "73d8dd2f-14f5-5774-8b7a-ca9712f63b91",
+      "uuid": "58e62481-da83-5ee9-9286-69822d1c153e",
       "value": "Endpoint Denial of Service"
     },
     {
@@ -9743,11 +9650,11 @@
       "value": "Acquire Infrastructure"
     },
     {
-      "description": "An adversary may change the configuration of network nodes so as to disable or weaken integrity protection on the network interfaces Non-SBI, SBI and Roaming, thus allowing for transmitted data manipulation.\r\n\r\nThe following network interfaces are in the scope of this document.\r\n\r\n1. “Non-SBI” (non-Service Based Interface) network interfaces are within 5G core (e.g. N4) and RAN (e.g. Xn, F1, E1), and between the RAN and the 5G Core (e.g. N2, N3). \r\n\r\n2. SBI network interfaces are between core NFs within an operator network; they use REST APIs.\r\n\r\n3. Roaming and interconnect interfaces, including IPX, are between network operators (between SEPPs (N32), or other interworking functions like AMF/MME (N26) and between the UPFs owned by different network operators (N9)).\r\n\r\nAn adversary with control over gNB or AMF or UPF or SMF may disable IPSec on non-SBI interfaces (Xn, F1, E1, N2, N3, N4). IPSec is expected to be used to protect all non-SBI links, however, unlike radio communications, operator RAN to core communications do not mandate integrity protection.\r\n\r\nAn adversary with access to the SBI links, for example, with control over one or more core network NFs or a middlebox (including the Service Communication Proxy (SCP) if deployed), may disable use of TLS or use older TLS version such as v1.1. TLS is expected (by 3GPP standards) to be used to protect all SBI links within the operator core network. \r\n\r\nAn adversary with control over roaming nodes or interfaces - namely SEPP or IPX network -- may disable or cause to use a weak integrity algorithm for TLS or JWS signatures on the N32 interface. An adversary with control over visited network UPF may disable IPSec on N9 interface or a compromised MME or AMF may disable IPSec on N26 interface.",
+      "description": "An adversary may alter network signaling so as to use weakened or no encryption algorithm on the Non-SBI (Service Based Interface), SBI and Roaming interfaces, thus allowing for eavesdropping of user data or signaling. \r\n\r\nThe following Network interfaces are in the scope of this document.\r\n\r\n1. “Non-SBI” network interfaces are within 5G core network and the Radio Access Network (RAN), and between the RAN and the 5G Core (e.g. N2, N3, N4, Xn). \r\n\r\n2. SBI network interfaces are between core Network Functions (NFs) within an operator network; they use REST APIs.\r\n\r\n3. Roaming and interconnect interfaces, including IPX, are between network operators (between Security Edge Protection Proxies (SEPPs) (N32), or other interworking functions like Access and Mobility Management (AMF/MME) (N26) and between User Plane Functions (UPFs) owned by different network operators (N9)).\r\n\r\nAn adversary with control over gNB, AMF, UPF or SMF may disable IPSec on non-SBI interfaces (Xn, N2, N3, N4). IPSec is expected to be used to protect all non-SBI links, however, unlike radio communications, operator RAN to core communications are not mandated to actually run encryption protection. \r\n\r\nAn adversary with access to the SBI links, with control over one or more core network functions (NFs) or a middlebox (including the Service Communication Proxy (SCP) if deployed), may disable use of TLS or use older TLS version such as v1.1. TLS is required by 3GPP standards to be used to protect all SBI links within the operator core network. \r\n\r\nAn adversary with control over roaming nodes or interfaces- namely SEPP or IPX network-- may disable or cause to use a weak encryption algorithm for TLS or JWE encryption on the N32 interface. An adversary with control over visited network UPF may disable IPSec on the N9 interface or a compromised MME or AMF may disable IPSec on N26 interface.",
       "meta": {
-        "access-required": "N/A",
-        "architecture-segment": "User Plane, Control Plane, Roaming",
-        "bluf": "An adversary may change the configuration of network nodes so as to disable or weaken integrity protection on the network interfaces Non-SBI, SBI and Roaming, thus allowing for transmitted data manipulation.",
+        "access-required": "None",
+        "architecture-segment": "Control Plane, User Plane",
+        "bluf": "An adversary may alter network signaling so as to use weakened or no encryption algorithm on the Non-SBI (Service Based Interface), SBI and Roaming interfaces, thus allowing for eavesdropping of user data or signaling.",
         "criticalassets": [
           {
             "Description": "Any of the subscriber data sourced or destined to the UE",
@@ -9756,34 +9663,25 @@
           {
             "Description": "Any of the signaling traffic between UE and network",
             "Name": "UE signaling"
-          },
-          {
-            "Description": "Any of the signaling traffic between 5G core NFs, between 5G core and RAN, within RAN and between 5G and 4G core networks.",
-            "Name": "Network signaling"
           }
         ],
         "detections": [
           {
-            "detects": "Check configuration changes in gNB, NFs, SEPP and MME.\nRun configuration audits by OSS/BSS.",
+            "detects": "Check configuration changes in gNB and all core NFs; Configuration audits by OSS/BSS.",
             "fgdsid": "DS0015",
             "name": "Application Log"
           },
           {
-            "detects": "Inspect network traffic and watch for unauthorized changes as the packets move through the interfaces.",
+            "detects": "Inspect network traffic and watch for unauthorized changes",
             "fgdsid": "DS0029",
             "name": "Network Traffic"
           }
         ],
-        "external_id": "FGT5009.002",
+        "external_id": "FGT1600.502",
         "kill_chain": [
           "fight:Defense-Evasion"
         ],
         "mitigations": [
-          {
-            "fgmid": "FGM5024",
-            "mitigates": "Use strong integrity protection on all non-SBI, SBI and roaming/interconnect interfaces. That is, TLS should be used in all SBI, N32-c and N32-f and PRINS in N32-f when TLS is not used.",
-            "name": "Integrity protection of data communication"
-          },
           {
             "fgmid": "M1018",
             "mitigates": "Network element security safeguards for gNB and all core NFs",
@@ -9793,6 +9691,11 @@
             "fgmid": "M1031",
             "mitigates": "Implement network intrusion prevention methods",
             "name": "Network Intrusion Prevention"
+          },
+          {
+            "fgmid": "M1041",
+            "mitigates": "Ensure strong encryption is used in all non-SBI, SBI and roaming/interconnect interfaces. That is, TLS (not version 1.1) should be used in all SBI, N32-c and N32-f ; in addition, PRINS should be used on N32-f when TLS is not used.",
+            "name": "Encrypt Sensitive Information"
           },
           {
             "fgmid": "M1043",
@@ -9814,78 +9717,74 @@
         "platforms": "5G",
         "postconditions": [
           {
-            "Description": "UE signaling with network and user plane data may be impacted. This can be used to cause DoS attack.",
-            "Name": "UE at risk of data manipulation"
-          },
-          {
-            "Description": "Network communication within core network or on the non-SBI interfaces or on roaming interface may be impacted.",
-            "Name": "Network signaling at risk of data manipulation"
+            "Description": "Control Plane: All UE signaling data may be revealed if IPSec and TLS are disabled.\n\nUser Plane: Subscriber (user plane) data may be revealed if IPSec is disabled. \n\nUE CP & UP data can be sniffed, see FGT1040 – Network Sniffing",
+            "Name": "UE data unprotected on network interfaces"
           }
         ],
         "preconditions": [
           {
             "Description": "Adversary must have access to the network components to cause the attacks",
-            "Name": "Rogue or misconfigured AMF or SMF or gNB or UPF or SEPP or MME or any other core NF"
+            "Name": "Rogue or misconfigured AMF/MME, SMF, gNB or UPF, or SEPP or any other core NF"
           }
         ],
         "procedureexamples": [
           {
-            "Description": "A rogue or misconfigured gNB can disable IPSec integrity or use a weak IPSec integrity algorithm on N2, N3, F1, E1 and Xn interfaces. Then it can launch other attacks. Clause D.2.2 of [1].",
+            "Description": "A rogue or misconfigured gNB can disable IPSec encryption or use a weak IPSec encryption algorithm on backhaul interfaces such as N2, N3 and Xn. This can be used to launch other attacks. Clause D.2.2 of [1], clause 5.3.2 of [2].",
             "Name": "Compromised or misconfigured gNB"
           },
           {
-            "Description": "A rogue or misconfigured AMF can disable integrity protection or use a weak integrity algorithm on N2 and N26 interfaces. Then it can launch other attacks. Clause K.2.1 of [1], clause 5.5.2 of [2].",
+            "Description": "A rogue or misconfigured AMF can disable IPSec encryption or use a weak IPSec encryption algorithm on N2 and N26 interfaces. This can be used to launch other attacks. Clause K.2.1 of [1], clause 5.5.1 of [2].",
             "Name": "Compromised or misconfigured AMF"
           },
           {
-            "Description": "A rogue or misconfigured UPF can disable IPSec integrity or use a weak IPSec integrity algorithm on N3, N4 and N9 interfaces. Then it can launch other attacks. Clause L.2.1 of [1], clauses 9.3 & 9.9 of [2].",
+            "Description": "A rogue or misconfigured UPF can disable IPSec encryption or use a weak IPSec encryption algorithm on N3, N4 and N9 interfaces. This can be used to launch other attacks. Clause L.2.1 of [1], clauses 9.3 and 9.9 of [2].",
             "Name": "Compromised or misconfigured UPF"
           },
           {
-            "Description": "A rogue or misconfigured SMF can disable IPSec integrity or use a weak IPSec integrity algorithm on N4 interface. Then it can launch other attacks. Clause 9.9 of [2].",
+            "Description": "A rogue or misconfigured SMF can disable IPSec encryption or use a weak IPSec encryption algorithm on N4 interface. This can be used to launch other attacks. Clause 9.9 of [2]",
             "Name": "Compromised or misconfigured SMF"
           },
           {
-            "Description": "A rogue or misconfigured NF can disable the TLS integrity or use a weak TLS integrity algorithm to another NF including the SCP (if deployed). Then it can launch other attacks to gain unauthorized access to network services. Clause 13.1 of [2].\n\nIf SCP is rogue or misconfigured, it can force TLS connections to all NFs to be unencrypted or use weak integrity for all. Clause 5.9.2.4 of [2].",
+            "Description": "A rogue or misconfigured NF can disable the TLS encryption or use a weak TLS encryption algorithm to another NF including the SCP. Then it can launch other attacks to gain unauthorized access to network services. Clause 13.1 of [2]\n\nIf SCP is rogue or misconfigured, it can force TLS connections to all NFs to be unencrypted or use weak encryptions for all. Clause 5.9.2.4 of [2].",
             "Name": "Compromised or misconfigured NF"
           },
           {
-            "Description": "A rogue or misconfigured SEPP can disable TLS integrity or use a weak TLS integrity algorithm on N32-c interface or N32-f interface or both.\n\nA rogue or misconfigured IPX component can disable JWS integrity or use a weak integrity algorithm when PRINS is used on N32-f. Then it can launch other attacks. Clauses 9.9, 13.1 and 13.2 of [2].",
+            "Description": "A rogue or misconfigured SEPP can disable TLS encryption or use a weak TLS encryption algorithm on N32-c interface or N32-f interface or both.\n\nA rogue or misconfigured SEPP can disable JWE encryption or use a weak encryption algorithm when the PRINS algorithm is used on N32-f. Then it can launch other attacks. Clauses 9.9, 13.1 and 13.2 of [2].",
             "Name": "Compromised or misconfigured SEPP or IPX component"
           },
           {
-            "Description": "A rogue or misconfigured AMF/MME can disable IPSec integrity or use a weak IPSec integrity algorithm on N26 interface. Then it can launch other attacks. Clause K.2.1 of [1], 8.4 of [2].",
+            "Description": "A rogue or misconfigured AMF/MME can disable IPSec encryption or use a weak IPSec encryption algorithm on N26 interface. Then it can launch other attacks. Clause K.2.1 of [1], 8.4 of [2].",
             "Name": "Compromised or misconfigured MME/AMF"
           }
         ],
         "refs": [
-          "[1] 3GPP TR33.926 “Security Assurance Specification (SCAS  threats and critical assets in 3GPP network product classes.” - https://www.3gpp.org/DynaReport/33926.htm",
-          "[2] 3GPP TS33.501 “Security architecture and procedures for 5G System.” - https://www.3gpp.org/DynaReport/33501.htm",
+          "[1] 3GPP TR 33.926 “Security Assurance Specification (SCAS  threats and critical assets in 3GPP network product classes”. - https://www.3gpp.org/DynaReport/33926.htm",
+          "[2] 3GPP TS 33.501 “Security architecture and procedures for 5G System”. - https://www.3gpp.org/DynaReport/33501.htm",
           "https://fight.mitre.org/data%20sources/DS0015",
           "https://fight.mitre.org/data%20sources/DS0029",
-          "https://fight.mitre.org/mitigations/FGM5024",
           "https://fight.mitre.org/mitigations/M1018",
           "https://fight.mitre.org/mitigations/M1031",
+          "https://fight.mitre.org/mitigations/M1041",
           "https://fight.mitre.org/mitigations/M1043",
           "https://fight.mitre.org/mitigations/M1046",
           "https://fight.mitre.org/mitigations/M1051",
-          "https://fight.mitre.org/techniques/FGT5009.002"
+          "https://fight.mitre.org/techniques/FGT1600.502"
         ],
         "status": "This is a theoretical behavior in context of 5G systems.",
-        "subtechnique-of": "FGT5009",
-        "typecode": "fight_subtechnique"
+        "subtechnique-of": "FGT1600",
+        "typecode": "fight_subtechnique_to_attack_technique"
       },
       "related": [
-        {
-          "dest-uuid": "cccb021c-dd96-5d72-904f-c55ad24598de",
-          "type": "mitigated-by"
-        },
         {
           "dest-uuid": "686a3700-8ee3-52d3-954f-d2ec4abf14aa",
           "type": "mitigated-by"
         },
         {
           "dest-uuid": "519ee587-bcda-5021-997d-9fc257c4720a",
+          "type": "mitigated-by"
+        },
+        {
+          "dest-uuid": "71801a06-41bd-5336-a539-e8bea9d647f7",
           "type": "mitigated-by"
         },
         {
@@ -9909,11 +9808,11 @@
           "type": "detected-by"
         },
         {
-          "dest-uuid": "4d8acf53-2350-5390-af4d-7ba1f5f9dc13",
+          "dest-uuid": "bb3c722d-a179-5bb9-bb66-0298fa30876d",
           "type": "subtechnique-of"
         }
       ],
-      "uuid": "56a188ea-36f4-5322-bc12-899feac72eaa",
+      "uuid": "8f866b4a-0347-509a-9f10-78af24f4ae8a",
       "value": "Network Interfaces"
     },
     {
@@ -10873,14 +10772,14 @@
       "value": "GTP-U Abuse"
     },
     {
-      "description": "An adversary may send an unsolicited SS7/Diameter message to the core network of a UE that will cause the core network to provide coarse location of the UE.\r\n\r\nAn operator’s network consists of a 5G Core and also auxiliary systems such as the IP Multimedia System (IMS).  The IMS is used to provide voice and SMS services; this is accomplished via traditional protocols SS7 and Diameter between the IMS and 5G core functions. This subtechnique covers the abuse of such legitimate signaling to obtain the location of a UE.\r\n\r\nBackground info:\r\n5G SA core has interfaces to IMS core to support voice and SMS services. Diameter/SS7 attacks. In signaling plane, voice service uses Diameter based Rx interface between PCF and P-CSCF in IMS, Diameter based Sh interface between HSS/UDM and TAS in IMS, Diameter based Cx interface between HSS/UDM and I/S-CSCF. It also uses SIP/SDP based Gm interface between UPF and P-CSCF in the user plane. SMS over NAS service uses SS7 (MAP) based interface and S6c Diameter based interface from UDM to SMSC. It also uses MAP and SGd (Diameter) interfaces from SMSF to SMSC.",
+      "description": "An adversary may send an unsolicited SS7/Diameter message to the core network of a UE that will cause the core network to provide IMSI/SUPI of the UE.\r\n\r\nAn operator’s network consists of a 5G Core and also auxiliary systems such as the IP Multimedia System (IMS).  The IMS is used to provide voice and SMS services; this is accomplished via traditional protocols SS7 and Diameter between the IMS and 5G core functions. This subtechnique covers the abuse of such legitimate signaling to obtain the permanent identifier of a UE. Once the IMSI/SUPI is obtained, adversary may launch further attacks such as retrieving location of the UE, network slice and data network that are being used by the UE etc.\r\n  \r\nBackground info:\r\n5G SA core has interfaces to IMS core to support voice and SMS services. Diameter/SS7 attacks. In signaling plane, voice service uses Diameter based Rx interface between PCF and P-CSCF in IMS, Diameter based Sh interface between HSS/UDM and TAS in IMS, Diameter based Cx interface between HSS/UDM and I/S-CSCF. It also uses SIP/SDP based Gm interface between UPF and P-CSCF in the user plane. SMS over NAS service uses SS7 (MAP) based interface and S6c Diameter based interface from UDM to SMSC. It also uses MAP and SGd (Diameter) interfaces from SMSF to SMSC.",
       "meta": {
         "access-required": "N/A",
         "architecture-segment": "Control Plane",
-        "bluf": "An adversary may send an unsolicited SS7/Diameter message to the core network of a UE that will cause the core network to provide coarse location of the UE.",
+        "bluf": "An adversary may send an unsolicited SS7/Diameter message to the core network of a UE that will cause the core network to provide IMSI/SUPI of the UE.",
         "criticalassets": [
           {
-            "Description": "Subscriber’s coarse location is revealed to the adversary.",
+            "Description": "Subscriber’s identity is revealed to the adversary.",
             "Name": "UE’s privacy is compromised"
           }
         ],
@@ -10891,7 +10790,7 @@
             "name": "Network Traffic"
           }
         ],
-        "external_id": "FGT5012.008",
+        "external_id": "FGT5019.005",
         "kill_chain": [
           "fight:Discovery",
           "fight:Collection"
@@ -10912,8 +10811,8 @@
         "platforms": "5G Network",
         "postconditions": [
           {
-            "Description": "Further attacks such as physical attack and eavesdropping on subscriber private data are possible once their coarse location is known to the adversary.",
-            "Name": "Further attacks on subscriber are possible"
+            "Description": "If IMSI/SUPI is obtained, many other subsequent attacks are possible such as retrieving subscriber location, network slice, data network of the UE.",
+            "Name": "IMSI/SUPI is available to the adversary"
           }
         ],
         "preconditions": [
@@ -10924,26 +10823,26 @@
         ],
         "procedureexamples": [
           {
-            "Description": "Adversary sets up a fake SMSC and then sends a specially crafted MAP SRI_SM Send Routing Info for Short Message Request (SRR) with victim UE’s MSISDN to HSS/UDM. If SMS router/firewall is not setup or if it is setup incorrectly, HSS/UDM will return the IMSI/SUPI of the UE and the ID of AMF/MME’s currently serving the UE in response Send Routing Info for SM Answer (SRA) message. Thus, adversary will know the coarse location of the UE e.g. part of the town where the victim UE is present [1]",
-            "Name": "Subscriber’s coarse location is retrieved via SS7/MAP signaling"
+            "Description": "Diameter protocol:\nAdversary sets up a fake SMSC and then sends a specially crafted Send Routing Info for Short Message Request (SRR) with victim UE’s MSISDN to HSS/UDM. If SMS router/firewall is not setup or if it is setup incorrectly, HSS/UDM will return the IMSI/SUPI of the UE and the ID of AMF/MME’s ID currently serving the UE in response Send Routing Info for SM Answer (SRA) message.\n\nSS7 protocol:\nAdversary sets up a fake SMSC and then sends a specially crafted MAP SRI_SM Send Routing Info for Short Message Request (SRR) with victim UE’s MSISDN to HSS/UDM. If SMS router/firewall is not setup or if it is setup incorrectly, HSS/UDM will return the IMSI/SUPI of the UE and the ID of AMF/MME’s ID currently serving the UE in response Send Routing Info for SM Answer (SRA) message. [1, 2]",
+            "Name": "UE’s IMSI/SUPI is retrieved using SRR message"
           },
           {
-            "Description": "Adversary sets up a fake IP-SM-GW or SMS-GMSC and then sends a specially crafted Send Routing Info for Short Message Request (SRR) with victim UE’s MSISDN to HSS/UDM. If SMS router/firewall is not setup or if it is setup incorrectly, HSS/UDM will return the ID of AMF/MME’s currently serving the UE in response Send Routing Info for SM Answer (SRA) message. Thus, adversary will know the coarse location of the UE e.g. part of the town where the victim UE is present. [2]",
-            "Name": "Subscriber’s coarse location is retrieved via Diameter signaling"
+            "Description": "Diameter protocol: Adversary sets up an application server and sends a specially crafted User Data Request (UDR) message with victim UE’s MSISDN to HSS/UDM. If HSS/UDM is not configured properly, HSS/UDM will return the IMSI/SUPI of the UE in User Data Answer (UDA) response message. [2]",
+            "Name": "UE’s IMSI/SUPI is retrieved using Diameter UDR message"
           }
         ],
         "refs": [
           "[1] International Conference on Cyber Conflict 2016: “We know where you are\". - https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7529440",
-          "[2] Positive Technologies article: “Next Generation Networks, Next Level Cyber Security Problems”. - https://www.ptsecurity.com/upload/iblock/a8e/diameter_research.pdf",
+          "[2] Positive Technologies article: “Next Generation Networks, Next Level Cyber Security Problems” - https://www.ptsecurity.com/upload/iblock/a8e/diameter_research.pdf",
           "[3] Broadforward’s SS7/MAP Firewall - https://www.broadforward.com/ss7-firewall-ss7fw/",
           "[4] GSMA IR.88 “EPS Roaming Guidelines”. - https://www.gsma.com/newsroom/wp-content/uploads/IR.88-v22.0.pdf",
           "https://fight.mitre.org/data%20sources/DS0029",
           "https://fight.mitre.org/mitigations/FGM5004",
           "https://fight.mitre.org/mitigations/FGM5513",
-          "https://fight.mitre.org/techniques/FGT5012.008"
+          "https://fight.mitre.org/techniques/FGT5019.005"
         ],
         "status": "Observed in earlier 3GPP generations and expected in 5G.",
-        "subtechnique-of": "FGT5012",
+        "subtechnique-of": "FGT5019",
         "typecode": "fight_subtechnique"
       },
       "related": [
@@ -10960,11 +10859,11 @@
           "type": "detected-by"
         },
         {
-          "dest-uuid": "f940f548-256a-5559-83bc-7fea99d051bf",
+          "dest-uuid": "0eaef533-4472-5d77-a665-3a40de657c70",
           "type": "subtechnique-of"
         }
       ],
-      "uuid": "42ff8bbd-7d2d-5e77-991d-62e9f7e16500",
+      "uuid": "b703c8f8-28b1-5fb3-8cbd-a1b154fddc68",
       "value": "Diameter signaling"
     },
     {
