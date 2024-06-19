@@ -431,7 +431,7 @@ Category: *actor* - source: *MISP Project* - total: *22* elements
 
 [Ransomware](https://www.misp-galaxy.org/ransomware) - Ransomware galaxy based on https://docs.google.com/spreadsheets/d/1TWS238xacAto-fLKh1n5uTsdijWdCEsGIM0Y0Hvmc5g/pubhtml and http://pastebin.com/raw/GHgpWjar
 
-Category: *tool* - source: *Various* - total: *1775* elements
+Category: *tool* - source: *Various* - total: *1784* elements
 
 [[HTML](https://www.misp-galaxy.org/ransomware)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/ransomware.json)]
 
@@ -471,7 +471,7 @@ Category: *sector* - source: *CERT-EU* - total: *118* elements
 
 [Sigma-Rules](https://www.misp-galaxy.org/sigma-rules) - MISP galaxy cluster based on Sigma Rules.
 
-Category: *rules* - source: *https://github.com/jstnk9/MISP/tree/main/misp-galaxy/sigma* - total: *2892* elements
+Category: *rules* - source: *https://github.com/jstnk9/MISP/tree/main/misp-galaxy/sigma* - total: *2901* elements
 
 [[HTML](https://www.misp-galaxy.org/sigma-rules)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/sigma-rules.json)]
 
