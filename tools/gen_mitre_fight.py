@@ -188,7 +188,7 @@ try:
             if key not in technique_galaxy.kill_chain_order:
                 print(f"New kill_chain_tactic found: {key}:{value}")
                 technique_galaxy.kill_chain_order.append(tactic)
-except KeyError:
+except (KeyError, FileNotFoundError):
     technique_galaxy = Galaxy({
         'description': galaxy_description,
         'icon': "map",
@@ -201,7 +201,6 @@ except KeyError:
     })
 
 technique_galaxy.save('mitre-fight-techniques')
-
 
 
 #
@@ -246,7 +245,7 @@ for cluster, duplicate in mitigation_cluster.duplicates:
 
 try:
     mitigation_galaxy = Galaxy('mitre-fight-mitigations')
-except KeyError:
+except (KeyError, FileNotFoundError):
     mitigation_galaxy = Galaxy({
         'description': galaxy_description,
         'icon': "shield-alt",
@@ -301,7 +300,7 @@ for cluster, duplicate in detection_cluster.duplicates:
 
 try:
     detection_galaxy = Galaxy('mitre-fight-datasources')
-except KeyError:
+except (KeyError, FileNotFoundError):
     detection_galaxy = Galaxy({
         'description': galaxy_description,
         'icon': "bell",

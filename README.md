@@ -335,7 +335,7 @@ Category: *mitigation* - source: *https://fight.mitre.org/* - total: *88* elemen
 
 [MITRE FiGHT Techniques](https://www.misp-galaxy.org/mitre-fight-techniques) - MITRE Five-G Hierarchy of Threats (FiGHT™) is a globally accessible knowledge base of adversary tactics and techniques that are used or could be used against 5G networks.
 
-Category: *attack-pattern* - source: *https://fight.mitre.org/* - total: *137* elements
+Category: *attack-pattern* - source: *https://fight.mitre.org/* - total: *136* elements
 
 [[HTML](https://www.misp-galaxy.org/mitre-fight-techniques)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-fight-techniques.json)]
 
