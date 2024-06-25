@@ -22,9 +22,9 @@ import yaml
 import os
 import uuid
 import re
-import json
-
 import argparse
+from pymispgalaxies import Cluster, Galaxy
+
 
 parser = argparse.ArgumentParser(description='Create/update the Azure Threat Research Matrix based on Markdown files.')
 parser.add_argument("-p", "--path", required=True, help="Path of the 'Azure Threat Research Matrix' git clone folder")
@@ -67,9 +67,12 @@ for nav_item in mkdocs_data['nav']:
                                     'uuid': str(uuid.uuid5(uuid.UUID("9319371e-2504-4128-8410-3741cebbcfd3"), technique)),
                                     'meta': {
                                         'kill_chain': [],
-                                        'refs': [f"https://microsoft.github.io/Azure-Threat-Research-Matrix/{fname[:-3]}"]
+                                        'refs': [f"https://microsoft.github.io/Azure-Threat-Research-Matrix/{fname[:-3]}"],
+                                        'external_id': technique.split(' ')[0]
                                     }
                                 }
+                            else:
+                                pass
                             clusters[technique]['meta']['kill_chain'].append(f"ATRM-tactics:{tactic}")
                 except KeyError:
                     continue
@@ -77,44 +80,52 @@ for nav_item in mkdocs_data['nav']:
     except KeyError:
         continue
 
-json_galaxy = {
-    'icon': "map",
-    'kill_chain_order': {
-        'ATRM-tactics': tactics
-    },
-    'name': "Azure Threat Research Matrix",
-    'description': "The purpose of the Azure Threat Research Matrix (ATRM) is to educate readers on the potential of Azure-based tactics, techniques, and procedures (TTPs). It is not to teach how to weaponize or specifically abuse them. For this reason, some specific commands will be obfuscated or parts will be omitted to prevent abuse.",
-    'namespace': "microsoft",
-    'type': "atrm",
-    'uuid': "b541a056-154c-41e7-8a56-41db3f871c00",
-    'version': 1
-}
 
-json_cluster = {
-    'authors': ["Microsoft"],
-    'category': 'atrm',
-    'name': "Azure Threat Research Matrix",
-    'description': "The purpose of the Azure Threat Research Matrix (ATRM) is to educate readers on the potential of Azure-based tactics, techniques, and procedures (TTPs). It is not to teach how to weaponize or specifically abuse them. For this reason, some specific commands will be obfuscated or parts will be omitted to prevent abuse.",
-    'source': 'https://github.com/microsoft/Azure-Threat-Research-Matrix',
-    'type': "atrm",
-    'uuid': "b541a056-154c-41e7-8a56-41db3f871c00",
-    'values': list(clusters.values()),
-    'version': 1
-}
+try:
+    cluster = Cluster('atrm')
+except (KeyError, FileNotFoundError):
+    cluster = Cluster({
+        'authors': ["Microsoft"],
+        'category': 'atrm',
+        'name': "Azure Threat Research Matrix",
+        'description': "The purpose of the Azure Threat Research Matrix (ATRM) is to educate readers on the potential of Azure-based tactics, techniques, and procedures (TTPs). It is not to teach how to weaponize or specifically abuse them. For this reason, some specific commands will be obfuscated or parts will be omitted to prevent abuse.",
+        'source': 'https://github.com/microsoft/Azure-Threat-Research-Matrix',
+        'type': "atrm",
+        'uuid': "b541a056-154c-41e7-8a56-41db3f871c00",
+        'version': 0
+    })
+
 # add authors based on the Acknowledgements page
 with open(os.path.join(args.path, 'docs', 'acknowledgments.md'), 'r') as f:
     for line in f:
         if line.startswith('* '):
             try:
-                json_cluster['authors'].append(re.search(r'\w+ [\w&]+', line).group())
+                cluster.authors.add(re.search(r'\w+ [\w&]+', line).group())
             except AttributeError:
-                json_cluster['authors'].append(re.search(r'\w+', line).group())
+                cluster.authors.add(re.search(r'\w+', line).group())
 
-# save the Galaxy and Cluster file
-with open(os.path.join('..', 'galaxies', 'atrm.json'), 'w') as f:
-    json.dump(json_galaxy, f, indent=2, sort_keys=True)
+for cluster_value in clusters.values():
+    cluster.append(cluster_value)
 
-with open(os.path.join('..', 'clusters', 'atrm.json'), 'w') as f:
-    json.dump(json_cluster, f, indent=2, sort_keys=True)
+cluster.save('atrm')
 
-print("All done, please don't forget to ./jq_all_the_things.sh, commit, and then ./validate_all.sh.")
+
+try:
+    galaxy = Galaxy('atrm')
+except (KeyError, FileNotFoundError):
+    galaxy = Galaxy({
+        'icon': "map",
+        'kill_chain_order': {
+            'ATRM-tactics': tactics
+        },
+        'name': "Azure Threat Research Matrix",
+        'description': "The purpose of the Azure Threat Research Matrix (ATRM) is to educate readers on the potential of Azure-based tactics, techniques, and procedures (TTPs). It is not to teach how to weaponize or specifically abuse them. For this reason, some specific commands will be obfuscated or parts will be omitted to prevent abuse.",
+        'namespace': "microsoft",
+        'type': "atrm",
+        'uuid': "b541a056-154c-41e7-8a56-41db3f871c00",
+        'version': 1
+    })
+
+galaxy.save('atrm')
+
+print("All done, please don't forget to ./jq_all_the_things.sh, commit, and then ./validate_all.sh, and also update_README_with_index.py.")
