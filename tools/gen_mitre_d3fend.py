@@ -17,13 +17,21 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import json
-import os
 import requests
 import uuid
+from pymispgalaxies import Cluster, Galaxy
+
 
 d3fend_url = 'https://d3fend.mitre.org/ontologies/d3fend.json'
 d3fend_full_mappings_url = 'https://d3fend.mitre.org/api/ontology/inference/d3fend-full-mappings.json'
+
+
+galaxy_fname = 'mitre-d3fend.json'
+galaxy_type = "mitre-d3fend"
+galaxy_name = "MITRE D3FEND"
+galaxy_description = 'A knowledge graph of cybersecurity countermeasures.'
+galaxy_source = 'https://d3fend.mitre.org/'
+
 
 # we love eating lots of memory
 r = requests.get(d3fend_url)
@@ -31,9 +39,6 @@ d3fend_json = r.json()
 
 r = requests.get(d3fend_full_mappings_url)
 d3fend_mappings_json = r.json()
-
-with open('../clusters/mitre-attack-pattern.json', 'r') as mitre_f:
-    mitre = json.load(mitre_f)
 
 
 uuid_seed = '35527064-12b4-4b73-952b-6d76b9f1b1e3'
@@ -123,13 +128,30 @@ def find_kill_chain_of(original_item):
             return find_kill_chain_of(data[parent_class])
 
 
-def find_mitre_uuid_from_technique_id(technique_id):
-    for item in mitre['values']:
-        if item['meta']['external_id'] == technique_id:
-            return item['uuid']
-    print("No MITRE UUID found for technique_id: ", technique_id)
-    return None
+mitre_attack_pattern = Cluster('mitre-attack-pattern')
 
+
+def find_mitre_uuid_from_technique_id(technique_id):
+    try:
+        return mitre_attack_pattern.get_by_external_id(technique_id).uuid
+    except KeyError:
+        print("No MITRE UUID found for technique_id: ", technique_id)
+        return None
+
+
+try:
+    cluster = Cluster('mitre-d3fend')
+except (KeyError, FileNotFoundError):
+    cluster = Cluster({
+        'authors': ["MITRE"],
+        'category': 'd3fend',
+        'name': galaxy_name,
+        'description': galaxy_description,
+        'source': galaxy_source,
+        'type': galaxy_type,
+        'uuid': "b8bd7e45-63bf-4c44-8ab1-c81c82547380",
+        'version': 0
+    })
 
 # relationships
 for item in d3fend_mappings_json['results']['bindings']:
@@ -213,47 +235,28 @@ while seen_new:
                 if item['rdfs:label'] in relations:
                     technique['related'] = relations[item['rdfs:label']]
 
-                techniques.append(technique)
+                cluster.append(technique)
                 print(f"Technique: {item['rdfs:label']} - {item['d3f:d3fend-id']}")
 
 
-galaxy_fname = 'mitre-d3fend.json'
-galaxy_type = "mitre-d3fend"
-galaxy_name = "MITRE D3FEND"
-galaxy_description = 'A knowledge graph of cybersecurity countermeasures.'
-galaxy_source = 'https://d3fend.mitre.org/'
-json_galaxy = {
-    'description': galaxy_description,
-    'icon': "user-shield",
-    'kill_chain_order': kill_chain_tactics,
-    'name': galaxy_name,
-    'namespace': "mitre",
-    'type': galaxy_type,
-    'uuid': "77d1bbfa-2982-4e0a-9238-1dae4a48c5b4",
-    'version': 1
-}
-
-json_cluster = {
-    'authors': ["MITRE"],
-    'category': 'd3fend',
-    'name': galaxy_name,
-    'description': galaxy_description,
-    'source': galaxy_source,
-    'type': galaxy_type,
-    'uuid': "b8bd7e45-63bf-4c44-8ab1-c81c82547380",
-    'values': list(techniques),
-    'version': 1
-}
+cluster.save('mitre-d3fend')
 
 
-# save the Galaxy and Cluster file
-with open(os.path.join('..', 'galaxies', galaxy_fname), 'w') as f:
-    # sort_keys, even if it breaks the kill_chain_order , but jq_all_the_things requires sorted keys
-    json.dump(json_galaxy, f, indent=2, sort_keys=True, ensure_ascii=False)
-    f.write('\n')  # only needed for the beauty and to be compliant with jq_all_the_things
+try:
+    galaxy = Galaxy('mitre-d3fend')
+    galaxy.kill_chain_order = kill_chain_tactics
+except (KeyError, FileNotFoundError):
+    galaxy = Galaxy({
+        'description': galaxy_description,
+        'icon': "user-shield",
+        'kill_chain_order': kill_chain_tactics,
+        'name': galaxy_name,
+        'namespace': "mitre",
+        'type': galaxy_type,
+        'uuid': "77d1bbfa-2982-4e0a-9238-1dae4a48c5b4",
+        'version': 1
+    })
 
-with open(os.path.join('..', 'clusters', galaxy_fname), 'w') as f:
-    json.dump(json_cluster, f, indent=2, sort_keys=True, ensure_ascii=False)
-    f.write('\n')  # only needed for the beauty and to be compliant with jq_all_the_things
+galaxy.save('mitre-d3fend')
 
 print("All done, please don't forget to ./jq_all_the_things.sh, commit, and then ./validate_all.sh.")
