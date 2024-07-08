@@ -12100,7 +12100,11 @@
           "Energy"
         ],
         "refs": [
-          "https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/new-apt-group-chamelgang/"
+          "https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/new-apt-group-chamelgang/",
+          "https://www.sentinelone.com/labs/chamelgang-attacking-critical-infrastructure-with-ransomware/"
+        ],
+        "synonyms": [
+          "CamoFei"
         ]
       },
       "related": [
@@ -12552,7 +12556,8 @@
           "Octo Tempest",
           "0ktapus",
           "Storm-0971",
-          "DEV-0971"
+          "DEV-0971",
+          "Starfraud"
         ]
       },
       "uuid": "3b238f3a-c67a-4a9e-b474-dc3897e00129",
@@ -16322,6 +16327,37 @@
       },
       "uuid": "99ad0cef-c53a-44d5-85d4-5459e59a06d5",
       "value": "Boolka"
+    },
+    {
+      "description": "CloudSorcerer is a sophisticated APT targeting Russian government entities, utilizing cloud infrastructure for stealth monitoring and data exfiltration. The malware leverages APIs and authentication tokens to access cloud resources for command and control, with GitHub serving as its initial C2 server. CloudSorcerer operates as separate modules depending on the process it's running in, executing from a single executable and utilizing complex inter-process communication through Windows pipes. The actor behind CloudSorcerer shows similarities to the CloudWizard APT in modus operandi, but the unique code and functionality suggest it is a new threat actor inspired by previous techniques.",
+      "meta": {
+        "refs": [
+          "https://securelist.com/cloudsorcerer-new-apt-cloud-actor/113056/"
+        ]
+      },
+      "uuid": "895548a2-e5c7-4a76-8425-19aa077db200",
+      "value": "CloudSorcerer"
+    },
+    {
+      "description": "The 8220 Gang, also known as Water Sigbin, is a threat actor group that focuses on deploying cryptocurrency-mining malware. They exploit vulnerabilities in Oracle WebLogic servers, such as CVE-2017-3506 and CVE-2023-21839, to deliver cryptocurrency miners using PowerShell scripts. The group has demonstrated a sophisticated multistage loading technique to deploy the PureCrypter loader and XMRIG crypto miner. They are known for using obfuscation techniques, such as hexadecimal encoding and code obfuscation, to evade detection and compromise systems.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://www.trendmicro.com/en_us/research/24/f/water-sigbin-xmrig.html",
+          "https://www.trendmicro.com/en_us/research/24/e/decoding-8220-latest-obfuscation-tricks.html",
+          "https://www.uptycs.com/blog/8220-gang-cryptomining-cloud-based-infrastructure-cyber-threat",
+          "https://www.imperva.com/blog/imperva-detects-undocumented-8220-gang-activities/",
+          "https://asec.ahnlab.com/en/51568/",
+          "https://www.trendmicro.com/en_us/research/23/e/8220-gang-evolution-new-strategies-adapted.html",
+          "https://blog.aquasec.com/8220-gang-confluence-vulnerability-cve-2022-26134",
+          "https://www.sentinelone.com/blog/from-the-front-lines-8220-gang-massively-expands-cloud-botnet-to-30000-infected-hosts/"
+        ],
+        "synonyms": [
+          "8220 Gang"
+        ]
+      },
+      "uuid": "745fd45f-9076-4c88-a977-01940bc0d36e",
+      "value": "Water Sigbin"
     }
   ],
   "version": 312
