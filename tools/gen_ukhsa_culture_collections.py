@@ -19,10 +19,10 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
-import os
 import json
 import requests
 import uuid
+from pymispgalaxies import Cluster, Galaxy
 
 '''
 From https://www.culturecollections.org.uk/search/?searchScope=Product&pageNumber=1&filter.collectionGroup=0&filter.collection=0&filter.sorting=DateCreated
@@ -41,6 +41,7 @@ culture and not for any specific property of the cell line, therefore further re
 cell culture characteristics. Passage numbers where given act only as a guide and Culture Collections does not guarantee
 the passage number stated will be the passage number received by the customer.
 '''
+
 
 def download_items():
     data = {'items': [],
@@ -75,10 +76,12 @@ def save_items(d):
         json.dump(d, f, indent=2, sort_keys=True)
     return True
 
+
 def load_saved_items():
     with open('items.json', 'r') as f:
         d = json.load(f)
     return d
+
 
 data = download_items()
 # save_items(data)
@@ -110,33 +113,27 @@ for item in data['items']:
         clusters_dict[cluster['value']] = cluster
 
 # transform dict to list
-clusters = []
+cluster = Cluster('ukhsa-culture-collections', skip_duplicates=True)
+cluster.cluster_values = {}
 for item in clusters_dict.values():
-    clusters.append(item)
+    cluster.append(item, skip_duplicates=True)
+cluster.save('ukhsa-culture-collections')
 
+for cluster, duplicate in cluster.duplicates:
+    print(f"WARNING: Skipped duplicate: {duplicate} in cluster {cluster}")
 
-json_galaxy = {
-    'icon': "virus",
-    'name': "UKHSA Culture Collections",
-    'description': "UK Health Security Agency Culture Collections represent deposits of cultures that consist of expertly preserved, authenticated cell lines and microbial strains of known provenance.",
-    'namespace': "gov.uk",
-    'type': "ukhsa-culture-collections",
-    'uuid': "bbe11c06-1d6a-477e-88f1-cdda2d71de56",
-    'version': 1
-}
-
-with open(os.path.join('..', 'clusters', 'ukhsa-culture-collections.json'), 'r') as f:
-    json_cluster = json.load(f)
-json_cluster['values'] = clusters
-json_cluster['version'] += 1
-
-# save the Galaxy and Cluster file
-with open(os.path.join('..', 'galaxies', 'ukhsa-culture-collections.json'), 'w') as f:
-    json.dump(json_galaxy, f, indent=2, sort_keys=True, ensure_ascii=False)
-    f.write('\n')  # only needed for the beauty and to be compliant with jq_all_the_things
-
-with open(os.path.join('..', 'clusters', 'ukhsa-culture-collections.json'), 'w') as f:
-    json.dump(json_cluster, f, indent=2, sort_keys=True, ensure_ascii=False)
-    f.write('\n')  # only needed for the beauty and to be compliant with jq_all_the_things
+try:
+    galaxy = Galaxy('ukhsa-culture-collections')
+except KeyError:
+    galaxy = Galaxy({
+        'icon': "virus",
+        'name': "UKHSA Culture Collections",
+        'description': "UK Health Security Agency Culture Collections represent deposits of cultures that consist of expertly preserved, authenticated cell lines and microbial strains of known provenance.",
+        'namespace': "gov.uk",
+        'type': "ukhsa-culture-collections",
+        'uuid': "bbe11c06-1d6a-477e-88f1-cdda2d71de56",
+        'version': 1
+    })
+galaxy.save('ukhsa-culture-collections')
 
 print("All done, please don't forget to ./jq_all_the_things.sh, commit, and then ./validate_all.sh.")

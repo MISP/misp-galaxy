@@ -22,9 +22,8 @@ import yaml
 import os
 import uuid
 import re
-import json
-
 import argparse
+from pymispgalaxies import Cluster, Galaxy
 
 parser = argparse.ArgumentParser(description='Create/update the Threat Matrix for storage services based on Markdown files.')
 parser.add_argument("-p", "--path", required=True, help="Path of the 'Threat Matrix for storage services' git clone folder")
@@ -40,13 +39,17 @@ with open(os.path.join(args.path, 'mkdocs.yml'), 'r') as f:
 tactics = []
 clusters = {}
 
+
+mitre_attack_pattern = Cluster('mitre-attack-pattern')
+
+
 def find_mitre_uuid_from_technique_id(technique_id):
-    with open('../clusters/mitre-attack-pattern.json', 'r') as mitre_f:
-        mitre = json.load(mitre_f)
-        for item in mitre['values']:
-            if item['meta']['external_id'] == technique_id:
-                return item['uuid']
-    return None
+    try:
+        return mitre_attack_pattern.get_by_external_id(technique_id).uuid
+    except KeyError:
+        print("No MITRE UUID found for technique_id: ", technique_id)
+        return None
+
 
 for nav_item in mkdocs_data['nav']:
     try:
@@ -70,8 +73,8 @@ for nav_item in mkdocs_data['nav']:
                                     mitre_technique_uuid = find_mitre_uuid_from_technique_id(mitre_technique_id)
                                     related = [
                                         {
-                                          "dest-uuid": mitre_technique_uuid,
-                                          "type": "related-to"
+                                            "dest-uuid": mitre_technique_uuid,
+                                            "type": "related-to"
                                         }
                                     ]
                                 except AttributeError:
@@ -107,43 +110,47 @@ galaxy_type = "tmss"
 galaxy_name = "Threat Matrix for storage services"
 galaxy_description = 'Microsoft Defender for Cloud threat matrix for storage services contains attack tactics, techniques and mitigations relevant storage services delivered by cloud providers.'
 galaxy_source = 'https://github.com/microsoft/Threat-matrix-for-storage-services'
-json_galaxy = {
-    'icon': "map",
-    'kill_chain_order': {
-        'TMSS-tactics': tactics
-    },
-    'name': galaxy_name,
-    'description': galaxy_description,
-    'namespace': "microsoft",
-    'type': galaxy_type,
-    'uuid': "d6532b58-99e0-44a9-93c8-affe055e4443",
-    'version': 1
-}
 
-json_cluster = {
-    'authors': ["Microsoft"],
-    'category': 'tmss',
-    'name': galaxy_name,
-    'description': galaxy_description,
-    'source': galaxy_source,
-    'type': galaxy_type,
-    'uuid': "aaf033a6-7f1e-45ab-beef-20a52b75b641",
-    'values': list(clusters.values()),
-    'version': 1
-}
+try:
+    galaxy = Galaxy('tmss')
+except (KeyError, FileNotFoundError):
+    galaxy = Galaxy({
+        'icon': "map",
+        'kill_chain_order': {
+            'TMSS-tactics': tactics
+        },
+        'name': galaxy_name,
+        'description': galaxy_description,
+        'namespace': "microsoft",
+        'type': galaxy_type,
+        'uuid': "d6532b58-99e0-44a9-93c8-affe055e4443",
+        'version': 1
+    })
+
+galaxy.save('tmss')
+
+try:
+    cluster = Cluster('tmss')
+except (KeyError, FileNotFoundError):
+    cluster = Cluster({
+        'authors': ["Microsoft"],
+        'category': 'tmss',
+        'name': galaxy_name,
+        'description': galaxy_description,
+        'source': galaxy_source,
+        'type': galaxy_type,
+        'uuid': "aaf033a6-7f1e-45ab-beef-20a52b75b641",
+        'version': 0
+    })
+
 # add authors based on the Acknowledgements page
 authors = ('Evgeny Bogokovsky', 'Ram Pliskin')
 for author in authors:
-    json_cluster['authors'].append(author)
+    cluster.authors.add(author)
 
+for cluster_value in clusters.values():
+    cluster.append(cluster_value)
 
-# save the Galaxy and Cluster file
-with open(os.path.join('..', 'galaxies', 'tmss.json'), 'w') as f:
-    json.dump(json_galaxy, f, indent=2, sort_keys=True, ensure_ascii=False)
-    f.write('\n')  # only needed for the beauty and to be compliant with jq_all_the_things
+cluster.save('tmss')
 
-with open(os.path.join('..', 'clusters', 'tmss.json'), 'w') as f:
-    json.dump(json_cluster, f, indent=2, sort_keys=True, ensure_ascii=False)
-    f.write('\n')  # only needed for the beauty and to be compliant with jq_all_the_things
-
-print("All done, please don't forget to ./jq_all_the_things.sh, commit, and then ./validate_all.sh.")
+print("All done, please don't forget to ./jq_all_the_things.sh, commit, and then ./validate_all.sh, and update_README.")

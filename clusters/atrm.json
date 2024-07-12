@@ -1,18 +1,18 @@
 {
   "authors": [
-    "Microsoft",
-    "Karl Fosaaen",
-    "Nestori Syynimaa",
-    "Ryan Cobb",
-    "Roberto Rodriguez",
-    "Manuel Berrueta",
-    "Jonny Johnson",
-    "Dor Edry",
-    "Ram Pliskin",
-    "Nikhil Mittal",
-    "MITRE ATT&CK",
     "AlertIQ",
-    "Craig Fretwell"
+    "Craig Fretwell",
+    "Dor Edry",
+    "Jonny Johnson",
+    "Karl Fosaaen",
+    "MITRE ATT&CK",
+    "Manuel Berrueta",
+    "Microsoft",
+    "Nestori Syynimaa",
+    "Nikhil Mittal",
+    "Ram Pliskin",
+    "Roberto Rodriguez",
+    "Ryan Cobb"
   ],
   "category": "atrm",
   "description": "The purpose of the Azure Threat Research Matrix (ATRM) is to educate readers on the potential of Azure-based tactics, techniques, and procedures (TTPs). It is not to teach how to weaponize or specifically abuse them. For this reason, some specific commands will be obfuscated or parts will be omitted to prevent abuse.",
@@ -24,6 +24,7 @@
     {
       "description": "It is possible to view the open ports on a virtual machine by viewing the Virtual Network Interface's assigned Network Security Group",
       "meta": {
+        "external_id": "AZT101",
         "kill_chain": [
           "ATRM-tactics:Reconnaissance"
         ],
@@ -37,6 +38,7 @@
     {
       "description": "It is possible to view the IP address on a resource by viewing the Virtual Network Interface",
       "meta": {
+        "external_id": "AZT102",
         "kill_chain": [
           "ATRM-tactics:Reconnaissance"
         ],
@@ -50,6 +52,7 @@
     {
       "description": "A resource within Azure is accessible from the public internet.",
       "meta": {
+        "external_id": "AZT103",
         "kill_chain": [
           "ATRM-tactics:Reconnaissance"
         ],
@@ -63,6 +66,7 @@
     {
       "description": "An adversary may obtain information about a User within Azure Active Directory. Details may include email addresses, first/last names, job information, addresses, and assigned roles. By default, all users are able to read other user's roles and group memberships within AAD.",
       "meta": {
+        "external_id": "AZT104",
         "kill_chain": [
           "ATRM-tactics:Reconnaissance"
         ],
@@ -76,6 +80,7 @@
     {
       "description": "An adversary may obtain information about an application within Azure Active Directory.",
       "meta": {
+        "external_id": "AZT105",
         "kill_chain": [
           "ATRM-tactics:Reconnaissance"
         ],
@@ -89,6 +94,7 @@
     {
       "description": "An adversary may obtain information about a role within Azure Active Directory or within Azure Resource Manager.",
       "meta": {
+        "external_id": "AZT106",
         "kill_chain": [
           "ATRM-tactics:Reconnaissance"
         ],
@@ -102,6 +108,7 @@
     {
       "description": "An adversary may gather role assignments within Azure Active Directory.",
       "meta": {
+        "external_id": "AZT106.1",
         "kill_chain": [
           "ATRM-tactics:Reconnaissance"
         ],
@@ -115,6 +122,7 @@
     {
       "description": "An adversary may gather information about an application role & it's member assignments within Azure Active Directory.",
       "meta": {
+        "external_id": "AZT106.2",
         "kill_chain": [
           "ATRM-tactics:Reconnaissance"
         ],
@@ -128,6 +136,7 @@
     {
       "description": "An adversary may gather role assignments for a specific Azure Resource, Resource Group, or Subscription.",
       "meta": {
+        "external_id": "AZT106.3",
         "kill_chain": [
           "ATRM-tactics:Reconnaissance"
         ],
@@ -141,6 +150,7 @@
     {
       "description": "An adversary may obtain information and data within a resource.",
       "meta": {
+        "external_id": "AZT107",
         "kill_chain": [
           "ATRM-tactics:Reconnaissance"
         ],
@@ -154,6 +164,7 @@
     {
       "description": "An adversary may access a user's personal data if their account is compromised. This includes data such as email, OneDrive, Teams, etc.",
       "meta": {
+        "external_id": "AZT108",
         "kill_chain": [
           "ATRM-tactics:Reconnaissance"
         ],
@@ -167,6 +178,7 @@
     {
       "description": "Adversaries may login to AzureAD using valid credentials. By logging in with valid credentials to an account or service principal, the adversary will assume all privileges of that account or service principal. If the account is privileged, this may lead to other tactics, such as persistence or privilege escalation.",
       "meta": {
+        "external_id": "AZT201",
         "kill_chain": [
           "ATRM-tactics:Initial Access",
           "ATRM-tactics:Privilege Escalation",
@@ -182,6 +194,7 @@
     {
       "description": "By obtaining valid user credentials, an adversary may login to AzureAD via command line or through the Azure Portal.",
       "meta": {
+        "external_id": "AZT201.1",
         "kill_chain": [
           "ATRM-tactics:Initial Access"
         ],
@@ -195,6 +208,7 @@
     {
       "description": "By obtaining a valid secret or certificate, an adversary may login to AzureAD via command line.",
       "meta": {
+        "external_id": "AZT201.2",
         "kill_chain": [
           "ATRM-tactics:Initial Access"
         ],
@@ -208,6 +222,7 @@
     {
       "description": "An adversary may potentially gain access to AzureAD by guessing a common password for multiple users.",
       "meta": {
+        "external_id": "AZT202",
         "kill_chain": [
           "ATRM-tactics:Initial Access"
         ],
@@ -221,6 +236,7 @@
     {
       "description": "An adversary may lure a victim into giving their access to a malicious application registered in AzureAD.",
       "meta": {
+        "external_id": "AZT203",
         "kill_chain": [
           "ATRM-tactics:Initial Access"
         ],
@@ -234,6 +250,7 @@
     {
       "description": "Adversaries may abuse access to virtual machines by executing a script through various methods in order to gain access to the Virtual Machine.",
       "meta": {
+        "external_id": "AZT301",
         "kill_chain": [
           "ATRM-tactics:Execution"
         ],
@@ -247,6 +264,7 @@
     {
       "description": "By utilizing the 'RunCommand' feature on a Virtual Machine, an attacker can pass:* **Windows**: PowerShell commands to the VM as SYSTEM.* **Linux**: Shell commands to the VM as root.",
       "meta": {
+        "external_id": "AZT301.1",
         "kill_chain": [
           "ATRM-tactics:Execution"
         ],
@@ -260,6 +278,7 @@
     {
       "description": "By utilizing the 'CustomScriptExtension' extension on a Virtual Machine, an attacker can pass PowerShell commands to the VM as SYSTEM.",
       "meta": {
+        "external_id": "AZT301.2",
         "kill_chain": [
           "ATRM-tactics:Execution"
         ],
@@ -273,6 +292,7 @@
     {
       "description": "By utilizing the 'Desired State Configuration extension' extension on a Virtual Machine, an attacker can pass PowerShell commands to the VM as SYSTEM.",
       "meta": {
+        "external_id": "AZT301.3",
         "kill_chain": [
           "ATRM-tactics:Execution"
         ],
@@ -286,6 +306,7 @@
     {
       "description": "By utilizing Compute Gallery Applications, an attacker can pass MS-DOS or PowerShell commands to the VM as SYSTEM.",
       "meta": {
+        "external_id": "AZT301.4",
         "kill_chain": [
           "ATRM-tactics:Execution"
         ],
@@ -299,6 +320,7 @@
     {
       "description": "By utilizing 'command invoke' on an Azure Kubernetes Service (AKS) cluster, an attacker can pass commands to the cluster's VM as SYSTEM",
       "meta": {
+        "external_id": "AZT301.5",
         "kill_chain": [
           "ATRM-tactics:Execution"
         ],
@@ -312,6 +334,7 @@
     {
       "description": "By utilizing the 'RunCommand' feature on a virtual machine scale set (Vmss), an attacker can execute a command on an instance or instances of VMs as:* **Windows**: PowerShell commands to the VM as SYSTEM.* **Linux**: Shell commands to the VM as root.",
       "meta": {
+        "external_id": "AZT301.6",
         "kill_chain": [
           "ATRM-tactics:Execution"
         ],
@@ -325,6 +348,7 @@
     {
       "description": "By utilizing the serial console feature on an Azure Virtual Machine, an adversary can pass arbitrary commands.",
       "meta": {
+        "external_id": "AZT301.7",
         "kill_chain": [
           "ATRM-tactics:Execution"
         ],
@@ -338,6 +362,7 @@
     {
       "description": "Adversaries may abuse access to serverless resources that are able to execute PowerShell or Python scripts on an Azure resource.",
       "meta": {
+        "external_id": "AZT302",
         "kill_chain": [
           "ATRM-tactics:Execution"
         ],
@@ -351,6 +376,7 @@
     {
       "description": "By utilizing an Automation Account configured with a Hybrid Worker Group, an attacker can execute Azure commands on any Azure VM within that Hybrid Worker Group.",
       "meta": {
+        "external_id": "AZT302.1",
         "kill_chain": [
           "ATRM-tactics:Execution"
         ],
@@ -364,6 +390,7 @@
     {
       "description": "By utilizing an Automation Account configured with a RunAs account, an attacker can execute commands on an Azure VM via RunCommand [(AZT301.1)](../AZT301/AZT301-1.md) if that service principal has the correct role and privileges.",
       "meta": {
+        "external_id": "AZT302.2",
         "kill_chain": [
           "ATRM-tactics:Execution"
         ],
@@ -377,6 +404,7 @@
     {
       "description": "By utilizing an Automation Account configured with a Managed Identity, an attacker can execute commands on an Azure VM via RunCommand [(AZT301.1)](../AZT301/AZT301-1.md) if that service principal has the correct role and privileges.",
       "meta": {
+        "external_id": "AZT302.3",
         "kill_chain": [
           "ATRM-tactics:Execution"
         ],
@@ -390,6 +418,7 @@
     {
       "description": "By utilizing a Function Application, an attacker can execute Azure operations on a given resource.",
       "meta": {
+        "external_id": "AZT302.4",
         "kill_chain": [
           "ATRM-tactics:Execution"
         ],
@@ -403,6 +432,7 @@
     {
       "description": "Adversaries may abuse access to any managed devices in AzureAD by executing PowerShell or Python scripts on them.",
       "meta": {
+        "external_id": "AZT303",
         "kill_chain": [
           "ATRM-tactics:Execution"
         ],
@@ -416,6 +446,7 @@
     {
       "description": "An adversary may escalate their privileges if their current account is eligible for role activation via Privileged Identity Management (PIM).",
       "meta": {
+        "external_id": "AZT401",
         "kill_chain": [
           "ATRM-tactics:Privilege Escalation"
         ],
@@ -429,6 +460,7 @@
     {
       "description": "An adversary may escalate their privileges from Azure AD to all Azure subscriptions in the tenant if they are a global administrator",
       "meta": {
+        "external_id": "AZT402",
         "kill_chain": [
           "ATRM-tactics:Privilege Escalation"
         ],
@@ -442,6 +474,7 @@
     {
       "description": "By modifying the .bashrc file in a CloudShell .IMG file, an adversary may escalate their privileges by injecting commands that will add an arbitrary user account to a desired role and scope.",
       "meta": {
+        "external_id": "AZT403",
         "kill_chain": [
           "ATRM-tactics:Privilege Escalation"
         ],
@@ -455,6 +488,7 @@
     {
       "description": "Adversaries may abuse resources that are configured with a service principal or other identity to further their access to the current or other resources.",
       "meta": {
+        "external_id": "AZT404",
         "kill_chain": [
           "ATRM-tactics:Privilege Escalation"
         ],
@@ -468,6 +502,7 @@
     {
       "description": "By utilizing a Function Application configured with a managed identity or other identity provider, an attacker can execute Azure operations on a given resource.",
       "meta": {
+        "external_id": "AZT404.1",
         "kill_chain": [
           "ATRM-tactics:Privilege Escalation"
         ],
@@ -481,6 +516,7 @@
     {
       "description": "By utilizing a Logic Application configured with a managed identity or other identity provider, an attacker can execute Azure operations on a given resource.",
       "meta": {
+        "external_id": "AZT404.2",
         "kill_chain": [
           "ATRM-tactics:Privilege Escalation"
         ],
@@ -494,6 +530,7 @@
     {
       "description": "By utilizing a Function Application, an attacker can execute Azure operations on a given resource.",
       "meta": {
+        "external_id": "AZT404.3",
         "kill_chain": [
           "ATRM-tactics:Privilege Escalation"
         ],
@@ -507,6 +544,7 @@
     {
       "description": "By utilizing an App Service configured with a managed identity or other identity provider, an attacker can execute Azure operations on a given resource.",
       "meta": {
+        "external_id": "AZT404.4",
         "kill_chain": [
           "ATRM-tactics:Privilege Escalation"
         ],
@@ -520,6 +558,7 @@
     {
       "description": "Adversaries may abuse the assigned permissions on an Azure AD Application to escalate their privileges.",
       "meta": {
+        "external_id": "AZT405",
         "kill_chain": [
           "ATRM-tactics:Privilege Escalation"
         ],
@@ -533,6 +572,7 @@
     {
       "description": "By compromising a user, user in a group, or service principal that has an application role over an application, they may be able to escalate their privileges by impersonating the associated service principal and leveraging any privileged assigned application role.",
       "meta": {
+        "external_id": "AZT405.1",
         "kill_chain": [
           "ATRM-tactics:Privilege Escalation"
         ],
@@ -546,6 +586,7 @@
     {
       "description": "By compromising a service principal whose application has privileged API permissions, an attacker can escalate their privileges to a higher privileged role.",
       "meta": {
+        "external_id": "AZT405.2",
         "kill_chain": [
           "ATRM-tactics:Privilege Escalation"
         ],
@@ -559,6 +600,7 @@
     {
       "description": "By compromising an account who is an 'Owner' over an application that is configured with additional roles or API permissions, an attacker can escalate their privileges by adding a certificate or credentials & logging in as the service principal.",
       "meta": {
+        "external_id": "AZT405.3",
         "kill_chain": [
           "ATRM-tactics:Privilege Escalation"
         ],
@@ -572,6 +614,7 @@
     {
       "description": "An adverary may manipulate an account to maintain access in an Azure tenant",
       "meta": {
+        "external_id": "AZT501",
         "kill_chain": [
           "ATRM-tactics:Persistence"
         ],
@@ -585,6 +628,7 @@
     {
       "description": "An adverary may manipulate a user account to maintain access in an Azure tenant",
       "meta": {
+        "external_id": "AZT501.1",
         "kill_chain": [
           "ATRM-tactics:Persistence"
         ],
@@ -598,6 +642,7 @@
     {
       "description": "An adverary may manipulate a service principal to maintain access in an Azure tenant",
       "meta": {
+        "external_id": "AZT501.2",
         "kill_chain": [
           "ATRM-tactics:Persistence"
         ],
@@ -611,6 +656,7 @@
     {
       "description": "An adverary may manipulate the local admin account on an Azure VM",
       "meta": {
+        "external_id": "AZT501.3",
         "kill_chain": [
           "ATRM-tactics:Persistence"
         ],
@@ -624,6 +670,7 @@
     {
       "description": "An adversary may create an account in Azure Active Directory.",
       "meta": {
+        "external_id": "AZT502",
         "kill_chain": [
           "ATRM-tactics:Persistence"
         ],
@@ -637,6 +684,7 @@
     {
       "description": "An adversary may create an application & service principal in Azure Active Directory",
       "meta": {
+        "external_id": "AZT502.1",
         "kill_chain": [
           "ATRM-tactics:Persistence"
         ],
@@ -650,6 +698,7 @@
     {
       "description": "An adversary may create an application & service principal in Azure Active Directory",
       "meta": {
+        "external_id": "AZT502.2",
         "kill_chain": [
           "ATRM-tactics:Persistence"
         ],
@@ -663,6 +712,7 @@
     {
       "description": "An adversary may create a guest account in Azure Active Directory",
       "meta": {
+        "external_id": "AZT502.3",
         "kill_chain": [
           "ATRM-tactics:Persistence"
         ],
@@ -676,6 +726,7 @@
     {
       "description": "Adversaries may configure a resource with an HTTP trigger to run commands without needing authentication.",
       "meta": {
+        "external_id": "AZT503",
         "kill_chain": [
           "ATRM-tactics:Persistence"
         ],
@@ -689,6 +740,7 @@
     {
       "description": "Adversaries may configure a Logic Application with a user account or managed identity and modify the HTTP trigger to run a command via HTTP request.",
       "meta": {
+        "external_id": "AZT503.1",
         "kill_chain": [
           "ATRM-tactics:Persistence"
         ],
@@ -702,6 +754,7 @@
     {
       "description": "Adversaries may configure a Function Application with a user account or managed identity and modify the HTTP trigger to run a command via HTTP request.",
       "meta": {
+        "external_id": "AZT503.2",
         "kill_chain": [
           "ATRM-tactics:Persistence"
         ],
@@ -715,6 +768,7 @@
     {
       "description": "Adversaries may create a webhook to a Runbook which allows unauthenticated access into an Azure subscription or tenant.",
       "meta": {
+        "external_id": "AZT503.3",
         "kill_chain": [
           "ATRM-tactics:Persistence"
         ],
@@ -728,6 +782,7 @@
     {
       "description": "Adversaries may create a WebJob on a App Service which allows arbitrary background tasks to be run on a set schedule",
       "meta": {
+        "external_id": "AZT503.4",
         "kill_chain": [
           "ATRM-tactics:Persistence"
         ],
@@ -741,6 +796,7 @@
     {
       "description": "By configurating a watcher task and a Runbook, an adversary can establish persistence by executing the Runbook on a triggered event.",
       "meta": {
+        "external_id": "AZT504",
         "kill_chain": [
           "ATRM-tactics:Persistence"
         ],
@@ -754,6 +810,7 @@
     {
       "description": "Adversaries may create a schedule for a Runbook to run at a defined interval.",
       "meta": {
+        "external_id": "AZT505",
         "kill_chain": [
           "ATRM-tactics:Persistence"
         ],
@@ -767,6 +824,7 @@
     {
       "description": "Adversaries can modify the rules in a Network Security Group to establish access over additional ports.",
       "meta": {
+        "external_id": "AZT506",
         "kill_chain": [
           "ATRM-tactics:Persistence"
         ],
@@ -780,6 +838,7 @@
     {
       "description": "Adversaries may configure the target Azure tenant to be managed by another, externel tenant, or its users.",
       "meta": {
+        "external_id": "AZT507",
         "kill_chain": [
           "ATRM-tactics:Persistence"
         ],
@@ -793,6 +852,7 @@
     {
       "description": "Adversaries may utilize Azure Lighthouse to manage the target tenant from an external tenant",
       "meta": {
+        "external_id": "AZT507.1",
         "kill_chain": [
           "ATRM-tactics:Persistence"
         ],
@@ -806,6 +866,7 @@
     {
       "description": "Adversaries may use Delegated Administrative Privileges to give themselves administrator access to the target tenant.",
       "meta": {
+        "external_id": "AZT507.2",
         "kill_chain": [
           "ATRM-tactics:Persistence"
         ],
@@ -819,6 +880,7 @@
     {
       "description": "An adversary may transfer a subscription from a target tenant to an attacker-controlled tenant. This retains the billing account setup by the target and the target tenant administrators will no longer have control over the subscription.",
       "meta": {
+        "external_id": "AZT507.3",
         "kill_chain": [
           "ATRM-tactics:Persistence"
         ],
@@ -832,6 +894,7 @@
     {
       "description": "An adversary may add an additional identity provider or domain to maintain a backdoor into the tenant.",
       "meta": {
+        "external_id": "AZT507.4",
         "kill_chain": [
           "ATRM-tactics:Persistence"
         ],
@@ -845,6 +908,7 @@
     {
       "description": "By configuring a policy with the 'DeployIfNotExists' definition, an adverary may establish persistence by creating a backdoor when the policy is triggered.",
       "meta": {
+        "external_id": "AZT508",
         "kill_chain": [
           "ATRM-tactics:Persistence"
         ],
@@ -858,6 +922,7 @@
     {
       "description": "An adverary may utilize the resource's functionality to obtain a JWT for the applied Managed Identity Service Principal account.",
       "meta": {
+        "external_id": "AZT601",
         "kill_chain": [
           "ATRM-tactics:Credential Access"
         ],
@@ -871,6 +936,7 @@
     {
       "description": "By utilizing access to IMDS, an attacker can request a JWT for a Managed Identity on an Azure VM if they have access to execute commands on the system.",
       "meta": {
+        "external_id": "AZT601.1",
         "kill_chain": [
           "ATRM-tactics:Credential Access"
         ],
@@ -884,6 +950,7 @@
     {
       "description": "By utilizing access to IMDS, an attacker can request a JWT for a Managed Identity on an AKS Cluster if they have access to execute commands on the system.",
       "meta": {
+        "external_id": "AZT601.2",
         "kill_chain": [
           "ATRM-tactics:Credential Access"
         ],
@@ -897,6 +964,7 @@
     {
       "description": "If a Logic App is using a Managed Identity, an adversary can modify the logic to make an HTTP POST request to reveal the Managed Identity's JWT.",
       "meta": {
+        "external_id": "AZT601.3",
         "kill_chain": [
           "ATRM-tactics:Credential Access"
         ],
@@ -910,6 +978,7 @@
     {
       "description": "If a Function App is using a Managed Identity, an adversary can modify the logic respond to an HTTP GET request to reveal the Managed Identity's JWT.",
       "meta": {
+        "external_id": "AZT601.4",
         "kill_chain": [
           "ATRM-tactics:Credential Access"
         ],
@@ -923,6 +992,7 @@
     {
       "description": "If an Automation Account is using a Managed Identity, an adversary can create a Runbook to request the Managed Identity's JWT.",
       "meta": {
+        "external_id": "AZT601.5",
         "kill_chain": [
           "ATRM-tactics:Credential Access"
         ],
@@ -936,6 +1006,7 @@
     {
       "description": "If a Runbook is utilizing a 'RunAs' account, then an adversary may manipulate the Runbook to reveal the certificate the Service Principal is using for authentication.",
       "meta": {
+        "external_id": "AZT602",
         "kill_chain": [
           "ATRM-tactics:Credential Access"
         ],
@@ -949,6 +1020,7 @@
     {
       "description": "If a Function App is using a service principal for authentication, an adversary may manipulate the function app logic to reveal the service principal's secret in plain text.",
       "meta": {
+        "external_id": "AZT603",
         "kill_chain": [
           "ATRM-tactics:Credential Access"
         ],
@@ -962,6 +1034,7 @@
     {
       "description": "An adverary may access an Azure KeyVault in an attempt to view secrets, certificates, or keys.",
       "meta": {
+        "external_id": "AZT604",
         "kill_chain": [
           "ATRM-tactics:Credential Access"
         ],
@@ -975,6 +1048,7 @@
     {
       "description": "By accessing an Azure Key Vault, an adversary may dump any or all secrets.",
       "meta": {
+        "external_id": "AZT604.1",
         "kill_chain": [
           "ATRM-tactics:Credential Access"
         ],
@@ -988,6 +1062,7 @@
     {
       "description": "By accessing an Azure Key Vault, an adversary may dump any or all certificates.",
       "meta": {
+        "external_id": "AZT604.2",
         "kill_chain": [
           "ATRM-tactics:Credential Access"
         ],
@@ -1001,6 +1076,7 @@
     {
       "description": "By accessing an Azure Key Vault, an adversary may dump any or all public keys. Note that Private keys cannot be retrieved.",
       "meta": {
+        "external_id": "AZT604.3",
         "kill_chain": [
           "ATRM-tactics:Credential Access"
         ],
@@ -1014,6 +1090,7 @@
     {
       "description": "An adverary may access an Azure KeyVault in an attempt to view secrets, certificates, or keys.",
       "meta": {
+        "external_id": "AZT605",
         "kill_chain": [
           "ATRM-tactics:Credential Access"
         ],
@@ -1027,6 +1104,7 @@
     {
       "description": "By accessing a Storage Account, an adversary may dump access keys pertaining to the Storage Account, which will give them full access to the Storage Account.",
       "meta": {
+        "external_id": "AZT605.1",
         "kill_chain": [
           "ATRM-tactics:Credential Access"
         ],
@@ -1040,6 +1118,7 @@
     {
       "description": "By editing a Runbook, a credential configured in an Automation Account may be revealed",
       "meta": {
+        "external_id": "AZT605.2",
         "kill_chain": [
           "ATRM-tactics:Credential Access"
         ],
@@ -1053,6 +1132,7 @@
     {
       "description": "By accessing deployment history of a Resource Group, secrets used in the ARM template may be revealed.",
       "meta": {
+        "external_id": "AZT605.3",
         "kill_chain": [
           "ATRM-tactics:Credential Access"
         ],
@@ -1066,6 +1146,7 @@
     {
       "description": "By generating an SAS URI for a resource, an adversary may extract the contents of that resource without authentication at any time.",
       "meta": {
+        "external_id": "AZT701",
         "kill_chain": [
           "ATRM-tactics:Impact"
         ],
@@ -1079,6 +1160,7 @@
     {
       "description": "An adversary may create an SAS URI to download the disk attached to a virtual machine.",
       "meta": {
+        "external_id": "AZT701.1",
         "kill_chain": [
           "ATRM-tactics:Impact"
         ],
@@ -1092,6 +1174,7 @@
     {
       "description": "By generating a Shared Access Signature (SAS) URI, an adversary can access a container in a Storage Account at any time.",
       "meta": {
+        "external_id": "AZT701.2",
         "kill_chain": [
           "ATRM-tactics:Impact"
         ],
@@ -1105,6 +1188,7 @@
     {
       "description": "An adversary can generate a connection string to mount an Azure Storage Account File Share as an NFS or SMB share to their local machine.",
       "meta": {
+        "external_id": "AZT702",
         "kill_chain": [
           "ATRM-tactics:Impact"
         ],
@@ -1116,8 +1200,8 @@
       "value": "AZT702 - File Share Mounting"
     },
     {
-      "description": "",
       "meta": {
+        "external_id": "AZT703",
         "kill_chain": [
           "ATRM-tactics:Impact"
         ],
@@ -1131,6 +1215,7 @@
     {
       "description": "An adversary may leverage resources found at a 'soft deletion' state, restore them and advance their attack by retrieving contents meant to be deleted",
       "meta": {
+        "external_id": "AZT704",
         "kill_chain": [
           "ATRM-tactics:Impact"
         ],
@@ -1144,6 +1229,7 @@
     {
       "description": "An adversary may recover a key vault object found in a 'soft deletion' state.",
       "meta": {
+        "external_id": "AZT704.1",
         "kill_chain": [
           "ATRM-tactics:Impact"
         ],
@@ -1157,6 +1243,7 @@
     {
       "description": "An adversary may recover a storage account object found in a 'soft deletion' state.",
       "meta": {
+        "external_id": "AZT704.2",
         "kill_chain": [
           "ATRM-tactics:Impact"
         ],
@@ -1170,6 +1257,7 @@
     {
       "description": "An adversary may recover a virtual machine object found in a 'soft deletion' state.",
       "meta": {
+        "external_id": "AZT704.3",
         "kill_chain": [
           "ATRM-tactics:Impact"
         ],
@@ -1183,6 +1271,7 @@
     {
       "description": "An adversary may recover a virtual machine object found in a 'soft deletion' state.",
       "meta": {
+        "external_id": "AZT705",
         "kill_chain": [
           "ATRM-tactics:Impact"
         ],
@@ -1194,5 +1283,5 @@
       "value": "AZT705 - Azure Backup Delete"
     }
   ],
-  "version": 2
+  "version": 3
 }

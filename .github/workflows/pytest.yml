@@ -51,3 +51,10 @@ jobs:
         pushd PyMISPGalaxies
         poetry run pytest --cov=pymispgalaxies  tests/tests.py
         popd
+
+    - name: Test updated README.md
+      run: |
+        pushd tools
+        python3 update_README_with_index.py
+        git diff --exit-code ../README.md
+        popd

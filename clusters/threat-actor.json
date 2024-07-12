@@ -1036,10 +1036,11 @@
           "https://www.mandiant.com/resources/insights/apt-groups",
           "https://www.pwc.co.uk/cyber-security/pdf/pwc-cyber-threats-2020-a-year-in-retrospect.pdf",
           "https://www.fireeye.com/content/dam/fireeye-www/summit/cds-2019/presentations/cds19-executive-s08-achievement-unlocked.pdf",
-          "https://www.proofpoint.com/us/blog/threat-insight/ta410-group-behind-lookback-attacks-against-us-utilities-sector-returns-new"
+          "https://www.proofpoint.com/us/blog/threat-insight/ta410-group-behind-lookback-attacks-against-us-utilities-sector-returns-new",
+          "https://www.crowdstrike.com/blog/two-birds-one-stone-panda/"
         ],
         "synonyms": [
-          "STONE PANDAD",
+          "STONE PANDA",
           "Menupass Team",
           "happyyongzi",
           "POTASSIUM",
@@ -2397,7 +2398,8 @@
           "https://unit42.paloaltonetworks.com/atoms/fighting-ursa/",
           "https://blog.google/threat-analysis-group/continued-cyber-activity-in-eastern-europe-observed-by-tag",
           "https://blog.google/threat-analysis-group/fog-of-war-how-the-ukraine-conflict-transformed-the-cyber-threat-landscape/",
-          "https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Cyber-Sicherheitslage/Analysen-und-Prognosen/Threat-Intelligence/Aktive_APT-Gruppen/aktive-apt-gruppen_node.html"
+          "https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Cyber-Sicherheitslage/Analysen-und-Prognosen/Threat-Intelligence/Aktive_APT-Gruppen/aktive-apt-gruppen_node.html",
+          "https://bluepurple.binaryfirefly.com/p/bluepurple-pulse-week-ending-june-64e"
         ],
         "synonyms": [
           "Pawn Storm",
@@ -2423,7 +2425,9 @@
           "UAC-0028",
           "FROZENLAKE",
           "Sofacy",
-          "Forest Blizzard"
+          "Forest Blizzard",
+          "BlueDelta",
+          "Fancy Bear"
         ],
         "targeted-sector": [
           "Military",
@@ -8967,6 +8971,19 @@
     {
       "description": "An actor mainly targeting Pakistan military targets, active since at least 2012. We have low confidence that this malware might be authored by an Indian company. To spread the malware, they use unique implementations to leverage the exploits of known vulnerabilities (such as CVE-2017-11882) and later deploy a Powershell payload in the final stages.",
       "meta": {
+        "cfr-suspected-state-sponsor": "India",
+        "cfr-suspected-victims": [
+          "China",
+          "Pakistan",
+          "Nepal",
+          "Afghanistan"
+        ],
+        "cfr-target-category": [
+          "Government",
+          "Military",
+          "Private Sector"
+        ],
+        "country": "IN",
         "refs": [
           "https://securelist.com/apt-trends-report-q1-2018/85280/",
           "https://blog.trendmicro.com/trendlabs-security-intelligence/first-active-attack-exploiting-cve-2019-2215-found-on-google-play-linked-to-sidewinder-apt-group/",
@@ -12083,7 +12100,11 @@
           "Energy"
         ],
         "refs": [
-          "https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/new-apt-group-chamelgang/"
+          "https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/new-apt-group-chamelgang/",
+          "https://www.sentinelone.com/labs/chamelgang-attacking-critical-infrastructure-with-ransomware/"
+        ],
+        "synonyms": [
+          "CamoFei"
         ]
       },
       "related": [
@@ -12535,7 +12556,8 @@
           "Octo Tempest",
           "0ktapus",
           "Storm-0971",
-          "DEV-0971"
+          "DEV-0971",
+          "Starfraud"
         ]
       },
       "uuid": "3b238f3a-c67a-4a9e-b474-dc3897e00129",
@@ -13263,11 +13285,13 @@
         "refs": [
           "https://www.mandiant.com/resources/blog/north-korea-supply-chain",
           "https://us-cert.cisa.gov/ncas/alerts/aa22-108a",
-          "https://www.mandiant.com/resources/blog/north-korea-cyber-structure-alignment-2023"
+          "https://www.mandiant.com/resources/blog/north-korea-cyber-structure-alignment-2023",
+          "https://cloud.google.com/blog/topics/threat-intelligence/cyber-threats-targeting-brazil"
         ],
         "synonyms": [
           "Jade Sleet",
-          "UNC4899"
+          "UNC4899",
+          "Pukchong"
         ]
       },
       "uuid": "825abfd9-7238-4438-a9e7-c08791f4df4e",
@@ -15994,7 +16018,347 @@
       },
       "uuid": "6149f3b6-510d-4e45-bf88-cd25c7193702",
       "value": "Alpha Spider"
+    },
+    {
+      "description": "RansomHub is a rapidly growing ransomware group believed to be an updated version of the older Knight ransomware. They have been linked to attacks exploiting the Zerologon vulnerability to gain initial access. RansomHub has attracted former affiliates of the ALPHV ransomware group and operates as a Ransomware-as-a-Service with a unique affiliate prepayment model. The group has been active in extorting victims and leaking sensitive data to pressure for ransom payments.",
+      "meta": {
+        "refs": [
+          "https://symantec-enterprise-blogs.security.com/threat-intelligence/ransomhub-knight-ransomware",
+          "https://forescoutstage.wpengine.com/blog/analysis-a-new-ransomware-group-emerges-from-the-change-healthcare-cyber-attack/",
+          "https://www.sentinelone.com/blog/ransomware-evolution-how-cheated-affiliates-are-recycling-victim-data-for-profit/"
+        ]
+      },
+      "uuid": "9d218bb3-fc59-43e0-a273-a0a0fb5c463e",
+      "value": "RansomHub"
+    },
+    {
+      "description": "Unfading Sea Haze is a threat actor focused on espionage, targeting government and military organizations in the South China Sea region since 2018. They employ spear-phishing emails with malicious attachments to gain initial access, followed by the deployment of custom malware such as Gh0st RAT variants and SharpJSHandler. The group utilizes scheduled tasks and manipulates local administrator accounts for persistence, while also incorporating Remote Monitoring and Management tools into their attacks. Unfading Sea Haze demonstrates a sophisticated and patient approach, remaining undetected for years and showing adaptability through evolving exfiltration tactics and malware arsenal.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://www.securityweek.com/newly-detected-chinese-group-targeting-military-government-entities/",
+          "https://www.bleepingcomputer.com/news/security/unfading-sea-haze-hackers-hide-on-military-and-govt-networks-for-6-years/"
+        ]
+      },
+      "uuid": "58e75098-8edc-48ce-b1de-c1a8647e33d3",
+      "value": "Unfading Sea Haze"
+    },
+    {
+      "description": "Stucx is a threat actor known for targeting Israeli systems, including SCADA systems and the Red Alert missile protection system. Stucx Team has also developed a mobile application called MyOPECS for coordinating attacks, which includes features like DDoS attacks and is expected to add more capabilities in the future. Additionally, they have been observed using VPNs and proxy software to conceal their activities and have a history of making threats against those who cooperate with Israel.",
+      "meta": {
+        "refs": [
+          "https://socradar.io/reflections-of-the-israel-palestine-conflict-on-the-cyber-world/",
+          "https://www.darkowl.com/blog-content/2-month-review-of-cyber-activities-in-the-israel-hamas-conflict/"
+        ]
+      },
+      "uuid": "ee13ddb3-e8c0-4568-b56c-82d82c30f48b",
+      "value": "StucxTeam"
+    },
+    {
+      "description": "FlyingYeti is a Russia-aligned threat actor targeting Ukrainian military entities. They conduct reconnaissance activities and launch phishing campaigns using malware like COOKBOX. FlyingYeti exploits the WinRAR vulnerability CVE-2023-38831 to infect targets with malicious payloads. Cloudforce One has successfully disrupted their operations and provided recommendations for defense against their phishing campaigns.",
+      "meta": {
+        "country": "RU",
+        "refs": [
+          "https://blog.cloudflare.com/disrupting-flyingyeti-campaign-targeting-ukraine"
+        ]
+      },
+      "uuid": "1dcbad05-c5b7-4ec3-8920-45f396554f7a",
+      "value": "FlyingYeti"
+    },
+    {
+      "description": "SEXi is a ransomware group that targets VMware ESXi servers, encrypting data and demanding ransom payments. They have been observed encrypting virtual machines and backups, causing significant disruptions to services. The group's name is a play on the word \"ESXi,\" indicating a deliberate focus on these systems. SEXi has been linked to other ransomware variants based on the Babuk source code.",
+      "meta": {
+        "refs": [
+          "https://www.cybersecurity-insiders.com/proven-data-restores-powerhosts-vmware-backups-after-sexi-ransomware-attack/",
+          "https://heimdalsecurity.com/blog/powerhosts-esxi-servers-encrypted-with-new-sexi-ransomware/",
+          "https://www.darkreading.com/threat-intelligence/sexi-ransomware-desires-vmware-hypervisors"
+        ]
+      },
+      "uuid": "1bd2034f-a135-4c71-b08f-867b7f9e7998",
+      "value": "SEXi"
+    },
+    {
+      "description": "LilacSquid is an APT actor targeting a variety of industries worldwide since at least 2021. They use tactics such as exploiting vulnerabilities and compromised RDP credentials to gain access to victim organizations. Their post-compromise activities involve deploying MeshAgent and a customized version of QuasarRAT known as PurpleInk to maintain control over infected systems. LilacSquid has been observed using tools like Secure Socket Funneling for data exfiltration.",
+      "meta": {
+        "refs": [
+          "https://blog.talosintelligence.com/lilacsquid/"
+        ]
+      },
+      "uuid": "efacc258-fa0e-4686-99d2-03bab14a640e",
+      "value": "LilacSquid"
+    },
+    {
+      "description": "Hunt3r Kill3rs is a newly emerged threat group claiming expertise in cyber operations, including ICS breaches and web application vulnerabilities exploitation. They have discussed using Java fuzzing in their exploits and have made unverified claims of joint attacks with other threat actors.",
+      "meta": {
+        "country": "RU",
+        "refs": [
+          "https://socradar.io/dark-web-profile-hunt3r-kill3rs/"
+        ]
+      },
+      "uuid": "4b32ad58-972e-4aa2-be3d-ff875ed06eba",
+      "value": "Hunt3r Kill3rs"
+    },
+    {
+      "description": "UTG-Q-008 is a threat actor targeting Linux platforms, primarily focusing on government and enterprise entities in China. They utilize a massive botnet network for espionage activities, including reconnaissance, brute-forcing, and Trojan component delivery. The actor has a history of compromising thousands of servers in China using a password dictionary based on Chinese Pinyin. UTG-Q-008 operates during standard working hours in the UTC+8 time zone, with potential ties to Eastern Europe.",
+      "meta": {
+        "refs": [
+          "https://ti.qianxin.com/blog/articles/Operation-Veles-Decade-Long-Espionage-Targeting-the-Global-Research-and-Education-Sector-EN/"
+        ]
+      },
+      "uuid": "fd17cd3c-5131-4907-be7d-83a0c7dabd36",
+      "value": "UTG-Q-008"
+    },
+    {
+      "description": "Gitloker is a threat actor group targeting GitHub repositories, wiping their contents, and extorting victims for their data. They use stolen credentials to compromise accounts, claim to have created a backup, and instruct victims to contact them on Telegram. The attackers leave a ransom note in the form of a README file, urging victims to negotiate the return of their data. GitHub is working to combat these evolving attacks and the vulnerabilities they exploit.",
+      "meta": {
+        "refs": [
+          "https://www.itsecurityguru.org/2024/06/13/guest-blog-proactive-application-security-learning-from-the-recent-github-extortion-campaigns/",
+          "https://www.bleepingcomputer.com/news/security/new-gitloker-attacks-wipe-github-repos-in-extortion-scheme/"
+        ]
+      },
+      "uuid": "75cc313a-6a95-4ab8-b7f8-bfd7e4a7fe00",
+      "value": "Gitloker"
+    },
+    {
+      "description": "UNC5537 is a financially motivated threat actor targeting Snowflake customer databases. They use stolen credentials obtained from infostealer malware to access and exfiltrate large volumes of data. The compromised accounts lack multi-factor authentication, allowing UNC5537 to conduct data theft and extortion.",
+      "meta": {
+        "refs": [
+          "https://research.checkpoint.com/2024/17th-june-threat-intelligence-report/",
+          "https://cloud.google.com/blog/topics/threat-intelligence/unc5537-snowflake-data-theft-extortion"
+        ]
+      },
+      "uuid": "b8c6da46-4c9a-4075-b9f3-3b5ef7bd3534",
+      "value": "UNC5537"
+    },
+    {
+      "description": "Sp1d3r, a threat actor, has been involved in multiple data breaches targeting companies like Truist Bank, Cylance, and Advance Auto Parts. They have stolen and attempted to sell sensitive information, including customer and employee emails, account numbers, and source code. Sp1d3r has also claimed to have obtained data from a third-party platform and a cloud storage vendor. They have utilized hacking forums to sell the stolen data for significant sums of money.",
+      "meta": {
+        "refs": [
+          "https://www.cysecurity.news/2024/06/truist-bank-confirms-data-breach-after.html",
+          "https://research.checkpoint.com/2024/17th-june-threat-intelligence-report/"
+        ]
+      },
+      "uuid": "2be04e23-4376-4333-87df-27d635e43a98",
+      "value": "Sp1d3r"
+    },
+    {
+      "description": "TA571 is a spam distributor actor known for delivering a variety of malware, including DarkGate, NetSupport RAT, and information stealers. They use phishing emails with macro-enabled attachments to spread malicious PDFs containing rogue OneDrive links. TA571 has been observed using unique filtering techniques with intermediary \"gates\" to target specific users and bypass automated sandboxing. Proofpoint assesses with high confidence that TA571 infections can lead to ransomware.",
+      "meta": {
+        "refs": [
+          "https://www.proofpoint.com/us/blog/threat-insight/security-brief-ta571-delivers-icedid-forked-loader",
+          "https://www.proofpoint.com/us/blog/threat-insight/clipboard-compromise-powershell-self-pwn"
+        ]
+      },
+      "uuid": "0245113e-cef3-4638-9532-3bf235b07d49",
+      "value": "TA571"
+    },
+    {
+      "description": "Bondnet is a threat actor that deploys backdoors and cryptocurrency miners. They use high-performance bots as C2 servers and configure reverse RDP environments on compromised systems. Bondnet has infected over 15,000 Windows server machines worldwide, primarily targeting Windows Server 2008 R2 systems. The botnet is used for mining cryptocurrencies like Monero, ByteCoin, RieCoin, and ZCash, potentially earning the operator thousands of dollars per day.",
+      "meta": {
+        "refs": [
+          "https://asec.ahnlab.com/en/66662/",
+          "https://www.akamai.com/blog/security/the-bondnet-army",
+          "https://thedfirreport.com/2022/07/11/select-xmrig-from-sqlserver/"
+        ]
+      },
+      "uuid": "78e8bc1a-0be3-4792-a911-9d4813dd7bc3",
+      "value": "Bondnet"
+    },
+    {
+      "description": "Vermin is a threat actor group linked to the Luhansk People’s Republic and believed to be acting on behalf of the Kremlin. They have targeted Ukrainian government infrastructure using malware like Spectr and legitimate tools like SyncThing for data exfiltration. Vermin has been active since at least 2018, using custom-made RATs like Vermin and open-source tools like Quasar for cyber-espionage. The group has resurfaced after periods of inactivity to conduct espionage operations against Ukraine's military and defense sectors.",
+      "meta": {
+        "country": "RU",
+        "refs": [
+          "https://socprime.com/blog/vermin-uac-0020-hacking-collective-hits-ukrainian-government-and-military-with-spectr-malware/",
+          "https://therecord.media/russian-vermin-hackers-target-ukraine",
+          "https://cert.gov.ua/article/6279600"
+        ],
+        "synonyms": [
+          "Vermin",
+          "SickSync"
+        ]
+      },
+      "uuid": "318be739-26fd-4f4d-bac8-aa20ec8273b7",
+      "value": "UAC-0020"
+    },
+    {
+      "description": "Void Arachne is a threat actor group targeting Chinese-speaking users with malicious MSI files containing legitimate software installers for AI software. They exploit public interest in VPN technology and AI software to distribute malware through SEO poisoning and Chinese-language-themed Telegram channels. The group's campaign includes bundling malicious Winos payloads with deepfake pornography-generating AI software and voice-and-face-swapping AI software. Void Arachne also promotes AI technologies for virtual kidnapping and uses AI voice-alternating technology to pressure victims into paying ransom.",
+      "meta": {
+        "refs": [
+          "https://www.trendmicro.com/en_us/research/24/f/behind-the-great-wall-void-arachne-targets-chinese-speaking-user.html"
+        ]
+      },
+      "uuid": "2ac0db88-8e88-447b-ad44-f781326f5884",
+      "value": "Void Arachne"
+    },
+    {
+      "description": "Markopolo is a threat actor known for running scams targeting cryptocurrency users through a fake app called Vortax. They use social media and a dedicated blog to legitimize their malicious activities. Markopolo has been linked to a credential-harvesting operation and is agile in pivoting to new scams when detected. The actor leverages shared hosting and C2 infrastructure for their malicious builds.",
+      "meta": {
+        "refs": [
+          "https://www.darkreading.com/remote-workforce/vortax-meeting-software-branding-spreads-infostealers",
+          "https://www.recordedfuture.com/the-travels-of-markopolo-self-proclaimed-meeting-software-vortax-spreads-infostealers"
+        ]
+      },
+      "uuid": "c1e2121a-84c9-4fd0-99ef-917ded9cb3e1",
+      "value": "Markopolo"
+    },
+    {
+      "description": "Adrastea is a threat actor who has been active on cybercrime forums, claiming to have breached organizations like MBDA and offering stolen data for sale. They describe themselves as a group of independent cybersecurity experts and researchers. Adrastea has been linked to ransomware operations, data leak platforms, and network access groups. The actor has been known to exploit critical vulnerabilities in target organizations' infrastructure to gain access to sensitive data.",
+      "meta": {
+        "refs": [
+          "https://www.cysecurity.news/2022/11/missile-supplier-mbda-breach-disclosed.html",
+          "https://www.itsecurityguru.org/2022/09/14/documents-for-sale-on-the-dark-web/",
+          "https://cybershafarat.com/2022/07/31/adrastea-hackers-claim-leading-european-designer-and-manufacturer-of-missile-systems-mbda-hacked/",
+          "https://securityaffairs.co/wordpress/133881/data-breach/mbda-alleged-data-breach.html"
+        ]
+      },
+      "uuid": "b7f37e61-0e1c-4818-9a04-8f83afdd337c",
+      "value": "Adrastea"
+    },
+    {
+      "description": "JuiceLedger is a threat actor known for infostealing through their JuiceStealer .NET assembly. They have evolved from spreading fraudulent applications to conducting supply chain attacks, targeting PyPI contributors with phishing campaigns and typosquatting. Their malicious packages contain a code snippet that downloads and executes JuiceStealer, which has evolved to support additional browsers and Discord. Victims of JuiceLedger attacks are advised to reset passwords and report any suspicious activity to security@pypi.org.",
+      "meta": {
+        "refs": [
+          "https://www.sentinelone.com/labs/pypi-phishing-campaign-juiceledger-threat-actor-pivots-from-fake-apps-to-supply-chain-attacks/"
+        ]
+      },
+      "uuid": "8f4eb6bc-3d3d-49e4-82d8-500c7bb0a2ec",
+      "value": "JuiceLedger"
+    },
+    {
+      "description": "RedJuliett is a likely Chinese state-sponsored threat actor targeting government, academic, technology, and diplomatic organizations in Taiwan. They exploit vulnerabilities in network edge devices for initial access and use SQL injection and directory traversal exploits against web and SQL applications. The group operates from Fuzhou, China, and aims to support Beijing's intelligence collection on Taiwan's economic and diplomatic relations. RedJuliett has also expanded its operations to compromise organizations in other countries such as Hong Kong, Malaysia, and the United States.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://www.recordedfuture.com/redjuliett-intensifies-taiwanese-cyber-espionage-via-network-perimeter"
+        ]
+      },
+      "uuid": "d20f5398-a362-4c88-b3fb-7e952dcf3948",
+      "value": "RedJuliett"
+    },
+    {
+      "description": "SneakyChef is a threat actor known for using the SugarGh0st RAT to target government agencies, research institutions, and organizations worldwide. They have been active since at least August 2023, with a focus on leveraging old and new command and control domains. The group has been observed using lures in the form of scanned documents related to Ministries of Foreign Affairs and embassies. Talos Intelligence assesses with medium confidence that the operators are likely Chinese-speaking based on language preferences and specific targets.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://blog.talosintelligence.com/sneakychef-sugarghost-rat/"
+        ]
+      },
+      "uuid": "cdf4506e-09ea-4eb8-b898-b1b5381aa343",
+      "value": "SneakyChef"
+    },
+    {
+      "description": "ALTDOS is a threat actor group that has targeted entities in Southeast Asia, including Singapore, Thailand, and Malaysia. They have been involved in data breaches of companies in various sectors, such as real estate and retail, compromising sensitive information like customer names, bank account numbers, and transaction details. ALTDOS uses tactics like ransomware attacks, data exfiltration, and dumping data publicly or for sale on underground forums. The group has been known to demand ransom payments from victims, but also leaks data if demands are not met.",
+      "meta": {
+        "refs": [
+          "https://www.databreaches.net/singapore-corporations-making-progress-in-preventing-cyberattacks/",
+          "https://www.databreaches.net/altdos-claims-to-have-hacked-one-of-malaysias-biggest-conglomerates/",
+          "https://www.databreaches.net/advisories-are-published-but-are-enough-entities-reading-them-and-taking-precautions/",
+          "https://www.databreaches.net/singapore-real-estate-firm-breached-by-altdos/",
+          "https://www.databreaches.net/sg-vhive-alerts-consumers-to-cyberattack/",
+          "https://www.databreaches.net/sg-vhive-attackers-escalate-take-control-of-furniture-retailers-email-server/"
+        ]
+      },
+      "uuid": "2bd6c045-2ec2-438e-af66-0d97a0163290",
+      "value": "ALTDOS"
+    },
+    {
+      "description": "BlueHornet is an advanced persistent threat group targeting government organizations in China, North Korea, Iran, and Russia. They have compromised and leaked data from other APT groups like Kryptonite Panda and Lazarus Group. BlueHornet has been involved in campaigns such as Operation Renminbi, Operation Ruble, and Operation EUSec, focusing on exfiltrating region-specific data and selling it on the dark web. They have also been known to collaborate with different threat actors and have recently disclosed a zero-day exploit in NGINX 1.18.",
+      "meta": {
+        "refs": [
+          "https://cyberint.com/blog/research/bluehornet-one-apt-to-terrorize-them-all/",
+          "https://www.mandiant.com/resources/blog/killnet-new-capabilities-older-tactics",
+          "https://www.csoonline.com/article/3684668/cyberattacks-against-governments-jumped-95-in-last-half-of-2022-cloudsek-says.html"
+        ],
+        "synonyms": [
+          "APT49",
+          "AgainstTheWest"
+        ]
+      },
+      "uuid": "06a615dc-fa13-4d6a-ac8b-3d2a8c9501c4",
+      "value": "BlueHornet"
+    },
+    {
+      "description": "Hellhounds is an APT group targeting organizations in Russia, using a modified version of Pupy RAT called Decoy Dog. They gain initial access through vulnerable web services and trusted relationships, with a focus on the public sector and IT companies. The group has been active since at least 2019, maintaining covert presence inside compromised organizations by modifying open-source projects to evade detection. Hellhounds have successfully targeted at least 48 victims, including a telecom operator where they disrupted services.",
+      "meta": {
+        "refs": [
+          "https://www.ptsecurity.com/ww-en/analytics/pt-esc-threat-intelligence/hellhounds-operation-lahat-part-2/",
+          "https://ics-cert.kaspersky.com/publications/reports/2024/04/02/apt-and-financial-attacks-on-industrial-organizations-in-h2-2023/"
+        ]
+      },
+      "uuid": "46ef6903-deac-415a-afaf-97e3ce067d7e",
+      "value": "HellHounds"
+    },
+    {
+      "description": "IntelBroker is a threat actor known for orchestrating high-profile data breaches targeting companies like Apple, Zscaler, and Facebook Marketplace. They have a reputation for selling access to compromised systems and data on underground forums like BreachForums. IntelBroker has claimed responsibility for breaches involving government agencies such as Europol, the U.S. Department of Transportation, and the Pentagon, leaking sensitive information and classified documents. The actor has been linked to breaches at companies like Acuity, General Electric, and Home Depot, showcasing a pattern of targeting critical infrastructure and major corporations.",
+      "meta": {
+        "refs": [
+          "https://www.cysecurity.news/2024/06/infamous-hacker-intelbroker-breaches.html",
+          "https://www.malwarebytes.com/blog/news/2024/06/was-t-mobile-compromised-by-a-zero-day-in-jira",
+          "https://securityaffairs.com/164263/cyber-crime/pandabuy-extorted-again.html",
+          "https://meterpreter.org/cybersecurity-firm-hacked-sensitive-data-on-sale/"
+        ]
+      },
+      "uuid": "849d16c8-eaa3-46e7-9c1c-179ef680922e",
+      "value": "IntelBroker"
+    },
+    {
+      "description": "DRAGONBRIDGE is a Chinese state-sponsored threat actor known for engaging in information operations to promote the political interests of the People's Republic of China. They have been observed using AI-generated images and videos to spread propaganda on social media platforms. The group has targeted various countries and regions, including the US, Taiwan, and Japan, with narratives promoting pro-PRC viewpoints. DRAGONBRIDGE has been linked to campaigns discrediting the US political system, sowing division between allies, and criticizing specific companies and individuals.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/prc-dragonbridge-influence-elections/",
+          "https://quointelligence.eu/2024/06/european-election-at-risk-analysis/",
+          "https://blog.google/threat-analysis-group/over-50000-instances-of-dragonbridge-activity-disrupted-in-2022/"
+        ],
+        "synonyms": [
+          "Spamouflage Dragon"
+        ]
+      },
+      "uuid": "a4d55f94-d842-400a-acb6-dfee1c446257",
+      "value": "Dragonbridge"
+    },
+    {
+      "description": "Boolka is a threat actor known for infecting websites with malicious JavaScript scripts for data exfiltration. They have been carrying out opportunistic SQL injection attacks since at least 2022. Boolka has developed a malware delivery platform based on the BeEF framework and has been distributing the BMANAGER trojan. Their activities demonstrate a progression from basic website infections to more sophisticated malware operations.",
+      "meta": {
+        "refs": [
+          "https://www.group-ib.com/blog/boolka/"
+        ]
+      },
+      "uuid": "99ad0cef-c53a-44d5-85d4-5459e59a06d5",
+      "value": "Boolka"
+    },
+    {
+      "description": "CloudSorcerer is a sophisticated APT targeting Russian government entities, utilizing cloud infrastructure for stealth monitoring and data exfiltration. The malware leverages APIs and authentication tokens to access cloud resources for command and control, with GitHub serving as its initial C2 server. CloudSorcerer operates as separate modules depending on the process it's running in, executing from a single executable and utilizing complex inter-process communication through Windows pipes. The actor behind CloudSorcerer shows similarities to the CloudWizard APT in modus operandi, but the unique code and functionality suggest it is a new threat actor inspired by previous techniques.",
+      "meta": {
+        "refs": [
+          "https://securelist.com/cloudsorcerer-new-apt-cloud-actor/113056/"
+        ]
+      },
+      "uuid": "895548a2-e5c7-4a76-8425-19aa077db200",
+      "value": "CloudSorcerer"
+    },
+    {
+      "description": "The 8220 Gang, also known as Water Sigbin, is a threat actor group that focuses on deploying cryptocurrency-mining malware. They exploit vulnerabilities in Oracle WebLogic servers, such as CVE-2017-3506 and CVE-2023-21839, to deliver cryptocurrency miners using PowerShell scripts. The group has demonstrated a sophisticated multistage loading technique to deploy the PureCrypter loader and XMRIG crypto miner. They are known for using obfuscation techniques, such as hexadecimal encoding and code obfuscation, to evade detection and compromise systems.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://www.trendmicro.com/en_us/research/24/f/water-sigbin-xmrig.html",
+          "https://www.trendmicro.com/en_us/research/24/e/decoding-8220-latest-obfuscation-tricks.html",
+          "https://www.uptycs.com/blog/8220-gang-cryptomining-cloud-based-infrastructure-cyber-threat",
+          "https://www.imperva.com/blog/imperva-detects-undocumented-8220-gang-activities/",
+          "https://asec.ahnlab.com/en/51568/",
+          "https://www.trendmicro.com/en_us/research/23/e/8220-gang-evolution-new-strategies-adapted.html",
+          "https://blog.aquasec.com/8220-gang-confluence-vulnerability-cve-2022-26134",
+          "https://www.sentinelone.com/blog/from-the-front-lines-8220-gang-massively-expands-cloud-botnet-to-30000-infected-hosts/"
+        ],
+        "synonyms": [
+          "8220 Gang"
+        ]
+      },
+      "uuid": "745fd45f-9076-4c88-a977-01940bc0d36e",
+      "value": "Water Sigbin"
     }
   ],
-  "version": 310
+  "version": 312
 }
