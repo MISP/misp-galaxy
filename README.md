@@ -387,6 +387,14 @@ Category: *tool* - source: *https://github.com/mitre/cti* - total: *87* elements
 
 [[HTML](https://www.misp-galaxy.org/mitre-tool)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-tool.json)]
 
+## NACE
+
+[NACE](https://www.misp-galaxy.org/nace) - version 2.1 - The Statistical Classification of Economic Activities in the European Community, commonly referred to as NACE (for the French term "nomenclature statistique des activités économiques dans la Communauté européenne"), is the industry standard classification system used in the European Union.
+
+Category: *sector* - source: *https://ec.europa.eu/eurostat/web/metadata/classifications* - total: *1047* elements
+
+[[HTML](https://www.misp-galaxy.org/nace)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/nace.json)]
+
 ## NAICS
 
 [NAICS](https://www.misp-galaxy.org/naics) - The North American Industry Classification System or NAICS is a classification of business establishments by type of economic activity (the process of production).
