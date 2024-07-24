@@ -403,6 +403,54 @@ Category: *sector* - source: *North American Industry Classification System - NA
 
 [[HTML](https://www.misp-galaxy.org/naics)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/naics.json)]
 
+## NICE Competency areas
+
+[NICE Competency areas](https://www.misp-galaxy.org/nice-framework-competency_areas) - Competency areas based on the NIST NICE framework
+
+Category: *workforce* - source: *https://csrc.nist.gov/pubs/sp/800/181/r1/final* - total: *11* elements
+
+[[HTML](https://www.misp-galaxy.org/nice-framework-competency_areas)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/nice-framework-competency_areas.json)]
+
+## NICE Knowledges
+
+[NICE Knowledges](https://www.misp-galaxy.org/nice-framework-knowledges) - Knowledge based on the NIST NICE framework
+
+Category: *workforce* - source: *https://csrc.nist.gov/pubs/sp/800/181/r1/final* - total: *640* elements
+
+[[HTML](https://www.misp-galaxy.org/nice-framework-knowledges)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/nice-framework-knowledges.json)]
+
+## OPM codes in cybersecurity
+
+[OPM codes in cybersecurity](https://www.misp-galaxy.org/nice-framework-opm_codes) - Office of Personnel Management codes in cybersecurity
+
+Category: *workforce* - source: *https://dw.opm.gov/datastandards/referenceData/2273/current* - total: *52* elements
+
+[[HTML](https://www.misp-galaxy.org/nice-framework-opm_codes)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/nice-framework-opm_codes.json)]
+
+## NICE Skills
+
+[NICE Skills](https://www.misp-galaxy.org/nice-framework-skills) - Skills based on the NIST NICE framework
+
+Category: *workforce* - source: *https://csrc.nist.gov/pubs/sp/800/181/r1/final* - total: *556* elements
+
+[[HTML](https://www.misp-galaxy.org/nice-framework-skills)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/nice-framework-skills.json)]
+
+## NICE Tasks
+
+[NICE Tasks](https://www.misp-galaxy.org/nice-framework-tasks) - Tasks based on the NIST NICE framework
+
+Category: *workforce* - source: *https://csrc.nist.gov/pubs/sp/800/181/r1/final* - total: *1084* elements
+
+[[HTML](https://www.misp-galaxy.org/nice-framework-tasks)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/nice-framework-tasks.json)]
+
+## NICE Work Roles
+
+[NICE Work Roles](https://www.misp-galaxy.org/nice-framework-work_roles) - Work roles based on the NIST NICE framework
+
+Category: *workforce* - source: *https://csrc.nist.gov/pubs/sp/800/181/r1/final* - total: *52* elements
+
+[[HTML](https://www.misp-galaxy.org/nice-framework-work_roles)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/nice-framework-work_roles.json)]
+
 ## o365-exchange-techniques
 
 [o365-exchange-techniques](https://www.misp-galaxy.org/o365-exchange-techniques) - o365-exchange-techniques - Office365/Exchange related techniques by @johnLaTwC and @inversecos
