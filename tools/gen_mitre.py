@@ -175,8 +175,8 @@ for domain in domains:
             # handle deprecated and/or revoked
             # if 'x_mitre_deprecated' in item and item['x_mitre_deprecated']:
             #     value['deprecated'] = True
-            # if 'revoked' in item and item['revoked']:
-            #     value['revoked'] = True
+            if 'revoked' in item and item['revoked']:
+                value['revoked'] = True
 
             if 'external_references' in item:
                 for reference in item['external_references']:
