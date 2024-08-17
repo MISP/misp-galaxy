@@ -315,30 +315,6 @@ Category: *data-source* - source: *https://github.com/mitre/cti* - total: *40* e
 
 [[HTML](https://www.misp-galaxy.org/mitre-data-source)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-data-source.json)]
 
-## MITRE FiGHT Data Sources
-
-[MITRE FiGHT Data Sources](https://www.misp-galaxy.org/mitre-fight-datasources) - MITRE Five-G Hierarchy of Threats (FiGHT™) is a globally accessible knowledge base of adversary tactics and techniques that are used or could be used against 5G networks.
-
-Category: *data-source* - source: *https://fight.mitre.org/* - total: *63* elements
-
-[[HTML](https://www.misp-galaxy.org/mitre-fight-datasources)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-fight-datasources.json)]
-
-## MITRE FiGHT Mitigations
-
-[MITRE FiGHT Mitigations](https://www.misp-galaxy.org/mitre-fight-mitigations) - MITRE Five-G Hierarchy of Threats (FiGHT™) is a globally accessible knowledge base of adversary tactics and techniques that are used or could be used against 5G networks.
-
-Category: *mitigation* - source: *https://fight.mitre.org/* - total: *88* elements
-
-[[HTML](https://www.misp-galaxy.org/mitre-fight-mitigations)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-fight-mitigations.json)]
-
-## MITRE FiGHT Techniques
-
-[MITRE FiGHT Techniques](https://www.misp-galaxy.org/mitre-fight-techniques) - MITRE Five-G Hierarchy of Threats (FiGHT™) is a globally accessible knowledge base of adversary tactics and techniques that are used or could be used against 5G networks.
-
-Category: *attack-pattern* - source: *https://fight.mitre.org/* - total: *136* elements
-
-[[HTML](https://www.misp-galaxy.org/mitre-fight-techniques)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-fight-techniques.json)]
-
 ## Assets
 
 [Assets](https://www.misp-galaxy.org/mitre-ics-assets) - A list of asset categories that are commonly found in industrial control systems.
