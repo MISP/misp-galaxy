@@ -9728,14 +9728,18 @@
           "https://www.bleepingcomputer.com/news/security/meta-ukrainian-officials-military-targeted-by-ghostwriter-hackers",
           "https://blog.google/threat-analysis-group/continued-cyber-activity-in-eastern-europe-observed-by-tag",
           "https://blog.google/threat-analysis-group/fog-of-war-how-the-ukraine-conflict-transformed-the-cyber-threat-landscape/",
-          "https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Cyber-Sicherheitslage/Analysen-und-Prognosen/Threat-Intelligence/Aktive_APT-Gruppen/aktive-apt-gruppen_node.html"
+          "https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Cyber-Sicherheitslage/Analysen-und-Prognosen/Threat-Intelligence/Aktive_APT-Gruppen/aktive-apt-gruppen_node.html",
+          "https://socprime.com/blog/uac-0057-attack-detection-a-surge-in-adversary-activity-distributing-picassoloader-and-cobalt-strike-beacon/",
+          "https://socprime.com/blog/picassoloader-and-cobalt-strike-beacon-detection-uac-0057-aka-ghostwriter-hacking-group-attacks-the-ukrainian-leading-military-educational-institution/",
+          "https://cert.gov.ua/article/5098518"
         ],
         "synonyms": [
           "UNC1151",
           "TA445",
           "PUSHCHA",
           "Storm-0257",
-          "DEV-0257"
+          "DEV-0257",
+          "UAC-0057"
         ]
       },
       "related": [
@@ -16455,7 +16459,59 @@
       },
       "uuid": "02768be6-853c-4239-8fb1-823427489a86",
       "value": "APT45"
+    },
+    {
+      "description": "TA4903 is a financially motivated threat actor known for conducting credential phishing and business email compromise campaigns. They target organizations in the U.S. across various sectors, spoofing government entities and private businesses. The actor has been observed using techniques such as QR codes in phishing campaigns and spoofing supplier domains to prompt victims to provide banking information. TA4903's activities typically involve stealing corporate credentials to facilitate follow-on BEC activities.",
+      "meta": {
+        "refs": [
+          "https://www.proofpoint.com/us/blog/threat-insight/ta4903-actor-spoofs-us-government-small-businesses-phishing-bec-bids"
+        ]
+      },
+      "uuid": "1725e1c3-9870-4f66-8962-753c4ed3e086",
+      "value": "TA4903"
+    },
+    {
+      "description": "Storm-0569 is an initial access broker that distributes BATLOADER using search engine optimization (SEO) poisoning with websites that spoof Zoom, TeamViewer, Tableau, and AnyDesk. It uses the loader malware to inject the Cobalt Strike payload and transfers access to Storm-0506 for the deployment of the Black Basta ransomware.",
+      "meta": {
+        "refs": [
+          "https://www.microsoft.com/en-us/security/blog/2024/07/29/ransomware-operators-exploit-esxi-hypervisor-vulnerability-for-mass-encryption/",
+          "https://www.rewterz.com/rewterz-news/rewterz-threat-alert-widely-abused-msix-app-installer-disabled-by-microsoft-active-iocs"
+        ]
+      },
+      "uuid": "d1ad4392-c85a-4f07-9818-a86f805a49f6",
+      "value": "Storm-0506"
+    },
+    {
+      "description": "SAMBASPIDER is a threat actor associated to the Mispadu malware. On July 24, USDoD allegedly scraped and leaked a 100,000-line Indicator of Compromise list from CrowdStrike, revealing detailed threat intelligence data. The leak, posted on Breach Forums, includes critical insights into the Mispadu malware and SAMBASPIDER threat actor.",
+      "meta": {
+        "refs": [
+          "https://hackread.com/hacker-scrapes-publishes-crowdstrike-ioc-list/",
+          "https://www.crowdstrike.com/blog/hacktivist-usdod-claims-to-have-leaked-threat-actor-list/"
+        ]
+      },
+      "uuid": "0b71d2db-93fe-49b5-a9fd-7f8c94b86637",
+      "value": "SAMBASPIDER"
+    },
+    {
+      "description": "UNC4393 is a financially motivated threat actor primarily using BASTA ransomware. They have been active since early 2022 and have targeted over 40 organizations across various industries. UNC4393 has shown a willingness to cooperate with other threat clusters for initial access and has evolved from using existing tools to developing custom malware. They focus on efficient data exfiltration and multi-faceted extortion, often utilizing tools like COGSCAN and RCLONE for reconnaissance and data theft.",
+      "meta": {
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/unc4393-goes-gently-into-silentnight"
+        ]
+      },
+      "uuid": "8191e28a-fb2d-4d50-b992-b877807a2f37",
+      "value": "UNC4393"
+    },
+    {
+      "description": "Being one of the most active malware distributors, Hive0137 demonstrates a willingness to explore new payloads and technologies such as GenAI. They have quickly moved onto the same level as other high-profile distributors such as TA577, and will likely be responsible for future phishing campaigns, facilitating initial access for ransomware affiliates. Hive0137’s combination of intent, capabilities and relationships with other groups presents a direct threat to organizations all over the world. As threat actors pick up the pace and increasingly adopt AI technologies for malicious purposes, it is important that organizations are aware of the most recent threats and their capabilities to maintain a strong security posture.",
+      "meta": {
+        "refs": [
+          "https://securityintelligence.com/x-force/hive0137-on-ai-journey/"
+        ]
+      },
+      "uuid": "34f2d3ad-e367-4058-a10b-1f7a4274c418",
+      "value": "Hive0137"
     }
   ],
-  "version": 312
+  "version": 313
 }
