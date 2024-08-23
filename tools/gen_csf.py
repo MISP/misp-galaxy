@@ -18,6 +18,7 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+import pdb
 import requests
 import json
 import os
@@ -55,15 +56,57 @@ url = "https://www.first.org/standards/frameworks/csirts/csirt_services_framewor
 # Send a GET request to the webpage
 response = requests.get(url)
 
-def extract_text(element):
+def extract_nostrong_content(element):
     content = element.find_next_siblings('p', limit=3)
-    content_text = ""
-    for i, elm in enumerate(content):
-        if i !=0 :
-            content_text += "\n" + elm.text.strip()
-        else:
-            content_text += elm.text.strip()
-    return content_text
+    extracted = {}
+
+    extracted["purpose"] = content[0].text.strip()[8:]
+    for sibling in content[0].find_next_siblings():
+        if "Description:" in sibling.text:
+            break
+        extracted["purpose"] += f" {sibling.text.strip()}"
+
+
+    extracted["description"] = content[1].text.strip()[12:]
+    for sibling in content[1].find_next_siblings():
+        if "Outcome:" in sibling.text:
+            break       
+        extracted["description"] += f" {sibling.text.strip()}"
+
+    extracted["outcome"] = content[2].text.strip()[8:]
+    for sibling in content[2].find_next_siblings():
+        if sibling.name =="h4":
+            break
+        extracted["outcome"] += f" {sibling.text.strip()}"
+
+    return extracted
+
+def extract_content(element):
+    content = {}
+    description_title = element.find_next("em", string=lambda text: "Description:" in text)
+    purpose_title = element.find_next("em", string=lambda text: "Purpose:" in text)
+    outcome_title = element.find_next("em", string=lambda text: "Outcome:" in text)
+
+
+    content["purpose"] = purpose_title.parent.parent.get_text(strip=True).replace("Purpose:", "").strip()
+    for sibling in purpose_title.parent.parent.find_next_siblings():
+        if "Description:" in sibling.text:
+            break
+        content["purpose"] += f" {sibling.text.strip()}"
+
+    content["description"] = description_title.parent.parent.get_text(strip=True).replace("Description:", "").strip()
+    for sibling in description_title.parent.parent.find_next_siblings():
+        if "Outcome:" in sibling.text:
+            break       
+        content["description"] += f" {sibling.text.strip()}"
+
+    content["outcome"] =  outcome_title.parent.parent.get_text(strip=True).replace("Outcome:", "").strip()
+    for sibling in outcome_title.parent.parent.find_next_siblings():
+        if sibling.name =="h4":
+            break
+        content["outcome"] += f" {sibling.text.strip()}"
+
+    return content
 
 def remove_heading(input_string):
     return re.sub(r'^\d+(\.\d+)*\s+', '', input_string)
@@ -81,11 +124,19 @@ if response.status_code == 200:
         functions = section_header.find_next_siblings('h4')
 
         for service in services:
+            if "Monitoring and detection" in service.text:
+                content = extract_nostrong_content(service)
+            else:
+                content = extract_content(service)
             name = remove_heading(service.text.strip())
             suuid = str(uuid.uuid5(uuid.UUID("43803a9f-9ea6-4ebc-9cb5-68ccdc2c23e0"), name))
             cluster["values"].append(
                 {
-                    "description": extract_text(service),
+                    "description": content["description"],
+                    "meta": {
+                        "purpose": content["purpose"],
+                        "outcome": content["outcome"]
+                    },
                     "uuid" : suuid,
                     "value": name,
                     "related": []
@@ -93,18 +144,23 @@ if response.status_code == 200:
             )
 
         for function in functions:
+            content = extract_content(function)
             # get the parent service
             parent_service = function.find_previous('h3')
             relationship = {
                 "dest-uuid": str(uuid.uuid5(uuid.UUID("43803a9f-9ea6-4ebc-9cb5-68ccdc2c23e0"), remove_heading(parent_service.text.strip()))),
-                "type": "used-by"
+                "type": "part-of"
             }
 
             name = remove_heading(function.text.strip())
 
             cluster["values"].append(
                 {
-                    "description": extract_text(function),
+                    "description": content["description"],
+                    "meta": {
+                        "purpose": content["purpose"],
+                        "outcome": content["outcome"]
+                    },
                     "uuid" : str(uuid.uuid5(uuid.UUID("43803a9f-9ea6-4ebc-9cb5-68ccdc2c23e0"), name)),
                     "value": name,
                     "related": [relationship]

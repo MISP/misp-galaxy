@@ -203,6 +203,14 @@ Category: *firearm* - source: *https://www.impactguns.com* - total: *5953* eleme
 
 [[HTML](https://www.misp-galaxy.org/firearms)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/firearms.json)]
 
+## FIRST CSIRT Services Framework
+
+[FIRST CSIRT Services Framework](https://www.misp-galaxy.org/first-csirt-services-framework) - The Computer Security Incident Response Team (CSIRT) Services Framework is a high-level document describing in a structured way a collection of cyber security services and associated functions that Computer Security Incident Response Teams and other teams providing incident management related services may provide
+
+Category: *csirt* - source: *https://www.first.org/standards/frameworks/csirts/csirt_services_framework_v2.1* - total: *97* elements
+
+[[HTML](https://www.misp-galaxy.org/first-csirt-services-framework)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/first-csirt-services-framework.json)]
+
 ## FIRST DNS Abuse Techniques Matrix
 
 [FIRST DNS Abuse Techniques Matrix](https://www.misp-galaxy.org/first-dns) - The Domain Name System (DNS) is a critical part of the Internet, including mapping domain names to IP addresses. Malicious threat actors use domain names, their corresponding technical resources, and other parts of the DNS infrastructure, including its protocols, for their malicious cyber operations. CERTs are confronted with reported DNS abuse on a continuous basis, and rely heavily on DNS analysis and infrastructure to protect their constituencies. Understanding the international customary norms applicable for detecting and mitigating DNS abuse from the perspective of the global incident response community is critical for the open Internet’s stability, security and resiliency. See also https://www.first.org/global/sigs/dns/ for more information.
