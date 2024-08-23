@@ -3,7 +3,7 @@
 #
 #    A simple convertor script to generate galaxies from the MITRE NICE framework
 #    https://niccs.cisa.gov/workforce-development/nice-framework
-#    Copyright (C) 2024 Jean-Louis Huynen 
+#    Copyright (C) 2024 Jean-Louis Huynen
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -35,7 +35,7 @@ galaxy = {
     "description": "The Computer Security Incident Response Team (CSIRT) Services Framework is a high-level document describing in a structured way a collection of cyber security services and associated functions that Computer Security Incident Response Teams and other teams providing incident management related services may provide",
     "uuid": "4a72488f-ef5b-4895-a5d9-c625dee663cb",
     "version": 1,
-    "icon": 'user'
+    "icon": 'user',
 }
 
 cluster = {
@@ -47,7 +47,7 @@ cluster = {
     "uuid": "4a72488f-ef5b-4895-a5d9-c625dee663cb",
     'source': 'https://www.first.org/standards/frameworks/csirts/csirt_services_framework_v2.1',
     'values': [],
-    'version': 1 
+    'version': 1,
 }
 
 # URL to download
@@ -55,6 +55,7 @@ url = "https://www.first.org/standards/frameworks/csirts/csirt_services_framewor
 
 # Send a GET request to the webpage
 response = requests.get(url)
+
 
 def extract_nostrong_content(element):
     content = element.find_next_siblings('p', limit=3)
@@ -66,50 +67,61 @@ def extract_nostrong_content(element):
             break
         extracted["purpose"] += f" {sibling.text.strip()}"
 
-
     extracted["description"] = content[1].text.strip()[12:]
     for sibling in content[1].find_next_siblings():
         if "Outcome:" in sibling.text:
-            break       
+            break
         extracted["description"] += f" {sibling.text.strip()}"
 
     extracted["outcome"] = content[2].text.strip()[8:]
     for sibling in content[2].find_next_siblings():
-        if sibling.name =="h4":
+        if sibling.name == "h4":
             break
         extracted["outcome"] += f" {sibling.text.strip()}"
 
     return extracted
 
+
 def extract_content(element):
     content = {}
-    description_title = element.find_next("em", string=lambda text: "Description:" in text)
+    description_title = element.find_next(
+        "em", string=lambda text: "Description:" in text
+    )
     purpose_title = element.find_next("em", string=lambda text: "Purpose:" in text)
     outcome_title = element.find_next("em", string=lambda text: "Outcome:" in text)
 
-
-    content["purpose"] = purpose_title.parent.parent.get_text(strip=True).replace("Purpose:", "").strip()
+    content["purpose"] = (
+        purpose_title.parent.parent.get_text(strip=True).replace("Purpose:", "").strip()
+    )
     for sibling in purpose_title.parent.parent.find_next_siblings():
         if "Description:" in sibling.text:
             break
         content["purpose"] += f" {sibling.text.strip()}"
 
-    content["description"] = description_title.parent.parent.get_text(strip=True).replace("Description:", "").strip()
+    content["description"] = (
+        description_title.parent.parent.get_text(strip=True)
+        .replace("Description:", "")
+        .strip()
+    )
     for sibling in description_title.parent.parent.find_next_siblings():
         if "Outcome:" in sibling.text:
-            break       
+            break
         content["description"] += f" {sibling.text.strip()}"
 
-    content["outcome"] =  outcome_title.parent.parent.get_text(strip=True).replace("Outcome:", "").strip()
+    content["outcome"] = (
+        outcome_title.parent.parent.get_text(strip=True).replace("Outcome:", "").strip()
+    )
     for sibling in outcome_title.parent.parent.find_next_siblings():
-        if sibling.name =="h4":
+        if sibling.name == "h4":
             break
         content["outcome"] += f" {sibling.text.strip()}"
 
     return content
 
+
 def remove_heading(input_string):
     return re.sub(r'^\d+(\.\d+)*\s+', '', input_string)
+
 
 # Check if the request was successful
 if response.status_code == 200:
@@ -117,7 +129,9 @@ if response.status_code == 200:
     soup = BeautifulSoup(response.content, 'html.parser')
 
     # Extract the section titled "4 CSIRT Services Framework Structure"
-    section_header = soup.find('h2', id="5-Service-Area-Information-Security-Event-Management")
+    section_header = soup.find(
+        'h2', id="5-Service-Area-Information-Security-Event-Management"
+    )
     if section_header:
 
         services = section_header.find_next_siblings('h3')
@@ -129,17 +143,19 @@ if response.status_code == 200:
             else:
                 content = extract_content(service)
             name = remove_heading(service.text.strip())
-            suuid = str(uuid.uuid5(uuid.UUID("43803a9f-9ea6-4ebc-9cb5-68ccdc2c23e0"), name))
+            suuid = str(
+                uuid.uuid5(uuid.UUID("43803a9f-9ea6-4ebc-9cb5-68ccdc2c23e0"), name)
+            )
             cluster["values"].append(
                 {
                     "description": content["description"],
                     "meta": {
                         "purpose": content["purpose"],
-                        "outcome": content["outcome"]
+                        "outcome": content["outcome"],
                     },
-                    "uuid" : suuid,
+                    "uuid": suuid,
                     "value": name,
-                    "related": []
+                    "related": [],
                 }
             )
 
@@ -148,8 +164,13 @@ if response.status_code == 200:
             # get the parent service
             parent_service = function.find_previous('h3')
             relationship = {
-                "dest-uuid": str(uuid.uuid5(uuid.UUID("43803a9f-9ea6-4ebc-9cb5-68ccdc2c23e0"), remove_heading(parent_service.text.strip()))),
-                "type": "part-of"
+                "dest-uuid": str(
+                    uuid.uuid5(
+                        uuid.UUID("43803a9f-9ea6-4ebc-9cb5-68ccdc2c23e0"),
+                        remove_heading(parent_service.text.strip()),
+                    )
+                ),
+                "type": "part-of",
             }
 
             name = remove_heading(function.text.strip())
@@ -159,21 +180,45 @@ if response.status_code == 200:
                     "description": content["description"],
                     "meta": {
                         "purpose": content["purpose"],
-                        "outcome": content["outcome"]
+                        "outcome": content["outcome"],
                     },
-                    "uuid" : str(uuid.uuid5(uuid.UUID("43803a9f-9ea6-4ebc-9cb5-68ccdc2c23e0"), name)),
+                    "uuid": str(
+                        uuid.uuid5(
+                            uuid.UUID("43803a9f-9ea6-4ebc-9cb5-68ccdc2c23e0"), name
+                        )
+                    ),
                     "value": name,
-                    "related": [relationship]
+                    "related": [relationship],
                 }
             )
-    
-        with open(os.path.join(os.path.dirname(__file__), '..', 'galaxies', f'first-csirt-services-framework.json'), 'w') as f:
-            json.dump(galaxy, f, indent=2, sort_keys=True, ensure_ascii=False)
-            f.write('\n')  # only needed for the beauty and to be compliant with jq_all_the_things
 
-        with open(os.path.join(os.path.dirname(__file__), '..', 'clusters', f'first-csirt-services-framework.json'), 'w') as f:
+        with open(
+            os.path.join(
+                os.path.dirname(__file__),
+                '..',
+                'galaxies',
+                f'first-csirt-services-framework.json',
+            ),
+            'w',
+        ) as f:
+            json.dump(galaxy, f, indent=2, sort_keys=True, ensure_ascii=False)
+            f.write(
+                '\n'
+            )  # only needed for the beauty and to be compliant with jq_all_the_things
+
+        with open(
+            os.path.join(
+                os.path.dirname(__file__),
+                '..',
+                'clusters',
+                f'first-csirt-services-framework.json',
+            ),
+            'w',
+        ) as f:
             json.dump(cluster, f, indent=2, sort_keys=True, ensure_ascii=False)
-            f.write('\n')  # only needed for the beauty and to be compliant with jq_all_the_things
+            f.write(
+                '\n'
+            )  # only needed for the beauty and to be compliant with jq_all_the_things
 
     else:
         print("Couldn't find the section header.")
