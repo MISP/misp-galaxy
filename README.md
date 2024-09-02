@@ -535,7 +535,7 @@ Category: *sector* - source: *CERT-EU* - total: *118* elements
 
 [Sigma-Rules](https://www.misp-galaxy.org/sigma-rules) - MISP galaxy cluster based on Sigma Rules.
 
-Category: *rules* - source: *https://github.com/jstnk9/MISP/tree/main/misp-galaxy/sigma* - total: *2932* elements
+Category: *rules* - source: *https://github.com/jstnk9/MISP/tree/main/misp-galaxy/sigma* - total: *2949* elements
 
 [[HTML](https://www.misp-galaxy.org/sigma-rules)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/sigma-rules.json)]
 
@@ -607,7 +607,7 @@ Category: *actor* - source: *MISP Project* - total: *721* elements
 
 [Tidal Campaigns](https://www.misp-galaxy.org/tidal-campaigns) - Tidal Campaigns Cluster
 
-Category: *Campaigns* - source: *https://app-api.tidalcyber.com/api/v1/campaigns/* - total: *48* elements
+Category: *Campaigns* - source: *https://app-api.tidalcyber.com/api/v1/campaigns/* - total: *78* elements
 
 [[HTML](https://www.misp-galaxy.org/tidal-campaigns)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/tidal-campaigns.json)]
 
@@ -615,7 +615,7 @@ Category: *Campaigns* - source: *https://app-api.tidalcyber.com/api/v1/campaigns
 
 [Tidal Groups](https://www.misp-galaxy.org/tidal-groups) - Tidal Groups Galaxy
 
-Category: *Threat Groups* - source: *https://app-api.tidalcyber.com/api/v1/groups/* - total: *172* elements
+Category: *Threat Groups* - source: *https://app-api.tidalcyber.com/api/v1/groups/* - total: *200* elements
 
 [[HTML](https://www.misp-galaxy.org/tidal-groups)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/tidal-groups.json)]
 
@@ -623,7 +623,7 @@ Category: *Threat Groups* - source: *https://app-api.tidalcyber.com/api/v1/group
 
 [Tidal References](https://www.misp-galaxy.org/tidal-references) - Tidal References Cluster
 
-Category: *References* - source: *https://app-api.tidalcyber.com/api/v1/references/* - total: *4261* elements
+Category: *References* - source: *https://app-api.tidalcyber.com/api/v1/references/* - total: *4309* elements
 
 [[HTML](https://www.misp-galaxy.org/tidal-references)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/tidal-references.json)]
 
@@ -631,7 +631,7 @@ Category: *References* - source: *https://app-api.tidalcyber.com/api/v1/referenc
 
 [Tidal Software](https://www.misp-galaxy.org/tidal-software) - Tidal Software Cluster
 
-Category: *Software* - source: *https://app-api.tidalcyber.com/api/v1/software/* - total: *1003* elements
+Category: *Software* - source: *https://app-api.tidalcyber.com/api/v1/software/* - total: *1014* elements
 
 [[HTML](https://www.misp-galaxy.org/tidal-software)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/tidal-software.json)]
 
