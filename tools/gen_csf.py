@@ -4,6 +4,7 @@
 #    A simple convertor script to generate galaxies from the MITRE NICE framework
 #    https://niccs.cisa.gov/workforce-development/nice-framework
 #    Copyright (C) 2024 Jean-Louis Huynen
+#    Copyright (C) 2024 Déborah Servili
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -56,7 +57,6 @@ url = "https://www.first.org/standards/frameworks/csirts/csirt_services_framewor
 # Send a GET request to the webpage
 response = requests.get(url)
 
-
 def extract_nostrong_content(element):
     content = element.find_next_siblings('p', limit=3)
     extracted = {}
@@ -75,12 +75,10 @@ def extract_nostrong_content(element):
 
     extracted["outcome"] = content[2].text.strip()[8:]
     for sibling in content[2].find_next_siblings():
-        if sibling.name == "h4":
+        if sibling.name in ["h2", "h3", "h4"] or any(substring in sibling.text for substring in ["The following functions", "List of functions"]):
             break
         extracted["outcome"] += f" {sibling.text.strip()}"
-
     return extracted
-
 
 def extract_content(element):
     content = {}
@@ -103,6 +101,7 @@ def extract_content(element):
         .replace("Description:", "")
         .strip()
     )
+
     for sibling in description_title.parent.parent.find_next_siblings():
         if "Outcome:" in sibling.text:
             break
@@ -112,21 +111,25 @@ def extract_content(element):
         outcome_title.parent.parent.get_text(strip=True).replace("Outcome:", "").strip()
     )
     for sibling in outcome_title.parent.parent.find_next_siblings():
-        if sibling.name == "h4":
+        if sibling.name in ["h2", "h3", "h4"] or any(substring in sibling.text for substring in ["The following functions", "List of functions"]):
             break
         content["outcome"] += f" {sibling.text.strip()}"
-
+        content["outcome"] = content["outcome"].split("The following functions")[0].strip()
     return content
 
 
 def remove_heading(input_string):
     return re.sub(r'^\d+(\.\d+)*\s+', '', input_string)
 
-
 # Check if the request was successful
 if response.status_code == 200:
     # Parse the page content with BeautifulSoup
     soup = BeautifulSoup(response.content, 'html.parser')
+
+    # Removing all links <a>
+    for a in soup.find_all('a', href=True):
+        if a['href'].startswith('#'):
+            a.decompose()
 
     # Extract the section titled "4 CSIRT Services Framework Structure"
     section_header = soup.find(
