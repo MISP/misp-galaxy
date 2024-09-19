@@ -13773,7 +13773,11 @@
       "meta": {
         "refs": [
           "https://www.securonix.com/blog/securonix-threat-labs-monthly-intelligence-insights-june-2023/",
-          "https://www.paloaltonetworks.com/blog/security-operations/through-the-cortex-xdr-lens-uncovering-a-new-activity-group-targeting-governments-in-the-middle-east-and-africa/"
+          "https://www.paloaltonetworks.com/blog/security-operations/through-the-cortex-xdr-lens-uncovering-a-new-activity-group-targeting-governments-in-the-middle-east-and-africa/",
+          "https://unit42.paloaltonetworks.com/operation-diplomatic-specter/"
+        ],
+        "synonyms": [
+          "TGR-STA-0043"
         ]
       },
       "uuid": "5d0aee14-f18a-44da-a44d-28d950f06b9c",
@@ -16511,6 +16515,179 @@
       },
       "uuid": "34f2d3ad-e367-4058-a10b-1f7a4274c418",
       "value": "Hive0137"
+    },
+    {
+      "description": "UNC4540 is a suspected Chinese threat actor targeting unpatched SonicWall Secure Mobile Access appliances to deploy custom malware that establishes long-term persistence for cyber espionage. The malware is designed to steal hashed credentials, provide shell access, and persist through firmware upgrades, utilizing a variant of the TinyShell backdoor. Mandiant has tracked UNC4540's activities back to 2021, noting their focus on maintaining access to compromised devices. The group's tactics are consistent with patterns observed in other Chinese threat actor campaigns targeting network devices for zero-day exploits.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://www.mandiant.com/resources/blog/suspected-chinese-persist-sonicwall"
+        ]
+      },
+      "uuid": "e6b27374-5055-4c2c-950b-06b4fc75a210",
+      "value": "UNC4540"
+    },
+    {
+      "description": "TIDRONE is an unidentified threat actor linked to Chinese-speaking groups, with a focus on military-related industry chains, particularly drone manufacturers in Taiwan. The actor employs advanced malware variants such as CXCLNT and CLNTEND, which are distributed through ERP software or remote desktops. The consistency in file compilation times and operational patterns aligns with other Chinese espionage activities, indicating a likely espionage motive.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://www.trendmicro.com/en_us/research/24/i/tidrone-targets-military-and-satellite-industries-in-taiwan.html"
+        ]
+      },
+      "uuid": "020d512f-0636-482b-8033-2bd404e0321f",
+      "value": "TIDRONE"
+    },
+    {
+      "description": "Actor240524 is a newly identified APT group that targeted Azerbaijani and Israeli diplomats through spear-phishing emails to steal sensitive data. The group employs a Trojan program known as ABCloader and ABCsync, demonstrating capabilities to steal secrets and modify file data. Their operations appear to focus on undermining the cooperative relationship between Azerbaijan and Israel. Actor240524 utilizes various countermeasures to obscure their attack tactics and techniques.",
+      "meta": {
+        "refs": [
+          "https://nsfocusglobal.com/new-apt-group-actor240524-a-closer-look-at-its-cyber-tactics-against-azerbaijan-and-israel/"
+        ]
+      },
+      "uuid": "6f394add-1703-41e7-be27-d79613f9929c",
+      "value": "Actor240524"
+    },
+    {
+      "description": "ZeroSevenGroup is a threat actor that claims to have breached a U.S. branch of Toyota, stealing 240GB of sensitive data, including employee and customer information, contracts, and financial details. They have also allegedly gained full network access to critical Israeli infrastructure, with access to 80TB of sensitive data across various sectors. The group has threatened to use the stolen data for malicious activities, including ransomware attacks. Their operations involve exploiting vulnerabilities, as indicated by their reference to manipulating memory through buffer overflow techniques.",
+      "meta": {
+        "refs": [
+          "https://siliconangle.com/2024/08/20/toyota-alleges-stolen-customer-data-published-hacking-site-came-outside-supplier/",
+          "https://www.oodaloop.com/briefs/2024/08/21/toyota-customer-employee-data-leaked-in-confirmed-data-breach/"
+        ]
+      },
+      "uuid": "c54b9a98-1436-4e29-b194-e5bde003dd4d",
+      "value": "ZeroSevenGroup"
+    },
+    {
+      "description": "UNC2970 is a North Korean threat actor that primarily targets organizations through spear-phishing emails with job recruitment themes, often utilizing fake LinkedIn accounts to engage victims. The group employs the PLANKWALK backdoor and other malware families, leveraging compromised WordPress sites for command and control. They have been observed using BYOVD techniques to exploit vulnerable drivers for evading detection. Mandiant has noted a shift in UNC2970's targeting strategy, including a focus on security researchers and advancements in their operational capabilities against EDR tools.",
+      "meta": {
+        "country": "KP",
+        "refs": [
+          "https://www.mandiant.com/resources/blog/lightshow-north-korea-unc2970"
+        ]
+      },
+      "uuid": "e40cf515-f155-46d4-b174-88b38383f9bb",
+      "value": "UNC2970"
+    },
+    {
+      "description": "SILKFIN AGENCY has claimed responsibility for multiple significant data breaches, including the compromise of DimeCuba.com, which exposed over 1 million SMS records and more than 100,000 email records. They also targeted the Sri Lankan Department of Agrarian Development, allegedly compromising the personal and agricultural data of over 1.45 million farmers. Additionally, they claimed a breach of the Siam Cement Group's database. The breaches involved sensitive data such as NIC numbers and transaction details.",
+      "meta": {
+        "refs": [
+          "https://dailydarkweb.net/threat-actor-claims-breach-of-siam-cement-group-database/",
+          "https://dailydarkweb.net/threat-actor-claimed-to-breach-database-of-dimecuba/",
+          "https://dailydarkweb.net/a-threat-actor-alleged-breach-of-sri-lankan-farmers-community-database/"
+        ]
+      },
+      "uuid": "b1fd5c1a-f0e9-42b1-b386-9925c02ba508",
+      "value": "SILKFIN AGENCY"
+    },
+    {
+      "description": "UNC4536 is a threat actor that distributes malware, including ICEDID, REDLINESTEALER, and CARBANAK, primarily through malvertising and trojanized MSIX installers masquerading as popular software. They utilize SEO poisoning tactics to direct victims to malicious sites that mimic legitimate software hosting platforms, facilitating the download of compromised installers. The actor employs a PowerShell script known as NUMOZYLOD to deliver tailored payloads, such as the CARBANAK backdoor, to their partners. Additionally, UNC4536 has been linked to campaigns that distribute NetSupport RAT, targeting IT administrators through fake sites promoted via Google Ads.",
+      "meta": {
+        "refs": [
+          "https://www.googlecloudcommunity.com/gc/Community-Blog/Finding-Malware-Unveiling-NUMOZYLOD-with-Google-Security/ba-p/789551"
+        ]
+      },
+      "uuid": "5a00ccdb-7987-4563-af4f-e368af8406df",
+      "value": "UNC4536"
+    },
+    {
+      "description": "UAC-0154 is a threat actor orchestrating the STARK#VORTEX phishing campaign, specifically targeting Ukraine’s military. They employ a Microsoft Help file containing obfuscated JavaScript as a lure, disguised as a manual for Pilot-in-Command Drones, to deliver the MerlinAgent malware. This PowerShell-based RAT is heavily obfuscated and downloads a payload from a remote server, enabling full control over compromised systems. The group initially targeted Ukrainian entities using military-themed documents sent via email to @ukr.net addresses.",
+      "meta": {
+        "refs": [
+          "https://www.securonix.com/blog/securonix-threat-labs-monthly-intelligence-insights-september-2023/"
+        ]
+      },
+      "uuid": "8356805a-5612-449c-9fdc-cbe536c1f392",
+      "value": "UAC-0154"
+    },
+    {
+      "description": "IRLeaks is a threat actor known for significant cyberattacks targeting Iranian organizations, including a major breach of SnappFood, where they exfiltrated 3TB of sensitive data from 20 million user profiles. They have also compromised data from 23 leading Iranian insurance companies, offering over 160 million records for sale. Their operations involve extortion tactics, as seen in the ransom negotiations with Tosan, and they utilize malware such as StealC for data extraction. IRLeaks communicates primarily in Persian and has been active in selling stolen data on cybercriminal marketplaces.",
+      "meta": {
+        "refs": [
+          "https://www.hackread.com/iranian-food-delivery-snappfood-cyber-attack/",
+          "https://cisoseries.com/cyber-security-headlines-google-5b-suit-settled-orbit-chain-loses-80m-fda-cyber-agreement/",
+          "https://www.oodaloop.com/briefs/2024/01/04/pilfered-data-from-iranian-insurance-and-food-delivery-firms-leaked-online/",
+          "https://cybershafarat.com/2024/09/04/major-ir-leaks/",
+          "https://www.scmagazine.com/brief/significant-ransom-payment-by-major-iranian-it-firm-underway"
+        ]
+      },
+      "uuid": "f0a50fa0-25ca-4346-a666-390923f2c5a1",
+      "value": "IRLeaks"
+    },
+    {
+      "description": "RaHDit is a pro-Kremlin hacktivist group known for orchestrating hack-and-leak operations, including the publication of personal information about Ukrainian military intelligence personnel and their associates. The group has been linked to Russian intelligence and has claimed to provide actionable intelligence to the Russian army. RaHDit operates a website called NemeZida, where they disclose sensitive data, and has been involved in disinformation campaigns supporting Russian narratives. Their activities include collaboration with other hacktivist groups and targeting Ukrainian cyberdefense efforts.",
+      "meta": {
+        "country": "RU",
+        "refs": [
+          "https://flashpoint.io/blog/pro-kremlin-hacktivist-groups/",
+          "https://news.risky.biz/risky-biz-news-doppelganger-gets-a-kick-in-the-butt-from-uncle-sam/"
+        ],
+        "synonyms": [
+          "Russian Angry Hackers Did It"
+        ]
+      },
+      "uuid": "1e3efe43-9006-4ac8-b9ee-f1fbb9794cd9",
+      "value": "RaHDit"
+    },
+    {
+      "description": "UAT-5394 is a state-sponsored North Korean threat actor known for developing the MoonPeak RAT, which is based on XenoRAT. They have transitioned from using QuasarRAT to MoonPeak and have established command and control infrastructure. UAT-5394 employs tactics such as using RDP for remote access and has implemented State Machines in their malware to complicate analysis. Their activity indicates a focus on rapidly evolving their malware and infrastructure to enhance operational capabilities.",
+      "meta": {
+        "country": "KP",
+        "refs": [
+          "https://blog.talosintelligence.com/moonpeak-malware-infrastructure-north-korea/"
+        ]
+      },
+      "uuid": "6038ceaf-4c1b-470d-af36-c62948488786",
+      "value": "UAT-5394"
+    },
+    {
+      "description": "Storm-1679 is a Russian disinformation group believed to be a spinoff of the Internet Research Agency, actively engaged in influence operations targeting the International Olympic Committee and the 2024 Olympic Games. The group has employed AI-generated content, including deepfake videos and fabricated narratives about violence, to discredit the IOC and instill fear among potential attendees. Their campaigns have been identified across multiple languages and platforms, utilizing techniques such as impersonation of media outlets and the creation of disinformation websites. Microsoft attributes significant disinformation activities related to the Olympics to Storm-1679, highlighting their focus on spreading falsehoods and promoting anti-Olympics messaging.",
+      "meta": {
+        "country": "RU",
+        "refs": [
+          "https://blogs.microsoft.com/on-the-issues/2024/06/02/russia-cyber-bots-disinformation-2024-paris-olympics/"
+        ]
+      },
+      "uuid": "10582c97-90de-4f2b-8e4d-21513c3971fc",
+      "value": "Storm-1679"
+    },
+    {
+      "description": "Fail0verflow is a hacking group known for exploiting vulnerabilities in gaming consoles, notably the Nintendo Wii and PlayStation 3. They utilized techniques such as RAM shorting, buffer overflow, and a signing bug to achieve code execution and develop the Homebrew Channel for the Wii. In 2010, they compromised an ECDSA key for the PS3, and later announced the retrieval of PS5 symmetric root keys, enabling the potential for custom firmware and homebrew software. Their exploits often involve kernel access and have raised concerns about the implications for piracy and litigation in the gaming community.",
+      "meta": {
+        "refs": [
+          "https://blog.0x7d0.dev/history/how-the-nintendo-wii-security-was-defeated/",
+          "https://arstechnica.com/gaming/2021/11/uncovered-ps5-encryption-keys-are-the-first-step-to-unlocking-the-console/",
+          "https://malware.news/t/playstation-5-hacked-twice/54441/1"
+        ],
+        "synonyms": [
+          "Team Twiizer"
+        ]
+      },
+      "uuid": "096c57c1-263f-463e-8089-e553872db149",
+      "value": "Fail0verflow"
+    },
+    {
+      "description": "UTG-Q-010 is a financially motivated APT group from East Asia that has been active since late 2022, primarily targeting the pharmaceutical industry and cryptocurrency enthusiasts. They exploit legitimate Windows processes, such as \"WerFault.exe,\" to sideload malicious DLLs like \"faultrep.dll\" and employ sophisticated phishing campaigns to deliver malware disguised as enticing content. Their recent campaigns have involved the use of the Pupy RAT and advanced defense evasion techniques, including in-memory execution and reflective DLL loading. UTG-Q-010's strategic focus on HR departments and the cryptocurrency sector highlights their understanding of target vulnerabilities and their ability to evade detection.",
+      "meta": {
+        "refs": [
+          "https://cyble.com/blog/analysing-the-utg-q-010-campaign/"
+        ]
+      },
+      "uuid": "279ca8a7-1d04-4d95-aa8c-32c758c2de2b",
+      "value": "UTG-Q-010"
+    },
+    {
+      "description": "Hikki-Chan has claimed responsibility for multiple significant data breaches, including the theft of data from 390.4 million users of VKontakte, which included sensitive personal information. The actor has also targeted Strong Current Enterprises and disclosed a breach involving the Israeli Ministry of Welfare and Social Affairs, leaking over 457,000 records. Additionally, Hikki-Chan is attributed with a breach of the Florida Office of Financial Regulation, exposing tens of thousands of records across various industries.",
+      "meta": {
+        "refs": [
+          "https://hackread.com/hacker-leaks-data-of-vk-users-russian-social-network/",
+          "https://dailydarkweb.net/sensitive-israeli-ministry-data-allegedly-leaked-on-dark-web/"
+        ]
+      },
+      "uuid": "071d271a-313f-442d-9bf0-10e6eeba0a8e",
+      "value": "HikkI-Chan"
     }
   ],
   "version": 313
