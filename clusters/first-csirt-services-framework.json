@@ -1,0 +1,1366 @@
+{
+  "authors": [
+    "FIRST",
+    "CIRCL",
+    "Jean-Louis Huynen"
+  ],
+  "category": "csirt",
+  "description": "The Computer Security Incident Response Team (CSIRT) Services Framework is a high-level document describing in a structured way a collection of cyber security services and associated functions that Computer Security Incident Response Teams and other teams providing incident management related services may provide",
+  "name": "FIRST CSIRT Services Framework",
+  "source": "https://www.first.org/standards/frameworks/csirts/csirt_services_framework_v2.1",
+  "type": "first-csirt-services-framework",
+  "uuid": "4a72488f-ef5b-4895-a5d9-c625dee663cb",
+  "values": [
+    {
+      "description": " Based on logs, NetFlow data, IDS alerts, sensor networks, external sources, or other available information security event data, apply a range of methods from simple logic or pattern matching rules to the application of statistical models or machine learning in order to identify potential information security incidents. This can involve a vast amount of data and typically, but not necessarily, requires specialized tools such as Security Information and Event Management (SIEM) or big data platforms to process. An important objective of continuous improvement is to minimize the amount of false alarms that need to be analyzed as part of the Analyzing service.",
+      "meta": {
+        "outcome": " Potential information security incidents are identified for analysis as part of the Analyzing service.",
+        "purpose": " Implement automated, continuous processing of a wide variety of information security event sources and contextual data in order to identify potential information security incidents, such as attacks, intrusions, data breaches or security policy violations."
+      },
+      "related": [],
+      "uuid": "0c165743-b9fa-528b-95df-2fce12ca302c",
+      "value": "Service: Monitoring and detection"
+    },
+    {
+      "description": "The flow of detected potential information security incidents must be triaged and each one qualified as an information security incident (true positive) or as a false alarm (false positive) using manual and/or automated analysis. This may require manual or automated gathering of additional information, depending on the detection use case. Priority should be given to the analysis of potentially more critical information security incidents to ensure timely reaction to what is most important. Structured qualification of detected potential information security incidents enables effective continuous improvement in a directed way by identifying detection use cases, data sources, or processes with quality issues.",
+      "meta": {
+        "outcome": "Qualified and correlated information security incidents are available as input to the Information Security Incident Management service area and false positives are qualified for continuous improvement.",
+        "purpose": "Triage detected potential information security incidents and their qualification as information security incidents for escalation to the Information Security Incident Management service area or as false alarms."
+      },
+      "related": [],
+      "uuid": "3818f4f7-4d89-5ca1-b129-4c31640b130c",
+      "value": "Service: Event analysis"
+    },
+    {
+      "description": "For a CSIRT, the most important task is the acceptance of reports about information security events and potential information security incidents affecting networks, devices, components, users, organizations, or infrastructure—referred to as the “target”—inside the constituency. The CSIRT should anticipate that potential information security incidents may be reported from various sources in various formats, both manually and automatically. To enable constituents to report information security incidents more effectively, the CSIRT should provide one or more mechanisms as well as guidance or instructions on what and how to securely report information security incidents. Reporting mechanisms can include email, a website, a dedicated information security incident reporting form or portal, or other appropriate methods to enable reports to be submitted safely and securely. Reporting guidance, if not included as part of an information security incidents reporting form itself, should be provided in separate documentation or via a webpage, and should list the specific information that is desirable for inclusion in the report. Due to the potentially large number of automatically escalated potential information security incidents detected via an Information Security Event Management service, this must be planned for in advance of adopting such interfaces or authorizing constituents to use them.",
+      "meta": {
+        "outcome": "The information security incident report is received with professional and consistent intake of each report as well as its initial validation and classification.",
+        "purpose": "Receive and process reports of potential information security incidents from constituents, from Information Security Event Management services or third parties."
+      },
+      "related": [],
+      "uuid": "75b0b609-defa-5302-9354-2e21c1ccfa3e",
+      "value": "Service: Information security incident report acceptance"
+    },
+    {
+      "description": "This service consists of functions to gain an understanding of the information security incident and its actual and potential impact to identify the underlying issues or vulnerabilities or weaknesses (root causes) that allowed the successful attack, compromise, or exploit. Detailed analysis is often complex and time-consuming. The objective is to identify and characterize the information security incident in as much detail as required or justified by the current understanding of its impact. Information security incidents can be characterized by scope, affected entities, tools, or attacks deployed, timelines, etc. This service may continue in parallel while the Information Security Incident Coordination service and functions are occurring or mitigation/recovery actions are taken. The CSIRT may use other information and its own analysis (see below for some options) or knowledge available from vendors and product security teams or security researchers to better understand what has happened and what steps to take to remedy losses or damage.",
+      "meta": {
+        "outcome": "Knowledge is increased of the key details of an information security incident (e.g., description, impact, scope, attacks/exploits, and remedies).",
+        "purpose": "Analyze and gain an understanding of a confirmed information security incident."
+      },
+      "related": [],
+      "uuid": "005c1e64-40dd-5b83-a5b0-15927707e58a",
+      "value": "Service: Information security incident analysis"
+    },
+    {
+      "description": "The services related to the understanding of the capabilities and intent of artefacts (e.g., malware, exploits, volatile memory dumps or disk copies, applications codes, logs, documents), their delivery mechanisms, their propagation, their detection, their mitigation, and their disarming or neutralization. This applies to any formats and sources: hardware, firmware, memory, software, etc. Any artefact or evidence must be preserved and collected without any modification, and kept in isolation. As some artefacts and data may become evidence in the context of law enforcement activities, specific regulations or requirements may apply. Even without preserving a chain-of-custody, this service usually involves complex and time-consuming tasks, and requires expertise, setting up dedicated and monitored analysis environments--with or without external accesses from standard wired or wireless networks (such as performing the forensics activities in a sealed or Faraday room), logging of activities, and compliance with procedures. As part of the handling of information security incidents, digital artefacts may be found on affected systems or malware distribution sites. Artefacts may be the remnants of an intruder attack, such as executables, scripts, files, images, configuration files, tools, tool outputs, logs, live or dormant pieces of code, etc. The analysis is carried out in order to find out some or all of the information listed below, which is not considered to be a complete list: The context required of the artefact to run and to perform its intended tasks, whether malicious or not\nHow the artefacts may have been utilized for the attack: uploaded, downloaded, copied, executed, or created within an organization’s environments or components\nWhich systems have been involved locally and remotely to support the distribution and actions\nWhat an intruder did once to access to the system, network, organization, or infrastructure was established: from passively collecting data, to actively scanning and transmitting data for exfiltration purposes, or collecting new action requests, updating itself or making a lateral movement inside a compromised (local) network\nWhat a user, user process, or user system did once the user account or user device was compromised\nWhat behavior characterizes the artefacts or compromised systems, either in standalone mode, in conjunction with artefacts or components, connected to a local network or the Internet, or in any combination\nHow the artefacts or compromised systems establish connectivity with the target (e.g., intrusion path, initial target, or detection evasion techniques);\nWhat communication architecture (peer-to-peer, command-and-control, both) has been utilized\nWhat were the actions of the threat actors, what is their network and systems footprint\nHow the intruders or artefacts evaded detection (even over long periods of time which may include reboot or reinitialization) This can be achieved through various types of activities including media or surface analysis\nreverse engineering\nruntime or dynamic analysis\ncomparative analysis Each activity provides additional information about the artefacts. Analysis methods include but are not limited to identification of type and characteristics of artefacts, comparison with known artefacts, observation of artefact execution in a runtime or a live environment, and disassembling and interpreting binary artefacts. In carrying out an analysis of the artefacts, an analyst attempts to reconstruct and determine what the intruder did, in order to detect the exploited vulnerability, assess damages, develop solutions to mitigate against the artefacts, and provide information to constituents and other researchers.",
+      "meta": {
+        "outcome": "The nature of recovered digital artefacts and analyzed forensic evidence is understood along with the relationship to other artefacts, internal or external objects or components, attacks on frameworks, tools, and exploited vulnerabilities. Working assumptions or proof of what the threat actor did, and how the artefacts behaved. This knowledge is critical to assess losses, damages, business impacts, etc. and to develop containment and mitigation or recovery strategies. The tactics, techniques, and procedures used by attackers or intruders to compromise systems, users, networks, organizations and/or infrastructures is understood. This includes those tactics, techniques, and procedures used to propagate, exfiltrate, update, modify, or fake its behavior, data, auto-delete traces of its own activities, or carry out additional malicious activities.",
+        "purpose": "Analyze and gain an understanding of artefacts related to a confirmed information security incident, taking into consideration the need to preserve forensic evidence."
+      },
+      "related": [],
+      "uuid": "eda3b2d9-4a66-5803-98c7-e87bb8068b97",
+      "value": "Service: Artifact and forensic evidence analysis"
+    },
+    {
+      "description": "Once the analysis has confirmed a potential information security incident and a response strategy has been developed, this must be turned over into a response plan. Even before a response plan can be finalized, ad-hoc measures may be taken. This service also includes the initiating and tracking of all activities which are performed until the information security incident can be considered closed or new information becomes available that requires further analysis and henceforth may also change the response strategy and plan.",
+      "meta": {
+        "outcome": "The information security incident is mitigated and the cyber security posture is improved. Integrity of systems impacted by the underlying attack or activities of the attacker is restored, as well as serviceability of the network and systems compromised. Data is restored in case of data loss, if possible.",
+        "purpose": "Contain the information security incident as much as possible to limit the number of victims, reduce the loss and to recover from damage, avoid further attacks and further losses by removing exploited vulnerabilities or weaknesses, and improve overall cyber security."
+      },
+      "related": [],
+      "uuid": "d153b816-a767-5bc6-9d78-89f6f49dc11a",
+      "value": "Service: Mitigation and recovery"
+    },
+    {
+      "description": "Being notified and kept informed about the details and ongoing activities in relation to an information security incident is critical for all stakeholders and organizations involved. As some activities required for a successful mitigation and recovery might involve management approval, this requires suitable escalation and reporting functions established before any information security incident can be handled effectively and efficiently. As the CSIRT analyzes all information as it becomes available, coordination makes sure that notifications and information reach the right points of contact, track their responses and make sure that all parties carrying out activities report back to provide for accurate situational awareness until the information security incident is considered closed and requiring no further coordination. Stakeholders should have avenues to submit questions, check the status of information security incidents, and report issues to the CSIRT. To engage internal stakeholders, the CSIRT should provide communications channels to advertise the remediation status of information security incidents. To engage external stakeholders, the CSIRT should maintain communications channels to other CSIRTs and CSIRT communities that might provide recommendations or technical support.",
+      "meta": {
+        "outcome": "The response is successfully coordinated based on well-informed entities that contribute to the response to an information security incident.",
+        "purpose": "Ensure timely notifications and accurate information distribution; keep the information flow and track the status of activities of entities that are either tasked or requested to participate in responding to the information security incident; and make sure the response plan is carried out and deviations caused by both delays or new information are managed accordingly."
+      },
+      "related": [],
+      "uuid": "fdbe09c5-09a1-538a-80bf-f784e68a5a70",
+      "value": "Service: Information security incident coordination"
+    },
+    {
+      "description": "While today’s information security incidents rarely constitute an organizational or national crisis, they have the potential to do so. But the response to a crisis is usually associated with an emergency that threatens the well-being of humans and society at large, or at least the existence of an organization. As it is established in crisis management, a high-ranking role will take over the responsibility of a crisis, thereby changing the usual line of command for the duration of the emergency. As the systems and networks might contribute to emergencies or are required to be available to respond to a crisis situation, a CSIRT will usually be a critical resource for managing such situations and provide valuable experience but also the established services and networks of points of contacts.",
+      "meta": {
+        "outcome": "The crisis management team can use the CSIRT’s resources to address the cyber security aspects of the current crisis. At the same time, the CSIRT’s communication resources can be utilized to reach out to constituents and external parties to ask for specific support actions or help. It can also be used to communicate in a trusted way towards constituents, using established communication means and trusted networks.",
+        "purpose": "Provide expertise and contacts to other security experts, CSIRTs, and CSIRT communities in order to help mitigate the crisis."
+      },
+      "related": [],
+      "uuid": "ee34661b-0cb2-5933-8f19-47d9a0d106fd",
+      "value": "Service: Crisis management support"
+    },
+    {
+      "description": "Discovery of a new vulnerability is a necessary first step that starts the overall vulnerability management lifecycle. This service includes those functions and activities that a CSIRT may actively perform through its own research or other services to discover a new vulnerability. Functions and activities related to the passive receipt of new vulnerability information from someone else are described later in the Vulnerability Report Intake service. Occasionally a new vulnerability may be discovered by a CSIRT during other activities, such as while analyzing or investigating an incident report. Another means of learning of a new vulnerability is through reading public sources (e.g., websites, mailing lists), other external sources (e.g., premium services, subscriptions), or by actively looking for vulnerabilities through deliberate research (e.g., through fuzz testing, reverse engineering). Such discoveries should be documented and fed into the organization’s vulnerability handling processes, regardless of how the CSIRT discovered or learned of the vulnerability.",
+      "meta": {
+        "outcome": "This service results in an increased discovery of potential vulnerabilities that were not reported directly to the CSIRT.",
+        "purpose": "Find, learn of, or search for new (previously unknown) vulnerabilities; vulnerabilities can be discovered by members of the vulnerability management service area or through other related CSIRT activities"
+      },
+      "related": [],
+      "uuid": "e43c7bab-34c9-5ee1-9e40-915d265ccd70",
+      "value": "Service: Vulnerability discovery / research"
+    },
+    {
+      "description": "One of the primary sources of vulnerability information may be reports or questions sent from a CSIRT’s constituents or other third parties. The CSIRT should anticipate that vulnerabilities may be reported from these various sources, and provide a mechanism, a process, and guidance for vulnerability reporting. Reporting infrastructures may include email or a web-based vulnerability reporting form. Not all vulnerabilities are reported directly to a CSIRT by constituents or third parties through the established channels. Supporting guidance should include reporting guidelines, contact information, and any disclosure policies. To enable constituents to report vulnerabilities more effectively, the CSIRT should provide one or more mechanisms as well as guidance or instructions on what and how to securely report vulnerabilities. Reporting mechanisms can include email, a website, a dedicated vulnerability reporting form or portal, or other appropriate methods to enable reports to be submitted safely and securely. Reporting guidance, if not included as part of a vulnerability reporting form itself, should be provided in separate documentation or via a web page, and should list the specific information that is desirable to be included in the report.",
+      "meta": {
+        "outcome": "The vulnerability report is received with professional and consistent intake of each report as well as its initial validation and classification.",
+        "purpose": "Receive and process vulnerability information reported from constituents or third parties."
+      },
+      "related": [],
+      "uuid": "e3226442-c563-51ef-9a89-76041f970fec",
+      "value": "Service: Vulnerability report intake"
+    },
+    {
+      "description": "The Vulnerability Analysis service consists of functions aimed at gaining an understanding of the vulnerability and its potential impact, identifying the underlying issue or flaw (root cause) that allows the vulnerability to be exploited, and identifying one or more remediation or mitigation strategies to prevent or minimize the exploitation of the vulnerability. The Vulnerability Analysis service and functions can continue in parallel while the Vulnerability Coordination service and functions occur with other participants in a coordinated vulnerability disclosure (CVD) process.",
+      "meta": {
+        "outcome": "Knowledge of the key details of a vulnerability (e.g., description, impact, resolution) is increased.",
+        "purpose": "Analyze and gain understanding of a confirmed vulnerability."
+      },
+      "related": [],
+      "uuid": "e428df3a-7353-5854-b967-fbbb47079ff6",
+      "value": "Service: Vulnerability analysis"
+    },
+    {
+      "description": "The handling of most vulnerabilities involves notifying, working with, and coordinating the exchange of relevant information with multiple parties including vulnerability finders/reporters, affected vendors, developers, PSRITs, or other trusted experts (e.g., researchers, CSIRTs, vulnerability coordinators) who can work together to analyze and fix the vulnerability.",
+      "meta": {
+        "outcome": "Information sharing with CVD participants who can assist in providing information to remediate/mitigate the vulnerability is effective and timely.",
+        "purpose": "Exchange information and coordinate the activities with participants involved in a coordinated vulnerability disclosure (CVD) process."
+      },
+      "related": [],
+      "uuid": "1613a204-9a27-5e3e-83d1-d459fb697ea2",
+      "value": "Service: Vulnerability coordination"
+    },
+    {
+      "description": "Inform the constituents of any known vulnerabilities (potential entry points for attackers), so that their systems can be kept up to date and monitored for exploits. Disclosure methods may include publication of information through multiple communication channels (e.g., website, email, social media), a vulnerability database, or other media. This service often, but not always, occurs following Vulnerability Coordination.",
+      "meta": {
+        "outcome": "Informed constituents can avoid the potential exploitation of known vulnerabilities prior to exploitation and can detect and mitigate vulnerabilities that already exist.",
+        "purpose": "Disseminate information about known vulnerabilities to constituents so that they can act upon that information to prevent, detect, and remediate/mitigate known vulnerabilities."
+      },
+      "related": [],
+      "uuid": "b797cc28-547c-5347-add9-b69a48676e25",
+      "value": "Service: Vulnerability disclosure"
+    },
+    {
+      "description": "The functions under this service are intended to determine whether a disclosed vulnerability exists on a constituent’s systems, often through the intentional act of looking for the presence of such vulnerabilities. The service can also include the follow-on actions to remediate or mitigate the vulnerability through the deployment of patches or workaround strategies.",
+      "meta": {
+        "outcome": "Information was acted upon in order to detect the presence of a vulnerability, remediate/mitigate a disclosed vulnerability, and prevent the vulnerability from being exploited.",
+        "purpose": "Actively take information about known vulnerabilities and act upon that information to prevent, detect, and remediate/mitigate those vulnerabilities."
+      },
+      "related": [],
+      "uuid": "8b6e3cc9-2f15-5502-9cbb-0a4c1aaf59d6",
+      "value": "Service: Vulnerability response"
+    },
+    {
+      "description": "Solicit, collect, determine, and satisfy the constituencies’ information requirements to achieve awareness of important internal and external relevant activities. This service includes the logistics of collecting relevant information including news of current events, scheduling future events, reports and feeds, filtering the collected information, organizing information for use in incident analysis, prevent, detection, or other activities (such as planning or trending), storing it for later use, improving its “searchability”, and more. Collected data will be used to determine the preventative measures needed and to help make informed decisions regarding incident management and information assurance activities. Without a basic perception of important environmental elements, the risk of other services forming an incorrect picture increases. CSIRTs will need to establish policy and procedures, and may employ technology to collect and vet information.",
+      "meta": {
+        "outcome": "The following artefacts result from this service: a set of data collection requirements that identifies situational awareness needs, and then maps those requirements to the types of information to be collected in order to meet those objectives\ninformation about the current and expected future status of constituency assets and activities\ninformation about external events or trends that provides insight into the constituency’s surroundings and current environment, including new technologies, methods, practices, risks, and threats \nproperly formatted information readied for analysis and detection activities",
+        "purpose": "Collect data that will help increase visibility as to what internal and external activities are occurring that may affect the constituency’s security posture."
+      },
+      "related": [],
+      "uuid": "b06d204e-4c27-55cb-8770-79e2259c8e12",
+      "value": "Service: Data acquisition"
+    },
+    {
+      "description": "The process of using current data, history, and analysis techniques to determine what is occurring that may impact the constituency assets and security posture, often done by determining an answer to a question or testing an intuition. Analysis may reveal when events do not match typical expected behavior, or may reveal information about the circumstance, nature, or origin of events or behaviors. Analysis may reveal implications to current and future situations. For example: a system may log that a user ID successfully logged into the system, but the system does not indicate whether the event was performed by a legitimate user. New sources (such as interviews with the user) will need to be incorporated into the analysis to provide the team with a more accurate picture to determine the legitimacy of the event. A variety of techniques may be used to analyze and interpret the collected data and its effect upon the constituency.",
+      "meta": {
+        "outcome": "A set of conclusions about the probable historical, current, and/or likely future events within a constituency is produced. It may also include recommendations about certain decisions that a constituency is facing. Analysis should be supported by evidence such as observation data collected from sensors and other sources and the interpretation of that evidence by analysts through a variety of methods. The analysis may also include constituents that need to be told about the results, and what they need to be told.",
+        "purpose": "Assess when the situation does not match with expectations (e.g., when specific assets may be about to experience a harmful event)."
+      },
+      "related": [],
+      "uuid": "9d622922-93a1-5528-82f2-e75b181bc8e4",
+      "value": "Service: Analysis and synthesis"
+    },
+    {
+      "description": "The knowledge obtained from situational awareness must be communicated to the constituency. This will allow it to react to observations and to take actions that will improve defensive situations, e.g., reducing third-party risk by improving the security environment at certain high-risk suppliers.",
+      "meta": {
+        "outcome": "Accurate, actionable, and timely situational information is delivered to constituency so they can better understand their past and improve their current and future situational picture.",
+        "purpose": "Notify constituents or others in the security community about changes in risks to the situational picture."
+      },
+      "related": [],
+      "uuid": "ddfea37e-0234-5d9d-b6ca-981c7e0fa114",
+      "value": "Service: Communication"
+    },
+    {
+      "description": "This service includes working with the constituency, experts, and trusted partners to raise the collective understanding of threats and actions that can be taken to prevent or mitigate the risks posed by these threats.",
+      "meta": {
+        "outcome": "The constituency is provided with the necessary awareness of: events, activities, and trends that may affect its ability to operate in a timely and secure manner\nsteps to take to detect, prevent and mitigate threats and malicious activity\nsecurity and operational best practices",
+        "purpose": "Increase the overall security posture of the constituency and help its members to detect, prevent, and recover from incidents; ensure that constituents are better prepared and educated."
+      },
+      "related": [],
+      "uuid": "895987fb-db75-5840-8aac-363ac47f106f",
+      "value": "Service: Awareness building"
+    },
+    {
+      "description": "A training and education program can help the CSIRT to establish relationships and to improve the overall cybersecurity posture of its constituency, including the ability to prevent future incidents from happening. Such a program can help maintain user awareness\nhelp the constituency understand the changing landscape and threats\nfacilitate information exchange between the CSIRT and its constituency\ntrain the constituency on tools, processes and procedures related to security and incident management. This can be done through various types of activities including documenting the knowledge, skills, and abilities (KSAs) required, developing educational and training materials, delivering content, mentoring, and professional and skill development. Each of these activities will collectively contribute to the constituency’s and the team’s capabilities.",
+      "meta": {
+        "outcome": "A consistent training and education program is provided that enables the CSIRTs’ constituency to appropriately acquire methods to detect, prevent or respond to threats\ntools and practices to help protect critical assets\nunderstanding about incident management processes and how to get assistance",
+        "purpose": "Provide training and education to a CSIRT constituency (which may include organizational and CSIRT staff) on topics related to cybersecurity, information assurance and incident management."
+      },
+      "related": [],
+      "uuid": "373ea683-406a-589a-b031-d960b3ab2f01",
+      "value": "Service: Training and education"
+    },
+    {
+      "description": "Services are offered by the organization to constituents that support the design, execution, and evaluation of cyber exercises intended to train and/or evaluate the capabilities of individual constituents and the stakeholder community as a whole, including communications capabilities. These types of exercises can be used to test policies and procedures: assess whether there are sufficient policies and procedures in place to effectively detect, respond and mitigate incidents. This is, generally, a paper/table-top exercise.\ntest operational readiness: assess whether the organization has an incident management capability that is able to detect, respond to and mitigate incidents in a timely and successful manner, as well as to test whether the right people are in place, directories are up-to-date, and if procedures are executed correctly. This service addresses both the needs of the organization and the needs of its constituents. More specifically, through the simulation of cybersecurity events/incidents, exercises can be used for one or several objectives: Demonstrate: Illustrate cybersecurity services and functions, as well as vulnerabilities, threats, and risks, in order to raise awareness.\nTrain: Instruct staff on new tools, techniques, and procedures:\n\nExercise: Provide an opportunity for staff to use tools, techniques, and procedures they are expected to be knowledgeable about. Exercising is necessary for perishable skills and helps improve and maintain efficiency.\nAssess: Analyze and understand the level of effectiveness and efficiency of cybersecurity services and functions, as well as the level of staff preparedness.\nVerify: Determine whether a specified level of effectiveness and/or efficiency can be achieved for cybersecurity services and functions.",
+      "meta": {
+        "outcome": "The effectiveness and efficiency of cybersecurity services and functions is improved and opportunities for further improvements are identified. Depending on the specific objective(s) of an exercise, cybersecurity may also be demonstrated to internal or external stakeholders, staff can be trained, and the efficiency and effectiveness of tools, services, and functions can be assessed and/or verified. Lessons for improving future exercises can also be identified and a report delivered to management or other key stakeholders.",
+        "purpose": "Conduct exercises to assess and improve the effectiveness and efficiency of cybersecurity services and functions."
+      },
+      "related": [],
+      "uuid": "111c542b-54ae-5dda-91cc-81907c7cd6b9",
+      "value": "Service: Exercises"
+    },
+    {
+      "description": "Support the CSIRT constituency and key stakeholders, internal or external to the constituency, in activities related to risk management and business continuity, providing technical advice as needed and contributing to the creation and implementation of the constituency’s policies, as well as influencing them to enable the CSIRT to be more effective.  Policies are also important in legitimizing the services of a CSIRT.",
+      "meta": {
+        "outcome": "A constituency is enabled to make organizational decisions based on operational security best practices that incorporate business continuity and disaster recovery best practices, while also understanding the need of including incident management teams, as trusted advisors, in business decisions where appropriate.",
+        "purpose": "Ensure the constituency’s policies and procedures include appropriate incident management considerations and, ultimately, enable the constituency to better manage risks and threats, as well as enabling the CSIRT to be more effective."
+      },
+      "related": [],
+      "uuid": "23e3a936-6f5d-553a-be67-e1938f84bbcf",
+      "value": "Service: Technical and policy advisory"
+    },
+    {
+      "description": "Sensors and log sources need operational management throughout their lifecycle. They must be deployed, onboarded, and decommissioned. Outages, data quality/scope, and configuration issues must be identified and resolved. Sensors that have some form of configuration such as pattern definitions need their configuration maintained in order to remain effective. Sensors may also include external detection services or Open Source Intelligence (OSINT) sources, if they form the basis for detection use cases.",
+      "meta": {
+        "outcome": "A reliable stream of relevant information security events is available as input for detection use cases.",
+        "purpose": "Manage log sources and sensors."
+      },
+      "related": [
+        {
+          "dest-uuid": "0c165743-b9fa-528b-95df-2fce12ca302c",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "d9acc29a-7c55-5645-8604-40303717d2ab",
+      "value": "Function: Log and sensor management"
+    },
+    {
+      "description": "New detection approaches are developed, tested, and improved, and eventually onboarded into a detection use case in production. Instructions for analyst triage, qualification, and correlation need to be developed, for example in the form of playbooks and Standard Operating Procedures (SOPs). Use cases that do not perform well, i.e., that have an unfavorable benefit/effort ratio, need to be improved, redefined, or abandoned. The portfolio of detection use cases should be expanded in a risk-oriented way and in coordination with preventive controls.",
+      "meta": {
+        "outcome": "A portfolio of effective detection use cases that are relevant to the constituency is developed.",
+        "purpose": "Manage the portfolio of detection use cases through their entire lifecycle."
+      },
+      "related": [
+        {
+          "dest-uuid": "0c165743-b9fa-528b-95df-2fce12ca302c",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "9d870f77-0bbf-523b-b757-8672a6262cef",
+      "value": "Function: Detection use case management"
+    },
+    {
+      "description": "The various contextual data sources that are involved in detection and enrichment need to be managed throughout their lifecycle. These can be live APIs to or exports from other IT systems such as a Configuration Management Database (CMDB), Identity and Access Management (IAM), or Threat Intel systems, or entirely separate data sets that need to be managed manually. The latter would be the case for indicator lists, watchlists and whitelists to suppress false positives.",
+      "meta": {
+        "outcome": "Up to date contextual data is available for both detection and enrichment.",
+        "purpose": "Manage of contextual data sources for detection and enrichment."
+      },
+      "related": [
+        {
+          "dest-uuid": "0c165743-b9fa-528b-95df-2fce12ca302c",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "c359f86a-71da-57d3-8edb-256694b41584",
+      "value": "Function: Contextual data management"
+    },
+    {
+      "description": "Potential information security incidents pertaining to the same assets (e.g., systems, services, customers) or identities (e.g., users), or which are otherwise directly related to other potential information security incidents are grouped together and escalated as a single information security incident in order to avoid duplicate efforts. New potential information security incidents directly related to ongoing information security incidents are assigned to that information security incident instead of opening a new, separate information security incident.",
+      "meta": {
+        "outcome": "Grouping of related potential information security incidents for combined qualification or updating to an existing information security incident already handled by the Information Security Incident Management service area is performed.",
+        "purpose": "Identify events directly related to other potential or ongoing security incidents."
+      },
+      "related": [
+        {
+          "dest-uuid": "3818f4f7-4d89-5ca1-b129-4c31640b130c",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "c9cc1b42-6487-59c6-8e5b-9258b2f33865",
+      "value": "Function: Correlation"
+    },
+    {
+      "description": "Potential information security incidents need to be triaged and each qualified as an information security incident (true positive) or as a false alarm (false positive). Because analysts have a limited number of potential information security incidents they can analyze, and in order to avoid alert fatigue, automation is key. Mature tooling facilitates effective triage by enriching with context information, assigning risk scores based on the criticality of affected assets and identities and/or automatically identifying related information security events. Recurring cases that can be automated should be identified and automated. Potential information security incidents with higher criticality should be analyzed before less critical ones. In addition to qualification as true or false positives, a more fine-grained qualification is an important input for continuous improvement of detection use cases as well as the management of log sources, sensors, and contextual data sources. More fine-grained qualification can also support the definition of higher-quality KPIs for measuring the success of this service area.",
+      "meta": {
+        "outcome": "Qualified potential information security incidents are available for handling as part of the Information Security Incident Management service area.",
+        "purpose": "Triage and qualify detected potential information security incidents in order to identify, categorize, and prioritize true positives."
+      },
+      "related": [
+        {
+          "dest-uuid": "3818f4f7-4d89-5ca1-b129-4c31640b130c",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "660ce9c7-4897-557e-b47a-3cea1c93a473",
+      "value": "Function: Qualification"
+    },
+    {
+      "description": "Effective intake of information security incident reports requires mechanisms and processes to receive the reports from constituents, stakeholders, and third parties (e.g., finders, researchers, ISACs, other CSIRTs). Information security incident reports may include affected devices/networks/users/organizations, conditions already identified like exploited vulnerabilities, impact both on technical and business level, and actions that have been taken to start remediation and/or mitigation steps and potentially resolution. Occasionally, information security incident information may be received jointly as part of the input to other services, most namely the Vulnerability Report Intake (e.g., if an information security incident is reported that has been identified while analyzing a vulnerability report). Automatically submitted reports might or might not be acknowledged pending further choices of the implemented interfaces and protocols.",
+      "meta": {
+        "outcome": "Information security incident reports are appropriately handled from constituents or third parties, including the initiation of documenting or tracking the reports The following sub-functions are considered to be part of this function: Monitoring communications channels regularly and check whether the advertised means of contacting the CSIRT are operational and reports can be submitted\nReporting initial acknowledgement to the submitter of the information security incident report, requesting additional information if needed, and setting expectations with the reporter",
+        "purpose": "Accept or receive information about an information security incident, as reported from constituents or third parties."
+      },
+      "related": [
+        {
+          "dest-uuid": "75b0b609-defa-5302-9354-2e21c1ccfa3e",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "3010eca9-c35d-5439-a38e-b8f3734d9b95",
+      "value": "Function: Information security incident report receipt"
+    },
+    {
+      "description": "Information Security Incident Reports are reviewed and triaged to obtain an initial understanding of the information security incident in question. It is of particular importance whether it has a real information security impact on the target and can result (or has already resulted) in damage to the confidentiality, availability, integrity, and/or authenticity of information assets or other assets. Depending on the amount of detail and quality of the information provided in the initial report, it may or not be obvious whether a real information security incident has occurred or if there is a different reason—such as misconfiguration or hardware failure. The next step will be determined on the basis of the preliminary assessment (e.g., process the report for further analysis; seek additional information from the reporter or other sources; decide that the report needs no further action or is a false alarm). It is possible that attacks may originate from within the constituency of a CSIRT, may target this constituency, or the constituency is affected by collateral effects only. If the CSIRT does not provide Information Security Management services for the identified targets, then the report should be forwarded securely to an external group for handling, such as the affected organization(s) or CSIRT(s). Unless there is a reason to decline an information security incident report or the report has been forwarded to another entity responsible for its handling, the report should be passed on to the Vulnerability Analysis service for further review, analysis, and handling.",
+      "meta": {
+        "outcome": "It can be determined if a reported matter is indeed an information security incident that needs to be handled by the CSIRT or passed on to a relevant entity. The following sub-functions are considered to be part of the implementation of this service: Processing reports and submitted data including artefacts or materials in isolation to protect the integrity of the working environment and avoid successful attacks on the CSIRT by such means\nUpdating acknowledgement of reports by providing some feedback on further steps based on categorization or prioritization results available\nMerging new information about already handled information security incidents to the available data to allow a consistent analysis and processing",
+        "purpose": "Initially review, categorize, prioritize, and process a reported information security incident."
+      },
+      "related": [
+        {
+          "dest-uuid": "75b0b609-defa-5302-9354-2e21c1ccfa3e",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "b906d2a9-6697-5d12-99ee-2b3c74133a98",
+      "value": "Function: Information security incident triage and processing"
+    },
+    {
+      "description": "The Analyzing Information Security Incidents service begins with a review of the available information to categorize, prioritize, and assess the impact an information security incident has on the involved systems relevant to the CSIRT’s mandate. Some of this may have been documented during the Information Security Incident Report Triage and Processing function (of the Information Security Incident Report Intake service) if the information security incident was reported to the CSIRT by a constituent or third party. If prior triage has not already been completed, the information security incident may be assigned to a subject matter expert who can provide technical confirmation that it has some impact on the involved systems and is relevant to the CSIRT’s mandate (i.e., a potential security impact on networks or systems that can result in damage to the confidentiality, availability, or integrity of information assets in an area the CSIRT according to its mandate).",
+      "meta": {
+        "outcome": "The information record of an information security incident is categorized, prioritized, and updated.",
+        "purpose": "Categorize, prioritize, and create an initial assessment of an information security incident."
+      },
+      "related": [
+        {
+          "dest-uuid": "005c1e64-40dd-5b83-a5b0-15927707e58a",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "e999f7cd-d109-5155-a096-733845fc085f",
+      "value": "Function: Information security incident triage (prioritization and categorization)"
+    },
+    {
+      "description": "Enable the collection of all valuable information to obtain the best understanding of the context, so that the origin and the content of the information can be appropriately evaluated and tagged to be used for any further processing. While collecting information, the agreed sharing policies and limitations of what data can be used in which context or for what form of processing must be accepted and adhered to. Also, the collection mechanisms and procedures must ensure that proper labeling and attribution of sources is used in order to later validate the origins as well as the appropriateness or authenticity.",
+      "meta": {
+        "outcome": "Structured information about collected digital and non-digital data or metadata is available, with tracking information and points of control of the integrity of both handling and storage. Depending whether the results will be used for future (informal) analysis or law enforcement activities, different requirements exist in regard to establishing a formal chain of custody that can be defended in court at some later stage. The following sub-functions are considered to be part of the implementation of this function: Evaluation and validation of information sources providing data and information\nCollection of reports regarding malicious or suspicious events, information security events, escalated potential information security incidents, and/or information security incident reports from constituents and third parties (such as other security teams or commercial intelligence feeds), whether manual, automated, or machine-readable forms\nGathering and cataloging of digital data that may be, but are not guaranteed to be, useful in understanding incident activity (e.g., disk and memory images, files with metadata or checksums, network architecture characteristics, logs); this includes but is not limited to artefacts believed to be remnants of adversary activity\nGathering and cataloging of non-digital data (e.g., physical sign-in sheets, architecture diagrams, business models, site assessment data, policies, enterprise risk frameworks)\nGathering and cataloging of metadata regarding the source, method of collection, persons having handled data or objects, owner, and custody information especially as it may be viewed as evidence for forensic analysis or law enforcement activities later on",
+        "purpose": "Intake, catalog, store, and track information related to the information security incident and all information security events that are considered to be part of it."
+      },
+      "related": [
+        {
+          "dest-uuid": "005c1e64-40dd-5b83-a5b0-15927707e58a",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "073074bd-6262-573f-b2cb-ac9b5566dda7",
+      "value": "Function: Information collection"
+    },
+    {
+      "description": "As more detailed technical analysis may be required, such analysis may be executed by other experts (inside or outside the host organization or CSIRT) or other third parties (such as a service provider specialized in such analysis). This requires initiating and tracking such activities up to the successful delivery of the desired analysis.",
+      "meta": {
+        "outcome": "A list of pending and—from the viewpoint of the incident handler coordinating the response to any given information security incident—outsourced analysis is available.",
+        "purpose": "Initiate and track any other technical analysis in regard to an information security incident."
+      },
+      "related": [
+        {
+          "dest-uuid": "005c1e64-40dd-5b83-a5b0-15927707e58a",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "4810f533-ce30-53a7-bff9-6dade2d41be7",
+      "value": "Function: Detailed analysis coordination"
+    },
+    {
+      "description": "This function involves the process and actions required to understand the architecture, usage, or implementation flaw(s) that caused or exposed systems, networks, users, organizations, etc. to the kind of attack or exploit or compromise as exercised against the targets of an information security incident. It is also concerned with the circumstances in which an attacker could compromise more systems based on the initial access to gain further access. Depending on the nature of the information security incident, it may be difficult for a CSIRT to perform this function thoroughly. In many situations, this function may best be conducted by the affected target itself, as especially in the context of Coordinating CSIRTs no detailed technical knowledge is available about systems or networks that have been compromised.",
+      "meta": {
+        "outcome": "The information security incident and the way in which malicious actors initially gained access and used it further on is understood so that remediation or mitigation methods can be determined to minimize the risk of future exposure or exploitation by eliminating the root causes.",
+        "purpose": "Identify the root cause of the information security incident, identifying the circumstances that allowed the exploited vulnerabilities to exist or that allowed the exploitation to succeed (including but not limited to user behavior)."
+      },
+      "related": [
+        {
+          "dest-uuid": "005c1e64-40dd-5b83-a5b0-15927707e58a",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "d83afb89-203e-57ae-81d4-ded2000b30ed",
+      "value": "Function: Information security incident root cause analysis"
+    },
+    {
+      "description": "This function involves the correlation of available information about multiple information security incidents to determine interrelations, trends, or applicable mitigations from already closed information security incidents to improve the response to currently handled information security incidents.",
+      "meta": {
+        "outcome": "The bigger picture is understood in terms of situational awareness based on a detailed knowledge about similarities and confirmed or suspected interrelationships of otherwise independent information security incidents.",
+        "purpose": "Enable the usage of all available information to get the best understanding of the context and detect interrelationships that otherwise would not have been recognized or acted upon."
+      },
+      "related": [
+        {
+          "dest-uuid": "005c1e64-40dd-5b83-a5b0-15927707e58a",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "1eb8496d-9383-5b95-909b-59670113537f",
+      "value": "Function: Cross-incident correlation"
+    },
+    {
+      "description": "This function involves identification and characterization of basic information and metadata about artefacts, including but not limited to file types, string outputs, cryptographic hashes, certificates, file sizes, file/directory names. As all available information is gathered and analyzed further, this may be used to review any public/open or private/closed source information repositories to learn more about the artefact or its behavior, as such information can be used to determine the next steps.",
+      "meta": {
+        "outcome": "Identify Characteristics and/or the signature of digital artefact are identified and any information already known about the artefact including maliciousness, impact, and mitigation.",
+        "purpose": "Compare information gathered from the artefact with other public and private artefacts and/or signature repositories."
+      },
+      "related": [
+        {
+          "dest-uuid": "eda3b2d9-4a66-5803-98c7-e87bb8068b97",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "7b910715-e5fa-5204-8636-fae5470e7d1e",
+      "value": "Function: Media or surface analysis"
+    },
+    {
+      "description": "To provide a deeper analysis of malware artefacts to include identifying hidden actions and triggering commands. Reverse engineering allows the analyst to dig past any obfuscation and compilation (for binaries) and identify the program, script, or code that makes up the malware, either by uncovering any source code or by disassembling the binary into assembly language and interpreting it. The analyst uncovers all of the machine language exposed functions and actions the malware can perform. Reverse engineering is a deeper analysis that is carried out when surface and runtime analysis do not provide the full information needed.",
+      "meta": {
+        "outcome": "Complete functionality of a digital artefact is derived to understand how it operates, how it is triggered, related system weaknesses that can be exploited, its full impact, and potential damage, in order to develop solutions to mitigate against the artefact and, if appropriate, create a new signature for comparison with other samples. The following sub-functions are considered to be part of the implementation of this function: Static analysis\nCode reverse engineering\nPotential behavior analysis and description\nPotential signature design",
+        "purpose": "Perform in-depth static analysis of an artefact to determine its complete functionality, regardless of the environment within which it may be executed."
+      },
+      "related": [
+        {
+          "dest-uuid": "eda3b2d9-4a66-5803-98c7-e87bb8068b97",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "679596e0-afd5-5e54-ba56-716d47e1a1aa",
+      "value": "Function: Reverse engineering"
+    },
+    {
+      "description": "This function involves understanding of an artifact’s capabilities via observation while running the sample in a real or emulated environment (e.g., sandbox, virtual environment, and hardware or software emulators). Use of a simulated environment captures changes to the host, network traffic, and output from execution. The basic premise is to try to see artefact in operation in as close to a real-life situation as possible.",
+      "meta": {
+        "outcome": "Additional insight is gained into a digital artefact’s operation by observing its behavior during execution to determine the changes to the affected host system, other system interaction, and resulting network traffic in order to better understand the system damage and impact, create new artefact signature(s), and determine mitigation steps. Note Not all functionality is apparent from runtime analysis, since not all code sections may be triggered. Runtime analysis only allows the analyst to see what the malware does in the test situation, not what it is fully capable of doing. The following sub-functions are considered to be part of the implementation of this function: Preparing an analysis environment (live/restricted/closed, emulated/simulated)\nPreparing collectors, sensors and/or probes\nCollecting initial behavior data and metadata\nProbing the artefact at multiple times in various contexts\nCarry out a systems and/or network behavior analysis, both short-term and long-term\nDrawing conclusions by evaluating all results and data gathered, comparing the various results and researching available knowledge bases for existing technical results matching the findings",
+        "purpose": "Provide insight into the artefact’s operation."
+      },
+      "related": [
+        {
+          "dest-uuid": "eda3b2d9-4a66-5803-98c7-e87bb8068b97",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "7410a6c8-3dd9-5c31-9ca1-1929f00acc61",
+      "value": "Function: Run time or dynamic analysis"
+    },
+    {
+      "description": "This function involves exploring an artefact’s relationship to other artefacts. This may identify similarities in code or modus operandi, targets, intent, and authors. Such similarities can be used to derive the scope of an attack (e.g., is there a larger target, has similar code been used before). Comparative analysis techniques can include exact match comparisons or code similarity comparisons. Comparative analysis provides a broader view of how the artefact or similar versions of it were used and changed over time, helping to understand the evaluation of malware or other malicious types of artefacts.",
+      "meta": {
+        "outcome": "Any commonalities or relationships to other artefacts are derived in order to identify trends or similarities that may provide additional insights or understanding of a digital artefact’s functionality, impact, and mitigation. The following sub-functions are considered to be part of the implementation of this function: Defining a baseline of characteristics and observed behaviors\nSearching for the same or similar characteristics in available repositories/knowledge bases\nUpdating available repositories/knowledge bases regarding newly observed or previously unknown symptoms, behaviors, and/or signatures which can be used to further categorize the researched artefact.",
+        "purpose": "Perform an analysis focused on identifying common functionality or intent, including family analysis of catalogued artefacts."
+      },
+      "related": [
+        {
+          "dest-uuid": "eda3b2d9-4a66-5803-98c7-e87bb8068b97",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "38014864-0c08-5bbd-8d28-3bde1727d50d",
+      "value": "Function: Comparative analysis"
+    },
+    {
+      "description": "Without fully understanding the business impact and requirements to mitigate and recover, no meaningful response will be provided. As there is a conflict of interest—tracking the attack to gain more intelligence vs. containing the attack to avoid further losses—it is necessary to take all interests into consideration and work out a response plan that is plausible to address the known facts and provide the desired outcome within the required timeframe. As with all plans, it must be considered that whenever new analysis results become available, the new findings need to be reviewed. Indeed, the response plan will usually need to be changed to provide continuous orientation and guidance. But without such plan—unless the response is handled by one small organizational group with little requirement of external interfaces or other entities—the activities might not be carried out effectively or efficiently due to a lack of coordination.",
+      "meta": {
+        "outcome": "An agreed response plan that meets business requirements if aided by available resources and support, which will then be executed. Tracking and coordination by a CSIRT would be provided by the “Coordination” service. The following sub-functions are considered to be part of the implementation of this function: Determine the business impact of the information security incident\nDetermine the business requirements and timeframe for a successful recovery\nDefine decision processes and criteria (if not already defined by policies)\nIdentify the objects to be recovered: environments, systems, applications, systems, transversal functions, etc.\nIdentify required support and actions by internal and external entities\nDetermine a response plan that provides for a meaningful response within the desired business requirements and timeframe based on available resources and the technical scope of required actions",
+        "purpose": "Define and enforce a plan to restore the integrity of affected systems and return the affected data, systems, and networks to a non-degraded operational state, restoring the impacted services to full functionality without recreating the context of enabling the original security issue to be exploited again."
+      },
+      "related": [
+        {
+          "dest-uuid": "d153b816-a767-5bc6-9d78-89f6f49dc11a",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "5b155f76-0772-5475-b622-8871d004d94a",
+      "value": "Function: Response plan establishment"
+    },
+    {
+      "description": "The immediate challenge in case of an information security incident is to stop it from spreading. While systems are compromised or malware is active on end user systems, further data losses and more compromises occur. It is usually the main objective of attacks to reach out to specific data and systems, including attacks (including but not limited to lateral movements) to other organizations both inside and outside the organization suffering from the information security incident. Stopping or at least limiting the extent of any malicious activities or further losses requires short-term actions such as blocking or filtering traffic and removing access to specific services or systems, and can also result in the disconnection of critical systems. Denying further access to potentially critical evidence data will allow a full analysis of such evidence. Denying further access to other systems and networks will also limit the exposure from liability as a result of damage done to other organizations. Stopping immediate damage and limiting the extent of malicious activity through short-term tactical actions (for example, blocking or filtering traffic) can also involve regaining control of systems. As long as attackers or active malware have ready access to more systems or networks, no return to normal operation will be possible.",
+      "meta": {
+        "outcome": "Control of systems and networks involved is regained. Access is denied for attackers and malware to data, systems, and networks in order to avoid more attacks and/or compromised systems and data. The following sub-functions might be part of the implementation of this function: Temporarily remove access for users/systems/services/networks\nTemporarily disconnect systems or networks from networks or backbones\nTemporarily disable services\nRequire users to change their passwords or crypto credentials\nMonitor for signs of intrusions and indicators of compromise\nVerify that all users/systems/services/networks are unaffected",
+        "purpose": "Implement measures that ensure an information security incident does not spread any further, i.e. remains confined to the currently affected system, users, and/or domains to ensure that no further losses (including leakage of documents, changes to databases or data, etc.) can occur."
+      },
+      "related": [
+        {
+          "dest-uuid": "d153b816-a767-5bc6-9d78-89f6f49dc11a",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "33646116-25db-59e4-b1a6-c40d96432797",
+      "value": "Function: Ad hoc measures and containment"
+    },
+    {
+      "description": "Restore the integrity of affected systems and returning the affected data, systems, and networks to a non-degraded operational state, restoring the impacted services to full functionality. As business reality usually demands systems return to normal operation as soon as possible, there is a risk that not all means of unauthorized access have been removed successfully. Therefore, unless the analysis results are already available, even returned systems must be carefully monitored and managed. Especially if identified vulnerabilities and weaknesses cannot (yet) be eliminated, improved protection and detection mechanisms need to be applied to avoid the same or similar or types of information security incidents.",
+      "meta": {
+        "outcome": "Measures are applied to restore the systems and services to full functionality as well as capacity. Measures are applied to close any detected vulnerabilities or weakness that contributed to the original information security incident. Detection and reaction measures are improved as recommended by the analysis and response plan. The following sub-functions are considered to be part of the implementation of this function: Restore user/system data from trusted backup media\nRestore configurations from trusted backup media or recreated content\nEnable disabled services and re-establish access for users/systems/networks\nPerform functional tests to validate the capacity and capability of systems/services/networks both on an infrastructure and application level",
+        "purpose": "Implement changes in the affected domain, infrastructure, or network necessary to fix and prevent this type of activity from reoccurring."
+      },
+      "related": [
+        {
+          "dest-uuid": "d153b816-a767-5bc6-9d78-89f6f49dc11a",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "c23fdfc5-660d-515b-80d9-8e3f6bfb31e4",
+      "value": "Function: System restoration"
+    },
+    {
+      "description": "A CSIRT may provide direct (onsite) assistance to help the constituents to recover from losses and to remove vulnerabilities. This might be a direct extension of offering analysis services on-site (see above). On the other hand, a CSIRT might choose to support the staff of the constituents responding to the information security incident with more detailed explanations, recommendations, etc.",
+      "meta": {
+        "outcome": "Response of the constituents is improved and recovery is faster. By adding to the available body of knowledge the future effectiveness and efficiency of related activities may be strengthened. In addition, it helps to support those entities inside the constituency that are lacking detailed technical knowledge to carry out the necessary action to respond.",
+        "purpose": "Enable the constituents to perform the required management and technical activities in order to successfully mitigate an information security incident and recover from it."
+      },
+      "related": [
+        {
+          "dest-uuid": "d153b816-a767-5bc6-9d78-89f6f49dc11a",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "ad062821-b88e-54cc-ac56-14ed4d20aeb7",
+      "value": "Function: Other information security entities support"
+    },
+    {
+      "description": "A CSIRT must account for the most accurate audience as communications are crafted and released. In return, a CSIRT must also be equipped to receive incoming feedback, reports, comments, and questions from a variety of sources based on its own communication. The security policy and the information sharing policy may require information to be handled in a strict manner. The CSIRT must be able to share with stakeholders in a reliable, secure, and private manner, both externally and internally. Non-disclosure agreements must be set up as far in advance as possible and communication resources set up accordingly. As an extension, the concept of “information under embargo” can also be used. Hence, a retention policy must also be established to ensure that both the data used to craft the information and the information itself are properly handled, shared, and kept based on constraints—such as time—until these constraints become void or the information is publicly disclosed. Communication channels can take multiple forms based upon the needs of stakeholders and constituents. All information communicated must be tagged according to the information sharing policy. Traffic Light Protocol may be utilized.",
+      "meta": {
+        "outcome": "All communication channels are available according to the security requirements of all receiving and sending parties.\nThe following sub-functions are considered to be part of the implementation of this function: Provide internal communication channels\nProvide external communication channels",
+        "purpose": "Engage effectively with stakeholders and establish appropriate multiple communication channels providing the required confidentiality."
+      },
+      "related": [
+        {
+          "dest-uuid": "fdbe09c5-09a1-538a-80bf-f784e68a5a70",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "cb18913e-ed20-55c8-875b-3c9e522a6167",
+      "value": "Function: Communication"
+    },
+    {
+      "description": "A security incident touches on many internal and potentially external entities and, possibly, systems, and networks. As CSIRTs are a central point for receiving reports of potential information security incidents, they also serve as a hub for notifying authorized points of contact about them. The notification usually will provide not only the appropriate technical details but also information about the expected response and a point of contact for any fellow-up.",
+      "meta": {
+        "outcome": "Information about an information security incident is available to entities required to either take part in the response or to be informed about it.",
+        "purpose": "Alert entities impacted by the information security incident or those that can contribute to the response to it and provide those entities with the required information to understand their role of involvement and any expectations that might exist regarding their cooperation and support."
+      },
+      "related": [
+        {
+          "dest-uuid": "fdbe09c5-09a1-538a-80bf-f784e68a5a70",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "661ad685-bc5e-5522-84a2-a93f22704f24",
+      "value": "Function: Notification distribution"
+    },
+    {
+      "description": "As the response to an information security incident progresses, more analysis results and reports from potentially other security experts, CSIRTs, or victims become available. It may be helpful to pass some of the information and lessons learned on to the Knowledge Transfer Service Area (if supported) to improve training and technical documents as well as to help create appropriate awareness, especially if new attacks or incident trends are identified.",
+      "meta": {
+        "outcome": "Available information is distributed to those either responsible for taking part in the response or requiring to be kept informed about the progress and current status.",
+        "purpose": "Keep communicating with the identified entities and provide a suitable flow of available information in order to enable those entities to benefit from available insights and lessons learned, to apply improved responses or take new ad-hoc measures."
+      },
+      "related": [
+        {
+          "dest-uuid": "fdbe09c5-09a1-538a-80bf-f784e68a5a70",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "c0d34fe0-118b-5b45-9f39-39ae30d6cfeb",
+      "value": "Function: Relevant information distribution"
+    },
+    {
+      "description": "As many entities are potentially involved in responding to an information security incident, it is necessary to track the status of all communication and activities. This involves the actions requested by a CSIRT or requests for sharing of further information as well as requests for technical analysis of artefacts s or the sharing of indicators of compromise, information about other victims, etc. This primarily occurs when the CSIRT is reliant on expertise and resources outside of the direct control of the CSIRT to effectuate the actions necessary to mitigate an incident. But it also occurs inside larger organizations for which an internal CSIRT coordinates the mitigation and recovery activities. By offering bilateral or multilateral coordination, the CSIRT participates in the exchange of information to enable those resources with the ability to take action to do so or to assist others in the detection, protection, or remediation of ongoing activities from attackers and help to close the information security incident.",
+      "meta": {
+        "outcome": "Situational awareness is developed of the current status of all activities and status of the entities that take part in the response.",
+        "purpose": "Track the status of all communication and activities."
+      },
+      "related": [
+        {
+          "dest-uuid": "fdbe09c5-09a1-538a-80bf-f784e68a5a70",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "495754cd-2ffe-5e9c-aca3-8a88a773d416",
+      "value": "Function: Activities coordination"
+    },
+    {
+      "description": "Delivering concise and factual information about the current status of activities requested or carried out in response to an information security incident. Instead of waiting to be pulled for such information as part of an ongoing coordinated action as required for any successful response, timely reports are critical to enable effective coordination.",
+      "meta": {
+        "outcome": "Internal stakeholders are apprised of the scope of current activities, actions already completed, and pending ones. The assessed impact of delays, recommendations and requested actions is also communicated, making it possible to understand the overall impact in regard to the selected response strategy and developed plan.",
+        "purpose": "Ensure that all involved entities within a business have information about the status of current activities so that further decisions about the next steps to be taken are based on the best situational awareness available."
+      },
+      "related": [
+        {
+          "dest-uuid": "fdbe09c5-09a1-538a-80bf-f784e68a5a70",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "67b7b51d-9502-5363-837e-221602d71b43",
+      "value": "Function: Reporting"
+    },
+    {
+      "description": "Communicating with the media is unavailable in many cases. While CSIRTs usually try to avoid such contact, it is important to realize that the media can help to mitigate specific types of ongoing and large-scale attacks causing information security incidents. For this it is necessary to explain what is causing the information security incidents and explain the impact on users and/or organizations. In some cases, a CSIRT might choose to provide this information already in a manner suitable for release to the public, but this certainly requires specific skills inside the CSIRT not readily available in most. In any case, if a CSIRT communicates with the media, it must take great care to simplify the technical issues as much as possible and leave out all confidential information.",
+      "meta": {
+        "outcome": "Factual information providing a clear summary of the ongoing information security incident is developed including steps to be taken by potential victims or outlining the chosen response strategy to recover from the information security incident.",
+        "purpose": "Engage with the (public) media to be able to provide accurate and easy-to-understand factual information about ongoing events to avoid the spread of rumors and misleading information."
+      },
+      "related": [
+        {
+          "dest-uuid": "fdbe09c5-09a1-538a-80bf-f784e68a5a70",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "eb400206-1fe8-5528-8a98-00391f140514",
+      "value": "Function: Media communication"
+    },
+    {
+      "description": "As the response to a crisis progresses, information must be distributed and disseminated. As the CSIRT has established such resources for its own purposes, crisis management may see it as appropriate or necessary to use such resources.",
+      "meta": {
+        "outcome": "Available information is distributed to constituents, benefiting from established trust relationships that help to reassure recipients of the accurateness of the information disseminated.",
+        "purpose": "Provide established communication resources to help respond to the crisis."
+      },
+      "related": [
+        {
+          "dest-uuid": "ee34661b-0cb2-5933-8f19-47d9a0d106fd",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "a90dd689-1625-5993-8737-15181e520683",
+      "value": "Function: Information distribution to constituents"
+    },
+    {
+      "description": "The function involves delivering concise and factual information about the current status of cyber security inside the constituency. As a crisis might be used to start other attacks or as occurring attacks might be part of the overall activities leading this crisis, it is very important for the crisis management team to establish complete situational awareness. The CSIRT can provide such situational awareness for its services and constituents. This may either be requested or is expected by standard policies in a time of crisis. In any case, as crisis management is only successful based on the established information flow as it depends on coordinate resources to address the most critical aspects of the crisis, reporting must be timely and accurate. As ongoing information security incidents will require resources to handle them, a decision must be taken to either discontinue the response for the duration of the incident (and allocate the now available resources to other areas) or to carry on. Reasonable decisions can only be taken based on the best situational awareness available.",
+      "meta": {
+        "outcome": "The crisis management team will be apprised of the scope of current activities, actions already completed, and pending ones. The assessed impact of delays, recommendations and requested actions are also communicated, allowing to understand the overall impact in regard to the selected strategy to address the current crisis.",
+        "purpose": "Ensure that the crisis management team has a complete overview of current information security incidents and known vulnerabilities to consider this as part of its overall priorities and strategies."
+      },
+      "related": [
+        {
+          "dest-uuid": "ee34661b-0cb2-5933-8f19-47d9a0d106fd",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "a1915495-7312-5fbb-a9c5-ecc15c4dc45e",
+      "value": "Function: Information security status reporting"
+    },
+    {
+      "description": "Informing other entities in a timely manner about the impact caused by the crisis on currently open information security incidents provides a clear understanding of what support can also be provided by the CSIRT during the duration of the crisis, and makes sure that entities understand what to expect. It also makes sure that other parties stop their support or interaction with the CSIRT as they might believe that the crisis is taking over. As the crisis management team may decide to postpone the response to an actual information security incident due to a crisis, such decisions need to be communicated to all entities currently informed and participating. This is to avoid misunderstandings and further issues that may also lead to a loss of trust in the CSIRT and/or host organization.",
+      "meta": {
+        "outcome": "Information of the crisis impact on the CSIRT operation is distributed to constituents and other entities involved with responding to open information security incidents. The expectations of the CSIRT towards such entities are clearly described and ensure that the information needs of the CSIRT are clearly communicated.",
+        "purpose": "Inform other entities in a timely manner about the impact caused by the crisis on currently open information security incidents."
+      },
+      "related": [
+        {
+          "dest-uuid": "ee34661b-0cb2-5933-8f19-47d9a0d106fd",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "1ac12b60-af3e-58f0-8a45-61ea0a06f476",
+      "value": "Function: Strategic decisions communication"
+    },
+    {
+      "description": "During the course of analyzing a security incident, information may be discovered that indicates that a vulnerability was exploited by the attacker. An incident may have been enabled through exploitation of a known vulnerability that was previously unpatched or unmitigated; or it may be due to a new (zero-day) vulnerability. Some of this vulnerability information might be received as an output from one of the services of the Information Security Incident Management service area if a vulnerability was exploited as part of an incident. The information can then be passed on to the Vulnerability Triage function or the Vulnerability Analysis service, as appropriate.",
+      "meta": {
+        "outcome": "Information about a vulnerability that is suspected to have been exploited as part of a security incident is passed on to the Vulnerability Management service area.",
+        "purpose": "Identify a vulnerability that was exploited as part of a security incident."
+      },
+      "related": [
+        {
+          "dest-uuid": "e43c7bab-34c9-5ee1-9e40-915d265ccd70",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "776f8c85-cd4e-5c93-b57e-fae183d54868",
+      "value": "Function: Incident response vulnerability discovery"
+    },
+    {
+      "description": "A CSIRT may initially learn about a new vulnerability from various public sources that announce such information. The sources can include vendor announcements, security websites, mailing lists, vulnerability databases, security conferences, social media, etc. This function may also learn of new vulnerabilities through other third-party sources that may not be completely open to the public, such as through paid subscriptions or premium services where information is shared with only a limited group. Staff may be assigned the responsibility to perform this function and collect information to organize it for further review and sharing. Similar vulnerability information might also be received from the services of the Situational Awareness service area.",
+      "meta": {
+        "outcome": "New vulnerabilities are identified that have been disclosed through public or other external sources.",
+        "purpose": "Learn about a new vulnerability from reading public sources or other third-party sources."
+      },
+      "related": [
+        {
+          "dest-uuid": "e43c7bab-34c9-5ee1-9e40-915d265ccd70",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "9ff2dcf3-7b42-5114-9fb9-0d9cd7037845",
+      "value": "Function: Public source vulnerability discovery"
+    },
+    {
+      "description": "This function includes the discovery of new vulnerabilities as a result of specific CSIRT activities, such as the testing of systems or software using fuzz testing (fuzzing), or through the reverse engineering of malware. This function may also receive input from the service(s) of the Information Security Incident Management service area or the Situational Awareness service area that would initiate this function to look for suspected vulnerabilities. The discovery of a new vulnerability as a result of this vulnerability research function may become input to the Incident Response service, Vulnerability Detection function (see sub-functions for Vulnerability Scanning and Vulnerability Penetration Testing).",
+      "meta": {
+        "outcome": "New vulnerabilities are identified through research.",
+        "purpose": "Discover or search for new vulnerabilities as a result of deliberate activities or research."
+      },
+      "related": [
+        {
+          "dest-uuid": "e43c7bab-34c9-5ee1-9e40-915d265ccd70",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "d4914b89-870a-5045-a1c9-13e9fc9fd2e0",
+      "value": "Function: Vulnerability research"
+    },
+    {
+      "description": "Effective intake of vulnerability reports requires mechanisms and processes to receive the reports from constituents, stakeholders, and third parties (finders, researchers, vendors, PSIRTs, other CSIRTs or vulnerability coordinators, etc.). Vulnerability information may include affected devices, conditions necessary to exploit the vulnerability, impact (e.g., privilege escalation, data access, etc.), as well as actions taken to resolve the vulnerability, remediation and/or mitigation steps, and resolution. Occasionally, vulnerability information may be received jointly as part of the input to other services, most notably the Information Security Incident Report Intake (e.g., if a vulnerability is reported to be exploited as part of an incident report).",
+      "meta": {
+        "outcome": "Vulnerability reports from constituents or third parties are appropriately handled, including the initiation of documenting or tracking the reports. The following sub-functions are considered to be part of this function: Monitor communications channels regularly and check whether the advertised means of contacting the CSIRT are operational and reports can be submitted.\nReport initial acknowledgement to the submitter of the vulnerability report, request additional information if needed, and set expectations with the reporter.",
+        "purpose": "Accept or receive information about a vulnerability, as reported from constituents or third parties."
+      },
+      "related": [
+        {
+          "dest-uuid": "e3226442-c563-51ef-9a89-76041f970fec",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "951ffc54-483f-5484-8ce4-53dd30534e6a",
+      "value": "Function: Vulnerability report receipt"
+    },
+    {
+      "description": "Vulnerability Reports are reviewed and triaged to obtain an initial understanding of the vulnerability in question and determine what to do next (e.g., process the vulnerability for further analysis, seek additional information from the reporter or other sources, decide that the vulnerability needs no further action). Depending on the amount of detail and quality of the information provided in the vulnerability report, it may or not be obvious whether a new vulnerability exists. Unless there is a reason to decline a vulnerability report, the report should be passed on to the Vulnerability Analysis service for further review, analysis, and handling. If the CSIRT does not provide a Vulnerability Analysis service, then the report should be securely forwarded to an external group for handling, such as the affected vendor(s), PSIRT(s), or a vulnerability coordinator.",
+      "meta": {
+        "outcome": "Available information is identified to determine what to do next. The following sub-functions are considered to be part of the implementation of this service: Process reports and submitted data including artefacts or materials in isolation to protect the integrity of the working environment and avoid successful attacks on the CSIRT by such means.\nUpdate acknowledgement of reports by providing some feedback on further steps based on categorization or prioritization results available.\nMerge new information about a vulnerability already being handled with the available data to allow consistent analysis and processing.",
+        "purpose": "Initially review, categorize, prioritize, and process a vulnerability report."
+      },
+      "related": [
+        {
+          "dest-uuid": "e3226442-c563-51ef-9a89-76041f970fec",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "bbf8cea3-869a-56e5-a5cc-a5e0a35f76d5",
+      "value": "Function: Vulnerability report triage and processing"
+    },
+    {
+      "description": "The Vulnerability Analysis service begins with a review of the available information to categorize, prioritize, and assess whether a vulnerability has some impact on the involved systems and is relevant to the CSIRT’s mandate. Some of this may have been documented during the Vulnerability Report Triage and Processing function (of the Vulnerability Report Intake service) if the vulnerability was reported to the CSIRT by a constituent or third party. If prior triage has not already been completed, the vulnerability may be assigned to a subject matter expert who can provide technical confirmation that it has some impact on the involved systems and is relevant to the CSIRT’s mandate (i.e., the potential security impact on networks or systems that can result in damage to the confidentiality, availability, or integrity of information assets in an area of the CSIRT according to its mandate).",
+      "meta": {
+        "outcome": "The information record of a vulnerability is categorized, prioritized, and updated.",
+        "purpose": "Categorize, prioritize, and perform an initial assessment of a vulnerability."
+      },
+      "related": [
+        {
+          "dest-uuid": "e428df3a-7353-5854-b967-fbbb47079ff6",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "5abf9c46-780f-5f4a-8e53-e3f7db6afd5a",
+      "value": "Function: Vulnerability triage (validation and categorization)"
+    },
+    {
+      "description": "The goal of this analysis is to identify the root cause of the vulnerability, identifying the circumstances that allow a vulnerability to exist, and in which circumstances an attacker can consequently exploit the vulnerability. This analysis may also attempt to understand the weakness(es) leveraged to instigate an incident and the adversarial tradecraft utilized to leverage that weakness. Depending on the nature of the vulnerability, it may be difficult for a CSIRT to perform this function thoroughly. In some cases, this function may have already been performed by the finder or reporter of the vulnerability. In many situations, this function may best be conducted by the product vendor or developer of the affected software or system or their respective PSIRT. It is also possible that a vulnerability is present in more than one product, in which case multiple analyses may be needed of the affected software or systems, requiring coordination with multiple vendors, PSIRTs, or stakeholders.",
+      "meta": {
+        "outcome": "Understanding of the vulnerability and the way in which malicious actors will be able to use this vulnerability is used to determine remediation or mitigation methods to minimize the risk of exposure or exploitation.",
+        "purpose": "Understand the design or implementation flaw that causes or exposes the vulnerability to exist."
+      },
+      "related": [
+        {
+          "dest-uuid": "e428df3a-7353-5854-b967-fbbb47079ff6",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "7999a479-b614-5c8f-835c-05f83ccca337",
+      "value": "Function: Vulnerability root cause analysis"
+    },
+    {
+      "description": "This function will ideally identify a remediation or a fix for a vulnerability. If a vendor patch or fix is not available in a timely manner, a temporary solution or workaround, called a mitigation, may be recommended, such as disabling the affected software or making configuration changes, to minimize the potential negative effects of the vulnerability. Note that the actual application or deployment of a remediation (patch) or mitigation (workaround) is a function of a separate service, called Vulnerability Response in this framework. As part of the Vulnerability Analysis service and Remediation Development, this function may optionally include other sub-functions or activities, such as validating the changing of a procedure or design, reviewing remediation by a third party, or identifying any new vulnerabilities introduced in the remediation steps. Vulnerabilities that are not remediated or mitigated should be documented as acceptable risks. This function will often receive information or input from the affected product’s vendor(s), sometimes as part of the initial report or announcement handled by other services or functions.",
+      "meta": {
+        "outcome": "A plan is established to change (patch) the software code, implement a workaround, or to improve processes, infrastructures, and/or designs to close the specific attack vector and to prevent the vulnerability from being exploited.\nThe following sub-functions are considered to be part of this function: Vulnerability remediation/patch development\nVulnerability mitigation development This function is typically performed by other entities (e.g., product vendors, PSIRTs).",
+        "purpose": "Develop the steps necessary to fix (remediate) the underlying vulnerability or mitigate (reduce) the effects of the vulnerability from being exploited."
+      },
+      "related": [
+        {
+          "dest-uuid": "e428df3a-7353-5854-b967-fbbb47079ff6",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "3282999a-09d1-5d99-9d23-4773611775be",
+      "value": "Function: Vulnerability remediation development"
+    },
+    {
+      "description": "The handling of most vulnerabilities involves notifying, working with, and coordinating the exchange of relevant information with multiple parties including the affected vendors, developers, PSIRTs, or other trusted experts (e.g., researchers, CSIRTs, vulnerability coordinators) who can work together to analyze and fix the vulnerability.",
+      "meta": {
+        "outcome": "Vendors (or other CVD participants) are informed about a vulnerability and can act to develop a remediation or mitigation solution.",
+        "purpose": "Initial share or report new vulnerability information with others who are to be involved in the CVD process."
+      },
+      "related": [
+        {
+          "dest-uuid": "1613a204-9a27-5e3e-83d1-d459fb697ea2",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "109f1de0-3697-57de-9a27-0786bf3f4c0a",
+      "value": "Function: Vulnerability notification/reporting"
+    },
+    {
+      "description": "Coordinate the exchange of information among the finders/researchers, vendors, PSIRTS, and any other participants in the coordinate vulnerability disclosure (CVD) efforts to analyze and fix the vulnerability and prepare for the disclosure of the vulnerability. This coordination should also include agreement by participants on the timing and synchronization of the disclosure.",
+      "meta": {
+        "outcome": "Vulnerability information is more effectively, timely, and responsibly shared among participants who can develop or announce a remediation/mitigation solution. The following sub-functions are considered to be part of this function: Vulnerability publication development",
+        "purpose": "Conduct follow-on coordination and sharing of information among the various stakeholders and participants involved in coordinated vulnerability disclosure (CVD) efforts."
+      },
+      "related": [
+        {
+          "dest-uuid": "1613a204-9a27-5e3e-83d1-d459fb697ea2",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "4fb4bb5b-9da7-5b77-8b21-536442585547",
+      "value": "Function: Vulnerability stakeholder coordination"
+    },
+    {
+      "description": "CSIRTs that handle vulnerability reports should define their vulnerability disclosure policy and make that policy available to its constituents, stakeholders, and CVD participants, preferably by publishing it on the CSIRT’s website. The vulnerability disclosure policy will provide transparency to stakeholders and help to promote appropriate disclosure policies. Policies can range from no disclosure, where no vulnerability information is disclosed, to limited disclosure, where only some information is made available, to full disclosure, where all information is disclosed, which may include proof-of-concept exploits. The disclosure policy should include factors such as the scope of the policy, references to any reporting mechanisms and guidelines, and expected timeframes and mechanisms for the disclosure of the vulnerability.",
+      "meta": {
+        "outcome": "Trust, collaboration, and control of the disclosure is increased and relationships and coordination with CVD participants is improved.",
+        "purpose": "Develop and maintain a policy that provides a framework and sets expectations for how a CSIRT handles and discloses vulnerabilities and the mechanism(s) used to disclose the vulnerability."
+      },
+      "related": [
+        {
+          "dest-uuid": "b797cc28-547c-5347-add9-b69a48676e25",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "3699e27e-0ff9-5fb0-ba84-90e94406f774",
+      "value": "Function: Vulnerability disclosure policy and infrastructure maintenance"
+    },
+    {
+      "description": "Disclose vulnerability information to defined constituents. The disclosure can be made through any or all of the mechanisms identified in the vulnerability disclosure policy. Dissemination mechanisms can vary depending on the needs or expectations of the target audience. The communication can be in the form of an announcement or security advisory distributed via email or text messaging, a publication posted to a website or social media channel, or other communication forms and channels as appropriate. Content to be included in the disclosure should follow a defined format, which typically can include information such as an overview or description, a unique vulnerability identifier, impact, severity, or CVSS score, resolution (remediation or mitigation), and supporting references or materials.",
+      "meta": {
+        "outcome": "The vulnerability is prevented, detected, and remediated/mitigated by providing timely, high-quality, effective information to constituents (or public).",
+        "purpose": "Provide information to constituents (or the public) about a new vulnerability, so that they can detect, remediate or mitigate, and prevent future exploitation of the vulnerability."
+      },
+      "related": [
+        {
+          "dest-uuid": "b797cc28-547c-5347-add9-b69a48676e25",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "6e847ac3-774a-5654-b09f-4a6ebcb91e47",
+      "value": "Function: Vulnerability announcement/communication/dissemination"
+    },
+    {
+      "description": "Following the disclosure of a new vulnerability, CSIRTs can expect to receive follow-on communications in the form of questions from some constituents about a vulnerability document. The questions may indicate a need for clarification, revision, or amendment of the vulnerability disclosure mechanism, if warranted. Information from constituents may simply be an acknowledgement or receipt of the vulnerability document, or the constituent may report an issue or difficulty in deploying the suggested remediation/mitigation. If the vulnerability was determined to have been already exploited, constituents may be reporting newly discovered incidents as a result of the vulnerability disclosure. Such reports should feed into the functions of the CSIRT’s Incident Reporting service.",
+      "meta": {
+        "outcome": "Any questions or requests for assistance are responded to in a timely manner following a vulnerability disclosure.",
+        "purpose": "Receive and respond to questions or reports from constituents about a vulnerability disclosure or document."
+      },
+      "related": [
+        {
+          "dest-uuid": "b797cc28-547c-5347-add9-b69a48676e25",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "2228959a-1fc7-54a1-879c-fb17d02947a7",
+      "value": "Function: Post-vulnerability disclosure feedback"
+    },
+    {
+      "description": "The goal of this function is to detect any previously unpatched or unmitigated vulnerabilities before they are exploited or impact the network or devices. This function may be initiated in response to an announcement about a new vulnerability, or it may be achieved as part of a periodically scheduled scan for known vulnerabilities. In order to provide vulnerability detection effectively, it is useful to have a systems inventory. Having such an inventory that can be queried for software version information can enable an organization to quickly assess the likely prevalence of a newly reported vulnerability in its infrastructure.",
+      "meta": {
+        "outcome": "Exposure to the threat of a vulnerability being exploited is prevented or reduced. The following sub-functions are considered to be part of this function: Vulnerability remediation (patch management)\nVulnerability mitigation This function is typically performed by others (e.g., IT, SOC, system owners), not the CSIRT.",
+        "purpose": "Actively engage in searching for the presence of known vulnerabilities in deployed systems."
+      },
+      "related": [
+        {
+          "dest-uuid": "8b6e3cc9-2f15-5502-9cbb-0a4c1aaf59d6",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "eab009bc-d429-503f-bdfb-61a067bbee62",
+      "value": "Function: Vulnerability detection / scanning"
+    },
+    {
+      "description": "Vulnerability remediation is intended to resolve or eliminate a vulnerability. For software vulnerabilities, this typically occurs through the deployment and installation of vendor-provided solutions in the form of software updates or patches. When approved patches are unavailable or cannot be deployed, an alternative mitigation or workaround may be applied as a countermeasure to prevent exploitation of the vulnerability. This function often follows a positive identification of a vulnerability as the result of the Vulnerability Detection/Scanning/Hunting function.",
+      "meta": {
+        "outcome": "Exposure to the threat of a vulnerability being exploited is prevented or reduced. The following sub-functions are considered to be part of this function: Vulnerability remediation (patch management)\nVulnerability mitigation This function is typically performed by others (e.g., IT, SOC, system owners), not the CSIRT.",
+        "purpose": "Remediate or mitigate vulnerabilities to prevent them from being exploited, typically through the timely application of vendor-provided patches or other solutions."
+      },
+      "related": [
+        {
+          "dest-uuid": "8b6e3cc9-2f15-5502-9cbb-0a4c1aaf59d6",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "06f12023-6c0c-5997-9983-42d9c6473b1b",
+      "value": "Function: Vulnerability remediation"
+    },
+    {
+      "description": "The collection, aggregation, and distillation of policy establishes the basis of acceptable normal activity. The end result is a context that establishes how the constituency and its infrastructure is supposed to be operating under acceptable conditions. For organizational CSIRTs, context includes understanding the organizations acceptable policies, plans, normal operating conditions, accepted risks, and tradeoffs. Understanding and context establish the basis against which observations can be evaluated.",
+      "meta": {
+        "outcome": "The acceptable observations that are taking place in the constituency are understood. This understanding is focused upon changes or impacts to infrastructure and assets.",
+        "purpose": "Establish the context with which the constituency and its assets should comply to know what should be occurring on the infrastructure."
+      },
+      "related": [
+        {
+          "dest-uuid": "b06d204e-4c27-55cb-8770-79e2259c8e12",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "0f6fbbcc-1bfc-5a32-94fc-ce5f46019005",
+      "value": "Function: Policy aggregation, distillation, and guidance"
+    },
+    {
+      "description": "CSIRT teams need to understand the current cyber security state of a constituency, and have a good understanding of what is acceptable security. They may need to know: Legitimate users of internal and public-facing systems and devices\nAuthorized devices and what they are used for\nApproved processes and applications, where they are allowed, and how they serve the constituency This information helps establish prioritization of assets that are potentially at risk, which can provide context for incident management activities. The more precise the information available to CSIRT team, the easier it will be to infer security issues and do something about them. Precise information may mean the CSIRT having access to established security policies, current access controls, up-to-date hardware and software inventories, and detailed network diagrams.",
+      "meta": {
+        "outcome": "The following lists result from this function: A list of key functions and the assets that support them; some assets may support multiple functions\nA list of the roles which perform each function and their equivalent digital role on the asset\nA list of generally permissible actions by each role\nA list of the key risks facing the assets and the functions. These lists will evolve based upon situational changes.",
+        "purpose": "Provide knowledge of existing assets, ownership, baselines and expected activity supports analysis functions that identify abnormal situational observations."
+      },
+      "related": [
+        {
+          "dest-uuid": "b06d204e-4c27-55cb-8770-79e2259c8e12",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "7094091e-8c9f-539c-a943-78139840bf22",
+      "value": "Function: Asset mapping to functions, roles, actions, and key risks"
+    },
+    {
+      "description": "Information and data collection activities extend beyond feeds providing automated information. Collection includes identifying useful sources such as information-relevant external activities including news from other constituencies, media sources, and other CSIRTs or security organizations, internal activities (e.g., organizational changes), technology developments, external events, political events, attack trends, defensive trends, conferences, available training, and more. The data collection function supports other services such as Security Event Management, Incident Management, and Knowledge Transfer. It also supports functions and activities within these services such as analysis, prediction, response, and risk mitigation. Newly collected information may reveal that an attack on a constituent is more likely than before. External events may expose information that identifies new risks to assets for a period of time or require heightened detection activities. Overall the information helps provide actionable information to aid in decision making and incident handling.",
+      "meta": {
+        "outcome": "Data and datasets are collected and produced to provide an operational or environmental context that can be used by other services and functions, including analysis, to create a situational picture for the constituency, identify alerts, or plan for mitigating increased areas of risk to assets and supporting infrastructures.",
+        "purpose": "Collect of information to support the Analysis and Interpretation service and/or other CSIRT services."
+      },
+      "related": [
+        {
+          "dest-uuid": "b06d204e-4c27-55cb-8770-79e2259c8e12",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "08183021-1832-52b3-88ff-f6d02497a362",
+      "value": "Function: Collection"
+    },
+    {
+      "description": "Data processing and preparation includes transformation, processing, normalization, and validation of a set of data. Sources of cybersecurity data need to be validated for accuracy often due to a high number of false positives. The relevant data also typically comes in different formats, and new data needs to be combined with historical data before a complete analysis can be performed. Some types of data (such as news articles) may need to be analyzed or processed as part of the preparation process. One example would be extracting relevant security information from a news article (e.g., names, dates, places, technical information, weaknesses, system names) and comparing it with internal data for potential impacts. Some analysis methods require data to be stored in the same format, or for files to have the same number of records. There are multiple processing steps that may be involved to prepare the data. Data augmentation (also called enrichment) is performed by including other available information related to a given piece of data from other internal and external sources. For example, teams may collect information related to internet protocol addresses (IP addresses) such as autonomous system identifiers, country codes, or geo-location data. For internal asset information, teams may enrich their asset inventory data with the name of the asset owner, their role, their permissions on other assets, their physical working location over time, and more.",
+      "meta": {
+        "outcome": "Data is available and ready to be used by other services or functions.",
+        "purpose": "Establish a reliable, consistent, and current set of data that can support CSIRT activities and the requirements of the analysis service."
+      },
+      "related": [
+        {
+          "dest-uuid": "b06d204e-4c27-55cb-8770-79e2259c8e12",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "0e21609b-98b9-5f58-9be2-b7e627353c51",
+      "value": "Function: Data processing and preparation"
+    },
+    {
+      "description": "The process of inferring the current state of a situation and making predictions about the possible likely near-term pictures based on the status and dynamics of the collected data. Sometimes the data may quickly show a security issue.",
+      "meta": {
+        "outcome": "The situational picture is updated along with knowledge about when a situational picture will change and how it might change.",
+        "purpose": "Analyze the information collected during data acquisition with the intent of identifying current or predicting future situational pictures."
+      },
+      "related": [
+        {
+          "dest-uuid": "9d622922-93a1-5528-82f2-e75b181bc8e4",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "6e5f9ddc-2790-5a94-bf97-c42b02c13dd7",
+      "value": "Function: Projection and inference"
+    },
+    {
+      "description": "The systematic and often directed searching for anomaly activity inside and outside of network boundaries based upon external and internal information and trends. To assist the constituency with analyzing its data from sensors and other sources to draw conclusions about its environment and situation. For example, if an anti-virus sensor sends an alert of a suspicious file, the team may analyze the system configuration, the sensor configuration, the file that was alerted, the user activity at the time, and more, to draw a conclusion about the severity of the observation. This function may receive significant input from the Security Event Management service area. The observations from sensors that are used to detect events may be shared among multiple services. CSIRT teams also need to determine the current situational picture based upon specific pieces of information about threats. This activity may sometimes be called “threat hunting.” Typically, threat hunting involves either preparing the environment to detect specific threat activity, or searching for specific threat activity that may already be present.",
+      "meta": {
+        "outcome": "A situational picture is updated based upon the detection of events in the constituency.",
+        "purpose": "Determine and confirm the details of the current situational picture for the constituency."
+      },
+      "related": [
+        {
+          "dest-uuid": "9d622922-93a1-5528-82f2-e75b181bc8e4",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "724ef355-21f4-5a11-92f5-c5ac725f6820",
+      "value": "Function: Event detection (through alerting and/or hunting)"
+    },
+    {
+      "description": "Performing analysis of specific evidence assists in identifying insights to support incident resolution. Sometimes, CSIRTs may focus their situational analysis to support a specific desired outcome such as incident resolution. Certain responses to an incident may affect a situational picture differently, and responders may ask for analysis (e.g., impact, cost, risk of failure) of choices. The decision-making needs of the constituency may change as their situational picture evolves, and the CSIRT team may initiate new analysis processes to assist them. This activity is related to the Incident Management Service Area. Incident Management functions are supported by Situational Awareness and the situational picture may change based upon Incident Management activities.",
+      "meta": {
+        "outcome": "Situational awareness is enhanced for incident management functions based upon new observations. Updated situational picture based upon incident management activities.",
+        "purpose": "Identify new insights during incidents that may help limit damage, mitigate future risk, or identify a newly created weakness."
+      },
+      "related": [
+        {
+          "dest-uuid": "9d622922-93a1-5528-82f2-e75b181bc8e4",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "7b9ff2e5-e1f7-5421-985e-0b4024fd0bcc",
+      "value": "Function: Information security incident management decision support"
+    },
+    {
+      "description": "This function identifies the impact a projection or inference may have upon a current or near-term future situation. An impact may include raising or lowering certain risks such as data loss, system downtime, or effects on data confidentiality/availability/integrity.",
+      "meta": {
+        "outcome": "An analysis is produced of the likely possible impact that an inference or projection may have upon a situation.",
+        "purpose": "Determine the expected potential impact of a given observation or possible observation to a situational picture."
+      },
+      "related": [
+        {
+          "dest-uuid": "9d622922-93a1-5528-82f2-e75b181bc8e4",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "1aefb16b-05a5-5183-9a98-a5c5536a2846",
+      "value": "Function: Situational impact"
+    },
+    {
+      "description": "Once the results of Analyze and Interpret are complete, they can be used to improve decision-making via both internal and external communication processes. Specific pieces of information are distributed based upon who needs to know them. Communication includes the method of delivery and the content that is being delivered. A CSIRT team might communicate new information and how it will change the situational picture. An example of this would be reporting the expected change a new malicious technique it has observed during an incident would have upon a constituent member. It may also include trend information such as the most useful sources of enrichment data and steps in which constituents can use it to improve their own situational awareness.",
+      "meta": {
+        "outcome": "Constituents are better informed and are prepared to take actions or make decisions that will improve their security or situation.",
+        "purpose": "Inform constituents (and others) of the current situational picture and how it may be changing."
+      },
+      "related": [
+        {
+          "dest-uuid": "ddfea37e-0234-5d9d-b6ca-981c7e0fa114",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "df014610-1a6e-5d81-b183-0e6a4af4aa5d",
+      "value": "Function: Internal and external communication"
+    },
+    {
+      "description": "Reports and recommendations should clearly indicate the choices and actions faced by constituents, and include analysis of the expected consequences of each choice or action. Communication of findings should include a list of evidence supporting the analysis and the recommendation (if a recommendation is made). The methods used to create the findings should be clearly explained to the audience so they can also judge the claims presented. The CSIRT team may create reports on a single event, a series of events, trends, patterns, possible events, or more to support the needs for their constituency to understand a situational picture.",
+      "meta": {
+        "outcome": "The capability to provide accurate, timely, and complete reports on the situational picture, the evidence that supports the conclusions, and/or recommendations on possible courses of action and their potential effects to the constituency is improved.",
+        "purpose": "Create results, artefacts, or findings that communicate critical information discovered or created during analysis to audiences in a manner and format that they will understand."
+      },
+      "related": [
+        {
+          "dest-uuid": "ddfea37e-0234-5d9d-b6ca-981c7e0fa114",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "a3a2e61d-3586-5dac-950b-45180d57a060",
+      "value": "Function: Reporting and recommendations"
+    },
+    {
+      "description": "In some instances, a CSIRT team may also perform the recommended adjustments to parts of the security infrastructure, for example changing the firewall rules on a particular honey pot based upon situational analysis.",
+      "meta": {
+        "outcome": "A course of action is performed or a change to the infrastructure is implemented by constituents based upon received communications containing analysis, projections, and/or recommendations.",
+        "purpose": "Adapt the constituent environment based on communications to be more prepared for or react to changes in the situational picture."
+      },
+      "related": [
+        {
+          "dest-uuid": "ddfea37e-0234-5d9d-b6ca-981c7e0fa114",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "400175ae-104f-57bc-ae0a-b2bf0b7eabd5",
+      "value": "Function: Implementation"
+    },
+    {
+      "description": "This function may include the following sub-functions: using the results of the analysis service in internal and external planning and decision-making processes\nidentifying the right targets to receive the information\nmaking the analysis results available\nensuring the delivery is successful\ntracking and reporting on the sharing of information\nsending relevant information to the Knowledge Transfer service for further use and dissemination",
+      "meta": {
+        "outcome": "Situational Awareness Analysis outputs are used as inputs (both internally and among constituents) into in key decision processes e.g., threat hunting, incident analysis, resolution. Outputs are disseminated as part of handling or detecting incidents. Information and data coming from Situational Awareness can also become Best Practices, Reports, Training and Awareness Material through the Knowledge Transfer service area.",
+        "purpose": "Assemble, normalize, and prepare information and then share it with constituents and others outside the constituency."
+      },
+      "related": [
+        {
+          "dest-uuid": "ddfea37e-0234-5d9d-b6ca-981c7e0fa114",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "03b4f249-1dba-5257-a39c-d85720be4657",
+      "value": "Function: Dissemination / integration / information sharing"
+    },
+    {
+      "description": "This function may include the following sub-functions: providing information to other groups.\nformatting information for transfer.\ntracking transfer process and its outcome.",
+      "meta": {
+        "outcome": "Assurance is provided that the right information is being shared, and that once shared, it is received by partners, constituents, and other community members. Reports are provided on sharing activity.",
+        "purpose": "Ensure transfer of information is successful and useable."
+      },
+      "related": [
+        {
+          "dest-uuid": "ddfea37e-0234-5d9d-b6ca-981c7e0fa114",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "320fe47b-f419-5f15-abfa-98dd8f98a397",
+      "value": "Function: Management of information sharing"
+    },
+    {
+      "description": "This function involves providing and receiving feedback on information provided, received, and used by the constituency, other service providers or other stakeholders. Was the information received accurate, applicable, timely, strategic, new/novel, etc.? Was it helpful in resolving an investigation? Did it lead to a new insight? This may mean providing information also to other CSIRT (as an external source) on the usefulness of or changes to signatures, honeypot findings, IOCs, warnings, threat information, mitigations, etc. This activity may also be performed by the Knowledge Transfer service area. If so, the results should be communicated back to the Situational Awareness service area.",
+      "meta": {
+        "outcome": "Observations and feedback is provided to internal and external sources in order to improve the accuracy, timeliness, quality, and usefulness of information received.",
+        "purpose": "Improve the quality, timeliness, accuracy, and relevance of the data being received from internal and external sources."
+      },
+      "related": [
+        {
+          "dest-uuid": "ddfea37e-0234-5d9d-b6ca-981c7e0fa114",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "36be4fe3-7c44-5934-8457-9949eb8dfcd3",
+      "value": "Function: Feedback"
+    },
+    {
+      "description": "This function involves researching and aggregating information relevant for building awareness materials and reports, including from outcomes of other services/functions, especially from the Security Event Management, Incident Management, and Situational Awareness service areas.",
+      "meta": {
+        "outcome": "Information about relevant trends, ongoing incidents, and best practices, is aggregated and can be used to develop reports and awareness materials for varied audiences.",
+        "purpose": "Aggregate, collate, and prioritize information that can be disseminated to the constituency for the improvement of the security posture and prevention and mitigation of risks."
+      },
+      "related": [
+        {
+          "dest-uuid": "895987fb-db75-5840-8aac-363ac47f106f",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "23a450ef-d219-5ff0-b9b4-228bc883254c",
+      "value": "Function: Research and information aggregation"
+    },
+    {
+      "description": "This function involves developing materials for diverse audiences (technical staff, management, end users, etc.) and in various formats, such as presentations, short videos, cartoons, booklets, technical analysis, trend reports, and annual reports.",
+      "meta": {
+        "outcome": "CSIRT reports and awareness materials of adequate quality are developed to meet the needs of the constituency utilizing varied and effective delivery techniques and platforms.",
+        "purpose": "Use the information aggregated and researched as being relevant to produce materials in different media with the goal of reaching different audiences or delivering specific content in the best way possible."
+      },
+      "related": [
+        {
+          "dest-uuid": "895987fb-db75-5840-8aac-363ac47f106f",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "fa81e0ba-5c23-55c1-80af-83ad70db539c",
+      "value": "Function: Reports and awareness materials development"
+    },
+    {
+      "description": "The function involves implementing a process of information dissemination that can help the CSIRT to best deliver its reports and awareness materials to its constituency based on the characteristics of different audiences and content.",
+      "meta": {
+        "outcome": "Information dissemination framework is implemented to enables the CSIRT’s constituency to have access to timely and relevant information through different methods, including podcasts, blog posts, social media posts and videos, press releases, advertisements, campaigns, public reports, etc.",
+        "purpose": "Disseminate security-related information to improve awareness and implementation of security practices."
+      },
+      "related": [
+        {
+          "dest-uuid": "895987fb-db75-5840-8aac-363ac47f106f",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "1f390acc-5b6e-5dfd-a76d-d771e8ca2f36",
+      "value": "Function: Information dissemination"
+    },
+    {
+      "description": "This function involves building partnerships, promoting cooperation, and engaging key stakeholders, internal or external to the constituency, with the goal of: disseminating awareness and best practices; helping the constituency and external stakeholders understand the services and benefits a CSIRT can provide; helping the CSIRT to better understand constituents’ needs; and enabling the realization of CSIRT’s mission. This may involve ensuring interoperability or fostering collaboration between or across organizations.",
+      "meta": {
+        "outcome": "Active and consistent outreach activities are performed that may include, but are not limited to, meeting with key stakeholders, participating in sector meetings, presenting at conferences, and organizing conferences.",
+        "purpose": "Develop and maintain relationships with experts or organizations that may help or be part of the execution of the mission of the CSIRT."
+      },
+      "related": [
+        {
+          "dest-uuid": "895987fb-db75-5840-8aac-363ac47f106f",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "113ba1d6-e172-5282-8c83-b8c505510ea4",
+      "value": "Function: Outreach"
+    },
+    {
+      "description": "The function involves collecting knowledge, skill, and ability (KSA) needs and the competence of a constituency in regard to determining what training and education should be provided.",
+      "meta": {
+        "outcome": "Constituency KSA needs are characterized and documented to be used as basis for developing relevant education and training materials.",
+        "purpose": "Properly assess, identify, and document what the constituency needs are in terms of requisite KSAs, to develop appropriate training and education materials and improve its skill level."
+      },
+      "related": [
+        {
+          "dest-uuid": "373ea683-406a-589a-b031-d960b3ab2f01",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "2892afcd-adab-5306-8cbd-90e807973385",
+      "value": "Function: Knowledge, skill, and ability requirements gathering"
+    },
+    {
+      "description": "This function involves building or acquiring content of educational and training materials such as presentations, lectures, demonstrations, simulations, videos, books, booklets, etc.",
+      "meta": {
+        "outcome": "CSIRT training and education materials utilizing varied and effective presentation techniques and platforms are developed that are of appropriate quality and that meet the needs of the constituency.",
+        "purpose": "Develop, using the constituency’s KSA needs as a basis, educational, instructional, and training material that is appropriate to the delivery methods identified as the best to reach different audiences or deliver specific content."
+      },
+      "related": [
+        {
+          "dest-uuid": "373ea683-406a-589a-b031-d960b3ab2f01",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "cf478ca0-f677-5b9b-9998-b490c823ccce",
+      "value": "Function: Educational and training materials development"
+    },
+    {
+      "description": "This function involves the transfer of knowledge and content to “students.” This can occur via various methods, such as computer-based/online training (CBT/WBT), instructor-led, virtual, conferences, presentations, labs, capture the flag (CTF) competitions, books, online videos, etc.",
+      "meta": {
+        "outcome": "A content delivery framework has been designed to help the constituency learn technical and soft skills and processes, using all alternative approaches, including books, booklets, online videos, presentations, hands-on labs, CTFs, CBT/WBT, in-person training, etc. This results in constituency members who understand the content delivered.",
+        "purpose": "Develop a formal process for content delivery that can help the CSIRT to best deliver the content to its constituency, based on the characteristics of different audiences and content."
+      },
+      "related": [
+        {
+          "dest-uuid": "373ea683-406a-589a-b031-d960b3ab2f01",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "470bc89e-0dc2-53c9-99cf-6c420eaaa78f",
+      "value": "Function: Content delivery"
+    },
+    {
+      "description": "A Mentoring program can help provide a formal as well as informal mechanism for the mentor to share with the mentee about education and skill development, insights, and life and career experiences outside of the official reporting relationship and structure of the team. This can involve on-site visits, rotation (exchange), shadowing, and discussing rationale for specific decisions and actions.",
+      "meta": {
+        "outcome": "Retention, loyalty, confidence, and overall ability to make sound decisions has been increased in the CSIRT team. Constituents have improved skill levels and a better relationship with its CSIRT. Improved capacity and capability of the constituency and the CSIRT team members, including the development of trusted relationships.",
+        "purpose": "Develop a program for CSIRT staff, constituency members, or external trusted partners to learn from experienced staff through an established relationship."
+      },
+      "related": [
+        {
+          "dest-uuid": "373ea683-406a-589a-b031-d960b3ab2f01",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "17770bf4-d76d-5fb6-80a8-9382e6fe64a8",
+      "value": "Function: Mentoring"
+    },
+    {
+      "description": "Once the appropriate skills have been identified, professional development is used by a CSIRT to promote a continuous process of securing new knowledge, skills, and abilities that relate to the security profession, unique job responsibilities, and the overall Team environment. This can include attending conferences, advanced training, and cross-training activities, among others.",
+      "meta": {
+        "outcome": "Developed and trained staff are available with the requisite technical and soft skills and process understanding, and who are up to date based on the job roles and needs. CSIRT members are ready to address the daily operational challenges, supporting both the team and its customers.",
+        "purpose": "Help staff members successfully and appropriately plan and develop their careers."
+      },
+      "related": [
+        {
+          "dest-uuid": "373ea683-406a-589a-b031-d960b3ab2f01",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "2d1ae674-4a3c-5a68-8339-955d39a0dd0a",
+      "value": "Function: CSIRT staff professional development"
+    },
+    {
+      "description": "Determine the learning objectives and scope of the exercise. Define the specific services, capabilities, and topics to be covered by the exercise. Ensure exercise includes activities and topics that relate to required or desired skills needed by the participants, as well as the processes that should be tested.",
+      "meta": {
+        "outcome": "A description of the purpose of the exercise is determined, along with an outline of the learning objectives to be met.",
+        "purpose": "Ensure an effective outcome of the exercise by concentrating on specific issues for the given scope and focus of the exercise."
+      },
+      "related": [
+        {
+          "dest-uuid": "111c542b-54ae-5dda-91cc-81907c7cd6b9",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "35fcac47-9aed-5ba2-9662-2824c49bf400",
+      "value": "Function: Requirements analysis"
+    },
+    {
+      "description": "Define the format and platform needed to meet the objectives and deliver the expected outcomes of the exercise.",
+      "meta": {
+        "outcome": "The type of exercise (table top, hands-on, simulation, etc.) is identified, as well as the internal and external resources needed to conduct the exercise.",
+        "purpose": "Specify and determine the internal and external resources and infrastructure needed to conduct the exercise."
+      },
+      "related": [
+        {
+          "dest-uuid": "111c542b-54ae-5dda-91cc-81907c7cd6b9",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "51ea374c-e93a-5d20-b0f0-a04770ca0505",
+      "value": "Function: Format and environment development"
+    },
+    {
+      "description": "Development of exercise scenarios in support of stakeholder objectives. Deliverables also include instructions and guidance to the participants and exercise managers; these instructions include recommended actions for the participants detailing some/all scenario steps.",
+      "meta": {
+        "outcome": "A main scenario with variants and various types of formalized injects is developed, along with tasks and role allocation to the exercise management team.",
+        "purpose": "Provide an opportunity for the target audience to improve the efficiency and effectiveness of its services and functions, and its skills, knowledge, and abilities, through the handling of simulated cybersecurity events/incidents, including communications aspects."
+      },
+      "related": [
+        {
+          "dest-uuid": "111c542b-54ae-5dda-91cc-81907c7cd6b9",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "8ca29e0d-5103-511d-81bc-b09f6a38327b",
+      "value": "Function: Scenario development"
+    },
+    {
+      "description": "The function involves performing readiness testing of constituent “students” to test their ability to apply training and perform job or task functions. Can be in the form of real or virtual environments, simulations, field tests, table tops, mock scenarios, or a combination, with injects being provided in a structured manner. This will also help determine the level at which the team is operating, as well as if and where it has room for improvement.",
+      "meta": {
+        "outcome": "A CSIRT has assessed its preparedness and readiness, ensuring the KSAs, key processes, and execution all work successfully together, or must be adapted/improved.",
+        "purpose": "Conduct drills/exercises allowing a CSIRT team to increase its confidence in the validity of an organization’s CSIRT plan and its ability for execution."
+      },
+      "related": [
+        {
+          "dest-uuid": "111c542b-54ae-5dda-91cc-81907c7cd6b9",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "72e0a7ef-76b6-5d3a-b500-7d59782dd35d",
+      "value": "Function: Exercises execution"
+    },
+    {
+      "description": "Develop an after-action report which includes lessons learned or findings/best practices from the exercise, and provide an assessment to the stakeholders/management.",
+      "meta": {
+        "outcome": "Deliverables are created highlighting the success of the exercise, areas for improvement, general findings, and recommended actions to take in order to improve: the organization incident management capabilities, the CSIRT’s team processes, and the capabilities of individual constituents and of the stakeholder community as a whole, including communications capabilities and procedures.",
+        "purpose": "Perform a formal and objective analysis of the exercise, based on factual observations."
+      },
+      "related": [
+        {
+          "dest-uuid": "111c542b-54ae-5dda-91cc-81907c7cd6b9",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "fe9a6ab7-7350-5189-bfba-d06ebe090bba",
+      "value": "Function: Exercise outcome review"
+    },
+    {
+      "description": "Support to activities related to assessing risk or compliance. This may include conducting an actual assessment or providing support to evaluate the results of an assessment.",
+      "meta": {
+        "outcome": "The constituency is able to identify risks and threats and select relevant risk management options, including appropriate and effective incident management strategies, security controls, or threat mitigations.",
+        "purpose": "Improve the identification of opportunities and threats, improve controls, improve loss prevention and incident management in conjunction with information security and other relevant functions."
+      },
+      "related": [
+        {
+          "dest-uuid": "23e3a936-6f5d-553a-be67-e1938f84bbcf",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "6af40391-f850-5420-917a-966b8bf58ef5",
+      "value": "Function: Risk management support"
+    },
+    {
+      "description": "Support the constituency in the activities related to organizational resilience, based on risks identified.",
+      "meta": {
+        "outcome": "The constituency is able to appropriately implement business continuity and disaster recovery plans that include and align with the incident management strategies.",
+        "purpose": "Act as a trusted advisor on business continuity and disaster recovery by providing impartial, fact-based advice, considering the environment in which the advice may be used and any resource constraints that apply."
+      },
+      "related": [
+        {
+          "dest-uuid": "23e3a936-6f5d-553a-be67-e1938f84bbcf",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "f3639b43-c283-51be-948c-29c6b6b16613",
+      "value": "Function: Business continuity and disaster recovery planning support"
+    },
+    {
+      "description": "This function supports the constituency in the development, maintenance, institutionalization, and enforcement of policies, while ensuring they enable and support incident management activities. For internal CSIRTs, this typically includes support for information security and other operating policies. For coordinating and National CSIRTs, this might include support for public policies and new legislation.",
+      "meta": {
+        "outcome": "The constituency is able to develop effective policies, institutionalize policies, and enable effective incident management strategies.",
+        "purpose": "Act as a trusted advisor on the development and implementation of policies by providing impartial, fact-based advice, considering the environment in which the advice may be used and any resource constraints that apply."
+      },
+      "related": [
+        {
+          "dest-uuid": "23e3a936-6f5d-553a-be67-e1938f84bbcf",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "f2ee7038-d049-54c5-a023-5a529eee5e43",
+      "value": "Function: Policy support"
+    },
+    {
+      "description": "This function provides support and recommendations for the improvement of cybersecurity related infrastructures, tools, and services for its constituency, with the goal of improving the security posture and incident management overall. This might include advice on security considerations for acquisition, compliance verification, maintenance, and upgrades\ninternal and external audits of cybersecurity related infrastructures and tools\nsecure software development requirements and secure coding",
+      "meta": {
+        "outcome": "Support is provided to design, acquire, manage, operate and maintain the constituency’s infrastructure and systems and tools, as well as assist in building the capability, capacity, and maturity of incident management activities.",
+        "purpose": "Provide technical advice that can help the constituency to better manage risks and threats and implement current operational and security best practices, while enabling effective incident handling activities."
+      },
+      "related": [
+        {
+          "dest-uuid": "23e3a936-6f5d-553a-be67-e1938f84bbcf",
+          "type": "part-of"
+        }
+      ],
+      "uuid": "2ca32179-9eed-5e0b-9567-e8a6040fb863",
+      "value": "Function: Technical advice"
+    }
+  ],
+  "version": 1
+}

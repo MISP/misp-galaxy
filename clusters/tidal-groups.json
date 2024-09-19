@@ -10,6 +10,37 @@
   "uuid": "877cdc4b-3392-4353-a7d4-2e46d40e5936",
   "values": [
     {
+      "description": "This object represents the behaviors associated with operators of 8Base ransomware, who may or may not operate as a cohesive unit. Behaviors associated with samples of 8Base ransomware are represented in the \"8Base Ransomware\" Software object.\n \nThe 8Base ransomware operation began claiming significant numbers of victims on its data leak site in June 2023, including organizations in a range of sectors. Researchers have observed considerable similarities between aspects of 8Base's operations and those of other ransomware groups, leading them to suspect that 8Base may be an evolution or offshoot of existing operations. The language in 8Base's ransom notes is similar to the language seen in RansomHouse's notes, and there is strong overlap between the code of Phobos ransomware and 8Base.<sup>[[VMWare 8Base June 28 2023](/references/573e9520-6181-4535-9ed3-2338688a8e9f)]</sup><sup>[[Acronis 8Base July 17 2023](/references/c9822477-1578-4068-9882-41e4d6eaee3f)]</sup>",
+      "meta": {
+        "group_attack_id": "G5030",
+        "observed_motivations": [
+          "Financial Gain"
+        ],
+        "owner": "TidalCyberIan",
+        "source": "Tidal Cyber",
+        "tags": [
+          "c6e1f516-1a18-4ff9-b563-e6ac8103b104",
+          "562e535e-19f5-4d6c-81ed-ce2aec544f09",
+          "5e7433ad-a894-4489-93bc-41e90da90019",
+          "7e7b0c67-bb85-4996-a289-da0e792d7172",
+          "2feda37d-5579-4102-a073-aa02e82cb49f"
+        ],
+        "target_categories": [
+          "Automotive",
+          "Construction",
+          "Financial Services",
+          "Healthcare",
+          "Hospitality Leisure",
+          "Manufacturing",
+          "Non Profit",
+          "Technology"
+        ]
+      },
+      "related": [],
+      "uuid": "00b45c13-d165-44d0-ad6b-99787d2a7ce3",
+      "value": "8Base Ransomware Actors"
+    },
+    {
       "description": "[admin@338](https://app.tidalcyber.com/groups/8567136b-f84a-45ed-8cce-46324c7da60e) is a China-based cyber threat group. It has previously used newsworthy events as lures to deliver malware and has primarily targeted organizations involved in financial, economic, and trade policy, typically using publicly available RATs such as [PoisonIvy](https://app.tidalcyber.com/software/1d87a695-7989-49ae-ac1a-b6601db565c3), as well as some non-public backdoors. <sup>[[FireEye admin@338](https://app.tidalcyber.com/references/f3470275-9652-440e-914d-ad4fc5165413)]</sup>",
       "meta": {
         "country": "CN",
@@ -23,7 +54,12 @@
           "Financial Services"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "ac4bce1f-b3ec-4c44-bd36-b6cc986b319b",
+          "type": "similar"
+        }
+      ],
       "uuid": "8567136b-f84a-45ed-8cce-46324c7da60e",
       "value": "admin@338"
     },
@@ -100,7 +136,7 @@
       "value": "Akira"
     },
     {
-      "description": "This Group object reflects the tools & TTPs used by threat actors known to deploy Akira, a ransomware family that researchers believe has been used since at least March 2023.<sup>[[TrendMicro Akira October 5 2023](/references/8f45fb21-c6ad-4b97-b459-da96eb643069)]</sup> Researchers assess that the Akira operation relates to and possibly derives from the Conti ransomware operation (by way of the Royal ransomware operation).<sup>[[GitHub ransomware_map](/references/d995f4b2-3262-4c37-855a-61aef7d7b8a8)]</sup>\n\nTTPs associated with the Akria ransomware binary itself can be found in the separate \"Akira Ransomware\" Software object.",
+      "description": "*We are no longer maintaining this object in favor of a similar object subsequently published by MITRE: \"Akira\" (Group). All relevant Tidal content extensions (e.g. additional Technique and Object relationships and metadata) have been added to the MITRE-authored object.*\n\n\nThis Group object reflects the tools & TTPs used by threat actors known to deploy Akira, a ransomware family that researchers believe has been used since at least March 2023.<sup>[[TrendMicro Akira October 5 2023](/references/8f45fb21-c6ad-4b97-b459-da96eb643069)]</sup> Researchers assess that the Akira operation relates to and possibly derives from the Conti ransomware operation (by way of the Royal ransomware operation).<sup>[[GitHub ransomware_map](/references/d995f4b2-3262-4c37-855a-61aef7d7b8a8)]</sup>\n\nTTPs associated with the Akria ransomware binary itself can be found in the separate \"Akira Ransomware\" Software object.",
       "meta": {
         "group_attack_id": "G5021",
         "observed_countries": [
@@ -155,7 +191,7 @@
       },
       "related": [],
       "uuid": "0fcb2205-e75b-46c9-ac54-00f218d5e331",
-      "value": "Akira Ransomware Actors"
+      "value": "Akira Ransomware Actors (Deprecated)"
     },
     {
       "description": "[Andariel](https://app.tidalcyber.com/groups/2cc997b5-5076-4eef-9974-f54387614f46) is a North Korean state-sponsored threat group that has been active since at least 2009. [Andariel](https://app.tidalcyber.com/groups/2cc997b5-5076-4eef-9974-f54387614f46) has primarily focused its operations--which have included destructive attacks--against South Korean government agencies, military organizations, and a variety of domestic companies; they have also conducted cyber financial operations against ATMs, banks, and cryptocurrency exchanges. [Andariel](https://app.tidalcyber.com/groups/2cc997b5-5076-4eef-9974-f54387614f46)'s notable activity includes Operation Black Mine, Operation GoldenAxe, and Campaign Rifle.<sup>[[FSI Andariel Campaign Rifle July 2017](https://app.tidalcyber.com/references/bde61ee9-16f9-4bd9-a847-5cc9df21335c)]</sup><sup>[[IssueMakersLab Andariel GoldenAxe May 2017](https://app.tidalcyber.com/references/10a21964-d31f-40af-bf32-5ccd7d8c99a2)]</sup><sup>[[AhnLab Andariel Subgroup of Lazarus June 2018](https://app.tidalcyber.com/references/bbc66e9f-98f9-4e34-b568-2833ea536f2e)]</sup><sup>[[TrendMicro New Andariel Tactics July 2018](https://app.tidalcyber.com/references/b667eb44-8c2f-4319-bc93-f03610214b8b)]</sup><sup>[[CrowdStrike Silent Chollima Adversary September 2021](https://app.tidalcyber.com/references/835283b5-af3b-4baf-805e-da8ebbe8b5d2)]</sup>\n\n[Andariel](https://app.tidalcyber.com/groups/2cc997b5-5076-4eef-9974-f54387614f46) is considered a sub-set of [Lazarus Group](https://app.tidalcyber.com/groups/0bc66e95-de93-4de7-b415-4041b7191f08), and has been attributed to North Korea's Reconnaissance General Bureau.<sup>[[Treasury North Korean Cyber Groups September 2019](https://app.tidalcyber.com/references/54977bb2-2929-41d7-bdea-06d39dc76174)]</sup>\n\nNorth Korean group definitions are known to have significant overlap, and some security researchers report all North Korean state-sponsored cyber activity under the name [Lazarus Group](https://app.tidalcyber.com/groups/0bc66e95-de93-4de7-b415-4041b7191f08) instead of tracking clusters or subgroups.",
@@ -166,37 +202,105 @@
           "BR",
           "CA",
           "CN",
+          "FR",
           "DE",
           "IN",
           "IL",
           "JP",
           "KR",
+          "NG",
           "NO",
           "PH",
           "RO",
           "RU",
           "SE",
+          "GB",
           "US",
           "VN"
         ],
         "observed_motivations": [
           "Cyber Espionage",
-          "Destruction"
+          "Destruction",
+          "Financial Gain"
         ],
         "source": "MITRE",
+        "tags": [
+          "af5e9be5-b86e-47af-91dd-966a5e34a186",
+          "27a117ce-bb19-4f79-9bc2-a851b69c5c50",
+          "6070668f-1cbd-4878-8066-c636d1d8659c",
+          "61cdbb28-cbfd-498b-9ab1-1f14337f9524",
+          "e551ae97-d1b4-484e-9267-89f33829ec2c",
+          "15787198-6c8b-4f79-bf50-258d55072fee",
+          "4f4744b0-8401-423c-9ed0-3cb2985d9fd3",
+          "ddfaecd0-bd3e-41ac-85c7-ca2156684343",
+          "0dbed83d-af67-4ce0-a1ee-16f1165fdc0f",
+          "6422a882-7606-4aa3-b994-f917f53c2ada",
+          "c1b123d2-ce58-4345-8482-d1da27b3c053",
+          "f166e59e-9877-4102-a39b-fae38df4b790",
+          "6a82d685-3f77-498d-91c3-a759292ec2da",
+          "a32a757a-9d6b-43ca-ac4b-5f695dd0f110",
+          "ac70560d-c3e7-4b40-a4d6-a3287e3d952b",
+          "75f62312-a7ee-4534-8c8a-e3b7366a3a4b",
+          "887d1cfe-d0c5-431c-8dce-0e1b9a2505aa",
+          "96eec53f-355c-406c-87ba-18c3be4c69a1",
+          "54fafdbe-1ea0-4f48-99ad-757c8fe50df2",
+          "35b334ec-4169-4898-ab90-487eea7feb69",
+          "4ac4e1b9-2192-47ac-a4d1-3a31aa0f2140",
+          "936a56f5-a4f1-42d8-83b7-c44399ead661",
+          "0d19ceed-28f6-4258-b365-f6e6f296121d",
+          "037cc75c-9683-49db-aaa8-c8142763bb87",
+          "ff71ed89-8355-4abc-9da4-eb4768a38c9c",
+          "6fade0a3-0c26-4a11-b81e-25d20e38bdd3",
+          "3b54d8a5-580f-43bf-a12d-8e011f953bad",
+          "0f6e72e1-ba8f-4d1d-920d-d8945a4fee59",
+          "7bbc5366-897a-4505-bc68-3a18e3d4cf44",
+          "4cd85398-c33a-4374-9a76-2bbf297cca63",
+          "5ec8231e-70e9-4675-b922-368bcb9e914a",
+          "21c64d34-e52a-42ba-a8c7-85aa82dc0b3f",
+          "cd9ab9e7-248f-4097-b120-a42834ce0f89",
+          "91ddbeac-b587-4978-a80d-543a5d96cb77",
+          "b8448700-7ed0-48b8-85f5-ed23e0d9ab97",
+          "12b074b9-6748-4ad7-880f-836cb80587e1",
+          "45f92502-0775-4fc6-8fcd-97b325ea49a9",
+          "cddb4563-fe90-4c72-be81-6256d175a698",
+          "69f278d7-194f-42d0-8f83-11de9f861264",
+          "f0c58aa3-5d21-4ade-95a0-b775dde7e8a3",
+          "5f9b1c23-81f8-4aa3-8d97-235302e77eec",
+          "d842c7ff-e3d3-4534-9ed7-283752f4bbe2",
+          "ecd84106-2a5b-4d25-854e-b8d1f57f6b75",
+          "7e6ef160-8e4f-4132-bdc4-9991f01c472e",
+          "532b7819-d407-41e9-9733-0d716b69eb17",
+          "e401022a-36ac-486d-8503-dd531410a927",
+          "173e1480-8d9b-49c5-854d-594dde9740d6",
+          "7551097a-dfdd-426f-aaa2-a2916dd9b873",
+          "c475ad68-3fdc-4725-8abc-784c56125e96",
+          "08809fa0-61b6-4394-b103-1c4d19a5be16",
+          "4ac8dcde-2665-4066-9ad9-b5572d5f0d28",
+          "5e7433ad-a894-4489-93bc-41e90da90019",
+          "7e7b0c67-bb85-4996-a289-da0e792d7172"
+        ],
         "target_categories": [
           "Aerospace",
           "Agriculture",
           "Casinos Gambling",
+          "Chemical",
           "Defense",
+          "Education",
           "Energy",
           "Financial Services",
           "Government",
           "Healthcare",
+          "Insurance",
+          "Legal",
           "Media",
+          "Nuclear",
           "Pharmaceuticals",
+          "Retail",
           "Technology",
-          "Travel Services"
+          "Telecommunications",
+          "Transportation",
+          "Travel Services",
+          "Utilities"
         ]
       },
       "related": [],
@@ -237,6 +341,7 @@
           "LV",
           "NL",
           "SE",
+          "UA",
           "AE",
           "US"
         ],
@@ -314,7 +419,12 @@
           "Transportation"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "1cb7e1cc-d695-42b1-92f4-fd0112a3c9be",
+          "type": "similar"
+        }
+      ],
       "uuid": "5307bba1-2674-4fbd-bfd5-1db1ae06fc5f",
       "value": "APT1"
     },
@@ -356,7 +466,12 @@
           "Technology"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "1f73e14f-b882-4032-a565-26dc653b0daf",
+          "type": "similar"
+        }
+      ],
       "uuid": "06a05175-0812-44f5-a529-30eba07d1762",
       "value": "APT16"
     },
@@ -388,7 +503,12 @@
           "Technology"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "99e30d89-9361-4b73-a999-9e5ff9320bcb",
+          "type": "similar"
+        }
+      ],
       "uuid": "5f083251-f5dc-459a-abfc-47a1aa7f5094",
       "value": "APT17"
     },
@@ -406,7 +526,12 @@
           "Technology"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "9a683d9c-8f7d-43df-bba2-ad0ca71e277c",
+          "type": "similar"
+        }
+      ],
       "uuid": "a0c31021-b281-4c41-9855-436768299fe7",
       "value": "APT18"
     },
@@ -432,7 +557,12 @@
           "Telecommunications"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "066d25c1-71bd-4bd4-8ca7-edbba00063f4",
+          "type": "similar"
+        }
+      ],
       "uuid": "713e2963-fbf4-406f-a8cf-6a4489d90439",
       "value": "APT19"
     },
@@ -545,6 +675,7 @@
         ],
         "source": "MITRE",
         "tags": [
+          "fe28cf32-a15c-44cf-892c-faa0360d6109",
           "6070668f-1cbd-4878-8066-c636d1d8659c",
           "d8f7e071-fbfd-46f8-b431-e241bb1513ac",
           "61cdbb28-cbfd-498b-9ab1-1f14337f9524",
@@ -574,7 +705,12 @@
           "Utilities"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "5b4ee3ea-eee3-4c8e-8323-85ae32658754",
+          "type": "similar"
+        }
+      ],
       "uuid": "5b1a5b9e-4722-41fc-a15d-196a549e3ac5",
       "value": "APT28"
     },
@@ -664,7 +800,12 @@
           "Video Games"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "b2056ff0-00b9-482e-b11c-c771daa5f28a",
+          "type": "similar"
+        }
+      ],
       "uuid": "4c3e48b9-4426-4271-a7af-c3dfad79f447",
       "value": "APT29"
     },
@@ -723,7 +864,12 @@
           "Media"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "2f1fd017-9df6-4759-91fb-e7039609b5ff",
+          "type": "similar"
+        }
+      ],
       "uuid": "be45ff95-6c74-4000-bc39-63044673d82f",
       "value": "APT30"
     },
@@ -761,7 +907,12 @@
           "Technology"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "aa29ae56-e54b-47a2-ad16-d3ab0242d5d7",
+          "type": "similar"
+        }
+      ],
       "uuid": "c0fe9859-e8de-4ce1-bc3c-b489e914a145",
       "value": "APT32"
     },
@@ -783,12 +934,21 @@
           "Cyber Espionage"
         ],
         "source": "MITRE",
+        "tags": [
+          "c9c73000-30a5-4a16-8c8b-79169f9c24aa",
+          "3ed3f7a6-b446-4fbc-a433-ff1d63c0e647"
+        ],
         "target_categories": [
           "Aerospace",
           "Energy"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "4f69ec6d-cb6b-42af-b8e2-920a2aa4be10",
+          "type": "similar"
+        }
+      ],
       "uuid": "99bbbe25-45af-492f-a7ff-7cbc57828bac",
       "value": "APT33"
     },
@@ -823,7 +983,12 @@
           "Technology"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "50cd027f-df14-40b2-aa22-bf5de5061163",
+          "type": "similar"
+        }
+      ],
       "uuid": "013fdfdc-aa32-4779-8f6e-7920615cbf66",
       "value": "APT37"
     },
@@ -889,7 +1054,12 @@
           "Media"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "68391641-859f-4a9a-9a1e-3e5cf71ec376",
+          "type": "similar"
+        }
+      ],
       "uuid": "dfbce236-735c-436d-b433-933bd6eae17b",
       "value": "APT38"
     },
@@ -916,7 +1086,12 @@
           "Travel Services"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "c2c64bd3-a325-446f-91a8-b4c0f173a30b",
+          "type": "similar"
+        }
+      ],
       "uuid": "a57b52c7-9f64-4ffe-a7c3-0de738fb2af1",
       "value": "APT39"
     },
@@ -952,6 +1127,7 @@
           "SA",
           "SG",
           "ZA",
+          "ES",
           "SE",
           "CH",
           "TW",
@@ -968,6 +1144,7 @@
         ],
         "source": "MITRE",
         "tags": [
+          "fe28cf32-a15c-44cf-892c-faa0360d6109",
           "f2ae2283-f94d-4f8f-bbde-43f2bed66c55",
           "a98d7a43-f227-478e-81de-e7299639a355"
         ],
@@ -976,20 +1153,76 @@
           "Automotive",
           "Education",
           "Energy",
+          "Entertainment",
           "Financial Services",
           "Healthcare",
           "High Tech",
           "Media",
           "Pharmaceuticals",
           "Retail",
+          "Technology",
           "Telecommunications",
+          "Transportation",
           "Travel Services",
           "Video Games"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "9c124874-042d-48cd-b72b-ccdc51ecbbd6",
+          "type": "similar"
+        }
+      ],
       "uuid": "502223ee-8947-42f8-a532-a3b3da12b7d9",
       "value": "APT41"
+    },
+    {
+      "description": "APT42 is an Iranian state-sponsored espionage group believed to operate on behalf of the Islamic Revolutionary Guard Corps (IRGC) Intelligence Organization (IRGC-IO). APT42 primarily focuses on collecting information on and surveilling its targets, mainly individuals and organizations with strategic significance to Iran's government. The group's operations are characterized by targeted spear-phishing attacks and surveillance activity. Mandiant researchers acknowledged overlaps between APT42 and APT35, which both likely operate on behalf of the IRGC, but noted that the groups display \"substantial differences\" in targeting patterns and TTPs.<sup>[[Mandiant Crooked Charms August 12 2022](/references/53bab956-be5b-4d8d-b553-9926bc5d9fee)]</sup>",
+      "meta": {
+        "country": "IR",
+        "group_attack_id": "G5051",
+        "observed_countries": [
+          "AU",
+          "BG",
+          "DE",
+          "IR",
+          "IL",
+          "IT",
+          "MY",
+          "NO",
+          "UA",
+          "AE",
+          "GB",
+          "US"
+        ],
+        "observed_motivations": [
+          "Cyber Espionage"
+        ],
+        "owner": "TidalCyberIan",
+        "source": "Tidal Cyber",
+        "tags": [
+          "15f2277a-a17e-4d85-8acd-480bf84f16b4",
+          "c6e1f516-1a18-4ff9-b563-e6ac8103b104",
+          "2feda37d-5579-4102-a073-aa02e82cb49f"
+        ],
+        "target_categories": [
+          "Defense",
+          "Education",
+          "Energy",
+          "Financial Services",
+          "Government",
+          "Healthcare",
+          "Human Rights",
+          "Legal",
+          "Manufacturing",
+          "Media",
+          "NGOs",
+          "Pharmaceuticals"
+        ]
+      },
+      "related": [],
+      "uuid": "ce126445-6984-45bb-9737-35448f06f27b",
+      "value": "APT42"
     },
     {
       "description": "[APT5](https://app.tidalcyber.com/groups/f46d6ee9-9d1d-586a-9f2d-6bff8fb92910) is a China-based espionage actor that has been active since at least 2007 primarily targeting the telecommunications, aerospace, and defense industries throughout the U.S., Europe, and Asia. [APT5](https://app.tidalcyber.com/groups/f46d6ee9-9d1d-586a-9f2d-6bff8fb92910) has displayed advanced tradecraft and significant interest in compromising networking devices and their underlying software including through the use of zero-day exploits.<sup>[[NSA APT5 Citrix Threat Hunting December 2022](https://app.tidalcyber.com/references/916e2137-46e6-53c2-a917-5b5b5c4bae3a)]</sup><sup>[[Microsoft East Asia Threats September 2023](https://app.tidalcyber.com/references/31f2c61e-cefe-5df7-9c2b-780bf03c88ec)]</sup><sup>[[Mandiant Pulse Secure Zero-Day April 2021](https://app.tidalcyber.com/references/0760480c-97be-5fc9-a6aa-f1df91a314a3)]</sup><sup>[[Mandiant Pulse Secure Update May 2021](https://app.tidalcyber.com/references/5620adaf-c2a7-5f0f-ae70-554ce720426e)]</sup><sup>[[FireEye Southeast Asia Threat Landscape March 2015](https://app.tidalcyber.com/references/59658f8b-af24-5df5-8f7d-cb6b9cf7579e)]</sup><sup>[[Mandiant Advanced Persistent Threats](https://app.tidalcyber.com/references/2d16615b-09fc-5925-8f59-6d20f334d236)]</sup>  ",
@@ -1094,7 +1327,12 @@
           "Telecommunications"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "99e30d89-9361-4b73-a999-9e5ff9320bcb",
+          "type": "similar"
+        }
+      ],
       "uuid": "90f4d3f9-3fe3-4a64-8dc1-172c6d037dca",
       "value": "Axiom"
     },
@@ -1152,6 +1390,9 @@
         "owner": "TidalCyberIan",
         "source": "Tidal Cyber",
         "tags": [
+          "64d3f7d8-30b7-4b03-bee2-a6029672216c",
+          "3ed2343c-a29c-42e2-8259-410381164c6a",
+          "89c5b94b-ecf4-4d53-9b74-3465086d4565",
           "35e694ec-5133-46e3-b7e1-5831867c3b55",
           "15787198-6c8b-4f79-bf50-258d55072fee",
           "d713747c-2d53-487e-9dac-259230f04460",
@@ -1185,6 +1426,9 @@
       "description": "[BITTER](https://app.tidalcyber.com/groups/3a02aa1b-851a-43e1-b83b-58037f3c7025) is a suspected South Asian cyber espionage threat group that has been active since at least 2013. [BITTER](https://app.tidalcyber.com/groups/3a02aa1b-851a-43e1-b83b-58037f3c7025) has targeted government, energy, and engineering organizations in Pakistan, China, Bangladesh, and Saudi Arabia.<sup>[[Cisco Talos Bitter Bangladesh May 2022](https://app.tidalcyber.com/references/097583ed-03b0-41cd-bf85-66d473f46439)]</sup><sup>[[Forcepoint BITTER Pakistan Oct 2016](https://app.tidalcyber.com/references/9fc54fb0-b7d9-49dc-b6dd-ab4cb2cd34fa)]</sup>",
       "meta": {
         "group_attack_id": "G1002",
+        "observed_motivations": [
+          "Cyber Espionage"
+        ],
         "source": "MITRE"
       },
       "related": [],
@@ -1245,6 +1489,7 @@
         "owner": "TidalCyberIan",
         "source": "Tidal Cyber",
         "tags": [
+          "89c5b94b-ecf4-4d53-9b74-3465086d4565",
           "d903e38b-600d-4736-9e3b-cf1a6e436481",
           "e551ae97-d1b4-484e-9267-89f33829ec2c",
           "d819ae1a-e385-49fd-88d5-f66660729ecb",
@@ -1327,6 +1572,7 @@
         "owner": "TidalCyberIan",
         "source": "Tidal Cyber",
         "tags": [
+          "c475ad68-3fdc-4725-8abc-784c56125e96",
           "562e535e-19f5-4d6c-81ed-ce2aec544f09",
           "e499005b-adba-45bb-85e3-07043fd9edf9",
           "8b1cb0dc-dd3e-44ba-828c-55c040e93b93",
@@ -1393,9 +1639,67 @@
         ],
         "source": "MITRE"
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "8fbd195f-5e03-4e85-8ca5-4f1dff300bec",
+          "type": "similar"
+        }
+      ],
       "uuid": "428dc121-a593-4981-9127-f958ae0a0fdd",
       "value": "BlackOasis"
+    },
+    {
+      "description": "This object reflects the ATT&CK Techniques associated with threat actors who deploy BlackSuit, a ransomware capable of running on Windows and Linux systems. BlackSuit is believed to be a successor to Royal, a ransomware operation which itself derives from the notorious Russia-based Conti gang. BlackSuit operations were first observed in May 2023, and although they were relatively low in number, U.S. authorities issued a warning for healthcare sector organizations due to the ransomware's suspected pedigree.<sup>[[HC3 Analyst Note BlackSuit Ransomware November 2023](/references/d956f0c6-d90e-49e8-a64c-a46bfc177cc6)]</sup> The number of attacks claimed by BlackSuit operators increased notably in Q2 2024.<sup>[[GitHub ransomwatch](/references/62037959-58e4-475a-bb91-ff360d20c1d7)]</sup>\n\nATT&CK Techniques associated with the BlackSuit ransomware binary are tracked in a separate \"BlackSuit  Ransomware\" Software object.",
+      "meta": {
+        "group_attack_id": "G5048",
+        "observed_countries": [
+          "AU",
+          "BR",
+          "CA",
+          "CN",
+          "DE",
+          "IL",
+          "IT",
+          "JM",
+          "JP",
+          "KR",
+          "NL",
+          "NG",
+          "ZA",
+          "GB",
+          "US"
+        ],
+        "observed_motivations": [
+          "Financial Gain"
+        ],
+        "owner": "TidalCyberIan",
+        "source": "Tidal Cyber",
+        "tags": [
+          "e551ae97-d1b4-484e-9267-89f33829ec2c",
+          "15787198-6c8b-4f79-bf50-258d55072fee",
+          "a2e000da-8181-4327-bacd-32013dbd3654",
+          "5e7433ad-a894-4489-93bc-41e90da90019",
+          "7e7b0c67-bb85-4996-a289-da0e792d7172"
+        ],
+        "target_categories": [
+          "Automotive",
+          "Construction",
+          "Education",
+          "Financial Services",
+          "Government",
+          "Healthcare",
+          "Hospitality Leisure",
+          "Mining",
+          "Non Profit",
+          "Pharmaceuticals",
+          "Technology",
+          "Telecommunications",
+          "Transportation"
+        ]
+      },
+      "related": [],
+      "uuid": "1d751794-ce94-4936-bf45-4ab86d0e3b6e",
+      "value": "BlackSuit Ransomware Actors"
     },
     {
       "description": "[BlackTech](https://app.tidalcyber.com/groups/528ab2ea-b8f1-44d8-8831-2a89fefd97cb) is a suspected Chinese cyber espionage group that has primarily targeted organizations in East Asia--particularly Taiwan, Japan, and Hong Kong--and the US since at least 2013. [BlackTech](https://app.tidalcyber.com/groups/528ab2ea-b8f1-44d8-8831-2a89fefd97cb) has used a combination of custom malware, dual-use tools, and living off the land tactics to compromise media, construction, engineering, electronics, and financial company networks.<sup>[[TrendMicro BlackTech June 2017](https://app.tidalcyber.com/references/abb9cb19-d30e-4048-b106-eb29a6dad7fc)]</sup><sup>[[Symantec Palmerworm Sep 2020](https://app.tidalcyber.com/references/84ecd475-8d3f-4e7c-afa8-2dff6078bed5)]</sup><sup>[[Reuters Taiwan BlackTech August 2020](https://app.tidalcyber.com/references/77293f88-e336-4786-b042-7f0080bbff32)]</sup>",
@@ -1427,7 +1731,12 @@
           "Telecommunications"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "320c42f7-eab7-4ef9-b09a-74396caa6c3e",
+          "type": "similar"
+        }
+      ],
       "uuid": "528ab2ea-b8f1-44d8-8831-2a89fefd97cb",
       "value": "BlackTech"
     },
@@ -1471,9 +1780,62 @@
           "Manufacturing"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "add6554a-815a-4ac3-9b22-9337b9661ab8",
+          "type": "similar"
+        }
+      ],
       "uuid": "5825a840-5577-4ffc-a08d-3f48d64395cb",
       "value": "BRONZE BUTLER"
+    },
+    {
+      "description": "This Group object reflects the tools & TTPs observed in use by threat actors known to deploy CACTUS, a ransomware that researchers believe has been used since at least March 2023.<sup>[[Kroll CACTUS Ransomware May 10 2023](/references/f50de2f6-465f-4cae-a79c-cc135ebfee4f)]</sup> Specific pre- and post-exploit behaviors may vary among intrusions carried out by distinct actors or actor clusters. TTPs associated with the CACTUS ransomware binary itself can be found in the separate dedicated Software object.",
+      "meta": {
+        "group_attack_id": "G5035",
+        "observed_countries": [
+          "AU",
+          "BE",
+          "CA",
+          "DK",
+          "FR",
+          "DE",
+          "IT",
+          "MX",
+          "RO",
+          "ES",
+          "SE",
+          "GB",
+          "US"
+        ],
+        "observed_motivations": [
+          "Financial Gain"
+        ],
+        "owner": "TidalCyberIan",
+        "source": "Tidal Cyber",
+        "tags": [
+          "c6e1f516-1a18-4ff9-b563-e6ac8103b104",
+          "3b615816-3403-46a4-bd7e-f7a723fc56da",
+          "a2e000da-8181-4327-bacd-32013dbd3654",
+          "562e535e-19f5-4d6c-81ed-ce2aec544f09",
+          "5e7433ad-a894-4489-93bc-41e90da90019",
+          "7e7b0c67-bb85-4996-a289-da0e792d7172",
+          "2feda37d-5579-4102-a073-aa02e82cb49f"
+        ],
+        "target_categories": [
+          "Automotive",
+          "Construction",
+          "Healthcare",
+          "Hospitality Leisure",
+          "Media",
+          "Mining",
+          "Retail",
+          "Technology"
+        ]
+      },
+      "related": [],
+      "uuid": "fac6fbf1-935f-4106-ad8b-c8fd8389dd38",
+      "value": "CACTUS Ransomware Actors"
     },
     {
       "description": "[Carbanak](https://app.tidalcyber.com/groups/72d9bea7-9ca1-43e6-8702-2fb7fb1355de) is a cybercriminal group that has used [Carbanak](https://app.tidalcyber.com/software/4cb9294b-9e4c-41b9-b640-46213a01952d) malware to target financial institutions since at least 2013. [Carbanak](https://app.tidalcyber.com/groups/72d9bea7-9ca1-43e6-8702-2fb7fb1355de) may be linked to groups tracked separately as [Cobalt Group](https://app.tidalcyber.com/groups/58db02e6-d908-47c2-bc82-ed58ada61331) and [FIN7](https://app.tidalcyber.com/groups/4348c510-50fc-4448-ab8d-c8cededd19ff) that have also used [Carbanak](https://app.tidalcyber.com/software/4cb9294b-9e4c-41b9-b640-46213a01952d) malware.<sup>[[Kaspersky Carbanak](https://app.tidalcyber.com/references/2f7e77db-fe39-4004-9945-3c8943708494)]</sup><sup>[[FireEye FIN7 April 2017](https://app.tidalcyber.com/references/6ee27fdb-1753-4fdf-af72-3295b072ff10)]</sup><sup>[[Europol Cobalt Mar 2018](https://app.tidalcyber.com/references/f9d1f2ab-9e75-48ce-bcdf-b7119687feef)]</sup><sup>[[Secureworks GOLD NIAGARA Threat Profile](https://app.tidalcyber.com/references/b11276cb-f6dd-4e91-90cd-9c287fb3e6b1)]</sup><sup>[[Secureworks GOLD KINGSWOOD Threat Profile](https://app.tidalcyber.com/references/36035bbb-1609-4461-be27-ef4a920b814c)]</sup>",
@@ -1515,7 +1877,12 @@
           "Financial Services"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "00220228-a5a4-4032-a30d-826bb55aa3fb",
+          "type": "similar"
+        }
+      ],
       "uuid": "72d9bea7-9ca1-43e6-8702-2fb7fb1355de",
       "value": "Carbanak"
     },
@@ -1585,7 +1952,12 @@
           "Telecommunications"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "86724806-7ec9-4a48-a0a7-ecbde3bf4810",
+          "type": "similar"
+        }
+      ],
       "uuid": "c8cc6ce8-d421-42e6-a6eb-2ea9d2d9ab07",
       "value": "Cleaver"
     },
@@ -1621,7 +1993,12 @@
           "Financial Services"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "01967480-c49b-4d4a-a7fa-aef0eaf535fe",
+          "type": "similar"
+        }
+      ],
       "uuid": "58db02e6-d908-47c2-bc82-ed58ada61331",
       "value": "Cobalt Group"
     },
@@ -1669,9 +2046,35 @@
           "Technology"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "8cca9a1d-66e4-4bc4-ad49-95f759f4c1ae",
+          "type": "similar"
+        }
+      ],
       "uuid": "6a8f5eca-8ecc-4bff-9c5f-5380e044ed5b",
       "value": "CopyKittens"
+    },
+    {
+      "description": "A Group object to represent actors that deploy Cuba Ransomware in victim environments.<sup>[[U.S. CISA Cuba Ransomware October 2022](/references/d6ed5172-a319-45b0-b1cb-d270a2a48fa3)]</sup>",
+      "meta": {
+        "group_attack_id": "G5026",
+        "observed_motivations": [
+          "Financial Gain"
+        ],
+        "owner": "TidalCyberIan",
+        "source": "Tidal Cyber",
+        "tags": [
+          "c6e1f516-1a18-4ff9-b563-e6ac8103b104",
+          "562e535e-19f5-4d6c-81ed-ce2aec544f09",
+          "5e7433ad-a894-4489-93bc-41e90da90019",
+          "7e7b0c67-bb85-4996-a289-da0e792d7172",
+          "2feda37d-5579-4102-a073-aa02e82cb49f"
+        ]
+      },
+      "related": [],
+      "uuid": "5216ac81-da4c-4b87-86ce-b90a651f1048",
+      "value": "Cuba Ransomware Actors"
     },
     {
       "description": "[CURIUM](https://app.tidalcyber.com/groups/ab15a328-c41e-5701-993f-3cab29ac4544) is an Iranian threat group first reported in November 2021 that has invested in building a relationship with potential targets via social media over a period of months to establish trust and confidence before sending malware. Security researchers note [CURIUM](https://app.tidalcyber.com/groups/ab15a328-c41e-5701-993f-3cab29ac4544) has demonstrated great patience and persistence by chatting with potential targets daily and sending benign files to help lower their security consciousness.<sup>[[Microsoft Iranian Threat Actor Trends November 2021](https://app.tidalcyber.com/references/78d39ee7-1cd5-5cb8-844a-1c3649e367a1)]</sup>",
@@ -1682,6 +2085,40 @@
       "related": [],
       "uuid": "ab15a328-c41e-5701-993f-3cab29ac4544",
       "value": "CURIUM"
+    },
+    {
+      "description": "The Cyber Army of Russia is a threat group that appears to carry out cyber attacks in line with Russian strategic interests. The group has claimed many distributed denial of service (DDoS) attacks against a variety of targets perceived as opposed to Russian interests. More recently, it has claimed disruptive industrial software-based attacks against water utilities in the United States, France, and Poland. Researchers link the Cyber Army of Russia to APT44 / Sandworm Team, although it remains unclear what level of direct support, if any, is provided by the latter group.<sup>[[Wired Cyber Army of Russia April 17 2024](/references/53583baf-4e09-4d19-9348-6110206b88be)]</sup><sup>[[Mandiant APT44 April 17 2024](/references/a64f689e-2bb4-4253-86cd-545e7f633a7e)]</sup>",
+      "meta": {
+        "country": "RU",
+        "group_attack_id": "G5038",
+        "observed_countries": [
+          "FR",
+          "PL",
+          "UA",
+          "US"
+        ],
+        "observed_motivations": [
+          "Destruction"
+        ],
+        "owner": "TidalCyberIan",
+        "source": "Tidal Cyber",
+        "tags": [
+          "c6e1f516-1a18-4ff9-b563-e6ac8103b104",
+          "3ed3f7a6-b446-4fbc-a433-ff1d63c0e647",
+          "2feda37d-5579-4102-a073-aa02e82cb49f"
+        ],
+        "target_categories": [
+          "Aerospace",
+          "Government",
+          "Media",
+          "Nuclear",
+          "Utilities",
+          "Water"
+        ]
+      },
+      "related": [],
+      "uuid": "411e005e-95a4-4805-8296-0accf902d08d",
+      "value": "Cyber Army of Russia"
     },
     {
       "description": "CyberAv3ngers is a cyber actor group that has claimed responsibility for numerous disruption-focused attacks against critical infrastructure organizations, including an oil refinery and electric utility in Israel and water/wastewater utilities in the United States. According to a joint advisory released by U.S. & Israeli cybersecurity authorities in December 2023, CyberAv3ngers (aka Cyber Av3ngers or Cyber Avengers) is a “cyber persona” of advanced persistent threat actors affiliated with the Iranian Islamic Revolutionary Guard Corps (IRGC). The advisory detailed how suspected CyberAv3ngers actors compromised programmable logic controller (PLC) devices that were exposed to the internet and used the vendor's default passwords and ports, leaving defacement images and possibly rendering the devices inoperable. The defacement messages suggested that the group or affiliates might carry out attacks against other technological equipment produced in or associated with Israel.<sup>[[U.S. CISA IRGC-Affiliated PLC Activity December 2023](/references/51a18523-5276-4a67-8644-2bc6997d043c)]</sup>",
@@ -1698,17 +2135,48 @@
         "owner": "TidalCyberIan",
         "source": "Tidal Cyber",
         "tags": [
+          "3ed3f7a6-b446-4fbc-a433-ff1d63c0e647",
           "841ce707-a678-4bcf-86ff-7feeacd37e55",
           "15787198-6c8b-4f79-bf50-258d55072fee"
         ],
         "target_categories": [
           "Energy",
-          "Utilities"
+          "Utilities",
+          "Water"
         ]
       },
       "related": [],
       "uuid": "44a9c8ac-c287-45d2-9ebc-2c8a7d0a1f57",
       "value": "CyberAv3ngers"
+    },
+    {
+      "description": "Cyber Toufan is an apparently politically motivated, destruction-focused threat actor group that has predominantly targeted organizations based in or perceived to be aligned with Israel. Cyber Toufan publicizes many of their cyber operations and in some cases has leaked victim data allegedly exfiltrated during their attacks.<sup>[[SOCRadar Cyber Toufan Profile](/references/a9aa6361-8c4d-4456-bb3f-c64ca5260695)]</sup> Check Point researchers labeled Cyber Toufan as an \"Iranian-affiliated\", \"hacktivist proxy\" group.<sup>[[Check Point Iranian Proxies December 4 2023](/references/60432d84-8f46-4934-951f-df8e0f297ff0)]</sup>",
+      "meta": {
+        "group_attack_id": "G5049",
+        "observed_countries": [
+          "IL",
+          "GB",
+          "US"
+        ],
+        "observed_motivations": [
+          "Destruction"
+        ],
+        "owner": "TidalCyberIan",
+        "source": "Tidal Cyber",
+        "target_categories": [
+          "Automotive",
+          "Government",
+          "High Tech",
+          "Manufacturing",
+          "Retail",
+          "Technology",
+          "Utilities",
+          "Water"
+        ]
+      },
+      "related": [],
+      "uuid": "42a7c134-c574-430b-8105-bf7a00e742ae",
+      "value": "Cyber Toufan"
     },
     {
       "description": "Daixin Team is a ransomware- and data extortion-focused threat group first observed in mid-2022. Daixin Team is known to publicly extort its victims to pressure them into paying a ransom. It has used ransomware (believed to be based on the leaked source code for Babuk Locker) to encrypt victim data and has also exfiltrated sensitive data from victim environments and threatened to publicly leak that data.\n\nMany of Daixin Team’s victims belong to critical infrastructure sectors, especially the Healthcare and Public Health (“HPH”) sector. An October 2022 joint Cybersecurity Advisory noted Daixin Team attacks on multiple U.S. HPH organizations.<sup>[[U.S. CISA Daixin Team October 2022](/references/cbf5ecfb-de79-41cc-8250-01790ff6e89b)]</sup> Alleged victims referenced on the threat group’s extortion website belong to the healthcare, utilities, transportation (airline), automobile manufacturing, information technology, retail, and media sectors in the United States, Europe, and Asia.<sup>[[GitHub ransomwatch](/references/62037959-58e4-475a-bb91-ff360d20c1d7)]</sup>",
@@ -1780,7 +2248,12 @@
         ],
         "source": "MITRE"
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "3d449c83-4426-431a-b06a-cb4f8a0fca94",
+          "type": "similar"
+        }
+      ],
       "uuid": "7ad94dbf-9909-42dd-8b62-a435481bdb14",
       "value": "Dark Caracal"
     },
@@ -1814,7 +2287,12 @@
           "Non Profit"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "b8c8b96d-61e6-47b1-8e38-fd8ad5d9854d",
+          "type": "similar"
+        }
+      ],
       "uuid": "efa1d922-8f48-43a6-89fe-237e1f3812c8",
       "value": "Darkhotel"
     },
@@ -1828,7 +2306,12 @@
           "Government"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "ce2c2dfd-2445-4fbc-a747-9e7092e383f9",
+          "type": "similar"
+        }
+      ],
       "uuid": "f2b31240-0b4a-4fa4-82a4-6bb00e146e75",
       "value": "DarkHydrus"
     },
@@ -1879,7 +2362,12 @@
           "Telecommunications"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "066d25c1-71bd-4bd4-8ca7-edbba00063f4",
+          "type": "similar"
+        }
+      ],
       "uuid": "43f826a1-e8c8-47b8-9b00-38e1b3e4293b",
       "value": "Deep Panda"
     },
@@ -1910,6 +2398,7 @@
         ],
         "source": "MITRE",
         "tags": [
+          "3ed3f7a6-b446-4fbc-a433-ff1d63c0e647",
           "f2ae2283-f94d-4f8f-bbde-43f2bed66c55"
         ],
         "target_categories": [
@@ -1918,7 +2407,12 @@
           "Travel Services"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "64d6559c-6d5c-4585-bbf9-c17868f763ee",
+          "type": "similar"
+        }
+      ],
       "uuid": "472080b0-e3d4-4546-9272-c4359fe856e1",
       "value": "Dragonfly"
     },
@@ -1939,7 +2433,12 @@
           "Technology"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "a9b44750-992c-4743-8922-129880d277ea",
+          "type": "similar"
+        }
+      ],
       "uuid": "f2c2db08-624c-46b9-b7ed-b22c21b81813",
       "value": "DragonOK"
     },
@@ -1980,9 +2479,40 @@
           "Technology"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "da754aeb-a86d-4874-b388-d1d2028a56be",
+          "type": "similar"
+        }
+      ],
       "uuid": "51146bb6-7478-44a3-8f08-19adcdceffca",
       "value": "Elderwood"
+    },
+    {
+      "description": "This object reflects the ATT&CK Techniques associated with threat actors who deploy Eldorado, a ransomware-as-a-service (\"RaaS\") first advertised for sale on cybercrime forums in March 2024. Researchers assess that Eldorado is a \"unique\" ransomware strain that is likely not derived from previously leaked ransomware source code.<sup>[[Group-IB July 3 2024](/references/50148a85-314c-4b29-bdfc-913ab647dadf)]</sup>\n\nWindows and Linux-focused versions of the ransomware are known to exist. (ATT&CK Techniques associated with these malware binaries are tracked in a separate \"Eldorado  Ransomware\" Software object.)",
+      "meta": {
+        "group_attack_id": "G5046",
+        "observed_motivations": [
+          "Financial Gain"
+        ],
+        "owner": "TidalCyberIan",
+        "source": "Tidal Cyber",
+        "tags": [
+          "a2e000da-8181-4327-bacd-32013dbd3654",
+          "5e7433ad-a894-4489-93bc-41e90da90019",
+          "562e535e-19f5-4d6c-81ed-ce2aec544f09",
+          "7e7b0c67-bb85-4996-a289-da0e792d7172",
+          "c6e1f516-1a18-4ff9-b563-e6ac8103b104",
+          "2feda37d-5579-4102-a073-aa02e82cb49f"
+        ],
+        "target_categories": [
+          "Education",
+          "Healthcare"
+        ]
+      },
+      "related": [],
+      "uuid": "26e1c52e-0c48-4cd0-bdc5-9cf981a6e714",
+      "value": "Eldorado Ransomware Operators"
     },
     {
       "description": "[Ember Bear](https://app.tidalcyber.com/groups/407274be-1820-4a84-939e-629313f4de1d) is a suspected Russian state-sponsored cyber espionage group that has been active since at least March 2021. [Ember Bear](https://app.tidalcyber.com/groups/407274be-1820-4a84-939e-629313f4de1d) has primarily focused their operations against Ukraine and Georgia, but has also targeted Western European and North American foreign ministries, pharmaceutical companies, and financial sector organizations. Security researchers assess [Ember Bear](https://app.tidalcyber.com/groups/407274be-1820-4a84-939e-629313f4de1d) likely conducted the [WhisperGate](https://app.tidalcyber.com/software/791f0afd-c2c4-4e23-8aee-1d14462667f5) destructive wiper attacks against Ukraine in early 2022.<sup>[[CrowdStrike Ember Bear Profile March 2022](https://app.tidalcyber.com/references/0639c340-b495-4d91-8418-3069f3fe0df1)]</sup><sup>[[Mandiant UNC2589 March 2022](https://app.tidalcyber.com/references/63d89139-9dd4-4ed6-bf6e-8cd872c5d034)]</sup><sup>[[Palo Alto Unit 42 OutSteel SaintBot February 2022 ](https://app.tidalcyber.com/references/b0632490-76be-4018-982d-4b73b3d13881)]</sup> ",
@@ -2046,7 +2576,12 @@
           "Telecommunications"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "7036fb3d-86b7-4d9c-bc66-1e1ead8b7840",
+          "type": "similar"
+        }
+      ],
       "uuid": "a4704485-65b5-49ec-bebe-5cc932362dd2",
       "value": "Equation"
     },
@@ -2116,9 +2651,47 @@
           "Mining"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "f2d02410-8c2c-11e9-8df1-a31c1fb33d79",
+          "type": "similar"
+        }
+      ],
       "uuid": "345e553a-164d-4c9d-8bf9-19fcf8a51533",
       "value": "FIN10"
+    },
+    {
+      "description": "FIN11 is a financially motivated adversary identified by Mandiant in 2020. Originally known for high-volume phishing campaigns leading to ransomware and data theft, the group more recently is known for carrying out wide-ranging exploitation of multiple vulnerabilities in 2023, including vulnerabilities affecting PaperCut print management software and MOVEit Transfer file transfer software to deliver Clop ransomware and for more general data theft, respectively, as well as GoAnywhere file transfer software exploits.<sup>[[Microsoft Threat Intelligence Tweet April 26 2023](/references/3b5a2349-e10c-422b-91e3-20e9033fdb60)]</sup><sup>[[Mandiant MOVEit Transfer June 2 2023](/references/232c7555-0483-4a57-88cb-71a990f7d683)]</sup>. Microsoft Threat Intelligence reports overlaps between FIN11 and Lace Tempest (DEV-0950), which it identifies as a Clop ransomware affiliate. The DFIR Report researchers attributed a May 2023 data theft and wiper campaign to FIN11 and Lace Tempest.<sup>[[The DFIR Report Truebot June 12 2023](/references/a6311a66-bb36-4cad-a98f-2b0b89aafa3d)]</sup>",
+      "meta": {
+        "group_attack_id": "G5028",
+        "observed_countries": [
+          "CA",
+          "IN",
+          "US"
+        ],
+        "observed_motivations": [
+          "Financial Gain"
+        ],
+        "owner": "TidalCyberIan",
+        "source": "Tidal Cyber",
+        "tags": [
+          "c6e1f516-1a18-4ff9-b563-e6ac8103b104",
+          "173e1480-8d9b-49c5-854d-594dde9740d6",
+          "1b5da77a-bf84-4fba-a6d7-8b3b8f7699e0",
+          "992bdd33-4a47-495d-883a-58010a2f0efb",
+          "5e7433ad-a894-4489-93bc-41e90da90019",
+          "7e7b0c67-bb85-4996-a289-da0e792d7172",
+          "2feda37d-5579-4102-a073-aa02e82cb49f"
+        ],
+        "target_categories": [
+          "Financial Services",
+          "Hospitality Leisure",
+          "Retail"
+        ]
+      },
+      "related": [],
+      "uuid": "ecdbd431-d62b-4b30-8663-b1ecb4304ec0",
+      "value": "FIN11"
     },
     {
       "description": "FIN12 is a financially motivated threat actor group believed to be responsible for multiple high-profile ransomware attacks since 2018. The group has attacked victims in various sectors and locations, including multiple attacks on healthcare entities. An October 2021 Mandiant assessment indicated 85% of the group's victims were U.S.-based, and the large majority of them were large enterprises with more than $300 million in annual revenue. The report also assessed that initial access brokers partnering with FIN12 target a wider range of organizations and allow FIN12 actors to select victims for further malicious activity.<sup>[[Mandiant FIN12 Group Profile October 07 2021](/references/7af84b3d-bbd6-449f-b29b-2f14591c9f05)]</sup>\n\nFIN12's toolset has reportedly shifted over time. Cobalt Strike has been observed in most intrusions. While TrickBot and Empire were common post-exploitation tools historically, French authorities observed the group using SystemBC alongside Cobalt Strike during a March 2023 hospital center intrusion. Ryuk, and to a lesser degree Conti, were traditionally used ransomware payloads, with the former used in a series of attacks on U.S. healthcare entities in 2020. However, a French CERT assessment published in 2023 linked the group to multiple more recent incidents it investigated and analyzed, which featured deployment of various ransomware families, including Hive, Nokoyawa, Play, Royal, and BlackCat, along with Emotet and BazarLoader malware for initial footholds.<sup>[[Mandiant FIN12 Group Profile October 07 2021](/references/7af84b3d-bbd6-449f-b29b-2f14591c9f05)]</sup><sup>[[CERTFR-2023-CTI-007](/references/0f4a03c5-79b3-418e-a77d-305d5a32caca)]</sup>\n\n**Related Vulnerabilities**: CVE-2023-21746, CVE-2022-24521, CVE-2021-34527, CVE-2019-0708, CVE-2020-1472<sup>[[CERTFR-2023-CTI-007](/references/0f4a03c5-79b3-418e-a77d-305d5a32caca)]</sup>",
@@ -2144,6 +2717,7 @@
         "owner": "TidalCyberIan",
         "source": "Tidal Cyber",
         "tags": [
+          "89c5b94b-ecf4-4d53-9b74-3465086d4565",
           "2743d495-7728-4a75-9e5f-b64854039792",
           "ecd84106-2a5b-4d25-854e-b8d1f57f6b75",
           "a6ba64e1-4b4a-4bbd-a26d-ce35c22b2530",
@@ -2199,7 +2773,12 @@
           "Pharmaceuticals"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "ff449346-aa9f-45f6-b482-71e886a5cf57",
+          "type": "similar"
+        }
+      ],
       "uuid": "4b6531dc-5b29-4577-8b54-fa99229ab0ca",
       "value": "FIN4"
     },
@@ -2216,7 +2795,12 @@
           "Hospitality Leisure"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "44dc2f9c-8c28-11e9-9b9a-7fdced8cbf70",
+          "type": "similar"
+        }
+      ],
       "uuid": "7902f5cc-d6a5-4a57-8d54-4c75e0c58b83",
       "value": "FIN5"
     },
@@ -2237,7 +2821,12 @@
           "Retail"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "647894f6-1723-4cba-aba4-0ef0966d5302",
+          "type": "similar"
+        }
+      ],
       "uuid": "fcaadc12-7c17-4946-a9dc-976ed610854c",
       "value": "FIN6"
     },
@@ -2291,7 +2880,12 @@
           "Transportation"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "00220228-a5a4-4032-a30d-826bb55aa3fb",
+          "type": "similar"
+        }
+      ],
       "uuid": "4348c510-50fc-4448-ab8d-c8cededd19ff",
       "value": "FIN7"
     },
@@ -2321,9 +2915,42 @@
           "Technology"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "a78ae9fe-71cd-4563-9213-7b6260bd9a73",
+          "type": "similar"
+        }
+      ],
       "uuid": "b3061284-0335-4dcb-9f8e-a3b0412fd46f",
       "value": "FIN8"
+    },
+    {
+      "description": "Researchers assess that Flax Typhoon is a nation-state-sponsored espionage group based in China that has targeted government, education, manufacturing, and IT organizations in Taiwan, elsewhere in Southeast Asia, North America, and Africa. Flax Typhoon is believed to overlap with the ETHEREAL PANDA group and has been active since mid-2021. Flax Typhoon has been seen establishing persistence, moving laterally, and accessing victim credentials after achieving network access, but to date, researchers have not observed the actors acting on final objectives during intrusions. Microsoft researchers assess that Flax Typhoon's techniques, which lean on legitimate, often built-in tools & utilities, could be used in attacks on victims in other regions.<sup>[[Microsoft Flax Typhoon August 24 2023](/references/ec962b72-7b7f-4f7e-b6d6-7c5380b07201)]</sup>",
+      "meta": {
+        "country": "CN",
+        "group_attack_id": "G5031",
+        "observed_countries": [
+          "TW"
+        ],
+        "observed_motivations": [
+          "Cyber Espionage"
+        ],
+        "owner": "TidalCyberIan",
+        "source": "Tidal Cyber",
+        "tags": [
+          "c6e1f516-1a18-4ff9-b563-e6ac8103b104",
+          "2feda37d-5579-4102-a073-aa02e82cb49f"
+        ],
+        "target_categories": [
+          "Education",
+          "Government",
+          "Manufacturing",
+          "Technology"
+        ]
+      },
+      "related": [],
+      "uuid": "b39d8eae-12e3-4903-a387-4c31d16a73b2",
+      "value": "Flax Typhoon"
     },
     {
       "description": "[Fox Kitten](https://app.tidalcyber.com/groups/7094468a-2310-48b5-ad24-e669152bd66d) is threat actor with a suspected nexus to the Iranian government that has been active since at least 2017 against entities in the Middle East, North Africa, Europe, Australia, and North America. [Fox Kitten](https://app.tidalcyber.com/groups/7094468a-2310-48b5-ad24-e669152bd66d) has targeted multiple industrial verticals including oil and gas, technology, government, defense, healthcare, manufacturing, and engineering.<sup>[[ClearkSky Fox Kitten February 2020](https://app.tidalcyber.com/references/a5ad6321-897a-4adc-9cdd-034a2538e3d6)]</sup><sup>[[CrowdStrike PIONEER KITTEN August 2020](https://app.tidalcyber.com/references/4fce29cc-ddab-4b96-b295-83c282a87564)]</sup><sup>[[Dragos PARISITE ](https://app.tidalcyber.com/references/15e974db-51a9-4ec1-9725-cff8bb9bc2fa)]</sup><sup>[[ClearSky Pay2Kitten December 2020](https://app.tidalcyber.com/references/6e09bc1a-8a5d-4512-9176-40eed91af358)]</sup>",
@@ -2350,10 +2977,16 @@
           "US"
         ],
         "observed_motivations": [
-          "Cyber Espionage"
+          "Cyber Espionage",
+          "Financial Gain"
         ],
         "source": "MITRE",
         "tags": [
+          "e551ae97-d1b4-484e-9267-89f33829ec2c",
+          "15787198-6c8b-4f79-bf50-258d55072fee",
+          "9768aada-9d63-4d46-ab9f-d41b8c8e4010",
+          "5e7433ad-a894-4489-93bc-41e90da90019",
+          "7e7b0c67-bb85-4996-a289-da0e792d7172",
           "291c006e-f77a-4c9c-ae7e-084974c0e1eb"
         ],
         "target_categories": [
@@ -2468,7 +3101,12 @@
           "Non Profit"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "1a77e156-76bc-43f5-bdd7-bd67f30fbbbb",
+          "type": "similar"
+        }
+      ],
       "uuid": "41e8b4a4-2d31-46ee-bc56-12375084d067",
       "value": "Gamaredon Group"
     },
@@ -2484,7 +3122,12 @@
           "Financial Services"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "d93889de-b4bc-4a29-9ce7-d67717c140a0",
+          "type": "similar"
+        }
+      ],
       "uuid": "dbc85db0-937d-47d7-9002-7364d41be48a",
       "value": "GCMAN"
     },
@@ -2523,9 +3166,36 @@
           "Government"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "e47c2c4d-706b-4098-92a2-b93e7103e131",
+          "type": "similar"
+        }
+      ],
       "uuid": "efb3b5ac-cd86-44a2-9de1-02e4612b8cc2",
       "value": "Gorgon Group"
+    },
+    {
+      "description": "GreenMwizi is assessed to be an actor based in Nairobi, Kenya that has carried out scam campaigns involving social media bots. A campaign observed in May 2023 appeared to target customers of a major online travel/hospitality booking brand.<sup>[[GreenMwizi - Kenyan scamming campaign using Twitter bots](/references/3b09696a-1345-4283-a59b-e9a13124ef59)]</sup>",
+      "meta": {
+        "group_attack_id": "G5024",
+        "observed_motivations": [
+          "Financial Gain"
+        ],
+        "owner": "TidalCyberIan",
+        "source": "Tidal Cyber",
+        "tags": [
+          "c6e1f516-1a18-4ff9-b563-e6ac8103b104",
+          "2feda37d-5579-4102-a073-aa02e82cb49f"
+        ],
+        "target_categories": [
+          "Hospitality Leisure",
+          "Travel Services"
+        ]
+      },
+      "related": [],
+      "uuid": "7d17fa48-e897-4a0c-8aa5-c7f2b6cd96a0",
+      "value": "GreenMwizi"
     },
     {
       "description": "[Group5](https://app.tidalcyber.com/groups/fcc6d937-8cd6-4f2c-adb8-48caedbde70a) is a threat group with a suspected Iranian nexus, though this attribution is not definite. The group has targeted individuals connected to the Syrian opposition via spearphishing and watering holes, normally using Syrian and Iranian themes. [Group5](https://app.tidalcyber.com/groups/fcc6d937-8cd6-4f2c-adb8-48caedbde70a) has used two commonly available remote access tools (RATs), [njRAT](https://app.tidalcyber.com/software/82996f6f-0575-45cd-8f7c-ba1b063d5b9f) and [NanoCore](https://app.tidalcyber.com/software/db05dbaa-eb3a-4303-b37e-18d67e7e85a1), as well as an Android RAT, DroidJack. <sup>[[Citizen Lab Group5](https://app.tidalcyber.com/references/ffbec5e8-947a-4363-b7e1-812dfd79935a)]</sup>",
@@ -2533,9 +3203,34 @@
         "group_attack_id": "G0043",
         "source": "MITRE"
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "bc8390aa-8c4e-11e9-a9cb-e37c361210af",
+          "type": "similar"
+        }
+      ],
       "uuid": "fcc6d937-8cd6-4f2c-adb8-48caedbde70a",
       "value": "Group5"
+    },
+    {
+      "description": "H0lyGh0st is a North Korea-based ransomware-focused threat actor group.<sup>[[H0lyGh0st - North Korean Threat Group Strikes Back With New Ransomware](/references/3f66ef62-ac0d-4ece-9a4b-917ae70f1617)]</sup>",
+      "meta": {
+        "group_attack_id": "G5025",
+        "observed_motivations": [
+          "Financial Gain"
+        ],
+        "owner": "TidalCyberIan",
+        "source": "Tidal Cyber",
+        "tags": [
+          "c6e1f516-1a18-4ff9-b563-e6ac8103b104",
+          "5e7433ad-a894-4489-93bc-41e90da90019",
+          "7e7b0c67-bb85-4996-a289-da0e792d7172",
+          "2feda37d-5579-4102-a073-aa02e82cb49f"
+        ]
+      },
+      "related": [],
+      "uuid": "cd83ecfb-8e42-4b55-8d1e-fd4dbe4b68cd",
+      "value": "H0lyGh0st Ransomware Group"
     },
     {
       "description": "[HAFNIUM](https://app.tidalcyber.com/groups/1bcc9382-ccfe-4b04-91f3-ef1250df5e5b) is a likely state-sponsored cyber espionage group operating out of China that has been active since at least January 2021. [HAFNIUM](https://app.tidalcyber.com/groups/1bcc9382-ccfe-4b04-91f3-ef1250df5e5b) primarily targets entities in the US across a number of industry sectors, including infectious disease researchers, law firms, higher education institutions, defense contractors, policy think tanks, and NGOs.<sup>[[Microsoft HAFNIUM March 2020](https://app.tidalcyber.com/references/6a986c46-79a3-49c6-94d2-d9b1f5db08f3)]</sup><sup>[[Volexity Exchange Marauder March 2021](https://app.tidalcyber.com/references/ef0626e9-281c-4770-b145-ffe36e18e369)]</sup>",
@@ -2557,7 +3252,12 @@
           "Think Tanks"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "4f05d6c1-3fc1-4567-91cd-dd4637cc38b5",
+          "type": "similar"
+        }
+      ],
       "uuid": "1bcc9382-ccfe-4b04-91f3-ef1250df5e5b",
       "value": "HAFNIUM"
     },
@@ -2565,7 +3265,10 @@
       "description": "[HEXANE](https://app.tidalcyber.com/groups/eecf7289-294f-48dd-a747-7705820f4735) is a cyber espionage threat group that has targeted oil & gas, telecommunications, aviation, and internet service provider organizations since at least 2017. Targeted companies have been located in the Middle East and Africa, including Israel, Saudi Arabia, Kuwait, Morocco, and Tunisia. [HEXANE](https://app.tidalcyber.com/groups/eecf7289-294f-48dd-a747-7705820f4735)'s TTPs appear similar to [APT33](https://app.tidalcyber.com/groups/99bbbe25-45af-492f-a7ff-7cbc57828bac) and [OilRig](https://app.tidalcyber.com/groups/d01abdb1-0378-4654-aa38-1a4a292703e2) but due to differences in victims and tools it is tracked as a separate entity.<sup>[[Dragos Hexane](https://app.tidalcyber.com/references/11838e67-5032-4352-ad1f-81ba0398a14f)]</sup><sup>[[Kaspersky Lyceum October 2021](https://app.tidalcyber.com/references/b3d13a82-c24e-4b47-b47a-7221ad449859)]</sup><sup>[[ClearSky Siamesekitten August 2021](https://app.tidalcyber.com/references/9485efce-8d54-4461-b64e-0d15e31fbf8c)]</sup><sup>[[Accenture Lyceum Targets November 2021](https://app.tidalcyber.com/references/127836ce-e459-405d-a75c-32fd5f0ab198)]</sup>",
       "meta": {
         "group_attack_id": "G1001",
-        "source": "MITRE"
+        "source": "MITRE",
+        "tags": [
+          "3ed3f7a6-b446-4fbc-a433-ff1d63c0e647"
+        ]
       },
       "related": [],
       "uuid": "eecf7289-294f-48dd-a747-7705820f4735",
@@ -2591,6 +3294,49 @@
       "related": [],
       "uuid": "f1477581-d485-403f-a95f-c56bf88c5d1e",
       "value": "Higaisa"
+    },
+    {
+      "description": "This Group object reflects the tools & TTPs associated with threat actors known to deploy Hive, a ransomware-as-a-service (RaaS) variant first observed in June 2021.<sup>[[U.S. CISA Hive November 25 2022](/references/fce322e6-5e23-404a-acf8-cd003f00c79d)]</sup> Specific pre- and post-compromise behaviors may vary among intrusions carried out by different Hive affiliates.\n\nHive actors have targeted victims in a wide range of verticals, including the government, communications, manufacturing, information technology, financial services, education, and especially the healthcare sectors. In January 2023, international authorities announced they disrupted Hive ransomware operations, seizing control of servers and websites used for communication among Hive actors and capturing Hive decryption keys.<sup>[[U.S. Justice Department Hive January 2023](/references/81bd5579-6a8a-40d2-b7b7-5cdb879ebdf0)]</sup>",
+      "meta": {
+        "group_attack_id": "G5042",
+        "observed_countries": [
+          "DE",
+          "NL",
+          "GB",
+          "US"
+        ],
+        "observed_motivations": [
+          "Financial Gain"
+        ],
+        "owner": "TidalCyberIan",
+        "source": "Tidal Cyber",
+        "tags": [
+          "d903e38b-600d-4736-9e3b-cf1a6e436481",
+          "e551ae97-d1b4-484e-9267-89f33829ec2c",
+          "15787198-6c8b-4f79-bf50-258d55072fee",
+          "5e9581be-dea3-42b2-a92a-4c307cedec2c",
+          "3ed2343c-a29c-42e2-8259-410381164c6a",
+          "375983b3-6e87-4281-99e2-1561519dd17b",
+          "64d3f7d8-30b7-4b03-bee2-a6029672216c",
+          "1423b5a8-cff3-48d5-a0a2-09b3afc9f195",
+          "562e535e-19f5-4d6c-81ed-ce2aec544f09",
+          "5e7433ad-a894-4489-93bc-41e90da90019",
+          "7e7b0c67-bb85-4996-a289-da0e792d7172"
+        ],
+        "target_categories": [
+          "Construction",
+          "Education",
+          "Financial Services",
+          "Government",
+          "Healthcare",
+          "High Tech",
+          "Manufacturing",
+          "Telecommunications"
+        ]
+      },
+      "related": [],
+      "uuid": "05cd82bb-f8fc-40f3-83ba-1586ef953d05",
+      "value": "Hive Ransomware Actors"
     },
     {
       "description": "[Inception](https://app.tidalcyber.com/groups/d7c58e7f-f0b0-44c6-b205-5adcfb56f0e6) is a cyber espionage group active since at least 2014. The group has targeted multiple industries and governmental entities primarily in Russia, but has also been active in the United States and throughout Europe, Asia, Africa, and the Middle East.<sup>[[Unit 42 Inception November 2018](https://app.tidalcyber.com/references/5cb98fce-f386-4878-b69c-5c6440ad689c)]</sup><sup>[[Symantec Inception Framework March 2018](https://app.tidalcyber.com/references/166f5c44-7d8c-45d5-8d9f-3b8bd21a2af3)]</sup><sup>[[Kaspersky Cloud Atlas December 2014](https://app.tidalcyber.com/references/41a9b3e3-0953-4bde-9e1d-c2f51de1120e)]</sup>",
@@ -2628,7 +3374,12 @@
           "Media"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "71ef51ca-a791-11e8-a026-07980ca910ca",
+          "type": "similar"
+        }
+      ],
       "uuid": "d7c58e7f-f0b0-44c6-b205-5adcfb56f0e6",
       "value": "Inception"
     },
@@ -2742,7 +3493,12 @@
           "NGOs"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "3501fbf2-098f-47e7-be6a-6b0ff5742ce8",
+          "type": "similar"
+        }
+      ],
       "uuid": "26c0925f-1a3c-4df6-b27a-62b9731299b8",
       "value": "Ke3chang"
     },
@@ -2820,6 +3576,7 @@
         "group_attack_id": "G1004",
         "source": "MITRE",
         "tags": [
+          "fe28cf32-a15c-44cf-892c-faa0360d6109",
           "2e5f6e4a-4579-46f7-9997-6923180815dd",
           "c9c73000-30a5-4a16-8c8b-79169f9c24aa",
           "a2e000da-8181-4327-bacd-32013dbd3654",
@@ -2850,6 +3607,7 @@
         ],
         "source": "MITRE",
         "tags": [
+          "3ed3f7a6-b446-4fbc-a433-ff1d63c0e647",
           "f2ae2283-f94d-4f8f-bbde-43f2bed66c55"
         ],
         "target_categories": [
@@ -2862,7 +3620,12 @@
           "Infrastructure"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "68391641-859f-4a9a-9a1e-3e5cf71ec376",
+          "type": "similar"
+        }
+      ],
       "uuid": "0bc66e95-de93-4de7-b415-4041b7191f08",
       "value": "Lazarus Group"
     },
@@ -2933,8 +3696,29 @@
           "GB",
           "US"
         ],
+        "observed_motivations": [
+          "Cyber Espionage"
+        ],
         "source": "MITRE",
         "tags": [
+          "96d58ca1-ab18-4e53-8891-d8ba62a47e5d",
+          "6070668f-1cbd-4878-8066-c636d1d8659c",
+          "d8f7e071-fbfd-46f8-b431-e241bb1513ac",
+          "758c3085-2f79-40a8-ab95-f8a684737927",
+          "1dc8fd1e-0737-405a-98a1-111dd557f1b5",
+          "61cdbb28-cbfd-498b-9ab1-1f14337f9524",
+          "e551ae97-d1b4-484e-9267-89f33829ec2c",
+          "15787198-6c8b-4f79-bf50-258d55072fee",
+          "35e694ec-5133-46e3-b7e1-5831867c3b55",
+          "ee3188ce-20e9-4e8e-bbfd-cdc527d5a2b2",
+          "a10eccee-317c-40f7-988f-f79517cf42e8",
+          "375983b3-6e87-4281-99e2-1561519dd17b",
+          "3ed2343c-a29c-42e2-8259-410381164c6a",
+          "a46c422c-5dad-49fc-a4ac-169a075a4d9a",
+          "2eeef0b4-08b5-4d25-84f7-25d41fe6305b",
+          "64d3f7d8-30b7-4b03-bee2-a6029672216c",
+          "7e6ef160-8e4f-4132-bdc4-9991f01c472e",
+          "b20e7912-6a8d-46e3-8e13-9a3fc4813852",
           "931d2342-5165-41cf-a5a9-8308d9c9f7ed"
         ],
         "target_categories": [
@@ -2948,7 +3732,12 @@
           "Transportation"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "5b4b6980-3bc7-11e8-84d6-879aaac37dd9",
+          "type": "similar"
+        }
+      ],
       "uuid": "eadd78e3-3b5d-430a-b994-4360b172c871",
       "value": "Leviathan"
     },
@@ -3004,6 +3793,10 @@
         "owner": "TidalCyberIan",
         "source": "Tidal Cyber",
         "tags": [
+          "64d3f7d8-30b7-4b03-bee2-a6029672216c",
+          "375983b3-6e87-4281-99e2-1561519dd17b",
+          "3ed2343c-a29c-42e2-8259-410381164c6a",
+          "89c5b94b-ecf4-4d53-9b74-3465086d4565",
           "562e535e-19f5-4d6c-81ed-ce2aec544f09",
           "793f4441-3916-4b3d-a3fd-686a59dc3de2",
           "1b5da77a-bf84-4fba-a6d7-8b3b8f7699e0",
@@ -3082,7 +3875,12 @@
           "Government"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "32fafa69-fe3c-49db-afd4-aac2664bcf0d",
+          "type": "similar"
+        }
+      ],
       "uuid": "2849455a-cf39-4a9f-bd89-c2b3c1e5dd52",
       "value": "Lotus Blossom"
     },
@@ -3095,6 +3893,29 @@
       "related": [],
       "uuid": "b10aa4c0-10a1-5e08-8d9d-82ce95d45e6a",
       "value": "LuminousMoth"
+    },
+    {
+      "description": "Luna Moth (aka Silent Ransom Group) is a financially-motivated, extortion-focused adversary active since at least March 2022 and through at least June 2023. The group is known for carrying out \"callback phishing\" attacks, where actors entice victims to call an actor-controlled number, for example by sending a fraudulent email that claims the victim recently registered for a popular subscription service. Once connected, actors would convince victims to join a live, actor-connected sessions with legitimate remote access tools provided via a link in a subsequent email, then install other legitimate remote administration software used to support further discovery and exfiltration activity.<sup>[[Sygnia Luna Moth July 1 2022](/references/115590b2-ab57-432c-900e-000627464a11)]</sup><sup>[[FBI Ransomware Tools November 7 2023](/references/e096e1f4-6b62-4756-8811-f263cf1dcecc)]</sup>",
+      "meta": {
+        "group_attack_id": "G5043",
+        "observed_motivations": [
+          "Financial Gain"
+        ],
+        "owner": "TidalCyberIan",
+        "source": "Tidal Cyber",
+        "tags": [
+          "5e7433ad-a894-4489-93bc-41e90da90019",
+          "c6e1f516-1a18-4ff9-b563-e6ac8103b104",
+          "2feda37d-5579-4102-a073-aa02e82cb49f"
+        ],
+        "target_categories": [
+          "Legal",
+          "Retail"
+        ]
+      },
+      "related": [],
+      "uuid": "cca12ba9-f65f-4a29-87ab-a9fc0f99521f",
+      "value": "Luna Moth"
     },
     {
       "description": "[Machete](https://app.tidalcyber.com/groups/a3be79a2-3d4f-4697-a8a1-83f0884220af) is a suspected Spanish-speaking cyber espionage group that has been active since at least 2010. It has primarily focused its operations within Latin America, with a particular emphasis on Venezuela, but also in the US, Europe, Russia, and parts of Asia. [Machete](https://app.tidalcyber.com/groups/a3be79a2-3d4f-4697-a8a1-83f0884220af) generally targets high-profile organizations such as government institutions, intelligence services, and military units, as well as telecommunications and power companies.<sup>[[Cylance Machete Mar 2017](https://app.tidalcyber.com/references/92a9a311-1e0b-4819-9856-2dfc8dbfc08d)]</sup><sup>[[Securelist Machete Aug 2014](https://app.tidalcyber.com/references/fc7be240-bd15-4ec4-bc01-f8891d7210d9)]</sup><sup>[[ESET Machete July 2019](https://app.tidalcyber.com/references/408d5e33-fcb6-4d21-8be9-7aa5a8bd3385)]</sup><sup>[[360 Machete Sep 2020](https://app.tidalcyber.com/references/682c843d-1bb8-4f30-9d2e-35e8d41b1976)]</sup>",
@@ -3137,7 +3958,12 @@
           "Utilities"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "827c17e0-c3f5-4ad1-a4f4-30a40ed0a2d3",
+          "type": "similar"
+        }
+      ],
       "uuid": "a3be79a2-3d4f-4697-a8a1-83f0884220af",
       "value": "Machete"
     },
@@ -3183,7 +4009,12 @@
           "Telecommunications"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "b8967b3c-3bc9-11e8-8701-8b1ead8c099e",
+          "type": "similar"
+        }
+      ],
       "uuid": "7a9d653c-8812-4b96-81d1-b0a27ca918b4",
       "value": "Magic Hound"
     },
@@ -3265,6 +4096,7 @@
         "owner": "TidalCyberIan",
         "source": "Tidal Cyber",
         "tags": [
+          "562e535e-19f5-4d6c-81ed-ce2aec544f09",
           "5e7433ad-a894-4489-93bc-41e90da90019",
           "7e7b0c67-bb85-4996-a289-da0e792d7172"
         ],
@@ -3348,7 +4180,12 @@
           "Technology"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "56b37b05-72e7-4a89-ba8a-61ce45269a8c",
+          "type": "similar"
+        }
+      ],
       "uuid": "fb93231d-2ae4-45da-9dea-4c372a11f322",
       "value": "menuPass"
     },
@@ -3382,7 +4219,12 @@
           "Manufacturing"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "a9b44750-992c-4743-8922-129880d277ea",
+          "type": "similar"
+        }
+      ],
       "uuid": "4510ce41-27b9-479c-9bf3-a328b77bae29",
       "value": "Moafee"
     },
@@ -3440,9 +4282,40 @@
           "NGOs"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "f7c2e501-73b1-400f-a5d9-2e2e07b7dfde",
+          "type": "similar"
+        }
+      ],
       "uuid": "679b7b6b-9659-4e56-9ffd-688a6fab01b6",
       "value": "Molerats"
+    },
+    {
+      "description": "Moonstone Sleet is a North Korea state-aligned threat actor group that has targeted individuals and organizations related to the software, information technology, education, and defense industrial base sectors, for both financial gain and espionage purposes. The group is believed to be well-resourced, capable of conducting multiple distinct campaigns simultaneously. Microsoft security researchers assess that Moonstone Sleet has expanded its capabilities, with possible goals of enabling disruptive operations and/or software supply chain attacks.<sup>[[Microsoft Security Blog 5 28 2024](/references/faf315ed-71f7-4e29-8334-701da35a69ad)]</sup>",
+      "meta": {
+        "country": "KP",
+        "group_attack_id": "G5040",
+        "observed_motivations": [
+          "Cyber Espionage",
+          "Financial Gain"
+        ],
+        "owner": "TidalCyberIan",
+        "source": "Tidal Cyber",
+        "tags": [
+          "c6e1f516-1a18-4ff9-b563-e6ac8103b104",
+          "2feda37d-5579-4102-a073-aa02e82cb49f"
+        ],
+        "target_categories": [
+          "Aerospace",
+          "Defense",
+          "Education",
+          "Technology"
+        ]
+      },
+      "related": [],
+      "uuid": "3b8a2c50-5d8e-49b4-bd50-10ae66ca6c72",
+      "value": "Moonstone Sleet"
     },
     {
       "description": "[Moses Staff](https://app.tidalcyber.com/groups/a41725c5-eb3a-4772-8d1e-17c3bbade79c) is a suspected Iranian threat group that has primarily targeted Israeli companies since at least September 2021. [Moses Staff](https://app.tidalcyber.com/groups/a41725c5-eb3a-4772-8d1e-17c3bbade79c) openly stated their motivation in attacking Israeli companies is to cause damage by leaking stolen sensitive data and encrypting the victim's networks without a ransom demand.<sup>[[Checkpoint MosesStaff Nov 2021](https://app.tidalcyber.com/references/d6da2849-cff0-408a-9f09-81a33fc88a56)]</sup> \n\nSecurity researchers assess [Moses Staff](https://app.tidalcyber.com/groups/a41725c5-eb3a-4772-8d1e-17c3bbade79c) is politically motivated, and has targeted government, finance, travel, energy, manufacturing, and utility companies outside of Israel as well, including those in Italy, India, Germany, Chile, Turkey, the UAE, and the US.<sup>[[Cybereason StrifeWater Feb 2022](https://app.tidalcyber.com/references/30c911b2-9a5e-4510-a78c-c65e84398c7e)]</sup>",
@@ -3536,6 +4409,9 @@
           "Cyber Espionage"
         ],
         "source": "MITRE",
+        "tags": [
+          "992bdd33-4a47-495d-883a-58010a2f0efb"
+        ],
         "target_categories": [
           "Education",
           "Energy",
@@ -3544,7 +4420,12 @@
           "Telecommunications"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "a29af069-03c3-4534-b78b-7d1a77ea085b",
+          "type": "similar"
+        }
+      ],
       "uuid": "dcb260d8-9d53-404f-9ff5-dbee2c6effe6",
       "value": "MuddyWater"
     },
@@ -3638,7 +4519,12 @@
           "Government"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "2f1fd017-9df6-4759-91fb-e7039609b5ff",
+          "type": "similar"
+        }
+      ],
       "uuid": "a80c00b2-b8b6-4780-99bb-df8fe921947d",
       "value": "Naikon"
     },
@@ -3654,7 +4540,12 @@
         ],
         "source": "MITRE"
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "ada08ea8-4517-4eea-aff1-3ad69e5466bb",
+          "type": "similar"
+        }
+      ],
       "uuid": "3a660ef3-9954-4252-8946-f903f3f42d0c",
       "value": "NEODYMIUM"
     },
@@ -3695,6 +4586,9 @@
           "US"
         ],
         "source": "MITRE",
+        "tags": [
+          "3ed3f7a6-b446-4fbc-a433-ff1d63c0e647"
+        ],
         "target_categories": [
           "Banks",
           "Chemical",
@@ -3705,7 +4599,12 @@
           "Telecommunications"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "42be2a84-5a5c-4c6d-9864-3f09d75bb0ba",
+          "type": "similar"
+        }
+      ],
       "uuid": "d01abdb1-0378-4654-aa38-1a4a292703e2",
       "value": "OilRig"
     },
@@ -3773,7 +4672,12 @@
           "Think Tanks"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "18d473a5-831b-47a5-97a1-a32156299825",
+          "type": "similar"
+        }
+      ],
       "uuid": "32385eba-7bbf-439e-acf2-83040e97165a",
       "value": "Patchwork"
     },
@@ -3823,7 +4727,12 @@
           "Telecommunications"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "4d37813c-b8e9-4e58-a758-03168d8aa189",
+          "type": "similar"
+        }
+      ],
       "uuid": "60936d3c-37ed-4116-a407-868da3aa4446",
       "value": "PittyTiger"
     },
@@ -3847,7 +4756,12 @@
           "Telecommunications"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "1fc5671f-5757-43bf-8d6d-a9a93b03713a",
+          "type": "similar"
+        }
+      ],
       "uuid": "f036b992-4c3f-47b7-a458-94ac133bce74",
       "value": "PLATINUM"
     },
@@ -3877,6 +4791,9 @@
         "owner": "TidalCyberIan",
         "source": "Tidal Cyber",
         "tags": [
+          "89c5b94b-ecf4-4d53-9b74-3465086d4565",
+          "5e7433ad-a894-4489-93bc-41e90da90019",
+          "7e7b0c67-bb85-4996-a289-da0e792d7172",
           "562e535e-19f5-4d6c-81ed-ce2aec544f09",
           "17864218-bc4f-4564-8abf-97c988eea9f7",
           "b6458e46-650e-4e96-8e68-8a9d70bcf045",
@@ -3936,7 +4853,12 @@
           "Utilities"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "5fc09923-fcff-4e81-9cae-4518ef31cf4d",
+          "type": "similar"
+        }
+      ],
       "uuid": "553e2b7b-170c-4eb5-812b-ea33fe1dd4a0",
       "value": "Poseidon Group"
     },
@@ -3952,7 +4874,12 @@
         ],
         "source": "MITRE"
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "43894e2a-174e-4931-94a8-2296afe8f650",
+          "type": "similar"
+        }
+      ],
       "uuid": "cc798766-8662-4b55-8536-6d057fbc58f0",
       "value": "PROMETHIUM"
     },
@@ -3974,9 +4901,35 @@
           "Telecommunications"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "0ca45163-e223-4167-b1af-f088ed14a93d",
+          "type": "similar"
+        }
+      ],
       "uuid": "6005f4a9-fe26-4237-a44e-3f6cbb1fe75c",
       "value": "Putter Panda"
+    },
+    {
+      "description": "This Group object reflects the tools & TTPs associated with threat actors known to deploy Quantum ransomware (aka Quantum Locker, which derives from the MountLocker, AstroLocker, and XingLocker ransomware families). The Quantum group is known to publicly extort its victims.<sup>[[Cybereason Quantum Ransomware May 9 2022](/references/19027620-216a-4921-8d78-f56377778a12)]</sup> Researchers indicate the group is a rebranding of the \"Conti Team Two\" that formed after the fragmenting of the Ryuk/Conti ransom group in early 2022.<sup>[[AdvIntel Bazar Call August 10 2022](/references/5d3dff70-28c2-42a5-bf58-211fe6491fd2)]</sup>",
+      "meta": {
+        "group_attack_id": "G5044",
+        "observed_motivations": [
+          "Financial Gain"
+        ],
+        "owner": "TidalCyberIan",
+        "source": "Tidal Cyber",
+        "tags": [
+          "5e7433ad-a894-4489-93bc-41e90da90019",
+          "562e535e-19f5-4d6c-81ed-ce2aec544f09",
+          "7e7b0c67-bb85-4996-a289-da0e792d7172",
+          "c6e1f516-1a18-4ff9-b563-e6ac8103b104",
+          "2feda37d-5579-4102-a073-aa02e82cb49f"
+        ]
+      },
+      "related": [],
+      "uuid": "e75a1b98-be68-467f-a8df-bcb7671543b3",
+      "value": "Quantum Ransomware Actors"
     },
     {
       "description": "[Rancor](https://app.tidalcyber.com/groups/021b3c71-6467-4e46-a413-8b726f066f2c) is a threat group that has led targeted campaigns against the South East Asia region. [Rancor](https://app.tidalcyber.com/groups/021b3c71-6467-4e46-a413-8b726f066f2c) uses politically-motivated lures to entice victims to open malicious documents. <sup>[[Rancor Unit42 June 2018](https://app.tidalcyber.com/references/45098a85-a61f-491a-a549-f62b02dc2ecd)]</sup>",
@@ -3991,9 +4944,34 @@
         ],
         "source": "MITRE"
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "79c7c7e0-79d5-11e8-9b9c-1ff96be20c0b",
+          "type": "similar"
+        }
+      ],
       "uuid": "021b3c71-6467-4e46-a413-8b726f066f2c",
       "value": "Rancor"
+    },
+    {
+      "description": "RansomHub is an extortion group that regularly republicizes victim data allegedly stolen in other ransomware groups' attacks, but it is also believed to have developed an original ransomware payload.<sup>[[BroadcomSW June 5 2024](/references/3fa49490-cb22-4362-bf48-eaba9e83e6f5)]</sup><sup>[[The Record RansomHub June 3 2024](/references/1e474240-bd12-4472-8e69-1631b0e4c102)]</sup> This object reflects the ATT&CK Techniques and/or associated Software & Campaigns linked to attacks by actors deploying RansomHub ransomware.",
+      "meta": {
+        "group_attack_id": "G5050",
+        "observed_motivations": [
+          "Financial Gain"
+        ],
+        "owner": "TidalCyberIan",
+        "source": "Tidal Cyber",
+        "tags": [
+          "5e7433ad-a894-4489-93bc-41e90da90019",
+          "7e7b0c67-bb85-4996-a289-da0e792d7172",
+          "c6e1f516-1a18-4ff9-b563-e6ac8103b104",
+          "2feda37d-5579-4102-a073-aa02e82cb49f"
+        ]
+      },
+      "related": [],
+      "uuid": "94794e7b-8b54-4be8-885a-fd1009425ed5",
+      "value": "RansomHub Ransomware Actors"
     },
     {
       "description": "This object represents the behaviors associated with operators of Rhysida ransomware, which is licensed on a ransomware-as-a-service (\"RaaS\") basis. Various affiliated ransomware operators likely do not operate as a cohesive unit. The Rhysida RaaS operation has been active since May 2023, claiming attacks on multiple sectors in several countries in North and South America, Western Europe, and Australia. Many alleged victims are education sector entities. Security researchers have observed TTP and victimology overlaps with the Vice Society extortion group.<sup>[[HC3 Analyst Note Rhysida Ransomware August 2023](/references/3f6e2821-5073-4382-b5dd-08676eaa2240)]</sup>\n\n**Related Vulnerabilities**: CVE-2020-1472<sup>[[U.S. CISA Rhysida Ransomware November 15 2023](/references/6d902955-d9a9-4ec1-8dd4-264f7594605e)]</sup>",
@@ -4079,6 +5057,8 @@
         "owner": "TidalCyberIan",
         "source": "Tidal Cyber",
         "tags": [
+          "e551ae97-d1b4-484e-9267-89f33829ec2c",
+          "a2e000da-8181-4327-bacd-32013dbd3654",
           "d63754b9-0267-4a70-82a3-212ef32fa796",
           "15787198-6c8b-4f79-bf50-258d55072fee",
           "5e7433ad-a894-4489-93bc-41e90da90019",
@@ -4122,7 +5102,12 @@
         ],
         "source": "MITRE"
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "88100602-8e8b-11e9-bb7c-1bf20b58e305",
+          "type": "similar"
+        }
+      ],
       "uuid": "666ab5f0-3ef1-4e74-8a10-65c60a7d1acd",
       "value": "RTM"
     },
@@ -4153,6 +5138,7 @@
         ],
         "source": "MITRE",
         "tags": [
+          "3ed3f7a6-b446-4fbc-a433-ff1d63c0e647",
           "b20e7912-6a8d-46e3-8e13-9a3fc4813852",
           "f2ae2283-f94d-4f8f-bbde-43f2bed66c55"
         ],
@@ -4165,9 +5151,33 @@
           "Transportation"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "f512de42-f76b-40d2-9923-59e7dbdfec35",
+          "type": "similar"
+        }
+      ],
       "uuid": "16a65ee9-cd60-4f04-ba34-f2f45fcfc666",
       "value": "Sandworm Team"
+    },
+    {
+      "description": "SCARLETEEL is a threat actor known to leverage various cloud-based technologies in order to steal proprietary software and other data from victim environments.<sup>[[Sysdig Scarleteel February 28 2023](/references/18931f81-51bf-44af-9573-512ccb66c238)]</sup>",
+      "meta": {
+        "group_attack_id": "G5036",
+        "owner": "TidalCyberIan",
+        "source": "Tidal Cyber",
+        "tags": [
+          "c6e1f516-1a18-4ff9-b563-e6ac8103b104",
+          "efa33611-88a5-40ba-9bc4-3d85c6c8819b",
+          "4fa6f8e1-b0d5-4169-8038-33e355c08bde",
+          "2e5f6e4a-4579-46f7-9997-6923180815dd",
+          "8d95e4d6-9a1e-4920-9f5c-83d9fe07a66e",
+          "2feda37d-5579-4102-a073-aa02e82cb49f"
+        ]
+      },
+      "related": [],
+      "uuid": "788ffbf6-1a36-481a-a504-bbcd9f907886",
+      "value": "SCARLETEEL"
     },
     {
       "description": "[Scarlet Mimic](https://app.tidalcyber.com/groups/6c1bdc51-f633-4512-8b20-04a11c2d97f4) is a threat group that has targeted minority rights activists. This group has not been directly linked to a government source, but the group's motivations appear to overlap with those of the Chinese government. While there is some overlap between IP addresses used by [Scarlet Mimic](https://app.tidalcyber.com/groups/6c1bdc51-f633-4512-8b20-04a11c2d97f4) and [Putter Panda](https://app.tidalcyber.com/groups/6005f4a9-fe26-4237-a44e-3f6cbb1fe75c), it has not been concluded that the groups are the same. <sup>[[Scarlet Mimic Jan 2016](https://app.tidalcyber.com/references/f84a5b6d-3af1-45b1-ac55-69ceced8735f)]</sup>",
@@ -4181,7 +5191,12 @@
           "Human Rights"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "0da10682-85c6-4c0b-bace-ba1f7adfb63e",
+          "type": "similar"
+        }
+      ],
       "uuid": "6c1bdc51-f633-4512-8b20-04a11c2d97f4",
       "value": "Scarlet Mimic"
     },
@@ -4210,6 +5225,7 @@
         ],
         "source": "MITRE",
         "tags": [
+          "fe28cf32-a15c-44cf-892c-faa0360d6109",
           "15f2277a-a17e-4d85-8acd-480bf84f16b4",
           "c9c73000-30a5-4a16-8c8b-79169f9c24aa",
           "15787198-6c8b-4f79-bf50-258d55072fee",
@@ -4219,6 +5235,7 @@
         ],
         "target_categories": [
           "Aerospace",
+          "Banks",
           "Casinos Gambling",
           "Commercial",
           "Construction",
@@ -4227,6 +5244,7 @@
           "Entertainment",
           "Financial Services",
           "Hospitality Leisure",
+          "Insurance",
           "Legal",
           "Media",
           "Pharmaceuticals",
@@ -4387,9 +5405,32 @@
           "Government"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "1ca3b039-404e-4132-88c2-4e41235cd2f5",
+          "type": "similar"
+        }
+      ],
       "uuid": "6632f07f-7c6b-4d12-8544-82edc6a7a577",
       "value": "Sowbug"
+    },
+    {
+      "description": "Spandex Tempest is a financially motivated adversary group associated with Dudear campaigns, which deliver the FlawedGrace remote access Trojan for information theft purposes.<sup>[[Microsoft Threat Actor Naming](/references/de9cda86-0b23-4bc8-b524-e74fecf99448)]</sup> The group has evolved initial access techniques observed during these campaigns to evade defenses.<sup>[[Microsoft Threat Intelligence Tweet June 17 2020](/references/98fc7485-9424-412f-8162-a69d6c10c243)]</sup>",
+      "meta": {
+        "group_attack_id": "G5029",
+        "observed_motivations": [
+          "Financial Gain"
+        ],
+        "owner": "TidalCyberIan",
+        "source": "Tidal Cyber",
+        "tags": [
+          "c6e1f516-1a18-4ff9-b563-e6ac8103b104",
+          "2feda37d-5579-4102-a073-aa02e82cb49f"
+        ]
+      },
+      "related": [],
+      "uuid": "eb10ed9e-ea8d-4b61-bfc3-5994d30970df",
+      "value": "Spandex Tempest"
     },
     {
       "description": "*Operationalize this intelligence by pivoting to relevant defensive resources via the Techniques below. Alternatively, use the **Add to Matrix** button above, then overlay entire sets of capabilities from your own defensive stack to identify threat overlaps & potential gaps (watch a [60-second tutorial here](https://www.youtube.com/watch?v=4jBo3XLO01E)).*\n\nStar Blizzard is believed to be a Russia-based cyber threat actor group. According to joint Cybersecurity Advisory AA23-341A (December 2023), U.S. and international authorities assess that Star Blizzard is “almost certainly” a subordinate of the Russian Federal Security Service (FSB) Centre 18. Star Blizzard is known to successfully use spear-phishing attacks against its targets for information-gathering purposes. The advisory indicated that authorities observed these spear-phishing attacks occurring through 2023. Star Blizzard has traditionally targeted academic, defense, government, non-governmental (NGO), and think tank organizations (and associated personnel) in the United States and United Kingdom, other NATO nations, and countries neighboring Russia. Politicians have also been targeted. According to the advisory, beginning in 2022, authorities witnessed Star Blizzard targeting expand to targets in the defense-industrial sector and U.S. Department of Energy facilities.<sup>[[U.S. CISA Star Blizzard December 2023](/references/3d53c154-8ced-4dbe-ab4e-db3bc15bfe4b)]</sup>",
@@ -4405,6 +5446,11 @@
         ],
         "owner": "TidalCyberIan",
         "source": "Tidal Cyber",
+        "tags": [
+          "82009876-294a-4e06-8cfc-3236a429bda4",
+          "15f2277a-a17e-4d85-8acd-480bf84f16b4",
+          "fe28cf32-a15c-44cf-892c-faa0360d6109"
+        ],
         "target_categories": [
           "Defense",
           "Education",
@@ -4430,9 +5476,56 @@
           "Human Rights"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "dab75e38-6969-4e78-9304-dc269c3cbcf0",
+          "type": "similar"
+        }
+      ],
       "uuid": "ca3016f3-642a-4ae0-86bc-7258475d6937",
       "value": "Stealth Falcon"
+    },
+    {
+      "description": "Storm-0844 is a threat actor originally known for distributing Akira ransomware, and more recently, for distributing Fog ransomware. The actor gains initial access likely by abusing valid accounts, then uses freely available tools for discovery, lateral movement, and exfiltration prior to ransomware deployment.<sup>[[Microsoft Threat Intelligence LinkedIn July 15 2024](/references/0e7ea8d0-bdb8-48a6-9718-703f64d16460)]</sup>",
+      "meta": {
+        "group_attack_id": "G5047",
+        "observed_motivations": [
+          "Financial Gain"
+        ],
+        "owner": "TidalCyberIan",
+        "source": "Tidal Cyber",
+        "tags": [
+          "562e535e-19f5-4d6c-81ed-ce2aec544f09",
+          "5e7433ad-a894-4489-93bc-41e90da90019",
+          "7e7b0c67-bb85-4996-a289-da0e792d7172",
+          "c6e1f516-1a18-4ff9-b563-e6ac8103b104",
+          "2feda37d-5579-4102-a073-aa02e82cb49f"
+        ]
+      },
+      "related": [],
+      "uuid": "fcbf6963-839b-4853-8b80-73ff6831b7d7",
+      "value": "Storm-0844"
+    },
+    {
+      "description": "According to Microsoft security researchers, Storm-1811 is a \"financially motivated cybercriminal group known to deploy Black Basta ransomware\".<sup>[[Microsoft Security Blog 5 15 2024](/references/0876de6e-ea0c-4717-89a4-9c7baed53b6f)]</sup>",
+      "meta": {
+        "group_attack_id": "G5039",
+        "observed_motivations": [
+          "Financial Gain"
+        ],
+        "owner": "TidalCyberIan",
+        "source": "Tidal Cyber",
+        "tags": [
+          "c6e1f516-1a18-4ff9-b563-e6ac8103b104",
+          "5e7433ad-a894-4489-93bc-41e90da90019",
+          "7e7b0c67-bb85-4996-a289-da0e792d7172",
+          "562e535e-19f5-4d6c-81ed-ce2aec544f09",
+          "2feda37d-5579-4102-a073-aa02e82cb49f"
+        ]
+      },
+      "related": [],
+      "uuid": "ee2da206-2532-44e3-a343-d66e9bfdbca0",
+      "value": "Storm-1811"
     },
     {
       "description": "[Strider](https://app.tidalcyber.com/groups/deb573c6-071a-4b50-9e92-4aa648d8bdc1) is a threat group that has been active since at least 2011 and has targeted victims in Russia, China, Sweden, Belgium, Iran, and Rwanda.<sup>[[Symantec Strider Blog](https://app.tidalcyber.com/references/664eac41-257f-4d4d-aba5-5d2e8e2117a7)]</sup><sup>[[Kaspersky ProjectSauron Blog](https://app.tidalcyber.com/references/baeaa632-3fa5-4d2b-9537-ccc7674fd7d6)]</sup>",
@@ -4458,7 +5551,12 @@
           "Telecommunications"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "f3179cfb-9c86-4980-bd6b-e4fa74adaaa7",
+          "type": "similar"
+        }
+      ],
       "uuid": "deb573c6-071a-4b50-9e92-4aa648d8bdc1",
       "value": "Strider"
     },
@@ -4475,7 +5573,12 @@
         ],
         "source": "MITRE"
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "5abb12e7-5066-4f84-a109-49a037205c76",
+          "type": "similar"
+        }
+      ],
       "uuid": "06549082-ff70-43bf-985e-88c695c7113c",
       "value": "Suckfly"
     },
@@ -4513,7 +5616,12 @@
         ],
         "source": "MITRE"
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "c6472ae1-c6ad-4cf1-8d6e-8c94b94fe314",
+          "type": "similar"
+        }
+      ],
       "uuid": "e343c1f1-458c-467b-bc4a-c1b97b2127e3",
       "value": "TA459"
     },
@@ -4538,7 +5646,12 @@
           "a98d7a43-f227-478e-81de-e7299639a355"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "03c80674-35f8-4fe0-be2b-226ed0fcd69f",
+          "type": "similar"
+        }
+      ],
       "uuid": "b3220638-6682-4a4e-ab64-e7dc4202a3f1",
       "value": "TA505"
     },
@@ -4551,7 +5664,12 @@
         ],
         "source": "MITRE"
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "36e8c848-4d20-47ea-9fc2-31aa17bf82d1",
+          "type": "similar"
+        }
+      ],
       "uuid": "8951bff3-c444-4374-8a9e-b2115d9125b2",
       "value": "TA551"
     },
@@ -4563,7 +5681,11 @@
           "Financial Gain"
         ],
         "owner": "TidalCyberIan",
-        "source": "Tidal Cyber"
+        "source": "Tidal Cyber",
+        "tags": [
+          "5e7433ad-a894-4489-93bc-41e90da90019",
+          "7e7b0c67-bb85-4996-a289-da0e792d7172"
+        ]
       },
       "related": [],
       "uuid": "28f3dbcc-b248-442f-9ff3-234210bb2f2a",
@@ -4598,11 +5720,19 @@
           "US"
         ],
         "source": "MITRE",
+        "tags": [
+          "3ed3f7a6-b446-4fbc-a433-ff1d63c0e647"
+        ],
         "target_categories": [
           "Infrastructure"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "90abfc42-91c6-11e9-89b1-af58de8f7ec2",
+          "type": "similar"
+        }
+      ],
       "uuid": "3a54b8dc-a231-4db8-96da-1c0c1aa396f6",
       "value": "TEMP.Veles"
     },
@@ -4680,7 +5810,12 @@
           "Technology"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "834e0acd-d92a-4e38-bb14-dc4159d7cb32",
+          "type": "similar"
+        }
+      ],
       "uuid": "79be2f31-5626-425e-844c-fd9c99e38fe5",
       "value": "Threat Group-3390"
     },
@@ -4700,7 +5835,12 @@
           "Telecommunications"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "98be4300-a9ef-11e8-9a95-bb9221083cfc",
+          "type": "similar"
+        }
+      ],
       "uuid": "a3b39b07-0bfa-4c69-9f01-acf7dc6033b4",
       "value": "Thrip"
     },
@@ -4740,7 +5880,12 @@
           "Telecommunications"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "0ab7c8de-fc23-4793-99aa-7ee336199e26",
+          "type": "similar"
+        }
+      ],
       "uuid": "9f5c5672-5e7e-4440-afc8-3fdf46a1bb6c",
       "value": "Tonto Team"
     },
@@ -4813,7 +5958,12 @@
           "Transportation"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "7f16d1f5-04ee-4d99-abf0-87e1f23f9fee",
+          "type": "similar"
+        }
+      ],
       "uuid": "0a245c5e-c1a8-480f-8655-bb2594e3266b",
       "value": "Tropic Trooper"
     },
@@ -4911,7 +6061,12 @@
           "Telecommunications"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "fa80877c-f509-4daf-8b62-20aba1635f68",
+          "type": "similar"
+        }
+      ],
       "uuid": "47ae4fb1-fc61-4e8e-9310-66dda706e1a2",
       "value": "Turla"
     },
@@ -4938,6 +6093,111 @@
       "related": [],
       "uuid": "f69c7e2f-b616-4782-b2f3-28e9b6702eb4",
       "value": "UAT4356"
+    },
+    {
+      "description": "UNC3966 is a threat actor group tracked by Mandiant. In an intrusion documented in March 2023, UNC3966 received access to a victim network initially compromised by the group UNC961. UNC3966 primary motivations remain unclear. During the intrusion, the group was observed collecting and exfiltrating victim data. While a ransom note was also discovered, UNC3966 did not appear to deploy ransomware encryption software and did not appear to demand a ransom payment.<sup>[[Mandiant UNC961 March 23 2023](/references/cef19ceb-179f-4d49-acba-5ce40ab9f65e)]</sup>",
+      "meta": {
+        "group_attack_id": "G5034",
+        "owner": "TidalCyberIan",
+        "source": "Tidal Cyber",
+        "tags": [
+          "c6e1f516-1a18-4ff9-b563-e6ac8103b104",
+          "2feda37d-5579-4102-a073-aa02e82cb49f"
+        ]
+      },
+      "related": [],
+      "uuid": "b07431f8-fcf0-4204-8e7c-138eb5cd5342",
+      "value": "UNC3966"
+    },
+    {
+      "description": "UNC5537 is a threat actor believed to be responsible for compromising a large number of database instances belonging to customers of Snowflake, a multi-cloud data warehousing platform, in Q2 2024. Initial access was largely achieved using stolen customer credentials compromised previously via infostealer malware. Actors sought to monetize their access by selling victim data on underground forums and by extorting victims. Researchers believe UNC5537 is comprised of members based in North America and at least one member in Turkey, and it has targeted hundreds of organizations globally.<sup>[[Google Cloud June 10 2024](/references/0afe3662-b55c-4189-9c9a-2be55a9b6a70)]</sup>",
+      "meta": {
+        "group_attack_id": "G5041",
+        "observed_countries": [
+          "ES",
+          "US"
+        ],
+        "observed_motivations": [
+          "Financial Gain"
+        ],
+        "owner": "TidalCyberIan",
+        "source": "Tidal Cyber",
+        "tags": [
+          "c6e1f516-1a18-4ff9-b563-e6ac8103b104",
+          "291c006e-f77a-4c9c-ae7e-084974c0e1eb",
+          "2feda37d-5579-4102-a073-aa02e82cb49f"
+        ],
+        "target_categories": [
+          "Automotive",
+          "Banks",
+          "Entertainment",
+          "Financial Services",
+          "Retail",
+          "Technology"
+        ]
+      },
+      "related": [],
+      "uuid": "809c288d-2dec-4c34-8ac1-f91d227ddfbd",
+      "value": "UNC5537"
+    },
+    {
+      "description": "UNC961 is a financially motivated group active since at least 2018. It traditionally targeted retail and \"business services\" organizations based in North America, until expanding its targeting in 2020 to also include victims in a range of additional sectors in Northern Europe and Western Asia. In all known intrusions, UNC961 gained initial access by exploiting web-facing applications.<sup>[[Mandiant Log4Shell March 28 2022](/references/62d4d685-09c4-47b6-865c-4a6096e551cd)]</sup>",
+      "meta": {
+        "group_attack_id": "G5033",
+        "observed_motivations": [
+          "Financial Gain"
+        ],
+        "owner": "TidalCyberIan",
+        "source": "Tidal Cyber",
+        "tags": [
+          "c6e1f516-1a18-4ff9-b563-e6ac8103b104",
+          "7e6ef160-8e4f-4132-bdc4-9991f01c472e",
+          "b1944c88-95cf-41db-b11c-d9284e733bf2",
+          "2eeef0b4-08b5-4d25-84f7-25d41fe6305b",
+          "f8b11afb-0876-4cd2-af74-9b305ff1b311",
+          "51287d7b-2674-4842-a880-c192d886eac3",
+          "ab64f2d8-8da3-48de-ac66-0fd91d634b22",
+          "8e05f5f0-6e25-448d-b08f-4c7627124fbd",
+          "2feda37d-5579-4102-a073-aa02e82cb49f"
+        ],
+        "target_categories": [
+          "Commercial",
+          "Education",
+          "Energy",
+          "Financial Services",
+          "Government",
+          "Healthcare",
+          "High Tech",
+          "Media",
+          "Retail",
+          "Transportation"
+        ]
+      },
+      "related": [],
+      "uuid": "e47b2958-b7c4-4fe1-a006-03137db91963",
+      "value": "UNC961"
+    },
+    {
+      "description": "Velvet Ant is a suspected \"China-nexus\" espionage group that has notably targeted network devices as part of its operations. In one case involving an unspecified victim located in East Asia, the group was seen abusing a legacy, internet-exposed F5 BIG-IP load balancer appliance as a command-and-control mechanism, managing to maintain network persistence for a period of three years. As part of the broader investigation into the group, researchers also observed cases of zero-day exploitation of CVE-2024-20399 in Cisco Nexus network switch devices, which allowed actors to upload and execute previously unknown, custom malware. The researchers highlighted how sophisticated threat groups are increasingly targeting network appliances as means of network access and persistence, since those appliances \"are often not sufficiently protected and monitored\".<sup>[[Sygnia Velvet Ant June 17 2024](/references/5c313af4-61a8-449d-a6c7-f7ead6c72e19)]</sup><sup>[[Sygnia Velvet Ant July 1 2024](/references/a0cfeeb6-4617-4dea-80d2-290eaf2bcf5b)]</sup>",
+      "meta": {
+        "country": "CN",
+        "group_attack_id": "G5045",
+        "observed_motivations": [
+          "Cyber Espionage"
+        ],
+        "owner": "TidalCyberIan",
+        "source": "Tidal Cyber",
+        "tags": [
+          "a98d7a43-f227-478e-81de-e7299639a355",
+          "72bc70fa-3979-4d3b-a0e9-b9ebebcf2a38",
+          "a159c91c-5258-49ea-af7d-e803008d97d3",
+          "c6e1f516-1a18-4ff9-b563-e6ac8103b104",
+          "2feda37d-5579-4102-a073-aa02e82cb49f"
+        ]
+      },
+      "related": [],
+      "uuid": "9327f7c0-2187-4b98-9c33-8d89849be0bc",
+      "value": "Velvet Ant"
     },
     {
       "description": "Vice Society is an extortion-focused threat actor group first observed in mid-2021. The group gained notoriety after targeting a considerable number of educational institutions, especially lower education institutions. Although the education sector accounts for a disproportionate amount of the group’s victims, Vice Society has claimed victims in multiple other industries too, including the healthcare, retail, financial, insurance, and public services sectors. The group regularly pressures victims into paying a ransom by threatening to leak data exfiltrated during its intrusions. Vice Society is not known to have developed its own ransomware, instead deploying other existing families, including HELLOKITTY/FIVEHANDS and Zeppelin.<sup>[[U.S. CISA Vice Society September 2022](/references/0a754513-5f20-44a0-8cea-c5d9519106c8)]</sup>\n\n**Related Vulnerabilities**: CVE-2021-1675<sup>[[Unit 42 Vice Society December 6 2022](/references/6abf7387-0857-4938-b36e-1374a66d4ed8)]</sup>, CVE-2021-34527<sup>[[Unit 42 Vice Society December 6 2022](/references/6abf7387-0857-4938-b36e-1374a66d4ed8)]</sup>",
@@ -5011,6 +6271,35 @@
       "value": "Vice Society"
     },
     {
+      "description": "Void Rabisu is a threat actor believed be responsible for distributing Cuba ransomware.<sup>[[Unit 42 Cuba August 9 2022](/references/06f668d9-9a68-4d2f-b9a0-b92beb3b75d6)]</sup> Trend Micro researchers assess that, since October 2022, Void Rabisu's use of the RomCom backdoor during attacks could suggest a shift in its motivation towards more geopolitically motivated activity.<sup>[[Trend Micro Void Rabisu May 30 2023](/references/5fd628ca-f366-4f0d-b493-8be19fa4dd4e)]</sup>",
+      "meta": {
+        "group_attack_id": "G5027",
+        "observed_countries": [
+          "UA",
+          "US"
+        ],
+        "observed_motivations": [
+          "Financial Gain"
+        ],
+        "owner": "TidalCyberIan",
+        "source": "Tidal Cyber",
+        "tags": [
+          "c6e1f516-1a18-4ff9-b563-e6ac8103b104",
+          "5e7433ad-a894-4489-93bc-41e90da90019",
+          "7e7b0c67-bb85-4996-a289-da0e792d7172",
+          "2feda37d-5579-4102-a073-aa02e82cb49f"
+        ],
+        "target_categories": [
+          "Defense",
+          "Government",
+          "Utilities"
+        ]
+      },
+      "related": [],
+      "uuid": "c2015888-72c0-4367-b2cf-df85688a56b7",
+      "value": "Void Rabisu"
+    },
+    {
       "description": "[Volatile Cedar](https://app.tidalcyber.com/groups/7c3ef21c-0e1c-43d5-afb0-3a07c5a66937) is a Lebanese threat group that has targeted individuals, companies, and institutions worldwide. [Volatile Cedar](https://app.tidalcyber.com/groups/7c3ef21c-0e1c-43d5-afb0-3a07c5a66937) has been operating since 2012 and is motivated by political and ideological interests.<sup>[[CheckPoint Volatile Cedar March 2015](https://app.tidalcyber.com/references/a26344a2-63ca-422e-8cf9-0cf22a5bee72)]</sup><sup>[[ClearSky Lebanese Cedar Jan 2021](https://app.tidalcyber.com/references/53944d48-caa9-4912-b42d-94a3789ed15b)]</sup>",
       "meta": {
         "country": "LB",
@@ -5028,6 +6317,10 @@
           "Cyber Espionage"
         ],
         "source": "MITRE",
+        "tags": [
+          "c6e1f516-1a18-4ff9-b563-e6ac8103b104",
+          "2feda37d-5579-4102-a073-aa02e82cb49f"
+        ],
         "target_categories": [
           "Defense",
           "Education",
@@ -5041,7 +6334,46 @@
       "value": "Volatile Cedar"
     },
     {
-      "description": "Volt Typhoon is a China state-backed threat actor that has targeted critical infrastructure organizations in a range of specific sectors in Guam and elsewhere in the United States since mid-2021. Its activities primarily focus on espionage and information gathering. Researchers indicate the group is focused on maintaining stealth and persistence in victim networks for as long as possible, leveraging a large number of living-off-the-land techniques to accomplish these goals. Researchers assessed with moderate confidence that Volt Typhoon's activities are focused on developing capabilities that could disrupt communications infrastructure between the United States and entities in Asia in the event of a potential geopolitical crisis.<sup>[[U.S. CISA Volt Typhoon May 24 2023](/references/12320f38-ebbf-486a-a450-8a548c3722d6)]</sup>\n\n**Related Vulnerabilities**: CVE-2021-40539, CVE-2021-27860<sup>[[U.S. CISA Volt Typhoon May 24 2023](/references/12320f38-ebbf-486a-a450-8a548c3722d6)]</sup>",
+      "description": "[Volt Typhoon](https://app.tidalcyber.com/groups/4ea1245f-3f35-5168-bd10-1fc49142fd4e) is a People's Republic of China (PRC) state-sponsored actor that has been active since at least 2021. [Volt Typhoon](https://app.tidalcyber.com/groups/4ea1245f-3f35-5168-bd10-1fc49142fd4e) typically focuses on espionage and information gathering and has targeted critical infrastructure organizations in the US including Guam. [Volt Typhoon](https://app.tidalcyber.com/groups/4ea1245f-3f35-5168-bd10-1fc49142fd4e) has emphasized stealth in operations using web shells, living-off-the-land (LOTL) binaries, hands on keyboard activities, and stolen credentials.<sup>[[Microsoft Volt Typhoon May 2023](https://app.tidalcyber.com/references/8b74f0b7-9719-598c-b3ee-61d734393e6f)]</sup><sup>[[Joint Cybersecurity Advisory Volt Typhoon June 2023](https://app.tidalcyber.com/references/14872f08-e219-5c0d-a2d7-43a3ba348b4b)]</sup><sup>[[Secureworks BRONZE SILHOUETTE May 2023](https://app.tidalcyber.com/references/77624549-e170-5894-9219-a15b4aa31726)]</sup>",
+      "meta": {
+        "country": "CN",
+        "group_attack_id": "G1017",
+        "observed_countries": [
+          "GU",
+          "US"
+        ],
+        "observed_motivations": [
+          "Cyber Espionage"
+        ],
+        "source": "MITRE",
+        "tags": [
+          "758c3085-2f79-40a8-ab95-f8a684737927",
+          "af5e9be5-b86e-47af-91dd-966a5e34a186",
+          "35e694ec-5133-46e3-b7e1-5831867c3b55",
+          "1dc8fd1e-0737-405a-98a1-111dd557f1b5",
+          "15787198-6c8b-4f79-bf50-258d55072fee",
+          "97cc0c9b-3625-42c3-824a-646a91702977",
+          "53331b05-782f-45fc-b925-27c9598dde80"
+        ],
+        "target_categories": [
+          "Construction",
+          "Education",
+          "Government",
+          "Manufacturing",
+          "Maritime",
+          "Technology",
+          "Telecommunications",
+          "Transportation",
+          "Utilities",
+          "Water"
+        ]
+      },
+      "related": [],
+      "uuid": "4ea1245f-3f35-5168-bd10-1fc49142fd4e",
+      "value": "Volt Typhoon"
+    },
+    {
+      "description": "*We are no longer maintaining this object in favor of a similar object subsequently published by MITRE: \"Volt Typhoon\" (Group). All relevant Tidal content extensions (e.g. additional Technique and Object relationships and metadata) have been added to the MITRE-authored object.*\n\n\nVolt Typhoon is a China state-backed threat actor that has targeted critical infrastructure organizations in a range of specific sectors in Guam and elsewhere in the United States since mid-2021. Its activities primarily focus on espionage and information gathering. Researchers indicate the group is focused on maintaining stealth and persistence in victim networks for as long as possible, leveraging a large number of living-off-the-land techniques to accomplish these goals. Researchers assessed with moderate confidence that Volt Typhoon's activities are focused on developing capabilities that could disrupt communications infrastructure between the United States and entities in Asia in the event of a potential geopolitical crisis.<sup>[[U.S. CISA Volt Typhoon May 24 2023](/references/12320f38-ebbf-486a-a450-8a548c3722d6)]</sup>\n\n**Related Vulnerabilities**: CVE-2021-40539, CVE-2021-27860<sup>[[U.S. CISA Volt Typhoon May 24 2023](/references/12320f38-ebbf-486a-a450-8a548c3722d6)]</sup>",
       "meta": {
         "country": "CN",
         "group_attack_id": "G5001",
@@ -5078,44 +6410,6 @@
       "related": [],
       "uuid": "3290dcb9-5781-4b87-8fa0-6ae820e152cd",
       "value": "Volt Typhoon - Tidal"
-    },
-    {
-      "description": "[Volt Typhoon](https://app.tidalcyber.com/groups/4ea1245f-3f35-5168-bd10-1fc49142fd4e) is a People's Republic of China (PRC) state-sponsored actor that has been active since at least 2021. [Volt Typhoon](https://app.tidalcyber.com/groups/4ea1245f-3f35-5168-bd10-1fc49142fd4e) typically focuses on espionage and information gathering and has targeted critical infrastructure organizations in the US including Guam. [Volt Typhoon](https://app.tidalcyber.com/groups/4ea1245f-3f35-5168-bd10-1fc49142fd4e) has emphasized stealth in operations using web shells, living-off-the-land (LOTL) binaries, hands on keyboard activities, and stolen credentials.<sup>[[Microsoft Volt Typhoon May 2023](https://app.tidalcyber.com/references/8b74f0b7-9719-598c-b3ee-61d734393e6f)]</sup><sup>[[Joint Cybersecurity Advisory Volt Typhoon June 2023](https://app.tidalcyber.com/references/14872f08-e219-5c0d-a2d7-43a3ba348b4b)]</sup><sup>[[Secureworks BRONZE SILHOUETTE May 2023](https://app.tidalcyber.com/references/77624549-e170-5894-9219-a15b4aa31726)]</sup>",
-      "meta": {
-        "country": "CN",
-        "group_attack_id": "G1017",
-        "observed_countries": [
-          "GU",
-          "US"
-        ],
-        "observed_motivations": [
-          "Cyber Espionage"
-        ],
-        "source": "MITRE",
-        "tags": [
-          "758c3085-2f79-40a8-ab95-f8a684737927",
-          "af5e9be5-b86e-47af-91dd-966a5e34a186",
-          "35e694ec-5133-46e3-b7e1-5831867c3b55",
-          "1dc8fd1e-0737-405a-98a1-111dd557f1b5",
-          "15787198-6c8b-4f79-bf50-258d55072fee",
-          "97cc0c9b-3625-42c3-824a-646a91702977",
-          "53331b05-782f-45fc-b925-27c9598dde80"
-        ],
-        "target_categories": [
-          "Construction",
-          "Education",
-          "Government",
-          "Manufacturing",
-          "Maritime",
-          "Technology",
-          "Telecommunications",
-          "Transportation",
-          "Utilities"
-        ]
-      },
-      "related": [],
-      "uuid": "4ea1245f-3f35-5168-bd10-1fc49142fd4e",
-      "value": "Volt Typhoon"
     },
     {
       "description": "[Whitefly](https://app.tidalcyber.com/groups/f0943620-7bbb-4239-8ed3-c541c36baaa1) is a cyber espionage group that has been operating since at least 2017. The group has targeted organizations based mostly in Singapore across a wide variety of sectors, and is primarily interested in stealing large amounts of sensitive information. The group has been linked to an attack against Singapore’s largest public health organization, SingHealth.<sup>[[Symantec Whitefly March 2019](https://app.tidalcyber.com/references/d0e48356-36d9-4b4c-b621-e3c4404378d2)]</sup>",
@@ -5192,7 +6486,12 @@
           "Entertainment"
         ]
       },
-      "related": [],
+      "related": [
+        {
+          "dest-uuid": "9c124874-042d-48cd-b72b-ccdc51ecbbd6",
+          "type": "similar"
+        }
+      ],
       "uuid": "6932662a-53a7-4e43-877f-6e940e2d744b",
       "value": "Winnti Group"
     },
@@ -5276,6 +6575,36 @@
       "value": "Wizard Spider"
     },
     {
+      "description": "Yellow Liderc (aka Imperial Kitten, Tortoiseshell, TA456, Crimson Sandstorm) is a threat actor group based in Iran that is believed to be aligned with the Iranian Islamic Revolutionary Guard Corp (IRGC). Researchers have observed the group targeting victims in a range of sectors in the United States, Europe, the Middle East and Mediterranean, and South Asia.<sup>[[PwC Yellow Liderc October 25 2023](/references/cbeaf9b5-865f-44a1-a913-9eec28d7a5ff)]</sup>",
+      "meta": {
+        "country": "IR",
+        "group_attack_id": "G5032",
+        "observed_countries": [
+          "US"
+        ],
+        "observed_motivations": [
+          "Cyber Espionage"
+        ],
+        "owner": "TidalCyberIan",
+        "source": "Tidal Cyber",
+        "tags": [
+          "c6e1f516-1a18-4ff9-b563-e6ac8103b104",
+          "2feda37d-5579-4102-a073-aa02e82cb49f"
+        ],
+        "target_categories": [
+          "Aerospace",
+          "Automotive",
+          "Defense",
+          "Energy",
+          "Maritime",
+          "Technology"
+        ]
+      },
+      "related": [],
+      "uuid": "9e8620c4-a560-4081-aefc-118c7ec3fc22",
+      "value": "Yellow Liderc"
+    },
+    {
       "description": "[ZIRCONIUM](https://app.tidalcyber.com/groups/5e34409e-2f55-4384-b519-80747d02394c) is a threat group operating out of China, active since at least 2017, that has targeted individuals associated with the 2020 US presidential election and prominent leaders in the international affairs community.<sup>[[Microsoft Targeting Elections September 2020](https://app.tidalcyber.com/references/1d7070fd-01be-4776-bb21-13368a6173b1)]</sup><sup>[[Check Point APT31 February 2021](https://app.tidalcyber.com/references/84ac99ef-106f-44e9-97f0-3eda90570932)]</sup>",
       "meta": {
         "country": "CN",
@@ -5313,6 +6642,74 @@
       "related": [],
       "uuid": "5e34409e-2f55-4384-b519-80747d02394c",
       "value": "ZIRCONIUM"
+    },
+    {
+      "description": "This object reflects the TTPs used by threat actors to distribute and deploy the Zloader trojan malware. Researchers have observed actors distributing Zloader in campaigns without attributing the activity to named adversaries, such as the operations described by ESET researchers cited in the References.<sup>[[WeLiveSecurity April 19 2022](/references/f86845b9-03c4-446b-845f-b31b79b247ee)]</sup>\n\nTTPs associated with Zloader binaries themselves can be found in the separate \"Zloader\" Software object.",
+      "meta": {
+        "group_attack_id": "G5037",
+        "observed_countries": [
+          "AF",
+          "AR",
+          "AU",
+          "AT",
+          "BE",
+          "BR",
+          "CA",
+          "CL",
+          "CN",
+          "CO",
+          "HR",
+          "CZ",
+          "EC",
+          "FI",
+          "FR",
+          "GF",
+          "DE",
+          "GH",
+          "GR",
+          "HU",
+          "IN",
+          "ID",
+          "IE",
+          "IL",
+          "IT",
+          "JP",
+          "KR",
+          "KW",
+          "MX",
+          "NL",
+          "NG",
+          "PK",
+          "PE",
+          "PL",
+          "RU",
+          "RW",
+          "SA",
+          "SL",
+          "SK",
+          "ZA",
+          "ES",
+          "SE",
+          "CH",
+          "TH",
+          "UA",
+          "AE",
+          "GB",
+          "US",
+          "YE"
+        ],
+        "owner": "TidalCyberIan",
+        "source": "Tidal Cyber",
+        "tags": [
+          "c6e1f516-1a18-4ff9-b563-e6ac8103b104",
+          "39357cc1-dbb1-49e4-9fe0-ff24032b94d5",
+          "f8669b82-2194-49a9-8e20-92e7f9ab0a6f",
+          "2feda37d-5579-4102-a073-aa02e82cb49f"
+        ]
+      },
+      "related": [],
+      "uuid": "d2fd3da1-e49c-4273-9add-3d15afc3b837",
+      "value": "Zloader Threat Actors"
     }
   ],
   "version": 1
