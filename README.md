@@ -63,7 +63,7 @@ Category: *guidelines* - source: *Open Sources* - total: *71* elements
 
 [Backdoor](https://www.misp-galaxy.org/backdoor) - A list of backdoor malware.
 
-Category: *tool* - source: *Open Sources* - total: *28* elements
+Category: *tool* - source: *Open Sources* - total: *29* elements
 
 [[HTML](https://www.misp-galaxy.org/backdoor)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/backdoor.json)]
 
@@ -87,7 +87,7 @@ Category: *mobile* - source: *https://arxiv.org/pdf/2005.05110.pdf* - total: *47
 
 [Botnet](https://www.misp-galaxy.org/botnet) - botnet galaxy
 
-Category: *tool* - source: *MISP Project* - total: *130* elements
+Category: *tool* - source: *MISP Project* - total: *132* elements
 
 [[HTML](https://www.misp-galaxy.org/botnet)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/botnet.json)]
 
