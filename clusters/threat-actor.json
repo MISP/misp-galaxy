@@ -15084,7 +15084,9 @@
           "https://decoded.avast.io/threatresearch/avast-q2-2023-threat-report/"
         ],
         "synonyms": [
-          "Akira"
+          "Akira",
+          "PUNK SPIDER",
+          "GOLD SAHARA"
         ]
       },
       "uuid": "3a912680-6f38-4fe7-9941-744f0e2280b3",
@@ -16828,6 +16830,94 @@
       ],
       "uuid": "6f7489f5-7edc-4693-b35a-44e79c969678",
       "value": "SloppyLemming"
+    },
+    {
+      "description": "Storm-0494 is a threat actor that facilitates Gootloader infections, which are then exploited by groups like Vice Society to deploy tools such as the Supper backdoor, AnyDesk, and MEGA. They utilize RDP for lateral movement and employ the WMI Provider Host to deploy the INC ransomware payload. Microsoft has identified their activities as part of a campaign targeting the U.S. health sector. Their operations are characterized by financially motivated tactics.",
+      "meta": {
+        "refs": [
+          "https://cisoseries.com/cybersecurity-news-inc-targets-healthcare-providence-schools-cyberattack-apple-ipads-bricked/",
+          "https://x.com/MsftSecIntel/status/1836456406276342215"
+        ]
+      },
+      "uuid": "bed7279c-4ae4-459a-a862-8c69e0cfdb93",
+      "value": "Storm-0494"
+    },
+    {
+      "description": "DragonRank is a threat actor primarily targeting web application services in Asia and Europe, utilizing TTPs associated with Simplified Chinese-speaking hacking groups. They exploit vulnerabilities in platforms like phpMyAdmin and WordPress to deploy web shells, enabling the installation of PlugX and BadIIS malware for black hat SEO practices. Their operations involve lateral movement within compromised networks to maintain control and elevate privileges, while also engaging in unethical online marketing strategies. DragonRank's activities include manipulating search engine rankings and distributing scam websites through compromised Windows IIS servers.",
+      "meta": {
+        "refs": [
+          "https://blog.talosintelligence.com/dragon-rank-seo-poisoning/"
+        ]
+      },
+      "uuid": "28157c93-0b9f-4341-983a-3a521cee12bb",
+      "value": "DragonRank"
+    },
+    {
+      "description": "Vice Spider is a Russian-speaking ransomware group that has been active since at least April 2021 and is linked to a significant increase in identity-based attacks, with a reported 583% rise in Kerberoasting incidents. CrowdStrike attributes 27% of these intrusions specifically to Vice Spider, which exploits vulnerabilities in the Kerberos authentication protocol to crack user passwords.",
+      "meta": {
+        "country": "RU",
+        "refs": [
+          "https://www.techtarget.com/searchsecurity/news/366547445/CrowdStrike-observes-massive-spike-in-identity-based-attacks"
+        ]
+      },
+      "uuid": "2be3426b-c216-499f-b111-6694e96918f7",
+      "value": "VICE SPIDER"
+    },
+    {
+      "description": "AzzaSec is a hacktivist group that originated in Italy. Known for their pro-Palestine stance, they have been involved in various cyberattacks targeting Israel and pro-Israel countries. Additionally, AzzaSec has engaged in ransomware activities and has been known to collaborate with other cybercriminal groups.\n\n\n\n\n\n\n\n\n",
+      "meta": {
+        "country": "IT",
+        "refs": [
+          "https://socradar.io/dark-peep-16-play-ransomware-lockbits-alliance-breachforums-leak-and-cyberniggers-revival/",
+          "https://thecyberexpress.com/azzasec-noname-join-hands-to-target-ukriane/"
+        ]
+      },
+      "uuid": "7d067b1a-89df-46ff-a2fc-d688da721236",
+      "value": "AzzaSec"
+    },
+    {
+      "description": "Handala is a pro-Palestinian hacktivist group that targets Israeli organizations, employing tactics such as phishing, data theft, extortion, and destructive attacks using custom wiper malware. The group utilizes a multi-stage loading process, including a Delphi-coded second-stage loader and an AutoIT injector, to deliver wiper malware that specifically targets Windows and Linux environments. Their phishing campaigns often exploit major events and critical vulnerabilities, masquerading as legitimate organizations to gain initial access. Handala operates a data leak site to publicize stolen data, although claims of successful attacks are sometimes disputed by targeted organizations.",
+      "meta": {
+        "country": "PS",
+        "refs": [
+          "https://www.splunk.com/en_us/blog/security/handalas-wiper-threat-analysis-and-detections.html",
+          "https://www.trellix.com/blogs/research/handalas-wiper-targets-israel/",
+          "https://intezer.com/blog/research/stealth-wiper-israeli-infrastructure/"
+        ]
+      },
+      "uuid": "7b14f285-86e9-47da-be1a-16ce566c428b",
+      "value": "Handala"
+    },
+    {
+      "description": "Storm-0501 is a financially motivated cybercriminal group that has been active since 2021, initially targeting US school districts with the Sabbath ransomware and later transitioning to a RaaS model deploying various ransomware strains, including Embargo. The group exploits weak credentials and over-privileged accounts to achieve lateral movement from on-premises environments to cloud infrastructures, establishing persistent backdoor access and deploying ransomware. They have utilized techniques such as credential theft, exploiting vulnerabilities in Zoho ManageEngine and Citrix NetScaler, and employing tools like Cobalt Strike and Rclone for lateral movement and data exfiltration. Storm-0501 has specifically targeted sectors such as government, manufacturing, transportation, and law enforcement in the United States.",
+      "meta": {
+        "refs": [
+          "https://www.microsoft.com/en-us/security/blog/2024/09/26/storm-0501-ransomware-attacks-expanding-to-hybrid-cloud-environments/"
+        ]
+      },
+      "uuid": "f6a60403-4bcc-4fc6-ac07-abb913c1f080",
+      "value": "Storm-0501"
+    },
+    {
+      "description": "CosmicBeetle is a threat actor known for deploying the ScRansom ransomware, which has replaced its previous variant, Scarab. The actor utilizes a custom toolset called Spacecolon, consisting of ScHackTool, ScInstaller, and ScService, to gain initial access through RDP brute forcing and exploiting vulnerabilities like CVE-2020-1472 and FortiOS SSL-VPN. CosmicBeetle has been observed impersonating the LockBit ransomware gang to leverage its reputation and has shown a tendency to leave artifacts on compromised systems. The group primarily targets SMBs globally, employing techniques such as credential dumping and data destruction.",
+      "meta": {
+        "refs": [
+          "https://www.welivesecurity.com/en/eset-research/cosmicbeetle-steps-up-probation-period-ransomhub/"
+        ]
+      },
+      "uuid": "9686ff2b-01e0-46eb-9169-9e8d115be345",
+      "value": "CosmicBeetle"
+    },
+    {
+      "description": "UNC1860 is a persistent and opportunistic Iranian state-sponsored threat actor that is likely affiliated with Iran’s Ministry of Intelligence and Security (MOIS). A key feature of UNC1860 is its collection of specialized tooling and passive backdoors that Mandiant believes supports several objectives, including its role as a probable initial access provider and its ability to gain persistent access to high-priority networks, such as those in the government and telecommunications space throughout the Middle East.",
+      "meta": {
+        "country": "IR",
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/unc1860-iran-middle-eastern-networks"
+        ]
+      },
+      "uuid": "80a874d5-0645-4245-aeb6-9b33a8689928",
+      "value": "UNC1860"
     }
   ],
   "version": 315
