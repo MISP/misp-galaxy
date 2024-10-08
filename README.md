@@ -179,6 +179,14 @@ Category: *guidelines* - source: *Open Sources* - total: *23* elements
 
 [[HTML](https://www.misp-galaxy.org/election-guidelines)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/election-guidelines.json)]
 
+## MITRE Engage Framework
+
+[MITRE Engage Framework](https://www.misp-galaxy.org/engage-framework) - This galaxy contains all parts of the MITRE Engage framework, including Activities, Approaches, Goals, and Vulnerabilities.
+
+Category: *engage* - source: *https://engage.mitre.org* - total: *77* elements
+
+[[HTML](https://www.misp-galaxy.org/engage-framework)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/engage-framework.json)]
+
 ## Entity
 
 [Entity](https://www.misp-galaxy.org/entity) - Description of entities that can be involved in events.
