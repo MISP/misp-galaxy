@@ -495,7 +495,7 @@ Category: *actor* - source: *MISP Project* - total: *46* elements
 
 [Ransomware](https://www.misp-galaxy.org/ransomware) - Ransomware galaxy based on different sources and maintained by the MISP Project.
 
-Category: *tool* - source: *Various* - total: *1807* elements
+Category: *tool* - source: *Various* - total: *1809* elements
 
 [[HTML](https://www.misp-galaxy.org/ransomware)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/ransomware.json)]
 
