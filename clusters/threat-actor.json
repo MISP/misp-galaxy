@@ -1037,7 +1037,8 @@
           "https://www.pwc.co.uk/cyber-security/pdf/pwc-cyber-threats-2020-a-year-in-retrospect.pdf",
           "https://www.fireeye.com/content/dam/fireeye-www/summit/cds-2019/presentations/cds19-executive-s08-achievement-unlocked.pdf",
           "https://www.proofpoint.com/us/blog/threat-insight/ta410-group-behind-lookback-attacks-against-us-utilities-sector-returns-new",
-          "https://www.crowdstrike.com/blog/two-birds-one-stone-panda/"
+          "https://www.crowdstrike.com/blog/two-birds-one-stone-panda/",
+          "http://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/cicada-apt10-china-ngo-government-attacks"
         ],
         "synonyms": [
           "STONE PANDA",
@@ -1052,7 +1053,8 @@
           "ATK41",
           "G0045",
           "Granite Taurus",
-          "TA429"
+          "TA429",
+          "Cicada"
         ]
       },
       "related": [
@@ -4052,7 +4054,8 @@
           "https://www.fireeye.com/content/dam/collateral/en/mtrends-2018.pdf",
           "https://www.wired.com/story/apt-34-iranian-hackers-critical-infrastructure-companies/",
           "https://unit42.paloaltonetworks.com/atoms/evasive-serpens/",
-          "https://www.microsoft.com/security/blog/2022/09/08/microsoft-investigates-iranian-attacks-against-the-albanian-government/"
+          "https://www.microsoft.com/security/blog/2022/09/08/microsoft-investigates-iranian-attacks-against-the-albanian-government/",
+          "https://www.trendmicro.com/en_us/research/24/j/earth-simnavaz-cyberattacks.html"
         ],
         "synonyms": [
           "Twisted Kitten",
@@ -4067,7 +4070,8 @@
           "Evasive Serpens",
           "Hazel Sandstorm",
           "EUROPIUM",
-          "TA452"
+          "TA452",
+          "Earth Simnavaz"
         ],
         "targeted-sector": [
           "Chemical",
@@ -6106,6 +6110,7 @@
       "value": "APT6"
     },
     {
+      "description": "AridViper is a state-sponsored APT primarily targeting military personnel, journalists, and dissidents in the Middle East, with a focus on Israel and Palestine. The group employs custom-developed mobile malware, including variants like AridSpy, GnatSpy, and Micropsia, often delivered through spear-phishing emails and deceptive applications. Their operations involve sophisticated social engineering tactics, including the use of fake social media profiles and weaponized apps masquerading as legitimate services. AridViper's activities are characterized by a blend of technical sophistication and psychological manipulation, aiming to exfiltrate sensitive data from compromised systems.",
       "meta": {
         "cfr-suspected-state-sponsor": "Palestine",
         "cfr-suspected-victims": [
@@ -6143,15 +6148,13 @@
           "https://www.threatconnect.com/blog/kasperagent-malware-campaign/",
           "https://www.trendmicro.com/vinfo/us/security/news/cyber-attacks/sexually-explicit-material-used-as-lures-in-cyber-attacks?linkId=12425812",
           "https://media.kasperskycontenthub.com/wp-content/uploads/sites/43/2018/03/08064309/The-Desert-Falcons-targeted-attacks.pdf",
-          "https://services.google.com/fh/files/misc/tool-of-first-resort-israel-hamas-war-cyber.pdf"
+          "https://www.sentinelone.com/labs/gaza-cybergang-unified-front-targeting-hamas-opposition/"
         ],
         "synonyms": [
           "Desert Falcon",
-          "Renegade Jackal",
-          "DESERTVARNISH",
-          "UNC718",
           "Arid Viper",
-          "APT-C-23"
+          "APT-C-23",
+          "Bearded Barbie"
         ]
       },
       "uuid": "0cfff0f4-868c-40a1-b9b4-0d153c0b33b6",
@@ -11583,10 +11586,12 @@
           "https://labs.k7computing.com/index.php/romcom-rat-not-your-typical-love-story/",
           "https://blogs.blackberry.com/en/2023/07/decoding-romcom-behaviors-and-opportunities-for-detection",
           "https://www.trendmicro.com/en_us/research/23/e/void-rabisu-s-use-of-romcom-backdoor-shows-a-growing-shift-in-th.html",
-          "https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Cyber-Sicherheitslage/Analysen-und-Prognosen/Threat-Intelligence/Aktive_APT-Gruppen/aktive-apt-gruppen_node.html"
+          "https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Cyber-Sicherheitslage/Analysen-und-Prognosen/Threat-Intelligence/Aktive_APT-Gruppen/aktive-apt-gruppen_node.html",
+          "https://blog.talosintelligence.com/uat-5647-romcom/"
         ],
         "synonyms": [
-          "Storm-0978"
+          "Storm-0978",
+          "UAT-5647"
         ]
       },
       "uuid": "ba9e1ed2-e142-48d0-a593-f73ac6d59ccd",
@@ -16987,6 +16992,151 @@
       },
       "uuid": "f6134b6c-56f1-4eda-be0f-79411d627f19",
       "value": "TaskMasters"
+    },
+    {
+      "description": "Anonymous 64 is a group accused by China's national security ministry of attempting to gain control of web portals, outdoor electronic screens, and network television. The Ministry of State Security claims that Anonymous 64 is linked to a cyber unit within Taiwan's defense ministry and identifies three active-duty military personnel as its members. The MSS alleges that the group is involved in an influence operation within China, using hacktivism as a cover. The accusations suggest that Anonymous 64 engages in sabotage activities, prompting authorities to call for public reporting of such actions.",
+      "meta": {
+        "country": "TW",
+        "refs": [
+          "https://www.theregister.com/2024/09/25/china_anonymous_64_taiwan_accusations/"
+        ],
+        "synonyms": [
+          "Anonymous 64"
+        ]
+      },
+      "uuid": "94f0fd5e-68a7-458a-bb5f-f2f4e5230fcc",
+      "value": "Anonymous64"
+    },
+    {
+      "description": "Asnarök is a threat actor that exploited CVE-2020-12271 and utilized command injection privilege escalation to gain root access to devices and install the Asnarök Trojan and demonstrated significant changes in TTPs, including the deployment of a web shell that did not reach out to external C2 for commands. X-Ops identified a patient-zero device linked to the attack and observed the use of an IC.sh script that stole local user account data. The actor's activities were linked to a broader pattern of malicious exploit research and targeted vulnerabilities disclosed by bug bounty researchers.",
+      "meta": {
+        "refs": [
+          "https://news.sophos.com/en-us/2024/10/31/pacific-rim-neutralizing-china-based-threat/",
+          "https://news.sophos.com/en-us/2024/10/31/pacific-rim-timeline/"
+        ],
+        "synonyms": [
+          "Personal Panda"
+        ]
+      },
+      "uuid": "4e26b4ac-5530-428b-8694-3dd6d24ee286",
+      "value": "Asnarök"
+    },
+    {
+      "description": "Shahid Hemmat is an IRGC-CEC affiliated hacking group linked to cyberattacks targeting U.S. critical infrastructure, including the defense industry and international transportation sectors. The group has been implicated in the hack of a booster station at the Municipal Water Authority in Aliquippa, Pennsylvania, which disrupted drinking water supply. Key figures within Shahid Hemmat include Manouchehr Akbari, Amir Hossein Hoseini, Mohammad Hossein Moradi, and Mohammad Reza Rafatnejad. The U.S. government is offering a $10 million reward for information on these individuals.",
+      "meta": {
+        "country": "IR",
+        "refs": [
+          "https://securityonline.info/shahid-hemmat-hackers-10m-reward-offered-by-us/",
+          "https://www.bitdefender.com/en-us/blog/hotforsecurity/us-offers-10-million-bounty-for-members-of-iranian-hacking-gang/"
+        ]
+      },
+      "uuid": "ae17fcf4-1335-4dec-9976-e26d2e5f7290",
+      "value": "Shahid Hemmat"
+    },
+    {
+      "description": "RipperSec is a pro-Palestinian, likely Malaysian hacktivist group created in June 2023, known for conducting DDoS attacks, data breaches, and defacements primarily targeting government and educational websites, as well as organizations perceived to support Israel. The group has claimed 196 DDoS attacks, with a significant portion directed at Israel, and utilizes a tool called MegaMedusa for their operations. RipperSec operates on Telegram, where it has amassed over 2,000 members, and collaborates with various like-minded hacktivist groups. Their attack strategy relies heavily on community involvement rather than sophisticated infrastructure.",
+      "meta": {
+        "country": "MY",
+        "refs": [
+          "https://blog.checkpoint.com/security/hacktivists-call-for-release-of-telegram-founder-with-freedurov-ddos-campaign/",
+          "https://www.radware.com/blog/security/2024/08/megamedusa-rippersec-public-web-ddos-attack-tool/",
+          "https://www.cyjax.com/the-hacktivist-response-to-uk-foreign-policy/"
+        ]
+      },
+      "uuid": "70d09d1f-15fb-4003-bd9a-b52250d9d57e",
+      "value": "RipperSec"
+    },
+    {
+      "description": "LulzSec Black is a hacktivist group that has claimed responsibility for coordinated DDoS attacks against Cyprus' government and critical infrastructure in response to the country's support for Israel. They have also announced cyberattacks targeting the UAE, including breaches of a government website and Alfa Electronics, asserting these actions are in support of Palestine. The group has indicated intentions for further attacks and has not provided independently verifiable evidence of their claims. Their operations reflect a focus on disrupting services and compromising data as part of their political agenda.",
+      "meta": {
+        "refs": [
+          "https://dailydarkweb.net/lulzsec-black-claims-cyberattacks-on-emirati-government-and-other-sector-targets/"
+        ]
+      },
+      "uuid": "a86b67d2-fc94-4c1b-91e1-949c969176ed",
+      "value": "LulzSec Black"
+    },
+    {
+      "description": "OverFlame is a hacktivist group known for executing DDoS attacks and website defacements, primarily targeting government institutions and corporations in Europe and North America. The group has been involved in coordinated attacks alongside other pro-Russian threat actors, such as NoName057and the People’s Cyber Army, often motivated by anti-government and anti-corporate sentiments. OverFlame operates through underground forums and encrypted messaging platforms to coordinate attacks and recruit members. Their activities have included targeting financial services, political parties, and educational institutions, demonstrating a focus on disrupting critical infrastructure.",
+      "meta": {
+        "refs": [
+          "https://socradar.io/biggest-education-industry-attacks-in-2024/",
+          "https://www.scworld.com/brief/austria-subjected-to-pro-russian-ddos-intrusions"
+        ]
+      },
+      "uuid": "8bd29f1a-ea33-49c2-a783-42cd2a193f83",
+      "value": "OverFlame"
+    },
+    {
+      "description": "UNC5820 is a threat actor exploiting the CVE-2024-47575 vulnerability in Fortinet's FortiManager, allowing them to bypass authentication and execute arbitrary commands. They have been observed exfiltrating configuration data, user information, and FortiOS256-hashed passwords from managed FortiGate devices. While the actor has staged and exfiltrated sensitive data, there is currently no evidence of lateral movement or further compromise of additional environments. Mandiant has not determined whether UNC5820 is state-sponsored or identified its geographic location.",
+      "meta": {
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/fortimanager-zero-day-exploitation-cve-2024-47575/"
+        ]
+      },
+      "uuid": "e13e36e7-a75b-42fa-8d51-35f9eeafebfc",
+      "value": "UNC5820"
+    },
+    {
+      "description": "Water Makara employs the Astaroth banking malware, which features a new defense evasion technique. Their spear phishing campaigns exploit human error by targeting users to click on malicious files. To mitigate these threats, organizations should implement regular security training, enforce strong password policies, utilize multifactor authentication (MFA), keep security solutions updated, and apply the principle of least privilege.",
+      "meta": {
+        "refs": [
+          "https://www.trendmicro.com/en_us/research/24/j/water-makara-uses-obfuscated-javascript-in-spear-phishing-campai.html"
+        ]
+      },
+      "uuid": "54bc063d-fc4e-4076-a282-cdb98480da2a",
+      "value": "Water Makara"
+    },
+    {
+      "description": "UAC-0215 is an APT group that has orchestrated a phishing campaign targeting public institutions, major industries, and military units in Ukraine, utilizing rogue RDP files to gain unauthorized access. The malicious emails are designed to appear legitimate, enticing recipients to open attachments that connect their systems to the attacker's server, allowing extensive access to local resources. CERT-UA has identified this activity as high-risk and has advised organizations to block RDP files at mail gateways and restrict RDP connection capabilities. The campaign's geographical footprint suggests a potential for broader cyberattacks beyond Ukraine.",
+      "meta": {
+        "refs": [
+          "https://cyble.com/blog/phishing-campaign-targeting-ukraine-uac-0215/",
+          "https://cert.gov.ua/article/6281076"
+        ]
+      },
+      "uuid": "0debc8ab-1449-4915-aa33-f6a54df2b2d7",
+      "value": "UAC-0215"
+    },
+    {
+      "description": "IcePeony is a China-nexus APT group that has been active since at least 2023, targeting government agencies, academic institutions, and political organizations in countries such as India, Mauritius, and Vietnam. They primarily employ SQL injection techniques to exploit vulnerabilities in publicly accessible web servers, subsequently installing web shells or executing malware like IceCache to facilitate credential theft. IcePeony operates under harsh work conditions, potentially adhering to the 996 working hour system, and shows a particular interest in the governments of Indian Ocean countries. Their activities suggest alignment with China's national interests, possibly related to maritime strategy.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://nao-sec.org/2024/10/IcePeony-with-the-996-work-culture.html"
+        ]
+      },
+      "uuid": "793280d5-d28c-4d4a-87b6-487ba9d9fbd1",
+      "value": "IcePeony"
+    },
+    {
+      "description": "DarkRaaS is a threat actor specializing in selling unauthorized access to various organizations' systems and networks across multiple countries, with a recent focus on targets in Israel, UAE, Turkey, and South America 4 9 20. The group has been operating for at least six years and typically offers access to sensitive data, internal systems, and infrastructure, with prices ranging up to $25,000 for VPN access 4 9. Their targets span various sectors including government institutions, educational facilities, oil and gas companies, and IT organizations, often claiming to have access to multiple terabytes of sensitive data 7 19.",
+      "meta": {
+        "refs": [
+          "https://cyberpress.org/darkraas-ransomware-oil-gas-company/",
+          "https://cyberpress.org/darkraas-ransomware-intelligence-data/",
+          "https://dailydarkweb.net/darkraas-allegedly-breached-a-major-oil-and-gas-company/"
+        ]
+      },
+      "uuid": "0c18304e-e65f-4881-94e1-cc2d621ec563",
+      "value": "DarkRaaS"
+    },
+    {
+      "description": "BLACKMETA is a pro-Palestinian hacktivist group that has claimed responsibility for a series of DDoS attacks and data breaches targeting organizations perceived as supportive of Israel, including the Internet Archive and various entities in the UAE and Saudi Arabia. The group employs DDoS attacks, website defacement, and data exfiltration, with motivations rooted in political ideology and retribution for perceived injustices against Palestinians. Their operations have been linked to a Telegram channel, where they publicize their activities and collaborate with other hacktivist groups. Additionally, they have been attributed to significant cyber disruptions, including a 100-hour DDoS campaign against a UAE bank, showcasing their operational capabilities.",
+      "meta": {
+        "country": "PS",
+        "refs": [
+          "https://thecyberexpress.com/sn-blackmeta-claim-snapchat-cyberattack/",
+          "https://www.radware.com/security/threat-advisories-and-attack-reports/six-day-web-ddos-attack-campaign/",
+          "https://securityboulevard.com/?p=2033037",
+          "https://socradar.io/internet-archive-data-breach-and-ddos-attacks/"
+        ],
+        "synonyms": [
+          "SN Blackmeta"
+        ]
+      },
+      "uuid": "969753d8-3cc9-43a2-9b8d-753d2bb385b4",
+      "value": "Blackmeta"
     }
   ],
   "version": 318
