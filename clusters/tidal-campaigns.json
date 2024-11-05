@@ -323,7 +323,7 @@
       "value": "APT40 Recent Tradecraft"
     },
     {
-      "description": "In July 2024, security researchers publicized a campaign attributed to Chinese state-sponsored espionage group APT41, where actors gained and maintained long-term access to various organizations' networks in multiple sectors around the world. Victims belonged to the shipping/logistics, media, entertainment, technology, and automotive industries and were located in western Europe, the Middle East, and East and Southeast Asia. Actors used a combination of red teaming tools, publicly available software, and custom malware for persistence, command and control, data collection, and exfiltration to Microsoft OneDrive accounts. The intrusions were notable for featuring the reemergence of DUSTPAN, a dropper not observed since a series of older APT41 compromises in 2021 & 2022.<sup>[[Mandiant APT41 July 18 2024](/references/34ee3a7c-27c0-492f-a3c6-a5a3e86915f0)]</sup>",
+      "description": "*We are no longer maintaining this object in favor of a similar object subsequently published by MITRE: \"APT41 DUST\" (Campaign). All relevant Tidal content extensions (e.g. additional Technique and Object relationships and metadata) have been added to the MITRE-authored object.*\n\nIn July 2024, security researchers publicized a campaign attributed to Chinese state-sponsored espionage group APT41, where actors gained and maintained long-term access to various organizations' networks in multiple sectors around the world. Victims belonged to the shipping/logistics, media, entertainment, technology, and automotive industries and were located in western Europe, the Middle East, and East and Southeast Asia. Actors used a combination of red teaming tools, publicly available software, and custom malware for persistence, command and control, data collection, and exfiltration to Microsoft OneDrive accounts. The intrusions were notable for featuring the reemergence of DUSTPAN, a dropper not observed since a series of older APT41 compromises in 2021 & 2022.<sup>[[Mandiant APT41 July 18 2024](/references/34ee3a7c-27c0-492f-a3c6-a5a3e86915f0)]</sup>",
       "meta": {
         "campaign_attack_id": "C3049",
         "first_seen": "2023-03-21T00:00:00Z",
@@ -337,7 +337,19 @@
       },
       "related": [],
       "uuid": "ea6266fd-50a7-4223-ade3-e60c3467f540",
-      "value": "APT41 2023-2024 Persistence & Exfiltration Activity"
+      "value": "APT41 2023-2024 Persistence & Exfiltration Activity (Deprecated)"
+    },
+    {
+      "description": "[APT41 DUST](https://app.tidalcyber.com/campaigns/b90adbbd-0fe3-5c5f-9433-543a5f01b0ae) was conducted by [APT41](https://app.tidalcyber.com/groups/502223ee-8947-42f8-a532-a3b3da12b7d9) from 2023 to July 2024 against entities in Europe, Asia, and the Middle East. [APT41 DUST](https://app.tidalcyber.com/campaigns/b90adbbd-0fe3-5c5f-9433-543a5f01b0ae) targeted sectors such as shipping, logistics, and media for information gathering purposes. [APT41](https://app.tidalcyber.com/groups/502223ee-8947-42f8-a532-a3b3da12b7d9) used previously-observed malware such as [DUSTPAN](https://app.tidalcyber.com/software/78454d3f-fa12-5b6f-9390-6412064d7c8d) as well as newly observed tools such as [DUSTTRAP](https://app.tidalcyber.com/software/ed72d5bb-2cf7-51a4-9d76-97fbd11c54d0) in [APT41 DUST](https://app.tidalcyber.com/campaigns/b90adbbd-0fe3-5c5f-9433-543a5f01b0ae).<sup>[[Google Cloud APT41 2024](https://app.tidalcyber.com/references/33bb9f8a-db9d-5dda-b4ae-2ba7fee0a0ae)]</sup>",
+      "meta": {
+        "campaign_attack_id": "C0040",
+        "first_seen": "2023-01-31T23:00:00Z",
+        "last_seen": "2024-06-30T22:00:00Z",
+        "source": "MITRE"
+      },
+      "related": [],
+      "uuid": "b90adbbd-0fe3-5c5f-9433-543a5f01b0ae",
+      "value": "APT41 DUST"
     },
     {
       "description": "ArcaneDoor was a campaign, which likely ran from November 2023 until around February 2024, that targeted Cisco Adaptive Security Appliances (ASAs). ASAs are network devices that combine firewall, VPN, and other functionality. The campaign targeted unspecified government institutions around the world and was believed to have been conducted for espionage purposes.<sup>[[Cisco Talos ArcaneDoor April 24 2024](/references/531c3f6f-2d2b-4774-b069-e2b7a13602c1)]</sup>\n\nResearchers attributed the campaign to UAT4356 (aka Storm-1849), a possible China-linked adversary.<sup>[[Wired ArcaneDoor April 24 2024](/references/05a8afd3-0173-41ca-b23b-196ea0f3b1c1)]</sup> The initial access vector for the ArcaneDoor attacks remains unclear. After gaining a foothold, actors used the Line Dancer tool to upload Line Runner, a persistence and arbitrary code execution capability, to compromised ASAs (Cisco assigned two vulnerabilities, CVE-2024-20359 and CVE-2024-20353, to these activities). Responders observed various actions on objectives during the attacks, including device configuration modification, network traffic capture, and possible lateral movement.<sup>[[Cisco Talos ArcaneDoor April 24 2024](/references/531c3f6f-2d2b-4774-b069-e2b7a13602c1)]</sup>",
@@ -590,6 +602,43 @@
       "value": "C0033"
     },
     {
+      "description": "Actors associated with the North Korean threat group Citrine Sleet were observed exploiting a zero-day vulnerability (CVE-2024-7971) in Chromium web browser software to achieve remote code execution in target environments. Actors were observed delivering FudModule, an advanced rootkit tool, during the attacks.<sup>[[Microsoft Security Blog August 30 2024](/references/d7ef2e80-30c0-47ce-91d4-db1690c6c689)]</sup>",
+      "meta": {
+        "campaign_attack_id": "C3055",
+        "first_seen": "2024-08-19T00:00:00Z",
+        "last_seen": "2024-08-30T00:00:00Z",
+        "owner": "TidalCyberIan",
+        "source": "Tidal Cyber",
+        "tags": [
+          "a38ef717-4427-4aa0-9666-bb97c6ff45f3",
+          "b9c973c9-062d-4cbd-8bfe-98d0b4e547eb",
+          "a98d7a43-f227-478e-81de-e7299639a355",
+          "c6e1f516-1a18-4ff9-b563-e6ac8103b104",
+          "2feda37d-5579-4102-a073-aa02e82cb49f"
+        ]
+      },
+      "related": [],
+      "uuid": "3ecdd876-7e93-4877-9032-49170c65a864",
+      "value": "Citrine Sleet Chromium Zero-Day Exploit Activity (CVE-2024-7971)"
+    },
+    {
+      "description": "Microsoft researchers observed threat actors, believed to be members of the Citrine Sleet aka DEV-0139 group, launch an apparently targeted attack against an organization in the cryptocurrency industry.<sup>[[Microsoft DEV-0139 December 6 2022](/references/f9c070f1-aa83-45a3-bffb-c90f4caf5926)]</sup>",
+      "meta": {
+        "campaign_attack_id": "C3056",
+        "first_seen": "2024-06-18T00:00:00Z",
+        "last_seen": "2022-10-19T00:00:00Z",
+        "owner": "TidalCyberIan",
+        "source": "Tidal Cyber",
+        "tags": [
+          "c6e1f516-1a18-4ff9-b563-e6ac8103b104",
+          "2feda37d-5579-4102-a073-aa02e82cb49f"
+        ]
+      },
+      "related": [],
+      "uuid": "dd4f230d-198b-45d5-b0f9-55ee725cd836",
+      "value": "Citrine Sleet Cryptocurrency Industry Attack"
+    },
+    {
       "description": "In June 2023, U.S. authorities released Cybersecurity Advisory AA23-158A, which detailed observed exploits of a zero-day SQL injection vulnerability (CVE-2023-34362) affecting Progress Software's managed file transfer (MFT) solution, MOVEit Transfer. According to the Advisory, exploit activity began on May 27, 2023, as threat actors, which the Advisory attributed to \"CL0P Ransomware Gang, also known as TA505\", began compromising internet-facing MOVEit Transfer web applications. Actors deployed web shells, dubbed LEMURLOOT, on compromised MOVEit applications, which enabled persistence, discovery of files and folders stored on MOVEit servers, and staging and exfiltration of compressed victim data. Authorities indicated they expected to see \"widespread exploitation of unpatched software services in both private and public networks\".<sup>[[U.S. CISA CL0P CVE-2023-34362 Exploitation](/references/07e48ca8-b965-4234-b04a-dfad45d58b22)]</sup> Progress Software acknowledged the vulnerability and issued guidance on known affected versions, software upgrades, and patching.<sup>[[Progress Software MOVEit Transfer Critical Vulnerability](/references/9f364e22-b73c-4f3a-902c-a3f0eb01a2b9)]</sup>\n\n**Related Vulnerabilities**: CVE-2023-34362<sup>[[U.S. CISA CL0P CVE-2023-34362 Exploitation](/references/07e48ca8-b965-4234-b04a-dfad45d58b22)]</sup>",
       "meta": {
         "campaign_attack_id": "C3005",
@@ -692,9 +741,7 @@
         "owner": "TidalCyberIan",
         "source": "Tidal Cyber",
         "tags": [
-          "c6e1f516-1a18-4ff9-b563-e6ac8103b104",
-          "2e5f6e4a-4579-46f7-9997-6923180815dd",
-          "2feda37d-5579-4102-a073-aa02e82cb49f"
+          "2e5f6e4a-4579-46f7-9997-6923180815dd"
         ]
       },
       "related": [],
@@ -720,6 +767,46 @@
       "value": "Defense Sector Supply Chain Compromise by North Korea-Linked Actors"
     },
     {
+      "description": "Security researchers observed consistent adversary use of Web Distributed Authoring and Versioning (WebDAV) technology to host malicious files related to Emmenhtal (aka PeakLight), a stealthy loader malware that was then used to ingress various final malicious payloads, including DarkGate, Amadey, and SelfAU3.<sup>[[Sekoia.io Blog September 19 2024](/references/df9ff358-4d1e-4094-92cd-4703c53a384c)]</sup>",
+      "meta": {
+        "campaign_attack_id": "C3060",
+        "first_seen": "2023-12-01T00:00:00Z",
+        "last_seen": "2024-09-19T00:00:00Z",
+        "owner": "TidalCyberIan",
+        "source": "Tidal Cyber",
+        "tags": [
+          "61085b71-eb19-46d8-a9e6-1ab9d2f3c08d",
+          "c6e1f516-1a18-4ff9-b563-e6ac8103b104",
+          "2feda37d-5579-4102-a073-aa02e82cb49f"
+        ]
+      },
+      "related": [],
+      "uuid": "0ca317da-c8d6-4bd5-8c1e-5d581c9095ce",
+      "value": "Emmenhtal Loader Distribution Activity"
+    },
+    {
+      "description": "ESET researchers observed cyberespionage activity that they linked to the FamousSparrow group, where actors used ProxyLogon and other vulnerability exploits to compromise hotel, legal, and other organizations worldwide and install a backdoor dubbed SparrowDoor, among other post-exploit tools.<sup>[[ESET FamousSparrow September 23 2021](/references/f91d6d8e-22a4-4851-9444-7a066e6b7aa5)]</sup>\n\nAt a similar time, Kaspersky researchers reported activity they linked to the GhostEmperor group, where ProxyLogon was also exploited and similar post-exploit tools were deployed, as well as a rootkit dubbed Demodex. The researchers further indicated that one of the command and control servers identified during their investigation correlated to the FamousSparrow activity that ESET had reported.<sup>[[Kaspersky September 30 2021](/references/8851f554-05c6-4fb0-807e-2ef0bc28e131)]</sup>",
+      "meta": {
+        "campaign_attack_id": "C3064",
+        "first_seen": "2021-03-03T00:00:00Z",
+        "last_seen": "2021-03-31T00:00:00Z",
+        "owner": "TidalCyberIan",
+        "source": "Tidal Cyber",
+        "tags": [
+          "915e7ac2-b266-45d7-945c-cb04327d6246",
+          "e499005b-adba-45bb-85e3-07043fd9edf9",
+          "8b1cb0dc-dd3e-44ba-828c-55c040e93b93",
+          "5f5e40cd-0732-4eb4-a083-06940623c3f9",
+          "15f2277a-a17e-4d85-8acd-480bf84f16b4",
+          "c6e1f516-1a18-4ff9-b563-e6ac8103b104",
+          "2feda37d-5579-4102-a073-aa02e82cb49f"
+        ]
+      },
+      "related": [],
+      "uuid": "7fa02214-cd06-480d-af2d-5943be14c6bd",
+      "value": "FamousSparrow/GhostEmperor Vulnerability Exploit and Post-Compromise Activity"
+    },
+    {
       "description": "In September 2023, French cybersecurity authorities released advisory CERTFR-2023-CTI-007, which detailed a network intrusion of the Regional and University Hospital Center of Brest, in northwestern France. Actors used valid credentials belonging to a healthcare professional to connect to a remote desktop service exposed to the Internet, then installed Cobalt Strike and SystemBC to provide backdoor network access. Authorities indicated that the credentials were likely compromised via unspecified infostealer malware.\n\nThe actors used multiple third-party tools for credential access and discovery, and they attempted to exploit at least five vulnerabilities for privilege escalation and lateral movement. Authorities worked with hospital personnel to isolate affected systems and disrupt the intrusion before suspected data exfiltration and encryption could take place. Based on infrastructural and behavioral overlaps with other incidents, officials attributed the intrusion to the FIN12 financially motivated actor group and indicated the same actors are responsible for dozens of attacks on French victims in recent years.\n\nAdditional details, indicators of compromise, and the observed Cobalt Strike configuration can be found in the [source report](https://www.cert.ssi.gouv.fr/uploads/CERTFR-2023-CTI-007.pdf).<sup>[[CERTFR-2023-CTI-007](/references/0f4a03c5-79b3-418e-a77d-305d5a32caca)]</sup>\n\n**Related Vulnerabilities**: CVE-2023-21746, CVE-2022-24521, CVE-2021-34527, CVE-2019-0708, CVE-2020-1472<sup>[[CERTFR-2023-CTI-007](/references/0f4a03c5-79b3-418e-a77d-305d5a32caca)]</sup>",
       "meta": {
         "campaign_attack_id": "C3010",
@@ -739,6 +826,25 @@
       "related": [],
       "uuid": "129ffe04-ea90-45d1-a2fd-7ff0bffa0433",
       "value": "FIN12 March 2023 Hospital Center Intrusion"
+    },
+    {
+      "description": "This object represents a collection of MITRE ATT&CK® Techniques and other objects related to the subject threat. Further contextual details are provided via the sources in the References tab below and any associated Tags.",
+      "meta": {
+        "campaign_attack_id": "C3066",
+        "first_seen": "2024-06-27T00:00:00Z",
+        "last_seen": "2024-10-23T00:00:00Z",
+        "owner": "TidalCyberIan",
+        "source": "Tidal Cyber",
+        "tags": [
+          "ef7715f8-526a-4df5-bad3-74b66170a52b",
+          "a98d7a43-f227-478e-81de-e7299639a355",
+          "c6e1f516-1a18-4ff9-b563-e6ac8103b104",
+          "2feda37d-5579-4102-a073-aa02e82cb49f"
+        ]
+      },
+      "related": [],
+      "uuid": "50a2fbb8-e92e-4033-9dfc-d6b47aaab22d",
+      "value": "FortiManager Zero-Day Exploit Activity (CVE-2024-47575)"
     },
     {
       "description": "[Frankenstein](https://app.tidalcyber.com/campaigns/2fab9878-8aae-445a-86db-6b47b473f56b) was described by security researchers as a highly-targeted campaign conducted by moderately sophisticated and highly resourceful threat actors in early 2019. The unidentified actors primarily relied on open source tools, including [Empire](https://app.tidalcyber.com/software/fea655ac-558f-4dd0-867f-9a5553626207). The campaign name refers to the actors' ability to piece together several unrelated open-source tool components.<sup>[[Talos Frankenstein June 2019](https://app.tidalcyber.com/references/a6faa495-db01-43e8-9db3-d446570802bc)]</sup>",
@@ -765,6 +871,23 @@
       "value": "FunnyDream"
     },
     {
+      "description": "In July 2024, Sygnia researchers reported about what they described as an \"updated infection chain\" used to deploy a variant of the Demodex rootkit, associated with the GhostEmperor (AKA FamousSparrow and Salt Typhoon) China-backed cyberespionage group. The attacks, which were discovered at an unspecified time in \"late 2023\", featured malware loading and obfuscation methods distinct from those observed during previous GhostEmperor activity in 2021.<sup>[[Sygnia July 17 2024](/references/7d30acb4-9600-46bd-a800-1c7e1149e9b4)]</sup>",
+      "meta": {
+        "campaign_attack_id": "C3065",
+        "first_seen": "2023-12-01T00:00:00Z",
+        "last_seen": "2023-12-31T00:00:00Z",
+        "owner": "TidalCyberIan",
+        "source": "Tidal Cyber",
+        "tags": [
+          "c6e1f516-1a18-4ff9-b563-e6ac8103b104",
+          "2feda37d-5579-4102-a073-aa02e82cb49f"
+        ]
+      },
+      "related": [],
+      "uuid": "c1447188-c034-408e-a827-55314c698827",
+      "value": "GhostEmperor/Demodex 2023 Compromise"
+    },
+    {
       "description": "U.S. cybersecurity authorities released an advisory that warned of recent attacks targeting healthcare entities and providers, which leveraged social engineering techniques for initial access and ultimately led to financial theft. The attacks used voice phishing and phishing domains, and sometimes bypassed multi-factor authentication measures, to gain footholds. Actors often used information gathered through extensive reconnaissance to facilitate these efforts.\n\nActors then used \"living off the land\" (LOTL) techniques to persist stealthily in compromised environments. Ultimately, actors sought to modify patient automated clearinghouse (ACH) account information to divert payments to actor-controlled bank accounts. The advisory did not attribute the recent campaign to a named adversary group.<sup>[[FBI Social Engineering Attacks June 24 2024](/references/527ac41a-a65e-4cf9-a9c9-194443b37c5b)]</sup>",
       "meta": {
         "campaign_attack_id": "C3042",
@@ -780,6 +903,22 @@
       "related": [],
       "uuid": "1610257c-e2fc-4b05-bd63-5c2cbfb2342e",
       "value": "Healthcare Social Engineering & Payment Diversion Activity"
+    },
+    {
+      "description": "[HomeLand Justice](https://app.tidalcyber.com/campaigns/04329c95-d792-5333-b5bc-13ef2c545d7b) was a disruptive campaign involving the use of ransomware, wiper malware, and sensitive information leaks conducted by Iranian state cyber actors against Albanian government networks in July and September 2022. Initial access for [HomeLand Justice](https://app.tidalcyber.com/campaigns/04329c95-d792-5333-b5bc-13ef2c545d7b) was established in May 2021 as threat actors subsequently moved laterally, exfiltrated sensitive information, and maintained persistence for approximately 14 months prior to the attacks. Responsibility was claimed by the \"HomeLand Justice\" front whose messaging indicated targeting of the Mujahedeen-e Khalq (MEK), an Iranian opposition group who maintain a refugee camp in Albania, and were formerly designated a terrorist organization by the US State Department.<sup>[[Mandiant ROADSWEEP August 2022](https://app.tidalcyber.com/references/0d81ec58-2e12-5824-aa53-feb0d2260f30)]</sup><sup>[[Microsoft Albanian Government Attacks September 2022](https://app.tidalcyber.com/references/d00399e9-a6c6-5691-92cd-0185b03b689e)]</sup><sup>[[CISA Iran Albanian Attacks September 2022](https://app.tidalcyber.com/references/c5d37bde-52bc-525a-b25a-e097f77a924a)]</sup> A second wave of attacks was launched in September 2022 using similar tactics after public attribution of the previous activity to Iran and the severing of diplomatic ties between Iran and Albania.<sup>[[CISA Iran Albanian Attacks September 2022](https://app.tidalcyber.com/references/c5d37bde-52bc-525a-b25a-e097f77a924a)]</sup>\n\n",
+      "meta": {
+        "campaign_attack_id": "C0038",
+        "first_seen": "2021-05-01T04:00:00Z",
+        "last_seen": "2022-09-01T04:00:00Z",
+        "source": "MITRE",
+        "tags": [
+          "e551ae97-d1b4-484e-9267-89f33829ec2c",
+          "15787198-6c8b-4f79-bf50-258d55072fee"
+        ]
+      },
+      "related": [],
+      "uuid": "04329c95-d792-5333-b5bc-13ef2c545d7b",
+      "value": "HomeLand Justice"
     },
     {
       "description": "This object represents a collection of MITRE ATT&CK® Techniques and other objects (Groups and/or Software) related to the specified threat activity. Further background & contextual details can be found in the References tab below.",
@@ -828,6 +967,29 @@
       "related": [],
       "uuid": "18cf25b5-ed3a-40f6-bf0a-a3938a4f8da2",
       "value": "Iranian APT Targeting U.S. Voter Data"
+    },
+    {
+      "description": "On October 16, 2024, U.S., Canadian, and Australian cybersecurity authorities released joint Cybersecurity Advisory AA24-290A, which detailed attacks by unspecified \"Iranian cyber actors\", who used brute forcing and other credential access techniques to compromise various critical infrastructure entities, including organizations in the healthcare and public health (HPH), government, information technology, engineering, and energy sectors. The advisory indicated that the actors likely carried out the attacks in order to ultimately sell harvested credentials and victim network information \"to enable access to cybercriminals\".<sup>[[U.S. CISA Iranian Actors Critical Infrastructure October 16 2024](/references/a70a4487-eaae-43b3-bfe0-0677fd911959)]</sup>",
+      "meta": {
+        "campaign_attack_id": "C3063",
+        "first_seen": "2023-10-01T00:00:00Z",
+        "last_seen": "2024-02-07T00:00:00Z",
+        "owner": "TidalCyberIan",
+        "source": "Tidal Cyber",
+        "tags": [
+          "51006447-540b-4b9d-bdba-1cbff8038ae9",
+          "35e694ec-5133-46e3-b7e1-5831867c3b55",
+          "61cdbb28-cbfd-498b-9ab1-1f14337f9524",
+          "15787198-6c8b-4f79-bf50-258d55072fee",
+          "89c5b94b-ecf4-4d53-9b74-3465086d4565",
+          "291c006e-f77a-4c9c-ae7e-084974c0e1eb",
+          "15f2277a-a17e-4d85-8acd-480bf84f16b4",
+          "c9c73000-30a5-4a16-8c8b-79169f9c24aa"
+        ]
+      },
+      "related": [],
+      "uuid": "3b15979c-eabf-41d1-8930-f480106f8430",
+      "value": "Iranian Cyber Actors Compromise Critical Infrastructure Organizations"
     },
     {
       "description": "In September 2022, U.S., Canadian, United Kingdom, and Australian cybersecurity authorities released joint Cybersecurity Advisory AA22-257A, which detailed malicious cyber activity attributed to advanced persistent threat (APT) actors affiliated with the Iranian government’s Islamic Revolutionary Guard Corps (IRGC). The advisory updated a previous alert (AA21-321A), published in November 2021, and summarized recent activities linked to the actors. Since at least March 2021, the actors were observed targeting victims in a wide range of U.S. critical infrastructure sectors, including transportation and healthcare, and victims in unspecified sectors in Australia, Canada, and the United Kingdom.\n\nThe actors typically exploited vulnerabilities to gain initial network access. They were observed exploiting vulnerabilities in Microsoft Exchange servers (ProxyShell) and Fortinet devices in 2021, and VMware Horizon (Log4j) in 2022. After gaining access, the actors typically evaluated the perceived value of data held within a victim network and either encrypted it for ransom and/or exfiltrated it. The actors are believed to have sold some exfiltrated data or used it as leverage to further pressure victims into paying a ransom.\n\nIn addition to behavioral observations and indicators of compromise, the advisories provided detection and mitigation guidance, which can be found in the source reports [here](https://www.cisa.gov/news-events/cybersecurity-advisories/aa22-257a) and [here](https://www.cisa.gov/news-events/cybersecurity-advisories/aa21-321a).\n\n**Related Vulnerabilities**: CVE-2021-34523, CVE-2021-31207, CVE-2021-44228, CVE-2021-45046, CVE-2021-45105<sup>[[U.S. CISA IRGC Actors September 14 2022](/references/728b20b0-f702-4dbe-afea-50270648a3a2)]</sup>, CVE-2021-34473, CVE-2018-13379, CVE-2020-12812, CVE-2019-5591<sup>[[U.S. CISA Iranian Government Actors November 19 2021](/references/d7014279-bc6a-43d4-953a-a6bc1d97a13b)]</sup>",
@@ -920,6 +1082,21 @@
       "value": "June 2023 Citrix Vulnerability Exploitation"
     },
     {
+      "description": "[KV Botnet Activity](https://app.tidalcyber.com/campaigns/c0c1054c-46f0-5221-9e7c-9907fe224947) consisted of exploitation of primarily “end-of-life” small office-home office (SOHO) equipment from manufacturers such as Cisco, NETGEAR, and DrayTek. [KV Botnet Activity](https://app.tidalcyber.com/campaigns/c0c1054c-46f0-5221-9e7c-9907fe224947) was used by [Volt Typhoon](https://app.tidalcyber.com/groups/4ea1245f-3f35-5168-bd10-1fc49142fd4e) to obfuscate connectivity to victims in multiple critical infrastructure segments, including energy and telecommunication companies and entities based on the US territory of Guam. While the KV Botnet is the most prominent element of this campaign, it overlaps with another botnet cluster referred to as the JDY cluster.<sup>[[Lumen KVBotnet 2023](https://app.tidalcyber.com/references/81bbc4e1-e1e6-5c93-bf65-ffdc9c7ff71d)]</sup> This botnet was disrupted by US law enforcement entities in early 2024 after periods of activity from October 2022 through January 2024.<sup>[[DOJ KVBotnet 2024](https://app.tidalcyber.com/references/55cf0ced-0de3-5af8-b3e6-3c33bb445593)]</sup>",
+      "meta": {
+        "campaign_attack_id": "C0035",
+        "first_seen": "2022-10-01T04:00:00Z",
+        "last_seen": "2024-01-01T05:00:00Z",
+        "source": "MITRE",
+        "tags": [
+          "b20e7912-6a8d-46e3-8e13-9a3fc4813852"
+        ]
+      },
+      "related": [],
+      "uuid": "c0c1054c-46f0-5221-9e7c-9907fe224947",
+      "value": "KV Botnet Activity"
+    },
+    {
       "description": "In November 2023, U.S. cybersecurity authorities and international partners released Cybersecurity Advisory AA23-325A, which detailed observed exploitation of CVE-2023-4966 (known colloquially as the “Citrix Bleed” vulnerability) by threat actors believed to be affiliated with the LockBit ransomware operation.\n\nCitrix Bleed is a vulnerability in Citrix NetScaler web application delivery control (“ADC”) and NetScaler Gateway appliances, which allows adversaries to bypass password requirements and multifactor authentication, enabling hijacking of legitimate user sessions and subsequent credential harvesting, lateral movement, and data or resource access. Authorities indicated that they expected “widespread” Citrix Bleed exploitation on unpatched services due to the ease of carrying out the exploit.\n\nAfter successful Citrix Bleed exploitation, LockBit affiliates were observed using a variety of follow-on TTPs and using a range of software, including abuse of native utilities and popular legitimate remote management and monitoring (“RMM”) tools. Indicators of compromise associated with recent intrusions and further incident response and mitigation guidance can be found in the [source report](https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-325a).<sup>[[U.S. CISA LockBit Citrix Bleed November 21 2023](/references/21f56e0c-9605-4fbb-9cb1-f868ba6eb053)]</sup> Public reporting suggested that actors associated with the Medusa and Qilin ransomware operations, plus other unknown ransomware and uncategorized actors, had also exploited Citrix Bleed as part of their operations.<sup>[[Malwarebytes Citrix Bleed November 24 2023](/references/fdc86cea-0015-48d1-934f-b22244de6306)]</sup><sup>[[Cybernews Yanfeng Qilin November 2023](/references/93c89ca5-1863-4ee2-9fff-258f94f655c4)]</sup>",
       "meta": {
         "campaign_attack_id": "C3016",
@@ -1009,7 +1186,7 @@
       "value": "Molerats 2021 Backdoor Delivery Campaign"
     },
     {
-      "description": "This object represents a collection of MITRE ATT&CK® Techniques related to multiple incidents attributed to the North Korean actor group Moonstone Sleet that took place from August 2023 through May 2024. Attacks targeted individuals and organizations related to the software, information technology, education, and defense industrial base sectors, and are believed to have been carried out for both financial gain and espionage purposes.<sup>[[Microsoft Security Blog 5 28 2024](/references/faf315ed-71f7-4e29-8334-701da35a69ad)]</sup>",
+      "description": "*We are no longer maintaining this object in favor of a similar object subsequently published by MITRE: \"Moonstone Sleet\" (Group). All relevant Tidal content extensions (e.g. additional Technique and Object relationships and metadata) have been added to the MITRE-authored object.*\n\nThis object represents a collection of MITRE ATT&CK® Techniques related to multiple incidents attributed to the North Korean actor group Moonstone Sleet that took place from August 2023 through May 2024. Attacks targeted individuals and organizations related to the software, information technology, education, and defense industrial base sectors, and are believed to have been carried out for both financial gain and espionage purposes.<sup>[[Microsoft Security Blog 5 28 2024](/references/faf315ed-71f7-4e29-8334-701da35a69ad)]</sup>",
       "meta": {
         "campaign_attack_id": "C3039",
         "first_seen": "2023-08-01T00:00:00Z",
@@ -1023,7 +1200,7 @@
       },
       "related": [],
       "uuid": "6e63729b-6483-4a87-923c-2de179a32f17",
-      "value": "Moonstone Sleet Operations"
+      "value": "Moonstone Sleet Operations (Deprecated)"
     },
     {
       "description": "[Night Dragon](https://app.tidalcyber.com/campaigns/85f136b3-d5a3-4c4c-a37c-40e4418dc989) was a cyber espionage campaign that targeted oil, energy, and petrochemical companies, along with individuals and executives in Kazakhstan, Taiwan, Greece, and the United States. The unidentified threat actors searched for information related to oil and gas field production systems, financials, and collected data from SCADA systems. Based on the observed techniques, tools, and network activities, security researchers assessed the campaign involved a threat group based in China.<sup>[[McAfee Night Dragon](https://app.tidalcyber.com/references/242d2933-ca2b-4511-803a-454727a3acc5)]</sup>",
@@ -1223,6 +1400,18 @@
       "value": "Pikabot Distribution Campaigns 2023"
     },
     {
+      "description": "[Pikabot](https://app.tidalcyber.com/software/fb1b0624-3290-5977-abbc-bc9609b51f8d) was distributed in [Pikabot Distribution February 2024](https://app.tidalcyber.com/campaigns/6e6fa0e4-18b3-5700-803d-b821dcdcd787) using malicious emails with embedded links leading to malicious ZIP archives requiring user interaction for follow-on infection. The version of [Pikabot](https://app.tidalcyber.com/software/fb1b0624-3290-5977-abbc-bc9609b51f8d) distributed featured significant changes over the 2023 variant, including reduced code complexity and simplified obfuscation mechanisms.<sup>[[Elastic Pikabot 2024](https://app.tidalcyber.com/references/6c222f33-f588-513c-9149-4c2308e05319)]</sup><sup>[[Zscaler Pikabot 2024](https://app.tidalcyber.com/references/9c1edd25-0fd0-5b5d-8091-68074da52593)]</sup>",
+      "meta": {
+        "campaign_attack_id": "C0036",
+        "first_seen": "2024-02-01T05:00:00Z",
+        "last_seen": "2024-02-01T05:00:00Z",
+        "source": "MITRE"
+      },
+      "related": [],
+      "uuid": "6e6fa0e4-18b3-5700-803d-b821dcdcd787",
+      "value": "Pikabot Distribution February 2024"
+    },
+    {
       "description": "Researchers observed a campaign, with activity occurring between March and at least June 2024, where multiple discrete threat actor clusters used similar social engineering techniques to trick users into copying and executing PowerShell scripts, which ultimately led to malware deployment on the victim's system. Payloads included droppers, RATs, and information stealer malware.\n\nInitial contact with the victim occurred through both malspam email campaigns and web browser injects, which would trigger a popup claiming an error occurred when trying to open a document or webpage. The popup would prompt the user to run a script in the PowerShell terminal or Windows Run dialog box. Researchers attributed these campaigns to TA571, an initial access broker, a known intrusion set (ClearFake), and a newer group dubbed ClickFix.<sup>[[Proofpoint June 17 2024](/references/a65d7492-04a4-46d4-85ed-134786c6828b)]</sup><sup>[[BleepingComputer Fake Chrome Errors June 17 2024](/references/6efa70e3-d8eb-4260-b0ab-62335681e6fd)]</sup>",
       "meta": {
         "campaign_attack_id": "C3045",
@@ -1277,6 +1466,49 @@
       "value": "Quantum Ransomware Compromise"
     },
     {
+      "description": "On October 10, 2024, U.S. cybersecurity authorities and international patners released a joint Cybersecurity Advisory (JCSA-20241010-001), which detailed TTPs used by Russian Foreign Intelligence Service (SVR) actors (aka APT29, Midnight Blizzard, et al) during \"recent\" cyber operations. The advisory highlighted the variety of initial access and post-exploitation TTPs leveraged by SVR actors in both targeted and broad-based campaigns, and it also spotlighted that these actors have the \"capability and interest\" to exploit a relatively long list of publicly disclosed vulnerabilities, which are tagged to this object.<sup>[[FBI SVR Update October 10 2024](/references/63a76e88-2cd1-4cfa-bd96-4c1c3eebb39b)]</sup>",
+      "meta": {
+        "campaign_attack_id": "C3062",
+        "first_seen": "2021-01-01T00:00:00Z",
+        "last_seen": "2024-10-10T00:00:00Z",
+        "owner": "TidalCyberIan",
+        "source": "Tidal Cyber",
+        "tags": [
+          "af5e9be5-b86e-47af-91dd-966a5e34a186",
+          "61cdbb28-cbfd-498b-9ab1-1f14337f9524",
+          "e551ae97-d1b4-484e-9267-89f33829ec2c",
+          "154bd6f0-9276-4ea5-946c-d35769d3ae4b",
+          "1ee3e55f-8f28-43c4-9f01-8a1bad68bd56",
+          "082b6886-9f4a-4237-82e4-827f6bab704e",
+          "7d158419-2d50-4688-aa4f-3b68a4d30870",
+          "5c7a911d-9f28-4f13-a6aa-c7a2e2b3ca55",
+          "46404b24-e38a-4fea-981b-cac3d3020c8b",
+          "9a0df3c4-2bbf-4192-a08a-ec27d9a4c5f1",
+          "e676e31d-d1d4-4a83-afa9-acf58be4f92a",
+          "49478e42-38e9-417c-9cf9-7f2c5d41bfa8",
+          "b7ad8591-fbff-46ec-8f4a-33f569cce2f9",
+          "5ef89937-dd06-4407-91d2-61db30c75934",
+          "72d3fa15-265b-4f4c-ba77-635d8531fe69",
+          "5bd6e9f7-78e3-4a8b-8734-c8c45b61a76d",
+          "b3665c87-5cb3-414e-8910-d4ffe53371c2",
+          "d1596bb2-b947-419a-b1f0-8f38e28eae09",
+          "49a674f7-c117-422e-8057-67bdfab2de9c",
+          "a4240ea5-b7d4-40a0-afbd-76fcf2e4ebbc",
+          "f97e406e-0d4b-4927-af03-8113a720417f",
+          "1b0321d7-4d9a-4977-bd2a-092c2693b328",
+          "cccb02c5-9791-4cb4-8fe8-0c5a6aea7dcf",
+          "15b77e5c-2285-434d-9719-73c14beba8bd",
+          "08809fa0-61b6-4394-b103-1c4d19a5be16",
+          "7551097a-dfdd-426f-aaa2-a2916dd9b873",
+          "a32a757a-9d6b-43ca-ac4b-5f695dd0f110",
+          "1b98f09a-7d93-4abb-8f3e-1eacdb9f9871"
+        ]
+      },
+      "related": [],
+      "uuid": "246d56a6-141c-4d60-a346-538e44fac1c9",
+      "value": "Russian SVR Cyber Operations and Vulnerability Exploitation Activity"
+    },
+    {
       "description": "Researchers have observed an evolution in Scattered Spider's/UNC3944's TTPs since the second half of 2023, with actors especially focusing on gaining wide access to victim SaaS environments for reconnaissance, data theft, and subsequent extortion purposes. This object reflects the MITRE ATT&CK® Techniques associated with this activity.<sup>[[Google Cloud June 13 2024](/references/161423a2-165d-448f-90e9-0c53e319a125)]</sup>\n\nNotable Techniques newly associated with Scattered Spider via this Campaign object include Forge Web Credentials: SAML Tokens (T1606.002), Impair Defenses: Disable or Modify Tools (T1562.001), Indicator Removal: Clear Windows Event Logs (T1070.001), Software Discovery: Security Software Discovery (T1518.001), and Pre-OS Boot: System Firmware (T1542.001).",
       "meta": {
         "campaign_attack_id": "C3041",
@@ -1317,7 +1549,7 @@
       "value": "ScreenConnect Vulnerability Exploit Attacks"
     },
     {
-      "description": "The [SolarWinds Compromise](https://app.tidalcyber.com/campaigns/8bde8146-0656-5800-82e6-e24e008e4f4a) was a sophisticated supply chain cyber operation conducted by [APT29](https://app.tidalcyber.com/groups/4c3e48b9-4426-4271-a7af-c3dfad79f447) that was discovered in mid-December 2020. [APT29](https://app.tidalcyber.com/groups/4c3e48b9-4426-4271-a7af-c3dfad79f447) used customized malware to inject malicious code into the SolarWinds Orion software build process that was later distributed through a normal software update; they also used password spraying, token theft, API abuse, spear phishing, and other supply chain attacks to compromise user accounts and leverage their associated access. Victims of this campaign included government, consulting, technology, telecom, and other organizations in North America, Europe, Asia, and the Middle East. Industry reporting initially referred to the actors involved in this campaign as UNC2452, NOBELIUM, StellarParticle, Dark Halo, and SolarStorm.<sup>[[SolarWinds Advisory Dec 2020](https://app.tidalcyber.com/references/4e8b908a-bdc5-441b-bc51-98dfa87f6b7a)]</sup><sup>[[SolarWinds Sunburst Sunspot Update January 2021](https://app.tidalcyber.com/references/1be1b6e0-1b42-4d07-856b-b6321c17bb88)]</sup><sup>[[FireEye SUNBURST Backdoor December 2020](https://app.tidalcyber.com/references/d006ed03-a8af-4887-9356-3481d81d43e4)]</sup><sup>[[Volexity SolarWinds](https://app.tidalcyber.com/references/355cecf8-ef3e-4a6e-a652-3bf26fe46d88)]</sup><sup>[[CrowdStrike StellarParticle January 2022](https://app.tidalcyber.com/references/149c1446-d6a1-4a63-9420-def9272d6cb9)]</sup><sup>[[Unit 42 SolarStorm December 2020](https://app.tidalcyber.com/references/ecbb602a-2427-5eba-8c2b-25d90c95f166)]</sup><sup>[[Microsoft Analyzing Solorigate Dec 2020](https://app.tidalcyber.com/references/8ad72d46-ba2c-426f-bb0d-eb47723c8e11)]</sup><sup>[[Microsoft Internal Solorigate Investigation Blog](https://app.tidalcyber.com/references/66cade99-0040-464c-98a6-bba57719f0a4)]</sup> \n\nIn April 2021, the US and UK governments attributed the [SolarWinds Compromise](https://app.tidalcyber.com/campaigns/8bde8146-0656-5800-82e6-e24e008e4f4a) to Russia's Foreign Intelligence Service (SVR); public statements included citations to [APT29](https://app.tidalcyber.com/groups/4c3e48b9-4426-4271-a7af-c3dfad79f447), Cozy Bear, and The Dukes.<sup>[[NSA Joint Advisory SVR SolarWinds April 2021](https://app.tidalcyber.com/references/43d9c469-1d54-454b-ba67-74e7f1de9c10)]</sup><sup>[[UK NSCS Russia SolarWinds April 2021](https://app.tidalcyber.com/references/f49e6780-8caa-4c3c-8d68-47a2cc4319a1)]</sup><sup>[[Mandiant UNC2452 APT29 April 2022](https://app.tidalcyber.com/references/5276508c-6792-56be-b757-e4b495ef6c37)]</sup> The US government assessed that of the approximately 18,000 affected public and private sector customers of Solar Winds’ Orion product, a much smaller number were compromised by follow-on [APT29](https://app.tidalcyber.com/groups/4c3e48b9-4426-4271-a7af-c3dfad79f447) activity on their systems.<sup>[[USG Joint Statement SolarWinds January 2021](https://app.tidalcyber.com/references/336a6549-a95d-5763-bbaf-5ef0d3141800)]</sup> ",
+      "description": "The [SolarWinds Compromise](https://app.tidalcyber.com/campaigns/8bde8146-0656-5800-82e6-e24e008e4f4a) was a sophisticated supply chain cyber operation conducted by [APT29](https://app.tidalcyber.com/groups/4c3e48b9-4426-4271-a7af-c3dfad79f447) that was discovered in mid-December 2020. [APT29](https://app.tidalcyber.com/groups/4c3e48b9-4426-4271-a7af-c3dfad79f447) used customized malware to inject malicious code into the SolarWinds Orion software build process that was later distributed through a normal software update; they also used password spraying, token theft, API abuse, spear phishing, and other supply chain attacks to compromise user accounts and leverage their associated access. Victims of this campaign included government, consulting, technology, telecom, and other organizations in North America, Europe, Asia, and the Middle East. This activity has been labled the StellarParticle campaign in industry reporting.<sup>[[CrowdStrike StellarParticle January 2022](https://app.tidalcyber.com/references/149c1446-d6a1-4a63-9420-def9272d6cb9)]</sup> Industry reporting also initially referred to the actors involved in this campaign as UNC2452, NOBELIUM, Dark Halo, and SolarStorm.<sup>[[SolarWinds Advisory Dec 2020](https://app.tidalcyber.com/references/4e8b908a-bdc5-441b-bc51-98dfa87f6b7a)]</sup><sup>[[SolarWinds Sunburst Sunspot Update January 2021](https://app.tidalcyber.com/references/1be1b6e0-1b42-4d07-856b-b6321c17bb88)]</sup><sup>[[FireEye SUNBURST Backdoor December 2020](https://app.tidalcyber.com/references/d006ed03-a8af-4887-9356-3481d81d43e4)]</sup><sup>[[Volexity SolarWinds](https://app.tidalcyber.com/references/355cecf8-ef3e-4a6e-a652-3bf26fe46d88)]</sup><sup>[[CrowdStrike StellarParticle January 2022](https://app.tidalcyber.com/references/149c1446-d6a1-4a63-9420-def9272d6cb9)]</sup><sup>[[Unit 42 SolarStorm December 2020](https://app.tidalcyber.com/references/ecbb602a-2427-5eba-8c2b-25d90c95f166)]</sup><sup>[[Microsoft Analyzing Solorigate Dec 2020](https://app.tidalcyber.com/references/8ad72d46-ba2c-426f-bb0d-eb47723c8e11)]</sup><sup>[[Microsoft Internal Solorigate Investigation Blog](https://app.tidalcyber.com/references/66cade99-0040-464c-98a6-bba57719f0a4)]</sup> \n\nIn April 2021, the US and UK governments attributed the [SolarWinds Compromise](https://app.tidalcyber.com/campaigns/8bde8146-0656-5800-82e6-e24e008e4f4a) to Russia's Foreign Intelligence Service (SVR); public statements included citations to [APT29](https://app.tidalcyber.com/groups/4c3e48b9-4426-4271-a7af-c3dfad79f447), Cozy Bear, and The Dukes.<sup>[[NSA Joint Advisory SVR SolarWinds April 2021](https://app.tidalcyber.com/references/43d9c469-1d54-454b-ba67-74e7f1de9c10)]</sup><sup>[[UK NSCS Russia SolarWinds April 2021](https://app.tidalcyber.com/references/f49e6780-8caa-4c3c-8d68-47a2cc4319a1)]</sup><sup>[[Mandiant UNC2452 APT29 April 2022](https://app.tidalcyber.com/references/5276508c-6792-56be-b757-e4b495ef6c37)]</sup> The US government assessed that of the approximately 18,000 affected public and private sector customers of Solar Winds’ Orion product, a much smaller number were compromised by follow-on [APT29](https://app.tidalcyber.com/groups/4c3e48b9-4426-4271-a7af-c3dfad79f447) activity on their systems.<sup>[[USG Joint Statement SolarWinds January 2021](https://app.tidalcyber.com/references/336a6549-a95d-5763-bbaf-5ef0d3141800)]</sup> ",
       "meta": {
         "campaign_attack_id": "C0024",
         "first_seen": "2019-08-01T05:00:00Z",
@@ -1331,6 +1563,30 @@
       "related": [],
       "uuid": "8bde8146-0656-5800-82e6-e24e008e4f4a",
       "value": "SolarWinds Compromise"
+    },
+    {
+      "description": "Microsoft researchers observed Storm-0501 actors abusing hybrid user identities and their associated privileges in order to pivot from on-premises to cloud environments in Q3 2024. Storm-0501 is a financially motivated actor that has been known to deploy multiple distinct ransomware families and exfiltrate data for extortion purposes, leveraging the relatively new, Rust-based Embargo ransomware (along with a number of supporting commodity and open-source tools) during the hybrid compromise attack.<sup>[[Microsoft Security Blog September 26 2024](/references/bf05138b-f690-4b0f-ba10-9af71f7d9bfc)]</sup> Mandiant reserachers linked Storm-0501 with an actor group they track as UNC2190, which was observed carrying out ransomware attacks while branded as \"54BB47h\" (Sabbath) in 2021.<sup>[[Mandiant Sabbath Ransomware November 29 2021](/references/ab3a20a5-2df1-4f8e-989d-baa96ffaca74)]</sup><sup>[[Tyler McLellan UNC2190 September 26 2024](/references/32298444-284a-4991-ba3b-a80bd62be903)]</sup>",
+      "meta": {
+        "campaign_attack_id": "C3057",
+        "first_seen": "2024-07-17T00:00:00Z",
+        "last_seen": "2024-09-17T00:00:00Z",
+        "owner": "TidalCyberIan",
+        "source": "Tidal Cyber",
+        "tags": [
+          "ecfc9a06-e970-4310-ac3f-0af98163563b",
+          "1c1a335a-dc30-470d-9539-b09aa87e2f8c",
+          "15b77e5c-2285-434d-9719-73c14beba8bd",
+          "532b7819-d407-41e9-9733-0d716b69eb17",
+          "c9c73000-30a5-4a16-8c8b-79169f9c24aa",
+          "5e7433ad-a894-4489-93bc-41e90da90019",
+          "7e7b0c67-bb85-4996-a289-da0e792d7172",
+          "c6e1f516-1a18-4ff9-b563-e6ac8103b104",
+          "2feda37d-5579-4102-a073-aa02e82cb49f"
+        ]
+      },
+      "related": [],
+      "uuid": "96a04dd1-c6e6-4edd-ada4-03171fd15b2d",
+      "value": "Storm-0501 Hybrid Cloud Compromise"
     },
     {
       "description": "This object represents a collection of MITRE ATT&CK® Techniques and other objects (Groups and/or Software) related to the specified threat activity. Further background & contextual details can be found in the References tab below.",
@@ -1363,6 +1619,25 @@
       "related": [],
       "uuid": "6c7185e1-bd46-5a80-9a76-a376b16fbc7b",
       "value": "Triton Safety Instrumented System Attack"
+    },
+    {
+      "description": "Mandiant researchers observed UNC2190, an actor group now linked to Storm-0501, deploying evasive, in-memory-only ransomware in 2021 while branded as the \"54BB47h\" (Sabbath) ransomware gang. The group had previously branded its operations as Eruption and Arcane. UNC2190 was seen targeting organizations in the education, health, and natural resources sectors in the United States and Canada from June through at least October 2021.<sup>[[Mandiant Sabbath Ransomware November 29 2021](/references/ab3a20a5-2df1-4f8e-989d-baa96ffaca74)]</sup>",
+      "meta": {
+        "campaign_attack_id": "C3058",
+        "first_seen": "2021-06-01T00:00:00Z",
+        "last_seen": "2021-10-26T00:00:00Z",
+        "owner": "TidalCyberIan",
+        "source": "Tidal Cyber",
+        "tags": [
+          "5e7433ad-a894-4489-93bc-41e90da90019",
+          "7e7b0c67-bb85-4996-a289-da0e792d7172",
+          "c6e1f516-1a18-4ff9-b563-e6ac8103b104",
+          "2feda37d-5579-4102-a073-aa02e82cb49f"
+        ]
+      },
+      "related": [],
+      "uuid": "1a9e2500-a1aa-4001-8bb4-9d7ebca60d47",
+      "value": "UNC2190 2021 Ransomware Activity"
     },
     {
       "description": "On September 5, 2024, international authorities published joint Cybersecurity Advisory AA24-249A, which detailed recent activity linked to cyber actors affiliated with the 161st Specialist Training Center (aka Unit 29155) of the Russian General Staff Main Intelligence Directorate (GRU), the foreign military intelligence agency of Russia's armed forces. The advisory highlighted Unit 29155 espionage, sabotage, and reputational cyber attacks carried out against targets around the world since 2020.\n\nWhile Unit 29155 had been previously linked to influence, interference, and physical sabotage operations, the advisory noted how the group has expanded its tradecraft to now include offensive cyber operations. The advisory indicated that several groups tracked by the cybersecurity community relate to Unit 29155 cyber actors but may not be directly synonyms with all parts of the Unit (or each other), including: Cadet Blizzard, DEV-0586, Ember Bear, Bleeding Bear, Frozenvista, UNC2589, and UAC-0056.<sup>[[U.S. CISA Unit 29155 September 5 2024](/references/9631a46d-3e0a-4f25-962b-0b2501c47926)]</sup>",
@@ -1431,6 +1706,22 @@
       "value": "Velvet Ant F5 BIG-IP Espionage Activity"
     },
     {
+      "description": "[Versa Director Zero Day Exploitation](https://app.tidalcyber.com/campaigns/e28a09b7-885f-5556-b56e-7ad3e0581ac0) was conducted by [Volt Typhoon](https://app.tidalcyber.com/groups/4ea1245f-3f35-5168-bd10-1fc49142fd4e) from early June through August 2024 as zero-day exploitation of Versa Director servers controlling software-defined wide area network (SD-WAN) applications. Since tracked as CVE-2024-39717, exploitation focused on credential capture from compromised Versa Director servers at managed service providers (MSPs) and internet service providers (ISPs) to enable follow-on access to service provider clients. [Versa Director Zero Day Exploitation](https://app.tidalcyber.com/campaigns/e28a09b7-885f-5556-b56e-7ad3e0581ac0) was followed by the delivery of the [VersaMem](https://app.tidalcyber.com/software/ea857bb3-408e-566f-a693-96d9dc4f3c90) web shell for both credential theft and follow-on code execution.<sup>[[Lumen Versa 2024](https://app.tidalcyber.com/references/1d7f40f7-76e6-5ba2-8561-17f3646cf407)]</sup>",
+      "meta": {
+        "campaign_attack_id": "C0039",
+        "first_seen": "2024-06-01T06:00:00Z",
+        "last_seen": "2024-08-01T06:00:00Z",
+        "source": "MITRE",
+        "tags": [
+          "a98d7a43-f227-478e-81de-e7299639a355",
+          "712d4124-8860-488a-a780-2938f9df6313"
+        ]
+      },
+      "related": [],
+      "uuid": "e28a09b7-885f-5556-b56e-7ad3e0581ac0",
+      "value": "Versa Director Zero Day Exploitation"
+    },
+    {
       "description": "Void Banshee is an advanced persistent threat (APT) group identified by Trend Micro researchers, which is known to target victims in North America, Europe, and Southeast Asia for information theft and financial gain. In May 2024, researchers observed Void Banshee actors exploiting CVE-2024-38112, a remote code execution vulnerability in the \"MSHTML\" web browser software component. The vulnerability had not been previously disclosed, so the campaign was characterized as \"zero-day\" exploit activity. Actors delivered the Atlantida infostealer malware during the observed attacks.<sup>[[Trend Micro Void Banshee July 15 2024](/references/02c4dda2-3aae-43ec-9b14-df282b200def)]</sup>\n\nLater, researchers noted that Void Banshee also exploited a separate MSHTML-related vulnerability, CVE-2024-43461, as a zero-day during attacks culminating in Atlantida infostealer deployments.<sup>[[BleepingComputer Void Banshee September 16 2024](/references/2c9a2355-02c5-4718-ad6e-b2fac9ad4096)]</sup>",
       "meta": {
         "campaign_attack_id": "C3054",
@@ -1468,6 +1759,75 @@
       "related": [],
       "uuid": "e740e392-98cb-428a-ab92-b0a4d1d546b7",
       "value": "Voldemort Malware Delivery Campaign"
+    },
+    {
+      "description": "*We are no longer maintaining this object in favor of a similar object subsequently published by MITRE: \"Versa Director Zero Day Exploitation\" (Campaign). All relevant Tidal content extensions (e.g. additional Technique and Object relationships and metadata) have been added to the MITRE-authored object.*\n\nThis object represents a collection of MITRE ATT&CK® Techniques and other objects related to the subject threat. Further contextual details are provided via the sources in the References tab below and any associated Tags.",
+      "meta": {
+        "campaign_attack_id": "C3067",
+        "first_seen": "2024-06-12T00:00:00Z",
+        "last_seen": "2024-07-15T00:00:00Z",
+        "owner": "TidalCyberIan",
+        "source": "Tidal Cyber",
+        "tags": [
+          "a98d7a43-f227-478e-81de-e7299639a355",
+          "712d4124-8860-488a-a780-2938f9df6313",
+          "c6e1f516-1a18-4ff9-b563-e6ac8103b104",
+          "2feda37d-5579-4102-a073-aa02e82cb49f"
+        ]
+      },
+      "related": [],
+      "uuid": "553feab0-28a8-4a0f-a4a9-2aac6aa11c56",
+      "value": "Volt Typhoon Versa Director Zero-Day Exploitation (CVE-2024-39717) (Deprecated)"
+    },
+    {
+      "description": "[Pikabot](https://app.tidalcyber.com/software/fb1b0624-3290-5977-abbc-bc9609b51f8d) was distributed in [Water Curupira Pikabot Distribution](https://app.tidalcyber.com/campaigns/5b6d5717-676d-5e8b-a2a3-2717c62f6450) throughout 2023 by an entity linked to BlackBasta ransomware deployment via email attachments. This activity followed the take-down of [QakBot](https://app.tidalcyber.com/software/9050b418-5ffd-481a-a30d-f9059b0871ea), with several technical overlaps and similarities with [QakBot](https://app.tidalcyber.com/software/9050b418-5ffd-481a-a30d-f9059b0871ea), indicating a possible connection. The identified activity led to the deployment of tools such as [Cobalt Strike](https://app.tidalcyber.com/software/9b6bcbba-3ab4-4a4c-a233-cd12254823f6), while coinciding with campaigns delivering [DarkGate](https://app.tidalcyber.com/software/39d81c48-8f7c-54cb-8fac-485598e31a55) and [IcedID](https://app.tidalcyber.com/software/7f59bb7c-5fa9-497d-9d8e-ba9349fd9433) en route to ransomware deployment.<sup>[[TrendMicro Pikabot 2024](https://app.tidalcyber.com/references/a2a22246-d49e-5847-9d20-dac64f1df3ea)]</sup>",
+      "meta": {
+        "campaign_attack_id": "C0037",
+        "first_seen": "2023-01-01T05:00:00Z",
+        "last_seen": "2023-12-01T05:00:00Z",
+        "source": "MITRE"
+      },
+      "related": [],
+      "uuid": "5b6d5717-676d-5e8b-a2a3-2717c62f6450",
+      "value": "Water Curupira Pikabot Distribution"
+    },
+    {
+      "description": "Security researchers observed adversaries using Web Distributed Authoring and Versioning (WebDAV) remote file management technology - hosted via free, development/testing-focused Cloudflare servers - to deliver various malware payloads, including AsyncRAT, XWorm, VenomRAT, and the PureLogs infostealer. One infection involved an unspecified organization in the government sector.<sup>[[Esentire July 31 2024](/references/18185ffd-8a66-4531-86de-4ba4dd9f675b)]</sup>",
+      "meta": {
+        "campaign_attack_id": "C3059",
+        "first_seen": "2024-07-01T00:00:00Z",
+        "last_seen": "2024-07-31T00:00:00Z",
+        "owner": "TidalCyberIan",
+        "source": "Tidal Cyber",
+        "tags": [
+          "61085b71-eb19-46d8-a9e6-1ab9d2f3c08d",
+          "c6e1f516-1a18-4ff9-b563-e6ac8103b104",
+          "2feda37d-5579-4102-a073-aa02e82cb49f"
+        ]
+      },
+      "related": [],
+      "uuid": "635edcc0-f8af-4b61-85ba-2589df9f3c58",
+      "value": "WebDAV Malware Delivery Activity"
+    },
+    {
+      "description": "Researchers observed a campaign that used phishing communications to trick victims into clicking links that would redirect them to compromised websites hosting a zero-day vulnerability exploit to bypass Microsoft Windows SmartScreen security technology (CVE-2024-21412). The exploit activity involved additional redirect activity, including via internet shortcut files hosted on an adversary WebDAV server. The attacks culminated in delivery of the DarkGate loader/remote access trojan.<sup>[[Trend Micro March 13 2024](/references/0574a0a7-694b-4858-b053-8f7911c8ce54)]</sup>",
+      "meta": {
+        "campaign_attack_id": "C3061",
+        "first_seen": "2024-01-15T00:00:00Z",
+        "last_seen": "2024-02-13T00:00:00Z",
+        "owner": "TidalCyberIan",
+        "source": "Tidal Cyber",
+        "tags": [
+          "5187cea7-601f-4829-8b41-306044200b64",
+          "a98d7a43-f227-478e-81de-e7299639a355",
+          "61085b71-eb19-46d8-a9e6-1ab9d2f3c08d",
+          "c6e1f516-1a18-4ff9-b563-e6ac8103b104",
+          "2feda37d-5579-4102-a073-aa02e82cb49f"
+        ]
+      },
+      "related": [],
+      "uuid": "22265193-4c7d-4edb-8e4e-727dcefd0a09",
+      "value": "Windows SmartScreen Bypass (CVE-2024-21412) DarkGate Campaign"
     },
     {
       "description": "A suspected affiliate of the Zloader operation carried out attacks mainly affecting financial institutions. Intrusions typically came via drive-by compromise and initiallly saw the installation of the Atera software, which was then used to load Zloader, and in some cases, Ursnif.<sup>[[WeLiveSecurity April 19 2022](/references/f86845b9-03c4-446b-845f-b31b79b247ee)]</sup>",

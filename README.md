@@ -535,7 +535,7 @@ Category: *sector* - source: *CERT-EU* - total: *118* elements
 
 [Sigma-Rules](https://www.misp-galaxy.org/sigma-rules) - MISP galaxy cluster based on Sigma Rules.
 
-Category: *rules* - source: *https://github.com/jstnk9/MISP/tree/main/misp-galaxy/sigma* - total: *2970* elements
+Category: *rules* - source: *https://github.com/jstnk9/MISP/tree/main/misp-galaxy/sigma* - total: *2971* elements
 
 [[HTML](https://www.misp-galaxy.org/sigma-rules)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/sigma-rules.json)]
 
@@ -599,7 +599,7 @@ Category: *tea-matrix* - source: ** - total: *7* elements
 
 [Threat Actor](https://www.misp-galaxy.org/threat-actor) - Known or estimated adversary groups targeting organizations and employees. Adversary groups are regularly confused with their initial operation or campaign. threat-actor-classification meta can be used to clarify the understanding of the threat-actor if also considered as operation, campaign or activity group.
 
-Category: *actor* - source: *MISP Project* - total: *751* elements
+Category: *actor* - source: *MISP Project* - total: *763* elements
 
 [[HTML](https://www.misp-galaxy.org/threat-actor)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/threat-actor.json)]
 
@@ -607,7 +607,7 @@ Category: *actor* - source: *MISP Project* - total: *751* elements
 
 [Tidal Campaigns](https://www.misp-galaxy.org/tidal-campaigns) - Tidal Campaigns Cluster
 
-Category: *Campaigns* - source: *https://app-api.tidalcyber.com/api/v1/campaigns/* - total: *83* elements
+Category: *Campaigns* - source: *https://app-api.tidalcyber.com/api/v1/campaigns/* - total: *102* elements
 
 [[HTML](https://www.misp-galaxy.org/tidal-campaigns)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/tidal-campaigns.json)]
 
@@ -615,7 +615,7 @@ Category: *Campaigns* - source: *https://app-api.tidalcyber.com/api/v1/campaigns
 
 [Tidal Groups](https://www.misp-galaxy.org/tidal-groups) - Tidal Groups Galaxy
 
-Category: *Threat Groups* - source: *https://app-api.tidalcyber.com/api/v1/groups/* - total: *206* elements
+Category: *Threat Groups* - source: *https://app-api.tidalcyber.com/api/v1/groups/* - total: *224* elements
 
 [[HTML](https://www.misp-galaxy.org/tidal-groups)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/tidal-groups.json)]
 
@@ -623,7 +623,7 @@ Category: *Threat Groups* - source: *https://app-api.tidalcyber.com/api/v1/group
 
 [Tidal References](https://www.misp-galaxy.org/tidal-references) - Tidal References Cluster
 
-Category: *References* - source: *https://app-api.tidalcyber.com/api/v1/references/* - total: *4349* elements
+Category: *References* - source: *https://app-api.tidalcyber.com/api/v1/references/* - total: *4627* elements
 
 [[HTML](https://www.misp-galaxy.org/tidal-references)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/tidal-references.json)]
 
@@ -631,7 +631,7 @@ Category: *References* - source: *https://app-api.tidalcyber.com/api/v1/referenc
 
 [Tidal Software](https://www.misp-galaxy.org/tidal-software) - Tidal Software Cluster
 
-Category: *Software* - source: *https://app-api.tidalcyber.com/api/v1/software/* - total: *1053* elements
+Category: *Software* - source: *https://app-api.tidalcyber.com/api/v1/software/* - total: *1106* elements
 
 [[HTML](https://www.misp-galaxy.org/tidal-software)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/tidal-software.json)]
 
@@ -647,7 +647,7 @@ Category: *Tactic* - source: *https://app-api.tidalcyber.com/api/v1/tactic/* - t
 
 [Tidal Technique](https://www.misp-galaxy.org/tidal-technique) - Tidal Technique Cluster
 
-Category: *Technique* - source: *https://app-api.tidalcyber.com/api/v1/technique/* - total: *202* elements
+Category: *Technique* - source: *https://app-api.tidalcyber.com/api/v1/technique/* - total: *203* elements
 
 [[HTML](https://www.misp-galaxy.org/tidal-technique)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/tidal-technique.json)]
 
