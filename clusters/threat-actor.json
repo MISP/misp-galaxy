@@ -17354,7 +17354,16 @@
         "country": "KP",
         "refs": [
           "https://unit42.paloaltonetworks.com/two-campaigns-by-north-korea-bad-actors-target-job-hunters/",
-          "https://www.zscaler.com/blogs/security-research/pyongyang-your-payroll-rise-north-korean-remote-workers-west"
+          "https://www.zscaler.com/blogs/security-research/pyongyang-your-payroll-rise-north-korean-remote-workers-west",
+          "https://unit42.paloaltonetworks.com/fake-north-korean-it-worker-activity-cluster/"
+        ],
+        "synonyms": [
+          "Famous Chollima",
+          "UNC5267",
+          "Wagemole",
+          "Nickel Tapestry",
+          "Contagious Interview",
+          "Storm-1877"
         ]
       },
       "uuid": "09aa3edb-e956-43f0-9fcb-a3154b47d202",
@@ -17380,6 +17389,60 @@
       },
       "uuid": "84bf7b38-e120-44c9-bfdd-82740593a6c6",
       "value": "APT73"
+    },
+    {
+      "description": "UAC-0194 is a Russian threat actor linked to the exploitation of the Windows zero-day CVE-2024-43451, which was used in attacks against Ukrainian organizations. The group delivered phishing emails containing .url files that, when interacted with, exploited the vulnerability to facilitate the installation of additional payloads, including the SparkRAT trojan. They also exploited the Server Message Block protocol for NTLM hash exfiltration. CERT-UA has associated UAC-0194's activities with social engineering tactics to convince victims to execute malicious files.",
+      "meta": {
+        "country": "RU",
+        "refs": [
+          "https://www.clearskysec.com/0d-vulnerability-exploited-in-the_wild/"
+        ]
+      },
+      "uuid": "714f76b2-a8fd-49b0-8605-0eb1c9703140",
+      "value": "UAC-0194"
+    },
+    {
+      "description": "TAG-112 is a Chinese state-sponsored APT that compromised Tibetan websites, including Tibet Post and Gyudmed Tantric University, to deliver Cobalt Strike malware. The group exploited vulnerabilities in the Joomla CMS to embed malicious JavaScript that spoofed a TLS certificate error, tricking users into downloading a compromised security certificate. TAG-112's infrastructure, concealed using Cloudflare, shows notable overlap with TAG-102, but it employs less sophisticated tactics, relying on Cobalt Strike rather than custom malware. The campaign reflects ongoing cyber-espionage efforts targeting Tibetan entities, likely for information collection and surveillance.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://www.recordedfuture.com/research/china-nexus-tag-112-compromises-tibetan-websites"
+        ]
+      },
+      "uuid": "9eeb11a0-3fcf-4036-844a-2500c72f8b69",
+      "value": "TAG-112"
+    },
+    {
+      "description": "SilkSpecter is a Chinese financially motivated threat actor that orchestrates phishing campaigns targeting e-commerce shoppers, particularly during peak shopping seasons. They exploit legitimate payment processors like Stripe to exfiltrate Cardholder Data and Personally Identifiable Information through convincing fake e-commerce sites created using the oemapps SaaS platform. Their phishing infrastructure relies on Chinese-hosted CDN servers and utilizes deceptive elements such as the \"trusttollsvg\" icon and a \"/homeapi/collect\" endpoint to track victim interactions. Analysts have linked SilkSpecter to over 89 IP addresses and more than 4,000 domain names associated with phishing activities, predominantly using .top, .shop, .store, and .vip TLDs.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://blog.eclecticiq.com/inside-intelligence-center-financially-motivated-chinese-threat-actor-silkspecter-targeting-black-friday-shoppers"
+        ]
+      },
+      "uuid": "0f4c942f-9491-4844-b782-4ee65033c7e0",
+      "value": "SilkSpecter"
+    },
+    {
+      "description": "TA455 is an Iranian APT group targeting the aerospace industry through a campaign known as the “Iranian Dream Job Campaign,” utilizing deceptive job offers to lure victims. They employ spearphishing tactics with malicious ZIP files containing the executable “secur32[.]dll” and disguise their C2 communications within the traffic of reputable services like Cloudflare and GitHub. The group intentionally mimics the TTPs of the North Korean Lazarus group to mislead investigators and complicate attribution. Their multi-stage infection strategy enhances the likelihood of success while evading detection.",
+      "meta": {
+        "country": "IR",
+        "refs": [
+          "https://informationsecuritybuzz.com/iranian-dream-job-aerospace/"
+        ]
+      },
+      "uuid": "c2f1f2e3-9573-49be-b01e-6ffff9a9571b",
+      "value": "TA455"
+    },
+    {
+      "description": "Kairos is an extortion group that emerged with a data-leak site on 13 November 2024, claiming attacks against six organizations, primarily in the US healthcare sector. The group is financially motivated, demanding Bitcoin payments for the secure deletion of stolen files and threatening to leak data if victims do not comply. While no specific TTPs are publicly known, common techniques among extortion groups include phishing and scanning for exposed internet-facing devices. There is a potential link to a user on a Russian-language cybercriminal forum who shares a post-exploitation script, but attribution remains uncertain.",
+      "meta": {
+        "refs": [
+          "https://www.cyjax.com/resources/blog/an-elephant-in-kairos-data-leak-site-emerges-for-new-extortion-group/"
+        ]
+      },
+      "uuid": "4d3c9666-6e08-4186-854c-cc0f8c28f5b6",
+      "value": "Kairos"
     }
   ],
   "version": 320
