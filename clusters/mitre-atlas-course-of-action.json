@@ -10,7 +10,7 @@
   "uuid": "951d5a45-43c2-422b-90af-059014f15714",
   "values": [
     {
-      "description": "Limit the public release of technical information about the machine learning stack used in an organization's products or services. Technical knowledge of how machine learning is used can be leveraged by adversaries to perform targeting and tailor attacks to the target system. Additionally, consider limiting the release of organizational information - including physical locations, researcher names, and department structures - from which technical details such as machine learning techniques, model architectures, or datasets may be inferred.\n",
+      "description": "Limit the public release of technical information about the machine learning stack used in an organization's products or services. Technical knowledge of how machine learning is used can be leveraged by adversaries to perform targeting and tailor attacks to the target system. Additionally, consider limiting the release of organizational information - including physical locations, researcher names, and department structures - from which technical details such as machine learning techniques, model architectures, or datasets may be inferred.",
       "meta": {
         "external_id": "AML.M0000",
         "refs": [
@@ -48,7 +48,7 @@
         }
       ],
       "uuid": "40076545-e797-4508-a294-943096a12111",
-      "value": "Limit Release of Public Information"
+      "value": "Limit Public Release of Information"
     },
     {
       "description": "Limit public release of technical project details including data, algorithms, model architectures, and model checkpoints that are used in production, or that are representative of those used in production.\n",
@@ -765,7 +765,316 @@
       ],
       "uuid": "7b00dd51-f719-433d-afd6-3d386f64386d",
       "value": "Control Access to ML Models and Data in Production"
+    },
+    {
+      "description": "Guardrails are safety controls that are placed between a generative AI model and the output shared with the user to prevent undesired inputs and outputs.\nGuardrails can take the form of validators such as filters, rule-based logic, or regular expressions, as well as AI-based approaches, such as classifiers and utilizing LLMs, or named entity recognition (NER) to evaluate the safety of the prompt or response. Domain specific methods can be employed to reduce risks in a variety of areas such as etiquette, brand damage, jailbreaking, false information, code exploits, SQL injections, and data leakage.",
+      "meta": {
+        "external_id": "AML.M0020",
+        "refs": [
+          "https://atlas.mitre.org/mitigations/AML.M0020"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "172427e3-9ecc-49a3-b628-96b824cc4131",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "19cd2d12-66ff-487c-a05c-e058b027efc9",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "45d378aa-20ae-401d-bf61-7f00104eeaca",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "adbb0dd5-ff66-4b2f-869f-bfb3fdb45fc8",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "d2cf31e0-a550-4fe0-8fdb-8941b3ac00d9",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "e98acce8-ed69-4ebe-845b-1bcb662836ba",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "b8511570-3320-4733-a0e1-134e376e7530",
+      "value": "Generative AI Guardrails"
+    },
+    {
+      "description": "Guidelines are safety controls that are placed between user-provided input and a generative AI model to help direct the model to produce desired outputs and prevent undesired outputs.\n\nGuidelines can be implemented as instructions appended to all user prompts or as part of the instructions in the system prompt. They can define the goal(s), role, and voice of the system, as well as outline safety and security parameters.",
+      "meta": {
+        "external_id": "AML.M0021",
+        "refs": [
+          "https://atlas.mitre.org/mitigations/AML.M0021"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "172427e3-9ecc-49a3-b628-96b824cc4131",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "19cd2d12-66ff-487c-a05c-e058b027efc9",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "45d378aa-20ae-401d-bf61-7f00104eeaca",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "adbb0dd5-ff66-4b2f-869f-bfb3fdb45fc8",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "e98acce8-ed69-4ebe-845b-1bcb662836ba",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "d55bd0c8-2db0-400b-9097-c7cec00e2b91",
+      "value": "Generative AI Guidelines"
+    },
+    {
+      "description": "When training or fine-tuning a generative AI model it is important to utilize techniques that improve model alignment with safety, security, and content policies.\n\nThe fine-tuning process can potentially remove built-in safety mechanisms in a generative AI model, but utilizing techniques such as Supervised Fine-Tuning, Reinforcement Learning from Human Feedback or AI Feedback, and Targeted Safety Context Distillation can improve the safety and alignment of the model.",
+      "meta": {
+        "external_id": "AML.M0022",
+        "refs": [
+          "https://atlas.mitre.org/mitigations/AML.M0022"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "172427e3-9ecc-49a3-b628-96b824cc4131",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "19cd2d12-66ff-487c-a05c-e058b027efc9",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "45d378aa-20ae-401d-bf61-7f00104eeaca",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "adbb0dd5-ff66-4b2f-869f-bfb3fdb45fc8",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "e98acce8-ed69-4ebe-845b-1bcb662836ba",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "1fca595d-b140-4ce0-8fd8-c4c6bee87540",
+      "value": "Generative AI Model Alignment"
+    },
+    {
+      "description": "An AI Bill of Materials (AI BOM) contains a full listing of artifacts and resources that were used in building the AI. The AI BOM can help mitigate supply chain risks and enable rapid response to reported vulnerabilities.\n\nThis can include maintaining dataset provenance, i.e. a detailed history of datasets used for AI applications. The history can include information about the dataset source as well as well as a complete record of any modifications.",
+      "meta": {
+        "external_id": "AML.M0023",
+        "refs": [
+          "https://atlas.mitre.org/mitigations/AML.M0023"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "0ec538ca-589b-4e42-bcaa-06097a0d679f",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "be6ef5c5-1ecb-486d-9743-42085bd2c256",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "e3b9d41a-d2f9-4825-942f-1c4a30b4d2f9",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "f4fc2abd-71a4-401a-a742-18fc5aeb4bc3",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "1f63b56d-034f-477d-ab49-399c1aa1a22a",
+      "value": "AI Bill of Materials"
+    },
+    {
+      "description": "Implement logging of inputs and outputs of deployed AI models. Monitoring logs can help to detect security threats and mitigate impacts.",
+      "meta": {
+        "external_id": "AML.M0024",
+        "refs": [
+          "https://atlas.mitre.org/mitigations/AML.M0024"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "19cd2d12-66ff-487c-a05c-e058b027efc9",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "86b5f486-afb8-4aa9-991f-0e24d5737f0c",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "90a420d4-3f03-4800-86c0-223c4376804a",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "a3660a2d-f6e5-4f1b-9618-332cceb389c8",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "a4a55526-2f1f-403b-9691-609e46381e17",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "b07d147f-51c8-4eb6-9a05-09c86762a9c1",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "b5626410-b33d-4487-9c0f-2b7d844b8e95",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "d911e8cb-0601-42f1-90de-7ce0b21cd578",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "e19c6f8a-f1e2-46cc-9387-03a3092f01ed",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "f78e0ac3-6d72-42ed-b20a-e10d8c752cf6",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "fa5108b2-3dc8-42dc-93a3-902f1bf74521",
+      "value": "AI Telemetry Logging"
+    },
+    {
+      "description": "Maintain a detailed history of datasets used for AI applications. The history should include information about the dataset's source as well as a complete record of any modifications.",
+      "meta": {
+        "external_id": "AML.M0025",
+        "refs": [
+          "https://atlas.mitre.org/mitigations/AML.M0025"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "0ec538ca-589b-4e42-bcaa-06097a0d679f",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "8d644240-ad99-4410-a7f8-3ef8f53a463e",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "e0eb2b64-aebd-4412-80f3-b71d7805a65f",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "005a5427-4b1e-41c2-a7aa-eda9ae9a9815",
+      "value": "Maintain AI Dataset Provenance"
     }
   ],
-  "version": 12
+  "version": 13
 }
