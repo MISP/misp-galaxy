@@ -247,7 +247,7 @@ Category: *dwva* - source: *https://interpol-innovation-centre.github.io/DW-VA-T
 
 [Malpedia](https://www.misp-galaxy.org/malpedia) - Malware galaxy cluster based on Malpedia.
 
-Category: *tool* - source: *Malpedia* - total: *3038* elements
+Category: *tool* - source: *Malpedia* - total: *3264* elements
 
 [[HTML](https://www.misp-galaxy.org/malpedia)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/malpedia.json)]
 
