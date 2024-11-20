@@ -271,7 +271,7 @@ Category: *misinformation-pattern* - source: *https://github.com/misinfosecproje
 
 [MITRE ATLAS Attack Pattern](https://www.misp-galaxy.org/mitre-atlas-attack-pattern) - MITRE ATLAS Attack Pattern - Adversarial Threat Landscape for Artificial-Intelligence Systems
 
-Category: *attack-pattern* - source: *https://github.com/mitre-atlas/atlas-navigator-data* - total: *82* elements
+Category: *attack-pattern* - source: *https://github.com/mitre-atlas/atlas-navigator-data* - total: *91* elements
 
 [[HTML](https://www.misp-galaxy.org/mitre-atlas-attack-pattern)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-atlas-attack-pattern.json)]
 
@@ -279,7 +279,7 @@ Category: *attack-pattern* - source: *https://github.com/mitre-atlas/atlas-navig
 
 [MITRE ATLAS Course of Action](https://www.misp-galaxy.org/mitre-atlas-course-of-action) - MITRE ATLAS Mitigation - Adversarial Threat Landscape for Artificial-Intelligence Systems
 
-Category: *course-of-action* - source: *https://github.com/mitre-atlas/atlas-navigator-data* - total: *20* elements
+Category: *course-of-action* - source: *https://github.com/mitre-atlas/atlas-navigator-data* - total: *26* elements
 
 [[HTML](https://www.misp-galaxy.org/mitre-atlas-course-of-action)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-atlas-course-of-action.json)]
 
