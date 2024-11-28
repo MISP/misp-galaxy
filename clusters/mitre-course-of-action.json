@@ -223,6 +223,10 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "8a2f40cf-8325-47f9-96e4-b1ca4c7389bd",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "970a3432-3237-47ad-bcca-7d8cbb217736",
           "type": "mitigates"
         },
@@ -232,6 +236,10 @@
         },
         {
           "dest-uuid": "9db0cf3a-a3c9-4012-8268-123b9db6fd82",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "a10641f4-87b4-45a3-a906-92a149cb2c27",
           "type": "mitigates"
         },
         {
@@ -264,6 +272,10 @@
         },
         {
           "dest-uuid": "cabe189c-a0e3-4965-a473-dcff00f17213",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "cc279e50-df85-4c8e-be80-6dc2eda8849c",
           "type": "mitigates"
         },
         {
@@ -778,6 +790,10 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "4ab929c6-ee2d-4fb5-aab4-b14be2ed7179",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "4d2a5b3e-340d-4600-9123-309dd63c9bf8",
           "type": "mitigates"
         },
@@ -835,6 +851,10 @@
         },
         {
           "dest-uuid": "837f9164-50af-4ac0-8219-379d8a74cefc",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "a10641f4-87b4-45a3-a906-92a149cb2c27",
           "type": "mitigates"
         },
         {
@@ -1584,6 +1604,10 @@
         },
         {
           "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "b577dfc1-0177-4522-8d5a-782127c8592b",
           "type": "mitigates"
         },
         {
@@ -2665,6 +2689,49 @@
       "value": "Runtime Data Manipulation Mitigation - T1494"
     },
     {
+      "description": "Establish secure out-of-band communication channels to ensure the continuity of critical communications during security incidents, data integrity attacks, or in-network communication failures. Out-of-band communication refers to using an alternative, separate communication path that is not dependent on the potentially compromised primary network infrastructure. This method can include secure messaging apps, encrypted phone lines, satellite communications, or dedicated emergency communication systems. Leveraging these alternative channels reduces the risk of adversaries intercepting, disrupting, or tampering with sensitive communications and helps coordinate an effective incident response.(Citation: TrustedSec OOB Communications)(Citation: NIST Special Publication 800-53 Revision 5)",
+      "meta": {
+        "external_id": "M1060",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M1060",
+          "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r5.pdf",
+          "https://trustedsec.com/blog/to-oob-or-not-to-oob-why-out-of-band-communications-are-essential-for-incident-response"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "1608f3e1-598a-42f4-a01a-2e252e81728f",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "1e9eb839-294b-48cc-b0d3-c45555a2a004",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "20fb2507-d71c-455d-9b6d-6104461cf26b",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "7d77a07d-02fe-4e88-8bd9-e9c008c01bf0",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "b4694861-542c-48ea-9eb1-10d356e7140a",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "d28ef391-8ed4-45dc-bc4a-2f43abf54416",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "fb75213f-cfb0-40bf-a02f-3bad93d6601e",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "80a0e940-f683-4fbd-ac00-e9f935f2f808",
+      "value": "Out-of-Band Communications Channel - M1060"
+    },
+    {
       "description": "Disable LLMNR and NetBIOS in local computer security settings or by group policy if they are not needed within an environment. (Citation: ADSecurity Windows Secure Baseline)\n\nUse host-based security software to block LLMNR/NetBIOS traffic. Enabling SMB Signing can stop NTLMv2 relay attacks.(Citation: byt3bl33d3r NTLM Relaying)(Citation: Secure Ideas SMB Relay)(Citation: Microsoft SMB Packet Signing)",
       "meta": {
         "external_id": "T1171",
@@ -2694,6 +2761,10 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "10ffac09-e42d-4f56-ab20-db94c67d76ff",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "118f61a5-eb3e-4fb6-931f-2096647f4ecd",
           "type": "mitigates"
         },
@@ -2715,6 +2786,10 @@
         },
         {
           "dest-uuid": "457c7820-d331-465a-915e-42f85500ccc4",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "58a3e6aa-4453-4cc8-a51f-4befe80b31a8",
           "type": "mitigates"
         },
         {
@@ -2766,6 +2841,10 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "cc279e50-df85-4c8e-be80-6dc2eda8849c",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "d742a578-d70e-4d0e-96a6-02a9c30204e6",
           "type": "mitigates"
         },
@@ -2787,6 +2866,10 @@
         },
         {
           "dest-uuid": "f7827069-0bf2-4764-af4f-23fae0d181b7",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "ff25900d-76d5-449b-a351-8824e62fc81b",
           "type": "mitigates"
         }
       ],
@@ -3177,6 +3260,10 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "130d4494-b2d6-4040-bcea-6e59f05222fe",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "191cc6af-1bb2-4344-ab5f-28e496638720",
           "type": "mitigates"
         },
@@ -3305,6 +3392,10 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "241f9ea8-f6ae-4f38-92f5-cef5b7e539dd",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "24bfaeba-cb0d-4525-b3dc-507c77ecec41",
           "type": "mitigates"
         },
@@ -3322,6 +3413,10 @@
         },
         {
           "dest-uuid": "4061e78c-1284-44b4-9116-73e4ac3912f7",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "48b836c6-e4ca-435a-82a3-29c03e5b492e",
           "type": "mitigates"
         },
         {
@@ -3635,6 +3730,10 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "d28ef391-8ed4-45dc-bc4a-2f43abf54416",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "edf91964-b26e-4b4a-9600-ccacd7d7df24",
           "type": "mitigates"
         },
@@ -3655,7 +3754,7 @@
       "value": "Encrypt Sensitive Information - M1041"
     },
     {
-      "description": "Configure Active Directory to prevent use of certain techniques; use SID Filtering, etc.",
+      "description": "Implement robust Active Directory configurations using group policies to control access and reduce the attack surface. Specific examples include:\n\n* Account Configuration: Use provisioned domain accounts rather than local accounts to leverage centralized control and auditing capabilities.\n* Interactive Logon Restrictions: Enforce group policies that prohibit interactive logons for accounts that should not directly access systems.\n* Remote Desktop Settings: Limit Remote Desktop logons to authorized accounts to prevent misuse by adversaries.\n* Dedicated Administrative Accounts: Create specialized domain-wide accounts that are restricted from interactive logons but can perform specific tasks like installations or repository access.\n* Authentication Silos: Configure Authentication Silos in Active Directory to create access zones with restrictions based on membership in the Protected Users global security group. This setup enhances security by applying additional protections to high-risk accounts, limiting their exposure to potential attacks.",
       "meta": {
         "external_id": "M1015",
         "refs": [
@@ -3843,6 +3942,14 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "0ce73446-8722-4086-9d43-514f1d0f669e",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "1001e0d6-ee09-4dfc-aa90-e9320ffc8fe4",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "106c0cf6-bf73-4601-9aa8-0945c2715ec5",
           "type": "mitigates"
         },
@@ -3860,6 +3967,10 @@
         },
         {
           "dest-uuid": "20fb2507-d71c-455d-9b6d-6104461cf26b",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "24769ab5-14bd-4f4e-a752-cfb185da53ee",
           "type": "mitigates"
         },
         {
@@ -3887,6 +3998,14 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "2e34237d-8574-43f6-aace-ae2915de8597",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "315f51f0-6b03-4c1e-bfb2-84740afb8e21",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "3257eb21-f9a7-4430-8de1-d8b6e288f529",
           "type": "mitigates"
         },
@@ -3904,6 +4023,14 @@
         },
         {
           "dest-uuid": "3d333250-30e4-4a82-9edc-756c68afc529",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "3f18edba-28f4-4bb9-82c3-8aa60dcac5f7",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "42e8de7b-37b2-4258-905a-6897815e58e0",
           "type": "mitigates"
         },
         {
@@ -3948,6 +4075,10 @@
         },
         {
           "dest-uuid": "57a3d31a-d04f-4663-b2da-7df8ec3f8c9d",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "58a3e6aa-4453-4cc8-a51f-4befe80b31a8",
           "type": "mitigates"
         },
         {
@@ -4123,6 +4254,14 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "bbfbb096-6561-4d7d-aa2c-a5ee8e44c696",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "c3d4bdd9-2cfe-4a80-9d0c-07a29ecdce8f",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "c8e87b83-edbb-48d4-9295-4974897525b7",
           "type": "mitigates"
         },
@@ -4155,7 +4294,15 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "d349c66e-18e1-4d8b-a2d7-65af7cbd2ba0",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "d456de47-a16f-4e46-8980-e67478a12dcb",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "d45a3d09-b3cf-48f4-9f0f-f521ee5cb05c",
           "type": "mitigates"
         },
         {
@@ -4219,7 +4366,15 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "f6ad61ee-65f3-4bd0-a3f5-2f0accb36317",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "f8ef3a62-3f44-40a4-abca-761ab235c436",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "fdc47f44-dd32-4b99-af5f-209f556f63c2",
           "type": "mitigates"
         },
         {
@@ -5311,7 +5466,15 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "7385dfaf-6886-4229-9ecd-6fd678040830",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "92a78814-b191-47ca-909c-1ccfe3777414",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "afddee82-3385-4682-ad90-eeced33f2d07",
           "type": "mitigates"
         },
         {
@@ -5345,6 +5508,14 @@
       "related": [
         {
           "dest-uuid": "0a3ead4e-6d47-4ccb-854c-a6a4f9d96b22",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "394220d9-8efc-4252-9040-664f7b115be6",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "3fc01293-ef5e-41c6-86ce-61f10706b64a",
           "type": "mitigates"
         },
         {
@@ -5478,6 +5649,10 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "51a14c76-dd3b-440b-9c20-2bf91d25a814",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "692074ae-bb62-4a5e-a735-02cb6bde458c",
           "type": "mitigates"
         },
@@ -5495,6 +5670,14 @@
         },
         {
           "dest-uuid": "b2d03cea-aec1-45ca-9744-9ee583c1e1cc",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "e848506b-8484-4410-8017-3d235a52f5b3",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "f005e783-57d4-4837-88ad-dbe7faee1c51",
           "type": "mitigates"
         },
         {
@@ -5548,6 +5731,10 @@
         },
         {
           "dest-uuid": "19bf235b-8620-4997-b5b4-94e0659ed7c3",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "241f9ea8-f6ae-4f38-92f5-cef5b7e539dd",
           "type": "mitigates"
         },
         {
@@ -5828,6 +6015,10 @@
       },
       "related": [
         {
+          "dest-uuid": "49fca0d2-685d-41eb-8bd4-05451cc3a742",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "853c4192-4311-43e1-bfbb-b11b14911852",
           "type": "mitigates"
         },
@@ -5863,6 +6054,10 @@
         },
         {
           "dest-uuid": "43f2776f-b4bd-4118-94b8-fee47e69676d",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "7c46b364-8496-4234-8a56-f7e6727e21e1",
           "type": "mitigates"
         },
         {
@@ -6600,6 +6795,10 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "6151cbea-819b-455a-9fa6-99a1cc58797d",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "635cbe30-392d-4e27-978e-66774357c762",
           "type": "mitigates"
         },
@@ -6652,6 +6851,10 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "b17a1a56-e99c-403c-8948-561df0cffe81",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "b2d03cea-aec1-45ca-9744-9ee583c1e1cc",
           "type": "mitigates"
         },
@@ -6684,6 +6887,10 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "d45a3d09-b3cf-48f4-9f0f-f521ee5cb05c",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "d4b96d2c-1032-4b22-9235-2b5b649d0605",
           "type": "mitigates"
         },
@@ -6713,6 +6920,10 @@
         },
         {
           "dest-uuid": "fc74ba38-dc98-461f-8611-b3dbf9978e3d",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "fdc47f44-dd32-4b99-af5f-209f556f63c2",
           "type": "mitigates"
         }
       ],
@@ -7443,6 +7654,10 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "10ffac09-e42d-4f56-ab20-db94c67d76ff",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "120d5519-3098-4e1c-9191-2aa61232f073",
           "type": "mitigates"
         },
@@ -7495,6 +7710,10 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "58a3e6aa-4453-4cc8-a51f-4befe80b31a8",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "67720091-eee3-4d2d-ae16-8264567f6f5b",
           "type": "mitigates"
         },
@@ -7543,6 +7762,10 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "be2dcee9-a7a7-4e38-afd6-21b31ecc3d63",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "bf147104-abf9-4221-95d1-e81585859441",
           "type": "mitigates"
         },
@@ -7560,10 +7783,6 @@
         },
         {
           "dest-uuid": "e64c62cf-9cd7-4a14-94ec-cdaac43ab44b",
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "e8a0a025-3601-4755-abfb-8d08283329fb",
           "type": "mitigates"
         },
         {
@@ -7681,6 +7900,10 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "315f51f0-6b03-4c1e-bfb2-84740afb8e21",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "389735f1-f21c-4208-b8f0-f8031e7169b8",
           "type": "mitigates"
         },
@@ -7693,7 +7916,15 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "48b836c6-e4ca-435a-82a3-29c03e5b492e",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "544b0346-29ad-41e1-a808-501bb4193f47",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "58a3e6aa-4453-4cc8-a51f-4befe80b31a8",
           "type": "mitigates"
         },
         {
@@ -7769,6 +8000,10 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "bbfbb096-6561-4d7d-aa2c-a5ee8e44c696",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "c3d4bdd9-2cfe-4a80-9d0c-07a29ecdce8f",
           "type": "mitigates"
         },
@@ -7790,6 +8025,10 @@
         },
         {
           "dest-uuid": "d28ef391-8ed4-45dc-bc4a-2f43abf54416",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "d4b96d2c-1032-4b22-9235-2b5b649d0605",
           "type": "mitigates"
         },
         {
@@ -7822,6 +8061,10 @@
         },
         {
           "dest-uuid": "f870408c-b1cd-49c7-a5c7-0ef0fc496cc6",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "fb75213f-cfb0-40bf-a02f-3bad93d6601e",
           "type": "mitigates"
         }
       ],
@@ -8028,6 +8271,10 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "c3d4bdd9-2cfe-4a80-9d0c-07a29ecdce8f",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "d0b4fcdb-d67d-4ed2-99ce-788b12f8c0f4",
           "type": "mitigates"
         },
@@ -8103,6 +8350,10 @@
         },
         {
           "dest-uuid": "0cfe31a7-81fc-472c-bc45-e2808d1066a3",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "1001e0d6-ee09-4dfc-aa90-e9320ffc8fe4",
           "type": "mitigates"
         },
         {
@@ -8256,6 +8507,10 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "4ab929c6-ee2d-4fb5-aab4-b14be2ed7179",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "4cbc6a62-9e34-4f94-8a19-5c1a11392a49",
           "type": "mitigates"
         },
@@ -8353,6 +8608,10 @@
         },
         {
           "dest-uuid": "aedfca76-3b30-4866-b2aa-0f1d7fd1e4b6",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "afddee82-3385-4682-ad90-eeced33f2d07",
           "type": "mitigates"
         },
         {
@@ -8461,7 +8720,15 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "0ce73446-8722-4086-9d43-514f1d0f669e",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "0f2c410d-d740-4ed9-abb1-b8f4a7faf6c3",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "0ff59227-8aa8-4c09-bf1f-925605bd07ea",
           "type": "mitigates"
         },
         {
@@ -8549,6 +8816,10 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "bbfbb096-6561-4d7d-aa2c-a5ee8e44c696",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "c3c8c916-2f3c-4e71-94b2-240bdfc996f0",
           "type": "mitigates"
         },
@@ -8558,6 +8829,10 @@
         },
         {
           "dest-uuid": "cca0ccb6-a068-4574-a722-b1556f86833a",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "d28ef391-8ed4-45dc-bc4a-2f43abf54416",
           "type": "mitigates"
         },
         {
@@ -8647,6 +8922,10 @@
         },
         {
           "dest-uuid": "b4b7458f-81f2-4d38-84be-1c5ba0167a52",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "cc279e50-df85-4c8e-be80-6dc2eda8849c",
           "type": "mitigates"
         },
         {
@@ -8972,10 +9251,6 @@
         },
         {
           "dest-uuid": "0dda99f0-4701-48ca-9774-8504922e92d3",
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "0ff59227-8aa8-4c09-bf1f-925605bd07ea",
           "type": "mitigates"
         },
         {
@@ -9352,6 +9627,10 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "b577dfc1-0177-4522-8d5a-782127c8592b",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "cc3502b5-30cc-4473-ad48-42d51a6ef6d1",
           "type": "mitigates"
         },
@@ -9499,6 +9778,10 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "0ce73446-8722-4086-9d43-514f1d0f669e",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "0cf55441-b176-4332-89e7-2c4c7799d0ff",
           "type": "mitigates"
         },
@@ -9508,6 +9791,10 @@
         },
         {
           "dest-uuid": "10ff21b9-5a01-4268-a1b5-3b55015f1847",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "10ffac09-e42d-4f56-ab20-db94c67d76ff",
           "type": "mitigates"
         },
         {
@@ -9543,6 +9830,10 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "2e34237d-8574-43f6-aace-ae2915de8597",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "2fee9321-3e71-4cf4-af24-d4d40d355b34",
           "type": "mitigates"
         },
@@ -9571,6 +9862,10 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "394220d9-8efc-4252-9040-664f7b115be6",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "3986e7fd-a8e9-4ecb-bfc6-55920855912b",
           "type": "mitigates"
         },
@@ -9580,6 +9875,10 @@
         },
         {
           "dest-uuid": "3fc01293-ef5e-41c6-86ce-61f10706b64a",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "42e8de7b-37b2-4258-905a-6897815e58e0",
           "type": "mitigates"
         },
         {
@@ -9656,6 +9955,10 @@
         },
         {
           "dest-uuid": "70d81154-b187-45f9-8ec5-295d01255979",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "7385dfaf-6886-4229-9ecd-6fd678040830",
           "type": "mitigates"
         },
         {
@@ -9739,6 +10042,10 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "afddee82-3385-4682-ad90-eeced33f2d07",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "b0c74ef9-c61e-4986-88cb-78da98a355ec",
           "type": "mitigates"
         },
@@ -9752,6 +10059,10 @@
         },
         {
           "dest-uuid": "b46a801b-fd98-491c-a25a-bca25d6e3001",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "bbfbb096-6561-4d7d-aa2c-a5ee8e44c696",
           "type": "mitigates"
         },
         {
@@ -9776,6 +10087,10 @@
         },
         {
           "dest-uuid": "d28ef391-8ed4-45dc-bc4a-2f43abf54416",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "d349c66e-18e1-4d8b-a2d7-65af7cbd2ba0",
           "type": "mitigates"
         },
         {
@@ -9819,7 +10134,15 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "f6ad61ee-65f3-4bd0-a3f5-2f0accb36317",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "f9e9365a-9ca2-4d9c-8e7c-050d73d1101a",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "fb75213f-cfb0-40bf-a02f-3bad93d6601e",
           "type": "mitigates"
         }
       ],
@@ -9827,5 +10150,5 @@
       "value": "Audit - M1047"
     }
   ],
-  "version": 29
+  "version": 30
 }
