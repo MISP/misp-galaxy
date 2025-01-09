@@ -3939,7 +3939,9 @@
           "https://attack.mitre.org/groups/G0037/",
           "https://securityintelligence.com/posts/more_eggs-anyone-threat-actor-itg08-strikes-again/",
           "http://www.secureworks.com/research/threat-profiles/gold-franklin",
-          "https://www.crowdstrike.com/resources/reports/2019-crowdstrike-global-threat-report/"
+          "https://www.crowdstrike.com/resources/reports/2019-crowdstrike-global-threat-report/",
+          "https://www.proofpoint.com/us/blog/threat-insight/security-brief-ta4557-targets-recruiters-directly-email",
+          "https://www.proofpoint.com/us/threat-insight/post/fake-jobs-campaigns-delivering-moreeggs-backdoor-fake-job-offers"
         ],
         "synonyms": [
           "SKELETON SPIDER",
@@ -3949,7 +3951,8 @@
           "GOLD FRANKLIN",
           "ATK88",
           "G0037",
-          "Camouflage Tempest"
+          "Camouflage Tempest",
+          "TA4557"
         ]
       },
       "related": [
@@ -17624,6 +17627,36 @@
       },
       "uuid": "fba00660-d18c-4af7-831c-25757e495907",
       "value": "Wassonite"
+    },
+    {
+      "description": "Natohub is a hacker who claimed to have stolen 42,000 documents from the UN’s International Civil Aviation Organization and is offering the data for sale on underground forums. The compromised documents allegedly contain personal records of ICAO staff and others associated with the agency. While ICAO is investigating the potential breach, Natohub has also made unverified claims about accessing personal data on thousands of UN delegates. The actor's track record of leaks is limited, raising questions about the credibility of their assertions.",
+      "meta": {
+        "refs": [
+          "https://cisoseries.com/cyber-security-news-cyber-trust-label-uk-deepfake-laws-treasury-attack-details/"
+        ]
+      },
+      "uuid": "43e2a6bc-0b62-456a-b5ae-a40770b8b8e1",
+      "value": "Natohub"
+    },
+    {
+      "description": "CoughingDown is a threat group attributed to various cyber campaigns, including the deployment of the EAGERBEE backdoor, which utilizes service manipulation and privilege escalation techniques. The group has been linked to malware infrastructure that abuses legitimate services like MSDTC, IKEEXT, and SessionEnv to load malicious DLLs, including oci.dll. Analysis of supply-chain attacks, particularly involving Trojanized packages, has revealed similarities between CoughingDown malware and post-compromise tools used in these incidents. Evidence such as consistent service creation and C2 domain overlap further supports the connection between EAGERBEE and CoughingDown.",
+      "meta": {
+        "refs": [
+          "https://securelist.com/eagerbee-backdoor/115175/"
+        ]
+      },
+      "uuid": "80872d9a-1d0c-4c12-9543-feca1fbd2ac2",
+      "value": "CoughingDown"
+    },
+    {
+      "description": "EC2 Grouper is a prolific threat actor known for leveraging AWS tools for PowerShell to conduct automated attacks in cloud environments. They typically utilize the CreateSecurityGroup API to establish remote access and exhibit a consistent security group naming convention. Credential acquisition is believed to stem from compromised cloud access keys, often sourced from public code repositories. Notably, their activities do not include calls to AuthorizeSecurityGroupIngress, suggesting a selective approach to escalation.",
+      "meta": {
+        "refs": [
+          "https://www.fortinet.com/blog/threat-research/catching-ec2-grouper-no-indicators-required"
+        ]
+      },
+      "uuid": "7f7b20e7-e704-4b47-b230-b5d232493fce",
+      "value": "EC2 Grouper"
     }
   ],
   "version": 322
