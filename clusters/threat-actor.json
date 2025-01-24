@@ -16256,6 +16256,9 @@
       "meta": {
         "refs": [
           "https://www.trendmicro.com/en_us/research/24/f/behind-the-great-wall-void-arachne-targets-chinese-speaking-user.html"
+        ],
+        "synonyms": [
+          "Silver Fox"
         ]
       },
       "uuid": "2ac0db88-8e88-447b-ad44-f781326f5884",
@@ -17657,6 +17660,38 @@
       },
       "uuid": "7f7b20e7-e704-4b47-b230-b5d232493fce",
       "value": "EC2 Grouper"
+    },
+    {
+      "description": "Codefinger is a ransomware group that targets Amazon S3 buckets by exploiting AWS’s Server-Side Encryption with Customer Provided Keys to encrypt victim data. They utilize compromised AWS credentials to gain access and demand Bitcoin ransoms for the decryption keys, threatening to delete files if negotiations fail. The group has been observed abusing publicly disclosed AWS keys with permissions to read and write S3 objects, making recovery impossible without their cooperation. Halcyon has documented multiple incidents linked to Codefinger's data extortion campaign against organizations with unsecured infrastructure.",
+      "meta": {
+        "refs": [
+          "https://www.halcyon.ai/blog/abusing-aws-native-services-ransomware-encrypting-s3-buckets-with-sse-c"
+        ]
+      },
+      "uuid": "8f099c68-8fc5-44c8-b935-bcc95f7b0489",
+      "value": "Codefinger"
+    },
+    {
+      "description": "Operation DRBControl is a cyberespionage campaign targeting gambling companies in Southeast Asia, first identified in 2019. The operation involves the use of HyperBro malware and SysUpdate variants, with evidence of customer database and source code exfiltration. The threat actor has employed domain spoofing for command and control and has shown a consistent interest in the gambling industry. Trend Micro's analysis linked multiple tools and malware families to this campaign, indicating a sophisticated and evolving threat landscape.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://www.trendmicro.com/vinfo/us/security/news/cyber-attacks/operation-drbcontrol-uncovering-a-cyberespionage-campaign-targeting-gambling-companies-in-southeast-asia"
+        ]
+      },
+      "uuid": "dda55447-f7bc-405a-ab2e-c9be9fc1c53f",
+      "value": "Operation DRBControl"
+    },
+    {
+      "description": "The Belsen Group has exploited the CVE-2022-40684 vulnerability in Fortinet devices to compromise over 15,000 FortiGate firewalls, releasing detailed configurations and plaintext VPN credentials. Their leaked data, organized by country and IP address, primarily consists of configurations from FortiOS 7.0.6 and 7.2.1, which were the last vulnerable versions before patches were issued. Security researcher Kevin Beaumont confirmed that the group leveraged this vulnerability to gain unauthorized access and warned of potential exploitation of CVE-2024-55591 by similar threat actors. Fortinet has stated that the leaked data originates from older campaigns and not from any recent incidents.",
+      "meta": {
+        "refs": [
+          "https://www.fortinet.com/blog/psirt-blogs/analysis-of-threat-actor-data-posting",
+          "https://socradar.io/fortigate-firewall-configs-cve-2022-40684-exploitation/"
+        ]
+      },
+      "uuid": "3ef31ccd-60a9-4abc-a1a3-713ce625cbb7",
+      "value": "Belsen Group"
     }
   ],
   "version": 322
