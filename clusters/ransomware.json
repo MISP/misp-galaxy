@@ -26884,6 +26884,57 @@
     {
       "description": "Black Basta is a new ransomware strain discovered during April 2022 - looks in dev since at least early February 2022 - and due to their ability to quickly amass new victims and the style of their negotiations, this is likely not a new operation but rather a rebrand of a previous top-tier ransomware gang that brought along their affiliates.",
       "meta": {
+        "TTP": [
+          "Data from Local System - T1005",
+          "System Network Configuration Discovery - T1016",
+          "Remote Desktop Protocol - T1021.001",
+          "Masquerading - T1036",
+          "Windows Management Instrumentation - T1047",
+          "System Network Connections Discovery - T1049",
+          "PowerShell - T1059.001",
+          "Exploitation for Privilege Escalation - T1068",
+          "File Deletion - T1070.004",
+          "Application Layer Protocol - T1071",
+          "Valid Accounts - T1078",
+          "System Information Discovery - T1082",
+          "Domain Account - T1087.002",
+          "Proxy - T1090",
+          "Account Manipulation - T1098",
+          "Modify Registry - T1112",
+          "Create Account - T1136",
+          "Deobfuscate/Decode Files or Information - T1140",
+          "Exploit Public-Facing Application - T1190",
+          "Regsvr32 - T1218.010",
+          "Remote Access Software - T1219",
+          "Group Policy Modification - T1484.001",
+          "Data Encrypted for Impact - T1486",
+          "Service Stop - T1489",
+          "Inhibit System Recovery - T1490",
+          "Windows Service - T1543.003",
+          "Credentials from Password Stores - T1555",
+          "Steal or Forge Kerberos Tickets - T1558",
+          "Archive via Utility - T1560.001",
+          "Disable or Modify Tools - T1562.001",
+          "Phishing - T1566",
+          "Spearphishing Attachment - T1566.001",
+          "Exfiltration to Cloud Storage - T1567.002",
+          "Service Execution - T1569.002",
+          "Protocol Tunneling - T1572",
+          "Encrypted Channel - T1573",
+          "DLL Search Order Hijacking - T1574.001",
+          "Debugger Evasion - T1622",
+          "Initial Access - TA0001",
+          "Execution - TA0002",
+          "Persistence - TA0003",
+          "Privilege Escalation - TA0004",
+          "Defense Evasion - TA0005",
+          "Credential Access - TA0006",
+          "Discovery - TA0007",
+          "Lateral Movement - TA0008",
+          "Collection - TA0009",
+          "Command and Control - TA0011",
+          "Impact - TA0040"
+        ],
         "extensions": [
           ".basta"
         ],
@@ -26937,59 +26988,7 @@
           "https://www.cynet.com/blog/orion-threat-alert-qakbot-ttps-arsenal-and-the-black-basta-ransomware/",
           "https://blogs.vmware.com/security/2022/09/esxi-targeting-ransomware-the-threats-that-are-after-your-virtual-machines-part-1.html",
           "https://www.ransomlook.io/group/blackbasta"
-        ],
-        "TTP": [
-    "Data from Local System - T1005",
-    "System Network Configuration Discovery - T1016",
-    "Remote Desktop Protocol - T1021.001",
-    "Masquerading - T1036",
-    "Windows Management Instrumentation - T1047",
-    "System Network Connections Discovery - T1049",
-    "PowerShell - T1059.001",
-    "Exploitation for Privilege Escalation - T1068",
-    "File Deletion - T1070.004",
-    "Application Layer Protocol - T1071",
-    "Valid Accounts - T1078",
-    "System Information Discovery - T1082",
-    "Domain Account - T1087.002",
-    "Proxy - T1090",
-    "Account Manipulation - T1098",
-    "Modify Registry - T1112",
-    "Create Account - T1136",
-    "Deobfuscate/Decode Files or Information - T1140",
-    "Exploit Public-Facing Application - T1190",
-    "Regsvr32 - T1218.010",
-    "Remote Access Software - T1219",
-    "Group Policy Modification - T1484.001",
-    "Data Encrypted for Impact - T1486",
-    "Service Stop - T1489",
-    "Inhibit System Recovery - T1490",
-    "Windows Service - T1543.003",
-    "Credentials from Password Stores - T1555",
-    "Steal or Forge Kerberos Tickets - T1558",
-    "Archive via Utility - T1560.001",
-    "Disable or Modify Tools - T1562.001",
-    "Phishing - T1566",
-    "Spearphishing Attachment - T1566.001",
-    "Exfiltration to Cloud Storage - T1567.002",
-    "Service Execution - T1569.002",
-    "Protocol Tunneling - T1572",
-    "Encrypted Channel - T1573",
-    "DLL Search Order Hijacking - T1574.001",
-    "Debugger Evasion - T1622",
-    "Initial Access - TA0001",
-    "Execution - TA0002",
-    "Persistence - TA0003",
-    "Privilege Escalation - TA0004",
-    "Defense Evasion - TA0005",
-    "Credential Access - TA0006",
-    "Discovery - TA0007",
-    "Lateral Movement - TA0008",
-    "Collection - TA0009",
-    "Command and Control - TA0011",
-    "Impact - TA0040"
-]
-
+        ]
       },
       "related": [
         {
@@ -27007,348 +27006,348 @@
           "type": "uses"
         },
         {
-  "dest-uuid": "3c4a2599-71ee-4405-ba1e-0e28414b4bc5",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-},
-{
-  "dest-uuid": "707399d6-ab3e-4963-9315-d9d3818cd6a0",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-},
-{
-  "dest-uuid": "eb062747-2193-45de-8fa2-e62549c37ddf",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-},
-{
-  "dest-uuid": "42e8de7b-37b2-4258-905a-6897815e58e0",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-},
-{
-  "dest-uuid": "01a5a209-b94c-450b-b7f9-946497d91055",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-},
-{
-  "dest-uuid": "7e150503-88e7-4861-866b-ff1ac82c4475",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-},
-{
-  "dest-uuid": "970a3432-3237-47ad-bcca-7d8cbb217736",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-},
-{
-  "dest-uuid": "b21c3b2d-02e6-45b1-980b-e69051040839",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-},
-{
-  "dest-uuid": "d63a3fb8-9452-4e9d-a60a-54be68d5998c",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-},
-{
-  "dest-uuid": "355be19c-ffc9-46d5-8d50-d6a036c675b6",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-},
-{
-  "dest-uuid": "b17a1a56-e99c-403c-8948-561df0cffe81",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-},
-{
-  "dest-uuid": "354a7f88-63fb-41b5-a801-ce3b377b36f1",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-},
-{
-  "dest-uuid": "21875073-b0ee-49e3-9077-1e2a885359af",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-},
-{
-  "dest-uuid": "731f4f55-b6d0-41d1-a7a9-072a66389aea",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-},
-{
-  "dest-uuid": "a10641f4-87b4-45a3-a906-92a149cb2c27",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-},
-{
-  "dest-uuid": "57340c81-c025-4189-8fa0-fc7ede51bae4",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-},
-{
-  "dest-uuid": "e01be9c5-e763-4caf-aeb7-000b416aef67",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-},
-{
-  "dest-uuid": "3ccef7ae-cb5e-48f6-8302-897105fbf55c",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-},
-{
-  "dest-uuid": "3f886f2a-874f-4333-b794-aa6075009b1c",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-},
-{
-  "dest-uuid": "b97f1d35-4249-4486-a6b5-ee60ccf24fab",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-},
-{
-  "dest-uuid": "4061e78c-1284-44b4-9116-73e4ac3912f7",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-},
-{
-  "dest-uuid": "5d2be8b9-d24c-4e98-83bf-2f5f79477163",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-},
-{
-  "dest-uuid": "b80d107d-fa0d-4b60-9684-b0433e8bdba0",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-},
-{
-  "dest-uuid": "20fb2507-d71c-455d-9b6d-6104461cf26b",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-},
-{
-  "dest-uuid": "f5d8eed6-48a9-4cdf-a3d7-d1ffa99c3d2a",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-},
-{
-  "dest-uuid": "2959d63f-73fd-46a1-abd2-109d7dcede32",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-},
-{
-  "dest-uuid": "3fc9b85a-2862-4363-a64d-d692e3ffbee0",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-},
-{
-  "dest-uuid": "3fc01293-ef5e-41c6-86ce-61f10706b64a",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-},
-{
-  "dest-uuid": "00f90846-cbd1-4fc5-9233-df5c2bf2a662",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-},
-{
-  "dest-uuid": "ac08589e-ee59-4935-8667-d845e38fe579",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-},
-{
-  "dest-uuid": "a62a8db3-f23a-4d8f-afd6-9dbc77e7813b",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-},
-{
-  "dest-uuid": "2e34237d-8574-43f6-aace-ae2915de8597",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-},
-{
-  "dest-uuid": "bf1b6176-597c-4600-bfcd-ac989670f96b",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-},
-{
-  "dest-uuid": "f1951e8a-500e-4a26-8803-76d95c4554b4",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-},
-{
-  "dest-uuid": "4fe28b27-b13c-453e-a386-c2ef362a573b",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-},
-{
-  "dest-uuid": "b8902400-e6c5-4ba2-95aa-2d35b442b118",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-},
-{
-  "dest-uuid": "2fee9321-3e71-4cf4-af24-d4d40d355b34",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-},
-{
-  "dest-uuid": "e4dc8c01-417f-458d-9ee0-bb0617c1b391",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-},
-{
-  "dest-uuid": "586a5b49-c566-4a57-beb4-e7c667f9c34c",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-},
-{
-  "dest-uuid": "dad2337d-6d35-410a-acc5-da36ff83ee44",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-},
-{
-  "dest-uuid": "ec4f9786-c00c-430a-bc6d-0d0d22fdd393",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-},
-{
-  "dest-uuid": "b17dde68-dbcf-4cfd-9bb8-be014ec65c37",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-},
-{
-  "dest-uuid": "8e29c6c9-0c10-4bb0-827d-ff0ab8922726",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-},
-{
-  "dest-uuid": "0c3132d5-c0df-4793-b5f2-1a95bd64ab53",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-},
-{
-  "dest-uuid": "ee7e5a85-a940-46e4-b408-12956f3baafa",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-},
-{
-  "dest-uuid": "50ba4930-7c8e-4ef9-bc36-70e7dae661eb",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-},
-{
-  "dest-uuid": "1ca65327-b553-4923-ae19-8e6987ca250a",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-},
-{
-  "dest-uuid": "94ffe549-1c29-438d-9c7f-e27f7acee0bb",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-},
-{
-  "dest-uuid": "52c0edbc-ce4d-429a-b1d5-720403e0172f",
-  "tags": [
-    "estimative-language:likelihood-probability=\"very-likely\""
-  ],
-  "type": "uses"
-}
+          "dest-uuid": "3c4a2599-71ee-4405-ba1e-0e28414b4bc5",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "707399d6-ab3e-4963-9315-d9d3818cd6a0",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "eb062747-2193-45de-8fa2-e62549c37ddf",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "42e8de7b-37b2-4258-905a-6897815e58e0",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "01a5a209-b94c-450b-b7f9-946497d91055",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "7e150503-88e7-4861-866b-ff1ac82c4475",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "970a3432-3237-47ad-bcca-7d8cbb217736",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "b21c3b2d-02e6-45b1-980b-e69051040839",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "d63a3fb8-9452-4e9d-a60a-54be68d5998c",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "355be19c-ffc9-46d5-8d50-d6a036c675b6",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "b17a1a56-e99c-403c-8948-561df0cffe81",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "354a7f88-63fb-41b5-a801-ce3b377b36f1",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "21875073-b0ee-49e3-9077-1e2a885359af",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "731f4f55-b6d0-41d1-a7a9-072a66389aea",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "a10641f4-87b4-45a3-a906-92a149cb2c27",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "57340c81-c025-4189-8fa0-fc7ede51bae4",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "e01be9c5-e763-4caf-aeb7-000b416aef67",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "3ccef7ae-cb5e-48f6-8302-897105fbf55c",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "3f886f2a-874f-4333-b794-aa6075009b1c",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "b97f1d35-4249-4486-a6b5-ee60ccf24fab",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "4061e78c-1284-44b4-9116-73e4ac3912f7",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "5d2be8b9-d24c-4e98-83bf-2f5f79477163",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "b80d107d-fa0d-4b60-9684-b0433e8bdba0",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "20fb2507-d71c-455d-9b6d-6104461cf26b",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "f5d8eed6-48a9-4cdf-a3d7-d1ffa99c3d2a",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "2959d63f-73fd-46a1-abd2-109d7dcede32",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "3fc9b85a-2862-4363-a64d-d692e3ffbee0",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "3fc01293-ef5e-41c6-86ce-61f10706b64a",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "ac08589e-ee59-4935-8667-d845e38fe579",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "a62a8db3-f23a-4d8f-afd6-9dbc77e7813b",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "2e34237d-8574-43f6-aace-ae2915de8597",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "bf1b6176-597c-4600-bfcd-ac989670f96b",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "f1951e8a-500e-4a26-8803-76d95c4554b4",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "4fe28b27-b13c-453e-a386-c2ef362a573b",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "b8902400-e6c5-4ba2-95aa-2d35b442b118",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "2fee9321-3e71-4cf4-af24-d4d40d355b34",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "e4dc8c01-417f-458d-9ee0-bb0617c1b391",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "586a5b49-c566-4a57-beb4-e7c667f9c34c",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "dad2337d-6d35-410a-acc5-da36ff83ee44",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "ec4f9786-c00c-430a-bc6d-0d0d22fdd393",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "b17dde68-dbcf-4cfd-9bb8-be014ec65c37",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "8e29c6c9-0c10-4bb0-827d-ff0ab8922726",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "0c3132d5-c0df-4793-b5f2-1a95bd64ab53",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "ee7e5a85-a940-46e4-b408-12956f3baafa",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "50ba4930-7c8e-4ef9-bc36-70e7dae661eb",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "1ca65327-b553-4923-ae19-8e6987ca250a",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "94ffe549-1c29-438d-9c7f-e27f7acee0bb",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "52c0edbc-ce4d-429a-b1d5-720403e0172f",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "uses"
+        }
       ],
       "uuid": "9db5f425-fe49-4137-8598-840e7290ed0f",
       "value": "BlackBasta"
