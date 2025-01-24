@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+#
+# STIX files for ATLAS are available in the navigator
+#    https://github.com/mitre-atlas/atlas-navigator-data
 import json
 import re
 import os

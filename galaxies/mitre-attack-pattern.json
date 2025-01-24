@@ -2,17 +2,6 @@
   "description": "ATT&CK Tactic",
   "icon": "map",
   "kill_chain_order": {
-    "attack-Azure-AD": [
-      "initial-access",
-      "execution",
-      "persistence",
-      "privilege-escalation",
-      "defense-evasion",
-      "credential-access",
-      "discovery",
-      "lateral-movement",
-      "impact"
-    ],
     "attack-Containers": [
       "initial-access",
       "execution",
@@ -22,19 +11,6 @@
       "credential-access",
       "discovery",
       "lateral-movement",
-      "impact"
-    ],
-    "attack-Google-Workspace": [
-      "initial-access",
-      "execution",
-      "persistence",
-      "privilege-escalation",
-      "defense-evasion",
-      "credential-access",
-      "discovery",
-      "lateral-movement",
-      "collection",
-      "exfiltration",
       "impact"
     ],
     "attack-IaaS": [
@@ -49,6 +25,16 @@
       "collection",
       "exfiltration",
       "impact"
+    ],
+    "attack-Identity-Provider": [
+      "initial-access",
+      "execution",
+      "persistence",
+      "privilege-escalation",
+      "defense-evasion",
+      "credential-access",
+      "discovery",
+      "lateral-movement"
     ],
     "attack-Linux": [
       "initial-access",
@@ -79,6 +65,11 @@
       "impact"
     ],
     "attack-Office-365": [
+      "initial-access",
+      "defense-evasion",
+      "lateral-movement"
+    ],
+    "attack-Office-Suite": [
       "initial-access",
       "execution",
       "persistence",
@@ -192,5 +183,5 @@
   "namespace": "mitre-attack",
   "type": "mitre-attack-pattern",
   "uuid": "c4e851fa-775f-11e7-8163-b774922098cd",
-  "version": 10
+  "version": 11
 }
