@@ -98,7 +98,7 @@ class Cluster:
             entry += f"    |-----------------------------------|-----|\n"
             for meta in sorted(self.meta.keys()):
                 if meta not in excluded_meta:
-                    entry += f"    | {meta} | {self.meta[meta]} |\n"
+                    entry += f"    | {meta} | {self.meta[meta].replace("\n", ". ")} |\n"
         return entry
 
     def _create_related_entry(self):
