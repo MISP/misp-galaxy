@@ -8960,7 +8960,11 @@
           "https://analyst1.com/file-assets/RANSOM-MAFIA-ANALYSIS-OF-THE-WORLD%E2%80%99S-FIRST-RANSOMWARE-CARTEL.pdf",
           "https://www.secureworks.com/blog/how-cyber-adversaries-are-adapting-to-exploit-the-global-pandemic",
           "http://www.secureworks.com/research/threat-profiles/gold-village",
-          "https://www.cysecurity.news/2023/12/twisted-spiders-dangerous-cactus.html"
+          "https://www.cysecurity.news/2023/12/twisted-spiders-dangerous-cactus.html",
+          "https://x.com/MsftSecIntel/status/1730383711437283757",
+          "https://cloud.google.com/blog/topics/threat-intelligence/melting-unc2198-icedid-to-ransomware-operations",
+          "https://youtu.be/U7p0J8aMZhM?t=193"
+
         ],
         "synonyms": [
           "Maze Team",
@@ -8968,7 +8972,7 @@
           "GOLD VILLAGE",
           "Storm-0216",
           "DEV-0216",
-          "Twisted Spider"
+          "UNC2198"
         ]
       },
       "uuid": "39925aa0-c7bf-4b9b-97d6-7d600329453d",
@@ -16564,11 +16568,14 @@
       "value": "TA4903"
     },
     {
-      "description": "Storm-0569 is an initial access broker that distributes BATLOADER using search engine optimization (SEO) poisoning with websites that spoof Zoom, TeamViewer, Tableau, and AnyDesk. It uses the loader malware to inject the Cobalt Strike payload and transfers access to Storm-0506 for the deployment of the Black Basta ransomware.",
+      "description": "Storm-0506 (DEV-0506) is a financially motivated cybercriminal group operating as a core affiliate within the Black Basta ransomware-as-a-service (RaaS) ecosystem, having switched from deploying Conti ransomware around April 2022. This actor's operational model is distinguished by its strategic reliance on a dynamic network of initial access brokers, showcasing a division of labor common in RaaS operations. Throughout its history, Storm-0506 has leveraged access obtained through various brokers: initially Storm-0450/0464 via Qakbot infections (pre-September 2023), then expanding to include Storm-1674 delivering DarkGate, Pikabot, and IcedID (September 2023), and later employing Storm-1674's Microsoft Teams vishing campaigns (October 2024) and Storm-0569's SEO poisoning leading to BATLOADER and Cobalt Strike (December 2023). Following successful initial compromise, Storm-0506 employs a range of post-exploitation tools, including Cobalt Strike Beacon, SystemBC, and Brute Ratel C4 backdoors, and notably, often utilizes command-and-control (C2) infrastructure established by Storm-0365, indicating close collaboration or shared resources. This actor is characterized by hands-on-keyboard activity, culminating in the deployment of Black Basta ransomware. A resurgence in activity observed in October 2024, directly linked to Storm-1674's vishing, underscores the ongoing and adaptive threat that Storm-0506 represents within the ransomware landscape.",
       "meta": {
         "refs": [
           "https://www.microsoft.com/en-us/security/blog/2024/07/29/ransomware-operators-exploit-esxi-hypervisor-vulnerability-for-mass-encryption/",
-          "https://www.rewterz.com/rewterz-news/rewterz-threat-alert-widely-abused-msix-app-installer-disabled-by-microsoft-active-iocs"
+          "https://www.microsoft.com/en-us/security/blog/2023/12/28/financially-motivated-threat-actors-misusing-app-installer/",
+          "https://youtu.be/U7p0J8aMZhM?t=193",
+          "https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=Exploit:Python/CVE-2024-1709.A!dha&ThreatID=2147903327",
+          "https://x.com/MsftSecIntel/status/1849518751080644921"
         ]
       },
       "uuid": "d1ad4392-c85a-4f07-9818-a86f805a49f6",
