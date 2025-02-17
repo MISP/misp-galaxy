@@ -2955,7 +2955,8 @@
           "https://www.secureworks.com/research/threat-profiles/gold-niagara",
           "https://www.computerweekly.com/news/252525240/ALPHV-BlackCat-ransomware-family-becoming-more-dangerous",
           "https://www.deepinstinct.com/blog/understanding-the-windows-javascript-threat-landscape",
-          "https://www.microsoft.com/en-us/security/blog/2023/12/28/financially-motivated-threat-actors-misusing-app-installer/"
+          "https://www.microsoft.com/en-us/security/blog/2023/12/28/financially-motivated-threat-actors-misusing-app-installer/",
+          "https://www.wired.com/story/fin7-carbanak-hacking-group-behind-a-string-of-big-breaches/"
         ],
         "synonyms": [
           "CARBON SPIDER",
@@ -2968,7 +2969,8 @@
           "Carbanak",
           "Sangria Tempest",
           "ELBRUS",
-          "Carbon Spider"
+          "Carbon Spider",
+          "JokerStash"
         ]
       },
       "related": [
@@ -13795,9 +13797,24 @@
       "meta": {
         "country": "CN",
         "refs": [
-          "https://blog.polyswarm.io/unc4841-targeting-government-entities-with-barracuda-esg-0day-cve-2023-2868",
-          "https://www.mandiant.com/resources/blog/unc4841-post-barracuda-zero-day-remediation",
-          "https://www.mandiant.com/resources/blog/barracuda-esg-exploited-globally"
+          "https://cloud.google.com/blog/topics/threat-intelligence/unc4841-post-barracuda-zero-day-remediation/",
+          "https://cloud.google.com/blog/topics/threat-intelligence/barracuda-esg-exploited-globally/",
+          "https://i.blackhat.com/Asia-24/Presentations/Asia-24-Chen-Chinese-APT.pdf",
+          "https://www.youtube.com/watch?v=PSaix1C-UMI",
+          "https://www.youtube.com/watch?v=4zaStuUdvrE",
+          "https://sansorg.egnyte.com/dd/8ekLJCPHPj/",
+          "https://www.cisa.gov/sites/default/files/2023-07/MAR-10454006.r3.v1.CLEAR_.pdf",
+          "https://www.cisa.gov/sites/default/files/2023-07/MAR-10454006.r2.v1.CLEAR_.pdf",
+          "https://www.cisa.gov/sites/default/files/2023-07/MAR-10454006.r1.v2.CLEAR_.pdf",
+          "https://www.cisa.gov/sites/default/files/2023-08/MAR-10459736.r1.v1.CLEAR_.pdf",
+          "https://www.cisa.gov/sites/default/files/2023-08/MAR-10454006.r4.v2.CLEAR_.pdf",
+          "https://www.cisa.gov/sites/default/files/2023-09/MAR-10454006.r5.v1.CLEAR__0.pdf",
+          "https://www.barracuda.com/company/legal/esg-vulnerability",
+          "https://mandiant.widen.net/s/qwlxddwdg6/barracuda-cve-2023-2868-hardening",
+          "https://jsac.jpcert.or.jp/archive/2025/pdf/JSAC2025_1_5_leon-chang_theo-chen_en.pdf"
+        ],
+        "synonyms": [
+          "SLIME57"
         ]
       },
       "uuid": "8959fbb4-95f0-485d-bba2-db9140b95386",
@@ -15215,14 +15232,21 @@
       "value": "Karkadann"
     },
     {
-      "description": "Tomiris is a threat actor that has been active since at least 2019. They primarily target government and diplomatic entities in the Commonwealth of Independent States region, with occasional victims in other regions being foreign representations of CIS countries. Tomiris uses a wide variety of malware implants, including downloaders, backdoors, and file stealers, developed in different programming languages. They employ various attack vectors such as spear-phishing, DNS hijacking, and exploitation of vulnerabilities. There are potential ties between Tomiris and Turla, but they are considered separate threat actors with distinct targeting and tradecraft by Kaspersky.",
+      "description": "Storm-0473 (Tomiris) is a threat actor that has been active since at least 2019. They primarily target government and diplomatic entities in the Commonwealth of Independent States region, with occasional victims in other regions being foreign representations of CIS countries. Tomiris uses a wide variety of malware implants, including downloaders, backdoors, and file stealers, developed in different programming languages. They employ various attack vectors such as spear-phishing, DNS hijacking, and exploitation of vulnerabilities. There are potential ties between Tomiris and Turla, but they are considered separate threat actors with distinct targeting and tradecraft by Kaspersky.",
       "meta": {
+        "country": "KZ",
         "refs": [
-          "https://securelist.com/tomiris-called-they-want-their-turla-malware-back/109552/"
+          "https://securelist.com/darkhalo-after-solarwinds-the-tomiris-connection/104311/",
+          "https://securelist.com/apt-trends-report-q1-2022/106351/",
+          "https://securelist.com/tomiris-called-they-want-their-turla-malware-back/109552/",
+          "https://www.microsoft.com/en-us/security/blog/2024/12/04/frequent-freeloader-part-i-secret-blizzard-compromising-storm-0156-infrastructure-for-espionage/"
+        ],
+        "synonyms": [
+          "UNC2849"
         ]
       },
       "uuid": "2f854548-1af0-4f55-acab-4f85ce9f162c",
-      "value": "Tomiris"
+      "value": "Storm-0473"
     },
     {
       "description": "ShaggyPanther is a threat actor that primarily targets government entities in Taiwan and Malaysia. They have been active since 2008 and utilize hidden encrypted payloads in registry keys. Their activities have been detected in various locations, including Indonesia and Syria.",
@@ -17701,6 +17725,16 @@
       },
       "uuid": "3ef31ccd-60a9-4abc-a1a3-713ce625cbb7",
       "value": "Belsen Group"
+    },
+    {
+      "description": "ExCobalt is an APT group that has been active since at least 2016 and is believed to be linked to the notorious Cobalt Gang. The group primarily targets Russian organizations across sectors—including metallurgy, telecommunications, mining, information technology, government, and software development by exploiting supply chain weaknesses and compromised contractors for initial access. ExCobalt’s toolkit features a custom Golang‑based backdoor, GoRed, which enables remote command execution, credential harvesting, and detailed system reconnaissance, while the group also employs established tools such as Spark RAT, Mimikatz, and multiple Linux privilege escalation exploits. Researchers note that ExCobalt continually evolves its tactics and even modifies standard utilities to bypass security controls and maintain persistent access, underscoring its commitment to sophisticated cyberespionage and data theft operations.",
+      "meta": {
+        "refs": [
+          "https://global.ptsecurity.com/analytics/pt-esc-threat-intelligence/excobalt-gored-the-hidden-tunnel-technique"
+        ]
+      },
+      "uuid": "12c9522e-41d7-442b-ae0e-134249732fbb",
+      "value": "ExCobalt"
     }
   ],
   "version": 322
