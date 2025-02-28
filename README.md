@@ -411,6 +411,14 @@ Category: *sector* - source: *North American Industry Classification System - NA
 
 [[HTML](https://www.misp-galaxy.org/naics)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/naics.json)]
 
+## NATO
+
+[NATO](https://www.misp-galaxy.org/nato) - The North Atlantic Treaty Organization, also called the North Atlantic Alliance, is an intergovernmental transnational military alliance of 32 member states—30 European and 2 North American. Established in the aftermath of World War II, the organization implements the North Atlantic Treaty, signed in Washington, D.C., on 4 April 1949. NATO is a collective security system: its independent member states agree to defend each other against attacks by third parties. 
+
+Category: *actor* - source: *North Atlantic Treaty Organization - NATO* - total: *7* elements
+
+[[HTML](https://www.misp-galaxy.org/nato)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/nato.json)]
+
 ## NICE Competency areas
 
 [NICE Competency areas](https://www.misp-galaxy.org/nice-framework-competency_areas) - Competency areas based on the NIST NICE framework
