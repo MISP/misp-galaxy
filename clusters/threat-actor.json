@@ -8962,7 +8962,10 @@
           "https://analyst1.com/file-assets/RANSOM-MAFIA-ANALYSIS-OF-THE-WORLD%E2%80%99S-FIRST-RANSOMWARE-CARTEL.pdf",
           "https://www.secureworks.com/blog/how-cyber-adversaries-are-adapting-to-exploit-the-global-pandemic",
           "http://www.secureworks.com/research/threat-profiles/gold-village",
-          "https://www.cysecurity.news/2023/12/twisted-spiders-dangerous-cactus.html"
+          "https://www.cysecurity.news/2023/12/twisted-spiders-dangerous-cactus.html",
+          "https://x.com/MsftSecIntel/status/1730383711437283757",
+          "https://cloud.google.com/blog/topics/threat-intelligence/melting-unc2198-icedid-to-ransomware-operations",
+          "https://youtu.be/U7p0J8aMZhM?t=193"
         ],
         "synonyms": [
           "Maze Team",
@@ -8970,7 +8973,7 @@
           "GOLD VILLAGE",
           "Storm-0216",
           "DEV-0216",
-          "Twisted Spider"
+          "UNC2198"
         ]
       },
       "uuid": "39925aa0-c7bf-4b9b-97d6-7d600329453d",
@@ -16572,11 +16575,14 @@
       "value": "TA4903"
     },
     {
-      "description": "Storm-0569 is an initial access broker that distributes BATLOADER using search engine optimization (SEO) poisoning with websites that spoof Zoom, TeamViewer, Tableau, and AnyDesk. It uses the loader malware to inject the Cobalt Strike payload and transfers access to Storm-0506 for the deployment of the Black Basta ransomware.",
+      "description": "Storm-0506 (DEV-0506) is a financially motivated cybercriminal group operating as a core affiliate within the Black Basta ransomware-as-a-service (RaaS) ecosystem, having switched from deploying Conti ransomware around April 2022. This actor's operational model is distinguished by its strategic reliance on a dynamic network of initial access brokers, showcasing a division of labor common in RaaS operations. Throughout its history, Storm-0506 has leveraged access obtained through various brokers: initially Storm-0450/0464 via Qakbot infections (pre-September 2023), then expanding to include Storm-1674 delivering DarkGate, Pikabot, and IcedID (September 2023), and later employing Storm-1674's Microsoft Teams vishing campaigns (October 2024) and Storm-0569's SEO poisoning leading to BATLOADER and Cobalt Strike (December 2023). Following successful initial compromise, Storm-0506 employs a range of post-exploitation tools, including Cobalt Strike Beacon, SystemBC, and Brute Ratel C4 backdoors, and notably, often utilizes command-and-control (C2) infrastructure established by Storm-0365, indicating close collaboration or shared resources. This actor is characterized by hands-on-keyboard activity, culminating in the deployment of Black Basta ransomware. A resurgence in activity observed in October 2024, directly linked to Storm-1674's vishing, underscores the ongoing and adaptive threat that Storm-0506 represents within the ransomware landscape.",
       "meta": {
         "refs": [
           "https://www.microsoft.com/en-us/security/blog/2024/07/29/ransomware-operators-exploit-esxi-hypervisor-vulnerability-for-mass-encryption/",
-          "https://www.rewterz.com/rewterz-news/rewterz-threat-alert-widely-abused-msix-app-installer-disabled-by-microsoft-active-iocs"
+          "https://www.microsoft.com/en-us/security/blog/2023/12/28/financially-motivated-threat-actors-misusing-app-installer/",
+          "https://youtu.be/U7p0J8aMZhM?t=193",
+          "https://www.microsoft.com/en-us/wdsi/threats/malware-encyclopedia-description?Name=Exploit:Python/CVE-2024-1709.A!dha&ThreatID=2147903327",
+          "https://x.com/MsftSecIntel/status/1849518751080644921"
         ]
       },
       "uuid": "d1ad4392-c85a-4f07-9818-a86f805a49f6",
@@ -16597,7 +16603,28 @@
       "description": "UNC4393 is a financially motivated threat actor primarily using BASTA ransomware. They have been active since early 2022 and have targeted over 40 organizations across various industries. UNC4393 has shown a willingness to cooperate with other threat clusters for initial access and has evolved from using existing tools to developing custom malware. They focus on efficient data exfiltration and multi-faceted extortion, often utilizing tools like COGSCAN and RCLONE for reconnaissance and data theft.",
       "meta": {
         "refs": [
-          "https://cloud.google.com/blog/topics/threat-intelligence/unc4393-goes-gently-into-silentnight"
+          "https://cloud.google.com/blog/topics/threat-intelligence/unc4393-goes-gently-into-silentnight",
+          "https://www.security.com/threat-intelligence/black-basta-ransomware-zero-day",
+          "https://cloud.google.com/blog/topics/threat-intelligence/detecting-disrupting-malvertising-backdoors/",
+          "https://www.microsoft.com/en-us/security/blog/2024/05/15/threat-actors-misusing-quick-assist-in-social-engineering-attacks-leading-to-ransomware/",
+          "https://news.sophos.com/en-us/2025/01/21/sophos-mdr-tracks-two-ransomware-campaigns-using-email-bombing-microsoft-teams-vishing/",
+          "https://www.esentire.com/security-advisories/ongoing-email-bombing-campaigns-leading-to-remote-access-and-post-exploitation",
+          "https://redcanary.com/blog/threat-intelligence/storm-1811-black-basta/",
+          "https://redcanary.com/blog/threat-intelligence/intelligence-insights-june-2024/",
+          "https://x.com/MsftSecIntel/status/1881751635598139714",
+          "https://techcommunity.microsoft.com/blog/microsoftsecurityexperts/phish-click-breach-hunting-for-a-sophisticated-cyber-attack/4267916",
+          "https://services.google.com/fh/files/misc/m_trends_2023_report.pdf",
+          "https://services.google.com/fh/files/misc/m-trends-2024.pdf",
+          "https://x.com/Unit42_Intel/status/1880368272610050459",
+          "https://medium.com/walmartglobaltech/qbot-is-back-connect-2d774052369f",
+          "https://go.crowdstrike.com/rs/281-OBQ-266/images/CrowdStrikeGlobalThreatReport2025.pdf",
+          "https://www.crowdstrike.com/adversaries/curly-spider/"
+        ],
+        "synonyms": [
+          "Storm-1811",
+          "CURLY SPIDER",
+          "STAC5777",
+          "Cardinal"
         ]
       },
       "uuid": "8191e28a-fb2d-4d50-b992-b877807a2f37",
@@ -17422,15 +17449,7 @@
       "description": "APT73 is a ransomware group that has publicly identified 12 victims and launched its data leak site on April 25th. The DLS bears a striking resemblance to that of LockBit, likely to leverage LockBit's reputation and attract potential affiliates. The rationale for this design mimicry is unclear, but it may be intended to signal operational parity with LockBit to inspire trust among low-level criminals. APT73 was formed by an alleged former LockBit affiliate following law enforcement's \"Operation Cronos\" in February 2024.",
       "meta": {
         "refs": [
-          "https://quointelligence.eu/2024/06/analyzing-shift-in-ransomware-dynamics/",
-          "https://www.redpacketsecurity.com/apt73-ransomware-victim-www-baldinger-ag-ch/",
-          "https://www.redpacketsecurity.com/apt73-ransomware-victim-www-scopeset-de/",
-          "https://www.redpacketsecurity.com/apt73-ransomware-victim-hpecds-com/",
-          "https://www.redpacketsecurity.com/apt73-ransomware-victim-www-trinitesolutions-com/",
-          "https://www.redpacketsecurity.com/apt73-ransomware-victim-modplan-co-uk/",
-          "https://www.redpacketsecurity.com/apt73-ransomware-victim-mgfsourcing-com/",
-          "https://www.redpacketsecurity.com/apt73-ransomware-victim-www-legilog-fr/",
-          "https://www.redpacketsecurity.com/apt73-ransomware-victim-sokkakreatif-com/"
+          "https://quointelligence.eu/2024/06/analyzing-shift-in-ransomware-dynamics/"
         ],
         "synonyms": [
           "Eraleig"
@@ -17477,7 +17496,7 @@
       "meta": {
         "country": "IR",
         "refs": [
-          "https://informationsecuritybuzz.com/iranian-dream-job-aerospace/"
+          "https://www.clearskysec.com/irdreamjob24/"
         ]
       },
       "uuid": "c2f1f2e3-9573-49be-b01e-6ffff9a9571b",
@@ -17626,7 +17645,7 @@
         ]
       },
       "uuid": "e7a64fd7-5d30-47ec-b9f6-8c555e5f319f",
-      "value": "Liminal Panda"
+      "value": "LIMINAL PANDA"
     },
     {
       "description": "ALTOUFAN TEAM is a politically motivated hacktivist group with anti-Zionism, anti-monarchy, and pro-14-February movement sentiments. They have targeted government agencies and organizations in Bahrain and Israel, claiming to support political causes in the region. The group has employed techniques such as credential theft to compromise systems, as demonstrated by their attack on Bahrain's Social Insurance Organization. ALTOUFAN maintains a presence on social media platforms to disseminate their messages and showcase their activities.",
@@ -17642,7 +17661,7 @@
       "description": "UAC-0185 has been active since at least 2022, primarily targeting Ukrainian defense organizations through credential theft via messaging apps like Signal, Telegram, and WhatsApp, as well as military systems such as DELTA, TENETA, and Kropyva. The group employs phishing attacks, often impersonating the Ukrainian Union of Industrialists and Entrepreneurs (UUIE), to gain unauthorized access to the PCs of defense sector employees. They utilize custom tools, including MESHAGENT and UltraVNC, to facilitate their operations. Their activities are mapped to MITRE ATT&CK, focusing on tactics related to credential theft and remote access.",
       "meta": {
         "refs": [
-          "https://socprime.com/blog/uac-0185-aka-unc4221-attack-detection/"
+          "https://cert.gov.ua/article/6281632"
         ],
         "synonyms": [
           "UNC4221"
@@ -17734,6 +17753,62 @@
       },
       "uuid": "12c9522e-41d7-442b-ae0e-134249732fbb",
       "value": "ExCobalt"
+    },
+    {
+      "description": "UNC3973 is a financially motivated threat actor tracked by Mandiant, distinguished from the broader BASTA ransomware ecosystem (primarily tracked as UNC4393) due to its unique operational characteristics and TTPs. This actor has demonstrated a specific focus on supply chain compromises, as evidenced by their June campaign targeting credit unions in western Canada via a compromised managed service provider (MSP). UNC3973 leverages unauthorized service accounts with elevated privileges, specifically domain administrator accounts shared between the compromised MSP and the target organizations, to gain initial access.This actor's post-exploitation activity includes attempts to disable security controls and deploy the SYSTEMBC tunneler for command and control (C2) communication, followed by attempts to deploy BASTA ransomware. While their attempts to deploy both SYSTEMBC and BASTA have been observed, these were thankfully thwarted by endpoint security solutions in observed instances. The targeted, supply chain-enabled nature of UNC3973's intrusions, coupled with its use of privileged shared accounts and attempts at deploying BASTA, all suggest that it is an exclusive group, perhaps even affiliates working closely with or possibly operating under the direct control, BASTA ransomware operators. This group's ability to exploit centralized access points, like MSPs, represents a significant threat to organizations reliant on third-party providers.",
+      "meta": {
+        "refs": [
+          "https://services.google.com/fh/files/misc/m_trends_2023_report.pdf",
+          "https://cloud.google.com/blog/topics/threat-intelligence/unc4393-goes-gently-into-silentnight"
+        ]
+      },
+      "uuid": "8b92f213-3dc6-4b45-a577-f81a6d237edf",
+      "value": "UNC3973"
+    },
+    {
+      "description": "Storm-0826 is a financially motivated cybercriminal group operating as an affiliate within the Black Basta ransomware-as-a-service (RaaS) ecosystem. This actor's primary known method of obtaining initial access is through handoffs from Storm-0464, a known distributor of the Qakbot malware",
+      "meta": {
+        "refs": [
+          "https://www.youtube.com/watch?v=U7p0J8aMZhM&t=193s",
+          "https://applied-gai-in-security.ghost.io/security-copilot-promptbook-threat-actor-profile/"
+        ]
+      },
+      "uuid": "102b6626-1576-4034-83bb-bd9d54ae0e5e",
+      "value": "Storm-0826"
+    },
+    {
+      "description": "STAC5143 is a threat actor group tracked by Sophos, notable for its sophisticated use of Microsoft Office 365's legitimate services to conduct ransomware and data extortion campaigns. Unlike FIN7, which typically targets larger organizations through phishing and malicious Google Ads, STAC5143 focuses on smaller victims across diverse business sectors. Their operations begin with overwhelming targeted individuals with email bombing, followed by Microsoft Teams messages impersonating tech support to initiate a remote screen control session. Utilizing Microsoft's Quick Assist or direct Teams screen sharing, they deploy malware, including Java Archive (JAR) files and Python-based backdoors, from external SharePoint file stores. This cluster exploits legitimate services within the Microsoft Office 365 platform, using a Java-based proxy to execute PowerShell commands and download malicious payloads. While employing publicly available tools like RPivot, their obfuscation methods and the use of side-loaded DLLs for command and control, combined with the deployment of Black Basta ransomware in one instance, indicate a sophisticated and evolving threat actor adapting known techniques for their specific objectives.",
+      "meta": {
+        "refs": [
+          "https://news.sophos.com/en-us/2025/01/21/sophos-mdr-tracks-two-ransomware-campaigns-using-email-bombing-microsoft-teams-vishing/"
+        ]
+      },
+      "uuid": "019514dc-c894-751f-8cfd-ff2b932ff451",
+      "value": "STAC5143"
+    },
+    {
+      "description": "GOLD REBELLION is a financially motivated cybercriminal threat group that operates the Black Basta name-and-shame ransomware. The group posted its first victim to its leak site in April 2022 and has continued to publish victim names at a rate of around 15 a month since then. GOLD REBELLION has not openly advertised or appeared to recruit for an affiliate program but the variety of tactics, techniques and procedures (TTP) observed in Black Basta intrusions suggests that multiple individuals are engaged in the ransomware scheme.Several security vendors and independent researchers have suggested the distributors of Black Basta may be former affiliates of GOLD ULRICK's Conti operation. Technical artifacts analyzed by CTU researchers suggest that Black Basta has been under development since at least early February 2022, several weeks before extensive public leaks detailed GOLD ULRICK's Conti operation. In November 2022, researchers at SentinelOne linked custom tooling used by GOLD REBELLION to the GOLD NIAGARA (FIN7) threat group. CTU researchers have not made independent observations corroborating a relationship between these threat groups or any others.GOLD REBELLION appear to have been a key customer of GOLD LAGOON's Qakbot: CTU researchers observed multiple incidents where Black Basta was distributed through it as an initial access vector (IAV), leading to Cobalt Strike and further lateral movement into the victim network. Following the takedown of Qakbot in August 2023, GOLD REBELLION explored new methods of delivery, including DarkGate and Pikabot. In one incident, CTU researchers observed a threat actor gain access to a victim network through a managed security services provider (MSSP). In October 2024, GOLD REBELLION likely exploited a vulnerability in a Sonic Wall VPN device for access. Also in 2024, CTU researchers observed multiple instances of the group using social engineering to convince victims to download remote management and monitoring tools like AnyDesk and Quick Assist. After spamming inboxes with multiple emails, the threat actors approached the affected users via Teams, purporting to be IT Support or Help Desk employees offering assistance with email inbox issues.Other tools members of the group have used include the SystemBC back connect malware, PsExec for remote execution, RDP for lateral movement, batch files to delete their own tools and disable anti-virus programs for defense evasion, and both Rclone and MegaSync for data exfiltration.",
+      "meta": {
+        "refs": [
+          "https://www.secureworks.com/research/threat-profiles/gold-rebellion",
+          "https://www.secureworks.com/-/media/Files/US/Reports/state%20of%20the%20threat/secureworks-state-of-the-threat-report-2024.ashx",
+          "https://www.secureworks.com/-/media/files/us/reports/secureworks-learning-from-incident-response-2022.pdf",
+          "https://www.secureworks.com/-/media/files/us/reports/ir-quarterly-reports/secureworks-learning-from-ir-jan-mar-2023.pdf",
+          "https://www.secureworks.com/-/media/files/us/reports/state-of-the-threat/secureworks-se-2023-sott-report.pdf",
+          "https://unit42.paloaltonetworks.com/threat-actor-groups-tracked-by-palo-alto-networks-unit-42/",
+          "https://www.pwc.at/de/dienstleistungen/Cyber/2022-year-in-retrospect-report.pdf",
+          "https://www.crowdstrike.com/adversaries/wandering-spider/",
+          "https://www.patechcon.com/wp-content/uploads/2023/08/ebook-modern-adversaries-and-evasion-techniques-2023.pdf",
+          "https://go.crowdstrike.com/rs/281-OBQ-266/images/CrowdStrikeGlobalThreatReport2025.pdf"
+        ],
+        "synonyms": [
+          "WANDERING SPIDER",
+          "White Dev 115",
+          "Dark Scorpius"
+        ]
+      },
+      "uuid": "835c7fc6-a066-447d-a0fc-b096bd9c412f",
+      "value": "GOLD REBELLION"
     }
   ],
   "version": 322
