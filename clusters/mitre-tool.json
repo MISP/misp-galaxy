@@ -17,8 +17,8 @@
           "Windows"
         ],
         "refs": [
-          "http://www.ampliasecurity.com/research/wcefaq.html",
-          "https://attack.mitre.org/software/S0005"
+          "https://attack.mitre.org/software/S0005",
+          "https://web.archive.org/web/20240904163410/https://www.ampliasecurity.com/research/wcefaq.html"
         ],
         "synonyms": [
           "Windows Credential Editor",
@@ -133,6 +133,10 @@
         },
         {
           "dest-uuid": "767dbf9e-df3f-45cb-8998-4903ab5f80c0",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "806a49c4-970d-43f9-9acc-ac0ee11e6662",
           "type": "uses"
         },
         {
@@ -334,15 +338,15 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "a718a0c8-5768-41a1-9958-a1cc3f995e99",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "ac08589e-ee59-4935-8667-d845e38fe579",
           "type": "uses"
         },
         {
           "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "cd25c1b4-935c-4f0e-ba8d-552f28bc4783",
           "type": "uses"
         },
         {
@@ -1150,7 +1154,7 @@
         ],
         "refs": [
           "https://attack.mitre.org/software/S0250",
-          "https://github.com/zerosum0x0/koadic",
+          "https://github.com/offsecginger/koadic",
           "https://researchcenter.paloaltonetworks.com/2018/06/unit42-sofacy-groups-parallel-attacks/",
           "https://www.malwarebytes.com/resources/files/2021/02/lazyscripter.pdf"
         ],
@@ -1355,6 +1359,10 @@
         },
         {
           "dest-uuid": "3489cfc5-640f-4bb3-a103-9137b97de79f",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "3e6831b2-bf4c-4ae6-b328-2e7c6633b291",
           "type": "uses"
         },
         {
@@ -2053,6 +2061,9 @@
           "https://attack.mitre.org/software/S0191",
           "https://github.com/skalkoto/winexe/",
           "https://netzpolitik.org/2015/digital-attack-on-german-parliament-investigative-report-on-the-hack-of-the-left-party-infrastructure-in-bundestag/"
+        ],
+        "synonyms": [
+          "Winexe"
         ]
       },
       "related": [
@@ -2358,9 +2369,8 @@
       "meta": {
         "external_id": "S0413",
         "mitre_platforms": [
-          "Office 365",
           "Windows",
-          "Azure AD"
+          "Office Suite"
         ],
         "refs": [
           "https://attack.mitre.org/software/S0413",
@@ -3456,6 +3466,14 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "2f6b4ed7-fef1-44ba-bcb8-1b4beb610b64",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "30973a08-aed9-4edf-8604-9084ce1b5c4f",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "322bad5a-1c49-4d23-ab79-76d641794afa",
           "type": "uses"
         },
@@ -3473,6 +3491,10 @@
         },
         {
           "dest-uuid": "43e7dc91-05b2-474c-b9ac-2ed4fe101f4d",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "4933e63b-9b77-476e-ab29-761bc5b7d15a",
           "type": "uses"
         },
         {
@@ -3508,7 +3530,15 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "824add00-99a1-4b15-9a2d-6c5683b7b497",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "86850eff-2729-40c3-b85e-c4af26da4a2d",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "8cdeb020-e31e-4f88-a582-f53dcfbda819",
           "type": "uses"
         },
         {
@@ -4192,6 +4222,10 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "394220d9-8efc-4252-9040-664f7b115be6",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "650c784b-7504-4df7-ab2c-4ea882384d1e",
           "type": "uses"
         },
@@ -4221,7 +4255,7 @@
         "external_id": "S0358",
         "mitre_platforms": [
           "Windows",
-          "Office 365"
+          "Office Suite"
         ],
         "refs": [
           "https://attack.mitre.org/software/S0358",
@@ -4509,6 +4543,9 @@
       "description": "[ROADTools](https://attack.mitre.org/software/S0684) is a framework for enumerating Azure Active Directory environments. The tool is written in Python and publicly available on GitHub.(Citation: ROADtools Github)",
       "meta": {
         "external_id": "S0684",
+        "mitre_platforms": [
+          "Identity Provider"
+        ],
         "refs": [
           "https://attack.mitre.org/software/S0684",
           "https://github.com/dirkjanm/ROADtools"
@@ -4734,8 +4771,8 @@
         "external_id": "S0677",
         "mitre_platforms": [
           "Windows",
-          "Azure AD",
-          "Office 365"
+          "Office Suite",
+          "Identity Provider"
         ],
         "refs": [
           "https://attack.mitre.org/software/S0677",
@@ -4924,7 +4961,184 @@
       ],
       "uuid": "d505fc8b-2e64-46eb-96d6-9ef7ffca5b66",
       "value": "Mythic - S0699"
+    },
+    {
+      "description": "NPPSPY is an implementation of a theoretical mechanism first presented in 2004 for capturing credentials submitted to a Windows system via a rogue Network Provider API item. NPPSPY captures credentials following submission and writes them to a file on the victim system for follow-on exfiltration.(Citation: Huntress NPPSPY 2022)(Citation: Polak NPPSPY 2004)",
+      "meta": {
+        "external_id": "S1131",
+        "mitre_platforms": [
+          "Windows"
+        ],
+        "refs": [
+          "https://attack.mitre.org/software/S1131",
+          "https://www.blackhat.com/presentations/win-usa-04/bh-win-04-polak/bh-win-04-polak2.pdf",
+          "https://www.huntress.com/blog/cleartext-shenanigans-gifting-user-passwords-to-adversaries-with-nppspy"
+        ],
+        "synonyms": [
+          "NPPSPY"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "035bb001-ab69-4a0b-9f6c-2de8b09e1b9d",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "30208d3e-0d6b-43c8-883e-44462a514619",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "3c4a2599-71ee-4405-ba1e-0e28414b4bc5",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "435dfb86-2697-4867-85b5-2fef496c0517",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "57340c81-c025-4189-8fa0-fc7ede51bae4",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "bb5a00de-e086-4859-a231-fa793f6797e2",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "c9e0c59e-162e-40a4-b8b1-78fab4329ada",
+          "type": "uses"
+        }
+      ],
+      "uuid": "0630d1a7-54da-4a48-a6af-eb8a62b13c17",
+      "value": "NPPSPY - S1131"
+    },
+    {
+      "description": "[FRP](https://attack.mitre.org/software/S1144), which stands for Fast Reverse Proxy, is an openly available tool that is capable of exposing a server located behind a firewall or Network Address Translation (NAT) to the Internet. [FRP](https://attack.mitre.org/software/S1144) can support multiple protocols including TCP, UDP, and HTTP(S) and has been abused by threat actors to proxy command and control communications.(Citation: FRP GitHub)(Citation: Joint Cybersecurity Advisory Volt Typhoon June 2023)(Citation: RedCanary Mockingbird May 2020)(Citation: DFIR Phosphorus November 2021)",
+      "meta": {
+        "external_id": "S1144",
+        "mitre_platforms": [
+          "Linux",
+          "macOS",
+          "Windows"
+        ],
+        "refs": [
+          "https://attack.mitre.org/software/S1144",
+          "https://github.com/fatedier/frp",
+          "https://media.defense.gov/2023/May/24/2003229517/-1/-1/0/CSA_Living_off_the_Land.PDF",
+          "https://redcanary.com/blog/blue-mockingbird-cryptominer/",
+          "https://thedfirreport.com/2021/11/15/exchange-exploit-leads-to-domain-wide-ransomware/"
+        ],
+        "synonyms": [
+          "FRP"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "0f4a0c76-ab2d-4cb0-85d3-3f0efb8cba0d",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "24bfaeba-cb0d-4525-b3dc-507c77ecec41",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "4fe28b27-b13c-453e-a386-c2ef362a573b",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "731f4f55-b6d0-41d1-a7a9-072a66389aea",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "7e150503-88e7-4861-866b-ff1ac82c4475",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "a782ebe2-daba-42c7-bc82-e8e9d923162d",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "bf176076-b789-408e-8cba-7275e81c0ada",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "c21d5a77-d422-4a69-acd7-2c53c1faa34b",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "df8b2a25-8bdf-4856-953c-a04372b1c161",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "e3a12395-188d-4051-9a16-ea8e14d07b88",
+          "type": "uses"
+        }
+      ],
+      "uuid": "36dd807e-b5bc-4c3e-91ed-80682360148c",
+      "value": "FRP - S1144"
+    },
+    {
+      "description": "[Covenant](https://attack.mitre.org/software/S1155) is a multi-platform command and control framework written in .NET. While designed for penetration testing and security research, the tool has also been used by threat actors such as [HAFNIUM](https://attack.mitre.org/groups/G0125) during operations. [Covenant](https://attack.mitre.org/software/S1155) functions through a central listener managing multiple deployed \"Grunts\" that communicate back to the controller.(Citation: Github Covenant)(Citation: Microsoft HAFNIUM March 2020)",
+      "meta": {
+        "external_id": "S1155",
+        "mitre_platforms": [
+          "Linux",
+          "macOS",
+          "Windows"
+        ],
+        "refs": [
+          "https://attack.mitre.org/software/S1155",
+          "https://github.com/cobbr/Covenant",
+          "https://www.microsoft.com/security/blog/2021/03/02/hafnium-targeting-exchange-servers/"
+        ],
+        "synonyms": [
+          "Covenant"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "01a5a209-b94c-450b-b7f9-946497d91055",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "2cd950a6-16c4-404a-aa01-044322395107",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "354a7f88-63fb-41b5-a801-ce3b377b36f1",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "840a987a-99bd-4a80-a5c9-0cb2baa6cade",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "970a3432-3237-47ad-bcca-7d8cbb217736",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "b18eae87-b469-4e14-b454-b171b416bc18",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "b97f1d35-4249-4486-a6b5-ee60ccf24fab",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "bf176076-b789-408e-8cba-7275e81c0ada",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "d1fcf083-a721-4223-aedf-bf8960798d62",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "df8b2a25-8bdf-4856-953c-a04372b1c161",
+          "type": "uses"
+        }
+      ],
+      "uuid": "05fb53c8-e2ac-4e17-a0c9-a0825e1198bf",
+      "value": "Covenant - S1155"
     }
   ],
-  "version": 32
+  "version": 33
 }

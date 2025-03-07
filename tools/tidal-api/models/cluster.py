@@ -132,7 +132,8 @@ class Cluster:
 
     def save_to_file(self, path):
         with open(path, "w") as file:
-            file.write(json.dumps(self.__dict__(), indent=4))
+            file.write(json.dumps(self.__dict__(), indent=2))
+            file.write('\n')
 
     def __str__(self) -> str:
         return f"Cluster: {self.name} - {self.type} - {self.uuid}"
@@ -270,7 +271,7 @@ class GroupCluster(Cluster):
 
             # Code Block for handling duplicate from Tidal API data (hopefully only temporary)
             if value.uuid == "3290dcb9-5781-4b87-8fa0-6ae820e152cd":
-                value.value = "Volt Typhoon - Tidal" 
+                value.value = "Volt Typhoon - Tidal"
 
             self.values.append(value.return_value())
 
@@ -367,6 +368,7 @@ class SoftwareCluster(Cluster):
                         uuid=associated_software.get("associated_software_id"),
                         value=associated_software.get("name") + " - Associated Software",
                     )
+
                     self.values.append(value.return_value())
                     related.append(
                         {
@@ -384,6 +386,12 @@ class SoftwareCluster(Cluster):
                 uuid=entry.get("id"),
                 value=entry.get("name"),
             )
+            # duplicates, manually handled
+            if value.uuid == '6af0eac2-c35f-4569-ae09-47f1ca846961':
+                value.value = f"{value.value} - Duplicate"
+            if value.uuid == '39d81c48-8f7c-54cb-8fac-485598e31a55':
+                value.value = f"{value.value} - Duplicate"
+
             self.values.append(value.return_value())
 
 
@@ -493,7 +501,7 @@ class TechniqueCluster(Cluster):
                         sub_value.value = "Spearphishing Link - Duplicate"
                     elif sub_value.uuid == "350c12a3-33f6-5942-8892-4d6e70abbfc1":
                         sub_value.value = "Spearphishing Voice - Duplicate"
-                    
+
                     self.values.append(sub_value.return_value())
                     related.append(
                         {
@@ -585,6 +593,17 @@ class ReferencesCluster(Cluster):
                 uuid=entry.get("id"),
                 value=entry.get("name"),
             )
+
+            # handle duplicates manually
+            if value.uuid == 'eea178f4-80bd-49d1-84b1-f80671e9a3e4':
+                value.value = f"{value.value} - Duplicate"
+            if value.uuid == '9bb5c330-56bd-47e7-8414-729d8e6cb3b3':
+                value.value = f"{value.value} - Duplicate"
+            if value.uuid == '8b4bdce9-da19-443f-88d2-11466e126c09':
+                value.value = f"{value.value} - Duplicate"
+            if value.uuid == 'b4727044-51bb-43b3-afdb-515bb4bb0f7e':
+                value.value = f"{value.value} - Duplicate"
+
             self.values.append(value.return_value())
 
 

@@ -101,7 +101,7 @@ def create_cluster_json(galaxyCluster):
     This function finally creates the sigma-cluster.json file with all the information.
     """
     with open("sigma-cluster.json", "w") as f:
-        json.dump(galaxyCluster, f)
+        json.dump(galaxyCluster, f, default=str)
 
 
 def parseYaml(inputPath, yamlFile):
