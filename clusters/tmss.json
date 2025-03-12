@@ -1,0 +1,630 @@
+{
+  "authors": [
+    "Evgeny Bogokovsky",
+    "Microsoft",
+    "Ram Pliskin"
+  ],
+  "category": "tmss",
+  "description": "Microsoft Defender for Cloud threat matrix for storage services contains attack tactics, techniques and mitigations relevant storage services delivered by cloud providers.",
+  "name": "Threat Matrix for storage services",
+  "source": "https://github.com/microsoft/Threat-matrix-for-storage-services",
+  "type": "tmss",
+  "uuid": "aaf033a6-7f1e-45ab-beef-20a52b75b641",
+  "values": [
+    {
+      "description": "Attackers may execute active reconnaissance scans to gather storage account names that becomes a potential target. Active scans are those where the adversary probes victim infrastructure via network traffic, as opposed to other forms of reconnaissance that do not involve direct interaction.",
+      "meta": {
+        "external_id": "MS-T801",
+        "kill_chain": [
+          "TMSS-tactics:Reconnaissance"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Threat-matrix-for-storage-services/techniques/storage-account-discovery"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "67073dde-d720-45ae-83da-b12d5e73ca3b",
+          "type": "related-to"
+        }
+      ],
+      "uuid": "106eb589-71e3-58a1-a37e-916cdc902414",
+      "value": "MS-T801 - Storage account discovery"
+    },
+    {
+      "description": "Attackers may use search engines to collect information about victim storage accounts that can be used during targeting. Search engine services typical crawl online sites to index context and may provide users with specialized syntax to search for specific keywords such as storage accounts domain names (site:*.blob.core.windows.net)",
+      "meta": {
+        "external_id": "MS-T804",
+        "kill_chain": [
+          "TMSS-tactics:Reconnaissance"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Threat-matrix-for-storage-services/techniques/search-engines"
+        ]
+      },
+      "uuid": "044be881-7476-5fbe-a760-bdf9cf949cab",
+      "value": "MS-T804 - Search engines"
+    },
+    {
+      "description": "Attackers may search public databases for publicly available storage accounts that can be used during targeting.",
+      "meta": {
+        "external_id": "MS-T803",
+        "kill_chain": [
+          "TMSS-tactics:Reconnaissance"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Threat-matrix-for-storage-services/techniques/databases-of-public-accounts"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "55fc4df0-b42c-479a-b860-7a6761bcaad0",
+          "type": "related-to"
+        }
+      ],
+      "uuid": "ef3d435e-8ca6-5864-a882-e7b092870719",
+      "value": "MS-T803 - Databases of publicly available storage accounts"
+    },
+    {
+      "description": "Attackers may search for DNS data for valid storage account names that can become potential targets. Threat actors can query nameservers using brute-force technique to enumerate existing storage accounts in the wild, or search through centralized repositories of logged DNS query responses (known as passive DNS).",
+      "meta": {
+        "external_id": "MS-T826",
+        "kill_chain": [
+          "TMSS-tactics:Reconnaissance"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Threat-matrix-for-storage-services/techniques/dns-passive-dns"
+        ]
+      },
+      "uuid": "e5b2e210-fedb-5651-bb82-484e9f0dfde8",
+      "value": "MS-T826 - DNS/Passive DNS"
+    },
+    {
+      "description": "Attackers may look for storage accounts of a victim enterprise by searching its websites. Victim-owned website pages may be stored on a storage account or contain links to retrieve data stored in a storage account. The links contain the URL of the storage and provide an entry point into the account.",
+      "meta": {
+        "external_id": "MS-T805",
+        "kill_chain": [
+          "TMSS-tactics:Reconnaissance"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Threat-matrix-for-storage-services/techniques/victim-owned-websites"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "16cdd21f-da65-4e4f-bc04-dd7d198c7b26",
+          "type": "related-to"
+        }
+      ],
+      "uuid": "53e65db3-5177-56fc-ae07-088c9919463e",
+      "value": "MS-T805 - Victim-owned websites"
+    },
+    {
+      "description": "A shared access signature (SAS) is a token, that is appended to the a uniform resource identifier (URI) for a storage resource, that grants restricted access rights over the associated resource in your storage account. Attackers may get a SAS token using one of the Credential Access techniques or during the reconnaissance process through social engineering.",
+      "meta": {
+        "external_id": "MS-T814",
+        "kill_chain": [
+          "TMSS-tactics:Initial Access"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Threat-matrix-for-storage-services/techniques/valid-sas-token"
+        ]
+      },
+      "uuid": "1900b9ba-0b3c-5ad7-bdd0-ac8c40a8da0a",
+      "value": "MS-T814 - Valid SAS token"
+    },
+    {
+      "description": "Attackers may get a shared key using one of Credential Access techniques or capture one earlier in their reconnaissance process through social engineering to gain initial access. Adversaries may leverage keys left in source code or configuration files. Sophisticated attackers may also obtain keys from hosts (virtual machines) that have mounted File Share on their system (SMB).  Shared key provides unrestricted permissions over all data plane operations.",
+      "meta": {
+        "external_id": "MS-T815",
+        "kill_chain": [
+          "TMSS-tactics:Initial Access"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Threat-matrix-for-storage-services/techniques/valid-shared-key"
+        ]
+      },
+      "uuid": "3348438e-9ed7-5aa3-b60b-8c97075c0550",
+      "value": "MS-T815 - Valid shared key"
+    },
+    {
+      "description": "Attackers may steal account credentials using one of the credential access techniques or capture an account earlier in their reconnaissance process through social engineering to gain initial access. An authorized principal account can result in full control of storage account resources.",
+      "meta": {
+        "external_id": "MS-T816",
+        "kill_chain": [
+          "TMSS-tactics:Initial Access"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Threat-matrix-for-storage-services/techniques/authorized-principal-account"
+        ]
+      },
+      "uuid": "ad800a27-4d29-58f4-962e-f3b01acea800",
+      "value": "MS-T816 - Authorized principal account"
+    },
+    {
+      "description": "Attackers may leverage publicly exposed storage accounts to list containers/blobs and their properties. Azure Storage supports optional anonymous public read access for containers and blobs. By default, anonymous access to your data is never permitted. Unless you explicitly enable anonymous access, all requests to a container and its blobs must be authorized. When you configure a container's public access level setting to permit anonymous access, clients can read data in that container without authorizing the request.",
+      "meta": {
+        "external_id": "MS-T817",
+        "kill_chain": [
+          "TMSS-tactics:Initial Access"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Threat-matrix-for-storage-services/techniques/anonymous-public-read-access"
+        ]
+      },
+      "uuid": "3e5fba42-41c6-54ff-8977-e9f861f9e039",
+      "value": "MS-T817 - Anonymous public read access"
+    },
+    {
+      "description": "Attackers may obtain and abuse credentials of an SFTP account as a means of gaining initial access. SFTP is a prevalent file transfer protocol between a client and a remote service. Once the user connects to the cloud storage service, the user can upload and download blobs and perform other operations that are supported by the protocol. SFTP connection requires SFTP accounts which are managed locally in the storage service instance, including credentials in a form of passwords or key-pairs.",
+      "meta": {
+        "external_id": "MS-T825",
+        "kill_chain": [
+          "TMSS-tactics:Initial Access"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Threat-matrix-for-storage-services/techniques/sftp-credentials"
+        ]
+      },
+      "uuid": "abc4f207-7149-54cb-baa8-685506759e03",
+      "value": "MS-T825 - SFTP credentials"
+    },
+    {
+      "description": "Attackers may perform initial access to a storage account using NFS protocol where enabled. While access is restricted to a list of allowed virtual networks that are configured on the storage account firewall, connection via NFS protocol does not require authentication and can be performed by any source on the specified networks.",
+      "meta": {
+        "external_id": "MS-T827",
+        "kill_chain": [
+          "TMSS-tactics:Initial Access"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Threat-matrix-for-storage-services/techniques/nfs-access"
+        ]
+      },
+      "uuid": "6b17039c-ec8b-54af-8363-232d5acef0e3",
+      "value": "MS-T827 - NFS access"
+    },
+    {
+      "description": "Attackers may perform initial access to a storage account file shares using Server Message Block (SMB) protocol.",
+      "meta": {
+        "external_id": "MS-T828",
+        "kill_chain": [
+          "TMSS-tactics:Initial Access"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Threat-matrix-for-storage-services/techniques/smb-access"
+        ]
+      },
+      "uuid": "2ede6cb7-2d42-577d-814d-a767b0dccf83",
+      "value": "MS-T828 - SMB access"
+    },
+    {
+      "description": "Attackers may set a replication policy between source and destination containers that asynchronously copies objects from source to destination. This feature can be maliciously misused in both directions. Outbound replication can serve as an exfiltration channel of customer data from the victim's container to an adversary's container. Inbound replication can be used to deliver malware from an adversary's container to a victim's container. After the policy is set, the attacker can operate on their container without accessing the victim container.",
+      "meta": {
+        "external_id": "MS-T840",
+        "kill_chain": [
+          "TMSS-tactics:Exfiltration",
+          "TMSS-tactics:Initial Access"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Threat-matrix-for-storage-services/techniques/object-replication"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "d4bdbdea-eaec-4071-b4f9-5105e12ea4b6",
+          "type": "related-to"
+        }
+      ],
+      "uuid": "8fdc8739-5b51-51c8-b290-f94a3bd07271",
+      "value": "MS-T840 - Object replication"
+    },
+    {
+      "description": "Attackers may disable firewall protection or set additional firewall rules to masquerade their access channel.  Azure Storage offers a set of built-in network access features. Administrators can leverage these capabilities to restrict access to storage resources. Restriction rules can operate at the IP level or VNet IDs. When network rules are configured, only requests originated from authorized subnets will be served.",
+      "meta": {
+        "external_id": "MS-T813",
+        "kill_chain": [
+          "TMSS-tactics:Defense Evasion",
+          "TMSS-tactics:Persistence"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Threat-matrix-for-storage-services/techniques/firewall-configuration-changes"
+        ]
+      },
+      "uuid": "a608566b-99bc-523c-9e7c-0e220fe2c972",
+      "value": "MS-T813 - Firewall and virtual networks configuratioin changes"
+    },
+    {
+      "description": "Storage services offer built-in RBAC roles that encompass sets of permissions used to access different data types. Definition of custom roles is also supported. Upon assignment of an RBAC role to an identity object (like Azure AD security principal) the storage provider grants access to that security principal. Attackers may leverage the RBAC mechanism to ensure persistent access to their owned identity objects.",
+      "meta": {
+        "external_id": "MS-T808",
+        "kill_chain": [
+          "TMSS-tactics:Defense Evasion",
+          "TMSS-tactics:Persistence"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Threat-matrix-for-storage-services/techniques/rbac-permission"
+        ]
+      },
+      "uuid": "bf27614e-18ca-5ab0-add4-610777067754",
+      "value": "MS-T808 - Role-based access control permission"
+    },
+    {
+      "description": "Attackers may create a high-privileged SAS token with long expiry to preserve valid credentials for a long period. The tokens are not monitored by storage accounts thus they cannot be revoked (except Service SAS) and it's not easy to determine whether there are valid tokens in the wild until they are used.",
+      "meta": {
+        "external_id": "MS-T806",
+        "kill_chain": [
+          "TMSS-tactics:Persistence"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Threat-matrix-for-storage-services/techniques/create-sas-token"
+        ]
+      },
+      "uuid": "5eefa8fc-0ae5-57f1-9a65-389186e25ca4",
+      "value": "MS-T806 - Create SAS token"
+    },
+    {
+      "description": "Attackers may adjust the container access level property at the granularity of a blob or container, to permit anonymous read access to data in the storage account. This configuration secures a channel to exfiltrate data even if the initial access technique is no longer valid.",
+      "meta": {
+        "external_id": "MS-T807",
+        "kill_chain": [
+          "TMSS-tactics:Persistence"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Threat-matrix-for-storage-services/techniques/container-access-level-property"
+        ]
+      },
+      "uuid": "17061b42-9706-5594-9ac2-2b9dd2150649",
+      "value": "MS-T807 - Container access level property"
+    },
+    {
+      "description": "Attackers may create an SFTP account to maintain access to a target storage account. The SFTP account is local on the storage instance and is not subject to Azure RBAC permissions. The account is also unaffected in case of storage account access keys rotation.",
+      "meta": {
+        "external_id": "MS-T809",
+        "kill_chain": [
+          "TMSS-tactics:Persistence"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Threat-matrix-for-storage-services/techniques/sftp-account"
+        ]
+      },
+      "uuid": "a31f49b0-5c72-577a-9f73-198daa685f17",
+      "value": "MS-T809 - SFTP account"
+    },
+    {
+      "description": "Attackers may configure the storage account firewall to allow access by trusted Azure services. Azure Storage provides a predefined list of trusted services. Any resource from that list that belongs to the same subscription as the storage account is allowed by the firewall even if there is no firewall rule that explicitly permits the source address of the resource.",
+      "meta": {
+        "external_id": "MS-T830",
+        "kill_chain": [
+          "TMSS-tactics:Persistence"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Threat-matrix-for-storage-services/techniques/trusted-azure-services"
+        ]
+      },
+      "uuid": "c78756dd-1bb7-5145-bb82-8268b55d1996",
+      "value": "MS-T830 - Trusted Azure services"
+    },
+    {
+      "description": "Attackers may configure the storage account firewall to allow access by specific resource instances based on their system-assigned managed identity, regardless of their source address. The resource type can be chosen from a predefined list provided by Azure Storage, and the resource instance must be in the same tenant as the storage account. The RBAC permissions of the resource instance determine the types of operations that a resource instance can perform on storage account data.",
+      "meta": {
+        "external_id": "MS-T829",
+        "kill_chain": [
+          "TMSS-tactics:Persistence"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Threat-matrix-for-storage-services/techniques/trusted-access-managed-identity"
+        ]
+      },
+      "uuid": "0f60104b-65bd-5ca4-8286-d83c6310d5b0",
+      "value": "MS-T829 - Trusted access based on a managed identity"
+    },
+    {
+      "description": "Attackers may set private endpoints for a storage account to establish a separate communication channel from a target virtual network. The new endpoint is assigned with a private IP address within the virtual network's address range. All the requests sent to the private endpoint bypass the storage account firewall by design.",
+      "meta": {
+        "external_id": "MS-T812",
+        "kill_chain": [
+          "TMSS-tactics:Defense Evasion",
+          "TMSS-tactics:Persistence"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Threat-matrix-for-storage-services/techniques/private-endpoint"
+        ]
+      },
+      "uuid": "b57fb931-e898-59f2-b456-fefce5e19e99",
+      "value": "MS-T812 - Private endpoint"
+    },
+    {
+      "description": "Storage services offer different types of cloning or backup data stored on them. Attackers may abuse these built-in capabilities to steal sensitive documents, source code, credentials, and other business crucial information.",
+      "meta": {
+        "external_id": "MS-T841",
+        "kill_chain": [
+          "TMSS-tactics:Defense Evasion"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Threat-matrix-for-storage-services/techniques/storage-data-clone"
+        ]
+      },
+      "uuid": "1581f347-b5bf-5237-b4cf-9005fbe0fcf6",
+      "value": "MS-T841 - Storage data clone"
+    },
+    {
+      "description": "Attackers may fragment stolen information and exfiltrate it on different size chunks to avoid being detected by triggering potentially predefined transfer threshold alerts.",
+      "meta": {
+        "external_id": "MS-T831",
+        "kill_chain": [
+          "TMSS-tactics:Defense Evasion",
+          "TMSS-tactics:Exfiltration"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Threat-matrix-for-storage-services/techniques/data-transfer-size-limits"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "c3888c54-775d-4b2f-b759-75a2ececcbfd",
+          "type": "related-to"
+        }
+      ],
+      "uuid": "30de37bf-a416-5f25-8396-a2af42ff437a",
+      "value": "MS-T831 - Data transfer size limits"
+    },
+    {
+      "description": "Attackers may exploit legitimate automation processes, predefined by the compromised organization, with the goal of having their logging traces blend in normally within the company’s typical activities. Assimilating or disguising malicious intentions will keep adversary actions, such as data theft, stealthier.",
+      "meta": {
+        "external_id": "MS-T832",
+        "kill_chain": [
+          "TMSS-tactics:Defense Evasion",
+          "TMSS-tactics:Exfiltration"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Threat-matrix-for-storage-services/techniques/automated-exfiltration"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "774a3188-6ba9-4dc4-879d-d54ee48a5ce9",
+          "type": "related-to"
+        }
+      ],
+      "uuid": "f4a35b50-b56b-5663-8a84-e2235cee712f",
+      "value": "MS-T832 - Automated exfiltration"
+    },
+    {
+      "description": "Attackers may disable storage account audit logs to prevent event tracking and avoid detection. Audit logs provide a detailed record of operations performed on a target storage account and may be used to detect malicious activities. Thus, disabling these logs can leave a resource vulnerable to attacks without being detected.",
+      "meta": {
+        "external_id": "MS-T810",
+        "kill_chain": [
+          "TMSS-tactics:Defense Evasion"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Threat-matrix-for-storage-services/techniques/disable-audit-logs"
+        ]
+      },
+      "uuid": "ef893695-23f7-5f90-9135-9c50a259abe1",
+      "value": "MS-T810 - Disable audit logs"
+    },
+    {
+      "description": "Attackers may disable the cloud workload protection service which raises security alerts upon detection of malicious activities in cloud storage services.",
+      "meta": {
+        "external_id": "MS-T811",
+        "kill_chain": [
+          "TMSS-tactics:Defense Evasion"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Threat-matrix-for-storage-services/techniques/disable-protection-service"
+        ]
+      },
+      "uuid": "14af4a95-e84c-52fb-80ac-0f3aeb13a643",
+      "value": "MS-T811 - Disable cloud workload protection"
+    },
+    {
+      "description": "Attackers may split their requests across geo replicas to reduce the footprint in each region and avoid being detected by various rules and heuristics.",
+      "meta": {
+        "external_id": "MS-T833",
+        "kill_chain": [
+          "TMSS-tactics:Defense Evasion"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Threat-matrix-for-storage-services/techniques/operations-across-geo-replicas"
+        ]
+      },
+      "uuid": "7853ec1a-6440-5119-a719-0cee735f3034",
+      "value": "MS-T833 - Operations across geo replicas"
+    },
+    {
+      "description": "Attackers may leverage subscription/account-level access to gather storage account keys and use these keys to authenticate at the resource level. This technique exhibits cloud resource pivoting in combination with control management and data planes. Adversaries can query management APIs to fetch primary and secondary storage account keys.",
+      "meta": {
+        "external_id": "MS-T818",
+        "kill_chain": [
+          "TMSS-tactics:Credential Access"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Threat-matrix-for-storage-services/techniques/access-key-query"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "890c9858-598c-401d-a4d5-c67ebcdd703a",
+          "type": "related-to"
+        }
+      ],
+      "uuid": "06735c35-4f9d-5ba4-9f05-7d087eac2e84",
+      "value": "MS-T818 - Access key query"
+    },
+    {
+      "description": "Cloud Shell is an interactive, authenticated, browser-accessible shell for managing cloud resources. It provides the flexibility of shell experience, either Bash or PowerShell. To support the Cloud Shell promise of being accessible from everywhere, Cloud Shell profiles and session history are saved on storage account. Attackers may leverage the legitimate use of Cloud Shell to impersonate account owners and potentially obtain additional secrets logged as part of session history.",
+      "meta": {
+        "external_id": "MS-T834",
+        "kill_chain": [
+          "TMSS-tactics:Credential Access"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Threat-matrix-for-storage-services/techniques/cloud-shell-profiles"
+        ]
+      },
+      "uuid": "cf858945-94ff-5d2d-ab02-bfe15626d8b3",
+      "value": "MS-T834 - Cloud shell profiles"
+    },
+    {
+      "description": "Attackers may sniff network traffic and capture credentials sent over an insecure protocol. When Storage account is configured to support unencrypted protocol such as HTTP, credentials are passed over the wire unprotected and are susceptible to leakage. The attacker can use the compromised credentials to gain initial access to the storage account.",
+      "meta": {
+        "external_id": "MS-T819",
+        "kill_chain": [
+          "TMSS-tactics:Credential Access"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Threat-matrix-for-storage-services/techniques/unsecured-communication-channel"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "3257eb21-f9a7-4430-8de1-d8b6e288f529",
+          "type": "related-to"
+        }
+      ],
+      "uuid": "37baec71-2c4e-5904-94c4-5bf1c88623b6",
+      "value": "MS-T819 - Unsecured communication channel"
+    },
+    {
+      "description": "Attackers may leverage access permission to explore the stored objects in the storage account. Tools witnessed, at the reconnaissance phase, are oftentimes used toward this post-compromise information-gathering objective, now with authorization to access storage APIs, such as the List Blobs call.",
+      "meta": {
+        "external_id": "MS-T820",
+        "kill_chain": [
+          "TMSS-tactics:Discovery"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Threat-matrix-for-storage-services/techniques/storage-service-discovery"
+        ]
+      },
+      "uuid": "559ab713-b18f-5649-ab34-608a1f00a663",
+      "value": "MS-T820 - Storage service discovery"
+    },
+    {
+      "description": "Attackers may leverage control plane access permission to retrieve the storage account configuration. The configuration contains various technical details that may assist the attacker in implementing a variety of tactics. For example, firewall configuration provides network access information. Other parameters may reveal whether access operations are logged. The configuation may also contain the backup policy that may assist the attacker in performing data destruction.",
+      "meta": {
+        "external_id": "MS-T835",
+        "kill_chain": [
+          "TMSS-tactics:Discovery"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Threat-matrix-for-storage-services/techniques/account-configuration-discovery"
+        ]
+      },
+      "uuid": "a58c9198-8b41-5d88-b856-ee48801b3a79",
+      "value": "MS-T835 - Account configuration discovery"
+    },
+    {
+      "description": "Attackers may use storage services to store a malicious program or toolset that will be executed at later times during their operation. In addition, adversaries may exploit the trust between users and their organization’s Storage services by storing phishing content. Furthermore, storage services can be leveraged to park gathered intelligence that will be exfiltrated when terms suit the actor group.",
+      "meta": {
+        "external_id": "MS-T821",
+        "kill_chain": [
+          "TMSS-tactics:Lateral Movement"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Threat-matrix-for-storage-services/techniques/malicious-content-upload"
+        ]
+      },
+      "uuid": "23539a72-5e00-5775-8f7d-24f364dd5bb7",
+      "value": "MS-T821 - Malicious content upload"
+    },
+    {
+      "description": "Storage services offer different types of mechanisms to support auto-synchronization between various resources and the storage account. Attackers may leverage access to the storage account to upload malware and benefit from the auto-sync built-in capabilities to have their payload being populated and potentially weaponize multiple systems.",
+      "meta": {
+        "external_id": "MS-T822",
+        "kill_chain": [
+          "TMSS-tactics:Lateral Movement"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Threat-matrix-for-storage-services/techniques/malware-distribution"
+        ]
+      },
+      "uuid": "a7100316-2a71-5b74-a2f2-a2529c08598c",
+      "value": "MS-T822 - Malware distribution"
+    },
+    {
+      "description": "Attackers may manipulate storage services to trigger a compute service, like Azure Functions, where an attacker already has a foothold on a storage container and can inject a blob that will initiate a chain of a compute process. This may allow an attacker to infiltrate another resource and cause harm.",
+      "meta": {
+        "external_id": "MS-T823",
+        "kill_chain": [
+          "TMSS-tactics:Lateral Movement"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Threat-matrix-for-storage-services/techniques/trigger-cross-service-interaction"
+        ]
+      },
+      "uuid": "f9d6b919-6fe3-59ea-81a3-cbac0daacfa5",
+      "value": "MS-T823 - Trigger cross-service interaction"
+    },
+    {
+      "description": "Same is applicable for data blobs or files which may be eventually processed on a host by a legitimate application with software vulnerabilities. Attackers may tamper benign data with a payload that exploits a vulnerability on a user's end and execute a malicious code.",
+      "meta": {
+        "external_id": "MS-T824",
+        "kill_chain": [
+          "TMSS-tactics:Lateral Movement"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Threat-matrix-for-storage-services/techniques/code-injection"
+        ]
+      },
+      "uuid": "ac060220-18b4-5757-9f5c-2fd43f2d2f61",
+      "value": "MS-T824 - Code injection"
+    },
+    {
+      "description": "Attackers may use the \"static website\" feature to exfiltrate collected data outside of the storage account. Static website is a cloud storage provider hosting capability that enables serving static web content directly from the storage account. The website can be reached via an alternative web endpoint which might be overlooked when restricting access to the storage account.",
+      "meta": {
+        "external_id": "MS-T836",
+        "kill_chain": [
+          "TMSS-tactics:Exfiltration"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Threat-matrix-for-storage-services/techniques/static-website"
+        ]
+      },
+      "uuid": "ae3a9c3e-3316-5165-bc98-a1df76acdee2",
+      "value": "MS-T836 - Static website"
+    },
+    {
+      "description": "Attackers may corrupt or delete data stored on storage services to disrupt the availability of systems or other lines of business.",
+      "meta": {
+        "external_id": "MS-T839",
+        "kill_chain": [
+          "TMSS-tactics:Impact"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Threat-matrix-for-storage-services/techniques/data-corruption"
+        ]
+      },
+      "uuid": "561d0cdd-ded3-5f52-b542-afd43ca5ca09",
+      "value": "MS-T839 - Data corruption"
+    },
+    {
+      "description": "Attackers may encrypt data stored on storage services to disrupt the availability of systems or other lines of business. Making resources inaccessible by encrypting files or blobs and withholding access to a decryption key. This may be done to extract monetary compensation from a victim in exchange for decryption or a decryption key (ransomware).",
+      "meta": {
+        "external_id": "MS-T838",
+        "kill_chain": [
+          "TMSS-tactics:Impact"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Threat-matrix-for-storage-services/techniques/data-encryption-for-impact"
+        ]
+      },
+      "uuid": "7e243d46-1e08-51ff-af85-cb80f02c7e41",
+      "value": "MS-T838 - Data encryption for impact (Ransomware)"
+    },
+    {
+      "description": "Attackers may insert or modify data in order to influence external outcomes, thus threatening the integrity of the data. By manipulating data, adversaries may attempt to affect a business process, organizational understanding, or decision making. The type of modification and the impact it will have depends on the target application and process as well as the goals and objectives of the adversary.",
+      "meta": {
+        "external_id": "MS-T837",
+        "kill_chain": [
+          "TMSS-tactics:Impact"
+        ],
+        "refs": [
+          "https://microsoft.github.io/Threat-matrix-for-storage-services/techniques/data-manipulation"
+        ]
+      },
+      "uuid": "f0556667-5e4e-51f9-a92c-9e92193d141a",
+      "value": "MS-T837 - Data manipulation"
+    }
+  ],
+  "version": 1
+}

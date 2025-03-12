@@ -2,9 +2,41 @@
   "description": "ATT&CK Tactic",
   "icon": "map",
   "kill_chain_order": {
-    "mitre-attack": [
-      "reconnaissance",
-      "resource-development",
+    "attack-Containers": [
+      "initial-access",
+      "execution",
+      "persistence",
+      "privilege-escalation",
+      "defense-evasion",
+      "credential-access",
+      "discovery",
+      "lateral-movement",
+      "impact"
+    ],
+    "attack-IaaS": [
+      "initial-access",
+      "execution",
+      "persistence",
+      "privilege-escalation",
+      "defense-evasion",
+      "credential-access",
+      "discovery",
+      "lateral-movement",
+      "collection",
+      "exfiltration",
+      "impact"
+    ],
+    "attack-Identity-Provider": [
+      "initial-access",
+      "execution",
+      "persistence",
+      "privilege-escalation",
+      "defense-evasion",
+      "credential-access",
+      "discovery",
+      "lateral-movement"
+    ],
+    "attack-Linux": [
       "initial-access",
       "execution",
       "persistence",
@@ -18,7 +50,84 @@
       "exfiltration",
       "impact"
     ],
-    "mitre-mobile-attack": [
+    "attack-Network": [
+      "initial-access",
+      "execution",
+      "persistence",
+      "privilege-escalation",
+      "defense-evasion",
+      "credential-access",
+      "discovery",
+      "lateral-movement",
+      "collection",
+      "command-and-control",
+      "exfiltration",
+      "impact"
+    ],
+    "attack-Office-365": [
+      "initial-access",
+      "defense-evasion",
+      "lateral-movement"
+    ],
+    "attack-Office-Suite": [
+      "initial-access",
+      "execution",
+      "persistence",
+      "privilege-escalation",
+      "defense-evasion",
+      "credential-access",
+      "discovery",
+      "lateral-movement",
+      "collection",
+      "exfiltration",
+      "impact"
+    ],
+    "attack-PRE": [
+      "reconnaissance",
+      "resource-development"
+    ],
+    "attack-SaaS": [
+      "initial-access",
+      "execution",
+      "persistence",
+      "privilege-escalation",
+      "defense-evasion",
+      "credential-access",
+      "discovery",
+      "lateral-movement",
+      "collection",
+      "exfiltration",
+      "impact"
+    ],
+    "attack-Windows": [
+      "initial-access",
+      "execution",
+      "persistence",
+      "privilege-escalation",
+      "defense-evasion",
+      "credential-access",
+      "discovery",
+      "lateral-movement",
+      "collection",
+      "command-and-control",
+      "exfiltration",
+      "impact"
+    ],
+    "attack-macOS": [
+      "initial-access",
+      "execution",
+      "persistence",
+      "privilege-escalation",
+      "defense-evasion",
+      "credential-access",
+      "discovery",
+      "lateral-movement",
+      "collection",
+      "command-and-control",
+      "exfiltration",
+      "impact"
+    ],
+    "mobile-attack-Android": [
       "initial-access",
       "execution",
       "persistence",
@@ -34,7 +143,23 @@
       "network-effects",
       "remote-service-effects"
     ],
-    "mitre-pre-attack": [
+    "mobile-attack-iOS": [
+      "initial-access",
+      "execution",
+      "persistence",
+      "privilege-escalation",
+      "defense-evasion",
+      "credential-access",
+      "discovery",
+      "lateral-movement",
+      "collection",
+      "command-and-control",
+      "exfiltration",
+      "impact",
+      "network-effects",
+      "remote-service-effects"
+    ],
+    "pre-attack": [
       "priority-definition-planning",
       "priority-definition-direction",
       "target-selection",
@@ -49,12 +174,14 @@
       "persona-development",
       "build-capabilities",
       "test-capabilities",
-      "stage-capabilities"
+      "stage-capabilities",
+      "launch",
+      "compromise"
     ]
   },
   "name": "Attack Pattern",
   "namespace": "mitre-attack",
   "type": "mitre-attack-pattern",
   "uuid": "c4e851fa-775f-11e7-8163-b774922098cd",
-  "version": 9
+  "version": 11
 }

@@ -384,7 +384,121 @@
       },
       "uuid": "14504cbe-8423-47aa-a947-a3ab5549a068",
       "value": "ZIPLINE"
+    },
+    {
+      "description": "SPAWNSNAIL is a backdoor that listens on localhost. It is designed to run by injecting into the dsmdm process (process responsible for supporting mobile device management features). It creates a backdoor by exposing a limited SSH server on localhost port 8300. We assess that the attacker uses the SPAWNMOLE tunneler to interact with SPAWNSNAIL.\n\nSPAWNSNAIL's second purpose is to inject SPAWNSLOTH into dslogserver, a process supporting event logging on Connect Secure.",
+      "meta": {
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/ivanti-post-exploitation-lateral-movement"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "6fcf8d1f-2e68-4982-a579-2ca5595e4990",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "e6cf28a6-94a9-4aab-b919-ad2f6a7e3b87",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "preceded-by"
+        },
+        {
+          "dest-uuid": "6c89c51f-1b97-4966-abc1-9cf526bb2892",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "interacts-with"
+        },
+        {
+          "dest-uuid": "2c237974-edc2-460a-90b5-20f699560da3",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "injects"
+        }
+      ],
+      "uuid": "de390f3e-c0d1-4c70-b121-a7a98f7326aa",
+      "value": "SPAWNSNAIL"
+    },
+    {
+      "description": "BRICKSTORM is a Go backdoor targeting VMware vCenter servers. It supports the ability to set itself up as a web server, perform file system and directory manipulation, perform file operations such as upload/download, run shell commands, and perform SOCKS relaying. BRICKSTORM communicates over WebSockets to a hard-coded C2.",
+      "meta": {
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/ivanti-post-exploitation-lateral-movement"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "f288f686-b5b3-4c86-9960-5f8fb18709a3",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "64a0e3ab-e201-4fdc-9836-85365dfa84bb",
+      "value": "BRICKSTORM"
+    },
+    {
+      "description": "PHANTOMNET is a modular backdoor that communicates using a custom communication protocol over TCP. PHANTOMNET's core functionality involves expanding its capabilities through a plugin management system. The downloaded plugins are mapped directly into memory and executed.",
+      "meta": {
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/ivanti-post-exploitation-lateral-movement"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "c5ea778c-df2f-4c63-b401-dded9cb2419c",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "is-deployed-by"
+        },
+        {
+          "dest-uuid": "540b3e66-edbf-40ee-ae05-474b27c1ff40",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "executed-by"
+        }
+      ],
+      "uuid": "f97ea150-a727-4d47-823a-41de07a43ea9",
+      "value": "PHANTOMNET"
+    },
+    {
+      "description": "TERRIBLETEA is a Go backdoor that communicates over HTTP using XXTEA for encrypted communications. It is built using multiple open-source Go modules and has a multitude of capabilities including Command execution, Keystroke logging, SOCKS5 proxy, Port scanning, File system interaction, SQL query execution, Screen captures, Ability to open a new SSH session, execute commands, and upload files to a remote server. ",
+      "meta": {
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/ivanti-post-exploitation-lateral-movement"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "083a637b-c58c-4ccb-ab59-81d783873e80",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "is-deployed-by "
+        }
+      ],
+      "uuid": "4838b37b-2d1f-4cb8-945d-7185580f0bff",
+      "value": "TERRIBLETEA"
+    },
+    {
+      "description": "Merdoor is a fully-featured backdoor that appears to have been in existence since 2018.\nThe backdoor contains the following functionality: Installing itself as a service, Keylogging, A variety of methods to communicate with its command-and-control (C&C) server (HTTP, HTTPS, DNS, UDP, TCP), Ability to listen on a local port for commands\nInstances of the Merdoor backdoor are usually identical with the exception of embedded and encrypted configuration, which determines: C&C communication method, Service details, Installation directory\nTypically, the backdoor is injected into the legitimate processes perfhost.exe or svchost.exe.",
+      "meta": {
+        "refs": [
+          "https://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/lancefly-merdoor-zxshell-custom-backdoor"
+        ]
+      },
+      "uuid": "8ebda9f4-f8f2-4d35-ba2b-d6ecb54b23d4",
+      "value": "Merdoor"
     }
   ],
-  "version": 18
+  "version": 20
 }
