@@ -15311,12 +15311,14 @@
           "https://www.ncsc.gov.uk/files/NCSC-MAR-SparrowDoor.pdf",
           "https://cloud.google.com/blog/topics/threat-intelligence/unc4841-post-barracuda-zero-day-remediation",
           "https://www.sygnia.co/blog/ghost-emperor-demodex-rootkit/",
-          "https://www.wsj.com/politics/national-security/china-cyberattack-internet-providers-260bd835"
+          "https://www.wsj.com/politics/national-security/china-cyberattack-internet-providers-260bd835",
+          "https://www.recordedfuture.com/research/redmike-salt-typhoon-exploits-vulnerable-devices"
         ],
         "synonyms": [
           "FamousSparrow",
           "UNC2286",
-          "Salt Typhoon"
+          "Salt Typhoon",
+          "RedMike"
         ]
       },
       "related": [
@@ -16073,15 +16075,17 @@
       "value": "Water Orthrus"
     },
     {
-      "description": "PhantomCore is a threat actor group known for using a remote access malware called PhantomRAT. They have been observed executing malicious code through specially crafted RAR archives, different from previous attacks exploiting vulnerabilities. The attribution of their campaign to Ukraine is uncertain due to limited visibility inside Russian networks. PhantomCore's use of RAR archives in their attack chain has been previously observed in other threat actor groups like Forest Blizzard.",
+      "description": "Head Mare is a hacktivism focussed threat actor group known for targeting Russia and Belarus sectors using a remote access malware called PhantomRAT. They have been observed executing malicious code through specially crafted RAR archives, different from previous attacks exploiting vulnerabilities. The attribution of their campaign to Ukraine is uncertain due to limited visibility inside Russian networks. PhantomCore's use of RAR archives in their attack chain has been previously observed in other threat actor groups like Forest Blizzard.",
       "meta": {
         "refs": [
           "https://therecord.media/russian-researchers-winrar-bug-ukraine-espionage",
-          "https://www.facct.ru/blog/phantomdl-loader"
+          "https://www.facct.ru/blog/phantomdl-loader",
+          "https://securelist.com/head-mare-hacktivists/113555/",
+          "https://cyble.com/blog/head-mare-deploys-phantomcore-against-russia/"
         ]
       },
       "uuid": "485947c7-edb6-4a07-9276-2114dc767551",
-      "value": "PhantomCore"
+      "value": "Head Mare"
     },
     {
       "description": "CiberInteligenciaSV is a threat actor that leaked 5.1 million Salvadoran records on Breach Forums. They have also compromised El Salvador's state Bitcoin wallet, Chivo, leaking its source code and VPN credentials. The group aims to obscure their involvement by associating with the Guacamaya group and its proxies.",
@@ -17796,9 +17800,9 @@
           "https://www.secureworks.com/-/media/files/us/reports/ir-quarterly-reports/secureworks-learning-from-ir-jan-mar-2023.pdf",
           "https://www.secureworks.com/-/media/files/us/reports/state-of-the-threat/secureworks-se-2023-sott-report.pdf",
           "https://unit42.paloaltonetworks.com/threat-actor-groups-tracked-by-palo-alto-networks-unit-42/",
-          "https://www.pwc.at/de/dienstleistungen/Cyber/2022-year-in-retrospect-report.pdf",
+          "https://www.pwc.com/gx/en/issues/cybersecurity/cyber-threat-intelligence/cyber-year-in-retrospect/pdf/2022-year-in-retrospect-report.pdf",
           "https://www.crowdstrike.com/adversaries/wandering-spider/",
-          "https://www.patechcon.com/wp-content/uploads/2023/08/ebook-modern-adversaries-and-evasion-techniques-2023.pdf",
+          "https://go.crowdstrike.com/rs/281-OBQ-266/images/ebook-modern-adversaries-and-evasion-techniques-2023.pdf",
           "https://go.crowdstrike.com/rs/281-OBQ-266/images/CrowdStrikeGlobalThreatReport2025.pdf"
         ],
         "synonyms": [
@@ -17809,6 +17813,184 @@
       },
       "uuid": "835c7fc6-a066-447d-a0fc-b096bd9c412f",
       "value": "GOLD REBELLION"
+    },
+    {
+      "description": "JavaGhost is a threat actor group that has targeted cloud environments, particularly AWS, for phishing campaigns without engaging in data theft for extortion. They exploit overly permissive IAM permissions and utilize long-term access keys to gain initial access, employing the GetFederationToken API to acquire temporary credentials for console access. JavaGhost has demonstrated advanced evasion techniques, avoiding common detection methods by not using the GetCallerIdentity API call. Their activities generate detectable logging footprints in CloudTrail, allowing organizations to identify and respond to their tactics.",
+      "meta": {
+        "refs": [
+          "https://unit42.paloaltonetworks.com/javaghost-cloud-phishing/"
+        ]
+      },
+      "uuid": "eedb23e9-49f4-45ad-90b6-9ff3e9d7e2b6",
+      "value": "JavaGhost"
+    },
+    {
+      "description": "Angry Likho is an APT group that has been active since 2023, primarily targeting large organizations and government agencies in Russia and Belarus. Their attacks typically involve spear-phishing emails with malicious attachments, such as RAR archives, and utilize a known payload, the Lumma stealer, for data exfiltration. The group employs a compact infrastructure and has been linked to espionage activities, particularly in sectors like aviation and pharmaceuticals. Their operations have shown a focus on collecting sensitive information, including cryptowallet files and user credentials.",
+      "meta": {
+        "country": "RU",
+        "refs": [
+          "https://securelist.com/angry-likho-apt-attacks-with-lumma-stealer/115663/",
+          "https://www.morphisec.com/blog/sticky-werewolfs-aviation-attacks/"
+        ],
+        "synonyms": [
+          "Sticky Werewolf"
+        ]
+      },
+      "uuid": "a6ca6148-d49f-4b72-a4ad-181a00dfec68",
+      "value": "Angry Likho"
+    },
+    {
+      "description": "PlushDaemon is a China-aligned APT group that has conducted cyberespionage operations against targets in China, Taiwan, Hong Kong, South Korea, the United States, and New Zealand. They executed a supply chain attack on the South Korean VPN provider IPany, compromising its installer to deploy the SlowStepper backdoor, which features a toolkit of over 30 components. PlushDaemon primarily gains initial access by hijacking legitimate updates of Chinese applications and has also exploited vulnerabilities in legitimate web servers. Additionally, they have utilized the Visual Studio command line utility regcap.exe to side-load a malicious DLL named lregdll.dll.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://www.welivesecurity.com/en/eset-research/plushdaemon-compromises-supply-chain-korean-vpn-service/"
+        ]
+      },
+      "uuid": "bdb9ac86-fd43-41e1-a06e-7cff2b5a922d",
+      "value": "PlushDaemon"
+    },
+    {
+      "description": "Storm-2139 is a cybercrime group that exploited stolen API keys from compromised Azure OpenAI Service accounts to generate harmful content, including non-consensual intimate imagery, using the DALL-E model. The group utilized reverse proxy infrastructure and custom software to bypass guardrails in Microsoft’s GenAI services. Microsoft has filed a lawsuit against four individuals associated with Storm-2139, alleging they modified customer systems and resold access to these capabilities. The group systematically harvested authentication tokens from U.S.-based enterprises and is linked to a broader network of illicit AI tool development and distribution.",
+      "meta": {
+        "refs": [
+          "https://blogs.microsoft.com/on-the-issues/2025/02/27/disrupting-cybercrime-abusing-gen-ai/"
+        ]
+      },
+      "uuid": "07e1bbc4-19ad-4706-a5fe-cf28f0b67300",
+      "value": "Storm-2139"
+    },
+    {
+      "description": "LARVA-208 is a financially motivated threat actor employing sophisticated phishing campaigns to harvest credentials and deploy ransomware. The actor uses multiple tactics, including Open URL Redirection, fake login pages, and social engineering, to bypass MFA and gain access to corporate networks. LARVA-208 has compromised over 618 organizations since June 2024, often deploying ransomware payloads. The threat actor is linked to LARVA-148, a threat actor managing domain acquisitions and attacks.",
+      "meta": {
+        "refs": [
+          "https://www.scworld.com/brief/over-600-organizations-subjected-to-global-encrypthub-attacks",
+          "https://catalyst.prodaft.com/public/report/larva-208/overview"
+        ],
+        "synonyms": [
+          "EncryptHub"
+        ]
+      },
+      "uuid": "22bdf6e8-49c8-42a9-994e-9b6e90868543",
+      "value": "Larva-208"
+    },
+    {
+      "description": "Cyber Alliance is a hacktivist group that has demonstrated capabilities in exploiting vulnerabilities, such as CVE-2023-22515 in Confluence, to escalate privileges and access targeted infrastructure. They successfully accessed Trigona's systems, exfiltrating sensitive data and ultimately defacing and deleting the organization's site.",
+      "meta": {
+        "country": "UA",
+        "refs": [
+          "https://unit42.paloaltonetworks.com/unit-42-ransomware-leak-site-data-analysis/",
+          "https://securelist.com/cyber-anarchy-squad-attacks-with-uncommon-trojans/114990/",
+          "https://www.darkowl.com/blog-content/what-are-cves/"
+        ],
+        "synonyms": [
+          "UCA"
+        ]
+      },
+      "uuid": "e8ff09b5-8291-454a-8ab5-df39bed2f99f",
+      "value": "Ukrainian Cyber Alliance"
+    },
+    {
+      "description": "Larva-24005 is a threat actor that breaches servers in Korea to establish a web server and PHP environment for phishing attacks, primarily targeting individuals involved with North Korea and university professors researching the regime. They exploit the BlueKeep vulnerability for initial access and utilize RDPWrap and a custom keylogger post-compromise. Phishing emails are crafted to appear as legitimate communications, often containing malicious URLs or compressed files. The actor has been observed storing phishing pages in the IIS_USER account and XAMPP home folder, although traces of these pages were later deleted.",
+      "meta": {
+        "country": "KP",
+        "refs": [
+          "https://asec.ahnlab.com/en/86535/"
+        ]
+      },
+      "uuid": "558e7697-7195-4086-a0d0-cd3b4c7b3747",
+      "value": "Larva-24005"
+    },
+    {
+      "description": "GreenSpot is an APT group believed to operate from Taiwan, active since at least 2007, primarily targeting government, academic, and military entities in China through phishing campaigns. The group frequently targets 163.com, aiming to steal login credentials using deceptive domains, manipulated TLS certificates, and counterfeit interfaces. Their tactics highlight the sophistication of modern credential theft operations, necessitating detection efforts focused on irregular domain registrations and certificate anomalies.",
+      "meta": {
+        "country": "TW",
+        "refs": [
+          "https://hunt.io/blog/greenspot-apt-targets-163com-fake-downloads-spoofing",
+          "https://www.antiy.net/p/greenspotoperations-grow-for-many-years/"
+        ]
+      },
+      "uuid": "cff9cc85-6f34-4deb-9239-730e34e639f3",
+      "value": "GreenSpot"
+    },
+    {
+      "description": "Teleboyi is a threat actor reportedly based in China, associated with the PlugX RAT. TeamT5 identified a custom PlugX loader used by Teleboyi that employs a similar string decryption algorithm as seen in the McUtil.dll loader from Operation Harvest. While there are weak links to the dsqurey[.]com domain, the connection remains uncertain due to the domain's registration history.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://www.trendmicro.com/en_us/research/25/b/updated-shadowpad-malware-leads-to-ransomware-deployment.html"
+        ]
+      },
+      "uuid": "60b13884-76cf-4152-b78f-85ba2c4faf67",
+      "value": "Teleboyi"
+    },
+    {
+      "description": "TRIPLESTRENGTH is a financially motivated threat actor targeting cloud environments and on-premises infrastructures for cryptojacking, ransomware, and extortion. They exploit stolen credentials, cookies, and information stealer logs to gain unauthorized access to platforms like Google Cloud, AWS, and Microsoft Azure, deploying the unMiner application for cryptocurrency mining. Their ransomware operations utilize lockers such as Phobos, LokiLocker, and RCRU64, involving lateral movement and mass encryption. TRIPLESTRENGTH also engages in account hijacking and collaborates with partners for ransomware and blackmail operations, advertising their services in hacking-focused Telegram channels.",
+      "meta": {
+        "refs": [
+          "https://services.google.com/fh/files/misc/threat_horizons_report_h1_2025.pdf",
+          "https://www.cyfirma.com/research/tracking-ransomware-january-2025/"
+        ]
+      },
+      "uuid": "4d1692ca-8022-4258-9f35-149e3d0564bb",
+      "value": "TRIPLESTRENGTH"
+    },
+    {
+      "description": "Storm-2372 is a suspected nation-state actor aligned with Russian interests, engaging in device code phishing campaigns targeting governments, NGOs, and various industries across Europe, North America, Africa, and the Middle East. The actor employs tactics that involve impersonating prominent individuals through third-party messaging services like WhatsApp and Signal to gain rapport before sending phishing invitations. These invitations lure users into completing device code authentication requests, granting Storm-2372 initial access to victim accounts and enabling Graph API data collection activities, including email harvesting. Microsoft has observed the actor utilizing keyword searches within compromised accounts to exfiltrate sensitive information.",
+      "meta": {
+        "country": "RU",
+        "refs": [
+          "https://www.microsoft.com/en-us/security/blog/2025/02/13/storm-2372-conducts-device-code-phishing-campaign/"
+        ]
+      },
+      "uuid": "9c2600e2-d9e6-42ea-963c-972a4b5673c6",
+      "value": "Storm-2372"
+    },
+    {
+      "description": "GamaCopy is a threat actor first discovered in June 2023, known for launching cyberattacks against Russia’s defense and critical infrastructure sectors by mimicking the TTPs of Gamaredon. The organization has been active since at least August 2021 and primarily uses Russian-language bait documents related to military facilities. Analysis of attack samples shows considerable overlap in code structure and tactics, including the use of 7z-SFX documentation to install UltraVNC and connecting via port 443. GamaCopy employs open-source tools to obfuscate its activities while targeting sensitive information in the context of the Russia-Ukraine conflict.",
+      "meta": {
+        "refs": [
+          "https://medium.com/@knownsec404team/love-and-hate-under-war-the-gamacopy-organization-which-imitates-the-russian-gamaredon-uses-560ba5e633fa?source=rss-f1efd6b74751------2"
+        ]
+      },
+      "uuid": "d424f90d-fc2b-428a-bbe6-41e390308fb3",
+      "value": "GamaCopy"
+    },
+    {
+      "description": "Mora_001 is a threat actor exhibiting a distinct operational signature that combines opportunistic attacks with ties to the LockBit ecosystem. The actor has been observed exploiting CVE-2024-55591 and CVE-2025-24472 vulnerabilities affecting Fortinet devices. The ransom note associated with Mora_001 includes the same TOX ID used by LockBit, indicating a potential affiliation or shared communication channels. Their post-exploitation patterns suggest a structured playbook that differentiates them from other ransomware operators, including LockBit affiliates.",
+      "meta": {
+        "country": "RU",
+        "refs": [
+          "https://www.forescout.com/blog/new-ransomware-operator-exploits-fortinet-vulnerability-duo/"
+        ]
+      },
+      "uuid": "5326f3c4-fd3d-450a-811b-cbb2dbcf6371",
+      "value": "Mora_001"
+    },
+    {
+      "description": "Linkc is a newly emerged ransomware group that operates an onion-based data leak site and has claimed one victim, a U.S.-based AI and cloud service provider, H2O.ai, which was attacked on January 29, 2025. The group demanded a ransom of $15 million for data decryption and removal, showcasing access to sensitive information, including GPT model source code and customer data. Linkc's DLS is well-constructed and quick to load, indicating potential for future victim listings. However, there is currently no public acknowledgment from the victim, and the group has not engaged in discussions on cybercrime forums.",
+      "meta": {
+        "refs": [
+          "https://www.redhotcyber.com/en/post/linkc-ransomware-the-new-cybercriminal-group-targeting-artificial-intelligence-data/#google_vignette",
+          "https://www.cyfirma.com/research/tracking-ransomware-february-2025/",
+          "https://www.cyjax.com/resources/blog/new-extortion-ransomware-group-linkc-emerges-what-you-need-to-know/"
+        ],
+        "synonyms": [
+          "LinkC"
+        ]
+      },
+      "uuid": "7e3427c0-12d9-4fe4-a98e-0fe43db0ca28",
+      "value": "LinkC Pub"
+    },
+    {
+      "description": "ScreamedJungle is a threat actor that exploits vulnerabilities in outdated Magento e-commerce platforms to inject malicious JavaScript code, specifically Bablosoft JS, into compromised websites. This actor has harvested millions of browser fingerprints by leveraging vulnerabilities such as CVE-2024-34102 and CVE-2024-20720. ScreamedJungle utilizes PerfectCanvas technology to ensure pixel-perfect replication of legitimate user fingerprints. Group-IB analysts estimate that over 115 e-commerce sites have been impacted by this fingerprint theft campaign.",
+      "meta": {
+        "refs": [
+          "https://www.group-ib.com/blog/fingerprint-heists/"
+        ]
+      },
+      "uuid": "a6c7ff17-b98b-469a-97cc-6303ba007e68",
+      "value": "ScreamedJungle"
     }
   ],
   "version": 322
