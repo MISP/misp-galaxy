@@ -54,7 +54,7 @@
       "value": "Exfiltration Over Other Network Medium Mitigation - T1011"
     },
     {
-      "description": "Remove or deny access to unnecessary and potentially vulnerable software to prevent abuse by adversaries.",
+      "description": "Disable or remove unnecessary and potentially vulnerable software, features, or services to reduce the attack surface and prevent abuse by adversaries. This involves identifying software or features that are no longer needed or that could be exploited and ensuring they are either removed or properly disabled. This mitigation can be implemented through the following measures: \n\nRemove Legacy Software:\n\n- Use Case: Disable or remove older versions of software that no longer receive updates or security patches (e.g., legacy Java, Adobe Flash).\n- Implementation: A company removes Flash Player from all employee systems after it has reached its end-of-life date.\n\nDisable Unused Features:\n\n- Use Case: Turn off unnecessary operating system features like SMBv1, Telnet, or RDP if they are not required.\n- Implementation: Disable SMBv1 in a Windows environment to mitigate vulnerabilities like EternalBlue.\n\nControl Applications Installed by Users:\n\n- Use Case: Prevent users from installing unauthorized software via group policies or other management tools.\n- Implementation: Block user installations of unauthorized file-sharing applications (e.g., BitTorrent clients) in an enterprise environment.\n\nRemove Unnecessary Services:\n\n- Use Case: Identify and disable unnecessary default services running on endpoints, servers, or network devices.\n- Implementation: Disable unused administrative shares (e.g., C$, ADMIN$) on workstations.\n\nRestrict Add-ons and Plugins:\n\n- Use Case: Remove or disable browser plugins and add-ons that are not needed for business purposes.\n- Implementation: Disable Java and ActiveX plugins in web browsers to prevent drive-by attacks.\n\n",
       "meta": {
         "external_id": "M1042",
         "refs": [
@@ -108,6 +108,10 @@
         },
         {
           "dest-uuid": "3b744087-9945-4a6f-91e8-9dbceda417a4",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "3d333250-30e4-4a82-9edc-756c68afc529",
           "type": "mitigates"
         },
         {
@@ -199,6 +203,10 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "7d356151-a69d-404e-896b-71618952702a",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "7d77a07d-02fe-4e88-8bd9-e9c008c01bf0",
           "type": "mitigates"
         },
@@ -259,6 +267,10 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "c31aebd6-c9b5-420f-ba2a-5853bbf897fa",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "c48a67ee-b657-45c1-91bf-6cdbe27205f8",
           "type": "mitigates"
         },
@@ -284,6 +296,10 @@
         },
         {
           "dest-uuid": "d336b553-5da9-46ca-98a8-0b23f49fb447",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "d4287702-e2f7-4946-bdfa-2c7f5aaa5032",
           "type": "mitigates"
         },
         {
@@ -335,7 +351,7 @@
       "value": "Disable or Remove Feature or Program - M1042"
     },
     {
-      "description": "Prevent access to file shares, remote access to systems, unnecessary services. Mechanisms to limit access may include use of network concentrators, RDP gateways, etc.",
+      "description": "Restrict access to network resources, such as file shares, remote systems, and services, to only those users, accounts, or systems with a legitimate business requirement. This can include employing technologies like network concentrators, RDP gateways, and zero-trust network access (ZTNA) models, alongside hardening services and protocols. This mitigation can be implemented through the following measures:\n\nAudit and Restrict Access:\n\n- Regularly audit permissions for file shares, network services, and remote access tools.\n- Remove unnecessary access and enforce least privilege principles for users and services.\n- Use Active Directory and IAM tools to restrict access based on roles and attributes.\n\nDeploy Secure Remote Access Solutions:\n\n- Use RDP gateways, VPN concentrators, and ZTNA solutions to aggregate and secure remote access connections.\n- Configure access controls to restrict connections based on time, device, and user identity.\n- Enforce MFA for all remote access mechanisms.\n\nDisable Unnecessary Services:\n\n- Identify running services using tools like netstat (Windows/Linux) or Nmap.\n- Disable unused services, such as Telnet, FTP, and legacy SMB, to reduce the attack surface.\n- Use firewall rules to block traffic on unused ports and protocols.\n\nNetwork Segmentation and Isolation:\n\n- Use VLANs, firewalls, or micro-segmentation to isolate critical network resources from general access.\n- Restrict communication between subnets to prevent lateral movement.\n\nMonitor and Log Access:\n\n- Monitor access attempts to file shares, RDP, and remote network resources using SIEM tools.\n- Enable auditing and logging for successful and failed attempts to access restricted resources.\n\n*Tools for Implementation*\n\nFile Share Management:\n\n- Microsoft Active Directory Group Policies\n- Samba (Linux/Unix file share management)\n- AccessEnum (Windows access auditing tool)\n\nSecure Remote Access:\n\n- Microsoft Remote Desktop Gateway\n- Apache Guacamole (open-source RDP/VNC gateway)\n- Zero Trust solutions: Tailscale, Cloudflare Zero Trust\n\nService and Protocol Hardening:\n\n- Nmap or Nessus for network service discovery\n- Windows Group Policy Editor for disabling SMBv1, Telnet, and legacy protocols\n- iptables or firewalld (Linux) for blocking unnecessary traffic\n\nNetwork Segmentation:\n\n- pfSense for open-source network isolation",
       "meta": {
         "external_id": "M1035",
         "refs": [
@@ -361,6 +377,10 @@
         },
         {
           "dest-uuid": "28abec6c-4443-4b03-8206-07f2e264a6b4",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "3f886f2a-874f-4333-b794-aa6075009b1c",
           "type": "mitigates"
         },
         {
@@ -693,7 +713,7 @@
       "value": "Replication Through Removable Media Mitigation - T1091"
     },
     {
-      "description": "Restrict access by setting directory and file permissions that are not specific to users or privileged accounts.",
+      "description": "Restricting file and directory permissions involves setting access controls at the file system level to limit which users, groups, or processes can read, write, or execute files. By configuring permissions appropriately, organizations can reduce the attack surface for adversaries seeking to access sensitive data, plant malicious code, or tamper with system files.\n\nEnforce Least Privilege Permissions:\n\n- Remove unnecessary write permissions on sensitive files and directories.\n- Use file ownership and groups to control access for specific roles.\n\nExample (Windows): Right-click the shared folder → Properties → Security tab → Adjust permissions for NTFS ACLs.\n\nHarden File Shares:\n\n- Disable anonymous access to shared folders.\n- Enforce NTFS permissions for shared folders on Windows.\n\nExample: Set permissions to restrict write access to critical files, such as system executables (e.g., `/bin` or `/sbin` on Linux). Use tools like `chown` and `chmod` to assign file ownership and limit access.\n\nOn Linux, apply:\n`chmod 750 /etc/sensitive.conf`\n`chown root:admin /etc/sensitive.conf`\n\nFile Integrity Monitoring (FIM):\n\n- Use tools like Tripwire, Wazuh, or OSSEC to monitor changes to critical file permissions.\n\nAudit File System Access:\n\n- Enable auditing to track permission changes or unauthorized access attempts.\n- Use auditd (Linux) or Event Viewer (Windows) to log activities.\n\nRestrict Startup Directories:\n\n- Configure permissions to prevent unauthorized writes to directories like `C:\\ProgramData\\Microsoft\\Windows\\Start Menu`.\n\nExample: Restrict write access to critical directories like `/etc/`, `/usr/local/`, and Windows directories such as `C:\\Windows\\System32`.\n\n- On Windows, use icacls to modify permissions: `icacls \"C:\\Windows\\System32\" /inheritance:r /grant:r SYSTEM:(OI)(CI)F`\n- On Linux, monitor permissions using tools like `lsattr` or `auditd`.",
       "meta": {
         "external_id": "M1022",
         "refs": [
@@ -1450,7 +1470,7 @@
       "value": "Application Window Discovery Mitigation - T1010"
     },
     {
-      "description": "Use capabilities to prevent suspicious behavior patterns from occurring on endpoint systems. This could include suspicious process, file, API call, etc. behavior.",
+      "description": "Behavior Prevention on Endpoint refers to the use of technologies and strategies to detect and block potentially malicious activities by analyzing the behavior of processes, files, API calls, and other endpoint events. Rather than relying solely on known signatures, this approach leverages heuristics, machine learning, and real-time monitoring to identify anomalous patterns indicative of an attack. This mitigation can be implemented through the following measures:\n\nSuspicious Process Behavior:\n\n- Implementation: Use Endpoint Detection and Response (EDR) tools to monitor and block processes exhibiting unusual behavior, such as privilege escalation attempts.\n- Use Case: An attacker uses a known vulnerability to spawn a privileged process from a user-level application. The endpoint tool detects the abnormal parent-child process relationship and blocks the action.\n\nUnauthorized File Access:\n\n- Implementation: Leverage Data Loss Prevention (DLP) or endpoint tools to block processes attempting to access sensitive files without proper authorization.\n- Use Case: A process tries to read or modify a sensitive file located in a restricted directory, such as /etc/shadow on Linux or the SAM registry hive on Windows. The endpoint tool identifies this anomalous behavior and prevents it.\n\nAbnormal API Calls:\n\n- Implementation: Implement runtime analysis tools to monitor API calls and block those associated with malicious activities.\n- Use Case: A process dynamically injects itself into another process to hijack its execution. The endpoint detects the abnormal use of APIs like `OpenProcess` and `WriteProcessMemory` and terminates the offending process.\n\nExploit Prevention:\n\n- Implementation: Use behavioral exploit prevention tools to detect and block exploits attempting to gain unauthorized access.\n- Use Case: A buffer overflow exploit is launched against a vulnerable application. The endpoint detects the anomalous memory write operation and halts the process.",
       "meta": {
         "external_id": "M1040",
         "refs": [
@@ -1552,6 +1572,10 @@
         },
         {
           "dest-uuid": "7385dfaf-6886-4229-9ecd-6fd678040830",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "762e6f29-a62f-4d96-91ed-d0073181431f",
           "type": "mitigates"
         },
         {
@@ -2157,7 +2181,7 @@
       "value": "Network Service Scanning Mitigation - T1046"
     },
     {
-      "description": "Restrict execution of code to a virtual environment on or in transit to an endpoint system.",
+      "description": "Application Isolation and Sandboxing refers to the technique of restricting the execution of code to a controlled and isolated environment (e.g., a virtual environment, container, or sandbox). This method prevents potentially malicious code from affecting the rest of the system or network by limiting access to sensitive resources and critical operations. The goal is to contain threats and minimize their impact. This mitigation can be implemented through the following measures:\n\nBrowser Sandboxing:\n\n- Use Case: Implement browser sandboxing to isolate untrusted web content, preventing malicious web pages or scripts from accessing sensitive system files.\n- Implementation: Use tools like Google Chrome's built-in sandbox or deploy solutions like Bromium to secure user web interactions.\n\nApplication Virtualization:\n\n- Use Case: Deploy critical or high-risk applications in a virtualized environment to ensure any compromise does not affect the host system.\n- Implementation: Use application virtualization platforms to run applications in isolated environments.\n\nEmail Attachment Sandboxing:\n\n- Use Case: Route email attachments to a sandbox environment to detect and block malware before delivering emails to end-users.\n- Implementation: Integrate security solutions with sandbox capabilities to analyze email attachments.\n\nEndpoint Sandboxing:\n\n- Use Case: Run all downloaded files and applications in a restricted environment to monitor their behavior for malicious activity.\n- Implementation: Use endpoint protection tools for sandboxing at the endpoint level.",
       "meta": {
         "external_id": "M1048",
         "refs": [
@@ -2183,6 +2207,10 @@
         },
         {
           "dest-uuid": "68a0c5ed-bee2-4513-830d-5b0d650139bd",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "78b9e70d-1605-459c-b23d-e3a25036968c",
           "type": "mitigates"
         },
         {
@@ -2748,7 +2776,7 @@
       "value": "LLMNR/NBT-NS Poisoning Mitigation - T1171"
     },
     {
-      "description": "Restrict use of certain websites, block downloads/attachments, block Javascript, restrict browser extensions, etc.",
+      "description": "Restricting web-based content involves enforcing policies and technologies that limit access to potentially malicious websites, unsafe downloads, and unauthorized browser behaviors. This can include URL filtering, download restrictions, script blocking, and extension control to protect against exploitation, phishing, and malware delivery. This mitigation can be implemented through the following measures:\n\nDeploy Web Proxy Filtering:\n\n- Use solutions to filter web traffic based on categories, reputation, and content types.\n- Enforce policies that block unsafe websites or file types at the gateway level.\n\nEnable DNS-Based Filtering:\n\n- Implement tools to restrict access to domains associated with malware or phishing campaigns.\n- Use public DNS filtering services to enhance protection.\n\nEnforce Content Security Policies (CSP):\n\n- Configure CSP headers on internal and external web applications to restrict script execution, iframe embedding, and cross-origin requests.\n\nControl Browser Features:\n\n- Disable unapproved browser features like automatic downloads, developer tools, or unsafe scripting.\n- Enforce policies through tools like Group Policy Management to control browser settings.\n\nMonitor and Alert on Web-Based Threats:\n\n- Use SIEM tools to collect and analyze web proxy logs for signs of anomalous or malicious activity.\n- Configure alerts for access attempts to blocked domains or repeated file download failures.",
       "meta": {
         "external_id": "M1021",
         "refs": [
@@ -2850,6 +2878,10 @@
         },
         {
           "dest-uuid": "dfd7cc1d-e1d8-4394-a198-97c4cab8aa67",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "e261a979-f354-41a8-963e-6cadac27c4bf",
           "type": "mitigates"
         },
         {
@@ -3239,7 +3271,7 @@
       "value": "Web Service Mitigation - T1102"
     },
     {
-      "description": "This mitigation describes any guidance or training given to developers of applications to avoid introducing security weaknesses that an adversary may be able to take advantage of.",
+      "description": "Application Developer Guidance focuses on providing developers with the knowledge, tools, and best practices needed to write secure code, reduce vulnerabilities, and implement secure design principles. By integrating security throughout the software development lifecycle (SDLC), this mitigation aims to prevent the introduction of exploitable weaknesses in applications, systems, and APIs. This mitigation can be implemented through the following measures:\n \nPreventing SQL Injection (Secure Coding Practice):\n\n- Implementation: Train developers to use parameterized queries or prepared statements instead of directly embedding user input into SQL queries.\n- Use Case: A web application accepts user input to search a database. By sanitizing and validating user inputs, developers can prevent attackers from injecting malicious SQL commands.\n\nCross-Site Scripting (XSS) Mitigation:\n\n- Implementation: Require developers to implement output encoding for all user-generated content displayed on a web page.\n- Use Case: An e-commerce site allows users to leave product reviews. Properly encoding and escaping user inputs prevents malicious scripts from being executed in other users’ browsers.\n\nSecure API Design:\n\n- Implementation: Train developers to authenticate all API endpoints and avoid exposing sensitive information in API responses.\n- Use Case: A mobile banking application uses APIs for account management. By enforcing token-based authentication for every API call, developers reduce the risk of unauthorized access.\n\nStatic Code Analysis in the Build Pipeline:\n\n- Implementation: Incorporate tools into CI/CD pipelines to automatically scan for vulnerabilities during the build process.\n- Use Case: A fintech company integrates static analysis tools to detect hardcoded credentials in their source code before deployment.\n\nThreat Modeling in the Design Phase:\n\n- Implementation: Use frameworks like STRIDE (Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, Elevation of Privilege) to assess threats during application design.\n- Use Case: Before launching a customer portal, a SaaS company identifies potential abuse cases, such as session hijacking, and designs mitigations like secure session management.\n\n**Tools for Implementation**:\n\n- Static Code Analysis Tools: Use tools that can scan for known vulnerabilities in source code.\n- Dynamic Application Security Testing (DAST): Use tools like Burp Suite or OWASP ZAP to simulate runtime attacks and identify vulnerabilities.\n- Secure Frameworks: Recommend secure-by-default frameworks (e.g., Django for Python, Spring Security for Java) that enforce security best practices.",
       "meta": {
         "external_id": "M1013",
         "refs": [
@@ -3273,6 +3305,10 @@
         },
         {
           "dest-uuid": "233fe2c0-cb41-4765-b454-e0087597fbce",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "2fee9321-3e71-4cf4-af24-d4d40d355b34",
           "type": "mitigates"
         },
         {
@@ -3333,10 +3369,6 @@
         },
         {
           "dest-uuid": "b22e5153-ac28-4cc6-865c-2054e36285cb",
-          "type": "mitigates"
-        },
-        {
-          "dest-uuid": "e64c62cf-9cd7-4a14-94ec-cdaac43ab44b",
           "type": "mitigates"
         },
         {
@@ -3560,6 +3592,10 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "e261a979-f354-41a8-963e-6cadac27c4bf",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "e3a12395-188d-4051-9a16-ea8e14d07b88",
           "type": "mitigates"
         },
@@ -3617,7 +3653,7 @@
       "value": "Port Monitors Mitigation - T1013"
     },
     {
-      "description": "Protect sensitive information with strong encryption.",
+      "description": "Protect sensitive information at rest, in transit, and during processing by using strong encryption algorithms. Encryption ensures the confidentiality and integrity of data, preventing unauthorized access or tampering. This mitigation can be implemented through the following measures:\n\nEncrypt Data at Rest:\n\n- Use Case: Use full-disk encryption or file-level encryption to secure sensitive data stored on devices.\n- Implementation: Implement BitLocker for Windows systems or FileVault for macOS devices to encrypt hard drives.\n\nEncrypt Data in Transit:\n\n- Use Case: Use secure communication protocols (e.g., TLS, HTTPS) to encrypt sensitive data as it travels over networks.\n- Implementation: Enable HTTPS for all web applications and configure mail servers to enforce STARTTLS for email encryption.\n\nEncrypt Backups:\n\n- Use Case: Ensure that backup data is encrypted both during storage and transfer to prevent unauthorized access.\n- Implementation: Encrypt cloud backups using AES-256 before uploading them to Amazon S3 or Google Cloud.\n\nEncrypt Application Secrets:\n\n- Use Case: Store sensitive credentials, API keys, and configuration files in encrypted vaults.\n- Implementation: Use HashiCorp Vault or AWS Secrets Manager to manage and encrypt secrets.\n\nDatabase Encryption:\n\n- Use Case: Enable Transparent Data Encryption (TDE) or column-level encryption in database management systems.\n- Implementation: Use MySQL’s built-in encryption features to encrypt sensitive database fields such as social security numbers.",
       "meta": {
         "external_id": "M1041",
         "refs": [
@@ -3748,13 +3784,17 @@
         {
           "dest-uuid": "f2877f7f-9a4c-4251-879f-1224e3006bee",
           "type": "mitigates"
+        },
+        {
+          "dest-uuid": "fde016f6-211a-41c8-a4ab-301f1e419c62",
+          "type": "mitigates"
         }
       ],
       "uuid": "feff9142-e8c2-46f4-842b-bd6fb3d41157",
       "value": "Encrypt Sensitive Information - M1041"
     },
     {
-      "description": "Implement robust Active Directory configurations using group policies to control access and reduce the attack surface. Specific examples include:\n\n* Account Configuration: Use provisioned domain accounts rather than local accounts to leverage centralized control and auditing capabilities.\n* Interactive Logon Restrictions: Enforce group policies that prohibit interactive logons for accounts that should not directly access systems.\n* Remote Desktop Settings: Limit Remote Desktop logons to authorized accounts to prevent misuse by adversaries.\n* Dedicated Administrative Accounts: Create specialized domain-wide accounts that are restricted from interactive logons but can perform specific tasks like installations or repository access.\n* Authentication Silos: Configure Authentication Silos in Active Directory to create access zones with restrictions based on membership in the Protected Users global security group. This setup enhances security by applying additional protections to high-risk accounts, limiting their exposure to potential attacks.",
+      "description": "Implement robust Active Directory (AD) configurations using group policies to secure user accounts, control access, and minimize the attack surface. AD configurations enable centralized control over account settings, logon policies, and permissions, reducing the risk of unauthorized access and lateral movement within the network. This mitigation can be implemented through the following measures:\n\nAccount Configuration:\n\n- Implementation: Use domain accounts instead of local accounts to leverage AD’s centralized management, including group policies, auditing, and access control.\n- Use Case: For IT staff managing shared resources, provision domain accounts that allow IT teams to log in centrally, reducing the risk of unmanaged, rogue local accounts on individual machines.\n\nInteractive Logon Restrictions:\n\n- Implementation: Configure group policies to restrict interactive logons (e.g., direct physical or RDP logons) for service accounts or privileged accounts that do not require such access.\n- Use Case: Prevent service accounts, such as SQL Server accounts, from having interactive logon privileges. This reduces the risk of these accounts being leveraged for lateral movement if compromised.\n\nRemote Desktop Settings:\n\n- Implementation: Limit Remote Desktop Protocol (RDP) access to specific, authorized accounts. Use group policies to enforce this, allowing only necessary users to establish RDP sessions.\n- Use Case: On sensitive servers (e.g., domain controllers or financial databases), restrict RDP access to administrative accounts only, while all other users are denied access.\n\nDedicated Administrative Accounts:\n\n- Implementation: Create domain-wide administrative accounts that are restricted from interactive logons, designed solely for high-level tasks (e.g., software installation, patching).\n- Use Case: Create separate administrative accounts for different purposes, such as one set of accounts for installations and another for managing repository access. This limits exposure and helps reduce attack vectors.\n\nAuthentication Silos:\n\n- Implementation: Configure Authentication Silos in AD, using group policies to create access zones with restrictions based on membership, such as the Protected Users security group. This restricts access to critical accounts and minimizes exposure to potential threats.\n- Use Case: Place high-risk or high-value accounts, such as executive or administrative accounts, in an Authentication Silo with extra controls, limiting their exposure to only necessary systems. This reduces the risk of credential misuse or abuse if these accounts are compromised.\n\n**Tools for Implementation**:\n\n- Active Directory Group Policies: Use Group Policy Management Console (GPMC) to configure, deploy, and enforce policies across AD environments.\n- PowerShell: Automate account configuration, logon restrictions, and policy application using PowerShell scripts.\n- AD Administrative Center: Manage Authentication Silos and configure high-level policies for critical user groups within AD.",
       "meta": {
         "external_id": "M1015",
         "refs": [
@@ -3913,7 +3953,7 @@
       "value": "File Deletion Mitigation - T1107"
     },
     {
-      "description": "Manage the creation, modification, use, and permissions associated to user accounts.",
+      "description": "User Account Management involves implementing and enforcing policies for the lifecycle of user accounts, including creation, modification, and deactivation. Proper account management reduces the attack surface by limiting unauthorized access, managing account privileges, and ensuring accounts are used according to organizational policies. This mitigation can be implemented through the following measures:\n\nEnforcing the Principle of Least Privilege\n\n- Implementation: Assign users only the minimum permissions required to perform their job functions. Regularly audit accounts to ensure no excess permissions are granted.\n- Use Case: Reduces the risk of privilege escalation by ensuring accounts cannot perform unauthorized actions.\n\nImplementing Strong Password Policies\n\n- Implementation: Enforce password complexity requirements (e.g., length, character types). Require password expiration every 90 days and disallow password reuse.\n- Use Case: Prevents adversaries from gaining unauthorized access through password guessing or brute force attacks.\n\nManaging Dormant and Orphaned Accounts\n\n- Implementation: Implement automated workflows to disable accounts after a set period of inactivity (e.g., 30 days). Remove orphaned accounts (e.g., accounts without an assigned owner) during regular account audits.\n- Use Case: Eliminates dormant accounts that could be exploited by attackers.\n\nAccount Lockout Policies\n\n- Implementation: Configure account lockout thresholds (e.g., lock accounts after five failed login attempts). Set lockout durations to a minimum of 15 minutes.\n- Use Case: Mitigates automated attack techniques that rely on repeated login attempts.\n\nMulti-Factor Authentication (MFA) for High-Risk Accounts\n\n- Implementation: Require MFA for all administrative accounts and high-risk users. Use MFA mechanisms like hardware tokens, authenticator apps, or biometrics.\n- Use Case: Prevents unauthorized access, even if credentials are stolen.\n\nRestricting Interactive Logins\n\n- Implementation: Restrict interactive logins for privileged accounts to specific secure systems or management consoles. Use group policies to enforce logon restrictions.\n- Use Case: Protects sensitive accounts from misuse or exploitation.\n\n*Tools for Implementation*\n\nBuilt-in Tools:\n\n- Microsoft Active Directory (AD): Centralized account management and RBAC enforcement.\n- Group Policy Object (GPO): Enforce password policies, logon restrictions, and account lockout policies.\n\nIdentity and Access Management (IAM) Tools:\n\n- Okta: Centralized user provisioning, MFA, and SSO integration.\n- Microsoft Azure Active Directory: Provides advanced account lifecycle management, role-based access, and conditional access policies.\n\nPrivileged Account Management (PAM):\n- CyberArk, BeyondTrust, Thycotic: Manage and monitor privileged account usage, enforce session recording, and JIT access.",
       "meta": {
         "external_id": "M1018",
         "refs": [
@@ -4006,6 +4046,10 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "31e5011f-090e-45be-9bb6-17a1c5e8219b",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "3257eb21-f9a7-4430-8de1-d8b6e288f529",
           "type": "mitigates"
         },
@@ -4039,6 +4083,10 @@
         },
         {
           "dest-uuid": "4ab929c6-ee2d-4fb5-aab4-b14be2ed7179",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "4b46767d-4a61-4f30-995e-c19a75c2e536",
           "type": "mitigates"
         },
         {
@@ -4429,7 +4477,7 @@
       "value": "System Firmware Mitigation - T1019"
     },
     {
-      "description": "A threat intelligence program helps an organization generate their own threat intelligence information and track trends to inform defensive priorities to mitigate risk.",
+      "description": "A Threat Intelligence Program enables organizations to proactively identify, analyze, and act on cyber threats by leveraging internal and external data sources. The program supports decision-making processes, prioritizes defenses, and improves incident response by delivering actionable intelligence tailored to the organization's risk profile and operational environment. This mitigation can be implemented through the following measures:\n\nEstablish a Threat Intelligence Team:\n\n- Form a dedicated team or assign responsibility to existing security personnel to collect, analyze, and act on threat intelligence.\n\nDefine Intelligence Requirements:\n\n- Identify the organization’s critical assets and focus intelligence gathering efforts on threats targeting these assets.\n\nLeverage Internal and External Data Sources:\n\n- Collect intelligence from internal sources such as logs, incidents, and alerts.\nSubscribe to external threat intelligence feeds, participate in ISACs, and monitor open-source intelligence (OSINT).\n\nImplement Tools for Automation:\n\n- Use threat intelligence platforms (TIPs) to automate the collection, enrichment, and dissemination of threat data.\n- Integrate threat intelligence with SIEMs to correlate IOCs with internal events.\n\nAnalyze and Act on Intelligence:\n\n- Use frameworks like MITRE ATT&CK to map intelligence to adversary TTPs.\n- Prioritize defensive measures, such as patching vulnerabilities or deploying IOCs, based on analyzed threats.\n\nShare and Collaborate:\n\n- Share intelligence with industry peers through ISACs or threat-sharing platforms to enhance collective defense.\n\nEvaluate and Update the Program:\n\n- Regularly assess the effectiveness of the threat intelligence program.\n- Update intelligence priorities and capabilities as new threats emerge.\n\n*Tools for Implementation*\n\nThreat Intelligence Platforms (TIPs):\n\n- OpenCTI: An open-source platform for structuring and sharing threat intelligence.\n- MISP: A threat intelligence sharing platform for sharing structured threat data.\n\nThreat Intelligence Feeds:\n\n- Open Threat Exchange (OTX): Provides free access to a large repository of threat intelligence.\n- CIRCL OSINT Feed: A free source for IOCs and threat information.\n\nAutomation and Enrichment Tools:\n\n- TheHive: An open-source incident response platform with threat intelligence integration.\n- Yeti: A platform for managing and structuring knowledge about threats.\n\nAnalysis Frameworks:\n\n- MITRE ATT&CK Navigator: A tool for mapping threat intelligence to adversary behaviors.\n- Cuckoo Sandbox: Analyzes malware to extract behavioral indicators.\n\nCommunity and Collaboration Tools:\n\n- ISAC Memberships: Join industry-specific ISACs for intelligence sharing.\n- Slack/Discord Channels: Participate in threat intelligence communities for real-time collaboration.",
       "meta": {
         "external_id": "M1019",
         "refs": [
@@ -4509,7 +4557,7 @@
       "value": "User Execution Mitigation - T1204"
     },
     {
-      "description": "Restrict the ability to modify certain hives or keys in the Windows Registry.",
+      "description": "Restricting registry permissions involves configuring access control settings for sensitive registry keys and hives to ensure that only authorized users or processes can make modifications. By limiting access, organizations can prevent unauthorized changes that adversaries might use for persistence, privilege escalation, or defense evasion. This mitigation can be implemented through the following measures:\n\nReview and Adjust Permissions on Critical Keys\n\n- Regularly review permissions on keys such as `Run`, `RunOnce`, and `Services` to ensure only authorized users have write access.\n- Use tools like `icacls` or `PowerShell` to automate permission adjustments.\n\nEnable Registry Auditing\n\n- Enable auditing on sensitive keys to log access attempts.\n- Use Event Viewer or SIEM solutions to analyze logs and detect suspicious activity.\n- Example Audit Policy: `auditpol /set /subcategory:\"Registry\" /success:enable /failure:enable`\n\nProtect Credential-Related Hives\n\n- Limit access to hives like `SAM`,`SECURITY`, and `SYSTEM` to prevent credential dumping or other unauthorized access.\n- Use LSA Protection to add an additional security layer for credential storage.\n\nRestrict Registry Editor Usage\n\n- Use Group Policy to restrict access to regedit.exe for non-administrative users.\n- Block execution of registry editing tools on endpoints where they are unnecessary.\n\nDeploy Baseline Configuration Tools\n\n- Use tools like Microsoft Security Compliance Toolkit or CIS Benchmarks to apply and maintain secure registry configurations.\n\n*Tools for Implementation* \n\nRegistry Permission Tools:\n\n- Registry Editor (regedit): Built-in tool to manage registry permissions.\n- PowerShell: Automate permissions and manage keys. `Set-ItemProperty -Path \"HKLM:\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\" -Name \"KeyName\" -Value \"Value\"`\n- icacls: Command-line tool to modify ACLs.\n\nMonitoring Tools:\n\n- Sysmon: Monitor and log registry events.\n- Event Viewer: View registry access logs.\n\nPolicy Management Tools:\n\n- Group Policy Management Console (GPMC): Enforce registry permissions via GPOs.\n- Microsoft Endpoint Manager: Deploy configuration baselines for registry permissions.",
       "meta": {
         "external_id": "M1024",
         "refs": [
@@ -4602,7 +4650,7 @@
       "value": "Restrict Registry Permissions - M1024"
     },
     {
-      "description": "Configure Windows User Account Control to mitigate risk of adversaries obtaining elevated process access.",
+      "description": "User Account Control (UAC) is a security feature in Microsoft Windows that prevents unauthorized changes to the operating system. UAC prompts users to confirm or provide administrator credentials when an action requires elevated privileges. Proper configuration of UAC reduces the risk of privilege escalation attacks. This mitigation can be implemented through the following measures:\n\nEnable UAC Globally:\n\n- Ensure UAC is enabled through Group Policy by setting `User Account Control: Run all administrators in Admin Approval Mode` to `Enabled`.\n\nRequire Credential Prompt:\n\n- Use Group Policy to configure UAC to prompt for administrative credentials instead of just confirmation (`User Account Control: Behavior of the elevation prompt`).\n\nRestrict Built-in Administrator Account:\n\nSet `Admin Approval Mode` for the built-in Administrator account to `Enabled` in Group Policy.\n\nSecure the UAC Prompt:\n\n- Configure UAC prompts to display on the secure desktop (`User Account Control: Switch to the secure desktop when prompting for elevation`).\n\nPrevent UAC Bypass:\n\n- Block untrusted applications from triggering UAC prompts by configuring `User Account Control: Only elevate executables that are signed and validated`.\n- Use EDR tools to detect and block known UAC bypass techniques.\n\nMonitor UAC-Related Events:\n\n- Use Windows Event Viewer to monitor for event ID 4688 (process creation) and look for suspicious processes attempting to invoke UAC elevation.\n\n*Tools for Implementation*\n\nBuilt-in Windows Tools:\n\n- Group Policy Editor: Configure UAC settings centrally for enterprise environments.\n- Registry Editor: Modify UAC-related settings directly, such as `EnableLUA` and `ConsentPromptBehaviorAdmin`.\n\nEndpoint Security Solutions:\n\n- Microsoft Defender for Endpoint: Detects and blocks UAC bypass techniques.\n- Sysmon: Logs process creations and monitors UAC elevation attempts for suspicious activity.\n\nThird-Party Security Tools:\n\n- Process Monitor (Sysinternals): Tracks real-time processes interacting with UAC.\n- EventSentry: Monitors Windows Event Logs for UAC-related alerts.",
       "meta": {
         "external_id": "M1052",
         "refs": [
@@ -4643,7 +4691,7 @@
       "value": "User Account Control - M1052"
     },
     {
-      "description": "Protect processes with high privileges that can be used to interact with critical system components through use of protected process light, anti-process injection defenses, or other process integrity enforcement measures.",
+      "description": "Privileged Process Integrity focuses on defending highly privileged processes (e.g., system services, antivirus, or authentication processes) from tampering, injection, or compromise by adversaries. These processes often interact with critical components, making them prime targets for techniques like code injection, privilege escalation, and process manipulation. This mitigation can be implemented through the following measures:\n\nProtected Process Mechanisms:\n\n- Enable RunAsPPL on Windows systems to protect LSASS and other critical processes.\n- Use registry modifications to enforce protected process settings: `HKEY_LOCAL_MACHINE\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\RunAsPPL`\n\nAnti-Injection and Memory Protection:\n\n- Enable Control Flow Guard (CFG), DEP, and ASLR to protect against process memory tampering.\n- Deploy endpoint protection tools that actively block process injection attempts.\n\nCode Signing Validation:\n\n- Implement policies for Windows Defender Application Control (WDAC) or AppLocker to enforce execution of signed binaries.\n- Ensure critical processes are signed with valid certificates.\n\nAccess Controls:\n\n- Use DACLs and MIC to limit which users and processes can interact with privileged processes.\n- Disable unnecessary debugging capabilities for high-privileged processes.\n\nKernel-Level Protections:\n\n- Ensure Kernel Patch Protection (PatchGuard) is enabled on Windows systems.\n- Leverage SELinux or AppArmor on Linux to enforce kernel-level security policies.\n\n*Tools for Implementation*\n\nProtected Process Light (PPL):\n\n- RunAsPPL (Windows)\n- Windows Defender Credential Guard\n\nCode Integrity and Signing:\n\n- Windows Defender Application Control (WDAC)\n- AppLocker\n- SELinux/AppArmor (Linux)\n\nMemory Protection:\n\n- Control Flow Guard (CFG), Data Execution Prevention (DEP), ASLR\n\nProcess Isolation/Sandboxing:\n\n- Firejail (Linux Sandbox)\n- Windows Sandbox\n- QEMU/KVM-based isolation\n\nKernel Protection:\n\n- PatchGuard (Windows Kernel Patch Protection)\n- SELinux (Mandatory Access Control for Linux)\n- AppArmor",
       "meta": {
         "external_id": "M1025",
         "refs": [
@@ -4696,7 +4744,7 @@
       "value": "Port Knocking Mitigation - T1205"
     },
     {
-      "description": "Manage the creation, modification, use, and permissions associated to privileged accounts, including SYSTEM and root.",
+      "description": "Privileged Account Management focuses on implementing policies, controls, and tools to securely manage privileged accounts (e.g., SYSTEM, root, or administrative accounts). This includes restricting access, limiting the scope of permissions, monitoring privileged account usage, and ensuring accountability through logging and auditing.This mitigation can be implemented through the following measures:\n\nAccount Permissions and Roles:\n\n- Implement RBAC and least privilege principles to allocate permissions securely.\n- Use tools like Active Directory Group Policies to enforce access restrictions.\n\nCredential Security:\n\n- Deploy password vaulting tools like CyberArk, HashiCorp Vault, or KeePass for secure storage and rotation of credentials.\n- Enforce password policies for complexity, uniqueness, and expiration using tools like Microsoft Group Policy Objects (GPO).\n\nMulti-Factor Authentication (MFA):\n\n- Enforce MFA for all privileged accounts using Duo Security, Okta, or Microsoft Azure AD MFA.\n\nPrivileged Access Management (PAM):\n\n- Use PAM solutions like CyberArk, BeyondTrust, or Thycotic to manage, monitor, and audit privileged access.\n\nAuditing and Monitoring:\n\n- Integrate activity monitoring into your SIEM (e.g., Splunk or QRadar) to detect and alert on anomalous privileged account usage.\n\nJust-In-Time Access:\n\n- Deploy JIT solutions like Azure Privileged Identity Management (PIM) or configure ephemeral roles in AWS and GCP to grant time-limited elevated permissions.\n\n*Tools for Implementation*\n\nPrivileged Access Management (PAM):\n\n- CyberArk, BeyondTrust, Thycotic, HashiCorp Vault.\n\nCredential Management:\n\n- Microsoft LAPS (Local Admin Password Solution), Password Safe, HashiCorp Vault, KeePass.\n\nMulti-Factor Authentication:\n\n- Duo Security, Okta, Microsoft Azure MFA, Google Authenticator.\n\nLinux Privilege Management:\n\n- sudo configuration, SELinux, AppArmor.\n\nJust-In-Time Access:\n\n- Azure Privileged Identity Management (PIM), AWS IAM Roles with session constraints, GCP Identity-Aware Proxy.",
       "meta": {
         "external_id": "M1026",
         "refs": [
@@ -5178,7 +5226,7 @@
       "value": "Sudo Caching Mitigation - T1206"
     },
     {
-      "description": "Make configuration changes related to the operating system or a common feature of the operating system that result in system hardening against techniques.",
+      "description": "Operating System Configuration involves adjusting system settings and hardening the default configurations of an operating system (OS) to mitigate adversary exploitation and prevent abuse of system functionality. Proper OS configurations address security vulnerabilities, limit attack surfaces, and ensure robust defense against a wide range of techniques. This mitigation can be implemented through the following measures: \n\nDisable Unused Features:\n\n- Turn off SMBv1, LLMNR, and NetBIOS where not needed.\n- Disable remote registry and unnecessary services.\n\nEnforce OS-level Protections:\n\n- Enable Data Execution Prevention (DEP), Address Space Layout Randomization (ASLR), and Control Flow Guard (CFG) on Windows.\n- Use AppArmor or SELinux on Linux for mandatory access controls.\n\nSecure Access Settings:\n\n- Enable User Account Control (UAC) for Windows.\n- Restrict root/sudo access on Linux/macOS and enforce strong permissions using sudoers files.\n\nFile System Hardening:\n\n- Implement least-privilege access for critical files and system directories.\n- Audit permissions regularly using tools like icacls (Windows) or getfacl/chmod (Linux/macOS).\n\nSecure Remote Access:\n\n- Restrict RDP, SSH, and VNC to authorized IPs using firewall rules.\n- Enable NLA for RDP and enforce strong password/lockout policies.\n\nHarden Boot Configurations:\n\n- Enable Secure Boot and enforce UEFI/BIOS password protection.\n- Use BitLocker or LUKS to encrypt boot drives.\n\nRegular Audits:\n\n- Periodically audit OS configurations using tools like CIS Benchmarks or SCAP tools.\n\n*Tools for Implementation*\n\nWindows:\n\n- Microsoft Group Policy Objects (GPO): Centrally enforce OS security settings.\n- Windows Defender Exploit Guard: Built-in OS protection against exploits.\n- CIS-CAT Pro: Audit Windows security configurations based on CIS Benchmarks.\n\nLinux/macOS:\n\n- AppArmor/SELinux: Enforce mandatory access controls.\n- Lynis: Perform comprehensive security audits.\n- SCAP Security Guide: Automate configuration hardening using Security Content Automation Protocol.\n\nCross-Platform:\n\n- Ansible or Chef/Puppet: Automate configuration hardening at scale.\n- OpenSCAP: Perform compliance and configuration checks.",
       "meta": {
         "external_id": "M1028",
         "refs": [
@@ -5347,7 +5395,7 @@
       "value": "Operating System Configuration - M1028"
     },
     {
-      "description": "Use remote security log and sensitive file storage where access can be controlled better to prevent exposure of intrusion detection log data or sensitive information.",
+      "description": "Remote Data Storage focuses on moving critical data, such as security logs and sensitive files, to secure, off-host locations to minimize unauthorized access, tampering, or destruction by adversaries. By leveraging remote storage solutions, organizations enhance the protection of forensic evidence, sensitive information, and monitoring data. This mitigation can be implemented through the following measures:\n\nCentralized Log Management:\n\n- Configure endpoints to forward security logs to a centralized log collector or SIEM.\n- Use tools like Splunk Graylog, or Security Onion to aggregate and store logs.\n- Example command (Linux): `sudo auditd | tee /var/log/audit/audit.log | nc <remote-log-server> 514`\n\nRemote File Storage Solutions:\n\n- Utilize cloud storage solutions like AWS S3, Google Cloud Storage, or Azure Blob Storage for sensitive data.\n- Ensure proper encryption at rest and access control policies (IAM roles, ACLs).\n\nIntrusion Detection Log Forwarding:\n\n- Forward logs from IDS/IPS systems (e.g., Zeek/Suricata) to a remote security information system.\n- Example for Suricata log forwarding:\n`outputs:\n  - type: syslog\n    protocol: tls\n    address: <remote-syslog-server>`\n\nImmutable Backup Configurations:\n\n- Enable immutable storage settings for backups to prevent adversaries from modifying or deleting data.\n- Example: AWS S3 Object Lock.\n\nData Encryption:\n\n- Ensure encryption for sensitive data using AES-256 at rest and TLS 1.2+ for data in transit.\nTools: OpenSSL, BitLocker, LUKS for Linux.",
       "meta": {
         "external_id": "M1029",
         "refs": [
@@ -5433,7 +5481,7 @@
       "value": "Scheduled Transfer Mitigation - T1029"
     },
     {
-      "description": "Block users or groups from installing unapproved software.",
+      "description": "Prevent users or groups from installing unauthorized or unapproved software to reduce the risk of introducing malicious or vulnerable applications. This can be achieved through allowlists, software restriction policies, endpoint management tools, and least privilege access principles. This mitigation can be implemented through the following measures:\n\nApplication Whitelisting\n\n- Implement Microsoft AppLocker or Windows Defender Application Control (WDAC) to create and enforce allowlists for approved software.\n- Whitelist applications based on file hash, path, or digital signatures.\n\nRestrict User Permissions\n\n- Remove local administrator rights for all non-IT users.\n- Use Role-Based Access Control (RBAC) to restrict installation permissions to privileged accounts only.\n\nSoftware Restriction Policies (SRP)\n\n- Use GPO to configure SRP to deny execution of binaries from directories such as `%AppData%`, `%Temp%`, and external drives.\n- Restrict specific file types (`.exe`, `.bat`, `.msi`, `.js`, `.vbs`) to trusted directories only.\n\nEndpoint Management Solutions\n\n- Deploy tools like Microsoft Intune, SCCM, or Jamf for centralized software management.\n- Maintain a list of approved software, versions, and updates across the enterprise.\n\nMonitor Software Installation Events\n\n- Enable logging of software installation events and monitor Windows Event ID 4688 and Event ID 11707 for software installs.\n- Use SIEM or EDR tools to alert on attempts to install unapproved software.\n\nImplement Software Inventory Management\n\n- Use tools like OSQuery or Wazuh to scan for unauthorized software on endpoints and servers.\n- Conduct regular audits to detect and remove unapproved software.\n\n*Tools for Implementation*\n\nApplication Whitelisting:\n\n- Microsoft AppLocker\n- Windows Defender Application Control (WDAC)\n\nEndpoint Management:\n\n- Microsoft Intune\n- SCCM (System Center Configuration Manager)\n- Jamf Pro (macOS)\n- Puppet or Ansible for automation\n\nSoftware Restriction Policies:\n\n- Group Policy Object (GPO)\n- Microsoft Software Restriction Policies (SRP)\n\nMonitoring and Logging:\n\n- Splunk\n- OSQuery\n- Wazuh (open-source SIEM and XDR)\n- EDRs\n\nInventory Management and Auditing:\n\n- OSQuery\n- Wazuh",
       "meta": {
         "external_id": "M1033",
         "refs": [
@@ -5458,11 +5506,19 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "278716b1-61ce-4a74-8d17-891d0c494101",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "389735f1-f21c-4208-b8f0-f8031e7169b8",
           "type": "mitigates"
         },
         {
           "dest-uuid": "3f18edba-28f4-4bb9-82c3-8aa60dcac5f7",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "66b34be7-6915-4b83-8d5a-b0f0592b5e41",
           "type": "mitigates"
         },
         {
@@ -5498,7 +5554,7 @@
       "value": "Limit Software Installation - M1033"
     },
     {
-      "description": "Use capabilities to prevent successful credential access by adversaries; including blocking forms of credential dumping.",
+      "description": "Credential Access Protection focuses on implementing measures to prevent adversaries from obtaining credentials, such as passwords, hashes, tokens, or keys, that could be used for unauthorized access. This involves restricting access to credential storage mechanisms, hardening configurations to block credential dumping methods, and using monitoring tools to detect suspicious credential-related activity. This mitigation can be implemented through the following measures:\n\nRestrict Access to Credential Storage:\n\n- Use Case: Prevent adversaries from accessing the SAM (Security Account Manager) database on Windows systems.\n- Implementation: Enforce least privilege principles and restrict administrative access to credential stores such as `C:\\Windows\\System32\\config\\SAM`.\n\nUse Credential Guard:\n\n- Use Case: Isolate LSASS (Local Security Authority Subsystem Service) memory to prevent credential dumping.\n- Implementation: Enable Windows Defender Credential Guard on enterprise endpoints to isolate secrets and protect them from unauthorized access.\n\nMonitor for Credential Dumping Tools:\n\n- Use Case: Detect and block known tools like Mimikatz or Windows Credential Editor.\n- Implementation: Flag suspicious process behavior related to credential dumping.\n\nDisable Cached Credentials:\n\n- Use Case: Prevent adversaries from exploiting cached credentials on endpoints.\n- Implementation: Configure group policy to reduce or eliminate the use of cached credentials (e.g., set Interactive logon: Number of previous logons to cache to 0).\n\nEnable Secure Boot and Memory Protections:\n\n- Use Case: Prevent memory-based attacks used to extract credentials.\n- Implementation: Configure Secure Boot and enforce hardware-based security features like DEP (Data Execution Prevention) and ASLR (Address Space Layout Randomization).",
       "meta": {
         "external_id": "M1043",
         "refs": [
@@ -5551,7 +5607,7 @@
       "value": "Credential Access Protection - M1043"
     },
     {
-      "description": "Block users or groups from installing or using unapproved hardware on systems, including USB devices.",
+      "description": "Prevent unauthorized users or groups from installing or using hardware, such as external drives, peripheral devices, or unapproved internal hardware components, by enforcing hardware usage policies and technical controls. This includes disabling USB ports, restricting driver installation, and implementing endpoint security tools to monitor and block unapproved devices. This mitigation can be implemented through the following measures:\n\nDisable USB Ports and Hardware Installation Policies:\n\n- Use Group Policy Objects (GPO) to disable USB mass storage devices:\n     - Navigate to Computer Configuration > Administrative Templates > System > Removable Storage Access.\n     - Deny write and read access to USB devices.\n- Whitelist approved devices using unique serial numbers via Windows Device Installation Policies.\n\nDeploy Endpoint Protection and Device Control Solutions:\n\n- Use tools like Microsoft Defender for Endpoint, Symantec Endpoint Protection, or Tanium to monitor and block unauthorized hardware.\n- Implement device control policies to allow specific hardware types (e.g., keyboards, mice) and block others.\n\nHarden BIOS/UEFI and System Firmware:\n\n- Set strong passwords for BIOS/UEFI access.\n- Enable Secure Boot to prevent rogue hardware components from loading unauthorized firmware.\n\nRestrict Peripheral Devices and Drivers:\n\n- Use Windows Device Manager Policies to block installation of unapproved drivers.\n- Monitor hardware installation attempts through endpoint monitoring tools.\n\nDisable Bluetooth and Wireless Hardware:\n\n- Use GPO or MDM tools to disable Bluetooth and Wi-Fi interfaces across systems.\n- Restrict hardware pairing to approved devices only.\n\nLogging and Monitoring:\n\n- Enable logging for hardware installation events in Windows Event Logs (Event ID 20001 for Device Setup Manager).\n- Use SIEM solutions (e.g., Splunk, Elastic Stack) to detect unauthorized hardware installation activities.\n\n*Tools for Implementation*\n\nUSB and Device Control:\n\n- Microsoft Group Policy Objects (GPO)\n- Microsoft Defender for Endpoint\n- Symantec Endpoint Protection\n- McAfee Device Control\n\nEndpoint Monitoring:\n\n- EDRs\n- OSSEC (open-source host-based IDS)\n\nHardware Whitelisting:\n\n- BitLocker for external drives (Windows)\n- Windows Device Installation Policies\n- Device Control \n\nBIOS/UEFI Security:\n\n- Secure Boot (Windows/Linux)\nFirmware management tools like Dell Command Update or HP Sure Start",
       "meta": {
         "external_id": "M1034",
         "refs": [
@@ -5564,7 +5620,19 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "4061e78c-1284-44b4-9116-73e4ac3912f7",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "63e3d25c-d57d-407d-8e6a-2cecd71f90be",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "a3e1e6c5-9c74-4fc0-a16c-a9d228c17829",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "a9fb6b3f-4a3c-4703-a4f1-f55f83d1e017",
           "type": "mitigates"
         },
         {
@@ -5636,7 +5704,7 @@
       "value": "Scheduled Task Mitigation - T1053"
     },
     {
-      "description": "Configure features related to account use like login attempt lockouts, specific login times, etc.",
+      "description": "Account Use Policies help mitigate unauthorized access by configuring and enforcing rules that govern how and when accounts can be used. These policies include enforcing account lockout mechanisms, restricting login times, and setting inactivity timeouts. Proper configuration of these policies reduces the risk of brute-force attacks, credential theft, and unauthorized access by limiting the opportunities for malicious actors to exploit accounts. This mitigation can be implemented through the following measures:\n\nAccount Lockout Policies:\n\n- Implementation: Configure account lockout settings so that after a defined number of failed login attempts (e.g., 3-5 attempts), the account is locked for a specific time period (e.g., 15 minutes) or requires an administrator to unlock it.\n- Use Case: This prevents brute-force attacks by limiting how many incorrect password attempts can be made before the account is temporarily disabled, reducing the likelihood of an attacker successfully guessing a password.\n\nLogin Time Restrictions:\n\n- Implementation: Set up login time policies to restrict when users or groups can log into systems. For example, only allowing login during standard business hours (e.g., 8 AM to 6 PM) for non-administrative accounts.\n- Use Case: This prevents unauthorized access outside of approved working hours, where login attempts might be more suspicious or harder to monitor. For example, if an account that is only supposed to be active during the day logs in at 2 AM, it should raise an alert or be blocked.\n\nInactivity Timeout and Session Termination:\n\n- Implementation: Enforce session timeouts after a period of inactivity (e.g., 10-15 minutes) and require users to re-authenticate if they wish to resume the session.\n- Use Case: This policy prevents attackers from hijacking active sessions left unattended. For example, if an employee walks away from their computer without locking it, an attacker with physical access to the system would be unable to exploit the session.\n\nPassword Aging Policies:\n\n- Implementation: Enforce password aging rules, requiring users to change their passwords after a defined period (e.g., 90 days) and ensure passwords are not reused by maintaining a password history.\n- Use Case: This limits the risk of compromised passwords being used indefinitely. Regular password changes make it more difficult for attackers to reuse stolen credentials.\n\nAccount Expiration and Deactivation:\n\n- Implementation: Configure user accounts, especially for temporary or contract workers, to automatically expire after a set date or event. Accounts that remain unused for a specific period should be deactivated automatically.\n- Use Case: This prevents dormant accounts from becoming an attack vector. For example, an attacker can exploit unused accounts if they are not properly monitored or deactivated.\n\n**Tools for Implementation**:\n\n- Group Policy Objects (GPOs) in Windows: To enforce account lockout thresholds, login time restrictions, session timeouts, and password policies.\n- Identity and Access Management (IAM) solutions: For centralized management of user accounts, session policies, and automated deactivation of accounts.\n- Security Information and Event Management (SIEM) platforms: To monitor and alert on unusual login activity, such as failed logins or out-of-hours access attempts.\n- Multi-Factor Authentication (MFA) Tools: To further enforce secure login attempts, preventing brute-force or credential stuffing attacks.\n",
       "meta": {
         "external_id": "M1036",
         "refs": [
@@ -5689,7 +5757,7 @@
       "value": "Account Use Policies - M1036"
     },
     {
-      "description": "Use network appliances to filter ingress or egress traffic and perform protocol-based filtering. Configure software on endpoints to filter network traffic.",
+      "description": "Employ network appliances and endpoint software to filter ingress, egress, and lateral network traffic. This includes protocol-based filtering, enforcing firewall rules, and blocking or restricting traffic based on predefined conditions to limit adversary movement and data exfiltration. This mitigation can be implemented through the following measures:\n\nIngress Traffic Filtering:\n\n- Use Case: Configure network firewalls to allow traffic only from authorized IP addresses to public-facing servers.\n- Implementation: Limit SSH (port 22) and RDP (port 3389) traffic to specific IP ranges.\n\nEgress Traffic Filtering:\n\n- Use Case: Use firewalls or endpoint security software to block unauthorized outbound traffic to prevent data exfiltration and command-and-control (C2) communications.\n- Implementation: Block outbound traffic to known malicious IPs or regions where communication is unexpected.\n\nProtocol-Based Filtering:\n\n- Use Case: Restrict the use of specific protocols that are commonly abused by adversaries, such as SMB, RPC, or Telnet, based on business needs.\n- Implementation: Disable SMBv1 on endpoints to prevent exploits like EternalBlue.\n\nNetwork Segmentation:\n\n- Use Case: Create network segments for critical systems and restrict communication between segments unless explicitly authorized.\n- Implementation: Implement VLANs to isolate IoT devices or guest networks from core business systems.\n\nApplication Layer Filtering:\n\n- Use Case: Use proxy servers or Web Application Firewalls (WAFs) to inspect and block malicious HTTP/S traffic.\n- Implementation: Configure a WAF to block SQL injection attempts or other web application exploitation techniques.",
       "meta": {
         "external_id": "M1037",
         "refs": [
@@ -5854,6 +5922,10 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "d4287702-e2f7-4946-bdfa-2c7f5aaa5032",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "d4bdbdea-eaec-4071-b4f9-5105e12ea4b6",
           "type": "mitigates"
         },
@@ -5889,7 +5961,7 @@
       "value": "Logon Scripts Mitigation - T1037"
     },
     {
-      "description": "Prevent modification of environment variables by unauthorized users and groups.",
+      "description": "Restrict the modification of environment variables to authorized users and processes by enforcing strict permissions and policies. This ensures the integrity of environment variables, preventing adversaries from abusing or altering them for malicious purposes. This mitigation can be implemented through the following measures:\n\nRestrict Write Access:\n\n- Use Case: Set file system-level permissions to restrict access to environment variable configuration files (e.g., `.bashrc`, `.bash_profile`, `.zshrc`, `systemd` service files).\n- Implementation: Configure `/etc/environment` or `/etc/profile` on Linux systems to only allow root or administrators to modify the file.\n\nSecure Access Controls:\n\n- Use Case: Limit access to environment variable settings in application deployment tools or CI/CD pipelines to authorized personnel.\n- Implementation: Use role-based access control (RBAC) in tools like Jenkins or GitLab to ensure only specific users can modify environment variables.\n\nRestrict Process Scope:\n\n- Use Case: Configure policies to ensure environment variables are only accessible to the processes they are explicitly intended for.\n- Implementation: Use containerized environments like Docker to isolate environment variables to specific containers and ensure they are not inherited by other processes.\n\nAudit Environment Variable Changes:\n\n- Use Case: Enable logging for changes to critical environment variables.\n- Implementation: Use `auditd` on Linux to monitor changes to files like `/etc/environment` or application-specific environment files.",
       "meta": {
         "external_id": "M1039",
         "refs": [
@@ -5927,7 +5999,7 @@
       "value": "Process Hollowing Mitigation - T1093"
     },
     {
-      "description": "Prevent abuse of library loading mechanisms in the operating system and software to load untrusted code by configuring appropriate library loading mechanisms and investigating potential vulnerable software.",
+      "description": "Restricting library loading involves implementing security controls to ensure that only trusted and verified libraries (DLLs, shared objects, etc.) are loaded into processes. Adversaries often abuse Dynamic-Link Library (DLL) Injection, DLL Search Order Hijacking, or LD_PRELOAD mechanisms to execute malicious code by forcing the operating system to load untrusted libraries. This mitigation can be implemented through the following measures: \n\nEnforce Safe Library Loading Practices:\n\n- Enable `SafeDLLSearchMode` on Windows.\n- Restrict `LD_PRELOAD` and `LD_LIBRARY_PATH` usage on Linux systems.\n\nCode Signing Enforcement:\n\n- Require digital signatures for all libraries loaded into processes.\n- Use tools like Signtool, and WDAC to enforce signed DLL execution.\n\nEnvironment Hardening:\n\n- Secure library paths and directories to prevent adversaries from placing rogue libraries.\n- Monitor user-writable directories and system configurations for unauthorized changes.\n\nAudit and Monitor Library Loading:\n\n- Enable `Sysmon` on Windows to monitor for suspicious library loads.\n- Use `auditd` on Linux to monitor shared library paths and configuration file changes.\n\nUse Application Control Solutions:\n\n- Implement AppLocker, WDAC, or SELinux to allow only trusted libraries.\n\n*Tools for Implementation*\n\nWindows-Specific Tools:\n\n- AppLocker: Application whitelisting for DLLs.\n- Windows Defender Application Control (WDAC): Restrict unauthorized library execution.\n- Signtool: Verify and enforce code signing.\n- Sysmon: Monitor DLL load events (Event ID 7).\n\nLinux-Specific Tools:\n\n- auditd: Monitor changes to library paths and critical files.\n- SELinux/AppArmor: Define policies to restrict library loading.\n- ldconfig and chattr: Secure LD configuration files and prevent unauthorized modifications.\n\nCross-Platform Solutions:\n\n- Wazuh or OSSEC: File integrity monitoring for library changes.\n- Tripwire: Detect and alert on unauthorized library modifications.",
       "meta": {
         "external_id": "M1044",
         "refs": [
@@ -6006,7 +6078,7 @@
       "value": "Environmental Keying Mitigation - T1480"
     },
     {
-      "description": "This category is to associate techniques that mitigation might increase risk of compromise and therefore mitigation is not recommended.",
+      "description": "The Do Not Mitigate category highlights scenarios where attempting to mitigate a specific technique may inadvertently increase the organization's security risk or operational instability. This could happen due to the complexity of the system, the integration of critical processes, or the potential for introducing new vulnerabilities. Instead of direct mitigation, these situations may call for alternative strategies such as detection, monitoring, or response. The Do Not Mitigate category underscores the importance of assessing the trade-offs between mitigation efforts and overall system integrity. This mitigation can be implemented through the following measures:\n\nComplex Systems Where Mitigation is Risky:\n\n- Interpretation: In certain systems, direct mitigation could introduce new risks, especially if the system is highly interconnected or complex, such as in legacy industrial control systems (ICS). Patching or modifying these systems could result in unplanned downtime, disruptions, or even safety risks.\n- Use Case: In a power grid control system, attempting to patch or disable certain services related to device communications might disrupt critical operations, leading to unintended service outages.\n\nRisk of Reducing Security Coverage:\n\n- Interpretation: In some cases, mitigating a technique might reduce the visibility or effectiveness of other security controls, limiting an organization’s ability to detect broader attacks.\n- Use Case: Disabling script execution on a web server to mitigate potential PowerShell-based attacks could interfere with legitimate administrative operations that rely on scripting, while attackers may still find alternate ways to execute code.\n\nIntroduction of New Vulnerabilities:\n\n- Interpretation: In highly sensitive or tightly controlled environments, implementing certain mitigations might create vulnerabilities in other parts of the system. For instance, disabling default security mechanisms in an attempt to resolve compatibility issues may open the system to exploitation.\n- Use Case: Disabling certificate validation to resolve internal communication issues in a secure environment could lead to man-in-the-middle attacks, creating a greater vulnerability than the original problem.\n\nNegative Impact on Performance and Availability:\n\n- Interpretation: Mitigations that involve removing or restricting system functionalities can have unintended consequences for system performance and availability. Some mitigations, while effective at blocking certain attacks, may introduce performance bottlenecks or compromise essential operations.\n- Use Case: Implementing high levels of encryption to mitigate data theft might result in significant performance degradation in systems handling large volumes of real-time transactions.",
       "meta": {
         "external_id": "M1055",
         "refs": [
@@ -6031,7 +6103,7 @@
       "value": "Do Not Mitigate - M1055"
     },
     {
-      "description": "Use a data loss prevention (DLP) strategy to categorize sensitive data, identify data formats indicative of personal identifiable information (PII), and restrict exfiltration of sensitive data.(Citation: PurpleSec Data Loss Prevention)",
+      "description": "Data Loss Prevention (DLP) involves implementing strategies and technologies to identify, categorize, monitor, and control the movement of sensitive data within an organization. This includes protecting data formats indicative of Personally Identifiable Information (PII), intellectual property, or financial data from unauthorized access, transmission, or exfiltration. DLP solutions integrate with network, endpoint, and cloud platforms to enforce security policies and prevent accidental or malicious data leaks. (Citation: PurpleSec Data Loss Prevention) This mitigation can be implemented through the following measures:\n\nSensitive Data Categorization:\n\n- Use Case: Identify and classify data based on sensitivity (e.g., PII, financial data, trade secrets).\n- Implementation: Use DLP solutions to scan and tag files containing sensitive information using predefined patterns, such as Social Security Numbers or credit card details.\n\nExfiltration Restrictions:\n\n- Use Case: Prevent unauthorized transmission of sensitive data.\n- Implementation: Enforce policies to block unapproved email attachments, unauthorized USB usage, or unencrypted data uploads to cloud storage.\n\nData-in-Transit Monitoring:\n\n- Use Case: Detect and prevent the transmission of sensitive data over unapproved channels.\n- Implementation: Deploy network-based DLP tools to inspect outbound traffic for sensitive content (e.g., financial records or PII) and block unapproved transmissions.\n\nEndpoint Data Protection:\n\n- Use Case: Monitor and control sensitive data usage on endpoints.\n- Implementation: Use endpoint-based DLP agents to block copy-paste actions of sensitive data and unauthorized printing or file sharing.\n\nCloud Data Security:\n\n- Use Case: Protect data stored in cloud platforms.\n- Implementation: Integrate DLP with cloud storage platforms like Google Drive, OneDrive, or AWS to monitor and restrict sensitive data sharing or downloads.",
       "meta": {
         "external_id": "M1057",
         "refs": [
@@ -6730,7 +6802,7 @@
       "value": "Service Stop Mitigation - T1489"
     },
     {
-      "description": "Use two or more pieces of evidence to authenticate to a system; such as username and password in addition to a token from a physical smart card or token generator.",
+      "description": "Multi-Factor Authentication (MFA) enhances security by requiring users to provide at least two forms of verification to prove their identity before granting access. These factors typically include:\n\n- *Something you know*: Passwords, PINs.\n- *Something you have*: Physical tokens, smartphone authenticator apps.\n- *Something you are*: Biometric data such as fingerprints, facial recognition, or retinal scans.\n\nImplementing MFA across all critical systems and services ensures robust protection against account takeover and unauthorized access. This mitigation can be implemented through the following measures:\n\nIdentity and Access Management (IAM):\n\n- Use IAM solutions like Azure Active Directory, Okta, or AWS IAM to enforce MFA policies for all user logins, especially for privileged roles.\n- Enable conditional access policies to enforce MFA for risky sign-ins (e.g., unfamiliar devices, geolocations).\n\nAuthentication Tools and Methods:\n\n- Use authenticator applications such as Google Authenticator, Microsoft Authenticator, or Authy for time-based one-time passwords (TOTP).\n- Deploy hardware-based tokens like YubiKey, RSA SecurID, or smart cards for additional security.\n- Enforce biometric authentication for compatible devices and applications.\n\nSecure Legacy Systems:\n\n- Integrate MFA solutions with older systems using third-party tools like Duo Security or Thales SafeNet.\n- Enable RADIUS/NPS servers to facilitate MFA for VPNs, RDP, and other network logins.\n\nMonitoring and Alerting:\n\n- Use SIEM tools to monitor failed MFA attempts, login anomalies, or brute-force attempts against MFA systems.\n- Implement alerts for suspicious MFA activities, such as repeated failed codes or new device registrations.\n\nTraining and Policy Enforcement:\n\n- Educate employees on the importance of MFA and secure authenticator usage.\n- Enforce policies that require MFA on all critical systems, especially for remote access, privileged accounts, and cloud applications.",
       "meta": {
         "external_id": "M1032",
         "refs": [
@@ -6925,6 +6997,10 @@
         {
           "dest-uuid": "fdc47f44-dd32-4b99-af5f-209f556f63c2",
           "type": "mitigates"
+        },
+        {
+          "dest-uuid": "fde016f6-211a-41c8-a4ab-301f1e419c62",
+          "type": "mitigates"
         }
       ],
       "uuid": "b045d015-6bed-4490-bd38-56b41ece59a0",
@@ -6943,7 +7019,7 @@
       "value": "Rc.common Mitigation - T1163"
     },
     {
-      "description": "Break and inspect SSL/TLS sessions to look at encrypted web traffic for adversary activity.",
+      "description": "SSL/TLS inspection involves decrypting encrypted network traffic to examine its content for signs of malicious activity. This capability is crucial for detecting threats that use encryption to evade detection, such as phishing, malware, or data exfiltration. After inspection, the traffic is re-encrypted and forwarded to its destination. This mitigation can be implemented through the following measures:\n\nDeploy SSL/TLS Inspection Appliances:\n\n- Implement SSL/TLS inspection solutions to decrypt and inspect encrypted traffic.\n- Ensure appliances are placed at critical network choke points for maximum coverage.\n\nConfigure Decryption Policies:\n\n- Define rules to decrypt traffic for specific applications, ports, or domains.\n- Avoid decrypting sensitive or privacy-related traffic, such as financial or healthcare websites, to comply with regulations.\n\nIntegrate Threat Intelligence:\n\n- Use threat intelligence feeds to correlate inspected traffic with known indicators of compromise (IOCs).\n\nIntegrate with Security Tools:\n\n- Combine SSL/TLS inspection with SIEM and NDR tools to analyze decrypted traffic and generate alerts for suspicious activity.\n- Example Tools: Splunk, Darktrace\n\nImplement Certificate Management:\n\n- Use trusted internal or third-party certificates for traffic re-encryption after inspection.\n- Regularly update certificate authorities (CAs) to ensure secure re-encryption.\n\nMonitor and Tune:\n\n- Continuously monitor SSL/TLS inspection logs for anomalies and fine-tune policies to reduce false positives.",
       "meta": {
         "external_id": "M1020",
         "refs": [
@@ -7094,7 +7170,7 @@
       "value": "Lock Bootloader - M1003"
     },
     {
-      "description": "Architect sections of the network to isolate critical systems, functions, or resources. Use physical and logical segmentation to prevent access to potentially sensitive systems and information. Use a DMZ to contain any internet-facing services that should not be exposed from the internal network. Configure separate virtual private cloud (VPC) instances to isolate critical cloud systems.",
+      "description": "Network segmentation involves dividing a network into smaller, isolated segments to control and limit the flow of traffic between devices, systems, and applications. By segmenting networks, organizations can reduce the attack surface, restrict lateral movement by adversaries, and protect critical assets from compromise.\n\nEffective network segmentation leverages a combination of physical boundaries, logical separation through VLANs, and access control policies enforced by network appliances like firewalls, routers, and cloud-based configurations. This mitigation can be implemented through the following measures:\n\nSegment Critical Systems:\n\n- Identify and group systems based on their function, sensitivity, and risk. Examples include payment systems, HR databases, production systems, and internet-facing servers.\n- Use VLANs, firewalls, or routers to enforce logical separation.\n\nImplement DMZ for Public-Facing Services:\n\n- Host web servers, DNS servers, and email servers in a DMZ to limit their access to internal systems.\n- Apply strict firewall rules to filter traffic between the DMZ and internal networks.\n\nUse Cloud-Based Segmentation:\n\n- In cloud environments, use VPCs, subnets, and security groups to isolate applications and enforce traffic rules.\n- Apply AWS Transit Gateway or Azure VNet peering for controlled connectivity between cloud segments.\n\nApply Microsegmentation for Workloads:\n\n- Use software-defined networking (SDN) tools to implement workload-level segmentation and prevent lateral movement.\n\nRestrict Traffic with ACLs and Firewalls:\n\n- Apply Access Control Lists (ACLs) to network devices to enforce \"deny by default\" policies.\n- Use firewalls to restrict both north-south (external-internal) and east-west (internal-internal) traffic.\n\nMonitor and Audit Segmented Networks:\n\n- Regularly review firewall rules, ACLs, and segmentation policies.\n- Monitor network flows for anomalies to ensure segmentation is effective.\n\nTest Segmentation Effectiveness:\n\n- Perform periodic penetration tests to verify that unauthorized access is blocked between network segments.",
       "meta": {
         "external_id": "M1030",
         "refs": [
@@ -7245,6 +7321,10 @@
         {
           "dest-uuid": "fb8d023d-45be-47e9-bc51-f56bcae6435b",
           "type": "mitigates"
+        },
+        {
+          "dest-uuid": "fde016f6-211a-41c8-a4ab-301f1e419c62",
+          "type": "mitigates"
         }
       ],
       "uuid": "86598de0-b347-4928-9eb0-0acbfc21908c",
@@ -7263,7 +7343,7 @@
       "value": "Application Vetting - M1005"
     },
     {
-      "description": "Use capabilities to detect and block conditions that may lead to or be indicative of a software exploit occurring.",
+      "description": "Deploy capabilities that detect, block, and mitigate conditions indicative of software exploits. These capabilities aim to prevent exploitation by addressing vulnerabilities, monitoring anomalous behaviors, and applying exploit-mitigation techniques to harden systems and software.\n\nOperating System Exploit Protections:\n\n- Use Case: Enable built-in exploit protection features provided by modern operating systems, such as Microsoft's Exploit Protection, which includes techniques like Data Execution Prevention (DEP), Address Space Layout Randomization (ASLR), and Control Flow Guard (CFG).\n- Implementation: Enforce DEP for all programs and enable ASLR to randomize memory addresses used by system and application processes. Windows: Configure Exploit Protection through the Windows Security app or deploy settings via Group Policy.\n`ExploitProtectionExportSettings.exe -path \"exploit_settings.xml\"`\nLinux: Use Kernel-level hardening features like SELinux, AppArmor, or GRSEC to enforce memory protections and prevent exploits.\n\nThird-Party Endpoint Security:\n\n- Use Case: Use endpoint protection tools with built-in exploit protection, such as enhanced memory protection, behavior monitoring, and real-time exploit detection.\n- Implementation: Deploy tools to detect and block exploitation attempts targeting unpatched software.\n\nVirtual Patching:\n- Use Case: Use tools to implement virtual patches that mitigate vulnerabilities in applications or operating systems until official patches are applied.\n- Implementation: Use Intrusion Prevention System (IPS) to block exploitation attempts on known vulnerabilities in outdated applications.\n\nHardening Application Configurations:\n\n- Use Case: Disable risky application features that can be exploited, such as macros in Microsoft Office or JScript in Internet Explorer.\n- Implementation: Configure Microsoft Office Group Policies to disable execution of macros in downloaded files.",
       "meta": {
         "external_id": "M1050",
         "refs": [
@@ -7417,6 +7497,10 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "8e097ec5-1755-41d6-807c-3882442b818a",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "99e6295e-741b-4857-b6e5-64989eb039b4",
           "type": "mitigates"
         },
@@ -7430,6 +7514,10 @@
         },
         {
           "dest-uuid": "9ef14445-6f35-4ed0-a042-5024f13a9242",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "a64a820a-cb21-471f-920c-506a2ff04fa5",
           "type": "mitigates"
         },
         {
@@ -7566,6 +7654,10 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "a64a820a-cb21-471f-920c-506a2ff04fa5",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "a8c31121-852b-46bd-9ba4-674ae5afe7ad",
           "type": "mitigates"
         },
@@ -7637,7 +7729,7 @@
       "value": "Rootkit Mitigation - T1014"
     },
     {
-      "description": "Perform regular software updates to mitigate exploitation risk.",
+      "description": "Software updates ensure systems are protected against known vulnerabilities by applying patches and upgrades provided by vendors. Regular updates reduce the attack surface and prevent adversaries from exploiting known security gaps. This includes patching operating systems, applications, drivers, and firmware. This mitigation can be implemented through the following measures:\n\nRegular Operating System Updates\n\n- Implementation: Apply the latest Windows security updates monthly using WSUS (Windows Server Update Services) or a similar patch management solution. Configure systems to check for updates automatically and schedule reboots during maintenance windows.\n- Use Case: Prevents exploitation of OS vulnerabilities such as privilege escalation or remote code execution.\n\nApplication Patching\n\n- Implementation: Monitor Apache's update release notes for security patches addressing vulnerabilities. Schedule updates for off-peak hours to avoid downtime while maintaining security compliance.\n- Use Case: Prevents exploitation of web application vulnerabilities, such as those leading to unauthorized access or data breaches.\n\nFirmware Updates\n\n- Implementation: Regularly check the vendor’s website for firmware updates addressing vulnerabilities. Plan for update deployment during scheduled maintenance to minimize business disruption.\n- Use Case: Protects against vulnerabilities that adversaries could exploit to gain access to network devices or inject malicious traffic.\n\nEmergency Patch Deployment\n\n- Implementation: Use the emergency patch deployment feature of the organization's patch management tool to apply updates to all affected Exchange servers within 24 hours.\n- Use Case: Reduces the risk of exploitation by rapidly addressing critical vulnerabilities.\n\nCentralized Patch Management\n\n- Implementation: Implement a centralized patch management system, such as SCCM or ManageEngine, to automate and track patch deployment across all environments. Generate regular compliance reports to ensure all systems are updated.\n- Use Case: Streamlines patching processes and ensures no critical systems are missed.\n\n*Tools for Implementation*\n\nPatch Management Tools:\n\n- WSUS: Manage and deploy Microsoft updates across the organization.\n- ManageEngine Patch Manager Plus: Automate patch deployment for OS and third-party apps.\n- Ansible: Automate updates across multiple platforms, including Linux and Windows.\n\nVulnerability Scanning Tools:\n\n- OpenVAS: Open-source vulnerability scanning to identify missing patches.",
       "meta": {
         "external_id": "M1051",
         "refs": [
@@ -7670,7 +7762,15 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "278716b1-61ce-4a74-8d17-891d0c494101",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "2c4d4e92-0ccf-4a97-b54c-86d662988a53",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "2fee9321-3e71-4cf4-af24-d4d40d355b34",
           "type": "mitigates"
         },
         {
@@ -7706,11 +7806,19 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "4a5b7ade-8bb5-4853-84ed-23f262002665",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "52759bf1-fe12-4052-ace6-c5b0cf7dd7fd",
           "type": "mitigates"
         },
         {
           "dest-uuid": "58a3e6aa-4453-4cc8-a51f-4befe80b31a8",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "66b34be7-6915-4b83-8d5a-b0f0592b5e41",
           "type": "mitigates"
         },
         {
@@ -7782,10 +7890,6 @@
           "type": "mitigates"
         },
         {
-          "dest-uuid": "e64c62cf-9cd7-4a14-94ec-cdaac43ab44b",
-          "type": "mitigates"
-        },
-        {
           "dest-uuid": "ee7ff928-801c-4f34-8a99-3df965e581a5",
           "type": "mitigates"
         },
@@ -7802,7 +7906,7 @@
       "value": "Update Software - M1051"
     },
     {
-      "description": "Vulnerability scanning is used to find potentially exploitable software vulnerabilities to remediate them.",
+      "description": "Vulnerability scanning involves the automated or manual assessment of systems, applications, and networks to identify misconfigurations, unpatched software, or other security weaknesses. The process helps prioritize remediation efforts by classifying vulnerabilities based on risk and impact, reducing the likelihood of exploitation by adversaries. This mitigation can be implemented through the following measures: \n\nProactive Identification of Vulnerabilities\n\n- Implementation: Use tools like Nessus or OpenVAS to scan endpoints, servers, and applications for missing patches and configuration issues. Schedule regular scans to ensure timely identification of vulnerabilities introduced by new deployments or updates.\n- Use Case: A scan identifies unpatched software, such as outdated Apache servers, which could be exploited via CVE-XXXX-XXXX. The server is promptly patched, mitigating the risk.\n\nCloud Environment Scanning\n\n- Implementation: Use cloud-specific vulnerability management tools like AWS Inspector, Azure Security Center, or GCP Security Command Center to identify issues like open S3 buckets or overly permissive IAM roles.\n- Use Case: The scan detects a misconfigured S3 bucket with public read access, which is remediated to prevent potential data leakage.\n\nNetwork Device Scanning\n\n- Implementation: Use tools to scan network devices for vulnerabilities, such as weak SNMP strings or outdated firmware. Correlate scan results with vendor advisories to prioritize updates.\n- Use Case: Scanning detects a router running outdated firmware vulnerable to CVE-XXXX-YYYY. The firmware is updated to a secure version.\n\nWeb Application Scanning\n\n- Implementation: Use dynamic application security testing (DAST) tools such as OWASP ZAP or Burp Suite to scan for common vulnerabilities like SQL injection or cross-site scripting (XSS). Perform regular scans post-deployment to identify newly introduced vulnerabilities.\n- Use Case: A scan identifies a cross-site scripting vulnerability in a form input field, which is promptly remediated by developers.\n\nPrioritizing Vulnerabilities\n\n- Implementation: Use vulnerability scoring frameworks like CVSS to assess severity.\nIntegrate vulnerability scanning tools with ticketing systems to assign remediation tasks based on criticality.\n- Use Case: A critical vulnerability with a CVSS score of 9.8 affecting remote access servers is prioritized and patched first.\n\n*Tools for Implementation*\n\nOpen Source Tools:\n\n- OpenVAS: Comprehensive network and system vulnerability scanning.\n- OWASP ZAP: Dynamic scanning of web applications for vulnerabilities.\n- Nmap with NSE Scripts: Network scanning with scripts to detect vulnerabilities.",
       "meta": {
         "external_id": "M1016",
         "refs": [
@@ -7847,7 +7951,7 @@
       "value": "Mshta Mitigation - T1170"
     },
     {
-      "description": "Train users to be aware of access or manipulation attempts by an adversary to reduce the risk of successful spearphishing, social engineering, and other techniques that involve user interaction.",
+      "description": "User Training involves educating employees and contractors on recognizing, reporting, and preventing cyber threats that rely on human interaction, such as phishing, social engineering, and other manipulative techniques. Comprehensive training programs create a human firewall by empowering users to be an active component of the organization's cybersecurity defenses. This mitigation can be implemented through the following measures:\n\nCreate Comprehensive Training Programs:\n\n- Design training modules tailored to the organization's risk profile, covering topics such as phishing, password management, and incident reporting.\n- Provide role-specific training for high-risk employees, such as helpdesk staff or executives.\n\nUse Simulated Exercises:\n\n- Conduct phishing simulations to measure user susceptibility and provide targeted follow-up training.\n- Run social engineering drills to evaluate employee responses and reinforce protocols.\n\nLeverage Gamification and Engagement:\n\n- Introduce interactive learning methods such as quizzes, gamified challenges, and rewards for successful detection and reporting of threats.\n\nIncorporate Security Policies into Onboarding:\n\n- Include cybersecurity training as part of the onboarding process for new employees.\n- Provide easy-to-understand materials outlining acceptable use policies and reporting procedures.\n\nRegular Refresher Courses:\n\n- Update training materials to include emerging threats and techniques used by adversaries.\n- Ensure all employees complete periodic refresher courses to stay informed.\n\nEmphasize Real-World Scenarios:\n\n- Use case studies of recent attacks to demonstrate the consequences of successful phishing or social engineering.\n- Discuss how specific employee actions can prevent or mitigate such attacks.",
       "meta": {
         "external_id": "M1017",
         "refs": [
@@ -7885,6 +7989,10 @@
         },
         {
           "dest-uuid": "232b7f21-adf9-4b42-b936-b9d6f7df856e",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "278716b1-61ce-4a74-8d17-891d0c494101",
           "type": "mitigates"
         },
         {
@@ -7929,6 +8037,10 @@
         },
         {
           "dest-uuid": "65f2d882-3f41-4d48-8a06-29af77ec9f90",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "66b34be7-6915-4b83-8d5a-b0f0592b5e41",
           "type": "mitigates"
         },
         {
@@ -8004,6 +8116,10 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "bed81616-3dde-4685-be6e-ba9820f9a7ed",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "c3d4bdd9-2cfe-4a80-9d0c-07a29ecdce8f",
           "type": "mitigates"
         },
@@ -8029,6 +8145,10 @@
         },
         {
           "dest-uuid": "d4b96d2c-1032-4b22-9235-2b5b649d0605",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "d742a578-d70e-4d0e-96a6-02a9c30204e6",
           "type": "mitigates"
         },
         {
@@ -8122,7 +8242,7 @@
       "value": "DCShadow Mitigation - T1207"
     },
     {
-      "description": "Set and enforce secure password policies for accounts.",
+      "description": "Set and enforce secure password policies for accounts to reduce the likelihood of unauthorized access. Strong password policies include enforcing password complexity, requiring regular password changes, and preventing password reuse. This mitigation can be implemented through the following measures:\n\nWindows Systems:\n\n- Use Group Policy Management Console (GPMC) to configure:\n    - Minimum password length (e.g., 12+ characters).\n    - Password complexity requirements.\n    - Password history (e.g., disallow last 24 passwords).\n    - Account lockout duration and thresholds.\n\nLinux Systems:\n\n- Configure Pluggable Authentication Modules (PAM):\n- Use `pam_pwquality` to enforce complexity and length requirements.\n- Implement `pam_tally2` or `pam_faillock` for account lockouts.\n- Use `pwunconv` to disable password reuse.\n\nPassword Managers:\n\n- Enforce usage of enterprise password managers (e.g., Bitwarden, 1Password, LastPass) to generate and store strong passwords.\n\nPassword Blacklisting:\n\n- Use tools like Have I Been Pwned password checks or NIST-based blacklist solutions to prevent users from setting compromised passwords.\n\nRegular Auditing:\n\n- Periodically audit password policies and account configurations to ensure compliance using tools like LAPS (Local Admin Password Solution) and vulnerability scanners.\n\n*Tools for Implementation*\n\nWindows:\n\n- Group Policy Management Console (GPMC): Enforce password policies.\n- Microsoft Local Administrator Password Solution (LAPS): Enforce random, unique admin passwords.\n\nLinux/macOS:\n\n- PAM Modules (pam_pwquality, pam_tally2, pam_faillock): Enforce password rules.\n- Lynis: Audit password policies and system configurations.\n\nCross-Platform:\n\n- Password Managers (Bitwarden, 1Password, KeePass): Manage and enforce strong passwords.\n- Have I Been Pwned API: Prevent the use of breached passwords.\n- NIST SP 800-63B compliant tools: Enforce password guidelines and blacklisting.",
       "meta": {
         "external_id": "M1027",
         "refs": [
@@ -8336,7 +8456,7 @@
       "value": "Kerberoasting Mitigation - T1208"
     },
     {
-      "description": "Take and store data backups from end user systems and critical servers. Ensure backup and storage systems are hardened and kept separate from the corporate network to prevent compromise.",
+      "description": "Data Backup involves taking and securely storing backups of data from end-user systems and critical servers. It ensures that data remains available in the event of system compromise, ransomware attacks, or other disruptions. Backup processes should include hardening backup systems, implementing secure storage solutions, and keeping backups isolated from the corporate network to prevent compromise during active incidents. This mitigation can be implemented through the following measures:\n\nRegular Backup Scheduling:\n- Use Case: Ensure timely and consistent backups of critical data.\n- Implementation: Schedule daily incremental backups and weekly full backups for all critical servers and systems.\n\nImmutable Backups:\n- Use Case: Protect backups from modification or deletion, even by attackers.\n- Implementation: Use write-once-read-many (WORM) storage for backups, preventing ransomware from encrypting or deleting backup files.\n\nBackup Encryption:\n- Use Case: Protect data integrity and confidentiality during transit and storage.\n- Implementation: Encrypt backups using strong encryption protocols (e.g., AES-256) before storing them in local, cloud, or remote locations.\n\nOffsite Backup Storage:\n- Use Case: Ensure data availability during physical disasters or onsite breaches.\n- Implementation: Use cloud-based solutions like AWS S3, Azure Backup, or physical offsite storage to maintain a copy of critical data.\n\nBackup Testing:\n- Use Case: Validate backup integrity and ensure recoverability.\n- Implementation: Regularly test data restoration processes to ensure that backups are not corrupted and can be recovered quickly.",
       "meta": {
         "external_id": "M1053",
         "refs": [
@@ -8406,7 +8526,7 @@
       "value": "Masquerading Mitigation - T1036"
     },
     {
-      "description": "Block execution of code on a system through application control, and/or script blocking.",
+      "description": "Prevent the execution of unauthorized or malicious code on systems by implementing application control, script blocking, and other execution prevention mechanisms. This ensures that only trusted and authorized code is executed, reducing the risk of malware and unauthorized actions. This mitigation can be implemented through the following measures:\n\nApplication Control:\n\n- Use Case: Use tools like AppLocker or Windows Defender Application Control (WDAC) to create whitelists of authorized applications and block unauthorized ones. On Linux, use tools like SELinux or AppArmor to define mandatory access control policies for application execution.\n- Implementation: Allow only digitally signed or pre-approved applications to execute on servers and endpoints. (e.g., `New-AppLockerPolicy -PolicyType Enforced -FilePath \"C:\\Policies\\AppLocker.xml\"`) \n\n\nScript Blocking:\n\n- Use Case: Use script control mechanisms to block unauthorized execution of scripts, such as PowerShell or JavaScript. Web Browsers: Use browser extensions or settings to block JavaScript execution from untrusted sources.\n- Implementation: Configure PowerShell to enforce Constrained Language Mode for non-administrator users. (e.g., `Set-ExecutionPolicy AllSigned`) \n\nExecutable Blocking:\n\n- Use Case: Prevent execution of binaries from suspicious locations, such as `%TEMP%` or `%APPDATA%` directories.\n- Implementation: Block execution of `.exe`, `.bat`, or `.ps1` files from user-writable directories.\n\nDynamic Analysis Prevention:\n- Use Case: Use behavior-based execution prevention tools to identify and block malicious activity in real time.\n- Implemenation: Employ EDR solutions that analyze runtime behavior and block suspicious code execution.",
       "meta": {
         "external_id": "M1038",
         "refs": [
@@ -8456,6 +8576,10 @@
         },
         {
           "dest-uuid": "246fd3c7-f5e3-466d-8787-4c13d9e3b61c",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "278716b1-61ce-4a74-8d17-891d0c494101",
           "type": "mitigates"
         },
         {
@@ -8539,6 +8663,14 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "63e3d25c-d57d-407d-8e6a-2cecd71f90be",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "66b34be7-6915-4b83-8d5a-b0f0592b5e41",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "67720091-eee3-4d2d-ae16-8264567f6f5b",
           "type": "mitigates"
         },
@@ -8559,7 +8691,15 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "77e29a47-e263-4f11-8692-e5012f44dbac",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "7b50a1d3-4ca7-45d1-989d-a6503f04bfe1",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "7d356151-a69d-404e-896b-71618952702a",
           "type": "mitigates"
         },
         {
@@ -8671,7 +8811,15 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "d4287702-e2f7-4946-bdfa-2c7f5aaa5032",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "dfd7cc1d-e1d8-4394-a198-97c4cab8aa67",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "e261a979-f354-41a8-963e-6cadac27c4bf",
           "type": "mitigates"
         },
         {
@@ -8707,7 +8855,7 @@
       "value": "Execution Prevention - M1038"
     },
     {
-      "description": "Implement configuration changes to software (other than the operating system) to mitigate security risks associated to how the software operates.",
+      "description": "Software configuration refers to making security-focused adjustments to the settings of applications, middleware, databases, or other software to mitigate potential threats. These changes help reduce the attack surface, enforce best practices, and protect sensitive data. This mitigation can be implemented through the following measures:\n\nConduct a Security Review of Application Settings:\n\n- Review the software documentation to identify recommended security configurations.\n- Compare default settings against organizational policies and compliance requirements.\n\nImplement Access Controls and Permissions:\n\n- Restrict access to sensitive features or data within the software.\n- Enforce least privilege principles for all roles and accounts interacting with the software.\n\nEnable Logging and Monitoring:\n\n- Configure detailed logging for key application events such as authentication failures, configuration changes, or unusual activity.\n- Integrate logs with a centralized monitoring solution, such as a SIEM.\n\nUpdate and Patch Software Regularly:\n\n- Ensure the software is kept up-to-date with the latest security patches to address known vulnerabilities.\n- Use automated patch management tools to streamline the update process.\n\nDisable Unnecessary Features or Services:\n\n- Turn off unused functionality or components that could introduce vulnerabilities, such as debugging interfaces or deprecated APIs.\n\nTest Configuration Changes:\n\n- Perform configuration changes in a staging environment before applying them in production.\n- Conduct regular audits to ensure that settings remain aligned with security policies.\n\n*Tools for Implementation*\n\nConfiguration Management Tools:\n\n- Ansible: Automates configuration changes across multiple applications and environments.\n- Chef: Ensures consistent application settings through code-based configuration management.\n- Puppet: Automates software configurations and audits changes for compliance.\n\nSecurity Benchmarking Tools:\n\n- CIS-CAT: Provides benchmarks and audits for secure software configurations.\n- Aqua Security Trivy: Scans containerized applications for configuration issues.\n\nVulnerability Management Solutions:\n\n- Nessus: Identifies misconfigurations and suggests corrective actions.\n\nLogging and Monitoring Tools:\n\n- Splunk: Aggregates and analyzes application logs to detect suspicious activity.",
       "meta": {
         "external_id": "M1054",
         "refs": [
@@ -8820,6 +8968,10 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "bed81616-3dde-4685-be6e-ba9820f9a7ed",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "c3c8c916-2f3c-4e71-94b2-240bdfc996f0",
           "type": "mitigates"
         },
@@ -8840,6 +8992,10 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "e1c2db92-7ae3-4e6a-90b4-157c1c1565cb",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "ed7efd4d-ce28-4a19-a8e6-c58011eb2c7a",
           "type": "mitigates"
         },
@@ -8852,7 +9008,7 @@
       "value": "Software Configuration - M1054"
     },
     {
-      "description": "Enforce binary and application integrity with digital signature verification to prevent untrusted code from executing.",
+      "description": "Code Signing is a security process that ensures the authenticity and integrity of software by digitally signing executables, scripts, and other code artifacts. It prevents untrusted or malicious code from executing by verifying the digital signatures against trusted sources. Code signing protects against tampering, impersonation, and distribution of unauthorized or malicious software, forming a critical defense against supply chain and software exploitation attacks. This mitigation can be implemented through the following measures:\n\nEnforce Signed Code Execution:\n\n- Implementation: Configure operating systems (e.g., Windows with AppLocker or Linux with Secure Boot) to allow only signed code to execute.\n- Use Case: Prevent the execution of malicious PowerShell scripts by requiring all scripts to be signed with a trusted certificate.\n\nVendor-Signed Driver Enforcement:\n\n- Implementation: Enable kernel-mode code signing to ensure that only drivers signed by trusted vendors can be loaded.\n- Use Case: A malicious driver attempting to modify system memory fails to load because it lacks a valid signature.\n\nCertificate Revocation Management:\n\n- Implementation: Use Online Certificate Status Protocol (OCSP) or Certificate Revocation Lists (CRLs) to block certificates associated with compromised or deprecated code.\n- Use Case: A compromised certificate used to sign a malicious update is revoked, preventing further execution of the software.\n\nThird-Party Software Verification:\n\n- Implementation: Require software from external vendors to be signed with valid certificates before deployment.\n- Use Case: An organization only deploys signed and verified third-party software to prevent supply chain attacks.\n\nScript Integrity in CI/CD Pipelines:\n\n- Implementation: Integrate code signing into CI/CD pipelines to sign and verify code artifacts before production release.\n- Use Case: A software company ensures that all production builds are signed, preventing tampered builds from reaching customers.\n\n**Key Components of Code Signing**\n\n- Digital Signature Verification: Verifies the authenticity of code by ensuring it was signed by a trusted entity.\n- Certificate Management: Uses Public Key Infrastructure (PKI) to manage signing certificates and revocation lists.\n- Enforced Policy for Unsigned Code: Prevents the execution of unsigned or untrusted binaries and scripts.\n- Hash Integrity Check: Confirms that code has not been altered since signing by comparing cryptographic hashes.\n",
       "meta": {
         "external_id": "M1045",
         "refs": [
@@ -8937,6 +9093,10 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "f8ba7d61-11c5-4130-bafd-7c3ff5fbf4b5",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "f9e9365a-9ca2-4d9c-8e7c-050d73d1101a",
           "type": "mitigates"
         },
@@ -8949,7 +9109,7 @@
       "value": "Code Signing - M1045"
     },
     {
-      "description": "Use secure methods to boot a system and verify the integrity of the operating system and loading mechanisms.",
+      "description": "Boot Integrity ensures that a system starts securely by verifying the integrity of its boot process, operating system, and associated components. This mitigation focuses on leveraging secure boot mechanisms, hardware-rooted trust, and runtime integrity checks to prevent tampering during the boot sequence. It is designed to thwart adversaries attempting to modify system firmware, bootloaders, or critical OS components. This mitigation can be implemented through the following measures:\n\nImplementation of Secure Boot:\n\n- Implementation: Enable UEFI Secure Boot on all systems and configure it to allow only signed bootloaders and operating systems.\n- Use Case: An adversary attempts to replace the system’s bootloader with a malicious version to gain persistence. Secure Boot prevents the untrusted bootloader from executing, halting the attack.\n\nUtilization of TPMs:\n\n- Implementation: Configure systems to use TPM-based attestation for boot integrity, ensuring that any modification to the firmware, bootloader, or OS is detected.\n- Use Case: A compromised firmware component alters the boot sequence. The TPM detects the change and triggers an alert, allowing the organization to respond before further damage.\n\nEnable Bootloader Passwords:\n\n- Implementation: Protect BIOS/UEFI settings with a strong password and limit physical access to devices.\n- Use Case: An attacker with physical access attempts to disable Secure Boot or modify the boot sequence. The password prevents unauthorized changes.\n\nRuntime Integrity Monitoring:\n\n- Implementation: Deploy solutions to verify the integrity of critical files and processes after boot.\n- Use Case: A malware infection modifies kernel modules post-boot. Runtime integrity monitoring detects the modification and prevents the malicious module from loading.",
       "meta": {
         "external_id": "M1046",
         "refs": [
@@ -8998,7 +9158,15 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "d456de47-a16f-4e46-8980-e67478a12dcb",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "f5bb433e-bdf6-4781-84bc-35e97e43be89",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "f8ba7d61-11c5-4130-bafd-7c3ff5fbf4b5",
           "type": "mitigates"
         },
         {
@@ -9217,7 +9385,7 @@
       "value": "Hooking Mitigation - T1179"
     },
     {
-      "description": "This category is used for any applicable mitigation activities that apply to techniques occurring before an adversary gains Initial Access, such as Reconnaissance and Resource Development techniques.",
+      "description": "Pre-compromise mitigations involve proactive measures and defenses implemented to prevent adversaries from successfully identifying and exploiting weaknesses during the Reconnaissance and Resource Development phases of an attack. These activities focus on reducing an organization's attack surface, identify adversarial preparation efforts, and increase the difficulty for attackers to conduct successful operations. This mitigation can be implemented through the following measures:\n\nLimit Information Exposure:\n\n- Regularly audit and sanitize publicly available data, including job posts, websites, and social media.\n- Use tools like OSINT monitoring platforms (e.g., SpiderFoot, Recon-ng) to identify leaked information.\n\nProtect Domain and DNS Infrastructure:\n\n- Enable DNSSEC and use WHOIS privacy protection.\n- Monitor for domain hijacking or lookalike domains using services like RiskIQ or DomainTools.\n\nExternal Monitoring:\n\n- Use tools like Shodan, Censys to monitor your external attack surface.\n- Deploy external vulnerability scanners to proactively address weaknesses.\n\nThreat Intelligence:\n\n- Leverage platforms like MISP, Recorded Future, or Anomali to track adversarial infrastructure, tools, and activity.\n\nContent and Email Protections:\n\n- Use email security solutions like Proofpoint, Microsoft Defender for Office 365, or Mimecast.\n- Enforce SPF/DKIM/DMARC policies to protect against email spoofing.\n\nTraining and Awareness:\n\n- Educate employees on identifying phishing attempts, securing their social media, and avoiding information leaks.",
       "meta": {
         "external_id": "M1056",
         "refs": [
@@ -9562,7 +9730,7 @@
       "value": "Pre-compromise - M1056"
     },
     {
-      "description": "Use signatures or heuristics to detect malicious software.",
+      "description": "Antivirus/Antimalware solutions utilize signatures, heuristics, and behavioral analysis to detect, block, and remediate malicious software, including viruses, trojans, ransomware, and spyware. These solutions continuously monitor endpoints and systems for known malicious patterns and suspicious behaviors that indicate compromise. Antivirus/Antimalware software should be deployed across all devices, with automated updates to ensure protection against the latest threats. This mitigation can be implemented through the following measures:\n\nSignature-Based Detection:\n\n- Implementation: Use predefined signatures to identify known malware based on unique patterns such as file hashes, byte sequences, or command-line arguments. This method is effective against known threats.\n- Use Case: When malware like \"Emotet\" is detected, its signature (such as a specific file hash) matches a known database of malicious software, triggering an alert and allowing immediate quarantine of the infected file.\n\nHeuristic-Based Detection:\n\n- Implementation: Deploy heuristic algorithms that analyze behavior and characteristics of files and processes to identify potential malware, even if it doesn’t match a known signature.\n- Use Case: If a program attempts to modify multiple critical system files or initiate suspicious network communications, heuristic analysis may flag it as potentially malicious, even if no specific malware signature is available.\n\nBehavioral Detection (Behavior Prevention):\n\n- Implementation: Use behavioral analysis to detect patterns of abnormal activities, such as unusual system calls, unauthorized file encryption, or attempts to escalate privileges.\n- Use Case: Behavioral analysis can detect ransomware attacks early by identifying behavior like mass file encryption, even before a specific ransomware signature has been identified.\n\nReal-Time Scanning:\n\n- Implementation: Enable real-time scanning to automatically inspect files and network traffic for signs of malware as they are accessed, downloaded, or executed.\n- Use Case: When a user downloads an email attachment, the antivirus solution scans the file in real-time, checking it against both signatures and heuristics to detect any malicious content before it can be opened.\n\nCloud-Assisted Threat Intelligence:\n\n- Implementation: Use cloud-based threat intelligence to ensure the antivirus solution can access the latest malware definitions and real-time threat feeds from a global database of emerging threats.\n- Use Case: Cloud-assisted antivirus solutions quickly identify newly discovered malware by cross-referencing against global threat databases, providing real-time protection against zero-day attacks.\n\n**Tools for Implementation**:\n\n- Endpoint Security Platforms: Use solutions such as EDR for comprehensive antivirus/antimalware protection across all systems.\n- Centralized Management: Implement centralized antivirus management consoles that provide visibility into threat activity, enable policy enforcement, and automate updates.\n- Behavioral Analysis Tools: Leverage solutions with advanced behavioral analysis capabilities to detect malicious activity patterns that don’t rely on known signatures.",
       "meta": {
         "external_id": "M1049",
         "refs": [
@@ -9600,6 +9768,10 @@
         },
         {
           "dest-uuid": "42e8de7b-37b2-4258-905a-6897815e58e0",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "671cd17f-a765-48fd-adc4-dad1941b1ae3",
           "type": "mitigates"
         },
         {
@@ -9652,6 +9824,10 @@
         },
         {
           "dest-uuid": "f6ad61ee-65f3-4bd0-a3f5-2f0accb36317",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "fbd91bfc-75c2-4f0c-8116-3b4e722906b3",
           "type": "mitigates"
         }
       ],
@@ -9745,7 +9921,7 @@
       "value": "Attestation - M1002"
     },
     {
-      "description": "Perform audits or scans of systems, permissions, insecure software, insecure configurations, etc. to identify potential weaknesses.",
+      "description": "Auditing is the process of recording activity and systematically reviewing and analyzing the activity and system configurations. The primary purpose of auditing is to detect anomalies and identify potential threats or weaknesses in the environment. Proper auditing configurations can also help to meet compliance requirements. The process of auditing encompasses regular analysis of user behaviors and system logs in support of proactive security measures.\n\nAuditing is applicable to all systems used within an organization, from the front door of a building to accessing a file on a fileserver. It is considered more critical for regulated industries such as, healthcare, finance and government where compliance requirements demand stringent tracking of user and system activates.This mitigation can be implemented through the following measures: \n\nSystem Audit:\n\n- Use Case: Regularly assess system configurations to ensure compliance with organizational security policies.\n- Implementation: Use tools to scan for deviations from established benchmarks.\n\nPermission Audits:\n\n- Use Case: Review file and folder permissions to minimize the risk of unauthorized access or privilege escalation.\n- Implementation: Run access reviews to identify users or groups with excessive permissions.\n\nSoftware Audits:\n\n- Use Case: Identify outdated, unsupported, or insecure software that could serve as an attack vector.\n- Implementation: Use inventory and vulnerability scanning tools to detect outdated versions and recommend secure alternatives.\n\nConfiguration Audits:\n\n- Use Case: Evaluate system and network configurations to ensure secure settings (e.g., disabled SMBv1, enabled MFA).\n- Implementation: Implement automated configuration scanning tools like SCAP (Security Content Automation Protocol) to identify non-compliant systems.\n\nNetwork Audits:\n\n- Use Case: Examine network traffic, firewall rules, and endpoint communications to identify unauthorized or insecure connections.\n- Implementation: Utilize tools such as Wireshark, or Zeek to monitor and log suspicious network behavior.",
       "meta": {
         "external_id": "M1047",
         "refs": [
@@ -9811,6 +9987,14 @@
         },
         {
           "dest-uuid": "1f9c2bae-b441-4f66-a8af-b65946ee72f2",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "22905430-4901-4c2a-84f6-98243cb173f8",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "278716b1-61ce-4a74-8d17-891d0c494101",
           "type": "mitigates"
         },
         {
@@ -9942,6 +10126,10 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "66b34be7-6915-4b83-8d5a-b0f0592b5e41",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "67720091-eee3-4d2d-ae16-8264567f6f5b",
           "type": "mitigates"
         },
@@ -10038,6 +10226,10 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "ac08589e-ee59-4935-8667-d845e38fe579",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "aedfca76-3b30-4866-b2aa-0f1d7fd1e4b6",
           "type": "mitigates"
         },
@@ -10062,11 +10254,23 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "b5327dd1-6bf9-4785-a199-25bcbd1f4a9d",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "bbfbb096-6561-4d7d-aa2c-a5ee8e44c696",
           "type": "mitigates"
         },
         {
           "dest-uuid": "bf96a5a3-3bce-43b7-8597-88545984c07b",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "c21d5a77-d422-4a69-acd7-2c53c1faa34b",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "c31aebd6-c9b5-420f-ba2a-5853bbf897fa",
           "type": "mitigates"
         },
         {
@@ -10138,6 +10342,10 @@
           "type": "mitigates"
         },
         {
+          "dest-uuid": "f8ba7d61-11c5-4130-bafd-7c3ff5fbf4b5",
+          "type": "mitigates"
+        },
+        {
           "dest-uuid": "f9e9365a-9ca2-4d9c-8e7c-050d73d1101a",
           "type": "mitigates"
         },
@@ -10150,5 +10358,5 @@
       "value": "Audit - M1047"
     }
   ],
-  "version": 30
+  "version": 31
 }
