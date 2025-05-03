@@ -18089,11 +18089,11 @@
       "value": "REF7707"
     },
     {
-      "description": "UAC-0219 is a hacking group that has been observed conducting cyber-espionage operations targeting Ukrainian critical sectors, primarily utilizing WRECKSTEEL malware for file exfiltration in both VBScript and PowerShell variants. Their activities focus on gathering intelligence from military innovation hubs, armed forces, law enforcement, and regional government institutions. CERT-UA has linked multiple cyber-attacks against government agencies and critical infrastructure in Ukraine to UAC-0219, emphasizing their reliance on specialized malware for sensitive information theft. The group’s operations are characterized by stealthy access and data exfiltration tactics, consistent with state-sponsored APT behavior.",
+      "description": "UAC-0219 is a hacking group observed conducting cyber-espionage operations targeting Ukrainian critical sectors, primarily utilising WRECKSTEEL malware for file exfiltration in both VBScript and PowerShell variants. Their activities focus on gathering intelligence from military innovation hubs, armed forces, law enforcement, and regional government institutions. CERT-UA has linked multiple cyber-attacks against government agencies and critical infrastructure in Ukraine to UAC-0219, emphasizing their reliance on specialized malware for sensitive information theft. The group’s operations are characterized by stealthy access and data exfiltration tactics, consistent with state-sponsored APT behavior.",
       "meta": {
         "refs": [
-          "https://socprime.com/blog/detect-uac-0219-attacks-against-ukrainian-state-bodies/",
-          "https://socprime.com/blog/detect-uac-0226-attacks-against-ukraine/"
+          "https://cert.gov.ua/article/6282902",
+          "https://socprime.com/blog/detect-uac-0219-attacks-against-ukrainian-state-bodies"
         ]
       },
       "uuid": "0bcd32bc-a241-44aa-a3eb-492eecb004eb",
@@ -18153,6 +18153,17 @@
       },
       "uuid": "0a690077-8268-4c06-9615-eabb6b0d0028",
       "value": "puNK-003"
+    },
+    {
+      "description": "UAC-0226 is a cyber-espionage group targeting Ukrainian military, law enforcement, and local government entities—particularly near the eastern border—since February 2025. Initial access is achieved via phishing emails containing malicious .xlsm documents that decode and execute base64-encoded payloads stored in spreadsheet cells. Two main tools are used: a .NET-based reverse shell leveraging PowerShell code from a public GitHub repository (https://github.com/tihanyin/PSSW100AVB), and GIFTEDCROOK, a C/C++ stealer that extracts browser data (cookies, history, credentials), archives it with PowerShell, and exfiltrates via Telegram. The group often abuses compromised webmail accounts for delivery, underlining the importance of detailed email and web server logging. Their activity shows a mix of low development overhead and high operational targeting, consistent with state-aligned espionage.",
+      "meta": {
+        "refs": [
+          "https://cert.gov.ua/article/6282902",
+          "https://socprime.com/blog/detect-uac-0226-attacks-against-ukraine/"
+        ]
+      },
+      "uuid": "41522eb4-1e34-42d2-be13-69baf0574e09",
+      "value": "UAC-0226"
     }
   ],
   "version": 322
