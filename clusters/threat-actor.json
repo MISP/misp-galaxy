@@ -10641,10 +10641,12 @@
         "refs": [
           "https://www.pwc.com/gx/en/issues/cybersecurity/cyber-threat-intelligence/cyber-year-in-retrospect/yir-cyber-threats-report-download.pdf",
           "https://www.pwc.com/gx/en/issues/cybersecurity/cyber-threat-intelligence/cyber-year-in-retrospect/yir-cyber-threats-annex-download.pdf",
-          "https://troopers.de/troopers22/talks/7cv8pz"
+          "https://troopers.de/troopers22/talks/7cv8pz",
+          "https://www.trendmicro.com/en_us/research/25/d/bpfdoor-hidden-controller.html"
         ],
         "synonyms": [
-          "Red Dev 18"
+          "Red Dev 18",
+          "Earth Bluecrow"
         ]
       },
       "uuid": "bfe66711-32dc-4c1f-b78b-9b2f9e4c1525",
@@ -17907,7 +17909,12 @@
         "country": "TW",
         "refs": [
           "https://hunt.io/blog/greenspot-apt-targets-163com-fake-downloads-spoofing",
-          "https://www.antiy.net/p/greenspotoperations-grow-for-many-years/"
+          "https://www.antiy.net/p/greenspotoperations-grow-for-many-years/",
+          "https://www.virusbulletin.com/virusbulletin/2019/11/vb2019-paper-vine-climbing-over-great-firewall-longterm-attack-against-china/"
+        ],
+        "synonyms": [
+          "PoisonVine",
+          "APT-Q-20"
         ]
       },
       "uuid": "cff9cc85-6f34-4deb-9239-730e34e639f3",
@@ -18164,6 +18171,105 @@
       },
       "uuid": "41522eb4-1e34-42d2-be13-69baf0574e09",
       "value": "UAC-0226"
+    },
+    {
+      "description": "Hive0145 is a financially motivated initial access broker that has been active since late 2022, primarily utilizing Strela Stealer malware to target email credentials. The group has evolved its tactics from generic phishing emails to using stolen legitimate emails with real invoice attachments, focusing on victims in Spain, Germany, and Ukraine. Strela Stealer is configured to extract data from Microsoft Outlook and Mozilla Thunderbird, and the group's operations have shown increased complexity and automation. Threat intelligence indicates that Hive0145's campaigns are characterized by credential theft and espionage-driven activities.",
+      "meta": {
+        "refs": [
+          "https://www.ibm.com/think/x-force/strela-stealer-todays-invoice-tomorrows-phish"
+        ],
+        "synonyms": [
+          "Hive0145"
+        ]
+      },
+      "uuid": "d1416b15-4f3d-41c9-80c4-c9764d83b327",
+      "value": "HIVE-0145"
+    },
+    {
+      "description": "Reckless Rabbit lures victims into investment scams through malicious Facebook advertisements that lead to fake news articles with embedded web forms for personal information collection. They create domains using RDGA patterns, including random characters and English words, and configure wildcard DNS responses to obscure their active subdomains. The actor employs validation checks to filter out traffic from specific countries, enhancing their operational security. Their investment scam platforms often feature fake endorsements to increase credibility among potential victims.",
+      "meta": {
+        "refs": [
+          "https://blogs.infoblox.com/threat-intelligence/uncovering-actor-ttp-patterns-and-the-role-of-dns-in-investment-scams/"
+        ]
+      },
+      "uuid": "532ec08b-4403-406c-96fa-5db040ebd255",
+      "value": "Reckless Rabbit"
+    },
+    {
+      "description": "Ruthless Rabbit has been running investment scam campaigns since November 2022, primarily targeting users in Russia, Poland, Romania, and Kazakhstan. The actor utilizes RDGA patterns to create over 2,600 domains, hosted on multiple dedicated IPs, and employs a cloaking service for validation checks on user leads. Their campaigns have included themes such as Baltic Pipe financial scams and spoofing well-known platforms like WhatsApp and Google Finance. The most prevalent campaign theme involves a spoofed news article from \"Channel One\" promoting the \"GazInvest\" platform with promises of high returns.",
+      "meta": {
+        "country": "RU",
+        "refs": [
+          "https://blogs.infoblox.com/threat-intelligence/uncovering-actor-ttp-patterns-and-the-role-of-dns-in-investment-scams/"
+        ]
+      },
+      "uuid": "8b04c61d-be69-4246-901f-88f588520e4c",
+      "value": "Ruthless Rabbit"
+    },
+    {
+      "description": "Earth Kurma is an APT group targeting government and telecommunications sectors in Southeast Asia, with a primary focus on data exfiltration. They employ advanced custom malware, including rootkits like KRNRAT and MORIYA, and utilize cloud storage services for exfiltration. Their toolsets include TESDAT and SIMPOBOXSPY, and they demonstrate adaptive TTPs and complex evasion techniques. Attribution overlaps with other APT groups, but distinct attack patterns warrant their separate designation.",
+      "meta": {
+        "refs": [
+          "https://www.trendmicro.com/en_us/research/25/d/earth-kurma-apt-campaign.html"
+        ]
+      },
+      "uuid": "a4852709-089e-4dc2-a17f-6a00225512a3",
+      "value": "Earth Kurma"
+    },
+    {
+      "description": "UNK_RemoteRogue is a suspected Russian threat actor that has been observed utilizing ClickFix in its infection chains, although this technique is not revolutionizing their operations but rather replacing existing installation methods. The group has a history of employing compromised intermediate mailservers, with specific infrastructure noted, such as the upstream concentrator at 80.66.66[.]197. Proofpoint recorded their use of ClickFix only once before they reverted to traditional campaigns that share similar characteristics, including targeting and infrastructure. UNK_RemoteRogue has been linked to phishing activities and has shown consistent patterns in its operational tactics.",
+      "meta": {
+        "country": "RU",
+        "refs": [
+          "https://www.proofpoint.com/us/blog/threat-insight/around-world-90-days-state-sponsored-actors-try-clickfix"
+        ]
+      },
+      "uuid": "8307bd0c-2195-44c3-8316-a607237c5b94",
+      "value": "UNK_RemoteRogue"
+    },
+    {
+      "description": "PurpleHaze is a China-nexus threat actor tracked by SentinelLABS, linked to APT15, known for targeting critical infrastructure sectors such as telecommunications and government organizations. The actor has been associated with reconnaissance attempts against SentinelOne and has utilized ShadowPad, a modular backdoor platform, for cyberespionage and potential ransomware deployment. Investigations are ongoing to determine overlaps between ShadowPad intrusions and PurpleHaze activity, highlighting the extensive sharing of malware and operational practices among Chinese threat groups. The targeting of third-party service providers has raised significant concerns regarding operational security and supply chain monitoring.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://www.sentinelone.com/labs/top-tier-target-what-it-takes-to-defend-a-cybersecurity-company-from-todays-adversaries/"
+        ]
+      },
+      "uuid": "40418a3e-fc51-4d24-9f88-aecbfcc0ef2e",
+      "value": "PurpleHaze"
+    },
+    {
+      "description": "MORH4x is a self-proclaimed Moroccan hacking group that claimed responsibility for a data leak from Algeria's pharmaceutical industry ministry. The group announced the breach on the BreachForums website, stating that the leaked files span from 2019 to 2025 and include internal documents related to Algeria's pharmaceutical imports. This incident is part of a series of escalating cyberattacks between Moroccan and Algerian hacking groups.",
+      "meta": {
+        "country": "MA",
+        "refs": [
+          "https://cybersecurity88.com/news/algerias-ministry-of-pharmaceutical-industry-data-leaked-in-retaliatory-cyberattack/"
+        ]
+      },
+      "uuid": "4bfc01ee-4c07-40bd-941c-d9e77050e24f",
+      "value": "MORH4x"
+    },
+    {
+      "description": "The Ukrainian Cyber Alliance is a pro-Ukraine hacktivist group formed in 2016, primarily targeting Russian entities since the invasion of Ukraine in 2022. They have claimed responsibility for significant cyberattacks, including the destruction of infrastructure at Russian internet provider Nodex and a breach of the microfinance company CarMoney, linked to Vladimir Putin's ex-wife. Their operations involve data destruction and disruption of IT infrastructure, utilizing techniques such as malware attacks and social engineering tactics. The group has positioned itself as a pro-military force, leveraging social media to communicate its activities and objectives.",
+      "meta": {
+        "country": "UA",
+        "refs": [
+          "https://securelist.com/cyber-anarchy-squad-attacks-with-uncommon-trojans/114990/",
+          "https://therecord.media/russia-carmoney-data-breach-ukrainian-cyber-alliance"
+        ]
+      },
+      "uuid": "77f0ec2e-11fe-4699-9679-a6cd3570fbca",
+      "value": "Cyber Alliance"
+    },
+    {
+      "description": "Storm-1977 is a sophisticated threat actor that conducts password-spraying attacks targeting cloud tenants, particularly in the education sector, utilizing the AzureChecker.exe CLI tool as their primary infection vector. They have successfully compromised over 200 containers, repurposing them for cryptocurrency mining operations by leveraging guest accounts to create new resource groups within compromised subscriptions. Microsoft Threat Intelligence researchers have identified unique operational patterns that distinguish Storm-1977 from other cryptomining threat actors. The group exploits compromised accounts as a primary attack surface in their operations.",
+      "meta": {
+        "refs": [
+          "https://www.microsoft.com/en-us/security/blog/2025/04/23/understanding-the-threat-landscape-for-kubernetes-and-containerized-assets/"
+        ]
+      },
+      "uuid": "e02cea12-e033-49ab-843d-d67b45bfd794",
+      "value": "Storm-1977"
     }
   ],
   "version": 322
