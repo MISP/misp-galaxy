@@ -856,7 +856,9 @@
           "https://www.accenture.com/t20180127T003755Z_w_/us-en/_acnmedia/PDF-46/Accenture-Security-Dragonfish-Threat-Analysis.pdf",
           "https://attack.mitre.org/groups/G0030/",
           "https://www.secureworks.com/research/threat-profiles/bronze-elgin",
-          "https://www.pwc.com/gx/en/issues/cybersecurity/cyber-threat-intelligence/cyber-year-in-retrospect/yir-cyber-threats-report-download.pdf"
+          "https://www.pwc.com/gx/en/issues/cybersecurity/cyber-threat-intelligence/cyber-year-in-retrospect/yir-cyber-threats-report-download.pdf",
+          "https://fortiguard.fortinet.com/threat-signal-report/4879",
+          "http://symantec-enterprise-blogs.security.com/blogs/threat-intelligence/espionage-asia-governments-cert-authority"
         ],
         "synonyms": [
           "Spring Dragon",
@@ -866,7 +868,9 @@
           "ATK1",
           "G0030",
           "Red Salamander",
-          "Lotus BLossom"
+          "Lotus BLossom",
+          "Billbug",
+          "Lotus Blossom"
         ],
         "targeted-sector": [
           "Military",
@@ -17444,7 +17448,8 @@
         "refs": [
           "https://unit42.paloaltonetworks.com/two-campaigns-by-north-korea-bad-actors-target-job-hunters/",
           "https://www.zscaler.com/blogs/security-research/pyongyang-your-payroll-rise-north-korean-remote-workers-west",
-          "https://unit42.paloaltonetworks.com/fake-north-korean-it-worker-activity-cluster/"
+          "https://unit42.paloaltonetworks.com/fake-north-korean-it-worker-activity-cluster/",
+          "https://www.trendmicro.com/en_us/research/25/d/russian-infrastructure-north-korean-cybercrime.html"
         ],
         "synonyms": [
           "Famous Chollima",
@@ -17452,7 +17457,8 @@
           "Wagemole",
           "Nickel Tapestry",
           "Contagious Interview",
-          "Storm-1877"
+          "Storm-1877",
+          "Void Dokkaebi"
         ]
       },
       "uuid": "09aa3edb-e956-43f0-9fcb-a3154b47d202",
@@ -18334,6 +18340,53 @@
       },
       "uuid": "e2dd2808-5a3c-4437-a626-0b550433e7e5",
       "value": "Malsmoke"
+    },
+    {
+      "description": "Luna Moth conducts high-tempo callback phishing campaigns targeting legal and financial organizations in the U.S., using social engineering to lure victims into calling fake helpdesk numbers. Attackers impersonate IT staff to install legitimate RMM tools, enabling direct access to victim systems for data exfiltration. The group demands ransoms between $1 million and $8 million, threatening to leak stolen data if payments are not made. Their operations reflect a shift from traditional ransomware tactics to data breach extortion, leveraging trusted systems to evade detection.",
+      "meta": {
+        "refs": [
+          "https://blog.eclecticiq.com/from-callback-phishing-to-extortion-luna-moth-abuse-reamaze-helpdesk-and-rmm-tools-against-u.s.-legal-and-financial-sectors",
+          "https://unit42.paloaltonetworks.com/luna-moth-callback-phishing/"
+        ],
+        "synonyms": [
+          "Silent Ransom",
+          "TG2729"
+        ]
+      },
+      "uuid": "f5022a01-27c3-4cff-bc64-9980dc003a66",
+      "value": "Luna Moth"
+    },
+    {
+      "description": "Hive0117 is a financially motivated cybercriminal group that conducts phishing campaigns to deliver the fileless malware DarkWatchman, which is capable of keylogging and collecting system information. The group targets individuals in the energy, finance, transport, and software security sectors across Russia, Kazakhstan, Latvia, and Estonia, often imitating official Russian government communications to induce urgency. Their operations leverage emergent policies related to conscription and utilize a UID string for identification, with malware capable of querying for smartcard readers, indicating a focus on higher security targets. The malware's fileless nature and ability to erase traces of its presence suggest moderate sophistication in their TTPs.",
+      "meta": {
+        "refs": [
+          "https://securityintelligence.com/posts/hive00117-fileless-malware-delivery-eastern-europe/"
+        ]
+      },
+      "uuid": "6acc54ac-f19d-4396-8de3-6906c5b9fda8",
+      "value": "Hive0117"
+    },
+    {
+      "description": "UTA0355 is a Russian threat actor that conducts phishing campaigns targeting individuals and organizations associated with Ukraine. The actor initiates contact via email, inviting targets to a video conference, and follows up through Signal or WhatsApp to enhance legitimacy. After establishing communication, UTA0355 prompts victims to log in via a malicious M365 URL, subsequently requesting approval for a 2FA authentication to access email data. Volexity assesses with high confidence that UTA0355 successfully registered devices and downloaded email data from compromised accounts.",
+      "meta": {
+        "country": "RU",
+        "refs": [
+          "https://www.volexity.com/blog/2025/04/22/phishing-for-codes-russian-threat-actors-target-microsoft-365-oauth-workflows/"
+        ]
+      },
+      "uuid": "b4bbbd06-a204-4363-90d2-f38cc0def521",
+      "value": "UTA0355"
+    },
+    {
+      "description": "UTA0352 is a Russian threat actor attributed to phishing campaigns that exploit Microsoft OAuth 2.0 authentication workflows, often impersonating government officials to lure targets into providing sensitive information. The actor has been observed using malicious URLs disguised as legitimate services, such as a Romanian government authentication system. UTA0352 has also targeted Microsoft Teams and employed social engineering tactics via messaging platforms like Signal and WhatsApp. Volexity assesses with medium confidence that UTA0352 is involved in operations themed around Ukraine, targeting individuals and organizations historically associated with Russian threat activities.",
+      "meta": {
+        "country": "RU",
+        "refs": [
+          "https://www.volexity.com/blog/2025/04/22/phishing-for-codes-russian-threat-actors-target-microsoft-365-oauth-workflows/"
+        ]
+      },
+      "uuid": "63305373-15a8-4f84-ab09-27ffeaa99ae2",
+      "value": "UTA0352"
     }
   ],
   "version": 322
