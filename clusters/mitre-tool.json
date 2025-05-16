@@ -172,10 +172,6 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "e64c62cf-9cd7-4a14-94ec-cdaac43ab44b",
-          "type": "uses"
-        },
-        {
           "dest-uuid": "e6919abc-99f9-4c6c-95a5-14761e7b2add",
           "type": "uses"
         },
@@ -212,6 +208,40 @@
       ],
       "uuid": "a52edc76-328d-4596-85e7-d56ef5a9eb69",
       "value": "Pass-The-Hash Toolkit - S0122"
+    },
+    {
+      "description": "[Quick Assist](https://attack.mitre.org/software/S1209) is a remote assistance tool primarily for Microsoft Windows, although a macOS version also exists. [Quick Assist](https://attack.mitre.org/software/S1209) allows for remote screen sharing and, with end user approval, remote control and command execution on the enabling device.(Citation: Microsoft Storm-1811 2024)(Citation: Microsoft Quick Assist 2024)",
+      "meta": {
+        "external_id": "S1209",
+        "mitre_platforms": [
+          "Windows",
+          "macOS"
+        ],
+        "refs": [
+          "https://attack.mitre.org/software/S1209",
+          "https://learn.microsoft.com/en-us/windows/client-management/client-tools/quick-assist",
+          "https://www.microsoft.com/en-us/security/blog/2024/05/15/threat-actors-misusing-quick-assist-in-social-engineering-attacks-leading-to-ransomware/"
+        ],
+        "synonyms": [
+          "Quick Assist"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "0259baeb-9f63-4c69-bf10-eb038c390688",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "6faf650d-bf31-4eb4-802d-1000cf38efaf",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "df8b2a25-8bdf-4856-953c-a04372b1c161",
+          "type": "uses"
+        }
+      ],
+      "uuid": "fcdb30de-5449-4777-a4f4-922e71f65932",
+      "value": "Quick Assist - S1209"
     },
     {
       "description": "[CSPY Downloader](https://attack.mitre.org/software/S0527) is a tool designed to evade analysis and download additional payloads used by [Kimsuky](https://attack.mitre.org/groups/G0094).(Citation: Cybereason Kimsuky November 2020)",
@@ -391,6 +421,30 @@
       "value": "Invoke-PSImage - S0231"
     },
     {
+      "description": "[cipher.exe](https://attack.mitre.org/software/S1205) is a native Microsoft utility that manages encryption of directories and files on NTFS (New Technology File System) partitions by using the Encrypting File System (EFS).(Citation: cipher.exe)",
+      "meta": {
+        "external_id": "S1205",
+        "mitre_platforms": [
+          "Windows"
+        ],
+        "refs": [
+          "https://attack.mitre.org/software/S1205",
+          "https://support.microsoft.com/en-us/topic/cipher-exe-security-tool-for-the-encrypting-file-system-56c85edd-85cf-ac07-f2f7-ca2d35dab7e4"
+        ],
+        "synonyms": [
+          "cipher.exe"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "fb640c43-aa6b-431e-a961-a279010424ac",
+          "type": "uses"
+        }
+      ],
+      "uuid": "da66959d-9875-4fde-bfed-11111a55895e",
+      "value": "cipher.exe - S1205"
+    },
+    {
       "description": "[ipconfig](https://attack.mitre.org/software/S0100) is a Windows utility that can be used to find information about a system's TCP/IP, DNS, DHCP, and adapter configuration. (Citation: TechNet Ipconfig)",
       "meta": {
         "external_id": "S0100",
@@ -517,7 +571,7 @@
         ],
         "refs": [
           "https://attack.mitre.org/software/S0040",
-          "https://www.fireeye.com/content/dam/fireeye-www/global/en/current-threats/pdfs/wp-operation-quantum-entanglement.pdf",
+          "https://web.archive.org/web/20210920193513/https://www.fireeye.com/content/dam/fireeye-www/global/en/current-threats/pdfs/wp-operation-quantum-entanglement.pdf",
           "https://www.ncsc.gov.uk/report/joint-report-on-publicly-available-hacking-tools"
         ],
         "synonyms": [
@@ -642,7 +696,7 @@
         ],
         "refs": [
           "https://attack.mitre.org/software/S0008",
-          "https://www.truesec.se/sakerhet/verktyg/saakerhet/gsecdump_v2.0b5"
+          "https://web.archive.org/web/20140328102838/https://www.truesec.se/sakerhet/verktyg/saakerhet/gsecdump_v2.0b5"
         ],
         "synonyms": [
           "gsecdump"
@@ -945,6 +999,10 @@
         {
           "dest-uuid": "df8b2a25-8bdf-4856-953c-a04372b1c161",
           "type": "uses"
+        },
+        {
+          "dest-uuid": "fbd91bfc-75c2-4f0c-8116-3b4e722906b3",
+          "type": "uses"
         }
       ],
       "uuid": "3a53b207-aba2-4a2b-9cdb-273d633669e7",
@@ -1156,7 +1214,7 @@
           "https://attack.mitre.org/software/S0250",
           "https://github.com/offsecginger/koadic",
           "https://researchcenter.paloaltonetworks.com/2018/06/unit42-sofacy-groups-parallel-attacks/",
-          "https://www.malwarebytes.com/resources/files/2021/02/lazyscripter.pdf"
+          "https://web.archive.org/web/20211003035156/https://www.malwarebytes.com/resources/files/2021/02/lazyscripter.pdf"
         ],
         "synonyms": [
           "Koadic"
@@ -1621,8 +1679,8 @@
         "refs": [
           "https://attack.mitre.org/software/S0508",
           "https://cyware.com/news/cyber-attackers-leverage-tunneling-service-to-drop-lokibot-onto-victims-systems-6f610e44",
+          "https://web.archive.org/web/20211003035156/https://www.malwarebytes.com/resources/files/2021/02/lazyscripter.pdf",
           "https://www.fireeye.com/blog/threat-research/2020/05/tactics-techniques-procedures-associated-with-maze-ransomware-incidents.html",
-          "https://www.malwarebytes.com/resources/files/2021/02/lazyscripter.pdf",
           "https://www.zdnet.com/article/sly-malware-author-hides-cryptomining-botnet-behind-ever-shifting-proxy-service/"
         ],
         "synonyms": [
@@ -2156,10 +2214,6 @@
         },
         {
           "dest-uuid": "a01bf75f-00b2-4568-a58f-565ff9bf202b",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "b6075259-dba3-44e9-87c7-e954f37ec0d5",
           "type": "uses"
         },
         {
@@ -4011,7 +4065,7 @@
       "value": "Empire - S0363"
     },
     {
-      "description": "[Sliver](https://attack.mitre.org/software/S0633) is an open source, cross-platform, red team command and control framework written in Golang.(Citation: Bishop Fox Sliver Framework August 2019)",
+      "description": "[Sliver](https://attack.mitre.org/software/S0633) is an open source, cross-platform, red team command and control (C2) framework written in Golang. [Sliver](https://attack.mitre.org/software/S0633) includes its own package manager, \"armory,\" for staging and downloading additional tools and payloads to the primary C2 framework.(Citation: Bishop Fox Sliver Framework August 2019)(Citation: Cybereason Sliver Undated)",
       "meta": {
         "external_id": "S0633",
         "mitre_platforms": [
@@ -4021,7 +4075,8 @@
         ],
         "refs": [
           "https://attack.mitre.org/software/S0633",
-          "https://labs.bishopfox.com/tech-blog/sliver"
+          "https://labs.bishopfox.com/tech-blog/sliver",
+          "https://www.cybereason.com/blog/sliver-c2-leveraged-by-many-threat-actors"
         ],
         "synonyms": [
           "Sliver"
@@ -4041,6 +4096,10 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "120d5519-3098-4e1c-9191-2aa61232f073",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "1996eef1-ced3-4d7f-bf94-33298cabbf72",
           "type": "uses"
         },
@@ -4049,11 +4108,23 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "355be19c-ffc9-46d5-8d50-d6a036c675b6",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "43e7dc91-05b2-474c-b9ac-2ed4fe101f4d",
           "type": "uses"
         },
         {
+          "dest-uuid": "65f2d882-3f41-4d48-8a06-29af77ec9f90",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "707399d6-ab3e-4963-9315-d9d3818cd6a0",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "768dce68-8d0d-477a-b01d-0eea98b963a1",
           "type": "uses"
         },
         {
@@ -4069,7 +4140,19 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "970a3432-3237-47ad-bcca-7d8cbb217736",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "bf176076-b789-408e-8cba-7275e81c0ada",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "c726e0a2-a57a-4b7b-a973-d0f013246617",
           "type": "uses"
         },
         {
@@ -4087,6 +4170,10 @@
         {
           "dest-uuid": "eec23884-3fa1-4d8a-ac50-6f104d51e235",
           "type": "uses"
+        },
+        {
+          "dest-uuid": "f6dacc85-b37d-458e-b58d-74fc4bbf5755",
+          "type": "uses"
         }
       ],
       "uuid": "11f8d7eb-1927-4806-9267-3a11d4d4d6be",
@@ -4101,7 +4188,7 @@
         ],
         "refs": [
           "https://attack.mitre.org/software/S0364",
-          "https://web.archive.org/web/20160303200515/https://operationblockbuster.com/wp-content/uploads/2016/02/Operation-Blockbuster-Destructive-Malware-Report.pdf",
+          "https://web.archive.org/web/20160303200515/https:/operationblockbuster.com/wp-content/uploads/2016/02/Operation-Blockbuster-Destructive-Malware-Report.pdf",
           "https://www.itprotoday.com/windows-78/eldos-provides-raw-disk-access-vista-and-xp"
         ],
         "synonyms": [
@@ -4231,6 +4318,10 @@
         },
         {
           "dest-uuid": "65f2d882-3f41-4d48-8a06-29af77ec9f90",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "bf90d72c-c00b-45e3-b3aa-68560560d4c5",
           "type": "uses"
         },
         {
@@ -4702,6 +4793,10 @@
       },
       "related": [
         {
+          "dest-uuid": "0d91b3c0-5e50-47c3-949a-2a796f04d144",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "0f4a0c76-ab2d-4cb0-85d3-3f0efb8cba0d",
           "type": "uses"
         },
@@ -4738,10 +4833,6 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
-          "type": "uses"
-        },
-        {
           "dest-uuid": "cc3502b5-30cc-4473-ad48-42d51a6ef6d1",
           "type": "uses"
         },
@@ -4759,6 +4850,10 @@
         },
         {
           "dest-uuid": "e6919abc-99f9-4c6c-95a5-14761e7b2add",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "fbd91bfc-75c2-4f0c-8116-3b4e722906b3",
           "type": "uses"
         }
       ],
@@ -5138,7 +5233,32 @@
       ],
       "uuid": "05fb53c8-e2ac-4e17-a0c9-a0825e1198bf",
       "value": "Covenant - S1155"
+    },
+    {
+      "description": "[attrib](https://attack.mitre.org/software/S1176) is a Windows utility used to display, set or remove attributes assigned to files or directories.(Citation: Microsoft attrib 2023) ",
+      "meta": {
+        "external_id": "S1176",
+        "mitre_platforms": [
+          "Windows"
+        ],
+        "refs": [
+          "https://attack.mitre.org/software/S1176",
+          "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/attrib"
+        ],
+        "synonyms": [
+          "attrib",
+          "attrib.exe"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "ec8fc7e2-b356-455c-8db5-2e37be158e7d",
+          "type": "uses"
+        }
+      ],
+      "uuid": "8c6e9947-f7b1-4bd3-9d5d-cc7d39934989",
+      "value": "attrib - S1176"
     }
   ],
-  "version": 33
+  "version": 34
 }

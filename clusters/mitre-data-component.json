@@ -10,7 +10,7 @@
   "uuid": "d2c1cf9e-c581-4a70-b1c5-12e6de3f0e83",
   "values": [
     {
-      "description": "Opening of an active directory object, typically to collect/read its value (ex: Windows EID 4661)",
+      "description": "Object access refers to activities where AD objects (e.g., user accounts, groups, policies) are accessed or queried. Example: Windows Event ID 4661 logs object access attempts. Examples:\n\n- Attribute Access: e.g., `userPassword`, `memberOf`, `securityDescriptor`.\n- Group Enumeration: Enumerating critical group members (e.g., Domain Admins).\n- User Attributes: Commonly accessed attributes like `samAccountName`, `lastLogonTimestamp`.\n- Policy Access: Accessing GPOs to understand security settings.\n\n*Data Collection Measures:*\n\n- Audit Policies:\n    - Enable \"Audit Directory Service Access\" under Advanced Audit Policies (Success and Failure).\n    - Path: `Computer Configuration > Policies > Windows Settings > Security Settings > Advanced Audit Policy Configuration > Audit Policies > Object AccessEnable: Audit Directory Service Access` (Success and Failure).\n    - Captured Events: IDs 4661, 4662.\n- Event Forwarding: Use WEF to centralize logs for SIEM analysis.\n- SIEM Integration: Collect and parse logs (e.g., 4661, 4662) using tools like Splunk or Azure Sentinel.\n- Log Filtering:\n- Focus on sensitive objects/attributes like:\n    - `Domain Admins` group.\n    - `userPassword`, `ntSecurityDescriptor`.\n- Enable EDR Monitoring:\n    - Detect processes accessing sensitive AD objects (e.g., samAccountName, securityDescriptor).\n    - Log all attempts to enumerate critical groups (e.g., \"Domain Admins\").",
       "meta": {
         "refs": []
       },
@@ -40,7 +40,7 @@
       "value": "Active Directory Object Access"
     },
     {
-      "description": "Initial construction of a new active directory object (ex: Windows EID 5137)",
+      "description": "Creating new objects in AD, such as user accounts, groups, organizational units (OUs), or trust relationships. Logged as Event ID 5137. Examples:\n\n- User Account Creation: New user account.\n- Group Creation: New security/distribution group.\n- OU Creation: New organizational unit.\n- Service Account Creation: New service account for automation or malicious tasks.\n- Trust Object Creation: Trust relationship with another domain.\n\n*Data Collection Measures:*\n\n- Audit Policy:\n    - Enable \"Audit Directory Service Changes\" (Success and Failure).\n    - Path: `Computer Configuration > Policies > Windows Settings > Security Settings > Advanced Audit Policy Configuration > Audit Policies > Directory Service Changes`.\n    - Key Event: Event ID 5137 (object creation).\n- Log Forwarding: Use WEF to centralize logs for SIEM tools (e.g., Splunk).\n- Enable EDR Monitoring:\n    - Track processes that create new accounts or modify AD objects.\n    - Correlate object creation with suspicious commands (e.g., net user /add).",
       "meta": {
         "refs": []
       },
@@ -78,7 +78,7 @@
       "value": "Active Directory Object Creation"
     },
     {
-      "description": "A user requested active directory credentials, such as a ticket or token (ex: Windows EID 4769)",
+      "description": "Requests for authentication credentials via Kerberos or other methods like NTLM and LDAP queries. Examples:\n\n- Kerberos TGT and Service Tickets (Event IDs 4768, 4769)\n- NTLM Authentication Events\n- LDAP Bind Requests\n\n*Data Collection Measures:*\n\n- Security Event Logging:\n    - Enable \"`Audit Kerberos Authentication Service`\" or \"`Audit Kerberos Service Ticket Operations`.\"\n    - Captured Events: IDs 4768, 4769, 4624.\n- Windows Event Forwarding (WEF): Forward domain controller logs to SIEM.\n- SIEM Integration: Use tools like Splunk or Azure Sentinel for log analysis.\n- Kerberos Debug Logging:\n    - Registry Key: HKLM\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\Kerberos\\Parameters.\n    - Set DWORD LogLevel to 1.\n- Azure AD Logs: Monitor Sign-In Logs for authentication and policy issues.\n- Enable EDR Monitoring:\n    - Use EDR to detect suspicious processes querying authentication mechanisms (e.g., lsass.exe memory access).",
       "meta": {
         "refs": []
       },
@@ -124,7 +124,7 @@
       "value": "Active Directory Credential Request"
     },
     {
-      "description": "Removal of an active directory object (ex: Windows EID 5141)",
+      "description": "Object deletion in AD (e.g., user accounts, groups, OUs) is logged as Event ID 5141. Examples:\n\n- User Account: Deleted user.\n- Group: Deleted security/distribution group.\n- Organizational Unit (OU): Loss of configurations or policies.\n- Service Account: Disrupted operations or cover tracks.\n- Trust Object: Removed domain trust, disrupting connectivity.\n\n*Data Collection Measures:*\n\n- Audit Policy:\n    - Enable \"Audit Directory Service Changes\" (Success and Failure).\n    - Path: `Computer Configuration > Policies > Windows Settings > Security Settings > Advanced Audit Policy Configuration > Audit Policies > Directory Service Changes`.\n    - Key Event: Event ID 5141.\n- Log Forwarding: Use WEF to centralize logs for SIEM tools (e.g., Splunk).\n- Enable EDR Monitoring:\n    - Detect processes or users that initiate unauthorized object deletions.\n    - Monitor tools and scripts that may delete key directory objects.",
       "meta": {
         "refs": []
       },
@@ -146,7 +146,7 @@
       "value": "Active Directory Object Deletion"
     },
     {
-      "description": "Changes made to an active directory object (ex: Windows EID 5163 or 5136)",
+      "description": "Changes to AD objects (e.g., users, groups, OUs) are logged as Event ID 5136 (Object Modification) or 5163 (Attribute Changes). Examples:\n\n- User Account: Modifying attributes (e.g., group membership, enabling/disabling accounts).\n- Group Membership: Adding/removing members.\n- OU: Changing properties/permissions (e.g., delegation).\n- Service Account: Modifying SPNs or other attributes.\n- Object Attributes: Changes to passwords, logon hours, or control flags.\n\n*Data Collection Measures:*\n\n- Audit Policy:\n    - Enable \"Audit Directory Service Changes\" (Success and Failure).\n    - Path: `Computer Configuration > Policies > Windows Settings > Security Settings > Advanced Audit Policy Configuration > Audit Policies > Directory Service Changes`.\n    - Key Events: 5136 (modifications), 5163 (attribute changes).\n- Log Forwarding:\n    - Use WEF to centralize logs for SIEM.\n    - Parse logs to extract: Object Name, Attribute Changed, Initiator Account Name.\n- Enable EDR Monitoring:\n    - Detect changes to critical attributes (e.g., memberOf, logonHours).\n    - Track processes modifying directory service objects (e.g., Set-ADUser or dsmod).\n- Enable EDR Monitoring:\n    - Detect changes to critical attributes (e.g., memberOf, logonHours).\n    - Track processes modifying directory service objects (e.g., Set-ADUser or dsmod).",
       "meta": {
         "refs": []
       },
@@ -208,6 +208,10 @@
           "type": "detects"
         },
         {
+          "dest-uuid": "c31aebd6-c9b5-420f-ba2a-5853bbf897fa",
+          "type": "detects"
+        },
+        {
           "dest-uuid": "c63a348e-ffc2-486a-b9d9-d7f11ec54d99",
           "type": "detects"
         },
@@ -236,7 +240,7 @@
       "value": "Active Directory Object Modification"
     },
     {
-      "description": "Opening a Registry Key, typically to read the associated value (ex: Windows EID 4656)",
+      "description": "The action of opening a specific Windows Registry key, typically to read its associated value. This activity can be used for system configuration, application settings retrieval, and security policies.\n\n*Data Collection Measures:*\n\n- Windows Event Logs\n    - Event ID 4656 - Handle to an Object was Requested: Logs attempts to open registry keys.\n    - Event ID 4663 - An Object was Accessed: Captures read/write operations on registry keys.\n    - Event ID 4657 - Registry Value Modification: Useful for detecting changes to registry keys after being accessed.\n- Sysmon\n    - Sysmon Event ID 13 - Registry Value Set: Captures modifications to existing registry keys.\n- Endpoint Detection and Response (EDR) Solutions\n    - Provide telemetry on registry key access activities, especially when linked to suspicious processes.",
       "meta": {
         "refs": []
       },
@@ -290,7 +294,7 @@
       "value": "Windows Registry Key Access"
     },
     {
-      "description": "Initial construction of a new Registry Key (ex: Windows EID 4656 or Sysmon EID 12)",
+      "description": "Initial construction of a new registry key within the Windows operating system. \n\n*Data Collection Measures:* \n\n- Windows Event Logs\n    - Event ID 4656 - Registry Object Handle Requested: Tracks registry key access, including newly created keys.\n    - Event ID 4657 - Registry Value Modification: Detects modifications to an existing registry key after creation.\n- Sysmon (System Monitor) for Windows\n    - Sysmon Event ID 12 - Registry Key Created: Logs when a new registry key is created.\n",
       "meta": {
         "refs": []
       },
@@ -317,6 +321,10 @@
         },
         {
           "dest-uuid": "22522668-ddf6-470b-a027-9d6866679f67",
+          "type": "detects"
+        },
+        {
+          "dest-uuid": "278716b1-61ce-4a74-8d17-891d0c494101",
           "type": "detects"
         },
         {
@@ -392,7 +400,7 @@
       "value": "Windows Registry Key Creation"
     },
     {
-      "description": "Removal of a Registry Key (ex: Windows EID 4658 or Sysmon EID 12)",
+      "description": "The removal of a registry key within the Windows operating system.\n\n*Data Collection Measures:*\n\n- Windows Event Logs\n    - Event ID 4658 - Registry Key Handle Closed: Captures when a handle to a registry key is closed, which may indicate deletion.\n    - Event ID 4660 - Object Deleted: Logs when a registry key is deleted.\n- Sysmon (System Monitor) for Windows\n    - Sysmon Event ID 12 - Registry Key Deleted: Logs when a registry key is removed.\n    - Sysmon Event ID 13 - Registry Value Deleted: Captures removal of specific registry values.\n- Endpoint Detection and Response (EDR) Solutions\n    - Monitor registry deletions for suspicious behavior.",
       "meta": {
         "refs": []
       },
@@ -426,7 +434,7 @@
       "value": "Windows Registry Key Deletion"
     },
     {
-      "description": "Changes made to a Registry Key and/or Key value (ex: Windows EID 4657 or Sysmon EID 13|14)",
+      "description": "Changes made to an existing registry key or its values. These modifications can include altering permissions, modifying stored data, or updating configuration settings.\n\n*Data Collection Measures:*\n\n- Windows Event Logs\n    - Event ID 4657 - Registry Value Modified: Logs changes to registry values, including modifications to startup entries, security settings, or system configurations.\n- Sysmon (System Monitor) for Windows\n    - Sysmon Event ID 13 - Registry Value Set: Captures changes to specific registry values.\n    - Sysmon Event ID 14 - Registry Key & Value Renamed: Logs renaming of registry keys, which may indicate evasion attempts.\n- Endpoint Detection and Response (EDR) Solutions\n    - Monitor registry modifications for suspicious behavior.",
       "meta": {
         "refs": []
       },
@@ -652,6 +660,10 @@
           "type": "detects"
         },
         {
+          "dest-uuid": "cbb66055-0325-4111-aca0-40547b6ad5b0",
+          "type": "detects"
+        },
+        {
           "dest-uuid": "cc89ecbd-3d33-4a41-bcca-001e702d18fd",
           "type": "detects"
         },
@@ -708,7 +720,7 @@
       "value": "Windows Registry Key Modification"
     },
     {
-      "description": "An attempt by a user to gain access to a network or computing resource, often by providing credentials (ex: Windows EID 4776 or /var/log/auth.log)",
+      "description": "An attempt (successful and failed login attempts) by a user, service, or application to gain access to a network, system, or cloud-based resource. This typically involves credentials such as passwords, tokens, multi-factor authentication (MFA), or biometric validation.\n\n*Data Collection Measures:*\n\n- Host-Based Authentication Logs\n    - Windows Event Logs\n        - Event ID 4776 – NTLM authentication attempt.\n        - Event ID 4624 – Successful user logon.\n        - Event ID 4625 – Failed authentication attempt.\n        - Event ID 4648 – Explicit logon with alternate credentials.\n    - Linux/macOS Authentication Logs\n        - `/var/log/auth.log`, `/var/log/secure` – Logs SSH, sudo, and other authentication attempts.\n        - AuditD – Tracks authentication events via PAM modules.\n        - macOS Unified Logs – `/var/db/diagnostics` captures authentication failures.\n- Cloud Authentication Logs\n    - Azure AD Logs\n        - Sign-in Logs – Tracks authentication attempts, MFA challenges, and conditional access failures.\n        - Audit Logs – Captures authentication-related configuration changes.\n        - Microsoft Graph API – Provides real-time sign-in analytics.\n    - Google Workspace & Office 365\n        - Google Admin Console – `User Login Report` tracks login attempts and failures.\n        - Office 365 Unified Audit Logs – Captures logins across Exchange, SharePoint, and Teams.\n    - AWS CloudTrail & IAM\n        - Tracks authentication via `AWS IAM AuthenticateUser` and `sts:GetSessionToken`.\n        - Logs failed authentications to AWS Management Console and API requests.\n- Container Authentication Monitoring\n    - Kubernetes Authentication Logs\n        - kubectl audit logs – Captures authentication attempts for service accounts and admin users.\n        - Azure Kubernetes Service (AKS) and Google Kubernetes Engine (GKE) – Logs IAM authentication events.",
       "meta": {
         "refs": []
       },
@@ -830,7 +842,7 @@
       "value": "User Account Authentication"
     },
     {
-      "description": "Logging, messaging, and other artifacts provided by third-party services (ex: metrics, errors, and/or alerts from mail/web applications)",
+      "description": "Application Log Content refers to logs generated by applications or services, providing a record of their activity. These logs may include metrics, errors, performance data, and operational alerts from web, mail, or other applications. These logs are vital for monitoring application behavior and detecting malicious activities or anomalies. Examples: \n\n- Web Application Logs: These logs include information about requests, responses, errors, and security events (e.g., unauthorized access attempts).\n- Email Application Logs: Logs contain metadata about emails sent, received, or blocked (e.g., sender/receiver addresses, message IDs).\n- SaaS Application Logs: Activity logs include user logins, configuration changes, and access to sensitive resources.\n- Cloud Application Logs: Logs detail control plane activities, including API calls, instance modifications, and network changes.\n- System/Application Monitoring Logs: Logs provide insights into application performance, errors, and anomalies.\n\nThis data component can be collected through the following measures:\n\nConfigure Application Logging\n\n- Enable logging within the application or service.\n- Examples:\n    - Web Servers: Enable access and error logs in NGINX or Apache.\n    - Email Systems: Enable audit logging in Microsoft Exchange or Gmail.\n\nCentralized Log Management\n\n- Use log management solutions like Splunk, or a cloud-native logging solution.\n- Configure the application to send logs to a centralized system for analysis.\n\nCloud-Specific Collection\n\n- Use services like AWS CloudWatch, Azure Monitor, or Google Cloud Operations Suite for cloud-based applications.\n- Ensure logging is enabled for all critical resources (e.g., API calls, IAM changes).\n\nSIEM Integration\n\n- Integrate application logs with a SIEM platform (e.g., Splunk, QRadar) for real-time correlation and analysis.\n- Use parsers to standardize log formats and extract key fields like timestamps, user IDs, and error codes.",
       "meta": {
         "refs": []
       },
@@ -913,6 +925,10 @@
         },
         {
           "dest-uuid": "2e34237d-8574-43f6-aace-ae2915de8597",
+          "type": "detects"
+        },
+        {
+          "dest-uuid": "31e5011f-090e-45be-9bb6-17a1c5e8219b",
           "type": "detects"
         },
         {
@@ -1112,6 +1128,10 @@
           "type": "detects"
         },
         {
+          "dest-uuid": "bed81616-3dde-4685-be6e-ba9820f9a7ed",
+          "type": "detects"
+        },
+        {
           "dest-uuid": "bf147104-abf9-4221-95d1-e81585859441",
           "type": "detects"
         },
@@ -1160,6 +1180,10 @@
           "type": "detects"
         },
         {
+          "dest-uuid": "e1c2db92-7ae3-4e6a-90b4-157c1c1565cb",
+          "type": "detects"
+        },
+        {
           "dest-uuid": "e4dc8c01-417f-458d-9ee0-bb0617c1b391",
           "type": "detects"
         },
@@ -1188,6 +1212,10 @@
           "type": "detects"
         },
         {
+          "dest-uuid": "f8ba7d61-11c5-4130-bafd-7c3ff5fbf4b5",
+          "type": "detects"
+        },
+        {
           "dest-uuid": "f9e9365a-9ca2-4d9c-8e7c-050d73d1101a",
           "type": "detects"
         },
@@ -1204,7 +1232,7 @@
       "value": "Application Log Content"
     },
     {
-      "description": "Opening of a cloud storage infrastructure, typically to collect/read its value (ex: AWS S3 GetObject)",
+      "description": "Cloud storage access refers to the retrieval or interaction with data stored in cloud infrastructure. This data component includes activities such as reading, downloading, or accessing files and objects within cloud storage systems. Common examples include API calls like GetObject in AWS S3, which retrieves objects from cloud buckets. Examples: \n\n- AWS S3 Access: An adversary uses the `GetObject` API to retrieve sensitive data from an AWS S3 bucket.\n- Azure Blob Storage Access: A user accesses a blob in Azure Storage using `Get Blob` or `Get Blob Properties`.\n- Google Cloud Storage Access: An adversary uses `storage.objects.get` to download objects from - OpenStack Swift Storage Access: A user retrieves an object from OpenStack Swift using the `GET` method.\n\nThis data component can be collected through the following measures:\n\nEnable Logging for Cloud Storage Services\n\n- AWS S3: Enable Server Access Logging to capture API calls like `GetObject` and store them in a designated S3 bucket.\n- Azure Storage: Enable Azure Storage Logging to capture operations like `GetBlob` and log metadata.\n- Google Cloud Storage: Enable Data Access audit logs for `storage.objects.get` API calls.\n- OpenStack Swift: Configure middleware for object logging to capture GET requests.\n\nCentralize and Aggregate Logs\n\n- Use a centralized logging solution (e.g., Splunk, ELK, or a cloud-native SIEM) to ingest and analyze logs from different cloud providers.\n    - AWS Example: Use AWS CloudTrail to collect API activity logs and forward them to your SIEM.\n    - Azure Example: Use Azure Monitor and Log Analytics to analyze storage access logs.\n\nCorrelate with IAM Logs\n\n- Combine storage access logs with IAM activity logs to correlate user actions with specific permissions and identities.",
       "meta": {
         "refs": []
       },
@@ -1230,7 +1258,7 @@
       "value": "Cloud Storage Access"
     },
     {
-      "description": "Initial construction of a new account (ex: Windows EID 4720 or /etc/passwd logs)",
+      "description": "The initial establishment of a new user, service, or machine account within an operating system, cloud environment, or identity management system.\n\n*Data Collection Measures:*\n\n- Host-Based Logging\n    - Windows Event Logs\n        - Event ID 4720 – A new user account was created.\n        - Event ID 4732/4735 – A user was added to a privileged group.\n        - Event ID 4798 – Enumeration of user accounts.\n    - Linux/macOS Authentication Logs\n        - `/var/log/auth.log`, `/var/log/secure` – Logs `useradd`, `adduser`, `passwd`, and `groupmod` activities.\n        - AuditD – Detects new account creation via PAM (`useradd`, `usermod`).\n        - OSQuery – The `users` table tracks newly created accounts.\n- Cloud-Based Logging\n    - Azure AD Logs\n        - Azure AD Audit Logs – Tracks new user and service account creation.\n        - Azure Graph API – Provides logs on new account provisioning.\n    - AWS IAM & CloudTrail Logs\n        - CreateUser, CreateRole – Tracks new IAM user creation.\n        - AttachRolePolicy – Identifies privilege escalation via account creation.\n    - Google Workspace & Office 365 Logs\n        - Google Admin Console – Logs user creation in User Accounts API.\n        - Microsoft 365 Unified Audit Log – Tracks new account provisioning.\n- Container & Network Account Creation Logs\n    - Kubernetes Account Creation Logs\n        - kubectl audit logs – Detects new service account provisioning.\n        - GKE/Azure AKS Logs – Track new container service accounts.",
       "meta": {
         "refs": []
       },
@@ -1276,7 +1304,7 @@
       "value": "User Account Creation"
     },
     {
-      "description": "Removal of an account (ex: Windows EID 4726 or /var/log access/authentication logs)",
+      "description": "The removal of a user, service, or machine account from an operating system, cloud identity management system, or directory service.\n\n*Data Collection Measures:*\n\n- Host-Based Logging\n    - Windows Event Logs\n        - Event ID 4726 – A user account was deleted.\n        - Event ID 4733/4735 – A user was removed from a privileged group.\n        - Event ID 1102 – Security log was cleared (potential cover-up).\n    - Linux/macOS Authentication Logs\n        - `/var/log/auth.log`, `/var/log/secure` – Logs `userdel`, `deluser`, `passwd -l`.\n        - AuditD – Tracks account deletions via PAM events (`userdel`).\n        - OSQuery – The `users` table can detect account removal.\n- Cloud-Based Logging\n    - Azure AD Logs\n        - Azure AD Audit Logs – Tracks user and service account deletions.\n        - Azure Graph API – Monitors identity changes.\n    - AWS IAM & CloudTrail Logs\n        - `DeleteUser`, `DeleteRole` – Tracks IAM user deletion.\n        - DetachRolePolicy – Identifies privilege revocation before deletion.\n    - Google Workspace & Office 365 Logs\n        - Google Admin Console – Logs user removal activities.\n        - Microsoft 365 Unified Audit Log – Captures deleted accounts in Active Directory.\n- Container & Network Account Deletion Logs\n    - Kubernetes Service Account Deletion\n        - kubectl audit logs – Detects when service accounts are removed from pods.\n        - GKE/Azure AKS Logs – Track containerized identity removals.",
       "meta": {
         "refs": []
       },
@@ -1302,7 +1330,7 @@
       "value": "User Account Deletion"
     },
     {
-      "description": "Operating system function/method calls executed by a process",
+      "description": "Calls made by a process to operating system-provided Application Programming Interfaces (APIs). These calls are essential for interacting with system resources such as memory, files, and hardware, or for performing system-level tasks. Monitoring these calls can provide insight into a process's intent, especially if the process is malicious.\n\n*Data Collection Measures:*\n\n- Endpoint Detection and Response (EDR) Tools:\n    - Leverage tools to monitor API execution behaviors at the process level.\n    - Example: Sysmon Event ID 10 captures API call traces for process access and memory allocation.\n- Process Monitor (ProcMon):\n    - Use ProcMon to collect detailed logs of process and API activity. ProcMon can provide granular details on API usage and identify malicious behavior during analysis.\n- Windows Event Logs:\n    - Use Event IDs from Windows logs for specific API-related activities:\n        - Event ID 4688: A new process has been created (can indirectly infer API use).\n        - Event ID 4657: A registry value has been modified (to monitor registry-altering APIs).\n- Dynamic Analysis Tools:\n    - Tools like Cuckoo Sandbox, Flare VM, or Hybrid Analysis monitor API execution during malware detonation.\n- Host-Based Logs:\n    - On Linux/macOS systems, leverage audit frameworks (e.g., `auditd`, `strace`) to capture and analyze system call usage that APIs map to.\n- Runtime Monitors:\n    - Runtime security tools like Falco can monitor system-level calls for API execution.\n- Debugging and Tracing:\n    - Use debugging tools like gdb (Linux) or WinDbg (Windows) for deep tracing of API executions in real time.",
       "meta": {
         "refs": []
       },
@@ -1500,6 +1528,10 @@
           "type": "detects"
         },
         {
+          "dest-uuid": "5bd41255-a224-4425-a2e2-e9d293eafe1c",
+          "type": "detects"
+        },
+        {
           "dest-uuid": "6495ae23-3ab4-43c5-a94f-5638a2c31fd2",
           "type": "detects"
         },
@@ -1573,6 +1605,10 @@
         },
         {
           "dest-uuid": "8cdeb020-e31e-4f88-a582-f53dcfbda819",
+          "type": "detects"
+        },
+        {
+          "dest-uuid": "8e097ec5-1755-41d6-807c-3882442b818a",
           "type": "detects"
         },
         {
@@ -1758,7 +1794,7 @@
       "value": "User Account Metadata"
     },
     {
-      "description": "Changes made to an account, such as permissions and/or membership in specific groups (ex: Windows EID 4738 or /var/log access/authentication logs)",
+      "description": "Changes made to an existing user, service, or machine account, including alterations to attributes, permissions, roles, authentication methods, or group memberships.\n\n*Data Collection Measures:*\n\n- Host-Based Logging\n    - Windows Event Logs\n        - Event ID 4738 – A user account was changed.\n        - Event ID 4725 – A user account was disabled.\n        - Event ID 4724 – An attempt was made to reset an account's password.\n        - Event ID 4767 – A user account was unlocked.\n    - Linux/macOS Authentication Logs\n        - `/var/log/auth.log`, `/var/log/secure` – Tracks account modifications (`usermod`, `chage`, `passwd`).\n        - AuditD – Monitors account changes (`useradd`, `usermod`, `gpasswd`).\n        - OSQuery – Queries the `users` table for recent modifications.\n- Cloud-Based Logging\n    - Azure AD Logs\n        - Azure AD Audit Logs – Tracks modifications to users and security groups.\n        - Azure Graph API – Captures changes to authentication policies and MFA settings.\n    - AWS IAM & CloudTrail Logs\n        - `ModifyUser`, `UpdateLoginProfile` – Captures changes to IAM user attributes.\n        - `AttachUserPolicy`, `AddUserToGroup` – Detects policy and group modifications.\n    - Google Workspace & Office 365 Logs\n        - Google Admin Console – Logs account changes, role modifications, and group membership updates.\n        - Microsoft 365 Unified Audit Log – Captures modifications to security settings and privileged account changes.\n- Container & Network Account Modification Logs\n    - Kubernetes Service Account Changes\n        - kubectl audit logs – Detects service account modifications in Kubernetes clusters.\n        - GKE/Azure AKS Logs – Monitors role and permission changes.",
       "meta": {
         "refs": []
       },
@@ -1832,7 +1868,7 @@
       "value": "User Account Modification"
     },
     {
-      "description": "Opening a network share, which makes the contents available to the requestor (ex: Windows EID 5140 or 5145)",
+      "description": "Opening a network share, which makes the contents available to the requestor (ex: Windows EID 5140 or 5145)\n\n*Data Collection Measures:*\n\n- Windows:\n    - Event ID 5140 – Network Share Object Access Logs every access attempt to a network share.\n    - Event ID 5145 – Detailed Network Share Object Access Captures granular access control information, including the requesting user, source IP, and access permissions.\n    - Sysmon Event ID 3 – Network Connection Initiated Helps track SMB connections to suspicious or unauthorized network shares.\n    - Enable Audit Policy for Network Share Access: `auditpol /set /subcategory:\"File Share\" /success:enable /failure:enable`\n    - Enable PowerShell Logging to Detect Unauthorized SMB Access: `Set-ExecutionPolicy RemoteSigned`\n    - Restrict Network Share Access with Group Policy (GPO): `Computer Configuration → Windows Settings → Security Settings → Local Policies → User Rights Assignment` Set \"Access this computer from the network\" to restrict unauthorized accounts.\n- Linux/macOS:\n    - AuditD (`open`, `read`, `write`, `connect` syscalls) Detects access to NFS, CIFS, and SMB network shares.\n    - Lsof (`lsof | grep nfs` or `lsof | grep smb`) Identifies active network share connections.\n    - Mount (`mount | grep nfs` or `mount | grep cifs`) Lists currently mounted network shares.\n    - Enable AuditD for SMB/NFS Access: `auditctl -a always,exit -F arch=b64 -S open -F path=/mnt/share -k network_share_access`\n    - Monitor Active Network Shares Using Netstat: `netstat -an | grep :445`\n- Endpoint Detection & Response (EDR):\n    - Detects abnormal network share access behavior, such as unusual account usage, large file transfers, or encrypted file activity.",
       "meta": {
         "refs": []
       },
@@ -1870,7 +1906,7 @@
       "value": "Network Share Access"
     },
     {
-      "description": "Initial construction of a network connection, such as capturing socket information with a source/destination IP and port(s) (ex: Windows EID 5156, Sysmon EID 3, or Zeek conn.log)",
+      "description": "The initial establishment of a network session, where a system or process initiates a connection to a local or remote endpoint. This typically involves capturing socket information (source/destination IP, ports, protocol) and tracking session metadata. Monitoring these events helps detect lateral movement, exfiltration, and command-and-control (C2) activities.\n\n*Data Collection Measures:*\n\n- Windows:\n    - Event ID 5156 – Filtering Platform Connection - Logs network connections permitted by Windows Filtering Platform (WFP).\n    - Sysmon Event ID 3 – Network Connection Initiated - Captures process, source/destination IP, ports, and parent process.\n- Linux/macOS:\n    - Netfilter (iptables), nftables logs - Tracks incoming and outgoing network connections.\n    - AuditD (`connect` syscall) - Logs TCP, UDP, and ICMP connections.\n    - Zeek (`conn.log`) - Captures protocol, duration, and bytes transferred.\n- Cloud & Network Infrastructure:\n    - AWS VPC Flow Logs / Azure NSG Flow Logs - Logs IP traffic at the network level in cloud environments.\n    - Zeek (conn.log) or Suricata (network events) - Captures packet metadata for detection and correlation.\n- Endpoint Detection & Response (EDR):\n    - Detect anomalous network activity such as new C2 connections or data exfiltration attempts.",
       "meta": {
         "refs": []
       },
@@ -1906,6 +1942,10 @@
         {
           "dest-uuid": "181a9f8c-c780-4f1f-91a8-edb770e904ba",
           "type": "included-in"
+        },
+        {
+          "dest-uuid": "278716b1-61ce-4a74-8d17-891d0c494101",
+          "type": "detects"
         },
         {
           "dest-uuid": "28abec6c-4443-4b03-8206-07f2e264a6b4",
@@ -1997,6 +2037,10 @@
         },
         {
           "dest-uuid": "774a3188-6ba9-4dc4-879d-d54ee48a5ce9",
+          "type": "detects"
+        },
+        {
+          "dest-uuid": "77e29a47-e263-4f11-8692-e5012f44dbac",
           "type": "detects"
         },
         {
@@ -2108,6 +2152,10 @@
           "type": "detects"
         },
         {
+          "dest-uuid": "d4287702-e2f7-4946-bdfa-2c7f5aaa5032",
+          "type": "detects"
+        },
+        {
           "dest-uuid": "d742a578-d70e-4d0e-96a6-02a9c30204e6",
           "type": "detects"
         },
@@ -2117,6 +2165,10 @@
         },
         {
           "dest-uuid": "dc31fe1e-d722-49da-8f5f-92c7b5aff534",
+          "type": "detects"
+        },
+        {
+          "dest-uuid": "e261a979-f354-41a8-963e-6cadac27c4bf",
           "type": "detects"
         },
         {
@@ -2150,13 +2202,17 @@
         {
           "dest-uuid": "fb8d023d-45be-47e9-bc51-f56bcae6435b",
           "type": "detects"
+        },
+        {
+          "dest-uuid": "fde016f6-211a-41c8-a4ab-301f1e419c62",
+          "type": "detects"
         }
       ],
       "uuid": "181a9f8c-c780-4f1f-91a8-edb770e904ba",
       "value": "Network Connection Creation"
     },
     {
-      "description": "Initial construction of new cloud storage infrastructure (ex: AWS S3 CreateBucket)",
+      "description": "Cloud Storage Creation refers to the initial creation of a new cloud storage resource, such as buckets, containers, or directories, within a cloud environment. This action is critical to track as it might indicate the legitimate provisioning of resources or unauthorized actions taken by adversaries to stage, store, or exfiltrate data. Examples: \n\n- AWS S3 Bucket Creation: An AWS user creates a new S3 bucket using the `CreateBucket` API call.\n- Azure Blob Storage Container Creation: A user creates a new container in Azure Blob Storage using the `Create Container` operation.\n- Google Cloud Storage Bucket Creation: A Google Cloud user creates a new bucket using `storage.buckets.create`.\n- OpenStack Swift Container Creation: A user creates a new container in OpenStack Swift using the `PUT` method.\n\nThis data component can be collected through the following measures:\n\nEnable Logging for Cloud Storage Services\n\n- AWS S3: Enable AWS CloudTrail to log CreateBucket API actions.\n- Azure Blob Storage: Enable Azure Monitor and Diagnostic Logs for storage account activity. Use Azure Event Grid to capture Create Container operations.\n- Google Cloud Storage: Enable Data Access logs in Cloud Audit Logs to monitor storage.buckets.create API calls.\n- OpenStack Swift: Configure Swift logging to capture PUT requests to new containers.\n\nCentralized Logging and Analysis\n\n- Forward logs to centralized platforms like Splunk or cloud-native SIEM solutions for correlation and analysis.",
       "meta": {
         "refs": []
       },
@@ -2196,7 +2252,7 @@
       "value": "Web Credential Creation"
     },
     {
-      "description": "Deactivation or stoppage of a cloud service (ex: AWS Cloudtrail StopLogging)",
+      "description": "This data component refers to monitoring actions that deactivate or stop a cloud service in a cloud control plane. Examples include disabling essential logging services like AWS CloudTrail (`StopLogging` API call), Microsoft Azure Monitor Logs, or Google Cloud's Operations Suite (formerly Stackdriver). Disabling such services can hinder visibility into adversary activities within the cloud environment. Examples: \n\n- AWS CloudTrail StopLogging: This action stops logging of API activity for a particular trail, effectively reducing the monitoring and visibility of AWS resources and activities.\n- Microsoft Azure Monitor Logs: Disabling these logs hinders the organization’s ability to detect anomalous activities and trace malicious actions.\n- Google Cloud Logging: Disabling cloud logging removes visibility into resource activity, preventing monitoring of service access or configuration changes.\n- SaaS Applications: Stopping logging removes visibility into user activities, such as email access or file downloads, enabling undetected malicious behavior.\n\nThis data component can be collected through the following measures:\n\nEnable and Monitor Cloud Service Logging\n\n- Ensure logging is enabled for all cloud services, including administrative actions like StopLogging.\n- Example: Use AWS Config to verify that CloudTrail is enabled and enforce logging as a compliance rule.\n\nAPI Monitoring\n\n- Use API monitoring tools to detect calls like StopLogging or equivalent service-stopping actions in other platforms.\n- Example: Monitor AWS CloudWatch for specific API events such as StopLogging and flag unauthorized users.\n\nSIEM Integration\n\n- Collect logs and events from the cloud control plane into a centralized SIEM for real-time analysis and correlation.\n- Example: Ingest AWS CloudTrail logs into Splunk or Azure Monitor logs into Sentinel.\n\nCloud Security Posture Management (CSPM) Tools\n\n- Leverage CSPM tools like Prisma Cloud, Dome9, or AWS Security Hub to detect misconfigurations or suspicious activity, such as disabled logging.\n- Example: Set alerts for changes to logging configurations in CSPM dashboards.\n\nConfigure Alerts in Cloud Platforms\n\n- Create native alerts in cloud platforms to detect service stoppages.\n- Example: Configure an AWS CloudWatch alarm to trigger when StopLogging is invoked.",
       "meta": {
         "refs": []
       },
@@ -2218,7 +2274,7 @@
       "value": "Cloud Service Disable"
     },
     {
-      "description": "Removal of cloud storage infrastructure (ex: AWS S3 DeleteBucket)",
+      "description": "Cloud Storage Deletion refers to the removal or destruction of cloud storage infrastructure, such as buckets, containers, or directories, within a cloud environment. Monitoring this activity is critical to detecting potential unauthorized or malicious actions, such as data destruction by adversaries or accidental deletions that may lead to data loss. Examples: \n\n- AWS S3 Bucket Deletion: An AWS user deletes an S3 bucket using the `DeleteBucket` API call.\n- Azure Blob Storage Container Deletion: A user deletes a container in Azure Blob Storage using the `Delete Container` operation.\n- Google Cloud Storage Bucket Deletion: A Google Cloud user deletes a bucket using the `storage.buckets.delete` API.\n- OpenStack Swift Container Deletion: A user deletes a container in OpenStack Swift using the `DELETE` method.\n\nThis data component can be collected through the following measures:\n\nEnable Logging for Cloud Storage Services\n\n- AWS S3: Enable AWS CloudTrail to log DeleteBucket API actions.\n- Azure Blob Storage: Enable Azure Monitor and Diagnostic Logs to capture Delete Container operations. Use Azure Event Grid to capture and trigger alerts for container deletion.\n- Google Cloud Storage: Enable Data Access logs in Cloud Audit Logs to monitor storage.buckets.delete API calls.\n- OpenStack Swift: Configure Swift logging to capture DELETE requests for containers.\n\nCentralized Logging and Analysis\n\n- Use platforms like Splunk or native SIEMs to forward and analyze logs for anomalies in cloud storage deletions.",
       "meta": {
         "refs": []
       },
@@ -2240,7 +2296,7 @@
       "value": "Cloud Storage Deletion"
     },
     {
-      "description": "An extracted list of cloud storage infrastructure (ex: AWS S3 ListBuckets or ListObjects)",
+      "description": "Cloud Storage Enumeration involves retrieving a list of available cloud storage infrastructure, such as buckets, containers, or objects, within a cloud environment. This activity may be performed for legitimate administrative purposes or malicious reconnaissance by adversaries seeking to identify accessible storage resources.Examples:\n\n- AWS S3 Bucket Enumeration: An AWS user lists all buckets using the `ListBuckets` API call.\n- Azure Blob Storage Container Enumeration: A user retrieves a list of all containers within a storage account using the Azure Storage SDK or API.\n- Google Cloud Storage Bucket Enumeration: A Google Cloud user lists all buckets within a project using the `storage.buckets.list` API.\n- OpenStack Swift Container Enumeration: A user retrieves a list of containers in OpenStack Swift using the `GET` method on the storage endpoint.\n\nThis data component can be collected through the following measures:\n\nEnable Logging for Cloud Storage Enumeration\n\n- AWS S3: Enable AWS CloudTrail to capture ListBuckets and ListObjects API calls.\n- Azure Blob Storage: Enable Azure Monitor and Diagnostic Logs to capture enumeration operations like List Containers. Use Azure Event Grid to trigger alerts for container enumeration.\n- Google Cloud Storage: Enable Audit Logs in Google Cloud to track storage.buckets.list API activity.\n- OpenStack Swift: Configure Swift logging to capture GET requests for container enumeration.\n\nCentralized Log Aggregation\n\n- Use platforms like Splunk or native SIEM solutions to collect and analyze enumeration logs.\n",
       "meta": {
         "refs": []
       },
@@ -2262,7 +2318,7 @@
       "value": "Cloud Storage Enumeration"
     },
     {
-      "description": "An extracted list of cloud services (ex: AWS ECS ListServices)",
+      "description": "Cloud service enumeration involves listing or querying available cloud services in a cloud control plane. This activity is often performed to identify resources such as virtual machines, storage buckets, compute clusters, or other services within a cloud environment. Examples include API calls like `AWS ECS ListServices`, `Azure ListAllResources`, or `Google Cloud ListInstances`. Examples: \n\nAWS Cloud Service Enumeration: The adversary gathers details about existing ECS services to identify opportunities for privilege escalation or exfiltration.\n- Azure Resource Enumeration: The adversary collects information about virtual machines, resource groups, and other Azure assets for reconnaissance purposes.\n- Google Cloud Resource Enumeration: The attacker seeks to map the environment and find misconfigured or underutilized resources for exploitation.\n- Office 365 Service Enumeration: The attacker may look for data repositories or collaboration tools to exfiltrate sensitive information.\n\nThis data component can be collected through the following measures: \n\nEnable Cloud Activity Logging\n\n- Ensure cloud service logs are enabled for API calls and resource usage.\n- Example: Enable AWS CloudTrail, Azure Monitor, or Google Cloud Logging to track resource queries.\n\nCentralize Logs in a SIEM\n\n- Aggregate logs from cloud control planes into a centralized SIEM (e.g., Splunk, Azure Sentinel).\n- Example: Collect AWS CloudTrail logs and set up alerts for API calls related to service enumeration.\n\nUse Native Cloud Security Tools\n\n- Leverage cloud-native security solutions like AWS GuardDuty, Azure Defender, or Google Security Command Center.\n- Example: Use GuardDuty to detect anomalous API activity, such as ListServices being executed by an unknown user.\n\nImplement Network Flow Logging\n\n- Monitor and analyze VPC flow logs to identify lateral movement or enumeration activity.\n- Example: Inspect flow logs for unexpected traffic between compute instances and the cloud control plane.\n\nAPI Access Monitoring\n\n- Monitor API keys and tokens used for enumeration to identify misuse or compromise.\n- Example: Use AWS Secrets Manager or Azure Key Vault to manage and rotate keys securely.",
       "meta": {
         "refs": []
       },
@@ -2292,7 +2348,7 @@
       "value": "Cloud Service Enumeration"
     },
     {
-      "description": "Initial construction of a new scheduled job (ex: Windows EID 4698 or /var/log cron logs)",
+      "description": "The establishment of a task or job that will execute at a predefined time or based on specific triggers.\n\n*Data Collection Measures: *\n\n- Windows Event Logs:\n    - Event ID 4698 (Scheduled Task Created) – Detects the creation of new scheduled tasks.\n    - Event ID 4702 (Scheduled Task Updated) – Identifies modifications to existing scheduled jobs.\n    - Event ID 106 (TaskScheduler Operational Log) – Provides details about scheduled task execution.\n- Sysmon (Windows):\n    - Event ID 1 (Process Creation) – Detects the execution of suspicious tasks started by `schtasks.exe`, `at.exe`, or `taskeng.exe`.\n- Linux/macOS Monitoring:\n    - AuditD: Monitor modifications to `/etc/cron*`, `/var/spool/cron/`, and `crontab` files.\n    - Syslog: Capture cron job execution logs from `/var/log/cron`.\n    - OSQuery: Query the `crontab` and `launchd` tables for scheduled job configurations.\n- Endpoint Detection and Response (EDR) Tools:\n    - Track scheduled task creation and modification events.\n- SIEM & XDR Detection Rules:\n    - Monitor for scheduled jobs created by unusual users.\n    - Detect tasks executing scripts from non-standard directories.",
       "meta": {
         "refs": []
       },
@@ -2330,7 +2386,7 @@
       "value": "Scheduled Job Creation"
     },
     {
-      "description": "Initial construction of a successful new user logon following an authentication attempt. (e.g. Windows EID 4624, /var/log/utmp, or /var/log/wmtp)",
+      "description": "The successful establishment of a new user session following a successful authentication attempt. This typically signifies that a user has provided valid credentials or authentication tokens, and the system has initiated a session associated with that user account. This data is crucial for tracking authentication events and identifying potential unauthorized access. Examples: \n\n- Windows Systems\n    - Event ID: 4624\n        - Logon Type: 2 (Interactive) or 10 (Remote Interactive via RDP).\n        - Account Name: JohnDoe\n        - Source Network Address: 192.168.1.100\n        - Authentication Package: NTLM\n- Linux Systems\n    - /var/log/utmp or /var/log/wtmp:\n        - Log format: login user [tty] from [source_ip]\n        - User: jane\n        - IP: 10.0.0.5\n        - Timestamp: 2024-12-28 08:30:00\n- macOS Systems\n    - /var/log/asl.log or unified logging framework:\n        - Log: com.apple.securityd: Authentication succeeded for user 'admin'\n- Cloud Environments\n    - Azure Sign-In Logs:\n        - Activity: Sign-in successful\n        - Client App: Browser\n        - Location: Unknown (Country: X)\n- Google Workspace\n    - Activity: Login\n        - Event Type: successful_login\n        - Source IP: 203.0.113.55\n\nThis data component can be collected through the following measures:\n\n- Windows Systems\n    - Event Logs: Monitor Security Event Logs using Event ID 4624 for successful logons.\n    - PowerShell Example: `Get-EventLog -LogName Security -InstanceId 4624`\n- Linux Systems\n    - Log Files: Monitor `/var/log/utmp`, `/var/log/wtmp`, or `/var/log/auth.log` for logon events.\n    - Tools: Use `last` or `who` commands to parse login records.\n- macOS Systems\n    - Log Sources: Monitor `/var/log/asl.log` or Apple Unified Logs using the `log show` command.\n    - Command Example: `log show --predicate 'eventMessage contains \"Authentication succeeded\"' --info`\n- Cloud Environments\n    - Azure AD: Use Azure Monitor to analyze sign-in logs. Example CLI Query: `az monitor log-analytics query -w <workspace_id> --analytics-query \"AzureActivity | where ActivityStatus == 'Success' and OperationName == 'Sign-in'\"`\n    - Google Workspace: Enable and monitor Login Audit logs from the Admin Console.\n    - Office 365: Use Audit Log Search in Microsoft 365 Security & Compliance Center for login-related events.\n- Network Logs\n    - Sources: Network authentication mechanisms (e.g., RADIUS or TACACS logs).\n- Enable EDR Monitoring: \n    - EDR tools monitor logon session activity, including the creation of new sessions.\n    - Configure alerts for: Suspicious logon types (e.g., Logon Type 10 for RDP or Type 5 for Service). Logons from unusual locations, accounts, or devices.\n    - Leverage EDR telemetry for session attributes like source IP, session duration, and originating process.",
       "meta": {
         "refs": []
       },
@@ -2508,7 +2564,7 @@
       "value": "Logon Session Creation"
     },
     {
-      "description": "Contextual data about cloud storage infrastructure and activity around it such as name, size, or owner",
+      "description": "Cloud Storage Metadata provides contextual information about cloud storage infrastructure and its associated activity. This data may include attributes such as storage name, size, owner, permissions, creation date, region, and activity metadata. It is essential for monitoring, auditing, and identifying anomalies in cloud storage environments. Examples: \n\n- AWS S3 Bucket Metadata: Metadata about an S3 bucket includes the bucket name, region, creation date, owner, storage class, and permissions.\n- Azure Blob Storage Metadata: Metadata for an Azure Blob container includes container name, access level (e.g., private or public), size, and tags.\n- Google Cloud Storage Metadata: Metadata includes bucket name, storage class, location, labels, lifecycle policies, and versioning status.\n- OpenStack Swift Metadata: Metadata for a Swift container includes name, access level, quota, and custom attributes.\n\nThis data component can be collected through the following measures:\n\nEnable Logging for Metadata Collection\n\n- AWS S3: Use AWS CloudTrail to log `GetBucketAcl`, `GetBucketPolicy`, and `HeadBucket` API calls.\n- Azure Blob Storage: Use Azure Monitor to log container metadata retrieval and updates.\n- Google Cloud Storage: Enable Google Cloud Audit Logs to capture `storage.buckets.get` and `storage.buckets.update`.\n- OpenStack Swift: Enable logging of `HEAD` or `GET` requests to containers.\n\nCentralized Log Aggregation\n\n- Use a SIEM solution (e.g., Splunk) to aggregate and analyze metadata retrieval and modification logs.\n- Correlate metadata access with user actions, IP addresses, and other contextual data.\n\nAPI Polling\n\n- Use cloud SDKs or APIs to periodically query metadata for analysis:\n    - AWS CLI Example: `aws s3api get-bucket-acl --bucket company-sensitive-data`\n    - Azure CLI Example: `az storage container show --name customer-records`\n    - Google Cloud CLI Example: `gcloud storage buckets describe user-uploads`",
       "meta": {
         "refs": []
       },
@@ -2526,7 +2582,7 @@
       "value": "Cloud Storage Metadata"
     },
     {
-      "description": "Contextual data about a cloud service and activity around it such as name, type, or purpose/function",
+      "description": "Cloud service metadata refers to the contextual and descriptive information about cloud services, including their name, type, purpose, configuration, and activity around them. This metadata is essential for understanding the roles and functions of cloud services, their operational status, and their potential misuse. Examples: \n\n- Azure Service Metadata: Metadata describing a resource in Azure, such as an Azure Storage Account or a Virtual Machine.\n- AWS Cloud Service Metadata: Metadata for an AWS EC2 instance collected using the `DescribeInstances` API call.\n- Google Cloud Service Metadata: Metadata for a Google Compute Engine instance collected using `gcloud compute instances describe`.\n- Office 365 Metadata: Metadata about an Office 365 SharePoint site.\n\nThis data component can be collected through the following measures:\n\nEnable Cloud Metadata APIs\n\n- Leverage APIs provided by cloud providers to query metadata about services.\n    - AWS: Use AWS CLI or SDKs for `DescribeInstances`, `DescribeBuckets`, etc.\n    - Azure: Use `az resource list` or SDKs.\n    - Google Cloud: Use `gcloud compute instances describe` or related commands.\n    - Office 365: Use Microsoft Graph API.\n\nCentralize Metadata in a Security Platform\n\n- Aggregate metadata from multiple clouds into a SIEM or CSPM (Cloud Security Posture Management) tool.\n- Example: Integrate AWS CloudTrail with Splunk or Azure Monitor with Sentinel.\n\nEnable Continuous Monitoring\n\n- Set up automated jobs or workflows to regularly query and update metadata.\n- Example: Use AWS Config to track resource configurations and changes over time.\n\nConfigure Access and Logging\n\n- Enable logging for API queries to ensure access and usage of metadata are monitored.\n- Example: Use AWS CloudTrail to log API activity for metadata queries.\n\nUse Cloud Security Tools\n\n- Employ CSPM tools like Prisma Cloud, Wiz, or Dome9 to gather metadata and identify misconfigurations.\n- Example: Prisma Cloud provides consolidated views of metadata for resources across AWS, Azure, and GCP.",
       "meta": {
         "refs": []
       },
@@ -2556,7 +2612,7 @@
       "value": "Cloud Service Metadata"
     },
     {
-      "description": "Changes made to cloud storage infrastructure, including its settings and/or data (ex: AWS S3 PutObject or PutObjectAcl)",
+      "description": "Cloud Storage Modification involves tracking changes made to cloud storage infrastructure, including updates to settings, permissions, or stored data. Examples include modifying object access control lists (ACLs), uploading new objects, or updating bucket policies. Examples: \n\nAWS S3: An object is uploaded or its ACL is modified.\n- Azure Blob Storage: A blob's metadata or permissions are updated.\n- Google Cloud Storage: An object's lifecycle policy is updated, or a bucket policy is changed.\n- OpenStack Swift: Modifications to container settings or uploading of new objects.\n\nThis data component can be collected through the following measures:\n\nEnable Logging\n\n- AWS S3: Enable AWS CloudTrail to log API events like PutObject, PutObjectAcl, and PutBucketPolicy.\n- Azure Blob Storage: Use Azure Monitor to log write and update operations.\n- Google Cloud Storage: Enable Google Cloud Audit Logs to track storage.objects.update and storage.buckets.update.\n- OpenStack Swift: Enable logging for PUT and POST requests to track object uploads and container metadata updates.\n\nUse Cloud Monitoring Tools\n\n- Integrate with tools like AWS Config, Azure Security Center, or Google Cloud Monitoring to detect configuration drift or unauthorized changes.\n\nCentralized Log Aggregation\n\n- Use a SIEM (e.g., Splunk) to aggregate logs across multiple cloud providers for unified monitoring and analysis.\n\nPeriodic API Queries\n\n- AWS CLI Example: Query recent modifications to bucket policies: `aws s3api get-bucket-policy --bucket sensitive-data`\n- Azure CLI Example: List changes to a blob container: `az storage blob show --container-name private-docs`\n- Google Cloud CLI Example: Check metadata updates: `gcloud storage objects describe gs://user-uploads/document.txt`",
       "meta": {
         "refs": []
       },
@@ -2586,7 +2642,7 @@
       "value": "Cloud Storage Modification"
     },
     {
-      "description": "Changes made to a cloud service, including its settings and/or data (ex: AWS CloudTrail DeleteTrail or DeleteConfigRule)",
+      "description": "Cloud service modification refers to changes made to the configuration, settings, or data of a cloud service. These modifications can include administrative changes such as enabling or disabling features, altering permissions, or deleting critical components. Monitoring these changes is critical to detect potential misconfigurations or malicious activity. Examples: \n\n- AWS Cloud Service Modifications: A user disables AWS CloudTrail logging (StopLogging) or deletes a CloudWatch configuration rule (DeleteConfigRule).\n- Azure Cloud Service Modifications: Changes to Azure Role-Based Access Control (RBAC) roles, such as adding a new Contributor role to a sensitive resource.\n- Google Cloud Service Modifications: Deletion of a Google Cloud Storage bucket or disabling a Google Cloud Function.\n- Office 365 Cloud Service Modifications: Altering mailbox permissions or disabling auditing in Microsoft 365.\n\nThis data component can be collected through the following measures:\n\nEnable Cloud Audit Logging\n\n- AWS: Enable AWS CloudTrail for logging management events such as StopLogging or DeleteTrail.\n- Azure: Use Azure Activity Logs to monitor resource changes and access actions.\n- Google Cloud: Enable Google Cloud Audit Logs to track API calls, resource modifications, and policy changes.\n- Office 365: Use Unified Audit Logs in Microsoft Purview to track administrative actions.\n\nCentralize Log Storage\n\n- Consolidate logs from all cloud providers into a SIEM or CSPM (Cloud Security Posture Management) tool.\n- Example: Use Splunk or Elastic Stack to ingest and analyze logs from AWS, Azure, and Google Cloud.\n\nAutomate Alerts for Sensitive Changes\n\n- Configure alerts for high-risk actions, such as disabling logging or modifying IAM roles.\n- AWS Example: Use AWS Config rules to detect and notify changes to critical services.\n- Azure Example: Set up Azure Monitor alerts for write actions on sensitive resources.\n\nEnable Continuous Monitoring\n\n- Use tools like AWS Security Hub, Azure Defender, or Google Chronicle to continuously monitor cloud service modifications for anomalies.",
       "meta": {
         "refs": []
       },
@@ -2605,6 +2661,10 @@
         },
         {
           "dest-uuid": "b6301b64-ef57-4cce-bb0b-77026f14a8db",
+          "type": "detects"
+        },
+        {
+          "dest-uuid": "c31aebd6-c9b5-420f-ba2a-5853bbf897fa",
           "type": "detects"
         },
         {
@@ -2640,7 +2700,7 @@
       "value": "Cloud Service Modification"
     },
     {
-      "description": "Logged network traffic data showing both protocol header and body values (ex: PCAP)",
+      "description": "The full packet capture (PCAP) or session data that logs both protocol headers and payload content. This allows analysts to inspect command and control (C2) traffic, exfiltration, and other suspicious activity within network communications. Unlike metadata-based logs, full content analysis enables deeper protocol inspection, payload decoding, and forensic investigations.\n\n*Data Collection Measures:*\n\n- Network Packet Capture (Full Content Logging)\n    - Wireshark / tcpdump / tshark\n        - Full packet captures (PCAP files) for manual analysis or IDS correlation. `tcpdump -i eth0 -w capture.pcap`\n    - Zeek (formerly Bro)\n        - Extracts protocol headers and payload details into structured logs. `echo \"redef Log::default_store = Log::ASCII;\" > local.zeek | zeek -Cr capture.pcap local.zeek`\n    - Suricata / Snort (IDS/IPS with PCAP Logging)\n        - Deep packet inspection (DPI) with signature-based and behavioral analysis. `suricata -c /etc/suricata/suricata.yaml -i eth0 -l /var/log/suricata`\n- Host-Based Collection\n    - Sysmon Event ID 22 – DNS Query Logging, Captures DNS requests made by processes, useful for detecting C2 domains.\n    - Sysmon Event ID 3 – Network Connection Initiated, Logs process-to-network connection relationships.\n    - AuditD (Linux) – syscall=connect, Monitors outbound network requests from processes. `auditctl -a always,exit -F arch=b64 -S connect -k network_activity`\n- Cloud & SaaS Traffic Collection\n    - AWS VPC Flow Logs / Azure NSG Flow Logs / Google VPC Flow Logs, Captures metadata about inbound/outbound network traffic.\n    - Cloud IDS (AWS GuardDuty, Azure Sentinel, Google Chronicle), Detects malicious activity in cloud environments by analyzing network traffic patterns.",
       "meta": {
         "refs": []
       },
@@ -3046,6 +3106,10 @@
           "type": "detects"
         },
         {
+          "dest-uuid": "d4287702-e2f7-4946-bdfa-2c7f5aaa5032",
+          "type": "detects"
+        },
+        {
           "dest-uuid": "d456de47-a16f-4e46-8980-e67478a12dcb",
           "type": "detects"
         },
@@ -3079,6 +3143,10 @@
         },
         {
           "dest-uuid": "e0033c16-a07e-48aa-8204-7c3ca669998c",
+          "type": "detects"
+        },
+        {
+          "dest-uuid": "e261a979-f354-41a8-963e-6cadac27c4bf",
           "type": "detects"
         },
         {
@@ -3172,7 +3240,7 @@
       "value": "Web Credential Usage"
     },
     {
-      "description": "Changes made to a firewall rule, typically to allow/block specific network traffic (ex: Windows EID 4950 or Write/Delete entries within Azure Firewall Rule Collection Activity Logs)",
+      "description": "The creation, deletion, or alteration of firewall rules to allow or block specific network traffic. Monitoring changes to these rules is critical for detecting misconfigurations, unauthorized access, or malicious attempts to bypass network protections. Examples: \n\n- Rule Creation: Adding a new rule to allow inbound traffic on port 3389 (RDP).\n- Rule Deletion: Deleting a rule that blocks inbound traffic from untrusted IP ranges.\n- Rule Modification: Changing a rule to allow traffic from \"any\" source IP instead of a specific trusted range.\n- Audit Log Metadata: Logs indicating \"Firewall rule modified by admin@domain.com.\"\n- Platform-Specific Scenarios\n    - Azure: Altering rules in an Azure Network Security Group (NSG).\n    - AWS: Modifying Security Group rules to allow traffic.\n    - Windows: Changes tracked in Security Event Logs (EID 4950 or 4951).\n\nThis data component can be collected through the following measures:\n\nCloud Control Plane\n\n- Azure: Collect rule modification logs from Azure Firewall Activity Logs.\n    - Example Command: `az network firewall policy rule-collection-group rule-collection list --policy-name <policy-name>`\n- AWS: Use CloudTrail to track `AuthorizeSecurityGroupIngress` or `RevokeSecurityGroupIngress` actions.\n    Example: `aws ec2 describe-security-groups`\n- Google Cloud: Use gcloud commands to extract firewall rules: `gcloud compute firewall-rules list --format=json`\n\nHost-Based Firewalls\n\n- Windows: \n    - Collect events from the Windows Security Event Log (EID 4950: A rule has been modified).\n    - Use PowerShell to track rule changes: `Get-NetFirewallRule -PolicyStore PersistentStore`\n- Linux:\n    - Monitor iptables or nftables rule modifications: `iptables -L -v`\n    - Use auditd for real-time monitoring: `auditctl -w /etc/iptables.rules -p wa`\n- macOS: Use pfctl to monitor rule changes: `sudo pfctl -sr`\n\nSIEM Integration\n\n- Collect logs from cloud platforms, host systems, and network appliances for centralized monitoring.\n\nAPI Monitoring\n\n- Monitor API calls for firewall rule modifications.",
       "meta": {
         "refs": []
       },
@@ -3200,13 +3268,17 @@
         {
           "dest-uuid": "d2ff4b56-8351-4ed8-b0fb-d8605366005f",
           "type": "included-in"
+        },
+        {
+          "dest-uuid": "fde016f6-211a-41c8-a4ab-301f1e419c62",
+          "type": "detects"
         }
       ],
       "uuid": "d2ff4b56-8351-4ed8-b0fb-d8605366005f",
       "value": "Firewall Rule Modification"
     },
     {
-      "description": "Summarized network packet data, with metrics, such as protocol headers and volume (ex: Netflow or Zeek http.log)",
+      "description": "Summarized network packet data that captures session-level details such as source/destination IPs, ports, protocol types, timestamps, and data volume, without storing full packet payloads. This is commonly used for traffic analysis, anomaly detection, and network performance monitoring.\n\n*Data Collection Measures:*\n\n- Network Flow Logs (Metadata Collection)\n    - NetFlow \n        - Summarized metadata for network conversations (no packet payloads).\n    - sFlow (Sampled Flow Logging)\n        - Captures sampled packets from switches and routers.\n        - Used for real-time traffic monitoring and anomaly detection.\n    - Zeek (Bro) Flow Logs\n        - Zeek logs session-level details in logs like conn.log, http.log, dns.log, etc.\n- Host-Based Collection\n    - Sysmon Event ID 3 – Network Connection Initiated\n        - Logs process-level network activity, useful for detecting malicious outbound connections.\n    - AuditD (Linux) – syscall=connect\n        - Monitors system calls for network connections. `auditctl -a always,exit -F arch=b64 -S connect -k network_activity`\n- Cloud & SaaS Flow Monitoring\n    - AWS VPC Flow Logs\n        - Captures metadata for traffic between EC2 instances, security groups, and internet gateways.\n    - Azure NSG Flow Logs / Google VPC Flow Logs\n        - Logs ingress/egress traffic for cloud-based resources.",
       "meta": {
         "refs": []
       },
@@ -3289,6 +3361,10 @@
         },
         {
           "dest-uuid": "36b2a1d7-e09e-49bf-b45e-477076c2ec01",
+          "type": "detects"
+        },
+        {
+          "dest-uuid": "389735f1-f21c-4208-b8f0-f8031e7169b8",
           "type": "detects"
         },
         {
@@ -3381,6 +3457,10 @@
         },
         {
           "dest-uuid": "650c784b-7504-4df7-ab2c-4ea882384d1e",
+          "type": "detects"
+        },
+        {
+          "dest-uuid": "66b34be7-6915-4b83-8d5a-b0f0592b5e41",
           "type": "detects"
         },
         {
@@ -3516,6 +3596,10 @@
           "type": "detects"
         },
         {
+          "dest-uuid": "bed81616-3dde-4685-be6e-ba9820f9a7ed",
+          "type": "detects"
+        },
+        {
           "dest-uuid": "bf1b6176-597c-4600-bfcd-ac989670f96b",
           "type": "detects"
         },
@@ -3626,6 +3710,10 @@
         {
           "dest-uuid": "fb8d023d-45be-47e9-bc51-f56bcae6435b",
           "type": "detects"
+        },
+        {
+          "dest-uuid": "fde016f6-211a-41c8-a4ab-301f1e419c62",
+          "type": "detects"
         }
       ],
       "uuid": "a7f22107-02e5-4982-9067-6625d4a1765a",
@@ -3654,7 +3742,7 @@
       "value": "Scheduled Job Metadata"
     },
     {
-      "description": "Changes made to a scheduled job, such as modifications to the execution launch (ex: Windows EID 4702 or /var/log cron logs)",
+      "description": "Changes made to an existing scheduled job, including modifications to its execution parameters, command payload, or execution timing.",
       "meta": {
         "refs": []
       },
@@ -3684,7 +3772,7 @@
       "value": "Scheduled Job Modification"
     },
     {
-      "description": "An object file that contains code to extend the running kernel of an OS, typically used to add support for new hardware (as device drivers) and/or filesystems, or for adding system calls",
+      "description": "The process of loading a kernel module into the operating system kernel. Kernel modules are object files that extend the kernel’s functionality, such as adding support for device drivers, new filesystems, or additional system calls. This action can be legitimate (e.g., loading a driver) or malicious (e.g., adding a rootkit). \n\n*Data Collection Measures:*\n\n- Linux:\n    - Auditd: Enable auditing of kernel module loading. Example rule: `-a always,exit -F arch=b64 -S init_module,delete_module`.\n    - Syslog: Monitor `/var/log/syslog` or `/var/log/messages` for entries related to kernel module loads.\n    - Systemd Journal: Use `journalctl` to query logs for module loading events: `journalctl -k | grep \"Loading kernel module\"`\n- macOS:\n    - Unified Logs: Use the `log` command to query kernel module events: `log show --predicate 'eventMessage contains \"kextload\"' --info`\n    - Endpoint Security Framework (ESF): Monitor for `ES_EVENT_TYPE_AUTH_KEXTLOAD` (kernel extension loading events).\n- Kernel-Specific Tools:\n    - Lsmod: Use `lsmod` to list loaded kernel modules in real-time.\n    - Kprobe/eBPF: Use extended Berkeley Packet Filter (eBPF) or Kernel Probes (kprobes) to monitor kernel events, including module loading. Example using eBPF tools like BCC:\n`sudo python /path/to/bcc/tools/kprobe -v do_init_module`\n- Enable EDR Monitoring:\n    - Configure alerts for: Suspicious kernel module loads from non-standard paths (e.g., /tmp). Unexpected or unsigned kernel modules.\n    - Review detailed telemetry data provided by the EDR for insight into who initiated the module load, the file path, and whether the module was signed.",
       "meta": {
         "refs": []
       },
@@ -3772,7 +3860,7 @@
       "value": "Logon Session Metadata"
     },
     {
-      "description": "Contextual data about a named pipe on a system, including pipe name and creating process (ex: Sysmon EIDs 17-18)",
+      "description": "Contextual data about a named pipe on a system, including pipe name and creating process (ex: Sysmon EIDs 17-18)\n\n*Data Collection Measures:*\n\n- Windows:\n    - Sysmon Event ID 17: Logs the creation of a named pipe.\n    - Sysmon Event ID 18: Logs connection attempts to a named pipe.\n    - Windows Security Event ID 5145: Logs access attempts to named pipes via SMB shares.\n    - ETW (Event Tracing for Windows): Provides deep telemetry into named pipe interactions.\n- Linux/macOS:\n    - AuditD (`mkfifo`, `open`, `read`, `write` syscalls): Tracks FIFO (named pipe) creation and usage.\n    - Lsof (`lsof -p <PID>` or `lsof | grep PIPE`): Lists active named pipes and associated processes.\n    - Strace (`strace -e open <process>`): Monitors named pipe interactions.\n- Endpoint Detection & Response (EDR):\n    - Capture named pipe events as part of process tracking.\n- Memory Forensics:\n    - Volatility Plugin (`pipescan`): Enumerates named pipes in system memory.\n    - Rekall Framework: Identifies active named pipes and associated processes.",
       "meta": {
         "refs": []
       },
@@ -3978,7 +4066,7 @@
       "value": "API Calls"
     },
     {
-      "description": "Queried domain name system (DNS) registry data highlighting current domain to IP address resolutions (ex: dig/nslookup queries)",
+      "description": "\"Domain Name: Active DNS\" data component captures queried DNS registry data that highlights current domain-to-IP address resolutions. This data includes both direct queries to DNS servers and records that provide mappings between domain names and associated IP addresses. It serves as a critical resource for tracking active infrastructure and understanding the network footprint of an organization or adversary. Examples: \n\n- DNS Query Example: `nslookup example.com`, `dig example.com A`\n- PTR Record Example: `dig -x 192.168.1.1`\n- Tracking Malicious Domains: DNS logs reveal repeated queries to suspicious domains like malicious-site.com. The IPs resolved by these domains may be indicators of compromise (IOCs).\n- DNS Record Types\n    - A/AAAA Record: Maps domain names to IP addresses (IPv4/IPv6).\n    - CNAME Record: Canonical name records, often used for redirects.\n    - MX Record: Mail exchange records, used to route emails.\n    - TXT Record: Can include security information like SPF or DKIM policies.\n    - SOA Record: Start of authority record for domain management.\n    - NS Record: Lists authoritative name servers for the domain.\n\nThis data component can be collected through the following measures:\n\n- System Utilities: Use built-in tools like `nslookup`, `dig`, or host on Linux, macOS, and Windows to perform active DNS queries.\n- DNS Logging\n    - Windows DNS Server: Enable DNS Analytical Logging to capture DNS queries and responses.\n    - Bind DNS: Enable query logging in the named.conf file.\n- Cloud Provider DNS Logging\n    - AWS Route 53: Enable query logging through CloudWatch or S3:\n    - Google Cloud DNS: Enable logging for Cloud DNS queries through Google Cloud Logging.\n- Network Traffic Monitoring: Use tools like Wireshark or Zeek to analyze DNS queries within network traffic.\n- Security Information and Event Management (SIEM) Integration: Aggregate DNS logs in a SIEM like Splunk to create alerts and monitor patterns.\n- Public OSINT Tools: Use OSINT platforms like VirusTotal, or PassiveTotal to collect information on domains and their associated IP addresses.",
       "meta": {
         "refs": []
       },
@@ -4012,7 +4100,7 @@
       "value": "Active DNS"
     },
     {
-      "description": "Opening of a data storage device with an assigned drive letter or mount point",
+      "description": "Refers to the act of accessing a data storage device, such as a hard drive, SSD, USB, or network-mounted drive. This data component logs the opening or mounting of drives, capturing activities such as reading, writing, or executing files within an assigned drive letter (e.g., `C:\\`, `/mnt/drive`) or mount point. Examples: \n\n- Removable Drive Insertion: A USB drive is inserted, assigned the letter `F:\\`, and files are accessed.\n- Network Drive Mounting: A network share `\\\\server\\share` is mapped to the drive `Z:\\`.\n- External Hard Drive Access: An external drive is connected, mounted at `/mnt/backup`, and accessed for copying files.\n- System Volume Access: The system volume `C:\\` is accessed for modifications to critical files.\n- Cloud-Synced Drives: Cloud storage drives like OneDrive or Google Drive are accessed via local mounts.\n\nThis data component can be collected through the following measures:\n\nWindows Event Logs\n- Relevant Events:\n    - Event ID 4663: Logs access to file or folder objects.\n    - Event ID 4656: Tracks a handle to an object like a drive or file.\n- Configuration:\n    - Enable auditing for \"Object Access\" in Local Security Policy.\n    - Use Group Policy for broader deployment: `Computer Configuration > Windows Settings > Security Settings > Advanced Audit Policy Configuration > Object Access`\n\nLinux System Logs\n\n- Command-Line Monitoring: Use the `dmesg` or `journalctl` command to monitor drive mount/unmount events.\n- Auditd Configuration: Add an audit rule for drive access: `auditctl -w /mnt/drive -p rwxa -k drive_access`\n- Review logs via `/var/log/audit/audit.log`.\n\nmacOS System Logs\n\n- Command-Line Monitoring: Use `diskutil list` or `fs_usage` to monitor drive access and mount points.\n- Unified Logs: Query unified logs using log show for drive-related activities: `log show --info | grep \"mount\"`\n\nEndpoint Detection and Response (EDR) Tools\n\n- Use EDR solutions to monitor drive activities and collect detailed forensic data.\n\nSIEM Tools\n\n- Ingest logs from endpoints to detect drive access patterns. Configure rules to alert on unusual or unauthorized drive access.",
       "meta": {
         "refs": []
       },
@@ -4046,7 +4134,7 @@
       "value": "Drive Access"
     },
     {
-      "description": "Opening a file, which makes the file contents available to the requestor (ex: Windows EID 4663)",
+      "description": "To events where a file is opened or accessed, making its contents available to the requester. This includes reading, executing, or interacting with files by authorized or unauthorized entities. Examples include logging file access events (e.g., Windows Event ID 4663), monitoring file reads, and detecting unusual file access patterns. Examples: \n\n- File Read Operations: A user opens a sensitive document (e.g., financial_report.xlsx) on a shared drive.\n- File Execution: A script or executable file is accessed and executed (e.g., malware.exe is run from a temporary directory).\n- Unauthorized File Access: An unauthorized user attempts to access a protected configuration file (e.g., `/etc/passwd` on Linux or `System32` files on Windows).\n- File Access Patterns: Bulk access to multiple files in a short time (e.g., mass access to documents on a file server).\n- File Access via Network: Files on a network share are accessed remotely (e.g., logs of SMB file access).\n\nThis data component can be collected through the following measures:\n\nWindows\n\n- Windows Event Logs: Event ID 4663: Captures file system auditing details, including who accessed the file, access type, and file name.\n- Sysmon:\n    - Event ID 11: Logs file creation time changes.\n    - Event ID 1 (process creation): Can provide insight into files executed.\n- PowerShell: Commands to monitor file access in real-time: `Get-WinEvent -FilterHashtable @{LogName='Security'; ID=4663}`\n\nLinux\n\n- Auditd: Monitor file access events using audit rules: `auditctl -w /path/to/file -p rwxa -k file_access`\n- View logs: `ausearch -k file_access`\n- Inotify: Use inotify to track file access on Linux: `inotifywait -m /path/to/watch -e access`\n\nmacOS\n\n- Unified Logs: Monitor file access using the macOS Unified Logging System.\n- FSEvents: File System Events can track file accesses: `fs_usage | grep open`\n\nNetwork Devices\n\n- SMB/CIFS Logs: Monitor file access over network shares using logs from SMB or CIFS protocol.\n- NAS Logs: Collect logs from network-attached storage systems for file access events.\n\nSIEM Integration\n\n- Collect file access logs from all platforms (Windows, Linux, macOS) and centralize in a SIEM for correlation and analysis.",
       "meta": {
         "refs": []
       },
@@ -4260,7 +4348,7 @@
       "value": "File Access"
     },
     {
-      "description": "Opening of a process by another process, typically to read memory of the target process (ex: Sysmon EID 10)",
+      "description": "Refers to an event where one process attempts to open another process, typically to inspect or manipulate its memory, access handles, or modify execution flow. Monitoring these access attempts can provide valuable insight into both benign and malicious behaviors, such as debugging, inter-process communication (IPC), or process injection.\n\n*Data Collection Measures:*\n\n- Endpoint Detection and Response (EDR) Tools:\n    -  EDR solutions that provide telemetry on inter-process access and memory manipulation.\n- Sysmon (Windows):\n    - Event ID 10: Captures process access attempts, including:\n        - Source process (initiator)\n        - Target process (victim)\n        - Access rights requested\n        - Process ID correlation\n- Windows Event Logs:\n    - Event ID 4656 (Audit Handle to an Object): Logs access attempts to system objects.\n    - Event ID 4690 (Attempted Process Modification): Can help identify unauthorized process changes.\n- Linux/macOS Monitoring:\n    - AuditD: Monitors process access through syscall tracing (e.g., `ptrace`, `open`, `read`, `write`).\n    - eBPF/XDP: Used for low-level monitoring of kernel process access.\n    - OSQuery: Query process access behavior via structured SQL-like logging.\n- Procmon (Process Monitor) and Debugging Tools:\n    - Windows Procmon: Captures real-time process interactions.\n    - Linux strace / ptrace: Useful for tracking process behavior at the system call level.",
       "meta": {
         "refs": []
       },
@@ -4358,7 +4446,7 @@
       "value": "Process Access"
     },
     {
-      "description": "Initial construction of a new container (ex: docker create <container_name>)",
+      "description": "\"Container Creation\" data component captures details about the initial construction of a container in a containerized environment. This includes events where a new container is instantiated, such as through Docker, Kubernetes, or other container orchestration platforms. Monitoring these events helps detect unauthorized or potentially malicious container creation. Examples:\n\n- Docker Example: `docker create my-container`, `docker run --name=my-container nginx:latest`\n- Kubernetes Example: `kubectl run my-pod --image=nginx`, `kubectl create deployment my-deployment --image=nginx`\n- Cloud Container Services Example\n    - AWS ECS: Task or service creation (`RunTask` or `CreateService`).\n    - Azure Container Instances: Deployment of a container group.\n    - Google Kubernetes Engine (GKE): Creation of new pods via GCP APIs.\n\nThis data component can be collected through the following measures:\n\n- Docker Audit Logging: Enable Docker daemon logging to capture `create` commands. Configure the Docker daemon to use a log driver such as `syslog` or `json-file`.\n- Kubernetes Audit Logs: Enable Kubernetes API server audit logging:\n- Cloud Provider Logs\n    - AWS CloudTrail: Enable logging for ECS `RunTask` or `CreateService` events.\n    - Azure Monitor: Enable activity logging for container group creation.\n    - GCP Cloud Logging: Monitor API calls such as `container.projects.zones.clusters.create`.\n- SIEM Integration: Use a SIEM to collect logs from Docker, Kubernetes, or cloud platforms.",
       "meta": {
         "refs": []
       },
@@ -4404,7 +4492,7 @@
       "value": "Container Creation"
     },
     {
-      "description": "Initial construction of a drive letter or mount point to a data storage device",
+      "description": "The activity of assigning a new drive letter or creating a mount point for a data storage device, such as a USB, network share, or external hard drive, enabling access to its content on a host system. Examples: \n\n- USB Drive Insertion: A USB drive is plugged in and automatically assigned the letter `E:\\` on a Windows machine.\n- Network Drive Mapping: A network share `\\\\server\\share` is mapped to the drive `Z:\\`.\n- Virtual Drive Creation: A virtual disk is mounted on `/mnt/virtualdrive` using an ISO image or a virtual hard disk (VHD).\n- Cloud Storage Mounting: Google Drive is mounted as `G:\\` on a Windows machine using a cloud sync tool.\n- External Storage Integration: An external HDD or SSD is connected and assigned `/mnt/external` on a Linux system.\n\nThis data component can be collected through the following measures:\n\nWindows Event Logs\n\n- Relevant Events:\n    - Event ID 98: Logs the creation of a volume (mount or new drive letter assignment).\n    - Event ID 1006: Logs removable storage device insertions.\n- Configuration: Enable \"Removable Storage Events\" in the Group Policy settings:\n`Computer Configuration > Administrative Templates > System > Removable Storage Access`\n\nLinux System Logs\n\n- Command-Line Monitoring: Use `dmesg` or `journalctl` to monitor mount events.\n\n- Auditd Configuration: Add audit rules to track mount points.\n- Logs can be reviewed in /var/log/audit/audit.log.\n\nmacOS System Logs\n\n- Unified Logs: Monitor system logs for mount activity:\n- Command-Line Tools: Use `diskutil list` to verify newly created or mounted drives.\n\nEndpoint Detection and Response (EDR) Tools\n\n- EDR solutions can log removable drive usage and network-mounted drives. Configure EDR policies to alert on suspicious drive creation events.\n\nSIEM Tools\n\n- Centralize logs from multiple platforms into a SIEM (e.g., Splunk) to correlate and alert on suspicious drive creation activities.",
       "meta": {
         "refs": []
       },
@@ -4418,11 +4506,23 @@
           "type": "included-in"
         },
         {
+          "dest-uuid": "4061e78c-1284-44b4-9116-73e4ac3912f7",
+          "type": "detects"
+        },
+        {
+          "dest-uuid": "63e3d25c-d57d-407d-8e6a-2cecd71f90be",
+          "type": "detects"
+        },
+        {
           "dest-uuid": "64196062-5210-42c3-9a02-563a0d1797ef",
           "type": "detects"
         },
         {
           "dest-uuid": "a3e1e6c5-9c74-4fc0-a16c-a9d228c17829",
+          "type": "detects"
+        },
+        {
+          "dest-uuid": "a9fb6b3f-4a3c-4703-a4f1-f55f83d1e017",
           "type": "detects"
         },
         {
@@ -4438,7 +4538,7 @@
       "value": "Drive Creation"
     },
     {
-      "description": "An extracted list of containers (ex: docker ps)",
+      "description": "\"Container Enumeration\" data component captures events and actions related to listing and identifying active or available containers within a containerized environment. This includes information about running, stopped, or configured containers, such as their names, IDs, statuses, or associated images. Monitoring this activity is crucial for detecting unauthorized discovery or reconnaissance efforts. Examples: \n\n- Docker Example: `docker ps`, `docker ps -a`\n- Kubernetes Example: `kubectl get pods`, `kubectl get deployments`\n- Cloud Container Services Example\n    - AWS ECS: API Call: ListTasks or ListContainers\n    - Azure Kubernetes Service: API Call: List pod or container instances.\n    - Google Kubernetes Engine (GKE): API Call: Retrieve deployments and their associated containers.\n\nThis data component can be collected through the following measures:\n\n- Docker Audit Logging: Enable Docker daemon logging to capture enumeration commands. Use tools like auditd to monitor terminal activity involving docker ps or similar commands.\n- Kubernetes Audit Logs: Enable Kubernetes API server audit logging. Capture events where users query resources such as pods, deployments, or services.\n- Cloud Provider Logs\n    - AWS CloudTrail: Enable logging for API calls like ListTasks or DescribeTasks.\n    - Azure Monitor: Enable activity logging to track container-related queries.\n    - GCP Cloud Logging: Track API events involving container enumerations or deployments.\n- SIEM Integration: Collect logs from Docker, Kubernetes, and cloud services for centralized analysis.",
       "meta": {
         "refs": []
       },
@@ -4456,7 +4556,7 @@
       "value": "Container Enumeration"
     },
     {
-      "description": "The execution of a line of text, potentially with arguments, created from program code (e.g. a cmdlet executed via powershell.exe, interactive commands like >dir, shell executions, etc. )",
+      "description": "Command Execution involves monitoring and capturing the execution of textual commands (including shell commands, cmdlets, and scripts) within an operating system or application. These commands may include arguments or parameters and are typically executed through interpreters such as `cmd.exe`, `bash`, `zsh`, `PowerShell`, or programmatic execution. Examples: \n\n- Windows Command Prompt\n    - dir – Lists directory contents.\n    - net user – Queries or manipulates user accounts.\n    - tasklist – Lists running processes.\n- PowerShell\n    - Get-Process – Retrieves processes running on a system.\n    - Set-ExecutionPolicy – Changes PowerShell script execution policies.\n    - Invoke-WebRequest – Downloads remote resources.\n- Linux Shell\n    - ls – Lists files in a directory.\n    - cat /etc/passwd – Reads the user accounts file.\n    - curl http://malicious-site.com – Retrieves content from a malicious URL.\n- Container Environments\n    - docker exec – Executes a command inside a running container.\n    - kubectl exec – Runs commands in Kubernetes pods.\n- macOS Terminal\n    - open – Opens files or URLs.\n    - dscl . -list /Users – Lists all users on the system.\n    - osascript -e – Executes AppleScript commands.\n\nThis data component can be collected through the following measures:\n\nEnable Command Logging\n\n- Windows:\n    - Enable PowerShell logging: `Set-ExecutionPolicy Bypass`, `Set-ItemProperty -Path \"HKLM:\\SOFTWARE\\Policies\\Microsoft\\Windows\\PowerShell\\ScriptBlockLogging\" -Name EnableScriptBlockLogging -Value 1`\n    - Enable Windows Event Logging:\n        - Event ID 4688: Tracks process creation, including command-line arguments.\n        - Event ID 4104: Logs PowerShell script block execution.\n- Linux/macOS:\n    - Enable shell history logging in `.bashrc` or `.zshrc`: `export HISTTIMEFORMAT=\"%d/%m/%y %T \"`, `export PROMPT_COMMAND='history -a; history -w'`\n    - Use audit frameworks (e.g., `auditd`) to log command executions. Example rule to log all `execve` syscalls: `-a always,exit -F arch=b64 -S execve -k cmd_exec`\n- Containers:\n    - Use runtime-specific tools like Docker’s --log-driver or Kubernetes Audit Logs to capture exec commands.\n\nIntegrate with Centralized Logging\n\n- Collect logs using a SIEM (e.g., Splunk) or cloud-based log aggregation tools like AWS CloudWatch or Azure Monitor. Example Splunk Search for Windows Event 4688:\n`index=windows EventID=4688 CommandLine=*`\n\nUse Endpoint Detection and Response (EDR) Tools\n\n- Monitor command executions via EDR solutions \n\nDeploy Sysmon for Advanced Logging (Windows)\n\n- Use Sysmon's Event ID 1 to log process creation with command-line arguments",
       "meta": {
         "refs": []
       },
@@ -4635,6 +4735,10 @@
         },
         {
           "dest-uuid": "25659dd6-ea12-45c4-97e6-381e3e4b593e",
+          "type": "detects"
+        },
+        {
+          "dest-uuid": "278716b1-61ce-4a74-8d17-891d0c494101",
           "type": "detects"
         },
         {
@@ -4838,6 +4942,10 @@
           "type": "detects"
         },
         {
+          "dest-uuid": "4b46767d-4a61-4f30-995e-c19a75c2e536",
+          "type": "detects"
+        },
+        {
           "dest-uuid": "4bc31b94-045b-4752-8920-aebaebdb6470",
           "type": "detects"
         },
@@ -4915,6 +5023,10 @@
         },
         {
           "dest-uuid": "5b0ad6f8-6a16-4966-a4ef-d09ea6e2a9f5",
+          "type": "detects"
+        },
+        {
+          "dest-uuid": "5bd41255-a224-4425-a2e2-e9d293eafe1c",
           "type": "detects"
         },
         {
@@ -4998,6 +5110,10 @@
           "type": "detects"
         },
         {
+          "dest-uuid": "6bc7f9aa-b91f-4b23-84b8-5e756eba68eb",
+          "type": "detects"
+        },
+        {
           "dest-uuid": "6d4a7fb3-5a24-42be-ae61-6728a2b581f6",
           "type": "detects"
         },
@@ -5035,6 +5151,10 @@
         },
         {
           "dest-uuid": "7610cada-1499-41a4-b3dd-46467b68d177",
+          "type": "detects"
+        },
+        {
+          "dest-uuid": "762e6f29-a62f-4d96-91ed-d0073181431f",
           "type": "detects"
         },
         {
@@ -5334,6 +5454,10 @@
           "type": "detects"
         },
         {
+          "dest-uuid": "bb5a00de-e086-4859-a231-fa793f6797e2",
+          "type": "detects"
+        },
+        {
           "dest-uuid": "bc0f5e80-91c0-4e04-9fbb-e4e332c85dae",
           "type": "detects"
         },
@@ -5442,7 +5566,15 @@
           "type": "detects"
         },
         {
+          "dest-uuid": "d2d642da-61ff-4211-b4df-7923c9ca220c",
+          "type": "detects"
+        },
+        {
           "dest-uuid": "d336b553-5da9-46ca-98a8-0b23f49fb447",
+          "type": "detects"
+        },
+        {
+          "dest-uuid": "d456de47-a16f-4e46-8980-e67478a12dcb",
           "type": "detects"
         },
         {
@@ -5486,6 +5618,10 @@
           "type": "detects"
         },
         {
+          "dest-uuid": "dff263cc-328e-42b4-afbc-1fee8b6a8913",
+          "type": "detects"
+        },
+        {
           "dest-uuid": "e0033c16-a07e-48aa-8204-7c3ca669998c",
           "type": "detects"
         },
@@ -5495,6 +5631,10 @@
         },
         {
           "dest-uuid": "e0232cb0-ded5-4c2e-9dc7-2893142a5c11",
+          "type": "detects"
+        },
+        {
+          "dest-uuid": "e261a979-f354-41a8-963e-6cadac27c4bf",
           "type": "detects"
         },
         {
@@ -5578,6 +5718,10 @@
           "type": "detects"
         },
         {
+          "dest-uuid": "f5946b5e-9408-485f-a7f7-b5efc88909b6",
+          "type": "detects"
+        },
+        {
           "dest-uuid": "f5d8eed6-48a9-4cdf-a3d7-d1ffa99c3d2a",
           "type": "detects"
         },
@@ -5587,6 +5731,10 @@
         },
         {
           "dest-uuid": "f6fe9070-7a65-49ea-ae72-76292f42cebe",
+          "type": "detects"
+        },
+        {
+          "dest-uuid": "f8ba7d61-11c5-4130-bafd-7c3ff5fbf4b5",
           "type": "detects"
         },
         {
@@ -5622,7 +5770,7 @@
       "value": "Command Execution"
     },
     {
-      "description": "Initial construction of a new file (ex: Sysmon EID 11)",
+      "description": "A new file is created on a system or network storage. This action often signifies an operation such as saving a document, writing data, or deploying a file. Logging these events helps identify legitimate or potentially malicious file creation activities. Examples include logging file creation events (e.g., Sysmon Event ID 11 or Linux auditd logs). \n\nThis data component can be collected through the following measures:\n\nWindows\n\n- Sysmon: Event ID 11: Logs file creation events, capturing details like the file path, hash, and creation time.\n- Windows Event Log: Enable \"Object Access\" auditing in Group Policy to track file creation under Event ID 4663.\n- PowerShell: Real-time monitoring of file creation:`Get-WinEvent -FilterHashtable @{LogName='Security'; ID=4663}`\n\nLinux\n\n- Auditd: Use audit rules to monitor file creation: `auditctl -w /path/to/directory -p w -k file_creation`\n- View logs: `ausearch -k file_creation`\n- Inotify: Monitor file creation with inotifywait: `inotifywait -m /path/to/watch -e create`\n\nmacOS\n\n- Unified Logs: Use the macOS Unified Logging System to capture file creation events.\n- FSEvents: Use File System Events to monitor file creation: `fs_usage | grep create`\n\nNetwork Devices\n\n- NAS Logs: Monitor file creation events on network-attached storage devices.\n- SMB Logs: Collect logs of file creation activities over SMB/CIFS protocols.\n\nSIEM Integration\n\n- Forward logs from all platforms (Windows, Linux, macOS) to a SIEM for central analysis and alerting.",
       "meta": {
         "refs": []
       },
@@ -5692,6 +5840,10 @@
           "type": "detects"
         },
         {
+          "dest-uuid": "1b7b1806-7746-41a1-a35d-e48dae25ddba",
+          "type": "detects"
+        },
+        {
           "dest-uuid": "1c34f7aa-9341-4a48-bfab-af22e51aca6c",
           "type": "detects"
         },
@@ -5713,6 +5865,10 @@
         },
         {
           "dest-uuid": "246fd3c7-f5e3-466d-8787-4c13d9e3b61c",
+          "type": "detects"
+        },
+        {
+          "dest-uuid": "278716b1-61ce-4a74-8d17-891d0c494101",
           "type": "detects"
         },
         {
@@ -5820,6 +5976,10 @@
           "type": "detects"
         },
         {
+          "dest-uuid": "5bd41255-a224-4425-a2e2-e9d293eafe1c",
+          "type": "detects"
+        },
+        {
           "dest-uuid": "5d0d3609-d06d-49e1-b9c9-b544e0c618cb",
           "type": "detects"
         },
@@ -5848,6 +6008,14 @@
           "type": "detects"
         },
         {
+          "dest-uuid": "77e29a47-e263-4f11-8692-e5012f44dbac",
+          "type": "detects"
+        },
+        {
+          "dest-uuid": "78b9e70d-1605-459c-b23d-e3a25036968c",
+          "type": "detects"
+        },
+        {
           "dest-uuid": "79a47ad0-fc3b-4821-9f01-a026b1ddba21",
           "type": "detects"
         },
@@ -5857,6 +6025,10 @@
         },
         {
           "dest-uuid": "7e7c2fba-7cca-486c-9582-4c1bb2851961",
+          "type": "detects"
+        },
+        {
+          "dest-uuid": "7f0ca133-88c4-40c6-a62f-b3083a7fbc2e",
           "type": "detects"
         },
         {
@@ -5960,6 +6132,14 @@
           "type": "detects"
         },
         {
+          "dest-uuid": "bb5a00de-e086-4859-a231-fa793f6797e2",
+          "type": "detects"
+        },
+        {
+          "dest-uuid": "bed81616-3dde-4685-be6e-ba9820f9a7ed",
+          "type": "detects"
+        },
+        {
           "dest-uuid": "bf90d72c-c00b-45e3-b3aa-68560560d4c5",
           "type": "detects"
         },
@@ -6020,7 +6200,7 @@
           "type": "detects"
         },
         {
-          "dest-uuid": "e64c62cf-9cd7-4a14-94ec-cdaac43ab44b",
+          "dest-uuid": "e261a979-f354-41a8-963e-6cadac27c4bf",
           "type": "detects"
         },
         {
@@ -6048,6 +6228,14 @@
           "type": "detects"
         },
         {
+          "dest-uuid": "f5946b5e-9408-485f-a7f7-b5efc88909b6",
+          "type": "detects"
+        },
+        {
+          "dest-uuid": "fbd91bfc-75c2-4f0c-8116-3b4e722906b3",
+          "type": "detects"
+        },
+        {
           "dest-uuid": "fc742192-19e3-466c-9eb5-964a97b29490",
           "type": "detects"
         },
@@ -6060,7 +6248,7 @@
       "value": "File Creation"
     },
     {
-      "description": "Initial construction of a WMI object, such as a filter, consumer, subscription, binding, or provider (ex: Sysmon EIDs 19-21)",
+      "description": "Initial construction of a WMI object, such as a filter, consumer, subscription, binding, or providers. \n\n*Data Collection Measures:*\n\n- Windows Security Event Logs:\n    - Event ID 5861 (WMI Permanent Event Subscription)\n    - Event ID 5860 (WMI Event Filter Activity)\n    - Event ID 5857 (WMI Event Consumer Activity)\n- Sysmon Logs:\n    - Sysmon Event ID 19 – WMI Event Filter Created\n    - Sysmon Event ID 20 – WMI Event Consumer Created\n    - Sysmon Event ID 21 – WMI Event Binding Created\n- Endpoint Detection & Response (EDR)\n    - Detects WMI-based persistence techniques.",
       "meta": {
         "refs": []
       },
@@ -6098,7 +6286,7 @@
       "value": "WMI Creation"
     },
     {
-      "description": "Initial construction of a new instance (ex: instance.insert within GCP Audit Logs)",
+      "description": "The initial provisioning and construction of a virtual machine (VM) or compute instance within a cloud infrastructure environment. This activity involves defining and allocating resources such as CPU, memory, storage, and networking to spin up a new compute instance. Examples:\n\n- AWS: creating an EC2 instance using RunInstances API calls.\n- Azure, creating a VM through the Azure Resource Manager (ARM).\n- GCP, an `instance.insert` action recorded.\n\n*Data Collection Measures:*\n\n- AWS CloudTrail: CloudTrail logs stored in S3 or accessible via CloudWatch.\n- Azure Activity Logs: Accessible in Azure Monitor or exported to a storage account.\n- GCP Audit Logs: Logs Explorer or BigQuery.",
       "meta": {
         "refs": []
       },
@@ -6132,7 +6320,7 @@
       "value": "Instance Creation"
     },
     {
-      "description": "Initial construction of a virtual machine image (ex: Azure Compute Service Images PUT)",
+      "description": "Initial construction of a virtual machine image within a cloud environment. Virtual machine images are templates containing an operating system and installed applications, which can be deployed to create new virtual machines. Monitoring the creation of these images is important because adversaries may create custom images to include malicious software or misconfigurations for later exploitation. Examples: \n\n- Azure Compute Service Image Creation\n    - Example: Creating a virtual machine image in Azure using Azure CLI: `az image create --resource-group MyResourceGroup --name MyImage --source MyVM`\n- AWS EC2 AMI (Amazon Machine Image) Creation\n    - Example: Creating an AMI from an EC2 instance: `aws ec2 create-image --instance-id i-1234567890abcdef0 --name \"MyAMI\" --description \"An AMI for my app\"`\n- Google Cloud Compute Engine Image Creation\n    - Example: Creating a custom image using gcloud: `gcloud compute images create my-custom-image --source-disk my-disk --source-disk-zone us-central1-a`\n- VMware vSphere\n    - Example: Exporting a VM to create an OVF (Open Virtualization Format) template: This could later be imported into other environments with potential tampering.\n\nThis data component can be collected through the following measures:\n\nEnable Cloud Platform Logging\n\n- Azure: Enable \"Activity Logs\" to capture image-related events such as PUT requests to `Microsoft.Compute/images`.\n- AWS: Use AWS CloudTrail to monitor `CreateImage` API calls.\n- Google Cloud: Enable \"Cloud Audit Logs\" to track custom image creation events under `compute.googleapis.com/images`.\n\nAPI Monitoring\n\n- Monitor API activity to track the creation of new images using:\n    - AWS SDK/CLI `CreateImage`.\n    - Azure REST API for image creation.\n    - Google Cloud Compute Engine APIs.\n\nCloud SIEM Integration\n\n- Ingest cloud platform logs into a centralized SIEM for real-time monitoring and alerting.\n",
       "meta": {
         "refs": []
       },
@@ -6190,7 +6378,7 @@
       "value": "Cluster Metadata"
     },
     {
-      "description": "Code, strings, and other signatures that compromise a malicious payload",
+      "description": "Code, strings, signatures, and other identifying characteristics of a malicious payload stored within a malware repository. It includes both static (file-based) and dynamic (behavioral or execution-based) components that can be analyzed for threat intelligence, detection, and prevention purposes. Examples:\n\n- Static Analysis:\n    - Executable Code: Analyze binary data to identify unique patterns, obfuscated code, or embedded resources.\n    - Strings Extraction: Use tools like strings or YARA rules to identify hardcoded URLs, IPs, filenames, or suspicious function calls.\n    - Signatures: Extract cryptographic hashes (MD5, SHA256) of files to track known malware variants or detect previously unseen samples.\n- Dynamic Analysis:\n    - Behavioral Observations: Monitor execution traces to capture API calls, registry modifications, or network traffic patterns indicative of malicious behavior.\n    - Memory Analysis: Examine memory dumps to uncover injected code or runtime-decrypted payloads.\n    - Artifacts: Record file system changes, process creation events, and command-line arguments.\n- Threat Intelligence Integration:\n    - Campaign Attribution: Associate observed code snippets or signatures with known APT campaigns or ransomware families.\n    - Indicator Sharing: Share identified Indicators of Compromise (IOCs) with threat intelligence platforms (e.g., MISP, OpenCTI).\n- Examples of Malware Content:\n    - Embedded C2 domains (e.g., malicious-domain.com hardcoded in the payload).\n    - Fileless malware indicators, such as PowerShell scripts invoking Invoke-Mimikatz.\n    - Malware-specific signatures, such as unique PE header values for a particular strain.\n\n*Data Collection Measures:*\n\n- Collection from Public Malware Repositories:\n    - VirusTotal: Obtain samples for static analysis.\n    - Hybrid Analysis: Gather execution data from sandbox analysis.\n    - Any.Run: Access interactive malware execution traces.\n    - MalwareBazaar: Download malware samples for research and signature generation.\n    - Automate data extraction using repository APIs (e.g., VirusTotal API for hash lookups or sample retrieval).\n- Internal Malware Labs:\n    - Sandbox Environments: Use dynamic malware analysis tools such as Cuckoo Sandbox or Joe Sandbox to execute and monitor malware in a controlled environment. Capture runtime behavior logs, memory dumps, and file system changes.\n    - Reverse Engineering: Disassemble binaries with tools like IDA Pro, Ghidra, or Radare2 to identify malicious functionality and extract code patterns.\n- EDR/Endpoint Telemetry:\n    - Collect samples of malicious binaries or scripts from infected endpoints using tools like CrowdStrike, Carbon Black, or SentinelOne.\n    - Extract memory-resident payloads from live systems for analysis.\n- Threat Intelligence Platforms:\n    - Gather contextual metadata for identified malware using tools like OpenCTI, Recorded Future, or ThreatConnect. Participate in intelligence-sharing groups such as ISACs (e.g., FS-ISAC, IT-ISAC).\n- Custom Data Collection Pipelines: Use open-source tools like malwoverview or Maltrail to automate sample downloads, hash extraction, and IOC generation.",
       "meta": {
         "refs": []
       },
@@ -6300,7 +6488,7 @@
       "value": "Protected Configuration"
     },
     {
-      "description": "The initial construction of an executable managed by the OS, that may involve one or more tasks or threads. (e.g. Win EID 4688, Sysmon EID 1, cmd.exe > net use, etc.)",
+      "description": "Refers to the event in which a new process (executable) is initialized by an operating system. This can involve parent-child process relationships, process arguments, and environmental variables. Monitoring process creation is crucial for detecting malicious behaviors, such as execution of unauthorized binaries, scripting abuse, or privilege escalation attempts.\n\n*Data Collection Measures:*\n\n- Endpoint Detection and Response (EDR) Tools:\n    - EDRs provide process telemetry, tracking execution flows and arguments.\n- Windows Event Logs:\n    - Event ID 4688 (Audit Process Creation): Captures process creation with associated parent process.\n- Sysmon (Windows):\n    - Event ID 1 (Process Creation): Provides detailed logging\n- Linux/macOS Monitoring:\n    - AuditD (execve syscall): Logs process creation.\n    - eBPF/XDP: Used for low-level monitoring of system calls related to process execution.\n    - OSQuery: Allows SQL-like queries to track process events (process_events table).\n    - Apple Endpoint Security Framework (ESF): Monitors process creation on macOS.\n- Network-Based Monitoring:\n    - Zeek (Bro) Logs: Captures network-based process execution related to remote shells.\n    - Syslog/OSSEC: Tracks execution of processes on distributed systems.\n- Behavioral SIEM Rules:\n    - Monitor process creation for uncommon binaries in user directories.\n    - Detect processes with suspicious command-line arguments. ",
       "meta": {
         "refs": []
       },
@@ -6466,6 +6654,10 @@
           "type": "detects"
         },
         {
+          "dest-uuid": "278716b1-61ce-4a74-8d17-891d0c494101",
+          "type": "detects"
+        },
+        {
           "dest-uuid": "28170e17-8384-415c-8486-2e6b294cb803",
           "type": "detects"
         },
@@ -6503,6 +6695,10 @@
         },
         {
           "dest-uuid": "2f6b4ed7-fef1-44ba-bcb8-1b4beb610b64",
+          "type": "detects"
+        },
+        {
+          "dest-uuid": "2fee9321-3e71-4cf4-af24-d4d40d355b34",
           "type": "detects"
         },
         {
@@ -6666,6 +6862,10 @@
           "type": "detects"
         },
         {
+          "dest-uuid": "4b46767d-4a61-4f30-995e-c19a75c2e536",
+          "type": "detects"
+        },
+        {
           "dest-uuid": "4bc31b94-045b-4752-8920-aebaebdb6470",
           "type": "detects"
         },
@@ -6754,6 +6954,10 @@
           "type": "detects"
         },
         {
+          "dest-uuid": "63e3d25c-d57d-407d-8e6a-2cecd71f90be",
+          "type": "detects"
+        },
+        {
           "dest-uuid": "6495ae23-3ab4-43c5-a94f-5638a2c31fd2",
           "type": "detects"
         },
@@ -6763,6 +6967,10 @@
         },
         {
           "dest-uuid": "65f2d882-3f41-4d48-8a06-29af77ec9f90",
+          "type": "detects"
+        },
+        {
+          "dest-uuid": "66b34be7-6915-4b83-8d5a-b0f0592b5e41",
           "type": "detects"
         },
         {
@@ -6826,7 +7034,15 @@
           "type": "detects"
         },
         {
+          "dest-uuid": "762e6f29-a62f-4d96-91ed-d0073181431f",
+          "type": "detects"
+        },
+        {
           "dest-uuid": "767dbf9e-df3f-45cb-8998-4903ab5f80c0",
+          "type": "detects"
+        },
+        {
+          "dest-uuid": "77e29a47-e263-4f11-8692-e5012f44dbac",
           "type": "detects"
         },
         {
@@ -6847,6 +7063,10 @@
         },
         {
           "dest-uuid": "7d20fff9-8751-404e-badd-ccd71bda0236",
+          "type": "detects"
+        },
+        {
+          "dest-uuid": "7d356151-a69d-404e-896b-71618952702a",
           "type": "detects"
         },
         {
@@ -7162,6 +7382,10 @@
           "type": "detects"
         },
         {
+          "dest-uuid": "d4287702-e2f7-4946-bdfa-2c7f5aaa5032",
+          "type": "detects"
+        },
+        {
           "dest-uuid": "d456de47-a16f-4e46-8980-e67478a12dcb",
           "type": "detects"
         },
@@ -7214,6 +7438,10 @@
           "type": "detects"
         },
         {
+          "dest-uuid": "e261a979-f354-41a8-963e-6cadac27c4bf",
+          "type": "detects"
+        },
+        {
           "dest-uuid": "e358d692-23c0-4a31-9eb6-ecc13a8d7735",
           "type": "detects"
         },
@@ -7227,10 +7455,6 @@
         },
         {
           "dest-uuid": "e6415f09-df0e-48de-9aba-928c902b7549",
-          "type": "detects"
-        },
-        {
-          "dest-uuid": "e64c62cf-9cd7-4a14-94ec-cdaac43ab44b",
           "type": "detects"
         },
         {
@@ -7330,7 +7554,7 @@
       "value": "Process Creation"
     },
     {
-      "description": "Initial construction of a new pod (ex: kubectl apply|run)",
+      "description": "The initial deployment or instantiation of a new pod in a containerized environment. This includes creating a pod manually, through orchestration tools (Kubernetes), or via Infrastructure-as-Code (IaC) configurations. A Pod is the smallest deployable unit in Kubernetes, typically containing one or more containers. Creation methods include:\n- Direct pod deployment (`kubectl run`, `kubectl apply`)\n- Automated deployment via CI/CD pipelines (e.g., ArgoCD, Jenkins, GitOps)\n- Infrastructure-as-Code (IaC) templates (e.g., Terraform, Helm Charts)\n- API-based deployments via Kubernetes control plane (create_pod API calls)\n- Pods can be ephemeral (short-lived) or persistent (part of a StatefulSet or Deployment).\n\n*Data Collection Measures:*\n\n- Kubernetes Audit Logs\n    - Captures all API requests, including pod `create` events.\n- Kube-api server Logs\t\n    - Monitors API calls related to pod deployments and modifications. Related Events: `PodSandboxChanged`, `SyncLoop`, `Created pod`\n- Container Runtime Logs\t\n    - Logs from CRI-O, containerd, or Docker capture pod creation events. Related Events: `container start`, `container create`\n- Cloud Provider Logs\t\n    - GKE, EKS, AKS logs provide insights into Kubernetes API interactions.\n- SIEM & Log Aggregation\t\n    - Integrates Kubernetes logs into SIEM solutions.\n- EDR/XDR Solutions\t\n    - Monitors container-based activity for anomalous pod creations.",
       "meta": {
         "refs": []
       },
@@ -7348,7 +7572,7 @@
       "value": "Pod Creation"
     },
     {
-      "description": "Queried or logged information highlighting current and expired digital certificates (ex: Certificate transparency)",
+      "description": "Certificate Registration refers to the collection and analysis of information about digital certificates, including current, revoked, and expired certificates. Sources such as Certificate Transparency logs and other public resources provide visibility into certificates issued for specific domains or organizations. Monitoring certificate registrations can help identify potential misuse, such as unauthorized certificates or signs of adversary reconnaissance. Examples: \n\n- Certificate Transparency Logs: These logs record the issuance of SSL/TLS certificates by trusted Certificate Authorities (CAs).\n- Revoked Certificates: Information about certificates that have been invalidated before their expiration date.\n- Expired Certificates: Reports of expired certificates for a domain, which may indicate lax security practices or opportunities for adversaries to exploit expired credentials.\n- Domain Monitoring for Certificates: Maps SSL/TLS certificates to domains and subdomains, helping to identify any rogue certificates.\n- Public Certificate Directories: Services providing APIs to query issued certificates for analysis.\n\nThis data component can be collected through the following measures:\n\nUse Certificate Transparency Monitors\n\n- Tools like crt.sh, CertStream, or APIs provided by certificate authorities (CAs) allow you to monitor issued certificates in real-time.\n- Example: Use CertStream to stream certificate issuance logs and filter for domains of interest.\n\nAnalyze Certificate Revocation Sources\n\n- Monitor CRLs or query OCSP responders to detect revoked certificates.\n- Configure tools like OpenSSL or browsers to validate certificate revocation status automatically.\n\nLeverage Public Scanning Tools\n\n- Use tools such as SSL Labs, Censys, or Shodan to scan for certificate details related to your domain or network.\n\nAutomate Certificate Monitoring\n\n- Set up automated scripts or services to parse Certificate Transparency logs for anomalies.\n- Example: Automate searches on crt.sh to identify certificates issued for typo-squatted domains.\n\nIntegrate with Threat Intelligence\n\n- Enrich certificate data with threat intelligence feeds to detect connections to known adversary-controlled infrastructure.\n- Tools like VirusTotal can identify malicious certificates based on associated indicators.",
       "meta": {
         "refs": []
       },
@@ -7370,7 +7594,7 @@
       "value": "Certificate Registration"
     },
     {
-      "description": "Logged network traffic in response to a scan showing both protocol header and body values",
+      "description": "Captured network traffic that provides details about responses received during an internet scan. This data includes both protocol header values (e.g., HTTP status codes, IP headers, or DNS response codes) and response body content (e.g., HTML, JSON, or raw data). Examples:\n\n- HTTP Scan: A web server responds to a probe with an HTTP 200 status code and an HTML body indicating the default page is accessible.\n- DNS Scan: A DNS server replies to a query with a resolved IP address for a domain, along with details like Time-To-Live (TTL) and authoritative information.\n- TCP Banner Grab: A service listening on a port (e.g., SSH or FTP) responds with a banner containing service name, version, or other metadata.\n\n*Data Collection Measures:*\n\n- Network Traffic Monitoring:\n    - Deploy packet capture tools like Wireshark, tcpdump, or Suricata to log both headers and body content of response traffic.\n    - Use network appliances like firewalls, intrusion detection systems (IDS), or intrusion prevention systems (IPS) with logging enabled to capture scan responses.\n- Cloud Logging Services:\n    - AWS VPC Flow Logs: Capture metadata about network flows, including source and destination, protocol, and response codes.\n    - GCP Packet Mirroring: Use mirrored packets to analyze responses.\n    - Azure NSG Flow Logs: Record network traffic flow information for analysis.\n- Specific Tools:\n    - Zmap or Masscan: Can perform internet-wide scans and collect response content for analysis.\n    - Nmap: Use custom scripts to capture and log detailed response data during scans.",
       "meta": {
         "refs": []
       },
@@ -7496,7 +7720,7 @@
       "value": "Response Content"
     },
     {
-      "description": "Initial construction of a new snapshot (ex: AWS create-snapshot)",
+      "description": "The process of taking a point-in-time copy of a cloud storage volume (files, settings, configurations, etc.), virtual machine (VM), or database that can be created and deployed in cloud environments.\n\n*Data Collection Measures:*\n\n- Cloud Platform Logs (IaaS)\n    - AWS CloudTrail Logs: Monitor API calls related to snapshot creation (`CreateSnapshot`).\n    - Azure Monitor Logs: Track snapshot creation (`Microsoft.Compute/snapshots/write`).\n    - Google Cloud Logging: Detect `compute.disks.createSnapshot`.",
       "meta": {
         "refs": []
       },
@@ -7522,7 +7746,7 @@
       "value": "Snapshot Creation"
     },
     {
-      "description": "Activation or invocation of a container (ex: docker start or docker restart)",
+      "description": "\"Container Start\" data component captures events related to the activation or invocation of a container within a containerized environment. This includes starting a previously stopped container, restarting an existing container, or initializing a container for runtime. Monitoring these activities is critical for identifying unauthorized or unexpected container activations, which may indicate potential adversarial activity or misconfigurations. Examples: \n\n- Docker Example: `docker start <container_name>`, `docker restart <container_name>`\n- Kubernetes Example: Kubernetes automatically restarts containers as part of pod lifecycle management (e.g., due to health checks or configuration changes).\n- Cloud-Native Example\n    - AWS ECS: API Call: StartTask to activate a stopped ECS task.\n    - Azure Container Instances: Command to restart a container group instance.\n    - GCP Kubernetes Engine: Automatic restarts as part of node or pod management.\n\nThis data component can be collected through the following measures:\n\n- Docker Audit Logging: Enable Docker logging to capture start and restart events. Use tools like auditd to monitor terminal activity involving container lifecycle commands.\n- Kubernetes Audit Logs: Enable Kubernetes API server audit logging.\n- Cloud Provider Logs\n    - AWS CloudTrail: Capture StartTask or related API calls for ECS.\n    - Azure Monitor: Track activity in container groups that indicate start or restart events.\n    - GCP Cloud Logging: Record logs related to pod restarts or scaling events in Kubernetes Engine.\n- SIEM Integration: Collect logs from Docker, Kubernetes, and cloud services to correlate container start events.",
       "meta": {
         "refs": []
       },
@@ -7548,7 +7772,7 @@
       "value": "Container Start"
     },
     {
-      "description": "Initial construction of a new service/daemon (ex: Windows EID 4697 or /var/log daemon logs)",
+      "description": "The registration of a new service or daemon on an operating system.\n\n*Data Collection Measures:*\n\n- Windows Event Logs\n    - Event ID 4697 - Captures the creation of a new Windows service.\n    - Event ID 7045 - Captures services installed by administrators or adversaries.\n    - Event ID 7034 - Could indicate malicious service modification or exploitation.\n- Sysmon Logs\n    - Sysmon Event ID 1 - Process Creation (captures service executables).\n    - Sysmon Event ID 4 - Service state changes (detects service installation).\n    - Sysmon Event ID 13 - Registry modifications (captures service persistence changes).\n- PowerShell Logging\n    - Monitor `New-Service` and `Set-Service` PowerShell cmdlets in Event ID 4104 (Script Block Logging).\n- Linux/macOS Collection Methods\n    - AuditD & Syslog Daemon Logs (`/var/log/syslog`, `/var/log/messages`, `/var/log/daemon.log`)\n    - AuditD Rules:\n        - `auditctl -w /etc/systemd/system -p wa -k service_creation`\n        - Detects changes to `systemd` service configurations.\n- Systemd Journals (`journalctl -u <service_name>`)\n    - Captures newly created systemd services.\n- LaunchDaemons & LaunchAgents (macOS)\n    - Monitor `/Library/LaunchDaemons/` and `/Library/LaunchAgents/` for new plist files.",
       "meta": {
         "refs": []
       },
@@ -7571,6 +7795,10 @@
         },
         {
           "dest-uuid": "42e8de7b-37b2-4258-905a-6897815e58e0",
+          "type": "detects"
+        },
+        {
+          "dest-uuid": "4b46767d-4a61-4f30-995e-c19a75c2e536",
           "type": "detects"
         },
         {
@@ -7618,7 +7846,7 @@
       "value": "Service Creation"
     },
     {
-      "description": "Initial construction of a cloud volume (ex: AWS create-volume)",
+      "description": "The initial provisioning of block storage volumes in cloud or on-prem environments, typically used for data storage, backup, or workload scaling.\n\n*Data Collection Measures:*\n\n- Cloud-Based Logging & Monitoring\n    - AWS CloudTrail\n        - `CreateVolume` – Logs the creation of new Amazon Elastic Block Store (EBS) volumes.\n        - `RunInstances` – Can be correlated to detect automatic volume provisioning.\n    - Azure Monitor & Log Analytics\n        - `Microsoft.Compute/disks/write` – Captures creation of new managed/unmanaged disks.\n        - `Microsoft.Storage/storageAccounts/write` – Detects creation of new Azure Blob Storage volumes.\n    - Google Cloud Logging (GCP)\n        - `compute.disks.insert` – Tracks new persistent disk creation.\n        - `compute.instances.attachDisk` – Logs attachment of a volume to a running VM.\n    - OpenStack Logs\n        - `volume.create` – Captures new storage volume provisioning.\n        - `cinder.volume.create` – Logs OpenStack Cinder block storage creation.\n- Host-Based & SIEM Detection\n    - Linux/macOS System Logs\n        - `/var/log/syslog` & `/var/log/messages` – Detects new mount points or attached storage.\n        - `dmesg | grep \"new disk\"` – Identifies kernel messages for volume attachment.\n        - AuditD: Tracks `mkfs` (filesystem creation) for new volume provisioning.\n    - Windows Event Logs\n        - Event ID 1006 (Storage Management Events) – Captures disk volume creation.\n        - Event ID 5145 (Object Access: File Share) – Detects access to newly created storage shares.",
       "meta": {
         "refs": []
       },
@@ -7636,7 +7864,7 @@
       "value": "Volume Creation"
     },
     {
-      "description": "Deactivation or stoppage of a cloud service (ex: Write/Delete entries within Azure Firewall Activity Logs)",
+      "description": "The deactivation, misconfiguration, or complete stoppage of firewall services, either on a host or in a cloud control plane. Such activity may involve turning off firewalls, modifying rules to disable protection, or deleting firewall-related configurations and activity logs. Examples: \n\n- Disabling Host-Based Firewalls: Stopping the Windows Defender Firewall service or using `iptables -F` to flush all rules on a Linux system.\n- Cloud Firewall Modification or Deactivation: Modifying or deleting security group rules in AWS or disabling a network firewall in Azure.\n- Activity Log Deletion: Writing or deleting entries in Azure Firewall Activity Logs to hide unauthorized firewall changes.\n- Temporary Disable for Malicious Operations: Temporarily disabling a firewall to allow malicious files or traffic, then re-enabling it to avoid detection.\n- Using Command-Line Tools to Stop Firewalls: Running commands like `Set-NetFirewallProfile -Enabled False on Windows or systemctl stop ufw` on Linux.\n\nThis data component can be collected through the following measures:\n\nCloud Control Plane\n\n- Azure Activity Logs:\n    - Enable logging of administrative actions, such as stopping or modifying Azure Firewall configurations.\n    - Use Azure Monitor to track specific firewall-related actions, including disabling or rule deletion.\n- AWS CloudTrail Logs:\n    - Monitor `RevokeSecurityGroupIngress` or `RevokeSecurityGroupEgress` events to detect rule changes in AWS Security Groups.\n- Google Cloud Platform Logs:\n    - Collect logs from the Firewall Rules resource in Google Cloud Operations Suite to detect rule deletions or modifications.\n\nHost-Level Firewalls\n\n- Windows Firewall Event Logs:\n    - Enable logging of firewall state changes:\n        - Security Event ID 2004: Firewall service stopped.\n        - Security Event ID 2005: Firewall service started.\n    - Use Sysmon for process creation events tied to firewall commands or scripts (Sysmon Event ID 1).\n- Linux Firewall Logs: Use auditd to track commands like iptables, firewalld, or ufw: `auditctl -a always,exit -F arch=b64 -S execve -k firewall_disable`\n- macOS Firewall: Monitor changes to the macOS Application Firewall using the log show command.\n\nNetwork-Level Monitoring\n\n- IDS/IPS Alerts: Deploy IDS/IPS systems to monitor abnormal traffic flows that could indicate firewall disablement.\n- NetFlow Data: Analyze NetFlow or packet capture data for traffic patterns inconsistent with firewall enforcement.\n\nSIEM and CSPM Tools\n\n- SIEM Integration: Use tools like Splunk or QRadar to centralize and analyze firewall disablement events from both hosts and cloud platforms.\n- Cloud Security Posture Management (CSPM): Use CSPM solutions to monitor misconfigurations and track deactivation of critical cloud services like firewalls.",
       "meta": {
         "refs": []
       },
@@ -7662,7 +7890,7 @@
       "value": "Firewall Disable"
     },
     {
-      "description": "Removal of a file (ex: Sysmon EID 23, macOS ESF EID ES_EVENT_TYPE_AUTH_UNLINK, or Linux commands auditd unlink, rename, rmdir, unlinked, or renameat rules)",
+      "description": "Refers to events where files are removed from a system or storage device. These events can indicate legitimate housekeeping activities or malicious actions such as attackers attempting to cover their tracks. Monitoring file deletions helps organizations identify unauthorized or suspicious activities.\n\nThis data component can be collected through the following measures:\n\nWindows\n\n- Sysmon: Event ID 23: Logs file deletion events, including details such as file paths and responsible processes.\n- Windows Event Log: Enable \"Object Access\" auditing to monitor file deletions.\n- PowerShell: `Get-WinEvent -FilterHashtable @{LogName='Security'; ID=4663} | Where-Object {$_.Message -like '*DELETE*'}`\n\nLinux\n\n- Auditd: Use audit rules to capture file deletion events: `auditctl -a always,exit -F arch=b64 -S unlink -S rename -S rmdir -k file_deletion`\n- Query logs: `ausearch -k file_deletion`\n- Inotify: Use inotifywait to monitor file deletions: `inotifywait -m /path/to/watch -e delete`\n\nmacOS\n\n- Endpoint Security Framework (ESF): Monitor events like ES_EVENT_TYPE_AUTH_UNLINK to capture file deletion activities.\n- FSEvents: Track file deletion activities in real-time: `fs_usage | grep unlink`\n\nSIEM Integration\n\n- Forward file deletion logs to a SIEM for centralized monitoring and correlation with other events.\n",
       "meta": {
         "refs": []
       },
@@ -7736,7 +7964,7 @@
       "value": "File Deletion"
     },
     {
-      "description": "Removal of an instance (ex: instance.delete within GCP Audit Logs)",
+      "description": "Removal of a virtual machine (VM) or compute instance within a cloud infrastructure. This activity results in the termination and deletion of the allocated resources (e.g., CPU, memory, storage), making the instance unavailable for future use. Examples:\n\n- AWS: instance deletion involves the `TerminateInstances` API call, which is recorded in CloudTrail logs.\n- Azure: VM deletion can be monitored via Azure Activity Logs, showing the `Microsoft.Compute/virtualMachines/delete` operation.\n- GCP: instance deletion is logged as an instance.delete operation within GCP Audit Logs.\n\n*Data Collection Measures: \n\n- AWS CloudTrail: CloudTrail logs stored in S3 or forwarded to CloudWatch.\n- Azure Activity Logs: Accessible via Azure Monitor or exported to a storage account.\n- GCP Audit Logs: Logs Explorer or BigQuery.",
       "meta": {
         "refs": []
       },
@@ -7762,7 +7990,7 @@
       "value": "Instance Deletion"
     },
     {
-      "description": "Removal of a virtual machine image (ex: Azure Compute Service Images DELETE)",
+      "description": "Removal of a virtual machine image in a cloud infrastructure (ex: Azure Compute Service Images DELETE) Examples: \n\n- Azure Compute Service Image Deletion\n    - Example: Deleting a virtual machine image using Azure CLI: `az image delete --name MyImage --resource-group MyResourceGroup`\n- AWS EC2 AMI (Amazon Machine Image) Deletion\n    - Example: Deregistering an AMI in AWS: `aws ec2 deregister-image --image-id ami-1234567890abcdef0`\n- Google Cloud Compute Engine Image Deletion\n    - Example: Deleting a custom image in Google Cloud: `gcloud compute images delete my-custom-image`\n- VMware vSphere\n    - Example: Deleting a VM image/template from a vSphere environment:\n\nThis data component can be collected through the following measures:\n\nEnable Cloud Platform Logging\n\n- Azure: Enable \"Activity Logs\" to capture DELETE requests to `Microsoft.Compute/images`.\n- AWS: Use AWS CloudTrail to monitor `DeregisterImage` or `DeleteSnapshot` API calls.\n- Google Cloud: Enable \"Cloud Audit Logs\" to track image deletion events under `compute.googleapis.com/images`.\n\nAPI Monitoring\n\n- Monitor API activity to track the deletion of images using:\n    - AWS SDK/CLI `DeregisterImage` or `DeleteSnapshot`.\n    - Azure REST API DELETE operations for images.\n    - Google Cloud Compute Engine APIs for image deletion.\n\nCloud SIEM Integration\n\n- Ingest logs into a centralized SIEM platform for monitoring and alerting:\n\nEvent Correlation\n\n- Correlate image deletion events with unusual account activity or concurrent unauthorized operations.\n",
       "meta": {
         "refs": []
       },
@@ -7780,7 +8008,7 @@
       "value": "Image Deletion"
     },
     {
-      "description": "Attaching a driver to either user or kernel-mode of a system (ex: Sysmon EID 6)",
+      "description": "The process of attaching a driver, which is a software component that allows the operating system and applications to interact with hardware devices, to either user-mode or kernel-mode of a system. This can include benign actions (e.g., hardware drivers) or malicious behavior (e.g., rootkits or unsigned drivers). Examples: \n\n- Legitimate Driver Loading: A new graphics driver from a vendor like NVIDIA or AMD is loaded into the system.\n- Unsigned Driver Loading: A driver without a valid digital signature is loaded into the kernel.\n- Rootkit Installation: A malicious rootkit driver is loaded to manipulate kernel-mode processes.\n- Anti-Virus or EDR Driver Loading: An Endpoint Detection and Response (EDR) solution loads its driver to monitor system activities.\n- Driver Misuse: A legitimate driver is loaded and exploited to execute malicious actions, such as using vulnerable drivers for bypassing defenses (e.g., Bring Your Own Vulnerable Driver (BYOVD) attacks).\n\nThis data component can be collected through the following measures:\n\nWindows\n\n- Sysmon Logs: \n    - Event ID 6: Captures driver loading activity, including file path, hashes, and signature information.\n    - Configuration: Ensure Sysmon is configured with a ruleset that monitors driver loading events\n- Windows Event Logs: Enable \"Audit Kernel Object\" to capture kernel-related driver loading events.\n\nLinux\n\n- Auditd: Configure audit rules to capture driver loading events: `auditctl -w /lib/modules/ -p rwxa -k driver_load`\n- Kernel Logs (dmesg): Use dmesg to monitor driver-related activities: `dmesg | grep \"module\"`\n- Syslog or journald: Review logs for module insertion or removal activities.\n\nmacOS\n\n- Unified Logs: Use the macOS unified logging system to monitor kext (kernel extension) loads:\n`log show --predicate 'eventMessage contains \"kext load\"'`\n- Endpoint Security Framework: Monitor driver loading via third-party security tools that leverage Apple’s Endpoint Security Framework.\n\nSIEM Tools\n\n- Ingest driver load logs from Sysmon, Auditd, or macOS unified logs into a centralized SIEM (e.g., Splunk).\n- Create rules to detect unsigned drivers, rootkit activity, or known vulnerable drivers.\n\nEDR Solutions\n\n- Use EDR tools to detect and alert on anomalous driver loading activity.",
       "meta": {
         "refs": []
       },
@@ -7850,7 +8078,7 @@
       "value": "Driver Load"
     },
     {
-      "description": "Contextual data about a driver and activity around it such as driver issues reporting or integrity (page hash, code) checking",
+      "description": "to contextual data about a driver, including its attributes, functionality, and activity. This can involve details such as the driver's origin, integrity, cryptographic signature, issues reported during its use, and runtime behavior. Examples include metadata captured during driver integrity checks, hash validation, or error reporting. Examples: \n\n- Driver Signature Validation: A driver is validated to ensure it is signed by a trusted Certificate Authority (CA).\n- Driver Hash Verification: The hash of a driver is compared to a known good hash stored in a database.\n- Driver Compatibility Issues: A driver error is logged due to compatibility issues with a particular version of the operating system.\n- Vulnerable Driver Identification: Metadata indicates the driver version is outdated or contains a known vulnerability.\n- Monitoring Driver Integrity: Drivers are monitored for any unauthorized modifications to their binary or associated files.\n\nThis data component can be collected through the following measures:\n\nWindows\n\n- Windows Event Logs:\n    - Event ID 3000-3006: Logs metadata about driver signature validation.\n    - Event ID 2000-2011 (Windows Defender Application Control): Tracks driver integrity and policy enforcement.\n- Sysmon Logs: Configure Sysmon to capture driver loading metadata (Event ID 6).\n- Driver Verifier: Use Driver Verifier to collect diagnostic and performance data about drivers, including stability and compatibility metrics.\n- PowerShell: Use commands to retrieve metadata about installed drivers:\n`Get-WindowsDriver -Online | Select-Object Driver, ProviderName, Version`\n\nLinux\n\n- Auditd: Configure audit rules to monitor driver interactions and collect metadata: `auditctl -w /lib/modules/ -p rwxa -k driver_metadata`\n- dmesg: Use `dmesg` to extract kernel logs with driver metadata: `dmesg | grep \"module\"`\n- lsmod and modinfo: Commands to list loaded modules and retrieve metadata about drivers: `lsmod` | `modinfo <module_name>`\n\nmacOS\n\n- Unified Logs: Collect metadata from system logs about kernel extensions (kexts): `log show --predicate 'eventMessage contains \"kext load\"' --info`\n- kextstat: Command to retrieve information about loaded kernel extensions: `kextstat`\n\nSIEM Tools\n\n- Ingest Driver Metadata: Collect driver metadata logs from Sysmon, Auditd, or macOS logs into SIEMs like Splunk or Elastic.\n\nVulnerability Management Tools\n\n- Use these tools to collect metadata about vulnerable drivers across enterprise systems.",
       "meta": {
         "refs": []
       },
@@ -7872,7 +8100,7 @@
       "value": "Driver Metadata"
     },
     {
-      "description": "Changes made to a drive letter or mount point of a data storage device",
+      "description": "The alteration of a drive letter, mount point, or other attributes of a data storage device, which could involve reassignment, renaming, permissions changes, or other modifications. Examples: \n\n- Drive Letter Reassignment: A USB drive previously assigned `E:\\` is reassigned to `D:\\` on a Windows machine.\n- Mount Point Change: On a Linux system, a mounted storage device at `/mnt/external` is moved to `/mnt/storage`.\n- Drive Permission Changes: A shared drive's permissions are modified to allow write access for unauthorized users or processes.\n- Renaming of a Drive: A network drive labeled \"HR_Share\" is renamed to \"Shared_Resources.\"\n- Modification of Cloud-Integrated Drives: A cloud storage mount such as Google Drive is modified to sync only specific folders.\n\nThis data component can be collected through the following measures:\n\nWindows Event Logs\n\n- Relevant Events:\n    - Event ID 98: Indicates changes to a volume (e.g., drive letter reassignment).\n    - Event ID 1006: Logs permission modifications or changes to removable storage.\n- Configuration: Enable \"Storage Operational Logs\" in the Event Viewer:\n`Applications and Services Logs > Microsoft > Windows > Storage-Tiering > Operational`\n\nLinux System Logs\n\n- Auditd Configuration: Add audit rules to track changes to mounted drives: `auditctl -w /mnt/ -p w -k drive_modification`\n- Command-Line Monitoring: Use `dmesg` or `journalctl` to observe drive modifications.\n\nmacOS System Logs\n\n- Unified Logs: Collect mount or drive modification events: `log show --info | grep \"Volume modified\"`\n- Command-Line Monitoring: Use `diskutil` to track changes:\n\nEndpoint Detection and Response (EDR) Tools\n\n- Configure policies in EDR solutions to monitor and log changes to drive configurations or attributes.\n\nSIEM Tools\n\n- Aggregate logs from multiple systems into a centralized platform like Splunk to correlate events and alert on suspicious drive modification activities.\n",
       "meta": {
         "refs": []
       },
@@ -7910,7 +8138,7 @@
       "value": "Drive Modification"
     },
     {
-      "description": "Logged domain name system (DNS) data highlighting timelines of domain to IP address resolutions (ex: passive DNS)",
+      "description": "\"Domain Name: Passive DNS\" captures logged historical and real-time domain name system (DNS) data. This includes records of domain-to-IP address resolutions over time, enabling analysts to track the evolution of domain infrastructure, uncover historical patterns of use, and detect malicious activities tied to domains and their associated IP addresses. Examples: \n\n- Historical Resolutions\n- Shared IP Usage\n- Temporal Patterns\n- Malicious Domain Clustering\n- Historical Lookback\n\nThis data component can be collected through the following measures:\n\n- Passive DNS Platforms: Use platforms that specialize in passive DNS collection and analysis:\n   - Tools: Farsight DNSDB, RiskIQ PassiveTotal, PassiveDNS.\n- Threat Intelligence Feeds: Integrate passive DNS data from commercial or open-source threat intelligence providers.\n- Custom DNS Collectors: Deploy custom tools to capture DNS traffic at the network level for analysis.\n- Cloud DNS Services: Leverage cloud DNS services (e.g., AWS Route 53, Azure DNS) that maintain DNS query logs.",
       "meta": {
         "refs": []
       },
@@ -7944,7 +8172,7 @@
       "value": "Passive DNS"
     },
     {
-      "description": "Information about domain name assignments and other domain metadata (ex: WHOIS)",
+      "description": "\"Domain Name: Domain Registration\" data component captures information about the assignment, ownership, and metadata of domain names. This information is often sourced from registries like WHOIS and includes details such as registrant names, contact information, registration dates, expiration dates, and registrar details. This data is invaluable for tracking domain ownership, detecting malicious domain registrations, and identifying trends in adversary behavior. Examples: \n\n- Registrant Information: WHOIS lookup of example.com \n- Registration and Expiration Dates: A domain registered a week before being used in phishing attacks.\n- Domain Status: Status codes like clientTransferProhibited or serverHold indicate domain restrictions or potential hijacking activity.\n- Name Server Information: Name servers point to a public DNS provider often associated with malicious campaigns.\n- Privacy Protection: A domain uses WHOIS privacy protection to hide registrant details.\n\nThis data component can be collected through the following measures:\n\n- WHOIS Services: Use tools or services to perform WHOIS lookups:\n- WHOIS APIs: Automate domain registration lookups with APIs:\n- Registrar Platforms: Directly query domain registrars (e.g., GoDaddy, Namecheap) for detailed registration data.\n- Threat Intelligence Platforms: Integrate domain registration data from services like Recorded Future, RiskIQ, or PassiveTotal for enriched analysis.",
       "meta": {
         "refs": []
       },
@@ -7978,7 +8206,7 @@
       "value": "Domain Registration"
     },
     {
-      "description": "Removal of a snapshot (ex: AWS delete-snapshot)",
+      "description": "The removal of a point-in-time backup of a cloud storage volume, virtual machine (VM), or database.\n\n*Data Collection Measures:*\n\n- AWS CloudTrail\n    - Logs `DeleteSnapshot` API calls in EC2, RDS, and EBS services.\n- Azure Monitor Logs\n    - Tracks snapshot deletions via `Microsoft.Compute/snapshots/delete` API calls.\n- Google Cloud Logging\n    - Detects snapshot removal through `compute.disks.deleteSnapshot` events.",
       "meta": {
         "refs": []
       },
@@ -8004,7 +8232,7 @@
       "value": "Snapshot Deletion"
     },
     {
-      "description": "Removal of a a cloud volume (ex: AWS delete-volume)",
+      "description": "The removal of a cloud-based or on-premise block storage volume. This action permanently deletes the allocated storage and may result in data loss if not backed up.\n\n*Data Collection Measures:*\n\n- Cloud Logging & APIs\n    - AWS CloudTrail Logs\n        - `eventName: DeleteVolume` (tracks volume deletions)\n    - Azure Monitor Logs\n        - `operationName: Microsoft.Compute/disks/delete`\n        - `status: Success | Failure` (flag unauthorized delete attempts)\n    - Google Cloud Audit Logs\n        - `protoPayload.methodName: \"v1.compute.disks.delete\"`\n        - `authenticationInfo.principalEmail` (identifies the user deleting the volume)\n- System & Host-Based Logging\n    - Linux & macOS Logs:\n        - `/var/log/syslog` or `/var/log/messages` for volume detach/deletion actions\n    - Windows Event Logs:\n        - Event ID 98 (Storage Class Memory)\n        - Event ID 225 (Volume Removal Detected)\n        - Event ID 12 (Disk Removal Notification)",
       "meta": {
         "refs": []
       },
@@ -8026,7 +8254,7 @@
       "value": "Volume Deletion"
     },
     {
-      "description": "An extracted list of available firewalls and/or their associated settings/rules (ex: Azure Network Firewall CLI Show commands)",
+      "description": "Querying and extracting a list of available firewalls or their associated configurations and rules. This activity can occur across host systems and cloud control planes, providing insight into the state and configuration of firewalls that protect the environment. Examples: \n\n- Querying Host-Based Firewalls: Using Windows PowerShell commands like `Get-NetFirewallRule` or Linux commands such as `iptables -L` or `firewalld --list-all`.\n- Cloud Firewall Rule Listing: Running commands like `az network firewall list` for Azure or `aws ec2 describe-security-groups` for AWS.\n- Using Management APIs: Leveraging APIs like Google Cloud Firewall's `list` API method or AWS's DescribeSecurityGroups API.\nIdentifying Misconfigurations: Extracting firewall rules to identify “allow all” policies or rules that lack logging.\n- Enumerating with CLI Tools: Using CLI commands like `gcloud compute firewall-rules list` to extract firewall settings in Google Cloud.\n\nThis data component can be collected through the following measures:\n\nCloud Control Plane\n\n- Azure Activity Logs:Collect logs from Azure Firewall to monitor rule listing commands. Enable logging for `az network firewall` commands.\n- AWS CloudTrail: Monitor calls to `DescribeSecurityGroups` or `DescribeNetworkAcls` APIs.\nGoogle Cloud Operations Suite: Collect logs for `gcloud compute firewall-rules list` or API calls to `firewalls.list`.\n\nHost-Based Firewalls\n\n- Windows Event Logs: Use PowerShell transcription logs to capture commands like `Get-NetFirewallRule`.\n- Linux Auditd: Track executions of commands like `iptables -L` or `ufw status` using auditd: `auditctl -a always,exit -F arch=b64 -S execve -k firewall_enum`\n- macOS: Monitor logs for firewall-related queries via the Console app or log monitoring tools.\n\nSIEM Integration\n\n- Collect logs from endpoints and cloud platforms to centralize data and detect enumeration activity.\n\nEndpoint Detection and Response (EDR)\n\n- Use EDR tools to track enumeration commands or API calls performed on managed devices.\n\nCSPM Tools\n\n- Deploy Cloud Security Posture Management tools to monitor for unauthorized enumeration of firewall rules or configurations.",
       "meta": {
         "refs": []
       },
@@ -8048,7 +8276,7 @@
       "value": "Firewall Enumeration"
     },
     {
-      "description": "An extracted list of available groups and/or their associated settings (ex: AWS list-groups)",
+      "description": "Extracting group lists from identity systems identifies permissions, roles, or configurations. Adversaries may exploit high-privilege groups or misconfigurations. Examples:\n\n- AWS CLI: `aws iam list-groups`\n- PowerShell: `Get-ADGroup -Filter *`\n- (Saas) Google Workspace: Admin SDK Directory API\n- Azure: `Get-AzureADGroup`\n- Microsoft 365:  Graph API `GET https://graph.microsoft.com/v1.0/groups`\n\n*Data Collection Measures:*\n\n- Cloud Logging: Enable AWS CloudTrail, Azure Activity Logs, and Google Workspace Admin Logs for group-related actions.\n- Directory Monitoring: Track logs like AD Event ID 4662 (object operations).\n- API Monitoring: Log API activity like AWS IAM queries.\n- SaaS Monitoring: Use platform logs (e.g., Office 365 Unified Audit Logs).\n- SIEM Integration: Centralize group query tracking.",
       "meta": {
         "refs": []
       },
@@ -8086,7 +8314,7 @@
       "value": "Group Enumeration"
     },
     {
-      "description": "An extracted list of instances within a cloud environment (ex: instance.list within GCP Audit Logs)",
+      "description": "The process of retrieving or querying a list of virtual machine instances or compute instances within a cloud infrastructure. This activity provides a view of all available or running instances, typically including their associated metadata such as instance ID, name, state, and configuration details. Examples:\n\n- AWS: instance enumeration involves the `DescribeInstances` API call, which retrieves information about running or stopped EC2 instances.\n- Azure: VM enumeration can be monitored via the `Microsoft.Compute/virtualMachines/read` operation.\n- GCP: instance enumeration is logged as an `instance.list` operation within GCP Audit Logs.\n\n*Data Collection Measures:*\n\n- AWS CloudTrail: CloudTrail logs stored in S3 or forwarded to CloudWatch.\n- Azure Activity Logs: Accessible via Azure Monitor or exported to a storage account.\n- GCP Audit Logs: Logs Explorer or BigQuery.",
       "meta": {
         "refs": []
       },
@@ -8104,7 +8332,7 @@
       "value": "Instance Enumeration"
     },
     {
-      "description": "An extracted list of pods within a cluster (ex: kubectl get pods)",
+      "description": "Extracting a list of running or existing pods within a containerized cluster environment. Pods are the smallest deployable units in a Kubernetes cluster and typically represent an application or workload. Enumeration of pods provides insight into the structure and state of applications running in the cluster, such as the names of pods, their namespaces, and their associated metadata.\n\n*Data Collection Measures:*\n\n- Kubernetes API Server Audit Logs:\n    - Enable Audit Logging in Kubernetes to capture API requests, such as GET `/api/v1/pods`.\n- Container Runtime Logs:\n    - Collect runtime-level logs from tools like CRI-O, containerd, or Docker, which might show relevant API calls for pod enumeration.\n- EDR and SIEM:\n    - Endpoint Detection and Response (EDR) tools, if configured with cluster-level visibility, can monitor user commands like `kubectl get pods`.\n    - SIEM platforms (e.g., Splunk) can ingest Kubernetes API logs to detect enumeration patterns.\n- Host-Based Monitoring:\n    - Monitor processes and commands executed on nodes where `kubectl` is installed using tools like auditd, Sysmon for Linux, or kernel modules.",
       "meta": {
         "refs": []
       },
@@ -8122,7 +8350,7 @@
       "value": "Pod Enumeration"
     },
     {
-      "description": "An extracted list of snapshops within a cloud environment (ex: AWS describe-snapshots)",
+      "description": "The process of listing or retrieving metadata about existing snapshots in a cloud environment.\n\n*Data Collection Measures:*\n\n- AWS CloudTrail\n    - Logs API calls such as `DescribeSnapshots`, `ListSnapshots`, and `GetSnapshotAttributes`.\n- Azure Monitor Logs\n    - Tracks snapshot enumeration via `Microsoft.Compute/snapshots/read`.\n- Google Cloud Logging\n    - Detects snapshot listing through `compute.disks.listSnapshots`.\n",
       "meta": {
         "refs": []
       },
@@ -8140,7 +8368,7 @@
       "value": "Snapshot Enumeration"
     },
     {
-      "description": "The execution of a text file that contains code via the interpreter (e.g. Powershell, WMI, Windows EID 4104, etc.)",
+      "description": "The execution of a text file that contains code via the interpreter.\n\n*Data Collection Measures:*\n\n- Windows Event Logs:\n    - Event ID 4104 (PowerShell Script Block Logging) – Captures full command-line execution of PowerShell scripts.\n    - Event ID 4688 (Process Creation) – Detects script execution by tracking process launches (`powershell.exe`, `wscript.exe`, `cscript.exe`).\n    - Event ID 5861 (Script Execution) – Captures script execution via Windows Defender AMSI logging.\n- Sysmon (Windows):\n    - Event ID 1 (Process Creation) – Monitors script execution initiated by scripting engines.\n    - Event ID 11 (File Creation) – Detects new script files written to disk before execution.\n- Endpoint Detection and Response (EDR) Tools:\n    - Track script execution behavior, detect obfuscated commands, and prevent malicious scripts.\n- PowerShell Logging:\n    - Enable Module Logging: Logs all loaded modules and cmdlets.\n    - Enable Script Block Logging: Captures complete PowerShell script execution history.\n- SIEM Detection Rules:\n    - Detect script execution with obfuscated, encoded, or remote URLs.\n    - Alert on script executions using `-EncodedCommand` or `iex(iwr)`.",
       "meta": {
         "refs": []
       },
@@ -8203,6 +8431,10 @@
         },
         {
           "dest-uuid": "53ac20cd-aca3-406e-9aa0-9fc7fdc60a5a",
+          "type": "detects"
+        },
+        {
+          "dest-uuid": "63e3d25c-d57d-407d-8e6a-2cecd71f90be",
           "type": "detects"
         },
         {
@@ -8300,7 +8532,7 @@
       "value": "Volume Enumeration"
     },
     {
-      "description": "Contextual data about a firewall and activity around it such as name, policy, or status",
+      "description": "Contextual information about firewalls, including their configurations, policies, status, and other details such as names and associated rules. This metadata provides valuable insights into the operational state and configurations of firewalls, both in cloud control planes and host systems. Examples: \n\n- Firewall Name and Configuration: The name, type, and purpose of a firewall such as \"Azure Firewall - Production Environment.\"\n- Policy Details: Capturing firewall policy details, such as \"Allow inbound TCP 443 to web servers.\"\n- Firewall Status: Status indicators like \"Active,\" \"Disabled,\" or \"Pending Updates.\"\n- Audit Log Metadata: Log entries showing administrative changes, such as \"Policy modified by admin@domain.com.\"\n- Rules Associated with Firewalls: Rules specifying source/destination IP ranges, protocols, and ports.\n- Tagging Information: Tags like \"Environment: Production\" or \"Owner: NetworkOps.\"\n\nThis data component can be collected through the following measures:\n\nCloud Control Plane\n\n- Azure: Use Azure Activity Logs and Network Watcher to collect metadata for Azure Firewall.\n    - Example: `az network firewall show --name <firewall-name>`\n- AWS: Use AWS CloudTrail and describe commands: `aws ec2 describe-security-groups`\n- Google Cloud: Use gcloud commands to extract metadata: `gcloud compute firewall-rules list --format=json`\n\nHost-Based Firewalls\n\n- Windows: Use PowerShell to gather metadata: `Get-NetFirewallRule -PolicyStore PersistentStore`\n- Linux: Query iptables or nftables rulesets: `iptables -S`\n- macOS: Use pfctl to extract metadata: `sudo pfctl -sr`\n\nSIEM Integration\n\n- Collect logs from cloud platforms, host systems, and network appliances.\n\nAPI Monitoring\n\n- Monitor API calls for metadata requests. Example (AWS): `Capture DescribeSecurityGroups or DescribeNetworkAcls` calls via CloudTrail.\n\nEndpoint Detection and Response (EDR)\n\n- Use EDR solutions to monitor firewall management tools for configuration changes or queries.",
       "meta": {
         "refs": []
       },
@@ -8322,7 +8554,7 @@
       "value": "Firewall Metadata"
     },
     {
-      "description": "Contextual data about a file, which may include information such as name, the content (ex: signature, headers, or data/media), user/owner, permissions, etc.",
+      "description": "contextual information about a file, including attributes such as the file's name, size, type, content (e.g., signatures, headers, media), user/owner, permissions, timestamps, and other related properties. File metadata provides insights into a file's characteristics and can be used to detect malicious activity, unauthorized modifications, or other anomalies. Examples: \n\n- File Ownership and Permissions: Checking the owner and permissions of a critical configuration file like /etc/passwd on Linux or C:\\Windows\\System32\\config\\SAM on Windows.\n- Timestamps: Analyzing the creation, modification, and access timestamps of a file.\n- File Content and Signatures: Extracting the headers of an executable file to verify its signature or detect packing/obfuscation.\n- File Attributes: Analyzing attributes like hidden, system, or read-only flags in Windows.\n- File Hashes: Generating MD5, SHA-1, or SHA-256 hashes of files to compare against threat intelligence feeds.\n- File Location: Monitoring files located in unusual directories or paths, such as temporary or user folders.\n\nThis data component can be collected through the following measures:\n\nWindows\n\n- Sysinternals Tools: Use `AccessEnum` or `PSFile` to retrieve metadata about file access and permissions.\n- Windows Event Logs: Enable object access auditing and monitor events like 4663 (Object Access) and 5140 (A network share object was accessed).\n- PowerShell: Use Get-Item or Get-ChildItem cmdlets: `Get-ChildItem -Path \"C:\\Path\\To\\Directory\" -Recurse | Select-Object Name, Length, LastWriteTime, Attributes`\n\nLinux\n\n- File System Commands: Use `ls -l` or stat to retrieve file metadata: `stat /path/to/file`\n- Auditd: Configure audit rules to log metadata access: `auditctl -w /path/to/file -p wa -k file_metadata`\n- Filesystem Integrity Tools: Tools like tripwire or AIDE (Advanced Intrusion Detection Environment) can monitor file metadata changes.\n\nmacOS\n\n- FSEvents: Use FSEvents to track file metadata changes.\n- Endpoint Security Framework (ESF): Capture metadata-related events via ESF APIs.\n- Command-Line Tools: Use ls -l or xattr for file attributes: `ls -l@ /path/to/file`\n\nSIEM Integration\n\n- Forward file metadata logs from endpoint or network devices to a SIEM for centralized analysis.",
       "meta": {
         "refs": []
       },
@@ -8416,6 +8648,10 @@
           "type": "detects"
         },
         {
+          "dest-uuid": "671cd17f-a765-48fd-adc4-dad1941b1ae3",
+          "type": "detects"
+        },
+        {
           "dest-uuid": "67720091-eee3-4d2d-ae16-8264567f6f5b",
           "type": "detects"
         },
@@ -8425,6 +8661,10 @@
         },
         {
           "dest-uuid": "7007935a-a8a7-4c0b-bd98-4e85be8ed197",
+          "type": "detects"
+        },
+        {
+          "dest-uuid": "762e6f29-a62f-4d96-91ed-d0073181431f",
           "type": "detects"
         },
         {
@@ -8522,13 +8762,17 @@
         {
           "dest-uuid": "f2857333-11d4-45bf-b064-2c28d8525be5",
           "type": "detects"
+        },
+        {
+          "dest-uuid": "fbd91bfc-75c2-4f0c-8116-3b4e722906b3",
+          "type": "detects"
         }
       ],
       "uuid": "639e87f3-acb6-448a-9645-258f20da4bc5",
       "value": "File Metadata"
     },
     {
-      "description": "Changes made to firmware, including its settings and/or data, such as MBR (Master Boot Record) and VBR (Volume Boot Record)",
+      "description": "Changes made to firmware, which may include its settings, configurations, or underlying data. This can encompass alterations to the Master Boot Record (MBR), Volume Boot Record (VBR), or other firmware components critical to system boot and functionality. Such modifications are often indicators of adversary activity, including malware persistence and system compromise. Examples: \n\n- Changes to Master Boot Record (MBR): Modifying the MBR to load malicious code during the boot process.\n- Changes to Volume Boot Record (VBR): Altering the VBR to redirect boot processes to malicious locations.\n- Firmware Configuration Changes: Modifying BIOS/UEFI settings such as disabling Secure Boot.\n- Firmware Image Tampering: Updating firmware with a malicious or unauthorized image.\n- Logs or Errors Indicating Firmware Changes: Logs showing unauthorized firmware updates or checksum mismatches.\n\nThis data component can be collected through the following measures:\n\n- BIOS/UEFI Logs: Enable and monitor BIOS/UEFI logs to capture settings changes or firmware updates.\n- Firmware Integrity Monitoring: Use tools or firmware security features to detect changes to firmware components.\n- Endpoint Detection and Response (EDR) Solutions: Many EDR platforms can detect abnormal firmware activity, such as changes to MBR/VBR or unauthorized firmware updates.\n- File System Monitoring: Monitor changes to MBR/VBR-related files using tools like Sysmon or auditd.\n    - Windows Example (Sysmon): Monitor Event ID 7 (Raw disk access).\n    - Linux Example (auditd): `auditctl -w /dev/sda -p wa -k firmware_modification`\n- Network Traffic Analysis: Capture firmware updates downloaded over the network, particularly from untrusted sources. Use network monitoring tools like Zeek or Wireshark to analyze firmware-related traffic.\n- Secure Boot Logs: Collect and analyze Secure Boot logs for signs of tampering or unauthorized configurations. Example: Use PowerShell to retrieve Secure Boot settings on Windows: `Confirm-SecureBootUEFI`\n- Vendor-Specific Firmware Tools: Many hardware vendors provide tools for firmware integrity checks.Examples:\n    - Intel Platform Firmware Resilience (PFR).\n    - Lenovo UEFI diagnostics.",
       "meta": {
         "refs": []
       },
@@ -8578,7 +8822,7 @@
       "value": "Firmware Modification"
     },
     {
-      "description": "Changes made to a file, or its access permissions and attributes, typically to alter the contents of the targeted file (ex: Windows EID 4670 or Sysmon EID 2)",
+      "description": "Changes made to a file, including updates to its contents, metadata, access permissions, or attributes. These modifications may indicate legitimate activity (e.g., software updates) or unauthorized changes (e.g., tampering, ransomware, or adversarial modifications). Examples: \n\n- Content Modifications: Changes to the content of a configuration file, such as modifying `/etc/ssh/sshd_config` on Linux or `C:\\Windows\\System32\\drivers\\etc\\hosts` on Windows.\n- Permission Changes: Altering file permissions to allow broader access, such as changing a file from `644` to `777` on Linux or modifying NTFS permissions on Windows.\n- Attribute Modifications: Changing a file's attributes to hidden, read-only, or system on Windows.\n- Timestamp Manipulation: Adjusting a file's creation or modification timestamp using tools like `touch` in Linux or timestomping tools on Windows.\n- Software or System File Changes: Modifying system files such as `boot.ini`, kernel modules, or application binaries.\n\nThis data component can be collected through the following measures:\n\nWindows\n\n- Event Logs: Enable file system auditing to monitor file modifications using Security Event ID 4670 (File System Audit) or Sysmon Event ID 2 (File creation time changed).\n- PowerShell: Use Get-ItemProperty or Get-Acl cmdlets to monitor file properties: `Get-Item -Path \"C:\\path\\to\\file\" | Select-Object Name, Attributes, LastWriteTime`\n\nLinux\n\n- File System Monitoring: Use tools like auditd with rules to monitor file modifications: `auditctl -w /path/to/file -p wa -k file_modification`\n- Inotify: Use inotifywait to watch for real-time changes to files or directories: `inotifywait -m /path/to/file`\n\nmacOS\n\n- Endpoint Security Framework (ESF): Monitor file modification events using ESF APIs.\n- Audit Framework: Configure audit rules to track file changes.\n- Command-Line Tools: Use fs_usage to monitor file activities: `fs_usage -w /path/to/file`\n\nSIEM Tools\n\n- Collect logs from endpoint agents (e.g., Sysmon, Auditd) and file servers to centralize file modification event data.",
       "meta": {
         "refs": []
       },
@@ -8621,6 +8865,10 @@
         },
         {
           "dest-uuid": "1365fe3b-0f50-455d-b4da-266ce31c23b0",
+          "type": "detects"
+        },
+        {
+          "dest-uuid": "1b7b1806-7746-41a1-a35d-e48dae25ddba",
           "type": "detects"
         },
         {
@@ -8736,6 +8984,10 @@
           "type": "detects"
         },
         {
+          "dest-uuid": "4b46767d-4a61-4f30-995e-c19a75c2e536",
+          "type": "detects"
+        },
+        {
           "dest-uuid": "543fceb5-cb92-40cb-aacf-6913d4db58bc",
           "type": "detects"
         },
@@ -8809,6 +9061,10 @@
         },
         {
           "dest-uuid": "7efba77e-3bc4-4ca5-8292-d8201dcd64b5",
+          "type": "detects"
+        },
+        {
+          "dest-uuid": "7f0ca133-88c4-40c6-a62f-b3083a7fbc2e",
           "type": "detects"
         },
         {
@@ -8984,10 +9240,6 @@
           "type": "detects"
         },
         {
-          "dest-uuid": "e64c62cf-9cd7-4a14-94ec-cdaac43ab44b",
-          "type": "detects"
-        },
-        {
           "dest-uuid": "e8a0a025-3601-4755-abfb-8d08283329fb",
           "type": "detects"
         },
@@ -9020,6 +9272,10 @@
           "type": "detects"
         },
         {
+          "dest-uuid": "f5946b5e-9408-485f-a7f7-b5efc88909b6",
+          "type": "detects"
+        },
+        {
           "dest-uuid": "fa44a152-ac48-441e-a524-dd7b04b8adcd",
           "type": "detects"
         },
@@ -9036,7 +9292,7 @@
       "value": "File Modification"
     },
     {
-      "description": "Contextual data about a group which describes group and activity around it, such as name, permissions, or user accounts within the group",
+      "description": "Group metadata includes attributes like name, permissions, purpose, and associated user accounts or roles, which adversaries may exploit for privilege escalation. Examples:\n\n- Active Directory: `Get-ADGroup -Identity \"Domain Admins\" -Properties Members, Description`\n- Azure AD: `Get-AzureADGroup -ObjectId <GroupId>`\n- Google Workspace: `GET https://admin.googleapis.com/admin/directory/v1/groups/<groupKey>`\n- AWS IAM: `aws iam list-group-policies --group-name <group_name>`\n- Office 365: `GET https://graph.microsoft.com/v1.0/groups/<id>`\n\n*Data Collection Measures:*\n\n- Cloud Logging:\n    - AWS CloudTrail for IAM group-related activities.\n    - Azure AD Sign-In/Audit logs for metadata changes.\n    - Google Admin Activity logs for API calls.\n- Directory Logging: Log metadata access (e.g., Windows Event ID 4662).\n- API Monitoring: Log API calls to modify group metadata (e.g., Microsoft Graph API).\n- SIEM Integration: Centralize group metadata logs for analysis.\n",
       "meta": {
         "refs": []
       },
@@ -9058,7 +9314,7 @@
       "value": "Group Metadata"
     },
     {
-      "description": "Changes made to a group, such as membership, name, or permissions (ex: Windows EID 4728 or 4732, AWS IAM UpdateGroup)",
+      "description": "Changes made to a group, such as membership, name, or permissions (ex: Windows EID 4728 or 4732, AWS IAM UpdateGroup). Examples: \n\n- Active Directory:\n    - Event ID 4728: Member added to a global group.\n    - Event ID 4732: Member added to a local group.\n- Azure AD: `Set-AzureADGroup -ObjectId <GroupId> -DisplayName \"New Name\"`\n- AWS IAM: `aws iam update-group --group-name <GroupName> --new-path \"/admin/\"`\n- Google Workspace: Modify permissions via Admin SDK API: `PATCH https://admin.googleapis.com/admin/directory/v1/groups/<groupKey>`\n- Office 365: Modify groups via Graph API: `PATCH https://graph.microsoft.com/v1.0/groups/<groupId>`\n\n*Data Collection Measures:*\n\n- Directory Logging:\n    - Windows: Log EIDs 4728 (add), 4729 (remove).\n    - Azure AD: Enable \"Audit logs.\"\n    - Google Workspace: Enable Admin Activity logs.\n    - Office 365: Use Unified Audit Logs.\n- Cloud Monitoring:\n    - AWS: Log `UpdateGroup`, `AttachGroupPolicy`, `RemoveUserFromGroup`.\n    - Azure: Track modifications via Audit logs.\n- API Monitoring: Log Google Admin SDK and Microsoft Graph API calls.\n- SIEM Integration: Centralize and monitor group modification logs.",
       "meta": {
         "refs": []
       },
@@ -9080,7 +9336,7 @@
       "value": "Group Modification"
     },
     {
-      "description": "Logging, messaging, and other artifacts highlighting the health of host sensors (ex: metrics, errors, and/or exceptions from logging applications)",
+      "description": "Logging, messaging, and other artifacts that highlight the health and operational state of host-based security sensors, such as Endpoint Detection and Response (EDR) agents, antivirus software, logging services, and system monitoring tools. Monitoring sensor health is essential for detecting misconfigurations, sensor failures, tampering, or deliberate security control evasion by adversaries.\n\n*Data Collection Measures:*\n\n- Windows Event Logs:\n    - Event ID 1074 (System Shutdown): Detects unexpected system reboots/shutdowns.\n    - Event ID 6006 (Event Log Stopped): Logs when Windows event logging is stopped.\n    - Event ID 16 (Sysmon): Detects configuration state changes that may indicate log tampering.\n    - Event ID 12 (Windows Defender Status Change) – Detects changes in Windows Defender state.\n- Linux/macOS Monitoring:\n    - `/var/log/syslog`, `/var/log/auth.log`, `/var/log/kern.log`\n    - Journald (journalctl) for kernel and system alerts.\n- Endpoint Detection and Response (EDR) Tools:\n    - Monitor agent health status, detect sensor tampering, and alert on missing telemetry.\n- Mobile Threat Intelligence Logs:\n    - Samsung Knox, SafetyNet, iOS Secure Enclave provide sensor health status for mobile endpoints.",
       "meta": {
         "refs": []
       },
@@ -9260,7 +9516,7 @@
       "value": "Instance Metadata"
     },
     {
-      "description": "Contextual data about a virtual machine image such as name, resource group, state, or type",
+      "description": "contextual information associated with a virtual machine image, such as its name, resource group, status (active or inactive), type (custom or prebuilt), size, creation date, and permissions. This metadata is critical for understanding the state and configuration of virtual machine images in cloud environments. Examples: \n\n- Azure Compute Service Image Metadata Example:\n    - Name: MyCustomImage\n    - Resource Group: MyResourceGroup\n    - State: Available\n    - Type: Managed Image\n- AWS EC2 AMI Metadata Example:\n    - Image ID: ami-1234567890abcdef0\n    - Name: ProdImage\n    - State: Available\n    - Platform: Windows\n- Google Cloud Compute Engine Image Metadata Example:\n    - Image Name: webserver-image\n    - Project: my-project-id\n    - Family: webserver\n    - Source Disk: my-disk-id\n- VMware vSphere Template Metadata Example:\n    - Name: LinuxTemplate\n    - Disk Size: 40GB\n    - Network Adapter: VM Network\n\nThis data component can be collected through the following measures:\n\nCloud Platform-Specific Tools\n\n- Azure:\n    - Use Azure CLI to query metadata: `az image show --name MyCustomImage --resource-group MyResourceGroup`\n- AWS:\n    - Use AWS CLI to describe AMI metadata: `aws ec2 describe-images --image-ids ami-1234567890abcdef0`\n- Google Cloud:\n    - Use Google Cloud SDK to retrieve image metadata: `gcloud compute images describe webserver-image` \n\nAPIs\n\n- Azure: `GET /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/images/{imageName}`\n- AWS: `DescribeImages` API.\n- Google Cloud: `GET https://compute.googleapis.com/compute/v1/projects/{project}/global/images/{image}.`\n\nCloud Management Portals\n\n- View metadata directly from the cloud provider's management console or dashboard.\n\nSIEM Integration\n\n- Aggregate metadata into SIEM platforms for centralized monitoring:\n",
       "meta": {
         "refs": []
       },
@@ -9290,7 +9546,7 @@
       "value": "Image Metadata"
     },
     {
-      "description": "Changes made to an instance, including its settings and/or control data (ex: instance.addResourcePolicies or instances.setMetadata within GCP Audit Logs)",
+      "description": "Changes made to a virtual machine (VM) or compute instance, including alterations to its configuration, metadata, attached policies, or operational state. Such modifications can include updating metadata, attaching or detaching resource policies, resizing instances, or modifying network configurations. Examples:\n\n- AWS: instance modifications include API actions like `ModifyInstanceAttribute`, `ModifyInstanceMetadataOptions`, or `RebootInstances`.\n- Azure: modifications can be tracked through operations like `Microsoft.Compute/virtualMachines/write`.\n- GCP: instance modification events include operations like `instances.setMetadata`, `instances.addResourcePolicies`, or `instances.resize`.\n\n*Data Collection Measures:*\n\n- AWS CloudTrail: Log Location: Stored in S3 or forwarded to CloudWatch.\n- Azure Activity Logs: Log Location: Accessible via Azure Monitor or exported to a storage account.\n- GCP Audit Logs: Log Location: Logs Explorer or BigQuery.",
       "meta": {
         "refs": []
       },
@@ -9330,7 +9586,7 @@
       "value": "Image Modification"
     },
     {
-      "description": "Activation or invocation of an instance (ex: instance.start within GCP Audit Logs)",
+      "description": "The initiation or activation of a virtual machine instance within a cloud infrastructure. This action typically involves starting an existing instance that had been stopped or paused, allowing it to resume operation. Examples: \n\n- Google Cloud Platform (GCP): Starting an instance through `instance.start` API activity.\n- AWS: Logging of `StartInstances` in AWS CloudTrail for EC2 instances.\n- Azure: `Microsoft.Compute/virtualMachines/start` entries indicate a VM instance being started.\n\n*Data Collection Measures:*\n\n- Google Cloud Platform: Enable GCP Audit Logs for Compute Engine.\n    - Log Event: Look for instance.start entries in Cloud Logging.\n- Amazon Web Services (AWS): AWS CloudTrail.\n    - Log Event: Search for StartInstances events associated with EC2.\n- Microsoft Azure: Azure Activity Logs.\n    - Log Event: Filter for Microsoft.Compute/virtualMachines/start operations.",
       "meta": {
         "refs": []
       },
@@ -9360,7 +9616,7 @@
       "value": "Instance Start"
     },
     {
-      "description": "Deactivation or stoppage of an instance (ex: instance.stop within GCP Audit Logs)",
+      "description": "The deactivation or shutdown of a virtual machine instance within a cloud infrastructure. This action typically involves stopping a running instance, which halts its operation and releases certain associated resources, such as CPU and memory. Examples: \n\n- Google Cloud Platform (GCP): `instance.stop` events recorded in GCP Audit Logs indicate the deactivation of an instance.\n- Amazon Web Services (AWS): `StopInstances` actions in AWS CloudTrail indicate EC2 instances being stopped.\n- Microsoft Azure: `Microsoft.Compute/virtualMachines/deallocate` or `stop` events in Azure Activity Logs represent a virtual machine being stopped or deallocated.",
       "meta": {
         "refs": []
       },
@@ -9382,7 +9638,7 @@
       "value": "Instance Stop"
     },
     {
-      "description": "Attaching a module into the memory of a process/program, typically to access shared resources/features provided by the module (ex: Sysmon EID 7)",
+      "description": "When a process or program dynamically attaches a shared library, module, or plugin into its memory space. This action is typically performed to extend the functionality of an application, access shared system resources, or interact with kernel-mode components.\n\n*Data Collection Measures:*\n\n- Event Logging (Windows):\n    - Sysmon Event ID 7: Logs when a DLL is loaded into a process.\n    - Windows Security Event ID 4688: Captures process creation events, often useful for correlating module loads.\n    - Windows Defender ATP: Can provide visibility into suspicious module loads.\n- Event Logging (Linux/macOS):\n    - AuditD (`execve` and `open` syscalls): Captures when shared libraries (`.so` files) are loaded.\n    - Ltrace/Strace: Monitors process behavior, including library calls (`dlopen`, `execve`).\n    - MacOS Endpoint Security Framework (ESF): Monitors library loads (`ES_EVENT_TYPE_NOTIFY_DYLD_INSERT_LIBRARIES`).\n- Endpoint Detection & Response (EDR): \n    - Provide real-time telemetry on module loads and process injections.\n    - Sysinternals Process Monitor (`procmon`): Captures loaded modules and their execution context.\n- Memory Forensics:\n    - Volatility Framework (`malfind`, `ldrmodules`): Detects injected DLLs and anomalous module loads.\n    - Rekall Framework: Useful for kernel-mode module detection.\n- SIEM and Log Analysis:\n    - Centralized log aggregation to correlate suspicious module loads across the environment.\n    - Detection rules using correlation searches and behavioral analytics.",
       "meta": {
         "refs": []
       },
@@ -9556,6 +9812,10 @@
           "type": "detects"
         },
         {
+          "dest-uuid": "bb5a00de-e086-4859-a231-fa793f6797e2",
+          "type": "detects"
+        },
+        {
           "dest-uuid": "bc0f5e80-91c0-4e04-9fbb-e4e332c85dae",
           "type": "detects"
         },
@@ -9573,10 +9833,6 @@
         },
         {
           "dest-uuid": "dfd7cc1d-e1d8-4394-a198-97c4cab8aa67",
-          "type": "detects"
-        },
-        {
-          "dest-uuid": "e64c62cf-9cd7-4a14-94ec-cdaac43ab44b",
           "type": "detects"
         },
         {
@@ -9601,6 +9857,10 @@
         },
         {
           "dest-uuid": "f4c1826f-a322-41cd-9557-562100848c84",
+          "type": "detects"
+        },
+        {
+          "dest-uuid": "f5946b5e-9408-485f-a7f7-b5efc88909b6",
           "type": "detects"
         },
         {
@@ -9688,11 +9948,19 @@
           "type": "detects"
         },
         {
+          "dest-uuid": "3d333250-30e4-4a82-9edc-756c68afc529",
+          "type": "detects"
+        },
+        {
           "dest-uuid": "42e8de7b-37b2-4258-905a-6897815e58e0",
           "type": "detects"
         },
         {
           "dest-uuid": "43e7dc91-05b2-474c-b9ac-2ed4fe101f4d",
+          "type": "detects"
+        },
+        {
+          "dest-uuid": "514dc7b3-0b80-4382-80a9-2e2d294f5019",
           "type": "detects"
         },
         {
@@ -9770,7 +10038,7 @@
       "value": "Pod Metadata"
     },
     {
-      "description": "Changes made to a process, or its contents, typically to write and/or execute code in the memory of the target process (ex: Sysmon EID 8)",
+      "description": "Changes made to a running process, such as writing data into memory, modifying execution behavior, or injecting code into an existing process. Adversaries frequently modify processes to execute malicious payloads, evade detection, or gain escalated privileges.\n\n*Data Collection Measures:* \n\n- Endpoint Detection and Response (EDR) Tools:\n    - EDRs can monitor memory modifications and API-level calls.\n- Sysmon (Windows):\n    - Event ID 8 (CreateRemoteThread) – Detects cross-process thread injection, commonly used in process hollowing.\n    - Event ID 10 (Process Access) – Detects access attempts to another process, often preceding injection attempts.\n- Linux/macOS Monitoring:\n    - AuditD (ptrace, mmap, mprotect syscalls): Detects memory modifications and debugging attempts.\n    - eBPF/XDP: Monitors low-level system calls related to process modifications.\n    - OSQuery: The processes table can be queried for unusual modifications.\n- Network-Based Monitoring:\n    - Zeek (Bro) Logs: Captures lateral movement attempts where adversaries remotely modify a process.\n    - Syslog/OSSEC: Monitors logs for suspicious modifications.",
       "meta": {
         "refs": []
       },
@@ -9832,7 +10100,7 @@
       "value": "Process Modification"
     },
     {
-      "description": "Changes made to a pod, including its settings and/or control data (ex: kubectl set|patch|edit)",
+      "description": "Changes made to a pod’s configuration or control data within a containerized cluster. This can include updating settings such as resource limits, environment variables, annotations, labels, or even the containers running within the pod. Pod modifications are often executed using commands like kubectl set, kubectl patch, or kubectl edit.\n\n*Data Collection Measures:* \n\n- Kubernetes API Server Audit Logs:\n    - Capture all API calls related to pod modification, such as PATCH, PUT, or UPDATE methods on v1/pods.\n- Runtime Security Tools:\n    - Tools like Falco, Sysdig, and Kube-bench can monitor pod modifications at runtime and alert on policy violations.\n- Container Orchestration Logs:\n    - Monitor events logged by Kubernetes itself (e.g., `kubectl logs -n kube-system kube-controller-manager`).\n- SIEM and EDR Solutions:\n    - Use SIEM platforms (e.g., Splunk) to aggregate API server logs and detect patterns of unauthorized or suspicious pod modifications.\n    - Endpoint Detection and Response (EDR) tools configured with container visibility can monitor commands like `kubectl` set or `kubectl patch`.\n- Host-Based Monitoring:\n    - Collect and analyze logs for processes executing `kubectl` commands or interacting with Kubernetes configuration files (e.g., `.kube/config`).",
       "meta": {
         "refs": []
       },
@@ -9850,7 +10118,7 @@
       "value": "Pod Modification"
     },
     {
-      "description": "Contextual data about an Internet-facing resource gathered from a scan, such as running services or ports",
+      "description": "Contextual information about an Internet-facing resource collected during a scan, including details such as open ports, running services, protocols, and versions. This metadata is typically derived from interpreting scan results and helps build a profile of the targeted system. Examples: \n\n- Port and Service Details:\n    - Open ports (e.g., 22, 80, 443).\n    - Identified services running on those ports (e.g., SSH, HTTP, HTTPS).\n- Service Versions: Detected software version information (e.g., Apache 2.4.41, OpenSSH 8.2).\n- Operating System Information: OS fingerprinting data (e.g., Linux Kernel 5.4.0).\n- TLS/SSL Certificate Data: Information about the TLS/SSL certificate, such as the expiration date, issuer, and cipher suites.\n\n*Data Collection Measures:*\n\n- Scanning Tools:\n    - Nmap: Collects port, service, and version information using commands like nmap -sV <IP>.\n    - Masscan: High-speed scanning tool for discovering open ports and active services.\n    - Zmap: Focused on large-scale Internet scanning, collecting metadata about discovered services.\n    - Shodan API: Retrieves scan metadata for publicly exposed devices and services.\n- Network Logs:\n    - Use logs from firewalls, intrusion detection systems (IDS), or intrusion prevention systems (IPS) to gather metadata from scan attempts. Example: Zeek or Suricata logs for incoming scan traffic.\n- OSINT Platforms: Platforms like Censys, GreyNoise, or Shodan provide aggregated metadata about Internet-facing resources.\n- Cloud Metadata Services: AWS Security Hub, Azure Monitor, or GCP Security Command Center can collect and centralize scan-related metadata for Internet-facing resources in cloud environments.",
       "meta": {
         "refs": []
       },
@@ -9976,7 +10244,7 @@
       "value": "Service Metadata"
     },
     {
-      "description": "Established, compromised, or otherwise acquired social media personas",
+      "description": "Established, compromised, or otherwise acquired by adversaries to conduct reconnaissance, influence operations, social engineering, or other cyber threats.\n\n*Data Collection Measures:*\n\n- API Monitoring\t\n    - Social media APIs (e.g., Twitter API, Facebook Graph API) can extract behavioral patterns of accounts.\n- Web Scraping\n    - Extracts public profile data, friend lists, or interactions to identify impersonation attempts.\n- Threat Intelligence Feeds\t\n    - External feeds track malicious personas linked to disinformation campaigns or phishing.\n- OSINT Tools\n    - Maltego, SpiderFoot, and OpenCTI can map social media persona relationships.\n- Endpoint Detection\t\n    - EDR logs user behavior and alerts on suspicious social media interactions.\n- SIEM Logging\n    - Detects access to known phishing pages or social media abuse via proxy logs.\n- Dark Web Monitoring\t\n    - Identifies compromised social media credentials being sold.",
       "meta": {
         "refs": []
       },
@@ -10006,7 +10274,7 @@
       "value": "Social Media"
     },
     {
-      "description": "Changes made to a snapshop, such as metadata and control data (ex: AWS modify-snapshot-attribute)",
+      "description": "Changes made to a cloud snapshot's metadata, attributes, or control settings. These modifications may involve adjusting access permissions, changing retention policies, or altering encryption settings. \n\n*Data Collection Measures:*\n\n- AWS CloudTrail\n    - Tracks API calls such as `ModifySnapshotAttribute`, `ResetSnapshotAttribute`, and `ModifySnapshotTier`.\n- Azure Monitor Logs\n    - Logs changes via `Microsoft.Compute/snapshots/write`.\n- Google Cloud Logging\n    - Captures modifications through `compute.snapshots.setIamPolicy` and `compute.snapshots.patch`.",
       "meta": {
         "refs": []
       },
@@ -10028,7 +10296,7 @@
       "value": "Snapshot Modification"
     },
     {
-      "description": "Changes made to a service/daemon, such as changes to name, description, and/or start type (ex: Windows EID 7040 or /var/log daemon logs)",
+      "description": "Changes made to an existing service or daemon, such as modifying the service name, start type, execution parameters, or security configurations.\n\n*Data Collection Measures: *\n\n- Windows Event Logs\n    - Event ID 7040 - Detects modifications to the startup behavior of a service.\n    - Event ID 7045 - Can capture changes made to existing services.\n    - Event ID 7036 - Tracks when services start or stop, potentially indicating malicious tampering.\n    - Event ID 4697 - Can detect when an adversary reinstalls a service with different parameters.\n- Sysmon Logs\n    - Sysmon Event ID 13 - Detects changes to service configurations in the Windows Registry (e.g., `HKLM\\SYSTEM\\CurrentControlSet\\Services\\`).\n    - Sysmon Event ID 1 - Can track execution of `sc.exe` or `PowerShell Set-Service`.\n- PowerShell Logging\n    - Event ID 4104 (Script Block Logging) - Captures execution of commands like `Set-Service`, `New-Service`, or `sc config`.\n    - Command-Line Logging (Event ID 4688) - Tracks usage of service modification commands:\n        - `sc config <service_name> start= auto`  \n        - `sc qc <service_name>`  \n- Linux/macOS Collection Methods\n    - Systemd Journals (`journalctl -u <service_name>`) Tracks modifications to systemd service configurations.\n    - Daemon Logs (`/var/log/syslog`, `/var/log/messages`, `/var/log/daemon.log`) Captures changes to service state and execution parameters.\n    - AuditD Rules for Service Modification \n        - Monitor modifications to `/etc/systemd/system/` for new or altered service unit files: `auditctl -w /etc/systemd/system/ -p wa -k service_modification`\n        - Track execution of `systemctl` or `service` commands: `auditctl -a always,exit -F arch=b64 -S execve -F a0=systemctl -F key=service_mod`\n    - OSQuery for Linux/macOS Monitoring\n        - Query modified services using OSQuery’s `processes` or `system_info` tables: `SELECT * FROM systemd_units WHERE state != 'running';`\n    - macOS Launch Daemon/Agent Modification\n        - Monitor for changes in:\n            - `/Library/LaunchDaemons/`\n            - `/Library/LaunchAgents/`\n        - Track modifications to `.plist` files indicating persistence attempts.",
       "meta": {
         "refs": []
       },
@@ -10136,6 +10404,10 @@
           "type": "detects"
         },
         {
+          "dest-uuid": "a64a820a-cb21-471f-920c-506a2ff04fa5",
+          "type": "detects"
+        },
+        {
           "dest-uuid": "bf0ff551-a5a7-40e5-bff9-f9405011b1f4",
           "type": "included-in"
         },
@@ -10211,6 +10483,10 @@
         },
         {
           "dest-uuid": "6683aa0c-d98a-4f5b-ac57-ca7e9934a760",
+          "type": "detects"
+        },
+        {
+          "dest-uuid": "8e097ec5-1755-41d6-807c-3882442b818a",
           "type": "detects"
         },
         {
@@ -10308,6 +10584,10 @@
           "type": "detects"
         },
         {
+          "dest-uuid": "8e097ec5-1755-41d6-807c-3882442b818a",
+          "type": "detects"
+        },
+        {
           "dest-uuid": "9c049d7b-c92a-4733-9381-27e2bd2ccadc",
           "type": "detects"
         },
@@ -10328,7 +10608,7 @@
       "value": "Permissions Request"
     },
     {
-      "description": "Exit of a running process (ex: Sysmon EID 5 or Windows EID 4689)",
+      "description": "The exit or termination of a running process on a system. This can occur due to normal operations, user-initiated commands, or malicious actions such as process termination by malware to disable security controls.\n\n*Data Collection Measures:*\n\n- Endpoint Detection and Response (EDR) Tools:\n    - Monitor process termination events.\n- Windows Event Logs:\n    - Event ID 4689 (Process Termination) – Captures when a process exits, including process ID and parent process.\n    - Event ID 7036 (Service Control Manager) – Monitors system service stops.\n- Sysmon (Windows):\n    - Event ID 5 (Process Termination) – Detects when a process exits, including parent-child relationships.\n- Linux/macOS Monitoring:\n    - AuditD (`execve`, `exit_group`, `kill` syscalls) – Captures process termination via command-line interactions.\n    - eBPF/XDP: Monitors low-level system calls related to process termination.\n    - OSQuery: The processes table can be queried for abnormal exits.",
       "meta": {
         "refs": []
       },
@@ -10351,6 +10631,10 @@
         },
         {
           "dest-uuid": "ac08589e-ee59-4935-8667-d845e38fe579",
+          "type": "detects"
+        },
+        {
+          "dest-uuid": "dff263cc-328e-42b4-afbc-1fee8b6a8913",
           "type": "detects"
         }
       ],
@@ -10500,5 +10784,5 @@
       "value": "System Settings"
     }
   ],
-  "version": 3
+  "version": 4
 }
