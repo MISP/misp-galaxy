@@ -511,7 +511,7 @@ Category: *tool* - source: *Various* - total: *1982* elements
 
 [RAT](https://www.misp-galaxy.org/rat) - remote administration tool or remote access tool (RAT), also called sometimes remote access trojan, is a piece of software or programming that allows a remote "operator" to control a system as if they have physical access to that system.
 
-Category: *tool* - source: *MISP Project* - total: *265* elements
+Category: *tool* - source: *MISP Project* - total: *267* elements
 
 [[HTML](https://www.misp-galaxy.org/rat)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/rat.json)]
 
@@ -543,7 +543,7 @@ Category: *sector* - source: *CERT-EU* - total: *118* elements
 
 [Sigma-Rules](https://www.misp-galaxy.org/sigma-rules) - MISP galaxy cluster based on Sigma Rules.
 
-Category: *rules* - source: *https://github.com/jstnk9/MISP/tree/main/misp-galaxy/sigma* - total: *2985* elements
+Category: *rules* - source: *https://github.com/jstnk9/MISP/tree/main/misp-galaxy/sigma* - total: *2988* elements
 
 [[HTML](https://www.misp-galaxy.org/sigma-rules)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/sigma-rules.json)]
 
@@ -575,7 +575,7 @@ Category: *tool* - source: *Open Sources* - total: *16* elements
 
 [Surveillance Vendor](https://www.misp-galaxy.org/surveillance-vendor) - List of vendors selling surveillance technologies including malware, interception devices or computer exploitation services.
 
-Category: *actor* - source: *MISP Project* - total: *50* elements
+Category: *actor* - source: *MISP Project* - total: *51* elements
 
 [[HTML](https://www.misp-galaxy.org/surveillance-vendor)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/surveillance-vendor.json)]
 
@@ -607,7 +607,7 @@ Category: *tea-matrix* - source: ** - total: *7* elements
 
 [Threat Actor](https://www.misp-galaxy.org/threat-actor) - Known or estimated adversary groups targeting organizations and employees. Adversary groups are regularly confused with their initial operation or campaign. threat-actor-classification meta can be used to clarify the understanding of the threat-actor if also considered as operation, campaign or activity group.
 
-Category: *actor* - source: *MISP Project* - total: *852* elements
+Category: *actor* - source: *MISP Project* - total: *821* elements
 
 [[HTML](https://www.misp-galaxy.org/threat-actor)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/threat-actor.json)]
 
@@ -671,7 +671,7 @@ Category: *tmss* - source: *https://github.com/microsoft/Threat-matrix-for-stora
 
 [Tool](https://www.misp-galaxy.org/tool) - threat-actor-tools is an enumeration of tools used by adversaries. The list includes malware but also common software regularly used by the adversaries.
 
-Category: *tool* - source: *MISP Project* - total: *603* elements
+Category: *tool* - source: *MISP Project* - total: *606* elements
 
 [[HTML](https://www.misp-galaxy.org/tool)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/tool.json)]
 
