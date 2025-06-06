@@ -227,6 +227,14 @@ Category: *attack-pattern* - source: *https://www.gsma.com/solutions-and-impact/
 
 [[HTML](https://www.misp-galaxy.org/gsma-motif)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/gsma-motif.json)]
 
+## Human Layer Kill Chain
+
+[Human Layer Kill Chain](https://www.misp-galaxy.org/human-kill-chain) - Human Layer Kill Chain (HKC) framework
+
+Category: *humint* - source: *https://arxiv.org/pdf/2505.24685* - total: *17* elements
+
+[[HTML](https://www.misp-galaxy.org/human-kill-chain)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/human-kill-chain.json)]
+
 ## Intelligence Agencies
 
 [Intelligence Agencies](https://www.misp-galaxy.org/intelligence-agencies) - List of intelligence agencies
