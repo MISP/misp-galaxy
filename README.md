@@ -511,7 +511,7 @@ Category: *actor* - source: *MISP Project* - total: *124* elements
 
 [Ransomware](https://www.misp-galaxy.org/ransomware) - Ransomware galaxy based on different sources and maintained by the MISP Project.
 
-Category: *tool* - source: *Various* - total: *1996* elements
+Category: *tool* - source: *Various* - total: *2002* elements
 
 [[HTML](https://www.misp-galaxy.org/ransomware)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/ransomware.json)]
 
@@ -719,12 +719,12 @@ The MISP galaxy (JSON files) are dual-licensed under:
 or
 
 ~~~~
- Copyright (c) 2015-2024 Alexandre Dulaunoy - a@foo.be
- Copyright (c) 2015-2024 CIRCL - Computer Incident Response Center Luxembourg
- Copyright (c) 2015-2024 Andras Iklody
- Copyright (c) 2015-2024 Raphael Vinot
- Copyright (c) 2015-2024 Deborah Servili
- Copyright (c) 2016-2024 Various contributors to MISP Project
+ Copyright (c) 2015-2025 Alexandre Dulaunoy - a@foo.be
+ Copyright (c) 2015-2025 CIRCL - Computer Incident Response Center Luxembourg
+ Copyright (c) 2015-2025 Andras Iklody
+ Copyright (c) 2015-2025 Raphael Vinot
+ Copyright (c) 2015-2025 Deborah Servili
+ Copyright (c) 2016-2025 Various contributors to MISP Project
 
  Redistribution and use in source and binary forms, with or without modification,
  are permitted provided that the following conditions are met:
