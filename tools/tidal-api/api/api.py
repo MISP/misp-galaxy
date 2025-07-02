@@ -5,7 +5,7 @@ class TidalAPI:
         self.base_url = 'https://app-api.tidalcyber.com/api/v1/'
 
     def get_data(self, endpoint):
-        url = self.base_url + endpoint
+        url = self.base_url + str(endpoint)
         try:
             response = requests.get(url)
             return response.json()
