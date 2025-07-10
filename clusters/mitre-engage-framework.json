@@ -19,7 +19,7 @@
         "last_modified": "28 February 2022",
         "long_description": "API Monitoring involves capturing an internal OS function for its usage, accompanying arguments, and result. When a defender captures this information, the data gathered can be analyzed to gain insights into the activity of an adversary at a level deeper than normal system activity monitoring. This type of monitoring can also be used to produce high-fidelity detections. For example, the defender can trace activity through WinSock TCP API functions to view potentially malicious network events or trace usage of the Win32 DeleteFile() function to log all attempts at deleting a given file.",
         "url": "https://engage.mitre.org/matrix/?activity=api-monitoring",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "810b5a19-2ebb-4025-a19c-5db671106353",
       "value": "EAC0001 - API Monitoring"
@@ -32,7 +32,7 @@
         "last_modified": "28 February 2022",
         "long_description": "Network Monitoring involves capturing network activity data, including capturing server, firewall, and other relevant logs. A defender can send this data to a centralized collection location for further analysis. This analysis can be automated or manual. In either case, a defender can use Network Monitoring to identify anomalous traffic patterns, large or unexpected data transfers, and other activity that may reveal the presence of an adversary.  Monitoring is essential to maintain situational awareness of adversary activities to ensure operational safety and make progress towards the defender’s goals. Careful pre-operational planning should be done to properly instrument the engagement environment to ensure that all key network traffic is collected. Some use cases of network monitoring include detecting unexpected outbound traffic, systems establishing connections using encapsulated protocols, and known adversary C2 protocols.",
         "url": "https://engage.mitre.org/matrix/?activity=network-monitoring",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "5fdae805-82cd-42f9-9e77-189deb553eb5",
       "value": "EAC0002 - Network Monitoring"
@@ -45,7 +45,7 @@
         "last_modified": "28 February 2022",
         "long_description": "Capturing system logs can show logins, user and system events, etc. A defender can use such inherent system logging to study and collect first-hand observations about the adversary’s actions and tools.  This data can be sent to a centralized collection location for further analysis. Careful planning should be used to guide which system logs are collected and at what level. If the logging level is set too high or too many system logs are collected, the defender may be blinded by the excess data. For example, understanding the adversary’s known TTPs will highlight resources the adversary is likely to touch and therefore which system logs are likely to capture adversary activity.  Overall, System Activity Monitoring is essential to maintain situational awareness of adversarial activities in order to ensure operational safety and progress towards operational goals. Careful pre-operational planning should be done to properly instrument the engagement environment. This will ensure that all key network traffic is collected.",
         "url": "https://engage.mitre.org/matrix/?activity=system-activity-monitoring",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "08378c32-d3b0-4405-8df5-9d077cfbc332",
       "value": "EAC0003 - System Activity Monitoring"
@@ -58,7 +58,7 @@
         "last_modified": "28 February 2022",
         "long_description": "Network analysis can be an automated or manual task to review communications between systems to expose adversary activity, such as C2 or data exfiltration traffic. This analysis is normally done by capturing and analyzing traffic on the wire or from previously collected packet capture.  When custom protocols are in use, defenders can leverage protocol decoder frameworks. These are customized code modules that can read network traffic and contextualize activity between the C2 operator and the implant. These frameworks are often required to process complex encryption ciphers and custom protocols into a human-readable format for an analyst to interpret. Decoder creation requires malware analysis of the implant to understand the design of the protocol. While a high level of technical maturity is required to create such a decoder, once created they are invaluable to the defender.  For example, a defender can use a protocol decode to decrypt network capture data and expose an adversary’s C2 or exfiltration activity. Not only does this data provide exquisite intelligence in regard to the adversary’s communications channels and targeting preferences, but it also provides future opportunities for data manipulation to further operational goals.",
         "url": "https://engage.mitre.org/matrix/?activity=network-analysis",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "011446a0-819f-4365-a88f-95c70b89ca6f",
       "value": "EAC0004 - Network Analysis"
@@ -71,7 +71,7 @@
         "last_modified": "28 February 2022",
         "long_description": "Lures are intended to elicit a particular response from the adversary. For example, the defender may utilize Lures to enable or block the adversary’s intended actions or encourage or discourage a specific action or response. Lures can take a variety of forms including credentials, accounts, files/directories, browser extensions/bookmarks, system processes, etc. Regardless of form, Lures provide opportunities to the defender to drive adversary behavior in ways that align with operational outcomes.",
         "url": "https://engage.mitre.org/matrix/?activity=lures",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "257ac464-d27f-4d7e-a9e5-b9f9c0559964",
       "value": "EAC0005 - Lures"
@@ -84,7 +84,7 @@
         "last_modified": "28 February 2022",
         "long_description": "Application Diversity presents an array of software targets to the adversary. On a single target system, defenders can configure multiple services or software applications. This diversity may include not only a variety of different types of applications, but also various versions of the same application. Application Diversity can be used to encourage engagement by offering a broad attack surface. By monitoring adversary activity in a diverse environment, the defender can gain information on the adversary’s capabilities and targeting preferences. For example, a defender can install one or more applications with a variety of patch levels to see how the adversary’s response differs across versions.  Additionally, a diverse set of applications provides a variety of avenues for the defender to present additional information throughout an operation. This information can be used to introduce additional attack surfaces, motivate or demotivate the adversary, or further the engagement narrative. For example, if the adversary is close to uncovering something that might raise suspicion around a target, the defender can add an event to a shared calendar application or a message in a notes application that the system will be offline for scheduled maintenance. Having a variety of applications on the system provides the defender with multiple engagement avenues to handle whatever events happen during the operation. Finally, diversity can increase the adversary’s overall comfort level by adding to the believability of the environment. ",
         "url": "https://engage.mitre.org/matrix/?activity=application-diversity",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "b844fb8e-3cb5-485f-9f5e-740faf31ea65",
       "value": "EAC0006 - Application Diversity"
@@ -97,7 +97,7 @@
         "last_modified": "28 February 2022",
         "long_description": "Network Diversity involves the use of an assorted collection of network resources such as networking devices, firewalls, printers, phones, etc. Network Diversity can be used to encourage adversaries to engage by offering a broad attack surface. Additionally, diversity can increase the adversary’s overall comfort level by adding to the believability of the environment. By monitoring adversary activity in a diverse environment, the defender can gain information on the adversary’s capabilities and targeting preferences. For example, a defender can deploy a variety of network resources to identify which devices are targeted by the adversary.",
         "url": "https://engage.mitre.org/matrix/?activity=network-diversity",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "778081d2-6fcc-429d-a269-09a29db2da97",
       "value": "EAC0007 - Network Diversity"
@@ -110,7 +110,7 @@
         "last_modified": "28 February 2022",
         "long_description": "Burn-In involves exercising the system to create desirable system artifacts such as web browsing history, file system usage, or the running of user applications. At times, Burn-In can be accomplished by simply letting a system or application run for an extended period of time. Other times, the defender engages with the environment to produce the Burn-In artifacts, such as when the defender logs into a decoy account or accesses a decoy website to generate session cookies and browser history. These tasks can be accomplished manually or via automated tooling.  Burn-In should occur pre-operation and continue as appropriate during the operation. The artifacts generated during the Burn-In process can reassure the adversary of the environment’s legitimacy by creating an environment that more closely resembles a real, lived in, system or network.",
         "url": "https://engage.mitre.org/matrix/?activity=burn-in",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "a65d049f-5471-40a4-9c5a-edf0855ca942",
       "value": "EAC0008 - Burn-In"
@@ -123,7 +123,7 @@
         "last_modified": "28 February 2022",
         "long_description": "Email Manipulation covers the various ways email flows in the environment can be affected. Email Manipulation can affect which mail appliances process mail flows, where mail is forwarded, or what mail is present in an inbox. A common use case for email manipulation is as a vector to introduce malware into the engagement environment.  Suspicious emails may be removed from production mailbox and placed into an inbox in an engagement environment. Then, any suspicious attachments or links could be detonated from within the environment. As another example, emails collected over a long period of time from a legitimate inbox outside the environment may be moved into the environment to reassure the adversary of the environment’s legitimacy by creating a mailbox that more closely resembles a real, lived-in inbox.",
         "url": "https://engage.mitre.org/matrix/?activity=email-manipulation",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "0860eae7-cfee-4a62-8387-1cda9e5e269b",
       "value": "EAC0009 - Email Manipulation"
@@ -136,7 +136,7 @@
         "last_modified": "28 February 2022",
         "long_description": "Peripheral Management is the administration of peripheral devices used on systems within the engagement environment. A defender can choose to allow or deny certain types of peripherals from being used on systems to either motivate or demotivate adversary activity or to direct the adversary towards specific targets. Defenders can also introduce peripherals to an adversary-controlled system to see how the adversary reacts. For example, the defender can introduce external Wi-Fi adapters, USB devices, etc. to determine if adversaries attempt to use them for exfiltration purposes.  Additionally, peripherals provide an avenue for the defender to present new or additional information to the adversary. This information can be used to introduce an additional attack surface, motivate or demotivate adversary activity, or to further the deception story. For example, the defender may include data on a connected USB device or stage an important conversation near an externally connected camera or microphone. Depending on the contents of this data, the adversary may be encouraged to take a specific action and/or reassured about the legitimacy of the environment.",
         "url": "https://engage.mitre.org/matrix/?activity=peripheral-management",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "7a277705-50a8-4937-bf5c-d87486414492",
       "value": "EAC0010 - Peripheral Management"
@@ -149,7 +149,7 @@
         "last_modified": "28 February 2022",
         "long_description": "Pocket Litter is data placed on a system to help tell the engagement narrative, to increase the credibility of an environment, and/or to establish a cognitive bias to raise the adversary’s tolerance to weaknesses in the environment. Unlike Lures, Pocket Litter does not necessarily aim to encourage the adversary to take a specific action, but rather it supports the overall deception story.  Pocket Litter can include documents, pictures, registry entries, installed software, log history, browsing history, connection history, and other user data that an adversary would expect to exist on a user’s computer. For example, a defender might conduct a series of web searches to generate browser artifacts, or scatter a variety of photos and documents across the desktop to make the computer feel lived in.",
         "url": "https://engage.mitre.org/matrix/?activity=pocket-litter",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "f365ed73-d872-4669-8e09-62f164956cd9",
       "value": "EAC0011 - Pocket Litter"
@@ -162,7 +162,7 @@
         "last_modified": "28 February 2022",
         "long_description": "A Persona is used to establish background information about a victim to increase the believability of the target. To create a Persona, the defender must develop a backstory and seed the environment with varying data in support of this story. Depending on the need for realism, the constructed persona can be supported by evidence of hobbies, social and professional interactions, consumer transactions, employment, browsing habits, etc.  In addition to lending legitimacy to the environment, personas can be used to engage directly with adversaries, such as during phishing email exchanges. Additionally, personas can make changes to the environment during the operation, such as adding or removing a USB device or introducing new decoy documents or credentials.",
         "url": "https://engage.mitre.org/matrix/?activity=personas",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "402eb806-289f-4839-9d02-8ba18be18650",
       "value": "EAC0012 - Personas"
@@ -175,7 +175,7 @@
         "last_modified": "28 February 2022",
         "long_description": "Malware can be detonated in a controlled and safe environment. Clear goals and safety procedures should always be established before detonation to ensure that the operation is focused and safe. The malware can be detonated in an execution environment ranging from a somewhat sterile commercial malware execution appliance to a bespoke engagement environment crafted to support an extended engagement.  Depending on operational objectives, the outcome of a malware detonation operation can include: collecting new IOCs during dynamic analysis,  observing additional TTPs by detonating the malware in a target rich environment, and/or negatively impacting the adversary and their operation. ",
         "url": "https://engage.mitre.org/matrix/?activity=malware-detonation",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "d015c0a3-be25-4b28-92fa-8d359d9d6891",
       "value": "EAC0013 - Malware Detonation"
@@ -188,7 +188,7 @@
         "last_modified": "28 February 2022",
         "long_description": "Software Manipulation allows a defender to alter or replace elements of the OS, file system, or other software installed and executed on a system. These alterations can affect outputs, degrade effectiveness, and/or prevent the software from functioning altogether. For example, the defender can manipulate software by changing the output of commonly used discovery commands to hide legitimate systems and artifacts and/or reveal deceptive artifacts and systems.  Alternatively, the defender can change the output of the password policy description for an adversary attempting to brute-force credentials. This manipulation may cause the adversary to waste resources brute-forcing passwords with inaccurate complexity requirements. If the defender wanted to degrade software effectiveness, they might weaken algorithms to expose data that is being archived, encoded, and/or encrypted.  Finally, to prevent software from functioning altogether, the defender may cause failures in software typically used to delete data or hide adversary artifacts. For some Software Manipulation use cases, it may be possible to make changes in such a way that adversary actions and legitimate user actions are handled differently. For example, the defender could show all files when viewed in a graphical application but hide files or introduce decoy files when viewed via a terminal command. This setup would allow legitimate users full access to the file system, while manipulating access for adversaries using a reverse shell.",
         "url": "https://engage.mitre.org/matrix/?activity=software-manipulation",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "61027f6d-9f5a-413d-8c02-acac240b91c1",
       "value": "EAC0014 - Software Manipulation"
@@ -201,7 +201,7 @@
         "last_modified": "28 February 2022",
         "long_description": "Information Manipulation is used to support the engagement narrative and directly impact adversary activities. Revealed facts and fictions can be used to adjust the adversary’s trust in the environment. Concealed facts and fiction can be used to adjust the adversary’s sense of uncertainty towards the environment. Revealed facts may include OS type and version, geographic location, hardware type and version, accounts, credentials, etc. Revealed fictions may include the content of decoy files, emails, messages, etc. Revealed facts and fictions may or may not be believed by the adversary.  If an adversary believes a revealed fact or fiction, it may lend credibility to the environment or encourage a specific action. If an adversary is suspicious or does not believe a revealed fact or fiction, it may erode adversary trust in the environment or discourage a specific action. Therefore, revealed facts and fictions can be used to adjust the adversary’s trust in the environment in ways that support the operational objectives.  <br><br>Concealed facts may include virtualized systems disguised as physical systems, monitoring software, or collection efforts. Concealed fictions may include an encrypted, interestingly named, decoy file or a partially deleted email thread referencing high value, but decoy, assets. Concealed facts and fictions may or may not be discovered by the adversary. If the adversary discovers a concealed fact or fiction, it may increase the ambiguity of the environment and affect the adversary’s sense of uncertainty.  In this way, concealed facts and fictions can be used to adjust the ambiguity and affect the adversary’s sense of uncertainty in ways that support the operational objectives",
         "url": "https://engage.mitre.org/matrix/?activity=information-manipulation",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "cfc81be2-33b2-43f4-8302-cf6eab4b2c42",
       "value": "EAC0015 - Information Manipulation"
@@ -214,7 +214,7 @@
         "last_modified": "28 February 2022",
         "long_description": "Network Manipulation allows a defender to throttle network speeds, segment the network, maintain a unique IP addressing scheme, add a kill switch to cut off network access, etc. These types of manipulations can affect the adversary’s ability to achieve their operational objectives by incurring an increased resource cost, forcing them to change tactics, or stopping them altogether.  For example, a defender can limit the allowed ports or network requests to force the adversary to alter their planned C2 or exfiltration channels. As another example, a defender could allow or deny outbound SMB requests from a network to affect the success of forced authentication. Additionally, the defender can degrade network speeds and reliability to impose a resource cost as adversaries exfiltrate large quantities of data. Finally, a defender can block primary C2 domains and IPs to determine if the adversary has additional infrastructure. While there are a range of network manipulation options, in all cases, the defender has an opportunity to learn about or influence the adversaries operating in the environment.",
         "url": "https://engage.mitre.org/matrix/?activity=network-manipulation",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "e0bb4fb8-59c2-4886-91e0-66365f736a39",
       "value": "EAC0016 - Network Manipulation"
@@ -227,7 +227,7 @@
         "last_modified": "28 February 2022",
         "long_description": "Hardware Manipulation can include physical adjustments or configuration changes to the hardware in the environment. This manipulation can include physically removing a system’s microphone, camera, on-board Wi-Fi adapter, etc. or using software controls to disable those devices. These types of manipulations can affect the adversary’s ability to achieve their operational objectives by incurring an increased resource cost, forcing them to change tactics, or stopping them altogether.  Hardware Manipulation is often required to maintain operational safety. For example, if the operation includes Malware Detonation using a laptop physically located in a shared space, it is likely that the defender will not have the ability to hide the legitimate conversations and individuals present in the space. Unless the defender can control the background sounds and visuals, it is likely too risky to leave the camera and microphone connected to the machine.",
         "url": "https://engage.mitre.org/matrix/?activity=hardware-manipulation",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "0c47a705-168f-4f89-8049-f0cbe4cc1d4c",
       "value": "EAC0017 - Hardware Manipulation"
@@ -240,7 +240,7 @@
         "last_modified": "28 February 2022",
         "long_description": "Manipulating Security Controls involves making configuration changes to a system’s security settings including modifying Group Policies, disabling/enabling autorun for removable media, tightening or relaxing system firewalls, etc. Such security controls can be tightened to dissuade or prevent adversary activity. Conversely, security controls can be weakened or left overly permissive to encourage or enable adversary activity.  Tightening security controls can typically be done by implementing any of the mitigations described in MITRE ATT&CK. See https://attack.mitre.org/mitigations/enterprise/ for a full list of mitigation strategies. While loosening security controls may seem obvious (i.e., simply don’t employ a given mitigation strategy), there is an additional level of nuance that must be considered. Some security controls are considered so routine that its absence may be suspicious.  For example, completely turning off Windows Defender would likely raise the adversary’s suspicion. However, it is possible to turn off Windows Defender in certain shared drives to encourage adversary activity in predetermined locations. Therefore, it will likely be far less suspicious to turn off Windows Defender in a single directory or share. When assessing the likelihood that removing a given security control is overly suspicious, it is important to consider how prevalent that security control is, the target adversary’s sophistication, and the engagement narrative.",
         "url": "https://engage.mitre.org/matrix/?activity=security-controls",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "d39019ec-3d44-407a-ab52-77bd366fb632",
       "value": "EAC0018 - Security Controls"
@@ -253,7 +253,7 @@
         "last_modified": "28 February 2022",
         "long_description": "To determine the system Baseline, the defender must identify software and configuration elements that are critical to a set of objectives. The defender must define the proper values and be prepared to reset a running system to its intended state. Reverting to a Baseline configuration can be essential when restoring an operational environment to a safe state or when looking to impose a cost on adversaries by preventing their activity.  For example, the defender can watch for an adversary to make changes in the environment and then revert the environment with the goal of either forcing the adversary to target elsewhere in the network or to display a new, possibly more advanced, TTP. The Baseline values will also be crucial post-operation when analyzing changes to the environment over time.",
         "url": "https://engage.mitre.org/matrix/?activity=baseline",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "98e72a7d-8f0f-44dd-bad3-5bc7a82981d2",
       "value": "EAC0019 - Baseline"
@@ -266,7 +266,7 @@
         "last_modified": "28 February 2022",
         "long_description": "Using Isolation, a defender can limit the effectiveness and scope of malicious activity and/or lower exposure to unintended risks. When a system or resource is isolated, a defender can observe adversary behaviors or tools with limited, or no, lateral movement allowed. For example, a defender may detonate a piece of malware on an isolated system to perform dynamic analysis without risk to other network resources.  Determining which systems should be isolated in an operation is a critical decision when calculating acceptable operational risk. However, if the adversary expects to find an entire corporate network but instead finds only an isolated system, they may not be interested in engaging with the target. Balancing acceptable risk, believability, and operational objectives is essential when determining if or when a system should be isolated.",
         "url": "https://engage.mitre.org/matrix/?activity=isolation",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "9a289ecf-34f3-494e-b656-9edf98ea4cb7",
       "value": "EAC0020 - Isolation"
@@ -279,7 +279,7 @@
         "last_modified": "28 February 2022",
         "long_description": "When a defender Migrates an Attack Vector, the defender intercepts a malicious element and moves it to a safe environment, such as a decoy system within a decoy network, for continued engagement or analysis. A defender may choose to Attack Vector Migrations, which may appear in the form of phishing emails, suspicious email attachments, or malicious USBs. For example, a defender might move a suspicious attachment from a corporate inbox to an inbox on a system that, while in the corporate IP space, is completely segmented from the enterprise network. This segregated environment will allow the adversary to move laterally throughout the environment without risk to enterprise resources.  Determining when an engagement should be moved to an engagement environment is a critical decision when calculating acceptable operational risk. However, if the adversary sent a custom malware sample to a phishing victim, but ultimately find themselves on an unrelated victim, they may be suspicious. Balancing this acceptable risk, believability, and operational goals is essential when determining if or when to migrate an attack vector.",
         "url": "https://engage.mitre.org/matrix/?activity=attack-vector-migration",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "f0c50eae-2d2b-4534-a72d-647bf4eb470e",
       "value": "EAC0021 - Attack Vector Migration"
@@ -292,7 +292,7 @@
         "last_modified": "28 February 2022",
         "long_description": "Artifact Diversity means presenting multiple network and system artifacts to the adversary including accounts, files/directories, credentials, logs, web browsing history, browser cookies, etc. These artifacts can be legitimate artifacts created as the result of natural usage over time or manually added to the environment by the defender. Artifact Diversity can be used to encourage the adversary to engage by offering a broad attack surface or can increase the adversary’s overall comfort level by adding to the believability of the environment.  Additionally, these artifacts may be Lures intended to elicit a specific response from the adversary. In any case, by monitoring adversary activity in a diverse environment, the defender can gain information on the adversary’s capabilities and targeting preferences. For example, a defender can include a diverse set of accounts and credentials and then monitor to determine which accounts the adversary targets in the future.",
         "url": "https://engage.mitre.org/matrix/?activity=artifact-diversity",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "7bccaf10-de23-4c66-a8d5-4c1a58944a55",
       "value": "EAC0022 - Artifact Diversity"
@@ -305,7 +305,7 @@
         "last_modified": "28 February 2022",
         "long_description": "By intentionally Introducing Vulnerabilities into the engagement environment, the defender can attempt to motivate the adversary to target specific resources. This targeting may serve to move the adversary towards a particular resource, or away from another resource. At other times, the defender may Introduce Vulnerabilities as a mean of encouraging the adversary to reveal targeting preferences, available capabilities, or even to influence future targeting decisions. The operational objectives will drive how and why the defender Introduces Vulnerabilities in the engagement environment.",
         "url": "https://engage.mitre.org/matrix/?activity=introduced-vulnerabilities",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "04cf4be6-dabc-452a-a1f4-467290d6fe85",
       "value": "EAC0023 - Introduced Vulnerabilities"
@@ -318,7 +318,7 @@
         "last_modified": "28 February 2022",
         "long_description": "The Operational Objective is  the goal(s) that drive all of the approaches and activities used in an adversary engagement operation. Articulating the operational objective allows the defender to align their actions to reach the desired end-state. There are three high-level Engagement Goals in adversary engagement operations: to Expose adversaries on the network, to Affect adversaries on the network, or to Elicit new information about adversaries.  These larger themes should help the defender create more focused operational objectives. For example, realistic operational objectives include: protecting a specific high-value technology or person by exposing adversaries targeting that technology or person, protecting against insider threats by affecting the adversary’s ability to steal sensitive data, or increasing the defender’s understanding of the threat landscape by eliciting new adversary TTPs, etc. Every action taken in the planning, execution, and analysis of an operation should be aligned with the operational objective. It is important to define this objective early on. Input from any involved stakeholders should be considered when choosing the operational objectives.  ",
         "url": "https://engage.mitre.org/matrix/?activity=operational-objective",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "8e23d442-100a-49b2-a949-a039e72dadca",
       "value": "SAC0001 - Operational Objective"
@@ -331,7 +331,7 @@
         "last_modified": "28 February 2022",
         "long_description": "Persona Creation is the process of planning for and creating the personas required to support the engagement narrative. This process should be informed by the previously generated threat model for the defender’s target adversary. For example, if the adversary targets a specific industry, the persona might be created to look like someone who works in that industry. The persona outline should include basic information about the persona itself such as their name, their relationship to the environment, and geographic location. Often, and especially for a short-term engagement operation, these persona traits can be broad.  For example, it is unlikely that a persona used in a short-term ransomware detonation operation would require a lot of details to be effective. However, for a longer-term insider threat protection operation, the defender may need to create a persona with the online presence of a corporate employee, including name, birthday, address, etc. Many factors should be considered when determining how in-depth a persona should be, including adversary sophistication, defender resources, and engagement narrative.  Once the persona traits have been decided, the planning process should determine how these traits will manifest in the environment. Persona creation is important to running an operation, as personas are often the predominant means through which the defender can engage with the adversary or change the environment during the operation. Careful planning is important as personas can be resource intensive to create and maintain and can reveal the ruse if discovered as fake by the adversary. ",
         "url": "https://engage.mitre.org/matrix/?activity=persona-creation",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "7b9c8ef2-57db-44fc-a418-e5c0f7db7355",
       "value": "SAC0002 - Persona Creation"
@@ -344,7 +344,7 @@
         "last_modified": "28 February 2022",
         "long_description": "Storyboarding is the process of creating the deception story through a sequence of events, interactions, the persona’s pattern of life, etc. A large part of Storyboarding is creating this pattern of life for the persona(s) using the system(s). The pattern of life can include behaviors such as using email or chat software, browsing the Internet, using system software, or physically moving the device (particularly important for mobile devices and laptops).  The defender must determine how the Persona’s behavior and other events in the environment will be generated. Personas may be generated automatically with tooling, manually with human operators, or some combination of both. The availability of defender resources may greatly impact the frequency of manually executing behaviors.  Not every action taken in the environment needs to be planned in advance. However, the defender should have a general idea of what actions will be taken. Setting up a storyboard early in the planning process will allow the operation to run smoothly, efficiently, and most importantly, consistently, regardless of operator, so as not to reveal the ruse.",
         "url": "https://engage.mitre.org/matrix/?activity=storyboarding",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "05a5c185-33eb-4996-9f3b-6ad7e5fd9b2c",
       "value": "SAC0003 - Storyboarding"
@@ -357,7 +357,7 @@
         "last_modified": "28 February 2022",
         "long_description": "Cyber Threat Intelligence (CTI) allows an organization to understand the threat landscape. CTI data can be informed by a combination of open and closed source research. Additionally, it can be supplemented with internal and external threat intelligence feeds, including information gleaned from previous engagement operations.  The understanding gained through CTI data allows the defender to identify and understand the target adversary for a given operation. For example, if the defender’s intended operational outcome is to expose adversaries on the network, the defender should prioritize adversaries that historically target their organization or similar organizations and/or have displayed TTPs that are likely to evade current defenses. Additionally, storyboarding should look at CTI data for the target adversary to make informed estimations on what the adversary may do in the environment and how they might react to what they find.  Once one or more adversaries have been selected as the target adversary, the relevant CTI data should guide the creation of the engagement environment and storyboard including hardware and software requirements, the required level of realism for lures and pocket Litter, and acceptable operational risk. This definition was based on the work presented by MITRE ATT&CK as seen here.",
         "url": "https://engage.mitre.org/matrix/?activity=cyber-threat-intelligence",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "05cdbc8c-6ba4-4fb1-a081-42a7138342fa",
       "value": "SAC0004 - Cyber Threat Intelligence"
@@ -370,7 +370,7 @@
         "last_modified": "28 February 2022",
         "long_description": "Gating Criteria are the event or sequence of events that are agreed to be the unnegotiable immediate pause or end to the operation. Sometimes, these events include the successful completion of the agreed upon operational objectives. Other times, these events may signify the operation has reached a hard stop. This stop is often necessary because future operational safety cannot be guaranteed. Alternatively, the operation may need to end because events have occurred that outweigh the agreed upon acceptable risk. Finally, it may just be that if the adversary operates any longer, they may learn something the defender doesn’t want them to know.  Multiple parties from the technical operations, threat intel, legal, and management perspectives should be included when defining Gating Criteria. For example, if an adversary begins to use the engagement environment as a platform to operate against other targets, stakeholders may decide that the operation must be suspended until the unacceptable traffic can be blocked. Defining the operational Gating Criteria is an essential step to ensure operational safety.",
         "url": "https://engage.mitre.org/matrix/?activity=gating-criteria",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "291f2c48-bdaa-4de1-b1bc-30232e017d6a",
       "value": "SAC0005 - Gating Criteria"
@@ -383,7 +383,7 @@
         "last_modified": "28 February 2022",
         "long_description": "The After Action Review (AAR) is the opportunity for the team to review the events of the operation to ensure progress towards strategic outcomes. This retrospective can include a review of the entire operational process from planning, implementation, execution, and impact. In addition to the operation itself, the AAR is an important time to assess the communication and teamwork of the operations team and all contributing stakeholders. While an AAR should always occur at the end of an operation, periodic reviews during long-running operations are vital to ensure alignment and progress towards the operational objectives.",
         "url": "https://engage.mitre.org/matrix/?activity=after-action-review",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "efa2df47-fa0d-4011-91ce-52b0d75c0b8c",
       "value": "SAC0006 - After-Action Review"
@@ -396,7 +396,7 @@
         "last_modified": "28 February 2022",
         "long_description": "The Engagement Environment is the set of carefully tailored, highly instrumented systems designed on an engagement-by-engagement basis as the backdrop to the engagement narrative. It is the actual environment that the adversary will operate in. It is important to ensure that the Engagement Environment complements, rather than competes with, the engagement narrative. Additionally, these systems should provide conduits to allow the target adversary necessary movement throughout the environment, as needed to meet operational outcomes. <br><br>While not strictly part of the Engagement Environment, the collection system is the set of systems used to gather artifacts and other data from an operation to monitor the engagement to ensure operational safety. It is important to consider the collection system while designing the engagement environment. By designing these environments in lockstep, the defender guarantees that all aspects of the engagement environment can be monitored. This is essential to ensure operations remain within the guardrails set by the Rules of Engagement. For example, available resources, capabilities, or skills may limit the type of assets in, or size of, the engagement environment.",
         "url": "https://engage.mitre.org/matrix/?activity=engagement-environment",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "859d00ce-0a47-48dd-90ed-13891a2476e5",
       "value": "SAC0012 - Engagement Environment"
@@ -409,7 +409,7 @@
         "last_modified": "28 February 2022",
         "long_description": "Among other things, threat models require that the defender assesses the strengths, weaknesses, and importance of the their own organization, including trusted partners, infrastructure, and critical cyber assets. This understanding will inform operational objectives by outlining the defender’s attack surface and highlighting areas that may be of particular interest to a given adversary. The organization’s threat model should be understood at the onset of an operation to drive operational objective development and revisited at the conclusion of an operation to ensure operational outcomes are captured. These process of defining and informing the organization’s threat model should enable better security decision-making both in future operations and elsewhere in the organization.",
         "url": "https://engage.mitre.org/matrix/?activity=threat-model",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "df87d02c-a9bb-4863-9253-b9d91a973bfc",
       "value": "SAC0009 - Threat Model"
@@ -604,7 +604,7 @@
         "last_modified": "28 February 2022",
         "long_description": "",
         "url": "",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "ace52fa2-9338-4836-b558-2b9d87144c7b",
       "value": "EAV0001 - "
@@ -617,7 +617,7 @@
         "last_modified": "28 February 2022",
         "long_description": "",
         "url": "",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "b0c62e4d-9c34-49d9-b11b-c549a5152758",
       "value": "EAV0002 - "
@@ -630,7 +630,7 @@
         "last_modified": "28 February 2022",
         "long_description": "",
         "url": "",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "e737e0bd-1123-4bd8-92ac-4a4376d40635",
       "value": "EAV0003 - "
@@ -643,7 +643,7 @@
         "last_modified": "28 February 2022",
         "long_description": "",
         "url": "",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "f420a0fe-04e7-49e6-b4dd-181391914392",
       "value": "EAV0004 - "
@@ -656,7 +656,7 @@
         "last_modified": "28 February 2022",
         "long_description": "",
         "url": "",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "bdb79151-3739-46b9-b185-7c9d84d3189c",
       "value": "EAV0005 - "
@@ -669,7 +669,7 @@
         "last_modified": "28 February 2022",
         "long_description": "",
         "url": "",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "9b6b151c-5b85-4cdd-ba17-bc6c73dfbb93",
       "value": "EAV0006 - "
@@ -682,7 +682,7 @@
         "last_modified": "28 February 2022",
         "long_description": "",
         "url": "",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "5aa4c915-c7d9-4ec9-8e56-74719b67812d",
       "value": "EAV0007 - "
@@ -695,7 +695,7 @@
         "last_modified": "28 February 2022",
         "long_description": "",
         "url": "",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "c1abb452-8864-4d5a-b4c7-8db5669a6631",
       "value": "EAV0008 - "
@@ -708,7 +708,7 @@
         "last_modified": "28 February 2022",
         "long_description": "",
         "url": "",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "053e6dda-d963-4c15-94f0-0beb8e419d3e",
       "value": "EAV0009 - "
@@ -721,7 +721,7 @@
         "last_modified": "28 February 2022",
         "long_description": "",
         "url": "",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "600296ee-0800-45f2-8dbc-bd46aabd240a",
       "value": "EAV0010 - "
@@ -734,7 +734,7 @@
         "last_modified": "28 February 2022",
         "long_description": "",
         "url": "",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "87b9a0fe-bc4c-41ee-a735-8d2a7f7b8fa5",
       "value": "EAV0011 - "
@@ -760,7 +760,7 @@
         "last_modified": "28 February 2022",
         "long_description": "",
         "url": "",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "2f9a7838-0322-41ee-9450-ac70f80eed33",
       "value": "EAV0013 - "
@@ -773,7 +773,7 @@
         "last_modified": "28 February 2022",
         "long_description": "",
         "url": "",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "1b810b36-b823-4a4b-be5b-cf1f42bfb898",
       "value": "EAV0014 - "
@@ -786,7 +786,7 @@
         "last_modified": "28 February 2022",
         "long_description": "",
         "url": "",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "93f0c0ef-4b69-4c25-aa8f-7e995ec7832b",
       "value": "EAV0015 - "
@@ -799,7 +799,7 @@
         "last_modified": "28 February 2022",
         "long_description": "",
         "url": "",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "c168e468-f206-41a4-a258-0d29ff2c26ee",
       "value": "EAV0016 - "
@@ -825,7 +825,7 @@
         "last_modified": "28 February 2022",
         "long_description": "",
         "url": "",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "72dea191-30aa-4950-9ceb-530e0d5c8675",
       "value": "EAV0018 - "
@@ -838,7 +838,7 @@
         "last_modified": "28 February 2022",
         "long_description": "",
         "url": "",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "db03271c-f6e5-4a1c-9de9-406d1d22c942",
       "value": "EAV0019 - "
@@ -851,7 +851,7 @@
         "last_modified": "28 February 2022",
         "long_description": "",
         "url": "",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "febd1a0c-70e1-43e2-949d-46b230f4cdb1",
       "value": "EAV0020 - "
@@ -864,7 +864,7 @@
         "last_modified": "28 February 2022",
         "long_description": "",
         "url": "",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "978e6782-caa9-4909-b7b5-5b462d52fd92",
       "value": "EAV0021 - "
@@ -877,7 +877,7 @@
         "last_modified": "28 February 2022",
         "long_description": "",
         "url": "",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "15ebde4a-439e-4ffa-8e84-6603f7a57850",
       "value": "EAV0022 - "
@@ -890,7 +890,7 @@
         "last_modified": "28 February 2022",
         "long_description": "",
         "url": "",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "0c3f2b3e-1c5b-4843-badb-3ab88c6ac759",
       "value": "EAV0023 - "
@@ -916,7 +916,7 @@
         "last_modified": "28 February 2022",
         "long_description": "",
         "url": "",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "e812ef24-2b22-4430-b38e-c5b84149ab52",
       "value": "EAV0025 - "
@@ -929,7 +929,7 @@
         "last_modified": "28 February 2022",
         "long_description": "",
         "url": "",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "b51c4941-3c01-47e9-bb62-c449ea420753",
       "value": "EAV0026 - "
@@ -942,7 +942,7 @@
         "last_modified": "28 February 2022",
         "long_description": "",
         "url": "",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "289078ce-e01f-4a1e-a3a5-92f0dc00de6d",
       "value": "EAV0027 - "
@@ -955,7 +955,7 @@
         "last_modified": "28 February 2022",
         "long_description": "",
         "url": "",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "0b1434c7-704c-4fd1-86cc-2d6782388398",
       "value": "EAV0028 - "
@@ -968,7 +968,7 @@
         "last_modified": "28 February 2022",
         "long_description": "",
         "url": "",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "81ef6541-8da7-48ce-b760-37352de9989c",
       "value": "EAV0029 - "
@@ -981,7 +981,7 @@
         "last_modified": "2024-03-28 00:00:00",
         "long_description": "",
         "url": "",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "53af4148-b3e4-4747-b2bc-70326648d6e8",
       "value": "EAV0030 - "
@@ -994,7 +994,7 @@
         "last_modified": "2024-03-28 00:00:00",
         "long_description": "",
         "url": "",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "1ee99284-392a-4fba-96c6-42c7cafa3ab3",
       "value": "EAV0031 - "
@@ -1007,10 +1007,11 @@
         "last_modified": "2024-03-28 00:00:00",
         "long_description": "",
         "url": "",
-        "version": 1.0
+        "version": 1
       },
       "uuid": "1510e3fa-67d3-448b-a9ae-26045c47b734",
       "value": "EAV0032 - "
     }
-  ]
+  ],
+  "version": 1
 }
