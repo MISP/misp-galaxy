@@ -575,7 +575,7 @@ Category: *sod-matrix* - source: *https://github.com/cudeso/SoD-Matrix* - total:
 
 [Stealer](https://www.misp-galaxy.org/stealer) - A list of malware stealer.
 
-Category: *tool* - source: *Open Sources* - total: *16* elements
+Category: *tool* - source: *Open Sources* - total: *18* elements
 
 [[HTML](https://www.misp-galaxy.org/stealer)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/stealer.json)]
 
@@ -679,7 +679,7 @@ Category: *tmss* - source: *https://github.com/microsoft/Threat-matrix-for-stora
 
 [Tool](https://www.misp-galaxy.org/tool) - threat-actor-tools is an enumeration of tools used by adversaries. The list includes malware but also common software regularly used by the adversaries.
 
-Category: *tool* - source: *MISP Project* - total: *606* elements
+Category: *tool* - source: *MISP Project* - total: *605* elements
 
 [[HTML](https://www.misp-galaxy.org/tool)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/tool.json)]
 
