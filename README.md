@@ -591,7 +591,7 @@ Category: *tool* - source: *Open Sources* - total: *18* elements
 
 [Surveillance Vendor](https://www.misp-galaxy.org/surveillance-vendor) - List of vendors selling surveillance technologies including malware, interception devices or computer exploitation services.
 
-Category: *actor* - source: *MISP Project* - total: *53* elements
+Category: *actor* - source: *MISP Project* - total: *615* elements
 
 [[HTML](https://www.misp-galaxy.org/surveillance-vendor)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/surveillance-vendor.json)]
 
