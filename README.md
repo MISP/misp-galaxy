@@ -693,9 +693,9 @@ Category: *tool* - source: *MISP Project* - total: *605* elements
 
 ## UAVs/UCAVs
 
-[UAVs/UCAVs](https://www.misp-galaxy.org/uavs) - Unmanned Aerial Vehicles / Unmanned Combat Aerial Vehicles
+[UAVs/UCAVs](https://www.misp-galaxy.org/uavs) - Osint Database of Unmanned combat aerial vehicle
 
-Category: *military equipment* - source: *Popular Mechanics* - total: *36* elements
+Category: *military equipment* - source: *Osint* - total: *459* elements
 
 [[HTML](https://www.misp-galaxy.org/uavs)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/uavs.json)]
 
