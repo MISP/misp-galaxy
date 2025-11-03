@@ -547,6 +547,62 @@ Category: *rsit* - source: *https://github.com/enisaeu/Reference-Security-Incide
 
 [[HTML](https://www.misp-galaxy.org/rsit)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/rsit.json)]
 
+## SCOR - About
+
+[SCOR - About](https://www.misp-galaxy.org/scor-about) - Overview entries to explain the SCOR namespace inside MISP.
+
+Category: *meta* - source: *Project documentation* - total: *4* elements
+
+[[HTML](https://www.misp-galaxy.org/scor-about)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/scor-about.json)]
+
+## SCOR SPACE-SHIELD Mitigations
+
+[SCOR SPACE-SHIELD Mitigations](https://www.misp-galaxy.org/scor-space-shield-mitigations) - ESA SPACE-SHIELD Mitigations adapted to the SCOR namespace for operational and technical countermeasures.
+
+Category: *mitigation* - source: *ESA SPACE-SHIELD Matrix* - total: *38* elements
+
+[[HTML](https://www.misp-galaxy.org/scor-space-shield-mitigations)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/scor-space-shield-mitigations.json)]
+
+## SCOR SPACE-SHIELD Tactics
+
+[SCOR SPACE-SHIELD Tactics](https://www.misp-galaxy.org/scor-space-shield-tactics) - ESA SPACE-SHIELD Tactics adapted to SCOR namespace for matrix rendering in MISP.
+
+Category: *tactic* - source: *ESA SPACE-SHIELD Matrix* - total: *14* elements
+
+[[HTML](https://www.misp-galaxy.org/scor-space-shield-tactics)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/scor-space-shield-tactics.json)]
+
+## SCOR SPACE-SHIELD Techniques
+
+[SCOR SPACE-SHIELD Techniques](https://www.misp-galaxy.org/scor-space-shield-techniques) - ESA SPACE-SHIELD Techniques adapted to SCOR namespace. Each technique is mapped to one or more tactics, aligning with the ESA matrix structure.
+
+Category: *technique* - source: *ESA SPACE-SHIELD Matrix* - total: *27* elements
+
+[[HTML](https://www.misp-galaxy.org/scor-space-shield-techniques)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/scor-space-shield-techniques.json)]
+
+## SCOR SPARTA Mitigations
+
+[SCOR SPARTA Mitigations](https://www.misp-galaxy.org/scor-sparta-mitigations) - SPARTA Mitigations cluster derived from The Aerospace Corporation’s SPARTA framework. Provides structured defensive measures against tactics and techniques used in space operations.
+
+Category: *SCOR* - source: *https://sparta.aerospace.org/* - total: *12* elements
+
+[[HTML](https://www.misp-galaxy.org/scor-sparta-mitigations)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/scor-sparta-mitigations.json)]
+
+## SCOR SPARTA Tactics
+
+[SCOR SPARTA Tactics](https://www.misp-galaxy.org/scor-sparta-tactics) - SPARTA Tactics cluster derived from Aerospace Corporation’s SPARTA framework. These represent the adversary's tactical objectives in space attack campaigns.
+
+Category: *SCOR* - source: *https://sparta.aerospace.org/* - total: *14* elements
+
+[[HTML](https://www.misp-galaxy.org/scor-sparta-tactics)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/scor-sparta-tactics.json)]
+
+## SCOR SPARTA Techniques
+
+[SCOR SPARTA Techniques](https://www.misp-galaxy.org/scor-sparta-techniques) - SPARTA Techniques cluster derived from Aerospace Corporation’s SPARTA STIX feed. Provides structured space threat technique taxonomy mapped to SPARTA tactics.
+
+Category: *SCOR* - source: *https://sparta.aerospace.org/* - total: *11* elements
+
+[[HTML](https://www.misp-galaxy.org/scor-sparta-techniques)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/scor-sparta-techniques.json)]
+
 ## Sector
 
 [Sector](https://www.misp-galaxy.org/sector) - Activity sectors
