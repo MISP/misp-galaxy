@@ -1,0 +1,318 @@
+{
+  "authors": [
+    "H4CK32N4U75®"
+  ],
+  "category": "mitigation",
+  "description": "ESA SPACE-SHIELD Mitigations adapted to the SCOR namespace for operational and technical countermeasures.",
+  "name": "SCOR SPACE-SHIELD Mitigations",
+  "source": "ESA SPACE-SHIELD Matrix",
+  "type": "scor-space-shield-mitigations",
+  "uuid": "9cbf6f82-582f-49d1-9d9a-6a343b2d1132",
+  "values": [
+    {
+      "description": "Authenticate users and enforce authorization to prevent unauthorized access, configuration changes, or spacecraft takeover.",
+      "meta": {
+        "id": "M2022"
+      },
+      "uuid": "8d56dac0-e53f-4737-905c-c40592d2f5f9",
+      "value": "Access control"
+    },
+    {
+      "description": "Ensure every access or action is attributable to a user or entity for traceability and forensic analysis.",
+      "meta": {
+        "id": "M2026"
+      },
+      "uuid": "fba019b3-7eab-4e8c-a9f8-d9fd192b3ede",
+      "value": "Accountability of actions"
+    },
+    {
+      "description": "Use sequence numbers, timestamps, or message identifiers to prevent adversaries from replaying commands.",
+      "meta": {
+        "id": "M2046"
+      },
+      "uuid": "52069af7-e025-4507-8bb8-90f5726f3dfc",
+      "value": "Anti-replay protection mechanisms"
+    },
+    {
+      "description": "Ensure confidentiality and authenticity of telemetry and telecommand data with authenticated encryption.",
+      "meta": {
+        "id": "M2068"
+      },
+      "uuid": "fb792a62-18f6-4ffc-9d51-2e8ee03b92e0",
+      "value": "Authenticated encryption"
+    },
+    {
+      "description": "Verify actor identity and protect commands/messages from spoofing or tampering.",
+      "meta": {
+        "id": "M2002"
+      },
+      "uuid": "0d3cab87-b269-4b17-b998-8e603c51b75a",
+      "value": "Authentication"
+    },
+    {
+      "description": "Protect functionality from being executed by unauthorized entities.",
+      "meta": {
+        "id": "M2025"
+      },
+      "uuid": "8fc6e98b-3946-4b4f-9dbd-03ea2974575b",
+      "value": "Authorization"
+    },
+    {
+      "description": "Maintain spacecraft function during TT&C disruptions with autonomous fallback behaviors.",
+      "meta": {
+        "id": "M2027"
+      },
+      "uuid": "e851fe1d-d0e1-48bd-9fca-b013a9d2b328",
+      "value": "Autonomy"
+    },
+    {
+      "description": "Secure boot ensures OS integrity and loading mechanism verification.",
+      "meta": {
+        "id": "M1046"
+      },
+      "uuid": "9700a630-6cbd-4759-8fee-3edec4a3af96",
+      "value": "Boot Integrity"
+    },
+    {
+      "description": "Protect TT&C against replay through secure sequence numbering.",
+      "meta": {
+        "id": "M2004"
+      },
+      "uuid": "9c37310c-d98d-413d-a020-c1260dfe61f6",
+      "value": "CCSDS SDLS Sequence numbers"
+    },
+    {
+      "description": "Verify digital signatures to ensure only trusted code executes.",
+      "meta": {
+        "id": "M1045"
+      },
+      "uuid": "65da765d-f1d3-4a21-9f08-b30823147f7c",
+      "value": "Code signing"
+    },
+    {
+      "description": "Block credential dumping or key compromise through hardened key storage and encryption.",
+      "meta": {
+        "id": "M1043"
+      },
+      "uuid": "d7f910c6-d8ad-4219-a768-014a79ac885b",
+      "value": "Credential Access Protection"
+    },
+    {
+      "description": "Use layered protection mechanisms, including authentication, encryption, and anomaly detection.",
+      "meta": {
+        "id": "M2049"
+      },
+      "uuid": "8be1c655-4827-44e8-bc71-044e78a48dcb",
+      "value": "Defense-in-depth measures"
+    },
+    {
+      "description": "Detect and prevent unauthorized interactions with the avionics bus.",
+      "meta": {
+        "id": "M2078"
+      },
+      "uuid": "90ea681c-85a7-4477-a8f1-265a2fefa235",
+      "value": "Detection of abnormal behaviour at avionics bus / Prevention mechanisms"
+    },
+    {
+      "description": "Use digital certificates (CCSDS 357.0-B-1) for identity assurance and command protection.",
+      "meta": {
+        "id": "M2037"
+      },
+      "uuid": "cde78ea8-ac8c-4120-b864-712f42be4640",
+      "value": "Digital certificates"
+    },
+    {
+      "description": "Introduce diversity in components or software to limit single points of failure.",
+      "meta": {
+        "id": "M2010"
+      },
+      "uuid": "dedde572-c809-442f-9a62-23a97ddcb408",
+      "value": "Diversity"
+    },
+    {
+      "description": "Apply strong encryption to protect sensitive data.",
+      "meta": {
+        "id": "M1041"
+      },
+      "uuid": "d1280f0a-df59-4fe6-8e70-10ed7a211d4d",
+      "value": "Encrypt Sensitive Information"
+    },
+    {
+      "description": "Encrypt RF and optical links to ensure confidentiality.",
+      "meta": {
+        "id": "M2003"
+      },
+      "uuid": "cddf4565-3f0d-418d-aa1d-0cc1d7062643",
+      "value": "Encryption of communications"
+    },
+    {
+      "description": "Apply protocol-based network filtering on endpoints and network perimeters.",
+      "meta": {
+        "id": "M1037"
+      },
+      "uuid": "c5fe0bb2-ae20-4b42-a2ce-dae411ea3911",
+      "value": "Filter Network Traffic"
+    },
+    {
+      "description": "Regularly change carrier frequencies to make interception or jamming harder.",
+      "meta": {
+        "id": "M2016"
+      },
+      "uuid": "af27f11c-5dfe-4d5e-a2d0-21ff557c8f93",
+      "value": "Frequency Hopping"
+    },
+    {
+      "description": "Protect avionics memory access with MMU/MPU for isolation.",
+      "meta": {
+        "id": "M2008"
+      },
+      "uuid": "5fed55ae-40b2-475a-ad8f-40c90449e86a",
+      "value": "MMU and MPU"
+    },
+    {
+      "description": "Monitor systems and radio channels for unauthorized activity or DoS events.",
+      "meta": {
+        "id": "M2017"
+      },
+      "uuid": "604a7a61-bc83-471f-a984-410e88496f6c",
+      "value": "Monitoring"
+    },
+    {
+      "description": "Require multiple factors to authenticate users and commands.",
+      "meta": {
+        "id": "M2041"
+      },
+      "uuid": "f32d8b06-119f-4d52-9115-43e33c2dc70d",
+      "value": "Multi-factor authentication"
+    },
+    {
+      "description": "Block malicious network activity using signatures and behavioral indicators.",
+      "meta": {
+        "id": "M1031"
+      },
+      "uuid": "2898b686-0745-4e8d-9cf4-3950951abc6a",
+      "value": "Network Intrusion Prevention"
+    },
+    {
+      "description": "Isolate critical systems through physical and logical segmentation.",
+      "meta": {
+        "id": "M1030"
+      },
+      "uuid": "f22c574a-5758-4e11-9735-50d9d7941109",
+      "value": "Network Segmentation"
+    },
+    {
+      "description": "Ensure actions cannot be denied, using digital signatures and logging.",
+      "meta": {
+        "id": "M2018"
+      },
+      "uuid": "1e198416-76d7-4efc-840c-0136f21f818d",
+      "value": "Non-repudiation mechanisms"
+    },
+    {
+      "description": "Authenticate commands on-board to prevent unauthorized execution.",
+      "meta": {
+        "id": "M2051"
+      },
+      "uuid": "1d36e242-c3e2-4d04-a2ac-29264c74883d",
+      "value": "On Board Authentication for executing critical commands"
+    },
+    {
+      "description": "Separate functions and components to contain compromises and faults.",
+      "meta": {
+        "id": "M2007"
+      },
+      "uuid": "4cf42ba9-a7be-4bf5-9a34-4f676e768da0",
+      "value": "Partitioning/Separation"
+    },
+    {
+      "description": "Use guards, gates, and other countermeasures to defend ground facilities.",
+      "meta": {
+        "id": "M2021"
+      },
+      "uuid": "96d1dcb4-e658-488d-be78-6aa01b70db9b",
+      "value": "Physical security"
+    },
+    {
+      "description": "Introduce redundant components and communication links to improve availability.",
+      "meta": {
+        "id": "M2009"
+      },
+      "uuid": "49865241-7f37-482e-9e5e-f2dcd67527df",
+      "value": "Redundancy"
+    },
+    {
+      "description": "Validate integrity of spacecraft software/firmware remotely.",
+      "meta": {
+        "id": "M2061"
+      },
+      "uuid": "f88bdd12-3b0b-4a09-93b3-cf174352ecbf",
+      "value": "Remote attestation"
+    },
+    {
+      "description": "Harden hardware and systems to maintain operations under attack.",
+      "meta": {
+        "id": "M2020"
+      },
+      "uuid": "b5be3682-9edf-48e8-9144-2e30cbab547f",
+      "value": "Resilience"
+    },
+    {
+      "description": "Implement robust PKI for authentication, key management, and command integrity.",
+      "meta": {
+        "id": "M2040"
+      },
+      "uuid": "d7d2b6ad-ce92-4588-b896-c145ca82ca4c",
+      "value": "Secure PKI implementation"
+    },
+    {
+      "description": "Maintain secure fallback keys and re-enable security functions upon recovery.",
+      "meta": {
+        "id": "M2029"
+      },
+      "uuid": "a4353dcc-3e6b-47ec-8f72-ea6d34f1f36d",
+      "value": "Secure Safe Mode"
+    },
+    {
+      "description": "Mitigate risks from supply chain insertion of malicious components.",
+      "meta": {
+        "id": "M2024"
+      },
+      "uuid": "d529765b-c66a-47e0-9acc-7a23bcb53d03",
+      "value": "Supply chain confidence"
+    },
+    {
+      "description": "Enforce strong controls over supplier verification, integrity checking, and tamper resistance.",
+      "meta": {
+        "id": "M2077"
+      },
+      "uuid": "684cd22f-afc7-41a6-984d-beb46824b278",
+      "value": "Supply chain protections"
+    },
+    {
+      "description": "Source only from certified and trusted suppliers.",
+      "meta": {
+        "id": "M2050"
+      },
+      "uuid": "e7f9c10e-a327-4b3d-b40d-19d363053f29",
+      "value": "Supply from trustworthy sources only"
+    },
+    {
+      "description": "Educate personnel to resist phishing, social engineering, and operational security lapses.",
+      "meta": {
+        "id": "M1017"
+      },
+      "uuid": "d02da809-76c4-4e6c-9ad4-bf1a2b6f8e99",
+      "value": "User Training"
+    },
+    {
+      "description": "Adopt a zero trust model to continuously verify users, devices, and communications.",
+      "meta": {
+        "id": "M2043"
+      },
+      "uuid": "3a55c0d7-4af9-46c0-a1b7-aa6226fb3e3d",
+      "value": "Zero Trust Architecture"
+    }
+  ],
+  "version": 1
+}
