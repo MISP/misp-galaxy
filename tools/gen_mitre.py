@@ -257,7 +257,12 @@ for domain in domains:
     for item in attack_data['objects']:
         if item['type'] != 'x-mitre-data-component':
             continue
-        data_source_uuid = re.findall(r'--([0-9a-f-]+)', item['x_mitre_data_source_ref']).pop()
+        if 'x_mitre_data_source_ref' not in item:
+            continue
+        source_ref_matched = re.findall(r'--([0-9a-f-]+)', item['x_mitre_data_source_ref'])
+        if not source_ref_matched:
+            continue
+        data_source_uuid = source_ref_matched.pop()
         data_component_uuid = re.findall(r'--([0-9a-f-]+)', item['id']).pop()
         # create relationship bidirectionally
         rel_data_source = {
