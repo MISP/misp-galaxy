@@ -128,6 +128,7 @@
           "http://arstechnica.com/security/2015/08/newly-discovered-chinese-hacking-group-hacked-100-websites-to-use-as-watering-holes/",
           "https://attack.mitre.org/groups/G0027",
           "https://documents.trendmicro.com/assets/white_papers/wp-uncovering-DRBcontrol.pdf",
+          "https://learn.microsoft.com/en-us/unified-secops-platform/microsoft-threat-actor-naming",
           "https://research.nccgroup.com/2018/05/18/emissary-panda-a-potential-new-malicious-tool/",
           "https://securelist.com/luckymouse-hits-national-data-center/86083/",
           "https://thehackernews.com/2018/06/chinese-watering-hole-attack.html",
@@ -144,7 +145,8 @@
           "BRONZE UNION",
           "APT27",
           "Iron Tiger",
-          "LuckyMouse"
+          "LuckyMouse",
+          "Linen Typhoon"
         ]
       },
       "related": [
@@ -1549,6 +1551,10 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "4a6cfdae-1417-40c7-a84e-f59d21c58266",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "4dea7d8e-af94-4bfb-afe4-7ff54f59308b",
           "type": "uses"
         },
@@ -1730,10 +1736,6 @@
         },
         {
           "dest-uuid": "e358d692-23c0-4a31-9eb6-ecc13a8d7735",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "e3b6daca-e963-4a69-aee6-ed4fd653ad58",
           "type": "uses"
         },
         {
@@ -2116,6 +2118,45 @@
       "value": "Night Dragon - G0014"
     },
     {
+      "description": "[Water Galura](https://attack.mitre.org/groups/G1050) are the operators of the [Qilin](https://attack.mitre.org/software/S1242) Ransomware-as-a-Service (RaaS) who handle payload generation, ransom negotiations, and the publication of stolen data for [Qilin](https://attack.mitre.org/software/S1242) affilates recruited on Russian cybercrime forums. [Water Galura](https://attack.mitre.org/groups/G1050) have been active since at least 2022 and use a double extortion model where they demand payment for providing decryption keys and for refraining from publishing the stolen data to their leak site.(Citation: BushidoToken Qilin RaaS JUN 2024)(Citation: Sophos Qilin MSP APR 2025)",
+      "meta": {
+        "external_id": "G1050",
+        "refs": [
+          "https://attack.mitre.org/groups/G1050",
+          "https://blog.bushidotoken.net/2024/06/tracking-adversaries-qilin-raas.html",
+          "https://news.sophos.com/en-us/2025/04/01/sophos-mdr-tracks-ongoing-campaign-by-qilin-affiliates-targeting-screenconnect/"
+        ],
+        "synonyms": [
+          "Water Galura",
+          "GOLD FEATHER"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "851e071f-208d-4c79-adc6-5974c85c78f3",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "b1ccd744-3f78-4a0e-9bb2-2002057f7928",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "b80d107d-fa0d-4b60-9684-b0433e8bdba0",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "e23d2777-b85d-44fc-861e-9149d399fbb9",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "ed7d0cb1-87a6-43b4-9f46-ef1bc56d6c68",
+          "type": "uses"
+        }
+      ],
+      "uuid": "be8847e0-9512-45db-895e-f871ab6d3820",
+      "value": "Water Galura - G1050"
+    },
+    {
       "description": "[Earth Lusca](https://attack.mitre.org/groups/G1006) is a suspected China-based cyber espionage group that has been active since at least April 2019. [Earth Lusca](https://attack.mitre.org/groups/G1006) has targeted organizations in Australia, China, Hong Kong, Mongolia, Nepal, the Philippines, Taiwan, Thailand, Vietnam, the United Arab Emirates, Nigeria, Germany, France, and the United States. Targets included government institutions, news media outlets, gambling companies, educational institutions, COVID-19 research organizations, telecommunications companies, religious movements banned in China, and cryptocurrency trading platforms; security researchers assess some [Earth Lusca](https://attack.mitre.org/groups/G1006) operations may be financially motivated.(Citation: TrendMicro EarthLusca 2022)\n\n[Earth Lusca](https://attack.mitre.org/groups/G1006) has used malware commonly used by other Chinese threat groups, including [APT41](https://attack.mitre.org/groups/G0096) and the [Winnti Group](https://attack.mitre.org/groups/G0044) cluster, however security researchers assess [Earth Lusca](https://attack.mitre.org/groups/G1006)'s techniques and infrastructure are separate.(Citation: TrendMicro EarthLusca 2022)",
       "meta": {
         "external_id": "G1006",
@@ -2135,6 +2176,10 @@
         ]
       },
       "related": [
+        {
+          "dest-uuid": "005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "type": "uses"
+        },
         {
           "dest-uuid": "00f90846-cbd1-4fc5-9233-df5c2bf2a662",
           "type": "uses"
@@ -2193,10 +2238,6 @@
         },
         {
           "dest-uuid": "322bad5a-1c49-4d23-ab79-76d641794afa",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "35dd844a-b219-4e2b-a6bb-efa9a75995a9",
           "type": "uses"
         },
         {
@@ -2716,6 +2757,10 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "f2514ae4-4e9b-4f26-a5ba-c4ae85fe93c3",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "f4599aa0-4f85-4a32-80ea-fc39dc965945",
           "type": "uses"
         },
@@ -2813,12 +2858,15 @@
       "value": "Moses Staff - G1009"
     },
     {
-      "description": "[Lazarus Group](https://attack.mitre.org/groups/G0032) is a North Korean state-sponsored cyber threat group that has been attributed to the Reconnaissance General Bureau.(Citation: US-CERT HIDDEN COBRA June 2017)(Citation: Treasury North Korean Cyber Groups September 2019) The group has been active since at least 2009 and was reportedly responsible for the November 2014 destructive wiper attack against Sony Pictures Entertainment as part of a campaign named Operation Blockbuster by Novetta. Malware used by [Lazarus Group](https://attack.mitre.org/groups/G0032) correlates to other reported campaigns, including Operation Flame, Operation 1Mission, Operation Troy, DarkSeoul, and Ten Days of Rain.(Citation: Novetta Blockbuster)\n\nNorth Korean group definitions are known to have significant overlap, and some security researchers report all North Korean state-sponsored cyber activity under the name [Lazarus Group](https://attack.mitre.org/groups/G0032) instead of tracking clusters or subgroups, such as [Andariel](https://attack.mitre.org/groups/G0138), [APT37](https://attack.mitre.org/groups/G0067), [APT38](https://attack.mitre.org/groups/G0082), and [Kimsuky](https://attack.mitre.org/groups/G0094).   ",
+      "description": "[Lazarus Group](https://attack.mitre.org/groups/G0032) is a North Korean state-sponsored cyber threat group attributed to the Reconnaissance General Bureau (RGB). (Citation: US-CERT HIDDEN COBRA June 2017) (Citation: Treasury North Korean Cyber Groups September 2019) [Lazarus Group](https://attack.mitre.org/groups/G0032) has been active since at least 2009 and is reportedly responsible for the November 2014 destructive wiper attack on Sony Pictures Entertainment, identified by Novetta as part of Operation Blockbuster. Malware used by [Lazarus Group](https://attack.mitre.org/groups/G0032) correlates to other reported campaigns, including Operation Flame, Operation 1Mission, Operation Troy, DarkSeoul, and Ten Days of Rain.(Citation: Novetta Blockbuster)\n\nNorth Korea’s cyber operations have shown a consistent pattern of adaptation, forming and reorganizing units as national priorities shift. These units frequently share personnel, infrastructure, malware, and tradecraft, making it difficult to attribute specific operations with high confidence. Public reporting often uses “Lazarus Group” as an umbrella term for multiple North Korean cyber operators conducting espionage, destructive attacks, and financially motivated campaigns.(Citation: Mandiant DPRK Laz Org Breakdown 2022)(Citation: Mandiant DPRK Groups 2023)(Citation: JPCert Blog Laz Subgroups 2025)\n\n",
       "meta": {
         "external_id": "G0032",
         "refs": [
           "https://attack.mitre.org/groups/G0032",
+          "https://blogs.jpcert.or.jp/en/2025/03/classifying-lazaruss-subgroup.html",
           "https://blogs.microsoft.com/on-the-issues/2017/12/19/microsoft-facebook-disrupt-zinc-malware-attack-protect-customers-internet-ongoing-cyberthreats/",
+          "https://cloud.google.com/blog/topics/threat-intelligence/mapping-dprk-groups-to-government/",
+          "https://cloud.google.com/blog/topics/threat-intelligence/north-korea-cyber-structure-alignment-2023",
           "https://home.treasury.gov/news/press-releases/sm774",
           "https://learn.microsoft.com/en-us/microsoft-365/security/intelligence/microsoft-threat-actor-naming?view=o365-worldwide",
           "https://web.archive.org/web/20160226161828/https://www.operationblockbuster.com/wp-content/uploads/2016/02/Operation-Blockbuster-Report.pdf",
@@ -3282,6 +3330,10 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "f2514ae4-4e9b-4f26-a5ba-c4ae85fe93c3",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "f3c544dc-673c-4ef3-accb-53229f1ae077",
           "type": "uses"
         },
@@ -3606,6 +3658,10 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "248d3fe1-7fe1-4d71-91c7-8bb7ef35cad3",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "26c87906-d750-42c5-946c-d4162c73fc7b",
           "type": "uses"
         },
@@ -3806,6 +3862,10 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "a126c117-54e4-4b93-9e4f-72cc964e6760",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "a2fdce72-04b2-409a-ac10-cc1695f4fce0",
           "type": "uses"
         },
@@ -3879,10 +3939,6 @@
         },
         {
           "dest-uuid": "c675646d-e204-4aa8-978d-e3d6d65885c4",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "d28ef391-8ed4-45dc-bc4a-2f43abf54416",
           "type": "uses"
         },
         {
@@ -4118,7 +4174,7 @@
       "value": "Winnti Group - G0044"
     },
     {
-      "description": "[Gamaredon Group](https://attack.mitre.org/groups/G0047) is a suspected Russian cyber espionage threat group that has targeted military, NGO, judiciary, law enforcement, and non-profit organizations in Ukraine since at least 2013. The name [Gamaredon Group](https://attack.mitre.org/groups/G0047) comes from a misspelling of the word \"Armageddon\", which was detected in the adversary's early campaigns.(Citation: Palo Alto Gamaredon Feb 2017)(Citation: TrendMicro Gamaredon April 2020)(Citation: ESET Gamaredon June 2020)(Citation: Symantec Shuckworm January 2022)(Citation: Microsoft Actinium February 2022)\n\nIn November 2021, the Ukrainian government publicly attributed [Gamaredon Group](https://attack.mitre.org/groups/G0047) to Russia's Federal Security Service (FSB) Center 18.(Citation: Bleepingcomputer Gamardeon FSB November 2021)(Citation: Microsoft Actinium February 2022)",
+      "description": "[Gamaredon Group](https://attack.mitre.org/groups/G0047) is a suspected Russian cyber espionage group that has targeted military, law enforcement, judiciary, non-profit, and non-governmental organizations in Ukraine since at least 2013. The name [Gamaredon Group](https://attack.mitre.org/groups/G0047) derives from a misspelling of the word \"Armageddon,\" found in early campaigns.(Citation: Palo Alto Gamaredon Feb 2017)(Citation: TrendMicro Gamaredon April 2020)(Citation: ESET Gamaredon June 2020)(Citation: Symantec Shuckworm January 2022)(Citation: Microsoft Actinium February 2022)\n\nIn November 2021, the Ukrainian government publicly attributed [Gamaredon Group](https://attack.mitre.org/groups/G0047) to Russia’s Federal Security Service (FSB) Center 18, an assessment later supported by multiple independent cybersecurity researchers. (Citation: Bleepingcomputer Gamardeon FSB November 2021)(Citation: Microsoft Actinium February 2022)",
       "meta": {
         "external_id": "G0047",
         "refs": [
@@ -4193,6 +4249,10 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "1cec9319-743b-4840-bb65-431547bce82a",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "232b7f21-adf9-4b42-b936-b9d6f7df856e",
           "type": "uses"
         },
@@ -4202,6 +4262,10 @@
         },
         {
           "dest-uuid": "29ba5a15-3b7b-4732-b817-65ea8f6468e6",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "29be378d-262d-4e99-b00d-852d573628e6",
           "type": "uses"
         },
         {
@@ -4233,6 +4297,10 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "3b744087-9945-4a6f-91e8-9dbceda417a4",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "3c4a2599-71ee-4405-ba1e-0e28414b4bc5",
           "type": "uses"
         },
@@ -4249,6 +4317,14 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "43e7dc91-05b2-474c-b9ac-2ed4fe101f4d",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "4933e63b-9b77-476e-ab29-761bc5b7d15a",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "57340c81-c025-4189-8fa0-fc7ede51bae4",
           "type": "uses"
         },
@@ -4258,6 +4334,10 @@
         },
         {
           "dest-uuid": "671cd17f-a765-48fd-adc4-dad1941b1ae3",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "731f4f55-b6d0-41d1-a7a9-072a66389aea",
           "type": "uses"
         },
         {
@@ -4277,6 +4357,10 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "7cd0bc75-055b-4098-a00e-83dc8beaff14",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "830c9528-df21-472c-8c14-a036bf17d665",
           "type": "uses"
         },
@@ -4286,6 +4370,14 @@
         },
         {
           "dest-uuid": "853c4192-4311-43e1-bfbb-b11b14911852",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "887274fc-2d63-4bdc-82f3-fae56d1d5fdc",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "88d31120-5bc7-4ce3-a9c0-7cf147be8e54",
           "type": "uses"
         },
         {
@@ -4321,6 +4413,10 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "a782ebe2-daba-42c7-bc82-e8e9d923162d",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "ac08589e-ee59-4935-8667-d845e38fe579",
           "type": "uses"
         },
@@ -4333,6 +4429,10 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "b18eae87-b469-4e14-b454-b171b416bc18",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
           "type": "uses"
         },
@@ -4341,7 +4441,23 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "be055942-6e63-49d7-9fa1-9cb7d8a8f3f4",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "c21d5a77-d422-4a69-acd7-2c53c1faa34b",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "c32f7008-9fea-41f7-8366-5eb9b74bd896",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "c726e0a2-a57a-4b7b-a973-d0f013246617",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "cba37adb-d6fb-4610-b069-dd04c0643384",
           "type": "uses"
         },
         {
@@ -4390,6 +4506,10 @@
         },
         {
           "dest-uuid": "fb640c43-aa6b-431e-a961-a279010424ac",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "fbd91bfc-75c2-4f0c-8116-3b4e722906b3",
           "type": "uses"
         }
       ],
@@ -5502,6 +5622,10 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "248d3fe1-7fe1-4d71-91c7-8bb7ef35cad3",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "2bce5b30-7014-4a5d-ade7-12913fe6ac36",
           "type": "uses"
         },
@@ -5571,10 +5695,6 @@
         },
         {
           "dest-uuid": "c726e0a2-a57a-4b7b-a973-d0f013246617",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "d28ef391-8ed4-45dc-bc4a-2f43abf54416",
           "type": "uses"
         },
         {
@@ -5655,11 +5775,281 @@
       "value": "GOLD SOUTHFIELD - G0115"
     },
     {
-      "description": "[Scattered Spider](https://attack.mitre.org/groups/G1015) is a native English-speaking cybercriminal group that has been active since at least 2022.(Citation: CrowdStrike Scattered Spider Profile)(Citation: MSTIC Octo Tempest Operations October 2023) The group initially targeted customer relationship management and business-process outsourcing (BPO) firms as well as telecommunications and technology companies. Beginning in 2023, [Scattered Spider](https://attack.mitre.org/groups/G1015) expanded its operations to compromise victims in the gaming, hospitality, retail, MSP, manufacturing, and financial sectors.(Citation: MSTIC Octo Tempest Operations October 2023) During campaigns, [Scattered Spider](https://attack.mitre.org/groups/G1015) has leveraged targeted social-engineering techniques, attempted to bypass popular endpoint security tools, and more recently, deployed ransomware for financial gain.(Citation: CISA Scattered Spider Advisory November 2023)(Citation: CrowdStrike Scattered Spider BYOVD January 2023)(Citation: CrowdStrike Scattered Spider Profile)(Citation: MSTIC Octo Tempest Operations October 2023)(Citation: Crowdstrike TELCO BPO Campaign December 2022)",
+      "description": "[Medusa Group](https://attack.mitre.org/groups/G1051) has been active since at least 2021 and was initially operated as a closed ransomware group before evolving into a Ransomware-as-a-Service (RaaS) operation. Some reporting indicates that certain attacks may still be conducted directly by the ransomware’s core developers. Public sources have also referred to the group as “Spearwing” or “Medusa Actors.” (Citation: CISA Medusa Group Medusa Ransomware March 2025) (Citation: Broadcom Medusa Ransomware Medusa Group March 2025) [Medusa Group](https://attack.mitre.org/groups/G1051) employs living-off-the-land techniques, frequently leveraging publicly available tools and common remote management software to conduct operations. The group engages in double extortion tactics, exfiltrating data prior to encryption and threatening to publish stolen information if ransom demands are not met. (Citation: Security Scorecard Medusa Ransomware January 2024) For initial access, [Medusa Group](https://attack.mitre.org/groups/G1051) has exploited publicly known vulnerabilities, conducted phishing campaigns, and used credentials or access purchased from Initial Access Brokers (IABs). The group is opportunistic and has targeted a wide range of sectors globally. (Citation: Intel471 Medusa Ransomware May 2025)",
+      "meta": {
+        "external_id": "G1051",
+        "refs": [
+          "https://attack.mitre.org/groups/G1051",
+          "https://securityscorecard.com/wp-content/uploads/2024/01/deep-dive-into-medusa-ransomware.pdf",
+          "https://www.cisa.gov/news-events/cybersecurity-advisories/aa25-071a",
+          "https://www.intel471.com/blog/threat-hunting-case-study-medusa-ransomware",
+          "https://www.security.com/threat-intelligence/medusa-ransomware-attacks"
+        ],
+        "synonyms": [
+          "Medusa Group"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "01a5a209-b94c-450b-b7f9-946497d91055",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "03d7999c-1f4c-42cc-8373-e7690d318104",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "0a68f1f1-da74-4d28-8d9a-696c082706cc",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "120d5519-3098-4e1c-9191-2aa61232f073",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "20fb2507-d71c-455d-9b6d-6104461cf26b",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "215d9700-5881-48b8-8265-6449dbb7195d",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "25659dd6-ea12-45c4-97e6-381e3e4b593e",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "28d93902-30e7-4436-8885-6d312c51c9a3",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "2959d63f-73fd-46a1-abd2-109d7dcede32",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "2aed01ad-3df3-4410-a8cb-11ea4ded587c",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "2f6b4ed7-fef1-44ba-bcb8-1b4beb610b64",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "32901740-b42c-4fdd-bc02-345b5dc57082",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "3489cfc5-640f-4bb3-a103-9137b97de79f",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "354a7f88-63fb-41b5-a801-ce3b377b36f1",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "391d824f-0ef1-47a0-b0ee-c59a75e27670",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "3aef9463-9a7a-43ba-8957-a867e07c1e6a",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "3f886f2a-874f-4333-b794-aa6075009b1c",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "4061e78c-1284-44b4-9116-73e4ac3912f7",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "506f6f49-7045-4156-9007-7474cb44ad6d",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "5372c5fe-f424-4def-bcd5-d3a8e770f07b",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "57340c81-c025-4189-8fa0-fc7ede51bae4",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "59096109-a1dd-463b-87e7-a8d110fe3a79",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "5d0d3609-d06d-49e1-b9c9-b544e0c618cb",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "65013dd2-bc61-43e3-afb5-a14c4fa7437a",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "65f2d882-3f41-4d48-8a06-29af77ec9f90",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "707399d6-ab3e-4963-9315-d9d3818cd6a0",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "7610cada-1499-41a4-b3dd-46467b68d177",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "7bc57495-ea59-4380-be31-a64af124ef18",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "851e071f-208d-4c79-adc6-5974c85c78f3",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "88d31120-5bc7-4ce3-a9c0-7cf147be8e54",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "8f4a33ec-8b1f-4b80-a2f6-642b2e479580",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "8f504411-cb96-4dac-a537-8d2bb7679c59",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "92a78814-b191-47ca-909c-1ccfe3777414",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "970a3432-3237-47ad-bcca-7d8cbb217736",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "a2fdce72-04b2-409a-ac10-cc1695f4fce0",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "a782ebe2-daba-42c7-bc82-e8e9d923162d",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "ac08589e-ee59-4935-8667-d845e38fe579",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "afc079f3-c0ea-4096-b75d-3f05338b7f60",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "b17a1a56-e99c-403c-8948-561df0cffe81",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "b1ccd744-3f78-4a0e-9bb2-2002057f7928",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "b80d107d-fa0d-4b60-9684-b0433e8bdba0",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "bf176076-b789-408e-8cba-7275e81c0ada",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "bf1b6176-597c-4600-bfcd-ac989670f96b",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "bf90d72c-c00b-45e3-b3aa-68560560d4c5",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "cba37adb-d6fb-4610-b069-dd04c0643384",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "cbb66055-0325-4111-aca0-40547b6ad5b0",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "d1fcf083-a721-4223-aedf-bf8960798d62",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "d21bb61f-08ad-4dc1-b001-81ca6cb79954",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "d511a6f6-4a33-41d5-bc95-c343875d1377",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "d63a3fb8-9452-4e9d-a60a-54be68d5998c",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "deb98323-e13f-4b0c-8d94-175379069062",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "df8b2a25-8bdf-4856-953c-a04372b1c161",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "e358d692-23c0-4a31-9eb6-ecc13a8d7735",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "e3a12395-188d-4051-9a16-ea8e14d07b88",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "e6919abc-99f9-4c6c-95a5-14761e7b2add",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "eb062747-2193-45de-8fa2-e62549c37ddf",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "edf91964-b26e-4b4a-9600-ccacd7d7df24",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "f1951e8a-500e-4a26-8803-76d95c4554b4",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "f5d8eed6-48a9-4cdf-a3d7-d1ffa99c3d2a",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "ff6caf67-ea1f-4895-b80e-4bb0fc31c6db",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "ff73aa03-0090-4464-83ac-f89e233c02bc",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "ffbcfdb0-de22-4106-9ed3-fc23c8a01407",
+          "type": "uses"
+        }
+      ],
+      "uuid": "918da025-04bd-48af-b6c4-f3e4d1b915eb",
+      "value": "Medusa Group - G1051"
+    },
+    {
+      "description": "[Scattered Spider](https://attack.mitre.org/groups/G1015) is a native English-speaking cybercriminal group active since at least 2022. (Citation: CrowdStrike Scattered Spider Profile) (Citation: MSTIC Octo Tempest Operations October 2023) The group initially targeted customer relationship management (CRM) providers, business process outsourcing (BPO) firms, and telecommunications and technology companies before expanding in 2023 to gaming, hospitality, retail, managed service provider (MSP), manufacturing, and financial sectors. (Citation: MSTIC Octo Tempest Operations October 2023)\n[Scattered Spider](https://attack.mitre.org/groups/G1015) relies heavily on social engineering, including impersonating IT and help-desk staff, to gain initial access, bypass multi-factor authentication (MFA), and compromise enterprise networks. The group has adapted its tooling to evade endpoint detection and response (EDR) defenses and used ransomware for financial gain. (Citation: CISA Scattered Spider Advisory November 2023) (Citation: CrowdStrike Scattered Spider BYOVD January 2023) (Citation: Crowdstrike TELCO BPO Campaign December 2022)\n[Scattered Spider](https://attack.mitre.org/groups/G1015) had expanded into hybrid cloud and identity environments, using help-desk impersonation and MFA bypass to obtain administrator access in Okta, AWS, and Office 365. (Citation: Mandiant UNC3944 May 2025)",
       "meta": {
         "external_id": "G1015",
         "refs": [
           "https://attack.mitre.org/groups/G1015",
+          "https://cloud.google.com/blog/topics/threat-intelligence/defending-vsphere-from-unc3944",
+          "https://cloud.google.com/blog/topics/threat-intelligence/unc3944-proactive-hardening-recommendations",
           "https://learn.microsoft.com/en-us/microsoft-365/security/intelligence/microsoft-threat-actor-naming?view=o365-worldwide",
           "https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-320a",
           "https://www.crowdstrike.com/adversaries/scattered-spider/",
@@ -5671,7 +6061,8 @@
           "Scattered Spider",
           "Roasted 0ktapus",
           "Octo Tempest",
-          "Storm-0875"
+          "Storm-0875",
+          "UNC3944"
         ]
       },
       "related": [
@@ -5692,6 +6083,10 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "15dbf668-795c-41e6-8219-f0447c0e64ce",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "1608f3e1-598a-42f4-a01a-2e252e81728f",
           "type": "uses"
         },
@@ -5704,11 +6099,27 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "2aed01ad-3df3-4410-a8cb-11ea4ded587c",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "2d3f5b3c-54ca-4f4d-bb1f-849346d31230",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "2db31dcd-54da-405d-acef-b9129b816ed6",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "2dbbdcd5-92cf-44c0-aea2-fe24783a6bc3",
           "type": "uses"
         },
         {
           "dest-uuid": "2f7f03bb-f367-4a5a-ad9b-310a12a48906",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "315f51f0-6b03-4c1e-bfb2-84740afb8e21",
           "type": "uses"
         },
         {
@@ -5720,7 +6131,19 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "4061e78c-1284-44b4-9116-73e4ac3912f7",
+          "dest-uuid": "354a7f88-63fb-41b5-a801-ce3b377b36f1",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "40f5caa0-4cb7-4117-89fc-d421bb493df3",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "438c967d-3996-4870-bfc2-3954752a1927",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "4fe28b27-b13c-453e-a386-c2ef362a573b",
           "type": "uses"
         },
         {
@@ -5728,7 +6151,15 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "5282dd9a-d26d-4e16-88b7-7c0f4553daf4",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "57a3d31a-d04f-4663-b2da-7df8ec3f8c9d",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "59096109-a1dd-463b-87e7-a8d110fe3a79",
           "type": "uses"
         },
         {
@@ -5744,7 +6175,27 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "707399d6-ab3e-4963-9315-d9d3818cd6a0",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "72b74d71-8169-42aa-92e0-e7b04b9f5a08",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "731f4f55-b6d0-41d1-a7a9-072a66389aea",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "7807d3a4-a885-4639-a786-c1ed41484970",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "7bc57495-ea59-4380-be31-a64af124ef18",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "7d77a07d-02fe-4e88-8bd9-e9c008c01bf0",
           "type": "uses"
         },
         {
@@ -5753,6 +6204,10 @@
         },
         {
           "dest-uuid": "837f9164-50af-4ac0-8219-379d8a74cefc",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "842976c7-f9c8-41b2-8371-41dc64fbe261",
           "type": "uses"
         },
         {
@@ -5768,7 +6223,23 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "92d7da27-2d91-488e-a00c-059dc162766d",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "954a1639-f2d6-407d-aef3-4917622ca493",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "970a3432-3237-47ad-bcca-7d8cbb217736",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "a10641f4-87b4-45a3-a906-92a149cb2c27",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "a2fdce72-04b2-409a-ac10-cc1695f4fce0",
           "type": "uses"
         },
         {
@@ -5776,7 +6247,23 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "a9d4b653-6915-42af-98b2-5758c4ceee56",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "ac08589e-ee59-4935-8667-d845e38fe579",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "afc079f3-c0ea-4096-b75d-3f05338b7f60",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "b17a1a56-e99c-403c-8948-561df0cffe81",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "b1ccd744-3f78-4a0e-9bb2-2002057f7928",
           "type": "uses"
         },
         {
@@ -5785,6 +6272,10 @@
         },
         {
           "dest-uuid": "b4409cd8-0da9-46e1-a401-a241afd4d1cc",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "b5a8fb8b-4ff1-43e5-a1ad-75ae565f5175",
           "type": "uses"
         },
         {
@@ -5820,7 +6311,15 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "d4287702-e2f7-4946-bdfa-2c7f5aaa5032",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "defc1257-4db1-4fb3-8ef5-bb77f63146df",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "dfefe2ed-4389-4318-8762-f0272b350a1b",
           "type": "uses"
         },
         {
@@ -5836,7 +6335,27 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "e6919abc-99f9-4c6c-95a5-14761e7b2add",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "eb062747-2193-45de-8fa2-e62549c37ddf",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "ed7d0cb1-87a6-43b4-9f46-ef1bc56d6c68",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "edf91964-b26e-4b4a-9600-ccacd7d7df24",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "f232fa7a-025c-4d43-abc7-318e81a73d65",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "f5d8eed6-48a9-4cdf-a3d7-d1ffa99c3d2a",
           "type": "uses"
         },
         {
@@ -6217,10 +6736,6 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "354a7f88-63fb-41b5-a801-ce3b377b36f1",
-          "type": "uses"
-        },
-        {
           "dest-uuid": "36dd807e-b5bc-4c3e-91ed-80682360148c",
           "type": "uses"
         },
@@ -6470,6 +6985,10 @@
         },
         {
           "dest-uuid": "edf91964-b26e-4b4a-9600-ccacd7d7df24",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "f2514ae4-4e9b-4f26-a5ba-c4ae85fe93c3",
           "type": "uses"
         },
         {
@@ -6958,23 +7477,316 @@
       "value": "Volatile Cedar - G0123"
     },
     {
-      "description": "[Mustang Panda](https://attack.mitre.org/groups/G0129) is a China-based cyber espionage threat actor that was first observed in 2017 but may have been conducting operations since at least 2014. [Mustang Panda](https://attack.mitre.org/groups/G0129) has targeted government entities, nonprofits, religious, and other non-governmental organizations in the U.S., Europe, Mongolia, Myanmar, Pakistan, and Vietnam, among others.(Citation: Crowdstrike MUSTANG PANDA June 2018)(Citation: Anomali MUSTANG PANDA October 2019)(Citation: Secureworks BRONZE PRESIDENT December 2019) ",
+      "description": "[Contagious Interview](https://attack.mitre.org/groups/G1052) is a North Korea–aligned threat group active since 2023. The group conducts both cyberespionage and financially motivated operations, including the theft of cryptocurrency and user credentials. [Contagious Interview](https://attack.mitre.org/groups/G1052) targets Windows, Linux, and macOS systems, with a particular focus on individuals engaged in software development and cryptocurrency-related activities. (Citation: Validin Contagious Interview North Korea ClickFix January 2025)(Citation: Esentire ContagiousInterview BeaverTail InvisibleFerret November 2024)(Citation: Datadog Contagious Interview Tenacious Pungsan October 2024)(Citation: Recorded Future Contagious Inteview BeaverTail InvisibleFerret OtterCookie February 2025)(Citation: ESET Contagious Interview BeaverTail InvisibleFerret February 2025)(Citation: Zscaler ContagiousInterview BeaverTail InvisibleFerret November 2024)(Citation: PaloAlto ContagiousInterview BeaverTail InvisibleFerret November 2023)(Citation: PaloAlto Unit42 ContagiousInterview BeaverTail InvisibileFerret October 2024)",
+      "meta": {
+        "external_id": "G1052",
+        "refs": [
+          "https://attack.mitre.org/groups/G1052",
+          "https://reports.dtexsystems.com/DTEX-Exposing+DPRK+Cyber+Syndicate+and+Hidden+IT+Workforce.pdf",
+          "https://securitylabs.datadoghq.com/articles/tenacious-pungsan-dprk-threat-actor-contagious-interview/",
+          "https://unit42.paloaltonetworks.com/north-korean-threat-actors-lure-tech-job-seekers-as-fake-recruiters/",
+          "https://unit42.paloaltonetworks.com/two-campaigns-by-north-korea-bad-actors-target-job-hunters/",
+          "https://www.esentire.com/blog/bored-beavertail-invisibleferret-yacht-club-a-lazarus-lure-pt-2",
+          "https://www.recordedfuture.com/research/inside-the-scam-north-koreas-it-worker-threat",
+          "https://www.securonix.com/blog/analysis-of-devpopper-new-attack-campaign-targeting-software-developers-likely-associated-with-north-korean-threat-actors/",
+          "https://www.sentinelone.com/labs/contagious-interview-threat-actors-scout-cyber-intel-platforms-reveal-plans-and-ops/",
+          "https://www.validin.com/blog/inoculating_contagious_interview_with_validin/",
+          "https://www.welivesecurity.com/en/eset-research/deceptivedevelopment-targets-freelance-developers/",
+          "https://www.zscaler.com/blogs/security-research/pyongyang-your-payroll-rise-north-korean-remote-workers-west"
+        ],
+        "synonyms": [
+          "Contagious Interview",
+          "DeceptiveDevelopment",
+          "Gwisin Gang",
+          "Tenacious Pungsan",
+          "DEV#POPPER",
+          "PurpleBravo",
+          "TAG-121"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "0458aab9-ad42-4eac-9e22-706a95bafee2",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "0cc222f5-c3ff-48e6-9f52-3314baf9d37e",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "0d91b3c0-5e50-47c3-949a-2a796f04d144",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "0f4a0c76-ab2d-4cb0-85d3-3f0efb8cba0d",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "1dac60f2-7d53-4a3e-95d1-cb2e875d5491",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "1eaebf46-e361-4437-bc23-d5d65a3b92e3",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "212306d8-efa4-44c9-8c2d-ed3d2e224aa0",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "232b7f21-adf9-4b42-b936-b9d6f7df856e",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "24bfaeba-cb0d-4525-b3dc-507c77ecec41",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "354a7f88-63fb-41b5-a801-ce3b377b36f1",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "3d7048f1-012e-468c-a18b-1bf98037d62c",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "3ee16395-03f0-4690-a32e-69ce9ada0f9e",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "40597f16-0963-4249-bf4c-ac93b7fb9807",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "40f5caa0-4cb7-4117-89fc-d421bb493df3",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "42e8de7b-37b2-4258-905a-6897815e58e0",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "5282dd9a-d26d-4e16-88b7-7c0f4553daf4",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "54b4c251-1f0e-4eba-ba6b-dbc7a6f6f06b",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "6055aee2-d1c6-4877-94e9-a3bde9936470",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "63b24abc-5702-4745-b1e4-ac70b20a43f2",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "65013dd2-bc61-43e3-afb5-a14c4fa7437a",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "70910fbd-58dc-4c1c-8c48-814d11fcd022",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "731f4f55-b6d0-41d1-a7a9-072a66389aea",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "73b24a10-6bf4-4af1-a81e-67b8bcb6c4e6",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "79da0971-3147-4af6-a4f5-e8cd447cd795",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "7bc57495-ea59-4380-be31-a64af124ef18",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "82caa33e-d11a-433a-94ea-9b5a5fbef81d",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "851e071f-208d-4c79-adc6-5974c85c78f3",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "853c4192-4311-43e1-bfbb-b11b14911852",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "88d31120-5bc7-4ce3-a9c0-7cf147be8e54",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "92d7da27-2d91-488e-a00c-059dc162766d",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "9efb1ea7-c37b-4595-9640-b7680cd84279",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "a0e6614a-7740-4b24-bd65-f1bde09fc365",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "a2fdce72-04b2-409a-ac10-cc1695f4fce0",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "a9d4b653-6915-42af-98b2-5758c4ceee56",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "ac08589e-ee59-4935-8667-d845e38fe579",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "b18eae87-b469-4e14-b454-b171b416bc18",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "b1ccd744-3f78-4a0e-9bb2-2002057f7928",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "b63a34e8-0a61-4c97-a23b-bf8a2ed812e2",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "bbe5b322-e2af-4a5e-9625-a4e62bf84ed3",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "bf1b6176-597c-4600-bfcd-ac989670f96b",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "c9e0c59e-162e-40a4-b8b1-78fab4329ada",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "cc3502b5-30cc-4473-ad48-42d51a6ef6d1",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "cdfc5f0a-9bb9-4352-b896-553cfa2d8fd8",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "d10cbd34-42e3-45c0-84d2-535a09849584",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "d1fcf083-a721-4223-aedf-bf8960798d62",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "d4287702-e2f7-4946-bdfa-2c7f5aaa5032",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "d511a6f6-4a33-41d5-bc95-c343875d1377",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "d63a3fb8-9452-4e9d-a60a-54be68d5998c",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "dfd7cc1d-e1d8-4394-a198-97c4cab8aa67",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "e0232cb0-ded5-4c2e-9dc7-2893142a5c11",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "e261a979-f354-41a8-963e-6cadac27c4bf",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "edadea33-549c-4ed1-9783-8f5a5853cbdf",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "ef67e13e-5598-4adc-bdb2-998225874fa9",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "f6ad61ee-65f3-4bd0-a3f5-2f0accb36317",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "fb8d023d-45be-47e9-bc51-f56bcae6435b",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "fedd9fcd-1f9c-4be0-9d84-f31e88eb6664",
+          "type": "uses"
+        }
+      ],
+      "uuid": "46599a4a-77ee-4697-9474-2683b6464859",
+      "value": "Contagious Interview - G1052"
+    },
+    {
+      "description": "[Mustang Panda](https://attack.mitre.org/groups/G0129) is a China-based cyber espionage threat actor that has been conducting operations since at least 2012. [Mustang Panda](https://attack.mitre.org/groups/G0129) has been known to use tailored phishing lures and decoy documents to deliver malicious payloads.  [Mustang Panda](https://attack.mitre.org/groups/G0129) has targeted government, diplomatic, and non-governmental organizations, including think tanks, religious institutions, and research entities, across the United States, Europe, and Asia, with notable activity in Russia, Mongolia, Myanmar, Pakistan, and Vietnam. (Citation: BlackBerry MUSTANG PANDA October 2022)(Citation: Eset PlugX Korplug Mustang Panda March 2022)(Citation: Anomali MUSTANG PANDA October 2019)(Citation: Cisco Talos MUSTANG PANDA PLUGX PUBLOAD MAY 2022)(Citation: Secureworks BRONZE PRESIDENT December 2019)(Citation: DOJ Affidavit Search and Seizure PlugX December 2024)(Citation: EclecticIQ Mustang Panda PlugX)(Citation: ATTACKIQ MUSTANG PANDA TONESHELL March 2023)(Citation: Crowdstrike MUSTANG PANDA June 2018)(Citation: Palo Alto Networks, Unit 42)(Citation: Sophos PlugX September 2022)(Citation: Sophos Mustang Panda PLUGX)(Citation: Zscaler)",
       "meta": {
         "external_id": "G0129",
         "refs": [
           "https://attack.mitre.org/groups/G0129",
+          "https://blog.eclecticiq.com/mustang-panda-apt-group-uses-european-commission-themed-lure-to-deliver-plugx-malware",
+          "https://blog.talosintelligence.com/mustang-panda-targets-europe/",
+          "https://blogs.blackberry.com/en/2022/10/mustang-panda-abuses-legitimate-apps-to-target-myanmar-based-victims",
+          "https://cloud.google.com/blog/topics/threat-intelligence/prc-nexus-espionage-targets-diplomats",
+          "https://csirt-cti.net/2024/01/23/stately-taurus-targets-myanmar/",
           "https://go.recordedfuture.com/hubfs/reports/cta-2020-0728.pdf",
+          "https://learn.microsoft.com/en-us/unified-secops-platform/microsoft-threat-actor-naming",
+          "https://research.checkpoint.com/2023/the-dragon-who-sold-his-camaro-analyzing-custom-router-implant/",
+          "https://unit42.paloaltonetworks.com/bookworm-trojan-a-model-of-modular-architecture/",
+          "https://unit42.paloaltonetworks.com/stately-taurus-abuses-vscode-southeast-asian-espionage/",
+          "https://unit42.paloaltonetworks.com/stately-taurus-attacks-se-asian-government/",
+          "https://unit42.paloaltonetworks.com/stately-taurus-uses-bookworm-malware/",
           "https://www.anomali.com/blog/china-based-apt-mustang-panda-targets-minority-groups-public-and-private-sector-organizations",
+          "https://www.attackiq.com/2023/03/23/emulating-the-politically-motivated-chinese-apt-mustang-panda/",
+          "https://www.broadcom.com/support/security-center/protection-bulletin/bookworm-malware-linked-to-fireant-aka-stately-tarurus-activity-observed-in-southeast-asia",
           "https://www.crowdstrike.com/blog/meet-crowdstrikes-adversary-of-the-month-for-june-mustang-panda/",
+          "https://www.ibm.com/think/x-force/hive0154-mustang-panda-shifts-focus-tibetan-community-deploy-pubload-backdoor",
+          "https://www.ibm.com/think/x-force/hive0154-targeting-us-philippines-pakistan-taiwan",
+          "https://www.justice.gov/archives/opa/media/1384136/dl",
           "https://www.proofpoint.com/us/blog/threat-insight/good-bad-and-web-bug-ta416-increases-operational-tempo-against-european",
           "https://www.proofpoint.com/us/blog/threat-insight/ta416-goes-ground-and-returns-golang-plugx-malware-loader",
-          "https://www.secureworks.com/research/bronze-president-targets-ngos"
+          "https://www.pwc.co.uk/cyber-security/pdf/pwc-cyber-threats-2020-a-year-in-retrospect.pdf",
+          "https://www.secureworks.com/blog/bronze-president-targets-government-officials",
+          "https://www.secureworks.com/blog/bronze-president-targets-russian-speakers-with-updated-plugx",
+          "https://www.secureworks.com/research/bronze-president-targets-ngos",
+          "https://www.trendmicro.com/en_us/research/22/k/earth-preta-spear-phishing-governments-worldwide.html",
+          "https://www.trendmicro.com/en_us/research/23/f/behind-the-scenes-unveiling-the-hidden-workings-of-earth-preta.html",
+          "https://www.trendmicro.com/en_us/research/24/i/earth-preta-new-malware-and-strategies.html",
+          "https://www.trendmicro.com/en_us/research/25/b/earth-preta-mixes-legitimate-and-malicious-components-to-sidestep-detection.html",
+          "https://www.welivesecurity.com/2022/03/23/mustang-panda-hodur-old-tricks-new-korplug-variant/",
+          "https://www.zscaler.com/blogs/security-research/latest-mustang-panda-arsenal-toneshell-and-starproxy-p1"
         ],
         "synonyms": [
           "Mustang Panda",
           "TA416",
           "RedDelta",
-          "BRONZE PRESIDENT"
+          "BRONZE PRESIDENT",
+          "STATELY TAURUS",
+          "FIREANT",
+          "CAMARO DRAGON",
+          "EARTH PRETA",
+          "HIVE0154",
+          "TWILL TYPHOON",
+          "TANTALUM",
+          "LUMINOUS MOTH",
+          "UNC6384",
+          "TEMP.Hex",
+          "Red Lich"
         ]
       },
       "related": [
@@ -6991,7 +7803,27 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "035bb001-ab69-4a0b-9f6c-2de8b09e1b9d",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "03acae53-9b98-46f6-b204-16b930839055",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "0a3ead4e-6d47-4ccb-854c-a6a4f9d96b22",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "0a5231ec-41af-4a35-83d0-6bdf11f28c65",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "0bf64997-7ce1-43e5-b01a-bcd2bf5dc87f",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "0f4a0c76-ab2d-4cb0-85d3-3f0efb8cba0d",
           "type": "uses"
         },
         {
@@ -7003,11 +7835,27 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "19401639-28d0-4c3c-adcc-bc2ba22f6421",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "1c34f7aa-9341-4a48-bfab-af22e51aca6c",
           "type": "uses"
         },
         {
           "dest-uuid": "1c4e5d32-1fe9-4116-9d9d-59e3925bd6a2",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "208884f1-7b83-4473-ac22-4e1cf6c41471",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "212306d8-efa4-44c9-8c2d-ed3d2e224aa0",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "21875073-b0ee-49e3-9077-1e2a885359af",
           "type": "uses"
         },
         {
@@ -7019,11 +7867,27 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "2683fde8-1dc4-415c-94bd-9bb95cc5b7ff",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "26c87906-d750-42c5-946c-d4162c73fc7b",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "2aed01ad-3df3-4410-a8cb-11ea4ded587c",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "2b742742-28c3-4e1b-bab7-8350d6300fa7",
           "type": "uses"
         },
         {
           "dest-uuid": "2cd950a6-16c4-404a-aa01-044322395107",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "2ceddaf9-b16a-4f8b-b252-bcccccd3d79f",
           "type": "uses"
         },
         {
@@ -7039,7 +7903,15 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "301e7370-c3d3-4f3e-893f-8a79345c2eb5",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "30208d3e-0d6b-43c8-883e-44462a514619",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "32901740-b42c-4fdd-bc02-345b5dc57082",
           "type": "uses"
         },
         {
@@ -7047,7 +7919,27 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "3824852d-1957-4712-9da0-38143723c060",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "391d824f-0ef1-47a0-b0ee-c59a75e27670",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "3b744087-9945-4a6f-91e8-9dbceda417a4",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "3ccef7ae-cb5e-48f6-8302-897105fbf55c",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "3d1f234e-6c60-43c1-b1f1-6bbc9e5b8e44",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "3dc8c101-d4db-4f4d-8150-1b5a76ca5f1b",
           "type": "uses"
         },
         {
@@ -7059,6 +7951,34 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "451a9977-d255-43c9-b431-66de80130c8c",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "47e4b55a-7803-4bf5-822c-906a1ecbdd6e",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "47f2d673-ca62-47e9-929b-1b0be9657611",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "4fe28b27-b13c-453e-a386-c2ef362a573b",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "5a3a31fe-5a8f-48e1-bff0-a753e5b1be70",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "5d0d3609-d06d-49e1-b9c9-b544e0c618cb",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "6114c345-4c09-42ce-8d37-aef16360a7f3",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "64fa0de0-6240-41f4-8638-f4ca7ed528fd",
           "type": "uses"
         },
@@ -7067,11 +7987,35 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "65f2d882-3f41-4d48-8a06-29af77ec9f90",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "66b34be7-6915-4b83-8d5a-b0f0592b5e41",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "671cd17f-a765-48fd-adc4-dad1941b1ae3",
           "type": "uses"
         },
         {
           "dest-uuid": "707399d6-ab3e-4963-9315-d9d3818cd6a0",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "70d81154-b187-45f9-8ec5-295d01255979",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "7385dfaf-6886-4229-9ecd-6fd678040830",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "77e29a47-e263-4f11-8692-e5012f44dbac",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "799ace7f-e227-4411-baa0-8868704f2a69",
           "type": "uses"
         },
         {
@@ -7095,11 +8039,31 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "866d0d6d-02c6-42bd-aa2f-02907fdc0969",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "887274fc-2d63-4bdc-82f3-fae56d1d5fdc",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "88d31120-5bc7-4ce3-a9c0-7cf147be8e54",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "8f4a33ec-8b1f-4b80-a2f6-642b2e479580",
           "type": "uses"
         },
         {
           "dest-uuid": "910906dd-8c0a-475a-9cc1-5e029e2fad58",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "92a78814-b191-47ca-909c-1ccfe3777414",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "92d7da27-2d91-488e-a00c-059dc162766d",
           "type": "uses"
         },
         {
@@ -7111,11 +8075,31 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "9fd4e24b-3b12-4c7c-925f-226e2e3c3758",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "a0e6614a-7740-4b24-bd65-f1bde09fc365",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "a1df809c-7d0e-459f-8fe5-25474bab770b",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "a2fdce72-04b2-409a-ac10-cc1695f4fce0",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "a3e1e6c5-9c74-4fc0-a16c-a9d228c17829",
           "type": "uses"
         },
         {
           "dest-uuid": "a7881f21-e978-4fe4-af56-92c9416a2616",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "afc079f3-c0ea-4096-b75d-3f05338b7f60",
           "type": "uses"
         },
         {
@@ -7135,6 +8119,18 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "bf1b6176-597c-4600-bfcd-ac989670f96b",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "c21d5a77-d422-4a69-acd7-2c53c1faa34b",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "c325b232-d5bc-4dde-a3ec-71f3db9e8adc",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "d1fcf083-a721-4223-aedf-bf8960798d62",
           "type": "uses"
         },
@@ -7147,6 +8143,10 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "da43312a-0188-4949-bab3-0df9a5df0aba",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "df8b2a25-8bdf-4856-953c-a04372b1c161",
           "type": "uses"
         },
@@ -7155,7 +8155,19 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "e358d692-23c0-4a31-9eb6-ecc13a8d7735",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "e3a12395-188d-4051-9a16-ea8e14d07b88",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "e3b6daca-e963-4a69-aee6-ed4fd653ad58",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "e4dc8c01-417f-458d-9ee0-bb0617c1b391",
           "type": "uses"
         },
         {
@@ -7163,7 +8175,23 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "e7cbc1de-1f79-48ee-abfd-da1241c65a15",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "e91d3543-ca5d-474b-8b20-5a753ebc6e49",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "ea4c2f9c-9df1-477c-8c42-6da1118f2ac4",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "ec8fc7e2-b356-455c-8db5-2e37be158e7d",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "ec9e00dd-0313-4d5b-8105-c20aa47abffc",
           "type": "uses"
         },
         {
@@ -7172,6 +8200,26 @@
         },
         {
           "dest-uuid": "ef67e13e-5598-4adc-bdb2-998225874fa9",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "f303a39a-6255-4b89-aecc-18c4d8ca7163",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "f39c6d39-0165-46db-a7ae-43341c428d22",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "f59508a6-3615-47c3-b493-6676e1a39a87",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "f91162cc-1686-4ff8-8115-bf3f61a4cc7a",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "fb8d023d-45be-47e9-bc51-f56bcae6435b",
           "type": "uses"
         }
       ],
@@ -7256,6 +8304,10 @@
         },
         {
           "dest-uuid": "a0e6614a-7740-4b24-bd65-f1bde09fc365",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "a126c117-54e4-4b93-9e4f-72cc964e6760",
           "type": "uses"
         },
         {
@@ -7875,6 +8927,10 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "e23d2777-b85d-44fc-861e-9149d399fbb9",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "e6919abc-99f9-4c6c-95a5-14761e7b2add",
           "type": "uses"
         },
@@ -8454,6 +9510,226 @@
       ],
       "uuid": "8332952e-b86b-486b-acc3-1c2a85d39394",
       "value": "APT-C-23 - G1028"
+    },
+    {
+      "description": "[Storm-0501](https://attack.mitre.org/groups/G1053) is a financially motivated cyber criminal group that uses commodity and open-source tools to conduct ransomware operations. [Storm-0501](https://attack.mitre.org/groups/G1053) has been active since 2021 and has previously been affiliated with Sabbath Ransomware and other Ransomware-as-a-Service (RaaS) variants such as Hive, [BlackCat](https://attack.mitre.org/software/S1068), Hunters International, [LockBit 3.0](https://attack.mitre.org/software/S1202), and [Embargo](https://attack.mitre.org/software/S1247) ransomware.(Citation: Avertium Storm-0501 Sabbath Ransomware Arcane January 2022)(Citation: Microsoft Storm-501 Sabbath Ransomware Embargo September 2024)(Citation: Microsoft Storm-0501 Embargo Ransomware August 2025)(Citation: Google Mandiant Storm-0501 Sabbath Ransomware November 2021)",
+      "meta": {
+        "external_id": "G1053",
+        "refs": [
+          "https://attack.mitre.org/groups/G1053",
+          "https://cloud.google.com/blog/topics/threat-intelligence/sabbath-ransomware-affiliate/",
+          "https://www.avertium.com/resources/threat-reports/in-depth-look-at-sabbath-ransomware-gang",
+          "https://www.microsoft.com/en-us/security/blog/2024/09/26/storm-0501-ransomware-attacks-expanding-to-hybrid-cloud-environments/",
+          "https://www.microsoft.com/en-us/security/blog/2025/08/27/storm-0501s-evolving-techniques-lead-to-cloud-based-ransomware/"
+        ],
+        "synonyms": [
+          "Storm-0501"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "005a06c6-14bf-4118-afa0-ebcd8aebb0c9",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "03342581-f790-4f03-ba41-e82e67392e23",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "045d0922-2310-4e60-b5e4-3302302cb3c5",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "0a3ead4e-6d47-4ccb-854c-a6a4f9d96b22",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "1cec9319-743b-4840-bb65-431547bce82a",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "21875073-b0ee-49e3-9077-1e2a885359af",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "24769ab5-14bd-4f4e-a752-cfb185da53ee",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "26c87906-d750-42c5-946c-d4162c73fc7b",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "2b5aa86b-a0df-4382-848d-30abea443327",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "2c5281dd-b5fd-4531-8aea-c1bf8a0f8756",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "2dbbdcd5-92cf-44c0-aea2-fe24783a6bc3",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "2e45723a-31da-4a7e-aaa6-e01998a6788f",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "315f51f0-6b03-4c1e-bfb2-84740afb8e21",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "3298ce88-1628-43b1-87d9-0b5336b193d7",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "354a7f88-63fb-41b5-a801-ce3b377b36f1",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "3f886f2a-874f-4333-b794-aa6075009b1c",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "55bb4471-ff1f-43b4-88c1-c9384ec47abf",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "57a3d31a-d04f-4663-b2da-7df8ec3f8c9d",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "59096109-a1dd-463b-87e7-a8d110fe3a79",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "5d2be8b9-d24c-4e98-83bf-2f5f79477163",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "60b508a1-6a5e-46b1-821a-9f7b78752abf",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "60d0c01d-e2bf-49dd-a453-f8a9c9fa6f65",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "70857657-bd0b-4695-ad3e-b13f92cac1b4",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "767dbf9e-df3f-45cb-8998-4903ab5f80c0",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "7bdca9d5-d500-4d7d-8c52-5fd47baf4c0c",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "82adb90e-43b8-4bce-9efe-afeba65457b2",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "851e071f-208d-4c79-adc6-5974c85c78f3",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "8861073d-d1b8-4941-82ce-dce621d398f0",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "8a2f40cf-8325-47f9-96e4-b1ca4c7389bd",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "8f104855-e5b7-4077-b1f5-bc3103b41abe",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "8f4a33ec-8b1f-4b80-a2f6-642b2e479580",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "970a3432-3237-47ad-bcca-7d8cbb217736",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "981acc4c-2ede-4b56-be6e-fa1a75f37acf",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "a7881f21-e978-4fe4-af56-92c9416a2616",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "a93494bb-4b80-4ea1-8695-3236a49916fd",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "b80d107d-fa0d-4b60-9684-b0433e8bdba0",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "b97f1d35-4249-4486-a6b5-ee60ccf24fab",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "bf1b6176-597c-4600-bfcd-ac989670f96b",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "c1b68a96-3c48-49ea-a6c0-9b27359f9c19",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "cba37adb-d6fb-4610-b069-dd04c0643384",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "ceaeb6d8-95ee-4da2-9d42-dc6aa6ca43ae",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "cfb525cc-5494-401d-a82b-2539ca46a561",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "d4287702-e2f7-4946-bdfa-2c7f5aaa5032",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "d45a3d09-b3cf-48f4-9f0f-f521ee5cb05c",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "d4bdbdea-eaec-4071-b4f9-5105e12ea4b6",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "deb98323-e13f-4b0c-8d94-175379069062",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "e24fcba8-2557-4442-a139-1ee2f2e784db",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "f232fa7a-025c-4d43-abc7-318e81a73d65",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "f303a39a-6255-4b89-aecc-18c4d8ca7163",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "f5d8eed6-48a9-4cdf-a3d7-d1ffa99c3d2a",
+          "type": "uses"
+        }
+      ],
+      "uuid": "7b404cd0-3ae9-41d4-90c0-023793d35d97",
+      "value": "Storm-0501 - G1053"
     },
     {
       "description": "[Storm-1811](https://attack.mitre.org/groups/G1046) is a financially-motivated entity linked to [Black Basta](https://attack.mitre.org/software/S1070) ransomware deployment. [Storm-1811](https://attack.mitre.org/groups/G1046) is notable for unique phishing and social engineering mechanisms for initial access, such as overloading victim email inboxes with non-malicious spam to prompt a fake \"help desk\" interaction leading to the deployment of adversary tools and capabilities.(Citation: Microsoft Storm-1811 2024)(Citation: rapid7-email-bombing)(Citation: RedCanary Storm-1811 2024)(Citation: RedCanary June Insights 2024)",
@@ -9389,6 +10665,10 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "248d3fe1-7fe1-4d71-91c7-8bb7ef35cad3",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "25659dd6-ea12-45c4-97e6-381e3e4b593e",
           "type": "uses"
         },
@@ -9657,10 +10937,6 @@
         },
         {
           "dest-uuid": "d1fcf083-a721-4223-aedf-bf8960798d62",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "d28ef391-8ed4-45dc-bc4a-2f43abf54416",
           "type": "uses"
         },
         {
@@ -11611,6 +12887,10 @@
         },
         {
           "dest-uuid": "ef67e13e-5598-4adc-bdb2-998225874fa9",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "f2514ae4-4e9b-4f26-a5ba-c4ae85fe93c3",
           "type": "uses"
         },
         {
@@ -13985,6 +15265,10 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "bfcb4a75-b6f0-489b-b506-836bfba3d70e",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "c32f7008-9fea-41f7-8366-5eb9b74bd896",
           "type": "uses"
         },
@@ -15889,6 +17173,10 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "a0f84e1d-d25c-4dd1-bb26-3c0e68471530",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "a2fdce72-04b2-409a-ac10-cc1695f4fce0",
           "type": "uses"
         },
@@ -17110,6 +18398,10 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "248d3fe1-7fe1-4d71-91c7-8bb7ef35cad3",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "2e34237d-8574-43f6-aace-ae2915de8597",
           "type": "uses"
         },
@@ -17230,10 +18522,6 @@
         },
         {
           "dest-uuid": "d1fcf083-a721-4223-aedf-bf8960798d62",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "d28ef391-8ed4-45dc-bc4a-2f43abf54416",
           "type": "uses"
         },
         {
@@ -18403,12 +19691,13 @@
       "value": "Sowbug - G0054"
     },
     {
-      "description": "[FIN7](https://attack.mitre.org/groups/G0046) is a financially-motivated threat group that has been active since 2013. [FIN7](https://attack.mitre.org/groups/G0046) has primarily targeted the retail, restaurant, hospitality, software, consulting, financial services, medical equipment, cloud services, media, food and beverage, transportation, and utilities industries in the U.S. A portion of [FIN7](https://attack.mitre.org/groups/G0046) was run out of a front company called Combi Security and often used point-of-sale malware for targeting efforts. Since 2020, [FIN7](https://attack.mitre.org/groups/G0046) shifted operations to a big game hunting (BGH) approach including use of [REvil](https://attack.mitre.org/software/S0496) ransomware and their own Ransomware as a Service (RaaS), Darkside. FIN7 may be linked to the [Carbanak](https://attack.mitre.org/groups/G0008) Group, but there appears to be several groups using [Carbanak](https://attack.mitre.org/software/S0030) malware and are therefore tracked separately.(Citation: FireEye FIN7 March 2017)(Citation: FireEye FIN7 April 2017)(Citation: FireEye CARBANAK June 2017)(Citation: FireEye FIN7 Aug 2018)(Citation: CrowdStrike Carbon Spider August 2021)(Citation: Mandiant FIN7 Apr 2022)",
+      "description": "[FIN7](https://attack.mitre.org/groups/G0046) is a financially-motivated threat group that has been active since 2013. [FIN7](https://attack.mitre.org/groups/G0046) has targeted the retail, restaurant, hospitality, software, consulting, financial services, medical equipment, cloud services, media, food and beverage, transportation, pharmaceutical, and utilities industries in the United States. A portion of [FIN7](https://attack.mitre.org/groups/G0046) was operated out of a front company called Combi Security and often used point-of-sale malware for targeting efforts. Since 2020, [FIN7](https://attack.mitre.org/groups/G0046) shifted operations to big game hunting (BGH), including use of [REvil](https://attack.mitre.org/software/S0496) ransomware and their own Ransomware-as-a-Service (RaaS), Darkside. FIN7 may be linked to the [Carbanak](https://attack.mitre.org/groups/G0008) Group, but multiple threat groups have been observed using [Carbanak](https://attack.mitre.org/software/S0030), leading these groups to be tracked separately.(Citation: FireEye FIN7 March 2017)(Citation: FireEye FIN7 April 2017)(Citation: FireEye CARBANAK June 2017)(Citation: FireEye FIN7 Aug 2018)(Citation: CrowdStrike Carbon Spider August 2021)(Citation: Mandiant FIN7 Apr 2022)(Citation: BiZone Lizar May 2021)",
       "meta": {
         "external_id": "G0046",
         "refs": [
           "http://blog.morphisec.com/fin7-attacks-restaurant-industry",
           "https://attack.mitre.org/groups/G0046",
+          "https://bi-zone.medium.com/from-pentest-to-apt-attack-cybercriminal-group-fin7-disguises-its-malware-as-an-ethical-hackers-c23c9a75e319",
           "https://learn.microsoft.com/en-us/microsoft-365/security/intelligence/microsoft-threat-actor-naming?view=o365-worldwide",
           "https://securityintelligence.com/posts/ransomware-2020-attack-trends-new-techniques-affecting-organizations-worldwide/",
           "https://web.archive.org/web/20180808125108/https:/www.fireeye.com/blog/threat-research/2017/03/fin7_spear_phishing.html",
@@ -18499,6 +19788,10 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "21875073-b0ee-49e3-9077-1e2a885359af",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "232a7e42-cd6e-4902-8fe9-2960f529dd4d",
           "type": "uses"
         },
@@ -18535,11 +19828,19 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "354a7f88-63fb-41b5-a801-ce3b377b36f1",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "3b744087-9945-4a6f-91e8-9dbceda417a4",
           "type": "uses"
         },
         {
           "dest-uuid": "3c4a2599-71ee-4405-ba1e-0e28414b4bc5",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "3ccef7ae-cb5e-48f6-8302-897105fbf55c",
           "type": "uses"
         },
         {
@@ -18563,7 +19864,19 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "4933e63b-9b77-476e-ab29-761bc5b7d15a",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "4f6aa78c-c3d4-4883-9840-96ca2f5d6d47",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "4fe28b27-b13c-453e-a386-c2ef362a573b",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "5372c5fe-f424-4def-bcd5-d3a8e770f07b",
           "type": "uses"
         },
         {
@@ -18599,7 +19912,15 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "84ae8255-b4f4-4237-b5c5-e717405a9701",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "88d31120-5bc7-4ce3-a9c0-7cf147be8e54",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "8f4a33ec-8b1f-4b80-a2f6-642b2e479580",
           "type": "uses"
         },
         {
@@ -18608,6 +19929,10 @@
         },
         {
           "dest-uuid": "91541e7e-b969-40c6-bbd8-1b5352ec2938",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "937e4772-8441-4e4a-8bf0-8d447d667e23",
           "type": "uses"
         },
         {
@@ -18671,6 +19996,14 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "cbb66055-0325-4111-aca0-40547b6ad5b0",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "cc723aff-ec88-40e3-a224-5af9fd983cc4",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "d1fcf083-a721-4223-aedf-bf8960798d62",
           "type": "uses"
         },
@@ -18695,7 +20028,15 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "ec8fc7e2-b356-455c-8db5-2e37be158e7d",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "ef67e13e-5598-4adc-bdb2-998225874fa9",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "f1951e8a-500e-4a26-8803-76d95c4554b4",
           "type": "uses"
         },
         {
@@ -18704,6 +20045,10 @@
         },
         {
           "dest-uuid": "f2877f7f-9a4c-4251-879f-1224e3006bee",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "f3c544dc-673c-4ef3-accb-53229f1ae077",
           "type": "uses"
         },
         {
@@ -18817,7 +20162,7 @@
       "value": "RTM - G0048"
     },
     {
-      "description": "[Kimsuky](https://attack.mitre.org/groups/G0094) is a North Korea-based cyber espionage group that has been active since at least 2012. The group initially focused on targeting South Korean government entities, think tanks, and individuals identified as experts in various fields, and expanded its operations to include the UN and the government, education, business services, and manufacturing sectors in the United States, Japan, Russia, and Europe. [Kimsuky](https://attack.mitre.org/groups/G0094) has focused its intelligence collection activities on foreign policy and national security issues related to the Korean peninsula, nuclear policy, and sanctions. [Kimsuky](https://attack.mitre.org/groups/G0094) operations have overlapped with those of other North Korean cyber espionage actors likely as a result of ad hoc collaborations or other limited resource sharing.(Citation: EST Kimsuky April 2019)(Citation: Cybereason Kimsuky November 2020)(Citation: Malwarebytes Kimsuky June 2021)(Citation: CISA AA20-301A Kimsuky)(Citation: Mandiant APT43 March 2024)(Citation: Proofpoint TA427 April 2024)\n\n[Kimsuky](https://attack.mitre.org/groups/G0094) was assessed to be responsible for the 2014 Korea Hydro & Nuclear Power Co. compromise; other notable campaigns include Operation STOLEN PENCIL (2018), Operation Kabar Cobra (2019), and Operation Smoke Screen (2019).(Citation: Netscout Stolen Pencil Dec 2018)(Citation: EST Kimsuky SmokeScreen April 2019)(Citation: AhnLab Kimsuky Kabar Cobra Feb 2019)\n\nNorth Korean group definitions are known to have significant overlap, and some security researchers report all North Korean state-sponsored cyber activity under the name [Lazarus Group](https://attack.mitre.org/groups/G0032) instead of tracking clusters or subgroups.\n\nIn 2023, [Kimsuky](https://attack.mitre.org/groups/G0094) has used commercial large language models to assist with vulnerability research, scripting, social engineering and reconnaissance.(Citation: MSFT-AI)",
+      "description": "[Kimsuky](https://attack.mitre.org/groups/G0094) is a North Korea-based cyber espionage group that has been active since at least 2012. The group initially targeted South Korean government agencies, think tanks, and subject-matter experts in various fields. Its operations expanded to include the United Nations and organizations in the government, education, business services, and manufacturing sectors across the United States, Japan, Russia, and Europe. [Kimsuky](https://attack.mitre.org/groups/G0094) has focused collection on foreign policy and national security issues tied to the Korean Peninsula, nuclear policy, and sanctions. Its operations have overlapped with other DPRK actors, likely due to ad hoc collaboration or limited resource sharing.(Citation: EST Kimsuky April 2019)(Citation: Cybereason Kimsuky November 2020)(Citation: Malwarebytes Kimsuky June 2021)(Citation: CISA AA20-301A Kimsuky)(Citation: Mandiant APT43 March 2024)(Citation: Proofpoint TA427 April 2024) Because of overlapping operations, some researchers group a wide range of North Korean state-sponsored cyber activity under the broader [Lazarus Group](https://attack.mitre.org/groups/G0032) umbrella rather than tracking separate subgroup or cluster distinctions.\n\n[Kimsuky](https://attack.mitre.org/groups/G0094) was assessed to be responsible for the 2014 Korea Hydro & Nuclear Power Co. compromise; other notable campaigns include Operation STOLEN PENCIL (2018), Operation Kabar Cobra (2019), and Operation Smoke Screen (2019).(Citation: Netscout Stolen Pencil Dec 2018)(Citation: EST Kimsuky SmokeScreen April 2019)(Citation: AhnLab Kimsuky Kabar Cobra Feb 2019)\n\nIn 2023, [Kimsuky](https://attack.mitre.org/groups/G0094) was observed using commercial large language models to assist with vulnerability research, scripting, social engineering and reconnaissance.(Citation: MSFT-AI)",
       "meta": {
         "external_id": "G0094",
         "refs": [
@@ -18896,6 +20241,10 @@
         },
         {
           "dest-uuid": "10ffac09-e42d-4f56-ab20-db94c67d76ff",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "11f29a39-0942-4d62-92b6-fe236cf3066e",
           "type": "uses"
         },
         {
@@ -19047,6 +20396,10 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "5bfccc3f-2326-4112-86cc-c1ece9d8a2b5",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "5d0d3609-d06d-49e1-b9c9-b544e0c618cb",
           "type": "uses"
         },
@@ -19064,6 +20417,10 @@
         },
         {
           "dest-uuid": "65f2d882-3f41-4d48-8a06-29af77ec9f90",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "671cd17f-a765-48fd-adc4-dad1941b1ae3",
           "type": "uses"
         },
         {
@@ -19104,6 +20461,10 @@
         },
         {
           "dest-uuid": "851e071f-208d-4c79-adc6-5974c85c78f3",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "887274fc-2d63-4bdc-82f3-fae56d1d5fdc",
           "type": "uses"
         },
         {
@@ -19259,6 +20620,10 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "d511a6f6-4a33-41d5-bc95-c343875d1377",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "d63a3fb8-9452-4e9d-a60a-54be68d5998c",
           "type": "uses"
         },
@@ -19308,6 +20673,10 @@
         },
         {
           "dest-uuid": "ef67e13e-5598-4adc-bdb2-998225874fa9",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "f2514ae4-4e9b-4f26-a5ba-c4ae85fe93c3",
           "type": "uses"
         },
         {
@@ -20789,6 +22158,10 @@
         },
         {
           "dest-uuid": "6add2ab5-2711-4e9d-87c8-7a0be8531530",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "6d5c257d-e6de-4c95-a7e8-09ac9386007d",
           "type": "uses"
         },
         {
@@ -22331,10 +23704,6 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "354a7f88-63fb-41b5-a801-ce3b377b36f1",
-          "type": "uses"
-        },
-        {
           "dest-uuid": "359b00ad-9425-420b-bba5-6de8d600cbc0",
           "type": "uses"
         },
@@ -22508,6 +23877,10 @@
         },
         {
           "dest-uuid": "f1951e8a-500e-4a26-8803-76d95c4554b4",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "f2514ae4-4e9b-4f26-a5ba-c4ae85fe93c3",
           "type": "uses"
         },
         {
@@ -22787,10 +24160,6 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "354a7f88-63fb-41b5-a801-ce3b377b36f1",
-          "type": "uses"
-        },
-        {
           "dest-uuid": "359b00ad-9425-420b-bba5-6de8d600cbc0",
           "type": "uses"
         },
@@ -22884,6 +24253,10 @@
         },
         {
           "dest-uuid": "e4feffc2-53d1-45c9-904e-adb9faca0d15",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "f2514ae4-4e9b-4f26-a5ba-c4ae85fe93c3",
           "type": "uses"
         },
         {
@@ -23424,10 +24797,6 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "354a7f88-63fb-41b5-a801-ce3b377b36f1",
-          "type": "uses"
-        },
-        {
           "dest-uuid": "7bc57495-ea59-4380-be31-a64af124ef18",
           "type": "uses"
         },
@@ -23477,6 +24846,10 @@
         },
         {
           "dest-uuid": "ef67e13e-5598-4adc-bdb2-998225874fa9",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "f2514ae4-4e9b-4f26-a5ba-c4ae85fe93c3",
           "type": "uses"
         },
         {
@@ -23929,6 +25302,10 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "f2514ae4-4e9b-4f26-a5ba-c4ae85fe93c3",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "f3c544dc-673c-4ef3-accb-53229f1ae077",
           "type": "uses"
         },
@@ -24174,6 +25551,252 @@
       ],
       "uuid": "4283ae19-69c7-4347-a35e-b56f08eb660b",
       "value": "ZIRCONIUM - G0128"
+    },
+    {
+      "description": "[UNC3886](https://attack.mitre.org/groups/G1048) is a China-nexus cyberespionage group that has been active since at least 2022, targeting defense, technology, and telecommunication organizations located in the United States and the Asia-Pacific-Japan (APJ) regions. [UNC3886](https://attack.mitre.org/groups/G1048) has displayed a deep understanding of edge devices and virtualization technologies through the exploitation of zero-day vulnerabilities and the use of novel malware families and utilities.(Citation: Mandiant Fortinet Zero Day)(Citation: Google Cloud Threat Intelligence VMWare ESXi Zero-Day 2023)",
+      "meta": {
+        "external_id": "G1048",
+        "refs": [
+          "https://attack.mitre.org/groups/G1048",
+          "https://cloud.google.com/blog/topics/threat-intelligence/vmware-esxi-zero-day-bypass/",
+          "https://www.mandiant.com/resources/blog/fortinet-malware-ecosystem"
+        ],
+        "synonyms": [
+          "UNC3886"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "03259939-0b57-482f-8eb5-87c0e0d54334",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "045d0922-2310-4e60-b5e4-3302302cb3c5",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "0a615414-1dad-4131-802d-38f5d72ef852",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "0f20e3cb-245b-4a61-8a91-2d93f7cb0e9b",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "143c0cbb-a297-4142-9624-87ffc778980b",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "15c7bcdb-23e1-4ce3-81a7-b109b4d2a4f1",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "19401639-28d0-4c3c-adcc-bc2ba22f6421",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "1c34f7aa-9341-4a48-bfab-af22e51aca6c",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "212306d8-efa4-44c9-8c2d-ed3d2e224aa0",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "2db31dcd-54da-405d-acef-b9129b816ed6",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "315f51f0-6b03-4c1e-bfb2-84740afb8e21",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "31e5011f-090e-45be-9bb6-17a1c5e8219b",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "3257eb21-f9a7-4430-8de1-d8b6e288f529",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "351b63d3-7b2c-4ede-b3fe-ff291527b397",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "3975dbb5-0e1e-4f5b-bae1-cf2ab84b46dc",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "3f886f2a-874f-4333-b794-aa6075009b1c",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "451a9977-d255-43c9-b431-66de80130c8c",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "47f2d673-ca62-47e9-929b-1b0be9657611",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "4a2975db-414e-4c0c-bd92-775987514b4b",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "4ea492ee-36f8-4017-938f-d01ce951ef94",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "5372c5fe-f424-4def-bcd5-d3a8e770f07b",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "6151cbea-819b-455a-9fa6-99a1cc58797d",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "63b24abc-5702-4745-b1e4-ac70b20a43f2",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "65f2d882-3f41-4d48-8a06-29af77ec9f90",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "67720091-eee3-4d2d-ae16-8264567f6f5b",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "6bc7f9aa-b91f-4b23-84b8-5e756eba68eb",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "7807d3a4-a885-4639-a786-c1ed41484970",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "7bc57495-ea59-4380-be31-a64af124ef18",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "7bdca9d5-d500-4d7d-8c52-5fd47baf4c0c",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "7cc63f0f-f24f-4cda-9e9f-61bde1d52297",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "8868cb5b-d575-4a60-acb2-07d37389a2fd",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "8f4a33ec-8b1f-4b80-a2f6-642b2e479580",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "8f504411-cb96-4dac-a537-8d2bb7679c59",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "960c3c86-1480-4d72-b4e0-8c242e84a5c5",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "970a3432-3237-47ad-bcca-7d8cbb217736",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "9c306d8d-cde7-4b4c-b6e8-d0bb16caca36",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "a9d4b653-6915-42af-98b2-5758c4ceee56",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "ac08589e-ee59-4935-8667-d845e38fe579",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "b0533c6e-8fea-4788-874f-b799cacc4b92",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "b17a1a56-e99c-403c-8948-561df0cffe81",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "b21c3b2d-02e6-45b1-980b-e69051040839",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "bbc3cba7-84ae-410d-b18b-16750731dfa2",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "be2dcee9-a7a7-4e38-afd6-21b31ecc3d63",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "bf90d72c-c00b-45e3-b3aa-68560560d4c5",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "bfcb4a75-b6f0-489b-b506-836bfba3d70e",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "c21d5a77-d422-4a69-acd7-2c53c1faa34b",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "cc3502b5-30cc-4473-ad48-42d51a6ef6d1",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "d0270367-37fc-471e-9206-483582c5f47d",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "d1fcf083-a721-4223-aedf-bf8960798d62",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "d2d642da-61ff-4211-b4df-7923c9ca220c",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "d63a3fb8-9452-4e9d-a60a-54be68d5998c",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "dca670cf-eeec-438f-8185-fd959d9ef211",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "df0b59fe-0193-49ea-84e1-9207139c716c",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "f24faf46-3b26-4dbb-98f2-63460498e433",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "f3c544dc-673c-4ef3-accb-53229f1ae077",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "f8ba7d61-11c5-4130-bafd-7c3ff5fbf4b5",
+          "type": "uses"
+        }
+      ],
+      "uuid": "461b8e25-8f4a-4ea2-a4a8-e39df7ce6630",
+      "value": "UNC3886 - G1048"
     },
     {
       "description": "[BlackByte](https://attack.mitre.org/groups/G1043) is a ransomware threat actor operating since at least 2021. [BlackByte](https://attack.mitre.org/groups/G1043) is associated with several versions of ransomware also labeled [BlackByte Ransomware](https://attack.mitre.org/software/S1180). [BlackByte](https://attack.mitre.org/groups/G1043) ransomware operations initially used a common encryption key allowing for the development of a universal decryptor, but subsequent versions such as [BlackByte 2.0 Ransomware](https://attack.mitre.org/software/S1181) use more robust encryption mechanisms. [BlackByte](https://attack.mitre.org/groups/G1043) is notable for operations targeting critical infrastructure entities among other targets across North America.(Citation: FBI BlackByte 2022)(Citation: Picus BlackByte 2022)(Citation: Symantec BlackByte 2022)(Citation: Microsoft BlackByte 2023)(Citation: Cisco BlackByte 2024)",
@@ -25276,6 +26899,10 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "c283d88f-8c23-4318-9da5-3d50cecad756",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "cba37adb-d6fb-4610-b069-dd04c0643384",
           "type": "uses"
         },
@@ -25310,11 +26937,48 @@
         {
           "dest-uuid": "e6919abc-99f9-4c6c-95a5-14761e7b2add",
           "type": "uses"
+        },
+        {
+          "dest-uuid": "f2514ae4-4e9b-4f26-a5ba-c4ae85fe93c3",
+          "type": "uses"
         }
       ],
       "uuid": "35d1b3be-49d4-42f1-aaa6-ef159c880bca",
       "value": "TeamTNT - G0139"
+    },
+    {
+      "description": "[AppleJeus](https://attack.mitre.org/groups/G1049) is a North Korean state-sponsored threat group attributed to the Reconnaissance General Bureau. Associated with the broader [Lazarus Group](https://attack.mitre.org/groups/G0032) umbrella of actors, [AppleJeus](https://attack.mitre.org/groups/G1049) has been active since at least 2018 and is closely aligned in resources with TEMP.hermit, another DPRK-affiliated group under the same umbrella.(Citation: dtex DPRK 2025 structure ITworkers) The group’s primary mission is to generate and launder revenue to provide financial support to the government. [AppleJeus](https://attack.mitre.org/groups/G1049) primarily targets the cryptocurrency industry and is most notably responsible for the [3CX Supply Chain Attack](https://attack.mitre.org/campaigns/C0057).(Citation: Mandiant 3cx UNC4736 2023) The group traditionally deploys malicious cryptocurrency software in combination with [Phishing](https://attack.mitre.org/techniques/T1566). From these compromised environments, it selectively deploys additional backdoors to enable extended operations against high-value financial targets.(Citation: Mandiant DPRK Groups 2023)(Citation: JPCert Blog Laz Subgroups 2025)",
+      "meta": {
+        "external_id": "G1049",
+        "refs": [
+          "https://attack.mitre.org/groups/G1049",
+          "https://blogs.jpcert.or.jp/en/2025/03/classifying-lazaruss-subgroup.html",
+          "https://cloud.google.com/blog/topics/threat-intelligence/3cx-software-supply-chain-compromise/",
+          "https://cloud.google.com/blog/topics/threat-intelligence/north-korea-cyber-structure-alignment-2023",
+          "https://reports.dtexsystems.com/DTEX-Exposing+DPRK+Cyber+Syndicate+and+Hidden+IT+Workforce.pdf",
+          "https://unit42.paloaltonetworks.com/threat-assessment-north-korean-threat-groups-2024/"
+        ],
+        "synonyms": [
+          "AppleJeus",
+          "Gleaming Pisces",
+          "Citrine Sleet",
+          "UNC1720",
+          "UNC4736"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "851e071f-208d-4c79-adc6-5974c85c78f3",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "a62a8db3-f23a-4d8f-afd6-9dbc77e7813b",
+          "type": "uses"
+        }
+      ],
+      "uuid": "14225573-63b5-4e50-ba9a-5fdcaf6a7b4c",
+      "value": "AppleJeus - G1049"
     }
   ],
-  "version": 38
+  "version": 39
 }
