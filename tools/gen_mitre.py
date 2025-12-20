@@ -163,10 +163,7 @@ for domain in domains:
                 value['value'] = item['name'] + ' - ' + item['external_references'][0]['external_id']
             else:
                 value['value'] = item['name']
-            if 'meta' in value and 'mitre_data_sources' in value['meta'].keys():
-                value['meta'] = {'mitre_data_sources': value['meta']['mitre_data_sources']}
-            else:
-                value['meta'] = {}
+            value['meta'] = {}
             value['meta']['refs'] = []
             value['uuid'] = re.search('--(.*)$', item['id']).group(0)[2:]
 
