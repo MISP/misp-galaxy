@@ -295,7 +295,7 @@ Category: *course-of-action* - source: *https://github.com/mitre-atlas/atlas-nav
 
 [Attack Pattern](https://www.misp-galaxy.org/mitre-attack-pattern) - ATT&CK tactic
 
-Category: *attack-pattern* - source: *https://github.com/mitre/cti* - total: *1199* elements
+Category: *attack-pattern* - source: *https://github.com/mitre/cti* - total: *1242* elements
 
 [[HTML](https://www.misp-galaxy.org/mitre-attack-pattern)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-attack-pattern.json)]
 
