@@ -275,6 +275,14 @@ Category: *misinformation-pattern* - source: *https://github.com/misinfosecproje
 
 [[HTML](https://www.misp-galaxy.org/misinfosec-amitt-misinformation-pattern)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/misinfosec-amitt-misinformation-pattern.json)]
 
+## Analytics
+
+[Analytics](https://www.misp-galaxy.org/mitre-analytic) - ATT&CK Analytics
+
+Category: *attack-pattern* - source: *https://attack.mitre.org/analytics/* - total: *1950* elements
+
+[[HTML](https://www.misp-galaxy.org/mitre-analytic)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-analytic.json)]
+
 ## MITRE ATLAS Attack Pattern
 
 [MITRE ATLAS Attack Pattern](https://www.misp-galaxy.org/mitre-atlas-attack-pattern) - MITRE ATLAS Attack Pattern - Adversarial Threat Landscape for Artificial-Intelligence Systems
@@ -330,6 +338,14 @@ Category: *data-component* - source: *https://github.com/mitre/cti* - total: *11
 Category: *data-source* - source: *https://github.com/mitre/cti* - total: *40* elements
 
 [[HTML](https://www.misp-galaxy.org/mitre-data-source)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-data-source.json)]
+
+## Detection Strategies
+
+[Detection Strategies](https://www.misp-galaxy.org/mitre-detection-strategy) - ATT&CK Detection Strategies
+
+Category: *attack-pattern* - source: *https://attack.mitre.org/detectionstrategies/* - total: *815* elements
+
+[[HTML](https://www.misp-galaxy.org/mitre-detection-strategy)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-detection-strategy.json)]
 
 ## MITRE Engage Framework
 

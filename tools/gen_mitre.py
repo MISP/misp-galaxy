@@ -21,7 +21,9 @@ types = {'data-source': 'x-mitre-data-source',
          'intrusion-set': 'intrusion-set',
          'malware': 'malware',
          'tool': 'tool',
-         'data-component': 'x-mitre-data-component'
+         'data-component': 'x-mitre-data-component',
+         'detection-strategy': 'x-mitre-detection-strategy',
+         'analytic': 'x-mitre-analytic',
          }
 mitre_sources = ['mitre-attack', 'mitre-ics-attack', 'mitre-pre-attack', 'mitre-mobile-attack']
 
