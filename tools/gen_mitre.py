@@ -226,6 +226,16 @@ for domain in domains:
                 value['meta']['mitre_data_sources'] = item['x_mitre_data_sources']
             if 'x_mitre_platforms' in item:
                 value['meta']['mitre_platforms'] = item['x_mitre_platforms']
+            if 'x_mitre_analytic_refs' in item:
+                for ref in item['x_mitre_analytic_refs']:
+                    ref_data = {
+                        "dest-uuid": re.findall(r'--([0-9a-f-]+)', ref).pop(),
+                        "type": 'analyzes',
+                    }
+                    if 'related' not in value:
+                        value['related'] = [ref_data]
+                    else:
+                        value['related'].append(ref_data)
             # TODO add the other x_mitre elements dynamically, but now it seems to break the tests
             # x_mitre_fields = [key for key in item.keys() if key.startswith('x_mitre')]
             # skip_x_mitre_fields = ['x_mitre_deprecated', 'x_mitre_aliases', 'x_mitre_version', 'x_mitre_old_attack_id', 'x_mitre_attack_spec_version']
