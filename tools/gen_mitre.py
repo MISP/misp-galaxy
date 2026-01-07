@@ -230,7 +230,7 @@ for domain in domains:
                 for ref in item['x_mitre_analytic_refs']:
                     ref_data = {
                         "dest-uuid": re.findall(r'--([0-9a-f-]+)', ref).pop(),
-                        "type": 'analyzes',
+                        "type": 'composed-of',
                     }
                     if 'related' not in value:
                         value['related'] = [ref_data]
