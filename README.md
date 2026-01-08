@@ -83,6 +83,14 @@ Category: *mobile* - source: *https://arxiv.org/pdf/2005.05110.pdf* - total: *47
 
 [[HTML](https://www.misp-galaxy.org/bhadra-framework)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/bhadra-framework.json)]
 
+## Busy is the New Stupid framework
+
+[Busy is the New Stupid framework](https://www.misp-galaxy.org/bitns) - Busy is the New Stupid framework - A tactical framework, examining how busyness compromises cognitive function, strategic thinking, and effectiveness. Created by Ross Young.
+
+Category: *user-tie* - source: *https://www.cisotradecraft.com/bitns* - total: *40* elements
+
+[[HTML](https://www.misp-galaxy.org/bitns)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/bitns.json)]
+
 ## Botnet
 
 [Botnet](https://www.misp-galaxy.org/botnet) - botnet galaxy
