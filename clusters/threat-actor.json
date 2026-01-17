@@ -1367,14 +1367,17 @@
           "https://www.cfr.org/interactive/cyber-operations/icefog",
           "https://d2538mqrb7brka.cloudfront.net/wp-content/uploads/sites/43/2018/03/20133739/icefog.pdf",
           "https://www.pwc.com/gx/en/issues/cybersecurity/cyber-threat-intelligence/cyber-year-in-retrospect/yir-cyber-threats-report-download.pdf",
-          "https://go.recordedfuture.com/hubfs/reports/cta-2021-0616.pdf"
+          "https://go.recordedfuture.com/hubfs/reports/cta-2021-0616.pdf",
+          "https://blog.talosintelligence.com/uat-7290/"
         ],
         "synonyms": [
           "IceFog",
           "Trident",
           "RedFoxtrot",
           "Red Wendigo",
-          "PLA Unit 69010"
+          "PLA Unit 69010",
+          "UAT-7290",
+          "Red Foxtrot"
         ],
         "targeted-sector": [
           "Other",
@@ -13139,11 +13142,21 @@
         "refs": [
           "https://blog.talosintelligence.com/attributing-yorotrooper/",
           "https://blog.talosintelligence.com/yorotrooper-espionage-campaign-cis-turkey-europe/",
-          "https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Cyber-Sicherheitslage/Analysen-und-Prognosen/Threat-Intelligence/Aktive_APT-Gruppen/aktive-apt-gruppen_node.html"
+          "https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Cyber-Sicherheitslage/Analysen-und-Prognosen/Threat-Intelligence/Aktive_APT-Gruppen/aktive-apt-gruppen_node.html",
+          "https://www.group-ib.com/blog/shadowsilk/",
+          "https://www.seqrite.com/blog/silent-lynx-apt-targeting-central-asian-entities/",
+          "https://bi-zone.medium.com/cavalry-werewolf-raids-russias-public-sector-with-trusted-relationship-attacks-e19f7a5c83ef",
+          "https://www.seqrite.com/blog/operation-peek-a-baku-silent-lynx-apt-dushanbe-espionage/",
+          "https://ctoatncsc.substack.com/p/cto-at-ncsc-summary-week-ending-october"
         ],
         "synonyms": [
           "Salted Earth",
-          "Sturgeon Fisher"
+          "Sturgeon Fisher",
+          "ShadowSilk",
+          "Silent Lynx",
+          "Cavalry Werewolf",
+          "SturgeonPhisher",
+          "Comrade Saiga"
         ]
       },
       "uuid": "2031ae01-e962-4861-a224-0934af6cdd3a",
@@ -15903,7 +15916,12 @@
       "meta": {
         "country": "IR",
         "refs": [
-          "https://www.mandiant.com/resources/blog/suspected-iranian-unc1549-targets-israel-middle-east"
+          "https://www.mandiant.com/resources/blog/suspected-iranian-unc1549-targets-israel-middle-east",
+          "https://research.checkpoint.com/2025/nimbus-manticore-deploys-new-malware-targeting-europe",
+          "https://blog.checkpoint.com/research/iranian-threat-actor-nimbus-manticore-expands-campaigns-into-europe-with-advanced-malware-and-fake-job-lures/"
+        ],
+        "synonyms": [
+          "Nimbus Manticore"
         ]
       },
       "uuid": "a2a7d49f-f517-4eeb-9ec8-b9b74e3fe756",
@@ -18910,6 +18928,89 @@
       },
       "uuid": "7bf6ae38-fcd3-4a99-99ba-292990a27f0a",
       "value": "Curly COMrades"
+    },
+    {
+      "description": "Houken is a Chinese state-sponsored threat actor that exploits zero-day vulnerabilities in Ivanti Cloud Services Appliance devices to gain initial access to critical infrastructure networks, particularly in France. The group employs a sophisticated rootkit alongside open-source tools, primarily developed by Chinese-speaking authors, to maintain persistence and control over compromised systems. Houken is suspected to operate as an initial access broker, selling footholds in targeted networks to other threat actors for further exploitation.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://www.cert.ssi.gouv.fr/cti/CERTFR-2025-CTI-009/",
+          "https://meterpreter.org/anssi-exposes-houken-china-linked-apt-exploiting-ivanti-csa-zero-days-deploying-linux-rootkits/"
+        ]
+      },
+      "uuid": "24bad06e-1720-4198-b6b0-9121a5aecc59",
+      "value": "Houken"
+    },
+    {
+      "description": "The Larva-24010 threat actor is distributing malware through the website of a Korean VPN service provider. As a result, when a user downloads and runs the installer from the VPN website, malware can be installed on the system. Since at least 2023, the Larva-24010 threat actor has been targeting Korean VPN users to spread malware, ultimately installing various backdoors such as MeshAgent, gs-netcat, and NKNShell. Through this, the attacker can control infected systems where the VPN is installed and steal sensitive information stored on those systems.",
+      "meta": {
+        "refs": [
+          "https://asec.ahnlab.com/en/91139/"
+        ]
+      },
+      "uuid": "6e5eb2f5-bc36-4ba8-95ff-c31a21098d40",
+      "value": "Larva-24010"
+    },
+    {
+      "description": "Earth Lamia is a China-nexus APT that targets organizations across multiple sectors, including finance, logistics, and government, primarily in Latin America, the Middle East, and Southeast Asia. The actor exploits web application vulnerabilities, such as CVE-2025-55182, and employs techniques like SQL injection, DLL sideloading, and the deployment of custom backdoors like PULSEPACK and BypassBoss. Earth Lamia conducts reconnaissance, file operations, and credential theft, often utilizing tools like Cobalt Strike and VShell.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/threat-actors-exploit-react2shell-cve-2025-55182",
+          "https://www.trendmicro.com/en_us/research/25/e/earth-lamia.html"
+        ],
+        "synonyms": [
+          "UNC5454"
+        ]
+      },
+      "uuid": "2828da6c-12d0-4287-9938-531165e19b47",
+      "value": "Earth Lamia"
+    },
+    {
+      "description": "LongNosedGoblin is a China-aligned APT group targeting governmental entities in Southeast Asia and Japan for cyberespionage. The group employs Group Policy for malware deployment and utilizes cloud services like Microsoft OneDrive and Google Drive as C&C servers. Their operations feature a modular malware ecosystem, including backdoors, browser data stealers, and PowerShell-based downloaders that execute multi-stage payloads in memory. LongNosedGoblin's tactics emphasize reconnaissance-driven targeting and the abuse of trusted enterprise mechanisms, allowing for stealthy persistence within compromised networks.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://botcrawl.com/chinese-apt-longnosedgoblin-targets-government-networks-in-southeast-asia-and-japan/"
+        ]
+      },
+      "uuid": "f2e81e5f-33ab-47c0-89e4-c5420bfe7b9d",
+      "value": "LongNosedGoblin"
+    },
+    {
+      "description": "UAT-9686 is a Chinese state-sponsored APT known for targeting networking infrastructure and edge appliances through a sophisticated espionage campaign. They exploit a critical flaw in the Cisco AsyncOS Spam Quarantine interface to gain root access and deploy custom malware, including AquaShell, along with Python scripts that execute natively. Their operations involve reverse tunneling and log purging, demonstrating a methodical approach to compromising communication infrastructure. Talos has observed overlaps in TTPs and tooling with other Chinese-nexus threat actors, indicating a consistent operational pattern.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://www.secpod.com/blog/zero-day-crisis-cve-2025-20393-unpatched-on-cisco-email-gateways-exploited-by-china-linked-hackers/",
+          "https://blog.talosintelligence.com/uat-9686/"
+        ]
+      },
+      "uuid": "72075688-b6e6-4324-849a-77041a54bc09",
+      "value": "UAT-9686"
+    },
+    {
+      "description": "ShadyPanda is a threat actor behind a 7-year campaign that has infected 4.3 million users through extensions masquerading as productivity tools while functioning as comprehensive spyware. Their tactics include data exfiltration, user surveillance, and systematic collection of corporate meeting intelligence from over 28 video conferencing platforms. Notably, the WeTab extension exemplifies their capabilities, collecting full browsing history and personal data, exfiltrating to 17 different domains. The actor employs steganography to hide malicious code within PNG files and maintains persistent access through shared infrastructure across their extensions.",
+      "meta": {
+        "refs": [
+          "https://www.koi.ai/blog/darkspectre-unmasking-the-threat-actor-behind-7-8-million-infected-browsers",
+          "https://www.koi.ai/blog/4-million-browsers-infected-inside-shadypanda-7-year-malware-campaign"
+        ]
+      },
+      "uuid": "c1e76272-22c5-4f2a-96e9-8d2384a994ad",
+      "value": "ShadyPanda"
+    },
+    {
+      "description": "Water Saci is a sophisticated cyber threat actor operating in Brazil, utilizing a multi-format attack chain that includes HTA files, ZIP archives, and PDFs to bypass security measures. The campaign employs an email-based C&C infrastructure using IMAP connections to terra.com.br accounts, enhancing its resilience and evasion tactics. It leverages social engineering through WhatsApp to propagate malware, specifically the SORVEPOTEL banking trojan, and incorporates advanced techniques for infection and persistence. The modular architecture of the malware allows for dynamic adaptation and extraction of sensitive credentials, indicating a significant evolution in adversarial capabilities.",
+      "meta": {
+        "country": "BR",
+        "refs": [
+          "https://www.trendmicro.com/en_us/research/25/j/active-water-saci-campaign-whatsapp-update.html",
+          "https://www.trendmicro.com/en_us/research/25/l/water-saci.html"
+        ]
+      },
+      "uuid": "6f6d828b-b2ac-471c-b2a3-c49d0f49789f",
+      "value": "Water Saci"
     }
   ],
   "version": 336
