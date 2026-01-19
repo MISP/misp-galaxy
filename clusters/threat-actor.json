@@ -10610,7 +10610,9 @@
           "LAPSUS$",
           "DEV-0537",
           "SLIPPY SPIDER",
-          "Strawberry Tempest"
+          "Strawberry Tempest",
+          "UNC3661",
+          "Lapsus"
         ]
       },
       "related": [
@@ -19011,6 +19013,92 @@
       },
       "uuid": "6f6d828b-b2ac-471c-b2a3-c49d0f49789f",
       "value": "Water Saci"
+    },
+    {
+      "description": "UNC6032 is a threat actor that weaponizes interest in AI tools, specifically targeting users with fake \"AI video generator\" websites to distribute malware, including Python-based infostealers and backdoors. Victims are typically directed to these sites through malicious social media ads that impersonate legitimate tools. Compromises have led to the exfiltration of sensitive data, including login credentials and credit card information, via the Telegram API. Google Threat Intelligence Group assesses UNC6032 to have a Vietnam nexus.",
+      "meta": {
+        "country": "VN",
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/cybercriminals-weaponize-fake-ai-websites"
+        ]
+      },
+      "uuid": "b6056927-a2b3-4f6f-9054-9c45c355de76",
+      "value": "UNC6032"
+    },
+    {
+      "description": "UNC6293 is a Russian state-sponsored threat actor identified by Google's Threat Intelligence Group (GTIG), which associates them with APT29 with low confidence. They have conducted campaigns utilizing social engineering tactics, including leveraging App-Specific Passwords for account compromises. GTIG has also noted a second campaign by UNC6293 that incorporates Ukrainian themes.",
+      "meta": {
+        "country": "RU",
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/creative-phishing-academics-critics-of-russia"
+        ]
+      },
+      "uuid": "4fc6dfbc-90de-47d2-82af-f271eb972fa0",
+      "value": "UNC6293"
+    },
+    {
+      "description": "UNC4487 is a threat actor that targeted Ukrainian government officials by compromising a Ukrainian auto insurance website essential for official travel. This attack facilitated the distribution of the MATANBUCHUS malware, which was used to monetize access to infected systems. Mandiant later identified additional malware samples, referred to as ChillyHell, linked to UNC4487 through the reuse of a code signing certificate associated with MATANBUCHUS. The group's activities highlight a focus on exploiting critical infrastructure for financial gain.",
+      "meta": {
+        "refs": [
+          "https://www.jamf.com/blog/chillyhell-a-modular-macos-backdoor/"
+        ]
+      },
+      "uuid": "6f49cb96-f2ce-405d-86b9-3ae2aa239f12",
+      "value": "UNC4487"
+    },
+    {
+      "description": "UNC6148 is a financially motivated threat actor that targets SonicWall Secure Mobile Access 100 series appliances, leveraging stolen credentials and possibly zero-day exploits to deploy a persistent backdoor known as OVERSTEP. They utilize a kernel-level rootkit for stealthy access and have been observed establishing SSL VPN sessions to launch reverse shells and manipulate system files. The actor's operations include credential theft, data exfiltration, and potential ransomware deployment, with evidence suggesting they modify legitimate scripts to maintain persistence. Their activities are characterized by the reuse of OTP seeds and admin credentials, allowing continued access even after security patches are applied.",
+      "meta": {
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/sonicwall-secure-mobile-access-exploitation-overstep-backdoor/"
+        ]
+      },
+      "uuid": "a5f80c8a-5b36-404b-b4b9-a9e1c2b631b5",
+      "value": "UNC6148"
+    },
+    {
+      "description": "UNC5342 is a North Korea-linked APT that employs the EtherHiding technique to deliver malware and facilitate cryptocurrency theft. The actor has been observed deploying EtherRAT and JADESNOW malware, utilizing transaction history as a Dead Drop Resolver to embed payloads directly into the calldata of blockchain transactions. Their operations involve leveraging centralized API services to interact with public blockchains like Ethereum and BNB Smart Chain. The malware is designed to exfiltrate sensitive data, particularly targeting cryptocurrency wallets and credentials.",
+      "meta": {
+        "country": "KP",
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/dprk-adopts-etherhiding"
+        ]
+      },
+      "uuid": "6c253a07-b75d-4c3c-a93d-13aed83662f1",
+      "value": "UNC5342"
+    },
+    {
+      "description": "UNC6485 is a cyber-espionage group exploiting CVE-2025-12480 in Gladinet’s Triofox file-sharing platform to gain initial network access and establish long-term persistence. They create unauthorized administrative accounts and deploy RATs, utilizing legitimate tools like Zoho Assist and AnyDesk to evade detection. Their TTPs indicate a sophisticated understanding of the platform, allowing them to blend malicious activities with legitimate administrative actions.",
+      "meta": {
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/triofox-vulnerability-cve-2025-12480"
+        ]
+      },
+      "uuid": "fb8fa22e-52c5-40ca-90dd-ba02da80019e",
+      "value": "UNC6485"
+    },
+    {
+      "description": "UNC6384 is a Chinese-affiliated APT that conducts targeted espionage campaigns primarily against diplomatic entities in Southeast Asia and Europe, specifically Belgium and Hungary. The group exploits the ZDI-CAN-25373 Windows shortcut vulnerability to gain initial code execution via malicious .LNK files, deploying the PlugX RAT through sophisticated delivery mechanisms, including DLL side-loading and adversary-in-the-middle attacks. Their operations involve social engineering tactics, such as spear-phishing emails themed around diplomatic events, to entice victims into executing malicious payloads. UNC6384's use of valid code signing and HTTPS hosting enhances their evasion of detection and increases the likelihood of user interaction.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/prc-nexus-espionage-targets-diplomats/"
+        ]
+      },
+      "uuid": "a3e4a57e-4b50-4bca-9282-3307e92e5539",
+      "value": "UNC6384"
+    },
+    {
+      "description": "UNC6040 is a financially motivated threat cluster that employs vishing to gain access to organizations' Salesforce environments, facilitating large-scale data exfiltration. The group manipulates end users into authorizing malicious connected apps, often masquerading as IT support personnel, to exploit OAuth permissions. Following initial access, UNC6040 leverages harvested credentials to move laterally within victim networks, targeting other cloud platforms like Okta and Microsoft 365. Their operations are characterized by the use of Mullvad VPN IP addresses and a focus on social engineering tactics to bypass security measures.",
+      "meta": {
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/voice-phishing-data-extortion",
+          "https://cloud.google.com/blog/topics/threat-intelligence/technical-analysis-vishing-threats/",
+          "https://www.varonis.com/blog/salesforce-vishing-threat-unc604"
+        ]
+      },
+      "uuid": "84669320-0b46-4b26-a063-fb71e9833fec",
+      "value": "UNC6040"
     }
   ],
   "version": 336
