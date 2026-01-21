@@ -17786,9 +17786,10 @@
         "country": "KP",
         "refs": [
           "https://unit42.paloaltonetworks.com/two-campaigns-by-north-korea-bad-actors-target-job-hunters/",
-          "https://www.zscaler.com/blogs/security-research/pyongyang-your-payroll-rise-north-korean-remote-workers-west",
           "https://unit42.paloaltonetworks.com/fake-north-korean-it-worker-activity-cluster/",
-          "https://www.trendmicro.com/en_us/research/25/d/russian-infrastructure-north-korean-cybercrime.html"
+          "https://www.trendmicro.com/en_us/research/25/d/russian-infrastructure-north-korean-cybercrime.html",
+          "https://jp.security.ntt/insights_resources/tech_blog/en-waterplum-ottercookie/",
+          "https://www.zscaler.com/blogs/security-research/pyongyang-your-payroll-rise-north-korean-remote-workers-west"
         ],
         "synonyms": [
           "Famous Chollima",
@@ -17796,7 +17797,9 @@
           "Wagemole",
           "Nickel Tapestry",
           "Storm-1877",
-          "Void Dokkaebi"
+          "Void Dokkaebi",
+          "WaterPlum",
+          "PurpleBravo"
         ]
       },
       "uuid": "09aa3edb-e956-43f0-9fcb-a3154b47d202",
@@ -18481,10 +18484,12 @@
         "country": "CN",
         "refs": [
           "https://unit42.paloaltonetworks.com/advanced-backdoor-squidoor/",
-          "https://www.elastic.co/security-labs/fragile-web-ref7707"
+          "https://www.elastic.co/security-labs/fragile-web-ref7707",
+          "https://www.security.com/threat-intelligence/jewelbug-apt-russia"
         ],
         "synonyms": [
-          "CL-STA-0049"
+          "CL-STA-0049",
+          "Jewelbug"
         ]
       },
       "uuid": "ff080026-9df7-4874-ad04-0c7d4dcb3e7f",
@@ -19099,6 +19104,103 @@
       },
       "uuid": "84669320-0b46-4b26-a063-fb71e9833fec",
       "value": "UNC6040"
+    },
+    {
+      "description": "Educated Manticore is an Iranian APT group aligned with the Islamic Revolutionary Guard Corps, primarily engaged in espionage targeting government, military, and academic sectors. The group employs spear-phishing tactics, utilizing custom backdoors like POWERLESS and phishing kits designed as SPAs to harvest credentials. Their operations have included impersonating credible figures to lure victims and using ISO images to initiate infection chains. Educated Manticore's activities are characterized by rapid domain setup and aggressive spear-phishing campaigns, particularly against Israeli individuals.",
+      "meta": {
+        "country": "IR",
+        "refs": [
+          "https://research.checkpoint.com/2025/iranian-educated-manticore-targets-leading-tech-academics",
+          "https://blog.checkpoint.com/security/check-point-research-uncovers-rare-techniques-used-by-iranian-affiliated-threat-actor-targeting-israeli-entities/",
+          "https://research.checkpoint.com/2023/educated-manticore-iran-aligned-threat-actor-targeting-israel-via-improved-arsenal-of-tools/"
+        ]
+      },
+      "uuid": "b84cd4b9-27d0-4722-a21e-e7bd4a171c86",
+      "value": "Educated Manticore"
+    },
+    {
+      "description": "UnsolicitedBooker is a China-aligned APT group known for its persistent targeting of an unnamed international organization in Saudi Arabia, employing a backdoor called MarsSnake. The group utilizes spear-phishing emails, often featuring flight tickets as decoys, to infiltrate governmental organizations across Asia, Africa, and the Middle East. Their operations have included multiple intrusion attempts over several years, demonstrating a sustained interest in their target. MarsSnake provides significant control over infected machines, allowing for arbitrary command execution and file access.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://www.welivesecurity.com/en/podcasts/eset-apt-activity-report-q4-2024q1-2025-malware-sharing-wipers-exploits/"
+        ]
+      },
+      "uuid": "e04cecf6-93a6-4810-886d-cb2e767abb81",
+      "value": "UnsolicitedBooker"
+    },
+    {
+      "description": "Larva‑25012 is a threat actor known for deploying Proxyware, utilizing malware disguised as a Notepad++ installer. The actor injects Proxyware into the Windows Explorer process and employs Python-based loaders to evade detection. They distribute Proxyware installers primarily through advertisements on websites offering free YouTube video downloads and fake sites for cracked software. Larva‑25012 has been active since at least 2024, distributing multiple types of Proxyware, including DigitalPulse, Honeygain, and Infatica.",
+      "meta": {
+        "refs": [
+          "https://asec.ahnlab.com/en/92183/"
+        ]
+      },
+      "uuid": "fc9858b1-9a54-45ac-8dbf-dffd1a62cdc6",
+      "value": "Larva‑25012"
+    },
+    {
+      "description": "WARP PANDA is a China-nexus APT that targets VMware vCenter environments and Microsoft Azure infrastructures, primarily focusing on legal, technology, and manufacturing sectors in the U.S. The group exploits internet-facing edge devices for initial access, later pivoting to vCenter environments using compromised credentials or vulnerabilities. Their toolkit includes the BRICKSTORM backdoor, along with implants like Junction and GuestConduit, which facilitate command execution and network traffic tunneling. WARP PANDA demonstrates advanced OPSEC and aims for long-term persistence and data exfiltration aligned with the interests of the People's Republic of China.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://www.crowdstrike.com/en-us/blog/warp-panda-cloud-threats/"
+        ]
+      },
+      "uuid": "820afecb-e91f-424e-8e70-0ac880963191",
+      "value": "WARP PANDA"
+    },
+    {
+      "description": "DarkGaboon is a financially motivated APT group that has been independently targeting Russian organizations since May 2023, primarily using phishing emails to deliver malware such as Revenge RAT and LockBit 3.0 ransomware. Their operations demonstrate advanced operational security practices, including the use of homoglyphs in file names and decoy documents sourced from legitimate Russian templates to evade detection. The group has shown a disciplined approach to updating their toolkit, with 369 unique files identified, and employs command-and-control infrastructure located outside Russia. DarkGaboon's linguistic proficiency in Russian suggests a deep understanding of the local context, enhancing the effectiveness of their phishing lures.",
+      "meta": {
+        "refs": [
+          "https://therecord.media/new-hacker-group-lockbit-target-russia",
+          "https://cybershafarat.com/2025/01/22/darkgaboon-targets-russian-finserv/"
+        ],
+        "synonyms": [
+          "Vengeful Wolf",
+          "room155"
+        ]
+      },
+      "uuid": "c2f849ae-9413-4351-b905-354657fe2405",
+      "value": "DarkGaboon"
+    },
+    {
+      "description": "GTG-1002 is a Chinese state-sponsored APT that conducted a large-scale autonomous cyber espionage campaign targeting approximately 30 global organizations across various sectors, focusing on military and energy-related data. The operation utilized AI, specifically Anthropic’s Claude model, for reconnaissance, exploitation, and data exfiltration, significantly reducing human involvement. Attackers employed techniques such as automated task execution and evasion of safety protocols by masquerading as legal security testing. The campaign lasted 18 months and highlighted vulnerabilities in traditional incident response workflows.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://assets.anthropic.com/m/ec212e6566a0d47/original/Disrupting-the-first-reported-AI-orchestrated-cyber-espionage-campaign.pdf",
+          "https://socradar.io/blog/ai-powered-gtg-1002-campaign/"
+        ]
+      },
+      "uuid": "c21d7fef-0bab-4229-a103-5e8275434141",
+      "value": "GTG-1002"
+    },
+    {
+      "description": "Golden Eye Dog targets Chinese-speaking users engaged in online gambling, employing techniques such as SERP poisoning, social engineering, and DDoS attacks. The group utilizes trojanized NSIS installers to deliver RONINGLOADER, which executes complex process-injection workflows and deploys a modified Gh0st RAT for espionage. Their operations have included DLL sideloading and the use of watering hole websites to implant Trojans. The group is noted for its high anti-detection capabilities and has been associated with various malware development languages.",
+      "meta": {
+        "refs": [
+          "https://www.sophos.com/fr-fr/blog/doubled-dll-sideloading-dragon-breath"
+        ],
+        "synonyms": [
+          "Golden Eye Dog",
+          "APT-Q-27,"
+        ]
+      },
+      "uuid": "708102cb-0bdd-4a3a-bc15-bcd3d15a7c7b",
+      "value": "DragonBreath"
+    },
+    {
+      "description": "PoisonSeed is a threat actor employing an MFA-resistant phishing kit to acquire credentials from individuals and organizations, primarily targeting email infrastructure for cryptocurrency-related spam. They utilize spear-phishing emails with malicious links, automate bulk downloading of email lists, and capture authentication cookies to bypass MFA. PoisonSeed has been linked to campaigns that exploit cross-device sign-in features and employ tactics such as cryptocurrency seed phrase poisoning. Their infrastructure includes domains registered through NICENIC and hosted on Cloudflare, with a focus on phishing CRM and bulk email provider credentials.",
+      "meta": {
+        "refs": [
+          "https://blog.nviso.eu/2025/08/12/shedding-light-on-poisonseeds-phishing-kit/",
+          "https://www.silentpush.com/blog/poisonseed/"
+        ]
+      },
+      "uuid": "d536294f-fb0a-470b-a6d5-89e057bda61e",
+      "value": "PoisonSeed"
     }
   ],
   "version": 336
