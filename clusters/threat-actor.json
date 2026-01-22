@@ -19201,6 +19201,115 @@
       },
       "uuid": "d536294f-fb0a-470b-a6d5-89e057bda61e",
       "value": "PoisonSeed"
+    },
+    {
+      "description": "Storm-2657 is a financially motivated threat actor targeting US-based organizations, particularly in higher education, to compromise employee accounts and redirect salary payments to attacker-controlled accounts. They employ tactics such as creating inbox rules to delete warning notifications from HR platforms like Workday and using phishing emails that impersonate legitimate university communications to gain access. The actor modifies employee salary payment configurations to facilitate financial theft. Mitigation efforts include implementing phishing-resistant MFA methods to secure user identities against such attacks.",
+      "meta": {
+        "refs": [
+          "https://www.microsoft.com/en-us/security/blog/2025/10/09/investigating-targeted-payroll-pirate-attacks-affecting-us-universities/"
+        ]
+      },
+      "uuid": "f240c6dd-e702-4acb-bfa9-131710f9f8b1",
+      "value": "Storm-2657"
+    },
+    {
+      "description": "GhostRedirector is a China-aligned threat actor that has compromised at least 65 Windows servers across various sectors, primarily in Brazil, Thailand, and Vietnam. It employs a passive C++ backdoor named Rungan and a malicious IIS module called Gamshen to maintain persistent access and manipulate search engine results for SEO fraud. The actor utilizes public exploits like EfsPotato and BadPotato for privilege escalation and abuses code-signing certificates to evade detection. GhostRedirector's operations involve installing remote access tools, creating rogue administrator accounts, and leveraging SQL injection vulnerabilities to execute PowerShell for downloading malicious payloads.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://www.welivesecurity.com/en/eset-research/ghostredirector-poisons-windows-servers-backdoors-side-potatoes/"
+        ]
+      },
+      "uuid": "a298949b-4f98-4432-8b5d-ca0503ef3c2d",
+      "value": "GhostRedirector"
+    },
+    {
+      "description": "UAC-0227 is an APT group that has been active since at least March 2025, targeting local governments, critical infrastructure, and various organizations in the European Union. The group employs phishing campaigns that utilize SVG file attachments to distribute stealers like Amatera Stealer and Strela Stealer. Their tactics include leveraging ClickFix-style methods to implement their threats.",
+      "meta": {
+        "refs": [
+          "https://cip.gov.ua/ua/news/novi-kiberzagrozi-kogo-i-yak-atakuyut-vorozhi-ugrupovannya",
+          "https://securityaffairs.com/183222/apt/ukraine-sees-surge-in-ai-powered-cyberattacks-by-russia-linked-threat-actors.html"
+        ]
+      },
+      "uuid": "b66a7c4b-a2a3-4c54-a021-a41c928c65d1",
+      "value": "UAC-0227"
+    },
+    {
+      "description": "UTA0388 is a China-aligned APT known for spear-phishing campaigns targeting organizations in North America, Asia, and Europe, primarily to deliver a Go-based implant called GOVERSHELL. The group employs \"rapport-building phishing\" tactics, engaging targets in benign conversations before sending malicious links, and has been linked to the use of Large Language Models for crafting phishing emails in multiple languages. Technical analysis indicates that UTA0388 operates in the interests of the Chinese state, with a focus on Asian geopolitical issues, as evidenced by the use of Simplified Chinese in its development environment. Volexity assesses that UTA0388's operations reflect a sophisticated blend of traditional phishing techniques and modern automation.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://www.volexity.com/blog/2025/10/08/apt-meets-gpt-targeted-operations-with-untamed-llms/"
+        ]
+      },
+      "uuid": "4606a1b5-6c3c-453c-aeef-2530676c2e89",
+      "value": "UTA0388"
+    },
+    {
+      "description": "BatShadow is a Vietnamese threat actor that targets job seekers and digital marketing professionals through social engineering campaigns, deploying the Go-based malware known as Vampire Bot. The group impersonates recruiters and distributes malicious job descriptions and corporate PDFs, triggering a multi-stage infection chain that enables remote surveillance and data theft. Analysts have linked BatShadow to Vietnam based on infrastructure reuse and targeting patterns, noting its history of using domains like samsung-work.com to distribute various malware families, including Agent Tesla and Quasar RAT. The actor employs techniques such as filename tricks and coercive browser actions to evade detection and increase the likelihood of successful compromises.",
+      "meta": {
+        "country": "VN",
+        "refs": [
+          "https://www.aryaka.com/blog/batshade-vampire-bot-social-engineering-malware/"
+        ]
+      },
+      "uuid": "b2a577e6-67ed-4b01-8fc2-a6df22b25b00",
+      "value": "BatShadow"
+    },
+    {
+      "description": "Water Bakunawa is a cybercriminal group identified by Trend Micro, responsible for the RansomHub ransomware, which exploits the Zerologon vulnerability to gain unauthorized network access. The group employs EDRKillShifter to evade detection and disrupt security monitoring processes, utilizing advanced anti-EDR techniques. Their targets include sectors such as water and wastewater, IT, healthcare, and financial services. Members of the group and related affiliates have linked by association with other high-profile RaaS groups like Scattered Spider and ALPHV.",
+      "meta": {
+        "refs": [
+          "https://www.trendmicro.com/en_us/research/24/i/how-ransomhub-ransomware-uses-edrkillshifter-to-disable-edr-and-.html"
+        ]
+      },
+      "uuid": "8472ca74-ecc9-48f1-9f13-8e60b69187e8",
+      "value": "Water Bakunawa"
+    },
+    {
+      "description": "UAT-8837 is a sophisticated China-linked APT group exploiting critical zero-day vulnerabilities, such as CVE-2025-53690 in the Sitecore platform, to achieve remote code execution and deploy the WeepSteel backdoor for espionage and data exfiltration. The group targets high-value enterprise and government sectors, focusing on public-facing applications to gain initial access and conducting stealthy reconnaissance. UAT-8837 employs techniques like privilege escalation by creating administrative accounts and is linked to targeted intrusions aimed at credential harvesting and internal reconnaissance.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://blog.talosintelligence.com/uat-8837/"
+        ]
+      },
+      "uuid": "560095df-ac68-4769-8811-6daa4b6f3583",
+      "value": "UAT-8837"
+    },
+    {
+      "description": "UAC-0239 has been observed conducting spearphishing attacks targeting the Defence Forces and local state agencies of Ukraine, impersonating the Security Service of Ukraine. The group employs the OrcaC2 framework and FILEMESS stealer to compromise these organizations. Their campaigns often utilize themes related to \"countering russian sabotage-reconnaissance groups\" to disguise their malicious intent.",
+      "meta": {
+        "refs": [
+          "https://cip.gov.ua/en/news/zlovmisniki-atakuyut-sili-oboroni-ukrayini-ta-organi-miscevogo-samovryaduvannya-vikoristovuyuchi-temu-protidiyi-rosiiskim-drg"
+        ]
+      },
+      "uuid": "4bc6fddc-3395-4dad-a84a-81184ac20585",
+      "value": "UAC-0239"
+    },
+    {
+      "description": "Kazu is a financially motivated ransomware group known for employing a double extortion model, targeting sectors such as healthcare and government. The group has claimed responsibility for multiple high-profile breaches, including those of Manage My Health and the Defensoría del Pueblo de Colombia, exfiltrating sensitive data through techniques like exploiting unpatched vulnerabilities and credential reuse. Kazu has demanded ransoms ranging from $60,000 to $500,000, threatening public disclosure of stolen data if payments are not made. Their operations have primarily focused on entities in Latin America, Asia, and the Middle East, with a notable presence on dark web leak sites.",
+      "meta": {
+        "refs": [
+          "https://www.cyfirma.com/research/cyber-threat-landscape-report-united-arab-emirates-uae/",
+          "https://botcrawl.com/national-civil-service-commission-of-colombia-data-breach/",
+          "https://www.hipaajournal.com/doctor-alliance-data-breach-claim/",
+          "https://databreaches.net/2025/11/18/from-bad-to-worse-doctor-alliance-hacked-again-by-same-threat-actor/",
+          "https://botcrawl.com/saudi-icon-data-breach/"
+        ]
+      },
+      "uuid": "3bd6b03e-cd3b-4645-918d-4c527975ea52",
+      "value": "Kazu"
+    },
+    {
+      "description": "",
+      "meta": {
+        "refs": [
+          "https://www.koi.ai/blog/darkspectre-unmasking-the-threat-actor-behind-7-8-million-infected-browsers"
+        ]
+      },
+      "uuid": "61ebbff4-6727-43e9-a505-5510af4fdd68",
+      "value": "DarkSpectre"
     }
   ],
   "version": 336
