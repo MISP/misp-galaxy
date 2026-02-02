@@ -16,14 +16,32 @@ misp_dir = '../'
 
 domains = ['enterprise-attack', 'mobile-attack', 'pre-attack']
 types = {'data-source': 'x-mitre-data-source',
-         'attack-pattern': 'attack-pattern',
+         'attack-pattern': ['attack-pattern', 'x-mitre-tactic'],
          'course-of-action': 'course-of-action',
          'intrusion-set': 'intrusion-set',
          'malware': 'malware',
          'tool': 'tool',
-         'data-component': 'x-mitre-data-component'
+         'data-component': 'x-mitre-data-component',
+         'detection-strategy': 'x-mitre-detection-strategy',
+         'analytic': 'x-mitre-analytic',
          }
 mitre_sources = ['mitre-attack', 'mitre-ics-attack', 'mitre-pre-attack', 'mitre-mobile-attack']
+
+
+def matches_type(item_type, meta_type):
+    # allow a single type or a collection of acceptable types
+    if isinstance(meta_type, (list, tuple, set)):
+        return item_type in meta_type
+    return item_type == meta_type
+
+
+# pre-compute the allowed MITRE item types for quick membership checks
+allowed_item_types = set()
+for meta_type in types.values():
+    if isinstance(meta_type, (list, tuple, set)):
+        allowed_item_types.update(meta_type)
+    else:
+        allowed_item_types.add(meta_type)
 
 
 kill_chain_order_sort_order = {
@@ -143,7 +161,7 @@ for domain in domains:
         attack_data = json.load(f)
 
     for item in attack_data['objects']:
-        if item['type'] not in types.values():
+        if item['type'] not in allowed_item_types:
             continue
 
         # print(json.dumps(item, indent=2, sort_keys=True, ensure_ascii=False))
@@ -163,7 +181,10 @@ for domain in domains:
                 value['value'] = item['name'] + ' - ' + item['external_references'][0]['external_id']
             else:
                 value['value'] = item['name']
-            value['meta'] = {}
+            if 'meta' in value and 'mitre_data_sources' in value['meta'].keys():
+                value['meta'] = {'mitre_data_sources': value['meta']['mitre_data_sources']}
+            else:
+                value['meta'] = {}
             value['meta']['refs'] = []
             value['uuid'] = re.search('--(.*)$', item['id']).group(0)[2:]
 
@@ -205,6 +226,16 @@ for domain in domains:
                 value['meta']['mitre_data_sources'] = item['x_mitre_data_sources']
             if 'x_mitre_platforms' in item:
                 value['meta']['mitre_platforms'] = item['x_mitre_platforms']
+            if 'x_mitre_analytic_refs' in item:
+                for ref in item['x_mitre_analytic_refs']:
+                    ref_data = {
+                        "dest-uuid": re.findall(r'--([0-9a-f-]+)', ref).pop(),
+                        "type": 'composed-of',
+                    }
+                    if 'related' not in value:
+                        value['related'] = [ref_data]
+                    else:
+                        value['related'].append(ref_data)
             # TODO add the other x_mitre elements dynamically, but now it seems to break the tests
             # x_mitre_fields = [key for key in item.keys() if key.startswith('x_mitre')]
             # skip_x_mitre_fields = ['x_mitre_deprecated', 'x_mitre_aliases', 'x_mitre_version', 'x_mitre_old_attack_id', 'x_mitre_attack_spec_version']
@@ -257,7 +288,12 @@ for domain in domains:
     for item in attack_data['objects']:
         if item['type'] != 'x-mitre-data-component':
             continue
-        data_source_uuid = re.findall(r'--([0-9a-f-]+)', item['x_mitre_data_source_ref']).pop()
+        if 'x_mitre_data_source_ref' not in item:
+            continue
+        source_ref_matched = re.findall(r'--([0-9a-f-]+)', item['x_mitre_data_source_ref'])
+        if not source_ref_matched:
+            continue
+        data_source_uuid = source_ref_matched.pop()
         data_component_uuid = re.findall(r'--([0-9a-f-]+)', item['id']).pop()
         # create relationship bidirectionally
         rel_data_source = {
@@ -297,7 +333,7 @@ for t, meta_t in types.items():
     file_data['values'] = []
     for item in all_data_uuid.values():
         # print(json.dumps(item, sort_keys=True, indent=2))
-        if 'type' not in item or item['type'] != meta_t:  # drop old data or not from the right type
+        if 'type' not in item or not matches_type(item['type'], meta_t):  # drop old data or not from the right type
             continue
         item_2 = item.copy()
         item_2.pop('type', None)

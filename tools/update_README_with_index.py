@@ -28,7 +28,8 @@ output = []
 
 # generate the index
 for f in galaxies_fnames:
-    with open(os.path.join(pathClusters, f)) as fr:
+    print(f)
+    with open(os.path.join(pathClusters, f), encoding='utf-8') as fr:
         cluster = json.load(fr)
     with open(os.path.join(pathGalaxies, f)) as fr:
         galaxy = json.load(fr)

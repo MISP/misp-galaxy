@@ -329,6 +329,17 @@
       "value": "APT3"
     },
     {
+      "description": "The group Microsoft tracks as Storm-2603 is assessed with medium confidence to be a China-based threat actor. Microsoft has not identified links between Storm-2603 and other known Chinese threat actors. Microsoft tracks this threat actor in association with attempts to steal MachineKeys via the on-premises SharePoint vulnerabilities. Although Microsoft has observed this threat actor deploying Warlock and Lockbit ransomware in the past, Microsoft is currently unable to confidently assess the threat actor’s objectives.  Additional actors may use these exploits to target unpatched on-premises SharePoint systems, further emphasizing the need for organizations to implement mitigations and security updates immediately.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://www.microsoft.com/en-us/security/blog/2025/07/22/disrupting-active-exploitation-of-on-premises-sharepoint-vulnerabilities/"
+        ]
+      },
+      "uuid": "981402be-3b2d-4310-a7c6-c773aec869c1",
+      "value": "Storm-2603"
+    },
+    {
       "description": "Kaspersky described DarkHotel in a 2014 report as: '... DarkHotel drives its campaigns by spear-phishing targets with highly advanced Flash zero-day exploits that effectively evade the latest Windows and Adobe defenses, and yet they also imprecisely spread among large numbers of vague targets with peer-to-peer spreading tactics. Moreover, this crews most unusual characteristic is that for several years the Darkhotel APT has maintained a capability to use hotel networks to follow and hit selected targets as they travel around the world.'",
       "meta": {
         "attribution-confidence": "50",
@@ -1356,14 +1367,17 @@
           "https://www.cfr.org/interactive/cyber-operations/icefog",
           "https://d2538mqrb7brka.cloudfront.net/wp-content/uploads/sites/43/2018/03/20133739/icefog.pdf",
           "https://www.pwc.com/gx/en/issues/cybersecurity/cyber-threat-intelligence/cyber-year-in-retrospect/yir-cyber-threats-report-download.pdf",
-          "https://go.recordedfuture.com/hubfs/reports/cta-2021-0616.pdf"
+          "https://go.recordedfuture.com/hubfs/reports/cta-2021-0616.pdf",
+          "https://blog.talosintelligence.com/uat-7290/"
         ],
         "synonyms": [
           "IceFog",
           "Trident",
           "RedFoxtrot",
           "Red Wendigo",
-          "PLA Unit 69010"
+          "PLA Unit 69010",
+          "UAT-7290",
+          "Red Foxtrot"
         ],
         "targeted-sector": [
           "Other",
@@ -2309,6 +2323,7 @@
       "description": "This is a pro-Islamist organization that generally conducts attacks motivated by real world events in which its members believe that members of the Muslim faith were wronged. Its attacks generally involve website defacements; however, the group did develop a RAT that it refers to as Fallaga RAT, but which appears to simply be a fork of the njRAT malware popular amongst hackers in the Middle East/North Africa region.",
       "meta": {
         "attribution-confidence": "50",
+        "cfr-type-of-incident": "Defacement",
         "country": "TN",
         "motive": "Hacktivists-Nationalists",
         "synonyms": [
@@ -2950,6 +2965,7 @@
       "description": "Groups targeting financial organizations or people with significant financial assets.",
       "meta": {
         "attribution-confidence": "50",
+        "cfr-type-of-incident": "Financial Theft",
         "country": "RU",
         "motive": "Cybercrime",
         "refs": [
@@ -4493,6 +4509,7 @@
       "description": "A Turkish hacking group, Sath-ı Müdafaa, is encouraging individuals to join its DDoS-for-Points platform that features points and prizes for carrying out distributed denial-of-service (DDoS) attacks against a list of predetermined targets. Their DDoS tool also contains a backdoor to hack the hackers. So the overarching motivation and allegiance of the group is not entirely clear.",
       "meta": {
         "attribution-confidence": "50",
+        "cfr-type-of-incident": "Denial of service",
         "country": "TR",
         "motive": "Hacktivists-Nationalists"
       },
@@ -4503,6 +4520,7 @@
       "description": "Turkish nationalist hacktivist group that has been active for roughly one year. According to Domaintools, the group’s site has been registered since December 2015, with an active Twitter account since January 2016. The group carries out distributed denial-of-service (DDoS) attacks and defacements against the sites of news organizations and governments perceived to be critical of Turkey’s policies or leadership, and purports to act in defense of Islam",
       "meta": {
         "attribution-confidence": "50",
+        "cfr-type-of-incident": "Denial of service",
         "country": "TR",
         "motive": "Hacktivists-Nationalists",
         "synonyms": [
@@ -4521,6 +4539,7 @@
       "description": "Ayyıldız (Crescent and Star) Tim is a nationalist hacking group founded in 2002. It performs defacements and DDoS attacks against the websites of governments that it considers to be repressing Muslim minorities or engaged in Islamophobic policies.",
       "meta": {
         "attribution-confidence": "50",
+        "cfr-type-of-incident": "Denial of service",
         "country": "TR",
         "motive": "Hacktivists-Nationalists",
         "synonyms": [
@@ -10601,7 +10620,9 @@
           "LAPSUS$",
           "DEV-0537",
           "SLIPPY SPIDER",
-          "Strawberry Tempest"
+          "Strawberry Tempest",
+          "UNC3661",
+          "Lapsus"
         ]
       },
       "related": [
@@ -12213,9 +12234,10 @@
           "Journalists",
           "NGOs"
         ],
-        "country": "KR",
+        "country": "KP",
         "refs": [
-          "https://www.proofpoint.com/us/blog/threat-insight/triple-threat-north-korea-aligned-ta406-scams-spies-and-steals"
+          "https://www.proofpoint.com/us/blog/threat-insight/triple-threat-north-korea-aligned-ta406-scams-spies-and-steals",
+          "https://www.proofpoint.com/us/blog/threat-insight/ta406-pivots-front"
         ]
       },
       "related": [
@@ -12471,6 +12493,7 @@
     {
       "description": "According to Proofpoint, TA866 is a newly identified threat actor that distributes malware via email utilizing both commodity and custom tools. While most of the activity observed occurred since October 2022, Proofpoint researchers identified multiple activity clusters since 2019 that overlap with TA866 activity. Most of the activity recently observed by Proofpoint suggests recent campaigns are financially motivated, however assessment of historic related activities suggests a possible, additional espionage objective.",
       "meta": {
+        "cfr-type-of-incident": "Financial Theft",
         "motive": "mainly financially motivated, additional espionage objective.",
         "refs": [
           "https://www.proofpoint.com/us/blog/threat-insight/screentime-sometimes-it-feels-like-somebodys-watching-me"
@@ -12546,6 +12569,10 @@
           "Media and Entertainment",
           "Information Technology",
           "Religious Organizations"
+        ],
+        "cfr-type-of-incident": [
+          "Financial Theft",
+          "Espionage"
         ],
         "country": "CN",
         "motive": "state-sponsored espionage and financially motivated",
@@ -13127,11 +13154,21 @@
         "refs": [
           "https://blog.talosintelligence.com/attributing-yorotrooper/",
           "https://blog.talosintelligence.com/yorotrooper-espionage-campaign-cis-turkey-europe/",
-          "https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Cyber-Sicherheitslage/Analysen-und-Prognosen/Threat-Intelligence/Aktive_APT-Gruppen/aktive-apt-gruppen_node.html"
+          "https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Cyber-Sicherheitslage/Analysen-und-Prognosen/Threat-Intelligence/Aktive_APT-Gruppen/aktive-apt-gruppen_node.html",
+          "https://www.group-ib.com/blog/shadowsilk/",
+          "https://www.seqrite.com/blog/silent-lynx-apt-targeting-central-asian-entities/",
+          "https://bi-zone.medium.com/cavalry-werewolf-raids-russias-public-sector-with-trusted-relationship-attacks-e19f7a5c83ef",
+          "https://www.seqrite.com/blog/operation-peek-a-baku-silent-lynx-apt-dushanbe-espionage/",
+          "https://ctoatncsc.substack.com/p/cto-at-ncsc-summary-week-ending-october"
         ],
         "synonyms": [
           "Salted Earth",
-          "Sturgeon Fisher"
+          "Sturgeon Fisher",
+          "ShadowSilk",
+          "Silent Lynx",
+          "Cavalry Werewolf",
+          "SturgeonPhisher",
+          "Comrade Saiga"
         ]
       },
       "uuid": "2031ae01-e962-4861-a224-0934af6cdd3a",
@@ -13373,7 +13410,11 @@
           "https://blog.cyble.com/2023/06/01/sharppanda-apt-campaign-expands-its-arsenal-targeting-g20-nations/",
           "https://www.rewterz.com/rewterz-news/rewterz-threat-alert-sharppanda-chinese-apt-group-targets-southeast-asian-government-active-iocs",
           "https://research.checkpoint.com/2021/chinese-apt-group-targets-southeast-asian-government-with-previously-unknown-backdoor/",
-          "https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Cyber-Sicherheitslage/Analysen-und-Prognosen/Threat-Intelligence/Aktive_APT-Gruppen/aktive-apt-gruppen_node.html"
+          "https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Cyber-Sicherheitslage/Analysen-und-Prognosen/Threat-Intelligence/Aktive_APT-Gruppen/aktive-apt-gruppen_node.html",
+          "https://research.checkpoint.com/2024/sharp-dragon-expands-towards-africa-and-the-caribbean/"
+        ],
+        "synonyms": [
+          "Sharp Dragon"
         ]
       },
       "uuid": "7133a722-088c-4d5a-b2e0-a1f9915f807d",
@@ -15887,7 +15928,12 @@
       "meta": {
         "country": "IR",
         "refs": [
-          "https://www.mandiant.com/resources/blog/suspected-iranian-unc1549-targets-israel-middle-east"
+          "https://www.mandiant.com/resources/blog/suspected-iranian-unc1549-targets-israel-middle-east",
+          "https://research.checkpoint.com/2025/nimbus-manticore-deploys-new-malware-targeting-europe",
+          "https://blog.checkpoint.com/research/iranian-threat-actor-nimbus-manticore-expands-campaigns-into-europe-with-advanced-malware-and-fake-job-lures/"
+        ],
+        "synonyms": [
+          "Nimbus Manticore"
         ]
       },
       "uuid": "a2a7d49f-f517-4eeb-9ec8-b9b74e3fe756",
@@ -16962,7 +17008,12 @@
       "meta": {
         "country": "CN",
         "refs": [
-          "https://www.trendmicro.com/en_us/research/24/i/tidrone-targets-military-and-satellite-industries-in-taiwan.html"
+          "https://www.trendmicro.com/en_us/research/24/i/tidrone-targets-military-and-satellite-industries-in-taiwan.html",
+          "https://www.trendmicro.com/en_us/research/25/e/earth-ammit.html"
+        ],
+        "synonyms": [
+          "Earth Ammit",
+          "VENOM"
         ]
       },
       "uuid": "020d512f-0636-482b-8033-2bd404e0321f",
@@ -17745,18 +17796,20 @@
         "country": "KP",
         "refs": [
           "https://unit42.paloaltonetworks.com/two-campaigns-by-north-korea-bad-actors-target-job-hunters/",
-          "https://www.zscaler.com/blogs/security-research/pyongyang-your-payroll-rise-north-korean-remote-workers-west",
           "https://unit42.paloaltonetworks.com/fake-north-korean-it-worker-activity-cluster/",
-          "https://www.trendmicro.com/en_us/research/25/d/russian-infrastructure-north-korean-cybercrime.html"
+          "https://www.trendmicro.com/en_us/research/25/d/russian-infrastructure-north-korean-cybercrime.html",
+          "https://jp.security.ntt/insights_resources/tech_blog/en-waterplum-ottercookie/",
+          "https://www.zscaler.com/blogs/security-research/pyongyang-your-payroll-rise-north-korean-remote-workers-west"
         ],
         "synonyms": [
           "Famous Chollima",
           "UNC5267",
           "Wagemole",
           "Nickel Tapestry",
-          "Contagious Interview",
           "Storm-1877",
-          "Void Dokkaebi"
+          "Void Dokkaebi",
+          "WaterPlum",
+          "PurpleBravo"
         ]
       },
       "uuid": "09aa3edb-e956-43f0-9fcb-a3154b47d202",
@@ -17866,10 +17919,12 @@
         "country": "CN",
         "refs": [
           "https://www.microsoft.com/en-us/security/blog/2024/11/22/microsoft-shares-latest-intelligence-on-north-korean-and-chinese-threat-actors-at-cyberwarcon/",
-          "https://www.recordedfuture.com/research/tag-100-uses-open-source-tools-in-suspected-global-espionage-campaign"
+          "https://www.recordedfuture.com/research/tag-100-uses-open-source-tools-in-suspected-global-espionage-campaign",
+          "https://thehackernews.com/2025/09/chinese-hackers-rednovember-target.html"
         ],
         "synonyms": [
-          "TAG-100"
+          "TAG-100",
+          "RedNovember"
         ]
       },
       "uuid": "e6afdfb4-a5ac-4be1-9cd0-c1801a7f7083",
@@ -18439,10 +18494,12 @@
         "country": "CN",
         "refs": [
           "https://unit42.paloaltonetworks.com/advanced-backdoor-squidoor/",
-          "https://www.elastic.co/security-labs/fragile-web-ref7707"
+          "https://www.elastic.co/security-labs/fragile-web-ref7707",
+          "https://www.security.com/threat-intelligence/jewelbug-apt-russia"
         ],
         "synonyms": [
-          "CL-STA-0049"
+          "CL-STA-0049",
+          "Jewelbug"
         ]
       },
       "uuid": "ff080026-9df7-4874-ad04-0c7d4dcb3e7f",
@@ -18743,15 +18800,527 @@
         "country": "RU",
         "refs": [
           "https://www.microsoft.com/en-us/security/blog/2025/05/27/new-russia-affiliated-actor-void-blizzard-targets-critical-sectors-for-espionage/",
-          "https://www.aivd.nl/actueel/nieuws/2025/05/27/onbekende-russische-groep-achter-hacks-nederlandse-doelen"
+          "https://www.aivd.nl/actueel/nieuws/2025/05/27/onbekende-russische-groep-achter-hacks-nederlandse-doelen",
+          "https://cert.gov.ua/article/6286942"
         ],
         "synonyms": [
-          "LAUNDRY BEAR"
+          "LAUNDRY BEAR",
+          "UAC-0190"
         ]
       },
       "uuid": "b495419f-e327-4bbe-aba5-0c281dc2605b",
       "value": "Void Blizzard"
+    },
+    {
+      "meta": {
+        "synonyms": [
+          "Storm-0113"
+        ]
+      },
+      "uuid": "3071973c-b3da-4c74-8fec-3cd6138bf146",
+      "value": "Patched Lightning"
+    },
+    {
+      "description": "NightEagle is an advanced Threat Actor that targeted China's High-Tech Industry and Military Organisation, leveraging sophisticated techniques, 0 days, and specialized detection avoiding malware. The threat actor seems to have access to significant funding, with dedicated infrastructure, and focuses on low-noise, low-impact intelligence gathering operations. NightEagle is identified as a North-American, state-sponsored or affiliated group that has been active since at least 2023.",
+      "meta": {
+        "attribution-confidence": "25",
+        "cfr-suspected-state-sponsor": "US",
+        "cfr-suspected-victims": [
+          "China"
+        ],
+        "cfr-target-category": [
+          "Military",
+          "Government",
+          "Private Sector"
+        ],
+        "cfr-type-of-incident": "Espionage",
+        "country": "US",
+        "refs": [
+          "https://www.authentic8.com/blog/cyber-intel-brief-nighteagle-apt-ai-deepfakes-spnego-flaw",
+          "https://thehackernews.com/2025/07/nighteagle-apt-exploits-microsoft.html",
+          "https://cybersecuritynews.com/nighteagle-apt-exploiting-0-days/"
+        ],
+        "since": "2023",
+        "synonyms": [
+          "APT-Q-95"
+        ],
+        "targeted-sector": [
+          "Military",
+          "Government, Administration",
+          "Technology"
+        ]
+      },
+      "uuid": "1b54a3c1-023b-4a3c-8f11-50d811cced88",
+      "value": "NightEagle"
+    },
+    {
+      "description": "The actor systematically exported large volumes of data from numerous corporate Salesforce instances. GTIG assesses the primary intent of the threat actor is to harvest credentials. After the data was exfiltrated, the actor searched through the data to look for secrets that could be potentially used to compromise victim environments. GTIG observed UNC6395 targeting sensitive credentials such as Amazon Web Services (AWS) access keys (AKIA), passwords, and Snowflake-related access tokens. UNC6395 demonstrated operational security awareness by deleting query jobs, however logs were not impacted and organizations should still review relevant logs for evidence of data exposure.",
+      "meta": {
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/data-theft-salesforce-instances-via-salesloft-drift"
+        ]
+      },
+      "uuid": "12503160-884d-40b8-b4cf-9a4d11a769cf",
+      "value": "UNC6395"
+    },
+    {
+      "description": "Between March and June 2025, Proofpoint identified multiple China-aligned threat actors specifically targeting Taiwanese organizations within the semiconductor industry. This included a China-aligned threat actor tracked as UNK_FistBump targeting semiconductor design, manufacturing, and supply chain organizations in employment-themed phishing campaigns resulting in the delivery of Cobalt Strike or the custom Voldemort backdoor.  Additionally, Proofpoint observed another China-aligned threat actor tracked as UNK_DropPitch targeting individuals in multiple major investment firms who specialize in investment analysis specifically within the Taiwanese semiconductor industry. This UNK_DropPitch targeting is exemplary of intelligence collection priorities spanning less obvious areas of the semiconductor ecosystem beyond just design and manufacturing entities. Finally, we also observed an actor tracked as UNK_SparkyCarp conducting credential phishing activity against a Taiwanese semiconductor company using a custom Adversary in the Middle (AiTM) phishing kit.",
+      "meta": {
+        "refs": [
+          "https://www.proofpoint.com/us/blog/threat-insight/phish-china-aligned-espionage-actors-ramp-up-taiwan-semiconductor-targeting"
+        ]
+      },
+      "uuid": "9d82d1f6-463f-4402-970d-75ba3c45c1c9",
+      "value": "UNK_FistBump"
+    },
+    {
+      "description": "Between March and June 2025, Proofpoint identified multiple China-aligned threat actors specifically targeting Taiwanese organizations within the semiconductor industry. This included a China-aligned threat actor tracked as UNK_FistBump targeting semiconductor design, manufacturing, and supply chain organizations in employment-themed phishing campaigns resulting in the delivery of Cobalt Strike or the custom Voldemort backdoor.  Additionally, Proofpoint observed another China-aligned threat actor tracked as UNK_DropPitch targeting individuals in multiple major investment firms who specialize in investment analysis specifically within the Taiwanese semiconductor industry. This UNK_DropPitch targeting is exemplary of intelligence collection priorities spanning less obvious areas of the semiconductor ecosystem beyond just design and manufacturing entities. Finally, we also observed an actor tracked as UNK_SparkyCarp conducting credential phishing activity against a Taiwanese semiconductor company using a custom Adversary in the Middle (AiTM) phishing kit.",
+      "meta": {
+        "refs": [
+          "https://www.proofpoint.com/us/blog/threat-insight/phish-china-aligned-espionage-actors-ramp-up-taiwan-semiconductor-targeting"
+        ]
+      },
+      "uuid": "91614529-dcdf-4b51-8485-1cfb069abe63",
+      "value": "UNK_DropPitch"
+    },
+    {
+      "description": "Between March and June 2025, Proofpoint identified multiple China-aligned threat actors specifically targeting Taiwanese organizations within the semiconductor industry. This included a China-aligned threat actor tracked as UNK_FistBump targeting semiconductor design, manufacturing, and supply chain organizations in employment-themed phishing campaigns resulting in the delivery of Cobalt Strike or the custom Voldemort backdoor.  Additionally, Proofpoint observed another China-aligned threat actor tracked as UNK_DropPitch targeting individuals in multiple major investment firms who specialize in investment analysis specifically within the Taiwanese semiconductor industry. This UNK_DropPitch targeting is exemplary of intelligence collection priorities spanning less obvious areas of the semiconductor ecosystem beyond just design and manufacturing entities. Finally, we also observed an actor tracked as UNK_SparkyCarp conducting credential phishing activity against a Taiwanese semiconductor company using a custom Adversary in the Middle (AiTM) phishing kit.",
+      "meta": {
+        "refs": [
+          "https://www.proofpoint.com/us/blog/threat-insight/phish-china-aligned-espionage-actors-ramp-up-taiwan-semiconductor-targeting"
+        ]
+      },
+      "uuid": "871d6e8b-ba72-4eaf-8bd4-fa7a2e243920",
+      "value": "UNK_SparkyCarp"
+    },
+    {
+      "description": "The Crimson Collective is a cybercrime group that claimed to have compromised Red Hat's private GitHub repositories in September 2025. The group asserted it had stolen 570GB of data from Red Hat's private GitHub repositories, including 28,000 projects and approximately 800 Customer Engagement Reports (CERs) containing sensitive network data. CERs often contain sensitive information including infrastructure details, configurations, and tokens that attackers could exploit to target customers' networks. The group shared proof of the breach on a Telegram channel, including a full file tree, CER list, and screenshots. The U.S.-based multinational software company confirmed the data breach but did not verify the Crimson Collective's claims. The group also claimed to have gained access to some of Red Hat's client infrastructure and stated they had warned the company but were ignored.",
+      "meta": {
+        "refs": [
+          "https://cybersecuritynews.com/red-hat-data-breach/",
+          "https://www.techzine.eu/news/security/135120/red-hat-hit-by-github-breach-570gb-stolen-including-client-info/",
+          "https://securityaffairs.com/182866/data-breach/cybercrime-group-claims-to-have-breached-red-hat-s-private-github-repositories.html"
+        ],
+        "targeted-sector": [
+          "Technology"
+        ]
+      },
+      "uuid": "8ab83a2c-e5c6-4963-808f-83395f9610ea",
+      "value": "Crimson Collective"
+    },
+    {
+      "description": "TheWizards is a China-aligned APT group that employs the Spellbinder tool for adversary-in-the-middle attacks, utilizing IPv6 SLAAC spoofing to redirect legitimate software updates to malicious servers. They have developed the WizardNet backdoor for Windows and serve DarkNights to Android applications, indicating a connection to Dianke Network Security Technology. The group targets individuals and companies in the Philippines, Cambodia, the UAE, mainland China, and Hong Kong. ESET has observed their infrastructure and tools, including the acquisition of servers for hosting C&C and malicious updates.",
+      "meta": {
+        "refs": [
+          "https://www.welivesecurity.com/en/eset-research/thewizards-apt-group-slaac-spoofing-adversary-in-the-middle-attacks/",
+          "https://www.welivesecurity.com/en/eset-research/nspx30-sophisticated-aitm-enabled-implant-evolving-since-2005/"
+        ]
+      },
+      "uuid": "834558f0-7961-48b3-b77a-7d4b6c66038e",
+      "value": "TheWizards"
+    },
+    {
+      "description": "CL-STA-0048 is a Chinese state-backed APT that targets strategic sectors in South Asia, particularly government and telecommunications entities, with a focus on espionage. The group has been linked to SAP NetWeaver intrusions and employs techniques such as DNS beaconing using ping commands and exploiting unpatched vulnerabilities in services like IIS, Apache Tomcat, and MSSQL. Analysts have observed its use of reverse shell commands and command-and-control traffic directed to specific IP addresses. The actor adapts its methods to evade detection and maintain persistent access to high-value networks.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://unit42.paloaltonetworks.com/espionage-campaign-targets-south-asian-entities/",
+          "https://blog.eclecticiq.com/china-nexus-nation-state-actors-exploit-sap-netweaver-cve-2025-31324-to-target-critical-infrastructures"
+        ],
+        "synonyms": [
+          "CL STA 0048"
+        ]
+      },
+      "uuid": "93ed34c6-5501-4993-9c47-6b53a8d3c36d",
+      "value": "CL-STA-0048"
+    },
+    {
+      "description": "Curly COMrades is a threat actor identified by Amazon Threat Intelligence and Bitdefender, believed to operate in support of Russian interests. They employ techniques such as Hyper-V abuse for EDR evasion and utilize proxy tools like Resocks, SSH, and Stunnel to gain access to internal networks. Their activities include repeated attempts to extract the NTDS database from domain controllers and establishing covert access through virtualization features on compromised Windows 10 machines.",
+      "meta": {
+        "country": "RU",
+        "refs": [
+          "https://www.bitdefender.com/en-us/blog/businessinsights/curly-comrades-evasion-persistence-hidden-hyper-v-virtual-machines",
+          "https://www.bitdefender.com/en-us/blog/businessinsights/curly-comrades-new-threat-actor-targeting-geopolitical-hotbeds"
+        ]
+      },
+      "uuid": "7bf6ae38-fcd3-4a99-99ba-292990a27f0a",
+      "value": "Curly COMrades"
+    },
+    {
+      "description": "Houken is a Chinese state-sponsored threat actor that exploits zero-day vulnerabilities in Ivanti Cloud Services Appliance devices to gain initial access to critical infrastructure networks, particularly in France. The group employs a sophisticated rootkit alongside open-source tools, primarily developed by Chinese-speaking authors, to maintain persistence and control over compromised systems. Houken is suspected to operate as an initial access broker, selling footholds in targeted networks to other threat actors for further exploitation.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://www.cert.ssi.gouv.fr/cti/CERTFR-2025-CTI-009/",
+          "https://meterpreter.org/anssi-exposes-houken-china-linked-apt-exploiting-ivanti-csa-zero-days-deploying-linux-rootkits/"
+        ]
+      },
+      "uuid": "24bad06e-1720-4198-b6b0-9121a5aecc59",
+      "value": "Houken"
+    },
+    {
+      "description": "The Larva-24010 threat actor is distributing malware through the website of a Korean VPN service provider. As a result, when a user downloads and runs the installer from the VPN website, malware can be installed on the system. Since at least 2023, the Larva-24010 threat actor has been targeting Korean VPN users to spread malware, ultimately installing various backdoors such as MeshAgent, gs-netcat, and NKNShell. Through this, the attacker can control infected systems where the VPN is installed and steal sensitive information stored on those systems.",
+      "meta": {
+        "refs": [
+          "https://asec.ahnlab.com/en/91139/"
+        ]
+      },
+      "uuid": "6e5eb2f5-bc36-4ba8-95ff-c31a21098d40",
+      "value": "Larva-24010"
+    },
+    {
+      "description": "Earth Lamia is a China-nexus APT that targets organizations across multiple sectors, including finance, logistics, and government, primarily in Latin America, the Middle East, and Southeast Asia. The actor exploits web application vulnerabilities, such as CVE-2025-55182, and employs techniques like SQL injection, DLL sideloading, and the deployment of custom backdoors like PULSEPACK and BypassBoss. Earth Lamia conducts reconnaissance, file operations, and credential theft, often utilizing tools like Cobalt Strike and VShell.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/threat-actors-exploit-react2shell-cve-2025-55182",
+          "https://www.trendmicro.com/en_us/research/25/e/earth-lamia.html"
+        ],
+        "synonyms": [
+          "UNC5454"
+        ]
+      },
+      "uuid": "2828da6c-12d0-4287-9938-531165e19b47",
+      "value": "Earth Lamia"
+    },
+    {
+      "description": "LongNosedGoblin is a China-aligned APT group targeting governmental entities in Southeast Asia and Japan for cyberespionage. The group employs Group Policy for malware deployment and utilizes cloud services like Microsoft OneDrive and Google Drive as C&C servers. Their operations feature a modular malware ecosystem, including backdoors, browser data stealers, and PowerShell-based downloaders that execute multi-stage payloads in memory. LongNosedGoblin's tactics emphasize reconnaissance-driven targeting and the abuse of trusted enterprise mechanisms, allowing for stealthy persistence within compromised networks.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://botcrawl.com/chinese-apt-longnosedgoblin-targets-government-networks-in-southeast-asia-and-japan/"
+        ]
+      },
+      "uuid": "f2e81e5f-33ab-47c0-89e4-c5420bfe7b9d",
+      "value": "LongNosedGoblin"
+    },
+    {
+      "description": "UAT-9686 is a Chinese state-sponsored APT known for targeting networking infrastructure and edge appliances through a sophisticated espionage campaign. They exploit a critical flaw in the Cisco AsyncOS Spam Quarantine interface to gain root access and deploy custom malware, including AquaShell, along with Python scripts that execute natively. Their operations involve reverse tunneling and log purging, demonstrating a methodical approach to compromising communication infrastructure. Talos has observed overlaps in TTPs and tooling with other Chinese-nexus threat actors, indicating a consistent operational pattern.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://www.secpod.com/blog/zero-day-crisis-cve-2025-20393-unpatched-on-cisco-email-gateways-exploited-by-china-linked-hackers/",
+          "https://blog.talosintelligence.com/uat-9686/"
+        ]
+      },
+      "uuid": "72075688-b6e6-4324-849a-77041a54bc09",
+      "value": "UAT-9686"
+    },
+    {
+      "description": "ShadyPanda is a threat actor behind a 7-year campaign that has infected 4.3 million users through extensions masquerading as productivity tools while functioning as comprehensive spyware. Their tactics include data exfiltration, user surveillance, and systematic collection of corporate meeting intelligence from over 28 video conferencing platforms. Notably, the WeTab extension exemplifies their capabilities, collecting full browsing history and personal data, exfiltrating to 17 different domains. The actor employs steganography to hide malicious code within PNG files and maintains persistent access through shared infrastructure across their extensions.",
+      "meta": {
+        "refs": [
+          "https://www.koi.ai/blog/darkspectre-unmasking-the-threat-actor-behind-7-8-million-infected-browsers",
+          "https://www.koi.ai/blog/4-million-browsers-infected-inside-shadypanda-7-year-malware-campaign"
+        ]
+      },
+      "uuid": "c1e76272-22c5-4f2a-96e9-8d2384a994ad",
+      "value": "ShadyPanda"
+    },
+    {
+      "description": "Water Saci is a sophisticated cyber threat actor operating in Brazil, utilizing a multi-format attack chain that includes HTA files, ZIP archives, and PDFs to bypass security measures. The campaign employs an email-based C&C infrastructure using IMAP connections to terra.com.br accounts, enhancing its resilience and evasion tactics. It leverages social engineering through WhatsApp to propagate malware, specifically the SORVEPOTEL banking trojan, and incorporates advanced techniques for infection and persistence. The modular architecture of the malware allows for dynamic adaptation and extraction of sensitive credentials, indicating a significant evolution in adversarial capabilities.",
+      "meta": {
+        "country": "BR",
+        "refs": [
+          "https://www.trendmicro.com/en_us/research/25/j/active-water-saci-campaign-whatsapp-update.html",
+          "https://www.trendmicro.com/en_us/research/25/l/water-saci.html"
+        ]
+      },
+      "uuid": "6f6d828b-b2ac-471c-b2a3-c49d0f49789f",
+      "value": "Water Saci"
+    },
+    {
+      "description": "UNC6032 is a threat actor that weaponizes interest in AI tools, specifically targeting users with fake \"AI video generator\" websites to distribute malware, including Python-based infostealers and backdoors. Victims are typically directed to these sites through malicious social media ads that impersonate legitimate tools. Compromises have led to the exfiltration of sensitive data, including login credentials and credit card information, via the Telegram API. Google Threat Intelligence Group assesses UNC6032 to have a Vietnam nexus.",
+      "meta": {
+        "country": "VN",
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/cybercriminals-weaponize-fake-ai-websites"
+        ]
+      },
+      "uuid": "b6056927-a2b3-4f6f-9054-9c45c355de76",
+      "value": "UNC6032"
+    },
+    {
+      "description": "UNC6293 is a Russian state-sponsored threat actor identified by Google's Threat Intelligence Group (GTIG), which associates them with APT29 with low confidence. They have conducted campaigns utilizing social engineering tactics, including leveraging App-Specific Passwords for account compromises. GTIG has also noted a second campaign by UNC6293 that incorporates Ukrainian themes.",
+      "meta": {
+        "country": "RU",
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/creative-phishing-academics-critics-of-russia"
+        ]
+      },
+      "uuid": "4fc6dfbc-90de-47d2-82af-f271eb972fa0",
+      "value": "UNC6293"
+    },
+    {
+      "description": "UNC4487 is a threat actor that targeted Ukrainian government officials by compromising a Ukrainian auto insurance website essential for official travel. This attack facilitated the distribution of the MATANBUCHUS malware, which was used to monetize access to infected systems. Mandiant later identified additional malware samples, referred to as ChillyHell, linked to UNC4487 through the reuse of a code signing certificate associated with MATANBUCHUS. The group's activities highlight a focus on exploiting critical infrastructure for financial gain.",
+      "meta": {
+        "refs": [
+          "https://www.jamf.com/blog/chillyhell-a-modular-macos-backdoor/"
+        ]
+      },
+      "uuid": "6f49cb96-f2ce-405d-86b9-3ae2aa239f12",
+      "value": "UNC4487"
+    },
+    {
+      "description": "UNC6148 is a financially motivated threat actor that targets SonicWall Secure Mobile Access 100 series appliances, leveraging stolen credentials and possibly zero-day exploits to deploy a persistent backdoor known as OVERSTEP. They utilize a kernel-level rootkit for stealthy access and have been observed establishing SSL VPN sessions to launch reverse shells and manipulate system files. The actor's operations include credential theft, data exfiltration, and potential ransomware deployment, with evidence suggesting they modify legitimate scripts to maintain persistence. Their activities are characterized by the reuse of OTP seeds and admin credentials, allowing continued access even after security patches are applied.",
+      "meta": {
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/sonicwall-secure-mobile-access-exploitation-overstep-backdoor/"
+        ]
+      },
+      "uuid": "a5f80c8a-5b36-404b-b4b9-a9e1c2b631b5",
+      "value": "UNC6148"
+    },
+    {
+      "description": "UNC5342 is a North Korea-linked APT that employs the EtherHiding technique to deliver malware and facilitate cryptocurrency theft. The actor has been observed deploying EtherRAT and JADESNOW malware, utilizing transaction history as a Dead Drop Resolver to embed payloads directly into the calldata of blockchain transactions. Their operations involve leveraging centralized API services to interact with public blockchains like Ethereum and BNB Smart Chain. The malware is designed to exfiltrate sensitive data, particularly targeting cryptocurrency wallets and credentials.",
+      "meta": {
+        "country": "KP",
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/dprk-adopts-etherhiding"
+        ]
+      },
+      "uuid": "6c253a07-b75d-4c3c-a93d-13aed83662f1",
+      "value": "UNC5342"
+    },
+    {
+      "description": "UNC6485 is a cyber-espionage group exploiting CVE-2025-12480 in Gladinet’s Triofox file-sharing platform to gain initial network access and establish long-term persistence. They create unauthorized administrative accounts and deploy RATs, utilizing legitimate tools like Zoho Assist and AnyDesk to evade detection. Their TTPs indicate a sophisticated understanding of the platform, allowing them to blend malicious activities with legitimate administrative actions.",
+      "meta": {
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/triofox-vulnerability-cve-2025-12480"
+        ]
+      },
+      "uuid": "fb8fa22e-52c5-40ca-90dd-ba02da80019e",
+      "value": "UNC6485"
+    },
+    {
+      "description": "UNC6384 is a Chinese-affiliated APT that conducts targeted espionage campaigns primarily against diplomatic entities in Southeast Asia and Europe, specifically Belgium and Hungary. The group exploits the ZDI-CAN-25373 Windows shortcut vulnerability to gain initial code execution via malicious .LNK files, deploying the PlugX RAT through sophisticated delivery mechanisms, including DLL side-loading and adversary-in-the-middle attacks. Their operations involve social engineering tactics, such as spear-phishing emails themed around diplomatic events, to entice victims into executing malicious payloads. UNC6384's use of valid code signing and HTTPS hosting enhances their evasion of detection and increases the likelihood of user interaction.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/prc-nexus-espionage-targets-diplomats/"
+        ]
+      },
+      "uuid": "a3e4a57e-4b50-4bca-9282-3307e92e5539",
+      "value": "UNC6384"
+    },
+    {
+      "description": "UNC6040 is a financially motivated threat cluster that employs vishing to gain access to organizations' Salesforce environments, facilitating large-scale data exfiltration. The group manipulates end users into authorizing malicious connected apps, often masquerading as IT support personnel, to exploit OAuth permissions. Following initial access, UNC6040 leverages harvested credentials to move laterally within victim networks, targeting other cloud platforms like Okta and Microsoft 365. Their operations are characterized by the use of Mullvad VPN IP addresses and a focus on social engineering tactics to bypass security measures.",
+      "meta": {
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/voice-phishing-data-extortion",
+          "https://cloud.google.com/blog/topics/threat-intelligence/technical-analysis-vishing-threats/",
+          "https://www.varonis.com/blog/salesforce-vishing-threat-unc604"
+        ]
+      },
+      "uuid": "84669320-0b46-4b26-a063-fb71e9833fec",
+      "value": "UNC6040"
+    },
+    {
+      "description": "Educated Manticore is an Iranian APT group aligned with the Islamic Revolutionary Guard Corps, primarily engaged in espionage targeting government, military, and academic sectors. The group employs spear-phishing tactics, utilizing custom backdoors like POWERLESS and phishing kits designed as SPAs to harvest credentials. Their operations have included impersonating credible figures to lure victims and using ISO images to initiate infection chains. Educated Manticore's activities are characterized by rapid domain setup and aggressive spear-phishing campaigns, particularly against Israeli individuals.",
+      "meta": {
+        "country": "IR",
+        "refs": [
+          "https://research.checkpoint.com/2025/iranian-educated-manticore-targets-leading-tech-academics",
+          "https://blog.checkpoint.com/security/check-point-research-uncovers-rare-techniques-used-by-iranian-affiliated-threat-actor-targeting-israeli-entities/",
+          "https://research.checkpoint.com/2023/educated-manticore-iran-aligned-threat-actor-targeting-israel-via-improved-arsenal-of-tools/"
+        ]
+      },
+      "uuid": "b84cd4b9-27d0-4722-a21e-e7bd4a171c86",
+      "value": "Educated Manticore"
+    },
+    {
+      "description": "UnsolicitedBooker is a China-aligned APT group known for its persistent targeting of an unnamed international organization in Saudi Arabia, employing a backdoor called MarsSnake. The group utilizes spear-phishing emails, often featuring flight tickets as decoys, to infiltrate governmental organizations across Asia, Africa, and the Middle East. Their operations have included multiple intrusion attempts over several years, demonstrating a sustained interest in their target. MarsSnake provides significant control over infected machines, allowing for arbitrary command execution and file access.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://www.welivesecurity.com/en/podcasts/eset-apt-activity-report-q4-2024q1-2025-malware-sharing-wipers-exploits/"
+        ]
+      },
+      "uuid": "e04cecf6-93a6-4810-886d-cb2e767abb81",
+      "value": "UnsolicitedBooker"
+    },
+    {
+      "description": "Larva‑25012 is a threat actor known for deploying Proxyware, utilizing malware disguised as a Notepad++ installer. The actor injects Proxyware into the Windows Explorer process and employs Python-based loaders to evade detection. They distribute Proxyware installers primarily through advertisements on websites offering free YouTube video downloads and fake sites for cracked software. Larva‑25012 has been active since at least 2024, distributing multiple types of Proxyware, including DigitalPulse, Honeygain, and Infatica.",
+      "meta": {
+        "refs": [
+          "https://asec.ahnlab.com/en/92183/"
+        ]
+      },
+      "uuid": "fc9858b1-9a54-45ac-8dbf-dffd1a62cdc6",
+      "value": "Larva‑25012"
+    },
+    {
+      "description": "WARP PANDA is a China-nexus APT that targets VMware vCenter environments and Microsoft Azure infrastructures, primarily focusing on legal, technology, and manufacturing sectors in the U.S. The group exploits internet-facing edge devices for initial access, later pivoting to vCenter environments using compromised credentials or vulnerabilities. Their toolkit includes the BRICKSTORM backdoor, along with implants like Junction and GuestConduit, which facilitate command execution and network traffic tunneling. WARP PANDA demonstrates advanced OPSEC and aims for long-term persistence and data exfiltration aligned with the interests of the People's Republic of China.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://www.crowdstrike.com/en-us/blog/warp-panda-cloud-threats/"
+        ]
+      },
+      "uuid": "820afecb-e91f-424e-8e70-0ac880963191",
+      "value": "WARP PANDA"
+    },
+    {
+      "description": "DarkGaboon is a financially motivated APT group that has been independently targeting Russian organizations since May 2023, primarily using phishing emails to deliver malware such as Revenge RAT and LockBit 3.0 ransomware. Their operations demonstrate advanced operational security practices, including the use of homoglyphs in file names and decoy documents sourced from legitimate Russian templates to evade detection. The group has shown a disciplined approach to updating their toolkit, with 369 unique files identified, and employs command-and-control infrastructure located outside Russia. DarkGaboon's linguistic proficiency in Russian suggests a deep understanding of the local context, enhancing the effectiveness of their phishing lures.",
+      "meta": {
+        "refs": [
+          "https://therecord.media/new-hacker-group-lockbit-target-russia",
+          "https://cybershafarat.com/2025/01/22/darkgaboon-targets-russian-finserv/"
+        ],
+        "synonyms": [
+          "Vengeful Wolf",
+          "room155"
+        ]
+      },
+      "uuid": "c2f849ae-9413-4351-b905-354657fe2405",
+      "value": "DarkGaboon"
+    },
+    {
+      "description": "GTG-1002 is a Chinese state-sponsored APT that conducted a large-scale autonomous cyber espionage campaign targeting approximately 30 global organizations across various sectors, focusing on military and energy-related data. The operation utilized AI, specifically Anthropic’s Claude model, for reconnaissance, exploitation, and data exfiltration, significantly reducing human involvement. Attackers employed techniques such as automated task execution and evasion of safety protocols by masquerading as legal security testing. The campaign lasted 18 months and highlighted vulnerabilities in traditional incident response workflows.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://assets.anthropic.com/m/ec212e6566a0d47/original/Disrupting-the-first-reported-AI-orchestrated-cyber-espionage-campaign.pdf",
+          "https://socradar.io/blog/ai-powered-gtg-1002-campaign/"
+        ]
+      },
+      "uuid": "c21d7fef-0bab-4229-a103-5e8275434141",
+      "value": "GTG-1002"
+    },
+    {
+      "description": "Golden Eye Dog targets Chinese-speaking users engaged in online gambling, employing techniques such as SERP poisoning, social engineering, and DDoS attacks. The group utilizes trojanized NSIS installers to deliver RONINGLOADER, which executes complex process-injection workflows and deploys a modified Gh0st RAT for espionage. Their operations have included DLL sideloading and the use of watering hole websites to implant Trojans. The group is noted for its high anti-detection capabilities and has been associated with various malware development languages.",
+      "meta": {
+        "refs": [
+          "https://www.sophos.com/fr-fr/blog/doubled-dll-sideloading-dragon-breath"
+        ],
+        "synonyms": [
+          "Golden Eye Dog",
+          "APT-Q-27,"
+        ]
+      },
+      "uuid": "708102cb-0bdd-4a3a-bc15-bcd3d15a7c7b",
+      "value": "DragonBreath"
+    },
+    {
+      "description": "PoisonSeed is a threat actor employing an MFA-resistant phishing kit to acquire credentials from individuals and organizations, primarily targeting email infrastructure for cryptocurrency-related spam. They utilize spear-phishing emails with malicious links, automate bulk downloading of email lists, and capture authentication cookies to bypass MFA. PoisonSeed has been linked to campaigns that exploit cross-device sign-in features and employ tactics such as cryptocurrency seed phrase poisoning. Their infrastructure includes domains registered through NICENIC and hosted on Cloudflare, with a focus on phishing CRM and bulk email provider credentials.",
+      "meta": {
+        "refs": [
+          "https://blog.nviso.eu/2025/08/12/shedding-light-on-poisonseeds-phishing-kit/",
+          "https://www.silentpush.com/blog/poisonseed/"
+        ]
+      },
+      "uuid": "d536294f-fb0a-470b-a6d5-89e057bda61e",
+      "value": "PoisonSeed"
+    },
+    {
+      "description": "Storm-2657 is a financially motivated threat actor targeting US-based organizations, particularly in higher education, to compromise employee accounts and redirect salary payments to attacker-controlled accounts. They employ tactics such as creating inbox rules to delete warning notifications from HR platforms like Workday and using phishing emails that impersonate legitimate university communications to gain access. The actor modifies employee salary payment configurations to facilitate financial theft. Mitigation efforts include implementing phishing-resistant MFA methods to secure user identities against such attacks.",
+      "meta": {
+        "refs": [
+          "https://www.microsoft.com/en-us/security/blog/2025/10/09/investigating-targeted-payroll-pirate-attacks-affecting-us-universities/"
+        ]
+      },
+      "uuid": "f240c6dd-e702-4acb-bfa9-131710f9f8b1",
+      "value": "Storm-2657"
+    },
+    {
+      "description": "GhostRedirector is a China-aligned threat actor that has compromised at least 65 Windows servers across various sectors, primarily in Brazil, Thailand, and Vietnam. It employs a passive C++ backdoor named Rungan and a malicious IIS module called Gamshen to maintain persistent access and manipulate search engine results for SEO fraud. The actor utilizes public exploits like EfsPotato and BadPotato for privilege escalation and abuses code-signing certificates to evade detection. GhostRedirector's operations involve installing remote access tools, creating rogue administrator accounts, and leveraging SQL injection vulnerabilities to execute PowerShell for downloading malicious payloads.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://www.welivesecurity.com/en/eset-research/ghostredirector-poisons-windows-servers-backdoors-side-potatoes/"
+        ]
+      },
+      "uuid": "a298949b-4f98-4432-8b5d-ca0503ef3c2d",
+      "value": "GhostRedirector"
+    },
+    {
+      "description": "UAC-0227 is an APT group that has been active since at least March 2025, targeting local governments, critical infrastructure, and various organizations in the European Union. The group employs phishing campaigns that utilize SVG file attachments to distribute stealers like Amatera Stealer and Strela Stealer. Their tactics include leveraging ClickFix-style methods to implement their threats.",
+      "meta": {
+        "refs": [
+          "https://cip.gov.ua/ua/news/novi-kiberzagrozi-kogo-i-yak-atakuyut-vorozhi-ugrupovannya",
+          "https://securityaffairs.com/183222/apt/ukraine-sees-surge-in-ai-powered-cyberattacks-by-russia-linked-threat-actors.html"
+        ]
+      },
+      "uuid": "b66a7c4b-a2a3-4c54-a021-a41c928c65d1",
+      "value": "UAC-0227"
+    },
+    {
+      "description": "UTA0388 is a China-aligned APT known for spear-phishing campaigns targeting organizations in North America, Asia, and Europe, primarily to deliver a Go-based implant called GOVERSHELL. The group employs \"rapport-building phishing\" tactics, engaging targets in benign conversations before sending malicious links, and has been linked to the use of Large Language Models for crafting phishing emails in multiple languages. Technical analysis indicates that UTA0388 operates in the interests of the Chinese state, with a focus on Asian geopolitical issues, as evidenced by the use of Simplified Chinese in its development environment. Volexity assesses that UTA0388's operations reflect a sophisticated blend of traditional phishing techniques and modern automation.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://www.volexity.com/blog/2025/10/08/apt-meets-gpt-targeted-operations-with-untamed-llms/"
+        ]
+      },
+      "uuid": "4606a1b5-6c3c-453c-aeef-2530676c2e89",
+      "value": "UTA0388"
+    },
+    {
+      "description": "BatShadow is a Vietnamese threat actor that targets job seekers and digital marketing professionals through social engineering campaigns, deploying the Go-based malware known as Vampire Bot. The group impersonates recruiters and distributes malicious job descriptions and corporate PDFs, triggering a multi-stage infection chain that enables remote surveillance and data theft. Analysts have linked BatShadow to Vietnam based on infrastructure reuse and targeting patterns, noting its history of using domains like samsung-work.com to distribute various malware families, including Agent Tesla and Quasar RAT. The actor employs techniques such as filename tricks and coercive browser actions to evade detection and increase the likelihood of successful compromises.",
+      "meta": {
+        "country": "VN",
+        "refs": [
+          "https://www.aryaka.com/blog/batshade-vampire-bot-social-engineering-malware/"
+        ]
+      },
+      "uuid": "b2a577e6-67ed-4b01-8fc2-a6df22b25b00",
+      "value": "BatShadow"
+    },
+    {
+      "description": "Water Bakunawa is a cybercriminal group identified by Trend Micro, responsible for the RansomHub ransomware, which exploits the Zerologon vulnerability to gain unauthorized network access. The group employs EDRKillShifter to evade detection and disrupt security monitoring processes, utilizing advanced anti-EDR techniques. Their targets include sectors such as water and wastewater, IT, healthcare, and financial services. Members of the group and related affiliates have linked by association with other high-profile RaaS groups like Scattered Spider and ALPHV.",
+      "meta": {
+        "refs": [
+          "https://www.trendmicro.com/en_us/research/24/i/how-ransomhub-ransomware-uses-edrkillshifter-to-disable-edr-and-.html"
+        ]
+      },
+      "uuid": "8472ca74-ecc9-48f1-9f13-8e60b69187e8",
+      "value": "Water Bakunawa"
+    },
+    {
+      "description": "UAT-8837 is a sophisticated China-linked APT group exploiting critical zero-day vulnerabilities, such as CVE-2025-53690 in the Sitecore platform, to achieve remote code execution and deploy the WeepSteel backdoor for espionage and data exfiltration. The group targets high-value enterprise and government sectors, focusing on public-facing applications to gain initial access and conducting stealthy reconnaissance. UAT-8837 employs techniques like privilege escalation by creating administrative accounts and is linked to targeted intrusions aimed at credential harvesting and internal reconnaissance.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://blog.talosintelligence.com/uat-8837/"
+        ]
+      },
+      "uuid": "560095df-ac68-4769-8811-6daa4b6f3583",
+      "value": "UAT-8837"
+    },
+    {
+      "description": "UAC-0239 has been observed conducting spearphishing attacks targeting the Defence Forces and local state agencies of Ukraine, impersonating the Security Service of Ukraine. The group employs the OrcaC2 framework and FILEMESS stealer to compromise these organizations. Their campaigns often utilize themes related to \"countering russian sabotage-reconnaissance groups\" to disguise their malicious intent.",
+      "meta": {
+        "refs": [
+          "https://cip.gov.ua/en/news/zlovmisniki-atakuyut-sili-oboroni-ukrayini-ta-organi-miscevogo-samovryaduvannya-vikoristovuyuchi-temu-protidiyi-rosiiskim-drg"
+        ]
+      },
+      "uuid": "4bc6fddc-3395-4dad-a84a-81184ac20585",
+      "value": "UAC-0239"
+    },
+    {
+      "description": "Kazu is a financially motivated ransomware group known for employing a double extortion model, targeting sectors such as healthcare and government. The group has claimed responsibility for multiple high-profile breaches, including those of Manage My Health and the Defensoría del Pueblo de Colombia, exfiltrating sensitive data through techniques like exploiting unpatched vulnerabilities and credential reuse. Kazu has demanded ransoms ranging from $60,000 to $500,000, threatening public disclosure of stolen data if payments are not made. Their operations have primarily focused on entities in Latin America, Asia, and the Middle East, with a notable presence on dark web leak sites.",
+      "meta": {
+        "refs": [
+          "https://www.cyfirma.com/research/cyber-threat-landscape-report-united-arab-emirates-uae/",
+          "https://botcrawl.com/national-civil-service-commission-of-colombia-data-breach/",
+          "https://www.hipaajournal.com/doctor-alliance-data-breach-claim/",
+          "https://databreaches.net/2025/11/18/from-bad-to-worse-doctor-alliance-hacked-again-by-same-threat-actor/",
+          "https://botcrawl.com/saudi-icon-data-breach/"
+        ]
+      },
+      "uuid": "3bd6b03e-cd3b-4645-918d-4c527975ea52",
+      "value": "Kazu"
+    },
+    {
+      "description": "",
+      "meta": {
+        "refs": [
+          "https://www.koi.ai/blog/darkspectre-unmasking-the-threat-actor-behind-7-8-million-infected-browsers"
+        ]
+      },
+      "uuid": "61ebbff4-6727-43e9-a505-5510af4fdd68",
+      "value": "DarkSpectre"
     }
   ],
-  "version": 327
+  "version": 336
 }
