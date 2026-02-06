@@ -95,7 +95,7 @@ Category: *user-tie* - source: *https://www.cisotradecraft.com/bitns* - total: *
 
 [Botnet](https://www.misp-galaxy.org/botnet) - botnet galaxy
 
-Category: *tool* - source: *MISP Project* - total: *132* elements
+Category: *tool* - source: *MISP Project* - total: *133* elements
 
 [[HTML](https://www.misp-galaxy.org/botnet)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/botnet.json)]
 
@@ -543,7 +543,7 @@ Category: *actor* - source: *MISP Project* - total: *126* elements
 
 [Ransomware](https://www.misp-galaxy.org/ransomware) - Ransomware galaxy based on different sources and maintained by the MISP Project.
 
-Category: *tool* - source: *Various* - total: *2077* elements
+Category: *tool* - source: *Various* - total: *2090* elements
 
 [[HTML](https://www.misp-galaxy.org/ransomware)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/ransomware.json)]
 
@@ -658,6 +658,14 @@ Category: *dark-patterns* - source: *CIRCL* - total: *19* elements
 Category: *sod-matrix* - source: *https://github.com/cudeso/SoD-Matrix* - total: *276* elements
 
 [[HTML](https://www.misp-galaxy.org/sod-matrix)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/sod-matrix.json)]
+
+## Stalkerware
+
+[Stalkerware](https://www.misp-galaxy.org/stalkerware) - A list of stalkerware and watchware.
+
+Category: *tool* - source: *https://github.com/AssoEchap/stalkerware-indicators* - total: *170* elements
+
+[[HTML](https://www.misp-galaxy.org/stalkerware)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/stalkerware.json)]
 
 ## Stealer
 

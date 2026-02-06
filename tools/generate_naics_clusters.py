@@ -5,7 +5,7 @@
 #naics.csv is extract from [2022]_NAICS_Structure.xlsx and only uses the 2022 NAICS Code and 2022 NAICS Title columns, without title.
 #Note 1 : This only generate the file for the "clusters" folder
 #Note 2 : The generated file needs to pass the jq_all_the_thigs.sh script to be in the corresponding information
-#Note 3 : New uuids are generated on every run
+#Note 3 : New uuids are generated on every run (fixed)
 
 import json
 import csv
@@ -31,7 +31,8 @@ with open('naics.csv', newline='') as csvfile:
         cluster = {}
         cluster['value']=row[0]
         cluster['description']=row[1].strip()
-        cluster['uuid']=str(uuid.uuid4())
+        # cluster['uuid']=str(uuid.uuid4())
+        cluster['uuid'] = str(uuid.uuid5(uuid.UUID('b73ecad4-6529-4625-8c4f-ee3ef703a72a'), row[0]))
         cluster['related']=[]
 
         values.append(cluster)
