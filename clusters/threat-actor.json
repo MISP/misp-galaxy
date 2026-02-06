@@ -9420,9 +9420,16 @@
     {
       "description": "Operation Shadow Force is a group of malware that is representative of Shadow Force and Wgdrop from 2013 to 2020, and is a group activity that attacks Korean companies and organizations. The group's first confirmed attack was in March 2013, but considering the date of malware creation, it is likely to have been active before 2012. Since the malware used mainly by them is Shadow Force, it was named Operation Shadow Force, and it has not been confirmed whether the attacker is associated with a known group.",
       "meta": {
+        "country": "CN",
         "refs": [
           "https://www.ahnlab.com/kr/site/securityinfo/secunews/secuNewsView.do?curPage=1&menu_dist=2&seq=29129",
-          "https://mobile.twitter.com/mstoned7/status/1247361687570673664"
+          "https://mobile.twitter.com/mstoned7/status/1247361687570673664",
+          "https://www.ahnlab.com/en/contents/content-center/35891",
+          "https://asec.ahnlab.com/en/52479/"
+        ],
+        "synonyms": [
+          "TA-ShadowCricket",
+          "Larva-24013"
         ]
       },
       "uuid": "f628b544-48b6-44e2-b794-950713353cf1",
@@ -13787,7 +13794,11 @@
         "country": "PS",
         "refs": [
           "https://securelist.com/wirtes-campaign-in-the-middle-east-living-off-the-land-since-at-least-2019/105044/",
-          "https://lab52.io/blog/wirte-group-attacking-the-middle-east/"
+          "https://lab52.io/blog/wirte-group-attacking-the-middle-east/",
+          "https://unit42.paloaltonetworks.com/hamas-affiliate-ashen-lepus-uses-new-malware-suite-ashtag/"
+        ],
+        "synonyms": [
+          "Ashen Lepus"
         ]
       },
       "uuid": "ec6bcaa9-4cb3-4397-a735-c806bc986c81",
@@ -15977,11 +15988,13 @@
       "description": "Earth Kapre is an APT group specializing in cyberespionage. They target organizations in various countries through phishing campaigns using malicious attachments to infect machines. Earth Kapre employs techniques like abusing PowerShell, curl, and Program Compatibility Assistant to execute malicious commands and evade detection within targeted networks. The group has been active since at least 2018 and has been linked to multiple incidents involving data theft and espionage.",
       "meta": {
         "refs": [
-          "https://www.trendmicro.com/en_us/research/24/c/unveiling-earth-kapre-aka-redcurls-cyberespionage-tactics-with-t.html"
+          "https://www.trendmicro.com/en_us/research/24/c/unveiling-earth-kapre-aka-redcurls-cyberespionage-tactics-with-t.html",
+          "https://news.sophos.com/en-us/2025/12/05/sharpening-the-knife-gold-blades-strategic-evolution/"
         ],
         "synonyms": [
           "RedCurl",
-          "Red Wolf"
+          "Red Wolf",
+          "GOLD BLADE"
         ]
       },
       "uuid": "d4004926-bf12-4cfe-b141-563c8ffb304a",
@@ -19320,6 +19333,249 @@
       },
       "uuid": "61ebbff4-6727-43e9-a505-5510af4fdd68",
       "value": "DarkSpectre"
+    },
+    {
+      "description": "CryptoCore is a North Korean APT known for targeting cryptocurrency exchanges and financial institutions, employing spear-phishing techniques that lead to LONEJOGGER malware infections. The group has leveraged social engineering tactics, including deepfake technology and hijacked YouTube accounts, to execute sophisticated giveaway scams that deceive victims into sending cryptocurrencies. Their operations have involved the misuse of platforms like Gemini for reconnaissance and the development of fraudulent content. Additionally, CryptoCore has been linked to a variety of campaigns, including Dangerous Password and SnatchCrypto, focusing on financial gain through cryptocurrency theft.",
+      "meta": {
+        "country": "KP",
+        "refs": [
+          "https://www.mandiant.com/resources/blog/north-korea-cyber-structure-alignment-2023",
+          "https://www.spixnet.com/cybersecurity-blog/2023/04/03/newly-exposed-apt43-hacking-group-targeting-us-orgs-since-2018/",
+          "https://cloud.google.com/blog/topics/threat-intelligence/threat-actor-usage-of-ai-tools/"
+        ],
+        "synonyms": [
+          "MASAN",
+          "CryptoCore"
+        ]
+      },
+      "uuid": "b7e897da-108b-4f5b-b32b-3fd9375cc55e",
+      "value": "UNC1069"
+    },
+    {
+      "description": "Storm-1175 is a cybercriminal group known for deploying Medusa ransomware and exploiting public-facing applications for initial access. They have been observed exploiting a critical deserialization vulnerability in GoAnywhere MFT, tracked as CVE-2025-10035, which could lead to command injection and potential RCE. Microsoft Defender researchers identified exploitation activity aligned with TTPs attributed to Storm-1175, including the use of post-compromise techniques that involve creating a group named “ESX Admins” in the domain.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://www.microsoft.com/en-us/security/blog/2025/10/06/investigating-active-exploitation-of-cve-2025-10035-goanywhere-managed-file-transfer-vulnerability/"
+        ]
+      },
+      "uuid": "313d6dbd-e2fc-4336-b6ae-053665f00ba1",
+      "value": "Storm-1175"
+    },
+    {
+      "description": "UAT-7237 is a Chinese-speaking APT group that has been active since at least 2022, primarily targeting web infrastructure entities in Taiwan. They utilize a customized Shellcode loader known as “SoundBill” to execute shellcode, including Cobalt Strike payloads, and rely on SoftEther VPN clients and RDP for persistence and access. UAT-7237 employs techniques such as credential extraction using Mimikatz, reconnaissance with WMI-based tools, and selective deployment of web shells. Their operations indicate a focus on long-term persistence and stealth, with a preference for open-sourced and customized tooling.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://blog.talosintelligence.com/uat-7237-targets-web-hosting-infra/"
+        ]
+      },
+      "uuid": "a1e84808-6540-42bd-a3f8-c3c724ba5203",
+      "value": "UAT-7237"
+    },
+    {
+      "description": "Mocha Manakin is a threat actor that employs the paste and run technique for initial access, tricking users into executing scripts that download various payloads, including LummaC2, HijackLoader, and Vidar. This actor is notable for utilizing a bespoke NodeJS-based backdoor named NodeInitRAT, which facilitates persistence and reconnaissance activities while communicating with adversary-controlled servers over HTTP. Mocha Manakin has been linked to Interlock ransomware, and while direct ransomware activity has not been observed, there is moderate confidence that unmitigated activity may lead to such outcomes. The effectiveness of paste and run lures, distributed through methods like phishing and web browser injects, has contributed to the actor's increased scope and scale.",
+      "meta": {
+        "refs": [
+          "https://redcanary.com/blog/threat-intelligence/mocha-manakin-nodejs-backdoor/"
+        ]
+      },
+      "uuid": "f2bbe78d-0701-467a-bc5b-3f4423181503",
+      "value": "Mocha Manakin"
+    },
+    {
+      "description": "GreedyBear is a sophisticated threat actor responsible for over $1 million in cryptocurrency theft through a campaign involving 150 malicious Firefox extensions, nearly 500 malicious executables, and numerous fraudulent websites. They employ techniques such as 'Extension Hollowing' to replace legitimate extensions with malicious versions that capture wallet credentials. The campaign is centralized, with most malicious domains resolving to a single IP address, and it has expanded to target other browsers while utilizing AI-generated code to enhance scalability and evade detection.",
+      "meta": {
+        "country": "RU",
+        "refs": [
+          "https://www.koi.ai/blog/greedybear-650-attack-tools-one-coordinated-campaign"
+        ]
+      },
+      "uuid": "33091121-d88f-43a6-b3de-efea4e257375",
+      "value": "GreedyBear"
+    },
+    {
+      "description": "UNG0901 is a cyber-espionage threat actor targeting Russian entities, particularly in the aerospace and defense sectors, utilizing spear-phishing tactics. They deploy the EAGLET backdoor, which exhibits functionalities similar to the Golang-based PhantomDL used by the Head Mare group, including shell, download, and upload capabilities. Notable overlaps in file-naming conventions and targeting strategies further reinforce the connection between UNG0901 and Head Mare.",
+      "meta": {
+        "refs": [
+          "https://www.seqrite.com/blog/operation-cargotalon-ung0901-targets-russian-aerospace-defense-sector-using-eaglet-implant/"
+        ],
+        "synonyms": [
+          "Operation CargoTalon",
+          "Unknown-Group-901"
+        ]
+      },
+      "uuid": "07877f7e-a5ba-487e-8d9c-5cb219343503",
+      "value": "UNG0901"
+    },
+    {
+      "description": "Scripted Sparrow is a prolific Business Email Compromise (BEC) collective that conducts highly targeted phishing campaigns, impersonating professional services firms to deceive finance teams into transferring funds. The group employs a disciplined approach, utilizing consistent language and familiar tones in their communications, while sending between 10,000 and 50,000 emails daily in small batches. They have developed a sophisticated understanding of corporate communication, crafting messages that mimic internal formats and urgency without raising suspicion. Scripted Sparrow relies on a network of US-based mule accounts, with 249 unique bank accounts identified across 42 financial institutions for cash-out operations.",
+      "meta": {
+        "refs": [
+          "https://www.helpnetsecurity.com/2025/12/18/tracking-scripted-sparrow-phishing-campaigns/",
+          "https://www.fortra.com/resources/guides/scripted-sparrow-prolific-bec-threat-group"
+        ]
+      },
+      "uuid": "deba565b-3313-425b-aaa3-2c6034257913",
+      "value": "Scripted Sparrow"
+    },
+    {
+      "description": "TA584 is a prominent initial access broker tracked by Proofpoint since November 2020, known for its high-volume campaigns targeting organizations globally. The actor employs various TTPs, including macro-enabled Excel documents, aggressive URL filtering, and geo-fenced landing pages, while frequently changing lures and delivery methods to evade detection. In 2025, TA584 expanded its geographic targeting to include Germany and Australia, while also introducing new malware such as Tsundere Bot alongside XWorm with the \"P0WER\" configuration. The actor's campaigns are characterized by rapid turnover and deliberate variability, making static indicators less effective for detection.",
+      "meta": {
+        "refs": [
+          "https://www.proofpoint.com/us/blog/threat-insight/cant-stop-wont-stop-ta584-innovates-initial-access",
+          "https://www.linkedin.com/feed/update/urn:li:activity:7401414126620884992/"
+        ],
+        "synonyms": [
+          "Storm-0900"
+        ]
+      },
+      "uuid": "670b3faa-10ab-4501-a982-e1b36233ed02",
+      "value": "TA584"
+    },
+    {
+      "description": "Sinobi is a financially motivated ransomware group that employs data theft and extortion as primary tactics, operating a public-facing leak portal to pressure victims during ransom negotiations. The group utilizes techniques such as phishing, credential compromise, and exploitation of unpatched vulnerabilities for initial access, followed by data exfiltration using tools like RClone. Sinobi ransomware employs Curve-25519 and AES-128-CTR for file encryption, making recovery impossible without the attacker's private key. The group has been linked to significant breaches across various sectors, including automotive, legal, and nonprofit organizations.",
+      "meta": {
+        "refs": [
+          "https://www.esentire.com/blog/threat-actors-deploy-sinobi-ransomware-via-compromised-sonicwall-ssl-vpn-credentials"
+        ]
+      },
+      "uuid": "8e156f06-5e7b-404b-aeab-25f94fa2ba9e",
+      "value": "Sinobi"
+    },
+    {
+      "description": "BreachLaboratory is a cybercrime actor that specializes in the extraction and sale of sensitive financial and identity datasets from various organizations. They have claimed to exfiltrate approximately 950,000 records from Grupo Catalana Occidente and over 18,000 records from Bank Mandiri, with data including customer names, account details, and SWIFT codes. The actor operates on underground forums, selling structured datasets such as CSV files and SQL dumps, and emphasizes the validity and financial utility of the data. Their activities indicate a focus on monetization through direct database sales and potential downstream fraud enablement.",
+      "meta": {
+        "refs": [
+          "https://www.cyfirma.com/news/weekly-intelligence-report-12-december-2025/#:~:text=well%2Dstructured%20operations.-,7.%20Data%20Leaks,-Bank%20Mandiri%20Data"
+        ]
+      },
+      "uuid": "58df3770-e72f-4281-a84d-abc1dce75112",
+      "value": "BreachLaboratory"
+    },
+    {
+      "description": "DarkPink is an APT group that has been active since mid-2021, primarily targeting government, military, and non-profit organizations in Southeast Asia and Europe. The group employs spear phishing techniques, utilizing ISO images and malicious PDF files to deliver custom Trojan programs like TelePowerBot and KamiKakaBot for information theft. They have exploited vulnerabilities such as CVE-2023-38831 to enhance their attack processes and maintain persistence through DLL side-loading and scheduled tasks. DarkPink's operations are characterized by stealth and precision, making them a significant threat in the cyber landscape.",
+      "meta": {
+        "refs": [
+          "https://www.group-ib.com/blog/dark-pink-apt/",
+          "https://www.group-ib.com/blog/dark-pink-episode-2/"
+        ],
+        "synonyms": [
+          "Saaiwc"
+        ]
+      },
+      "uuid": "8456c6f1-bdbb-436e-bd9e-c170b0c510ff",
+      "value": "DarkPink"
+    },
+    {
+      "description": "ViciousTrap has compromised over 5,500 edge devices, transforming them into honeypots and utilizing a shell script called NetGhost to redirect incoming traffic from specific ports to their infrastructure. The actor has targeted various EOL devices, including ASUS routers, Linksys LRT224, and Araknis Networks AN-300-RT-4L2W VPN routers. Observations indicate attempts to deploy a web shell for executing their redirection script, although authorship of the web shell has not been attributed to ViciousTrap. The overall objectives of ViciousTrap remain unclear, but their activities suggest a honeypot-style network aimed at intercepting network flows.",
+      "meta": {
+        "refs": [
+          "https://blog.sekoia.io/vicioustrap-infiltrate-control-lure-turning-edge-devices-into-honeypots-en-masse/"
+        ]
+      },
+      "uuid": "e30ca036-93c8-4970-b52b-d8a0e780c5be",
+      "value": "ViciousTrap"
+    },
+    {
+      "description": "Team46 is a sophisticated APT group active since at least late 2024, targeting Russian government, academic, and media organizations through spearphishing emails disguised as forum invitations or service notifications. They exploit zero-day vulnerabilities like CVE-2025-2783 in Google Chrome (March 2025, Operation ForumTroll) and CVE-2024-6473 in Yandex Browser, deploying multi-stage loaders (e.g., winsta.dll, donut shellcode) that decrypt payloads using machine-specific keys like firmware UUID for environmental guardrails. Key malware includes the Trinper backdoor for keylogging, clipboard theft, file/process discovery, and encrypted C2 exfiltration over HTTPS with domain fronting, alongside auxiliary .NET tools (dirlist.exe, ProcessList.exe) and variants using Cobalt Strike or Dante backdoor; the group employs obfuscation, AMSI bypasses, debugger evasion, and self-deletion for persistence and stealth. Positive Technologies attributes TaxOff operations to Team46 based on identical PowerShell patterns, loaders, and hyphenated CDN-mimicking infrastructure (e.g., ms-appdata-*.global.ssl.fastly.net).",
+      "meta": {
+        "refs": [
+          "https://global.ptsecurity.com/analytics/pt-esc-threat-intelligence/team46-and-taxoff-two-sides-of-the-same-coin",
+          "https://global.ptsecurity.com/en/research/pt-esc-threat-intelligence/taxoff-um-you-ve-got-a-backdoor/"
+        ],
+        "synonyms": [
+          "TaxOff"
+        ]
+      },
+      "uuid": "cd5e544b-0125-4fd7-94e0-97431bf17156",
+      "value": "Team46"
+    },
+    {
+      "description": "UAT-8099 is a Chinese-speaking cybercrime group primarily engaged in SEO fraud and the theft of high-value credentials, configuration files, and certificate data from vulnerable IIS servers. They utilize web shells and PowerShell to deploy the GotoHTTP tool for remote access, while also employing techniques such as DLL sideloading and RDP for persistence. The group has been observed using BadIIS variants for SEO manipulation and executing reconnaissance commands to gather system information. Additionally, they create hidden accounts and utilize VPN tools to maintain long-term access to compromised systems.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://blog.talosintelligence.com/uat-8099-new-persistence-mechanisms-and-regional-focus/",
+          "https://blog.talosintelligence.com/uat-8099-chinese-speaking-cybercrime-group-seo-fraud/"
+        ]
+      },
+      "uuid": "284151b2-6f0b-4835-9589-68a8c3287e1e",
+      "value": "UAT-8099"
+    },
+    {
+      "description": "ByteToBreach is a prolific cybercriminal who operates across multiple platforms, including DarkForums and Telegram, and has been active since at least June 2025. He exploits known vulnerabilities in cloud and corporate infrastructure, reuses stolen credentials, and employs brute force or misconfiguration tactics for initial access, focusing on data exfiltration of sensitive information from high-value targets. ByteToBreach has established a professional-looking website to promote his services and has demonstrated credible activity, with many of his claims supported by verifiable proof.",
+      "meta": {
+        "refs": [
+          "https://www.kelacyber.com/blog/bytetobreach-a-deep-dive-into-a-persistent-data-leak-operator/"
+        ]
+      },
+      "uuid": "f145cc75-45c0-4d14-a8fd-4ed444d0f7b9",
+      "value": "ByteToBreach"
+    },
+    {
+      "description": "Storm-1747 is an intrusion set that develops and operates the Tycoon 2FA phishing kit, which has been active since at least mid-2023 and is known for its sophisticated obfuscation and exfiltration techniques. The kit has been sold and distributed under the PhaaS model, making it one of the most widespread phishing kits by early 2025.",
+      "meta": {
+        "refs": [
+          "https://any.run/cybersecurity-blog/salty2fa-tycoon2fa-hybrid-phishing-2025/"
+        ]
+      },
+      "uuid": "faa83106-1329-4049-87a8-7740d986a349",
+      "value": "Storm-1747"
+    },
+    {
+      "description": "CryptoChameleon is a cybercriminal group known for targeting cryptocurrency exchanges and users to steal digital assets, employing tactics such as VIP spear phishing, SIM swapping, and email hacks. They have leveraged phishing kits, including a notable one associated with LastPass, and utilize infrastructure from bulletproof host NICENIC. The group primarily targets platforms like Coinbase and Ledger, and their attacks are characterized by rapid cash-out efforts following successful breaches. Their operational methods include manually guiding victims through phishing pages to evade detection by automated scanners.",
+      "meta": {
+        "refs": [
+          "https://www.silentpush.com/blog/poisonseed/",
+          "https://www.lookout.com/threat-intelligence/article/cryptochameleon-fcc-phishing-kit"
+        ],
+        "synonyms": [
+          "UNC5356"
+        ]
+      },
+      "uuid": "4f76393a-76a0-428f-9609-704163ef90ce",
+      "value": "CryptoChameleon"
+    },
+    {
+      "description": "UAT-6382 is a Chinese-speaking threat actor that exploits CVE-2025-0944 to gain access to enterprise networks, particularly targeting local governing bodies in the U.S. They deploy web shells like AntSword and chinatso/Chopper on IIS web servers and utilize Rust-based loaders to implement Cobalt Strike and VSHell for persistent access. UAT-6382 employs custom tooling, such as TetraLoader, and conducts reconnaissance to identify and exfiltrate files of interest. Their VShell stager connects to a hardcoded C2 server and executes payloads in memory, indicating modifications made by the actor.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://blog.talosintelligence.com/uat-6382-exploits-cityworks-vulnerability/"
+        ]
+      },
+      "uuid": "ae72a60a-0a0c-4384-8591-11c342c21c41",
+      "value": "UAT-6382"
+    },
+    {
+      "description": "TA829 is a Russia-aligned threat actor that employs the RomCom RAT for intelligence-gathering and financially motivated cyberattacks, exploiting zero-day vulnerabilities in Mozilla Firefox and Microsoft Windows. The group utilizes REM Proxy services hosted on compromised MikroTik routers to relay traffic and disguise its origin. In their operations, victims targeted by TA829 receive a strain known as SlipScreen, while their infrastructure and tactics show significant similarities to those of UNK_GreenSec. TA829's hybrid approach combines espionage with financial fraud, making it a notable player in the cyber threat landscape.",
+      "meta": {
+        "country": "RU",
+        "refs": [
+          "https://www.proofpoint.com/us/blog/threat-insight/10-things-i-hate-about-attribution-romcom-vs-transferloader"
+        ]
+      },
+      "uuid": "e9cba6d4-e413-4c53-8c84-7313f5c6aac5",
+      "value": "TA829"
+    },
+    {
+      "description": "CopyCop is a Russian covert influence network that has established over 300 fictional media websites targeting the US, France, Canada, and other countries, primarily to disseminate pro-Russian and anti-Ukrainian narratives. The network employs TTPs such as deepfakes, fake interviews, and self-hosted LLMs for content generation, while also impersonating local media outlets and fact-checking organizations. Its operations are supported by the Moscow-based Center for Geopolitical Expertise and the GRU, aiming to undermine support for Ukraine and exacerbate political fragmentation in Western nations. CopyCop's influence content is amplified by a network of pro-Russian social media influencers and other Russian influence networks.",
+      "meta": {
+        "country": "RU",
+        "refs": [
+          "https://www.recordedfuture.com/research/copycop-deepens-its-playbook-with-new-websites-and-targets",
+          "https://www.recordedfuture.com/research/russian-influence-assets-converge-on-moldovan-elections",
+          "https://www.recordedfuture.com/research/stimmen-aus-moskau-russian-influence-operations-target-german-elections",
+          "https://www.defense.gouv.fr/actualites/storm-1516-dessous-dune-operation-dinfluence-russe",
+          "https://www.sgdsn.gouv.fr/publications/analyse-du-mode-operatoire-informationnel-russe-storm-1516"
+        ],
+        "synonyms": [
+          "CopyCop"
+        ]
+      },
+      "uuid": "f37e5920-d780-4568-81dc-ae4e12052697",
+      "value": "Storm-1516"
     }
   ],
   "version": 336

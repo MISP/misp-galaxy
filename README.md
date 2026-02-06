@@ -703,7 +703,7 @@ Category: *tea-matrix* - source: ** - total: *7* elements
 
 [Threat Actor](https://www.misp-galaxy.org/threat-actor) - Known or estimated adversary groups targeting organizations and employees. Adversary groups are regularly confused with their initial operation or campaign. threat-actor-classification meta can be used to clarify the understanding of the threat-actor if also considered as operation, campaign or activity group.
 
-Category: *actor* - source: *MISP Project* - total: *899* elements
+Category: *actor* - source: *MISP Project* - total: *919* elements
 
 [[HTML](https://www.misp-galaxy.org/threat-actor)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/threat-actor.json)]
 
@@ -775,7 +775,7 @@ Category: *tool* - source: *MISP Project* - total: *606* elements
 
 [UAVs/UCAVs](https://www.misp-galaxy.org/uavs) - OSINT Database of Unmanned Combat Aerial Vehicle
 
-Category: *Military equipment* - source: *OSINT* - total: *645* elements
+Category: *Military equipment* - source: *OSINT* - total: *654* elements
 
 [[HTML](https://www.misp-galaxy.org/uavs)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/uavs.json)]
 
