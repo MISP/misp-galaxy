@@ -19689,6 +19689,16 @@
       },
       "uuid": "9551c163-4be3-4f05-b9a3-660238583644",
       "value": "SHADOW-VOID-042"
+    },
+    {
+      "description": "IronErn440 is a threat actor tracked by Oligo Security for orchestrating the ShadowRay 2.0 campaign, an evolution of attacks since September 2023 exploiting CVE-2023-48022, a missing authentication flaw in the Ray AI framework's Job Submission API. The actor submits malicious jobs to exposed Ray clusters (port 8265), deploying multi-stage Bash/Python payloads via GitHub/GitLab repositories like \"ironern440-group\" and \"thisisforwork440-ops\" to propagate worm-like, hijack NVIDIA GPUs for XMRig cryptomining, pivot laterally, create reverse shells, kill competing miners, limit CPU to 60%, and persist via cron jobs pulling updates every 15 minutes. Additional capabilities include DDoS via sockstress on port 3333 (targeting mining pools), region-specific malware (e.g., China checks), LLM-generated payloads, and use of tools like interact.sh for scanning over 230,500 public Ray servers; mitigations involve firewalling, authorization, and Anyscale's port checker.",
+      "meta": {
+        "refs": [
+          "https://www.oligo.security/blog/shadowray-2-0-attackers-turn-ai-against-itself-in-global-campaign-that-hijacks-ai-into-self-propagating-botnet"
+        ]
+      },
+      "uuid": "91f6f235-5798-4ec5-a52e-c858696ecb3b",
+      "value": "IronErn440"
     }
   ],
   "version": 337
