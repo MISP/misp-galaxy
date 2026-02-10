@@ -19689,6 +19689,113 @@
       },
       "uuid": "9551c163-4be3-4f05-b9a3-660238583644",
       "value": "SHADOW-VOID-042"
+    },
+    {
+      "description": "IronErn440 is a threat actor tracked by Oligo Security for orchestrating the ShadowRay 2.0 campaign, an evolution of attacks since September 2023 exploiting CVE-2023-48022, a missing authentication flaw in the Ray AI framework's Job Submission API. The actor submits malicious jobs to exposed Ray clusters (port 8265), deploying multi-stage Bash/Python payloads via GitHub/GitLab repositories like \"ironern440-group\" and \"thisisforwork440-ops\" to propagate worm-like, hijack NVIDIA GPUs for XMRig cryptomining, pivot laterally, create reverse shells, kill competing miners, limit CPU to 60%, and persist via cron jobs pulling updates every 15 minutes. Additional capabilities include DDoS via sockstress on port 3333 (targeting mining pools), region-specific malware (e.g., China checks), LLM-generated payloads, and use of tools like interact.sh for scanning over 230,500 public Ray servers; mitigations involve firewalling, authorization, and Anyscale's port checker.",
+      "meta": {
+        "refs": [
+          "https://www.oligo.security/blog/shadowray-2-0-attackers-turn-ai-against-itself-in-global-campaign-that-hijacks-ai-into-self-propagating-botnet"
+        ]
+      },
+      "uuid": "91f6f235-5798-4ec5-a52e-c858696ecb3b",
+      "value": "IronErn440"
+    },
+    {
+      "description": "ComicForm is an emerging cyber threat actor tracked since at least April 2025, specializing in targeted phishing campaigns against organizations in Eurasian countries including Belarus, Kazakhstan, and Russia, often in sectors like banking, production, and critical infrastructure. The group deploys FormBook infostealer malware via sophisticated loaders: an obfuscated .NET executable unpacks MechMatrix Pro.dll, which decrypts and executes Montero.dll dropper in memory to deliver FormBook, establishing persistence through scheduled tasks and antivirus exclusions while evading detection. Malware binaries uniquely embed Tumblr links to innocuous comic superhero GIFs (e.g., Batman), from which the actor derives its name, alongside phishing lures themed around recruitment, quotes, or production facilities using Russian free email services like Rivet_kz. Active through at least September 2025 with no confirmed overlaps to other actors like pro-Russian SectorJ149 despite concurrent Eurasian operations, ComicForm demonstrates proficiency in commodity malware customization and regional targeting.",
+      "meta": {
+        "refs": [
+          "https://ics-cert.kaspersky.com/publications/reports/2025/12/01/apt-and-financial-attacks-on-industrial-organizations-in-q3-2025/"
+        ]
+      },
+      "uuid": "84fbc654-6d8d-46ad-bc07-9d5a96118a05",
+      "value": "ComicForm"
+    },
+    {
+      "description": "TGR-STA-1030 is a state-aligned cyberespionage group operating out of Asia, known for compromising government and critical infrastructure organizations across 37 countries. The group frequently deploys web shells, such as Behinder, Neo-reGeorg, and Godzilla, on both external and internal web servers to maintain access and enable lateral movement. TGR-STA-1030 has conducted extensive reconnaissance against government infrastructure, particularly focusing on nations in the South China Sea and Gulf of Thailand regions, as well as European countries like Germany. The group primarily targets government ministries and departments for espionage purposes, especially those exploring specific economic partnerships.",
+      "meta": {
+        "refs": [
+          "https://unit42.paloaltonetworks.com/shadow-campaigns-uncovering-global-espionage/"
+        ],
+        "synonyms": [
+          "TGR-STA-1030",
+          "Shadow Campaigns"
+        ]
+      },
+      "uuid": "1006069d-722f-4149-8609-2d524b8ba9dd",
+      "value": "UNC6619"
+    },
+    {
+      "description": "RedKitten is a campaign targeting Iranian interests, particularly NGOs and individuals documenting human rights abuses, first observed in January 2026. The malware utilizes GitHub and Google Drive for configuration and payload retrieval, while employing Telegram for command and control. Although precise attribution is challenging, the activity exhibits TTPs associated with Iranian state-sponsored actors and linguistic indicators suggest a Farsi-speaking threat actor. RedKitten is characterized as an AI-accelerated campaign exploiting the humanitarian crisis surrounding Iran’s Dey 1404 protests.",
+      "meta": {
+        "refs": [
+          "https://harfanglab.io/insidethelab/redkitten-ai-accelerated-campaign-targeting-iranian-protests/"
+        ]
+      },
+      "uuid": "2974b903-822a-4a34-af86-43ed231c3bc7",
+      "value": "RedKitten"
+    },
+    {
+      "description": "PayTool is a threat actor that operates a phishing ecosystem focused on traffic violation and fine payment scams targeting Canadians through SMS-based social engineering. Their campaigns impersonate Canadian government traffic enforcement services, utilizing a federal-style \"Traffic Ticket Search Portal\" model that aggregates provincial fine payment portals. PayTool maintains a pool of generic domains to ensure continuity when specific provincial domains are blacklisted, exploiting brand trust with disposable domains. Recommendations include implementing DNS and web gateway controls to block newly registered domains and known PayTool-related IP ranges.",
+      "meta": {
+        "refs": [
+          "https://www.cloudsek.com/blog/pivoting-from-paytool-tracking-various-frauds-and-e-crime-targeting-canada",
+          "https://flare.io/learn/resources/blog/paytool-targets-canadians-traffic-scams"
+        ]
+      },
+      "uuid": "e08ab051-f2d5-42c3-960f-efffebaa7f7c",
+      "value": "PayTool"
+    },
+    {
+      "description": "UNK_AcademicFlare is a suspected Russia-aligned threat actor that conducts device code phishing campaigns by leveraging compromised email addresses from government and military organizations. The actor engages in rapport building through benign outreach, ultimately leading to a phishing attempt via a Cloudflare Worker URL that spoofs a OneDrive account. Targeted sectors include government, think tanks, higher education, and transportation in the U.S. and Europe, with a focus on Russia and Ukraine-themed content. Their tactics include using compromised accounts for initial contact and employing device code phishing techniques to extract credentials.",
+      "meta": {
+        "country": "RU",
+        "refs": [
+          "https://www.proofpoint.com/us/blog/threat-insight/access-granted-phishing-device-code-authorization-account-takeover"
+        ]
+      },
+      "uuid": "25768037-105d-4234-8b51-846ec614ecfa",
+      "value": "UNK_AcademicFlare"
+    },
+    {
+      "description": "Femwar02 is a previously unknown pro-Russian ransomware threat actor that emerged in early 2026, linked to a major cyberattack on Italy's Sapienza University of Rome in February 2026, which caused a full network shutdown and operational disruptions. The group deploys Bablock (also known as Rorschach), a next-generation ransomware strain first identified in 2023 that features fast hybrid encryption (curve25519 and hc-128), partial file encryption for speed, direct system calls to evade detection, and domain-wide propagation via Group Policy on Windows Domain Controllers. Bablock shares code similarities with LockBit 2.0 but incorporates elements from other families like Babuk and DarkSide, often delivered via encrypted payloads, DLL sideloading with tools like DarkLoader, and exploits such as those in Zimbra or phishing. Notably, the malware skips encrypting files written in Russian, reinforcing its pro-Russian alignment, with no prior attributions or campaigns documented before the Sapienza incident.",
+      "meta": {
+        "country": "RU",
+        "refs": [
+          "https://www.bleepingcomputer.com/news/security/italian-university-la-sapienza-goes-offline-after-cyberattack/"
+        ]
+      },
+      "uuid": "2e32124d-b4e1-48e3-918a-72cc37d3e8ea",
+      "value": "Femwar02"
+    },
+    {
+      "description": "SlopAds is a sophisticated ad fraud and click fraud operation involving a collection of 224 apps, downloaded over 38 million times globally. The threat actors utilize steganography, hidden WebViews, and a mobile marketing attribution platform to execute their fraud schemes, which include generating fraudulent ad impressions and clicks. Their infrastructure comprises multiple C2 servers and over 300 related domains, indicating plans for expansion. The operation has been linked to 2.3 billion bid requests per day, with significant traffic originating from the United States, India, and Brazil.",
+      "meta": {
+        "refs": [
+          "https://www.humansecurity.com/learn/blog/satori-threat-intelligence-alert-slopads-covers-fraud-with-layers-of-obfuscation/"
+        ]
+      },
+      "uuid": "10cc894e-13e6-4903-a762-7d997658d5c0",
+      "value": "SlopAds"
+    },
+    {
+      "description": "WhiteCobra is a threat actor that has infiltrated the Visual Studio Code marketplace and Open VSX registry, deploying 24 malicious extensions targeting cryptocurrency development tools, particularly Solidity. The group employs social engineering tactics, manipulates download counts and reviews, and uses fake branding to establish credibility for their extensions, which deliver LummaStealer on Windows and unknown malware on macOS. WhiteCobra has been linked to a $500,000 cryptocurrency theft in July 2025 and maintains detailed playbooks with revenue targets, showcasing their organized and persistent operations. Despite ongoing efforts by security researchers to remove their malicious extensions, WhiteCobra continues to upload new threats weekly, highlighting the sophistication of their TTPs.",
+      "meta": {
+        "refs": [
+          "https://www.koi.ai/blog/whitecobra-vscode-cursor-extensions-malware"
+        ]
+      },
+      "uuid": "e36c1f61-1374-48dd-a710-87c290097f0c",
+      "value": "WhiteCobra"
+    },
+    {
+      "description": "CL-STA-1009 is a threat activity cluster associated with a suspected nation-state actor utilizing the Airstalk malware family, which includes both PowerShell and .NET variants. The .NET variant features a multi-threaded C2 protocol, versioning, and complex tasks, employing defense evasion techniques such as signed binaries with a revoked certificate and manipulation of PE timestamps. The malware is believed to have been used in supply chain attacks, with a development timeline established through signed timestamps. The persistent threat posed by this actor is underscored by the adaptive nature of the malware.",
+      "meta": {
+        "refs": [
+          "https://unit42.paloaltonetworks.com/new-windows-based-malware-family-airstalk/"
+        ]
+      },
+      "uuid": "2462885d-f49e-4731-a163-da704e50aca7",
+      "value": "CL-STA-1009"
     }
   ],
   "version": 337
