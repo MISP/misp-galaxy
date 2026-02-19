@@ -1,0 +1,144 @@
+{
+  "authors": [
+    "Censys"
+  ],
+  "category": "attack-pattern",
+  "description": "Web-native delivery and trust-abuse patterns where adversaries reuse security-themed interfaces and platform-sanctioned browser workflows as the delivery surface (e.g., verification challenges, remediation prompts), inheriting user and platform trust rather than compromising the underlying service.",
+  "name": "Web Delivery Interfaces",
+  "source": "Open Sources",
+  "type": "web-delivery-interfaces",
+  "uuid": "96021c62-b516-4df8-9eee-b9f2c5c76db5",
+  "values": [
+    {
+      "description": "Systematic reuse of security-themed interfaces, platform-sanctioned workflows, and conditioned user behavior to deliver malware. Rather than compromising trusted services, adversaries inherit trust by operating inside familiar verification and browser workflows that users and tooling are trained to accept.",
+      "meta": {
+        "context": [
+          "trust inheritance",
+          "web-native delivery",
+          "security-themed UX"
+        ],
+        "refs": [
+          "https://censys.com/blog/living-off-the-web-how-trust-infrastructure-became-a-malware-delivery-interface"
+        ],
+        "synonyms": [
+          "LOTW"
+        ]
+      },
+      "uuid": "eb795f5c-37cc-4218-9400-3412cce2da98",
+      "value": "Living Off the Web"
+    },
+    {
+      "description": "A fragmented, fast-changing web abuse pattern that imitates legitimate verification challenges and uses trusted web infrastructure as the delivery surface. Visual similarity across pages is common, but underlying delivery behavior can vary significantly.",
+      "meta": {
+        "context": [
+          "verification challenge lure",
+          "web-based malware delivery",
+          "interface standardization"
+        ],
+        "refs": [
+          "https://censys.com/blog/living-off-the-web-how-trust-infrastructure-became-a-malware-delivery-interface"
+        ],
+        "synonyms": [
+          "FakeCaptcha"
+        ]
+      },
+      "uuid": "5eaa7d70-216a-4778-b835-e01fbeafed47",
+      "value": "Fake Captcha"
+    },
+    {
+      "description": "Use of verification UI patterns closely resembling common Cloudflare-style browser checks to reduce suspicion and accelerate user compliance. This describes imitation of a familiar interface style, not necessarily abuse of Cloudflare infrastructure.",
+      "meta": {
+        "context": [
+          "interface mimicry",
+          "familiar security interstitial",
+          "social engineering"
+        ],
+        "refs": [
+          "https://censys.com/blog/living-off-the-web-how-trust-infrastructure-became-a-malware-delivery-interface"
+        ]
+      },
+      "uuid": "1bd0efb6-5d38-4ba7-a18b-ff60ad920b65",
+      "value": "Cloudflare-style Verification Challenge Imitation"
+    },
+    {
+      "description": "A web lure pattern that frames malicious user action as a browser or security “fix,” often guiding victims through steps that lead to self-executed payloads. Commonly appears alongside or following Fake Captcha-style lures in web delivery chains.",
+      "meta": {
+        "context": [
+          "remediation prompt",
+          "guided user execution",
+          "conversion step"
+        ],
+        "refs": [
+          "https://censys.com/blog/living-off-the-web-how-trust-infrastructure-became-a-malware-delivery-interface"
+        ],
+        "synonyms": [
+          "Click-Fix"
+        ]
+      },
+      "uuid": "acb1e0ac-c6d2-4e3a-9806-551fef750edb",
+      "value": "ClickFix"
+    },
+    {
+      "description": "A delivery model where the page guides the user to paste and execute a command that has been placed on the clipboard (commonly PowerShell or VBScript), shifting execution responsibility onto the victim through explicit instructions.",
+      "meta": {
+        "context": [
+          "paste-to-run",
+          "PowerShell",
+          "VBScript",
+          "self-execution"
+        ],
+        "refs": [
+          "https://censys.com/blog/living-off-the-web-how-trust-infrastructure-became-a-malware-delivery-interface"
+        ]
+      },
+      "uuid": "a6830ccf-18bf-40fc-8288-b5b3c923431c",
+      "value": "Clipboard-driven Execution Delivery"
+    },
+    {
+      "description": "A delivery model where the web lure culminates in downloading and running an installer package (e.g., MSI). The interface serves as the trust gateway and conversion layer for an installer-based payload chain.",
+      "meta": {
+        "context": [
+          "installer payload",
+          "MSI delivery",
+          "download-and-run"
+        ],
+        "refs": [
+          "https://censys.com/blog/living-off-the-web-how-trust-infrastructure-became-a-malware-delivery-interface"
+        ]
+      },
+      "uuid": "323d1da9-3021-47d2-92d1-4549fafbd103",
+      "value": "Installer-based Delivery (MSI)"
+    },
+    {
+      "description": "A delivery model where the interface triggers server-driven, push-style frameworks that expose minimal or no client-side execution artifacts. The user interaction remains the conversion step, while execution mechanics may occur without obvious client-side commands.",
+      "meta": {
+        "context": [
+          "push-style framework",
+          "minimal client artifacts",
+          "delivery decoupling"
+        ],
+        "refs": [
+          "https://censys.com/blog/living-off-the-web-how-trust-infrastructure-became-a-malware-delivery-interface"
+        ]
+      },
+      "uuid": "47e0cf62-4993-4f86-b194-9c2a1d9d7e09",
+      "value": "Server-driven Push-style Delivery"
+    },
+    {
+      "description": "A pattern where a widely reused interface provides a standardized interaction layer that decouples initial trust abuse (the lure/UX) from downstream execution (payload, malware family, or operator). Visual similarity and user interaction are not reliable signals for attribution or scoping.",
+      "meta": {
+        "context": [
+          "decoupled delivery",
+          "non-attributable UX",
+          "behavioral diversity"
+        ],
+        "refs": [
+          "https://censys.com/blog/living-off-the-web-how-trust-infrastructure-became-a-malware-delivery-interface"
+        ]
+      },
+      "uuid": "152c2df7-6a95-445f-9bef-e2298921e916",
+      "value": "Standardized Interaction Layer (Trust Interface Decoupling)"
+    }
+  ],
+  "version": 1
+}
