@@ -95,7 +95,7 @@ Category: *user-tie* - source: *https://www.cisotradecraft.com/bitns* - total: *
 
 [Botnet](https://www.misp-galaxy.org/botnet) - botnet galaxy
 
-Category: *tool* - source: *MISP Project* - total: *132* elements
+Category: *tool* - source: *MISP Project* - total: *133* elements
 
 [[HTML](https://www.misp-galaxy.org/botnet)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/botnet.json)]
 
@@ -543,7 +543,7 @@ Category: *actor* - source: *MISP Project* - total: *126* elements
 
 [Ransomware](https://www.misp-galaxy.org/ransomware) - Ransomware galaxy based on different sources and maintained by the MISP Project.
 
-Category: *tool* - source: *Various* - total: *2077* elements
+Category: *tool* - source: *Various* - total: *2089* elements
 
 [[HTML](https://www.misp-galaxy.org/ransomware)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/ransomware.json)]
 
@@ -639,7 +639,7 @@ Category: *sector* - source: *CERT-EU* - total: *118* elements
 
 [Sigma-Rules](https://www.misp-galaxy.org/sigma-rules) - MISP galaxy cluster based on Sigma Rules.
 
-Category: *rules* - source: *https://github.com/jstnk9/MISP/tree/main/misp-galaxy/sigma* - total: *3083* elements
+Category: *rules* - source: *https://github.com/jstnk9/MISP/tree/main/misp-galaxy/sigma* - total: *3104* elements
 
 [[HTML](https://www.misp-galaxy.org/sigma-rules)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/sigma-rules.json)]
 
@@ -658,6 +658,14 @@ Category: *dark-patterns* - source: *CIRCL* - total: *19* elements
 Category: *sod-matrix* - source: *https://github.com/cudeso/SoD-Matrix* - total: *276* elements
 
 [[HTML](https://www.misp-galaxy.org/sod-matrix)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/sod-matrix.json)]
+
+## Stalkerware
+
+[Stalkerware](https://www.misp-galaxy.org/stalkerware) - A list of stalkerware and watchware.
+
+Category: *tool* - source: *https://github.com/AssoEchap/stalkerware-indicators* - total: *170* elements
+
+[[HTML](https://www.misp-galaxy.org/stalkerware)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/stalkerware.json)]
 
 ## Stealer
 
@@ -703,7 +711,7 @@ Category: *tea-matrix* - source: ** - total: *7* elements
 
 [Threat Actor](https://www.misp-galaxy.org/threat-actor) - Known or estimated adversary groups targeting organizations and employees. Adversary groups are regularly confused with their initial operation or campaign. threat-actor-classification meta can be used to clarify the understanding of the threat-actor if also considered as operation, campaign or activity group.
 
-Category: *actor* - source: *MISP Project* - total: *899* elements
+Category: *actor* - source: *MISP Project* - total: *941* elements
 
 [[HTML](https://www.misp-galaxy.org/threat-actor)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/threat-actor.json)]
 
