@@ -1,5 +1,6 @@
 # misp-galaxy
 
+![misp galaxy logo](https://raw.githubusercontent.com/MISP/misp-galaxy/aa41337fd78946a60aef3783f58f337d2342430a/doc/images/misp-galaxy-logo.png)
 ![Python application](https://github.com/MISP/misp-galaxy/workflows/Python%20application/badge.svg)
 
 ![Screenshot - MISP galaxy integeration in MISP threat intelligence platform](https://raw.githubusercontent.com/MISP/misp-galaxy/aa41337fd78946a60aef3783f58f337d2342430a/doc/images/galaxy.png)
