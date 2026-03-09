@@ -708,6 +708,14 @@ Category: *tea-matrix* - source: ** - total: *7* elements
 
 [[HTML](https://www.misp-galaxy.org/tea-matrix)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/tea-matrix.json)]
 
+## Canada Listed Terrorist Entities
+
+[Canada Listed Terrorist Entities](https://www.misp-galaxy.org/terrorist-groups) - Entities listed under Canada's Criminal Code as terrorist entities.
+
+Category: *threat-actor* - source: *https://www.publicsafety.gc.ca/cnt/_xml/lstd-ntts-eng.xml* - total: *90* elements
+
+[[HTML](https://www.misp-galaxy.org/terrorist-groups)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/terrorist-groups.json)]
+
 ## Threat Actor
 
 [Threat Actor](https://www.misp-galaxy.org/threat-actor) - Known or estimated adversary groups targeting organizations and employees. Adversary groups are regularly confused with their initial operation or campaign. threat-actor-classification meta can be used to clarify the understanding of the threat-actor if also considered as operation, campaign or activity group.
