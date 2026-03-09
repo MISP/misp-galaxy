@@ -186,7 +186,7 @@ def main() -> None:
             "value": value,
             "description": description,
             "uuid": str(uuid.uuid5(UUID_NS, value)),
-            "meta": {"raw_fields": fields},
+            "meta": dict(fields),
         }
         if aliases:
             cluster["meta"]["synonyms"] = aliases
