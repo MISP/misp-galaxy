@@ -1,5 +1,6 @@
 # misp-galaxy
 
+![misp galaxy logo](https://raw.githubusercontent.com/MISP/misp-galaxy/refs/heads/main/doc/images/misp-galaxy-logo.png)
 ![Python application](https://github.com/MISP/misp-galaxy/workflows/Python%20application/badge.svg)
 
 ![Screenshot - MISP galaxy integeration in MISP threat intelligence platform](https://raw.githubusercontent.com/MISP/misp-galaxy/aa41337fd78946a60aef3783f58f337d2342430a/doc/images/galaxy.png)
@@ -199,7 +200,7 @@ Category: *actor* - source: *MISP Project* - total: *4* elements
 
 [Exploit-Kit](https://www.misp-galaxy.org/exploit-kit) - Exploit-Kit is an enumeration of some exploitation kits used by adversaries. The list includes document, browser and router exploit kits.It's not meant to be totally exhaustive but aim at covering the most seen in the past 5 years
 
-Category: *tool* - source: *MISP Project* - total: *52* elements
+Category: *tool* - source: *MISP Project* - total: *53* elements
 
 [[HTML](https://www.misp-galaxy.org/exploit-kit)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/exploit-kit.json)]
 
@@ -707,11 +708,19 @@ Category: *tea-matrix* - source: ** - total: *7* elements
 
 [[HTML](https://www.misp-galaxy.org/tea-matrix)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/tea-matrix.json)]
 
+## Canada Listed Terrorist Entities
+
+[Canada Listed Terrorist Entities](https://www.misp-galaxy.org/terrorist-groups) - Entities listed under Canada's Criminal Code as terrorist entities.
+
+Category: *threat-actor* - source: *https://www.publicsafety.gc.ca/cnt/_xml/lstd-ntts-eng.xml* - total: *90* elements
+
+[[HTML](https://www.misp-galaxy.org/terrorist-groups)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/terrorist-groups.json)]
+
 ## Threat Actor
 
 [Threat Actor](https://www.misp-galaxy.org/threat-actor) - Known or estimated adversary groups targeting organizations and employees. Adversary groups are regularly confused with their initial operation or campaign. threat-actor-classification meta can be used to clarify the understanding of the threat-actor if also considered as operation, campaign or activity group.
 
-Category: *actor* - source: *MISP Project* - total: *941* elements
+Category: *actor* - source: *MISP Project* - total: *953* elements
 
 [[HTML](https://www.misp-galaxy.org/threat-actor)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/threat-actor.json)]
 
@@ -783,7 +792,7 @@ Category: *tool* - source: *MISP Project* - total: *606* elements
 
 [UAVs/UCAVs](https://www.misp-galaxy.org/uavs) - OSINT Database of Unmanned Combat Aerial Vehicle
 
-Category: *Military equipment* - source: *OSINT* - total: *661* elements
+Category: *Military equipment* - source: *OSINT* - total: *663* elements
 
 [[HTML](https://www.misp-galaxy.org/uavs)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/uavs.json)]
 
