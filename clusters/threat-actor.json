@@ -20114,6 +20114,92 @@
       },
       "uuid": "207fea73-aebd-40c0-a8de-63bb605cada2",
       "value": "APTIran"
+    },
+    {
+      "description": "TeamPCP is a threat actor that has executed a coordinated series of supply chain attacks, compromising widely-used open source tools such as Trivy, KICS, and LiteLLM to deploy credential-stealing malware. They employed techniques like credential harvesting, lateral movement within Kubernetes environments, and audio steganography to evade detection. The group has demonstrated the ability to leverage stolen credentials to propagate attacks across multiple ecosystems, including npm and PyPI, using a self-propagating worm known as CanisterWorm. Their operations have included the use of AES-256 encryption and RSA-4096 for exfiltration of sensitive data.",
+      "meta": {
+        "refs": [
+          "https://www.trendmicro.com/en_us/research/26/c/teampcp-telnyx-attack-marks-a-shift-in-tactics.html",
+          "https://www.trendmicro.com/en_us/research/26/c/inside-litellm-supply-chain-compromise.html",
+          "https://tracebit.com/blog/detecting-cicd-supply-chain-attacks-with-canary-credentials"
+        ]
+      },
+      "uuid": "d3682137-2845-424f-be8a-9112d23f4f58",
+      "value": "TeamPCP"
+    },
+    {
+      "description": "Larva-26002 targets improperly managed MS-SQL servers, exploiting vulnerabilities such as brute force and dictionary attacks. The actor has distributed Trigona and Mimic ransomware, utilizing the Bulk Copy Program for exploitation and installing remote access tools like AnyDesk and Teramind. In their attacks, they also deploy scanner malware, including ICE Cloud Client written in Go and a Rust-based scanner. After compromising systems, they execute commands to gather information about the infected environment.",
+      "meta": {
+        "refs": [
+          "https://asec.ahnlab.com/en/92988/"
+        ]
+      },
+      "uuid": "cab59c56-7446-4c62-bb4e-0887fca42839",
+      "value": "Larva-26002"
+    },
+    {
+      "description": "Bearlyfy has been attributed to over 70 cyber attacks targeting Russian companies since its emergence in January 2025, employing a custom Windows ransomware strain known as GenieLocker. The group operates with dual objectives of extortion and sabotage, utilizing a modified version of PolyVice and leveraging vulnerabilities in external services and applications for initial access. Analysis reveals overlaps with PhantomCore, indicating a pro-Ukrainian interest, while Bearlyfy's attacks are characterized by minimal preparation and a focus on immediate impact through data encryption and destruction. Approximately 20% of victims reportedly pay the ransom, with demands escalating to hundreds of thousands of dollars.",
+      "meta": {
+        "country": "UA",
+        "refs": [
+          "https://therecord.media/ransomware-ukraine-russia-bearlyfy",
+          "https://www.f6.ru/blog/bearlyfy/"
+        ],
+        "synonyms": [
+          "Labubu"
+        ]
+      },
+      "uuid": "0979be99-61f3-4356-98b5-db06e24f2049",
+      "value": "Bearlyfy"
+    },
+    {
+      "description": "UAT-10608 is a threat cluster observed by Cisco Talos conducting a large-scale, automated credential-harvesting campaign against public-facing web applications, especially Next.js deployments, using a custom framework called NEXUS Listener to extract and exfiltrate secrets such as credentials, SSH keys, cloud tokens, and API keys. The activity has been linked to broad opportunistic scanning and at least 766 compromised hosts across multiple regions and cloud providers.",
+      "meta": {
+        "refs": [
+          "https://blog.talosintelligence.com/uat-10608-inside-a-large-scale-automated-credential-harvesting-operation-targeting-web-applications/"
+        ]
+      },
+      "uuid": "88ba3275-6eda-4ff4-b54e-1be126e13bec",
+      "value": "UAT-10608"
+    },
+    {
+      "description": "Arcane Werewolf has been observed targeting Russian manufacturing enterprises through phishing emails that lead to malicious links and spoofed websites. The actor has utilized ZIP archives containing malicious LNK files and a C++ dropper in their campaigns. Their infrastructure includes a C2 server disguised as a Russian manufacturing company website. Kaspersky researchers have noted their evolving TTPs, indicating either a new group or one that has significantly improved its methods.",
+      "meta": {
+        "refs": [
+          "https://bi.zone/eng/expertise/blog/arcane-werewolf-vernulsya-s-obnovlennym-implantom-loki/"
+        ],
+        "synonyms": [
+          "Arcane Werewolf"
+        ]
+      },
+      "uuid": "e6e4a9a2-e20d-4f95-8b8b-73b21a3d3fa9",
+      "value": "Mythic Likho"
+    },
+    {
+      "description": "UAC-0255 is a threat actor that conducted a phishing campaign impersonating CERT-UA to distribute the AGEWHEEZE RAT, targeting organizations in Ukraine's public and private sectors. The campaign is part of a broader trend of using trusted identities to enhance victim engagement, as seen in previous activities like UAC-0190 and UAC-0252. CERT-UA identified UAC-0255 after discovering links to the CyberSerp Telegram channel, which claimed responsibility for the attack. The activity is documented under the identifier CERT-UA#21075, with detection rules available for cybersecurity analysts.",
+      "meta": {
+        "country": "RU",
+        "refs": [
+          "https://socprime.com/blog/uac-0255-distributing-agewheeze-rat/",
+          "https://cert.gov.ua/article/6288047"
+        ],
+        "synonyms": [
+          "UAC-0255"
+        ]
+      },
+      "uuid": "898033a1-8e4c-400d-b4a2-c59bfc64970a",
+      "value": "Cyber Serp"
+    },
+    {
+      "description": "RuskiNet is a pro-Russian hacktivist collective associated with disruptive operations including DDoS attacks, website defacements, phishing, and data leaks against government, infrastructure, financial, and civil targets.",
+      "meta": {
+        "country": "RU",
+        "refs": [
+          "https://cybelangel.com/blog/ruskinet-hacktivism-apt-threats/"
+        ]
+      },
+      "uuid": "c2049438-940f-4961-a072-4b0981e81471",
+      "value": "RuskiNet"
     }
   ],
   "version": 341
