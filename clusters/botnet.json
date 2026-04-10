@@ -2087,7 +2087,9 @@
     {
       "description": "Aisuru is a Mirai-derivative DDoS botnet active since at least August 2024. The botnet has evolved through two distinct generations — transitioning from DNS A record C2 resolution to a DNS TXT scheme using CAFEBABE XOR-encoded IP addresses, and most recently adopting HMAC-SHA256 authentication with a new 0x1CEB00DA protocol magic.",
       "meta": {
-        "refs": "https://github.com/deepfield/public-research"
+        "refs": [
+          "https://github.com/deepfield/public-research"
+        ]
       },
       "related": [
         {
@@ -2111,15 +2113,19 @@
     {
       "description": "CECbot: Android TV botnet with HDMI-CEC abuse, successor to Katana",
       "meta": {
-        "refs": "https://github.com/deepfield/public-research"
+        "refs": [
+          "https://github.com/deepfield/public-research"
+        ]
       },
       "uuid": "9f33caea-0c33-4f3e-8b26-f7a86c8d0dae",
-      "value": "cecbot"
+      "value": "CECbot"
     },
     {
       "description": "Independent DDoS botnet on ADB attack surface, CCTV-themed C2 domains",
       "meta": {
-        "refs": "https://github.com/deepfield/public-research"
+        "refs": [
+          "https://github.com/deepfield/public-research"
+        ]
       },
       "uuid": "c1b0b636-4e47-401e-aedc-116e7f1cd707",
       "value": "drifter"
@@ -2127,7 +2133,9 @@
     {
       "description": "CatDDoS derivative with modified RC4 cipher, OpenNIC C2",
       "meta": {
-        "refs": "https://github.com/deepfield/public-research"
+        "refs": [
+          "https://github.com/deepfield/public-research"
+        ]
       },
       "related": [
         {
@@ -2142,17 +2150,15 @@
       "value": "cecilio"
     },
     {
-      "description": "",
-      "meta": {
-        "refs": ""
-      },
       "uuid": "f72bbd9f-28b7-4b2f-8fb0-55708c2390c9",
       "value": "CatDDoS"
     },
     {
       "description": "Mirai variant sharing code lineage with Aisuru, DoH C2 via mbedTLS",
       "meta": {
-        "refs": "https://github.com/deepfield/public-research"
+        "refs": [
+          "https://github.com/deepfield/public-research"
+        ]
       },
       "related": [
         {
@@ -2176,7 +2182,9 @@
     {
       "description": "Mirai variant with on-device compiled rootkit, targeting Android TV set-top boxes",
       "meta": {
-        "refs": "https://github.com/deepfield/public-research"
+        "refs": [
+          "https://github.com/deepfield/public-research"
+        ]
       },
       "related": [
         {
@@ -2200,7 +2208,9 @@
     {
       "description": "Dual-purpose residential proxy and DDoS botnet, 3M+ devices observed",
       "meta": {
-        "refs": "https://github.com/deepfield/public-research"
+        "refs": [
+          "https://github.com/deepfield/public-research"
+        ]
       },
       "uuid": "29f64438-a96a-457e-879e-bbb8ec6251f5",
       "value": "kimwolf"
@@ -2208,11 +2218,43 @@
     {
       "description": "Android TV/IoT DDoS botnet via ADB, operationally linked to ecosystem",
       "meta": {
-        "refs": "https://github.com/deepfield/public-research"
+        "refs": [
+          "https://github.com/deepfield/public-research"
+        ]
       },
       "uuid": "e48ba3aa-0c0c-4d22-aec2-ce31ad893153",
       "value": "mossadproxy"
+    },
+    {
+      "description": "Variant of Aisuru.",
+      "meta": {
+        "refs": [
+          "https://blog.xlab.qianxin.com/large-scale-botnet-airashi-en/",
+          "https://blog.polyswarm.io/airashi-botnet"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "825591d0-dba5-4084-b9f9-3a5bc16604ef",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "variant-of"
+        }
+      ],
+      "uuid": "0ab63bf2-a47a-4a5d-b562-7986518c0ee8",
+      "value": "Airashi"
+    },
+    {
+      "description": "Malware used to run a DDoS botnet.",
+      "meta": {
+        "refs": [
+          "https://malpedia.caad.fkie.fraunhofer.de/details/elf.fodcha"
+        ]
+      },
+      "uuid": "09e9e0dc-7520-4479-b7e6-2a4b68f51379",
+      "value": "Fodcha"
     }
   ],
-  "version": 39
+  "version": 40
 }
