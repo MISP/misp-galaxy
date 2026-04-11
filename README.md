@@ -364,6 +364,14 @@ Category: *engage* - source: *https://engage.mitre.org* - total: *77* elements
 
 [[HTML](https://www.misp-galaxy.org/mitre-engage-framework)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-engage-framework.json)]
 
+## MITRE Fight Fraud Framework
+
+[MITRE Fight Fraud Framework](https://www.misp-galaxy.org/mitre-fraud-framework) - MITRE Fight Fraud Framework (F3) matrix of fraud techniques.
+
+Category: *attack-pattern* - source: *https://ctid.mitre.org/fraud/* - total: *123* elements
+
+[[HTML](https://www.misp-galaxy.org/mitre-fraud-framework)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-fraud-framework.json)]
+
 ## Assets
 
 [Assets](https://www.misp-galaxy.org/mitre-ics-assets) - A list of asset categories that are commonly found in industrial control systems.
@@ -640,7 +648,7 @@ Category: *sector* - source: *CERT-EU* - total: *118* elements
 
 [Sigma-Rules](https://www.misp-galaxy.org/sigma-rules) - MISP galaxy cluster based on Sigma Rules.
 
-Category: *rules* - source: *https://github.com/jstnk9/MISP/tree/main/misp-galaxy/sigma* - total: *3104* elements
+Category: *rules* - source: *https://github.com/jstnk9/MISP/tree/main/misp-galaxy/sigma* - total: *3110* elements
 
 [[HTML](https://www.misp-galaxy.org/sigma-rules)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/sigma-rules.json)]
 
