@@ -310,7 +310,61 @@
       },
       "uuid": "19c98fa6-45f7-47cc-830d-2d4f39301b06",
       "value": "Packet filtering"
+    },
+    {
+      "description": "Implement multi-factor authentication (MFA), prioritizing phishing-resistant methods (for example FIDO2/WebAuthn passkeys) for remote access, privileged accounts, and administrative interfaces.",
+      "meta": {
+        "complexity": "Medium",
+        "effectiveness": "High",
+        "impact": "Low",
+        "possible_issues": "Legacy applications and service accounts may require compensating controls.",
+        "refs": [
+          "https://www.cisa.gov/resources-tools/resources/implementing-phishing-resistant-mfa",
+          "https://pages.nist.gov/800-63-4/sp800-63b.html"
+        ],
+        "type": [
+          "Identity and Access Management"
+        ]
+      },
+      "uuid": "e9fe09a2-aea5-4d87-82c7-ad3cedd94268",
+      "value": "Phishing-Resistant MFA"
+    },
+    {
+      "description": "Maintain an offline, immutable, or otherwise tamper-protected backup copy (for example object-lock/WORM) in addition to operational backups to improve recovery from destructive malware and ransomware.",
+      "meta": {
+        "complexity": "Medium",
+        "effectiveness": "High",
+        "impact": "Low",
+        "possible_issues": "Retention and storage costs can increase.",
+        "refs": [
+          "https://www.cisa.gov/stopransomware/ransomware-guide",
+          "https://www.nist.gov/itl/smallbusinesscyber/planning-guide"
+        ],
+        "type": [
+          "Recovery"
+        ]
+      },
+      "uuid": "38c0123b-a29a-4145-a336-fa9948e5aa69",
+      "value": "Immutable Offline Backups"
+    },
+    {
+      "description": "Create and exercise an incident-response playbook for ransomware and disruptive malware that includes isolation of affected hosts, credential reset workflow, legal/communications escalation, and restoration decision points.",
+      "meta": {
+        "complexity": "Medium",
+        "effectiveness": "High",
+        "impact": "Medium",
+        "possible_issues": "Requires recurring tabletop exercises and cross-team coordination.",
+        "refs": [
+          "https://www.cisa.gov/stopransomware/ransomware-guide",
+          "https://www.nist.gov/privacy-framework/nist-cybersecurity-framework-csf-20"
+        ],
+        "type": [
+          "Incident Response"
+        ]
+      },
+      "uuid": "c9b48e8b-6447-49a4-9718-269c22c78c95",
+      "value": "Ransomware Incident Response Playbook"
     }
   ],
-  "version": 4
+  "version": 5
 }
