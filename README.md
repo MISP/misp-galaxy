@@ -532,6 +532,14 @@ Category: *tool* - source: *Open Sources* - total: *1* elements
 
 [[HTML](https://www.misp-galaxy.org/online-service)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/online-service.json)]
 
+## Operating Systems
+
+[Operating Systems](https://www.misp-galaxy.org/operating-system) - Operating systems galaxy including major desktop, server, mobile, embedded, and mainframe operating systems with platform metadata.
+
+Category: *software* - source: *Open Sources* - total: *31* elements
+
+[[HTML](https://www.misp-galaxy.org/operating-system)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/operating-system.json)]
+
 ## Preventive Measure
 
 [Preventive Measure](https://www.misp-galaxy.org/preventive-measure) - Preventive measures based on the ransomware document overview as published in https://docs.google.com/spreadsheets/d/1TWS238xacAto-fLKh1n5uTsdijWdCEsGIM0Y0Hvmc5g/pubhtml# . The preventive measures are quite generic and can fit any standard Windows infrastructure and their security measures.
