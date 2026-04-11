@@ -154,7 +154,7 @@ def build_cluster_values(entries):
 def main():
     parser = argparse.ArgumentParser(description="Generate MISP galaxy and cluster files for LOLRMM tools.")
     parser.add_argument("--input", default=SOURCE_URL, help="URL or local path to LOLRMM JSON data")
-    parser.add_argument("--output-dir", default=".", help="Repository root output directory")
+    parser.add_argument("--output-dir", default="..", help="Repository root output directory")
     parser.add_argument("--version", type=int, default=1, help="Galaxy/cluster version")
     args = parser.parse_args()
 
