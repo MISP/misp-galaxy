@@ -580,6 +580,14 @@ Category: *location* - source: *https://unstats.un.org/unsd/methodology/m49/over
 
 [[HTML](https://www.misp-galaxy.org/region)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/region.json)]
 
+## RMM tools
+
+[RMM tools](https://www.misp-galaxy.org/rmm-tool) - Remote monitoring and management tools listed by LOLRMM.
+
+Category: *tool* - source: *https://lolrmm.io/* - total: *0* elements
+
+[[HTML](https://www.misp-galaxy.org/rmm-tool)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/rmm-tool.json)]
+
 ## rsit
 
 [rsit](https://www.misp-galaxy.org/rsit) - rsit
