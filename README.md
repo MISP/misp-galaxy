@@ -544,7 +544,7 @@ Category: *software* - source: *Open Sources* - total: *31* elements
 
 [Preventive Measure](https://www.misp-galaxy.org/preventive-measure) - Preventive measures based on the ransomware document overview as published in https://docs.google.com/spreadsheets/d/1TWS238xacAto-fLKh1n5uTsdijWdCEsGIM0Y0Hvmc5g/pubhtml# . The preventive measures are quite generic and can fit any standard Windows infrastructure and their security measures.
 
-Category: *measure* - source: *MISP Project* - total: *20* elements
+Category: *measure* - source: *MISP Project* - total: *23* elements
 
 [[HTML](https://www.misp-galaxy.org/preventive-measure)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/preventive-measure.json)]
 
