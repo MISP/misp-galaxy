@@ -18,6 +18,17 @@ def normalize_name(value: str) -> str:
     return re.sub(r"\s+", " ", value).strip()
 
 
+def strip_numeric_tokens(value: str) -> str:
+    """Return a normalized name with digits removed (keeps non-numeric tokens)."""
+    value = re.sub(r"\d+", " ", value)
+    return re.sub(r"\s+", " ", value).strip()
+
+
+def numeric_tokens(value: str):
+    """Extract numeric token sequences from a normalized name."""
+    return tuple(re.findall(r"\d+", value))
+
+
 def load_threat_actor_names(cluster_path: Path):
     """Return a map: normalized name -> map of canonical threat actor name -> UUID."""
     data = json.loads(cluster_path.read_text(encoding="utf-8"))
@@ -46,7 +57,11 @@ def load_threat_actor_names(cluster_path: Path):
 
 
 def find_similar_name_pairs(names_to_actors, min_similarity=0.88, max_results=200):
-    """Compute similar name pairs using difflib.SequenceMatcher."""
+    """Compute similar name pairs using difflib.SequenceMatcher.
+
+    Numeric-heavy variants (same non-numeric stem, different numeric tokens) are
+    intentionally skipped to reduce noisy matches like "apt 28" vs "apt 29".
+    """
     names = sorted(names_to_actors)
     results = []
 
@@ -61,6 +76,23 @@ def find_similar_name_pairs(names_to_actors, min_similarity=0.88, max_results=20
         left_actors = names_to_actors[left]
         right_actors = names_to_actors[right]
         if left_actors == right_actors:
+            continue
+
+        left_non_numeric = strip_numeric_tokens(left)
+        right_non_numeric = strip_numeric_tokens(right)
+        left_numbers = numeric_tokens(left)
+        right_numbers = numeric_tokens(right)
+
+        # Threat-actor names often reuse a textual stem with a different numeric id.
+        # Treat these as distinct identifiers to avoid over-reporting false positives.
+        if (
+            left_numbers
+            and right_numbers
+            and left_non_numeric
+            and right_non_numeric
+            and left_non_numeric == right_non_numeric
+            and left_numbers != right_numbers
+        ):
             continue
 
         longer = max(len(left), len(right))
