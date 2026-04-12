@@ -19,12 +19,13 @@ def normalize_name(value: str) -> str:
 
 
 def load_threat_actor_names(cluster_path: Path):
-    """Return a map: normalized name -> set of canonical threat actor names."""
+    """Return a map: normalized name -> map of canonical threat actor name -> UUID."""
     data = json.loads(cluster_path.read_text(encoding="utf-8"))
     names_to_actors = {}
 
     for entry in data.get("values", []):
         canonical_name = entry.get("value", "").strip()
+        canonical_uuid = entry.get("uuid", "").strip()
         if not canonical_name:
             continue
 
@@ -38,7 +39,8 @@ def load_threat_actor_names(cluster_path: Path):
             normalized = normalize_name(raw_name)
             if not normalized:
                 continue
-            names_to_actors.setdefault(normalized, set()).add(canonical_name)
+            actors_for_name = names_to_actors.setdefault(normalized, {})
+            actors_for_name[canonical_name] = canonical_uuid
 
     return names_to_actors
 
@@ -79,9 +81,9 @@ def find_similar_name_pairs(names_to_actors, min_similarity=0.88, max_results=20
             {
                 "score": round(score, 4),
                 "name_1": left,
-                "actors_1": sorted(left_actors),
+                "actors_1": sorted(left_actors.items()),
                 "name_2": right,
-                "actors_2": sorted(right_actors),
+                "actors_2": sorted(right_actors.items()),
             }
         )
 
@@ -92,6 +94,9 @@ def find_similar_name_pairs(names_to_actors, min_similarity=0.88, max_results=20
 def build_markdown_report(results, source_path: Path, min_similarity: float, max_results: int):
     """Build a markdown report containing potential similar threat-actor names."""
     generated_at = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
+    def format_actors(actors):
+        return ", ".join(f"`{name}` ({uuid or 'N/A'})" for name, uuid in actors)
+
     lines = [
         "# Threat-Actor Similarity Report",
         "",
@@ -119,9 +124,9 @@ def build_markdown_report(results, source_path: Path, min_similarity: float, max
             "| {score:.4f} | `{name_1}` | {actors_1} | `{name_2}` | {actors_2} |".format(
                 score=item["score"],
                 name_1=item["name_1"],
-                actors_1=", ".join(item["actors_1"]),
+                actors_1=format_actors(item["actors_1"]),
                 name_2=item["name_2"],
-                actors_2=", ".join(item["actors_2"]),
+                actors_2=format_actors(item["actors_2"]),
             )
         )
 
