@@ -37,6 +37,25 @@ class Cluster:
     meta: dict
 
 
+@dataclass(frozen=True)
+class GraphNode:
+    node_id: str
+    kind: str
+    uuid: str
+    name: str
+    galaxy_type: str
+    description: str
+
+
+@dataclass(frozen=True)
+class GraphEdge:
+    source: str
+    target: str
+    relation_type: str
+    relation_source: str
+    edge_id: str | None = None
+
+
 def normalize(text: str) -> str:
     return re.sub(r"\s+", " ", text.strip().lower())
 
@@ -128,44 +147,50 @@ def add_data(parent: ET.Element, key: str, value: str) -> None:
     data.text = value
 
 
-def build_graphml(
+def build_graph(
     galaxies: dict[str, Galaxy],
     clusters: dict[str, Cluster],
     explicit_edges: list[tuple[str, str, str]],
     include_explicit_edges: bool,
     inferred_mode: str,
-) -> ET.ElementTree:
-    root = ET.Element("graphml", xmlns="http://graphml.graphdrawing.org/xmlns")
-    add_graphml_keys(root)
-
-    graph = ET.SubElement(root, "graph", id="misp_galaxies", edgedefault="directed")
+) -> tuple[list[GraphNode], list[GraphEdge]]:
+    nodes: list[GraphNode] = []
+    edges: list[GraphEdge] = []
 
     for galaxy in galaxies.values():
-        node = ET.SubElement(graph, "node", id=f"galaxy:{galaxy.uuid}")
-        add_data(node, "d0", "galaxy")
-        add_data(node, "d1", galaxy.uuid)
-        add_data(node, "d2", galaxy.name)
-        add_data(node, "d3", galaxy.type)
-        add_data(node, "d4", galaxy.description)
+        nodes.append(
+            GraphNode(
+                node_id=f"galaxy:{galaxy.uuid}",
+                kind="galaxy",
+                uuid=galaxy.uuid,
+                name=galaxy.name,
+                galaxy_type=galaxy.type,
+                description=galaxy.description,
+            )
+        )
 
     for cluster in clusters.values():
-        node = ET.SubElement(graph, "node", id=cluster.node_id)
-        add_data(node, "d0", "cluster")
-        add_data(node, "d1", cluster.uuid)
-        add_data(node, "d2", cluster.value)
-        add_data(node, "d3", cluster.galaxy_type)
-        add_data(node, "d4", cluster.description)
+        nodes.append(
+            GraphNode(
+                node_id=cluster.node_id,
+                kind="cluster",
+                uuid=cluster.uuid,
+                name=cluster.value,
+                galaxy_type=cluster.galaxy_type,
+                description=cluster.description,
+            )
+        )
 
         galaxy = galaxies.get(cluster.galaxy_type)
         if galaxy:
-            edge = ET.SubElement(
-                graph,
-                "edge",
-                source=f"galaxy:{galaxy.uuid}",
-                target=cluster.node_id,
+            edges.append(
+                GraphEdge(
+                    source=f"galaxy:{galaxy.uuid}",
+                    target=cluster.node_id,
+                    relation_type="contains",
+                    relation_source="membership",
+                )
             )
-            add_data(edge, "d5", "contains")
-            add_data(edge, "d6", "membership")
 
     edge_counter = itertools.count(1)
 
@@ -175,15 +200,15 @@ def build_graphml(
             target_cluster = clusters.get(target_uuid)
             if not source_cluster or not target_cluster:
                 continue
-            edge = ET.SubElement(
-                graph,
-                "edge",
-                id=f"e{next(edge_counter)}",
-                source=source_cluster.node_id,
-                target=target_cluster.node_id,
+            edges.append(
+                GraphEdge(
+                    edge_id=f"e{next(edge_counter)}",
+                    source=source_cluster.node_id,
+                    target=target_cluster.node_id,
+                    relation_type=relation_type,
+                    relation_source="explicit",
+                )
             )
-            add_data(edge, "d5", relation_type)
-            add_data(edge, "d6", "explicit")
 
     if inferred_mode != "none":
         include_synonyms = inferred_mode == "value-or-synonyms"
@@ -205,17 +230,81 @@ def build_graphml(
                     continue
                 seen_pairs.add(pair)
 
-                edge = ET.SubElement(
-                    graph,
-                    "edge",
-                    id=f"e{next(edge_counter)}",
-                    source=left.node_id,
-                    target=right.node_id,
+                edges.append(
+                    GraphEdge(
+                        edge_id=f"e{next(edge_counter)}",
+                        source=left.node_id,
+                        target=right.node_id,
+                        relation_type="same-value",
+                        relation_source=f"inferred:{term}",
+                    )
                 )
-                add_data(edge, "d5", "same-value")
-                add_data(edge, "d6", f"inferred:{term}")
+
+    return nodes, edges
+
+
+def build_graphml(nodes: list[GraphNode], edges: list[GraphEdge]) -> ET.ElementTree:
+    root = ET.Element("graphml", xmlns="http://graphml.graphdrawing.org/xmlns")
+    add_graphml_keys(root)
+    graph = ET.SubElement(root, "graph", id="misp_galaxies", edgedefault="directed")
+
+    for graph_node in nodes:
+        node = ET.SubElement(graph, "node", id=graph_node.node_id)
+        add_data(node, "d0", graph_node.kind)
+        add_data(node, "d1", graph_node.uuid)
+        add_data(node, "d2", graph_node.name)
+        add_data(node, "d3", graph_node.galaxy_type)
+        add_data(node, "d4", graph_node.description)
+
+    for graph_edge in edges:
+        edge_kwargs = {"source": graph_edge.source, "target": graph_edge.target}
+        if graph_edge.edge_id:
+            edge_kwargs["id"] = graph_edge.edge_id
+        edge = ET.SubElement(graph, "edge", **edge_kwargs)
+        add_data(edge, "d5", graph_edge.relation_type)
+        add_data(edge, "d6", graph_edge.relation_source)
 
     return ET.ElementTree(root)
+
+
+def to_dot(nodes: list[GraphNode], edges: list[GraphEdge]) -> str:
+    lines = ["digraph misp_galaxies {"]
+    for graph_node in nodes:
+        label = graph_node.name.replace('"', '\\"')
+        lines.append(f'  "{graph_node.node_id}" [label="{label}", kind="{graph_node.kind}"];')
+    for graph_edge in edges:
+        lines.append(
+            f'  "{graph_edge.source}" -> "{graph_edge.target}" [label="{graph_edge.relation_type}"];'
+        )
+    lines.append("}")
+    return "\n".join(lines) + "\n"
+
+
+def to_json_graph(nodes: list[GraphNode], edges: list[GraphEdge]) -> str:
+    payload = {
+        "nodes": [
+            {
+                "id": graph_node.node_id,
+                "kind": graph_node.kind,
+                "uuid": graph_node.uuid,
+                "name": graph_node.name,
+                "galaxy_type": graph_node.galaxy_type,
+                "description": graph_node.description,
+            }
+            for graph_node in nodes
+        ],
+        "edges": [
+            {
+                "id": graph_edge.edge_id,
+                "source": graph_edge.source,
+                "target": graph_edge.target,
+                "relation_type": graph_edge.relation_type,
+                "relation_source": graph_edge.relation_source,
+            }
+            for graph_edge in edges
+        ],
+    }
+    return json.dumps(payload, indent=2, ensure_ascii=False) + "\n"
 
 
 def parse_args() -> argparse.Namespace:
@@ -242,6 +331,12 @@ def parse_args() -> argparse.Namespace:
         help="Output GraphML file path.",
     )
     parser.add_argument(
+        "--output-format",
+        choices=["graphml", "dot", "json-graph"],
+        default="graphml",
+        help="Output format: GraphML (default), Graphviz DOT, or JSON graph.",
+    )
+    parser.add_argument(
         "--no-existing-relationships",
         action="store_true",
         help="Disable explicit relationships from cluster related[] entries.",
@@ -264,7 +359,7 @@ def main() -> int:
     galaxies = load_galaxies(args.galaxies_dir)
     clusters, explicit_edges = load_clusters(args.clusters_dir)
 
-    graphml = build_graphml(
+    nodes, edges = build_graph(
         galaxies=galaxies,
         clusters=clusters,
         explicit_edges=explicit_edges,
@@ -273,10 +368,16 @@ def main() -> int:
     )
 
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    graphml.write(args.output, encoding="utf-8", xml_declaration=True)
+    if args.output_format == "graphml":
+        graphml = build_graphml(nodes, edges)
+        graphml.write(args.output, encoding="utf-8", xml_declaration=True)
+    elif args.output_format == "dot":
+        args.output.write_text(to_dot(nodes, edges), encoding="utf-8")
+    else:
+        args.output.write_text(to_json_graph(nodes, edges), encoding="utf-8")
 
     print(
-        f"GraphML written to {args.output} with {len(galaxies)} galaxies and {len(clusters)} clusters."
+        f"{args.output_format} graph written to {args.output} with {len(galaxies)} galaxies and {len(clusters)} clusters."
     )
     return 0
 
