@@ -60,6 +60,16 @@ def normalize(text: str) -> str:
     return re.sub(r"\s+", " ", text.strip().lower())
 
 
+def parse_name_filters(raw_values: list[str]) -> set[str]:
+    filters: set[str] = set()
+    for raw_value in raw_values:
+        for value in raw_value.split(","):
+            normalized = normalize(value)
+            if normalized:
+                filters.add(normalized)
+    return filters
+
+
 def load_galaxies(galaxies_dir: Path) -> dict[str, Galaxy]:
     galaxies: dict[str, Galaxy] = {}
     for path in sorted(galaxies_dir.glob("*.json")):
@@ -324,6 +334,44 @@ def resolve_output_path(requested_path: Path, output_format: str) -> Path:
     return requested_path
 
 
+def filter_graph_data(
+    galaxies: dict[str, Galaxy],
+    clusters: dict[str, Cluster],
+    selected_galaxy_names: set[str],
+    selected_cluster_names: set[str],
+) -> tuple[dict[str, Galaxy], dict[str, Cluster]]:
+    filtered_galaxy_types: set[str] | None = None
+    if selected_galaxy_names:
+        filtered_galaxy_types = {
+            galaxy.type
+            for galaxy in galaxies.values()
+            if normalize(galaxy.name) in selected_galaxy_names
+            or normalize(galaxy.type) in selected_galaxy_names
+        }
+
+    filtered_clusters = {
+        uuid: cluster
+        for uuid, cluster in clusters.items()
+        if (
+            filtered_galaxy_types is None or cluster.galaxy_type in filtered_galaxy_types
+        )
+        and (
+            not selected_cluster_names
+            or normalize(cluster.value) in selected_cluster_names
+        )
+    }
+
+    if filtered_galaxy_types is None:
+        filtered_galaxy_types = {cluster.galaxy_type for cluster in filtered_clusters.values()}
+
+    filtered_galaxies = {
+        gtype: galaxy
+        for gtype, galaxy in galaxies.items()
+        if gtype in filtered_galaxy_types
+    }
+    return filtered_galaxies, filtered_clusters
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
@@ -370,6 +418,26 @@ def parse_args() -> argparse.Namespace:
             "or values+synonyms."
         ),
     )
+    parser.add_argument(
+        "--select-galaxy-name",
+        action="append",
+        default=[],
+        metavar="NAME",
+        help=(
+            "Limit export to matching galaxy names or types. Repeat or pass a comma-separated "
+            "list (case-insensitive)."
+        ),
+    )
+    parser.add_argument(
+        "--select-cluster-name",
+        action="append",
+        default=[],
+        metavar="NAME",
+        help=(
+            "Limit export to matching cluster values. Repeat or pass a comma-separated list "
+            "(case-insensitive)."
+        ),
+    )
     return parser.parse_args()
 
 
@@ -378,6 +446,14 @@ def main() -> int:
 
     galaxies = load_galaxies(args.galaxies_dir)
     clusters, explicit_edges = load_clusters(args.clusters_dir)
+    selected_galaxy_names = parse_name_filters(args.select_galaxy_name)
+    selected_cluster_names = parse_name_filters(args.select_cluster_name)
+    galaxies, clusters = filter_graph_data(
+        galaxies=galaxies,
+        clusters=clusters,
+        selected_galaxy_names=selected_galaxy_names,
+        selected_cluster_names=selected_cluster_names,
+    )
 
     nodes, edges = build_graph(
         galaxies=galaxies,
