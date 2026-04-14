@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate a GraphML export for all MISP galaxies and clusters.
+"""Generate graph exports for MISP galaxies and clusters.
 
 The graph contains:
 - One node per galaxy definition (`galaxies/*.json`)
@@ -307,9 +307,29 @@ def to_json_graph(nodes: list[GraphNode], edges: list[GraphEdge]) -> str:
     return json.dumps(payload, indent=2, ensure_ascii=False) + "\n"
 
 
+def output_suffix(output_format: str) -> str:
+    """Return the expected file suffix for each supported output format."""
+    return {
+        "graphml": ".graphml",
+        "dot": ".dot",
+        "json-graph": ".json",
+    }[output_format]
+
+
+def resolve_output_path(requested_path: Path, output_format: str) -> Path:
+    """Ensure output file extension matches the selected graph export format."""
+    expected_suffix = output_suffix(output_format)
+    if requested_path.suffix != expected_suffix:
+        return requested_path.with_suffix(expected_suffix)
+    return requested_path
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Generate a GraphML graph from galaxies and clusters JSON files."
+        description=(
+            "Generate a graph export from MISP galaxy and cluster JSON files "
+            "(GraphML, Graphviz DOT, or JSON graph)."
+        )
     )
     parser.add_argument(
         "--clusters-dir",
@@ -328,7 +348,7 @@ def parse_args() -> argparse.Namespace:
         "--output",
         type=Path,
         default=Path("misp-galaxies.graphml"),
-        help="Output GraphML file path.",
+        help="Output file path (its extension is aligned with --output-format).",
     )
     parser.add_argument(
         "--output-format",
@@ -367,17 +387,18 @@ def main() -> int:
         inferred_mode=args.cross_cluster_matching,
     )
 
-    args.output.parent.mkdir(parents=True, exist_ok=True)
+    output_path = resolve_output_path(args.output, args.output_format)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
     if args.output_format == "graphml":
         graphml = build_graphml(nodes, edges)
-        graphml.write(args.output, encoding="utf-8", xml_declaration=True)
+        graphml.write(output_path, encoding="utf-8", xml_declaration=True)
     elif args.output_format == "dot":
-        args.output.write_text(to_dot(nodes, edges), encoding="utf-8")
+        output_path.write_text(to_dot(nodes, edges), encoding="utf-8")
     else:
-        args.output.write_text(to_json_graph(nodes, edges), encoding="utf-8")
+        output_path.write_text(to_json_graph(nodes, edges), encoding="utf-8")
 
     print(
-        f"{args.output_format} graph written to {args.output} with {len(galaxies)} galaxies and {len(clusters)} clusters."
+        f"{args.output_format} graph written to {output_path} with {len(galaxies)} galaxies and {len(clusters)} clusters."
     )
     return 0
 
