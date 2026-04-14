@@ -317,12 +317,101 @@ def to_json_graph(nodes: list[GraphNode], edges: list[GraphEdge]) -> str:
     return json.dumps(payload, indent=2, ensure_ascii=False) + "\n"
 
 
+def to_pivotick_html(nodes: list[GraphNode], edges: list[GraphEdge], pivotick_library_url: str) -> str:
+    payload = {
+        "nodes": [
+            {
+                "id": graph_node.node_id,
+                "data": {"label": graph_node.name, "node": graph_node.__dict__},
+            }
+            for graph_node in nodes
+        ],
+        "edges": [
+            {
+                "id": graph_edge.edge_id or f"{graph_edge.source}->{graph_edge.target}:{graph_edge.relation_type}",
+                "source": graph_edge.source,
+                "target": graph_edge.target,
+                "data": {"label": graph_edge.relation_type, "edge": graph_edge.__dict__},
+            }
+            for graph_edge in edges
+        ],
+    }
+    graph_json = json.dumps(payload, ensure_ascii=False)
+    escaped_library_url = json.dumps(pivotick_library_url)
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MISP Galaxy Graph (Pivotick)</title>
+  <style>
+    html, body {{
+      margin: 0;
+      height: 100%;
+      font-family: system-ui, -apple-system, sans-serif;
+    }}
+    #graph-container {{
+      width: 100%;
+      height: 100%;
+    }}
+    #status {{
+      position: fixed;
+      top: 0.75rem;
+      left: 0.75rem;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.75);
+      color: #fff;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.375rem;
+      max-width: 32rem;
+      font-size: 0.875rem;
+      line-height: 1.4;
+    }}
+  </style>
+</head>
+<body>
+  <div id="status">Loading Pivotick graph…</div>
+  <div id="graph-container"></div>
+  <script type="module">
+    const pivotickLibraryUrl = {escaped_library_url};
+    const status = document.getElementById("status");
+    const container = document.getElementById("graph-container");
+    const graphData = {graph_json};
+
+    try {{
+      const module = await import(pivotickLibraryUrl);
+      const pivotickFactory = module.default || module.Pivotick || window.Pivotick;
+      if (!pivotickFactory) {{
+        throw new Error("Pivotick export not found in loaded module.");
+      }}
+
+      pivotickFactory(container, {{
+        data: graphData,
+        isDirected: true,
+        UI: {{
+          mode: "viewer",
+        }},
+      }});
+
+      status.textContent = "Loaded. Use mouse/touch controls to navigate.";
+      setTimeout(() => status.remove(), 2500);
+    }} catch (error) {{
+      console.error(error);
+      status.textContent = "Failed to load Pivotick from " + pivotickLibraryUrl + ". Check --pivotick-library-url and browser network access.";
+    }}
+  </script>
+</body>
+</html>
+"""
+
+
 def output_suffix(output_format: str) -> str:
     """Return the expected file suffix for each supported output format."""
     return {
         "graphml": ".graphml",
         "dot": ".dot",
         "json-graph": ".json",
+        "pivotick-html": ".html",
     }[output_format]
 
 
@@ -371,7 +460,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
             "Generate a graph export from MISP galaxy and cluster JSON files "
-            "(GraphML, Graphviz DOT, or JSON graph)."
+            "(GraphML, Graphviz DOT, JSON graph, or static Pivotick HTML)."
         )
     )
     parser.add_argument(
@@ -395,9 +484,17 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--output-format",
-        choices=["graphml", "dot", "json-graph"],
+        choices=["graphml", "dot", "json-graph", "pivotick-html"],
         default="graphml",
-        help="Output format: GraphML (default), Graphviz DOT, or JSON graph.",
+        help="Output format: GraphML (default), Graphviz DOT, JSON graph, or static Pivotick HTML.",
+    )
+    parser.add_argument(
+        "--pivotick-library-url",
+        default="https://cdn.jsdelivr.net/gh/Pivotick/Pivotick@develop/dist/pivotick.js",
+        help=(
+            "Module URL used by --output-format pivotick-html to load Pivotick "
+            "(default points to Pivotick develop branch on jsDelivr)."
+        ),
     )
     parser.add_argument(
         "--no-existing-relationships",
@@ -453,8 +550,12 @@ def main() -> int:
         graphml.write(output_path, encoding="utf-8", xml_declaration=True)
     elif args.output_format == "dot":
         output_path.write_text(to_dot(nodes, edges), encoding="utf-8")
-    else:
+    elif args.output_format == "json-graph":
         output_path.write_text(to_json_graph(nodes, edges), encoding="utf-8")
+    else:
+        output_path.write_text(
+            to_pivotick_html(nodes, edges, args.pivotick_library_url), encoding="utf-8"
+        )
 
     print(
         f"{args.output_format} graph written to {output_path} with {len(galaxies)} galaxies and {len(clusters)} clusters."
