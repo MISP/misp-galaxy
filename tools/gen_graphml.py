@@ -60,6 +60,16 @@ def normalize(text: str) -> str:
     return re.sub(r"\s+", " ", text.strip().lower())
 
 
+def parse_name_filters(raw_values: list[str]) -> set[str]:
+    filters: set[str] = set()
+    for raw_value in raw_values:
+        for value in raw_value.split(","):
+            normalized = normalize(value)
+            if normalized:
+                filters.add(normalized)
+    return filters
+
+
 def load_galaxies(galaxies_dir: Path) -> dict[str, Galaxy]:
     galaxies: dict[str, Galaxy] = {}
     for path in sorted(galaxies_dir.glob("*.json")):
@@ -324,6 +334,39 @@ def resolve_output_path(requested_path: Path, output_format: str) -> Path:
     return requested_path
 
 
+def filter_graph_data(
+    galaxies: dict[str, Galaxy],
+    clusters: dict[str, Cluster],
+    selected_names: set[str],
+) -> tuple[dict[str, Galaxy], dict[str, Cluster]]:
+    if not selected_names:
+        return galaxies, clusters
+
+    selected_galaxy_types = {
+        galaxy.type
+        for galaxy in galaxies.values()
+        if normalize(galaxy.name) in selected_names
+        or normalize(galaxy.type) in selected_names
+    }
+    selected_cluster_uuids = {
+        cluster.uuid
+        for cluster in clusters.values()
+        if normalize(cluster.value) in selected_names
+    }
+
+    filtered_clusters = {
+        uuid: cluster
+        for uuid, cluster in clusters.items()
+        if cluster.uuid in selected_cluster_uuids or cluster.galaxy_type in selected_galaxy_types
+    }
+
+    filtered_galaxy_types = selected_galaxy_types | {
+        cluster.galaxy_type for cluster in filtered_clusters.values()
+    }
+    filtered_galaxies = {gtype: galaxy for gtype, galaxy in galaxies.items() if gtype in filtered_galaxy_types}
+    return filtered_galaxies, filtered_clusters
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
@@ -370,6 +413,16 @@ def parse_args() -> argparse.Namespace:
             "or values+synonyms."
         ),
     )
+    parser.add_argument(
+        "--select-name",
+        action="append",
+        default=[],
+        metavar="NAME",
+        help=(
+            "Limit export to matching galaxy names/types and cluster values. Repeat or pass "
+            "a comma-separated list (case-insensitive)."
+        ),
+    )
     return parser.parse_args()
 
 
@@ -378,6 +431,12 @@ def main() -> int:
 
     galaxies = load_galaxies(args.galaxies_dir)
     clusters, explicit_edges = load_clusters(args.clusters_dir)
+    selected_names = parse_name_filters(args.select_name)
+    galaxies, clusters = filter_graph_data(
+        galaxies=galaxies,
+        clusters=clusters,
+        selected_names=selected_names,
+    )
 
     nodes, edges = build_graph(
         galaxies=galaxies,
