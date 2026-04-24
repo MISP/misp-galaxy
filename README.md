@@ -740,6 +740,14 @@ Category: *target* - source: *Various* - total: *241* elements
 
 [[HTML](https://www.misp-galaxy.org/target-information)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/target-information.json)]
 
+## Taxonomy of Fraud
+
+[Taxonomy of Fraud](https://www.misp-galaxy.org/taxonomy-of-fraud) - Taxonomy of Fraud from the Stanford Center on Longevity (2015), including hierarchy nodes and attribute tags.
+
+Category: *financial-fraud* - source: *https://longevity.stanford.edu/framework-for-a-taxonomy-of-fraud/* - total: *206* elements
+
+[[HTML](https://www.misp-galaxy.org/taxonomy-of-fraud)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/taxonomy-of-fraud.json)]
+
 ## TDS
 
 [TDS](https://www.misp-galaxy.org/tds) - TDS is a list of Traffic Direction System used by adversaries
