@@ -684,6 +684,30 @@ Category: *sod-matrix* - source: *https://github.com/cudeso/SoD-Matrix* - total:
 
 [[HTML](https://www.misp-galaxy.org/sod-matrix)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/sod-matrix.json)]
 
+## SPARTA Mitigations
+
+[SPARTA Mitigations](https://www.misp-galaxy.org/sparta-mitigations) - SPARTA countermeasures derived from the official STIX feed.
+
+Category: *tool* - source: *https://sparta.aerospace.org/* - total: *268* elements
+
+[[HTML](https://www.misp-galaxy.org/sparta-mitigations)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/sparta-mitigations.json)]
+
+## SPARTA Tactics
+
+[SPARTA Tactics](https://www.misp-galaxy.org/sparta-tactics) - SPARTA tactics published by The Aerospace Corporation.
+
+Category: *tool* - source: *https://sparta.aerospace.org/* - total: *9* elements
+
+[[HTML](https://www.misp-galaxy.org/sparta-tactics)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/sparta-tactics.json)]
+
+## SPARTA Techniques
+
+[SPARTA Techniques](https://www.misp-galaxy.org/sparta-techniques) - SPARTA techniques and sub-techniques derived from the official STIX feed.
+
+Category: *tool* - source: *https://sparta.aerospace.org/* - total: *258* elements
+
+[[HTML](https://www.misp-galaxy.org/sparta-techniques)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/sparta-techniques.json)]
+
 ## Stalkerware
 
 [Stalkerware](https://www.misp-galaxy.org/stalkerware) - A list of stalkerware and watchware.
