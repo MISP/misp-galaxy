@@ -149,9 +149,20 @@ def build_cluster_values(
     external_index: dict[str, list[dict[str, str]]],
     max_cross_links: int,
 ) -> list[dict[str, Any]]:
+    value_counts: dict[str, int] = {}
+    for node in nodes:
+        value_counts[node.value] = value_counts.get(node.value, 0) + 1
+
+    def unique_value_for(node: VerisNode) -> str:
+        if value_counts[node.value] <= 1:
+            return node.value
+        context = ' > '.join(titleize_key(part) for part in node.path[:-1])
+        return f'{node.value} ({context})'
+
     entries_by_path: dict[tuple[str, ...], dict[str, Any]] = {}
 
     for node in nodes:
+        unique_value = unique_value_for(node)
         meta = {
             'path': '.'.join(node.path),
             'level': str(len(node.path)),
@@ -159,12 +170,14 @@ def build_cluster_values(
             'top_level_domain': node.path[0],
             'source': VERIS_SOURCE_URL,
         }
+        if unique_value != node.value:
+            meta['short_name'] = node.value
 
         if node.parent_path:
             meta['parent_path'] = '.'.join(node.parent_path)
 
         entry: dict[str, Any] = {
-            'value': node.value,
+            'value': unique_value,
             'uuid': to_uuid(node.path),
             'meta': meta,
         }
