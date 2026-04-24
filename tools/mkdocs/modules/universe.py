@@ -10,13 +10,21 @@ class Universe:
         self.add_inbound_relationship = add_inbound_relationship
         self.private_clusters = {}
 
-    def add_galaxy(self, galaxy_name, json_file_name, authors, description):
+    def add_galaxy(
+        self,
+        galaxy_name,
+        json_file_name,
+        authors,
+        description,
+        kill_chain_order=None,
+    ):
         if galaxy_name not in self.galaxies:
             self.galaxies[galaxy_name] = Galaxy(
                 galaxy_name=galaxy_name,
                 json_file_name=json_file_name,
                 authors=authors,
                 description=description,
+                kill_chain_order=kill_chain_order,
             )
 
     def add_cluster(self, galaxy_name, uuid, description, value, meta):
