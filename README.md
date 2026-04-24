@@ -264,7 +264,7 @@ Category: *dwva* - source: *https://interpol-innovation-centre.github.io/DW-VA-T
 
 [Malpedia](https://www.misp-galaxy.org/malpedia) - Malware galaxy cluster based on Malpedia.
 
-Category: *tool* - source: *Malpedia* - total: *3596* elements
+Category: *tool* - source: *Malpedia* - total: *3683* elements
 
 [[HTML](https://www.misp-galaxy.org/malpedia)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/malpedia.json)]
 
@@ -363,6 +363,14 @@ Category: *attack-pattern* - source: *https://attack.mitre.org/detectionstrategi
 Category: *engage* - source: *https://engage.mitre.org* - total: *77* elements
 
 [[HTML](https://www.misp-galaxy.org/mitre-engage-framework)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-engage-framework.json)]
+
+## MITRE Fight Fraud Framework
+
+[MITRE Fight Fraud Framework](https://www.misp-galaxy.org/mitre-fraud-framework) - MITRE Fight Fraud Framework (F3) matrix of fraud techniques.
+
+Category: *attack-pattern* - source: *https://ctid.mitre.org/fraud/* - total: *123* elements
+
+[[HTML](https://www.misp-galaxy.org/mitre-fraud-framework)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-fraud-framework.json)]
 
 ## Assets
 
@@ -524,11 +532,19 @@ Category: *tool* - source: *Open Sources* - total: *1* elements
 
 [[HTML](https://www.misp-galaxy.org/online-service)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/online-service.json)]
 
+## Operating Systems
+
+[Operating Systems](https://www.misp-galaxy.org/operating-system) - Operating systems galaxy including major desktop, server, mobile, embedded, and mainframe operating systems with platform metadata.
+
+Category: *software* - source: *Open Sources* - total: *31* elements
+
+[[HTML](https://www.misp-galaxy.org/operating-system)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/operating-system.json)]
+
 ## Preventive Measure
 
 [Preventive Measure](https://www.misp-galaxy.org/preventive-measure) - Preventive measures based on the ransomware document overview as published in https://docs.google.com/spreadsheets/d/1TWS238xacAto-fLKh1n5uTsdijWdCEsGIM0Y0Hvmc5g/pubhtml# . The preventive measures are quite generic and can fit any standard Windows infrastructure and their security measures.
 
-Category: *measure* - source: *MISP Project* - total: *20* elements
+Category: *measure* - source: *MISP Project* - total: *23* elements
 
 [[HTML](https://www.misp-galaxy.org/preventive-measure)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/preventive-measure.json)]
 
@@ -563,6 +579,14 @@ Category: *tool* - source: *MISP Project* - total: *267* elements
 Category: *location* - source: *https://unstats.un.org/unsd/methodology/m49/overview/* - total: *32* elements
 
 [[HTML](https://www.misp-galaxy.org/region)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/region.json)]
+
+## RMM tools
+
+[RMM tools](https://www.misp-galaxy.org/rmm-tool) - Remote monitoring and management tools listed by LOLRMM.
+
+Category: *tool* - source: *https://lolrmm.io/* - total: *294* elements
+
+[[HTML](https://www.misp-galaxy.org/rmm-tool)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/rmm-tool.json)]
 
 ## rsit
 
@@ -640,7 +664,7 @@ Category: *sector* - source: *CERT-EU* - total: *118* elements
 
 [Sigma-Rules](https://www.misp-galaxy.org/sigma-rules) - MISP galaxy cluster based on Sigma Rules.
 
-Category: *rules* - source: *https://github.com/jstnk9/MISP/tree/main/misp-galaxy/sigma* - total: *3104* elements
+Category: *rules* - source: *https://github.com/jstnk9/MISP/tree/main/misp-galaxy/sigma* - total: *3110* elements
 
 [[HTML](https://www.misp-galaxy.org/sigma-rules)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/sigma-rules.json)]
 
@@ -720,7 +744,7 @@ Category: *threat-actor* - source: *https://www.publicsafety.gc.ca/cnt/_xml/lstd
 
 [Threat Actor](https://www.misp-galaxy.org/threat-actor) - Known or estimated adversary groups targeting organizations and employees. Adversary groups are regularly confused with their initial operation or campaign. threat-actor-classification meta can be used to clarify the understanding of the threat-actor if also considered as operation, campaign or activity group.
 
-Category: *actor* - source: *MISP Project* - total: *971* elements
+Category: *actor* - source: *MISP Project* - total: *979* elements
 
 [[HTML](https://www.misp-galaxy.org/threat-actor)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/threat-actor.json)]
 
@@ -792,7 +816,7 @@ Category: *tool* - source: *MISP Project* - total: *606* elements
 
 [UAVs/UCAVs](https://www.misp-galaxy.org/uavs) - OSINT Database of Unmanned Combat Aerial Vehicle
 
-Category: *Military equipment* - source: *OSINT* - total: *735* elements
+Category: *Military equipment* - source: *OSINT* - total: *739* elements
 
 [[HTML](https://www.misp-galaxy.org/uavs)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/uavs.json)]
 

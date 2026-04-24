@@ -127,6 +127,23 @@
       "value": "Dust Storm"
     },
     {
+      "description": "Shamoon Group is an Iran-linked threat actor associated with destructive Shamoon wiper operations targeting organizations in the Middle East, especially in the energy sector.",
+      "meta": {
+        "attribution-confidence": "50",
+        "country": "IR",
+        "refs": [
+          "https://www.cfr.org/cyber-operations/shamoon",
+          "https://securelist.com/shamoon-2-0-the-return-of-the-disttrack-wiper/77232/",
+          "https://www.cisa.gov/news-events/cybersecurity-advisories/aa22-055a"
+        ],
+        "synonyms": [
+          "Cutting Sword of Justice"
+        ]
+      },
+      "uuid": "092622dd-7673-487b-af2e-03529809c910",
+      "value": "Shamoon Group"
+    },
+    {
       "meta": {
         "attribution-confidence": "50",
         "country": "CN",
@@ -7226,6 +7243,15 @@
           "Twill Typhoon"
         ]
       },
+      "related": [
+        {
+          "dest-uuid": "fceed509-938e-4f9e-acd4-76e6c28dc6f1",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "overlaps"
+        }
+      ],
       "uuid": "78bf726c-a9e6-11e8-9e43-77249a2f7339",
       "value": "MUSTANG PANDA"
     },
@@ -8243,7 +8269,8 @@
           "Mabna Institute",
           "TA407",
           "TA4900",
-          "Yellow Nabu"
+          "Yellow Nabu",
+          "Mabna Institute Group"
         ]
       },
       "uuid": "5059b44d-2753-4977-b987-4922f09afe6b",
@@ -19119,11 +19146,14 @@
       "value": "UNC6485"
     },
     {
-      "description": "UNC6384 is a Chinese-affiliated APT that conducts targeted espionage campaigns primarily against diplomatic entities in Southeast Asia and Europe, specifically Belgium and Hungary. The group exploits the ZDI-CAN-25373 Windows shortcut vulnerability to gain initial code execution via malicious .LNK files, deploying the PlugX RAT through sophisticated delivery mechanisms, including DLL side-loading and adversary-in-the-middle attacks. Their operations involve social engineering tactics, such as spear-phishing emails themed around diplomatic events, to entice victims into executing malicious payloads. UNC6384's use of valid code signing and HTTPS hosting enhances their evasion of detection and increases the likelihood of user interaction.",
+      "description": "UNC6384 (also tracked as Vertigo Panda) is a Chinese-affiliated APT that conducts targeted espionage campaigns primarily against diplomatic entities in Southeast Asia and Europe, specifically Belgium and Hungary. The group exploits the ZDI-CAN-25373 Windows shortcut vulnerability to gain initial code execution via malicious .LNK files, deploying the PlugX RAT through sophisticated delivery mechanisms, including DLL side-loading and adversary-in-the-middle attacks. Their operations involve social engineering tactics, such as spear-phishing emails themed around diplomatic events, to entice victims into executing malicious payloads. UNC6384's use of valid code signing and HTTPS hosting enhances their evasion of detection and increases the likelihood of user interaction.",
       "meta": {
         "country": "CN",
         "refs": [
           "https://cloud.google.com/blog/topics/threat-intelligence/prc-nexus-espionage-targets-diplomats/"
+        ],
+        "synonyms": [
+          "Vertigo Panda"
         ]
       },
       "uuid": "a3e4a57e-4b50-4bca-9282-3307e92e5539",
@@ -20200,6 +20230,79 @@
       },
       "uuid": "c2049438-940f-4961-a072-4b0981e81471",
       "value": "RuskiNet"
+    },
+    {
+      "description": "Coinbase Cartel is a ransomware threat actor that emerged in September 2025, focusing on data exfiltration rather than encryption, and has claimed over 60 victims, primarily in the healthcare, technology, and transportation sectors. The group employs TTPs such as social engineering, credential harvesting, and collaboration with Initial Access Brokers to gain initial access. They operate a data leak site where they publish victim names and issue ransom demands, requiring payment via Bitcoin.",
+      "meta": {
+        "refs": [
+          "https://businessinsights.bitdefender.com/coinbase-cartel-ransomware-group-extortion-tactics"
+        ]
+      },
+      "uuid": "bebcafbd-49ec-442f-9184-260c8c327f89",
+      "value": "Coinbase Cartel"
+    },
+    {
+      "description": "GrayCharlie is a threat actor that compromises WordPress sites to inject malicious JavaScript, redirecting visitors to NetSupport RAT payloads via fake browser update pages or ClickFix mechanisms. Insikt Group has identified extensive infrastructure linked to GrayCharlie, primarily associated with MivoCloud and HZ Hosting Ltd., including command-and-control servers and staging infrastructure. The group employs two primary attack chains to deliver the NetSupport RAT, utilizing both fake updates and ClickFix techniques. GrayCharlie targets organizations worldwide, with a particular focus on the US, and has shown persistent behavior in its operations since its emergence in 2023.",
+      "meta": {
+        "refs": [
+          "https://www.recordedfuture.com/research/graycharlie-hijacks-law-firm-sites-suspected-supply-chain-attack"
+        ]
+      },
+      "uuid": "6ec20d92-b194-40dc-a486-af335cf85a78",
+      "value": "GrayCharlie"
+    },
+    {
+      "description": "Ababil of Minab is an emerging pro-Iranian hacktivist group with a limited public profile and little verifiable prior activity in threat intelligence reporting. The group claims responsibility for a cyberattack and allegedly possesses administrative access to targeted systems. Their pro-Iran messaging and targeting of a major US public transit authority align with known patterns of Iranian-aligned actors targeting US critical infrastructure. The use of escalatory language suggests potential for further activity.",
+      "meta": {
+        "country": "IR",
+        "refs": [
+          "https://www.dataminr.com/resources/intel-brief/pro-iran-actor-ababil-of-minab-claims-cyberattack-on-la-metro/"
+        ]
+      },
+      "uuid": "74015ecc-3eaa-468b-9841-927773259f94",
+      "value": "Ababil of Minab"
+    },
+    {
+      "description": "Krybit is a ransomware group that operates as a ransomware-as-a-service provider, offering affiliates 80% of ransom proceeds in exchange for technical support and a malware suite. The group has claimed attacks on various organizations across multiple countries, including asesoriauriel.com in Spain and fraper.com in Spain, without disclosing the volume of data exfiltrated. Krybit is currently engaged in a turf war with another group, 0APT, and has been accused of fabricating victim claims. Their leak site has been used to publish compromised data and to issue threats to rivals and victims alike.",
+      "meta": {
+        "refs": [
+          "https://www.cyberdaily.au/security/13464-exclusive-krybit-hackers-claim-breach-of-new-zealand-it-services-provider",
+          "https://www.redpacketsecurity.com/krybit-ransomware-victim-hacked-0apt/",
+          "https://www.redpacketsecurity.com/krybit-ransomware-victim-fraper-com/"
+        ]
+      },
+      "uuid": "d73792c0-97d3-4aff-8e34-96bf335bf54b",
+      "value": "Krybit"
+    },
+    {
+      "description": "CashRewindo is a sophisticated threat actor leveraging aged domains in global malvertising campaigns to direct victims to investment scam sites. The group employs TTPs such as flipping between scam ads and innocuous content, as well as A/B testing to exploit time-based creative verification systems. Their operations are characterized by tailored campaigns that utilize localized language and imagery across diverse regions, including Europe, Asia, Africa, and the Americas. Additionally, CashRewindo smuggles malicious code within common JavaScript libraries to enhance their effectiveness.",
+      "meta": {
+        "refs": [
+          "https://www.confiant.com/news/cashrewindo-investment-scam-unveiled"
+        ]
+      },
+      "uuid": "cdacd83a-d89e-4101-b1ae-f5da5041eba1",
+      "value": "CashRewindo"
+    },
+    {
+      "description": "UAT-10362 is a threat actor identified by Cisco Talos, conducting spear-phishing campaigns targeting Taiwanese NGOs and suspected universities to deploy the malware \"LucidRook.\" The malware features a multi-language modular design, layered anti-analysis capabilities, and stealth-focused payload handling. UAT-10362's operations rely on compromised or public infrastructure, indicating a mature level of operational tradecraft.",
+      "meta": {
+        "refs": [
+          "https://blog.talosintelligence.com/new-lua-based-malware-lucidrook/"
+        ]
+      },
+      "uuid": "367a3c6c-8291-4428-8670-da0f9a59300e",
+      "value": "UAT-10362"
+    },
+    {
+      "description": "SHADOW-AETHER-015 is a highly adaptable cybercriminal group known for identity abuse and cloud compromise, primarily targeting identity and access management systems like Okta and Azure AD/Entra ID. They employ sophisticated social engineering techniques, including vishing and help-desk impersonation, to gain access to legitimate credentials. Their operations involve multi-pressure extortion tactics, such as data theft, ransomware, and employee intimidation, while leveraging MFA fatigue and token theft to bypass authentication controls. The group has been linked to the \"0ktapus\" phishing campaign and is most active in English-speaking countries, with a focus on sectors rich in sensitive data.",
+      "meta": {
+        "refs": [
+          "https://www.trendmicro.com/en_us/research/26/a/shadow-aether-015-earth-preta-mitre.html"
+        ]
+      },
+      "uuid": "f5d231d4-8590-4770-b511-e7a44dce59f7",
+      "value": "SHADOW-AETHER-015"
     }
   ],
   "version": 341

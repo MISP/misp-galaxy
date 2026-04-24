@@ -1,0 +1,2151 @@
+{
+  "authors": [
+    "MITRE"
+  ],
+  "category": "attack-pattern",
+  "description": "MITRE Fight Fraud Framework (F3) matrix of fraud techniques.",
+  "name": "MITRE Fight Fraud Framework",
+  "source": "https://ctid.mitre.org/fraud/",
+  "type": "mitre-fraud-framework",
+  "uuid": "9ef31655-ceaf-5808-aae9-26106b03b7b6",
+  "values": [
+    {
+      "description": "Fraud actors may exploit weaknesses in 3-Domain Secure authentication implementations to bypass additional security verification for card-not-present transactions. This may include deliberately providing incomplete cardholder information to cause authentication failures that result in transactions being processed without additional verification. Bypassing 3DS authentication allows fraud actors to conduct fraudulent transactions without completing the additional security challenges designed to prevent card-not-present fraud.",
+      "meta": {
+        "external_id": "F1001",
+        "kill_chain": [
+          "mitre-f3:defense-evasion"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1001"
+        ]
+      },
+      "uuid": "ccecdfd4-795e-5ce8-920f-b80d455d6abb",
+      "value": "3DS Bypass"
+    },
+    {
+      "description": "Fraud actors may exploit publicly available APIs intended for legitimate customer or partner use to facilitate fraud operations. This may include account enumeration, credential stuffing attacks, data scraping, or automated financial transaction fraud. Fraud actors often leverage compromised credentials, botnets, or custom scripts to generate high volumes of API requests that mimic legitimate traffic patterns.",
+      "meta": {
+        "external_id": "F1002",
+        "kill_chain": [
+          "mitre-f3:initial-access",
+          "mitre-f3:execution",
+          "mitre-f3:positioning"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1002"
+        ]
+      },
+      "uuid": "07beec94-daec-58ca-bdba-17484fb0e8d2",
+      "value": "Abuse of Public-Facing API"
+    },
+    {
+      "description": "Fraud actors may exploit mobile-specific APIs to conduct fraud operations. This may include using modified mobile applications, mobile device emulators, or custom scripts to generate fraudulent API calls that appear legitimate. Fraud actors target mobile APIs to bypass security controls designed for web-based access or to exploit mobile-specific vulnerabilities in authentication and authorization mechanisms.",
+      "meta": {
+        "external_id": "F1002.001",
+        "kill_chain": [
+          "mitre-f3:initial-access",
+          "mitre-f3:execution",
+          "mitre-f3:positioning"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1002.001"
+        ]
+      },
+      "uuid": "58ea848c-e1bf-5a8b-a62f-62c4e13c533d",
+      "value": "Abuse of Public-Facing API: Mobile API Abuse"
+    },
+    {
+      "description": "Fraud actors may abuse web-based APIs exposed through websites or web applications to automate fraud operations. This may include leveraging botnets, proxy networks, or headless browsers to mimic legitimate web traffic while conducting credential stuffing, transaction fraud, or data exfiltration. Fraud actors exploit web APIs to bypass rate limiting, CAPTCHA controls, or other security mechanisms designed to prevent automated abuse.",
+      "meta": {
+        "external_id": "F1002.002",
+        "kill_chain": [
+          "mitre-f3:initial-access",
+          "mitre-f3:execution",
+          "mitre-f3:positioning"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1002.002"
+        ]
+      },
+      "uuid": "d4891b28-d71c-5b4a-9a31-eb32d66d3d73",
+      "value": "Abuse of Public-Facing API: Web API Abuse"
+    },
+    {
+      "description": "Fraud actors may abuse SMS verification and one-time-password (OTP) services to generate excessive messaging costs or facilitate toll‑fraud schemes, rather than to authenticate real users. In a common pattern, attackers script large numbers of account sign‑ups or login attempts that all trigger SMS verifications to premium‑rate or otherwise high‑tariff phone numbers they control, allowing them to collect a share of the inflated termination fees while the victim organization pays the messaging bill. \n\nAdversaries may also manipulate SMS routing by steering verification traffic through specific high‑cost international carriers or number ranges, disguising these as normal mobile destinations so that automated routing systems deliver the messages without suspicion. By driving sustained volumes of verification traffic into these expensive routes, attackers can rapidly increase the victim’s telecom spend and monetize the difference between actual delivery cost and what the organization expects to pay for legitimate verification usage. \n\nThis technique focuses on cost and routing abuse of SMS verification itself, and is distinct from Multi-Factor Authenticaion Request Generation, which covers triggering MFA prompts or notifications to overwhelm or pressure vicitims into approving authenticaion attempts.",
+      "meta": {
+        "external_id": "F1003",
+        "kill_chain": [
+          "mitre-f3:execution"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1003"
+        ]
+      },
+      "uuid": "2357aed7-24de-5577-ac47-d4dbbf9fc992",
+      "value": "Abuse SMS verification"
+    },
+    {
+      "description": "Fraud actors may use stolen session cookies to gain unauthorized access to user accounts without requiring authentication credentials. Session cookies maintain user login state and may be obtained through phishing, malware, network interception, or data breaches. By replaying stolen session cookies, fraud actors can impersonate legitimate users and access accounts as long as the session remains valid.",
+      "meta": {
+        "external_id": "F1004",
+        "kill_chain": [
+          "mitre-f3:initial-access"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1004"
+        ]
+      },
+      "uuid": "9191bab9-2f0e-52d8-af2e-3ab024263b40",
+      "value": "Access with Stolen Session Cookie"
+    },
+    {
+      "description": "Fraud actors may modify account settings to facilitate fraud operations or maintain persistent access. This may include altering payment methods, changing contact information, modifying notification preferences, adjusting security settings, linking accounts, or adding users. . Fraud actors typically gain initial access through stolen credentials or system vulnerabilities, then make unauthorized changes to account configurations to support subsequent fraud activities or prevent detection.",
+      "meta": {
+        "external_id": "F1005",
+        "kill_chain": [
+          "mitre-f3:positioning",
+          "mitre-f3:defense-evasion"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1005"
+        ]
+      },
+      "uuid": "6d03055b-ba73-5270-9bb2-0e0e1b984536",
+      "value": "Account Manipulation"
+    },
+    {
+      "description": "Fraud actors may link compromised accounts to accounts under their control to establish persistent access that survives credential resets. In online and mobile banking environments, fraud actors may link victim bank accounts to secondary credentials or profiles without the victim's knowledge. This technique allows fraud actors to maintain account access even after the victim changes primary authentication credentials.",
+      "meta": {
+        "external_id": "F1005.001",
+        "kill_chain": [
+          "mitre-f3:positioning",
+          "mitre-f3:defense-evasion"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1005.001"
+        ]
+      },
+      "uuid": "69f8421f-bade-5331-9747-32a7ecb41208",
+      "value": "Account Manipulation: Account Linking"
+    },
+    {
+      "description": "Fraud actors may add themselves or accomplices as authorized users or secondary signers on compromised accounts. Authorized users typically have permission to perform transactions and access account features on behalf of the primary account holder. This technique provides fraud actors with legitimate-appearing access to accounts and may be used to position access for monetization or to establish persistent access that appears authorized.",
+      "meta": {
+        "external_id": "F1005.002",
+        "kill_chain": [
+          "mitre-f3:positioning",
+          "mitre-f3:defense-evasion"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1005.002"
+        ]
+      },
+      "uuid": "902b4146-59d9-568a-8d11-7d3c77a0223b",
+      "value": "Account Manipulation: Add Authorized User"
+    },
+    {
+      "description": "Fraud actors may add themselves or accounts under their control as beneficiaries on compromised financial accounts. Beneficiary designations determine who receives account assets or benefits after the account holder's death or under other specified conditions. This technique allows fraud actors to potentially receive account assets in the future or to establish fraudulent claims to account benefits.",
+      "meta": {
+        "external_id": "F1005.003",
+        "kill_chain": [
+          "mitre-f3:positioning",
+          "mitre-f3:defense-evasion"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1005.003"
+        ]
+      },
+      "uuid": "55bf6512-114d-5fac-97f5-a235424a3974",
+      "value": "Account Manipulation: Add Beneficiary"
+    },
+    {
+      "description": "Fraud actors may change account details such as PIN numbers, security questions, transaction limits, addresses, phone numbers, email address, or other account parameters. By modifying these details, fraud actors can reduce security controls, increase their operational capabilities, or prevent legitimate users from accessing or recovering accounts. This may include changing knowledge-based authentication answers or adjusting account restrictions.",
+      "meta": {
+        "external_id": "F1005.004",
+        "kill_chain": [
+          "mitre-f3:positioning",
+          "mitre-f3:defense-evasion"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1005.004"
+        ]
+      },
+      "uuid": "86c4054c-3504-5f56-bb17-af822a91a91c",
+      "value": "Account Manipulation: Change Account Details"
+    },
+    {
+      "description": "Fraud actors may change electronic delivery or notification settings to prevent account holders from detecting suspicious account activity. By disabling email alerts, SMS notifications, or other notification mechanisms, fraud actors can conduct fraudulent transactions or account modifications without triggering alerts that would otherwise notify the legitimate account owner.",
+      "meta": {
+        "external_id": "F1005.005",
+        "kill_chain": [
+          "mitre-f3:positioning",
+          "mitre-f3:defense-evasion"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1005.005"
+        ]
+      },
+      "uuid": "87a87169-9703-5812-92c9-5275b4fc9433",
+      "value": "Account Manipulation: Change E-Delivery or Notification Settings"
+    },
+    {
+      "description": "Fraud actors may alter stored payment or payout details in compromised customer, merchant, or vendor accounts to redirect non‑payroll funds to accounts or instruments they control. This can include changing bank information for vendor payments or customer refunds, updating stored cards or digital wallets used for billing, or adding new payment methods to enable unauthorized purchases and withdrawals, while leaving payroll processes untouched.",
+      "meta": {
+        "external_id": "F1005.006",
+        "kill_chain": [
+          "mitre-f3:positioning",
+          "mitre-f3:defense-evasion"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1005.006"
+        ]
+      },
+      "uuid": "d8041fd0-aa32-5377-bbe9-39311ca6ec03",
+      "value": "Account Manipulation: Change of Payment Details"
+    },
+    {
+      "description": "Fraud actors may enable additional account features that legitimate account holders did not intend to activate. This may include increasing transaction limits, enabling international transactions, activating overdraft protection, or enabling other features that facilitate unauthorized financial activities. By expanding account capabilities, fraud actors increase their ability to monetize compromised accounts.",
+      "meta": {
+        "external_id": "F1005.007",
+        "kill_chain": [
+          "mitre-f3:positioning",
+          "mitre-f3:defense-evasion"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1005.007"
+        ]
+      },
+      "uuid": "aa5086d0-1184-5045-ab03-2aea81c7eb0e",
+      "value": "Account Manipulation: Enable Account Features"
+    },
+    {
+      "description": "Fraud actors may add devices under their control to victim accounts to intercept phone calls intended for the legitimate account holder. This may include adding devices to cloud account profiles such as Apple ID or Microsoft accounts. By intercepting phone calls, fraud actors can receive authentication codes sent via voice calls, intercept customer service callbacks, or monitor communication related to account security.",
+      "meta": {
+        "external_id": "F1005.008",
+        "kill_chain": [
+          "mitre-f3:positioning",
+          "mitre-f3:defense-evasion"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1005.008"
+        ]
+      },
+      "uuid": "2e0eb57a-3d7f-56b4-a165-15c236282873",
+      "value": "Account Manipulation: Update Call Receiving Device"
+    },
+    {
+      "description": "Fraud actors may gain unauthorized access and control of a customer’s bank or payment account on a financial platform or service. This typically involves compromising the account used to hold and move funds—such as online banking, card‑issuing, or digital wallet accounts—rather than general user or application accounts covered under Compromise Accounts.\n\nFraud actors may achieve bank account takeover by using stolen credentials, exploiting system vulnerabilities, conducting phishing attacks, bypassing MFA, or leveraging credential stuffing with previously breached credentials. Once access is obtained, they can change contact and security details, add or modify payees, redirect deposits or payouts, initiate unauthorized transfers and card‑not‑present transactions, or extract sensitive financial data that supports additional fraud against the customer or institution.",
+      "meta": {
+        "external_id": "F1006",
+        "kill_chain": [
+          "mitre-f3:initial-access"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1006"
+        ]
+      },
+      "uuid": "b60b59a1-d7bb-5015-b666-67225ad42aa2",
+      "value": "Account Takeover"
+    },
+    {
+      "description": "Fraudsters may take over accounts by obtaining exposed API keys that are intended to authorize programmatic access to financial services. An exposed key can allow unauthorized interaction with payment platforms, enabling access to account data, manipulation of payment flows, and initiation of illicit transactions without traditional interactive login.\n\nAPI keys may be exposed through insecure code repositories, plaintext configuration files, shared code snippets, or targeted phishing of developers and technical staff. Once obtained, fraudsters can use the key to retrieve transaction and customer information, create or modify transactions and refunds for their own benefit, alter payment configuration to reroute future funds, or harvest data that supports follow‑on phishing or fraud campaigns.",
+      "meta": {
+        "external_id": "F1006.001",
+        "kill_chain": [
+          "mitre-f3:initial-access"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1006.001"
+        ]
+      },
+      "uuid": "307437e7-b16b-56c2-98b1-39c8ff3ad677",
+      "value": "Account Takeover: Exposed API Key"
+    },
+    {
+      "description": "Fraudsters may gain control of accounts by using exposed login credentials, such as usernames and passwords leaked or stolen from other sources. Using these credentials, they authenticate directly to payment or account portals and assume the identity of the legitimate user, often without triggering additional verification if passwords are reused or multifactor controls are weak.\n\nLogin credentials can be obtained via large‑scale data breaches, credential‑stuffing lists, phishing campaigns, or keylogging malware. After gaining access, fraudsters may change routing details or payout instructions, initiate withdrawals or refunds, view and exfiltrate sensitive customer data, adjust billing or invoicing settings to redirect future payments, or use the compromised account as infrastructure for additional fraud schemes.",
+      "meta": {
+        "external_id": "F1006.002",
+        "kill_chain": [
+          "mitre-f3:initial-access"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1006.002"
+        ]
+      },
+      "uuid": "3f428af7-2d45-5e61-8be5-53af05a5b43c",
+      "value": "Account Takeover: Exposed Login Credential"
+    },
+    {
+      "description": "Fraudsters may seize control of accounts by abusing password reset and account recovery mechanisms. By compromising a victim’s email account or intercepting reset links and one‑time codes, they can initiate and complete password reset flows without the legitimate user’s knowledge. Once the reset is successful, fraudsters establish new credentials under their control, lock the victim out of the account, and can freely modify settings, payment details, or perform unauthorized transactions.",
+      "meta": {
+        "external_id": "F1006.003",
+        "kill_chain": [
+          "mitre-f3:initial-access"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1006.003"
+        ]
+      },
+      "uuid": "df58fb2e-a38b-586f-b724-06d4c5fe4da9",
+      "value": "Account Takeover: Password Reset"
+    },
+    {
+      "description": "Fraud actors may use malware or malicious browser components to intercept, monitor, or manipulate web browser activity and transactions. This may include injecting malicious code into browser processes, deploying malicious browser extensions, or using DLL injection to compromise browser operations. Adversary-in-the-browser techniques allow real-time interception and modification of web traffic, including credential capture and transaction manipulation.",
+      "meta": {
+        "external_id": "F1007",
+        "kill_chain": [
+          "mitre-f3:initial-access",
+          "mitre-f3:positioning",
+          "mitre-f3:execution"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1007"
+        ]
+      },
+      "uuid": "5d4c074e-0e77-5347-89c7-c499b30eca30",
+      "value": "Adversary-in-the-Browser"
+    },
+    {
+      "description": "Fraud actors may inject malicious dynamic-link libraries into legitimate browser processes to intercept and manipulate web traffic. Injected DLLs can capture credentials, modify displayed content, intercept form data, or manipulate financial transactions in real-time. This technique allows fraud actors to bypass browser security controls and operate within the context of trusted browser processes.",
+      "meta": {
+        "external_id": "F1007.001",
+        "kill_chain": [
+          "mitre-f3:initial-access",
+          "mitre-f3:positioning",
+          "mitre-f3:execution"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1007.001"
+        ]
+      },
+      "uuid": "81e6cc53-5ba7-5b81-bf32-427a6d616ba9",
+      "value": "Adversary-in-the-Browser: DLL Injection"
+    },
+    {
+      "description": "Fraud actors may deploy malicious browser extensions that appear legitimate but contain hidden functionality to steal credentials or intercept financial transactions. Malicious extensions can monitor web activity, capture form inputs including payment information, modify displayed content, or inject malicious scripts into visited web pages. Users may be deceived into installing these extensions through social engineering or by compromising legitimate extension distribution channels.",
+      "meta": {
+        "external_id": "F1007.002",
+        "kill_chain": [
+          "mitre-f3:initial-access",
+          "mitre-f3:positioning",
+          "mitre-f3:execution"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1007.002"
+        ]
+      },
+      "uuid": "e6d21256-aef4-5825-b6ac-5d3428573d73",
+      "value": "Adversary-in-the-Browser: Malicious Browser Extension"
+    },
+    {
+      "description": "Fraud actors may inject malicious JavaScript into legitimate web pages to intercept credentials, capture payment information, or manipulate financial transactions. This may be accomplished through compromising web servers, exploiting cross-site scripting vulnerabilities, or using browser-based malware to modify page content before rendering. Injected JavaScript operates within the security context of the legitimate website, making detection more difficult.",
+      "meta": {
+        "external_id": "F1007.003",
+        "kill_chain": [
+          "mitre-f3:initial-access",
+          "mitre-f3:positioning",
+          "mitre-f3:execution"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1007.003"
+        ]
+      },
+      "uuid": "5afbc6a8-b1fd-5ed3-b98d-8985000177f1",
+      "value": "Adversary-in-the-Browser: Malicious JavaScript Injection"
+    },
+    {
+      "description": "Fraud actors may manipulate ATM hardware or software to steal financial data or dispense unauthorized cash. This may include installing malicious software, exploiting vulnerabilities, connecting unauthorized hardware devices, or physically manipulating ATM components. ATM manipulation techniques allow fraud actors to capture card data and PINs, dispense cash without proper authorization, or disable security controls.",
+      "meta": {
+        "external_id": "F1008",
+        "kill_chain": [
+          "mitre-f3:execution"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1008"
+        ]
+      },
+      "uuid": "f3f8b871-10f3-56c0-b1a4-7cf7cfd92972",
+      "value": "ATM Manipulation"
+    },
+    {
+      "description": "Fraud actors may manipulate ATM hardware to gain unauthorized access or control. This may include installing black box devices that connect to internal ATM systems, modifying card readers to capture card data, or physically accessing internal communication interfaces. Hardware manipulation techniques such as ATM black boxing involve connecting unauthorized devices to the ATM's internal systems to send fraudulent dispense commands.",
+      "meta": {
+        "external_id": "F1008.001",
+        "kill_chain": [
+          "mitre-f3:execution"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1008.001"
+        ]
+      },
+      "uuid": "ca408cf2-ff71-56a7-aec3-2207094e9a4b",
+      "value": "ATM Manipulation: ATM Hardware Manipulation"
+    },
+    {
+      "description": "Fraud actors may manipulate ATM software to gain unauthorized access to sensitive financial data or conduct unauthorized transactions. This may include installing malicious software, exploiting software vulnerabilities, or modifying ATM operating system configurations. Software manipulation can allow fraud actors to capture card data and PINs, dispense cash without authorization, or disable security controls.",
+      "meta": {
+        "external_id": "F1008.002",
+        "kill_chain": [
+          "mitre-f3:execution"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1008.002"
+        ]
+      },
+      "uuid": "75cb82e4-05e1-5f1f-a638-523f83366cd0",
+      "value": "ATM Manipulation: ATM Software Manipulation"
+    },
+    {
+      "description": "Fraud actors may exploit bank deposit mechanisms to introduce fraudulent funds, kite checks, or launder money. This may include depositing counterfeit checks, manipulating mobile deposit systems, exploiting deposit timing vulnerabilities, or using stolen instruments. Bank deposit fraud techniques exploit the delay between deposit and verification or clearing of deposited instruments.",
+      "meta": {
+        "external_id": "F1009",
+        "kill_chain": [
+          "mitre-f3:execution",
+          "mitre-f3:positioning"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1009"
+        ]
+      },
+      "uuid": "f815e7cd-6d56-563d-a833-3986ee36ed5b",
+      "value": "Bank Deposit"
+    },
+    {
+      "description": "Fraud actors may exploit ATM deposit functions to introduce fraudulent checks or cash into accounts. This may include depositing counterfeit checks, altered checks, or stolen instruments through ATMs that process deposits with limited immediate verification. ATM deposits may provide longer processing times before fraud is detected compared to teller deposits.",
+      "meta": {
+        "external_id": "F1009.001",
+        "kill_chain": [
+          "mitre-f3:execution",
+          "mitre-f3:positioning"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1009.001"
+        ]
+      },
+      "uuid": "566d5854-49ac-5e16-a5e9-b36a2e4df70e",
+      "value": "Bank Deposit: ATM Deposit"
+    },
+    {
+      "description": "Fraud actors may exploit mobile deposit capabilities to deposit fraudulent checks or repeatedly deposit the same check. This may include depositing counterfeit checks, altered checks, or exploiting check processing delays to deposit the same check through multiple channels before fraud is detected. Mobile deposit systems may have reduced verification compared to in-person deposits.",
+      "meta": {
+        "external_id": "F1009.002",
+        "kill_chain": [
+          "mitre-f3:execution",
+          "mitre-f3:positioning"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1009.002"
+        ]
+      },
+      "uuid": "b41348d9-3555-5f2b-ba17-777896103731",
+      "value": "Bank Deposit: Mobile Deposit"
+    },
+    {
+      "description": "Fraud actors may exploit night deposit services to introduce fraudulent deposits with delayed verification. Night deposits are processed the following business day, providing additional time for fraud actors to exploit the float period before deposits are verified. This may include depositing counterfeit checks, stolen checks, or altered instruments.",
+      "meta": {
+        "external_id": "F1009.003",
+        "kill_chain": [
+          "mitre-f3:execution",
+          "mitre-f3:positioning"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1009.003"
+        ]
+      },
+      "uuid": "273d4356-def2-596f-9aec-5d55baf18eaf",
+      "value": "Bank Deposit: Night Deposit"
+    },
+    {
+      "description": "Fraud actors may abuse test deposit mechanisms used for account verification to gather account information or conduct micro-deposit fraud. Account linking services often send small test deposits that users must verify, and fraud actors may intercept these deposits to confirm account control or conduct account enumeration. This technique may also be used to identify active accounts for targeting.",
+      "meta": {
+        "external_id": "F1009.004",
+        "kill_chain": [
+          "mitre-f3:execution",
+          "mitre-f3:positioning"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1009.004"
+        ]
+      },
+      "uuid": "298e0670-57cc-5bfd-89fd-a70126a9f2a9",
+      "value": "Bank Deposit: Test Deposit"
+    },
+    {
+      "description": "Fraud actors may purchase money orders with stolen payment methods or fraudulent funds to convert illicit proceeds into more anonymous monetary instruments. Money orders can be cashed at various locations, are difficult to trace back to the purchaser, and can be used as payment instruments with reduced fraud detection compared to electronic payments.",
+      "meta": {
+        "external_id": "F1010",
+        "kill_chain": [
+          "mitre-f3:monetization"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1010"
+        ]
+      },
+      "uuid": "468e875d-efe4-5a33-991e-2656835351f8",
+      "value": "Buy Money Order"
+    },
+    {
+      "description": "Fraud actors may capture payment card magnetic stripe data, EMV chip data, or card details from various sources. This may include using skimming devices at point-of-sale terminals, ATMs, or fuel pumps, compromising payment processing systems, or conducting memory scraping attacks against POS systems. Captured card data can be used to create counterfeit cards, conduct card-not-present fraud, or be sold to other malicious fraud actors.",
+      "meta": {
+        "external_id": "F1011",
+        "kill_chain": [
+          "mitre-f3:positioning",
+          "mitre-f3:reconnaissance"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1011"
+        ]
+      },
+      "uuid": "4dbdd135-5ab6-5ec6-9528-974a895922fa",
+      "value": "Card Dump Capture"
+    },
+    {
+      "description": "Fraud actors may test stolen payment card credentials by conducting small transactions to determine if cards are valid and active. This may include making small purchases, authorization attempts without completing transactions, or using automated testing services. Successful card tests confirm which stolen credentials remain valid for use in larger fraudulent transactions or for sale to other malicious fraud actors.",
+      "meta": {
+        "external_id": "F1012",
+        "kill_chain": [
+          "mitre-f3:positioning"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1012"
+        ]
+      },
+      "uuid": "b12f20c5-0b75-58a1-8b41-7ecde3ebf9f9",
+      "value": "Card Testing"
+    },
+    {
+      "description": "Fraud actors may alter payroll or HR system settings so that an employee’s salary or wage payments are redirected to accounts they control. This typically involves changing direct‑deposit account and routing numbers, updating payee details, or modifying payroll profiles inside dedicated payroll/HR platforms, resulting in ongoing diversion of regular paycheck deposits away from the legitimate employee.",
+      "meta": {
+        "external_id": "F1013",
+        "kill_chain": [
+          "mitre-f3:positioning"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1013"
+        ]
+      },
+      "uuid": "616141ad-6772-5d42-bb06-66fab63d5ea0",
+      "value": "Change Payroll Details"
+    },
+    {
+      "description": "Fraud Actors may illicitly obtain funds by abusing paper or digital checks tied to existing accounts. This can involve stealing checks, forging signatures or endorsements, issuing counterfeit or unauthorized checks, altering payee or amount details, or “washing” and reusing legitimate checks, all with the goal of cashing out or redirecting funds without the account holder’s consent.",
+      "meta": {
+        "external_id": "F1014",
+        "kill_chain": [
+          "mitre-f3:execution"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1014"
+        ]
+      },
+      "uuid": "5041627a-813f-53c8-8b46-4863a0b3da20",
+      "value": "Check Fraud"
+    },
+    {
+      "description": "Churning fraud occurs when fraud actors repeatedly use stolen payment card information to conduct transactions until the card limit is reached or the account balance is depleted, often before detection or card deactivation.\n\nFraud actors typically begin with a low‑value test transaction to confirm that the card details are valid and active, then rapidly execute a series of higher‑value transactions. These transactions often involve card‑not‑present channels such as eCommerce, digital goods and services, or purchases that can be quickly resold, including gift cards, prepaid instruments, or other easily liquidated assets.\n\nThe primary objectives of churning fraud are to quickly monetize stolen card data before it is revoked, acquire goods or assets that can be anonymized or converted into cash with minimal traceability, and maximize financial gain from each compromised card before fraud controls or victims detect the activity.",
+      "meta": {
+        "external_id": "F1015",
+        "kill_chain": [
+          "mitre-f3:execution"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1015"
+        ]
+      },
+      "uuid": "f505ce83-f6e1-5f37-89ee-8e68ba3a1660",
+      "value": "Churning"
+    },
+    {
+      "description": "Fraudsters may gain unauthorized access to payment gateway platforms that process online transactions, allowing them to interfere with how payments are routed and recorded. Once embedded in a gateway environment, they can redirect transactions to accounts they control, alter transaction details to siphon funds, capture payment card and customer data, or disrupt normal settlement processes.\n\nCompromise of a payment gateway can occur through exploitation of software vulnerabilities, use of stolen or weak credentials, phishing of gateway or merchant staff, or deployment of malware that intercepts traffic between merchants and the gateway. Fraud actors often focus on weaknesses in the integration between a merchant’s website and the gateway, or on misconfigurations and security gaps within the gateway’s own infrastructure, to maintain persistent and covert access.",
+      "meta": {
+        "external_id": "F1016",
+        "kill_chain": [
+          "mitre-f3:initial-access"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1016"
+        ]
+      },
+      "uuid": "bd30299c-9e48-5463-b659-4340603f9027",
+      "value": "Compromise Payment Gateway"
+    },
+    {
+      "description": "Fraud actors may turn digital or account‑based balances into physical money or negotiable instruments to complete cash‑out. By moving value into cash or cash‑like forms, they reduce traceability within electronic payment systems and gain flexibility to spend, transport, or further launder proceeds.",
+      "meta": {
+        "external_id": "F1017",
+        "kill_chain": [
+          "mitre-f3:monetization"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1017"
+        ]
+      },
+      "uuid": "67c26a38-3dac-5e2e-b1f0-5b33f52f04a6",
+      "value": "Conversion to Physical Monetary Instruments"
+    },
+    {
+      "description": "Fraud actors may withdraw cash directly from compromised accounts using ATMs, in‑branch teller withdrawals, or cash‑back at point‑of‑sale. Cash withdrawals provide immediate access to funds and can be coordinated across multiple mules, cards, or locations to rapidly deplete balances before controls or fraud‑detection mechanisms respond.",
+      "meta": {
+        "external_id": "F1017.001",
+        "kill_chain": [
+          "mitre-f3:monetization"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1017.001"
+        ]
+      },
+      "uuid": "04986007-e398-50b4-a249-38b0180db48d",
+      "value": "Conversion to Physical Monetary Instruments: Cash"
+    },
+    {
+      "description": "Fraud actors may request cashier’s checks funded from compromised accounts and payable to themselves, accomplices, or front entities. Once issued, cashier’s checks can be deposited, cashed, or used to purchase high‑value goods, providing a semi‑anonymous way to move and store value outside the original account.",
+      "meta": {
+        "external_id": "F1017.002",
+        "kill_chain": [
+          "mitre-f3:monetization"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1017.002"
+        ]
+      },
+      "uuid": "272f29df-9348-59d4-9941-fff484fc5f29",
+      "value": "Conversion to Physical Monetary Instruments: Cashier's Check"
+    },
+    {
+      "description": "Fraud actors may purchase money orders using funds drawn from compromised accounts, including via debit card, bank counter transactions, or other payment instruments. Money orders can then be cashed, resold, or used for payments (such as rent or goods), enabling further layering and obscuring the link to the original compromised account.",
+      "meta": {
+        "external_id": "F1017.003",
+        "kill_chain": [
+          "mitre-f3:monetization"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1017.003"
+        ]
+      },
+      "uuid": "82d03845-8cfe-58cc-b61e-241ab4afbed1",
+      "value": "Conversion to Physical Monetary Instruments: Money Order"
+    },
+    {
+      "description": "Fraudsters may convert stolen or illicit funds into cryptocurrencies such as Bitcoin or Ethereum to obscure the origin and movement of value. Cryptocurrency transfers leverage pseudonymous addresses and cross‑platform exchanges, making it more difficult for traditional financial monitoring and investigative processes to trace or recover the underlying funds.",
+      "meta": {
+        "external_id": "F1018",
+        "kill_chain": [
+          "mitre-f3:monetization"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1018"
+        ]
+      },
+      "uuid": "1c9e7019-bec1-5f62-9474-477033248010",
+      "value": "Convert to Cryptocurrency"
+    },
+    {
+      "description": "Fraudsters may manufacture physical payment cards using stolen or fabricated card data in order to conduct in‑person or card‑present transactions. This includes encoding compromised account details onto blank card stock or cloning existing cards so that fraudulent purchases, ATM withdrawals, or cash‑back transactions appear to originate from a legitimate debit or credit card.",
+      "meta": {
+        "external_id": "F1019",
+        "kill_chain": [
+          "mitre-f3:resource-development"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1019"
+        ]
+      },
+      "uuid": "bcd8302a-01f8-59e6-a12b-7ec0d600b147",
+      "value": "Create Counterfeit Card"
+    },
+    {
+      "description": "Fraud actors may create fraudulent materials to deceive victims or establish false legitimacy. This may include creating fake websites, fraudulent documents, counterfeit identification, or other materials designed to appear legitimate. Fake materials are used to support various fraud operations including phishing, identity fraud, business email compromise, or establishing fraudulent business entities.",
+      "meta": {
+        "external_id": "F1020",
+        "kill_chain": [
+          "mitre-f3:resource-development"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1020"
+        ]
+      },
+      "uuid": "9fc87026-b37e-5e9c-83af-de32122e82e9",
+      "value": "Create Fake Materials"
+    },
+    {
+      "description": "Fraud actors may forge documents and supporting artifacts to falsify identities, deceive authorities, or fabricate evidence in support of fraud operations. This can include creating or altering identification cards, passports, financial statements, or shipping-related evidence such as tracking numbers to bypass verification processes, gain access to restricted services, or legitimize fraudulent transactions. Commonly faked documents include bank statements, paychecks, government-issued IDs, Social Security cards, insurance policies, invoices, business licenses, which may be either fully counterfeit or subtly modified to evade detection.",
+      "meta": {
+        "external_id": "F1020.001",
+        "kill_chain": [
+          "mitre-f3:resource-development"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1020.001"
+        ]
+      },
+      "uuid": "79883be0-894a-58c6-b53a-d10103bf8909",
+      "value": "Create Fake Materials: Fake Documents"
+    },
+    {
+      "description": "Fraud actors may create fraudulent e-commerce websites that mimic legitimate retailers to capture payment information or steal credentials. This may include replicating the design, layout, and functionality of trusted sites while hosting them on attacker-controlled infrastructure, often using lookalike domains (e.g., typosquatting) to appear legitimate. Fraud actors may advertise products with no intention of delivery to harvest payment card information during checkout.\n\nFraud actors may promote these sites through phishing campaigns, malicious advertisements, search engine optimization, or social media to drive victim traffic. Fraud actors use these sites to collect credentials, payment details, or personal data, redirect transactions, or facilitate additional fraudulent activity.",
+      "meta": {
+        "external_id": "F1020.002",
+        "kill_chain": [
+          "mitre-f3:resource-development"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1020.002"
+        ]
+      },
+      "uuid": "3d9c8299-12eb-5418-b5e3-9e290f74b013",
+      "value": "Create Fake Materials: Fake Website"
+    },
+    {
+      "description": "Fraud actors may create fraudulent merchant accounts with payment processors or acquiring banks to obtain legitimate‑appearing payment acceptance capabilities. These accounts are often opened using stolen or fabricated identity information, shell businesses, or front companies to bypass onboarding and KYC controls.\n\nOnce established, fraudulent merchant accounts allow fraud actors to process payments for non‑existent or sham goods and services, run payment card testing at scale, or move and cycle funds as part of broader fraud schemes. By mimicking the behavior and documentation of real merchants, these accounts provide a controlled point for receiving card payments and disbursing proceeds, while making downstream transactions appear to originate from a legitimate business.",
+      "meta": {
+        "external_id": "F1021",
+        "kill_chain": [
+          "mitre-f3:resource-development"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1021"
+        ]
+      },
+      "uuid": "6fa3a2d4-0634-567f-99a7-d09558462fda",
+      "value": "Create Fraudulent Merchant Account"
+    },
+    {
+      "description": "Fraudsters may delete emails that could alert victims or investigators to ongoing fraudulent activity. This can include removing copies of messages sent from the victim’s account, replies from recipients, security alerts about unusual login or transaction activity, or other notifications that would reveal account changes, preventing the legitimate user from noticing and responding to the compromise",
+      "meta": {
+        "external_id": "F1022",
+        "kill_chain": [
+          "mitre-f3:defense-evasion"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1022"
+        ]
+      },
+      "uuid": "bcb95403-9889-5e7f-ab78-b3871fc0e0e9",
+      "value": "Delete Relevant Emails"
+    },
+    {
+      "description": "Fraud actors employ device fingerprint spoofing to mask their true identities and evade detection by security systems. By manipulating various attributes of their device's fingerprint, such as browser settings, operating system details, and hardware configurations, they can make their devices appear as different, legitimate ones. This technique enables fraud actors to bypass security measures that rely on device identification for authentication or fraud detection, allowing them to carry out illicit activities while remaining undetected.",
+      "meta": {
+        "external_id": "F1023",
+        "kill_chain": [
+          "mitre-f3:defense-evasion"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1023"
+        ]
+      },
+      "uuid": "080900a6-dfa3-5513-8d65-317e4d476be0",
+      "value": "Device Fingerprint Spoofing"
+    },
+    {
+      "description": "Fraud Actors or complicit consumers may intentionally dispute legitimate card purchases or payment transactions to obtain unwarranted credits or refunds from a financial institution. By falsely claiming that a transaction was unauthorized, fraudulent, or that goods or services were not received, they seek to reverse charges while retaining the benefit of the original purchase.",
+      "meta": {
+        "external_id": "F1024",
+        "kill_chain": [
+          "mitre-f3:execution"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1024"
+        ]
+      },
+      "uuid": "53957b4d-0869-5918-ae3a-474e23fafb5f",
+      "value": "Dispute Legitimate Transaction"
+    },
+    {
+      "description": "Fraud actors may use electronic funds transfer mechanisms to move money out of compromised accounts into destinations they control. This activity can leverage traditional banking rails, regional payment systems, or peer‑to‑peer platforms to rapidly cash out or further obscure stolen funds.",
+      "meta": {
+        "external_id": "F1025",
+        "kill_chain": [
+          "mitre-f3:monetization"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1025"
+        ]
+      },
+      "uuid": "fa26a797-e982-5749-bd04-6e42548076d2",
+      "value": "Electronic Funds Transfer"
+    },
+    {
+      "description": "Fraud actors may use regional payment systems, such as ACH or SEPA, to schedule push payments, credits, or other electronic transfers from victim accounts to accounts they or their accomplices control. These rails can support repeated or batched withdrawals, enabling lower‑value but high‑volume monetization that may initially blend into normal transaction patterns.",
+      "meta": {
+        "external_id": "F1025.001",
+        "kill_chain": [
+          "mitre-f3:monetization"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1025.001"
+        ]
+      },
+      "uuid": "13299e5b-ed5d-52e4-9209-c45360769fb6",
+      "value": "Electronic Funds Transfer: Peer-to-Peer Transfer"
+    },
+    {
+      "description": "Fraudsters may convert compromised account balances into physical funds by obtaining cash or cash‑like instruments, including ATM withdrawals, cashier’s checks, money orders, or similar negotiable instruments. Physical withdrawals allow immediate spending or further layering of funds outside of the original financial channel",
+      "meta": {
+        "external_id": "F1025.002",
+        "kill_chain": [
+          "mitre-f3:monetization"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1025.002"
+        ]
+      },
+      "uuid": "45ee4220-ff62-56d4-8c49-0bc2527a4fcc",
+      "value": "Electronic Funds Transfer: Regional Payment Rail"
+    },
+    {
+      "description": "Fraud actors may initiate domestic or international wire transfers from compromised accounts to mule or controlled accounts. Wire transfers can move large values quickly and, once executed, are often difficult or slow to reverse, providing an efficient channel for high‑value cash‑out.",
+      "meta": {
+        "external_id": "F1025.003",
+        "kill_chain": [
+          "mitre-f3:monetization"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1025.003"
+        ]
+      },
+      "uuid": "9b1f2624-46c3-5866-97bb-cebb59a6d6a9",
+      "value": "Electronic Funds Transfer: Wire Transfer"
+    },
+    {
+      "description": "Fraud actors may exploit gambling platforms as a channel to convert illicit value into seemingly legitimate funds and to move or disguise the proceeds of fraud. They may create or use accounts, often opened with stolen or fabricated identities, to deposit illicit funds, place low‑risk or offsetting bets, and then withdraw balances as “winnings” to other accounts under their control. They may also exploit bonus structures, loyalty rewards, or promotional credits to generate additional value, or conduct arbitrage across multiple platforms to turn promotional or gaming flows into profit. \n\nBy routing funds through gambling platforms and generating complex patterns of bets, transfers, and payouts, actors aim to obscure the source of the money and make subsequent withdrawals appear consistent with normal gambling activity, supporting monetization and money‑laundering objectives rather than the initial execution of fraud.",
+      "meta": {
+        "external_id": "F1026",
+        "kill_chain": [
+          "mitre-f3:monetization"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1026"
+        ]
+      },
+      "uuid": "593f6e9b-b98d-5962-bc3a-8a7d23ef3b89",
+      "value": "Exploitation of Gambling Platforms"
+    },
+    {
+      "description": "Fraud actors may create or alter business documents to support fraud schemes or deceive stakeholders. This may include creating fake invoices, forging business licenses, falsifying financial statements, or creating fraudulent corporate documentation. Falsified documents may be used to establish fraudulent business entities, support business email compromise schemes, obtain financing, or deceive partners and customers.",
+      "meta": {
+        "external_id": "F1027",
+        "kill_chain": [
+          "mitre-f3:resource-development"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1027"
+        ]
+      },
+      "uuid": "1dfbeab1-12e9-5a1b-b2f4-73c6613f1773",
+      "value": "Falsify Business Documents"
+    },
+    {
+      "description": "Fraudulent purchasing occurs when fraud actors use stolen payment card data, compromised or fraudulent accounts, or money laundering channels to buy goods or services. These purchases are used to convert illicit funds into seemingly legitimate assets, avoid scrutiny by financial institutions, or cash out stolen value into clean money.\n\nFraud actors may carry out fraudulent purchases using stolen credit card details or by abusing compromised financial accounts on e‑commerce platforms, payment processors (for example, gateway providers), or brick‑and‑mortar merchants with online payment capabilities. They may prioritize high‑value goods that can be quickly resold, or convert funds into cryptocurrencies or gift cards that provide liquid, harder‑to‑trace value.\n\nExamples of fraudulent purchasing include: buying luxury items with stolen card information and reselling them for cash; ordering goods or services to drop addresses where they or associates can safely retrieve the items; and using illegitimately obtained funds to purchase gift cards or digital assets that have anonymous resale value or can be redeemed without exposing the buyer’s identity.\n\nThe primary objectives of fraudulent purchasing are to liquidate stolen financial assets before detection and account shutdown, launder money by transforming illicit funds into physical goods that can be resold for “clean” proceeds, and obtain goods or services for personal use or profit without any intention of legitimate payment.",
+      "meta": {
+        "external_id": "F1028",
+        "kill_chain": [
+          "mitre-f3:execution",
+          "mitre-f3:monetization"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1028"
+        ]
+      },
+      "uuid": "d20917d7-1da6-5cd1-8157-961a51774212",
+      "value": "Fradulent Purchasing"
+    },
+    {
+      "description": "Fraud actors may gather information about existing or prospective customers to support targeted fraud operations and social‑engineering attacks against financial institutions, merchants, or platforms. This can include collecting customer identity details (such as names, addresses, dates of birth, government identifiers), account and card data, contact information, relationship data (for example, employers, family members, or business associations), and behavioral or preference information (such as typical spending patterns or channel usage).\n\nCustomer information may be sourced from data breaches, underground markets, public records, social media, third‑party data brokers, compromised internal systems, or direct social‑engineering of customers and staff. Aggregated customer data enables more convincing impersonation, tailored fraud scenarios, and higher‑success attacks such as account takeover, new‑account fraud, mule recruitment, and highly targeted social‑engineering campaigns against both customers and the institutions that serve them.",
+      "meta": {
+        "external_id": "F1029",
+        "kill_chain": [
+          "mitre-f3:reconnaissance"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1029"
+        ]
+      },
+      "uuid": "2eea2af7-e5a9-5ef5-b6a1-c4c7e1db483a",
+      "value": "Gather Customer Information"
+    },
+    {
+      "description": "Fraud actors may falsify geographic location information to bypass location-based security controls or access restricted services. This may include using VPNs, proxy servers, GPS spoofing applications, or other techniques to mask true location. Location spoofing allows fraud actors to access geo-restricted content, bypass location-based fraud detection, or hide their true location during fraud operations.",
+      "meta": {
+        "external_id": "F1030",
+        "kill_chain": [
+          "mitre-f3:defense-evasion"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1030"
+        ]
+      },
+      "uuid": "ef50645d-89af-5251-9cb3-352dbfa2c7c6",
+      "value": "Geolocation Spoofing"
+    },
+    {
+      "description": "Fraud actors may impersonate legitimate account holders when interacting with financial institutions or service providers. This may include using stolen personal information to answer authentication questions, conducting social engineering attacks while impersonating victims, or using compromised identity information to convince institutions to grant access or conduct transactions. Successful impersonation can bypass identity verification controls.",
+      "meta": {
+        "external_id": "F1031",
+        "kill_chain": [
+          "mitre-f3:initial-access",
+          "mitre-f3:defense-evasion"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1031"
+        ]
+      },
+      "uuid": "03361ddb-cd4a-552e-b1ad-aa6b1a07d343",
+      "value": "Impersonate Account Holder"
+    },
+    {
+      "description": "Fraud actors may impersonate officials such as bank representatives, law enforcement officers, government agents, or other authority figures to manipulate victims. By impersonating officials, fraud actors leverage the trust and authority associated with these positions to convince victims to provide sensitive information, authorize transactions, or take actions that facilitate fraud. Impersonation may occur through phone calls, emails, or in-person interactions.",
+      "meta": {
+        "external_id": "F1032",
+        "kill_chain": [
+          "mitre-f3:initial-access",
+          "mitre-f3:defense-evasion"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1032"
+        ]
+      },
+      "uuid": "a2a8496e-9796-581d-b26a-1946d1d37907",
+      "value": "Impersonate Official"
+    },
+    {
+      "description": "Fraud actors may abuse legitimate access privileges to conduct fraud operations. This may include malicious insiders, compromised insiders, or exploitation of excessive access privileges by authorized users. Insider access provides fraud actors with legitimate credentials and authorization to access systems, data, or conduct transactions, making detection more difficult than external attacks.",
+      "meta": {
+        "external_id": "F1033",
+        "kill_chain": [
+          "mitre-f3:initial-access"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1033"
+        ]
+      },
+      "uuid": "ed4c18ff-d859-536f-880a-2907775ca351",
+      "value": "Insider Access Abuse"
+    },
+    {
+      "description": "Fraud actors may interact with interactive voice response systems to understand call flows, authentication mechanisms, or available functions. By mapping IVR systems, fraud actors can identify opportunities for fraud, understand authentication requirements, or develop strategies for social engineering attacks against customer service representatives. IVR discovery may be automated or conducted manually to gather intelligence for fraud operations.",
+      "meta": {
+        "external_id": "F1034",
+        "kill_chain": [
+          "mitre-f3:reconnaissance"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1034"
+        ]
+      },
+      "uuid": "0087690c-2b5d-560d-a294-375ad89964f0",
+      "value": "Interactive Voice Response Mapping"
+    },
+    {
+      "description": "Fraud actors may steal physical mail to obtain financial information, payment cards, checks, or identity documents. Mail theft provides access to statements, new payment cards, checks, tax documents, or other financial materials that can be used for fraud. Stolen mail may be intercepted from mailboxes, during postal delivery, or from mail processing facilities.",
+      "meta": {
+        "external_id": "F1035",
+        "kill_chain": [
+          "mitre-f3:positioning",
+          "mitre-f3:reconnaissance"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1035"
+        ]
+      },
+      "uuid": "5690ead2-7667-5501-b33c-c9deb54ca8f3",
+      "value": "Mail Theft"
+    },
+    {
+      "description": "Fraud actors may pretend to be a new vendor or supplier to trick organizations into directing payments to fraudulent accounts. New vendor setup can be initiated through fake invoices, requests for adding a new payee, banking information change forms, or urgent payment requests that pressure staff to bypass normal verification steps. Once the bogus vendor profile is established in accounts payable or procurement systems, fraud actors can submit additional invoices, alter payment details, or reroute legitimate payments intended for real vendors to accounts they control.",
+      "meta": {
+        "external_id": "F1036",
+        "kill_chain": [
+          "mitre-f3:positioning",
+          "mitre-f3:defense-evasion"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1036"
+        ]
+      },
+      "uuid": "bc85fe1c-467f-5375-9917-35f2bc44a2f0",
+      "value": "New Vendor Setup"
+    },
+    {
+      "description": "Fraud actors exploit NFC (Near Field Communication) payments by using stolen or cloned NFC-enabled cards or mobile devices to make unauthorized transactions. They may intercept or manipulate NFC signals to initiate payments without the legitimate cardholder's knowledge or consent. By leveraging NFC technology, fraud actors can quickly and discreetly conduct fraudulent transactions, often evading traditional security measures such as PIN verification or signature requirements, leading to financial losses for both consumers and businesses.",
+      "meta": {
+        "external_id": "F1037",
+        "kill_chain": [
+          "mitre-f3:execution"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1037"
+        ]
+      },
+      "uuid": "2a2113cf-b4c5-56cb-91b5-2947d3733ca0",
+      "value": "NFC Payment"
+    },
+    {
+      "description": "Fraud actors use PAN/CVV Generators to create valid credit card numbers (PANs) along with their corresponding Card Verification Values (CVVs), allowing fraud actors to bypass security measures and make unauthorized purchases. By generating PANs and CVVs, fraud actors can create counterfeit credit cards or conduct card-not-present transactions without physically possessing the victim's card.",
+      "meta": {
+        "external_id": "F1038",
+        "kill_chain": [
+          "mitre-f3:resource-development"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1038"
+        ]
+      },
+      "uuid": "0fdd6965-4a3a-5021-bb10-f8d4e9ef5a60",
+      "value": "PAN/CVV Generation"
+    },
+    {
+      "description": "Fraud actors exploit Payment Authentication Requests (PaReqs) by manipulating the data within these requests to bypass security measures and gain unauthorized access to sensitive information or transactions. By altering the parameters or contents of PaReqs, they can trick payment systems into approving fraudulent transactions without proper authentication. This manipulation helps fraud actors evade detection by exploiting vulnerabilities in payment processing systems and bypassing security checks designed to prevent unauthorized access or fraudulent transactions.",
+      "meta": {
+        "external_id": "F1039",
+        "kill_chain": [
+          "mitre-f3:defense-evasion"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1039"
+        ]
+      },
+      "uuid": "6073989d-2562-58de-9260-40e642ad4967",
+      "value": "PaReq Manipulation"
+    },
+    {
+      "description": "Fraud actors may manipulate caller ID information so that outgoing calls appear to originate from a different phone number than the one actually used. This enables them to impersonate trusted organizations or ordinary customers in order to bypass call‑screening controls, establish credibility, and support social engineering or other fraudulent activity.",
+      "meta": {
+        "external_id": "F1040",
+        "kill_chain": [
+          "mitre-f3:defense-evasion",
+          "mitre-f3:reconnaissance",
+          "mitre-f3:initial-access"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1040"
+        ]
+      },
+      "uuid": "815ec34b-a80e-5b78-a1a9-476670a90d16",
+      "value": "Phone Number Spoofing"
+    },
+    {
+      "description": "Fraud actors may spoof a phone number that appears to belong to a legitimate customer or other ordinary individual when calling financial institutions or other official entities. By presenting themselves as the account holder from a plausible personal number, they attempt to pass identity verification, obtain confidential information about the customer, or convince staff to change account details, reset credentials, or otherwise grant access that facilitates downstream fraud like Impersonate Account Holder.",
+      "meta": {
+        "external_id": "F1040.001",
+        "kill_chain": [
+          "mitre-f3:defense-evasion",
+          "mitre-f3:reconnaissance",
+          "mitre-f3:initial-access"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1040.001"
+        ]
+      },
+      "uuid": "6d1aec95-d99f-53c6-a068-a5bf02e5ab40",
+      "value": "Phone Number Spoofing: Customer Phone Number Spoofing"
+    },
+    {
+      "description": "Fraud actors may spoof an official phone number associated with a trusted organization, such as a bank, government agency, or law enforcement office, when calling victims. By making the call appear to come from a recognized institution’s published number, they increase the likelihood that targets will trust the caller, disclose sensitive information, or perform high‑risk actions such as approving transactions or granting account access.",
+      "meta": {
+        "external_id": "F1040.002",
+        "kill_chain": [
+          "mitre-f3:defense-evasion",
+          "mitre-f3:reconnaissance",
+          "mitre-f3:initial-access"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1040.002"
+        ]
+      },
+      "uuid": "0355371c-9b2f-5c3c-ac5d-89ef419ebb70",
+      "value": "Phone Number Spoofing: Official Phone Number Spoofing"
+    },
+    {
+      "description": "Fraud actors observe or obtain personal identification numbers (PINs). Use of hidden cameras, skimming devices, or other covert methods to capture PINs at ATMs, point-of-sale terminals, or other PIN-entry locations.\n\nObtained PIN numbers used with other stolen information to compromise the victim's accounts or conduct fraudulent transactions.",
+      "meta": {
+        "external_id": "F1041",
+        "kill_chain": [
+          "mitre-f3:initial-access",
+          "mitre-f3:reconnaissance"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1041"
+        ]
+      },
+      "uuid": "96974458-a21c-5c6c-a78f-662e8c5d27be",
+      "value": "PIN-code Peeking"
+    },
+    {
+      "description": "Fraud actors target inactive bank accounts because they are less likely to be monitored closely by the account holder or financial institution. They may attempt to reactivate the bank account through social engineering or by exploiting loopholes in the bank's security procedures. Once reactivated, they can use the account to launder money, deposit counterfeit checks, or engage in other fraudulent activities, taking advantage of the perceived lack of scrutiny on inactive accounts.",
+      "meta": {
+        "external_id": "F1042",
+        "kill_chain": [
+          "mitre-f3:positioning",
+          "mitre-f3:initial-access"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1042"
+        ]
+      },
+      "uuid": "8ff42f80-5a31-53ba-847f-5309aa66595a",
+      "value": "Reactivate Account"
+    },
+    {
+      "description": "Fraud actors exploit the Reversal of Operation by initially conducting a legitimate transaction, such as purchasing goods or services. After the transaction is complete and the funds have been transferred, they then reverse the transaction, claiming it was unauthorized or fraudulent. This technique may allow them to obtain the goods or services without actually paying for them, effectively evading detection and potentially causing financial loss to the legitimate party involved.",
+      "meta": {
+        "external_id": "F1043",
+        "kill_chain": [
+          "mitre-f3:execution"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1043"
+        ]
+      },
+      "uuid": "8f0ecacb-33a4-5f42-a1b7-30d557020618",
+      "value": "Reversal of Transaction"
+    },
+    {
+      "description": "Fraud actors use scheduled transfers to systematically move funds out of compromised accounts at predefined intervals. By creating or hijacking recurring payment instructions within online banking or payment services, they can quietly redirect money to accounts they control or to intermediaries that help conceal the origin of the funds.\n\nFraud actors may gain access to online banking or payment service accounts and configure new standing orders or modify existing ones to send funds to external destinations. These transfers are typically timed and sized to resemble normal business activity, helping them evade detection while routing money through shell entities, mule accounts, or cryptocurrency services as part of the laundering process.",
+      "meta": {
+        "external_id": "F1044",
+        "kill_chain": [
+          "mitre-f3:execution"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1044"
+        ]
+      },
+      "uuid": "13686090-7c0f-5346-adb5-7c2113e89f1f",
+      "value": "Scheduled Transfer"
+    },
+    {
+      "description": "Fraud actors may structure transactions or account activity by breaking up large movements of funds, spreading activity across multiple accounts, or using different locations and channels to avoid triggering fraud controls and regulatory reporting thresholds. By parcelling deposits, withdrawals, or transfers into smaller amounts that fall below Currency Transaction Report (CTR) or Suspicious Activity Report (SAR) triggers, or by distributing activity over time and across institutions, they aim to keep illicit flows appearing routine and prevent automated systems or investigators from detecting the underlying money laundering or fraud.",
+      "meta": {
+        "external_id": "F1045",
+        "kill_chain": [
+          "mitre-f3:defense-evasion"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1045"
+        ]
+      },
+      "uuid": "4e833dcb-41be-5ea1-a6e0-688e5fc61452",
+      "value": "Structuring"
+    },
+    {
+      "description": "Fraud actors may perform small, low‑value “test” transactions to verify that stolen or compromised payment instruments can be successfully used before attempting larger fraud. In these tests, they confirm details such as whether the card or account is open, has not been blocked, passes authorization checks (for example, AVS/CVV or 3‑D Secure), and can complete online or card‑not‑present purchases without triggering strong controls. Successful tests indicate that a card or account is likely to support higher‑value charges or cash‑out attempts, allowing fraud actors to prioritize the most viable instruments for large‑scale fraudulent transactions or broader card‑testing campaigns.",
+      "meta": {
+        "external_id": "F1046",
+        "kill_chain": [
+          "mitre-f3:positioning"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1046"
+        ]
+      },
+      "uuid": "de68dadd-768d-5d5d-83f2-20bea9cc50cb",
+      "value": "Test Payment Thresholds"
+    },
+    {
+      "description": "Fraud actors may initiate unauthorized bank transfers to move funds from compromised accounts. This may include wire transfers, ACH transfers, peer-to-peer payment transfers, or other electronic fund transfer mechanisms. Fraud actors typically gain access through stolen credentials, compromised sessions, or by manipulating account holders through social engineering before initiating transfers to accounts under their control.",
+      "meta": {
+        "external_id": "F1047",
+        "kill_chain": [
+          "mitre-f3:monetization"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1047"
+        ]
+      },
+      "uuid": "849861ed-af5a-5b4d-8a56-2d8a487877db",
+      "value": "Transfer of funds"
+    },
+    {
+      "description": "Fraud actors use virtual cards to facilitate online fraud because they provide flexibility, anonymity, and rapid issuance for card‑not‑present transactions. Virtual cards are often obtained with weaker identity verification or sourced from compromised accounts, making them attractive instruments for testing stolen card data, funding mule accounts, or executing rapid series of purchases and refunds. Their disposability allows fraud actors to run multiple transactions, dispute or reverse charges, and then discard the card, reducing the risk that a single compromised instrument links together the broader scheme.\n\nVirtual cards are frequently employed in promotion abuse, synthetic identity fraud, and account takeover scenarios, for example, to cash out loyalty points, rotate through trial or subscription offers, or route payments through intermediary wallets and marketplaces. They can also be used to create complex transaction chains across merchants and jurisdictions, complicating efforts to tie specific fraudulent purchases back to the originating compromised identity or account. This flexibility makes virtual cards a convenient tool for scaling and obscuring a wide range of digital fraud schemes, even when they are not explicitly part of a formal money‑laundering process.",
+      "meta": {
+        "external_id": "F1048",
+        "kill_chain": [
+          "mitre-f3:defense-evasion"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/F1048"
+        ]
+      },
+      "uuid": "561e7c31-06b1-5dbe-83c9-a471b595237e",
+      "value": "Use Virtual Cards"
+    },
+    {
+      "description": "Fraud actors may delete or modify artifacts generated within systems to remove evidence of their presence or hinder defenses. Various artifacts may be created by a fraud actor or something that can be attributed to afraud actor’s actions. Typically these artifacts are used as defensive indicators related to monitored events, such as strings from downloaded files, logs that are generated from user actions, and other data analyzed by defenders. Location, format, and type of artifact (such as command or login history) are often specific to each platform.\n\nRemoval of these indicators may interfere with event collection, reporting, or other processes used to detect intrusion activity. This may compromise the integrity of security solutions by causing notable events to go unreported. This activity may also impede forensic analysis and incident response, due to lack of sufficient data to determine what occurred.",
+      "meta": {
+        "external_id": "T1070",
+        "kill_chain": [
+          "mitre-f3:defense-evasion"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/T1070"
+        ]
+      },
+      "uuid": "411e46e5-b942-5694-b153-bce708a0c14c",
+      "value": "Indicator Removal"
+    },
+    {
+      "description": "Fraud actors may use brute force techniques to gain access to accounts when passwords are unknown or when password hashes are obtained. Without knowledge of the password for an account or set of accounts, a fraud actor may systematically guess the password using a repetitive or iterative mechanism. Brute forcing passwords can take place via interaction with a service that will check the validity of those credentials or offline against previously acquired credential data, such as password hashes.\n\nBrute forcing credentials may take place at various points during a breach. For example, fraud actors may attempt to brute force access to Valid Accounts within a victim environment leveraging knowledge gathered from other post-compromise behaviors such as OS Credential Dumping, Account Discovery, or Password Policy Discovery. Fraud actors may also combine brute forcing activity with behaviors such as External Remote Services as part of Initial Access.\n\nIf a fraud actor guesses the correct password but fails to login to a compromised account due to location-based conditional access policies, they may change their infrastructure until they match the victim’s location and therefore bypass those policies.",
+      "meta": {
+        "external_id": "T1110",
+        "kill_chain": [
+          "mitre-f3:initial-access"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/T1110"
+        ]
+      },
+      "uuid": "e76deeb5-f9f1-5ed7-b2e1-e774af84b1a0",
+      "value": "Brute Force"
+    },
+    {
+      "description": "Fraud actors with no prior knowledge of legitimate credentials within the system or environment may guess passwords to attempt access to accounts. Without knowledge of the password for an account, a fraud actor may opt to systematically guess the password using a repetitive or iterative mechanism. A fraud actor may guess login credentials without prior knowledge of system or environment passwords during an operation by using a list of common passwords. Password guessing may or may not take into account the target's policies on password complexity or use policies that may lock accounts out after a number of failed attempts.\n\nGuessing passwords can be a risky option because it could cause numerous authentication failures and account lockouts, depending on the organization's login failure policies.",
+      "meta": {
+        "external_id": "T1110.001",
+        "kill_chain": [
+          "mitre-f3:initial-access"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/T1110.001"
+        ]
+      },
+      "uuid": "839ca809-b1a1-5c50-9de6-1bc7def1c7ba",
+      "value": "Brute Force: Password Guessing"
+    },
+    {
+      "description": "Fraud actors may use password cracking to attempt to recover usable credentials, such as plaintext passwords, when credential material such as password hashes are obtained. OS Credential Dumping can be used to obtain password hashes, this may only get a fraud actor so far when Pass the Hash is not an option. Further, fraud actors may leverage Data from Configuration Repository in order to obtain hashed credentials for network devices.\n\nTechniques to systematically guess the passwords used to compute hashes are available, or the fraud actor may use a pre-computed rainbow table to crack hashes. Cracking hashes is usually done on fraudster-controlled systems outside of the target network. The resulting plaintext password resulting from a successfully cracked hash may be used to log into systems, resources, and services in which the account has access.",
+      "meta": {
+        "external_id": "T1110.002",
+        "kill_chain": [
+          "mitre-f3:initial-access"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/T1110.002"
+        ]
+      },
+      "uuid": "6419fa0c-8f64-5162-a4fb-2fcae4a7891a",
+      "value": "Brute Force: Password Cracking"
+    },
+    {
+      "description": "Fraud actors may use a single or small list of commonly used passwords against many different accounts to attempt to acquire valid account credentials. Password spraying uses one password (e.g. 'Password01'), or a small list of commonly used passwords, that may match the complexity policy of the domain. Logins are attempted with that password against many different accounts on a network to avoid account lockouts that would normally occur when brute forcing a single account with many passwords.\n\nIn order to avoid detection thresholds, fraud actors may deliberately throttle password spraying attempts to avoid triggering security alerting. Additionally, fraud actors may leverage LDAP and Kerberos authentication attempts, which are less likely to trigger high-visibility events such as Windows \"logon failure\" event ID 4625 that is commonly triggered by failed SMB connection attempts.",
+      "meta": {
+        "external_id": "T1110.003",
+        "kill_chain": [
+          "mitre-f3:initial-access"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/T1110.003"
+        ]
+      },
+      "uuid": "7f50537f-bb4e-5ffe-9a4b-bc1a17b1357a",
+      "value": "Brute Force: Password Spraying"
+    },
+    {
+      "description": "Fraud actors may use credentials obtained from breach dumps of unrelated accounts to gain access to target accounts through credential overlap. Occasionally, large numbers of username and password pairs are dumped online when a website or service is compromised and the user account credentials accessed. The information may be useful to a fraud actor attempting to compromise accounts by taking advantage of the tendency for users to use the same passwords across personal and business accounts.\n\nCredential stuffing is a risky option because it could cause numerous authentication failures and account lockouts, depending on the organization's login failure policies.",
+      "meta": {
+        "external_id": "T1110.004",
+        "kill_chain": [
+          "mitre-f3:initial-access"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/T1110.004"
+        ]
+      },
+      "uuid": "f70ffeee-7858-5020-9c9d-de511bc3234a",
+      "value": "Brute Force:  Credential Stuffing"
+    },
+    {
+      "description": "Fraud actors may intercept multi-factor authentication credentials or tokens to bypass additional security controls. This may include intercepting SMS messages containing one-time codes, capturing push notification approvals, compromising hardware tokens, or exploiting vulnerabilities in MFA implementations. Successful MFA interception allows fraud actors to complete authentication despite not possessing legitimate MFA credentials.",
+      "meta": {
+        "external_id": "T1111",
+        "kill_chain": [
+          "mitre-f3:initial-access"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/T1111"
+        ]
+      },
+      "uuid": "2ff9223e-69ea-56de-b5cf-cec75905963b",
+      "value": "Multi-Factor Authentication Interception"
+    },
+    {
+      "description": "Fraud actors may attempt to take screen captures of the desktop to gather information over the course of an operation. Screen capturing functionality may be included as a feature of a remote access tool used in post-compromise operations. Taking a screenshot is also typically possible through native utilities or API calls, such as CopyFromScreen, xwd, or screencapture.",
+      "meta": {
+        "external_id": "T1113",
+        "kill_chain": [
+          "mitre-f3:positioning"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/T1113"
+        ]
+      },
+      "uuid": "77eb7cd3-0e8f-5778-a308-1276ebd1a065",
+      "value": "Screen Capture"
+    },
+    {
+      "description": "Fraud actors may take advantage of security vulnerabilities and inherent functionality in browser software to change content, modify user-behaviors, and intercept information as part of various browser session hijacking techniques.\n\nA specific example is when a fraud actor injects software into a browser that allows them to inherit cookies, HTTP sessions, and SSL client certificates of a user then use the browser as a way to pivot into an authenticated intranet. Executing browser-based behaviors such as pivoting may require specific process permissions, such as SeDebugPrivilege and/or high-integrity/administrator rights\n\nAnother example involves pivoting browser traffic from the fraud actor's browser through the user's browser by setting up a proxy which will redirect web traffic. This does not alter the user's traffic in any way, and the proxy connection can be severed as soon as the browser is closed. The fraud actor assumes the security context of whichever browser process the proxy is injected into. Browsers typically create a new process for each tab that is opened and permissions and certificates are separated accordingly. With these permissions, a fraud actor could potentially browse to any resource on an intranet, such as SharePoint or webmail, that is accessible through the browser and which the browser has sufficient permissions. Browser pivoting may also bypass security provided by 2-factor authentication.",
+      "meta": {
+        "external_id": "T1185",
+        "kill_chain": [
+          "mitre-f3:initial-access",
+          "mitre-f3:positioning"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/T1185"
+        ]
+      },
+      "uuid": "32732820-d6d7-50f8-80e7-cbbba40adcc4",
+      "value": "Browser Session Hijacking"
+    },
+    {
+      "description": "Fraud actors may gain access to a system through a user visiting a website over the normal course of browsing. Multiple ways of delivering exploit code to a browser exist (i.e., Drive-by Target), including: \n- A legitimate website is compromised, allowing fraud actors to inject malicious code\n- Script files served to a legitimate website from a publicly writeable cloud storage bucket are modified by a fraud actor\n- Malicious ads are paid for and served through legitimate ad providers (i.e., Malvertising)\n- Built-in web application interfaces that allow content are leveraged for the insertion of malicious scripts or iFrames (e.g., cross-site scripting)\n\nBrowser push notifications may also be abused by fraud actors and leveraged for malicious code injection via User Execution. By clicking \"allow\" on browser push notifications, users may be granting a website permission to run JavaScript code on their browser.\nOften the website used by a fraud actor is one visited by a specific community, such as government, a particular industry, or a particular region, where the goal is to compromise a specific user or set of users based on a shared interest. This kind of targeted campaign is often referred to a strategic web compromise or watering hole attack. There are several known examples of this occurring.",
+      "meta": {
+        "external_id": "T1189",
+        "kill_chain": [
+          "mitre-f3:initial-access"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/T1189"
+        ]
+      },
+      "uuid": "2fbc9003-8e4e-5330-9643-bb1e71ecdcbc",
+      "value": "Drive-by Compromise"
+    },
+    {
+      "description": "Fraud actors may manipulate products or product delivery mechanisms prior to receipt by a final consumer for the purpose of data or system compromise.\n\nSupply chain compromise can take place at any stage of the supply chain including:\n\n- Manipulation of development tools\n- Manipulation of a development environment\n- Manipulation of source code repositories (public or private)\n- Manipulation of source code in open-source dependencies\n- Manipulation of software update/distribution mechanisms\n- Compromised/infected system images (removable media infected at the factory)\n- Replacement of legitimate software with modified versions\n- Sales of modified/counterfeit products to legitimate distributors\n- Shipment interdiction\n\nWhile supply chain compromise can impact any component of hardware or software, fraud actors looking to gain execution have often focused on malicious additions to legitimate software in software distribution or update channels. Fraud actors may limit targeting to a desired victim set or distribute malicious software to a broad set of consumers but only follow up with specific victims. Popular open-source projects that are used as dependencies in many applications may also be targeted as a means to add malicious code to users of the dependency.\n\nIn some cases, fraud actors may conduct \"second-order\" supply chain compromises by leveraging the access gained from an initial supply chain compromise to further compromise a software component. This may allow the threat actor to spread to even more victims.",
+      "meta": {
+        "external_id": "T1195",
+        "kill_chain": [
+          "mitre-f3:initial-access"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/T1195"
+        ]
+      },
+      "uuid": "6ca7f760-658b-5de7-95be-a196c4208ef7",
+      "value": "Supply Chain Compromise"
+    },
+    {
+      "description": "A fraud actor may use legitimate remote access tools to establish an interactive command and control channel within a network. Remote access tools create a session between two trusted hosts through a graphical interface, a command line interaction, a protocol tunnel via development or management software, or hardware-level access such as KVM (Keyboard, Video, Mouse) over IP solutions. Desktop support software (usually graphical interface) and remote management software (typically command line interface) allow a user to control a computer remotely as if they are a local user inheriting the user or software permissions. This software is commonly used for troubleshooting, software installation, and system management. Fraud actors may similarly abuse response features included in EDR and other defensive tools that enable remote access",
+      "meta": {
+        "external_id": "T1219",
+        "kill_chain": [
+          "mitre-f3:positioning"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/T1219"
+        ]
+      },
+      "uuid": "168b6b40-bce4-5582-a308-1443d29ce3f0",
+      "value": "Remote Access Tools"
+    },
+    {
+      "description": "Unauthorized SIM changes including swapping to a new SIM card within the same carrier or porting the phone number to a new SIM card at a new carrier. This results in voice and SMS communications being redirected to the threat-actor.",
+      "meta": {
+        "external_id": "T1451",
+        "kill_chain": [
+          "mitre-f3:initial-access"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/T1451"
+        ]
+      },
+      "uuid": "7b2b5d88-ab4d-54bf-a5cd-4f66e992c842",
+      "value": "SIM Card Swap"
+    },
+    {
+      "description": "Fraud actors may abuse accessibility features on mobile devices to intercept and manipulate authentication processes. Malicious applications may request accessibility service permissions, enabling them to monitor screen content, intercept authentication prompts, and capture one-time passwords or other multi-factor authentication codes displayed on the device. This technique allows fraud actors to bypass security controls by gaining unauthorized access to sensitive information presented through legitimate authentication interfaces.",
+      "meta": {
+        "external_id": "T1453",
+        "kill_chain": [
+          "mitre-f3:positioning"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/T1453"
+        ]
+      },
+      "uuid": "98da0674-2376-52a2-9ff1-00b1dc51205e",
+      "value": "Abuse Accessibility Features"
+    },
+    {
+      "description": "Fraud actors may remove or alter account access controls after gaining unauthorized access to lock out legitimate account owners. This may include changing login credentials, modifying account recovery information, or manipulating user roles and permissions within enterprise systems. By preventing the legitimate owner from regaining access, fraud actors maintain persistent control over compromised accounts.",
+      "meta": {
+        "external_id": "T1531",
+        "kill_chain": [
+          "mitre-f3:positioning"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/T1531"
+        ]
+      },
+      "uuid": "c0ca0eb6-b05a-5a95-b6e0-01b2280824b4",
+      "value": "Account Access Removal"
+    },
+    {
+      "description": "A fraud actor may steal web application or service session cookies and use them to gain access to web applications or Internet services as an authenticated user without needing credentials. Web applications and services often use session cookies as an authentication token after a user has authenticated to a website.\n\nCookies are often valid for an extended period of time, even if the web application is not actively used. Cookies can be found on disk, in the process memory of the browser, and in network traffic to remote systems. Additionally, other applications on the targets machine might store sensitive authentication cookies in memory (e.g. apps which authenticate to cloud services). Session cookies can be used to bypasses some multi-factor authentication protocols.\n\nThere are several examples of malware targeting cookies from web browsers on the local system. Fraud actors may also steal cookies by injecting malicious JavaScript content into websites or relying on User Execution by tricking victims into running malicious JavaScript in their browser.\n\nThere are also open source frameworks such as Evilginx2 and Muraena that can gather session cookies through a malicious proxy (e.g., Adversary-in-the-Middle) that can be set up by a fraud actor and used in phishing campaigns.\n\nAfter a fraud actor acquires a valid cookie, they can then perform a Web Session Cookie technique to login to the corresponding web application.",
+      "meta": {
+        "external_id": "T1539",
+        "kill_chain": [
+          "mitre-f3:positioning",
+          "mitre-f3:initial-access"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/T1539"
+        ]
+      },
+      "uuid": "955e1da4-f589-5463-8dc7-1b106ed754cc",
+      "value": "Steal Web Session Cookie"
+    },
+    {
+      "description": "Fraud actors may use authentication materials other than passwords to gain unauthorized access to accounts or systems. This may include using stolen authentication tokens, session cookies, API keys, or biometric data. Alternate authentication materials may be longer-lived than passwords, may not trigger password-based security controls, or may be easier to steal than passwords in certain scenarios.",
+      "meta": {
+        "external_id": "T1550",
+        "kill_chain": [
+          "mitre-f3:initial-access"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/T1550"
+        ]
+      },
+      "uuid": "b088a938-bc55-57cc-ba53-d4eb8779eacb",
+      "value": "Use Alternate Authentication Material"
+    },
+    {
+      "description": "Fraud actors may use stolen application access tokens to authenticate to services without requiring passwords or MFA. Access tokens are often long-lived, may have broad permissions, and may not be protected as carefully as passwords. Stolen tokens can be obtained through malware, phishing, insecure storage, or compromised applications. Using stolen tokens allows fraud actors to bypass password-based authentication controls and may not trigger alerts for unusual login locations.",
+      "meta": {
+        "external_id": "T1550.001",
+        "kill_chain": [
+          "mitre-f3:initial-access"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/T1550.001"
+        ]
+      },
+      "uuid": "9121e600-3dc4-576f-ba00-0d1bbcccee26",
+      "value": "Use Alternate Authentication Material: Application Access Token"
+    },
+    {
+      "description": "Fraud actors may search for common password storage locations to obtain user credentials. Passwords are stored in several places on a system, depending on the operating system or application holding the credentials. There are also specific applications and services that store passwords to make them easier for users to manage and maintain, such as password managers and cloud secrets vaults. Once credentials are obtained, they can be used to perform lateral movement and access restricted information.",
+      "meta": {
+        "external_id": "T1555",
+        "kill_chain": [
+          "mitre-f3:reconnaissance"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/T1555"
+        ]
+      },
+      "uuid": "a0c52804-0241-57e5-b14e-2db3ff534904",
+      "value": "Credentials from Password Stores"
+    },
+    {
+      "description": "Fraud actors may extract credentials saved in web browser password storage mechanisms. Web browsers commonly offer to save and autofill credentials for user convenience, but this stored information can be extracted by malware or fraud actors with local access. Extracted credentials may include usernames, passwords, and authentication tokens for various online services.",
+      "meta": {
+        "external_id": "T1555.003",
+        "kill_chain": [
+          "mitre-f3:reconnaissance"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/T1555.003"
+        ]
+      },
+      "uuid": "e87f5a70-d0a8-5d74-878b-eb0416ea28da",
+      "value": "Credentials from Password Stores: Credentials from Web Browsers"
+    },
+    {
+      "description": "Fraud actors may acquire user credentials from third-party password managers.[1] Password managers are applications designed to store user credentials, normally in an encrypted database. Credentials are typically accessible after a user provides a master password that unlocks the database. After the database is unlocked, these credentials may be copied to memory. These databases can be stored as files on disk.",
+      "meta": {
+        "external_id": "T1555.005",
+        "kill_chain": [
+          "mitre-f3:reconnaissance"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/T1555.005"
+        ]
+      },
+      "uuid": "e64078bf-15ec-5dbe-86bf-2de3fb639aa1",
+      "value": "Credentials from Password Stores: Password Managers"
+    },
+    {
+      "description": "Fraud actors may attempt to position themselves between two or more devices to support follow-on behaviors such as Network Sniffing, Transmitted Data Manipulation, or replay attacks (Exploitation for Credential Access). By abusing features of common network protocols that can determine the flow of network traffic (e.g. ARP, DNS, LLMNR, etc.), fraud actors may force a device to communicate through a fraudster-controlled system so they can collect information or perform additional actions.",
+      "meta": {
+        "external_id": "T1557",
+        "kill_chain": [
+          "mitre-f3:initial-access",
+          "mitre-f3:positioning",
+          "mitre-f3:execution"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/T1557"
+        ]
+      },
+      "uuid": "e73529b4-42d6-5cfd-88de-1b847a1de7c4",
+      "value": "Adversary-in-the-Middle"
+    },
+    {
+      "description": "Fraud actors may acquire or compromise infrastructure to support fraud operations. This may include registering domains, establishing hosting services, deploying command and control infrastructure, or compromising legitimate infrastructure for malicious use. Acquired infrastructure provides fraud actors with resources needed to conduct phishing campaigns, host malicious content, process fraudulent transactions, or maintain persistent access to compromised environments.",
+      "meta": {
+        "external_id": "T1583",
+        "kill_chain": [
+          "mitre-f3:resource-development"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/T1583"
+        ]
+      },
+      "uuid": "60728c52-2cc9-5fc9-99f8-d219235750b4",
+      "value": "Acquire Infrastructure"
+    },
+    {
+      "description": "Fraud actors may register domains similar to legitimate organizations or services to support fraud operations. This may include typosquatting domains, domains using different top-level domains, or domains incorporating organization names with additional words. Fraudulent domains are used for phishing websites, fake service websites, or to send emails that appear to originate from legitimate organizations.",
+      "meta": {
+        "external_id": "T1583.001",
+        "kill_chain": [
+          "mitre-f3:resource-development"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/T1583.001"
+        ]
+      },
+      "uuid": "a5af9e42-d74e-5332-a124-80d259bd5efc",
+      "value": "Acquire Infrastructure: Domains"
+    },
+    {
+      "description": "Fraud actors may acquire access to VPN services or anonymous proxy servers to mask their activities or create the appearance of legitimate operations. VPN and proxy services allow fraud actors to obscure their true location, bypass geographic restrictions, evade detection systems that rely on IP reputation, or simulate legitimate user traffic patterns during fraud operations.",
+      "meta": {
+        "external_id": "T1583.003",
+        "kill_chain": [
+          "mitre-f3:resource-development"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/T1583.003"
+        ]
+      },
+      "uuid": "cad49fc9-3ba9-500a-8d97-77c3436fe5f8",
+      "value": "Acquire Infrastructure: Virtual Private Network or Server"
+    },
+    {
+      "description": "Fraud actors may create malicious advertisements that direct users to fraudulent sites equipped with credential harvesting or payment card skimming capabilities. This may include advertisements for fraudulent merchant sites, compromised legitimate merchant sites, and fradulent Whatsapp investment groups. Fraud actors often use stolen payment card data to fund advertising campaigns, creating a self-sustaining fraud operation where stolen credentials fund further credential theft activities.",
+      "meta": {
+        "external_id": "T1583.008",
+        "kill_chain": [
+          "mitre-f3:resource-development"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/T1583.008"
+        ]
+      },
+      "uuid": "1651b1eb-b3a3-590f-9ee5-317eb79c3ab5",
+      "value": "Acquire Infrastructure: Malvertising"
+    },
+    {
+      "description": "Fraud actors may create and cultivate accounts with services that can be used during targeting. fraud actors can create accounts that can be used to build a persona to further operations. Persona development consists of the development of public information, presence, history and appropriate affiliations. This development could be applied to social media, website, or other publicly available information that could be referenced and scrutinized for legitimacy over the course of an operation using that persona or identity.\n\nFor operations incorporating social engineering, the utilization of an online persona may be important. These personas may be fictitious or impersonate real people. The persona may exist on a single site or across multiple sites (ex: Facebook, LinkedIn, Twitter, Google, GitHub, Docker Hub, etc.). Establishing a persona may require development of additional documentation to make them seem real. This could include filling out profile information, developing social networks, or incorporating photos.\n\nEstablishing accounts can also include the creation of accounts with email providers, which may be directly leveraged for Phishing for Information or Phishing. In addition, establishing accounts may allow fraud actors to abuse free services, such as registering for trial periods to Acquire Infrastructure for malicious purposes.",
+      "meta": {
+        "external_id": "T1585",
+        "kill_chain": [
+          "mitre-f3:resource-development"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/T1585"
+        ]
+      },
+      "uuid": "471e1855-a6d3-59fc-ab34-273dcebb0593",
+      "value": "Establish Accounts"
+    },
+    {
+      "description": "Fraud Actors may compromise accounts with services that can be used during targeting. For operations incorporating social engineering, the utilization of an online persona may be important. Rather than creating and cultivating accounts (i.e. Establish Accounts), adversaries may compromise existing accounts. Utilizing an existing persona may engender a level of trust in a potential victim if they have a relationship, or knowledge of, the compromised persona.\n\nA variety of methods exist for compromising accounts, such as gathering credentials via Phishing for Information, purchasing credentials from third-party sites, brute forcing credentials (ex: password reuse from breach credential dumps), or paying employees, suppliers or business partners for access to credentials.Prior to compromising accounts, adversaries may conduct Reconnaissance to inform decisions about which accounts to compromise to further their operation.\n\nPersonas may exist on a single site or across multiple sites (ex: Facebook, LinkedIn, Twitter, Google, etc.). Compromised accounts may require additional development, this could include filling out or modifying profile information, further developing social networks, or incorporating photos.\n\nFraud actors may directly leverage compromised email accounts for Phishing for Information or Phishing.",
+      "meta": {
+        "external_id": "T1586",
+        "kill_chain": [
+          "mitre-f3:resource-development"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/T1586"
+        ]
+      },
+      "uuid": "4bd4df15-ab7b-5547-bb9d-53c168f22642",
+      "value": "Compromise Accounts"
+    },
+    {
+      "description": "Adversaries may compromise social media accounts that can be used during targeting. For operations incorporating social engineering, the utilization of an online persona may be important. Rather than creating and cultivating social media profiles (i.e. Social Media Accounts), adversaries may compromise existing social media accounts. Utilizing an existing persona may engender a level of trust in a potential victim if they have a relationship, or knowledge of, the compromised persona.\n\nA variety of methods exist for compromising social media accounts, such as gathering credentials via Phishing for Information, purchasing credentials from third-party sites, or by brute forcing credentials (ex: password reuse from breach credential dumps). Prior to compromising social media accounts, adversaries may conduct Reconnaissance to inform decisions about which accounts to compromise to further their operation.\n\nPersonas may exist on a single site or across multiple sites (ex: Facebook, LinkedIn, Twitter, etc.). Compromised social media accounts may require additional development, this could include filling out or modifying profile information, further developing social networks, or incorporating photos.\n\nAdversaries can use a compromised social media profile to create new, or hijack existing, connections to targets of interest. These connections may be direct or may include trying to connect through others. Compromised profiles may be leveraged during other phases of the adversary lifecycle, such as during Initial Access (ex: Spearphishing via Service).",
+      "meta": {
+        "external_id": "T1586.001",
+        "kill_chain": [
+          "mitre-f3:resource-development"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/T1586.001"
+        ]
+      },
+      "uuid": "1b774b59-74ce-5bcd-a23e-f1280b80ab99",
+      "value": "Compromise Accounts: Social Media Accounts"
+    },
+    {
+      "description": "Fraud actors may compromise email accounts that can be used during targeting. Fraud actors can use compromised email accounts to further their operations, such as leveraging them to conduct Phishing for Information, Phishing, or large-scale spam email campaigns. Utilizing an existing persona with a compromised email account may engender a level of trust in a potential victim if they have a relationship with, or knowledge of, the compromised persona. Compromised email accounts can also be used in the acquisition of infrastructure (ex: Domains).\n\nA variety of methods exist for compromising email accounts, such as gathering credentials via Phishing for Information, purchasing credentials from third-party sites, brute forcing credentials (ex: password reuse from breach credential dumps), or paying employees, suppliers or business partners for access to credentials. Prior to compromising email accounts, fraud actors may conduct Reconnaissance to inform decisions about which accounts to compromise to further their operation. Fraud actors may target compromising well-known email accounts or domains from which malicious spam or Phishing emails may evade reputation-based email filtering rules.\n\nFraud actors can use a compromised email account to hijack existing email threads with targets of interest.",
+      "meta": {
+        "external_id": "T1586.002",
+        "kill_chain": [
+          "mitre-f3:resource-development"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/T1586.002"
+        ]
+      },
+      "uuid": "fc51ef45-fd23-532e-b3e6-2dafa066694d",
+      "value": "Compromise Accounts: Email Accounts"
+    },
+    {
+      "description": "Fraud Actors may compromise cloud accounts that can be used during targeting. Adversaries can use compromised cloud accounts to further their operations, including leveraging cloud storage services such as Dropbox, Microsoft OneDrive, or AWS S3 buckets for Exfiltration to Cloud Storage or to Upload Tools. Cloud accounts can also be used in the acquisition of infrastructure, such as Virtual Private Servers or Serverless infrastructure. Additionally, cloud-based messaging services such as Twilio, SendGrid, AWS End User Messaging, AWS SNS (Simple Notification Service), or AWS SES (Simple Email Service) may be leveraged for spam or Phishing. Compromising cloud accounts may allow adversaries to develop sophisticated capabilities without managing their own servers.\n\nA variety of methods exist for compromising cloud accounts, such as gathering credentials via Phishing for Information, purchasing credentials from third-party sites, conducting Password Spraying attacks, or attempting to Steal Application Access Tokens.[4] Prior to compromising cloud accounts, adversaries may conduct Reconnaissance to inform decisions about which accounts to compromise to further their operation. In some cases, adversaries may target privileged service provider accounts with the intent of leveraging a Trusted Relationship between service providers and their customers.",
+      "meta": {
+        "external_id": "T1586.003",
+        "kill_chain": [
+          "mitre-f3:resource-development"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/T1586.003"
+        ]
+      },
+      "uuid": "5f7ddfdb-4335-50a9-be00-25acf21e6a64",
+      "value": "Compromise Accounts: Cloud Accounts"
+    },
+    {
+      "description": "Fraud actors may compromise corporate accounts that can be used during targeting and follow-on fraud operations. Compromised corporate accounts provide fraud actors with legitimate access to business systems, internal applications, and communication channels that can be leveraged to conduct business email compromise attacks, initiate unauthorized transactions, or modify business processes for financial gain.\n\nA variety of methods exist for compromising corporate accounts, such as gathering credentials via Phishing for Information, purchasing credentials from third-party sites, brute forcing credentials (for example, password reuse from breach credential dumps), or paying employees, suppliers, or business partners for access to credentials. Prior to compromising corporate accounts, fraud actors may conduct Reconnaissance to identify high-value employees, roles, or business units whose access can provide entry to sensitive data, financial systems, or approval workflows.\n\nOnce compromised, corporate accounts may be used to access internal systems, customer records, financial information, or other protected corporate resources, as well as to authorize fraudulent payments or make unauthorized changes to vendor, payroll, or billing details. Fraud actors may also further develop the compromised corporate identity, such as by maintaining normal email behavior or updating profiles, to preserve trust with partners and customers while they execute and expand their fraud schemes.",
+      "meta": {
+        "external_id": "T1586.004",
+        "kill_chain": [
+          "mitre-f3:resource-development"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/T1586.004"
+        ]
+      },
+      "uuid": "f3ce6ce5-1122-5602-99c4-f0ca243a1631",
+      "value": "Compromise Accounts: Corporate Accounts"
+    },
+    {
+      "description": "Fraud actors may search freely available online sources for information about customers or organizations that can be used to plan and target fraud. This can include browsing social media profiles, public records, company websites, data‑leak forums, and other open sources to collect details such as contact information, roles, affiliations, and recent activity.\n\nThey may tailor where they look based on the type of information needed—for example, using professional networks to identify finance staff, public procurement sites to learn about vendors and contracts, or social platforms to understand personal relationships and behaviors. Information gathered from open sources can then be used to craft convincing social‑engineering pretexts, identify high‑value accounts or employees, and enable follow‑on techniques such as phishing for information, establishing or compromising accounts, or attempting direct access to exposed services.",
+      "meta": {
+        "external_id": "T1593",
+        "kill_chain": [
+          "mitre-f3:reconnaissance"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/T1593"
+        ]
+      },
+      "uuid": "5c212a4d-4d3a-531e-ad9d-eccd259e1350",
+      "value": "Search Open Websites/Domains"
+    },
+    {
+      "description": "Fraud actors may search social media platforms for information about customers or organizations that can be used to plan and target fraud. Public posts, profiles, and company pages can reveal details such as roles and seniority, contact information, locations, recent business events, and personal interests or relationships that make social‑engineering attempts more convincing.\n\nThey may passively harvest data from multiple social networks or professional platforms, then use that information to tailor phishing messages, impersonate trusted contacts, or identify high‑value employees and accounts. Fraud actors may also create fake profiles, pages, or groups that mimic real people or organizations in order to build rapport and lure targets into disclosing additional details, which can then be used to support account takeover, new‑account fraud, or other targeted fraud operations.",
+      "meta": {
+        "external_id": "T1593.001",
+        "kill_chain": [
+          "mitre-f3:reconnaissance"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/T1593.001"
+        ]
+      },
+      "uuid": "3079a4fa-a966-531f-aaad-6308f95608b2",
+      "value": "Search Open Websites/Domains: Social Media"
+    },
+    {
+      "description": "Fraud actors may use search engines to collect information about customers, employees, and organizations that can be leveraged for fraud. General queries can surface public details such as contact information, exposed documents, cached pages, and references to accounts or services tied to a target.\n\nThey may also craft specialized queries (for example, using advanced operators or searching by file type) to locate accidentally exposed data, such as configuration files, credential lists, internal documents, or screenshots containing sensitive information. Insights gathered from search results can then be used to refine social‑engineering pretexts, identify weakly protected services, support account takeover or new‑account fraud, and guide further reconnaissance against specific people, systems, or business processes.",
+      "meta": {
+        "external_id": "T1593.002",
+        "kill_chain": [
+          "mitre-f3:reconnaissance"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/T1593.002"
+        ]
+      },
+      "uuid": "6fbbf374-96d8-52c7-80e2-a02a1a0bc2b6",
+      "value": "Search Open Websites/Domains: Search Engines"
+    },
+    {
+      "description": "Fraud actors may send phishing messages across multiple channels - email, SMS (smishing), QR codes (quishing), and voice calls (vishing) - to elicit sensitive information for targeting and follow‑on fraud. Phishing for information focuses on tricking targets into revealing credentials, one‑time passcodes, or other actionable data, and is distinct from Phishing, which primarily aims to get the user to execute malicious code or payloads.\n\nThese are all electronically delivered social‑engineering attacks. Email phishing and spearphishing may target specific people or organizations, while broad campaigns support mass credential harvesting. Smishing uses deceptive texts, quishing uses QR codes that lead to fraudulent sites, and vishing relies on calls or voicemail to socially engineer victims, sometimes by luring them to dial a controlled phone number.\n\nPhishing for information typically uses convincing pretexts—such as posing as a bank, payment provider, help desk, or vendor—and often leverages urgency like account lockouts or security alerts. Attackers combine email spoofing, look‑alike domains, shortened links in SMS, and caller‑ID spoofing in vishing to appear legitimate, and may hide or manipulate messages, headers, sender IDs, or phone numbers to bypass security tools and reduce the chance of detection across email, SMS, QR, and voice channels.",
+      "meta": {
+        "external_id": "T1598",
+        "kill_chain": [
+          "mitre-f3:reconnaissance"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/T1598"
+        ]
+      },
+      "uuid": "a17ae40a-a607-50d3-8943-94986b031de7",
+      "value": "Phishing for Information"
+    },
+    {
+      "description": "Fraud actors may upload, install, or otherwise set up capabilities and infrastructure that will be used in later stages of fraud operations. This can include staging tools and content they have developed or acquired on infrastructure they control, such as purchased or compromised servers, cloud platforms, or web services, as well as on third‑party platforms like app stores, code‑hosting sites, or social networks.\n\nStaging activities may involve hosting phishing or impersonation websites, configuring command‑and‑control or automation infrastructure, uploading malicious applications or scripts, or creating and populating social media profiles and other online personas for fraud operations. Fraud actors may also stage payloads, tooling, and supporting web resources used to deliver links or files in phishing campaigns, to enable later tool transfer into victim environments, or to support encrypted communications and other operational needs. Collectively, these actions position the technical resources required to execute and sustain fraud at scale.",
+      "meta": {
+        "external_id": "T1608",
+        "kill_chain": [
+          "mitre-f3:resource-development"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/T1608"
+        ]
+      },
+      "uuid": "8e3e71b5-0ac8-565e-ac54-740b8df9324c",
+      "value": "Stage Capabilities"
+    },
+    {
+      "description": "Fraud actors may manipulate search engine optimization to position malicious websites prominently in search results for targeted keywords. SEO poisoning can make fraudulent websites, phishing pages, or malicious content appear in top search results for legitimate queries. This technique exploits user trust in search engines and may target users searching for customer service contact information, software downloads, or financial services.",
+      "meta": {
+        "external_id": "T1608.006",
+        "kill_chain": [
+          "mitre-f3:resource-development"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/T1608.006"
+        ]
+      },
+      "uuid": "1eb128d8-06df-58ca-9377-9f888b323676",
+      "value": "Stage Capabilities: SEO Poisoning"
+    },
+    {
+      "description": "Fraud actors may generate multiple MFA requests to overwhelm or pressure victims into approving fraudulent authentication attempts. This technique, often called MFA fatigue, involves repeatedly generating authentication requests until the victim approves access to stop the notifications. Fraud actors rely on user frustration, confusion, or mistakes to gain approval for unauthorized access attempts.",
+      "meta": {
+        "external_id": "T1621",
+        "kill_chain": [
+          "mitre-f3:initial-access"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/T1621"
+        ]
+      },
+      "uuid": "97c2ae9d-8d7c-5346-af0b-b47dd1ead315",
+      "value": "Multi-Factor Authentication Request Generation"
+    },
+    {
+      "description": "Fraud actors may purchase or otherwise obtain existing access to organizations, accounts, or infrastructure instead of gaining access themselves. This access is often sold through underground markets or broker networks and can include compromised bank and customer accounts, merchant accounts, remote access into back‑office systems, or logins to third‑party platforms that process payments or store customer data.\n\nPurchased access may take many forms, such as credentials and MFA artifacts for online banking or payment accounts, administrative access to merchant portals, remote access tools already deployed on internal systems, or API keys and tokens that allow programmatic control of financial services. Brokers may also pre‑install tooling or “loads” that buyers can use to deploy additional malware or automate fraud at scale.\n\nBy leveraging acquired access, fraud actors can bypass early intrusion steps and focus on high‑value fraud activity such as moving funds, altering account details, manipulating transactions, or harvesting additional identities and credentials. They may prioritize buying access to accounts or systems with high limits, weak monitoring, or privileged roles, and to organizations in sectors (for example, processors, fintechs, BPOs, or service providers) where a single foothold can be used to reach additional victims through trusted business relationships and shared platforms.",
+      "meta": {
+        "external_id": "T1650",
+        "kill_chain": [
+          "mitre-f3:resource-development"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/T1650"
+        ]
+      },
+      "uuid": "afcb8c72-dbbb-52eb-98af-c8b5ecc87cd4",
+      "value": "Acquire Access"
+    },
+    {
+      "description": "Fraud Actors may send malicious content to users in order to gain access to their mobile devices. All forms of phishing are electronically delivered social engineering. Adversaries can conduct both non-targeted phishing, such as in mass malware spam campaigns, as well as more targeted phishing tailored for a specific individual, company, or industry, known as \"spearphishing.\" Phishing often involves social engineering techniques, such as posing as a trusted source, as well as evasion techniques, such as removing or manipulating emails or metadata/headers from compromised accounts being abused to send messages.\n\nMobile phishing may take various forms. For example, adversaries may send emails containing malicious attachments or links, typically to deliver and then execute malicious code on victim devices. Phishing may also be conducted via third-party services, like social media platforms. Adversaries may also impersonate executives of organizations to persuade victims into performing some action on their behalf. For example, adversaries will often use social engineering techniques in text messages to trick the victims into acting quickly, which leads to adversaries obtaining credentials and other information.\n\nMobile devices have sensors and radios that allow adversaries to execute phishing attempts over several different vectors, such as:\n\n- SMS messages: Adversaries may send SMS messages (known as \"smishing\") from compromised devices to potential targets to convince the target to, for example, install malware, navigate to a specific website, or enable certain insecure configurations on their device.\n- Quick Response (QR) Codes: Adversaries may use QR codes (known as \"quishing\") to redirect users to a phishing website. For example, an adversary could replace a legitimate public QR Code with one that leads to a different destination, such as a phishing website. A malicious QR code could also be delivered via other means, such as SMS or email. In the latter case, an adversary could utilize a malicious QR code in an email to pivot from the user’s desktop computer to their mobile device.\n- Phone Calls: Adversaries may call victims (known as \"vishing\") to persuade them to perform an action, such as providing login credentials or navigating to a malicious website. This could also be used as a technique to perform the initial access on a mobile device, but then pivot to a computer/other network by having the victim perform an action on a desktop computer.",
+      "meta": {
+        "external_id": "T1660",
+        "kill_chain": [
+          "mitre-f3:initial-access"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/T1660"
+        ]
+      },
+      "uuid": "0df0730c-a2d4-550d-b858-d396a0679f36",
+      "value": "Phishing"
+    },
+    {
+      "description": "Fraud actors may flood targeted email addresses with an overwhelming volume of messages. This may bury legitimate emails in a flood of spam and disrupt business operations.[1][2]\n\nA fraud actor may accomplish email bombing by leveraging an automated bot to register a targeted address for e-mail lists that do not validate new signups, such as online newsletters. The result can be a wave of thousands of e-mails that effectively overloads the victim’s inbox.[2][3]\n\nBy sending hundreds or thousands of e-mails in quick succession, fraud actors may successfully divert attention away from and bury legitimate messages including security alerts, daily business processes like help desk tickets and client correspondence, or ongoing scams.[3] This behavior can also be used as a tool of harassment.[2]",
+      "meta": {
+        "external_id": "T1667",
+        "kill_chain": [
+          "mitre-f3:defense-evasion"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/T1667"
+        ]
+      },
+      "uuid": "b4b771a2-bfb7-5b08-8b4a-40bb440f73c9",
+      "value": "Email Bombing"
+    },
+    {
+      "description": "Fraud actors may forge or misrepresent the sender’s email address and related headers so messages appear to come from a trusted or recognizable source, such as a bank, employer, vendor, or colleague. The goal is to make the email look legitimate enough that recipients will trust the content and act on it.\n\nSpoofed emails are commonly used in phishing and fraud schemes to convince victims to click links, open attachments, share credentials or other sensitive information, change payment details, or approve fraudulent transactions. By imitating known domains, display names, or reply‑to addresses - and sometimes bypassing basic email authentication controls - email spoofing increases the likelihood that fraudulent messages evade suspicion and technical defenses.",
+      "meta": {
+        "external_id": "T1672",
+        "kill_chain": [
+          "mitre-f3:defense-evasion"
+        ],
+        "mitre_platforms": [
+          "F3"
+        ],
+        "refs": [
+          "https://ctid.mitre.org/fraud/techniques/T1672"
+        ]
+      },
+      "uuid": "381417a1-4de5-5dd3-97f9-952eaac76643",
+      "value": "Email Spoofing"
+    }
+  ],
+  "version": 1
+}
