@@ -1762,24 +1762,6 @@
       "value": "High-Powered Microwave"
     },
     {
-      "description": "The adversary re-sends previously valid commands or procedures to cause the spacecraft to transmit data again, then captures the resulting downlink. Typical targets are recorder playbacks, payload product dumps, housekeeping snapshots, or file directory listings. By aligning replays with geometry (e.g., when the satellite is in view of actor-controlled apertures) and with acceptance conditions (counters, timetags, mode), the attacker induces legitimate transmissions that appear routine to operators. Variants include selectively replaying index ranges to fetch only high-value intervals, reissuing subscription/telemetry-rate changes to increase data volume, or queueing playbacks that fire during later passes when interception is feasible.",
-      "meta": {
-        "external_id": "EXF-0001",
-        "kill_chain": [
-          "sparta:exfiltration"
-        ],
-        "refs": [
-          "https://sparta.aerospace.org/technique/EXF-0001/",
-          "https://sparta.aerospace.org/related-work/threats/SV-AC-2",
-          "https://sparta.aerospace.org/related-work/threats/SV-CF-1",
-          "https://sparta.aerospace.org/related-work/threats/SV-CF-2",
-          "https://emb3d.mitre.org/threats/TID-407.html"
-        ]
-      },
-      "uuid": "8d1fbe98-7fa5-4ef7-93d4-4f5bad02dec4",
-      "value": "Replay"
-    },
-    {
       "description": "Information is extracted not by reading files or decrypting frames but by observing physical or protocol byproducts of computation, power draw, electromagnetic emissions, timing, thermal signatures, or traffic patterns. Repeated measurements create distinctive fingerprints correlated with internal states (key use, table loads, parser branches, buffer occupancy). Matching those fingerprints to models or templates yields sensitive facts without direct access to the protected data. In space systems, vantage points span proximity assets (for EM/thermal), ground testing and ATLO (for direct probing), compromised on-board modules that can sample rails or sensors, and remote observation of link-layer timing behaviors.",
       "meta": {
         "external_id": "EXF-0002",
@@ -1986,22 +1968,22 @@
       "value": "Out-of-Band Communications Link"
     },
     {
-      "description": "A nearby vehicle serves as the collection platform for unintended emissions and other proximate signals, effectively a mobile TEMPEST/EMSEC sensor. From close range, the adversary measures near-field RF, conducted/structure-borne emissions, optical/IR signatures, or leaked crosslink traffic correlated with on-board activity, then decodes or models those signals to recover information (keys, tables, procedure execution, payload content). Proximity also enables directional gain and repeated sampling passes, turning weak side channels into usable exfiltration without engaging the victim’s logical interfaces.",
+      "description": "In proximity scenarios, an adversary platform (or co-located payload) attempts to observe emissions and intra-vehicle traffic at close range, RF side-channels, optical/lasercom leakage, and, in extreme cases, electromagnetic emanations consistent with TEMPEST/EMSEC concerns. Physical proximity can expose harmonics, intermodulation products, local oscillators, and bus activity that are undetectable from the ground, enabling reconstruction of timing, command acceptance windows, or even limited protocol content. In hosted-payload or rideshare contexts, a poorly segregated data path may permit passive observation of TT&C gateways, crosslinks, or payload buses.",
       "meta": {
-        "external_id": "EXF-0005",
+        "external_id": "REC-0005.03",
         "kill_chain": [
-          "sparta:exfiltration"
+          "sparta:reconnaissance"
         ],
         "refs": [
-          "https://sparta.aerospace.org/technique/EXF-0005/",
+          "https://sparta.aerospace.org/technique/REC-0005/03/",
           "https://sparta.aerospace.org/related-work/threats/SV-AC-5",
-          "https://sparta.aerospace.org/related-work/threats/SV-AC-7",
           "https://sparta.aerospace.org/related-work/threats/SV-CF-1",
           "https://sparta.aerospace.org/related-work/threats/SV-CF-2",
-          "https://emb3d.mitre.org/threats/TID-nan.html"
+          "https://emb3d.mitre.org/threats/TID-408.html",
+          "https://emb3d.mitre.org/threats/TID-410.html"
         ]
       },
-      "uuid": "eec20996-f53e-423f-9e33-1af730c070cc",
+      "uuid": "0aa3a9b8-355d-4562-8e76-e4bd3204128c",
       "value": "Proximity Operations"
     },
     {
@@ -3917,25 +3899,6 @@
       },
       "uuid": "1df3e254-5201-4641-9139-93817b7f8011",
       "value": "Downlink Intercept"
-    },
-    {
-      "description": "In proximity scenarios, an adversary platform (or co-located payload) attempts to observe emissions and intra-vehicle traffic at close range, RF side-channels, optical/lasercom leakage, and, in extreme cases, electromagnetic emanations consistent with TEMPEST/EMSEC concerns. Physical proximity can expose harmonics, intermodulation products, local oscillators, and bus activity that are undetectable from the ground, enabling reconstruction of timing, command acceptance windows, or even limited protocol content. In hosted-payload or rideshare contexts, a poorly segregated data path may permit passive observation of TT&C gateways, crosslinks, or payload buses.",
-      "meta": {
-        "external_id": "REC-0005.03",
-        "kill_chain": [
-          "sparta:reconnaissance"
-        ],
-        "refs": [
-          "https://sparta.aerospace.org/technique/REC-0005/03/",
-          "https://sparta.aerospace.org/related-work/threats/SV-AC-5",
-          "https://sparta.aerospace.org/related-work/threats/SV-CF-1",
-          "https://sparta.aerospace.org/related-work/threats/SV-CF-2",
-          "https://emb3d.mitre.org/threats/TID-408.html",
-          "https://emb3d.mitre.org/threats/TID-410.html"
-        ]
-      },
-      "uuid": "0aa3a9b8-355d-4562-8e76-e4bd3204128c",
-      "value": "Proximity Operations"
     },
     {
       "description": "Active scanning moves beyond passive collection: an adversary transmits or injects probes intended to elicit identifiable responses that reveal frequencies, protocols, or device behavior. Examples include stimulating auto-track or auto-reply beacons, provoking ranging responses, tickling access schemes (TDMA/FDMA bursts), or sending benign-looking frames to observe AGC, saturation, or error counters. Optical/lasercom analogs include alignment pings or modulation patterns that solicit acquisition messages. The objective is RF “banner grabbing”, learning enough to build compatible demod/decoder chains or to map control surfaces, without necessarily breaching authentication. Because scans can resemble normal acquisition attempts, they may blend into the noise floor of operations.",
