@@ -852,6 +852,14 @@ Category: *virus* - source: *https://www.culturecollections.org.uk* - total: *66
 
 [[HTML](https://www.misp-galaxy.org/ukhsa-culture-collections)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/ukhsa-culture-collections.json)]
 
+## VERIS Framework
+
+[VERIS Framework](https://www.misp-galaxy.org/veris-framework) - VERIS taxonomy for describing cybersecurity incidents, including categories and enumerated values.
+
+Category: *framework* - source: *https://github.com/vz-risk/veris* - total: *2207* elements
+
+[[HTML](https://www.misp-galaxy.org/veris-framework)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/veris-framework.json)]
+
 
 # Online documentation
 
