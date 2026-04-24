@@ -154,7 +154,7 @@ def build_cluster_values(
     for node in nodes:
         meta = {
             'path': '.'.join(node.path),
-            'level': len(node.path),
+            'level': str(len(node.path)),
             'node_type': node.node_type,
             'top_level_domain': node.path[0],
             'source': VERIS_SOURCE_URL,
