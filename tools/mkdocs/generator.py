@@ -47,9 +47,23 @@ def get_deprecated_galaxy_files():
     return deprecated_galaxy_files
 
 
+def get_galaxy_metadata():
+    metadata = {}
+    for f in os.listdir(GALAXY_PATH):
+        if not f.endswith(".json"):
+            continue
+        with open(os.path.join(GALAXY_PATH, f)) as fr:
+            galaxy_json = json.load(fr)
+            metadata[f] = {
+                "kill_chain_order": galaxy_json.get("kill_chain_order", {}),
+            }
+    return metadata
+
+
 if __name__ == "__main__":
     start_time = time.time()
     universe = Universe()
+    galaxy_metadata = get_galaxy_metadata()
 
     FILES_TO_IGNORE.extend(get_deprecated_galaxy_files())
     galaxies_fnames = []
@@ -67,6 +81,9 @@ if __name__ == "__main__":
                 json_file_name=galaxy,
                 authors=galaxy_json["authors"],
                 description=galaxy_json["description"],
+                kill_chain_order=galaxy_metadata.get(galaxy, {}).get(
+                    "kill_chain_order", {}
+                ),
             )
             for cluster in galaxy_json["values"]:
                 universe.add_cluster(
