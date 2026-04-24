@@ -69,6 +69,19 @@ def stix_id_to_uuid(stix_id: str) -> str:
     return str(uuid.uuid5(UUID_NAMESPACE, stix_id))
 
 
+def tactic_shortname(value: str) -> str:
+    return value.strip().lower().replace(' ', '-')
+
+
+def tactic_display_name(value: str) -> str:
+    cleaned = value.strip()
+    if not cleaned:
+        return cleaned
+    if '-' in cleaned and cleaned == cleaned.lower():
+        return cleaned.replace('-', ' ').title()
+    return cleaned
+
+
 def normalize_version(version: str) -> tuple[int, ...]:
     return tuple(int(p) for p in version.split('.'))
 
@@ -121,12 +134,31 @@ def parse_bundle(bundle: dict) -> tuple[list[dict], dict[str, dict], dict[str, d
         if item.get('x_mitre_deprecated') or item.get('revoked'):
             continue
         item_type = item.get('type')
-        if item_type == 'x-mitre-tactic':
+        if item_type in ('x-mitre-tactic', 'tactic'):
+            if item_type == 'tactic' and 'x_mitre_shortname' not in item:
+                item['x_mitre_shortname'] = tactic_shortname(item.get('name', ''))
             tactics_by_id[item['id']] = item
         elif item_type == 'attack-pattern':
             techniques_by_id[item['id']] = item
         elif item_type == 'course-of-action':
             mitigations_by_id[item['id']] = item
+
+    if not tactics_by_id:
+        synthetic_tactics = {}
+        for technique in techniques_by_id.values():
+            for phase in technique.get('kill_chain_phases', []):
+                phase_name = phase.get('phase_name')
+                if not phase_name:
+                    continue
+                shortname = tactic_shortname(phase_name)
+                if not shortname or shortname in synthetic_tactics:
+                    continue
+                synthetic_tactics[shortname] = {
+                    'id': f'tactic--{shortname}',
+                    'name': tactic_display_name(phase_name),
+                    'x_mitre_shortname': shortname,
+                }
+        tactics_by_id = {item['id']: item for item in synthetic_tactics.values()}
 
     matrix_order = []
     for item in objects:
@@ -138,13 +170,13 @@ def parse_bundle(bundle: dict) -> tuple[list[dict], dict[str, dict], dict[str, d
             tactic = tactics_by_id.get(tactic_id)
             if not tactic:
                 continue
-            shortname = tactic.get('x_mitre_shortname', tactic.get('name', '').lower().replace(' ', '-'))
+            shortname = tactic_shortname(tactic.get('x_mitre_shortname', tactic.get('name', '')))
             if shortname and shortname not in matrix_order:
                 matrix_order.append(shortname)
 
     if not matrix_order:
         matrix_order = [
-            t.get('x_mitre_shortname', t.get('name', '').lower().replace(' ', '-'))
+            tactic_shortname(t.get('x_mitre_shortname', t.get('name', '')))
             for t in sorted(tactics_by_id.values(), key=lambda v: (first_external_id(v) or '', v.get('name', '')))
         ]
 
@@ -161,7 +193,7 @@ def parse_bundle(bundle: dict) -> tuple[list[dict], dict[str, dict], dict[str, d
 def build_tactics_cluster(tactics_by_id: dict[str, dict]) -> list[dict]:
     values = []
     for tactic in tactics_by_id.values():
-        shortname = tactic.get('x_mitre_shortname', tactic.get('name', '').lower().replace(' ', '-'))
+        shortname = tactic_shortname(tactic.get('x_mitre_shortname', tactic.get('name', '')))
         meta = meta_with_refs_and_external_id(tactic)
         if shortname:
             meta['shortname'] = shortname
@@ -184,7 +216,7 @@ def build_techniques_cluster(
     tactics_by_id: dict[str, dict],
 ) -> list[dict]:
     tactic_by_shortname = {
-        t.get('x_mitre_shortname', t.get('name', '').lower().replace(' ', '-')): t
+        tactic_shortname(t.get('x_mitre_shortname', t.get('name', ''))): t
         for t in tactics_by_id.values()
     }
 
@@ -197,8 +229,9 @@ def build_techniques_cluster(
             phase_name = phase.get('phase_name')
             if not phase_name:
                 continue
-            tactic = tactic_by_shortname.get(phase_name)
-            mapped_name = tactic.get('x_mitre_shortname', phase_name) if tactic else phase_name
+            phase_shortname = tactic_shortname(phase_name)
+            tactic = tactic_by_shortname.get(phase_shortname)
+            mapped_name = tactic_shortname(tactic.get('x_mitre_shortname', phase_shortname)) if tactic else phase_shortname
             chain = f'{KILL_CHAIN_NAME}:{mapped_name}'
             if chain not in kill_chain:
                 kill_chain.append(chain)
