@@ -260,6 +260,14 @@ Category: *dwva* - source: *https://interpol-innovation-centre.github.io/DW-VA-T
 
 [[HTML](https://www.misp-galaxy.org/interpol-dwva)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/interpol-dwva.json)]
 
+## IT Infrastructure Equipment
+
+[IT Infrastructure Equipment](https://www.misp-galaxy.org/it-infrastructure-equipment) - Generic types of IT infrastructure equipment used in enterprise environments, including network, security, server, and client equipment.
+
+Category: *it-infrastructure-equipment* - source: *MISP Project* - total: *28* elements
+
+[[HTML](https://www.misp-galaxy.org/it-infrastructure-equipment)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/it-infrastructure-equipment.json)]
+
 ## Malpedia
 
 [Malpedia](https://www.misp-galaxy.org/malpedia) - Malware galaxy cluster based on Malpedia.
