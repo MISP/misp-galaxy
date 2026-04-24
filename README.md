@@ -684,6 +684,14 @@ Category: *sod-matrix* - source: *https://github.com/cudeso/SoD-Matrix* - total:
 
 [[HTML](https://www.misp-galaxy.org/sod-matrix)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/sod-matrix.json)]
 
+## Software Vendor
+
+[Software Vendor](https://www.misp-galaxy.org/software-vendor) - Top 1000 open-source organizations on GitHub (ranked by followers) with reference links and repository portfolio metadata.
+
+Category: *actor* - source: *MISP Project* - total: *1000* elements
+
+[[HTML](https://www.misp-galaxy.org/software-vendor)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/software-vendor.json)]
+
 ## SPARTA Mitigations
 
 [SPARTA Mitigations](https://www.misp-galaxy.org/sparta-mitigations) - SPARTA countermeasures derived from the official STIX feed.
