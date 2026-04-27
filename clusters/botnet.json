@@ -3,7 +3,7 @@
     "Various"
   ],
   "category": "tool",
-  "description": "botnet galaxy",
+  "description": "Botnet galaxy.",
   "name": "Botnet",
   "source": "MISP Project",
   "type": "botnet",
@@ -2088,7 +2088,9 @@
       "description": "Aisuru is a Mirai-derivative DDoS botnet active since at least August 2024. The botnet has evolved through two distinct generations — transitioning from DNS A record C2 resolution to a DNS TXT scheme using CAFEBABE XOR-encoded IP addresses, and most recently adopting HMAC-SHA256 authentication with a new 0x1CEB00DA protocol magic.",
       "meta": {
         "refs": [
-          "https://github.com/deepfield/public-research"
+          "https://github.com/deepfield/public-research",
+          "https://blog.xlab.qianxin.com/super-large-scale-botnet-aisuru-en/",
+          "https://github.com/deepfield/public-research/blob/main/reports/2026-03-20-aisuru-ecosystem.md"
         ]
       },
       "related": [
@@ -2114,18 +2116,10 @@
       "description": "CECbot: Android TV botnet with HDMI-CEC abuse, successor to Katana",
       "meta": {
         "refs": [
-          "https://github.com/deepfield/public-research"
+          "https://github.com/deepfield/public-research",
+          "https://digitalcommons.fiu.edu/record/13555/files/FIDC010451.pdf"
         ]
       },
-      "related": [
-        {
-          "dest-uuid": "8478c985-3620-4bf9-86e1-87eacd265dde",
-          "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
-          ],
-          "type": "successor-of"
-        }
-      ],
       "uuid": "9f33caea-0c33-4f3e-8b26-f7a86c8d0dae",
       "value": "CECbot"
     },
@@ -2133,7 +2127,8 @@
       "description": "Independent DDoS botnet on ADB attack surface, CCTV-themed C2 domains",
       "meta": {
         "refs": [
-          "https://github.com/deepfield/public-research"
+          "https://github.com/deepfield/public-research",
+          "https://github.com/deepfield/public-research/blob/main/drifter/report.md"
         ]
       },
       "uuid": "c1b0b636-4e47-401e-aedc-116e7f1cd707",
@@ -2159,6 +2154,12 @@
       "value": "cecilio"
     },
     {
+      "meta": {
+        "refs": [
+          "https://blog.xlab.qianxin.com/catddos-derivative-en/",
+          "https://ti.qianxin.com/blog/articles/new-botnet-catddos-continues-to-evolve-en/"
+        ]
+      },
       "uuid": "f72bbd9f-28b7-4b2f-8fb0-55708c2390c9",
       "value": "CatDDoS"
     },
@@ -2166,7 +2167,12 @@
       "description": "Mirai variant sharing code lineage with Aisuru, DoH C2 via mbedTLS",
       "meta": {
         "refs": [
-          "https://github.com/deepfield/public-research"
+          "https://github.com/deepfield/public-research",
+          "https://foresiet.com/blog/mirai-botnet-jackskid-resurgence-nov-2025-iot-threats/",
+          "https://www.secrss.com/articles/87776"
+        ],
+        "synonyms": [
+          "RCtea"
         ]
       },
       "related": [
@@ -2192,7 +2198,13 @@
       "description": "Mirai variant with on-device compiled rootkit, targeting Android TV set-top boxes",
       "meta": {
         "refs": [
-          "https://github.com/deepfield/public-research"
+          "https://github.com/deepfield/public-research",
+          "https://malpedia.caad.fkie.fraunhofer.de/details/elf.mirai",
+          "https://www.darkreading.com/iot/avira-researchers-discover-a-new-variant-of-mirai"
+        ],
+        "synonyms": [
+          "elf.mirai",
+          "Mirai (ELF)"
         ]
       },
       "related": [
@@ -2209,6 +2221,10 @@
             "estimative-language:likelihood-probability=\"likely\""
           ],
           "type": "variant-of"
+        },
+        {
+          "dest-uuid": "17e12216-a303-4a00-8283-d3fe92d0934c",
+          "type": "similar"
         }
       ],
       "uuid": "8478c985-3620-4bf9-86e1-87eacd265dde",
@@ -2218,7 +2234,9 @@
       "description": "Dual-purpose residential proxy and DDoS botnet, 3M+ devices observed",
       "meta": {
         "refs": [
-          "https://github.com/deepfield/public-research"
+          "https://github.com/deepfield/public-research",
+          "https://blog.xlab.qianxin.com/kimwolf-botnet-en/",
+          "https://synthient.com/blog/a-broken-system-fueling-botnets"
         ]
       },
       "uuid": "29f64438-a96a-457e-879e-bbb8ec6251f5",
@@ -2263,7 +2281,22 @@
       },
       "uuid": "09e9e0dc-7520-4479-b7e6-2a4b68f51379",
       "value": "Fodcha"
+    },
+    {
+      "description": "Dual-purpose proxy/DDoS botnet with ENS, IPFS, and custom P2P mesh",
+      "meta": {
+        "refs": [
+          "https://github.com/deepfield/public-research",
+          "https://github.com/deepfield/public-research/blob/main/maskify/report.md",
+          "https://x.com/deobfuscately/status/2041151620486987898"
+        ],
+        "synonyms": [
+          "Earnify"
+        ]
+      },
+      "uuid": "de4fc700-c18d-4e4a-85d3-71cc834fc732",
+      "value": "Maskify"
     }
   ],
-  "version": 41
+  "version": 42
 }

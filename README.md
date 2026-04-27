@@ -94,9 +94,9 @@ Category: *user-tie* - source: *https://www.cisotradecraft.com/bitns* - total: *
 
 ## Botnet
 
-[Botnet](https://www.misp-galaxy.org/botnet) - botnet galaxy
+[Botnet](https://www.misp-galaxy.org/botnet) - Botnet galaxy.
 
-Category: *tool* - source: *MISP Project* - total: *145* elements
+Category: *tool* - source: *MISP Project* - total: *146* elements
 
 [[HTML](https://www.misp-galaxy.org/botnet)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/botnet.json)]
 
@@ -683,6 +683,30 @@ Category: *dark-patterns* - source: *CIRCL* - total: *19* elements
 Category: *sod-matrix* - source: *https://github.com/cudeso/SoD-Matrix* - total: *276* elements
 
 [[HTML](https://www.misp-galaxy.org/sod-matrix)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/sod-matrix.json)]
+
+## SPARTA Mitigations
+
+[SPARTA Mitigations](https://www.misp-galaxy.org/sparta-mitigations) - SPARTA countermeasures derived from the official STIX feed.
+
+Category: *tool* - source: *https://sparta.aerospace.org/* - total: *268* elements
+
+[[HTML](https://www.misp-galaxy.org/sparta-mitigations)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/sparta-mitigations.json)]
+
+## SPARTA Tactics
+
+[SPARTA Tactics](https://www.misp-galaxy.org/sparta-tactics) - SPARTA tactics published by The Aerospace Corporation.
+
+Category: *tool* - source: *https://sparta.aerospace.org/* - total: *9* elements
+
+[[HTML](https://www.misp-galaxy.org/sparta-tactics)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/sparta-tactics.json)]
+
+## SPARTA Techniques
+
+[SPARTA Techniques](https://www.misp-galaxy.org/sparta-techniques) - SPARTA techniques and sub-techniques derived from the official STIX feed.
+
+Category: *tool* - source: *https://sparta.aerospace.org/* - total: *260* elements
+
+[[HTML](https://www.misp-galaxy.org/sparta-techniques)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/sparta-techniques.json)]
 
 ## Stalkerware
 
