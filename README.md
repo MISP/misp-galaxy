@@ -230,7 +230,7 @@ Category: *first-dns* - source: *https://www.first.org/global/sigs/dns/* - total
 
 ## GSMA MoTIF
 
-[GSMA MoTIF](https://www.misp-galaxy.org/gsma-motif) - Mobile Threat Intelligence Framework (MoTIF) Principles. 
+[GSMA MoTIF](https://www.misp-galaxy.org/gsma-motif) - Mobile Threat Intelligence Framework (MoTIF) Principles.
 
 Category: *attack-pattern* - source: *https://www.gsma.com/solutions-and-impact/technologies/security/latest-news/establishing-motif-the-mobile-threat-intelligence-framework/* - total: *50* elements
 
@@ -259,6 +259,14 @@ Category: *Intelligence Agencies* - source: *https://en.wikipedia.org/wiki/List_
 Category: *dwva* - source: *https://interpol-innovation-centre.github.io/DW-VA-Taxonomy/* - total: *94* elements
 
 [[HTML](https://www.misp-galaxy.org/interpol-dwva)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/interpol-dwva.json)]
+
+## IT Infrastructure Equipment
+
+[IT Infrastructure Equipment](https://www.misp-galaxy.org/it-infrastructure-equipment) - Generic types of IT infrastructure equipment used in enterprise environments, including network, security, server, and client equipment.
+
+Category: *it-infrastructure-equipment* - source: *MISP Project* - total: *28* elements
+
+[[HTML](https://www.misp-galaxy.org/it-infrastructure-equipment)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/it-infrastructure-equipment.json)]
 
 ## Malpedia
 
@@ -334,7 +342,7 @@ Category: *d3fend* - source: *https://d3fend.mitre.org/* - total: *171* elements
 
 ## mitre-data-component
 
-[mitre-data-component](https://www.misp-galaxy.org/mitre-data-component) - Data components are parts of data sources. 
+[mitre-data-component](https://www.misp-galaxy.org/mitre-data-component) - Data components are parts of data sources.
 
 Category: *data-component* - source: *https://github.com/mitre/cti* - total: *117* elements
 
@@ -342,7 +350,7 @@ Category: *data-component* - source: *https://github.com/mitre/cti* - total: *11
 
 ## mitre-data-source
 
-[mitre-data-source](https://www.misp-galaxy.org/mitre-data-source) - Data sources represent the various subjects/topics of information that can be collected by sensors/logs. 
+[mitre-data-source](https://www.misp-galaxy.org/mitre-data-source) - Data sources represent the various subjects/topics of information that can be collected by sensors/logs.
 
 Category: *data-source* - source: *https://github.com/mitre/cti* - total: *40* elements
 
@@ -462,7 +470,7 @@ Category: *sector* - source: *North American Industry Classification System - NA
 
 ## NATO
 
-[NATO](https://www.misp-galaxy.org/nato) - The North Atlantic Treaty Organization, also called the North Atlantic Alliance, is an intergovernmental transnational military alliance of 32 member states—30 European and 2 North American. Established in the aftermath of World War II, the organization implements the North Atlantic Treaty, signed in Washington, D.C., on 4 April 1949. NATO is a collective security system: its independent member states agree to defend each other against attacks by third parties. 
+[NATO](https://www.misp-galaxy.org/nato) - The North Atlantic Treaty Organization, also called the North Atlantic Alliance, is an intergovernmental transnational military alliance of 32 member states—30 European and 2 North American. Established in the aftermath of World War II, the organization implements the North Atlantic Treaty, signed in Washington, D.C., on 4 April 1949. NATO is a collective security system: its independent member states agree to defend each other against attacks by third parties.
 
 Category: *actor* - source: *North Atlantic Treaty Organization - NATO* - total: *7* elements
 
@@ -684,6 +692,17 @@ Category: *sod-matrix* - source: *https://github.com/cudeso/SoD-Matrix* - total:
 
 [[HTML](https://www.misp-galaxy.org/sod-matrix)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/sod-matrix.json)]
 
+<<<<<<< HEAD
+=======
+## Software Vendor
+
+[Software Vendor](https://www.misp-galaxy.org/software-vendor) - Top 1000 open-source organizations on GitHub (ranked by followers) with reference links and repository portfolio metadata.
+
+Category: *actor* - source: *MISP Project* - total: *1000* elements
+
+[[HTML](https://www.misp-galaxy.org/software-vendor)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/software-vendor.json)]
+
+>>>>>>> eacfcb4a9119552adb667325bfc995d3edeb1fa3
 ## SPARTA Mitigations
 
 [SPARTA Mitigations](https://www.misp-galaxy.org/sparta-mitigations) - SPARTA countermeasures derived from the official STIX feed.
@@ -739,6 +758,14 @@ Category: *actor* - source: *MISP Project* - total: *615* elements
 Category: *target* - source: *Various* - total: *241* elements
 
 [[HTML](https://www.misp-galaxy.org/target-information)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/target-information.json)]
+
+## Taxonomy of Fraud
+
+[Taxonomy of Fraud](https://www.misp-galaxy.org/taxonomy-of-fraud) - Taxonomy of Fraud from the Stanford Center on Longevity (2015), including hierarchy nodes and attribute tags.
+
+Category: *financial-fraud* - source: *https://longevity.stanford.edu/framework-for-a-taxonomy-of-fraud/* - total: *206* elements
+
+[[HTML](https://www.misp-galaxy.org/taxonomy-of-fraud)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/taxonomy-of-fraud.json)]
 
 ## TDS
 
@@ -851,6 +878,14 @@ Category: *Military equipment* - source: *OSINT* - total: *739* elements
 Category: *virus* - source: *https://www.culturecollections.org.uk* - total: *6638* elements
 
 [[HTML](https://www.misp-galaxy.org/ukhsa-culture-collections)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/ukhsa-culture-collections.json)]
+
+## VERIS Framework
+
+[VERIS Framework](https://www.misp-galaxy.org/veris-framework) - VERIS taxonomy for describing cybersecurity incidents, including categories and enumerated values.
+
+Category: *framework* - source: *https://github.com/vz-risk/veris* - total: *2207* elements
+
+[[HTML](https://www.misp-galaxy.org/veris-framework)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/veris-framework.json)]
 
 
 # Online documentation
