@@ -280,7 +280,7 @@ Category: *tool* - source: *Malpedia* - total: *3683* elements
 
 [Microsoft Activity Group actor](https://www.misp-galaxy.org/microsoft-activity-group) - Activity groups as described by Microsoft
 
-Category: *actor* - source: *MISP Project* - total: *79* elements
+Category: *actor* - source: *MISP Project* - total: *179* elements
 
 [[HTML](https://www.misp-galaxy.org/microsoft-activity-group)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/microsoft-activity-group.json)]
 
