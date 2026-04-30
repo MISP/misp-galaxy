@@ -296,7 +296,7 @@ Category: *misinformation-pattern* - source: *https://github.com/misinfosecproje
 
 [Analytics](https://www.misp-galaxy.org/mitre-analytic) - ATT&CK Analytics
 
-Category: *attack-pattern* - source: *https://attack.mitre.org/analytics/* - total: *1950* elements
+Category: *attack-pattern* - source: *https://attack.mitre.org/analytics/* - total: *1969* elements
 
 [[HTML](https://www.misp-galaxy.org/mitre-analytic)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-analytic.json)]
 
@@ -320,7 +320,7 @@ Category: *course-of-action* - source: *https://github.com/mitre-atlas/atlas-nav
 
 [Attack Pattern](https://www.misp-galaxy.org/mitre-attack-pattern) - ATT&CK tactic
 
-Category: *attack-pattern* - source: *https://github.com/mitre/cti* - total: *1242* elements
+Category: *attack-pattern* - source: *https://github.com/mitre/cti* - total: *1266* elements
 
 [[HTML](https://www.misp-galaxy.org/mitre-attack-pattern)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-attack-pattern.json)]
 
@@ -344,7 +344,7 @@ Category: *d3fend* - source: *https://d3fend.mitre.org/* - total: *171* elements
 
 [mitre-data-component](https://www.misp-galaxy.org/mitre-data-component) - Data components are parts of data sources. 
 
-Category: *data-component* - source: *https://github.com/mitre/cti* - total: *117* elements
+Category: *data-component* - source: *https://github.com/mitre/cti* - total: *118* elements
 
 [[HTML](https://www.misp-galaxy.org/mitre-data-component)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-data-component.json)]
 
@@ -360,7 +360,7 @@ Category: *data-source* - source: *https://github.com/mitre/cti* - total: *40* e
 
 [Detection Strategies](https://www.misp-galaxy.org/mitre-detection-strategy) - ATT&CK Detection Strategies
 
-Category: *attack-pattern* - source: *https://attack.mitre.org/detectionstrategies/* - total: *815* elements
+Category: *attack-pattern* - source: *https://attack.mitre.org/detectionstrategies/* - total: *823* elements
 
 [[HTML](https://www.misp-galaxy.org/mitre-detection-strategy)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-detection-strategy.json)]
 
@@ -432,7 +432,7 @@ Category: *attack-pattern* - source: *https://collaborate.mitre.org/attackics/in
 
 [Intrusion Set](https://www.misp-galaxy.org/mitre-intrusion-set) - Name of ATT&CK Group
 
-Category: *actor* - source: *https://github.com/mitre/cti* - total: *189* elements
+Category: *actor* - source: *https://github.com/mitre/cti* - total: *191* elements
 
 [[HTML](https://www.misp-galaxy.org/mitre-intrusion-set)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-intrusion-set.json)]
 
@@ -440,7 +440,7 @@ Category: *actor* - source: *https://github.com/mitre/cti* - total: *189* elemen
 
 [Malware](https://www.misp-galaxy.org/mitre-malware) - Name of ATT&CK software
 
-Category: *tool* - source: *https://github.com/mitre/cti* - total: *815* elements
+Category: *tool* - source: *https://github.com/mitre/cti* - total: *850* elements
 
 [[HTML](https://www.misp-galaxy.org/mitre-malware)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-malware.json)]
 
@@ -448,7 +448,7 @@ Category: *tool* - source: *https://github.com/mitre/cti* - total: *815* element
 
 [mitre-tool](https://www.misp-galaxy.org/mitre-tool) - Name of ATT&CK software
 
-Category: *tool* - source: *https://github.com/mitre/cti* - total: *93* elements
+Category: *tool* - source: *https://github.com/mitre/cti* - total: *97* elements
 
 [[HTML](https://www.misp-galaxy.org/mitre-tool)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-tool.json)]
 
