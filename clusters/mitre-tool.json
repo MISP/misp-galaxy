@@ -128,10 +128,6 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "74d2a63f-3c7b-4852-92da-02d8fbab16da",
-          "type": "uses"
-        },
-        {
           "dest-uuid": "767dbf9e-df3f-45cb-8998-4903ab5f80c0",
           "type": "uses"
         },
@@ -149,6 +145,10 @@
         },
         {
           "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "bbde9781-60aa-4b8a-a911-895b0c1b3872",
           "type": "uses"
         },
         {
@@ -372,11 +372,11 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "ac08589e-ee59-4935-8667-d845e38fe579",
+          "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
           "type": "uses"
         },
         {
-          "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
+          "dest-uuid": "bbde9781-60aa-4b8a-a911-895b0c1b3872",
           "type": "uses"
         },
         {
@@ -604,7 +604,7 @@
       "value": "HTRAN - S0040"
     },
     {
-      "description": "[MCMD](https://attack.mitre.org/software/S0500) is a remote access tool that provides remote command shell capability used by [Dragonfly 2.0](https://attack.mitre.org/groups/G0074).(Citation: Secureworks MCMD July 2019)",
+      "description": "[MCMD](https://attack.mitre.org/software/S0500) is a remote access tool that provides remote command shell capability used by [Dragonfly](https://attack.mitre.org/groups/G0035).(Citation: Secureworks MCMD July 2019)",
       "meta": {
         "external_id": "S0500",
         "mitre_platforms": [
@@ -799,6 +799,9 @@
         "refs": [
           "https://attack.mitre.org/software/S0102",
           "https://technet.microsoft.com/en-us/library/cc940106.aspx"
+        ],
+        "synonyms": [
+          "nbtstat"
         ]
       },
       "related": [
@@ -1148,15 +1151,15 @@
       },
       "related": [
         {
-          "dest-uuid": "5372c5fe-f424-4def-bcd5-d3a8e770f07b",
-          "type": "uses"
-        },
-        {
           "dest-uuid": "731f4f55-b6d0-41d1-a7a9-072a66389aea",
           "type": "uses"
         },
         {
           "dest-uuid": "cba37adb-d6fb-4610-b069-dd04c0643384",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "eec096b8-c207-43df-b6c1-11523861e452",
           "type": "uses"
         },
         {
@@ -1202,6 +1205,87 @@
       ],
       "uuid": "64764dc6-a032-495f-8250-1e4c06bdc163",
       "value": "BITSAdmin - S0190"
+    },
+    {
+      "description": "[evilginx2](https://attack.mitre.org/software/S9003) is an open-source adversary-in-the-middle (AiTM) attack framework based on the open-source nginx web server. [evilginx2](https://attack.mitre.org/software/S9003) can be used as a reverse proxy between victims and legitimate web services to intercept and capture credentials, authentication tokens, and session cookies.(Citation: Evilginx 2 July 2018)(Citation: Breakdev Evilginx 2.1 SEP 2018)(Citation: Sophos Evilginx MAR 2025)\n ",
+      "meta": {
+        "external_id": "S9003",
+        "mitre_platforms": [
+          "IaaS",
+          "Identity Provider",
+          "Office Suite",
+          "SaaS"
+        ],
+        "refs": [
+          "https://attack.mitre.org/software/S9003",
+          "https://breakdev.org/evilginx-2-1-the-first-post-release-update/",
+          "https://breakdev.org/evilginx-2-next-generation-of-phishing-2fa-tokens/",
+          "https://www.sophos.com/en-us/blog/stealing-user-credentials-with-evilginx"
+        ],
+        "synonyms": [
+          "evilginx2"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "035bb001-ab69-4a0b-9f6c-2de8b09e1b9d",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "0f4a0c76-ab2d-4cb0-85d3-3f0efb8cba0d",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "10ffac09-e42d-4f56-ab20-db94c67d76ff",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "2d3f5b3c-54ca-4f4d-bb1f-849346d31230",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "4bed873f-0b7d-41d4-b93a-b6905d1f90b0",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "544b0346-29ad-41e1-a808-501bb4193f47",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "69b8fd78-40e8-4600-ae4d-662c9d7afdb3",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "707399d6-ab3e-4963-9315-d9d3818cd6a0",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "853c4192-4311-43e1-bfbb-b11b14911852",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "ad255bfe-a9e6-4b52-a258-8d3462abe842",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "c615231b-f253-4f58-9d47-d5b4cbdb6839",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "cc7b8c4e-9be0-47ca-b0bb-83915ec3ee2f",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "dd43c543-bb85-4a6f-aa6e-160d90d06a49",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "df8b2a25-8bdf-4856-953c-a04372b1c161",
+          "type": "uses"
+        }
+      ],
+      "uuid": "1eb9627d-a661-4db6-bf53-41b7dcc63087",
+      "value": "evilginx2 - S9003"
     },
     {
       "description": "[Koadic](https://attack.mitre.org/software/S0250) is a Windows post-exploitation framework and penetration testing tool that is publicly available on GitHub. [Koadic](https://attack.mitre.org/software/S0250) has several options for staging payloads and creating implants, and performs most of its operations using Windows Script Host.(Citation: Github Koadic)(Citation: Palo Alto Sofacy 06-2018)(Citation: MalwareBytes LazyScripter Feb 2021)",
@@ -1332,6 +1416,47 @@
       ],
       "uuid": "c8655260-9f4b-44e3-85e1-6538a5f6e4f4",
       "value": "Koadic - S0250"
+    },
+    {
+      "description": "[Diskpart](https://attack.mitre.org/software/S9002) is a Windows command-line utility that is used to manage the computer’s drives, which includes disks, partitions, volumes and virtual hard disks.(Citation: Microsoft_diskpart_Feb2023)  \n\nAdversaries may abuse [Diskpart](https://attack.mitre.org/software/S9002) to perform discovery and destructive actions on a system’s storage. For example, adversaries have been observed using [Diskpart](https://attack.mitre.org/software/S9002) to conduct [Discovery](https://attack.mitre.org/tactics/TA0007) techniques to enumerate disks and volumes to gather information about the host environment, and to execute commands such as `clean all` to remove partition information and overwrite data across disks, resulting in data destruction.(Citation: Trendmicro_RansomHub_Dec2024)",
+      "meta": {
+        "external_id": "S9002",
+        "mitre_platforms": [
+          "Windows"
+        ],
+        "refs": [
+          "https://attack.mitre.org/software/S9002",
+          "https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/diskpart",
+          "https://www.trendmicro.com/vinfo/us/security/news/ransomware-spotlight/ransomware-spotlight-ransomhub"
+        ],
+        "synonyms": [
+          "Diskpart"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "0af0ca99-357d-4ba1-805f-674fdfb7bef9",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "34e793de-0274-4982-9c1a-246ed1c19dee",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "354a7f88-63fb-41b5-a801-ce3b377b36f1",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "7bc57495-ea59-4380-be31-a64af124ef18",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "d1fcf083-a721-4223-aedf-bf8960798d62",
+          "type": "uses"
+        }
+      ],
+      "uuid": "080f872e-f1a3-4d42-bb00-9eb55949f6a9",
+      "value": "Diskpart - S9002"
     },
     {
       "description": "[PsExec](https://attack.mitre.org/software/S0029) is a free Microsoft tool that can be used to execute a program on another computer. It is used by IT administrators and attackers.(Citation: Russinovich Sysinternals)(Citation: SANS PsExec)",
@@ -1867,6 +1992,96 @@
       "value": "Arp - S0099"
     },
     {
+      "description": "[TruffleHog](https://attack.mitre.org/software/S9009) is an open-source secrets-discovery tool that is used to search for credentials, API keys, and encryption keys across a variety of data sources and environments.(Citation: Black Hills Information Security TruffleHog January 2024)(Citation: Github TruffleSecurity Trufflehog April 2025) [TruffleHog](https://attack.mitre.org/software/S9009) has the ability to discover credentials and secrets stored in code repositories, git history, CI/CD pipelines, among other common storage locations to include filesystems and cloud storage buckets.(Citation: Black Hills Information Security TruffleHog January 2024)(Citation: Netskope Shai-Hulud November 2025)(Citation: Github TruffleSecurity Trufflehog April 2025) [TruffleHog](https://attack.mitre.org/software/S9009) was first released by its author in 2016.(Citation: Github TruffleSecurity Trufflehog April 2025)",
+      "meta": {
+        "external_id": "S9009",
+        "mitre_platforms": [
+          "IaaS",
+          "Linux",
+          "SaaS",
+          "Windows"
+        ],
+        "refs": [
+          "https://attack.mitre.org/software/S9009",
+          "https://github.com/trufflesecurity/trufflehog",
+          "https://www.blackhillsinfosec.com/rooting-for-secrets-with-trufflehog/",
+          "https://www.netskope.com/blog/shai-hulud-2-0-aggressive-automated-one-of-fastest-spreading-npm-supply-chain-attacks-ever-observed"
+        ],
+        "synonyms": [
+          "TruffleHog",
+          "Trufflehog"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "0c4b4fda-9062-47da-98b9-ceae2dcf052a",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "19bf235b-8620-4997-b5b4-94e0659ed7c3",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "3298ce88-1628-43b1-87d9-0b5336b193d7",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "3c4a2599-71ee-4405-ba1e-0e28414b4bc5",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "55bb4471-ff1f-43b4-88c1-c9384ec47abf",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "57a3d31a-d04f-4663-b2da-7df8ec3f8c9d",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "7ad38ef1-381a-406d-872a-38b136eb5ecc",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "7bc57495-ea59-4380-be31-a64af124ef18",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "837f9164-50af-4ac0-8219-379d8a74cefc",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "8565825b-21c8-4518-b75e-cbc4c717a156",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "890c9858-598c-401d-a4d5-c67ebcdd703a",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "cfb525cc-5494-401d-a82b-2539ca46a561",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "cff94884-3b1c-4987-a70b-6d5643c621c3",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "e24fcba8-2557-4442-a139-1ee2f2e784db",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "f232fa7a-025c-4d43-abc7-318e81a73d65",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "fb75213f-cfb0-40bf-a02f-3bad93d6601e",
+          "type": "uses"
+        }
+      ],
+      "uuid": "76f8a686-3157-481f-9af6-e8558883a8d6",
+      "value": "TruffleHog - S9009"
+    },
+    {
       "description": "[schtasks](https://attack.mitre.org/software/S0111) is used to schedule execution of programs or scripts on a Windows system to run at a specific date and time. (Citation: TechNet Schtasks)",
       "meta": {
         "external_id": "S0111",
@@ -2036,6 +2251,10 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "34ff60a3-a3f8-42e4-bed0-af9a2cb563d7",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "435dfb86-2697-4867-85b5-2fef496c0517",
           "type": "uses"
         },
@@ -2045,10 +2264,6 @@
         },
         {
           "dest-uuid": "57a3d31a-d04f-4663-b2da-7df8ec3f8c9d",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "77532a55-c283-4cd2-bc5d-2d0b65e9d88c",
           "type": "uses"
         },
         {
@@ -2076,10 +2291,6 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "cacc40da-4c9e-462c-80d5-fd70a178b12d",
-          "type": "uses"
-        },
-        {
           "dest-uuid": "cba37adb-d6fb-4610-b069-dd04c0643384",
           "type": "uses"
         },
@@ -2101,6 +2312,10 @@
         },
         {
           "dest-uuid": "ed2e45f9-d338-4eb2-8ce5-3a2e03323bc1",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "ee474564-64be-4b83-a958-53f238f49b01",
           "type": "uses"
         },
         {
@@ -2304,10 +2519,6 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "6495ae23-3ab4-43c5-a94f-5638a2c31fd2",
-          "type": "uses"
-        },
-        {
           "dest-uuid": "650c784b-7504-4df7-ab2c-4ea882384d1e",
           "type": "uses"
         },
@@ -2325,6 +2536,10 @@
         },
         {
           "dest-uuid": "707399d6-ab3e-4963-9315-d9d3818cd6a0",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "75b9a4d2-d4e2-4ca1-9aab-1badd9e05fd0",
           "type": "uses"
         },
         {
@@ -2913,7 +3128,19 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "118f61a5-eb3e-4fb6-931f-2096647f4ecd",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "232b7f21-adf9-4b42-b936-b9d6f7df856e",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "29be378d-262d-4e99-b00d-852d573628e6",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "2e34237d-8574-43f6-aace-ae2915de8597",
           "type": "uses"
         },
         {
@@ -2925,6 +3152,10 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "707399d6-ab3e-4963-9315-d9d3818cd6a0",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "7bd9c723-2f78-4309-82c5-47cad406572b",
           "type": "uses"
         },
@@ -2933,7 +3164,15 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "a782ebe2-daba-42c7-bc82-e8e9d923162d",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "cbb66055-0325-4111-aca0-40547b6ad5b0",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "d1fcf083-a721-4223-aedf-bf8960798d62",
           "type": "uses"
         },
         {
@@ -2947,10 +3186,50 @@
         {
           "dest-uuid": "f2514ae4-4e9b-4f26-a5ba-c4ae85fe93c3",
           "type": "uses"
+        },
+        {
+          "dest-uuid": "f3c544dc-673c-4ef3-accb-53229f1ae077",
+          "type": "uses"
         }
       ],
       "uuid": "6a5947f3-1a36-4653-8734-526df3e1d28d",
       "value": "AsyncRAT - S1087"
+    },
+    {
+      "description": "[DCRAT](https://attack.mitre.org/software/S9017) is a variant of the open-source [AsyncRAT](https://attack.mitre.org/software/S1087) developed in C# with additional capabilities such as patching Microsoft’s Antimalware Scan Interface (AMSI).(Citation: Zscaler BlindEagle DEC 2025)",
+      "meta": {
+        "external_id": "S9017",
+        "mitre_platforms": [
+          "Windows"
+        ],
+        "refs": [
+          "https://attack.mitre.org/software/S9017",
+          "https://www.zscaler.com/blogs/security-research/blindeagle-targets-colombian-government-agency-caminho-and-dcrat"
+        ],
+        "synonyms": [
+          "DCRAT"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "09a60ea3-a8d1-4ae5-976e-5783248b72a4",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "0d91b3c0-5e50-47c3-949a-2a796f04d144",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "bbde9781-60aa-4b8a-a911-895b0c1b3872",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "bf176076-b789-408e-8cba-7275e81c0ada",
+          "type": "uses"
+        }
+      ],
+      "uuid": "2f481072-e9f8-4452-be00-d1d7e43c2edc",
+      "value": "DCRAT - S9017"
     },
     {
       "description": "[MimiPenguin](https://attack.mitre.org/software/S0179) is a credential dumper, similar to [Mimikatz](https://attack.mitre.org/software/S0002), designed specifically for Linux platforms. (Citation: MimiPenguin GitHub May 2017)",
@@ -3001,6 +3280,9 @@
         "refs": [
           "http://sqlmap.org/",
           "https://attack.mitre.org/software/S0225"
+        ],
+        "synonyms": [
+          "sqlmap"
         ]
       },
       "related": [
@@ -3066,6 +3348,10 @@
         },
         {
           "dest-uuid": "3fc9b85a-2862-4363-a64d-d692e3ffbee0",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "4ae4f953-fe58-4cc8-a327-33257e30a830",
           "type": "uses"
         },
         {
@@ -3175,11 +3461,31 @@
       },
       "related": [
         {
+          "dest-uuid": "00f90846-cbd1-4fc5-9233-df5c2bf2a662",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "0259baeb-9f63-4c69-bf10-eb038c390688",
           "type": "uses"
         },
         {
+          "dest-uuid": "03d7999c-1f4c-42cc-8373-e7690d318104",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "04fd5427-79c7-44ea-ae13-11b24778ff1c",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "09a60ea3-a8d1-4ae5-976e-5783248b72a4",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "0d91b3c0-5e50-47c3-949a-2a796f04d144",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "0f4a0c76-ab2d-4cb0-85d3-3f0efb8cba0d",
           "type": "uses"
         },
         {
@@ -3191,7 +3497,23 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "22905430-4901-4c2a-84f6-98243cb173f8",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "232b7f21-adf9-4b42-b936-b9d6f7df856e",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "2959d63f-73fd-46a1-abd2-109d7dcede32",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "29be378d-262d-4e99-b00d-852d573628e6",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "2e34237d-8574-43f6-aace-ae2915de8597",
           "type": "uses"
         },
         {
@@ -3199,7 +3521,15 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "354a7f88-63fb-41b5-a801-ce3b377b36f1",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "43e7dc91-05b2-474c-b9ac-2ed4fe101f4d",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "4ae4f953-fe58-4cc8-a327-33257e30a830",
           "type": "uses"
         },
         {
@@ -3215,7 +3545,23 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "799ace7f-e227-4411-baa0-8868704f2a69",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "7bc57495-ea59-4380-be31-a64af124ef18",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "7bd9c723-2f78-4309-82c5-47cad406572b",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "8c41090b-aa47-4331-986b-8c9a51a91103",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "8f4a33ec-8b1f-4b80-a2f6-642b2e479580",
           "type": "uses"
         },
         {
@@ -3227,6 +3573,22 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "bf176076-b789-408e-8cba-7275e81c0ada",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "c32f7008-9fea-41f7-8366-5eb9b74bd896",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "c877e33f-1df6-40d6-b1e7-ce70f16f4979",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "cbb66055-0325-4111-aca0-40547b6ad5b0",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "cc3502b5-30cc-4473-ad48-42d51a6ef6d1",
           "type": "uses"
         },
@@ -3235,7 +3597,19 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "d63a3fb8-9452-4e9d-a60a-54be68d5998c",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "dfd7cc1d-e1d8-4394-a198-97c4cab8aa67",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "e6919abc-99f9-4c6c-95a5-14761e7b2add",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "ff73aa03-0090-4464-83ac-f89e233c02bc",
           "type": "uses"
         }
       ],
@@ -3524,6 +3898,10 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "30904c16-39f9-41c6-b01a-500eb8878442",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "30973a08-aed9-4edf-8604-9084ce1b5c4f",
           "type": "uses"
         },
@@ -3584,10 +3962,6 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "824add00-99a1-4b15-9a2d-6c5683b7b497",
-          "type": "uses"
-        },
-        {
           "dest-uuid": "86850eff-2729-40c3-b85e-c4af26da4a2d",
           "type": "uses"
         },
@@ -3601,10 +3975,6 @@
         },
         {
           "dest-uuid": "8f4a33ec-8b1f-4b80-a2f6-642b2e479580",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "8f504411-cb96-4dac-a537-8d2bb7679c59",
           "type": "uses"
         },
         {
@@ -3636,7 +4006,11 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "ac08589e-ee59-4935-8667-d845e38fe579",
+          "dest-uuid": "b831f51c-d22f-4724-bbab-60d056bd1150",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "bbde9781-60aa-4b8a-a911-895b0c1b3872",
           "type": "uses"
         },
         {
@@ -4623,15 +4997,15 @@
       },
       "related": [
         {
+          "dest-uuid": "1411e6b8-80a6-4465-9909-54eaa9c67ce0",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "3c4a2599-71ee-4405-ba1e-0e28414b4bc5",
           "type": "uses"
         },
         {
-          "dest-uuid": "4eb28bed-d11a-4641-9863-c2ac017d910a",
-          "type": "uses"
-        },
-        {
-          "dest-uuid": "6495ae23-3ab4-43c5-a94f-5638a2c31fd2",
+          "dest-uuid": "75b9a4d2-d4e2-4ca1-9aab-1badd9e05fd0",
           "type": "uses"
         }
       ],
@@ -4837,7 +5211,7 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "ac08589e-ee59-4935-8667-d845e38fe579",
+          "dest-uuid": "bbde9781-60aa-4b8a-a911-895b0c1b3872",
           "type": "uses"
         },
         {
@@ -5107,7 +5481,7 @@
           "type": "uses"
         },
         {
-          "dest-uuid": "c9e0c59e-162e-40a4-b8b1-78fab4329ada",
+          "dest-uuid": "cd92d2b8-ce43-4666-9472-f1b4b9f4f8be",
           "type": "uses"
         }
       ],
@@ -5268,5 +5642,5 @@
       "value": "attrib - S1176"
     }
   ],
-  "version": 36
+  "version": 37
 }
