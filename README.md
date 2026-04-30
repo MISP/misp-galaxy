@@ -592,7 +592,7 @@ Category: *location* - source: *https://unstats.un.org/unsd/methodology/m49/over
 
 [RMM tools](https://www.misp-galaxy.org/rmm-tool) - Remote monitoring and management tools listed by LOLRMM.
 
-Category: *tool* - source: *https://lolrmm.io/* - total: *294* elements
+Category: *tool* - source: *https://lolrmm.io/* - total: *295* elements
 
 [[HTML](https://www.misp-galaxy.org/rmm-tool)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/rmm-tool.json)]
 
