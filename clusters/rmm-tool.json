@@ -3073,13 +3073,12 @@
         ],
         "domains": [
           "*.instanthousecall.com",
-          "secure.instanthousecall.com",
           "*.instanthousecall.net",
-          "instanthousecall.com"
+          "instanthousecall.com",
+          "secure.instanthousecall.com"
         ],
         "installation_paths": [
           "hsloader.exe",
-          "InstantHousecall.exe",
           "ihcserver.exe",
           "instanthousecall.exe"
         ],
@@ -3105,12 +3104,13 @@
         ],
         "domains": [
           "*.instanthousecall.com",
+          "secure.instanthousecall.com",
           "*.instanthousecall.net",
-          "instanthousecall.com",
-          "secure.instanthousecall.com"
+          "instanthousecall.com"
         ],
         "installation_paths": [
           "hsloader.exe",
+          "InstantHousecall.exe",
           "ihcserver.exe",
           "instanthousecall.exe"
         ],
@@ -3353,7 +3353,8 @@
           "Detects potential processes activity of ITSupport247 (ConnectWise) RMM tool"
         ],
         "domains": [
-          "*.itsupport247.net"
+          "*.itsupport247.net",
+          "itsupport247.net"
         ],
         "installation_paths": [
           "saazapsc.exe"
@@ -3363,9 +3364,6 @@
           "https://control.itsupport247.net/",
           "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/itsupport247__connectwise__network_sigma.yml",
           "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/itsupport247__connectwise__processes_sigma.yml"
-        ],
-        "supported_os": [
-          "Windows"
         ]
       },
       "uuid": "3b24327a-9190-58fa-92be-1e25551784bf",
@@ -3381,8 +3379,7 @@
           "Detects potential processes activity of ITSupport247 (ConnectWise) RMM tool"
         ],
         "domains": [
-          "*.itsupport247.net",
-          "itsupport247.net"
+          "*.itsupport247.net"
         ],
         "installation_paths": [
           "saazapsc.exe"
@@ -3392,6 +3389,9 @@
           "https://control.itsupport247.net/",
           "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/itsupport247__connectwise__network_sigma.yml",
           "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/itsupport247__connectwise__processes_sigma.yml"
+        ],
+        "supported_os": [
+          "Windows"
         ]
       },
       "uuid": "3b24327a-9190-58fa-92be-1e25551784bf",
@@ -4022,6 +4022,56 @@
       },
       "uuid": "969c0b77-e897-57c0-b843-f9a4ae3b7514",
       "value": "LogMeIn rescue"
+    },
+    {
+      "description": "Lunixar is a Remote Monitoring and Management (RMM) platform by Lunixar SAS de CV (Mexico) for MSPs and IT teams. Provides remote access from the browser and a Windows app, script execution and scheduling, hardware/software inventory, process and service management, and real-time alerting. Has been observed abused in the wild, renamed as Googlemeet.msi and distributed via the phishing domain mymeetinggoogle.com, and as eDocument-*.msi for social engineering lures.",
+      "meta": {
+        "author": "Michael Haag",
+        "capabilities": [
+          "Remote access (browser and Windows app)",
+          "Script execution and scheduling",
+          "Hardware and software inventory",
+          "Process and service management",
+          "Real-time CPU/RAM/disk alerting"
+        ],
+        "category": "RMM",
+        "created": "2026-04-23",
+        "domains": [
+          "*.lunixar.com",
+          "lunixar.com",
+          "app.lunixar.com",
+          "socket.lunixar.com",
+          "downloads.lunixar.com",
+          "devrmm.lunixar.com",
+          "mymeetinggoogle.com"
+        ],
+        "installation_paths": [
+          "C:\\Program Files\\Lunixar\\*",
+          "*\\Lunixar\\Lunixar.exe",
+          "*\\Lunixar\\Lunixar.dll",
+          "*\\Lunixar\\Lunixar.Agent.Core.dll",
+          "*\\Lunixar\\LunixarRemote.exe",
+          "*\\Lunixar\\LunixarRemote.dll",
+          "*\\Lunixar\\LunixarUpdater.exe",
+          "*\\Lunixar\\LunixarUpdater.dll",
+          "LunixarRMM*.msi",
+          "Googlemeet.msi",
+          "eDocument-*.msi"
+        ],
+        "last_modified": "2026-04-23",
+        "ports": [
+          "23501"
+        ],
+        "refs": [
+          "https://lunixar.com/en/",
+          "https://www.virustotal.com/gui/file/3160414da55882b9f03bae5aa76f0dc3c6cdb9e27e9091d9dac6fa610bd94c33"
+        ],
+        "supported_os": [
+          "Windows"
+        ]
+      },
+      "uuid": "5a23c013-0944-5925-8631-8c475c05b0e6",
+      "value": "Lunixar"
     },
     {
       "description": "Manage Engine (Desktop Central) is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
@@ -4676,47 +4726,6 @@
           "Detects potential processes activity of N-Able Advanced Monitoring Agent RMM tool"
         ],
         "domains": [
-          "*remote.management",
-          "*.logicnow.com",
-          "*systemmonitor.us",
-          "*systemmonitor.eu.com",
-          "*system-monitor.com",
-          "systemmonitor.us.cdn.cloudflare.net",
-          "*cloudbackup.management",
-          "*systemmonitor.co.uk",
-          "*.n-able.com",
-          "*.beanywhere.com",
-          "*.swi-tc.com"
-        ],
-        "installation_paths": [
-          "Agent_*_RW.exe",
-          "BASEClient.exe",
-          "BASupApp.exe",
-          "BASupSrvc.exe",
-          "BASupSrvcCnfg.exe",
-          "BASupTSHelper.exe"
-        ],
-        "last_modified": "2024-08-02",
-        "refs": [
-          "https://documentation.n-able.com/takecontrol/troubleshooting/Content/kb/Take-Control-Standalone-Ports-and-Domains-Firewall-and-AV-Exclusions.htm",
-          "https://www.n-able.com/features/advanced-monitoring-agent",
-          "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/n-able_advanced_monitoring_agent_network_sigma.yml",
-          "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/n-able_advanced_monitoring_agent_processes_sigma.yml"
-        ]
-      },
-      "uuid": "5d737702-8d5f-5227-8190-804e376af333",
-      "value": "N-Able Advanced Monitoring Agent"
-    },
-    {
-      "description": "N-Able Advanced Monitoring Agent is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-      "meta": {
-        "category": "RMM",
-        "created": "2024-08-02",
-        "detection_descriptions": [
-          "Detects potential network activity of N-Able Advanced Monitoring Agent RMM tool",
-          "Detects potential processes activity of N-Able Advanced Monitoring Agent RMM tool"
-        ],
-        "domains": [
           "*.beanywhere.com",
           "systemmonitor.co.uk",
           "*system-monitor.com",
@@ -4745,6 +4754,47 @@
           "Agent_*_RW.exe",
           "BASEClient.exe",
           "BASupSrvcCnfg.exe"
+        ],
+        "last_modified": "2024-08-02",
+        "refs": [
+          "https://documentation.n-able.com/takecontrol/troubleshooting/Content/kb/Take-Control-Standalone-Ports-and-Domains-Firewall-and-AV-Exclusions.htm",
+          "https://www.n-able.com/features/advanced-monitoring-agent",
+          "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/n-able_advanced_monitoring_agent_network_sigma.yml",
+          "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/n-able_advanced_monitoring_agent_processes_sigma.yml"
+        ]
+      },
+      "uuid": "5d737702-8d5f-5227-8190-804e376af333",
+      "value": "N-Able Advanced Monitoring Agent"
+    },
+    {
+      "description": "N-Able Advanced Monitoring Agent is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
+      "meta": {
+        "category": "RMM",
+        "created": "2024-08-02",
+        "detection_descriptions": [
+          "Detects potential network activity of N-Able Advanced Monitoring Agent RMM tool",
+          "Detects potential processes activity of N-Able Advanced Monitoring Agent RMM tool"
+        ],
+        "domains": [
+          "*remote.management",
+          "*.logicnow.com",
+          "*systemmonitor.us",
+          "*systemmonitor.eu.com",
+          "*system-monitor.com",
+          "systemmonitor.us.cdn.cloudflare.net",
+          "*cloudbackup.management",
+          "*systemmonitor.co.uk",
+          "*.n-able.com",
+          "*.beanywhere.com",
+          "*.swi-tc.com"
+        ],
+        "installation_paths": [
+          "Agent_*_RW.exe",
+          "BASEClient.exe",
+          "BASupApp.exe",
+          "BASupSrvc.exe",
+          "BASupSrvcCnfg.exe",
+          "BASupTSHelper.exe"
         ],
         "last_modified": "2024-08-02",
         "refs": [
@@ -7295,37 +7345,6 @@
     {
       "description": "SimpleHelp is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
       "meta": {
-        "category": "RMM",
-        "created": "2024-08-02",
-        "detection_descriptions": [
-          "Detects potential network activity of SimpleHelp RMM tool",
-          "Detects potential processes activity of SimpleHelp RMM tool"
-        ],
-        "domains": [
-          "user_managed",
-          "simple-help.com"
-        ],
-        "installation_paths": [
-          "simplehelpcustomer.exe",
-          "simpleservice.exe",
-          "simplegatewayservice.exe",
-          "remote access.exe",
-          "windowslauncher.exe"
-        ],
-        "last_modified": "2024-08-02",
-        "refs": [
-          "https://simple-help.com/remote-support",
-          "https://simple-help.com/",
-          "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/simplehelp_network_sigma.yml",
-          "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/simplehelp_processes_sigma.yml"
-        ]
-      },
-      "uuid": "c315bd0f-fe30-5d42-88f0-810e6d5032a4",
-      "value": "SimpleHelp"
-    },
-    {
-      "description": "SimpleHelp is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
-      "meta": {
         "author": "Phyo Paing Htun",
         "category": "RMM",
         "created": "2025-03-05",
@@ -7362,6 +7381,37 @@
         ],
         "supported_os": [
           "windows"
+        ]
+      },
+      "uuid": "c315bd0f-fe30-5d42-88f0-810e6d5032a4",
+      "value": "SimpleHelp"
+    },
+    {
+      "description": "SimpleHelp is a remote monitoring and management (RMM) tool. More information will be added as it becomes available.",
+      "meta": {
+        "category": "RMM",
+        "created": "2024-08-02",
+        "detection_descriptions": [
+          "Detects potential network activity of SimpleHelp RMM tool",
+          "Detects potential processes activity of SimpleHelp RMM tool"
+        ],
+        "domains": [
+          "user_managed",
+          "simple-help.com"
+        ],
+        "installation_paths": [
+          "simplehelpcustomer.exe",
+          "simpleservice.exe",
+          "simplegatewayservice.exe",
+          "remote access.exe",
+          "windowslauncher.exe"
+        ],
+        "last_modified": "2024-08-02",
+        "refs": [
+          "https://simple-help.com/remote-support",
+          "https://simple-help.com/",
+          "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/simplehelp_network_sigma.yml",
+          "https://github.com/magicsword-io/LOLRMM/blob/main/detections/sigma/simplehelp_processes_sigma.yml"
         ]
       },
       "uuid": "c315bd0f-fe30-5d42-88f0-810e6d5032a4",
