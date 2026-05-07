@@ -40,7 +40,7 @@ Category: *firearm* - source: *https://ammo.com/* - total: *409* elements
 
 [Android](https://www.misp-galaxy.org/android) - Android malware galaxy based on multiple open sources.
 
-Category: *tool* - source: *Open Sources* - total: *450* elements
+Category: *tool* - source: *Open Sources* - total: *449* elements
 
 [[HTML](https://www.misp-galaxy.org/android)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/android.json)]
 
