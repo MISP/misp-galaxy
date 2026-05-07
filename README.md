@@ -884,6 +884,14 @@ Category: *framework* - source: *https://github.com/vz-risk/veris* - total: *220
 
 [[HTML](https://www.misp-galaxy.org/veris-framework)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/veris-framework.json)]
 
+## Wiper
+
+[Wiper](https://www.misp-galaxy.org/wiper) - Wiper malware is an enumeration of destructive malware families designed to delete, overwrite, or otherwise irreversibly damage files and systems on compromised infrastructure.
+
+Category: *tool* - source: *MISP Project* - total: *25* elements
+
+[[HTML](https://www.misp-galaxy.org/wiper)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/wiper.json)]
+
 
 # Online documentation
 
