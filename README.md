@@ -196,6 +196,14 @@ Category: *actor* - source: *MISP Project* - total: *4* elements
 
 [[HTML](https://www.misp-galaxy.org/entity)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/entity.json)]
 
+## Synthetic Exercise World
+
+[Synthetic Exercise World](https://www.misp-galaxy.org/exercise-world) - Self-contained fictional world dataset for cyber exercises and standards documents.
+
+Category: *tool* - source: *https://www.misp-project.org/galaxy.html* - total: *60* elements
+
+[[HTML](https://www.misp-galaxy.org/exercise-world)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/exercise-world.json)]
+
 ## Exploit-Kit
 
 [Exploit-Kit](https://www.misp-galaxy.org/exploit-kit) - Exploit-Kit is an enumeration of some exploitation kits used by adversaries. The list includes document, browser and router exploit kits.It's not meant to be totally exhaustive but aim at covering the most seen in the past 5 years
