@@ -11,6 +11,7 @@ agent-threat-rules clone.
 """
 import argparse
 import json
+import re
 import sys
 import uuid
 from pathlib import Path
@@ -36,6 +37,46 @@ CATEGORIES = [
 
 GALAXY_UUID = "5b3d8c2e-7a1f-4e9b-8c5d-2a4f6b9e8c1d"
 CLUSTER_UUID = "9e2c5a7b-3f8d-4b1c-a6e9-7d5c8b2f4a3e"
+
+
+ATLAS_ID_PATTERN = re.compile(r"AML\.T\d{4}(?:\.\d{3})?")
+
+
+def load_atlas_uuid_map(atlas_cluster_path: Path) -> dict[str, str]:
+    """Load mitre-atlas-attack-pattern cluster and return {external_id: uuid}."""
+    if not atlas_cluster_path.is_file():
+        print(f"warning: ATLAS cluster not found at {atlas_cluster_path}", file=sys.stderr)
+        return {}
+    with open(atlas_cluster_path, "r", encoding="utf-8") as f:
+        cluster = json.load(f)
+    out: dict[str, str] = {}
+    for v in cluster.get("values", []):
+        ext_id = (v.get("meta") or {}).get("external_id")
+        u = v.get("uuid")
+        if ext_id and u:
+            out[ext_id] = u
+    return out
+
+
+def atlas_relationships(rule: dict, atlas_map: dict[str, str]) -> list[dict]:
+    """Build `related` entries for ATLAS technique IDs found on the rule."""
+    refs = (rule.get("references") or {}).get("mitre_atlas") or []
+    seen: set[str] = set()
+    out: list[dict] = []
+    for r in refs:
+        if not isinstance(r, str):
+            continue
+        m = ATLAS_ID_PATTERN.search(r)
+        if not m:
+            continue
+        ext_id = m.group(0)
+        if ext_id in seen:
+            continue
+        seen.add(ext_id)
+        dest = atlas_map.get(ext_id)
+        if dest:
+            out.append({"dest-uuid": dest, "type": "related-to"})
+    return out
 
 
 def load_rules(rules_dir: Path) -> list[dict]:
@@ -83,7 +124,7 @@ def github_url(rule_id: str, category: str) -> str:
     return f"https://github.com/Agent-Threat-Rule/agent-threat-rules/tree/main/rules/{category}"
 
 
-def build_value(rule: dict) -> dict:
+def build_value(rule: dict, atlas_map: dict[str, str]) -> dict:
     rule_id = rule["id"]
     title = rule.get("title", rule_id)
     desc = (rule.get("description") or "").strip()
@@ -109,17 +150,23 @@ def build_value(rule: dict) -> dict:
     if mitre_atlas:
         meta["mitre_atlas"] = mitre_atlas
 
-    return {
+    out = {
         "description": desc,
         "meta": meta,
         "uuid": str(uuid.uuid5(GALAXY_NS, rule_id)),
         "value": f"{title} - {rule_id}",
     }
 
+    rels = atlas_relationships(rule, atlas_map)
+    if rels:
+        out["related"] = rels
 
-def build_cluster(rules: list[dict]) -> dict:
+    return out
+
+
+def build_cluster(rules: list[dict], atlas_map: dict[str, str]) -> dict:
     values = sorted(
-        (build_value(r) for r in rules),
+        (build_value(r, atlas_map) for r in rules),
         key=lambda v: v["meta"]["external_id"],
     )
     return {
@@ -138,6 +185,8 @@ def build_cluster(rules: list[dict]) -> dict:
 def main() -> int:
     p = argparse.ArgumentParser()
     p.add_argument("--rules-dir", required=True, help="Path to agent-threat-rules/rules")
+    p.add_argument("--atlas-cluster", default="clusters/mitre-atlas-attack-pattern.json",
+                   help="Path to MISP MITRE ATLAS attack-pattern cluster (for relationship UUIDs)")
     p.add_argument("--galaxy-out", default="galaxies/agent-threat-rules.json")
     p.add_argument("--cluster-out", default="clusters/agent-threat-rules.json")
     args = p.parse_args()
@@ -150,8 +199,14 @@ def main() -> int:
     rules = load_rules(rules_dir)
     print(f"loaded {len(rules)} rules from {rules_dir}")
 
+    atlas_map = load_atlas_uuid_map(Path(args.atlas_cluster))
+    print(f"loaded {len(atlas_map)} ATLAS technique UUIDs from {args.atlas_cluster}")
+
     galaxy = build_galaxy()
-    cluster = build_cluster(rules)
+    cluster = build_cluster(rules, atlas_map)
+    rel_count = sum(len(v.get("related", [])) for v in cluster["values"])
+    rules_with_rels = sum(1 for v in cluster["values"] if v.get("related"))
+    print(f"added {rel_count} ATLAS relationships across {rules_with_rels} rules")
 
     Path(args.galaxy_out).parent.mkdir(parents=True, exist_ok=True)
     Path(args.cluster_out).parent.mkdir(parents=True, exist_ok=True)
