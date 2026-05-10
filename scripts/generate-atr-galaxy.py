@@ -40,14 +40,15 @@ CLUSTER_UUID = "9e2c5a7b-3f8d-4b1c-a6e9-7d5c8b2f4a3e"
 
 
 ATLAS_ID_PATTERN = re.compile(r"AML\.T\d{4}(?:\.\d{3})?")
+ATTACK_ID_PATTERN = re.compile(r"\bT\d{4}(?:\.\d{3})?\b")
 
 
-def load_atlas_uuid_map(atlas_cluster_path: Path) -> dict[str, str]:
-    """Load mitre-atlas-attack-pattern cluster and return {external_id: uuid}."""
-    if not atlas_cluster_path.is_file():
-        print(f"warning: ATLAS cluster not found at {atlas_cluster_path}", file=sys.stderr)
+def load_uuid_map(cluster_path: Path, label: str) -> dict[str, str]:
+    """Load any MISP galaxy cluster file and return {external_id: uuid}."""
+    if not cluster_path.is_file():
+        print(f"warning: {label} cluster not found at {cluster_path}", file=sys.stderr)
         return {}
-    with open(atlas_cluster_path, "r", encoding="utf-8") as f:
+    with open(cluster_path, "r", encoding="utf-8") as f:
         cluster = json.load(f)
     out: dict[str, str] = {}
     for v in cluster.get("values", []):
@@ -58,25 +59,37 @@ def load_atlas_uuid_map(atlas_cluster_path: Path) -> dict[str, str]:
     return out
 
 
-def atlas_relationships(rule: dict, atlas_map: dict[str, str]) -> list[dict]:
-    """Build `related` entries for ATLAS technique IDs found on the rule."""
-    refs = (rule.get("references") or {}).get("mitre_atlas") or []
-    seen: set[str] = set()
+def _refs_to_relationships(
+    refs: list,
+    pattern: re.Pattern,
+    uuid_map: dict[str, str],
+    seen: set[str],
+) -> list[dict]:
     out: list[dict] = []
     for r in refs:
         if not isinstance(r, str):
             continue
-        m = ATLAS_ID_PATTERN.search(r)
+        m = pattern.search(r)
         if not m:
             continue
         ext_id = m.group(0)
         if ext_id in seen:
             continue
         seen.add(ext_id)
-        dest = atlas_map.get(ext_id)
+        dest = uuid_map.get(ext_id)
         if dest:
             out.append({"dest-uuid": dest, "type": "related-to"})
     return out
+
+
+def atlas_relationships(rule: dict, atlas_map: dict[str, str]) -> list[dict]:
+    refs = (rule.get("references") or {}).get("mitre_atlas") or []
+    return _refs_to_relationships(refs, ATLAS_ID_PATTERN, atlas_map, set())
+
+
+def attack_relationships(rule: dict, attack_map: dict[str, str]) -> list[dict]:
+    refs = (rule.get("references") or {}).get("mitre_attack") or []
+    return _refs_to_relationships(refs, ATTACK_ID_PATTERN, attack_map, set())
 
 
 def load_rules(rules_dir: Path) -> list[dict]:
@@ -124,7 +137,11 @@ def github_url(rule_id: str, category: str) -> str:
     return f"https://github.com/Agent-Threat-Rule/agent-threat-rules/tree/main/rules/{category}"
 
 
-def build_value(rule: dict, atlas_map: dict[str, str]) -> dict:
+def build_value(
+    rule: dict,
+    atlas_map: dict[str, str],
+    attack_map: dict[str, str],
+) -> dict:
     rule_id = rule["id"]
     title = rule.get("title", rule_id)
     desc = (rule.get("description") or "").strip()
@@ -157,16 +174,31 @@ def build_value(rule: dict, atlas_map: dict[str, str]) -> dict:
         "value": f"{title} - {rule_id}",
     }
 
-    rels = atlas_relationships(rule, atlas_map)
+    rels: list[dict] = []
+    rels.extend(atlas_relationships(rule, atlas_map))
+    rels.extend(attack_relationships(rule, attack_map))
+    # dedupe by dest-uuid (in case a technique appears in both ATLAS and ATT&CK refs)
     if rels:
-        out["related"] = rels
+        seen_uuids: set[str] = set()
+        deduped: list[dict] = []
+        for r in rels:
+            u = r["dest-uuid"]
+            if u in seen_uuids:
+                continue
+            seen_uuids.add(u)
+            deduped.append(r)
+        out["related"] = deduped
 
     return out
 
 
-def build_cluster(rules: list[dict], atlas_map: dict[str, str]) -> dict:
+def build_cluster(
+    rules: list[dict],
+    atlas_map: dict[str, str],
+    attack_map: dict[str, str],
+) -> dict:
     values = sorted(
-        (build_value(r, atlas_map) for r in rules),
+        (build_value(r, atlas_map, attack_map) for r in rules),
         key=lambda v: v["meta"]["external_id"],
     )
     return {
@@ -187,6 +219,8 @@ def main() -> int:
     p.add_argument("--rules-dir", required=True, help="Path to agent-threat-rules/rules")
     p.add_argument("--atlas-cluster", default="clusters/mitre-atlas-attack-pattern.json",
                    help="Path to MISP MITRE ATLAS attack-pattern cluster (for relationship UUIDs)")
+    p.add_argument("--attack-cluster", default="clusters/mitre-attack-pattern.json",
+                   help="Path to MISP MITRE ATT&CK attack-pattern cluster (for relationship UUIDs)")
     p.add_argument("--galaxy-out", default="galaxies/agent-threat-rules.json")
     p.add_argument("--cluster-out", default="clusters/agent-threat-rules.json")
     args = p.parse_args()
@@ -199,14 +233,17 @@ def main() -> int:
     rules = load_rules(rules_dir)
     print(f"loaded {len(rules)} rules from {rules_dir}")
 
-    atlas_map = load_atlas_uuid_map(Path(args.atlas_cluster))
+    atlas_map = load_uuid_map(Path(args.atlas_cluster), "ATLAS")
     print(f"loaded {len(atlas_map)} ATLAS technique UUIDs from {args.atlas_cluster}")
 
+    attack_map = load_uuid_map(Path(args.attack_cluster), "ATT&CK")
+    print(f"loaded {len(attack_map)} ATT&CK technique UUIDs from {args.attack_cluster}")
+
     galaxy = build_galaxy()
-    cluster = build_cluster(rules, atlas_map)
+    cluster = build_cluster(rules, atlas_map, attack_map)
     rel_count = sum(len(v.get("related", [])) for v in cluster["values"])
     rules_with_rels = sum(1 for v in cluster["values"] if v.get("related"))
-    print(f"added {rel_count} ATLAS relationships across {rules_with_rels} rules")
+    print(f"added {rel_count} relationships (ATLAS + ATT&CK combined) across {rules_with_rels} rules")
 
     Path(args.galaxy_out).parent.mkdir(parents=True, exist_ok=True)
     Path(args.cluster_out).parent.mkdir(parents=True, exist_ok=True)
