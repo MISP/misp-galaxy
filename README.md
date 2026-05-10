@@ -28,6 +28,14 @@ Category: *actor* - source: *https://apt.360.net/aptlist* - total: *42* elements
 
 [[HTML](https://www.misp-galaxy.org/360net)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/360net.json)]
 
+## Agent Threat Rules
+
+[Agent Threat Rules](https://www.misp-galaxy.org/agent-threat-rules) - Open detection rules for AI agent threats — prompt injection, tool poisoning, MCP server attacks, skill compromise. Each cluster value is one ATR rule with category, severity, and CVE/OWASP/MITRE ATLAS references where mapped.
+
+Category: *agent-threat-rules* - source: *https://github.com/Agent-Threat-Rule/agent-threat-rules* - total: *336* elements
+
+[[HTML](https://www.misp-galaxy.org/agent-threat-rules)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/agent-threat-rules.json)]
+
 ## Ammunitions
 
 [Ammunitions](https://www.misp-galaxy.org/ammunitions) - Common ammunitions galaxy
