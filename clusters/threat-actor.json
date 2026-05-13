@@ -20720,6 +20720,91 @@
       },
       "uuid": "480b325a-7a08-44ae-8690-1ba5eaf9c899",
       "value": "Lamashtu"
+    },
+    {
+      "description": "NyxarGroup is a threat actor involved in a coordinated data brokerage ecosystem across Latin America, primarily targeting government infrastructure. They have published high volumes of data, including 110,000 records from Chile's Servicio Civil platform and 250GB from the Ley del Lobby platform, which tracks lobbying activities. The data exfiltrated includes limited fields but provides a directory of Chilean government employees, enhancing the visibility of the public sector workforce. NyxarGroup's activities indicate a focus on exploiting government transparency and training systems for data leaks.",
+      "meta": {
+        "refs": [
+          "https://darkwebinformer.com/alleged-breach-of-chiles-servicio-civil-platform-exposes-110k-public-servant-records-with-full-names-and-user-ids/",
+          "https://darkwebinformer.com/alleged-breach-of-chiles-ley-del-lobby-platform-exposes-250gb-of-government-lobbying-records-spanning-2018-to-2026/"
+        ]
+      },
+      "uuid": "0c78182d-bc4b-404f-aacc-40538252b58c",
+      "value": "NyxarGroup"
+    },
+    {
+      "description": "UNC6748 targets users in Saudi Arabia through a fake Snapchat website, employing a backdoor known as GHOSTKNIFE for data exfiltration. Their exploitation process initially featured basic obfuscation, which evolved to include anti-debugging measures. The actor primarily leveraged CVE-2025-31277 and CVE-2026-20700 for RCE exploits, but exhibited inconsistencies in exploit support for different iOS versions. Additionally, UNC6748's delivery mechanisms incorporated session storage checks to manage infection attempts.",
+      "meta": {
+        "country": "RU",
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/darksword-ios-exploit-chain/"
+        ]
+      },
+      "uuid": "df383083-f43a-4bf8-9757-ce2bf1def292",
+      "value": "UNC6748"
+    },
+    {
+      "description": "FlowerStorm is a phishing-as-a-service platform that mimics legitimate services to bypass multi-factor authentication structure. The majority of its targets are located in North America and Europe, with a significant focus on organizations in the United States. FlowerStorm's operational mistakes have led to vulnerabilities that can be exploited for disruption and analysis.",
+      "meta": {
+        "refs": [
+          "https://news.sophos.com/en-us/2024/12/19/phishing-platform-rockstar-2fa-trips-and-flowerstorm-picks-up-the-pieces/"
+        ]
+      },
+      "uuid": "05cf269a-1731-45a6-bcd3-eff1afcca2bb",
+      "value": "FlowerStorm"
+    },
+    {
+      "description": "Mr_Rot13 is a stable hacking group identified through a PHP backdoor and a Downloader domain linked to a C2 infrastructure active since 2020. They utilize the Rot13 algorithm for obfuscation and have demonstrated a low detection rate across security products, indicating advanced operational security. Their activities include exploiting CVE-2026-41940 to deliver malicious payloads and maintaining covert communication via Telegram. The group has shown a particular focus on WordPress as a target, with ongoing operations that suggest a sophisticated threat actor rather than opportunistic attackers.",
+      "meta": {
+        "refs": [
+          "https://blog.xlab.qianxin.com/mr_rot13-the-elusive-6-year-hacker-group-weaponizing-critical-cpanel-flaws-for-backdoor-deployment/"
+        ]
+      },
+      "uuid": "712d2b58-5e2e-4106-b5aa-65c5b7d99e44",
+      "value": "Mr_Rot13"
+    },
+    {
+      "description": "SHADOW-EARTH-053 is a China-aligned threat group exploiting unpatched Microsoft Exchange Server vulnerabilities, specifically CVE-2021-26855, to conduct cyberespionage against government and defense-linked targets across Asia and Europe. The group primarily deploys ShadowPad malware, utilizing techniques such as credential dumping, tunneling tools, and lateral movement via WMIC. They have also been observed installing web shells for persistence and leveraging a custom ExchangeExport tool to extract high-value mailbox contents. Additionally, low-confidence associations with Noodle RAT and CVE-2025-55182 have been noted in their operations.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://www.trendmicro.com/en_us/research/26/d/inside-shadow-earth-053.html"
+        ]
+      },
+      "uuid": "a2553b72-e87f-40c6-afe2-04df4cf3e12f",
+      "value": "Shadow-Earth-053"
+    },
+    {
+      "description": "Hive0163 is a financially motivated ransomware group responsible for deploying Interlock ransomware, utilizing ClickFix social engineering for initial access. They employ the AI-generated PowerShell backdoor Slopoly for persistent command-and-control access, which checks in with attacker infrastructure every 50 seconds and transmits telemetry every 30 seconds. The group leverages AzCopy for bulk data exfiltration to Azure blob storage before executing ransomware, employing a five-stage attack chain. Their operations are characterized by the use of initial access brokers and a variety of custom backdoors for long-term access and data exfiltration.",
+      "meta": {
+        "refs": [
+          "https://www.ibm.com/think/x-force/slopoly-start-ai-enhanced-ransomware-attacks"
+        ]
+      },
+      "uuid": "85652df8-67e5-4c25-baad-147bd1eb2d80",
+      "value": "Hive0163"
+    },
+    {
+      "description": "The threat actor lulzintel has claimed responsibility for multiple data breaches, including those of vegehome.pl, Almaex, Smaregi, and Kin Teck Tong, exposing sensitive information of over 400,000 individuals combined. The breaches involved the release of customer and patient records, including personal details and medical histories.Sample data has been provided to demonstrate the validity of the claims.",
+      "meta": {
+        "refs": [
+          "https://darkwebinformer.com/singapore-traditional-chinese-medicine-clinic-kin-teck-tong-allegedly-suffers-data-breach-exposing-150-000-patient-records/",
+          "https://darkwebinformer.com/almaex-iranian-cryptocurrency-exchange-breach-allegedly-exposes-over-50-000-user-records/",
+          "https://darkwebinformer.com/polish-eco-friendly-retailer-vegehome-suffers-data-breach-exposing-100k-customers/"
+        ]
+      },
+      "uuid": "7e039dd6-e2cd-4fab-9be9-85d6a5ea1eb3",
+      "value": "LulzIntel"
+    },
+    {
+      "description": "Storm-2561 is a cybercriminal threat actor known for a credential theft campaign that employs SEO poisoning to distribute fake VPN clients. The campaign redirects users to malicious ZIP files containing digitally signed trojans that harvest VPN credentials, leveraging user trust in search engine results. The malicious components are signed by “Taiyuan Lihua Near Information Technology Co., Ltd.” and were hosted on GitHub repositories that have since been taken down. This operation exhibits characteristics consistent with financially motivated cybercrime.",
+      "meta": {
+        "refs": [
+          "https://www.microsoft.com/en-us/security/blog/2026/03/12/storm-2561-uses-seo-poisoning-to-distribute-fake-vpn-clients-for-credential-theft/"
+        ]
+      },
+      "uuid": "7ff63e0c-2345-4282-b4d7-0e5dc49dfc60",
+      "value": "Storm-2561"
     }
   ],
   "version": 341
