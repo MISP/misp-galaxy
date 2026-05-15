@@ -1399,7 +1399,7 @@
       "value": "Analytic 1080 - AN1080"
     },
     {
-      "description": "Mobile threat defense agents could detect unauthorized operating system modifications by using attestation. ",
+      "description": "Correlates (1) modification or replacement of system runtime libraries or API resolution paths, (2) repeated invocation of hijacked APIs across multiple applications, and (3) inconsistent or suppressed outputs from those APIs compared to expected OS-enforced behavior. The defender observes a causal chain where system-level API behavior is altered, resulting in multiple applications exhibiting consistent anomalies in sensor access, permission checks, or system state reporting.",
       "meta": {
         "external_id": "AN1800",
         "mitre_platforms": [
@@ -1810,6 +1810,20 @@
       "value": "Analytic 0240 - AN0240"
     },
     {
+      "description": "Detects crafted activity resulting in crashes or impairment of endpoint security extensions, network filters, launch daemons, or telemetry agents. Correlates process activity, system extension state changes, and telemetry interruption.",
+      "meta": {
+        "external_id": "AN2040",
+        "mitre_platforms": [
+          "macOS"
+        ],
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0900#AN2040"
+        ]
+      },
+      "uuid": "9df50fd3-bbad-43ce-b511-1bf995f1b583",
+      "value": "Analytic 2040 - AN2040"
+    },
+    {
       "description": "Monitor and analyze traffic patterns and packet inspection associated to protocol(s) that do not follow the expected protocol standards and traffic flows (e.g extraneous packets that do not belong to established flows, gratuitous or anomalous traffic patterns, anomalous syntax, or structure). Consider correlation with process monitoring and command line to detect anomalous processes execution and command line arguments associated to traffic patterns (e.g. monitor anomalies in use of files that do not normally initiate connections for respective protocol(s)).\nConsider monitoring social media activity related to your organization. Suspicious activity may include personas claiming to work for your organization or recently created/modified accounts making numerous connection requests to accounts affiliated with your organization.\nMuch of this activity will take place outside the visibility of the target organization, making detection of this behavior difficult. Detection efforts may be focused on related stages of the adversary lifecycle, such as during Initial Access (ex: [Phishing](https://attack.mitre.org/techniques/T1566)).",
       "meta": {
         "external_id": "AN2005",
@@ -2007,6 +2021,20 @@
       },
       "uuid": "ea793457-89e6-47d2-8ae1-7fd2bd814f82",
       "value": "Analytic 0062 - AN0062"
+    },
+    {
+      "description": "Much of this takes place outside the visibility of the target organization, making detection difficult for defenders.\n\nDetection efforts may be focused on related stages of the adversary lifecycle, such as during Initial Access.",
+      "meta": {
+        "external_id": "AN2060",
+        "mitre_platforms": [
+          "PRE"
+        ],
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0917#AN2060"
+        ]
+      },
+      "uuid": "3c500af0-d284-48c3-b23b-a22f8b77649d",
+      "value": "Analytic 2060 - AN2060"
     },
     {
       "description": "Monitors cloud function creation triggered by specific audit log events (e.g., IAM changes, object creation), followed by anomalous behavior from new service accounts.",
@@ -5159,7 +5187,7 @@
       "value": "Analytic 0117 - AN0117"
     },
     {
-      "description": "The user is prompted for approval when an application requests device administrator permissions.\nApplication vetting services can check for the string `BIND_DEVICE_ADMIN` in the application’s manifest. This indicates it can prompt the user for device administrator permissions.\nThe user can see which applications are registered as device administrators in the device settings.",
+      "description": "Correlates (1) activation of Device Administrator privileges by an application, (2) absence or mismatch of legitimate user interaction during the approval flow, and (3) immediate execution of administrator-level control actions (e.g., password reset, device lock, policy enforcement, prevention of uninstall). The defender observes a causal chain where an application transitions into a privileged device control role and rapidly exercises those capabilities outside expected user-driven patterns.\n\nApplication vetting services can check for the string `BIND_DEVICE_ADMIN` in the application’s manifest. ",
       "meta": {
         "external_id": "AN1701",
         "mitre_platforms": [
@@ -5173,7 +5201,7 @@
       "value": "Analytic 1701 - AN1701"
     },
     {
-      "description": "System Network Connections Discovery can be difficult to detect, and therefore enterprises may be better served focusing on detection at other stages of adversarial behavior.",
+      "description": "Defender observes an app (package/UID) repeatedly querying device networking context APIs (Wi-Fi scan results/current SSID/BSSID, Bluetooth device discovery, or cellular tower lists) at a rate or timing inconsistent with the app’s normal UX, often while backgrounded. Correlate API calls with permission usage (fine location, nearby devices/Bluetooth) and concurrent connectivity probes (DNS lookups/ARP/port reachability) to distinguish automated discovery from user-initiated settings checks. The detection is based on observed API execution + permission use + rate/sequence, not the specific API method name.",
       "meta": {
         "external_id": "AN1710",
         "mitre_platforms": [
@@ -5285,7 +5313,7 @@
       "value": "Analytic 1018 - AN1018"
     },
     {
-      "description": "Application vetting services could look for use of the accessibility service or features that typically require root access.\nThe user can see a list of applications that can use accessibility services in the device settings.",
+      "description": "Correlates (1) a malicious application gaining or using a removal-capable control path, such as device owner or delegated app-management authority, accessibility service control over uninstall UI, or rooted filesystem access, (2) initiation of uninstall or package-removal behavior, and (3) disappearance of the application from installed-state inventory or app runtime immediately afterward, often with a short-lived final burst of local cleanup or outbound communication. The defender observes a causal chain where the application first establishes the ability to remove itself, then triggers uninstall or deletion, and then vanishes from expected app presence while device activity continues.",
       "meta": {
         "external_id": "AN1801",
         "mitre_platforms": [
@@ -5902,6 +5930,20 @@
       "value": "Analytic 1402 - AN1402"
     },
     {
+      "description": "Detects exploitation of cloud-native security boundaries or management components followed by disabled logging, detached agents, changed security groups, policy bypass, or telemetry suppression. Correlates suspicious API activity with reduced control coverage.",
+      "meta": {
+        "external_id": "AN2041",
+        "mitre_platforms": [
+          "IaaS"
+        ],
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0900#AN2041"
+        ]
+      },
+      "uuid": "47df93f9-b33f-4333-95b6-b3cca9418a4d",
+      "value": "Analytic 2041 - AN2041"
+    },
+    {
       "description": "Detects deletion or overwriting of bash history, syslog, audit logs, and .ssh metadata following privilege elevation or suspicious process spawning.",
       "meta": {
         "external_id": "AN0521",
@@ -6266,6 +6308,20 @@
       "value": "Analytic 0612 - AN0612"
     },
     {
+      "description": "Much of this takes place outside the visibility of the target organization, making detection difficult for defenders.\n\nDetection efforts may be focused on related stages of the adversary lifecycle, such as during Initial Access.",
+      "meta": {
+        "external_id": "AN2061",
+        "mitre_platforms": [
+          "PRE"
+        ],
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0918#AN2061"
+        ]
+      },
+      "uuid": "33712883-6871-4147-8272-7cd1c6c64ad6",
+      "value": "Analytic 2061 - AN2061"
+    },
+    {
       "description": "Abuse of mavinject.exe to inject DLLs or import descriptors into another running process. Chain: (1) mavinject.exe starts with /INJECTRUNNING or /HMODULE → (2) mavinject obtains high-access handles to a target process (VM_WRITE/CREATE_THREAD) → (3) target process loads attacker DLL (module load) → (4) optional follow-on child activity or network egress from the target process.",
       "meta": {
         "external_id": "AN1207",
@@ -6423,7 +6479,7 @@
       "value": "Analytic 0217 - AN0217"
     },
     {
-      "description": "Application vetting services could detect usage of standard clipboard APIs.",
+      "description": "From the defender view: an app accesses UIPasteboard contents, sometimes repeatedly, including in background or immediately after another app copies sensitive text. iOS 14+ shows user notifications when pasting cross-app; unified logs reflect pasteboard access, notification, and optional subsequent persistence/exfil. We correlate: pasteboard access → optional cross-app notification → local write (cache/DB) and/or network egress within a short window.",
       "meta": {
         "external_id": "AN1720",
         "mitre_platforms": [
@@ -6437,7 +6493,7 @@
       "value": "Analytic 1720 - AN1720"
     },
     {
-      "description": "Enterprises may be able to detect anomalous traffic originating from mobile devices, which could indicate compromise.",
+      "description": "The defender correlates proxy-capable network setup or socket-handling behavior with subsequent bidirectional traffic relaying through the same device and app context, especially when inbound client sessions are followed by outbound connections to unrelated remote destinations or when the device sustains multiplexed traffic patterns inconsistent with normal mobile app workflows. The analytic prioritizes Android-observable effects: proxy or raw-socket setup, app background execution, inbound-to-outbound traffic bridging, and sustained relayed flows to multiple destinations without recent user interaction.",
       "meta": {
         "external_id": "AN1702",
         "mitre_platforms": [
@@ -6605,7 +6661,7 @@
       "value": "Analytic 1082 - AN1082"
     },
     {
-      "description": "Google sends a notification to the device when Android Device Manager is used to locate it. Additionally, Google provides the ability for users to view their general account activity and alerts users when their credentials have been used on a new device. Apple iCloud also provides notifications to users of account activity such as when credentials have been used. ",
+      "description": "Defender observes anomalous access to remote device management or enterprise mobility management control planes followed by device-state queries, location requests, or management actions inconsistent with user role, historical behavior, or device ownership context.",
       "meta": {
         "external_id": "AN1820",
         "mitre_platforms": [
@@ -6619,7 +6675,7 @@
       "value": "Analytic 1820 - AN1820"
     },
     {
-      "description": "Mobile security products can often alert the user if their device is vulnerable to known exploits.",
+      "description": "Defender correlates a causal chain where a device transitions into USB debugging or file transfer mode after a physical connection event, followed by application installation, file replication, or execution originating from the USB interface rather than the application store ecosystem.",
       "meta": {
         "external_id": "AN1802",
         "mitre_platforms": [
@@ -7475,7 +7531,7 @@
       "value": "Analytic 0173 - AN0173"
     },
     {
-      "description": "Detection of adversaries attempting to stop or disable host-based security agents by killing daemons, unloading kernel modules, or modifying init/systemd service configurations.",
+      "description": "Detects kill/systemctl/service commands against EDR, auditd, falco, osquery, rsyslog, journald, or agent processes; configuration edits disabling startup; module unload attempts; abrupt cessation of logs after privileged shell execution.",
       "meta": {
         "external_id": "AN1370",
         "mitre_platforms": [
@@ -7531,7 +7587,7 @@
       "value": "Analytic 1703 - AN1703"
     },
     {
-      "description": "This behavior is seamless to the user and is typically undetectable.",
+      "description": "The defender correlates anomalous application package replacement, update, or executable-content drift with subsequent execution under the trusted application's identity, especially when package metadata, signing lineage, install source, file integrity, or native/DEX component characteristics change without a corresponding trusted distribution path. The analytic prioritizes Android-observable control-plane effects: package install/update events, package hash or code-section drift, signer mismatch or lineage break, unexpected app process behavior after replacement, and optional near-term network or sensor activity inconsistent with the legitimate application's baseline.",
       "meta": {
         "external_id": "AN1730",
         "mitre_platforms": [
@@ -7685,7 +7741,7 @@
       "value": "Analytic 0831 - AN0831"
     },
     {
-      "description": "Mobile security products can often alert the user if their device is vulnerable to known exploits.",
+      "description": "Defender correlates a chain where a device establishes a new trusted USB host pairing or enters developer/debug configuration state, followed by device data extraction activity, configuration manipulation, or abnormal application behavior shortly after the pairing event.",
       "meta": {
         "external_id": "AN1803",
         "mitre_platforms": [
@@ -7699,7 +7755,7 @@
       "value": "Analytic 1803 - AN1803"
     },
     {
-      "description": "Scheduling tasks/jobs can be difficult to detect, and therefore enterprises may be better served focusing on detection at other stages of adversarial behavior.",
+      "description": "The defender correlates creation of background scheduler activity with later execution of repeating or deferred work by the same managed app, then raises confidence when the triggered activity produces network, local-write, or other app behavior that occurs outside expected user context. Because iOS exposes weaker direct scheduling observability in many enterprise environments, the analytic anchors first on managed app posture and lifecycle-to-network or lifecycle-to-file effects, with NSBackgroundActivityScheduler-related behavior treated as strongest when runtime telemetry can observe background scheduler usage or execution callbacks.",
       "meta": {
         "external_id": "AN1830",
         "mitre_platforms": [
@@ -8413,15 +8469,14 @@
       "value": "Analytic 0714 - AN0714"
     },
     {
-      "description": "On Android, Verified Boot can detect unauthorized modifications to the system partition.(Citation: Android-VerifiedBoot) Android's SafetyNet API provides remote attestation capabilities, which could potentially be used to identify and respond to compromise devices. Samsung Knox provides a similar remote attestation capability on supported Samsung devices. ",
+      "description": "Correlates unauthorized alterations to launchd configuration (LaunchDaemons/LaunchAgents plists), background execution entitlements, or sideloaded app containers with suspicious auto-start behavior during device boot or user unlock. From the defender’s view this shows up as new or modified plist files in launchd directories, launchd starting binaries from non-Apple or non-AppStore locations, and apps with unexpected background modes that remain active immediately after boot/unlock.",
       "meta": {
         "external_id": "AN1740",
         "mitre_platforms": [
           "iOS"
         ],
         "refs": [
-          "https://attack.mitre.org/detectionstrategies/DET0654#AN1740",
-          "https://source.android.com/security/verifiedboot/"
+          "https://attack.mitre.org/detectionstrategies/DET0654#AN1740"
         ]
       },
       "uuid": "007a370c-be77-49c9-9ca3-25d50de35864",
@@ -8582,7 +8637,7 @@
       "value": "Analytic 0148 - AN0148"
     },
     {
-      "description": "Mobile security products can typically detect rooted devices, which is an indication that Process Discovery is possible. Application vetting could potentially detect when applications attempt to abuse root access or root the system itself. Further, application vetting services could look for attempted usage of legacy process discovery mechanisms, such as the usage of `ps` or inspection of the `/proc` directory.",
+      "description": "Defender observes an app/package attempting to enumerate running processes by triggering restricted process visibility mechanisms (e.g., repeated queries for running tasks/services, rapid iteration over process identifiers, or access attempts against /proc entries) that are atypical for its declared function and occur without an associated user-facing diagnostic workflow. The detection relies on correlating (1) OS/API calls or shell/system utility execution indicative of process listing or /proc traversal, (2) app privilege context (root, debug build, device owner/profile owner, accessibility/IME status), (3) background execution state, and (4) optional follow-on behaviors consistent with automated discovery (short bursts of local IPC probes, network beacons immediately after enumeration, or rapid targeting of specific high-value package/process names). The analytic should describe what is observable: repeated enumeration signals + privilege context + timing relationship, not the adversary’s intent.",
       "meta": {
         "external_id": "AN1804",
         "mitre_platforms": [
@@ -8596,7 +8651,7 @@
       "value": "Analytic 1804 - AN1804"
     },
     {
-      "description": "Accessing data from the local system can be difficult to detect, and therefore enterprises may be better served focusing on detection at other stages of adversarial behavior.",
+      "description": "The defender correlates newly granted or recently exercised storage- or privilege-relevant access with burst reads of local files, local databases, or protected records from operating-system or external-storage locations, especially when the reads are inconsistent with app role, occur in background or locked-device context, or are followed by temporary data staging or network transmission. The analytic emphasizes Android-specific observables such as external storage access, app-private database reads where visible to the sensor, and repeated enumeration/read activity against local paths associated with media, tokens, caches, or exported application data.",
       "meta": {
         "external_id": "AN1840",
         "mitre_platforms": [
@@ -8638,7 +8693,7 @@
       "value": "Analytic 1094 - AN1094"
     },
     {
-      "description": "Much of this activity will take place outside the visibility of the target organization, making detection of this behavior difficult. Detection efforts may be focused on behaviors relating to the potential use of exploits for vulnerabilities (i.e. [Exploit Public-Facing Application](https://attack.mitre.org/techniques/T1190), [Exploitation for Client Execution](https://attack.mitre.org/techniques/T1203), [Exploitation for Privilege Escalation](https://attack.mitre.org/techniques/T1068), [Exploitation for Defense Evasion](https://attack.mitre.org/techniques/T1211), [Exploitation for Credential Access](https://attack.mitre.org/techniques/T1212), [Exploitation of Remote Services](https://attack.mitre.org/techniques/T1210), and [Application or System Exploitation](https://attack.mitre.org/techniques/T1499/004)).",
+      "description": "Much of this activity will take place outside the visibility of the target organization, making detection of this behavior difficult. Detection efforts may be focused on behaviors relating to the potential use of exploits for vulnerabilities (i.e. [Exploit Public-Facing Application](https://attack.mitre.org/techniques/T1190), [Exploitation for Client Execution](https://attack.mitre.org/techniques/T1203), [Exploitation for Privilege Escalation](https://attack.mitre.org/techniques/T1068), [Exploitation for Stealth](https://attack.mitre.org/techniques/T1211), [Exploitation for Credential Access](https://attack.mitre.org/techniques/T1212), [Exploitation of Remote Services](https://attack.mitre.org/techniques/T1210), and [Application or System Exploitation](https://attack.mitre.org/techniques/T1499/004)).",
       "meta": {
         "external_id": "AN1940",
         "mitre_platforms": [
@@ -9002,7 +9057,7 @@
       "value": "Analytic 0165 - AN0165"
     },
     {
-      "description": "Application vetting services could look for `android.permission.READ_CALL_LOG` in an Android application’s manifest. Most applications do not need call log access, so extra scrutiny could be applied to those that request it. \nOn Android, the user can manage which applications have permission to access the call log through the device settings screen, revoking the permission if necessary.",
+      "description": "OLD: Application vetting services could look for `android.permission.READ_CALL_LOG` in an Android application’s manifest. Most applications do not need call log access, so extra scrutiny could be applied to those that request it. \nOn Android, the user can manage which applications have permission to access the call log through the device settings screen, revoking the permission if necessary.\n\nNEW: A defender observes an Android application requesting for `android.permission.READ_CALL_LOG`, which may also be listed in the application's manifest file. ",
       "meta": {
         "external_id": "AN1650",
         "mitre_platforms": [
@@ -9324,7 +9379,7 @@
       "value": "Analytic 0581 - AN0581"
     },
     {
-      "description": "Mobile security products can typically detect rooted devices, which is an indication that Process Discovery is possible. Application vetting could potentially detect when applications attempt to abuse root access or root the system itself. Further, application vetting services could look for attempted usage of legacy process discovery mechanisms, such as the usage of `ps` or inspection of the `/proc` directory.",
+      "description": "Defender observes signals consistent with attempted process listing on iOS where modern OS protections generally prevent broad process enumeration for non-root apps. Detections therefore focus on: (1) feasibility gating via integrity/jailbreak posture, and (2) observable security/log anomalies consistent with attempts to query process tables or restricted system interfaces (e.g., repeated sandbox denials, suspicious sysctl-like access attempts, or abnormal use of private frameworks). Correlate integrity compromise indicators with repeated restricted-access events and optional follow-on behaviors (rapid targeting of specific bundles/services or immediate network beacons) to raise confidence that process discovery is occurring.",
       "meta": {
         "external_id": "AN1805",
         "mitre_platforms": [
@@ -9338,7 +9393,7 @@
       "value": "Analytic 1805 - AN1805"
     },
     {
-      "description": "Hooking can be difficult to detect, and therefore enterprises may be better served focusing on detection at other stages of adversarial behavior.",
+      "description": "Correlates (1) device posture changes indicating root or elevated privilege state, (2) runtime framework manipulation or injection into application processes, and (3) anomalous API behavior or suppressed security signals. The defender observes a causal chain where an application gains privileged execution context, interacts with system frameworks (e.g., ART/Zygote), and modifies expected API outputs or suppresses security-relevant signals such as permission checks, sensor access reporting, or process visibility.",
       "meta": {
         "external_id": "AN1850",
         "mitre_platforms": [
@@ -9730,7 +9785,7 @@
       "value": "Analytic 1760 - AN1760"
     },
     {
-      "description": "Mobile security products can often alert the user if their device is vulnerable to known exploits.",
+      "description": "A defender correlates Safari or embedded web content navigation with short-lived but abnormal web session behavior such as staged redirects, environment fingerprinting, or exploit-preparation fetches, followed by browser/WebView instability, unusual file handling, profile/download prompts, or near-term changes in device or application behavior inconsistent with normal browsing.",
       "meta": {
         "external_id": "AN1670",
         "mitre_platforms": [
@@ -9744,7 +9799,7 @@
       "value": "Analytic 1670 - AN1670"
     },
     {
-      "description": "Application vetting services could look for usage of the `READ_PRIVILEGED_PHONE_STATE` Android permission. This could indicate that non-system apps are attempting to access information that they do not have access to.",
+      "description": "Defender observes an app (package/UID) repeatedly retrieving network interface configuration attributes (local IP/MAC/interface names, active network capabilities, link properties, proxy/DNS settings, or carrier identifiers when permitted) in a short time window, without corresponding user network-management activity. The pattern is characterized by OS API execution for interface/config reads combined with background state, permission/role context (e.g., device owner/profile owner/carrier/default-SMS), and optional follow-on connectivity tests (gateway/DNS/proxy reachability). Correlate across API execution + app state + (optional) local probe to identify automated network configuration discovery rather than routine connectivity checks.",
       "meta": {
         "external_id": "AN1706",
         "mitre_platforms": [
@@ -9884,7 +9939,7 @@
       "value": "Analytic 0168 - AN0168"
     },
     {
-      "description": "The user can view a list of active device administrators in the device settings.",
+      "description": "Correlates (1) application acquisition or use of elevated control paths capable of altering defensive tooling or protected system state, such as device administration, root-enabled modification, or security-setting manipulation, (2) direct changes to security-tool configuration, service state, package state, or protected enforcement settings such as SELinux-relevant files or security-app components, and (3) immediate degradation, suppression, or disappearance of expected security telemetry while the device and initiating application remain active. The defender observes a causal chain where a security control is modified first, then monitoring or protection weakens, and subsequent activity continues under reduced defensive visibility.",
       "meta": {
         "external_id": "AN1806",
         "mitre_platforms": [
@@ -10122,7 +10177,7 @@
       "value": "Analytic 0717 - AN0717"
     },
     {
-      "description": "Application vetting services may provide a list of connections made or received by an application, or a list of domains contacted by the application.\nMany properly configured firewalls may naturally block command and control traffic.",
+      "description": "The defender correlates outbound communication from an application or service to legitimate external web platforms with mobile runtime context showing that the communication is inconsistent with the app's approved role, expected destinations, user interaction pattern, or device state. The strongest Android evidence is a managed or installed app communicating with cloud storage, social, messaging, code-hosting, or generic HTTPS web-service infrastructure shortly after background activation, protected-resource use, or local staging activity, especially when the device is locked, user interaction is absent, or the app's historical network baseline does not include that service class.",
       "meta": {
         "external_id": "AN1770",
         "mitre_platforms": [
@@ -10262,7 +10317,7 @@
       "value": "Analytic 1087 - AN1087"
     },
     {
-      "description": "Mobile threat defense agents could detect unauthorized operating system modifications by using attestation.",
+      "description": "Correlates (1) abnormal application or system resource resolution behavior (e.g., library loading, path resolution, or intent redirection), (2) execution of code or resources not aligned with the originating application’s package identity or expected runtime context, and (3) follow-on execution or network activity originating from the hijacked flow. The defender observes a causal chain where execution is redirected from an expected code path to an alternate resource or payload, resulting in execution under a trusted context but with untrusted origin.",
       "meta": {
         "external_id": "AN1807",
         "mitre_platforms": [
@@ -10276,7 +10331,7 @@
       "value": "Analytic 1807 - AN1807"
     },
     {
-      "description": "Monitor for API calls that are related to the AccountManager API on Android and Keychain services on iOS.\nApplication vetting services may look for `MANAGE_ACCOUNTS` in an Android application’s manifest. Most applications do not need access to accounts, so extra scrutiny may be applied to those that request it.",
+      "description": "OLD: Monitor for API calls that are related to the AccountManager API on Android and Keychain services on iOS.\nApplication vetting services may look for `MANAGE_ACCOUNTS` in an Android application’s manifest. Most applications do not need access to accounts, so extra scrutiny may be applied to those that request it.\n\nNEW: A defender observes an Android application invoking the AccountManager API.  ",
       "meta": {
         "external_id": "AN1708",
         "mitre_platforms": [
@@ -10290,7 +10345,7 @@
       "value": "Analytic 1708 - AN1708"
     },
     {
-      "description": "Detection of steganography is difficult unless detectable artifacts with a known signature are left behind by the obfuscation process. Look for strings are other signatures left in system artifacts related to decoding steganography.",
+      "description": "Defender correlates an app's opaque media ingress (download/IPC) with high-entropy or anomalous edits to image/audio/video files in app-writable storage (e.g., bursts of bitmap/codec operations, EXIF/IPTC/XMP mutation, suspicious container growth), followed by decoding/extraction behavior (new non-media artifact derived from the edited media) and optional exfiltration/sharing of the stego media. Focus is on: (1) opaque media arrival → (2) rapid metadata or pixel-domain mutations with atypical size/entropy deltas → (3a) decoded payload creation or dynamic load from decoded path, and/or (3b) upload/share of the modified media within a tight window.",
       "meta": {
         "external_id": "AN1780",
         "mitre_platforms": [
@@ -10517,7 +10572,7 @@
       "value": "Analytic 0818 - AN0818"
     },
     {
-      "description": "The user can view which applications have permission to use the camera through the device settings screen, where the user can then choose to revoke the permissions.\nDuring the vetting process, applications using the Android permission `android.permission.CAMERA`, or the iOS `NSCameraUsageDescription` plist entry could be given closer scrutiny. ",
+      "description": "The defender correlates Android camera access by an app identity with app and device context showing that the capture is inconsistent with expected user-driven recording behavior. The strongest Android evidence is camera resource access followed by sustained capture duration, video or image artifact creation, buffer or cache growth, and optional outbound transfer, especially when the app is backgrounded, operating as a foreground service without visible user initiation, active while the device is locked, or capturing without recent user interaction. The detection is strengthened when the app is unmanaged, recently granted camera access, or not approved to record video.",
       "meta": {
         "external_id": "AN1808",
         "mitre_platforms": [
@@ -10659,7 +10714,7 @@
       "value": "Analytic 1098 - AN1098"
     },
     {
-      "description": "The user can view which applications have permission to use the camera through the device settings screen, where the user can then choose to revoke the permissions.\nDuring the vetting process, applications using the Android permission `android.permission.CAMERA`, or the iOS `NSCameraUsageDescription` plist entry could be given closer scrutiny. ",
+      "description": "The defender correlates managed-app or supervised-device camera access with app and device context showing that the capture is inconsistent with expected user-driven recording behavior. The strongest iOS evidence is camera access or camera-adjacent capture activity followed by app-state evidence such as background or low-interaction operation, optional media artifact creation, and optional post-capture network transfer. Because direct low-level runtime visibility is weaker than Android for many enterprises, the primary iOS analytic should anchor on managed app context, device state, and downstream effects around camera use, with local subsystem telemetry treated as enrichment rather than sole proof.",
       "meta": {
         "external_id": "AN1809",
         "mitre_platforms": [
@@ -10898,6 +10953,20 @@
       "value": "Analytic 0242 - AN0242"
     },
     {
+      "description": "Detects exploitation or abuse of SaaS security workflows resulting in disabled alerts, reduced retention, bypassed enforcement, role escalation, or tokenized persistence that weakens monitoring. Correlates unusual admin/API activity with visibility reduction.",
+      "meta": {
+        "external_id": "AN2042",
+        "mitre_platforms": [
+          "SaaS"
+        ],
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0900#AN2042"
+        ]
+      },
+      "uuid": "f46639b5-4d99-4d52-8da9-112a468cc6d8",
+      "value": "Analytic 2042 - AN2042"
+    },
+    {
       "description": "Detects clearing of unified logs, deletion of plist files tied to persistence, and manipulation of Terminal history after initial execution.",
       "meta": {
         "external_id": "AN0522",
@@ -10954,7 +11023,7 @@
       "value": "Analytic 0252 - AN0252"
     },
     {
-      "description": "Much of this activity will take place outside the visibility of the target organization, making detection of this behavior difficult. Detection efforts may be focused on behaviors relating to the use of exploits (i.e. [Exploit Public-Facing Application](https://attack.mitre.org/techniques/T1190), [Exploitation for Client Execution](https://attack.mitre.org/techniques/T1203), [Exploitation for Privilege Escalation](https://attack.mitre.org/techniques/T1068), [Exploitation for Defense Evasion](https://attack.mitre.org/techniques/T1211), [Exploitation for Credential Access](https://attack.mitre.org/techniques/T1212), [Exploitation of Remote Services](https://attack.mitre.org/techniques/T1210), and [Application or System Exploitation](https://attack.mitre.org/techniques/T1499/004)).",
+      "description": "Much of this activity will take place outside the visibility of the target organization, making detection of this behavior difficult. Detection efforts may be focused on behaviors relating to the use of exploits (i.e. [Exploit Public-Facing Application](https://attack.mitre.org/techniques/T1190), [Exploitation for Client Execution](https://attack.mitre.org/techniques/T1203), [Exploitation for Privilege Escalation](https://attack.mitre.org/techniques/T1068), [Exploitation for Stealth](https://attack.mitre.org/techniques/T1211), [Exploitation for Credential Access](https://attack.mitre.org/techniques/T1212), [Exploitation of Remote Services](https://attack.mitre.org/techniques/T1210), and [Application or System Exploitation](https://attack.mitre.org/techniques/T1499/004)).",
       "meta": {
         "external_id": "AN2026",
         "mitre_platforms": [
@@ -11008,6 +11077,20 @@
       },
       "uuid": "e6f38f76-4e60-4b8a-881c-5d3f206e912c",
       "value": "Analytic 0622 - AN0622"
+    },
+    {
+      "description": "Much of this takes place outside the visibility of the target organization, making detection difficult for defenders.\n\nDetection efforts may be focused on related stages of the adversary lifecycle, such as during Initial Access.",
+      "meta": {
+        "external_id": "AN2062",
+        "mitre_platforms": [
+          "PRE"
+        ],
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0919#AN2062"
+        ]
+      },
+      "uuid": "255379f1-e115-4f3c-835a-23c8d279847e",
+      "value": "Analytic 2062 - AN2062"
     },
     {
       "description": "Execution of trusted system binaries (e.g., `split`, `tee`, `bash`, `env`) used in uncommon sequences or chained behaviors to execute malicious payloads or perform actions inconsistent with normal system or script behavior.",
@@ -11224,6 +11307,20 @@
       "value": "Analytic 0332 - AN0332"
     },
     {
+      "description": "Detects suspicious inbound communications or collaboration requests followed by rapid sensitive user actions such as file sharing changes, macro enablement, OAuth consent, credential submission, or financial workflow approvals that deviate from historical relationships or normal approval patterns.\n      ",
+      "meta": {
+        "external_id": "AN2033",
+        "mitre_platforms": [
+          "Office Suite"
+        ],
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0899#AN2033"
+        ]
+      },
+      "uuid": "f238e0f3-7354-4304-9101-69cefd8446fc",
+      "value": "Analytic 2033 - AN2033"
+    },
+    {
       "description": "Detects removable drive insertion followed by unusual file access, compression, or staging activity by unauthorized users or unexpected processes.",
       "meta": {
         "external_id": "AN0342",
@@ -11306,6 +11403,34 @@
       },
       "uuid": "d265376d-3cdc-4e95-a8ea-4c4278860218",
       "value": "Analytic 0423 - AN0423"
+    },
+    {
+      "description": "Detects processes or users modifying Windows Defender Firewall profiles, policies, or rules followed by measurable network exposure changes. Correlates firewall management execution, registry/policy mutation, service state changes, and subsequent inbound or outbound connectivity inconsistent with baseline administration.",
+      "meta": {
+        "external_id": "AN2043",
+        "mitre_platforms": [
+          "Windows"
+        ],
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0901#AN2043"
+        ]
+      },
+      "uuid": "702db8b6-641f-4526-a0d0-a5a62c499508",
+      "value": "Analytic 2043 - AN2043"
+    },
+    {
+      "description": "Detects consent grants, password resets, role changes, external sharing, or token creation shortly after user interaction with messages, invites, or help desk workflows. Emphasis is placed on unusual requester relationships, new device context, or off-hours approvals.",
+      "meta": {
+        "external_id": "AN2034",
+        "mitre_platforms": [
+          "SaaS"
+        ],
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0899#AN2034"
+        ]
+      },
+      "uuid": "e817eb45-0830-476d-9fd7-8e8acb14af8a",
+      "value": "Analytic 2034 - AN2034"
     },
     {
       "description": "Manual or script-based installation of extension-like modules into browser config directories or IDE plugin paths, followed by suspicious network activity",
@@ -11392,6 +11517,20 @@
       "value": "Analytic 0352 - AN0352"
     },
     {
+      "description": "Detects user execution of newly received content or instructions shortly after external communication, including script launches, Office child process spawning, browser-to-script execution chains, or credential prompts followed by new logon sessions.",
+      "meta": {
+        "external_id": "AN2035",
+        "mitre_platforms": [
+          "Windows"
+        ],
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0899#AN2035"
+        ]
+      },
+      "uuid": "983e1849-6af7-491e-9605-46b9bf54bbd1",
+      "value": "Analytic 2035 - AN2035"
+    },
+    {
       "description": "Monitor for creation of WMI EventFilter, EventConsumer, and FilterToConsumerBinding objects through WMI or MOF file execution. Detect command-line execution of `mofcomp.exe`, usage of `Register-WmiEvent` via PowerShell, and anomalous child processes of `WmiPrvSE.exe` that indicate triggered execution. Look for lateral anomalies in process lineage and WMI logging channels.",
       "meta": {
         "external_id": "AN0236",
@@ -11474,6 +11613,34 @@
       },
       "uuid": "7e3c05c9-5e49-416c-a0c9-eb7631ea5e7e",
       "value": "Analytic 0326 - AN0326"
+    },
+    {
+      "description": "Detection identifies execution of scripts or files that appear visually benign (low printable character ratio) but result in runtime decoding, dynamic evaluation, and subsequent process or network activity. Correlation links script execution with abnormal Unicode density and follow-on behavior such as child process creation or outbound connections.",
+      "meta": {
+        "external_id": "AN2063",
+        "mitre_platforms": [
+          "Windows"
+        ],
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0920#AN2063"
+        ]
+      },
+      "uuid": "1a9f097a-d5b9-424d-ae20-19ed73eb9dcf",
+      "value": "Analytic 2063 - AN2063"
+    },
+    {
+      "description": "Detects user-authorized execution of downloaded content or scripts after communication prompts, including browser downloads followed by osascript, shell, or installer execution and subsequent network activity.",
+      "meta": {
+        "external_id": "AN2036",
+        "mitre_platforms": [
+          "macOS"
+        ],
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0899#AN2036"
+        ]
+      },
+      "uuid": "fc19b602-2811-418f-aa98-1b49f1355743",
+      "value": "Analytic 2036 - AN2036"
     },
     {
       "description": "Anomalous or bulk download activity from private or restricted repositories by non-developer or privileged accounts, often preceded by unusual login behavior (e.g., unfamiliar geo, OAuth token use, elevated API rate).",
@@ -11560,6 +11727,20 @@
       "value": "Analytic 0327 - AN0327"
     },
     {
+      "description": "Detects users executing commands copied from chats, tickets, or emails, including curl|bash patterns, shell script launches from temp directories, credential changes, or SSH key additions shortly after communication events.",
+      "meta": {
+        "external_id": "AN2037",
+        "mitre_platforms": [
+          "Linux"
+        ],
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0899#AN2037"
+        ]
+      },
+      "uuid": "54bb8256-cbe8-4088-9cff-b03711bd7841",
+      "value": "Analytic 2037 - AN2037"
+    },
+    {
       "description": "Links inbound network access to SSHD/SMB/NFS/Databases or custom daemons with subsequent daemon crash/restart, core dump, or spawning of shells/reverse shells from the service context, indicating remote exploitation.",
       "meta": {
         "external_id": "AN0328",
@@ -11642,6 +11823,20 @@
       },
       "uuid": "e9de9003-46e9-438f-929a-94a33c2eb5bd",
       "value": "Analytic 0238 - AN0238"
+    },
+    {
+      "description": "Detects suspicious interactions with security products followed by service crashes, unexpected restarts, driver unloads, telemetry gaps, or tamper-state changes. Correlates exploit precursor behavior with immediate degradation of defensive services and follow-on process execution.",
+      "meta": {
+        "external_id": "AN2038",
+        "mitre_platforms": [
+          "Windows"
+        ],
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0900#AN2038"
+        ]
+      },
+      "uuid": "7ec436a3-dd31-4d23-a51b-0e03d3c474bd",
+      "value": "Analytic 2038 - AN2038"
     },
     {
       "description": "Detection of encoded payloads being decoded and executed in-memory using scripting tools or third-party decoders.",
@@ -11728,6 +11923,20 @@
       "value": "Analytic 0392 - AN0392"
     },
     {
+      "description": "Detects exploitation attempts against security daemons or kernel security modules followed by daemon termination, disabled logging, module unload, audit stoppage, or reduced endpoint telemetry. Correlates local execution or network input with control degradation.",
+      "meta": {
+        "external_id": "AN2039",
+        "mitre_platforms": [
+          "Linux"
+        ],
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0900#AN2039"
+        ]
+      },
+      "uuid": "c6fb992c-387e-49ee-beaf-a1351aded262",
+      "value": "Analytic 2039 - AN2039"
+    },
+    {
       "description": "Detects non-system processes accessing /dev/input/* or issuing ptrace/evdev syscalls used for reading keystroke buffers directly.",
       "meta": {
         "external_id": "AN0244",
@@ -11768,6 +11977,20 @@
       },
       "uuid": "e246212e-aca3-489d-a2d9-7e24f7c3516c",
       "value": "Analytic 0442 - AN0442"
+    },
+    {
+      "description": "Detects esxcli commands disabling syslog, firewall, lockdown mode, or stopping hostd/vpxa; correlates command execution with reduced forwarding activity.",
+      "meta": {
+        "external_id": "AN2044",
+        "mitre_platforms": [
+          "ESXi"
+        ],
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0497#AN2044"
+        ]
+      },
+      "uuid": "2b990a38-dedf-4a9a-9bd2-9a805c2f1b46",
+      "value": "Analytic 2044 - AN2044"
     },
     {
       "description": "Detection of XProtect or AV quarantining a known tool, followed by modification (file size, hash, string) and subsequent re-execution by the same or related user.",
@@ -11936,6 +12159,20 @@
       },
       "uuid": "e0ad2e3d-c109-4af0-ac44-0d4cd45407c2",
       "value": "Analytic 0642 - AN0642"
+    },
+    {
+      "description": "Detection identifies execution of scripts containing high concentrations of invisible Unicode characters followed by decoding or interpretation behaviors (e.g., base64 decode, eval) and subsequent process or network activity. Emphasis is placed on mismatch between file entropy/structure and execution output.",
+      "meta": {
+        "external_id": "AN2064",
+        "mitre_platforms": [
+          "Linux"
+        ],
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0920#AN2064"
+        ]
+      },
+      "uuid": "a32c4f38-feaf-4291-9dad-3043114b4d37",
+      "value": "Analytic 2064 - AN2064"
     },
     {
       "description": "Detects file reads across locations followed by writes to temp or staging directories, often compressed or encrypted, indicating local staging behavior.",
@@ -12316,6 +12553,20 @@
       "value": "Analytic 0562 - AN0562"
     },
     {
+      "description": "Detection identifies execution of scripts or applications containing invisible Unicode payloads reconstructed at runtime, correlated with abnormal AppleScript, JavaScript for Automation, or shell execution and subsequent process or network behavior inconsistent with visible file content. ",
+      "meta": {
+        "external_id": "AN2065",
+        "mitre_platforms": [
+          "macOS"
+        ],
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0920#AN2065"
+        ]
+      },
+      "uuid": "6195e912-ed73-4ec7-a03b-097631ec0b26",
+      "value": "Analytic 2065 - AN2065"
+    },
+    {
       "description": "Monitor for execution of hypervisor management commands such as `esxcli vm process list` or `vim-cmd vmsvc/getallvms` that enumerate virtual machines. Defenders observe unexpected users issuing VM listing commands outside normal administrative workflows.",
       "meta": {
         "external_id": "AN0572",
@@ -12566,6 +12817,20 @@
       },
       "uuid": "fa36a169-1cca-4887-b362-e3cceb02414f",
       "value": "Analytic 0952 - AN0952"
+    },
+    {
+      "description": "Much of this takes place outside the visibility of the target organization, making detection difficult for defenders.\n\nDetection efforts may be focused on related stages of the adversary lifecycle, such as during Initial Access.",
+      "meta": {
+        "external_id": "AN2059",
+        "mitre_platforms": [
+          "PRE"
+        ],
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0916#AN2059"
+        ]
+      },
+      "uuid": "360eb601-28db-4418-8474-ad2a432ce534",
+      "value": "Analytic 2059 - AN2059"
     },
     {
       "description": "Use of native tools or scripting (e.g., `usermod`, `passwd`, `groupmod`) to escalate permissions or persist access on existing users, correlated with login or process events.",
@@ -18294,7 +18559,7 @@
       "value": "Analytic 1171 - AN1171"
     },
     {
-      "description": "The user can see persistent notifications in their notification drawer and can subsequently uninstall applications that do not belong.\nApplications could be vetted for their use of the `startForeground()` API, and could be further scrutinized if usage is found.",
+      "description": "The defender correlates foreground service start or promotion activity with persistent-notification presentation, long-lived application execution, and continued access to while-in-use sensors or network activity outside expected user-driven context. The analytic looks for an application invoking foreground service APIs, sustaining a foreground state longer than expected for its declared role, and retaining camera, microphone, location, or other sensor access while the device is locked, the app lacks recent interaction, or the notification identity/function does not match the application’s behavior.",
       "meta": {
         "external_id": "AN1711",
         "mitre_platforms": [
@@ -18728,7 +18993,7 @@
       "value": "Analytic 1126 - AN1126"
     },
     {
-      "description": "Detection of suspicious enumeration of local or domain accounts via command-line tools, WMI, or scripts.",
+      "description": "Detection of processes performing local or domain account enumeration by invoking account directory queries or security APIs followed by structured output of account lists. The defender observes command execution or API invocation patterns that retrieve account information and produce enumeration artifacts shortly afterward.",
       "meta": {
         "external_id": "AN1612",
         "mitre_platforms": [
@@ -18812,7 +19077,7 @@
       "value": "Analytic 1127 - AN1127"
     },
     {
-      "description": "Application vetting services could look for known software packers or artifacts of packing techniques. Packing is not a definitive indicator of malicious activity, because as legitimate software may use packing techniques to reduce binary size or to protect proprietary code.",
+      "description": "From the defender view: a sandboxed process receives/creates a high-entropy Mach-O/bundle or encrypted segment, performs in-memory decrypt/unpack (mmap/mprotect RW→RX or RWX), optionally drops a transient image in app-writable dirs, then loads it through dyld/dlopen or spawns it. We correlate: (1) opaque blob write/arrival → (2) kernel memory protection changes → (3) dyld/dlopen from app-writable path or posix_spawn of a recently created image → (4) (optional) code-sign evaluation anomalies for the new image.",
       "meta": {
         "external_id": "AN1721",
         "mitre_platforms": [
@@ -18826,7 +19091,7 @@
       "value": "Analytic 1721 - AN1721"
     },
     {
-      "description": "Mobile security products can detect which applications can request device administrator permissions. Application vetting services could be extra scrutinous of applications that request device administrator permissions.\nThe user can view applications with administrator access through the device settings, and may also notice if user data is inexplicably missing. ",
+      "description": "Correlates (1) application access to or staging of local files likely to be of operational, evidentiary, or user value, (2) deletion of those files or wipe-like destructive actions through ordinary storage access, administrative controls, or privileged/rooted paths, and (3) continued app or device activity after deletion, including cleanup, concealment, or outbound transfer. The defender observes a causal chain where files are first accessed or prepared, then removed, and device-side behavior continues after evidence or data is gone.",
       "meta": {
         "external_id": "AN1712",
         "mitre_platforms": [
@@ -18896,7 +19161,7 @@
       "value": "Analytic 1128 - AN1128"
     },
     {
-      "description": "Google sends a notification to the device when Android Device Manager is used to locate it. Additionally, Google provides the ability for users to view their general account activity and alerts users when their credentials have been used on a new device. Apple iCloud also provides notifications to users of account activity such as when credentials have been used. ",
+      "description": "Defender observes anomalous authentication or session activity targeting remote device management services followed by device-tracking queries, device-state requests, or remote actions inconsistent with established user-device relationships or operational patterns.",
       "meta": {
         "external_id": "AN1821",
         "mitre_platforms": [
@@ -18910,7 +19175,7 @@
       "value": "Analytic 1821 - AN1821"
     },
     {
-      "description": "Application vetting services can look for applications requesting the permissions granting access to accessibility services or application overlay.\nThe user can view a list of device administrators and applications that have registered Accessibility services in device settings. Applications that register an Accessibility service should be scrutinized further for malicious behavior. ",
+      "description": "A defender correlates an application being granted accessibility service control with subsequent consumption of high-volume accessibility events, interaction with sensitive UI elements or text-entry fields, optional overlay/window presentation over other applications, and near-term local buffering or outbound network transmission, indicating abuse of accessibility features for input capture, credential theft, or automated interaction.",
       "meta": {
         "external_id": "AN1812",
         "mitre_platforms": [
@@ -19316,7 +19581,7 @@
       "value": "Analytic 1173 - AN1173"
     },
     {
-      "description": "Detection of adversary disabling endpoint security tools by unloading launch agents/daemons, modifying configuration profiles, or using security/uninstall commands to remove agents.",
+      "description": "Detection of adversary disabling endpoint security tools by unloading launch agents/daemons, modifying configuration profiles, or disabling Gatekeeper/XProtect/logging settings, or removing endpoint agents followed by telemetry loss.",
       "meta": {
         "external_id": "AN1371",
         "mitre_platforms": [
@@ -19330,7 +19595,7 @@
       "value": "Analytic 1371 - AN1371"
     },
     {
-      "description": "Unexpected loss of radio signal could indicate that a device is being actively jammed.",
+      "description": "Defender correlates an Android-specific causal chain where device connectivity degrades or oscillates across one or more radios, applications lose or repeatedly reattempt network access, and the radio or network failure pattern is inconsistent with ordinary mobility, coverage transition, or user-initiated airplane mode behavior. The defender correlates radio state, connectivity framework behavior, application state, network session failures, and location/network-provider degradation to distinguish network denial effects from routine weak-signal conditions.",
       "meta": {
         "external_id": "AN1713",
         "mitre_platforms": [
@@ -19344,7 +19609,7 @@
       "value": "Analytic 1713 - AN1713"
     },
     {
-      "description": "Since data encryption is a common practice in many legitimate applications and uses standard programming language-specific APIs, encrypting data for command and control communication is regarded as undetectable to the user.",
+      "description": "An application performs repeated symmetric cryptographic operations (e.g., AES/RC4) on collected or staged data using locally accessible or reusable keys, followed by structured outbound communication. Detection correlates symmetric crypto API invocation + key reuse patterns + data staging + background execution context + network transmission, especially when inconsistent with expected application functionality.",
       "meta": {
         "external_id": "AN1731",
         "mitre_platforms": [
@@ -19652,7 +19917,7 @@
       "value": "Analytic 1416 - AN1416"
     },
     {
-      "description": "Detection of user account enumeration through tools like dscl, dscacheutil, or loginshell enumeration via command-line.",
+      "description": "Detection of account enumeration through directory service queries or system utilities accessing account metadata stores, followed by structured enumeration output.",
       "meta": {
         "external_id": "AN1614",
         "mitre_platforms": [
@@ -19764,7 +20029,7 @@
       "value": "Analytic 1471 - AN1471"
     },
     {
-      "description": "Unexpected loss of radio signal could indicate that a device is being actively jammed.",
+      "description": "Defender correlates an iOS-specific reduced-confidence chain where a managed or supervised device remains active but experiences abrupt loss of network-dependent functionality, repeated session failure, or sustained communication inability without matching configuration changes or ordinary user action. Because direct radio-layer and RF-cause visibility is weaker on iOS, the defender emphasizes device posture, application wake or foreground behavior during service loss, protected network-policy stability, and downstream failure patterns observed in VPN or proxy telemetry.",
       "meta": {
         "external_id": "AN1714",
         "mitre_platforms": [
@@ -19778,15 +20043,14 @@
       "value": "Analytic 1714 - AN1714"
     },
     {
-      "description": "Command-line activities can potentially be detected through Mobile Threat Defense (MTD) integrations with lower-level OS APIs. This could grant the MTD agents access to running processes and their parameters, potentially detecting unwanted or malicious shells.\nMobile Threat Defense (MTD) with lower-level OS APIs integrations may have access to newly created processes and their parameters, potentially detecting unwanted or malicious shells.\nApplication vetting services could detect the invocations of methods that could be used to execute shell commands.(Citation: Samsung Knox Mobile Threat Defense)\nMobile Threat Defense (MTD) with lower-level OS APIs integrations may have access to running processes and their parameters, potentially detecting unwanted or malicious shells.",
+      "description": "The defender correlates app-driven shell or command execution setup with subsequent process creation, command invocation, or script-driven follow-on behavior under the same app context, especially when command execution occurs from background state, without recent user interaction, or immediately after payload retrieval or local staging. The analytic prioritizes Android-observable control-plane effects: Java Runtime or similar command-execution method use, shell or sh-like process creation, command parameter visibility where available, and immediate file or network effects produced by the interpreter.",
       "meta": {
         "external_id": "AN1741",
         "mitre_platforms": [
           "Android"
         ],
         "refs": [
-          "https://attack.mitre.org/detectionstrategies/DET0655#AN1741",
-          "https://partner.samsungknox.com/mtd"
+          "https://attack.mitre.org/detectionstrategies/DET0655#AN1741"
         ]
       },
       "uuid": "a4242809-30bc-4c00-b247-b6cc11644a07",
@@ -19863,7 +20127,7 @@
       "value": "Analytic 1814 - AN1814"
     },
     {
-      "description": "Accessing data from the local system can be difficult to detect, and therefore enterprises may be better served focusing on detection at other stages of adversarial behavior.",
+      "description": "The defender correlates supervised-device app posture and lifecycle context with repeated local file or local-database access effects, especially when a managed app reads browser, messaging, keychain-adjacent, or application-container data outside its expected role and then stages or uploads the result. Because direct low-level local system access visibility is weaker on iOS, the primary analytic is effect-based: managed app identity, file/database access where visible to the mobile sensor, background execution context, and near-term outbound communication.",
       "meta": {
         "external_id": "AN1841",
         "mitre_platforms": [
@@ -20017,7 +20281,7 @@
       "value": "Analytic 1156 - AN1156"
     },
     {
-      "description": "Detection of API calls listing users, IAM roles, or groups in cloud environments.",
+      "description": "Detection of enumeration of identity entities through cloud provider APIs where principals retrieve account metadata such as IAM users or roles in rapid succession.",
       "meta": {
         "external_id": "AN1615",
         "mitre_platforms": [
@@ -20129,7 +20393,7 @@
       "value": "Analytic 1175 - AN1175"
     },
     {
-      "description": "Application vetting services can look for applications requesting the `android.permission.BIND_ACCESSIBILITY_SERVICE` permission in a service declaration. On Android, the user can view and manage which applications can use accessibility services through the device settings in Accessibility. The exact device settings menu locations may vary between operating system versions.\nOn Android, the user can view and manage which applications have third-party keyboard access through the device settings in System -> Languages & input -> Virtual keyboard. On iOS, the user can view and manage which applications have third-party keyboard access through the device settings in General -> Keyboard. ",
+      "description": "Defender correlates an app acquiring input-capture capability (AccessibilityService enablement or default IME set) with high-frequency text-change/IME commit callbacks sourced from other packages, followed by local keylog persistence and/or small, immediate network egress. Chain: capability/permission → intercept (accessibility ‘TYPE_VIEW_TEXT_CHANGED’ or IME commitText/onStartInput bursts) → persist to container → near-term egress.",
       "meta": {
         "external_id": "AN1751",
         "mitre_platforms": [
@@ -20143,7 +20407,7 @@
       "value": "Analytic 1751 - AN1751"
     },
     {
-      "description": "Application vetting services could potentially detect the usage of APIs intended for artifact hiding.\nThe user can examine the list of all installed applications in the device settings. ",
+      "description": "Correlates (1) changes to application visibility or user-facing presence such as launcher component disablement, icon suppression, or reduced discoverability, (2) continued application execution or privileged framework activity after that visibility reduction, and (3) follow-on behavior such as background network communication, sensor access, or persistence-related state transitions. The defender observes a causal chain where an application becomes less visible to the user while retaining or increasing operational activity.",
       "meta": {
         "external_id": "AN1715",
         "mitre_platforms": [
@@ -20213,7 +20477,7 @@
       "value": "Analytic 1185 - AN1185"
     },
     {
-      "description": "Dynamic analysis, when used in application vetting, may in some cases be able to identify malicious code in obfuscated or encrypted form by detecting the code at execution time (after it is deobfuscated or decrypted). Some application vetting techniques apply reputation analysis of the application developer and can alert to potentially suspicious applications without actual examination of application code.",
+      "description": "Defender correlates a sandboxed app writing high-entropy or encoded artifacts (often in app-private or shared storage), performing decode/decompress/reassembly, then dynamically loading/execing the resulting code (DexClassLoader/JNI dlopen) or spawning a helper process. Sequence: high-entropy file writes → decode/unpack bursts → new .dex/.so/.jar creation in temp/obfuscated paths → dynamic load or shell spawn within a tight window.",
       "meta": {
         "external_id": "AN1851",
         "mitre_platforms": [
@@ -20227,7 +20491,7 @@
       "value": "Analytic 1851 - AN1851"
     },
     {
-      "description": "Mobile security products may be able to detect some forms of user evasion. Otherwise, the act of hiding malicious activity could be difficult to detect, and therefore enterprises may be better served focusing on detection at other stages of adversarial behavior.",
+      "description": "Correlates (1) continuous or repeated use of motion or interaction-inference signals that do not require overt user-facing privilege prompts, (2) suppression of higher-risk behavior while user presence or active handling is inferred, and (3) resumption of background execution, sensor use, local data handling, or network activity only when device interaction falls below a threshold. The defender observes a causal chain where an application senses user/device interaction state and intentionally gates malicious behavior to user-inactive periods.",
       "meta": {
         "external_id": "AN1815",
         "mitre_platforms": [
@@ -20325,7 +20589,7 @@
       "value": "Analytic 1166 - AN1166"
     },
     {
-      "description": "Enumeration of user or role objects via IdP API endpoints or LDAP queries.",
+      "description": "Detection of identity directory enumeration through API calls or administrative queries retrieving multiple account objects within a short interval.",
       "meta": {
         "external_id": "AN1616",
         "mitre_platforms": [
@@ -20381,7 +20645,7 @@
       "value": "Analytic 1167 - AN1167"
     },
     {
-      "description": "Account enumeration via esxcli, vim-cmd, or API calls to vSphere.",
+      "description": "Detection of enumeration activity when system processes query ESXi host account configuration or management APIs to retrieve user account listings.",
       "meta": {
         "external_id": "AN1617",
         "mitre_platforms": [
@@ -20423,7 +20687,7 @@
       "value": "Analytic 1761 - AN1761"
     },
     {
-      "description": "Since data encryption is a common practice in many legitimate applications and uses standard programming language-specific APIs, encrypting data for command and control communication is regarded as undetectable to the user.",
+      "description": "An application performs explicit cryptographic operations (e.g., symmetric/asymmetric encryption routines) on locally collected or generated data, followed by structured outbound network communication that does not align with expected application behavior, particularly when occurring in the background or without user interaction. Detection correlates crypto API usage + data staging + application state + network transmission patterns.",
       "meta": {
         "external_id": "AN1716",
         "mitre_platforms": [
@@ -20479,7 +20743,7 @@
       "value": "Analytic 1618 - AN1618"
     },
     {
-      "description": "Application vetting services may provide a list of connections made or received by an application, or a list of domains contacted by the application.\nMany properly configured firewalls may naturally block bidirectional command and control traffic.",
+      "description": "The defender correlates repeated inbound retrieval and outbound submission activity by the same Android app identity to the same legitimate public web-service class within a short operational window, where the two-way exchange is inconsistent with the app's approved role, interaction model, or background behavior baseline. The strongest Android evidence is app-attributed communication to collaboration, social, cloud storage, code-hosting, messaging, or generic HTTPS platforms where requests that retrieve content are followed by app-attributed posts, uploads, document updates, API writes, or repeated small bidirectional exchanges, especially when they occur while the app is backgrounded, while the device is locked, without recent user interaction, or shortly after local staging or protected-resource access.",
       "meta": {
         "external_id": "AN1816",
         "mitre_platforms": [
@@ -20493,7 +20757,7 @@
       "value": "Analytic 1816 - AN1816"
     },
     {
-      "description": "Abuse of standard application protocols can be difficult to detect as many legitimate mobile applications leverage such protocols for language-specific APIs. Enterprises may be better served focusing on detection at other stages of adversarial behavior. ",
+      "description": "Defender observes an application establishing recurrent HTTPS or FCM-based communication sessions exhibiting structured cadence, asymmetric request/response sizes, or persistent low-volume polling inconsistent with declared application functionality, potentially embedding command data within web protocol traffic.",
       "meta": {
         "external_id": "AN1681",
         "mitre_platforms": [
@@ -20592,7 +20856,7 @@
       "value": "Analytic 1177 - AN1177"
     },
     {
-      "description": "Since data encryption is a common practice in many legitimate applications and uses standard programming language-specific APIs, encrypting data for command and control communication is regarded as undetectable to the user.",
+      "description": "Indirect evidence of application-layer encrypted channel usage inferred through anomalous background processing and network transmission patterns following application activity, where encryption operations are not directly observable. Detection correlates background execution + network behavior + application entitlement posture to identify misuse of encrypted communication channels.",
       "meta": {
         "external_id": "AN1717",
         "mitre_platforms": [
@@ -20606,7 +20870,7 @@
       "value": "Analytic 1717 - AN1717"
     },
     {
-      "description": "Application vetting services may provide a list of connections made or received by an application, or a list of domains contacted by the application.\nMany properly configured firewalls may naturally block command and control traffic.",
+      "description": "The defender correlates communication to legitimate external web-service platforms with supervised managed-app context and device-state information showing that the traffic is inconsistent with the app's expected role, background-refresh profile, or user interaction timing. On iOS, the strongest reliable evidence is network telemetry tied to a managed app or device plus app state and supervision context, especially when traffic to social, collaboration, cloud-storage, or generic HTTPS platforms occurs shortly after background activity, while the device is locked, or without expected user-driven foreground execution. Direct low-level framework visibility is weaker than Android, so primary analytic confidence should be anchored to supervised app context plus network behavior rather than assumed host-level proof.",
       "meta": {
         "external_id": "AN1771",
         "mitre_platforms": [
@@ -20648,7 +20912,7 @@
       "value": "Analytic 1178 - AN1178"
     },
     {
-      "description": "Application vetting services can detect when an application requests administrator permission.\nWhen an application requests administrator permission, the user is presented with a popup and the option to grant or deny the request. ",
+      "description": "Correlates (1) application interaction with elevation control mechanisms (e.g., Accessibility Service, Device Admin, overlay permissions, package installer flows), (2) rapid transition to elevated capability state without expected user interaction patterns, and (3) immediate privileged actions such as sensor access, UI manipulation, or background persistence. The defender observes a causal chain where an application gains elevated privileges through abuse of system-controlled consent flows and subsequently performs actions inconsistent with normal user-driven authorization.",
       "meta": {
         "external_id": "AN1718",
         "mitre_platforms": [
@@ -20662,7 +20926,7 @@
       "value": "Analytic 1718 - AN1718"
     },
     {
-      "description": "Application vetting services may provide a list of connections made or received by an application, or a list of domains contacted by the application.\nMany properly configured firewalls may naturally block bidirectional command and control traffic.",
+      "description": "The defender correlates repeated retrieval and outbound submission activity from a supervised device or managed iOS app to the same legitimate public web-service class where the two-way exchange does not fit the bundle's approved role or expected background-refresh model. The strongest iOS evidence is managed-app or device-attributed communication to collaboration, storage, messaging, social, or generic HTTPS platforms where inbound content fetches are followed by outbound writes, uploads, updates, or message submissions within a short window, especially when occurring during background refresh, while the device is locked, or without recent user interaction. Because direct local runtime visibility is weaker than Android, the primary analytic is anchored on network directionality plus supervised managed-app and device-state context.",
       "meta": {
         "external_id": "AN1817",
         "mitre_platforms": [
@@ -20676,7 +20940,7 @@
       "value": "Analytic 1817 - AN1817"
     },
     {
-      "description": "Application vetting services may be able to detect if an application attempts to encrypt files, although this may be benign behavior.",
+      "description": "An application with access to broad file scopes or sensitive storage areas becomes active, performs abnormal burst file reads and writes across many user or shared-storage locations, transforms file content or extensions at scale in a short window, and causes rapid file inaccessibility, rewrite, or replacement inconsistent with normal sync, backup, media processing, or document-editing behavior. The defender correlates capability state, app lifecycle, framework use, bulk file-write effects, and optional network communications to distinguish encrypt-for-impact behavior from benign bulk file operations.",
       "meta": {
         "external_id": "AN1781",
         "mitre_platforms": [
@@ -20732,7 +20996,7 @@
       "value": "Analytic 1197 - AN1197"
     },
     {
-      "description": "Application vetting services could detect usage of standard clipboard APIs.",
+      "description": "From the defender view: an app registers a clipboard listener or calls ClipboardManager getters; the app is (a) foreground, (b) the default IME, or (c) abusing legacy paths. Shortly after each clipboard change, the app reads the primary clip repeatedly, optionally persists content (local file/DB) and/or exfiltrates it. We correlate: listener/clip-access → privilege/foreground confirmation → bursty reads → local write and/or network egress within a tight window.",
       "meta": {
         "external_id": "AN1719",
         "mitre_platforms": [
@@ -21083,7 +21347,7 @@
       "value": "Analytic 1227 - AN1227"
     },
     {
-      "description": "Application vetting services could look for known software packers or artifacts of packing techniques. Packing is not a definitive indicator of malicious activity, because as legitimate software may use packing techniques to reduce binary size or to protect proprietary code.",
+      "description": "From the defender view: a sandboxed app handles a high-entropy executable blob, performs rapid decode/decrypt in memory (often with RW→RX or execmem friction), optionally emits a transient .dex/.so into app-writable paths, then immediately loads/executes it (DexClassLoader/dlopen) or spawns a helper. We correlate: (1) opaque blob write/arrival → (2) decode/unpack or memory protection change → (3) new code artifact or byte[] class definition → (4) dynamic load/exec within a tight window.",
       "meta": {
         "external_id": "AN1722",
         "mitre_platforms": [
@@ -21125,7 +21389,7 @@
       "value": "Analytic 1282 - AN1282"
     },
     {
-      "description": "The user can review available call logs for irregularities, such as missing or unrecognized calls.\nThe user can view their default phone app in device settings.",
+      "description": "The defender correlates call-control capability or telecom role state with subsequent unauthorized call initiation, answer, block, redirect, or concealment behavior by an application outside expected telephony workflows. The analytic prioritizes Android-observable control-plane effects: dangerous or role-gated call-control permissions, default dialer or ConnectionService-related role changes, telecom framework invocation for call placement or handling, write activity against call-log records, and call-control activity occurring from background or locked-device context without recent user interaction.",
       "meta": {
         "external_id": "AN1822",
         "mitre_platforms": [
@@ -21475,7 +21739,7 @@
       "value": "Analytic 1237 - AN1237"
     },
     {
-      "description": "Detection of adversaries disabling cloud monitoring and logging agents such as CloudWatch, Google Cloud Monitoring, or Azure Monitor by API calls or agent process termination.",
+      "description": "Correlates control-plane API actions disabling cloud-native monitoring or sensor agents (CloudTrail, GuardDuty, Security Hub, Defender, monitoring agents), role abuse preceding disablement, or instance agent uninstall events",
       "meta": {
         "external_id": "AN1372",
         "mitre_platforms": [
@@ -21517,7 +21781,7 @@
       "value": "Analytic 1327 - AN1327"
     },
     {
-      "description": "Mobile security products can often alert the user if their device is vulnerable to known exploits.",
+      "description": "A lock-state transition telemetry, special access or privileged interaction capability, security-sensitive framework use, and immediate downstream activity while the user-interaction context is weak or inconsistent. This yields stronger coverage on Android than iOS.",
       "meta": {
         "external_id": "AN1723",
         "mitre_platforms": [
@@ -21531,7 +21795,7 @@
       "value": "Analytic 1723 - AN1723"
     },
     {
-      "description": "Since data encryption is a common practice in many legitimate applications and uses standard programming language-specific APIs, encrypting data for command and control communication is regarded as undetectable to the user.",
+      "description": "Indirect evidence of symmetric cryptographic channel usage inferred through repeated structured encrypted network transmissions and background processing patterns, where direct observation of symmetric crypto operations is limited. Detection correlates application background execution + consistent encrypted payload patterns + app entitlement posture to identify misuse of symmetric encryption for command and control.",
       "meta": {
         "external_id": "AN1732",
         "mitre_platforms": [
@@ -21615,7 +21879,7 @@
       "value": "Analytic 1832 - AN1832"
     },
     {
-      "description": "Usage of insecure or malicious third-party libraries could be detected by application vetting services. Malicious software development tools could be detected by enterprises that deploy endpoint protection software on computers that are used to develop mobile apps. Application vetting could detect the usage of insecure or malicious third-party libraries.",
+      "description": "A legitimate-seeming application or update is installed through an expected or previously trusted path, but shortly after first run or update the application exhibits new runtime behavior, sensor use, file staging, or network communications inconsistent with its historical baseline, documented role, or prior version. The defender specifically looks for behaviors commonly introduced by compromised third-party libraries or manipulated build tooling, such as unexpected background service activation, first-seen framework use, new permissions exercised, novel network destinations, or dropped local artifacts not aligned to the app's expected function.",
       "meta": {
         "external_id": "AN1823",
         "mitre_platforms": [
@@ -21755,7 +22019,7 @@
       "value": "Analytic 1254 - AN1254"
     },
     {
-      "description": "Process creation and command-line execution of native system discovery utilities such as `systeminfo`, `hostname`, `wmic`, or use of PowerShell/WMI for system enumeration.",
+      "description": "Detection of processes executing system environment inspection operations followed by access to OS configuration APIs or registry locations that expose OS version, architecture, patch level, or hardware characteristics. Defenders observe process execution retrieving system configuration metadata immediately after process startup.",
       "meta": {
         "external_id": "AN1452",
         "mitre_platforms": [
@@ -21951,22 +22215,21 @@
       "value": "Analytic 1274 - AN1274"
     },
     {
-      "description": "Command-line activities can potentially be detected through Mobile Threat Defense (MTD) integrations with lower-level OS APIs. This could grant the MTD agents access to running processes and their parameters, potentially detecting unwanted or malicious shells.\nMobile Threat Defense (MTD) with lower-level OS APIs integrations may have access to newly created processes and their parameters, potentially detecting unwanted or malicious shells.\nApplication vetting services could detect the invocations of methods that could be used to execute shell commands.(Citation: Samsung Knox Mobile Threat Defense)\nMobile Threat Defense (MTD) with lower-level OS APIs integrations may have access to running processes and their parameters, potentially detecting unwanted or malicious shells.",
+      "description": "The defender correlates managed-app runtime behavior indicative of command or shell invocation with subsequent spawned process or shell-like execution effects, then raises confidence when the resulting activity produces local artifacts or network communication outside expected user context. Because direct shell-process visibility can be weaker on iOS in many enterprise deployments, the analytic anchors first on process-creation or lower-level OS API effects where mobile telemetry can observe them, then on lifecycle context and post-execution network or file behavior. Confidence is strongest when the same app shows command invocation followed by process execution and immediate follow-on effects.",
       "meta": {
         "external_id": "AN1742",
         "mitre_platforms": [
           "iOS"
         ],
         "refs": [
-          "https://attack.mitre.org/detectionstrategies/DET0655#AN1742",
-          "https://partner.samsungknox.com/mtd"
+          "https://attack.mitre.org/detectionstrategies/DET0655#AN1742"
         ]
       },
       "uuid": "77c81bf1-beef-429a-a426-a716b489383a",
       "value": "Analytic 1742 - AN1742"
     },
     {
-      "description": "Mobile security products can often alert the user if their device is vulnerable to known exploits.",
+      "description": "Defender correlates an iOS-specific reduced-confidence chain where a supervised or managed device transitions from locked or inactive state to interactive or application-active state with weak evidence of expected user authentication, often accompanied by abnormal protected posture change, trust-state change, unexpected app wake, sensor use, or immediate downstream communication. Because direct visibility into lockscreen bypass mechanics on iOS is limited, the analytic prioritizes strong device-state effects and post-unlock behavior rather than pretending to observe the exact bypass method.",
       "meta": {
         "external_id": "AN1724",
         "mitre_platforms": [
@@ -22036,7 +22299,7 @@
       "value": "Analytic 1428 - AN1428"
     },
     {
-      "description": "Usage of insecure or malicious third-party libraries could be detected by application vetting services. Malicious software development tools could be detected by enterprises that deploy endpoint protection software on computers that are used to develop mobile apps. Application vetting could detect the usage of insecure or malicious third-party libraries.",
+      "description": "A legitimate-seeming app or update arrives through an expected or trusted distribution path, but the delivered application begins showing new entitlement exercise, background activity, framework use, sensor access, or network behavior inconsistent with its prior baseline or documented role. Because direct inspection of compromised dependencies or developer tooling is weaker on iOS, the defender emphasizes supervised-device app inventory, post-update behavior drift, new first-run or background patterns, and downstream communications that suggest compromised embedded libraries or manipulated build outputs.",
       "meta": {
         "external_id": "AN1824",
         "mitre_platforms": [
@@ -22050,7 +22313,7 @@
       "value": "Analytic 1824 - AN1824"
     },
     {
-      "description": "The user can examine the list of all installed applications, including those with a suppressed icon, in the device settings. If the user is redirected to the device settings when tapping an application’s icon, they should inspect the application to ensure it is genuine.\nApplication vetting services could potentially detect the usage of APIs intended for suppressing the application’s icon.",
+      "description": "Correlates (1) suppression or disablement of launcher-visible application components or effective reduction of user-facing launcher presence, (2) persistence of installed application state after icon suppression, and (3) continued runtime activity such as background execution, framework use, sensor access, or network communication after the icon becomes unavailable or is replaced by reduced-discoverability launcher behavior. The defender observes a causal chain where an app removes or reduces its launcher visibility while remaining operational and continuing meaningful activity.",
       "meta": {
         "external_id": "AN1842",
         "mitre_platforms": [
@@ -22246,7 +22509,7 @@
       "value": "Analytic 1562 - AN1562"
     },
     {
-      "description": "The user can view a list of device administrators in device settings and revoke permission where appropriate. Applications that request device administrator permissions should be scrutinized further for malicious behavior.",
+      "description": "Correlates (1) acquisition or presence of elevated control paths capable of forcing a lock state or blocking user interaction, (2) invocation of screen-locking or UI-denial behavior such as DevicePolicyManager lock operations, persistent overlays, accessibility-driven navigation interruption, or foreground lock-screen impersonation, and (3) immediate transition of the device into an unavailable or repeatedly re-locked state while the responsible application remains installed and active. The defender observes a causal chain where an application first gains the ability to control lock-related behavior, then forces or simulates lockout, and the device becomes unusable to the legitimate user.",
       "meta": {
         "external_id": "AN1652",
         "mitre_platforms": [
@@ -22316,7 +22579,7 @@
       "value": "Analytic 1527 - AN1527"
     },
     {
-      "description": "Application vetting services can detect certificate pinning by examining an application’s `network_security_config.xml` file, although this behavior can be benign.",
+      "description": "The defender correlates application TLS trust customization activity with subsequent outbound encrypted sessions that bypass enterprise interception visibility or fail only under enterprise inspection conditions. The analytic looks for an app establishing its own certificate or public-key trust logic, then initiating HTTPS sessions to destinations not aligned with approved app behavior, especially from background state or without recent user interaction. Higher-confidence observations come from Android runtime/framework telemetry showing custom trust manager, certificate validation override, or pin validation logic immediately preceding network connection attempts, combined with network evidence of failed-inspection patterns or opaque direct TLS sessions.",
       "meta": {
         "external_id": "AN1725",
         "mitre_platforms": [
@@ -22330,7 +22593,7 @@
       "value": "Analytic 1725 - AN1725"
     },
     {
-      "description": "Application vetting services can look for applications requesting the `android.permission.BIND_ACCESSIBILITY_SERVICE` permission in a service declaration. On Android, the user can view and manage which applications can use accessibility services through the device settings in Accessibility. The exact device settings menu locations may vary between operating system versions.\nOn Android, the user can view and manage which applications have third-party keyboard access through the device settings in System -> Languages & input -> Virtual keyboard. On iOS, the user can view and manage which applications have third-party keyboard access through the device settings in General -> Keyboard. ",
+      "description": "Defender correlates a custom keyboard extension activation (optionally with TCC ‘Full Access’) or abnormal UI text-entry interception with local keylog persistence and/or small egress. Chain: capability/consent (keyboard Full Access/TCC) → intercept (keyboard commit events or repeated secure text entry edits) → persist to container → near-term egress.",
       "meta": {
         "external_id": "AN1752",
         "mitre_platforms": [
@@ -22400,7 +22663,7 @@
       "value": "Analytic 1528 - AN1528"
     },
     {
-      "description": "Dynamic analysis, when used in application vetting, may in some cases be able to identify malicious code in obfuscated or encrypted form by detecting the code at execution time (after it is deobfuscated or decrypted). Some application vetting techniques apply reputation analysis of the application developer and can alert to potentially suspicious applications without actual examination of application code.",
+      "description": "Defender correlates a sandboxed app downloading or receiving opaque/encoded blobs, writing high-entropy content into container/tmp, performing decode/decompress/reassembly, and then executing/loaded as Mach-O or bundle (dlopen) or leveraging JIT/RWX pages to run the decoded payload. Sequence: opaque download or IPC → high-entropy writes/split-file bursts → decode/unarchive → new Mach-O/bundle in tmp → dlopen/posix_spawn or RWX region activity.",
       "meta": {
         "external_id": "AN1852",
         "mitre_platforms": [
@@ -22414,7 +22677,7 @@
       "value": "Analytic 1852 - AN1852"
     },
     {
-      "description": "The user can view and manage installed third-party keyboards.\nApplication vetting services can look for applications requesting the permissions granting access to accessibility services or application overlay.",
+      "description": "Defender observes an app gaining input-observation capability (AccessibilityService enablement, default IME set, draw-over-apps permission), then creating an intercept surface (overlay window, accessibility event stream consumption or IME keystroke callbacks), followed by persistence (local keylog/clipboard dump) and/or small, frequent network egress. Chain: capability/permission → listener/overlay activation → bursty input read events → local write → near-term exfil.",
       "meta": {
         "external_id": "AN1825",
         "mitre_platforms": [
@@ -22584,7 +22847,7 @@
       "value": "Analytic 1276 - AN1276"
     },
     {
-      "description": "Since data encryption is a common practice in many legitimate applications and uses standard programming language-specific APIs, encrypting data for command and control communication is regarded as undetectable to the user.",
+      "description": "An application generates, imports, or accesses asymmetric keypairs (e.g., RSA/ECC), uses a public key to encrypt outbound data or establish encrypted sessions, and transmits resulting ciphertext in structured communication patterns. Detection correlates keypair lifecycle activity + asymmetric crypto API usage + data transformation + background execution context + network transmission, especially when inconsistent with expected application functionality.",
       "meta": {
         "external_id": "AN1762",
         "mitre_platforms": [
@@ -22612,7 +22875,7 @@
       "value": "Analytic 1672 - AN1672"
     },
     {
-      "description": "Application vetting services can detect certificate pinning by examining an application’s `network_security_config.xml` file, although this behavior can be benign.",
+      "description": "The defender correlates supervised-device application posture and background execution context with network-side evidence that an app rejects enterprise inspection or performs certificate/public-key-bound trust behavior during TLS establishment. Because direct app-level pin-validation observability is weaker on iOS, the analytic is anchored primarily to network control-plane effects: repeated TLS handshake rejection under enterprise inspection, destination-specific inspection bypass patterns, or persistent opaque app-to-endpoint encrypted sessions inconsistent with baseline app behavior. Additional confidence comes from managed app identity, background execution context, and supervised device policy state.",
       "meta": {
         "external_id": "AN1726",
         "mitre_platforms": [
@@ -22668,7 +22931,7 @@
       "value": "Analytic 1286 - AN1286"
     },
     {
-      "description": "The user can view and manage installed third-party keyboards.\nApplication vetting services can look for applications requesting the permissions granting access to accessibility services or application overlay.",
+      "description": "Defender observes an app enabling or using input-capture surfaces (custom keyboard extension with Full Access, abnormal UI text entry interception, pasteboard polling adjacent to login screens), then persisting and/or exfiltrating captured input. Chain: capability/consent (TCC for keyboard Full Access or input privacy domains) → intercept behavior (keyboard extension active, repeated text field ‘editingChanged’/secure entry focus, background pasteboard reads) → local write → near-term egress.",
       "meta": {
         "external_id": "AN1826",
         "mitre_platforms": [
@@ -22682,7 +22945,7 @@
       "value": "Analytic 1826 - AN1826"
     },
     {
-      "description": "Abuse of standard application protocols can be difficult to detect as many legitimate mobile applications leverage such protocols for language-specific APIs. Enterprises may be better served focusing on detection at other stages of adversarial behavior. ",
+      "description": "Defender observes an application establishing recurrent HTTPS or APNS-related communications exhibiting structured cadence, abnormal session persistence, or notification-triggered network bursts inconsistent with user interaction patterns or declared application behavior.",
       "meta": {
         "external_id": "AN1682",
         "mitre_platforms": [
@@ -22780,7 +23043,7 @@
       "value": "Analytic 1277 - AN1277"
     },
     {
-      "description": "Application vetting services can detect which broadcast intents an application registers for and which permissions it requests. ",
+      "description": "The defender correlates application registration for system event triggers (e.g., broadcast receivers, WorkManager, JobScheduler, SMS/BOOT events) with subsequent execution of application code immediately following the triggering event, without direct user interaction. Confidence increases when execution occurs in background or locked state, is tied to sensitive triggers (SMS received, boot completed, connectivity change), and produces follow-on file or network activity inconsistent with the application’s expected role.",
       "meta": {
         "external_id": "AN1727",
         "mitre_platforms": [
@@ -22794,16 +23057,14 @@
       "value": "Analytic 1727 - AN1727"
     },
     {
-      "description": "In iOS 14 and up, an orange dot (or orange square if the Differentiate Without Color setting is enabled) appears in the status bar when the microphone is being used by an application. However, there have been demonstrations indicating it may still be possible to access the microphone in the background without triggering this visual indicator by abusing features that natively access the microphone or camera but do not trigger the visual indicators.(Citation: iOS Mic Spyware)\n\n\nIn Android 12 and up, a green dot appears in the status bar when the microphone is being used by an application.(Citation: Android Privacy Indicators)\nAndroid applications using the `RECORD_AUDIO` permission and iOS applications using `RequestRecordPermission` should be carefully reviewed and monitored. If the `CAPTURE_AUDIO_OUTPUT` permission is found in a third-party Android application, the application should be heavily scrutinized.\n\nIn both Android (6.0 and up) and iOS, the user can review which applications have the permission to access the microphone through the device settings screen and revoke permissions as necessary. ",
+      "description": "A defender observes an application holding microphone capture capability transitioning into active microphone resource usage through Android audio APIs (e.g., MediaRecorder or AudioRecord), followed by sustained capture while the application is backgrounded or the device is locked, and subsequent outbound network traffic suggesting potential audio exfiltration or streaming.",
       "meta": {
         "external_id": "AN1772",
         "mitre_platforms": [
           "Android"
         ],
         "refs": [
-          "https://attack.mitre.org/detectionstrategies/DET0673#AN1772",
-          "https://blog.zecops.com/research/how-ios-malware-can-spy-on-users-silently/",
-          "https://source.android.com/devices/tech/config/privacy-indicators"
+          "https://attack.mitre.org/detectionstrategies/DET0673#AN1772"
         ]
       },
       "uuid": "d942e493-32eb-4302-890b-7729f63b7202",
@@ -22838,7 +23099,7 @@
       "value": "Analytic 1278 - AN1278"
     },
     {
-      "description": "Application vetting services can detect unnecessary and potentially abused location permissions.\nOn Android 10 and later, the system shows a notification to the user when an app has been accessing device location in the background.\nApplication vetting services can detect unnecessary and potentially abused API calls.\nThe user can review which applications have location permissions in the operating system’s settings menu.",
+      "description": "Correlates (1) acquisition of foreground or background location permission sufficient for continuous geolocation evaluation, (2) repeated location checks or registration of geofence monitoring in background or low-interaction states, and (3) transition into sensitive behavior only after the device enters, exits, or remains within a qualifying geographic region. The defender observes a causal chain where an application suppresses malicious or higher-risk behavior until a location-derived condition is satisfied, then initiates follow-on actions such as network communication, background processing, or protected resource access.",
       "meta": {
         "external_id": "AN1728",
         "mitre_platforms": [
@@ -22852,7 +23113,7 @@
       "value": "Analytic 1728 - AN1728"
     },
     {
-      "description": "Many properly configured firewalls may also naturally block command and control traffic over non-standard ports.\nApplication vetting reports may show network communications performed by the application, including hosts, ports, protocols, and URLs. Further detection would most likely be at the enterprise level, through packet and/or netflow inspection. ",
+      "description": "The defender correlates app-attributed outbound sessions where protocol indicators such as TLS handshake, HTTP method and header patterns, DNS semantics, or other application-layer characteristics are observed over a destination port outside the approved baseline for that protocol and app role. The strongest Android evidence is repeated or persistent app-attributed traffic using HTTPS-, HTTP-, DNS-, WebSocket-, or other recognizable application behavior over uncommon destination ports, especially when the app is backgrounded, while the device is locked, without recent user interaction, or when the app is unmanaged or not approved for that protocol-to-port pairing.",
       "meta": {
         "external_id": "AN1827",
         "mitre_platforms": [
@@ -22866,7 +23127,7 @@
       "value": "Analytic 1827 - AN1827"
     },
     {
-      "description": "Application vetting services could look for `android.permission.READ_CONTACTS` in an Android application’s manifest, or `NSContactsUsageDescription` in an iOS application’s `Info.plist` file. Most applications do not need contact list access, so extra scrutiny could be applied to those that request it.\nOn both Android and iOS, the user can manage which applications have permission to access the contact list through the device settings screen, revoking the permission if necessary. ",
+      "description": "OLD: Application vetting services could look for `android.permission.READ_CONTACTS` in an Android application’s manifest, or `NSContactsUsageDescription` in an iOS application’s `Info.plist` file. Most applications do not need contact list access, so extra scrutiny could be applied to those that request it.\nOn both Android and iOS, the user can manage which applications have permission to access the contact list through the device settings screen, revoking the permission if necessary. \n\nNEW: A defender observes an Android application requesting for android.permission.READ_CONTACTS, which may also be listed in the application's manifest file. ",
       "meta": {
         "external_id": "AN1782",
         "mitre_platforms": [
@@ -22937,7 +23198,7 @@
       "value": "Analytic 1792 - AN1792"
     },
     {
-      "description": "Application vetting services can detect unnecessary and potentially abused location permissions.\nOn Android 10 and later, the system shows a notification to the user when an app has been accessing device location in the background.\nApplication vetting services can detect unnecessary and potentially abused API calls.\nThe user can review which applications have location permissions in the operating system’s settings menu.",
+      "description": "Correlates (1) application possession and use of location authorization sufficient for ongoing geographic evaluation, (2) repeated location or region-monitoring behavior with limited visible feature activation outside target area, and (3) abrupt onset of network communication, background execution, or feature activation only after a qualifying location context is reached. Because direct visibility into every geofence callback is often weaker on iOS, the defender relies more heavily on the combination of location authorization state, repeated location access, app state transition, and downstream behavior that begins after region alignment.",
       "meta": {
         "external_id": "AN1729",
         "mitre_platforms": [
@@ -22965,7 +23226,7 @@
       "value": "Analytic 1288 - AN1288"
     },
     {
-      "description": "Many properly configured firewalls may also naturally block command and control traffic over non-standard ports.\nApplication vetting reports may show network communications performed by the application, including hosts, ports, protocols, and URLs. Further detection would most likely be at the enterprise level, through packet and/or netflow inspection. ",
+      "description": "The defender correlates managed-app or supervised-device outbound sessions where protocol indicators such as TLS handshake, HTTP semantics, or other application-layer behaviors are observed over destination ports outside the approved baseline for that protocol and bundle role. The strongest iOS evidence is network telemetry showing repeated or persistent sessions using recognizable application protocols over uncommon ports, particularly during background refresh, while the device is locked, or without recent user interaction. Because direct local runtime attribution is weaker than Android, the primary iOS analytic should be anchored on network protocol-versus-port mismatch plus supervised managed-app context and device-state enrichment.",
       "meta": {
         "external_id": "AN1828",
         "mitre_platforms": [
@@ -23025,7 +23286,7 @@
       "value": "Analytic 1298 - AN1298"
     },
     {
-      "description": "Scheduling tasks/jobs can be difficult to detect, and therefore enterprises may be better served focusing on detection at other stages of adversarial behavior.",
+      "description": "The defender correlates creation or registration of deferred, repeating, or constraint-based background work with later task execution in the same app context, especially when the task executes without recent user interaction, from background state, or with follow-on file, sensor, or network behavior inconsistent with the app's declared role. The analytic prioritizes Android-observable control-plane effects: WorkManager enqueue operations, JobScheduler or AlarmManager scheduling, later wake or execution of the scheduled work, and post-trigger activity such as network sessions, local staging, or sensor access.",
       "meta": {
         "external_id": "AN1829",
         "mitre_platforms": [
@@ -23221,7 +23482,7 @@
       "value": "Analytic 1337 - AN1337"
     },
     {
-      "description": "Detection of adversaries tampering with container runtime security plugins, disabling admission controllers, or stopping monitoring sidecars.",
+      "description": "Detects disabling container runtime security controls, removing sidecar sensors, modifying seccomp/AppArmor profiles, mounting host proc/sys paths to interfere with host logging, or killing in-container monitoring agents.",
       "meta": {
         "external_id": "AN1373",
         "mitre_platforms": [
@@ -23235,7 +23496,7 @@
       "value": "Analytic 1373 - AN1373"
     },
     {
-      "description": "Mobile security products can detect which applications can request device administrator permissions. Application vetting services could look for use of APIs that could indicate the application is trying to hide activity.\nThe user can view applications with administrator access through the device settings, and may also notice if user data is inexplicably missing. The user can see a list of applications that can use accessibility services in the device settings. ",
+      "description": "Detects indirect evidence of host-side indicator removal by correlating (1) local artifact creation or compromise-state-relevant activity, (2) later disappearance, alteration, or reporting loss for those artifacts or state indicators, and (3) continued application or device activity under reduced visibility. Because iOS provides weaker direct visibility into some Android-style artifact and jailbreak-indicator manipulation patterns, the defender relies more on app-private artifact lifecycle changes, managed posture shifts, and continued runtime or network activity after expected evidence disappears.",
       "meta": {
         "external_id": "AN1733",
         "mitre_platforms": [
@@ -23557,7 +23818,7 @@
       "value": "Analytic 1437 - AN1437"
     },
     {
-      "description": "Detection of adversaries modifying startup configuration files to disable signature verification, logging, or monitoring features.",
+      "description": "Detects disabling AAA, syslog, SNMP traps, ACL logging, or security features on routers/switches/firewalls; correlates privileged login followed by configuration commit reducing visibility.",
       "meta": {
         "external_id": "AN1374",
         "mitre_platforms": [
@@ -23585,7 +23846,7 @@
       "value": "Analytic 1347 - AN1347"
     },
     {
-      "description": "Mobile security products can detect which applications can request device administrator permissions. Application vetting services could look for use of APIs that could indicate the application is trying to hide activity.\nThe user can view applications with administrator access through the device settings, and may also notice if user data is inexplicably missing. The user can see a list of applications that can use accessibility services in the device settings. ",
+      "description": "Correlates (1) application activity that creates, modifies, or accesses local artifacts relevant to detection or device compromise state, (2) subsequent deletion, alteration, renaming, relocation, or visibility suppression of those artifacts, including files, application presence, media, or root-compromise indicators, and (3) continued application execution, reduced telemetry quality, or outbound activity after the artifact state changes. The defender observes a causal chain where host-side evidence is first manipulated and expected visibility or reporting degrades while the initiating application remains active.",
       "meta": {
         "external_id": "AN1734",
         "mitre_platforms": [
@@ -23599,16 +23860,14 @@
       "value": "Analytic 1734 - AN1734"
     },
     {
-      "description": "When vetting applications for potential security weaknesses, the vetting process could look for insecure use of Intents. Developers should be encouraged to use techniques to ensure that the intent can only be sent to an appropriate destination (e.g., use explicit rather than implicit intents, permission checking, checking of the destination app's signing certificate, or utilizing the App Links feature). For mobile applications using OAuth, encourage use of best practice.(Citation: IETF-OAuthNativeApps)(Citation: Android-AppLinks)\nOn Android, users may be presented with a popup to select the appropriate application to open a URI in. If the user sees an application they do not recognize, they can remove it.",
+      "description": "Defender observes an OAuth/OIDC redirect (ACTION_VIEW) resolved to a non-allowlisted handler package (logcat:IntentResolver), followed within a short window by that same package accessing token material via AccountManager/Keystore or reading application token caches under /data/data/<pkg>/(shared_prefs|databases) (logcat:AccountManager, logcat:Keystore, logcat:FileIO). Correlate on package/UID/profile and time proximity to indicate token acquisition.",
       "meta": {
         "external_id": "AN1743",
         "mitre_platforms": [
           "Android"
         ],
         "refs": [
-          "https://attack.mitre.org/detectionstrategies/DET0656#AN1743",
-          "https://developer.android.com/training/app-links/index.html",
-          "https://tools.ietf.org/html/rfc8252"
+          "https://attack.mitre.org/detectionstrategies/DET0656#AN1743"
         ]
       },
       "uuid": "9253e546-bc55-42c1-bf8c-b4337a1ea5b5",
@@ -23881,7 +24140,7 @@
       "value": "Analytic 1563 - AN1563"
     },
     {
-      "description": "Integrity checking mechanisms can potentially detect unauthorized hardware modifications.",
+      "description": "The defender observes a newly enrolled or recently activated device presenting abnormal integrity, hardware-backed attestation, or firmware/build relationships at the management plane, followed by privileged or system-context access to protected resources or framework paths, and then outbound communication inconsistent with setup state, lock state, or recent user interaction. The causal sequence is strongest when the device has not yet reached a normal trusted posture but still exhibits system-level capability use or network activity.",
       "meta": {
         "external_id": "AN1653",
         "mitre_platforms": [
@@ -23965,7 +24224,7 @@
       "value": "Analytic 1735 - AN1735"
     },
     {
-      "description": "Network carriers may be able to use firewalls, Intrusion Detection Systems (IDS), or Intrusion Prevention Systems (IPS) to detect and/or block SS7 exploitation.(Citation: CSRIC5-WG10-FinalReport) The CSRIC also suggests threat information sharing between telecommunications industry members.",
+      "description": "Defender observes anomalous signaling network queries targeting subscriber information associated with a device, including unexpected routing requests, location information exchanges, or node-origin inconsistencies indicative of SS7 signaling abuse. (Citation: CSRIC5-WG10-FinalReport) The CSRIC also suggests threat information sharing between telecommunications industry members.",
       "meta": {
         "external_id": "AN1753",
         "mitre_platforms": [
@@ -24050,7 +24309,7 @@
       "value": "Analytic 1835 - AN1835"
     },
     {
-      "description": "Application vetting services can detect malicious code in applications.\nSystem partition integrity checking mechanisms can detect unauthorized or malicious code contained in the system partition.",
+      "description": "The defender correlates the arrival, installation, or update of a trusted or expected application with a subsequent deviation in package trust characteristics, permission posture, protected-resource use, framework behavior, or network communication that is inconsistent with the known-good role of that app. The strongest Android evidence is a managed or trusted package whose first-run or post-update behavior introduces unexpected special access, sensitive sensor use, unusual background execution, privileged framework interaction, or outbound communication to destinations outside the app's baseline shortly after installation or update.",
       "meta": {
         "external_id": "AN1853",
         "mitre_platforms": [
@@ -24162,7 +24421,7 @@
       "value": "Analytic 1366 - AN1366"
     },
     {
-      "description": "Application vetting services may provide a list of connections made or received by an application, or a list of domains contacted by the application.\nMany properly configured firewalls may naturally block one-way command and control traffic.",
+      "description": "The defender correlates repeated or periodic app-attributed retrieval from a legitimate public web-service platform with runtime conditions showing that the retrieval is not aligned to normal foreground consumption, user interaction, or approved app role. The strongest Android evidence is a managed or installed app repeatedly issuing inbound-oriented GET, fetch, sync, or content-pull operations to social, collaboration, paste, code-hosting, cloud-storage, messaging, or generic HTTPS platforms while the app is backgrounded, while the device is locked, or without recent user interaction, and without a corresponding outbound writeback to that same service class during the operational window. The detection is strengthened when the retrieval is temporally adjacent to scheduled/background execution, local state changes, or later downstream effects that do not require the same public platform to receive output.",
       "meta": {
         "external_id": "AN1663",
         "mitre_platforms": [
@@ -24232,7 +24491,7 @@
       "value": "Analytic 1736 - AN1736"
     },
     {
-      "description": "Since data encryption is a common practice in many legitimate applications and uses standard programming language-specific APIs, encrypting data for command and control communication is regarded as undetectable to the user.",
+      "description": "Indirect evidence of asymmetric cryptographic channel usage inferred through key exchange-like network patterns and application background execution behavior, where direct observation of keypair operations is limited. Detection correlates app entitlement posture + background execution + asymmetric handshake patterns + subsequent encrypted communication.",
       "meta": {
         "external_id": "AN1763",
         "mitre_platforms": [
@@ -24316,7 +24575,7 @@
       "value": "Analytic 1836 - AN1836"
     },
     {
-      "description": "Application vetting services could detect when applications store data insecurely, for example, in unprotected external storage.",
+      "description": "Defender correlates an app escalating file visibility (permissions/flags, legacy storage modes) with enumeration of other apps’ storage or exported ContentProviders, followed by bulk reads/copies from target paths (including shared/external storage) and optional archive/encode then share/upload. Sequence: storage capability/permission gain → target discovery (provider queries, directory listing) → high-volume cross-app data reads from writable/shared paths → archive/encode → exfil/share within a short window.",
       "meta": {
         "external_id": "AN1683",
         "mitre_platforms": [
@@ -24386,7 +24645,7 @@
       "value": "Analytic 1639 - AN1639"
     },
     {
-      "description": "When vetting applications for potential security weaknesses, the vetting process could look for insecure use of Intents. Developers should be encouraged to use techniques to ensure that the intent can only be sent to an appropriate destination (e.g., use explicit rather than implicit intents, permission checking, checking of the destination app's signing certificate, or utilizing the App Links feature). For mobile applications using OAuth, encourage use of best practice. (Citation: IETF-OAuthNativeApps)(Citation: Android-AppLinks)\nOn Android, users may be presented with a popup to select the appropriate application to open the URI in. If the user sees an application they do not recognize, they can remove it.",
+      "description": "When vetting applications for potential security weaknesses, the vetting process could look for insecure use of Intents. Defenders should validate the entirety of the URI. For example, the URI's scheme should be `https` and the URI's host should be on a list of trusted hosts.(Citation: Android_UnsafeURILoading_Sept2024)\n\nDevelopers should be encouraged to use techniques to ensure that the intent can only be sent to an appropriate destination (e.g., use explicit rather than implicit intents, permission checking, checking of the destination app's signing certificate, or utilizing the App Links feature). For mobile applications using OAuth, encourage use of best practice.(Citation: IETF-OAuthNativeApps)(Citation: Android-AppLinks)\n\nOn Android, users may be presented with a popup to select the appropriate application to open the URI in. If the user sees an application they do not recognize, they can remove it.",
       "meta": {
         "external_id": "AN1693",
         "mitre_platforms": [
@@ -24394,6 +24653,7 @@
         ],
         "refs": [
           "https://attack.mitre.org/detectionstrategies/DET0626#AN1693",
+          "https://developer.android.com/privacy-and-security/risks/unsafe-uri-loading",
           "https://developer.android.com/training/app-links/index.html",
           "https://tools.ietf.org/html/rfc8252"
         ]
@@ -24416,7 +24676,7 @@
       "value": "Analytic 1377 - AN1377"
     },
     {
-      "description": "The user can review which applications have location and sensitive phone information permissions in the operating system’s settings menu. \nApplication vetting services can detect unnecessary and potentially abused API calls.\nApplication vetting services can detect unnecessary and potentially abused permissions.",
+      "description": "Correlates (1) application access to device- or environment-specific attributes used to validate target conditions, (2) suppression of sensitive behavior until those attributes match an expected value, and (3) immediate transition into protected actions such as sensor use, file access, or network communication only after the condition is satisfied. The defender observes a causal chain where an app repeatedly evaluates device state or environment context and withholds execution until a target-specific match occurs.",
       "meta": {
         "external_id": "AN1737",
         "mitre_platforms": [
@@ -24430,16 +24690,14 @@
       "value": "Analytic 1737 - AN1737"
     },
     {
-      "description": "In iOS 14 and up, an orange dot (or orange square if the Differentiate Without Color setting is enabled) appears in the status bar when the microphone is being used by an application. However, there have been demonstrations indicating it may still be possible to access the microphone in the background without triggering this visual indicator by abusing features that natively access the microphone or camera but do not trigger the visual indicators.(Citation: iOS Mic Spyware)\n\n\nIn Android 12 and up, a green dot appears in the status bar when the microphone is being used by an application.(Citation: Android Privacy Indicators)\nAndroid applications using the `RECORD_AUDIO` permission and iOS applications using `RequestRecordPermission` should be carefully reviewed and monitored. If the `CAPTURE_AUDIO_OUTPUT` permission is found in a third-party Android application, the application should be heavily scrutinized.\n\nIn both Android (6.0 and up) and iOS, the user can review which applications have the permission to access the microphone through the device settings screen and revoke permissions as necessary. ",
+      "description": "A defender observes an application with declared microphone capability initiating microphone resource use through iOS audio frameworks, potentially during background execution or shortly after a silent wake event, followed by sustained audio capture and outbound encrypted traffic suggesting audio streaming or upload activity.",
       "meta": {
         "external_id": "AN1773",
         "mitre_platforms": [
           "iOS"
         ],
         "refs": [
-          "https://attack.mitre.org/detectionstrategies/DET0673#AN1773",
-          "https://blog.zecops.com/research/how-ios-malware-can-spy-on-users-silently/",
-          "https://source.android.com/devices/tech/config/privacy-indicators"
+          "https://attack.mitre.org/detectionstrategies/DET0673#AN1773"
         ]
       },
       "uuid": "4623e949-e902-4a8c-893b-73e5ab4b57d5",
@@ -24474,7 +24732,7 @@
       "value": "Analytic 1387 - AN1387"
     },
     {
-      "description": "The user can review which applications have location and sensitive phone information permissions in the operating system’s settings menu. \nApplication vetting services can detect unnecessary and potentially abused API calls.\nApplication vetting services can detect unnecessary and potentially abused permissions.",
+      "description": "Detects conditional execution by correlating (1) application access to constrained environment signals such as location, locale, network context, device state, or user interaction timing, (2) prolonged inactivity or feature suppression despite available permissions, and (3) abrupt initiation of higher-risk behavior only when the expected target context is present. Because direct observation of some runtime decision logic is weaker on iOS, the defender relies more heavily on lifecycle, sensor, and downstream network effects following target-condition alignment.",
       "meta": {
         "external_id": "AN1738",
         "mitre_platforms": [
@@ -24502,7 +24760,7 @@
       "value": "Analytic 1783 - AN1783"
     },
     {
-      "description": "Application vetting services can detect which broadcast intents an application registers for and which permissions it requests. ",
+      "description": "Correlates (1) application registration or activation of broadcast receivers tied to system or app-generated intents, (2) event-triggered execution while the application is not in the foreground, and (3) immediate follow-on actions such as network communication or data access. The defender observes a causal chain where an external event (e.g., BOOT_COMPLETED, SMS_RECEIVED, USER_PRESENT, CONNECTIVITY_CHANGE) triggers application execution that bypasses normal user-driven lifecycle expectations, followed by background processing or outbound activity.",
       "meta": {
         "external_id": "AN1837",
         "mitre_platforms": [
@@ -24572,7 +24830,7 @@
       "value": "Analytic 1397 - AN1397"
     },
     {
-      "description": "Abuse of standard application protocols can be difficult to detect as many legitimate mobile applications leverage such protocols for language-specific APIs. Enterprises may be better served focusing on detection at other stages of adversarial behavior.",
+      "description": "A defender observes an application establishing application-layer network sessions (e.g., HTTP(S), WebSocket, DNS, SMTP/IMAP) with destinations and request patterns that deviate from the enterprise baseline for that app category, especially when sessions occur during background execution or while the device is locked and exhibit beacon-like periodicity, anomalous SNI/Host patterns, or suspicious request/response size symmetry consistent with command polling and tasking over legitimate-looking protocols.",
       "meta": {
         "external_id": "AN1793",
         "mitre_platforms": [
@@ -24586,15 +24844,14 @@
       "value": "Analytic 1793 - AN1793"
     },
     {
-      "description": "On Android, Verified Boot can detect unauthorized modifications to the system partition.(Citation: Android-VerifiedBoot) Android's SafetyNet API provides remote attestation capabilities, which could potentially be used to identify and respond to compromise devices. Samsung Knox provides a similar remote attestation capability on supported Samsung devices. ",
+      "description": "Correlates anomalous modifications to boot-time or logon-time initialization artifacts (for example, init.rc, vendor init scripts, app_process or shell hijacks, and malicious BOOT_COMPLETED BroadcastReceivers) with subsequent unauthorized script execution after boot. From the defender’s perspective this appears as integrity or attestation failures on the system partition, unexpected writes to protected init paths, new apps registering for boot events, and privileged processes invoking scripts or binaries from non-standard locations shortly after the device boots.",
       "meta": {
         "external_id": "AN1739",
         "mitre_platforms": [
           "Android"
         ],
         "refs": [
-          "https://attack.mitre.org/detectionstrategies/DET0654#AN1739",
-          "https://source.android.com/security/verifiedboot/"
+          "https://attack.mitre.org/detectionstrategies/DET0654#AN1739"
         ]
       },
       "uuid": "e8bfbaf2-cfa8-41fd-a5ee-48b57026ac7c",
@@ -24827,7 +25084,7 @@
       "value": "Analytic 1464 - AN1464"
     },
     {
-      "description": "Application vetting services may detect API calls to `performGlobalAction(int)`. \nThe user can view a list of device administrators and applications that have registered accessibility services in device settings. The user can typically visually see when an action happens that they did not initiate and can subsequently review installed applications for any out of place or unknown ones. Applications that register an accessibility service or request device administrator permissions should be scrutinized further for malicious behavior.",
+      "description": "Correlates (1) an application obtaining or maintaining elevated control mechanisms capable of resisting removal (device administrator, accessibility control, managed-owner posture), (2) user navigation into uninstall or application-management flows, and (3) immediate UI redirection, back-navigation injection, modal dismissal, or failed uninstall completion followed by continued app presence. Defender observes a causal chain where a removal attempt is actively disrupted and the target application remains installed.",
       "meta": {
         "external_id": "AN1644",
         "mitre_platforms": [
@@ -25067,7 +25324,7 @@
       "value": "Analytic 1564 - AN1564"
     },
     {
-      "description": "Integrity checking mechanisms can potentially detect unauthorized hardware modifications.",
+      "description": "The defender observes a device at activation, supervision, or enrollment time with unusual management-plane posture, inventory, or trust characteristics and then relies primarily on downstream network effects and device state inconsistencies rather than direct low-level process telemetry. On iOS, the most reliable sequence is supervision/attestation or inventory concern near first contact followed by network egress or protected-state behavior that is inconsistent with lock state, setup phase, or expected managed app activity.",
       "meta": {
         "external_id": "AN1654",
         "mitre_platforms": [
@@ -25081,7 +25338,7 @@
       "value": "Analytic 1654 - AN1654"
     },
     {
-      "description": "The user can view the default SMS handler in system settings.",
+      "description": "The defender correlates SMS-relevant permission state or default SMS handler role with subsequent unauthorized SMS send, receive interception, message database modification, deletion, or concealment behavior by an application outside expected messaging workflows. The analytic prioritizes Android-observable control-plane effects: SEND_SMS or RECEIVE_SMS capability, default SMS handler change or exercise of SMS_DELIVER semantics, direct interaction with the SMS content provider or messaging database, and SMS activity occurring from background or locked-device state without recent user interaction.",
       "meta": {
         "external_id": "AN1645",
         "mitre_platforms": [
@@ -25151,7 +25408,7 @@
       "value": "Analytic 1547 - AN1547"
     },
     {
-      "description": "Network carriers may be able to use firewalls, Intrusion Detection Systems (IDS), or Intrusion Prevention Systems (IPS) to detect and/or block SS7 exploitation.(Citation: CSRIC5-WG10-FinalReport) The CSRIC also suggests threat information sharing between telecommunications industry members.",
+      "description": "Defender observes anomalous signaling interactions involving subscriber identity or location resolution events associated with a device, including abnormal routing requests, unexpected location information exchanges, or signaling node inconsistencies indicative of SS7 abuse. (Citation: CSRIC5-WG10-FinalReport) The CSRIC also suggests threat information sharing between telecommunications industry members.",
       "meta": {
         "external_id": "AN1754",
         "mitre_platforms": [
@@ -25250,7 +25507,7 @@
       "value": "Analytic 1845 - AN1845"
     },
     {
-      "description": "Application vetting services can detect malicious code in applications.\nSystem partition integrity checking mechanisms can detect unauthorized or malicious code contained in the system partition.",
+      "description": "Anchor on supervised managed-app install/update or version drift, then correlate with unexpected background activity, managed-app state changes, or egress inconsistent with the app's historical and policy baseline.",
       "meta": {
         "external_id": "AN1854",
         "mitre_platforms": [
@@ -25362,7 +25619,7 @@
       "value": "Analytic 1466 - AN1466"
     },
     {
-      "description": "Application vetting services could look for the Android permission `android.permission.QUERY_ALL_PACKAGES`, and apply extra scrutiny to applications that request it. On iOS, application vetting services could look for usage of the private API `LSApplicationWorkspace` and apply extra scrutiny to applications that employ it.",
+      "description": "Defender correlates an app enumerating installed packages (PackageManager queries or shell 'pm list packages') with selective checks for high-value targets (banking/identity/security apps) and near-term persistence/egress of the inventory. Chain: capability to query apps → burst of enumeration calls or shell listing → optional foreground target detection → local inventory file → small POST to remote endpoint.",
       "meta": {
         "external_id": "AN1646",
         "mitre_platforms": [
@@ -25376,7 +25633,7 @@
       "value": "Analytic 1646 - AN1646"
     },
     {
-      "description": "Application vetting services may provide a list of connections made or received by an application, or a list of domains contacted by the application.\nMany properly configured firewalls may naturally block one-way command and control traffic.",
+      "description": "The defender correlates repeated retrieval-oriented communication from a supervised device or managed iOS app to a legitimate public web-service platform where the activity remains primarily inbound and does not produce corresponding writeback to that same service class during the operational window. The strongest iOS evidence is managed-app or device-attributed communication to collaboration, social, messaging, storage, or generic HTTPS platforms where inbound fetches or content pulls recur during background refresh, while the device is locked, or without recent user interaction, and no matching POST, upload, update, or message-send activity to that same public service class is observed. Because direct local runtime visibility is weaker than Android, the primary analytic is anchored on network directionality plus supervised managed-app and device-state context.",
       "meta": {
         "external_id": "AN1664",
         "mitre_platforms": [
@@ -25418,7 +25675,7 @@
       "value": "Analytic 1476 - AN1476"
     },
     {
-      "description": "Application vetting services can look for the use of the Android `MediaProjectionManager` class, applying extra scrutiny to applications that use the class.\nThe user can view a list of apps with accessibility service privileges in the device settings.",
+      "description": "The defender correlates Android screen-capture-capable behavior from an app identity with runtime context showing that foreground content from another app is being captured outside expected user-driven workflows. The strongest Android evidence is MediaProjection-like capture initiation, accessibility-assisted observation of foreground UI content, or privileged screencap or screenrecord behavior, followed by screenshot or video artifact creation, buffer growth, or outbound transfer. The detection is strengthened when the capturing app is backgrounded, operates as a foreground service without clear user-driven recording intent, captures while another sensitive app is foregrounded, runs with accessibility or elevated access inconsistent with its role, or performs capture without recent user interaction.",
       "meta": {
         "external_id": "AN1764",
         "mitre_platforms": [
@@ -25432,7 +25689,7 @@
       "value": "Analytic 1764 - AN1764"
     },
     {
-      "description": "Application vetting services could look for the Android permission `android.permission.QUERY_ALL_PACKAGES`, and apply extra scrutiny to applications that request it. On iOS, application vetting services could look for usage of the private API `LSApplicationWorkspace` and apply extra scrutiny to applications that employ it.",
+      "description": "Defender correlates attempts to inventory installed apps via LaunchServices/URL-scheme probing or private APIs (e.g., LSApplicationWorkspace) with checks for high-value targets and quick persistence/egress. Chain: capability/attempt (URL scheme spray or LSWorkspace calls) → large scheme/app probe set → optional webview hits to brand domains → local inventory cache → small egress.",
       "meta": {
         "external_id": "AN1647",
         "mitre_platforms": [
@@ -25502,7 +25759,7 @@
       "value": "Analytic 1486 - AN1486"
     },
     {
-      "description": "System information discovery can be difficult to detect, and therefore enterprises may be better served focusing on detection at other stages of adversarial behavior.",
+      "description": "Defender correlates an app process performing a burst of OS/device attribute lookups (build, hardware, SDK level, system properties) with near-term execution branching (feature gating, module load, permission workflow changes) and/or immediate outbound communications, indicating environment evaluation used to shape follow-on actions.",
       "meta": {
         "external_id": "AN1648",
         "mitre_platforms": [
@@ -25530,7 +25787,7 @@
       "value": "Analytic 1846 - AN1846"
     },
     {
-      "description": "Application vetting services could detect when applications store data insecurely, for example, in unprotected external storage.",
+      "description": "Defender correlates attempts to access other apps’ data via shared containers (App Groups), Photos/Files providers, pasteboard abuse, or jailbroken cross-container reads, followed by aggregation/packaging and optional exfil/share. Sequence: capability/consent (TCC/entitlements) → target discovery (AppGroup/Photos/Files enumeration, URL schemes) → bulk read from shared/foreign container or provider → package/encode → exfil/share.",
       "meta": {
         "external_id": "AN1684",
         "mitre_platforms": [
@@ -25600,7 +25857,7 @@
       "value": "Analytic 1469 - AN1469"
     },
     {
-      "description": "System information discovery can be difficult to detect, and therefore enterprises may be better served focusing on detection at other stages of adversarial behavior.",
+      "description": "Defender correlates an app querying device model and iOS version (often limited to UIDevice-visible attributes) with subsequent behavior divergence (capability gating, alternate code paths) and/or near-term outbound connections, suggesting device fingerprinting for decision-making rather than normal telemetry.",
       "meta": {
         "external_id": "AN1649",
         "mitre_platforms": [
@@ -25614,7 +25871,7 @@
       "value": "Analytic 1649 - AN1649"
     },
     {
-      "description": "When vetting applications for potential security weaknesses, the vetting process could look for insecure use of Intents. Developers should be encouraged to use techniques to ensure that the intent can only be sent to an appropriate destination (e.g., use explicit rather than implicit intents, permission checking, checking of the destination app's signing certificate, or utilizing the App Links feature). For mobile applications using OAuth, encourage use of best practice. (Citation: IETF-OAuthNativeApps)(Citation: Android-AppLinks)\nOn Android, users may be presented with a popup to select the appropriate application to open the URI in. If the user sees an application they do not recognize, they can remove it.",
+      "description": "When vetting applications for potential security weaknesses, the vetting process could look for insecure use of Intents. \n\nDevelopers should be encouraged to use techniques to ensure that the intent can only be sent to an appropriate destination (e.g., use explicit rather than implicit intents, permission checking, checking of the destination app's signing certificate, or utilizing the App Links feature). For mobile applications using OAuth, encourage use of best practice.(Citation: IETF-OAuthNativeApps)(Citation: SecureAuth_iOSOAuth_2025)",
       "meta": {
         "external_id": "AN1694",
         "mitre_platforms": [
@@ -25622,7 +25879,7 @@
         ],
         "refs": [
           "https://attack.mitre.org/detectionstrategies/DET0626#AN1694",
-          "https://developer.android.com/training/app-links/index.html",
+          "https://docs.secureauth.com/ciam/en/build-an-ios-app-using-oauth-2-0-and-pkce.html",
           "https://tools.ietf.org/html/rfc8252"
         ]
       },
@@ -25644,7 +25901,7 @@
       "value": "Analytic 1477 - AN1477"
     },
     {
-      "description": "The OS may show a notification to the user that the SIM card has been transferred to another device.",
+      "description": "A defender correlates a sudden carrier identity/service state change (SIM/line identifier change or unexpected loss of cellular service) with near-term device messaging/telephony disruption and a concurrent shift in authentication traffic patterns—such as a spike in SMS-based verification flows or account recovery activity from the same user’s identities—indicating the user’s number may have been transferred to a different SIM/device (SIM swap impact).",
       "meta": {
         "external_id": "AN1747",
         "mitre_platforms": [
@@ -25658,7 +25915,7 @@
       "value": "Analytic 1747 - AN1747"
     },
     {
-      "description": "Application vetting services could look for `android.permission.READ_CALENDAR` or `android.permission.WRITE_CALENDAR` in an Android application’s manifest, or `NSCalendarsUsageDescription` in an iOS application’s `Info.plist` file. Most applications do not need calendar access, so extra scrutiny could be applied to those that request it. \nOn both Android and iOS, the user can manage which applications have permission to access calendar information through the device settings screen, revoke the permission if necessary. ",
+      "description": "OLD: \nApplication vetting services could look for `android.permission.READ_CALENDAR` or `android.permission.WRITE_CALENDAR` in an Android application’s manifest, or `NSCalendarsUsageDescription` in an iOS application’s `Info.plist` file. Most applications do not need calendar access, so extra scrutiny could be applied to those that request it. \nOn both Android and iOS, the user can manage which applications have permission to access calendar information through the device settings screen, revoke the permission if necessary. \n\nNEW:\nA defender observes an Android application requesting for `android.permission.READ_CALENDAR` or `android.permission.WRITE_CALENDAR`, which may also be listed in the application’s Manifest.",
       "meta": {
         "external_id": "AN1774",
         "mitre_platforms": [
@@ -25700,7 +25957,7 @@
       "value": "Analytic 1487 - AN1487"
     },
     {
-      "description": "The OS may show a notification to the user that the SIM card has been transferred to another device.",
+      "description": "A defender correlates an unexpected change in cellular subscription state (eSIM/SIM profile change, carrier/operator change, or sudden persistent loss of cellular service) with near-term disruption signals and a rapid increase in authentication-related network activity consistent with SMS verification or account recovery flows, suggesting the user’s number has been ported to an adversary-controlled SIM/device (SIM swap impact).",
       "meta": {
         "external_id": "AN1748",
         "mitre_platforms": [
@@ -25714,7 +25971,7 @@
       "value": "Analytic 1748 - AN1748"
     },
     {
-      "description": "This is abuse of standard OS-level APIs and are therefore typically undetectable to the end user.",
+      "description": "The defender correlates application loading or invoking native libraries through JNI or NDK-backed execution paths with subsequent lower-level activity such as native thread creation, sensor access, file operations, or outbound network communication that is inconsistent with the app's declared role or recent user interaction. The analytic prioritizes defender-observable control-plane effects: native library load or JNI bridge use, transition into native execution context, and immediate post-load behavior occurring from background state, locked-device state, or non-baselined app categories.",
       "meta": {
         "external_id": "AN1847",
         "mitre_platforms": [
@@ -25728,7 +25985,7 @@
       "value": "Analytic 1847 - AN1847"
     },
     {
-      "description": "Application vetting services could look for the Android permission `android.permission.QUERY_ALL_PACKAGES`, and apply extra scrutiny to applications that request it. On iOS, application vetting services could look for usage of the private API `LSApplicationWorkspace` and apply extra scrutiny to applications that employ it.",
+      "description": "Defender observes an app enumerating installed security/management controls (AV/EDR/MDM/VPN/Play Protect) via PackageManager, DevicePolicyManager, AppOps, and Settings queries or shell ‘pm list’ usage, optionally probing Accessibility/Device Admin state. Enumeration is followed by local inventory artifact creation and/or small egress. Chain: capability to query → burst of security-focused checks (packages/permissions/policies) → optional foreground targeting → artifact write → quick POST.",
       "meta": {
         "external_id": "AN1784",
         "mitre_platforms": [
@@ -25812,7 +26069,7 @@
       "value": "Analytic 1749 - AN1749"
     },
     {
-      "description": "Abuse of standard application protocols can be difficult to detect as many legitimate mobile applications leverage such protocols for language-specific APIs. Enterprises may be better served focusing on detection at other stages of adversarial behavior.",
+      "description": "A defender observes an application generating application-layer communications that blend with normal traffic (HTTP(S), WebSocket, DNS, mail protocols) but show deviations from enterprise baselines for that bundle ID—such as persistent background network sessions, regular low-volume polling intervals, anomalous SNI/Host destinations, uncommon DNS patterns, or uniform request/response sizing—suggesting command and control over legitimate-looking protocols without relying on tool signatures.",
       "meta": {
         "external_id": "AN1794",
         "mitre_platforms": [
@@ -25840,7 +26097,7 @@
       "value": "Analytic 1488 - AN1488"
     },
     {
-      "description": "Application vetting services could look for connections to unknown domains or IP addresses. \nApplication vetting services may indicate precisely what content was requested during application execution.",
+      "description": "The defender correlates an application establishing outbound retrieval to a non-baselined external source with immediate local creation of a new executable, module, staged payload, overlay asset, or secondary file in app-controlled or shared storage, followed by optional load, invocation, handoff, or repeat retrieval behavior. The analytic prioritizes Android-observable effects: network download activity, DownloadManager or direct HTTP retrieval, file creation in package-specific or external paths, and execution context inconsistent with recent user interaction or the app’s declared role.",
       "meta": {
         "external_id": "AN1848",
         "mitre_platforms": [
@@ -25911,7 +26168,7 @@
       "value": "Analytic 1489 - AN1489"
     },
     {
-      "description": "Application vetting services could look for connections to unknown domains or IP addresses. \nApplication vetting services may indicate precisely what content was requested during application execution.",
+      "description": "The defender correlates managed-app network retrieval from a non-baselined external source with immediate creation of a new local artifact, staged resource, module-like file, or opaque payload inside the app container, followed by optional dynamic loading, handoff, or repeat retrieval behavior. Because iOS offers weaker direct visibility into tool staging internals than Android in many environments, the analytic anchors first on network acquisition plus managed app identity and then strengthens confidence with file creation or process-activity effects where mobile telemetry is available.",
       "meta": {
         "external_id": "AN1849",
         "mitre_platforms": [
@@ -26051,7 +26308,7 @@
       "value": "Analytic 1575 - AN1575"
     },
     {
-      "description": "Network traffic analysis could reveal patterns of compromise if devices attempt to access unusual targets or resources. \nApplication vetting may be able to identify applications that perform [Discovery](https://attack.mitre.org/tactics/TA0032) or utilize existing connectivity to remotely access hosts within an internal enterprise network. ",
+      "description": "Defender observes a mobile device initiating abnormal or exploit-like network interactions with internal or remote services, followed by process-level instability, privilege boundary shifts, or unexpected execution behaviors indicative of service exploitation outcomes.",
       "meta": {
         "external_id": "AN1755",
         "mitre_platforms": [
@@ -26151,7 +26408,7 @@
       "value": "Analytic 1566 - AN1566"
     },
     {
-      "description": "The user can also inspect and modify the list of applications that have notification access through the device settings (e.g. Apps & notification -> Special app access -> Notification access). \nApplication vetting services can look for applications requesting the `BIND_NOTIFICATION_LISTENER_SERVICE` permission in a service declaration. ",
+      "description": "An application is granted or maintains notification listener access, observes notification content from other applications (including sensitive sources such as SMS/email/2FA apps), processes or stores notification payloads, and optionally suppresses or programmatically interacts with notifications (dismiss/action triggers) without corresponding foreground user interaction. Detection correlates special access permission state + notification event interception + application background state + downstream data use (local write or network transmission).",
       "meta": {
         "external_id": "AN1665",
         "mitre_platforms": [
@@ -26207,7 +26464,7 @@
       "value": "Analytic 1576 - AN1576"
     },
     {
-      "description": "Network traffic analysis could reveal patterns of compromise if devices attempt to access unusual targets or resources. \nApplication vetting may be able to identify applications that perform [Discovery](https://attack.mitre.org/tactics/TA0032) or utilize existing connectivity to remotely access hosts within an internal enterprise network. ",
+      "description": "Defender observes a mobile device engaging remote or internal services with traffic characteristics inconsistent with normal application behavior, followed by execution anomalies, application instability, or security context deviations consistent with exploitation effects.",
       "meta": {
         "external_id": "AN1756",
         "mitre_platforms": [
@@ -26221,7 +26478,7 @@
       "value": "Analytic 1756 - AN1756"
     },
     {
-      "description": "Many properly configured firewalls may naturally block command and control traffic.\nApplication vetting services may provide a list of connections made or received by an application, or a list of domains contacted by the application. ",
+      "description": "The defender correlates an app-attributed request to a legitimate public web platform with a subsequent outbound connection to a newly derived or previously unseen destination within a short time window. The behavior is strengthened when the initial request retrieves structured or encoded content followed by a pivot to a different domain or IP that was not previously contacted by the app, especially when occurring without user interaction, in background state, or immediately after app initialization or scheduled execution. This sequence reflects resolver retrieval followed by dynamic C2 resolution.",
       "meta": {
         "external_id": "AN1675",
         "mitre_platforms": [
@@ -26251,15 +26508,14 @@
       "value": "Analytic 1765 - AN1765"
     },
     {
-      "description": "Command-line activities can potentially be detected through Mobile Threat Defense (MTD) integrations with lower-level OS APIs. This could grant the MTD agents access to running processes and their parameters, potentially detecting unwanted or malicious shells.\nMobile Threat Defense (MTD) with lower-level OS APIs integrations may have access to newly created processes and their parameters, potentially detecting unwanted or malicious shells.\nApplication vetting services could detect the invocations of methods that could be used to execute shell commands.(Citation: Samsung Knox Mobile Threat Defense)\nMobile Threat Defense (MTD) with lower-level OS APIs integrations may have access to running processes and their parameters, potentially detecting unwanted or malicious shells.",
+      "description": "The defender correlates app-driven shell-launch behavior with subsequent execution of Unix shell processes or shell-script activity under the same app context, especially when execution occurs from background state, without recent user interaction, or is followed by file-system, privilege-escalation, or network effects inconsistent with the app's declared role. The analytic prioritizes Android-observable control-plane effects: Runtime or ProcessBuilder invocation, spawn of sh/toybox/toolbox/su or equivalent shell process, script-file staging or redirected output, and post-execution network or local artifact creation.",
       "meta": {
         "external_id": "AN1657",
         "mitre_platforms": [
           "Android"
         ],
         "refs": [
-          "https://attack.mitre.org/detectionstrategies/DET0607#AN1657",
-          "https://partner.samsungknox.com/mtd"
+          "https://attack.mitre.org/detectionstrategies/DET0607#AN1657"
         ]
       },
       "uuid": "f2c74903-6770-4f55-9a11-edcf6e00938e",
@@ -26308,15 +26564,14 @@
       "value": "Analytic 1685 - AN1685"
     },
     {
-      "description": "Command-line activities can potentially be detected through Mobile Threat Defense (MTD) integrations with lower-level OS APIs. This could grant the MTD agents access to running processes and their parameters, potentially detecting unwanted or malicious shells.\nMobile Threat Defense (MTD) with lower-level OS APIs integrations may have access to newly created processes and their parameters, potentially detecting unwanted or malicious shells.\nApplication vetting services could detect the invocations of methods that could be used to execute shell commands.(Citation: Samsung Knox Mobile Threat Defense)\nMobile Threat Defense (MTD) with lower-level OS APIs integrations may have access to running processes and their parameters, potentially detecting unwanted or malicious shells.",
+      "description": "The defender correlates managed-app process-launch or shell-like execution effects with subsequent file or network activity by the same app, then raises confidence when execution occurs in background context, without recent user interaction, or appears tied to command delivery or output exfiltration. Because direct Unix-shell observability is typically weaker on iOS and child processes remain constrained by the app sandbox, the analytic anchors on process-execution effects where available and then on lifecycle, file, and network side effects rather than assuming rich shell-parameter visibility in all environments.",
       "meta": {
         "external_id": "AN1658",
         "mitre_platforms": [
           "iOS"
         ],
         "refs": [
-          "https://attack.mitre.org/detectionstrategies/DET0607#AN1658",
-          "https://partner.samsungknox.com/mtd"
+          "https://attack.mitre.org/detectionstrategies/DET0607#AN1658"
         ]
       },
       "uuid": "649ee05c-9f09-47fc-802a-7df2ce362563",
@@ -26477,7 +26732,7 @@
       "value": "Analytic 1587 - AN1587"
     },
     {
-      "description": "Application vetting services could look for the Android permission `android.permission.QUERY_ALL_PACKAGES`, and apply extra scrutiny to applications that request it. On iOS, application vetting services could look for usage of the private API `LSApplicationWorkspace` and apply extra scrutiny to applications that employ it.",
+      "description": "Defender correlates app attempts to enumerate or infer security/management tooling (ManagedConfiguration/MDM presence, VPN/NEFilter config, AV/EDR app presence via LaunchServices or URL-scheme probing, private APIs) with local inventory persistence and egress. Chain: probe (MDM/NE/VPN/AV presence) → burst of LS/canOpenURL/ManagedConfiguration calls → inventory cache write → small POST.",
       "meta": {
         "external_id": "AN1785",
         "mitre_platforms": [
@@ -26491,7 +26746,7 @@
       "value": "Analytic 1785 - AN1785"
     },
     {
-      "description": "Mobile security products can potentially utilize device APIs to determine if a device has been rooted or jailbroken.\nApplication vetting services could potentially determine if an application contains code designed to exploit vulnerabilities.",
+      "description": "From the defender’s perspective, this strategy correlates signals that a previously unprivileged Android app or process has gained higher privileges through exploitation rather than normal OS or MDM flows. \nObservable behaviors include: \n(1) unprivileged app processes issuing sensitive syscalls or accessing privileged device interfaces, \n(2) bursts of SELinux denials followed by an unexpected domain or permission change, \n(3) creation of new processes running with system or root UID whose lineage traces back to an app sandbox path, and \n(4) crashes or abnormal restarts of privileged system services followed shortly by a new connection or binder interaction from the same low-privileged app. The focus is on unusual privilege transitions, anomalous process ancestry, and OS security policy violations, not on specific exploit binaries or CVE signatures.",
       "meta": {
         "external_id": "AN1758",
         "mitre_platforms": [
@@ -26561,7 +26816,7 @@
       "value": "Analytic 1957 - AN1957"
     },
     {
-      "description": "Mobile security products can potentially utilize device APIs to determine if a device has been rooted or jailbroken.\nApplication vetting services could potentially determine if an application contains code designed to exploit vulnerabilities.",
+      "description": "Correlates app sandbox escape attempts via unsigned binary execution, mmap memory permission changes (RWX), and sandbox profile violations. Detection chain includes app leveraging JIT/JSC to execute shellcode or triggering kernel exploit via crafted IOKit or Mach port abuse.",
       "meta": {
         "external_id": "AN1759",
         "mitre_platforms": [
@@ -26575,7 +26830,7 @@
       "value": "Analytic 1759 - AN1759"
     },
     {
-      "description": "Application vetting services could look for `android.permission.READ_SMS` in an Android application’s manifest. Most applications do not need access to SMS messages, so extra scrutiny could be applied to those that request it. \nOn Android, the user can manage which applications have permission to access SMS messages through the device settings screen, revoking the permission if necessary.",
+      "description": "OLD: Application vetting services could look for `android.permission.READ_SMS` in an Android application’s manifest. Most applications do not need access to SMS messages, so extra scrutiny could be applied to those that request it. \nOn Android, the user can manage which applications have permission to access SMS messages through the device settings screen, revoking the permission if necessary.\n\nNEW: A defender observes an Android application requesting for `android.permission. READ_SMS` and/or ` android.permission. RECEIVE_SMS `, which may also be listed in the application's manifest file. ",
       "meta": {
         "external_id": "AN1795",
         "mitre_platforms": [
@@ -26677,7 +26932,7 @@
       "value": "Analytic 1995 - AN1995"
     },
     {
-      "description": "\nMuch of this activity will take place outside the visibility of the target organization, making detection of this behavior difficult. Detection efforts may be focused on behaviors relating to the use of exploits (i.e. [Exploit Public-Facing Application](https://attack.mitre.org/techniques/T1190), [Exploitation for Client Execution](https://attack.mitre.org/techniques/T1203), [Exploitation for Privilege Escalation](https://attack.mitre.org/techniques/T1068), [Exploitation for Defense Evasion](https://attack.mitre.org/techniques/T1211), [Exploitation for Credential Access](https://attack.mitre.org/techniques/T1212), [Exploitation of Remote Services](https://attack.mitre.org/techniques/T1210), and [Application or System Exploitation](https://attack.mitre.org/techniques/T1499/004)).",
+      "description": "\nMuch of this activity will take place outside the visibility of the target organization, making detection of this behavior difficult. Detection efforts may be focused on behaviors relating to the use of exploits (i.e. [Exploit Public-Facing Application](https://attack.mitre.org/techniques/T1190), [Exploitation for Client Execution](https://attack.mitre.org/techniques/T1203), [Exploitation for Privilege Escalation](https://attack.mitre.org/techniques/T1068), [Exploitation for Stealth](https://attack.mitre.org/techniques/T1211), [Exploitation for Credential Access](https://attack.mitre.org/techniques/T1212), [Exploitation of Remote Services](https://attack.mitre.org/techniques/T1210), and [Application or System Exploitation](https://attack.mitre.org/techniques/T1499/004)).",
       "meta": {
         "external_id": "AN1959",
         "mitre_platforms": [
@@ -26705,7 +26960,7 @@
       "value": "Analytic 1599 - AN1599"
     },
     {
-      "description": "The user can view applications that have registered accessibility services in the accessibility menu within the device settings.",
+      "description": "The defender correlates Android accessibility or UI-automation-capable behavior from an app identity with injected user-interface actions occurring on behalf of the user in another foreground application. The strongest Android evidence is accessibility-enabled or similarly privileged app behavior that triggers programmatic clicks, global actions, or text insertion into another app's active UI, especially when those actions occur without matching user touch interaction, while the injecting app is backgrounded or foreground-service-only, or when the target foreground app belongs to a sensitive category such as banking, payments, identity, communications, or enterprise access. The detection is strengthened when the injected input sequence is followed by target-app navigation, form submission, transaction progression, or network activity from the target context.",
       "meta": {
         "external_id": "AN1666",
         "mitre_platforms": [
@@ -26751,7 +27006,7 @@
       "value": "Analytic 1667 - AN1667"
     },
     {
-      "description": "Many properly configured firewalls may naturally block command and control traffic.\nApplication vetting services may provide a list of connections made or received by an application, or a list of domains contacted by the application. ",
+      "description": "The defender correlates a supervised-device or managed-app request to a legitimate web platform with a subsequent connection to a newly derived destination that is not part of the expected service interaction. Because iOS has weaker app-level telemetry, the strongest signal is a network-level sequence where a request to a known public platform is immediately followed by a connection to a different domain or IP, particularly when the device is locked, no recent user interaction occurred, and the bundle is not expected to interact with such downstream infrastructure.",
       "meta": {
         "external_id": "AN1676",
         "mitre_platforms": [
@@ -26809,7 +27064,7 @@
       "value": "Analytic 1966 - AN1966"
     },
     {
-      "description": "Mobile security products can often alert the user if their device is vulnerable to known exploits.",
+      "description": "A defender correlates navigation to external web content in a browser or embedded WebView with immediate script-heavy or exploit-preparation network activity, followed by abnormal browser/WebView process behavior, suspicious file or download artifacts, or rapid post-visit capability shifts such as new package install attempts, overlay prompts, permission requests, or outbound command traffic inconsistent with normal browsing.",
       "meta": {
         "external_id": "AN1669",
         "mitre_platforms": [
@@ -26837,7 +27092,7 @@
       "value": "Analytic 1696 - AN1696"
     },
     {
-      "description": "Application vetting services may be able to list domains and/or IP addresses that applications communicate with. \nMobile security products may provide URL inspection services that could determine if a domain being visited is malicious.\nApplication vetting services could look for indications that the application downloads and executes new code at runtime (e.g., on Android, use of `DexClassLoader`, `System.load`, or the WebView `JavaScriptInterface` capability; on iOS, use of JSPatch or similar capabilities).",
+      "description": "From the defender’s view: an app retrieves opaque code (DEX/SO/JAR/JS) over the network or IPC, writes it into an app-writable path, optionally performs verification-bypass behaviors (reflection, addJavascriptInterface exposure, or execmem friction), and then loads/executes that code via DexClassLoader/PathClassLoader, dlopen, or WebView bridge invocation within a short window. The analytic correlates Network Content → File Creation/Modification → OS API Execution (loader/syscall/SELinux friction) → Module Load (DexClassLoader/dlopen) and, for WebView paths, Application Log signals of JavaScript interface attachment.",
       "meta": {
         "external_id": "AN1677",
         "mitre_platforms": [
@@ -26851,7 +27106,7 @@
       "value": "Analytic 1677 - AN1677"
     },
     {
-      "description": "In both Android (6.0 and up) and iOS, the user can view which applications have the permission to access the device location through the device settings screen and revoke permissions as necessary. \nAndroid applications requesting the `ACCESS_COARSE_LOCATION`, `ACCESS_FINE_LOCATION`, or `ACCESS_BACKGROUND_LOCATION` permissions and iOS applications including the `NSLocationWhenInUseUsageDescription`, `NSLocationAlwaysAndWhenInUseUsageDescription`, and/or `NSLocationAlwaysUsageDescription` keys in their `Info.plist` file could be scrutinized during the application vetting process. ",
+      "description": "Defender correlates an application gaining/retaining fine or background location capability with subsequent location sensor sessions that occur while the app is backgrounded or the device is locked, followed by repeated location reads at a periodic cadence and near-term outbound connections to domains not typical for fleet navigation/MDM services, indicating covert location tracking.",
       "meta": {
         "external_id": "AN1776",
         "mitre_platforms": [
@@ -26865,7 +27120,7 @@
       "value": "Analytic 1776 - AN1776"
     },
     {
-      "description": "Many encryption mechanisms are built into standard application-accessible APIs and are therefore undetectable to the end user.",
+      "description": "The defender correlates recent access to locally collected or protected data with subsequent compression, packaging, or encryption behavior inside the same app context, followed by creation of archive-like or high-entropy output and optional near-term network transmission. The analytic prioritizes Android runtime and storage effects: application data access or sensor-derived collection, compression/encryption framework use, archive/blob creation in app-accessible storage, and background or device-locked execution inconsistent with the app’s declared function.",
       "meta": {
         "external_id": "AN1767",
         "mitre_platforms": [
@@ -26879,7 +27134,7 @@
       "value": "Analytic 1767 - AN1767"
     },
     {
-      "description": "Many encryption mechanisms are built into standard application-accessible APIs and are therefore undetectable to the end user.",
+      "description": "The defender correlates managed-app data access and lifecycle context with indirect evidence of packaging or encryption prior to outbound transfer. Because direct archive/compression visibility is generally weaker on iOS, the analytic anchors on app lifecycle state, file/output effects observable by mobile EDR where available, managed app role via MDM, and downstream network uploads that closely follow creation of new large or high-entropy local artifacts. Confidence is lower when only network effects are available.",
       "meta": {
         "external_id": "AN1768",
         "mitre_platforms": [
@@ -26921,7 +27176,7 @@
       "value": "Analytic 1786 - AN1786"
     },
     {
-      "description": "Application vetting services may be able to list domains and/or IP addresses that applications communicate with. \nMobile security products may provide URL inspection services that could determine if a domain being visited is malicious.\nApplication vetting services could look for indications that the application downloads and executes new code at runtime (e.g., on Android, use of `DexClassLoader`, `System.load`, or the WebView `JavaScriptInterface` capability; on iOS, use of JSPatch or similar capabilities).",
+      "description": "From the defender’s view: a sandboxed app retrieves code-like content (JS/Mach-O/bundles), writes it to container tmp/Caches, performs memory permission changes (RW→RX/RWX) or directly loads via dyld/dlopen from writable paths, sometimes preceded by 3rd-party hotpatch frameworks (e.g., JSPatch-like behavior) or script engine evaluation. The analytic correlates Network Content → File Creation → OS API Execution (memory permission change) → Module Load (dyld/dlopen) and/or Process Access (codesign validation touches), with optional scripting engine events.",
       "meta": {
         "external_id": "AN1678",
         "mitre_platforms": [
@@ -27006,7 +27261,7 @@
       "value": "Analytic 1796 - AN1796"
     },
     {
-      "description": "Usage of insecure or malicious third-party libraries could be detected by application vetting services. Malicious software development tools could be detected by enterprises that deploy endpoint protection software on computers that are used to develop mobile apps. Application vetting could detect the usage of insecure or malicious third-party libraries.",
+      "description": "An app or app update arrives through an expected delivery path or presents as a known legitimate package identity, but its post-install or post-update behavior materially changes in ways inconsistent with its historical role. The defender correlates package identity and install/update context, newly expanded capability state, changed runtime framework use, new sensor or storage behaviors, and new network destinations shortly after installation or update to identify likely supply-chain compromise rather than ordinary malicious sideloading or unrelated post-compromise activity.",
       "meta": {
         "external_id": "AN1697",
         "mitre_platforms": [
@@ -27079,7 +27334,7 @@
       "value": "Analytic 1689 - AN1689"
     },
     {
-      "description": "Usage of insecure or malicious third-party libraries could be detected by application vetting services. Malicious software development tools could be detected by enterprises that deploy endpoint protection software on computers that are used to develop mobile apps. Application vetting could detect the usage of insecure or malicious third-party libraries.",
+      "description": "A managed or supervised app, app update, or enterprise-distributed build retains a legitimate-seeming identity but exhibits post-delivery behavior inconsistent with its expected role, prior version, or distribution context. Because iOS exposes less direct visibility into bundled dependency tampering or component-level supply-chain insertion, the defender prioritizes supervised app inventory, signing/provisioning trust posture, entitlement and behavior drift after update, new sensor/resource use, and new downstream network effects soon after install or version change.",
       "meta": {
         "external_id": "AN1698",
         "mitre_platforms": [
@@ -27136,7 +27391,7 @@
       "value": "Analytic 1699 - AN1699"
     },
     {
-      "description": "In both Android (6.0 and up) and iOS, the user can view which applications have the permission to access the device location through the device settings screen and revoke permissions as necessary. \nAndroid applications requesting the `ACCESS_COARSE_LOCATION`, `ACCESS_FINE_LOCATION`, or `ACCESS_BACKGROUND_LOCATION` permissions and iOS applications including the `NSLocationWhenInUseUsageDescription`, `NSLocationAlwaysAndWhenInUseUsageDescription`, and/or `NSLocationAlwaysUsageDescription` keys in their `Info.plist` file could be scrutinized during the application vetting process. ",
+      "description": "Defender correlates an application’s location authorization level (When-In-Use vs Always) and entitlement posture with observed location sensor activity that occurs without proximate user interaction, including background updates, followed by periodic outbound network sessions aligned to location update timing—suggesting covert or policy-violating location tracking.",
       "meta": {
         "external_id": "AN1777",
         "mitre_platforms": [
@@ -27150,7 +27405,7 @@
       "value": "Analytic 1777 - AN1777"
     },
     {
-      "description": "An Android user can view and manage which applications hold the `SYSTEM_ALERT_WINDOW` permission through the device settings in Apps & notifications -> Special app access -> Display over other apps (the exact menu location may vary between Android versions). \nApplication vetting services can look for applications requesting the `android.permission.SYSTEM_ALERT_WINDOW` permission in the list of permissions in the app manifest. ",
+      "description": "Defender correlates an app preparing to phish (gaining overlay/notification/accessibility capability) with precise foreground targeting (reading activity in front via accessibility/focus) and then presenting a look-alike UI (overlay window or activity-on-top) immediately before local storage or small-burst egress of entered data. Chain: capability/permission → target app in foreground detected → overlay/activity-on-top or fake notification tap → local prompt input write → near-term network egress.",
       "meta": {
         "external_id": "AN1778",
         "mitre_platforms": [
@@ -27193,7 +27448,7 @@
       "value": "Analytic 1977 - AN1977"
     },
     {
-      "description": "An Android user can view and manage which applications hold the `SYSTEM_ALERT_WINDOW` permission through the device settings in Apps & notifications -> Special app access -> Display over other apps (the exact menu location may vary between Android versions). \nApplication vetting services can look for applications requesting the `android.permission.SYSTEM_ALERT_WINDOW` permission in the list of permissions in the app manifest. ",
+      "description": "Defender correlates a look-alike prompt inside an app (e.g., faux Apple ID password view, webview of brand login) with timing against scene/foreground activation, optional push notification bait, then local form cache writes and/or small egress. Chain: scene activation around sensitive UI → suspicious prompt creation (UIKit events without expected auth controller) or webview navigated to look-alike domain → local cache write → near-term egress",
       "meta": {
         "external_id": "AN1779",
         "mitre_platforms": [
@@ -27207,22 +27462,21 @@
       "value": "Analytic 1779 - AN1779"
     },
     {
-      "description": "Application vetting can detect many techniques associated with impairing device defenses.(Citation: Samsung Knox Mobile Threat Defense)\nMobile security products integrated with Samsung Knox for Mobile Threat Defense can monitor processes to see if security tools are killed or stop running.",
+      "description": "Correlates (1) application-driven modification of device security posture or monitoring capability (e.g., accessibility abuse, disabling security app components, altering monitoring configuration), (2) immediate degradation or cessation of expected telemetry sources such as mobile EDR, sensor visibility, or system monitoring, and (3) subsequent application activity continuing with reduced observability. The defender observes a causal chain where defensive visibility or enforcement is altered first, followed by continued execution under reduced monitoring conditions.",
       "meta": {
         "external_id": "AN1797",
         "mitre_platforms": [
           "Android"
         ],
         "refs": [
-          "https://attack.mitre.org/detectionstrategies/DET0687#AN1797",
-          "https://partner.samsungknox.com/mtd"
+          "https://attack.mitre.org/detectionstrategies/DET0687#AN1797"
         ]
       },
       "uuid": "e13d662d-a496-4997-b26a-39e71eb17fc2",
       "value": "Analytic 1797 - AN1797"
     },
     {
-      "description": "On Android, the user is presented with a permissions popup when an application requests access to external device storage.",
+      "description": "Defender observes an app (package/UID) issuing high-rate directory or content-index enumerations against external/shared storage or other apps’ Documents/Media providers (logcat:ContentResolver, logcat:StorageAccessFramework), followed within a short window by bulk READ handles or stat/list calls over many distinct paths (logcat:FileIO). Activity occurs without foreground UI or exceeds typical per-app baseline, indicating automated file/dir discovery rather than user-driven browsing. Correlate on package/UID/profile and time proximity.",
       "meta": {
         "external_id": "AN1788",
         "mitre_platforms": [
@@ -27264,7 +27518,7 @@
       "value": "Analytic 1978 - AN1978"
     },
     {
-      "description": "On Android, the user is presented with a permissions popup when an application requests access to external device storage.",
+      "description": "Defender observes an app (bundle/process) performing large-scope directory listings or metadata reads via FileProvider/NSFileManager against user-visible containers (Files app locations, iCloud/On-My-iPhone) or external providers, with rapid traversal across many folders while the app is backgrounded or without corresponding UI activity (unifiedlogs:FileProvider, unifiedlogs:FileIO). Optional signals include Photo library or document picker bulk enumeration absent recent user gesture. Correlate on bundle/process/profile and path volume within a bounded window.",
       "meta": {
         "external_id": "AN1789",
         "mitre_platforms": [
@@ -27392,5 +27646,5 @@
       "value": "Analytic 1999 - AN1999"
     }
   ],
-  "version": 1
+  "version": 2
 }

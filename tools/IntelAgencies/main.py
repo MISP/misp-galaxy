@@ -5,7 +5,10 @@ import uuid
 import json
 
 from bs4 import BeautifulSoup
-import pycountry
+try:
+    import pycountry
+except ModuleNotFoundError:
+    pycountry = None
 
 CLUSTER_PATH = '../../clusters'
 GALAXY_PATH = '../../galaxies'
@@ -84,14 +87,17 @@ def get_agencies_from_country(heading, current_country):
     for content in contents:
         agency_names = get_notes_on_lower_level(content)
         for name, links, description, synonyms in agency_names:
-            country_code = pycountry.countries.get(name=current_country)
+            country_code = None
 
             # Set country
             country_name = current_country
 
-            if country_code:
-                country_code = country_code.alpha_2
-            else:
+            if pycountry is not None:
+                country = pycountry.countries.get(name=current_country)
+                if country:
+                    country_code = country.alpha_2
+
+            if country_code is None:
                 country_code = COUNTRY_CODES.get(current_country)
 
             if current_country in ["European Union", "Shanghai Cooperation Organisation"]: # Not a country
@@ -128,7 +134,8 @@ if __name__ == '__main__':
     else:
         raise ValueError("Error: No content found: ", content)
 
-    authors = [x['name'] for x in wiki.get_authors(page_title)]
+    authors_raw = wiki.get_authors(page_title) or []
+    authors = [x.get('name') for x in authors_raw if x.get('name')]
     # Write to files
     galaxy = Galaxy(
         description="List of intelligence agencies",

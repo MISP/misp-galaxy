@@ -28,6 +28,14 @@ Category: *actor* - source: *https://apt.360.net/aptlist* - total: *42* elements
 
 [[HTML](https://www.misp-galaxy.org/360net)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/360net.json)]
 
+## Agent Threat Rules
+
+[Agent Threat Rules](https://www.misp-galaxy.org/agent-threat-rules) - Open detection rules for AI agent threats — prompt injection, tool poisoning, MCP server attacks, skill compromise. Each cluster value is one ATR rule with category, severity, and CVE/OWASP/MITRE ATLAS references where mapped.
+
+Category: *agent-threat-rules* - source: *https://github.com/Agent-Threat-Rule/agent-threat-rules* - total: *336* elements
+
+[[HTML](https://www.misp-galaxy.org/agent-threat-rules)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/agent-threat-rules.json)]
+
 ## Ammunitions
 
 [Ammunitions](https://www.misp-galaxy.org/ammunitions) - Common ammunitions galaxy
@@ -40,7 +48,7 @@ Category: *firearm* - source: *https://ammo.com/* - total: *409* elements
 
 [Android](https://www.misp-galaxy.org/android) - Android malware galaxy based on multiple open sources.
 
-Category: *tool* - source: *Open Sources* - total: *435* elements
+Category: *tool* - source: *Open Sources* - total: *449* elements
 
 [[HTML](https://www.misp-galaxy.org/android)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/android.json)]
 
@@ -196,6 +204,14 @@ Category: *actor* - source: *MISP Project* - total: *4* elements
 
 [[HTML](https://www.misp-galaxy.org/entity)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/entity.json)]
 
+## Synthetic Exercise World
+
+[Synthetic Exercise World](https://www.misp-galaxy.org/exercise-world) - Self-contained fictional world dataset for cyber exercises and standards documents.
+
+Category: *tool* - source: *https://www.misp-project.org/galaxy.html* - total: *60* elements
+
+[[HTML](https://www.misp-galaxy.org/exercise-world)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/exercise-world.json)]
+
 ## Exploit-Kit
 
 [Exploit-Kit](https://www.misp-galaxy.org/exploit-kit) - Exploit-Kit is an enumeration of some exploitation kits used by adversaries. The list includes document, browser and router exploit kits.It's not meant to be totally exhaustive but aim at covering the most seen in the past 5 years
@@ -296,7 +312,7 @@ Category: *misinformation-pattern* - source: *https://github.com/misinfosecproje
 
 [Analytics](https://www.misp-galaxy.org/mitre-analytic) - ATT&CK Analytics
 
-Category: *attack-pattern* - source: *https://attack.mitre.org/analytics/* - total: *1950* elements
+Category: *attack-pattern* - source: *https://attack.mitre.org/analytics/* - total: *1969* elements
 
 [[HTML](https://www.misp-galaxy.org/mitre-analytic)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-analytic.json)]
 
@@ -320,7 +336,7 @@ Category: *course-of-action* - source: *https://github.com/mitre-atlas/atlas-nav
 
 [Attack Pattern](https://www.misp-galaxy.org/mitre-attack-pattern) - ATT&CK tactic
 
-Category: *attack-pattern* - source: *https://github.com/mitre/cti* - total: *1242* elements
+Category: *attack-pattern* - source: *https://github.com/mitre/cti* - total: *1266* elements
 
 [[HTML](https://www.misp-galaxy.org/mitre-attack-pattern)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-attack-pattern.json)]
 
@@ -344,7 +360,7 @@ Category: *d3fend* - source: *https://d3fend.mitre.org/* - total: *171* elements
 
 [mitre-data-component](https://www.misp-galaxy.org/mitre-data-component) - Data components are parts of data sources. 
 
-Category: *data-component* - source: *https://github.com/mitre/cti* - total: *117* elements
+Category: *data-component* - source: *https://github.com/mitre/cti* - total: *118* elements
 
 [[HTML](https://www.misp-galaxy.org/mitre-data-component)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-data-component.json)]
 
@@ -360,7 +376,7 @@ Category: *data-source* - source: *https://github.com/mitre/cti* - total: *40* e
 
 [Detection Strategies](https://www.misp-galaxy.org/mitre-detection-strategy) - ATT&CK Detection Strategies
 
-Category: *attack-pattern* - source: *https://attack.mitre.org/detectionstrategies/* - total: *815* elements
+Category: *attack-pattern* - source: *https://attack.mitre.org/detectionstrategies/* - total: *823* elements
 
 [[HTML](https://www.misp-galaxy.org/mitre-detection-strategy)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-detection-strategy.json)]
 
@@ -432,7 +448,7 @@ Category: *attack-pattern* - source: *https://collaborate.mitre.org/attackics/in
 
 [Intrusion Set](https://www.misp-galaxy.org/mitre-intrusion-set) - Name of ATT&CK Group
 
-Category: *actor* - source: *https://github.com/mitre/cti* - total: *189* elements
+Category: *actor* - source: *https://github.com/mitre/cti* - total: *191* elements
 
 [[HTML](https://www.misp-galaxy.org/mitre-intrusion-set)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-intrusion-set.json)]
 
@@ -440,7 +456,7 @@ Category: *actor* - source: *https://github.com/mitre/cti* - total: *189* elemen
 
 [Malware](https://www.misp-galaxy.org/mitre-malware) - Name of ATT&CK software
 
-Category: *tool* - source: *https://github.com/mitre/cti* - total: *815* elements
+Category: *tool* - source: *https://github.com/mitre/cti* - total: *850* elements
 
 [[HTML](https://www.misp-galaxy.org/mitre-malware)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-malware.json)]
 
@@ -448,7 +464,7 @@ Category: *tool* - source: *https://github.com/mitre/cti* - total: *815* element
 
 [mitre-tool](https://www.misp-galaxy.org/mitre-tool) - Name of ATT&CK software
 
-Category: *tool* - source: *https://github.com/mitre/cti* - total: *93* elements
+Category: *tool* - source: *https://github.com/mitre/cti* - total: *97* elements
 
 [[HTML](https://www.misp-galaxy.org/mitre-tool)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-tool.json)]
 
@@ -568,7 +584,7 @@ Category: *actor* - source: *MISP Project* - total: *126* elements
 
 [Ransomware](https://www.misp-galaxy.org/ransomware) - Ransomware galaxy based on different sources and maintained by the MISP Project.
 
-Category: *tool* - source: *Various* - total: *2100* elements
+Category: *tool* - source: *Various* - total: *2117* elements
 
 [[HTML](https://www.misp-galaxy.org/ransomware)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/ransomware.json)]
 
@@ -592,7 +608,7 @@ Category: *location* - source: *https://unstats.un.org/unsd/methodology/m49/over
 
 [RMM tools](https://www.misp-galaxy.org/rmm-tool) - Remote monitoring and management tools listed by LOLRMM.
 
-Category: *tool* - source: *https://lolrmm.io/* - total: *294* elements
+Category: *tool* - source: *https://lolrmm.io/* - total: *295* elements
 
 [[HTML](https://www.misp-galaxy.org/rmm-tool)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/rmm-tool.json)]
 
@@ -672,7 +688,7 @@ Category: *sector* - source: *CERT-EU* - total: *118* elements
 
 [Sigma-Rules](https://www.misp-galaxy.org/sigma-rules) - MISP galaxy cluster based on Sigma Rules.
 
-Category: *rules* - source: *https://github.com/jstnk9/MISP/tree/main/misp-galaxy/sigma* - total: *3110* elements
+Category: *rules* - source: *https://github.com/jstnk9/MISP/tree/main/misp-galaxy/sigma* - total: *3132* elements
 
 [[HTML](https://www.misp-galaxy.org/sigma-rules)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/sigma-rules.json)]
 
@@ -792,7 +808,7 @@ Category: *threat-actor* - source: *https://www.publicsafety.gc.ca/cnt/_xml/lstd
 
 [Threat Actor](https://www.misp-galaxy.org/threat-actor) - Known or estimated adversary groups targeting organizations and employees. Adversary groups are regularly confused with their initial operation or campaign. threat-actor-classification meta can be used to clarify the understanding of the threat-actor if also considered as operation, campaign or activity group.
 
-Category: *actor* - source: *MISP Project* - total: *979* elements
+Category: *actor* - source: *MISP Project* - total: *994* elements
 
 [[HTML](https://www.misp-galaxy.org/threat-actor)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/threat-actor.json)]
 
@@ -883,6 +899,14 @@ Category: *virus* - source: *https://www.culturecollections.org.uk* - total: *66
 Category: *framework* - source: *https://github.com/vz-risk/veris* - total: *2207* elements
 
 [[HTML](https://www.misp-galaxy.org/veris-framework)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/veris-framework.json)]
+
+## Wiper
+
+[Wiper](https://www.misp-galaxy.org/wiper) - Wiper malware is an enumeration of destructive malware families designed to delete, overwrite, or otherwise irreversibly damage files and systems on compromised infrastructure.
+
+Category: *tool* - source: *MISP Project* - total: *25* elements
+
+[[HTML](https://www.misp-galaxy.org/wiper)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/wiper.json)]
 
 
 # Online documentation

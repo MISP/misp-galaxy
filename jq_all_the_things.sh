@@ -2,8 +2,10 @@
 
 # Seeds sponge, from moreutils
 
-#Validate all Jsons first
-for dir in `find . -name "*.json"`
+# Validate all JSONs first in cluster and galaxy
+
+folders=( clusters/*.json galaxy/*.json )
+for dir in "${folders[@]}"
 do
   echo validating ${dir}
   # python3 -c "import json; f_in = open('${dir}'); data = json.load(f_in); f_in.close(); f_out = open('${dir}', 'w'); json.dump(data, f_out, indent=2, sort_keys=True, ensure_ascii=False); f_out.close();"

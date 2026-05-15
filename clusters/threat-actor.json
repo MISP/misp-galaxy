@@ -20646,6 +20646,165 @@
       },
       "uuid": "f5d231d4-8590-4770-b511-e7a44dce59f7",
       "value": "SHADOW-AETHER-015"
+    },
+    {
+      "description": "GopherWhisper is a China-aligned APT that routes C2 traffic through legitimate enterprise platforms like Slack, Discord, and Microsoft 365 Outlook to evade detection. Its toolkit includes the LaxGopher backdoor for Slack, RatGopher for Discord, and CompactGopher for data exfiltration via file.io. The group employs DLL side-loading via JabGopher and uses raw OpenSSL socket C2 on port 443 with the SSLORDoor backdoor. GopherWhisper has targeted Mongolian government entities and is assessed to have additional unidentified victims in Central Asia.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://web-assets.esetstatic.com/wls/en/papers/white-papers/gopherwhisper-burrow-full-malware.pdf"
+        ]
+      },
+      "uuid": "d35a871f-402b-4a0e-a702-04e886abe883",
+      "value": "GopherWhisper"
+    },
+    {
+      "description": "HexagonalRodent targets Web3 developers to steal crypto assets, employing social engineering tactics such as fake job offers. They utilize malware like BeaverTail and OtterCookie, both NodeJS-based toolkits, and InvisibleFerret, a Python-based RAT, to execute their attacks. Their TTPs include backdooring skills assessments via VSCode's tasks.json feature and conducting opportunistic exfiltration of credentials and crypto wallets. The group has also engaged in a supply chain attack, compromising the 'fast-draft' VSX extension to install malware.",
+      "meta": {
+        "refs": [
+          "https://expel.com/blog/inside-lazarus-how-north-korea-uses-ai-to-industrialize-attacks-on-developers/"
+        ]
+      },
+      "uuid": "75714cef-0265-4944-84c6-f66aec01994d",
+      "value": "HexagonalRodent"
+    },
+    {
+      "description": "UNC6692 is a threat actor that employs social engineering tactics, such as impersonating IT helpdesk personnel, to gain initial access to victim environments. They utilize a custom modular malware suite, including components like SNOWBELT, SNOWGLAZE, and SNOWBASIN, to facilitate deep network penetration and lateral movement. After extracting credentials from the LSASS process memory, they leverage Pass-The-Hash techniques to authenticate to domain controllers and exfiltrate sensitive data using LimeWire. The campaign highlights the systematic abuse of legitimate cloud services for payload delivery and command-and-control infrastructure.",
+      "meta": {
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/unc6692-social-engineering-custom-malware/"
+        ]
+      },
+      "uuid": "317ecce2-5e79-4453-b6d3-727d7fe8eb4f",
+      "value": "UNC6692"
+    },
+    {
+      "description": "NICKEL ALLEY is a North Korean threat group that targets technology professionals through fake job opportunities, employing social engineering tactics such as creating fraudulent LinkedIn pages and GitHub repositories for malware delivery. They utilize the ClickFix tactic to deploy the PyLangGhost RAT, which supports file exfiltration and system profiling, particularly focusing on Chrome cryptocurrency wallet data. The group has also leveraged Visual Studio Code tasks to execute commands for malware retrieval based on the victim's operating system. Their operations indicate a dual focus on cryptocurrency theft and potential supply chain compromise or corporate espionage.",
+      "meta": {
+        "country": "KP",
+        "refs": [
+          "https://www.sophos.com/en-us/blog/nickel-alley-strategy-fake-it-til-you-make-it"
+        ]
+      },
+      "uuid": "2a105c46-90b1-4cff-9f66-464f8c66c22f",
+      "value": "Nickel Alley"
+    },
+    {
+      "description": "UAT-8302 is a sophisticated China-nexus APT group targeting government entities in South America and southeastern Europe, deploying custom-made malware such as NetDraft, CloudSorcerer version 3, and VSHELL. They utilize tools like SNOWLIGHT and SNOWRUST for initial access and reconnaissance, employing techniques such as PowerShell scripts and SMB share discovery. UAT-8302 also establishes backdoor access through proxy servers and uses tools like Stowaway for tunneling traffic. Their operations indicate a close relationship with other known China-nexus threat actors, leveraging shared malware families and TTPs.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://blog.talosintelligence.com/uat-8302/"
+        ]
+      },
+      "uuid": "34f06d4a-8497-40ab-8614-bba6fd4754a3",
+      "value": "UAT-8302"
+    },
+    {
+      "description": "Earth Naga is an APT group that has persistently targeted high-value organizations, including government agencies, telecommunications, and military-related manufacturers, primarily in Taiwan and the broader APAC region. They have been linked to the use of Draculoader and ShadowPad C&C infrastructure, demonstrating sophisticated TTPs such as establishing SSH connections through compromised mail servers. Earth Naga has collaborated with Earth Estries, sharing access to facilitate continued exploitation, complicating detection and attribution efforts. Their operations reflect a growing interest in global intelligence collection, extending to NATO member countries and Latin America.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://www.trendmicro.com/en_us/research/25/j/premier-pass-as-a-service.html"
+        ]
+      },
+      "uuid": "7461ca39-3331-4b67-b4f8-a88de1c46768",
+      "value": "Earth Naga"
+    },
+    {
+      "description": "Lamashtu is a financially motivated data-theft and extortion group that emerged in mid-April 2026, operating a Tor-hosted leak site (Lamashtu[.]Blog) with countdown timers, structured Breach Impact Reports, and proof-of-life thumbnails to pressure victims. The group has claimed 17+ victims across France, Romania, Thailand, Malaysia, Egypt, and the UAE within its first weeks of activity, targeting energy, pharmaceutical, retail, hospitality, and film sectors, with confirmed exfiltration totaling 760+ GB.",
+      "meta": {
+        "refs": [
+          "https://redpiranha.net/news/threat-intelligence-report-april-21-april-27-2026"
+        ]
+      },
+      "uuid": "480b325a-7a08-44ae-8690-1ba5eaf9c899",
+      "value": "Lamashtu"
+    },
+    {
+      "description": "NyxarGroup is a threat actor involved in a coordinated data brokerage ecosystem across Latin America, primarily targeting government infrastructure. They have published high volumes of data, including 110,000 records from Chile's Servicio Civil platform and 250GB from the Ley del Lobby platform, which tracks lobbying activities. The data exfiltrated includes limited fields but provides a directory of Chilean government employees, enhancing the visibility of the public sector workforce. NyxarGroup's activities indicate a focus on exploiting government transparency and training systems for data leaks.",
+      "meta": {
+        "refs": [
+          "https://darkwebinformer.com/alleged-breach-of-chiles-servicio-civil-platform-exposes-110k-public-servant-records-with-full-names-and-user-ids/",
+          "https://darkwebinformer.com/alleged-breach-of-chiles-ley-del-lobby-platform-exposes-250gb-of-government-lobbying-records-spanning-2018-to-2026/"
+        ]
+      },
+      "uuid": "0c78182d-bc4b-404f-aacc-40538252b58c",
+      "value": "NyxarGroup"
+    },
+    {
+      "description": "UNC6748 targets users in Saudi Arabia through a fake Snapchat website, employing a backdoor known as GHOSTKNIFE for data exfiltration. Their exploitation process initially featured basic obfuscation, which evolved to include anti-debugging measures. The actor primarily leveraged CVE-2025-31277 and CVE-2026-20700 for RCE exploits, but exhibited inconsistencies in exploit support for different iOS versions. Additionally, UNC6748's delivery mechanisms incorporated session storage checks to manage infection attempts.",
+      "meta": {
+        "country": "RU",
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/darksword-ios-exploit-chain/"
+        ]
+      },
+      "uuid": "df383083-f43a-4bf8-9757-ce2bf1def292",
+      "value": "UNC6748"
+    },
+    {
+      "description": "FlowerStorm is a phishing-as-a-service platform that mimics legitimate services to bypass multi-factor authentication structure. The majority of its targets are located in North America and Europe, with a significant focus on organizations in the United States. FlowerStorm's operational mistakes have led to vulnerabilities that can be exploited for disruption and analysis.",
+      "meta": {
+        "refs": [
+          "https://news.sophos.com/en-us/2024/12/19/phishing-platform-rockstar-2fa-trips-and-flowerstorm-picks-up-the-pieces/"
+        ]
+      },
+      "uuid": "05cf269a-1731-45a6-bcd3-eff1afcca2bb",
+      "value": "FlowerStorm"
+    },
+    {
+      "description": "Mr_Rot13 is a stable hacking group identified through a PHP backdoor and a Downloader domain linked to a C2 infrastructure active since 2020. They utilize the Rot13 algorithm for obfuscation and have demonstrated a low detection rate across security products, indicating advanced operational security. Their activities include exploiting CVE-2026-41940 to deliver malicious payloads and maintaining covert communication via Telegram. The group has shown a particular focus on WordPress as a target, with ongoing operations that suggest a sophisticated threat actor rather than opportunistic attackers.",
+      "meta": {
+        "refs": [
+          "https://blog.xlab.qianxin.com/mr_rot13-the-elusive-6-year-hacker-group-weaponizing-critical-cpanel-flaws-for-backdoor-deployment/"
+        ]
+      },
+      "uuid": "712d2b58-5e2e-4106-b5aa-65c5b7d99e44",
+      "value": "Mr_Rot13"
+    },
+    {
+      "description": "SHADOW-EARTH-053 is a China-aligned threat group exploiting unpatched Microsoft Exchange Server vulnerabilities, specifically CVE-2021-26855, to conduct cyberespionage against government and defense-linked targets across Asia and Europe. The group primarily deploys ShadowPad malware, utilizing techniques such as credential dumping, tunneling tools, and lateral movement via WMIC. They have also been observed installing web shells for persistence and leveraging a custom ExchangeExport tool to extract high-value mailbox contents. Additionally, low-confidence associations with Noodle RAT and CVE-2025-55182 have been noted in their operations.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://www.trendmicro.com/en_us/research/26/d/inside-shadow-earth-053.html"
+        ]
+      },
+      "uuid": "a2553b72-e87f-40c6-afe2-04df4cf3e12f",
+      "value": "Shadow-Earth-053"
+    },
+    {
+      "description": "Hive0163 is a financially motivated ransomware group responsible for deploying Interlock ransomware, utilizing ClickFix social engineering for initial access. They employ the AI-generated PowerShell backdoor Slopoly for persistent command-and-control access, which checks in with attacker infrastructure every 50 seconds and transmits telemetry every 30 seconds. The group leverages AzCopy for bulk data exfiltration to Azure blob storage before executing ransomware, employing a five-stage attack chain. Their operations are characterized by the use of initial access brokers and a variety of custom backdoors for long-term access and data exfiltration.",
+      "meta": {
+        "refs": [
+          "https://www.ibm.com/think/x-force/slopoly-start-ai-enhanced-ransomware-attacks"
+        ]
+      },
+      "uuid": "85652df8-67e5-4c25-baad-147bd1eb2d80",
+      "value": "Hive0163"
+    },
+    {
+      "description": "The threat actor lulzintel has claimed responsibility for multiple data breaches, including those of vegehome.pl, Almaex, Smaregi, and Kin Teck Tong, exposing sensitive information of over 400,000 individuals combined. The breaches involved the release of customer and patient records, including personal details and medical histories.Sample data has been provided to demonstrate the validity of the claims.",
+      "meta": {
+        "refs": [
+          "https://darkwebinformer.com/singapore-traditional-chinese-medicine-clinic-kin-teck-tong-allegedly-suffers-data-breach-exposing-150-000-patient-records/",
+          "https://darkwebinformer.com/almaex-iranian-cryptocurrency-exchange-breach-allegedly-exposes-over-50-000-user-records/",
+          "https://darkwebinformer.com/polish-eco-friendly-retailer-vegehome-suffers-data-breach-exposing-100k-customers/"
+        ]
+      },
+      "uuid": "7e039dd6-e2cd-4fab-9be9-85d6a5ea1eb3",
+      "value": "LulzIntel"
+    },
+    {
+      "description": "Storm-2561 is a cybercriminal threat actor known for a credential theft campaign that employs SEO poisoning to distribute fake VPN clients. The campaign redirects users to malicious ZIP files containing digitally signed trojans that harvest VPN credentials, leveraging user trust in search engine results. The malicious components are signed by “Taiyuan Lihua Near Information Technology Co., Ltd.” and were hosted on GitHub repositories that have since been taken down. This operation exhibits characteristics consistent with financially motivated cybercrime.",
+      "meta": {
+        "refs": [
+          "https://www.microsoft.com/en-us/security/blog/2026/03/12/storm-2561-uses-seo-poisoning-to-distribute-fake-vpn-clients-for-credential-theft/"
+        ]
+      },
+      "uuid": "7ff63e0c-2345-4282-b4d7-0e5dc49dfc60",
+      "value": "Storm-2561"
     }
   ],
   "version": 341
