@@ -104,7 +104,7 @@ Category: *user-tie* - source: *https://www.cisotradecraft.com/bitns* - total: *
 
 [Botnet](https://www.misp-galaxy.org/botnet) - Botnet galaxy.
 
-Category: *tool* - source: *MISP Project* - total: *146* elements
+Category: *tool* - source: *MISP Project* - total: *147* elements
 
 [[HTML](https://www.misp-galaxy.org/botnet)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/botnet.json)]
 
