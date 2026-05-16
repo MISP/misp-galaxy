@@ -557,7 +557,7 @@ Category: *meta* - source: *Project documentation* - total: *8* elements
 
 ## SCOR Exposure Domain
 
-[SCOR Exposure Domain](https://www.misp-galaxy.org/scor-exposure-domain) - Five exposure domains that classify how an event reaches the platform: Kinetic, Non-kinetic, Electronic Warfare (EW), Cyber Warfare, and Other (environmental). Applied orthogonally to the SCOR five-layer schema.
+[SCOR Exposure Domain](https://www.misp-galaxy.org/scor-exposure-domain) - Five exposure domains that classify how an event reaches the platform: Kinetic, Non-kinetic, Electronic Warfare (EW), Cyber Warfare, and Other (environmental). Applied orthogonally to the SCOR five-layer schema (PCE, SEG, SVC, AST, AN).
 
 Category: *exposure-domain* - source: *Project documentation* - total: *5* elements
 
@@ -565,7 +565,7 @@ Category: *exposure-domain* - source: *Project documentation* - total: *5* eleme
 
 ## SCOR Incidents
 
-[SCOR Incidents](https://www.misp-galaxy.org/scor-incidents) - Analyst-centric, visual-driven catalog of worked-example cross-domain incidents. Each entry carries an exposure-domain tag plus SCOR five-layer tags so analysts can filter by attack mode and pivot across environment, segment, service, asset, and analytic dimensions.
+[SCOR Incidents](https://www.misp-galaxy.org/scor-incidents) - Worked-example incident catalog used to seed an analyst-centric, visual-driven view of cross-domain events. Each incident carries an exposure-domain tag plus SCOR five-layer tags (PCE, SEG, SVC, AST, AN) so analysts can filter by attack mode and pivot across environment, segment, service, asset, and analytic dimensions.
 
 Category: *incident* - source: *Open sources* - total: *11* elements
 
