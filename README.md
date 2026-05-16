@@ -551,7 +551,7 @@ Category: *rsit* - source: *https://github.com/enisaeu/Reference-Security-Incide
 
 [SCOR - About](https://www.misp-galaxy.org/scor-about) - Overview entries to explain the SCOR namespace inside MISP.
 
-Category: *meta* - source: *Project documentation* - total: *4* elements
+Category: *meta* - source: *Project documentation* - total: *7* elements
 
 [[HTML](https://www.misp-galaxy.org/scor-about)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/scor-about.json)]
 
