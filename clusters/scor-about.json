@@ -10,27 +10,120 @@
   "uuid": "6f9f2d21-0ab0-4a7e-9b8c-bb0d2a7a0002",
   "values": [
     {
-      "description": "SCOR stands for Space, Cybersecurity, Operations, and Resilience. It is the shared namespace used to publish space security galaxies and clusters such as METEORSTORM, SPARTA, and SPACE-SHIELD elements.",
+      "description": "SCOR (Space, Cybersecurity, Operations, and Resilience) is a taxonomic and ontological namespace that classifies converged-space-systems intelligence along five orthogonal layers: environment (PCE), segment (SEG), service plane (SVC), asset class (AST), and analytic dimension (AN). A single cluster value carries concurrent tags across layers, so an incident is reachable from environment-, segment-, service-, asset-, or indicator-typed pivots in MISP and Maltego.",
       "meta": {
         "keywords": [
           "space",
-          "security",
-          "galaxy",
-          "frameworks"
+          "cybersecurity",
+          "operations",
+          "resilience",
+          "taxonomy",
+          "ontology",
+          "environment",
+          "segment",
+          "service",
+          "asset",
+          "analytic"
         ]
       },
       "uuid": "a7f8f3a2-8a73-489f-9c5b-000000000001",
       "value": "What is SCOR"
     },
     {
-      "description": "PCE - Terrestrial, Aerial, Orbital, Deep Space. SEG - Ground, User, Launch, Space, Deep Space. SVC - Control, Data, Hybrid. AST - Hardware, Firmware, Software, Data, Signal, Hybrid. AN - IOC, IOA, Threat, Detection, Resilience.",
+      "description": "SCOR equips Space, Cybersecurity, Operations, and Resilience Platform Professionals with a five-layer classification model for confirmed and modeled indicators of compromise, indicators of attack, attack paths, threats, detection signatures, and resilience measures. The model covers environments outside IT-centric frameworks (aquatic, orbital, deep space), a ten-segment range from user to deep space (user, ground, launch, link, low altitude, high altitude, near space, aquatic, space, deep space), explicit control-plane / data-plane / hybrid service separation, and assets that include signals and firmware alongside software, hardware, data, and hybrid. UUIDs are stable across versions so tags persist through content evolution.",
       "meta": {
+        "audience": [
+          "Space Platform Professionals",
+          "Cybersecurity Platform Professionals",
+          "Operations Platform Professionals",
+          "Resilience Platform Professionals"
+        ],
+        "view": [
+          "taxonomic",
+          "ontological"
+        ]
+      },
+      "uuid": "a7f8f3a2-8a73-489f-9c5b-000000000005",
+      "value": "Mission"
+    },
+    {
+      "description": "Technical capabilities that distinguish SCOR from IT-centric taxonomies such as ATT&CK Enterprise/ICS: multi-axis tagging on a single cluster value, environment and segment coverage for aerial, aquatic, orbital, and deep-space domains, service-plane separation for TT&C versus mission payload events, an explicit modeled-IoC class for low-frequency high-impact events, and asset categories that include RF/optical/acoustic signals and firmware. Pairs with the MISP and Maltego SCOR workbench for graph analysis over the five-layer tag schema.",
+      "meta": {
+        "capabilities": [
+          "Multi-axis tag schema (PCE / SEG / SVC / AST / AN) attaches concurrently to a single cluster value, enabling N-dimensional pivots in MISP and Maltego",
+          "Environment and segment coverage for aquatic (subsea cables, undersea autonomy), low/high altitude (UAS, near-space platforms), orbital, and deep space - layers absent or shallow in ATT&CK Enterprise and ATT&CK ICS",
+          "Service-plane separation distinguishes telemetry, tracking, and command (control plane) from mission payload data (data plane) and bus-bridged events (hybrid)",
+          "Modeled IoC class alongside confirmed IoC supports hypothesis tracking for low-frequency high-impact events (ASAT debris cascades, coordinated subsea cuts, sustained GNSS denial) where observable telemetry is sparse",
+          "Asset taxonomy explicitly covers signals (RF, optical, acoustic) and firmware, supporting incidents whose primary artifacts are not file-based",
+          "Stable UUIDs and version semantics preserve tag identity across releases, so long-running graph queries remain valid as content evolves",
+          "Aligned to the MISP and Maltego SCOR workbench for tag-driven pivots across environment, segment, service, asset, and analytic dimensions"
+        ]
+      },
+      "uuid": "a7f8f3a2-8a73-489f-9c5b-000000000006",
+      "value": "Capabilities"
+    },
+    {
+      "description": "Worked examples of cross-domain incidents that SCOR classifies coherently where IT-only taxonomies cannot. Each example lists the cluster-value tag set across the five SCOR layers, illustrating how environment, segment, service, asset, and analytic dimensions combine on real events.",
+      "meta": {
+        "examples": [
+          "UAS and counter-UAS engagements: Gatwick Airport closures during sustained drone incursions (December 2018); UAS and cruise-missile strikes on Abqaiq and Khurais Saudi Aramco facilities (September 2019); one-way attack-drone strike on Tower 22 (January 2024); persistent UAS incursions reported over US installations including Langley AFB (December 2023). SCOR tags: PCE=Aerial, SEG=Low Altitude, SVC=Control Plane, AST=Hardware+Signals, AN=IOC+IOA+Threat+Resilience",
+          "Subsea fibre disruption: Matsu Islands cable severance attributed to vessel anchor activity (February 2023); Red Sea damage to AAE-1, EIG, Seacom, and TGN cables during regional escalation (February 2024); Baltic Sea severance of BCS East-West and C-Lion1 coincident with Yi Peng 3 transit (November 2024); Estlink 2 power and communications cable incident linked to Eagle S (December 2024). SCOR tags: PCE=Aquatic, SEG=Link, SVC=Data Plane+Hybrid, AST=Hardware+Data, AN=IOC+IOA+Threat+Resilience",
+          "Space cyber and signals events: AcidRain wiper against Viasat KA-SAT modems on the morning of the 2022 invasion of Ukraine, with collateral loss of wind-turbine telemetry across Europe (February 2022); persistent GNSS spoofing and jamming observed in the Black Sea, Eastern Mediterranean, and Strait of Hormuz; Cosmos 1408 ASAT debris-generating event (November 2021). SCOR tags: PCE=Orbital+Terrestrial, SEG=Ground+Link+Space, SVC=Control Plane+Data Plane, AST=Software+Firmware+Signals, AN=IOC+IOA+Threat+Detection+Resilience"
+        ]
+      },
+      "uuid": "a7f8f3a2-8a73-489f-9c5b-000000000007",
+      "value": "Incident scope"
+    },
+    {
+      "description": "PCE (environment) - Terrestrial, Aerial, Aquatic, Orbital, Deep Space. SEG (segment) - User, Ground, Launch, Link, Low Altitude, High Altitude, Near Space, Aquatic, Space, Deep Space. SVC (service) - Control Plane, Data Plane, Hybrid. AST (asset) - Software, Firmware, Hardware, Data, Signals, Hybrid. AN (analytic) - IOC (confirmed and modeled), IOA, Attack Path, Threat, Detection, Resilience.",
+      "meta": {
+        "an_dimensions": [
+          "IOC (confirmed)",
+          "IOC (modeled)",
+          "IOA",
+          "Attack Path",
+          "Threat",
+          "Detection",
+          "Resilience"
+        ],
+        "assets": [
+          "Software",
+          "Firmware",
+          "Hardware",
+          "Data",
+          "Signals",
+          "Hybrid"
+        ],
+        "environments": [
+          "Terrestrial",
+          "Aerial",
+          "Aquatic",
+          "Orbital",
+          "Deep Space"
+        ],
         "links": [
           "PCE",
           "SEG",
           "SVC",
           "AST",
           "AN"
+        ],
+        "segments": [
+          "User",
+          "Ground",
+          "Launch",
+          "Link",
+          "Low Altitude",
+          "High Altitude",
+          "Near Space",
+          "Aquatic",
+          "Space",
+          "Deep Space"
+        ],
+        "services": [
+          "Control Plane",
+          "Data Plane",
+          "Hybrid"
         ]
       },
       "uuid": "a7f8f3a2-8a73-489f-9c5b-000000000002",
@@ -53,5 +146,5 @@
       "value": "Contributing"
     }
   ],
-  "version": 1
+  "version": 4
 }
