@@ -1,0 +1,400 @@
+{
+  "authors": [
+    "H4CK32N4U75®"
+  ],
+  "category": "incident",
+  "description": "Worked-example incident catalog used to seed an analyst-centric, visual-driven view of cross-domain events. Each incident carries an exposure-domain tag plus SCOR five-layer tags (PCE, SEG, SVC, AST, AN) so analysts can filter by attack mode and pivot across environment, segment, service, asset, and analytic dimensions.",
+  "name": "SCOR Incidents",
+  "source": "Open sources",
+  "type": "scor-incidents",
+  "uuid": "6f4e2d9b-3c5a-4d7f-8b2c-1d3e4f5a6b02",
+  "values": [
+    {
+      "description": "Sustained UAS incursions over Gatwick Airport caused runway closures and disrupted operations across multiple days, illustrating low-altitude aerial threats to ground infrastructure without confirmed attribution.",
+      "meta": {
+        "an": [
+          "IOC (confirmed)",
+          "IOA",
+          "Threat",
+          "Resilience"
+        ],
+        "ast": [
+          "Hardware",
+          "Signals"
+        ],
+        "date": "2018-12",
+        "exposure_domain": [
+          "Kinetic"
+        ],
+        "pce": [
+          "Aerial"
+        ],
+        "refs": [
+          "https://en.wikipedia.org/wiki/Gatwick_Airport_drone_incident"
+        ],
+        "seg": [
+          "Low Altitude",
+          "Ground"
+        ],
+        "svc": [
+          "Control Plane"
+        ]
+      },
+      "uuid": "6f4e2d9b-3c5a-4d7f-8b2c-000000000001",
+      "value": "Gatwick UAS Incursions"
+    },
+    {
+      "description": "Coordinated UAS and cruise-missile strikes on Saudi Aramco's Abqaiq processing facility and Khurais field temporarily removed roughly half of Saudi crude output, demonstrating cross-domain aerial kinetic effects against critical ground infrastructure.",
+      "meta": {
+        "an": [
+          "IOC (confirmed)",
+          "IOA",
+          "Threat",
+          "Resilience"
+        ],
+        "ast": [
+          "Hardware"
+        ],
+        "date": "2019-09",
+        "exposure_domain": [
+          "Kinetic"
+        ],
+        "pce": [
+          "Aerial",
+          "Terrestrial"
+        ],
+        "refs": [
+          "https://en.wikipedia.org/wiki/Abqaiq%E2%80%93Khurais_attack"
+        ],
+        "seg": [
+          "Low Altitude",
+          "Ground"
+        ],
+        "svc": [
+          "Control Plane"
+        ]
+      },
+      "uuid": "6f4e2d9b-3c5a-4d7f-8b2c-000000000002",
+      "value": "Abqaiq-Khurais Strike"
+    },
+    {
+      "description": "One-way attack drone struck Tower 22, a US logistics outpost on the Jordan-Syria border, killing three service members. Illustrates low-altitude OWA UAS as a confirmed kinetic threat to forward ground infrastructure.",
+      "meta": {
+        "an": [
+          "IOC (confirmed)",
+          "IOA",
+          "Threat"
+        ],
+        "ast": [
+          "Hardware"
+        ],
+        "date": "2024-01",
+        "exposure_domain": [
+          "Kinetic"
+        ],
+        "pce": [
+          "Aerial"
+        ],
+        "refs": [
+          "https://en.wikipedia.org/wiki/Tower_22_drone_attack"
+        ],
+        "seg": [
+          "Low Altitude",
+          "Ground"
+        ],
+        "svc": [
+          "Control Plane"
+        ]
+      },
+      "uuid": "6f4e2d9b-3c5a-4d7f-8b2c-000000000003",
+      "value": "Tower 22 OWA Drone Strike"
+    },
+    {
+      "description": "Persistent UAS incursions reported over Langley AFB and other US installations. Tracked as a modeled indicator of attack pending attribution; supports hypothesis tracking for sustained low-altitude reconnaissance and harassment patterns.",
+      "meta": {
+        "an": [
+          "IOC (modeled)",
+          "IOA",
+          "Threat",
+          "Detection"
+        ],
+        "ast": [
+          "Hardware",
+          "Signals"
+        ],
+        "date": "2023-12",
+        "exposure_domain": [
+          "Kinetic"
+        ],
+        "pce": [
+          "Aerial"
+        ],
+        "refs": [
+          "https://www.airandspaceforces.com/langley-drone-incursions/"
+        ],
+        "seg": [
+          "Low Altitude"
+        ],
+        "svc": [
+          "Control Plane"
+        ]
+      },
+      "uuid": "6f4e2d9b-3c5a-4d7f-8b2c-000000000004",
+      "value": "Langley AFB UAS Incursions"
+    },
+    {
+      "description": "Two subsea cables connecting the Matsu Islands to Taiwan were severed within days of each other, attributed to vessel anchor activity. Cut off broadband service to roughly 14,000 residents and exposed the Aquatic-link segment to deniable kinetic disruption.",
+      "meta": {
+        "an": [
+          "IOC (confirmed)",
+          "IOA",
+          "Threat",
+          "Resilience"
+        ],
+        "ast": [
+          "Hardware",
+          "Data"
+        ],
+        "date": "2023-02",
+        "exposure_domain": [
+          "Kinetic"
+        ],
+        "pce": [
+          "Aquatic"
+        ],
+        "refs": [
+          "https://www.reuters.com/world/asia-pacific/taiwan-suspects-chinese-ships-cut-islands-internet-cables-2023-03-08/"
+        ],
+        "seg": [
+          "Link",
+          "Aquatic"
+        ],
+        "svc": [
+          "Data Plane",
+          "Hybrid"
+        ]
+      },
+      "uuid": "6f4e2d9b-3c5a-4d7f-8b2c-000000000005",
+      "value": "Matsu Subsea Cable Severance"
+    },
+    {
+      "description": "Damage to AAE-1, EIG, Seacom, and TGN subsea cables in the Red Sea during regional escalation degraded internet capacity between Europe, the Middle East, and Asia. Confirmed kinetic exposure against the Aquatic-link segment with hybrid data-plane and signaling impact.",
+      "meta": {
+        "an": [
+          "IOC (confirmed)",
+          "IOA",
+          "Threat",
+          "Resilience"
+        ],
+        "ast": [
+          "Hardware",
+          "Data"
+        ],
+        "date": "2024-02",
+        "exposure_domain": [
+          "Kinetic"
+        ],
+        "pce": [
+          "Aquatic"
+        ],
+        "refs": [
+          "https://www.reuters.com/world/middle-east/four-undersea-cables-red-sea-have-been-cut-hgc-2024-03-04/"
+        ],
+        "seg": [
+          "Link",
+          "Aquatic"
+        ],
+        "svc": [
+          "Data Plane",
+          "Hybrid"
+        ]
+      },
+      "uuid": "6f4e2d9b-3c5a-4d7f-8b2c-000000000006",
+      "value": "Red Sea Cable Damage (AAE-1/EIG/Seacom)"
+    },
+    {
+      "description": "BCS East-West and C-Lion1 subsea cables in the Baltic Sea were severed within hours of each other, coincident with the transit of the bulk carrier Yi Peng 3. Treated as a confirmed kinetic event with open attribution.",
+      "meta": {
+        "an": [
+          "IOC (confirmed)",
+          "IOA",
+          "Threat",
+          "Resilience"
+        ],
+        "ast": [
+          "Hardware",
+          "Data"
+        ],
+        "date": "2024-11",
+        "exposure_domain": [
+          "Kinetic"
+        ],
+        "pce": [
+          "Aquatic"
+        ],
+        "refs": [
+          "https://www.reuters.com/world/europe/baltic-sea-cable-cut-was-act-sabotage-german-minister-says-2024-11-19/"
+        ],
+        "seg": [
+          "Link",
+          "Aquatic"
+        ],
+        "svc": [
+          "Data Plane",
+          "Hybrid"
+        ]
+      },
+      "uuid": "6f4e2d9b-3c5a-4d7f-8b2c-000000000007",
+      "value": "Baltic Cable Severance (C-Lion1 / BCS East-West)"
+    },
+    {
+      "description": "The Estlink 2 power and communications cable between Finland and Estonia was damaged, with the tanker Eagle S subsequently boarded by Finnish authorities. Extends the Baltic pattern to mixed power-plus-data cable exposure on the Aquatic-link segment.",
+      "meta": {
+        "an": [
+          "IOC (confirmed)",
+          "IOA",
+          "Threat",
+          "Resilience"
+        ],
+        "ast": [
+          "Hardware",
+          "Data"
+        ],
+        "date": "2024-12",
+        "exposure_domain": [
+          "Kinetic"
+        ],
+        "pce": [
+          "Aquatic"
+        ],
+        "refs": [
+          "https://www.reuters.com/world/europe/finland-seizes-tanker-suspected-cutting-power-cable-2024-12-26/"
+        ],
+        "seg": [
+          "Link",
+          "Aquatic"
+        ],
+        "svc": [
+          "Data Plane",
+          "Hybrid"
+        ]
+      },
+      "uuid": "6f4e2d9b-3c5a-4d7f-8b2c-000000000008",
+      "value": "Estlink 2 Cable Incident"
+    },
+    {
+      "description": "AcidRain wiper deployed against Viasat KA-SAT modems on the morning of the 2022 invasion of Ukraine, with collateral loss of wind-turbine telemetry across Europe. Canonical confirmed cyber-warfare event against orbital ground infrastructure and link-segment user terminals.",
+      "meta": {
+        "an": [
+          "IOC (confirmed)",
+          "IOA",
+          "Attack Path",
+          "Threat",
+          "Detection",
+          "Resilience"
+        ],
+        "ast": [
+          "Software",
+          "Firmware",
+          "Data"
+        ],
+        "date": "2022-02",
+        "exposure_domain": [
+          "Cyber Warfare"
+        ],
+        "pce": [
+          "Orbital",
+          "Terrestrial"
+        ],
+        "refs": [
+          "https://www.viasat.com/about/newsroom/blog/ka-sat-network-cyber-attack-overview/",
+          "https://www.sentinelone.com/labs/acidrain-a-modem-wiper-rains-down-on-europe/"
+        ],
+        "seg": [
+          "Ground",
+          "Link",
+          "User"
+        ],
+        "svc": [
+          "Control Plane",
+          "Data Plane"
+        ]
+      },
+      "uuid": "6f4e2d9b-3c5a-4d7f-8b2c-000000000009",
+      "value": "Viasat KA-SAT AcidRain"
+    },
+    {
+      "description": "Persistent GNSS spoofing and jamming observed in the Black Sea, Eastern Mediterranean, and Strait of Hormuz, affecting maritime, aviation, and ground-based PNT-dependent systems. Long-running confirmed electronic-warfare exposure on the link-and-signals plane.",
+      "meta": {
+        "an": [
+          "IOC (confirmed)",
+          "IOA",
+          "Threat",
+          "Detection",
+          "Resilience"
+        ],
+        "ast": [
+          "Signals",
+          "Data"
+        ],
+        "date": "ongoing",
+        "exposure_domain": [
+          "Electronic Warfare (EW)"
+        ],
+        "pce": [
+          "Orbital",
+          "Terrestrial",
+          "Aquatic"
+        ],
+        "refs": [
+          "https://gpspatron.com/gps-spoofing-incidents-overview/"
+        ],
+        "seg": [
+          "Link",
+          "User"
+        ],
+        "svc": [
+          "Data Plane"
+        ]
+      },
+      "uuid": "6f4e2d9b-3c5a-4d7f-8b2c-00000000000a",
+      "value": "GNSS Spoofing and Jamming (Black Sea / Hormuz)"
+    },
+    {
+      "description": "Russian direct-ascent anti-satellite test destroyed Cosmos 1408, generating thousands of trackable debris fragments in low Earth orbit. Dual-classified as a confirmed kinetic event and an environmental hazard owing to the persistent debris cloud.",
+      "meta": {
+        "an": [
+          "IOC (confirmed)",
+          "IOA",
+          "Threat",
+          "Detection",
+          "Resilience"
+        ],
+        "ast": [
+          "Hardware"
+        ],
+        "date": "2021-11",
+        "exposure_domain": [
+          "Kinetic",
+          "Other (environmental)"
+        ],
+        "pce": [
+          "Orbital"
+        ],
+        "refs": [
+          "https://en.wikipedia.org/wiki/2021_Russian_anti-satellite_weapon_test"
+        ],
+        "seg": [
+          "Space"
+        ],
+        "svc": [
+          "Control Plane",
+          "Data Plane"
+        ]
+      },
+      "uuid": "6f4e2d9b-3c5a-4d7f-8b2c-00000000000b",
+      "value": "Cosmos 1408 ASAT Debris Event"
+    }
+  ],
+  "version": 1
+}
