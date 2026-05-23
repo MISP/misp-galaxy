@@ -1,0 +1,134 @@
+{
+  "authors": [
+    "H4CK32N4U75®"
+  ],
+  "category": "attack-pattern",
+  "description": "Library of converged cross-domain attack paths. Each value is one Attack Path analytic element (AN:ATT:Attack Path:NN) populated with ETENs (Enumerated Taxonomic Element Nomenclatures) per the METEORSTORM data model. The pce_etens/seg_etens/svc_etens/ast_etens lists make every structural ETEN the path touches visible in the cluster detail view; toe aggregates them as the canonical Target-of-Exploitation reference per the analytic-element ontology. Stages are narrative; the path itself is the analytic claim.",
+  "name": "SCOR Attack Paths",
+  "source": "Open sources curated by the SCOR steward.",
+  "type": "scor-attack-paths",
+  "uuid": "7e1c4a8b-3d5f-4e2a-9c8b-0d1e2f3a4b02",
+  "values": [
+    {
+      "description": "Cyber-warfare attack against Viasat's KA-SAT consumer-broadband service, executed at 24 February 2022 ~05:00 UTC, one hour before the Russian invasion of Ukraine. Adversary obtained access to a misconfigured VPN appliance at the Skylogic network-management facility (Turin), pivoted into the KA-SAT modem-management plane, and pushed the AcidRain wiper to SurfBeam2 / SurfBeam2+ consumer modems via the legitimate firmware-update channel. Tens of thousands of modems were bricked across Ukraine and Europe; ~5,800 Enercon wind turbines in Germany lost broadband ride-through. Five Eyes + EU + US Treasury coordinated attribution to Russian state actors.",
+      "meta": {
+        "analytic_eten": "AN:ATT:Attack Path:00",
+        "ast_etens": [
+          "AST:SW:Software:00",
+          "AST:FW:Firmware:00",
+          "AST:HW:Hardware:00",
+          "AST:SI:Signal:00",
+          "AST:DA:Data:00"
+        ],
+        "date": "2022-02-24",
+        "exposure_domain": [
+          "Cyber",
+          "Supply Chain"
+        ],
+        "kill_chain": [
+          "Terrestrial:Cyber",
+          "Terrestrial:Supply Chain",
+          "Orbital:Cyber"
+        ],
+        "pce_etens": [
+          "PCE:TE:Terrestrial:00",
+          "PCE:OR:Orbital:00"
+        ],
+        "refs": [
+          "https://www.viasat.com/about/newsroom/blog/ka-sat-network-cyber-attack-overview/",
+          "https://www.sentinelone.com/labs/acidrain-a-modem-wiper-rains-down-on-europe/",
+          "https://www.ncsc.gov.uk/news/russia-behind-cyber-attack-with-europe-wide-impact-an-hour-before-ukraine-invasion"
+        ],
+        "seg_etens": [
+          "SEG:GR:Ground:00",
+          "SEG:LI:Link:00",
+          "SEG:US:User:00",
+          "SEG:SP:Space:00"
+        ],
+        "source_phase": "Real",
+        "stages": [
+          "1. Initial Access — exploit misconfigured VPN appliance at Skylogic ground/management facility.",
+          "2. Lateral Movement — pivot within KA-SAT management VLAN to modem-management plane.",
+          "3. Payload Delivery — push AcidRain wiper through the legitimate firmware-update channel to SurfBeam2 modems.",
+          "4. Execution / Impact — wiper bricks tens of thousands of consumer modems; Enercon wind-turbine ride-through degraded.",
+          "5. Recovery — modem replacement campaigns; firmware-update authentication hardened; coordinated public attribution."
+        ],
+        "svc_etens": [
+          "SVC:CP:Control Plane:00",
+          "SVC:DP:Data Plane:00"
+        ],
+        "toe": [
+          "PCE:TE:Terrestrial:00",
+          "PCE:OR:Orbital:00",
+          "SEG:GR:Ground:00",
+          "SEG:LI:Link:00",
+          "SEG:US:User:00",
+          "SEG:SP:Space:00",
+          "SVC:CP:Control Plane:00",
+          "SVC:DP:Data Plane:00",
+          "AST:SW:Software:00",
+          "AST:FW:Firmware:00",
+          "AST:HW:Hardware:00",
+          "AST:SI:Signal:00",
+          "AST:DA:Data:00"
+        ]
+      },
+      "uuid": "7e1c4a8b-3d5f-4e2a-9c8b-000000000001",
+      "value": "Viasat KA-SAT AcidRain (2022)"
+    },
+    {
+      "description": "Sustained unauthorised UAS incursions over London Gatwick Airport between 19 and 21 December 2018. Multiple drone sightings forced runway closures, disrupted >1,000 flights, and affected ~140,000 passengers. Attribution was never confirmed. Demonstrates a low-altitude aerial kinetic threat against terrestrial ground-segment operations using commodity hardware, with no cyber component required to produce strategic-scale impact.",
+      "meta": {
+        "analytic_eten": "AN:ATT:Attack Path:01",
+        "ast_etens": [
+          "AST:HW:Hardware:00",
+          "AST:SI:Signal:00"
+        ],
+        "date": "2018-12",
+        "exposure_domain": [
+          "Kinetic"
+        ],
+        "kill_chain": [
+          "Aerial:Kinetic",
+          "Terrestrial:Kinetic"
+        ],
+        "pce_etens": [
+          "PCE:AE:Aerial:00",
+          "PCE:TE:Terrestrial:00"
+        ],
+        "refs": [
+          "https://en.wikipedia.org/wiki/Gatwick_Airport_drone_incident",
+          "https://www.bbc.com/news/uk-england-sussex-46663019",
+          "https://www.gov.uk/government/news/government-acts-to-tackle-drone-misuse"
+        ],
+        "seg_etens": [
+          "SEG:LO:Low Altitude:00",
+          "SEG:GR:Ground:00"
+        ],
+        "source_phase": "Real",
+        "stages": [
+          "1. Reconnaissance — adversary maps Gatwick runway approach, perimeter coverage, and ATC response posture.",
+          "2. Incursion — UAS launched from undetermined ground position; sustained presence inside controlled airspace.",
+          "3. Control-Plane Disruption — ATC issues runway closure; ground operations halted; counter-UAS assets mobilised.",
+          "4. Recurrence — repeated incursions over 33 hours defeat single-shot detection/response posture.",
+          "5. Recovery — RAF EW assets and police counter-UAS systems deployed; runway reopens; permanent counter-UAS investments follow."
+        ],
+        "svc_etens": [
+          "SVC:CP:Control Plane:00"
+        ],
+        "toe": [
+          "PCE:AE:Aerial:00",
+          "PCE:TE:Terrestrial:00",
+          "SEG:LO:Low Altitude:00",
+          "SEG:GR:Ground:00",
+          "SVC:CP:Control Plane:00",
+          "AST:HW:Hardware:00",
+          "AST:SI:Signal:00"
+        ]
+      },
+      "uuid": "7e1c4a8b-3d5f-4e2a-9c8b-000000000002",
+      "value": "Gatwick UAS Incursions (2018)"
+    }
+  ],
+  "version": 1
+}
