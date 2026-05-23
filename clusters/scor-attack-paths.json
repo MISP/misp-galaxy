@@ -79,7 +79,7 @@
     {
       "description": "Sustained unauthorised UAS incursions over London Gatwick Airport between 19 and 21 December 2018. Multiple drone sightings forced runway closures, disrupted >1,000 flights, and affected ~140,000 passengers. Attribution was never confirmed. Demonstrates a low-altitude aerial kinetic threat against terrestrial ground-segment operations using commodity hardware, with no cyber component required to produce strategic-scale impact.",
       "meta": {
-        "analytic_eten": "AN:ATT:Attack Path:01",
+        "analytic_eten": "AN:ATT:Attack Path:00",
         "ast_etens": [
           "AST:HW:Hardware:00",
           "AST:SI:Signal:00"
@@ -128,6 +128,104 @@
       },
       "uuid": "7e1c4a8b-3d5f-4e2a-9c8b-000000000002",
       "value": "Gatwick UAS Incursions (2018)"
+    },
+    {
+      "description": "Chinese kinetic anti-satellite (ASAT) test conducted on 11 January 2007. A ground-launched SC-19 kinetic kill vehicle intercepted China's own retired Fengyun-1C polar-orbit weather satellite at ~865 km altitude over central China. The collision created the worst single debris event in LEO history: ~3,000+ trackable fragments plus an estimated 150,000+ untrackable pieces, distributed between 200 km and 3,850 km altitude. The debris field will persist for decades to centuries and continues to threaten operations across LEO including the ISS, other satellites, and future launches. The test demonstrated Chinese counter-space capability and triggered international condemnation.",
+      "meta": {
+        "analytic_eten": "AN:ATT:Attack Path:00",
+        "ast_etens": [
+          "AST:HW:Hardware:00",
+          "AST:DA:Data:00"
+        ],
+        "date": "2007-01-11",
+        "exposure_domain": [
+          "Kinetic"
+        ],
+        "kill_chain": [
+          "Orbital:Kinetic"
+        ],
+        "pce_etens": [
+          "PCE:OR:Orbital:00"
+        ],
+        "refs": [
+          "https://www.theage.com.au/national/world-fury-at-satellite-destruction-20070120-ge416d.html",
+          "https://aerospace.org/sites/default/files/2018-05/SpaceTrafficMgmt_0.pdf",
+          "https://www.spacesecurity.info/space-attacks-open-database/"
+        ],
+        "seg_etens": [
+          "SEG:SP:Space:00"
+        ],
+        "source_phase": "Real",
+        "stages": [
+          "1. Mission Selection — China's SC-19 ASAT program targets the retired Fengyun-1C polar-orbit weather satellite at ~865 km altitude.",
+          "2. Launch — SC-19 kinetic kill vehicle launched from Xichang Satellite Launch Center on 11 January 2007.",
+          "3. Intercept — KKV impacts FY-1C in retrograde collision at closing velocity ~8 km/s.",
+          "4. Fragmentation — satellite shatters into 3,000+ trackable fragments plus an estimated 150,000+ untrackable pieces.",
+          "5. Debris field persistence — fragments populate 200-3,850 km altitude; persistence projected decades to centuries; continues to threaten LEO operations including the ISS."
+        ],
+        "svc_etens": [
+          "SVC:DP:Data Plane:00"
+        ],
+        "toe": [
+          "PCE:OR:Orbital:00",
+          "SEG:SP:Space:00",
+          "SVC:DP:Data Plane:00",
+          "AST:HW:Hardware:00",
+          "AST:DA:Data:00"
+        ]
+      },
+      "uuid": "7e1c4a8b-3d5f-4e2a-9c8b-000000000003",
+      "value": "Fengyun-1C Chinese ASAT Test (2007)"
+    },
+    {
+      "description": "Proof-of-concept GPS spoofing attack against the 65m luxury yacht M/Y White Rose of Drachs in the Mediterranean Sea during June 2013. A research team from the UT Austin Radionavigation Laboratory (Prof. Todd Humphreys, Jahshan Bhatti, Daniel Shepard) deployed a custom software-defined radio that generated false GPS signals matching the constellation pattern. By gradually increasing the spoofer's transmit power above the genuine satellite signal level, the team caused the yacht's GPS receiver to lock onto the spoofed signal without triggering any anomaly alerts. The autopilot then computed navigation solutions from the false position fix and steered the vessel onto an attacker-chosen course while the bridge crew observed no warning. Demonstrated GPS reliance vulnerability in civil maritime navigation; reported by UT Austin in July 2013.",
+      "meta": {
+        "analytic_eten": "AN:ATT:Attack Path:00",
+        "ast_etens": [
+          "AST:SI:Signal:00",
+          "AST:HW:Hardware:00",
+          "AST:DA:Data:00"
+        ],
+        "date": "2013-06",
+        "exposure_domain": [
+          "Radio Frequency"
+        ],
+        "kill_chain": [
+          "Aquatic:Radio Frequency"
+        ],
+        "pce_etens": [
+          "PCE:AQ:Aquatic:00"
+        ],
+        "refs": [
+          "https://news.utexas.edu/2013/07/29/ut-austin-researchers-spoof-superyacht-at-sea/",
+          "https://www.engr.utexas.edu/news/archive/7649-superyacht-gps-spoofing",
+          "https://www.spacesecurity.info/space-attacks-open-database/"
+        ],
+        "seg_etens": [
+          "SEG:AQ:Aquatic:00"
+        ],
+        "source_phase": "Modeled",
+        "stages": [
+          "1. Reconnaissance — identify target's GPS receiver model and confirm civilian (L1 C/A) signal use; civilian GPS lacks signal authentication.",
+          "2. Spoof Generation — generate counterfeit GPS L1 C/A signals matching the visible constellation geometry from the target's location.",
+          "3. Signal Override — co-located transmitter raises spoofed signal power above satellite signal level; receiver locks onto spoofed signals without triggering loss-of-lock alerts.",
+          "4. Course Deviation — autopilot processes false position fixes, computes deviation, and steers the vessel onto attacker-chosen waypoints.",
+          "5. Detection-Free Operation — bridge crew observes no GPS anomaly indicators; vessel arrives off-course while monitoring instruments show nominal navigation."
+        ],
+        "svc_etens": [
+          "SVC:CP:Control Plane:00"
+        ],
+        "toe": [
+          "PCE:AQ:Aquatic:00",
+          "SEG:AQ:Aquatic:00",
+          "SVC:CP:Control Plane:00",
+          "AST:SI:Signal:00",
+          "AST:HW:Hardware:00",
+          "AST:DA:Data:00"
+        ]
+      },
+      "uuid": "7e1c4a8b-3d5f-4e2a-9c8b-000000000004",
+      "value": "Yacht GPS Spoofing PoC (UT Austin, 2013)"
     }
   ],
   "version": 1

@@ -632,7 +632,7 @@ Category: *meta* - source: *Project documentation* - total: *8* elements
 
 [SCOR Attack Paths](https://www.misp-galaxy.org/scor-attack-paths) - Library of converged cross-domain attack paths. Each value is one Attack Path analytic element (AN:ATT:Attack Path:NN) populated with ETENs (Enumerated Taxonomic Element Nomenclatures) per the METEORSTORM data model. The pce_etens/seg_etens/svc_etens/ast_etens lists make every structural ETEN the path touches visible in the cluster detail view; toe aggregates them as the canonical Target-of-Exploitation reference per the analytic-element ontology. Stages are narrative; the path itself is the analytic claim.
 
-Category: *attack-pattern* - source: *Open sources curated by the SCOR steward.* - total: *2* elements
+Category: *attack-pattern* - source: *Open sources curated by the SCOR steward.* - total: *4* elements
 
 [[HTML](https://www.misp-galaxy.org/scor-attack-paths)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/scor-attack-paths.json)]
 
