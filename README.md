@@ -156,6 +156,22 @@ Category: *Cryptominers* - source: *Open Source Intelligence* - total: *5* eleme
 
 [[HTML](https://www.misp-galaxy.org/cryptominers)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/cryptominers.json)]
 
+## CyberFundamentals 2023 Assurance Requirements
+
+[CyberFundamentals 2023 Assurance Requirements](https://www.misp-galaxy.org/cyfun-assurance-requirements-2023) - CyberFundamentals 2023 assurance-level control matrix for MISP. Each cluster value is a level-specific control instance with provenance and key-measure metadata; normative text is referenced, not embedded.
+
+Category: *cybersecurity-framework* - source: *https://atwork.safeonweb.be/tools-resources/cyberfundamentals-framework* - total: *233* elements
+
+[[HTML](https://www.misp-galaxy.org/cyfun-assurance-requirements-2023)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/cyfun-assurance-requirements-2023.json)]
+
+## CyberFundamentals 2023 Control Catalogue
+
+[CyberFundamentals 2023 Control Catalogue](https://www.misp-galaxy.org/cyfun-control-catalogue-2023) - Normalized CyberFundamentals 2023 control catalogue. Values preserve identifiers, assurance-level availability, official provenance, and key-measure mapping without reproducing normative text.
+
+Category: *cybersecurity-framework* - source: *https://atwork.safeonweb.be/tools-resources/cyberfundamentals-framework* - total: *107* elements
+
+[[HTML](https://www.misp-galaxy.org/cyfun-control-catalogue-2023)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/cyfun-control-catalogue-2023.json)]
+
 ## Actor Types
 
 [Actor Types](https://www.misp-galaxy.org/disarm-actortypes) - DISARM is a framework designed for describing and understanding disinformation incidents.
