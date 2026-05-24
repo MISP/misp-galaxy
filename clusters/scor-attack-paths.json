@@ -1,0 +1,232 @@
+{
+  "authors": [
+    "H4CK32N4U75®"
+  ],
+  "category": "attack-pattern",
+  "description": "Library of converged cross-domain attack paths. Each value is one Attack Path analytic element (AN:ATT:Attack Path:NN) populated with ETENs (Enumerated Taxonomic Element Nomenclatures) per the METEORSTORM data model. The pce_etens/seg_etens/svc_etens/ast_etens lists make every structural ETEN the path touches visible in the cluster detail view; toe aggregates them as the canonical Target-of-Exploitation reference per the analytic-element ontology. Stages are narrative; the path itself is the analytic claim.",
+  "name": "SCOR Attack Paths",
+  "source": "Open sources curated by the SCOR steward.",
+  "type": "scor-attack-paths",
+  "uuid": "7e1c4a8b-3d5f-4e2a-9c8b-0d1e2f3a4b02",
+  "values": [
+    {
+      "description": "Cyber-warfare attack against Viasat's KA-SAT consumer-broadband service, executed at 24 February 2022 ~05:00 UTC, one hour before the Russian invasion of Ukraine. Adversary obtained access to a misconfigured VPN appliance at the Skylogic network-management facility (Turin), pivoted into the KA-SAT modem-management plane, and pushed the AcidRain wiper to SurfBeam2 / SurfBeam2+ consumer modems via the legitimate firmware-update channel. Tens of thousands of modems were bricked across Ukraine and Europe; ~5,800 Enercon wind turbines in Germany lost broadband ride-through. Five Eyes + EU + US Treasury coordinated attribution to Russian state actors.",
+      "meta": {
+        "analytic_eten": "AN:ATT:Attack Path:00",
+        "ast_etens": [
+          "AST:SW:Software:00",
+          "AST:FW:Firmware:00",
+          "AST:HW:Hardware:00",
+          "AST:SI:Signal:00",
+          "AST:DA:Data:00"
+        ],
+        "date": "2022-02-24",
+        "exposure_domain": [
+          "Cyber",
+          "Supply Chain"
+        ],
+        "kill_chain": [
+          "Terrestrial:Cyber",
+          "Terrestrial:Supply Chain",
+          "Orbital:Cyber"
+        ],
+        "pce_etens": [
+          "PCE:TE:Terrestrial:00",
+          "PCE:OR:Orbital:00"
+        ],
+        "refs": [
+          "https://www.viasat.com/about/newsroom/blog/ka-sat-network-cyber-attack-overview/",
+          "https://www.sentinelone.com/labs/acidrain-a-modem-wiper-rains-down-on-europe/",
+          "https://www.ncsc.gov.uk/news/russia-behind-cyber-attack-with-europe-wide-impact-an-hour-before-ukraine-invasion"
+        ],
+        "seg_etens": [
+          "SEG:GR:Ground:00",
+          "SEG:LI:Link:00",
+          "SEG:US:User:00",
+          "SEG:SP:Space:00"
+        ],
+        "source_phase": "Real",
+        "stages": [
+          "1. Initial Access — exploit misconfigured VPN appliance at Skylogic ground/management facility.",
+          "2. Lateral Movement — pivot within KA-SAT management VLAN to modem-management plane.",
+          "3. Payload Delivery — push AcidRain wiper through the legitimate firmware-update channel to SurfBeam2 modems.",
+          "4. Execution / Impact — wiper bricks tens of thousands of consumer modems; Enercon wind-turbine ride-through degraded.",
+          "5. Recovery — modem replacement campaigns; firmware-update authentication hardened; coordinated public attribution."
+        ],
+        "svc_etens": [
+          "SVC:CP:Control Plane:00",
+          "SVC:DP:Data Plane:00"
+        ],
+        "toe": [
+          "PCE:TE:Terrestrial:00",
+          "PCE:OR:Orbital:00",
+          "SEG:GR:Ground:00",
+          "SEG:LI:Link:00",
+          "SEG:US:User:00",
+          "SEG:SP:Space:00",
+          "SVC:CP:Control Plane:00",
+          "SVC:DP:Data Plane:00",
+          "AST:SW:Software:00",
+          "AST:FW:Firmware:00",
+          "AST:HW:Hardware:00",
+          "AST:SI:Signal:00",
+          "AST:DA:Data:00"
+        ]
+      },
+      "uuid": "7e1c4a8b-3d5f-4e2a-9c8b-000000000001",
+      "value": "Viasat KA-SAT AcidRain (2022)"
+    },
+    {
+      "description": "Sustained unauthorised UAS incursions over London Gatwick Airport between 19 and 21 December 2018. Multiple drone sightings forced runway closures, disrupted >1,000 flights, and affected ~140,000 passengers. Attribution was never confirmed. Demonstrates a low-altitude aerial kinetic threat against terrestrial ground-segment operations using commodity hardware, with no cyber component required to produce strategic-scale impact.",
+      "meta": {
+        "analytic_eten": "AN:ATT:Attack Path:00",
+        "ast_etens": [
+          "AST:HW:Hardware:00",
+          "AST:SI:Signal:00"
+        ],
+        "date": "2018-12",
+        "exposure_domain": [
+          "Kinetic"
+        ],
+        "kill_chain": [
+          "Aerial:Kinetic",
+          "Terrestrial:Kinetic"
+        ],
+        "pce_etens": [
+          "PCE:AE:Aerial:00",
+          "PCE:TE:Terrestrial:00"
+        ],
+        "refs": [
+          "https://en.wikipedia.org/wiki/Gatwick_Airport_drone_incident",
+          "https://www.bbc.com/news/uk-england-sussex-46663019",
+          "https://www.gov.uk/government/news/government-acts-to-tackle-drone-misuse"
+        ],
+        "seg_etens": [
+          "SEG:LO:Low Altitude:00",
+          "SEG:GR:Ground:00"
+        ],
+        "source_phase": "Real",
+        "stages": [
+          "1. Reconnaissance — adversary maps Gatwick runway approach, perimeter coverage, and ATC response posture.",
+          "2. Incursion — UAS launched from undetermined ground position; sustained presence inside controlled airspace.",
+          "3. Control-Plane Disruption — ATC issues runway closure; ground operations halted; counter-UAS assets mobilised.",
+          "4. Recurrence — repeated incursions over 33 hours defeat single-shot detection/response posture.",
+          "5. Recovery — RAF EW assets and police counter-UAS systems deployed; runway reopens; permanent counter-UAS investments follow."
+        ],
+        "svc_etens": [
+          "SVC:CP:Control Plane:00"
+        ],
+        "toe": [
+          "PCE:AE:Aerial:00",
+          "PCE:TE:Terrestrial:00",
+          "SEG:LO:Low Altitude:00",
+          "SEG:GR:Ground:00",
+          "SVC:CP:Control Plane:00",
+          "AST:HW:Hardware:00",
+          "AST:SI:Signal:00"
+        ]
+      },
+      "uuid": "7e1c4a8b-3d5f-4e2a-9c8b-000000000002",
+      "value": "Gatwick UAS Incursions (2018)"
+    },
+    {
+      "description": "Chinese kinetic anti-satellite (ASAT) test conducted on 11 January 2007. A ground-launched SC-19 kinetic kill vehicle intercepted China's own retired Fengyun-1C polar-orbit weather satellite at ~865 km altitude over central China. The collision created the worst single debris event in LEO history: ~3,000+ trackable fragments plus an estimated 150,000+ untrackable pieces, distributed between 200 km and 3,850 km altitude. The debris field will persist for decades to centuries and continues to threaten operations across LEO including the ISS, other satellites, and future launches. The test demonstrated Chinese counter-space capability and triggered international condemnation.",
+      "meta": {
+        "analytic_eten": "AN:ATT:Attack Path:00",
+        "ast_etens": [
+          "AST:HW:Hardware:00",
+          "AST:DA:Data:00"
+        ],
+        "date": "2007-01-11",
+        "exposure_domain": [
+          "Kinetic"
+        ],
+        "kill_chain": [
+          "Orbital:Kinetic"
+        ],
+        "pce_etens": [
+          "PCE:OR:Orbital:00"
+        ],
+        "refs": [
+          "https://www.theage.com.au/national/world-fury-at-satellite-destruction-20070120-ge416d.html",
+          "https://aerospace.org/sites/default/files/2018-05/SpaceTrafficMgmt_0.pdf",
+          "https://www.spacesecurity.info/space-attacks-open-database/"
+        ],
+        "seg_etens": [
+          "SEG:SP:Space:00"
+        ],
+        "source_phase": "Real",
+        "stages": [
+          "1. Mission Selection — China's SC-19 ASAT program targets the retired Fengyun-1C polar-orbit weather satellite at ~865 km altitude.",
+          "2. Launch — SC-19 kinetic kill vehicle launched from Xichang Satellite Launch Center on 11 January 2007.",
+          "3. Intercept — KKV impacts FY-1C in retrograde collision at closing velocity ~8 km/s.",
+          "4. Fragmentation — satellite shatters into 3,000+ trackable fragments plus an estimated 150,000+ untrackable pieces.",
+          "5. Debris field persistence — fragments populate 200-3,850 km altitude; persistence projected decades to centuries; continues to threaten LEO operations including the ISS."
+        ],
+        "svc_etens": [
+          "SVC:DP:Data Plane:00"
+        ],
+        "toe": [
+          "PCE:OR:Orbital:00",
+          "SEG:SP:Space:00",
+          "SVC:DP:Data Plane:00",
+          "AST:HW:Hardware:00",
+          "AST:DA:Data:00"
+        ]
+      },
+      "uuid": "7e1c4a8b-3d5f-4e2a-9c8b-000000000003",
+      "value": "Fengyun-1C Chinese ASAT Test (2007)"
+    },
+    {
+      "description": "Proof-of-concept GPS spoofing attack against the 65m luxury yacht M/Y White Rose of Drachs in the Mediterranean Sea during June 2013. A research team from the UT Austin Radionavigation Laboratory (Prof. Todd Humphreys, Jahshan Bhatti, Daniel Shepard) deployed a custom software-defined radio that generated false GPS signals matching the constellation pattern. By gradually increasing the spoofer's transmit power above the genuine satellite signal level, the team caused the yacht's GPS receiver to lock onto the spoofed signal without triggering any anomaly alerts. The autopilot then computed navigation solutions from the false position fix and steered the vessel onto an attacker-chosen course while the bridge crew observed no warning. Demonstrated GPS reliance vulnerability in civil maritime navigation; reported by UT Austin in July 2013.",
+      "meta": {
+        "analytic_eten": "AN:ATT:Attack Path:00",
+        "ast_etens": [
+          "AST:SI:Signal:00",
+          "AST:HW:Hardware:00",
+          "AST:DA:Data:00"
+        ],
+        "date": "2013-06",
+        "exposure_domain": [
+          "Radio Frequency"
+        ],
+        "kill_chain": [
+          "Aquatic:Radio Frequency"
+        ],
+        "pce_etens": [
+          "PCE:AQ:Aquatic:00"
+        ],
+        "refs": [
+          "https://news.utexas.edu/2013/07/29/ut-austin-researchers-spoof-superyacht-at-sea/",
+          "https://www.engr.utexas.edu/news/archive/7649-superyacht-gps-spoofing",
+          "https://www.spacesecurity.info/space-attacks-open-database/"
+        ],
+        "seg_etens": [
+          "SEG:AQ:Aquatic:00"
+        ],
+        "source_phase": "Modeled",
+        "stages": [
+          "1. Reconnaissance — identify target's GPS receiver model and confirm civilian (L1 C/A) signal use; civilian GPS lacks signal authentication.",
+          "2. Spoof Generation — generate counterfeit GPS L1 C/A signals matching the visible constellation geometry from the target's location.",
+          "3. Signal Override — co-located transmitter raises spoofed signal power above satellite signal level; receiver locks onto spoofed signals without triggering loss-of-lock alerts.",
+          "4. Course Deviation — autopilot processes false position fixes, computes deviation, and steers the vessel onto attacker-chosen waypoints.",
+          "5. Detection-Free Operation — bridge crew observes no GPS anomaly indicators; vessel arrives off-course while monitoring instruments show nominal navigation."
+        ],
+        "svc_etens": [
+          "SVC:CP:Control Plane:00"
+        ],
+        "toe": [
+          "PCE:AQ:Aquatic:00",
+          "SEG:AQ:Aquatic:00",
+          "SVC:CP:Control Plane:00",
+          "AST:SI:Signal:00",
+          "AST:HW:Hardware:00",
+          "AST:DA:Data:00"
+        ]
+      },
+      "uuid": "7e1c4a8b-3d5f-4e2a-9c8b-000000000004",
+      "value": "Yacht GPS Spoofing PoC (UT Austin, 2013)"
+    }
+  ],
+  "version": 1
+}
