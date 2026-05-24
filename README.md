@@ -576,7 +576,7 @@ Category: *measure* - source: *MISP Project* - total: *23* elements
 
 [Producer](https://www.misp-galaxy.org/producer) - List of threat intelligence producer from security vendors to CERTs including any producer of intelligence at large.
 
-Category: *actor* - source: *MISP Project* - total: *126* elements
+Category: *actor* - source: *MISP Project* - total: *129* elements
 
 [[HTML](https://www.misp-galaxy.org/producer)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/producer.json)]
 
