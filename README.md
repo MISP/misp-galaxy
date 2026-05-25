@@ -668,6 +668,14 @@ Category: *incident* - source: *Open sources* - total: *11* elements
 
 [[HTML](https://www.misp-galaxy.org/scor-incidents)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/scor-incidents.json)]
 
+## SCOR TENs
+
+[SCOR TENs](https://www.misp-galaxy.org/scor-tens) - Taxonomic Element Nomenclatures (TENs) of the METEORSTORM five-layer data model. Each value is one stable template (LAYER-TAG-LABEL) that analysts consume during enumeration to produce ETENs (LAYER:TAG:LABEL:ORDINAL) on a specific platform. Attack-path and other analytic cluster values reference these TENs by UUID via related[] arrays with relation type TOE/TDM/TRE per §6.2. Definitions follow METEORSTORM Quick Guide §8.
+
+Category: *meta* - source: *METEORSTORM Quick Guide §8 (Full Data Model).* - total: *30* elements
+
+[[HTML](https://www.misp-galaxy.org/scor-tens)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/scor-tens.json)]
+
 ## Sector
 
 [Sector](https://www.misp-galaxy.org/sector) - Activity sectors
