@@ -3,6 +3,7 @@
 
 import argparse
 import json
+import subprocess
 import uuid
 from pathlib import Path
 from urllib.request import urlopen
@@ -72,7 +73,7 @@ def build_cluster(data_by_phase: list[dict]) -> dict:
     }
 
 
-def build_galaxy(data_by_phase: list[dict]) -> dict:
+def build_galaxy(data_by_phase: list[dict], version: int = 1) -> dict:
     kill_chain = []
     for phase_data in data_by_phase:
         phase = phase_data["phase"]
@@ -85,7 +86,7 @@ def build_galaxy(data_by_phase: list[dict]) -> dict:
         "namespace": "dima",
         "type": "dima-techniques",
         "uuid": stable_uuid("galaxy", "dima-techniques"),
-        "version": 1,
+        "version": version,
         "icon": "project-diagram",
         "kill_chain_order": {"tactics": kill_chain},
     }
@@ -98,11 +99,20 @@ def main() -> None:
     args = parser.parse_args()
 
     data_by_phase = [fetch_phase(phase) for phase in FILES]
-    galaxy = build_galaxy(data_by_phase)
+
+    current_version = 0
+    galaxy_output = Path(args.galaxy_output)
+    if galaxy_output.exists():
+        existing_galaxy = json.loads(galaxy_output.read_text(encoding="utf-8"))
+        current_version = int(existing_galaxy.get("version", 0))
+
+    galaxy = build_galaxy(data_by_phase, version=current_version + 1)
     cluster = build_cluster(data_by_phase)
 
-    Path(args.galaxy_output).write_text(json.dumps(galaxy, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    galaxy_output.write_text(json.dumps(galaxy, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     Path(args.cluster_output).write_text(json.dumps(cluster, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+    subprocess.run(["./jq_all_the_things.sh"], check=True)
 
 
 if __name__ == "__main__":
