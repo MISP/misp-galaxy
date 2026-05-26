@@ -172,6 +172,14 @@ Category: *cybersecurity-framework* - source: *https://atwork.safeonweb.be/tools
 
 [[HTML](https://www.misp-galaxy.org/cyfun-control-catalogue-2023)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/cyfun-control-catalogue-2023.json)]
 
+## DIMA Techniques
+
+[DIMA Techniques](https://www.misp-galaxy.org/dima-techniques) - DIMA is a social engineering and cognitive manipulation framework organized by phase, tactic, and technique.
+
+Category: *dima* - source: *https://github.com/M82-project/DIMA* - total: *44* elements
+
+[[HTML](https://www.misp-galaxy.org/dima-techniques)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/dima-techniques.json)]
+
 ## Actor Types
 
 [Actor Types](https://www.misp-galaxy.org/disarm-actortypes) - DISARM is a framework designed for describing and understanding disinformation incidents.
