@@ -1,46 +1,9 @@
 {
-  "description": "SCOR Attack Paths. Library of converged cross-domain attack paths classified by the METEORSTORM five-layer data model. Each entry is an Attack Path analytic element (AN:ATT:Attack Path:NN) whose TOE (Target of Exploitation) field enumerates the structural ETENs (PCE/SEG/SVC/AST) that the path touches. Tabs are PCE environments (Terrestrial, Aquatic, Aerial, Orbital, Deep Space); columns are the five METEORSTORM exposure domains (Cyber, Radio Frequency, Kinetic, Supply Chain, Environmental). A path that spans multiple environments or exposure domains receives multiple kill_chain entries and renders in every applicable cell. Pairs with the METEORSTORM MISP taxonomy at https://github.com/MISP/misp-taxonomies/tree/main/meteorstorm. Contact: william.o.ferguson@ethicallyhacking.space. License: CC BY 4.0. Namespace_display: SCOR. Namespace_long: Space, Cybersecurity, Operations, and Resilience. Steward: H4CK32N4U75®.",
-  "icon": "route",
-  "kill_chain_order": {
-    "Aerial": [
-      "Cyber",
-      "Radio Frequency",
-      "Kinetic",
-      "Supply Chain",
-      "Environmental"
-    ],
-    "Aquatic": [
-      "Cyber",
-      "Radio Frequency",
-      "Kinetic",
-      "Supply Chain",
-      "Environmental"
-    ],
-    "Deep Space": [
-      "Cyber",
-      "Radio Frequency",
-      "Kinetic",
-      "Supply Chain",
-      "Environmental"
-    ],
-    "Orbital": [
-      "Cyber",
-      "Radio Frequency",
-      "Kinetic",
-      "Supply Chain",
-      "Environmental"
-    ],
-    "Terrestrial": [
-      "Cyber",
-      "Radio Frequency",
-      "Kinetic",
-      "Supply Chain",
-      "Environmental"
-    ]
-  },
+  "description": "SCOR Attack Paths. Informative galaxy providing taxonomic illustrations of known attack paths. Each path references TEN UUIDs through TOE relations and may additionally reference Detection Signatures (TDM) and Resilience Measures (TRE).",
+  "icon": "project-diagram",
   "name": "SCOR Attack Paths",
   "namespace": "scor",
   "type": "scor-attack-paths",
   "uuid": "7e1c4a8b-3d5f-4e2a-9c8b-0d1e2f3a4b01",
-  "version": 1
+  "version": 2
 }

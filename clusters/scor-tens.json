@@ -2,17 +2,16 @@
   "authors": [
     "H4CK32N4U75®"
   ],
-  "category": "meta",
-  "description": "Taxonomic Element Nomenclatures (TENs) of the METEORSTORM five-layer data model. Each value is one stable template (LAYER-TAG-LABEL) that analysts consume during enumeration to produce ETENs (LAYER:TAG:LABEL:ORDINAL) on a specific platform. Attack-path and other analytic cluster values reference these TENs by UUID via related[] arrays with relation type TOE/TDM/TRE per §6.2. Definitions follow METEORSTORM Quick Guide §8.",
-  "name": "SCOR TENs",
-  "source": "METEORSTORM Quick Guide §8 (Full Data Model).",
+  "category": "scor",
+  "description": "Reference nomenclature for the 30 SCOR Taxonomic Elements (TENs) across the five METEORSTORM layers. Vocabulary follows METEORSTORM Quick Guide §8 Tables 8.1,8.5 exactly.",
+  "name": "SCOR Taxonomic Element Nomenclature",
+  "source": "https://misp-galaxy.org/scor-tens/",
   "type": "scor-tens",
   "uuid": "7e1c4a8b-3d5f-4e2a-9c8b-0d1e2f3a4b04",
   "values": [
     {
-      "description": "Surface-based operational zones on planetary bodies. Root of the structural ontology; PCE entries enumerate no PARENT reference.",
+      "description": "Surface-based operational zones on planetary bodies.",
       "meta": {
-        "doc_section": "§8.1",
         "label": "Terrestrial",
         "layer": "PCE",
         "tag": "TE"
@@ -23,7 +22,6 @@
     {
       "description": "Water-based operational zones, including maritime domains.",
       "meta": {
-        "doc_section": "§8.1",
         "label": "Aquatic",
         "layer": "PCE",
         "tag": "AQ"
@@ -34,7 +32,6 @@
     {
       "description": "Atmospheric operational zones spanning low, high, and near-space regions.",
       "meta": {
-        "doc_section": "§8.1",
         "label": "Aerial",
         "layer": "PCE",
         "tag": "AE"
@@ -45,7 +42,6 @@
     {
       "description": "Operational zones within planetary or satellite orbits.",
       "meta": {
-        "doc_section": "§8.1",
         "label": "Orbital",
         "layer": "PCE",
         "tag": "OR"
@@ -56,7 +52,6 @@
     {
       "description": "Operational zones beyond planetary orbital regimes.",
       "meta": {
-        "doc_section": "§8.1",
         "label": "Deep Space",
         "layer": "PCE",
         "tag": "DS"
@@ -65,9 +60,8 @@
       "value": "PCE-DS-Deep Space"
     },
     {
-      "description": "Surface-based services and assets for primary launch operations. Every Segment enumerates a PARENT reference to one or more PCE entries.",
+      "description": "Surface-based services and assets for primary launch operations.",
       "meta": {
-        "doc_section": "§8.2",
         "label": "Launch",
         "layer": "SEG",
         "tag": "LA"
@@ -78,7 +72,6 @@
     {
       "description": "Services and assets enabling platform communications across signal paths.",
       "meta": {
-        "doc_section": "§8.2",
         "label": "Link",
         "layer": "SEG",
         "tag": "LI"
@@ -89,7 +82,6 @@
     {
       "description": "Surface-based services and assets for primary platform operations; primary locus of control-plane activity.",
       "meta": {
-        "doc_section": "§8.2",
         "label": "Ground",
         "layer": "SEG",
         "tag": "GR"
@@ -100,7 +92,6 @@
     {
       "description": "Services and assets for primary end-user operations.",
       "meta": {
-        "doc_section": "§8.2",
         "label": "User",
         "layer": "SEG",
         "tag": "US"
@@ -111,7 +102,6 @@
     {
       "description": "Water-based services and assets for primary platform operations.",
       "meta": {
-        "doc_section": "§8.2",
         "label": "Aquatic",
         "layer": "SEG",
         "tag": "AQ"
@@ -122,7 +112,6 @@
     {
       "description": "Aerial services and assets in the lower atmosphere.",
       "meta": {
-        "doc_section": "§8.2",
         "label": "Low Altitude",
         "layer": "SEG",
         "tag": "LO"
@@ -133,7 +122,6 @@
     {
       "description": "Aerial services and assets above the lower atmosphere but below near space.",
       "meta": {
-        "doc_section": "§8.2",
         "label": "High Altitude",
         "layer": "SEG",
         "tag": "HI"
@@ -144,7 +132,6 @@
     {
       "description": "Aerial services and assets above high altitude and below orbital regions.",
       "meta": {
-        "doc_section": "§8.2",
         "label": "Near Space",
         "layer": "SEG",
         "tag": "NE"
@@ -155,7 +142,6 @@
     {
       "description": "Services and assets operating in planetary or satellite orbits.",
       "meta": {
-        "doc_section": "§8.2",
         "label": "Space",
         "layer": "SEG",
         "tag": "SP"
@@ -166,7 +152,6 @@
     {
       "description": "Services and assets operating beyond planetary orbital regimes.",
       "meta": {
-        "doc_section": "§8.2",
         "label": "Deep Space",
         "layer": "SEG",
         "tag": "DE"
@@ -175,9 +160,8 @@
       "value": "SEG-DE-Deep Space"
     },
     {
-      "description": "Services for managing and orchestrating platform control functions. Every Service enumerates a PARENT reference to one or more Segments plus a DISTRIBUTED flag (Y/N).",
+      "description": "Services for managing and orchestrating platform control functions.",
       "meta": {
-        "doc_section": "§8.3",
         "label": "Control Plane",
         "layer": "SVC",
         "tag": "CP"
@@ -188,7 +172,6 @@
     {
       "description": "Services for managing and orchestrating mission product functions.",
       "meta": {
-        "doc_section": "§8.3",
         "label": "Data Plane",
         "layer": "SVC",
         "tag": "DP"
@@ -199,7 +182,6 @@
     {
       "description": "Services integrating both control and data plane functionalities.",
       "meta": {
-        "doc_section": "§8.3",
         "label": "Hybrid",
         "layer": "SVC",
         "tag": "HY"
@@ -208,9 +190,8 @@
       "value": "SVC-HY-Hybrid"
     },
     {
-      "description": "Physical components supporting platform operations. Every Asset enumerates a PARENT reference to exactly one Service and may optionally enumerate a SUBSYSTEM grouping.",
+      "description": "Physical components supporting platform operations.",
       "meta": {
-        "doc_section": "§8.4",
         "label": "Hardware",
         "layer": "AST",
         "tag": "HW"
@@ -221,7 +202,6 @@
     {
       "description": "Embedded control code governing hardware functions.",
       "meta": {
-        "doc_section": "§8.4",
         "label": "Firmware",
         "layer": "AST",
         "tag": "FW"
@@ -232,7 +212,6 @@
     {
       "description": "Applications and logic executing operational tasks.",
       "meta": {
-        "doc_section": "§8.4",
         "label": "Software",
         "layer": "AST",
         "tag": "SW"
@@ -243,7 +222,6 @@
     {
       "description": "Information generated, processed, or consumed by the platform.",
       "meta": {
-        "doc_section": "§8.4",
         "label": "Data",
         "layer": "AST",
         "tag": "DA"
@@ -254,7 +232,6 @@
     {
       "description": "Communication channels and transmission frequencies.",
       "meta": {
-        "doc_section": "§8.4",
         "label": "Signal",
         "layer": "AST",
         "tag": "SI"
@@ -265,7 +242,6 @@
     {
       "description": "Composite elements combining multiple asset types.",
       "meta": {
-        "doc_section": "§8.4",
         "label": "Hybrid",
         "layer": "AST",
         "tag": "HY"
@@ -274,9 +250,8 @@
       "value": "AST-HY-Hybrid"
     },
     {
-      "description": "Verifiable indication that the platform has been compromised. Analytic entries do not enumerate a PARENT reference; they enumerate a TARGET reference (TOE for IOC/IOA/ATT/THR; TDM for DET; TRE for RES) plus a SOURCE phase (Real, Modeled, or Synthetic).",
+      "description": "Verifiable indication that the platform has been compromised.",
       "meta": {
-        "doc_section": "§8.5",
         "label": "Indicator of Compromise",
         "layer": "AN",
         "tag": "IOC"
@@ -287,7 +262,6 @@
     {
       "description": "Verifiable indication that the platform has been targeted.",
       "meta": {
-        "doc_section": "§8.5",
         "label": "Indicator of Attack",
         "layer": "AN",
         "tag": "IOA"
@@ -298,7 +272,6 @@
     {
       "description": "Known or modeled attack path for a converged space system.",
       "meta": {
-        "doc_section": "§8.5",
         "label": "Attack Path",
         "layer": "AN",
         "tag": "ATT"
@@ -309,7 +282,6 @@
     {
       "description": "Known adversarial threat to the platform.",
       "meta": {
-        "doc_section": "§8.5",
         "label": "Threat",
         "layer": "AN",
         "tag": "THR"
@@ -320,7 +292,6 @@
     {
       "description": "Pattern, signal, or logic that triggers on contextualized threat behavior.",
       "meta": {
-        "doc_section": "§8.5",
         "label": "Detection Signature",
         "layer": "AN",
         "tag": "DET"
@@ -331,7 +302,6 @@
     {
       "description": "Protective capability ensuring resistance or recovery from threats, for either immediate implementation or as feedback for future platform engineering efforts.",
       "meta": {
-        "doc_section": "§8.5",
         "label": "Resilience Measure",
         "layer": "AN",
         "tag": "RES"

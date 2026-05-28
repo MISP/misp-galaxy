@@ -3,482 +3,515 @@
     "H4CK32N4U75®"
   ],
   "category": "attack-pattern",
-  "description": "Library of converged cross-domain attack paths. Each value is one Attack Path analytic element (AN:ATT:Attack Path:NN) populated with ETENs (Enumerated Taxonomic Element Nomenclatures) per the METEORSTORM data model. The pce_etens/seg_etens/svc_etens/ast_etens lists make every structural ETEN the path touches visible in the cluster detail view; toe aggregates them as the canonical Target-of-Exploitation reference per the analytic-element ontology. Stages are narrative; the path itself is the analytic claim.",
+  "description": "Informative galaxy: known attack paths through converged platforms. Every value uses the TEN form AN-ATT-Attack Path; individual paths are distinguished by meta.display_name and uuid. Each path describes initial access, lateral movement, and intended target (meta.initial-access, meta.lateral-movement, meta.intended-target), and lists the TENs it typically exploits in meta.toe-candidates (TOE reference notes in full TEN form). Relationships to TENs (the actual TOE relationship), Detection Signatures, and Resilience Measures are created by analysts in MISP, not precalculated here.",
   "name": "SCOR Attack Paths",
   "source": "Open sources curated by the SCOR steward.",
   "type": "scor-attack-paths",
   "uuid": "7e1c4a8b-3d5f-4e2a-9c8b-0d1e2f3a4b02",
   "values": [
     {
-      "description": "Cyber-warfare attack against Viasat's KA-SAT consumer-broadband service, executed at 24 February 2022 ~05:00 UTC, one hour before the Russian invasion of Ukraine. Adversary obtained access to a misconfigured VPN appliance at the Skylogic network-management facility (Turin), pivoted into the KA-SAT modem-management plane, and pushed the AcidRain wiper to SurfBeam2 / SurfBeam2+ consumer modems via the legitimate firmware-update channel. Tens of thousands of modems were bricked across Ukraine and Europe; ~5,800 Enercon wind turbines in Germany lost broadband ride-through. Five Eyes + EU + US Treasury coordinated attribution to Russian state actors.",
+      "description": "Generic attack path. An adversary obtains access to a ground-segment management appliance (such as a misconfigured edge VPN or remote-access gateway) and pivots into the platform's management VLAN. From there the adversary reaches a modem- or terminal-management plane that legitimately ships firmware updates to user-segment endpoints, and uses the existing update channel to deliver a destructive or persistent payload at scale. Initial access is on the ground segment; lateral movement is through control-plane infrastructure; the intended target is user-segment software and firmware via an authenticated, expected delivery mechanism.",
       "meta": {
-        "analytic_eten": "AN:ATT:Attack Path:00",
-        "ast_etens": [
-          "AST:SW:Software:00",
-          "AST:FW:Firmware:00",
-          "AST:HW:Hardware:00",
-          "AST:SI:Signal:00",
-          "AST:DA:Data:00"
-        ],
-        "date": "2022-02-24",
+        "an_layer_tag": "meteorstorm:an=\"ATT\"",
+        "audit-pending": true,
+        "display_name": "Network-management compromise via ground-segment edge appliance",
         "exposure_domain": [
-          "Cyber",
-          "Supply Chain"
+          "Cyber Warfare"
         ],
-        "kill_chain": [
-          "Terrestrial:Cyber",
-          "Terrestrial:Supply Chain",
-          "Orbital:Cyber"
+        "initial-access": "AUDIT-PENDING",
+        "intended-target": "AUDIT-PENDING",
+        "lateral-movement": "AUDIT-PENDING",
+        "related-incidents": [
+          {
+            "incident": "Viasat KA-SAT AcidRain",
+            "uuid": "6f4e2d9b-3c5a-4d7f-8b2c-000000000009"
+          }
         ],
-        "pce_etens": [
-          "PCE:TE:Terrestrial:00",
-          "PCE:OR:Orbital:00"
-        ],
-        "refs": [
-          "https://www.viasat.com/about/newsroom/blog/ka-sat-network-cyber-attack-overview/",
-          "https://www.sentinelone.com/labs/acidrain-a-modem-wiper-rains-down-on-europe/",
-          "https://www.ncsc.gov.uk/news/russia-behind-cyber-attack-with-europe-wide-impact-an-hour-before-ukraine-invasion"
-        ],
-        "seg_etens": [
-          "SEG:GR:Ground:00",
-          "SEG:LI:Link:00",
-          "SEG:US:User:00",
-          "SEG:SP:Space:00"
-        ],
-        "source_phase": "Real",
-        "stages": [
-          "1. Initial Access — exploit misconfigured VPN appliance at Skylogic ground/management facility.",
-          "2. Lateral Movement — pivot within KA-SAT management VLAN to modem-management plane.",
-          "3. Payload Delivery — push AcidRain wiper through the legitimate firmware-update channel to SurfBeam2 modems.",
-          "4. Execution / Impact — wiper bricks tens of thousands of consumer modems; Enercon wind-turbine ride-through degraded.",
-          "5. Recovery — modem replacement campaigns; firmware-update authentication hardened; coordinated public attribution."
-        ],
-        "svc_etens": [
-          "SVC:CP:Control Plane:00",
-          "SVC:DP:Data Plane:00"
-        ],
-        "toe": [
-          "PCE:TE:Terrestrial:00",
-          "PCE:OR:Orbital:00",
-          "SEG:GR:Ground:00",
-          "SEG:LI:Link:00",
-          "SEG:US:User:00",
-          "SEG:SP:Space:00",
-          "SVC:CP:Control Plane:00",
-          "SVC:DP:Data Plane:00",
-          "AST:SW:Software:00",
-          "AST:FW:Firmware:00",
-          "AST:HW:Hardware:00",
-          "AST:SI:Signal:00",
-          "AST:DA:Data:00"
-        ]
+        "ten": "AN-ATT-Attack Path",
+        "toe-candidates": []
       },
       "related": [
         {
           "dest-uuid": "7e1c4a8b-3d5f-4e2a-9c8b-100000000001",
           "tags": [
-            "scor-eten:\"PCE:TE:Terrestrial:00\""
+            "scor:ten=\"PCE-TE-Terrestrial\""
           ],
           "type": "TOE"
         },
         {
           "dest-uuid": "7e1c4a8b-3d5f-4e2a-9c8b-100000000004",
           "tags": [
-            "scor-eten:\"PCE:OR:Orbital:00\""
+            "scor:ten=\"PCE-OR-Orbital\""
           ],
           "type": "TOE"
         },
         {
           "dest-uuid": "7e1c4a8b-3d5f-4e2a-9c8b-200000000003",
           "tags": [
-            "scor-eten:\"SEG:GR:Ground:00\""
+            "scor:ten=\"SEG-GR-Ground\""
           ],
           "type": "TOE"
         },
         {
           "dest-uuid": "7e1c4a8b-3d5f-4e2a-9c8b-200000000002",
           "tags": [
-            "scor-eten:\"SEG:LI:Link:00\""
+            "scor:ten=\"SEG-LI-Link\""
           ],
           "type": "TOE"
         },
         {
           "dest-uuid": "7e1c4a8b-3d5f-4e2a-9c8b-200000000004",
           "tags": [
-            "scor-eten:\"SEG:US:User:00\""
+            "scor:ten=\"SEG-US-User\""
           ],
           "type": "TOE"
         },
         {
           "dest-uuid": "7e1c4a8b-3d5f-4e2a-9c8b-200000000009",
           "tags": [
-            "scor-eten:\"SEG:SP:Space:00\""
+            "scor:ten=\"SEG-SP-Space\""
           ],
           "type": "TOE"
         },
         {
           "dest-uuid": "7e1c4a8b-3d5f-4e2a-9c8b-300000000001",
           "tags": [
-            "scor-eten:\"SVC:CP:Control Plane:00\""
+            "scor:ten=\"SVC-CP-Control Plane\""
           ],
           "type": "TOE"
         },
         {
           "dest-uuid": "7e1c4a8b-3d5f-4e2a-9c8b-300000000002",
           "tags": [
-            "scor-eten:\"SVC:DP:Data Plane:00\""
+            "scor:ten=\"SVC-DP-Data Plane\""
           ],
           "type": "TOE"
         },
         {
           "dest-uuid": "7e1c4a8b-3d5f-4e2a-9c8b-400000000003",
           "tags": [
-            "scor-eten:\"AST:SW:Software:00\""
+            "scor:ten=\"AST-SW-Software\""
           ],
           "type": "TOE"
         },
         {
           "dest-uuid": "7e1c4a8b-3d5f-4e2a-9c8b-400000000002",
           "tags": [
-            "scor-eten:\"AST:FW:Firmware:00\""
+            "scor:ten=\"AST-FW-Firmware\""
           ],
           "type": "TOE"
         },
         {
           "dest-uuid": "7e1c4a8b-3d5f-4e2a-9c8b-400000000001",
           "tags": [
-            "scor-eten:\"AST:HW:Hardware:00\""
+            "scor:ten=\"AST-HW-Hardware\""
           ],
           "type": "TOE"
         },
         {
           "dest-uuid": "7e1c4a8b-3d5f-4e2a-9c8b-400000000005",
           "tags": [
-            "scor-eten:\"AST:SI:Signal:00\""
+            "scor:ten=\"AST-SI-Signal\""
           ],
           "type": "TOE"
         },
         {
           "dest-uuid": "7e1c4a8b-3d5f-4e2a-9c8b-400000000004",
           "tags": [
-            "scor-eten:\"AST:DA:Data:00\""
+            "scor:ten=\"AST-DA-Data\""
           ],
           "type": "TOE"
-        },
-        {
-          "dest-uuid": "7e1c4a8b-3d5f-4e2a-9c8b-500000000003",
-          "tags": [
-            "scor-eten:\"AN:ATT:Attack Path:00\""
-          ],
-          "type": "instance-of"
         }
       ],
       "uuid": "7e1c4a8b-3d5f-4e2a-9c8b-000000000001",
-      "value": "Viasat KA-SAT AcidRain (2022)"
+      "value": "Network-management compromise via ground-segment edge appliance"
     },
     {
-      "description": "Sustained unauthorised UAS incursions over London Gatwick Airport between 19 and 21 December 2018. Multiple drone sightings forced runway closures, disrupted >1,000 flights, and affected ~140,000 passengers. Attribution was never confirmed. Demonstrates a low-altitude aerial kinetic threat against terrestrial ground-segment operations using commodity hardware, with no cyber component required to produce strategic-scale impact.",
+      "description": "Generic attack path. One or more uncrewed aerial systems are flown into the low-altitude airspace over a ground-segment facility (airfield, launch range, telemetry site, mission control campus). The intended target may be physical (collision, payload delivery), informational (reconnaissance, telemetry capture), or operational (denial of service by forcing protective shutdown of the ground facility). Initial access is via the aerial environment; lateral movement is the UAS itself transiting toward the target site; the intended target is ground-segment hardware, signals, or operations.",
       "meta": {
-        "analytic_eten": "AN:ATT:Attack Path:00",
-        "ast_etens": [
-          "AST:HW:Hardware:00",
-          "AST:SI:Signal:00"
-        ],
-        "date": "2018-12",
+        "an_layer_tag": "meteorstorm:an=\"ATT\"",
+        "audit-pending": true,
+        "display_name": "Low-altitude UAS incursion against ground infrastructure",
         "exposure_domain": [
           "Kinetic"
         ],
-        "kill_chain": [
-          "Aerial:Kinetic",
-          "Terrestrial:Kinetic"
+        "initial-access": "AUDIT-PENDING",
+        "intended-target": "AUDIT-PENDING",
+        "lateral-movement": "AUDIT-PENDING",
+        "related-incidents": [
+          {
+            "incident": "Gatwick UAS Incursions",
+            "uuid": "6f4e2d9b-3c5a-4d7f-8b2c-000000000001"
+          }
         ],
-        "pce_etens": [
-          "PCE:AE:Aerial:00",
-          "PCE:TE:Terrestrial:00"
-        ],
-        "refs": [
-          "https://en.wikipedia.org/wiki/Gatwick_Airport_drone_incident",
-          "https://www.bbc.com/news/uk-england-sussex-46663019",
-          "https://www.gov.uk/government/news/government-acts-to-tackle-drone-misuse"
-        ],
-        "seg_etens": [
-          "SEG:LO:Low Altitude:00",
-          "SEG:GR:Ground:00"
-        ],
-        "source_phase": "Real",
-        "stages": [
-          "1. Reconnaissance — adversary maps Gatwick runway approach, perimeter coverage, and ATC response posture.",
-          "2. Incursion — UAS launched from undetermined ground position; sustained presence inside controlled airspace.",
-          "3. Control-Plane Disruption — ATC issues runway closure; ground operations halted; counter-UAS assets mobilised.",
-          "4. Recurrence — repeated incursions over 33 hours defeat single-shot detection/response posture.",
-          "5. Recovery — RAF EW assets and police counter-UAS systems deployed; runway reopens; permanent counter-UAS investments follow."
-        ],
-        "svc_etens": [
-          "SVC:CP:Control Plane:00"
-        ],
-        "toe": [
-          "PCE:AE:Aerial:00",
-          "PCE:TE:Terrestrial:00",
-          "SEG:LO:Low Altitude:00",
-          "SEG:GR:Ground:00",
-          "SVC:CP:Control Plane:00",
-          "AST:HW:Hardware:00",
-          "AST:SI:Signal:00"
-        ]
+        "ten": "AN-ATT-Attack Path",
+        "toe-candidates": []
       },
       "related": [
         {
           "dest-uuid": "7e1c4a8b-3d5f-4e2a-9c8b-100000000003",
           "tags": [
-            "scor-eten:\"PCE:AE:Aerial:00\""
+            "scor:ten=\"PCE-AE-Aerial\""
           ],
           "type": "TOE"
         },
         {
           "dest-uuid": "7e1c4a8b-3d5f-4e2a-9c8b-100000000001",
           "tags": [
-            "scor-eten:\"PCE:TE:Terrestrial:00\""
+            "scor:ten=\"PCE-TE-Terrestrial\""
           ],
           "type": "TOE"
         },
         {
           "dest-uuid": "7e1c4a8b-3d5f-4e2a-9c8b-200000000006",
           "tags": [
-            "scor-eten:\"SEG:LO:Low Altitude:00\""
+            "scor:ten=\"SEG-LO-Low Altitude\""
           ],
           "type": "TOE"
         },
         {
           "dest-uuid": "7e1c4a8b-3d5f-4e2a-9c8b-200000000003",
           "tags": [
-            "scor-eten:\"SEG:GR:Ground:00\""
+            "scor:ten=\"SEG-GR-Ground\""
           ],
           "type": "TOE"
         },
         {
           "dest-uuid": "7e1c4a8b-3d5f-4e2a-9c8b-300000000001",
           "tags": [
-            "scor-eten:\"SVC:CP:Control Plane:00\""
+            "scor:ten=\"SVC-CP-Control Plane\""
           ],
           "type": "TOE"
         },
         {
           "dest-uuid": "7e1c4a8b-3d5f-4e2a-9c8b-400000000001",
           "tags": [
-            "scor-eten:\"AST:HW:Hardware:00\""
+            "scor:ten=\"AST-HW-Hardware\""
           ],
           "type": "TOE"
         },
         {
           "dest-uuid": "7e1c4a8b-3d5f-4e2a-9c8b-400000000005",
           "tags": [
-            "scor-eten:\"AST:SI:Signal:00\""
+            "scor:ten=\"AST-SI-Signal\""
           ],
           "type": "TOE"
-        },
-        {
-          "dest-uuid": "7e1c4a8b-3d5f-4e2a-9c8b-500000000003",
-          "tags": [
-            "scor-eten:\"AN:ATT:Attack Path:00\""
-          ],
-          "type": "instance-of"
         }
       ],
       "uuid": "7e1c4a8b-3d5f-4e2a-9c8b-000000000002",
-      "value": "Gatwick UAS Incursions (2018)"
+      "value": "Low-altitude UAS incursion against ground infrastructure"
     },
     {
-      "description": "Chinese kinetic anti-satellite (ASAT) test conducted on 11 January 2007. A ground-launched SC-19 kinetic kill vehicle intercepted China's own retired Fengyun-1C polar-orbit weather satellite at ~865 km altitude over central China. The collision created the worst single debris event in LEO history: ~3,000+ trackable fragments plus an estimated 150,000+ untrackable pieces, distributed between 200 km and 3,850 km altitude. The debris field will persist for decades to centuries and continues to threaten operations across LEO including the ISS, other satellites, and future launches. The test demonstrated Chinese counter-space capability and triggered international condemnation.",
+      "description": "Generic attack path. A direct-ascent or co-orbital interceptor is launched against a space-segment asset (satellite, on-orbit platform). The engagement may aim for destruction, manoeuvrable harassment, or denial of orbital capability. Secondary effects include large debris populations that degrade the orbital environment and impose collision risk on co-located assets. Initial access is via the orbital environment; lateral movement is the interceptor's transit to the engagement point; the intended target is space-segment hardware.",
       "meta": {
-        "analytic_eten": "AN:ATT:Attack Path:00",
-        "ast_etens": [
-          "AST:HW:Hardware:00",
-          "AST:DA:Data:00"
-        ],
-        "date": "2007-01-11",
+        "an_layer_tag": "meteorstorm:an=\"ATT\"",
+        "audit-pending": true,
+        "display_name": "Direct-ascent kinetic engagement of space-segment assets",
         "exposure_domain": [
           "Kinetic"
         ],
-        "kill_chain": [
-          "Orbital:Kinetic"
-        ],
-        "pce_etens": [
-          "PCE:OR:Orbital:00"
-        ],
-        "refs": [
-          "https://www.theage.com.au/national/world-fury-at-satellite-destruction-20070120-ge416d.html",
-          "https://aerospace.org/sites/default/files/2018-05/SpaceTrafficMgmt_0.pdf",
-          "https://www.spacesecurity.info/space-attacks-open-database/"
-        ],
-        "seg_etens": [
-          "SEG:SP:Space:00"
-        ],
-        "source_phase": "Real",
-        "stages": [
-          "1. Mission Selection — China's SC-19 ASAT program targets the retired Fengyun-1C polar-orbit weather satellite at ~865 km altitude.",
-          "2. Launch — SC-19 kinetic kill vehicle launched from Xichang Satellite Launch Center on 11 January 2007.",
-          "3. Intercept — KKV impacts FY-1C in retrograde collision at closing velocity ~8 km/s.",
-          "4. Fragmentation — satellite shatters into 3,000+ trackable fragments plus an estimated 150,000+ untrackable pieces.",
-          "5. Debris field persistence — fragments populate 200-3,850 km altitude; persistence projected decades to centuries; continues to threaten LEO operations including the ISS."
-        ],
-        "svc_etens": [
-          "SVC:DP:Data Plane:00"
-        ],
-        "toe": [
-          "PCE:OR:Orbital:00",
-          "SEG:SP:Space:00",
-          "SVC:DP:Data Plane:00",
-          "AST:HW:Hardware:00",
-          "AST:DA:Data:00"
-        ]
+        "initial-access": "AUDIT-PENDING",
+        "intended-target": "AUDIT-PENDING",
+        "lateral-movement": "AUDIT-PENDING",
+        "related-incidents": [],
+        "ten": "AN-ATT-Attack Path",
+        "toe-candidates": []
       },
       "related": [
         {
           "dest-uuid": "7e1c4a8b-3d5f-4e2a-9c8b-100000000004",
           "tags": [
-            "scor-eten:\"PCE:OR:Orbital:00\""
+            "scor:ten=\"PCE-OR-Orbital\""
           ],
           "type": "TOE"
         },
         {
           "dest-uuid": "7e1c4a8b-3d5f-4e2a-9c8b-200000000009",
           "tags": [
-            "scor-eten:\"SEG:SP:Space:00\""
+            "scor:ten=\"SEG-SP-Space\""
           ],
           "type": "TOE"
         },
         {
           "dest-uuid": "7e1c4a8b-3d5f-4e2a-9c8b-300000000002",
           "tags": [
-            "scor-eten:\"SVC:DP:Data Plane:00\""
+            "scor:ten=\"SVC-DP-Data Plane\""
           ],
           "type": "TOE"
         },
         {
           "dest-uuid": "7e1c4a8b-3d5f-4e2a-9c8b-400000000001",
           "tags": [
-            "scor-eten:\"AST:HW:Hardware:00\""
+            "scor:ten=\"AST-HW-Hardware\""
           ],
           "type": "TOE"
         },
         {
           "dest-uuid": "7e1c4a8b-3d5f-4e2a-9c8b-400000000004",
           "tags": [
-            "scor-eten:\"AST:DA:Data:00\""
+            "scor:ten=\"AST-DA-Data\""
           ],
           "type": "TOE"
-        },
-        {
-          "dest-uuid": "7e1c4a8b-3d5f-4e2a-9c8b-500000000003",
-          "tags": [
-            "scor-eten:\"AN:ATT:Attack Path:00\""
-          ],
-          "type": "instance-of"
         }
       ],
       "uuid": "7e1c4a8b-3d5f-4e2a-9c8b-000000000003",
-      "value": "Fengyun-1C Chinese ASAT Test (2007)"
+      "value": "Direct-ascent kinetic engagement of space-segment assets"
     },
     {
-      "description": "Proof-of-concept GPS spoofing attack against the 65m luxury yacht M/Y White Rose of Drachs in the Mediterranean Sea during June 2013. A research team from the UT Austin Radionavigation Laboratory (Prof. Todd Humphreys, Jahshan Bhatti, Daniel Shepard) deployed a custom software-defined radio that generated false GPS signals matching the constellation pattern. By gradually increasing the spoofer's transmit power above the genuine satellite signal level, the team caused the yacht's GPS receiver to lock onto the spoofed signal without triggering any anomaly alerts. The autopilot then computed navigation solutions from the false position fix and steered the vessel onto an attacker-chosen course while the bridge crew observed no warning. Demonstrated GPS reliance vulnerability in civil maritime navigation; reported by UT Austin in July 2013.",
+      "description": "Generic attack path. An adversary radiates spoofed or meaconed GNSS signals on the link segment with sufficient power and timing fidelity to be tracked by user-segment positioning receivers. The receivers report position, velocity, or time consistent with the spoofed signal rather than the true sky picture, causing platforms or operators relying on those receivers to act on false PNT. Initial access is on the link segment; lateral movement is the receiver's signal-acquisition and tracking loops; the intended target is user-segment signal processing.",
       "meta": {
-        "analytic_eten": "AN:ATT:Attack Path:00",
-        "ast_etens": [
-          "AST:SI:Signal:00",
-          "AST:HW:Hardware:00",
-          "AST:DA:Data:00"
-        ],
-        "date": "2013-06",
+        "an_layer_tag": "meteorstorm:an=\"ATT\"",
+        "audit-pending": true,
+        "display_name": "GNSS deception against user-segment positioning receivers",
         "exposure_domain": [
-          "Radio Frequency"
+          "Electronic Warfare (EW)"
         ],
-        "kill_chain": [
-          "Aquatic:Radio Frequency"
-        ],
-        "pce_etens": [
-          "PCE:AQ:Aquatic:00"
-        ],
-        "refs": [
-          "https://news.utexas.edu/2013/07/29/ut-austin-researchers-spoof-superyacht-at-sea/",
-          "https://www.engr.utexas.edu/news/archive/7649-superyacht-gps-spoofing",
-          "https://www.spacesecurity.info/space-attacks-open-database/"
-        ],
-        "seg_etens": [
-          "SEG:AQ:Aquatic:00"
-        ],
-        "source_phase": "Modeled",
-        "stages": [
-          "1. Reconnaissance — identify target's GPS receiver model and confirm civilian (L1 C/A) signal use; civilian GPS lacks signal authentication.",
-          "2. Spoof Generation — generate counterfeit GPS L1 C/A signals matching the visible constellation geometry from the target's location.",
-          "3. Signal Override — co-located transmitter raises spoofed signal power above satellite signal level; receiver locks onto spoofed signals without triggering loss-of-lock alerts.",
-          "4. Course Deviation — autopilot processes false position fixes, computes deviation, and steers the vessel onto attacker-chosen waypoints.",
-          "5. Detection-Free Operation — bridge crew observes no GPS anomaly indicators; vessel arrives off-course while monitoring instruments show nominal navigation."
-        ],
-        "svc_etens": [
-          "SVC:CP:Control Plane:00"
-        ],
-        "toe": [
-          "PCE:AQ:Aquatic:00",
-          "SEG:AQ:Aquatic:00",
-          "SVC:CP:Control Plane:00",
-          "AST:SI:Signal:00",
-          "AST:HW:Hardware:00",
-          "AST:DA:Data:00"
-        ]
+        "initial-access": "AUDIT-PENDING",
+        "intended-target": "AUDIT-PENDING",
+        "lateral-movement": "AUDIT-PENDING",
+        "related-incidents": [],
+        "ten": "AN-ATT-Attack Path",
+        "toe-candidates": []
       },
       "related": [
         {
           "dest-uuid": "7e1c4a8b-3d5f-4e2a-9c8b-100000000002",
           "tags": [
-            "scor-eten:\"PCE:AQ:Aquatic:00\""
+            "scor:ten=\"PCE-AQ-Aquatic\""
           ],
           "type": "TOE"
         },
         {
           "dest-uuid": "7e1c4a8b-3d5f-4e2a-9c8b-200000000005",
           "tags": [
-            "scor-eten:\"SEG:AQ:Aquatic:00\""
+            "scor:ten=\"SEG-AQ-Aquatic\""
           ],
           "type": "TOE"
         },
         {
           "dest-uuid": "7e1c4a8b-3d5f-4e2a-9c8b-300000000001",
           "tags": [
-            "scor-eten:\"SVC:CP:Control Plane:00\""
+            "scor:ten=\"SVC-CP-Control Plane\""
           ],
           "type": "TOE"
         },
         {
           "dest-uuid": "7e1c4a8b-3d5f-4e2a-9c8b-400000000005",
           "tags": [
-            "scor-eten:\"AST:SI:Signal:00\""
+            "scor:ten=\"AST-SI-Signal\""
           ],
           "type": "TOE"
         },
         {
           "dest-uuid": "7e1c4a8b-3d5f-4e2a-9c8b-400000000001",
           "tags": [
-            "scor-eten:\"AST:HW:Hardware:00\""
+            "scor:ten=\"AST-HW-Hardware\""
           ],
           "type": "TOE"
         },
         {
           "dest-uuid": "7e1c4a8b-3d5f-4e2a-9c8b-400000000004",
           "tags": [
-            "scor-eten:\"AST:DA:Data:00\""
+            "scor:ten=\"AST-DA-Data\""
+          ],
+          "type": "TOE"
+        }
+      ],
+      "uuid": "7e1c4a8b-3d5f-4e2a-9c8b-000000000004",
+      "value": "GNSS deception against user-segment positioning receivers"
+    },
+    {
+      "description": "Ground-to-platform command path via credential abuse. Path in which an adversary compromises ground-segment operator credentials and reaches the platform control plane through legitimate command channels.",
+      "meta": {
+        "an_layer_tag": "AN-ATT",
+        "display_name": "Ground-to-platform command path via credential abuse",
+        "initial-access": "Compromise of ground-segment operator credentials (phishing or credential theft).",
+        "intended-target": "Issuance of out-of-baseline commands to the platform control plane.",
+        "lateral-movement": "Reuse of valid sessions to move from the operator workstation into the control-plane service.",
+        "related-incidents": [],
+        "ten": "AN-ATT-Attack Path",
+        "toe-candidates": [
+          {
+            "description": "The ground segment is the entry point: the operator workstation and ground infrastructure are where the credentials are abused.",
+            "ten": "SEG-GR-Ground"
+          },
+          {
+            "description": "The control plane is exploited to issue commands once the adversary holds valid sessions.",
+            "ten": "SVC-CP-Control Plane"
+          },
+          {
+            "description": "Ground-segment software (the operator console and command tooling) is the asset abused to reach the platform.",
+            "ten": "AST-SW-Software"
+          }
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "7e1c4a8b-3d5f-4e2a-9c8b-200000000003",
+          "tags": [
+            "scor:ten=\"SEG-GR-Ground\""
           ],
           "type": "TOE"
         },
         {
-          "dest-uuid": "7e1c4a8b-3d5f-4e2a-9c8b-500000000003",
+          "dest-uuid": "7e1c4a8b-3d5f-4e2a-9c8b-300000000001",
           "tags": [
-            "scor-eten:\"AN:ATT:Attack Path:00\""
+            "scor:ten=\"SVC-CP-Control Plane\""
           ],
-          "type": "instance-of"
+          "type": "TOE"
+        },
+        {
+          "dest-uuid": "7e1c4a8b-3d5f-4e2a-9c8b-400000000003",
+          "tags": [
+            "scor:ten=\"AST-SW-Software\""
+          ],
+          "type": "TOE"
         }
       ],
-      "uuid": "7e1c4a8b-3d5f-4e2a-9c8b-000000000004",
-      "value": "Yacht GPS Spoofing PoC (UT Austin, 2013)"
+      "uuid": "8d360306-04b1-58fa-a211-f21c4b6af2e8",
+      "value": "AN-ATT-Attack Path"
+    },
+    {
+      "description": "Firmware implant introduced through supply chain. Path in which an adversary modifies firmware artifacts via a supplier and reaches the platform via the legitimate update pipeline.",
+      "meta": {
+        "an_layer_tag": "AN-ATT",
+        "display_name": "Firmware implant introduced through supply chain",
+        "initial-access": "Compromise of a supplier or integrator build artifact prior to delivery.",
+        "intended-target": "Persistent firmware implant on platform hardware.",
+        "lateral-movement": "Propagation of the tampered artifact through the legitimate update pipeline onto platform hardware.",
+        "related-incidents": [],
+        "ten": "AN-ATT-Attack Path",
+        "toe-candidates": [
+          {
+            "description": "Software artifacts in the supplier pipeline are the initial point of tampering.",
+            "ten": "AST-SW-Software"
+          },
+          {
+            "description": "Firmware is the ultimate artifact carrying the implant onto the platform.",
+            "ten": "AST-FW-Firmware"
+          },
+          {
+            "description": "Platform hardware is the host the implanted firmware persists on.",
+            "ten": "AST-HW-Hardware"
+          }
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "7e1c4a8b-3d5f-4e2a-9c8b-400000000003",
+          "tags": [
+            "scor:ten=\"AST-SW-Software\""
+          ],
+          "type": "TOE"
+        },
+        {
+          "dest-uuid": "7e1c4a8b-3d5f-4e2a-9c8b-400000000002",
+          "tags": [
+            "scor:ten=\"AST-FW-Firmware\""
+          ],
+          "type": "TOE"
+        },
+        {
+          "dest-uuid": "7e1c4a8b-3d5f-4e2a-9c8b-400000000001",
+          "tags": [
+            "scor:ten=\"AST-HW-Hardware\""
+          ],
+          "type": "TOE"
+        }
+      ],
+      "uuid": "be0a2d09-f46b-5f52-8f48-775356a9ed42",
+      "value": "AN-ATT-Attack Path"
+    },
+    {
+      "description": "PNT deception path against user segment. Path in which an adversary degrades user-segment PNT availability through RF deception, optionally as a precursor to a downstream operational disruption.",
+      "meta": {
+        "an_layer_tag": "AN-ATT",
+        "display_name": "PNT deception path against user segment",
+        "initial-access": "RF-range proximity to the user segment sufficient to transmit deceptive PNT signals.",
+        "intended-target": "Degradation or manipulation of user-segment positioning, navigation, and timing.",
+        "lateral-movement": "Progressive capture of receiver tracking loops from authentic to deceptive signals.",
+        "related-incidents": [],
+        "ten": "AN-ATT-Attack Path",
+        "toe-candidates": [
+          {
+            "description": "The user segment is the target whose receivers are deceived.",
+            "ten": "SEG-US-User"
+          },
+          {
+            "description": "The link segment is the medium over which the deceptive signals are injected.",
+            "ten": "SEG-LI-Link"
+          },
+          {
+            "description": "Signal assets (the RF channels and receiver tracking loops) are the asset class manipulated.",
+            "ten": "AST-SI-Signal"
+          }
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "7e1c4a8b-3d5f-4e2a-9c8b-200000000004",
+          "tags": [
+            "scor:ten=\"SEG-US-User\""
+          ],
+          "type": "TOE"
+        },
+        {
+          "dest-uuid": "7e1c4a8b-3d5f-4e2a-9c8b-200000000002",
+          "tags": [
+            "scor:ten=\"SEG-LI-Link\""
+          ],
+          "type": "TOE"
+        },
+        {
+          "dest-uuid": "7e1c4a8b-3d5f-4e2a-9c8b-400000000005",
+          "tags": [
+            "scor:ten=\"AST-SI-Signal\""
+          ],
+          "type": "TOE"
+        }
+      ],
+      "uuid": "b0a43fb2-e3ff-5431-905c-1cb634c9e081",
+      "value": "AN-ATT-Attack Path"
+    },
+    {
+      "description": "Mission data exfiltration via the data plane. Path in which an adversary obtains access to mission data products and exfiltrates them through abnormal egress channels on the data plane.",
+      "meta": {
+        "an_layer_tag": "AN-ATT",
+        "display_name": "Mission data exfiltration via the data plane",
+        "initial-access": "Compromise of a data-plane service account or processing node.",
+        "intended-target": "Exfiltration of mission data products through abnormal egress channels.",
+        "lateral-movement": "Traversal from the processing node to mission data stores.",
+        "related-incidents": [],
+        "ten": "AN-ATT-Attack Path",
+        "toe-candidates": [
+          {
+            "description": "The data plane is the service whose mission products are targeted.",
+            "ten": "SVC-DP-Data Plane"
+          },
+          {
+            "description": "Data assets (the mission product stores) are the asset class exfiltrated.",
+            "ten": "AST-DA-Data"
+          }
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "7e1c4a8b-3d5f-4e2a-9c8b-300000000002",
+          "tags": [
+            "scor:ten=\"SVC-DP-Data Plane\""
+          ],
+          "type": "TOE"
+        },
+        {
+          "dest-uuid": "7e1c4a8b-3d5f-4e2a-9c8b-400000000004",
+          "tags": [
+            "scor:ten=\"AST-DA-Data\""
+          ],
+          "type": "TOE"
+        }
+      ],
+      "uuid": "6e32cdeb-9f4c-5564-bad0-06ec949916f7",
+      "value": "AN-ATT-Attack Path"
     }
   ],
   "version": 1
