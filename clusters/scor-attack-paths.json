@@ -13,7 +13,7 @@
       "description": "Generic attack path. An adversary obtains access to a ground-segment management appliance (such as a misconfigured edge VPN or remote-access gateway) and pivots into the platform's management VLAN. From there the adversary reaches a modem- or terminal-management plane that legitimately ships firmware updates to user-segment endpoints, and uses the existing update channel to deliver a destructive or persistent payload at scale. Initial access is on the ground segment; lateral movement is through control-plane infrastructure; the intended target is user-segment software and firmware via an authenticated, expected delivery mechanism.",
       "meta": {
         "an_layer_tag": "meteorstorm:an=\"ATT\"",
-        "audit-pending": true,
+        "audit-pending": "true",
         "display_name": "Network-management compromise via ground-segment edge appliance",
         "exposure_domain": [
           "Cyber Warfare"
@@ -22,10 +22,7 @@
         "intended-target": "AUDIT-PENDING",
         "lateral-movement": "AUDIT-PENDING",
         "related-incidents": [
-          {
-            "incident": "Viasat KA-SAT AcidRain",
-            "uuid": "6f4e2d9b-3c5a-4d7f-8b2c-000000000009"
-          }
+          "6f4e2d9b-3c5a-4d7f-8b2c-000000000009"
         ],
         "ten": "AN-ATT-Attack Path",
         "toe-candidates": []
@@ -130,7 +127,7 @@
       "description": "Generic attack path. One or more uncrewed aerial systems are flown into the low-altitude airspace over a ground-segment facility (airfield, launch range, telemetry site, mission control campus). The intended target may be physical (collision, payload delivery), informational (reconnaissance, telemetry capture), or operational (denial of service by forcing protective shutdown of the ground facility). Initial access is via the aerial environment; lateral movement is the UAS itself transiting toward the target site; the intended target is ground-segment hardware, signals, or operations.",
       "meta": {
         "an_layer_tag": "meteorstorm:an=\"ATT\"",
-        "audit-pending": true,
+        "audit-pending": "true",
         "display_name": "Low-altitude UAS incursion against ground infrastructure",
         "exposure_domain": [
           "Kinetic"
@@ -139,10 +136,7 @@
         "intended-target": "AUDIT-PENDING",
         "lateral-movement": "AUDIT-PENDING",
         "related-incidents": [
-          {
-            "incident": "Gatwick UAS Incursions",
-            "uuid": "6f4e2d9b-3c5a-4d7f-8b2c-000000000001"
-          }
+          "6f4e2d9b-3c5a-4d7f-8b2c-000000000001"
         ],
         "ten": "AN-ATT-Attack Path",
         "toe-candidates": []
@@ -205,7 +199,7 @@
       "description": "Generic attack path. A direct-ascent or co-orbital interceptor is launched against a space-segment asset (satellite, on-orbit platform). The engagement may aim for destruction, manoeuvrable harassment, or denial of orbital capability. Secondary effects include large debris populations that degrade the orbital environment and impose collision risk on co-located assets. Initial access is via the orbital environment; lateral movement is the interceptor's transit to the engagement point; the intended target is space-segment hardware.",
       "meta": {
         "an_layer_tag": "meteorstorm:an=\"ATT\"",
-        "audit-pending": true,
+        "audit-pending": "true",
         "display_name": "Direct-ascent kinetic engagement of space-segment assets",
         "exposure_domain": [
           "Kinetic"
@@ -261,7 +255,7 @@
       "description": "Generic attack path. An adversary radiates spoofed or meaconed GNSS signals on the link segment with sufficient power and timing fidelity to be tracked by user-segment positioning receivers. The receivers report position, velocity, or time consistent with the spoofed signal rather than the true sky picture, causing platforms or operators relying on those receivers to act on false PNT. Initial access is on the link segment; lateral movement is the receiver's signal-acquisition and tracking loops; the intended target is user-segment signal processing.",
       "meta": {
         "an_layer_tag": "meteorstorm:an=\"ATT\"",
-        "audit-pending": true,
+        "audit-pending": "true",
         "display_name": "GNSS deception against user-segment positioning receivers",
         "exposure_domain": [
           "Electronic Warfare (EW)"
@@ -321,7 +315,7 @@
       "value": "GNSS deception against user-segment positioning receivers"
     },
     {
-      "description": "Ground-to-platform command path via credential abuse. Path in which an adversary compromises ground-segment operator credentials and reaches the platform control plane through legitimate command channels.",
+      "description": "Ground-to-platform command path via credential abuse. Path in which an adversary compromises ground-segment operator credentials and reaches the platform control plane through legitimate command channels. Reference TENs: SEG-GR-Ground: The ground segment is the entry point: the operator workstation and ground infrastructure are where the credentials are abused. SVC-CP-Control Plane: The control plane is exploited to issue commands once the adversary holds valid sessions. AST-SW-Software: Ground-segment software (the operator console and command tooling) is the asset abused to reach the platform.",
       "meta": {
         "an_layer_tag": "AN-ATT",
         "display_name": "Ground-to-platform command path via credential abuse",
@@ -331,18 +325,9 @@
         "related-incidents": [],
         "ten": "AN-ATT-Attack Path",
         "toe-candidates": [
-          {
-            "description": "The ground segment is the entry point: the operator workstation and ground infrastructure are where the credentials are abused.",
-            "ten": "SEG-GR-Ground"
-          },
-          {
-            "description": "The control plane is exploited to issue commands once the adversary holds valid sessions.",
-            "ten": "SVC-CP-Control Plane"
-          },
-          {
-            "description": "Ground-segment software (the operator console and command tooling) is the asset abused to reach the platform.",
-            "ten": "AST-SW-Software"
-          }
+          "SEG-GR-Ground",
+          "SVC-CP-Control Plane",
+          "AST-SW-Software"
         ]
       },
       "related": [
@@ -369,10 +354,10 @@
         }
       ],
       "uuid": "8d360306-04b1-58fa-a211-f21c4b6af2e8",
-      "value": "AN-ATT-Attack Path"
+      "value": "Ground-to-platform command path via credential abuse"
     },
     {
-      "description": "Firmware implant introduced through supply chain. Path in which an adversary modifies firmware artifacts via a supplier and reaches the platform via the legitimate update pipeline.",
+      "description": "Firmware implant introduced through supply chain. Path in which an adversary modifies firmware artifacts via a supplier and reaches the platform via the legitimate update pipeline. Reference TENs: AST-SW-Software: Software artifacts in the supplier pipeline are the initial point of tampering. AST-FW-Firmware: Firmware is the ultimate artifact carrying the implant onto the platform. AST-HW-Hardware: Platform hardware is the host the implanted firmware persists on.",
       "meta": {
         "an_layer_tag": "AN-ATT",
         "display_name": "Firmware implant introduced through supply chain",
@@ -382,18 +367,9 @@
         "related-incidents": [],
         "ten": "AN-ATT-Attack Path",
         "toe-candidates": [
-          {
-            "description": "Software artifacts in the supplier pipeline are the initial point of tampering.",
-            "ten": "AST-SW-Software"
-          },
-          {
-            "description": "Firmware is the ultimate artifact carrying the implant onto the platform.",
-            "ten": "AST-FW-Firmware"
-          },
-          {
-            "description": "Platform hardware is the host the implanted firmware persists on.",
-            "ten": "AST-HW-Hardware"
-          }
+          "AST-SW-Software",
+          "AST-FW-Firmware",
+          "AST-HW-Hardware"
         ]
       },
       "related": [
@@ -420,10 +396,10 @@
         }
       ],
       "uuid": "be0a2d09-f46b-5f52-8f48-775356a9ed42",
-      "value": "AN-ATT-Attack Path"
+      "value": "Firmware implant introduced through supply chain"
     },
     {
-      "description": "PNT deception path against user segment. Path in which an adversary degrades user-segment PNT availability through RF deception, optionally as a precursor to a downstream operational disruption.",
+      "description": "PNT deception path against user segment. Path in which an adversary degrades user-segment PNT availability through RF deception, optionally as a precursor to a downstream operational disruption. Reference TENs: SEG-US-User: The user segment is the target whose receivers are deceived. SEG-LI-Link: The link segment is the medium over which the deceptive signals are injected. AST-SI-Signal: Signal assets (the RF channels and receiver tracking loops) are the asset class manipulated.",
       "meta": {
         "an_layer_tag": "AN-ATT",
         "display_name": "PNT deception path against user segment",
@@ -433,18 +409,9 @@
         "related-incidents": [],
         "ten": "AN-ATT-Attack Path",
         "toe-candidates": [
-          {
-            "description": "The user segment is the target whose receivers are deceived.",
-            "ten": "SEG-US-User"
-          },
-          {
-            "description": "The link segment is the medium over which the deceptive signals are injected.",
-            "ten": "SEG-LI-Link"
-          },
-          {
-            "description": "Signal assets (the RF channels and receiver tracking loops) are the asset class manipulated.",
-            "ten": "AST-SI-Signal"
-          }
+          "SEG-US-User",
+          "SEG-LI-Link",
+          "AST-SI-Signal"
         ]
       },
       "related": [
@@ -471,10 +438,10 @@
         }
       ],
       "uuid": "b0a43fb2-e3ff-5431-905c-1cb634c9e081",
-      "value": "AN-ATT-Attack Path"
+      "value": "PNT deception path against user segment"
     },
     {
-      "description": "Mission data exfiltration via the data plane. Path in which an adversary obtains access to mission data products and exfiltrates them through abnormal egress channels on the data plane.",
+      "description": "Mission data exfiltration via the data plane. Path in which an adversary obtains access to mission data products and exfiltrates them through abnormal egress channels on the data plane. Reference TENs: SVC-DP-Data Plane: The data plane is the service whose mission products are targeted. AST-DA-Data: Data assets (the mission product stores) are the asset class exfiltrated.",
       "meta": {
         "an_layer_tag": "AN-ATT",
         "display_name": "Mission data exfiltration via the data plane",
@@ -484,14 +451,8 @@
         "related-incidents": [],
         "ten": "AN-ATT-Attack Path",
         "toe-candidates": [
-          {
-            "description": "The data plane is the service whose mission products are targeted.",
-            "ten": "SVC-DP-Data Plane"
-          },
-          {
-            "description": "Data assets (the mission product stores) are the asset class exfiltrated.",
-            "ten": "AST-DA-Data"
-          }
+          "SVC-DP-Data Plane",
+          "AST-DA-Data"
         ]
       },
       "related": [
@@ -511,7 +472,7 @@
         }
       ],
       "uuid": "6e32cdeb-9f4c-5564-bad0-06ec949916f7",
-      "value": "AN-ATT-Attack Path"
+      "value": "Mission data exfiltration via the data plane"
     }
   ],
   "version": 1

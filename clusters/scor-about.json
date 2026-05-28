@@ -48,71 +48,19 @@
       "description": "Reference galaxy for AN-RES values. Each measure lists TRE candidates (the TENs it protects) and records equivalent controls from external frameworks via the framework-mappings metadata field. This is the Framing's normalization bridge: a single SCOR measure becomes the common reference point for controls expressed in many vocabularies.\n\nThe thirteen frameworks normalized into the METEORSTORM Analytic Layer, with the publisher and the benefit of normalization for each:\n\n• MITRE ATT&CK, The MITRE Corporation (https://attack.mitre.org). The globally adopted catalog of adversary tactics, techniques, and procedures across enterprise, cloud, mobile, and industrial control system environments. Normalizing ATT&CK into the METEORSTORM Analytic Layer gives defenders a stable lexicon for adversary behavior that every partner organization already speaks, so Attack Path (AN-ATT-Attack Path) and Threat (AN-THR-Threat) entries sourced from ATT&CK are portable across teams and tools with no translation cost.\n\n• MITRE FiGHT, The MITRE Corporation, with the U.S. DoD 5G Cross-Functional Team (https://fight.mitre.org). A purpose-built threat model for 5G telecommunications networks spanning the radio interface, core network, and service layer. Normalizing FiGHT lets METEORSTORM carry 5G-specific adversary knowledge against link- and ground-segment services that rely on 5G infrastructure, without requiring defenders to maintain a separate 5G-only lane in their tooling.\n\n• MITRE ATLAS, The MITRE Corporation (https://atlas.mitre.org). Adversary tactics, techniques, and case studies targeting AI and machine learning systems, including data poisoning, model evasion, prompt injection, and adversarial input manipulation. Normalizing ATLAS gives the Analytic Layer a stable vocabulary for AI/ML adversary behavior, so AI-facing AN-ATT-Attack Path and AN-THR entries carry the same threat language that AI security teams already use. (Where these entries attach in the service layer depends on how the affected AI workloads are enumerated as ETENs on the platform under analysis; the canonical 30-TEN catalog from METEORSTORM Quick Guide section 8 governs available service-layer TENs.)\n\n• MITRE D3FEND, The MITRE Corporation, funded by the NSA (https://d3fend.mitre.org). A structured knowledge graph of cybersecurity countermeasures and defensive techniques mapped against offensive TTPs. Normalizing D3FEND gives Detection Signature (AN-DET-Detection Signature) and Resilience Measure (AN-RES-Resilience Measure) entries a shared vocabulary for defender actions, so that a defensive control enumerated by one team is immediately recognizable and actionable to another.\n\n• MITRE EMB3D, The MITRE Corporation (https://emb3d.mitre.org). An emerging threat model cataloging cyber threats to embedded devices (the firmware, bootloaders, and microcontrollers underneath complex platforms) with mapped mitigations. Normalizing EMB3D is what lets METEORSTORM reach beneath flight software into the firmware-layer assets (AST-FW-Firmware) where space, drone, and embedded platforms are increasingly targeted.\n\n• MITRE CAPEC, The MITRE Corporation, originally sponsored by the U.S. Department of Homeland Security (https://capec.mitre.org). The Common Attack Pattern Enumeration and Classification catalog, describing how attacks are executed at an abstract, reusable pattern level across software and systems. Normalizing CAPEC supplies METEORSTORM with the generalized attack-pattern language that complements the more tactical ATT&CK catalog, useful for Attack Path entries whose underlying mechanism is a well-known software pattern rather than a specific adversary TTP.\n\n• Aerospace SPARTA, The Aerospace Corporation (https://sparta.aerospace.org). The Space Attack Research and Tactic Analysis framework, the first matrix purpose-built for spacecraft and space systems, cataloging adversary TTPs across reconnaissance, initial access, execution, persistence, and impact. Normalizing SPARTA gives the Analytic Layer the space-specific adversary vocabulary that no enterprise-focused framework fully captures, and is the canonical source for AN-ATT entries attached to space-segment assets.\n\n• ESA SPACE-SHIELD, European Space Agency (ESA), via the Space Security Operations Centre at ESEC Redu (https://spaceshield.esa.int). The Space Attacks and Countermeasures Engineering Shield, delivering an ATT&CK-aligned knowledge base tailored to the space segment and communication links. Normalizing SPACE-SHIELD complements SPARTA by bringing the European space community's perspective into the same analytic entry, so that trans-Atlantic partner organizations can share space-threat intelligence in a single vocabulary.\n\n• CSA AI Controls Matrix (AICM), Cloud Security Alliance (CSA) (https://cloudsecurityalliance.org/artifacts/ai-controls-matrix). A vendor-agnostic control framework for securely developing, operating, and governing cloud-based AI systems, mapped to ISO 42001, ISO 27001, and NIST AI RMF. Normalizing AICM is what lets METEORSTORM enumerate AI-governance controls as Resilience Measure (AN-RES-Resilience Measure) entries that are already crosswalked to the major audit standards, eliminating duplicate control-mapping work.\n\n• CSA Cloud Controls Matrix (CCM), Cloud Security Alliance (CSA) (https://cloudsecurityalliance.org/research/cloud-controls-matrix). The de facto standard for cloud security assurance, comprising control objectives across security domains and crosswalked to ISO 27001, NIST, PCI, and other leading standards. Normalizing CCM lets cloud-segment AN-RES entries carry the same control vocabulary that enterprise security teams already use, so mission-assurance analytics roll up cleanly into existing cloud governance reporting.\n\n• CSA Shared Security Responsibility Model (SSRM), Cloud Security Alliance (CSA) (https://cloudsecurityalliance.org/research/working-groups/shared-security-responsibility-model). The canonical model defining where security responsibility sits between cloud service providers and cloud service consumers across IaaS, PaaS, and SaaS. Normalizing SSRM is essential for multi-operator space and ground architectures; it gives analytic entries a defensible way to enumerate which party owns a given control, preventing the gaps that emerge when responsibility is ambiguous across the stack.\n\n• NIST SP 800-160 Volumes 1 and 2, U.S. National Institute of Standards and Technology (NIST) (https://csrc.nist.gov/pubs/sp/800/160/v1/r1/final). Systems security engineering and cyber resiliency engineering frameworks providing principled guidance for building trustworthy, survivable systems. Normalizing SP 800-160 is the methodological anchor for Resilience Measure (AN-RES-Resilience Measure) entries; the Anticipate - Withstand - Recover - Adapt goals from Volume 2 are the engineering definition behind what AN-RES-Resilience Measure exists to capture.\n\n• NIST SP 800-53, U.S. National Institute of Standards and Technology (NIST) (https://csrc.nist.gov/projects/risk-management/sp800-53-controls). The comprehensive catalog of security and privacy controls for federal information systems and organizations: the reference control library the U.S. government and countless commercial programs build against. Normalizing SP 800-53 means Resilience Measure (AN-RES-Resilience Measure) entries can reference the exact control identifiers that appear in an organization's System Security Plan, closing the loop between threat-informed analytics and compliance-driven engineering.\n\nHow it is used. SCOR Platform Professionals draw TRE relationships in MISP from each measure to the TEN clusters it is intended to protect. The framework-mappings field provides the cross-walk so an organization running SPARTA, a different organization running CSA CCM, a third organization running NIST SP 800-53, and a fourth running ESA SPACE-SHIELD can all point at the same SCOR measure as the canonical reference.\n\nFile pair: galaxies/scor-resilience-measures.json and clusters/scor-resilience-measures.json.",
       "meta": {
         "frameworks-normalized": [
-          {
-            "name": "MITRE ATT&CK",
-            "publisher": "The MITRE Corporation",
-            "url": "https://attack.mitre.org"
-          },
-          {
-            "name": "MITRE FiGHT",
-            "publisher": "The MITRE Corporation, with the U.S. DoD 5G Cross-Functional Team",
-            "url": "https://fight.mitre.org"
-          },
-          {
-            "name": "MITRE ATLAS",
-            "publisher": "The MITRE Corporation",
-            "url": "https://atlas.mitre.org"
-          },
-          {
-            "name": "MITRE D3FEND",
-            "publisher": "The MITRE Corporation, funded by the NSA",
-            "url": "https://d3fend.mitre.org"
-          },
-          {
-            "name": "MITRE EMB3D",
-            "publisher": "The MITRE Corporation",
-            "url": "https://emb3d.mitre.org"
-          },
-          {
-            "name": "MITRE CAPEC",
-            "publisher": "The MITRE Corporation, originally sponsored by the U.S. Department of Homeland Security",
-            "url": "https://capec.mitre.org"
-          },
-          {
-            "name": "Aerospace SPARTA",
-            "publisher": "The Aerospace Corporation",
-            "url": "https://sparta.aerospace.org"
-          },
-          {
-            "name": "ESA SPACE-SHIELD",
-            "publisher": "European Space Agency (ESA), via the Space Security Operations Centre at ESEC Redu",
-            "url": "https://spaceshield.esa.int"
-          },
-          {
-            "name": "CSA AI Controls Matrix (AICM)",
-            "publisher": "Cloud Security Alliance (CSA)",
-            "url": "https://cloudsecurityalliance.org/artifacts/ai-controls-matrix"
-          },
-          {
-            "name": "CSA Cloud Controls Matrix (CCM)",
-            "publisher": "Cloud Security Alliance (CSA)",
-            "url": "https://cloudsecurityalliance.org/research/cloud-controls-matrix"
-          },
-          {
-            "name": "CSA Shared Security Responsibility Model (SSRM)",
-            "publisher": "Cloud Security Alliance (CSA)",
-            "url": "https://cloudsecurityalliance.org/research/working-groups/shared-security-responsibility-model"
-          },
-          {
-            "name": "NIST SP 800-160 Volumes 1 and 2",
-            "publisher": "U.S. National Institute of Standards and Technology (NIST)",
-            "url": "https://csrc.nist.gov/pubs/sp/800/160/v1/r1/final"
-          },
-          {
-            "name": "NIST SP 800-53",
-            "publisher": "U.S. National Institute of Standards and Technology (NIST)",
-            "url": "https://csrc.nist.gov/projects/risk-management/sp800-53-controls"
-          }
+          "MITRE ATT&CK",
+          "MITRE FiGHT",
+          "MITRE ATLAS",
+          "MITRE D3FEND",
+          "MITRE EMB3D",
+          "MITRE CAPEC",
+          "Aerospace SPARTA",
+          "ESA SPACE-SHIELD",
+          "CSA AI Controls Matrix (AICM)",
+          "CSA Cloud Controls Matrix (CCM)",
+          "CSA Shared Security Responsibility Model (SSRM)",
+          "NIST SP 800-160 Volumes 1 and 2",
+          "NIST SP 800-53"
         ],
         "galaxy": "scor-resilience-measures",
         "role": "reference-galaxy"

@@ -10,7 +10,7 @@
   "uuid": "86cf7827-3e6e-54d8-bc1b-6339ff46d91c",
   "values": [
     {
-      "description": "Signed and replay-protected command authentication. Requires cryptographically signed and replay-protected commands on the platform control plane.",
+      "description": "Signed and replay-protected command authentication. Requires cryptographically signed and replay-protected commands on the platform control plane. Reference TENs: SVC-CP-Control Plane: Protects the control plane by ensuring only authenticated, non-replayable commands are accepted. AST-SW-Software: Protects the command-handling software that validates and executes commands.",
       "meta": {
         "an_layer_tag": "AN-RES",
         "display_name": "Signed and replay-protected command authentication",
@@ -22,18 +22,12 @@
         ],
         "ten": "AN-RES-Resilience Measure",
         "tre-candidates": [
-          {
-            "description": "Protects the control plane by ensuring only authenticated, non-replayable commands are accepted.",
-            "ten": "SVC-CP-Control Plane"
-          },
-          {
-            "description": "Protects the command-handling software that validates and executes commands.",
-            "ten": "AST-SW-Software"
-          }
+          "SVC-CP-Control Plane",
+          "AST-SW-Software"
         ]
       },
       "uuid": "332052de-6028-5740-9ae8-448414a8e732",
-      "value": "AN-RES-Resilience Measure"
+      "value": "Signed and replay-protected command authentication"
     }
   ],
   "version": 1
