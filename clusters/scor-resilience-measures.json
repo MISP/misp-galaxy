@@ -1,0 +1,34 @@
+{
+  "authors": [
+    "H4CK32N4U75®"
+  ],
+  "category": "scor",
+  "description": "Reference vocabulary for SCOR AN-RES values. Every value uses the TEN form AN-RES-Resilience Measure; individual measures are distinguished by meta.display_name and uuid. Each measure lists the TENs it protects in meta.tre-candidates (TRE reference notes in full TEN form, each with a description). This galaxy is the normalization bridge for resilience and mitigation content: each measure records equivalent controls from external frameworks (for example SPARTA, SPACE-SHIELD, DEFEND, NIST SP 800-160, CSA CCM) in meta.framework-mappings. The actual TRE relationships to TEN clusters are created by analysts in MISP, not precalculated here.",
+  "name": "SCOR Resilience Measures",
+  "source": "https://misp-galaxy.org/scor-resilience-measures/",
+  "type": "scor-resilience-measures",
+  "uuid": "86cf7827-3e6e-54d8-bc1b-6339ff46d91c",
+  "values": [
+    {
+      "description": "Signed and replay-protected command authentication. Requires cryptographically signed and replay-protected commands on the platform control plane. Reference TENs: SVC-CP-Control Plane: Protects the control plane by ensuring only authenticated, non-replayable commands are accepted. AST-SW-Software: Protects the command-handling software that validates and executes commands.",
+      "meta": {
+        "an_layer_tag": "AN-RES",
+        "display_name": "Signed and replay-protected command authentication",
+        "framework-mappings": [
+          "SPARTA: REC-0009",
+          "SPACE-SHIELD: M-0012",
+          "NIST SP 800-160: SA-8",
+          "CSA CCM: IVS-09"
+        ],
+        "ten": "AN-RES-Resilience Measure",
+        "tre-candidates": [
+          "SVC-CP-Control Plane",
+          "AST-SW-Software"
+        ]
+      },
+      "uuid": "332052de-6028-5740-9ae8-448414a8e732",
+      "value": "Signed and replay-protected command authentication"
+    }
+  ],
+  "version": 1
+}

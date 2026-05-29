@@ -1,0 +1,31 @@
+{
+  "authors": [
+    "H4CK32N4U75®"
+  ],
+  "category": "scor",
+  "description": "Reference vocabulary for SCOR AN-DET values. Every value uses the TEN form AN-DET-Detection Signature; individual signatures are distinguished by meta.display_name and uuid. Each signature is expressed as a full RootA (roota.io) rule embedded in meta.roota and carries a mandatory METEORSTORM layer mapping (meta.pce, meta.seg, meta.svc, meta.ast), each a METEORSTORM TAG value or NA. TDM relationships to TEN clusters are created by analysts in MISP, not precalculated here.",
+  "name": "SCOR Detection Signatures",
+  "source": "https://misp-galaxy.org/scor-detection-signatures/",
+  "type": "scor-detection-signatures",
+  "uuid": "d705856b-aec0-5d62-bf42-81f3251f0aff",
+  "values": [
+    {
+      "description": "Anomalous control-plane command sequence detection. Detects command sequences on the platform control plane that deviate from a learned operational baseline.",
+      "meta": {
+        "an_layer_tag": "AN-DET",
+        "ast": "SW",
+        "display_name": "Anomalous control-plane command sequence detection",
+        "format": "roota",
+        "pce": "NA",
+        "roota": "name: Anomalous control-plane command sequence detection\ndetails: Detects command sequences on the platform control plane that deviate from a learned operational baseline.\nauthor: H4CK32N4U75®\nseverity: high\ntype: query\nclass: behaviour\ndate: 2026-06-01\nmitre-attack:\n    - t1059\n    - t1078.004\ndetection:\n    language: splunk-spl-query\n    body: index=* source=\"platform:control-plane\" (command_class=\"commanding\" OR command_class=\"reconfig\") NOT baseline_match=true | stats count by source_account, command_class, asset_id\nlogsource:\n    product: Linux\n    log_name: platform_cmd_audit\n    class_name: Process Activity\n    audit:\n        source: Platform control-plane command audit log\n        enable: Enable command-audit logging on the control-plane service and forward to the SIEM.\ntimeline:\n    2026-02-14: DEMO-CAMPAIGN-ALPHA\nreferences:\n    - https://misp-galaxy.org/scor-detection-signatures/\ntags: scor, control_plane, commanding\nlicense: DRL 1.1\nversion: 1\nuuid: c8fb7196-d938-557d-9f98-233cbf2f5382\ncorrelation:\n    timeframe: 5m\n    functions: count() > 5",
+        "roota-version": "1",
+        "seg": "GR",
+        "svc": "CP",
+        "ten": "AN-DET-Detection Signature"
+      },
+      "uuid": "c8fb7196-d938-557d-9f98-233cbf2f5382",
+      "value": "Anomalous control-plane command sequence detection"
+    }
+  ],
+  "version": 1
+}
