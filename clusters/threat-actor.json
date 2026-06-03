@@ -9209,13 +9209,16 @@
     {
       "description": "For the first time, the activity of the Calypso group was detected by specialists of PT Expert Security Center in March 2019, during the work to detect cyber threats. As a result, many malware samples of this group were obtained, affected organizations and control servers of intruders were identified. According to our data, the group has been active since at least September 2016. The main goal of the group is to steal confidential data, the main victims are government agencies from Brazil, India, Kazakhstan, Russia, Thailand, Turkey. Our data suggest that the group has Asian roots. Description translated from Russian.",
       "meta": {
+        "country": "CN",
         "origin:BRONZE MEDLEY": "Secureworks",
         "refs": [
           "https://www.ptsecurity.com/upload/corporate/ru-ru/analytics/calypso-apt-2019-rus.pdf",
-          "https://www.welivesecurity.com/2021/03/10/exchange-servers-under-siege-10-apt-groups/"
+          "https://www.welivesecurity.com/2021/03/10/exchange-servers-under-siege-10-apt-groups/",
+          "https://www.pwc.com/gx/en/issues/cybersecurity/cyber-threat-intelligence/red-lamassu-open-season.html"
         ],
         "synonyms": [
-          "BRONZE MEDLEY"
+          "BRONZE MEDLEY",
+          "Red Lamassu"
         ],
         "targeted-sector": [
           "Government, Administration"
@@ -20805,6 +20808,149 @@
       },
       "uuid": "7ff63e0c-2345-4282-b4d7-0e5dc49dfc60",
       "value": "Storm-2561"
+    },
+    {
+      "description": "DriveSurge compromises legitimate websites to inject scripts that route visitors through zTDS, leading them to fake browser updates and ClickFix-style prompts. This operation resembles an initial-access broker model, where successful infections generate leads for downstream threat actors. The actor employs tactics that avoid detection by site administrators, allowing infections to go unnoticed during routine checks.",
+      "meta": {
+        "refs": [
+          "https://trojan-killer.net/drivesurge-clickfix-fake-browser-updates/"
+        ]
+      },
+      "uuid": "d0a254d1-4277-4f80-bc32-2fdb0c387be0",
+      "value": "DriveSurge"
+    },
+    {
+      "description": "GHOST STADIUM is a Chinese-speaking, financially motivated threat actor operating a sophisticated phishing campaign across over 300 domains, utilizing a custom React-based phishing kit that closely mimics FIFA's official website and exploits the PingIdentity SSO login flow. The campaign has the potential to generate financial losses estimated between $71 million and $474 million from premium ticket fraud alone, with total losses potentially reaching billions. GHOST STADIUM employs Facebook Ads as a primary traffic acquisition channel and has been linked to 2,513 compromised FIFA credentials available on dark-web markets. The actor is part of a broader fraud ecosystem that includes multiple parallel schemes, such as credential phishing and counterfeit merchandise sales.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://www.group-ib.com/blog/ghost-stadium-football-fraud/"
+        ]
+      },
+      "uuid": "f37e6dda-f6e2-45a9-86ed-a2d22042221f",
+      "value": "GHOST STADIUM"
+    },
+    {
+      "description": "JINX-0164 is a financially motivated threat actor active since mid-2025, primarily targeting software developers through recruitment-themed social engineering to steal cryptocurrencies and conduct supply chain attacks. Their operations have focused on macOS devices, utilizing malware such as AUDIOFIX and MINIRAT, with a notable supply chain compromise involving the trojanization of an npm package. The actor employs a shell script for initial system profiling and payload delivery, often spoofing legitimate services like Microsoft Teams and cryptocurrency companies. JINX-0164's infrastructure includes numerous lookalike domains and utilizes VPN exit nodes for accessing victim systems.",
+      "meta": {
+        "country": "KP",
+        "refs": [
+          "https://www.wiz.io/blog/threat-actors-target-crypto-orgs"
+        ]
+      },
+      "uuid": "3714b184-50ea-4251-acd8-4ad1e2b0a4d7",
+      "value": "JINX-0164"
+    },
+    {
+      "description": "CL-UNK-1068 is a Chinese threat actor that has targeted critical infrastructure in Asia, primarily focusing on cyberespionage. They utilize cross-platform tools, including the Xnote Linux backdoor and the GodZilla web shell, to maintain a persistent presence and execute credential theft. Their TTPs involve DLL side-loading, the use of custom malware, and batch scripts to bypass security measures. The group has demonstrated a capability for data exfiltration from SQL servers and has employed tools like DumpIt and Volatility for memory analysis.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://unit42.paloaltonetworks.com/cl-unk-1068-targets-critical-sectors/"
+        ]
+      },
+      "uuid": "30cb8ff9-6375-49a5-b3ef-23df9ba197bb",
+      "value": "CL-UNK-1068"
+    },
+    {
+      "description": "ZeffSec is a hacktivist collective focused on infrastructure-level disruption and exposing vulnerabilities in centralized digital networks. In March 2026, the group claimed responsibility for a large-scale DDoS attack against ArvanCloud, Iran's primary cloud and CDN provider, causing widespread service outages across platforms including the online education service Skyroom. The group announced the operation via Telegram, stating their goal was disruption of centralized infrastructure rather than data theft.",
+      "meta": {
+        "refs": [
+          "https://hackernoon.com/zeffsec-resurfaces-on-telegram-claims-breach-of-gozine2ir"
+        ],
+        "synonyms": [
+          "Zeff Security"
+        ]
+      },
+      "uuid": "024d7f4a-dffb-40e3-877f-08e7e3725fe1",
+      "value": "ZeffSec"
+    },
+    {
+      "description": "GREYVIBE is a low-to-moderately sophisticated threat actor associated with Russian state interests, primarily targeting Ukrainian entities. The group employs custom malware like LegionRelay and PhantomRelay, utilizing techniques such as decoy-and-payload execution logic and systematic use of GenAI and LLMs throughout their operations. Their campaigns exhibit operational overlaps with other groups, including shared C2 infrastructure and post-compromise tooling. WithSecure has identified design flaws in their malware that have provided insights into their victimology and operational behavior.",
+      "meta": {
+        "country": "RU",
+        "refs": [
+          "https://labs.withsecure.com/publications/greyvibe"
+        ]
+      },
+      "uuid": "2454eeca-8660-42c6-af7e-efbc8f90a490",
+      "value": "GreyVibe"
+    },
+    {
+      "description": "CL-STA-1020 targets Southeast Asian government networks, employing AWS Lambda Function URLs configured with AuthType: NONE for stealthy command-and-control communication. The actor has been observed collecting sensitive information from governmental entities, including data on tariffs and trade disputes. An investigation revealed a new Windows backdoor named HazyBeacon, which utilizes this novel C2 technique. This activity cluster has demonstrated significant efforts to remain undetected while executing its operations.",
+      "meta": {
+        "refs": [
+          "https://blog.qualys.com/qualys-insights/2026/06/02/hazybeacon-aws-lambda-function-url-command-control-abuse",
+          "https://unit42.paloaltonetworks.com/windows-backdoor-for-novel-c2-communication/"
+        ]
+      },
+      "uuid": "93a4c01e-3d11-47a9-942c-b368c1dcf87a",
+      "value": "CL-STA-1020"
+    },
+    {
+      "description": "SnowSoul is a financially motivated threat actor active since at least early 2026, operating a low-ransom extortion scheme primarily targeting Chinese organizations. The actor sends extortion demands of around $2,000 USD, and when victims refuse to pay, leaks stolen data on hacker forums. Operations are tracked through numbered identifiers (e.g., SnowSoul ID-1265, ID-1270), suggesting a systematic, serial campaign. ",
+      "meta": {
+        "refs": [
+          "https://dailydarkweb.net/snowsoul-attack-hits-multiple-chinese-organizations/",
+          "https://dailydarkweb.net/guangdong-caiding-market-group-faces-data-breach-after-extortion/",
+          "https://hacknotice.com/2026/03/16/hualun-new-materials-suffers-massive-data-breach-by-snowsoul/"
+        ]
+      },
+      "uuid": "2adf3d89-8659-4f9c-aa6c-054cad3cc3fd",
+      "value": "SnowSoul"
+    },
+    {
+      "description": "Storm-2949 is a sophisticated threat actor that exploited Microsoft’s Self-Service Password Reset process to compromise high-value accounts, primarily targeting IT personnel and senior leadership. They leveraged Azure tools and APIs to conduct reconnaissance, exfiltrate sensitive data from Microsoft 365 applications, and manipulate Azure resources, including Key Vaults and SQL databases. The actor employed social engineering tactics to bypass MFA and utilized custom Python scripts for directory discovery and data exfiltration. Their operations included lateral movement across cloud and endpoint environments while mimicking legitimate administrative behavior.",
+      "meta": {
+        "refs": [
+          "https://www.microsoft.com/en-us/security/blog/2026/05/18/storm-2949-turned-compromised-identity-into-cloud-wide-breach/"
+        ]
+      },
+      "uuid": "4c449531-1e59-4a3f-a318-915b1dc79dc8",
+      "value": "Storm-2949"
+    },
+    {
+      "description": "Narketing163 is a financially motivated threat actor named after one of their frequently used email addresses (narketing163@gmail.com). Active since at least July 2023, the actor conducts large-scale phishing campaigns distributing commodity infostealer and keylogger malware disguised as business correspondence such as price quotes, order forms, and payment notices. Targets span multiple countries including Russia, Belarus, Kazakhstan, Azerbaijan, Armenia, Turkey, the USA, Germany, the UK, India, and others, across sectors including e-commerce, retail, chemicals, construction, healthcare, insurance, and food. The actor delivers malware via spearphishing attachments (compressed archives) deploying RedLine Stealer, Agent Tesla, FormBook, and Snake Keylogger against Windows systems. Exfiltration is performed via actor-controlled Roundcube mail servers. Emails are sent in Russian, Azerbaijani, Turkish, and English, with rotating sender IPs and use of anonymization tools such as VPNs and proxies.",
+      "meta": {
+        "refs": [
+          "https://www.f6.ru/blog/narketing163/?utm_referrer=https%3A//www.f6.ru/blog/narketing163/"
+        ]
+      },
+      "uuid": "702a9d27-9dcd-4d17-93e9-1979259676ab",
+      "value": "Narketing163"
+    },
+    {
+      "description": "SHADOW-WATER-063 is a financially motivated threat actor attributed to the Banana RAT banking trojan, primarily targeting Brazilian financial accounts. Analysis of recovered artifacts, including a Python panel and PowerShell stagers, supports a moderate-confidence attribution assessment. The actor's infrastructure and endpoint telemetry indicate a focus on executing fraudulent transactions. Key evidentiary pillars establish their intent to exploit Brazilian financial systems.",
+      "meta": {
+        "country": "BR",
+        "refs": [
+          "https://www.trendmicro.com/en_us/research/26/e/banana-rat.html"
+        ]
+      },
+      "uuid": "00dadabe-f33e-40a2-a6e9-9e098f6347fc",
+      "value": "SHADOW-WATER-063"
+    },
+    {
+      "description": "Inteid is a member of the Russian Legion alliance, which includes groups like Cardinal and The White Pulse, and has been involved in DDoS attacks targeting Denmark's health portal, sundhed.dk. The group has also participated in ICS attacks, primarily affecting the Energy & Utilities, Manufacturing, and Agriculture sectors across Europe. Inteid has demonstrated operational coordination with other hacktivist entities, such as Keymous+, to support Iranian cyberwar efforts against Israeli targets.",
+      "meta": {
+        "refs": [
+          "https://thehackernews.com/2025/06/us-agencies-warn-of-rising-iranian.html",
+          "https://outpost24.com/blog/hacktivist-cyber-operations-iran-israel/",
+          "https://intelinsights.substack.com/p/profiling-hacktivist-groupsalliances"
+        ]
+      },
+      "uuid": "adc3cde7-0f1f-4846-b0a5-164f7c0eb7bc",
+      "value": "Inteid"
+    },
+    {
+      "description": "Chronus Team is a hacktivist group known for defacement attacks and data leaks, primarily targeting public-sector organizations in Mexico. They have been linked to multiple cyber incidents, including a significant breach of the Sonora Ministry of Education and Culture, where they allegedly exfiltrated sensitive data on educators. Their operations involve traditional hacking methods and the distribution of stolen data through channels typical of cybercriminals. The group's activities raise concerns about identity theft, fraud, and the destabilization of public institutions due to the exposure of sensitive information.",
+      "meta": {
+        "refs": [
+          "https://www.recordedfuture.com/research/latin-america-and-the-caribbean-cybercrime-landscape"
+        ]
+      },
+      "uuid": "801b91a5-3764-498d-bb38-16803d458260",
+      "value": "Chronus Group"
     }
   ],
   "version": 341
