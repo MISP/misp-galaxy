@@ -156,6 +156,14 @@ Category: *Cryptominers* - source: *Open Source Intelligence* - total: *5* eleme
 
 [[HTML](https://www.misp-galaxy.org/cryptominers)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/cryptominers.json)]
 
+## CTI-CMM 1.3
+
+[CTI-CMM 1.3](https://www.misp-galaxy.org/cti-cmm-1-3) - Cyber Threat Intelligence Capability Maturity Model (CTI-CMM) version 1.3 maturity-indicator practices represented as a matrix-like galaxy by stakeholder domain.
+
+Category: *cyber-threat-intelligence-maturity-model* - source: *https://github.com/cti-cmm/framework* - total: *199* elements
+
+[[HTML](https://www.misp-galaxy.org/cti-cmm-1-3)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/cti-cmm-1-3.json)]
+
 ## CyberFundamentals 2023 Assurance Requirements
 
 [CyberFundamentals 2023 Assurance Requirements](https://www.misp-galaxy.org/cyfun-assurance-requirements-2023) - CyberFundamentals 2023 assurance-level control matrix for MISP. Each cluster value is a level-specific control instance with provenance and key-measure metadata; normative text is referenced, not embedded.
