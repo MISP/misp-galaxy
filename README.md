@@ -588,6 +588,14 @@ Category: *software* - source: *Open Sources* - total: *31* elements
 
 [[HTML](https://www.misp-galaxy.org/operating-system)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/operating-system.json)]
 
+## PLOT4ai
+
+[PLOT4ai](https://www.misp-galaxy.org/plot4ai) - Practical Library Of Threats 4 Artificial Intelligence (PLOT4ai) risk cards for threat modeling responsible AI systems.
+
+Category: *ai-threat-modeling* - source: *https://github.com/PLOT4ai/plot4ai-library/blob/main/deck.json* - total: *138* elements
+
+[[HTML](https://www.misp-galaxy.org/plot4ai)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/plot4ai.json)]
+
 ## Preventive Measure
 
 [Preventive Measure](https://www.misp-galaxy.org/preventive-measure) - Preventive measures based on the ransomware document overview as published in https://docs.google.com/spreadsheets/d/1TWS238xacAto-fLKh1n5uTsdijWdCEsGIM0Y0Hvmc5g/pubhtml# . The preventive measures are quite generic and can fit any standard Windows infrastructure and their security measures.
