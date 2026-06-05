@@ -7,6 +7,7 @@ https://github.com/PLOT4ai/plot4ai-library/blob/main/deck.json
 from __future__ import annotations
 
 import argparse
+import collections
 import json
 import re
 import sys
@@ -132,63 +133,77 @@ def build_galaxy() -> dict[str, Any]:
     }
 
 
+def _deck_cards(deck: list[dict[str, Any]]) -> list[tuple[dict[str, Any], dict[str, Any]]]:
+    cards: list[tuple[dict[str, Any], dict[str, Any]]] = []
+    for category in deck:
+        for card in category.get("cards", []):
+            cards.append((category, card))
+    return cards
+
+
+def _cluster_value(label: str, category_name: str, label_counts: collections.Counter[str]) -> str:
+    if label_counts[label] > 1:
+        return f"{label} ({category_name})"
+    return label
+
+
 def build_cluster(deck: list[dict[str, Any]]) -> dict[str, Any]:
     values: list[dict[str, Any]] = []
-    sequence = 0
-    for category in deck:
+    source_cards = _deck_cards(deck)
+    label_counts = collections.Counter(clean_text(card["label"]) for _category, card in source_cards)
+    for sequence, (category, card) in enumerate(source_cards, start=1):
         category_name = category["category"]
         category_id = category.get("id")
         colour = category.get("colour")
-        for card in category.get("cards", []):
-            sequence += 1
-            label = clean_text(card["label"])
-            explanation = clean_text(card.get("explanation", ""))
-            question = clean_text(card.get("question", ""))
-            recommendation = clean_text(card.get("recommendation", ""))
-            sources = clean_text(card.get("sources", ""))
-            description_parts = [explanation]
-            if question:
-                description_parts.append(f"Threat-modeling question: {question}")
-            description = "\n\n".join(part for part in description_parts if part)
-            refs, source_names = extract_markdown_links(sources, recommendation)
-            refs = dedupe([*refs, SOURCE_DECK_URL, PLOT4AI_LIBRARY])
-            meta: dict[str, Any] = {
-                "external_id": f"PLOT4AI-{sequence:03d}",
-                "aitypes": card.get("aitypes", []),
-                "roles": card.get("roles", []),
-                "categories": card.get("categories", []),
-                "primary_category": category_name,
-                "phases": card.get("phases", []),
-                "threatif": clean_text(card.get("threatif", "")),
-                "question": question,
-                "recommendation": recommendation,
-                "refs": refs,
-                "source_repository": SOURCE_REPOSITORY,
-                "source_deck": SOURCE_DECK_URL,
-                "source_license": LICENSE,
-            }
-            if category_id is not None:
-                meta["category_id"] = str(category_id)
-            if colour:
-                meta["colour"] = f"#{colour}"
-            if sources:
-                meta["source_text"] = sources
-            if source_names:
-                meta["source_names"] = source_names
-            if card.get("cia"):
-                meta["cia"] = card["cia"]
-            if card.get("qr"):
-                meta["qr"] = card["qr"]
-            entry: dict[str, Any] = {
-                "description": description,
-                "meta": meta,
-                "uuid": uuid_for("card", f"{sequence:03d}", label),
-                "value": label,
-            }
-            related = RELATED_BY_LABEL.get(label)
-            if related:
-                entry["related"] = related
-            values.append(entry)
+        label = clean_text(card["label"])
+        value = _cluster_value(label, category_name, label_counts)
+        explanation = clean_text(card.get("explanation", ""))
+        question = clean_text(card.get("question", ""))
+        recommendation = clean_text(card.get("recommendation", ""))
+        sources = clean_text(card.get("sources", ""))
+        description_parts = [explanation]
+        if question:
+            description_parts.append(f"Threat-modeling question: {question}")
+        description = "\n\n".join(part for part in description_parts if part)
+        refs, source_names = extract_markdown_links(sources, recommendation)
+        refs = dedupe([*refs, SOURCE_DECK_URL, PLOT4AI_LIBRARY])
+        meta: dict[str, Any] = {
+            "external_id": f"PLOT4AI-{sequence:03d}",
+            "aitypes": card.get("aitypes", []),
+            "roles": card.get("roles", []),
+            "categories": card.get("categories", []),
+            "primary_category": category_name,
+            "phases": card.get("phases", []),
+            "threatif": clean_text(card.get("threatif", "")),
+            "question": question,
+            "recommendation": recommendation,
+            "refs": refs,
+            "source_repository": SOURCE_REPOSITORY,
+            "source_deck": SOURCE_DECK_URL,
+            "source_license": LICENSE,
+        }
+        if category_id is not None:
+            meta["category_id"] = str(category_id)
+        if colour:
+            meta["colour"] = f"#{colour}"
+        if sources:
+            meta["source_text"] = sources
+        if source_names:
+            meta["source_names"] = source_names
+        if card.get("cia"):
+            meta["cia"] = card["cia"]
+        if card.get("qr"):
+            meta["qr"] = card["qr"]
+        entry: dict[str, Any] = {
+            "description": description,
+            "meta": meta,
+            "uuid": uuid_for("card", f"{sequence:03d}", label),
+            "value": value,
+        }
+        related = RELATED_BY_LABEL.get(label)
+        if related:
+            entry["related"] = related
+        values.append(entry)
     return {
         "authors": AUTHORS,
         "category": "ai-threat-modeling",

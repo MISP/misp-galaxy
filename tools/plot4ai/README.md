@@ -26,5 +26,7 @@ The generated files are:
 The generator preserves PLOT4ai card metadata such as AI types, roles, phases,
 categories, threat condition, questions, recommendations, CIA values when
 available, references, source names, source text, license, and source provenance.
-It also adds conservative relationships to existing MISP galaxies where a close
-mapping exists, primarily MITRE ATLAS and Agent Threat Rules.
+It also disambiguates duplicate card labels by appending the primary PLOT4ai
+category to the MISP cluster value, and adds conservative relationships to
+existing MISP galaxies where a close mapping exists, primarily MITRE ATLAS and
+Agent Threat Rules.
