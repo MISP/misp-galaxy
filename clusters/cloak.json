@@ -1,0 +1,581 @@
+{
+  "authors": [
+    "Mick Deben",
+    "MISP Project"
+  ],
+  "category": "concealment",
+  "description": "Concealment Layers for Online Anonymity and Knowledge (CLOAK) is a knowledge base of cybercriminal concealment measures inspired by MITRE ATT&CK. This matrix-like galaxy organises concealment practices across technical, behavioural, and physical layers to support investigation, common referencing, gap analysis, and defensive planning. The source project describes CLOAK as derived from qualitative research over more than 200 OpSec guides and its initial public version as containing 13 tactics, 109 techniques, 679 sub-techniques, and 586 procedures.",
+  "name": "Concealment Layers for Online Anonymity and Knowledge (CLOAK)",
+  "source": "https://github.com/Mickinthemiddle/CLOAK",
+  "type": "cloak",
+  "uuid": "9bb54363-5174-50e9-aafa-c26ce4f85443",
+  "values": [
+    {
+      "description": "Browse or access Internet resources while reducing attribution to a subscriber, device, location, or identity. Includes anonymous Internet connections, privacy search engines, Tor/I2P routing, pluggable transports, anti-censorship transports, and public-network usage.",
+      "meta": {
+        "attribution": "This MISP galaxy is based on Concealment Layers for Online Anonymity and Knowledge (CLOAK) by Mick Deben. The MISP Project converted and summarised the source material as a matrix-like MISP galaxy; some descriptions are expanded to provide operational context where the source JSON contains sparse descriptions.",
+        "external_id": "CLOAK-TA01",
+        "kill_chain": [
+          "cloak:Anonymous browsing"
+        ],
+        "layer": "Technical",
+        "matrix": "CLOAK",
+        "refs": [
+          "https://github.com/Mickinthemiddle/CLOAK",
+          "https://github.com/Mickinthemiddle/CLOAK/blob/main/concealment-data.json",
+          "https://opsectechniques.com"
+        ],
+        "source_notes": "Descriptions are derived from CLOAK README and concealment-data.json structure and expanded for MISP usability where original entries lack detail.",
+        "technique_examples": [
+          "The Onion Router (Tor)",
+          "Invisible Internet Project (I2P)",
+          "obfuscated bridges",
+          "public Wi-Fi",
+          "privacy search engines"
+        ],
+        "related_misp_galaxies_note": "Relationships are best-effort analytical mappings to existing MISP MITRE ATT&CK attack-pattern clusters where CLOAK concealment tactics overlap with ATT&CK adversary behaviors; they are not asserted as source-published CLOAK mappings."
+      },
+      "uuid": "594c1b33-aac8-5cfd-83db-fc46aeb26ed7",
+      "value": "CLOAK - Anonymous browsing",
+      "related": [
+        {
+          "dest-uuid": "d3dca536-8bf0-4e43-97c1-44a2353c3d69",
+          "type": "related-to",
+          "tags": [
+            "MITRE ATT&CK Mobile T1306 Anonymity Services"
+          ]
+        },
+        {
+          "dest-uuid": "731f4f55-b6d0-41d1-a7a9-072a66389aea",
+          "type": "related-to",
+          "tags": [
+            "MITRE ATT&CK T1090 Proxy"
+          ]
+        },
+        {
+          "dest-uuid": "a782ebe2-daba-42c7-bc82-e8e9d923162d",
+          "type": "related-to",
+          "tags": [
+            "MITRE ATT&CK T1090.003 Multi-hop Proxy"
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Communicate without exposing durable identity, social graph, message metadata, or contact-discovery information. Includes encrypted messengers, disposable mail, aliases, anonymous voice/SMS, sealed sender patterns, and compartmented accounts.",
+      "meta": {
+        "attribution": "This MISP galaxy is based on Concealment Layers for Online Anonymity and Knowledge (CLOAK) by Mick Deben. The MISP Project converted and summarised the source material as a matrix-like MISP galaxy; some descriptions are expanded to provide operational context where the source JSON contains sparse descriptions.",
+        "external_id": "CLOAK-TA02",
+        "kill_chain": [
+          "cloak:Anonymous communication"
+        ],
+        "layer": "Technical/Behavioral",
+        "matrix": "CLOAK",
+        "refs": [
+          "https://github.com/Mickinthemiddle/CLOAK",
+          "https://github.com/Mickinthemiddle/CLOAK/blob/main/concealment-data.json",
+          "https://opsectechniques.com"
+        ],
+        "source_notes": "Descriptions are derived from CLOAK README and concealment-data.json structure and expanded for MISP usability where original entries lack detail.",
+        "technique_examples": [
+          "encrypted messaging",
+          "disposable email",
+          "email aliases",
+          "anonymous phone numbers",
+          "metadata-minimising contact discovery"
+        ],
+        "related_misp_galaxies_note": "Relationships are best-effort analytical mappings to existing MISP MITRE ATT&CK attack-pattern clusters where CLOAK concealment tactics overlap with ATT&CK adversary behaviors; they are not asserted as source-published CLOAK mappings."
+      },
+      "uuid": "ca88752b-3083-5683-9b49-6cf8e4286816",
+      "value": "CLOAK - Anonymous communication",
+      "related": [
+        {
+          "dest-uuid": "b8902400-e6c5-4ba2-95aa-2d35b442b118",
+          "type": "related-to",
+          "tags": [
+            "MITRE ATT&CK T1573 Encrypted Channel"
+          ]
+        },
+        {
+          "dest-uuid": "ed2c05a1-4f81-4d97-9e1b-aff01c34ae84",
+          "type": "related-to",
+          "tags": [
+            "MITRE ATT&CK Mobile T1521 Encrypted Channel"
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Acquire, move, store, or spend funds while reducing direct attribution. Includes cryptocurrency privacy practices, wallet segmentation, mixers/swaps where legal context permits, paper wallets, and transaction timing or amount discipline.",
+      "meta": {
+        "attribution": "This MISP galaxy is based on Concealment Layers for Online Anonymity and Knowledge (CLOAK) by Mick Deben. The MISP Project converted and summarised the source material as a matrix-like MISP galaxy; some descriptions are expanded to provide operational context where the source JSON contains sparse descriptions.",
+        "external_id": "CLOAK-TA03",
+        "kill_chain": [
+          "cloak:Anonymous financial transactions"
+        ],
+        "layer": "Technical/Behavioral",
+        "matrix": "CLOAK",
+        "refs": [
+          "https://github.com/Mickinthemiddle/CLOAK",
+          "https://github.com/Mickinthemiddle/CLOAK/blob/main/concealment-data.json",
+          "https://opsectechniques.com"
+        ],
+        "source_notes": "Descriptions are derived from CLOAK README and concealment-data.json structure and expanded for MISP usability where original entries lack detail.",
+        "technique_examples": [
+          "wallet segmentation",
+          "privacy coins",
+          "paper wallets",
+          "transaction delay",
+          "anonymous payment cards"
+        ]
+      },
+      "uuid": "6967b507-8fec-5d04-a7b0-2b78afd20928",
+      "value": "CLOAK - Anonymous financial transactions"
+    },
+    {
+      "description": "Host services, store data, or operate infrastructure while limiting exposure of operators, providers, payment trails, or backend origin systems. Includes offshore/privacy-preserving hosting, onion/I2P services, proxies, VPNs, reverse proxies, and short-lived infrastructure.",
+      "meta": {
+        "attribution": "This MISP galaxy is based on Concealment Layers for Online Anonymity and Knowledge (CLOAK) by Mick Deben. The MISP Project converted and summarised the source material as a matrix-like MISP galaxy; some descriptions are expanded to provide operational context where the source JSON contains sparse descriptions.",
+        "external_id": "CLOAK-TA04",
+        "kill_chain": [
+          "cloak:Anonymous hosting and infrastructure"
+        ],
+        "layer": "Technical",
+        "matrix": "CLOAK",
+        "refs": [
+          "https://github.com/Mickinthemiddle/CLOAK",
+          "https://github.com/Mickinthemiddle/CLOAK/blob/main/concealment-data.json",
+          "https://opsectechniques.com"
+        ],
+        "source_notes": "Descriptions are derived from CLOAK README and concealment-data.json structure and expanded for MISP usability where original entries lack detail.",
+        "technique_examples": [
+          "onion services",
+          "I2P eepsites",
+          "offshore hosting",
+          "proxy chains",
+          "short lifetime attack infrastructure"
+        ],
+        "related_misp_galaxies_note": "Relationships are best-effort analytical mappings to existing MISP MITRE ATT&CK attack-pattern clusters where CLOAK concealment tactics overlap with ATT&CK adversary behaviors; they are not asserted as source-published CLOAK mappings."
+      },
+      "uuid": "79ea4d13-82b7-5139-8d0f-e940ac1226f9",
+      "value": "CLOAK - Anonymous hosting and infrastructure",
+      "related": [
+        {
+          "dest-uuid": "731f4f55-b6d0-41d1-a7a9-072a66389aea",
+          "type": "related-to",
+          "tags": [
+            "MITRE ATT&CK T1090 Proxy"
+          ]
+        },
+        {
+          "dest-uuid": "69b8fd78-40e8-4600-ae4d-662c9d7afdb3",
+          "type": "related-to",
+          "tags": [
+            "MITRE ATT&CK T1090.002 External Proxy"
+          ]
+        },
+        {
+          "dest-uuid": "ca9d3402-ada3-484d-876a-d717bd6e05f2",
+          "type": "related-to",
+          "tags": [
+            "MITRE ATT&CK T1090.004 Domain Fronting"
+          ]
+        },
+        {
+          "dest-uuid": "4fe28b27-b13c-453e-a386-c2ef362a573b",
+          "type": "related-to",
+          "tags": [
+            "MITRE ATT&CK T1572 Protocol Tunneling"
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Create and maintain personas or accounts that cannot easily be linked to a real-world identity or to each other. Includes alias generation, unique credentials, account segmentation, reduced personal disclosures, and controlled profile consistency.",
+      "meta": {
+        "attribution": "This MISP galaxy is based on Concealment Layers for Online Anonymity and Knowledge (CLOAK) by Mick Deben. The MISP Project converted and summarised the source material as a matrix-like MISP galaxy; some descriptions are expanded to provide operational context where the source JSON contains sparse descriptions.",
+        "external_id": "CLOAK-TA05",
+        "kill_chain": [
+          "cloak:Anonymous identities and accounts"
+        ],
+        "layer": "Behavioral",
+        "matrix": "CLOAK",
+        "refs": [
+          "https://github.com/Mickinthemiddle/CLOAK",
+          "https://github.com/Mickinthemiddle/CLOAK/blob/main/concealment-data.json",
+          "https://opsectechniques.com"
+        ],
+        "source_notes": "Descriptions are derived from CLOAK README and concealment-data.json structure and expanded for MISP usability where original entries lack detail.",
+        "technique_examples": [
+          "personas",
+          "unique usernames",
+          "unique passphrases",
+          "identity segmentation",
+          "avoid personal details"
+        ],
+        "related_misp_galaxies_note": "Relationships are best-effort analytical mappings to existing MISP MITRE ATT&CK attack-pattern clusters where CLOAK concealment tactics overlap with ATT&CK adversary behaviors; they are not asserted as source-published CLOAK mappings."
+      },
+      "uuid": "e36c8bb4-3c6e-5cd0-b8bd-61342557d286",
+      "value": "CLOAK - Anonymous identities and accounts",
+      "related": [
+        {
+          "dest-uuid": "b17a1a56-e99c-403c-8948-561df0cffe81",
+          "type": "related-to",
+          "tags": [
+            "MITRE ATT&CK T1078 Valid Accounts"
+          ]
+        },
+        {
+          "dest-uuid": "42e8de7b-37b2-4258-905a-6897815e58e0",
+          "type": "related-to",
+          "tags": [
+            "MITRE ATT&CK T1036 Masquerading"
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Use operating systems, devices, virtual machines, boot media, and hardened configurations designed to minimise leakage and support compartmented activity. Includes live systems, security-focused distributions, hardened mobile platforms, VM chains, and verified layered setups.",
+      "meta": {
+        "attribution": "This MISP galaxy is based on Concealment Layers for Online Anonymity and Knowledge (CLOAK) by Mick Deben. The MISP Project converted and summarised the source material as a matrix-like MISP galaxy; some descriptions are expanded to provide operational context where the source JSON contains sparse descriptions.",
+        "external_id": "CLOAK-TA06",
+        "kill_chain": [
+          "cloak:Anonymous operating environment"
+        ],
+        "layer": "Technical",
+        "matrix": "CLOAK",
+        "refs": [
+          "https://github.com/Mickinthemiddle/CLOAK",
+          "https://github.com/Mickinthemiddle/CLOAK/blob/main/concealment-data.json",
+          "https://opsectechniques.com"
+        ],
+        "source_notes": "Descriptions are derived from CLOAK README and concealment-data.json structure and expanded for MISP usability where original entries lack detail.",
+        "technique_examples": [
+          "Qubes OS",
+          "Whonix",
+          "Tails-like live environments",
+          "hardened mobile devices",
+          "layered VPN/Tor setups"
+        ],
+        "related_misp_galaxies_note": "Relationships are best-effort analytical mappings to existing MISP MITRE ATT&CK attack-pattern clusters where CLOAK concealment tactics overlap with ATT&CK adversary behaviors; they are not asserted as source-published CLOAK mappings."
+      },
+      "uuid": "94f326f4-57e9-5502-a08e-ad21b4907c8b",
+      "value": "CLOAK - Anonymous operating environment",
+      "related": [
+        {
+          "dest-uuid": "8e097ec5-1755-41d6-807c-3882442b818a",
+          "type": "related-to",
+          "tags": [
+            "MITRE ATT&CK T1670 Virtualization Solution"
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Reduce or remove local, remote, or metadata traces that could identify activities after the fact. Includes secure wiping, metadata removal, log reduction, encrypted containers, hidden volumes, and limiting host-OS artefacts.",
+      "meta": {
+        "attribution": "This MISP galaxy is based on Concealment Layers for Online Anonymity and Knowledge (CLOAK) by Mick Deben. The MISP Project converted and summarised the source material as a matrix-like MISP galaxy; some descriptions are expanded to provide operational context where the source JSON contains sparse descriptions.",
+        "external_id": "CLOAK-TA07",
+        "kill_chain": [
+          "cloak:Anti-forensics and trace removal"
+        ],
+        "layer": "Technical",
+        "matrix": "CLOAK",
+        "refs": [
+          "https://github.com/Mickinthemiddle/CLOAK",
+          "https://github.com/Mickinthemiddle/CLOAK/blob/main/concealment-data.json",
+          "https://opsectechniques.com"
+        ],
+        "source_notes": "Descriptions are derived from CLOAK README and concealment-data.json structure and expanded for MISP usability where original entries lack detail.",
+        "technique_examples": [
+          "metadata removal",
+          "secure erase",
+          "hidden volumes",
+          "host artefact reduction",
+          "encrypted containers"
+        ],
+        "related_misp_galaxies_note": "Relationships are best-effort analytical mappings to existing MISP MITRE ATT&CK attack-pattern clusters where CLOAK concealment tactics overlap with ATT&CK adversary behaviors; they are not asserted as source-published CLOAK mappings."
+      },
+      "uuid": "d79be067-ae89-57a4-9e29-c538b3e68f9d",
+      "value": "CLOAK - Anti-forensics and trace removal",
+      "related": [
+        {
+          "dest-uuid": "799ace7f-e227-4411-baa0-8868704f2a69",
+          "type": "related-to",
+          "tags": [
+            "MITRE ATT&CK T1070 Indicator Removal"
+          ]
+        },
+        {
+          "dest-uuid": "3aef9463-9a7a-43ba-8957-a867e07c1e6a",
+          "type": "related-to",
+          "tags": [
+            "MITRE ATT&CK T1070.003 Clear Command History"
+          ]
+        },
+        {
+          "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
+          "type": "related-to",
+          "tags": [
+            "MITRE ATT&CK T1027 Obfuscated Files or Information"
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Avoid surveillance, fingerprinting, malware, scams, telemetry, traffic analysis, and other collection that can expose an operator. Includes anti-fingerprinting, ad/tracker blocking, MAC/hostname randomisation, avoiding CCTV and monitored networks, and security updates.",
+      "meta": {
+        "attribution": "This MISP galaxy is based on Concealment Layers for Online Anonymity and Knowledge (CLOAK) by Mick Deben. The MISP Project converted and summarised the source material as a matrix-like MISP galaxy; some descriptions are expanded to provide operational context where the source JSON contains sparse descriptions.",
+        "external_id": "CLOAK-TA08",
+        "kill_chain": [
+          "cloak:Avoid detection and monitoring"
+        ],
+        "layer": "Technical/Behavioral",
+        "matrix": "CLOAK",
+        "refs": [
+          "https://github.com/Mickinthemiddle/CLOAK",
+          "https://github.com/Mickinthemiddle/CLOAK/blob/main/concealment-data.json",
+          "https://opsectechniques.com"
+        ],
+        "source_notes": "Descriptions are derived from CLOAK README and concealment-data.json structure and expanded for MISP usability where original entries lack detail.",
+        "technique_examples": [
+          "anti-fingerprinting",
+          "MAC randomisation",
+          "hostname spoofing",
+          "avoid CCTV",
+          "software updates"
+        ],
+        "related_misp_galaxies_note": "Relationships are best-effort analytical mappings to existing MISP MITRE ATT&CK attack-pattern clusters where CLOAK concealment tactics overlap with ATT&CK adversary behaviors; they are not asserted as source-published CLOAK mappings."
+      },
+      "uuid": "1d6a1bf1-edbc-59f5-b9e4-ad659015f7b3",
+      "value": "CLOAK - Avoid detection and monitoring",
+      "related": [
+        {
+          "dest-uuid": "3d333250-30e4-4a82-9edc-756c68afc529",
+          "type": "related-to",
+          "tags": [
+            "MITRE ATT&CK T1562 Impair Defenses"
+          ]
+        },
+        {
+          "dest-uuid": "22905430-4901-4c2a-84f6-98243cb173f8",
+          "type": "related-to",
+          "tags": [
+            "MITRE ATT&CK T1564 Hide Artifacts"
+          ]
+        },
+        {
+          "dest-uuid": "82caa33e-d11a-433a-94ea-9b5a5fbef81d",
+          "type": "related-to",
+          "tags": [
+            "MITRE ATT&CK T1497 Virtualization/Sandbox Evasion"
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Keep identities, activities, credentials, browsers, devices, wallets, keys, and data separated so compromise or observation of one compartment does not expose another.",
+      "meta": {
+        "attribution": "This MISP galaxy is based on Concealment Layers for Online Anonymity and Knowledge (CLOAK) by Mick Deben. The MISP Project converted and summarised the source material as a matrix-like MISP galaxy; some descriptions are expanded to provide operational context where the source JSON contains sparse descriptions.",
+        "external_id": "CLOAK-TA09",
+        "kill_chain": [
+          "cloak:Compartmentalization and isolation"
+        ],
+        "layer": "Behavioral/Technical",
+        "matrix": "CLOAK",
+        "refs": [
+          "https://github.com/Mickinthemiddle/CLOAK",
+          "https://github.com/Mickinthemiddle/CLOAK/blob/main/concealment-data.json",
+          "https://opsectechniques.com"
+        ],
+        "source_notes": "Descriptions are derived from CLOAK README and concealment-data.json structure and expanded for MISP usability where original entries lack detail.",
+        "technique_examples": [
+          "compartmentalize identities",
+          "compartmentalize browsers",
+          "segment wallets",
+          "isolate VMs",
+          "stream isolation"
+        ],
+        "related_misp_galaxies_note": "Relationships are best-effort analytical mappings to existing MISP MITRE ATT&CK attack-pattern clusters where CLOAK concealment tactics overlap with ATT&CK adversary behaviors; they are not asserted as source-published CLOAK mappings."
+      },
+      "uuid": "0bbcbb12-dd33-5164-93c2-3ec167d6487c",
+      "value": "CLOAK - Compartmentalization and isolation",
+      "related": [
+        {
+          "dest-uuid": "22905430-4901-4c2a-84f6-98243cb173f8",
+          "type": "related-to",
+          "tags": [
+            "MITRE ATT&CK T1564 Hide Artifacts"
+          ]
+        },
+        {
+          "dest-uuid": "82caa33e-d11a-433a-94ea-9b5a5fbef81d",
+          "type": "related-to",
+          "tags": [
+            "MITRE ATT&CK T1497 Virtualization/Sandbox Evasion"
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Protect secrets and sensitive data against compromise, seizure, coercion, or loss. Includes strong passphrases, MFA, password managers, encryption, backups, offline storage, secret splitting, and recovery planning.",
+      "meta": {
+        "attribution": "This MISP galaxy is based on Concealment Layers for Online Anonymity and Knowledge (CLOAK) by Mick Deben. The MISP Project converted and summarised the source material as a matrix-like MISP galaxy; some descriptions are expanded to provide operational context where the source JSON contains sparse descriptions.",
+        "external_id": "CLOAK-TA10",
+        "kill_chain": [
+          "cloak:Data, credential, and secret protection"
+        ],
+        "layer": "Technical/Physical",
+        "matrix": "CLOAK",
+        "refs": [
+          "https://github.com/Mickinthemiddle/CLOAK",
+          "https://github.com/Mickinthemiddle/CLOAK/blob/main/concealment-data.json",
+          "https://opsectechniques.com"
+        ],
+        "source_notes": "Descriptions are derived from CLOAK README and concealment-data.json structure and expanded for MISP usability where original entries lack detail.",
+        "technique_examples": [
+          "password managers",
+          "MFA",
+          "file encryption",
+          "offline backup",
+          "secret splitting"
+        ],
+        "related_misp_galaxies_note": "Relationships are best-effort analytical mappings to existing MISP MITRE ATT&CK attack-pattern clusters where CLOAK concealment tactics overlap with ATT&CK adversary behaviors; they are not asserted as source-published CLOAK mappings."
+      },
+      "uuid": "70b94469-ff1a-50d1-a75a-66249f4e14b8",
+      "value": "CLOAK - Data, credential, and secret protection",
+      "related": [
+        {
+          "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
+          "type": "related-to",
+          "tags": [
+            "MITRE ATT&CK T1027 Obfuscated Files or Information"
+          ]
+        },
+        {
+          "dest-uuid": "53ac20cd-aca3-406e-9aa0-9fc7fdc60a5a",
+          "type": "related-to",
+          "tags": [
+            "MITRE ATT&CK T1560 Archive Collected Data"
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Mislead observers or create alternative explanations to preserve anonymity or protect sensitive material. Includes decoy files, decoy partitions, fake doxing details, active disinformation, and plausible-deniability storage designs.",
+      "meta": {
+        "attribution": "This MISP galaxy is based on Concealment Layers for Online Anonymity and Knowledge (CLOAK) by Mick Deben. The MISP Project converted and summarised the source material as a matrix-like MISP galaxy; some descriptions are expanded to provide operational context where the source JSON contains sparse descriptions.",
+        "external_id": "CLOAK-TA11",
+        "kill_chain": [
+          "cloak:Deception, misinformation, and plausible deniability"
+        ],
+        "layer": "Behavioral/Technical",
+        "matrix": "CLOAK",
+        "refs": [
+          "https://github.com/Mickinthemiddle/CLOAK",
+          "https://github.com/Mickinthemiddle/CLOAK/blob/main/concealment-data.json",
+          "https://opsectechniques.com"
+        ],
+        "source_notes": "Descriptions are derived from CLOAK README and concealment-data.json structure and expanded for MISP usability where original entries lack detail.",
+        "technique_examples": [
+          "decoy files",
+          "decoy partitions",
+          "fake biographical details",
+          "plausible deniability",
+          "file corruption"
+        ],
+        "related_misp_galaxies_note": "Relationships are best-effort analytical mappings to existing MISP MITRE ATT&CK attack-pattern clusters where CLOAK concealment tactics overlap with ATT&CK adversary behaviors; they are not asserted as source-published CLOAK mappings."
+      },
+      "uuid": "c9245d33-d3fe-570a-9f10-052c350f27d3",
+      "value": "CLOAK - Deception, misinformation, and plausible deniability",
+      "related": [
+        {
+          "dest-uuid": "42e8de7b-37b2-4258-905a-6897815e58e0",
+          "type": "related-to",
+          "tags": [
+            "MITRE ATT&CK T1036 Masquerading"
+          ]
+        },
+        {
+          "dest-uuid": "b3d682b6-98f2-4fb0-aa3b-b4df007ca70a",
+          "type": "related-to",
+          "tags": [
+            "MITRE ATT&CK T1027 Obfuscated Files or Information"
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Sustain anonymity through repeatable behavior, risk management, threat modeling, legal-rights awareness, avoiding routines, avoiding stylometry, and careful interaction with people, services, and environments.",
+      "meta": {
+        "attribution": "This MISP galaxy is based on Concealment Layers for Online Anonymity and Knowledge (CLOAK) by Mick Deben. The MISP Project converted and summarised the source material as a matrix-like MISP galaxy; some descriptions are expanded to provide operational context where the source JSON contains sparse descriptions.",
+        "external_id": "CLOAK-TA12",
+        "kill_chain": [
+          "cloak:Operational discipline and situational awareness"
+        ],
+        "layer": "Behavioral",
+        "matrix": "CLOAK",
+        "refs": [
+          "https://github.com/Mickinthemiddle/CLOAK",
+          "https://github.com/Mickinthemiddle/CLOAK/blob/main/concealment-data.json",
+          "https://opsectechniques.com"
+        ],
+        "source_notes": "Descriptions are derived from CLOAK README and concealment-data.json structure and expanded for MISP usability where original entries lack detail.",
+        "technique_examples": [
+          "threat modeling",
+          "risk management",
+          "avoid routines",
+          "avoid stylometry",
+          "remain silent"
+        ],
+        "related_misp_galaxies_note": "Relationships are best-effort analytical mappings to existing MISP MITRE ATT&CK attack-pattern clusters where CLOAK concealment tactics overlap with ATT&CK adversary behaviors; they are not asserted as source-published CLOAK mappings."
+      },
+      "uuid": "f9467d4e-8a74-58a2-9854-5561426a3526",
+      "value": "CLOAK - Operational discipline and situational awareness",
+      "related": [
+        {
+          "dest-uuid": "82caa33e-d11a-433a-94ea-9b5a5fbef81d",
+          "type": "related-to",
+          "tags": [
+            "MITRE ATT&CK T1497 Virtualization/Sandbox Evasion"
+          ]
+        },
+        {
+          "dest-uuid": "3d333250-30e4-4a82-9edc-756c68afc529",
+          "type": "related-to",
+          "tags": [
+            "MITRE ATT&CK T1562 Impair Defenses"
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Use physical measures that support continuity, detection avoidance, and resistance to seizure or surveillance. Includes Faraday shielding, disguises, tamper detection, physical destruction, offline/offsite backups, and component removal or covering.",
+      "meta": {
+        "attribution": "This MISP galaxy is based on Concealment Layers for Online Anonymity and Knowledge (CLOAK) by Mick Deben. The MISP Project converted and summarised the source material as a matrix-like MISP galaxy; some descriptions are expanded to provide operational context where the source JSON contains sparse descriptions.",
+        "external_id": "CLOAK-TA13",
+        "kill_chain": [
+          "cloak:Physical concealment and resilience"
+        ],
+        "layer": "Physical",
+        "matrix": "CLOAK",
+        "refs": [
+          "https://github.com/Mickinthemiddle/CLOAK",
+          "https://github.com/Mickinthemiddle/CLOAK/blob/main/concealment-data.json",
+          "https://opsectechniques.com"
+        ],
+        "source_notes": "Descriptions are derived from CLOAK README and concealment-data.json structure and expanded for MISP usability where original entries lack detail.",
+        "technique_examples": [
+          "Faraday bags",
+          "disguise",
+          "tamper evidence",
+          "physical destruction",
+          "offsite backup"
+        ]
+      },
+      "uuid": "e70f8ae9-05cd-5ac9-9509-9f72418f0025",
+      "value": "CLOAK - Physical concealment and resilience"
+    }
+  ],
+  "version": 1
+}
