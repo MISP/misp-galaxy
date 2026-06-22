@@ -132,6 +132,14 @@ Category: *academic-institution* - source: *ASPI International Cyber Policy Cent
 
 [[HTML](https://www.misp-galaxy.org/china-defence-universities)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/china-defence-universities.json)]
 
+## Concealment Layers for Online Anonymity and Knowledge (CLOAK)
+
+[Concealment Layers for Online Anonymity and Knowledge (CLOAK)](https://www.misp-galaxy.org/cloak) - Concealment Layers for Online Anonymity and Knowledge (CLOAK) is a knowledge base of cybercriminal concealment measures inspired by MITRE ATT&CK. This matrix-like galaxy organises concealment practices across technical, behavioural, and physical layers to support investigation, common referencing, gap analysis, and defensive planning. The source project describes CLOAK as derived from qualitative research over more than 200 OpSec guides and its initial public version as containing 13 tactics, 109 techniques, 679 sub-techniques, and 586 procedures.
+
+Category: *concealment* - source: *https://github.com/Mickinthemiddle/CLOAK* - total: *13* elements
+
+[[HTML](https://www.misp-galaxy.org/cloak)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/cloak.json)]
+
 ## CONCORDIA Mobile Modelling Framework - Attack Pattern
 
 [CONCORDIA Mobile Modelling Framework - Attack Pattern](https://www.misp-galaxy.org/cmtmf-attack-pattern) - A list of Techniques in CONCORDIA Mobile Modelling Framework.
