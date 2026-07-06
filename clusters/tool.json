@@ -11139,7 +11139,28 @@
       },
       "uuid": "a252cd34-f7cb-4c17-8db2-64464619ff4b",
       "value": "ResidentBat"
+    },
+    {
+      "description": "According to Proofpoint, RomulusLoader is a C-based loader whose purpose is to download and execute further payloads from a C2. It includes a custom PE loader, dynamic API resolution, and RC4 encryption for embedded payloads, and it sideloads legitimate components to blend into the environment. It operates in a multi-stage fashion, spawning workers that run in other processes to maintain persistence and facilitate C2 communications. As a first-stage loader, it is used to drop follow-on payloads, including remote-management software, enabling broader remote access capabilities for the operator.",
+      "meta": {
+        "refs": [
+          "https://malpedia.caad.fkie.fraunhofer.de/details/win.romulus_loader"
+        ]
+      },
+      "uuid": "e1c9cac8-be25-4781-b65f-b11d539958c1",
+      "value": "RomulusLoader"
+    },
+    {
+      "description": "According to Proofpoint, SilentRunLoader is a Python-based stealer/loader used by TA4922 to quietly download and execute a next-stage payload. It is designed to harvest Chrome data and other browser artifacts and exfiltrate them to a C2 server. The Python code is relatively straightforward and often appears as vibe-coded, with rapid development of new Python-based tooling observed across campaigns. This reflects the actor’s use of Python-based malware to quickly deploy new payloads.",
+      "meta": {
+        "refs": [
+          "https://malpedia.caad.fkie.fraunhofer.de/details/win.silent_run_loader",
+          "https://www.proofpoint.com/us/blog/threat-insight/ta4922-suspected-chinese-crime-group-going-global"
+        ]
+      },
+      "uuid": "7501abf2-4864-4fc2-a8a3-3a1250ab8e71",
+      "value": "SilentRunLoader"
     }
   ],
-  "version": 176
+  "version": 177
 }
