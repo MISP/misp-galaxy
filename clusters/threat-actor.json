@@ -14375,17 +14375,29 @@
       "value": "UNC4841"
     },
     {
-      "description": "CL-STA-0043 is a highly skilled and sophisticated threat actor, believed to be a nation-state, targeting governmental entities in the Middle East and Africa. They exploit vulnerabilities in on-premises Internet Information Services and Microsoft Exchange servers to infiltrate target networks. They engage in reconnaissance, locate vital assets, and have been observed using native Windows tools for privilege escalation.",
+      "description": "CL-STA-0043 is a Chinese state-nexus cyber-espionage actor tracked by Palo Alto Networks Unit 42, which promoted the activity cluster to the named threat actor Phantom Taurus in September 2025, having previously designated it TGR-STA-0043 and linked it to the Operation Diplomatic Specter campaign. The group targets government and telecommunications organizations, including ministries of foreign affairs, embassies and diplomatic missions, across Africa, the Middle East and Asia, with a focus on geopolitical and military intelligence collection. It typically gains access by exploiting internet-facing Internet Information Services (IIS) and Microsoft Exchange servers, then performs reconnaissance and privilege escalation using native Windows tooling. In more recent operations the actor deployed NET-STAR, a fileless .NET malware suite targeting IIS web servers that comprises the IIServerCore backdoor and the AssemblyExecuter V1 and V2 loaders.",
       "meta": {
+        "country": "CN",
         "refs": [
           "https://www.securonix.com/blog/securonix-threat-labs-monthly-intelligence-insights-june-2023/",
           "https://www.paloaltonetworks.com/blog/security-operations/through-the-cortex-xdr-lens-uncovering-a-new-activity-group-targeting-governments-in-the-middle-east-and-africa/",
-          "https://unit42.paloaltonetworks.com/operation-diplomatic-specter/"
+          "https://unit42.paloaltonetworks.com/operation-diplomatic-specter/",
+          "https://unit42.paloaltonetworks.com/phantom-taurus/"
         ],
         "synonyms": [
+          "Phantom Taurus",
           "TGR-STA-0043"
         ]
       },
+      "related": [
+        {
+          "dest-uuid": "c8ad61b6-55ff-4585-8782-5aabb3d5dcc3",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        }
+      ],
       "uuid": "5d0aee14-f18a-44da-a44d-28d950f06b9c",
       "value": "CL-STA-0043"
     },
@@ -21222,5 +21234,5 @@
       "value": "FulcrumSec"
     }
   ],
-  "version": 344
+  "version": 345
 }
