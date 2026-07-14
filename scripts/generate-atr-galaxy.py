@@ -3,7 +3,7 @@
 
 Reads ATR rule YAML files, emits:
 - galaxies/agent-threat-rules.json (metadata)
-- clusters/agent-threat-rules.json (336 entries)
+- clusters/agent-threat-rules.json (713 entries)
 
 UUIDs are deterministic (UUID5) so regenerating is byte-stable.
 Run from misp-galaxy fork root, with --rules-dir pointing at the
@@ -108,7 +108,7 @@ def load_rules(rules_dir: Path) -> list[dict]:
 
 def build_galaxy() -> dict:
     return {
-        "description": "Agent Threat Rules (ATR) — open detection standard for AI agent threats covering prompt injection, tool poisoning, context exfiltration, and 6 other attack classes against MCP servers, skill manifests, and agent runtimes. 336 rules across 9 categories.",
+        "description": "Agent Threat Rules (ATR) — open detection standard for AI agent threats covering prompt injection, tool poisoning, context exfiltration, and 6 other attack classes against MCP servers, skill manifests, and agent runtimes. 713 rules across 9 categories.",
         "icon": "shield-virus",
         "kill_chain_order": {
             "agent-threat": CATEGORIES,
@@ -117,7 +117,7 @@ def build_galaxy() -> dict:
         "namespace": "agent-threat-rules",
         "type": "agent-threat-rules",
         "uuid": GALAXY_UUID,
-        "version": 1,
+        "version": 2,
     }
 
 
@@ -210,7 +210,7 @@ def build_cluster(
         "type": "agent-threat-rules",
         "uuid": CLUSTER_UUID,
         "values": values,
-        "version": 1,
+        "version": 2,
     }
 
 
