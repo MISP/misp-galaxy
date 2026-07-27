@@ -4475,7 +4475,8 @@
         ],
         "synonyms": [
           "StrongPity",
-          "G0056"
+          "G0056",
+          "APT-C-41"
         ]
       },
       "related": [
@@ -19828,7 +19829,11 @@
       "meta": {
         "country": "CN",
         "refs": [
-          "https://blog.talosintelligence.com/uat-7237-targets-web-hosting-infra/"
+          "https://blog.talosintelligence.com/uat-7237-targets-web-hosting-infra/",
+          "https://unit42.paloaltonetworks.com/cl-sta-1062-tinyrct-backdoor/"
+        ],
+        "synonyms": [
+          "CL-STA-1062"
         ]
       },
       "uuid": "a1e84808-6540-42bd-a3f8-c3c724ba5203",
@@ -21243,6 +21248,129 @@
       },
       "uuid": "b7883e16-e1d8-4ab2-b0dc-9117cce4228f",
       "value": "Mysterious Elephant"
+    },
+    {
+      "description": "Armored Likho is an APT group targeting government agencies and the electric power sector across Russia, Brazil, and Kazakhstan. Their operations blend financially motivated campaigns with cyber-espionage, utilizing obfuscated, modular RATs and infostealers designed to evade dynamic analysis. They employ spear-phishing emails with deceptive themes to gain initial access, distributing malicious attachments that mimic legitimate content. Their toolkit includes BusySnake Stealer and AquilaRAT, with a focus on evolving TTPs and leveraging AI tools for payload generation.",
+      "meta": {
+        "refs": [
+          "https://securelist.com/tr/armored-likho-apt-with-busysnake-stealer/120292/"
+        ],
+        "synonyms": [
+          "Eagle Werewolf"
+        ]
+      },
+      "uuid": "261f26b7-fdb9-470f-9fd8-464d7291a1d9",
+      "value": "Armored Likho"
+    },
+    {
+      "description": "Launched in August 2025, the Scattered LAPSUS$ Hunters collective has rapidly established itself as one of the most formidable threats on today’s cybercriminal landscape. This alliance brings together three of the most notorious English-speaking cybercriminal groups: Scattered Spider, LAPSUS$ and ShinyHunters. In just a few months, this organization has multiplied spectacular attacks against leading companies, stealing billions of pieces of data and perfecting the art of digital extortion.",
+      "meta": {
+        "refs": [
+          "https://www.picussecurity.com/resource/blog/scattered-lapsus-hunters-2025s-most-dangerous-cybercrime-supergroup",
+          "https://sosransomware.com/en/ransomware-groups/scattered-lapsus-hunters-the-cybercrime-alliance-that-will-shake-global-businesses-in-2025/",
+          "https://krebsonsecurity.com/2025/11/meet-rey-the-admin-of-scattered-lapsus-hunters/",
+          "https://unit42.paloaltonetworks.com/scattered-lapsus-hunters/",
+          "https://pushsecurity.com/blog/scattered-lapsus-hunters/",
+          "https://falconfeeds.io/blogs/scattered-lapsus-hunters-slsh-threat-intelligence-2025/",
+          "https://www.levelblue.com/blogs/spiderlabs-blog/scattered-lapsuss-hunters-anatomy-of-a-federated-cybercriminal-brand",
+          "https://www.resecurity.com/blog/article/trinity-of-chaos-the-lapsus-shinyhunters-and-scattered-spider-alliance-embarks-on-global-cybercrime-spree"
+        ],
+        "synonyms": [
+          "Scattered Lapsus$ Hunters"
+        ]
+      },
+      "uuid": "c216b83d-f298-438c-be47-0506ec773d8f",
+      "value": "Scattered Lapsus Hunters"
+    },
+    {
+      "description": "UNC2529 is a well-resourced threat actor that conducted a global phishing campaign targeting various industries, utilizing tailored lures and sophisticated malware, including DOUBLEDRAG, DOUBLEDROP, and DOUBLEBACK. They compromised a legitimate domain to enhance their phishing efforts and employed at least 50 domains throughout the campaign. The actor demonstrated target research through personalized email addresses and subject lines, indicating a non-native English speaker. Their activities suggest a financial crime motive, with extensive use of obfuscation and fileless malware to evade detection.",
+      "meta": {
+        "refs": [
+          "https://www.fireeye.com/blog/threat-research/2021/05/unc2529-triple-double-trifecta-phishing-campaign.html"
+        ]
+      },
+      "uuid": "ab2f8f37-35e3-4a2a-b55b-12937734b5dd",
+      "value": "UNC2529"
+    },
+    {
+      "description": "UTA0533 has been linked to compromised SonicWall SMA appliances, with exploitation beginning on June 22, 2026. The actor routed traffic through ExpressVPN and Mullvad exit nodes, utilizing over 200 IP addresses. Notably, several attacker hostnames, including a Kali Linux machine, were leaked during lateral movement, indicating hands-on-keyboard intrusion.",
+      "meta": {
+        "refs": [
+          "https://www.volexity.com/blog/2026/07/17/proxying-to-compromise-sonicwall-secure-mobile-access-0-day-exploitation/"
+        ]
+      },
+      "uuid": "34d2ed46-0b42-45a0-a8a4-2148f5990036",
+      "value": "UTA0533"
+    },
+    {
+      "description": "UAT-7810 is an APT actor responsible for maintaining the LapDogs ORB network and developing custom malware, including the backdoors SHORTLEASH and LONGLEASH, as well as DOGLEASH and JARLEASH. They exploit known vulnerabilities in unpatched Ruckus wireless routers and have been observed using infrastructure to host malicious payloads across various hardware platforms. Forensic analysis has revealed their use of multiple IP addresses for hosting and deploying malware, including a test binary named LEASHTEST for functionality checks on MIPS devices. Talos assesses UAT-7810 as a China-nexus threat actor, providing infrastructure to secondary APTs while maintaining distinct objectives.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://blog.talosintelligence.com/uat-7810/"
+        ]
+      },
+      "uuid": "accc7fd6-3f77-471c-aec1-78662beba2b7",
+      "value": "UAT-7810"
+    },
+    {
+      "description": "Hyadina is a threat actor that first emerged in March 2022, deploying its Monster ransomware variant primarily targeting 32-bit Windows systems while avoiding the CIS region. The group rebranded its ransomware as Beast in June 2024, enhancing its toolset to include support for Linux and VMware ESXi, and incorporating extensive use of NirSoft tools. The latest iteration, GodDamn, showcases advanced defensive evasion techniques, including the use of the PoisonX malicious driver component. Hyadina operates as a ransomware-as-a-service, collaborating with affiliates to execute attacks.",
+      "meta": {
+        "refs": [
+          "https://www.security.com/threat-intelligence/goddamn-ransomware-beast-rebrand"
+        ]
+      },
+      "uuid": "2c1b3ad6-6354-4e97-a407-6105b223dfe9",
+      "value": "Hyadina"
+    },
+    {
+      "description": "Cavern Manticore is an Iran-nexus APT primarily targeting Israeli organizations in the government and IT sectors, linked to the MOIS. The group employs a modular command-and-control framework built on a shared .NET foundation, utilizing multiple compilation formats to create an anti-analysis layer. Their operations demonstrate a high operational tempo and a disciplined approach to target selection, particularly during campaigns like \"Operation Epic Fury.\" By decoupling core infrastructure from mission-specific modules, Cavern Manticore enhances operational agility while complicating detection efforts for defenders.",
+      "meta": {
+        "country": "IR",
+        "refs": [
+          "https://research.checkpoint.com/2026/cavern-manticore-exposing-iran-linked-modular-c2-framework/"
+        ]
+      },
+      "uuid": "2281a516-8bb2-4f9d-8080-f2b8c4db42ea",
+      "value": "Cavern Manticore"
+    },
+    {
+      "description": "UAT-11795 is a sophisticated, Russian-speaking, financially motivated adversary conducting malicious campaigns targeting users in the U.S. and Europe since June 2025. The actor employs CastleStealer and Remcos RAT as alternative payload implants. Their operations indicate a focus on financial gain through targeted attacks.",
+      "meta": {
+        "country": "RU",
+        "refs": [
+          "https://blog.talosintelligence.com/uat-11795-deploys-novel-starland-rat-and-bespoke-wldr-c2-implant-in-financially-motivated-campaign/"
+        ]
+      },
+      "uuid": "9cabe2b7-ea4d-43fd-aded-ff60bad756dd",
+      "value": "UAT-11795"
+    },
+    {
+      "description": "Jackpot Panda is a China-nexus state-sponsored APT primarily focused on cyber espionage against East and Southeast Asian entities, particularly in the online gambling sector and domestic security. They rapidly exploited CVE-2025-55182 using automated scanning, reconnaissance commands, and multi-vulnerability campaigns. Their activities have been linked to infrastructure associated with the exploitation of trojanized platforms and malware deployment, including SNOWLIGHT and VShell.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/threat-actors-exploit-react2shell-cve-2025-55182",
+          "https://blog.polyswarm.io/multiple-threat-actors-leveraging-cve-2025-55182-react2shell",
+          "https://aws.amazon.com/blogs/security/china-nexus-cyber-threat-groups-rapidly-exploit-react2shell-vulnerability-cve-2025-55182/"
+        ]
+      },
+      "uuid": "e7278476-22c1-4bc1-a7cf-25d8a2deec30",
+      "value": "JACKPOT PANDA"
+    },
+    {
+      "description": "JADEPUFFER is an agentic threat actor that executed a fully autonomous ransomware operation, leveraging a Large Language Model to automate the entire attack chain from initial access to data destruction. It exploited CVE-2025-3248 against an exposed Langflow instance for initial access, then compromised MinIO using default credentials and manipulated MySQL for privilege escalation. The operation culminated in the encryption of over 1,300 configuration records in Nacos, with the encryption key lost, rendering the data unrecoverable. JADEPUFFER exemplifies a shift towards machine-speed extortion, where traditional security models are outpaced by automated threats.",
+      "meta": {
+        "refs": [
+          "https://thehackernews.com/2026/07/new-encforge-ransomware-targets-ai.html",
+          "https://krypt3ia.wordpress.com/2026/07/13/threat-intelligence-report-jadepuffer-agentic-ransomware-and-automated-extortion/",
+          "https://nsfocusglobal.com/ai-security-incident-jadepuffer-ransomware-leverages-ai-agent-to-automate-attacks/",
+          "https://securereading.com/jadepuffer-ai-ransomware-autonomous-llm-attack/",
+          "https://socfortress.medium.com/jadepuffer-the-dawn-of-agentic-ransomware-operations-003a59848007"
+        ]
+      },
+      "uuid": "3ba33e02-c485-40dd-b9af-c4f9a7c46fd5",
+      "value": "JadePuffer"
     }
   ],
   "version": 345
