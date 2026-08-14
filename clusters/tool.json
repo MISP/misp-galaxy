@@ -11160,7 +11160,67 @@
       },
       "uuid": "7501abf2-4864-4fc2-a8a3-3a1250ab8e71",
       "value": "SilentRunLoader"
+    },
+    {
+      "description": "According to Symantec, Antino is the Windows backdoor used by the Jewelbug (aka REF7707, Earth Alux, CL-STA-0049) group. It is delivered by HTA downloaders themed on current geopolitical events, and as fake Adobe Flash or Adobe installers (file names such as flashcenter_pp_ax_install_en.exe and Adobeinstall.exe) hosted on group-controlled domains. Once running, it uses the Microsoft Graph API as its command-and-control channel, hiding its traffic inside legitimate Microsoft cloud services. It also sideloads a malicious 'PDF Viewer' browser extension into the victim's browser profile and drops a native-messaging helper registered as com.microsoft.runedge, which runs operator commands through the Windows command interpreter. Note that most antivirus engines label samples of this family as Fsysna, Midie or CRAITHNEX; Antino is the Symantec name.",
+      "meta": {
+        "date": "August 2026.",
+        "refs": [
+          "https://www.security.com/threat-intelligence/jewelbug-crypto-fraud-espionage"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "ff080026-9df7-4874-ad04-0c7d4dcb3e7f",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "dcdb06f3-2d50-4d5c-893b-383e0a2ea4ac",
+      "value": "Antino"
+    },
+    {
+      "description": "According to Symantec, ClientKing is a Rust implant used by the Jewelbug (aka REF7707, Earth Alux, CL-STA-0049) group to reach servers and network devices rather than browsers. Thirty-seven builds were observed, spanning x86-64 servers, ARM64 devices and ASUS consumer routers. It supports five command-and-control transports, including a custom DNS tunnel, and offers a full interactive shell, SOCKS pivoting and the ability to load kernel modules directly from memory. A companion toolkit adds a kernel-module rootkit and a malicious authentication module hooked into su and sudo to steal credentials.",
+      "meta": {
+        "date": "August 2026.",
+        "refs": [
+          "https://www.security.com/threat-intelligence/jewelbug-crypto-fraud-espionage"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "ff080026-9df7-4874-ad04-0c7d4dcb3e7f",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "ae48283b-562f-4800-98d2-df3eced24b29",
+      "value": "ClientKing"
+    },
+    {
+      "description": "According to Symantec, XG-Web is the operator control panel of the Jewelbug (aka REF7707, Earth Alux, CL-STA-0049) group, administering both its espionage and cryptocurrency fraud operations. It is a browser-centric remote-access and information-stealing platform built as a React panel over a Node.js backend, with a MySQL database that doubles as the rendezvous point for victim implants. Its developers describe it as a penetration-testing platform, while internal terms for its functions include browser hijacking, data theft and man-in-the-middle attack. Campaign payloads were served through public Google Documents created by the backend, and a scheduled job checked the group's own C&C domains against VirusTotal every twelve hours so operators could rotate away from flagged infrastructure.",
+      "meta": {
+        "date": "August 2026.",
+        "refs": [
+          "https://www.security.com/threat-intelligence/jewelbug-crypto-fraud-espionage"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "ff080026-9df7-4874-ad04-0c7d4dcb3e7f",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "078618f7-c422-4fea-b290-8dad859f5fa8",
+      "value": "XG-Web"
     }
   ],
-  "version": 177
+  "version": 178
 }
