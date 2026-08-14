@@ -488,7 +488,7 @@ Category: *attack-pattern* - source: *https://collaborate.mitre.org/attackics/in
 
 [Intrusion Set](https://www.misp-galaxy.org/mitre-intrusion-set) - Name of ATT&CK Group
 
-Category: *actor* - source: *https://github.com/mitre/cti* - total: *191* elements
+Category: *actor* - source: *https://github.com/mitre/cti* - total: *193* elements
 
 [[HTML](https://www.misp-galaxy.org/mitre-intrusion-set)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-intrusion-set.json)]
 
@@ -496,7 +496,7 @@ Category: *actor* - source: *https://github.com/mitre/cti* - total: *191* elemen
 
 [Malware](https://www.misp-galaxy.org/mitre-malware) - Name of ATT&CK software
 
-Category: *tool* - source: *https://github.com/mitre/cti* - total: *850* elements
+Category: *tool* - source: *https://github.com/mitre/cti* - total: *854* elements
 
 [[HTML](https://www.misp-galaxy.org/mitre-malware)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-malware.json)]
 
