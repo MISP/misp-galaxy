@@ -11220,7 +11220,18 @@
       ],
       "uuid": "078618f7-c422-4fea-b290-8dad859f5fa8",
       "value": "XG-Web"
+    },
+    {
+      "description": "According to Zscaler ThreatLabz, C2Looper is a Rust-based Windows backdoor first identified in July 2026 and assessed with low to medium confidence to be delivered through multi-stage ClickFix infection chains, likely by an initial access broker establishing a foothold for ransomware. It resolves Windows APIs dynamically through LoadLibrary and GetProcAddress, and decrypts its strings at runtime with a single 8-byte XOR key reused throughout the code. Early variants beacon over plaintext HTTP to /api/beacon every second, reporting username, hostname and process ID, and return command output to /api/result/. Supported commands cover remote shell execution, reconnaissance, and second-stage delivery; the upload command writes a payload as wtsapi32.dll under %LocalAppData%\\Microsoft\\OneDrive\\, kills the OneDrive process and sideloads the DLL through the legitimate executable. A later variant, tagged version 2 by its own debug strings, abandons HTTP endpoints entirely and drives all command and control through a GitHub repository, writing cmd.json, result.json and beacon.json per bot, and adds directory listing, drive enumeration, richer reconnaissance and shellcode injection into the text section of a loaded winspool.drv. Note that no antivirus engine names this family: detections on the published samples are entirely generic.",
+      "meta": {
+        "date": "August 2026.",
+        "refs": [
+          "https://www.zscaler.com/blogs/security-research/c2looper-new-backdoor-likely-tied-ransomware-github-c2"
+        ]
+      },
+      "uuid": "e3de66ff-1ec1-4097-ba11-9764a23bdf69",
+      "value": "C2Looper"
     }
   ],
-  "version": 178
+  "version": 179
 }
