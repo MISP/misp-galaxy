@@ -11231,7 +11231,30 @@
       },
       "uuid": "e3de66ff-1ec1-4097-ba11-9764a23bdf69",
       "value": "C2Looper"
+    },
+    {
+      "description": "CoolClient is a modular backdoor used by Mustang Panda. The name is not a vendor label: it comes from the developers' own build paths, recovered by Sophos in November 2022 from PDB strings such as G:\\project\\木马\\Cool\\Client\\hijack_export\\libvlc\\Release\\libvlc.pdb, where 木马 means trojan. Sophos documented the campaign without attributing it, noting that Mustang Panda and LuminousMoth artefacts found alongside were collateral of the USB worm's indiscriminate file collection rather than evidence of collusion; Trend Micro attributed the backdoor to Mustang Panda in 2023, Symantec observed it against telecom operators in Asia in June 2024, and Kaspersky has tracked it since 2025. It is delivered by DLL sideloading through a renamed legitimate binary, persists as a service, terminates security software, and supports file read and delete, clipboard and active-window monitoring, and second-stage delivery. Kaspersky's August 2026 analysis describes a variant that installs a kernel-mode rootkit driver signed with an expired Nanjing Ranyi Technology Co., Ltd. certificate, hooking nsiproxy to hide the C2 addresses from local network tooling. Note that only Kaspersky labels samples Rootkit.Win64.CoolClient; other engines report the driver as Etset or generic rootkit detections.",
+      "meta": {
+        "date": "November 2022.",
+        "refs": [
+          "https://news.sophos.com/en-us/2022/11/03/family-tree-dll-sideloading-cases-may-be-related/",
+          "https://www.trendmicro.com/en_gb/research/23/c/earth-preta-updated-stealthy-strategies.html",
+          "https://securelist.com/honeymyte-updates-coolclient-uses-browser-stealers-and-scripts/118664/",
+          "https://securelist.com/honeymyte-coolclient-driver-rootkit/121028/"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "78bf726c-a9e6-11e8-9e43-77249a2f7339",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "6d26e384-8dcc-4ef1-941b-b84c826ea68d",
+      "value": "CoolClient"
     }
   ],
-  "version": 179
+  "version": 180
 }
