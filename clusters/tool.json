@@ -11254,7 +11254,163 @@
       ],
       "uuid": "6d26e384-8dcc-4ef1-941b-b84c826ea68d",
       "value": "CoolClient"
+    },
+    {
+      "description": "CookiETagRAT is a C++ remote access trojan used by the SilkParasite activity cluster, observed by Bitdefender in Central Asia. It hides its command-and-control exchange inside HTTP Cookie and ETag headers, so the traffic carries no distinctive body and inspection that looks only at payloads sees ordinary web requests. Delivery relies on DLL sideloading through renamed legitimate binaries.",
+      "meta": {
+        "date": "August 2026.",
+        "refs": [
+          "https://www.bitdefender.com/en-us/blog/businessinsights/silkparasite-tracking-china-nexus-apt-across-central-asia"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "33420fce-ac3e-4164-a1f5-ccc3d43657c2",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "0b49a769-99ce-4279-8664-d5410471a04c",
+      "value": "CookiETagRAT"
+    },
+    {
+      "description": "DriveSilkRAT is a remote access trojan used by the SilkParasite activity cluster, observed by Bitdefender in Central Asia. Two lineages exist: an original .NET implementation and a later C++ rewrite. Its distinguishing trait is command and control over Google Drive, which places the traffic inside a service most networks already allow and cannot easily distinguish from legitimate use. Delivery relies on DLL sideloading through renamed legitimate binaries.",
+      "meta": {
+        "date": "August 2026.",
+        "refs": [
+          "https://www.bitdefender.com/en-us/blog/businessinsights/silkparasite-tracking-china-nexus-apt-across-central-asia"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "33420fce-ac3e-4164-a1f5-ccc3d43657c2",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "96422a8c-ae49-41c6-9f85-56d8f03fd871",
+      "value": "DriveSilkRAT"
+    },
+    {
+      "description": "GoginRAT is a remote access trojan written in Go, used by the SilkParasite activity cluster and observed by Bitdefender in Central Asia. Bitdefender notes development artefacts across this cluster's newer implants that suggest AI-assisted coding, including test functions left in shipped builds and placeholder cryptographic material such as a literal change_this_key. Delivery relies on DLL sideloading through renamed legitimate binaries.",
+      "meta": {
+        "date": "August 2026.",
+        "refs": [
+          "https://www.bitdefender.com/en-us/blog/businessinsights/silkparasite-tracking-china-nexus-apt-across-central-asia"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "33420fce-ac3e-4164-a1f5-ccc3d43657c2",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "28d502d5-db8a-4fb9-81eb-422e573ea40a",
+      "value": "GoginRAT"
+    },
+    {
+      "description": "HelpLoader is the loader component that delivers SpiceRAT, named by Cisco Talos in June 2024. It is sideloaded by a renamed legitimate executable and is responsible for decrypting and running the implant, which never touches disk in its final form. Reported in campaigns attributed to SneakyChef, and observed again in August 2026 by Bitdefender within the SilkParasite activity cluster.",
+      "meta": {
+        "date": "June 2024.",
+        "refs": [
+          "https://blog.talosintelligence.com/sneakychef-spicerat-suncrypt/",
+          "https://www.bitdefender.com/en-us/blog/businessinsights/silkparasite-tracking-china-nexus-apt-across-central-asia"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "cdf4506e-09ea-4eb8-b898-b1b5381aa343",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "33420fce-ac3e-4164-a1f5-ccc3d43657c2",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "35cef3a8-5e19-4aa5-b512-9460ed025e5e",
+      "value": "HelpLoader"
+    },
+    {
+      "description": "NodeEdgeRAT is a remote access trojan written in JavaScript and running on Node.js, used by the SilkParasite activity cluster and observed by Bitdefender in Central Asia. Its command-and-control infrastructure includes domains impersonating legitimate regional hosting providers, a pattern that makes the traffic plausible to a local defender.",
+      "meta": {
+        "date": "August 2026.",
+        "refs": [
+          "https://www.bitdefender.com/en-us/blog/businessinsights/silkparasite-tracking-china-nexus-apt-across-central-asia"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "33420fce-ac3e-4164-a1f5-ccc3d43657c2",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "620b78ec-bf00-468d-a0eb-0ff18a8bcd40",
+      "value": "NodeEdgeRAT"
+    },
+    {
+      "description": "NomadRAT is a C++ remote access trojan used by the SilkParasite activity cluster, observed by Bitdefender against government and telecommunications targets in Central Asia. Delivery relies on DLL sideloading through renamed legitimate binaries, the pattern shared across this cluster's tooling.",
+      "meta": {
+        "date": "August 2026.",
+        "refs": [
+          "https://www.bitdefender.com/en-us/blog/businessinsights/silkparasite-tracking-china-nexus-apt-across-central-asia"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "33420fce-ac3e-4164-a1f5-ccc3d43657c2",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "e693625b-0d70-4acd-b08d-49e7320db974",
+      "value": "NomadRAT"
+    },
+    {
+      "description": "SpiceRAT is a remote access trojan first reported by Cisco Talos in June 2024, in a campaign attributed to SneakyChef targeting government agencies and think tanks in EMEA and Asia. It is delivered through two chains, one using a LNK file and one using an HTA, both loading the implant by DLL sideloading through a renamed legitimate executable; Talos names the loader component HelpLoader. Bitdefender observed SpiceRAT again in August 2026 as part of the SilkParasite activity cluster in Central Asia, alongside implants of that cluster's own.",
+      "meta": {
+        "date": "June 2024.",
+        "refs": [
+          "https://blog.talosintelligence.com/sneakychef-spicerat-suncrypt/",
+          "https://www.bitdefender.com/en-us/blog/businessinsights/silkparasite-tracking-china-nexus-apt-across-central-asia"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "cdf4506e-09ea-4eb8-b898-b1b5381aa343",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "33420fce-ac3e-4164-a1f5-ccc3d43657c2",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "80f5eb4e-cf4e-49dd-bf59-10f9f7258ff3",
+      "value": "SpiceRAT"
     }
   ],
-  "version": 180
+  "version": 181
 }
