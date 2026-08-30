@@ -184,6 +184,12 @@ if __name__ == "__main__":
         with ThreadPoolExecutor(
             max_workers=(multiprocessing.cpu_count() * 4)
         ) as executor:
-            executor.map(write_relations_table, galaxy.clusters.values())
+            # executor.map returns a lazy iterator: an exception raised in a
+            # worker is stored in its Future and only re-raised when that
+            # result is consumed. Discarding the iterator therefore swallows
+            # every failure, and the build reports success with relation
+            # pages silently missing. Draining it propagates the first one.
+            for _ in executor.map(write_relations_table, galaxy.clusters.values()):
+                pass
 
     print(f"Finished in {time.time() - start_time} seconds")
