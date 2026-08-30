@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import requests
 import json
+import os
 from bs4 import BeautifulSoup
 import bs4
 import uuid
@@ -178,7 +179,27 @@ def _fetchArticle(url):
     return article
 
 
-def _gen_galaxy(scrape):
+def _load_committed_uuids(path):
+    """Map value -> uuid from the cluster this run is about to overwrite.
+
+    Every entry below is minted with uuid4(), so without this a regeneration
+    would replace all 159 universities with fresh uuids and orphan every
+    `related` edge pointing at them.
+    """
+    try:
+        with open(path, encoding="utf-8") as f:
+            committed = json.load(f)
+    except (FileNotFoundError, ValueError):
+        return {}
+    return {
+        v["value"].strip().casefold(): v["uuid"]
+        for v in committed.get("values", [])
+        if v.get("value") and v.get("uuid")
+    }
+
+
+def _gen_galaxy(scrape, committed_uuids=None):
+    committed_uuids = committed_uuids or {}
     base = {
         "authors": [
             "Australian Strategic Policy Institute"
@@ -204,7 +225,7 @@ def _gen_galaxy(scrape):
             "value": ""
         }
 
-        new_template["uuid"] = str(uuid.uuid4())
+        # placeholder; replaced below once the value is known
 
         new_template["meta"]["refs"].append(uni["url"])
 
@@ -260,6 +281,12 @@ def _gen_galaxy(scrape):
             if uni.get(uni["location"][0]["long"]) != "":
                 new_template["meta"]["long"] = uni["location"][0]["long"]
 
+        # Reuse the uuid already committed for this university; only a
+        # genuinely new entry gets a freshly minted one.
+        new_template["uuid"] = committed_uuids.get(
+            new_template["value"].strip().casefold()
+        ) or str(uuid.uuid4())
+
         base["values"].append(new_template)
 
     return base
@@ -283,12 +310,18 @@ def main():
         else:
             head = "bloop"
 
-    galaxy = _gen_galaxy(articles)
+    cluster_path = os.path.join('..', 'clusters', 'china-defence-universities.json')
+    galaxy = _gen_galaxy(articles, _load_committed_uuids(cluster_path))
 
     print(galaxy)
 
-    with open("china-defence-universities.json", "w") as g:
-        g.write(json.dumps(galaxy, indent=4, sort_keys=True))
+    # Was: open("china-defence-universities.json", "w") -- written into the
+    # current directory, so clusters/china-defence-universities.json was
+    # never updated.
+    with open(cluster_path, 'w', encoding='utf-8') as g:
+        json.dump(galaxy, g, indent=2, sort_keys=True, ensure_ascii=False)
+        g.write('\n')  # match jq_all_the_things.sh formatting
+    print("Wrote %s" % cluster_path)
 
 
 if __name__ == "__main__":
