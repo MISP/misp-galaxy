@@ -500,21 +500,13 @@ Category: *actor* - source: *https://github.com/mitre/cti* - total: *193* elemen
 
 [[HTML](https://www.misp-galaxy.org/mitre-intrusion-set)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-intrusion-set.json)]
 
-## MITRE ATT&CK Malware
+## MITRE ATT&CK Software
 
-[MITRE ATT&CK Malware](https://www.misp-galaxy.org/mitre-malware) - Malicious software tracked by MITRE ATT&CK.
+[MITRE ATT&CK Software](https://www.misp-galaxy.org/mitre-software) - Malware and legitimate tools used by adversaries, tracked by MITRE ATT&CK.
 
-Category: *tool* - source: *https://github.com/mitre/cti* - total: *854* elements
+Category: *tool* - source: *https://github.com/mitre/cti* - total: *951* elements
 
-[[HTML](https://www.misp-galaxy.org/mitre-malware)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-malware.json)]
-
-## MITRE ATT&CK Tools
-
-[MITRE ATT&CK Tools](https://www.misp-galaxy.org/mitre-tool) - Legitimate tools abused by adversaries, tracked by MITRE ATT&CK.
-
-Category: *tool* - source: *https://github.com/mitre/cti* - total: *97* elements
-
-[[HTML](https://www.misp-galaxy.org/mitre-tool)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-tool.json)]
+[[HTML](https://www.misp-galaxy.org/mitre-software)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-software.json)]
 
 ## NACE
 
