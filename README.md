@@ -380,6 +380,14 @@ Category: *attack-pattern* - source: *https://github.com/mitre/cti* - total: *12
 
 [[HTML](https://www.misp-galaxy.org/mitre-attack-pattern)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-attack-pattern.json)]
 
+## MITRE ATT&CK Campaigns
+
+[MITRE ATT&CK Campaigns](https://www.misp-galaxy.org/mitre-campaign) - Campaigns tracked by MITRE ATT&CK.
+
+Category: *actor* - source: *https://github.com/mitre/cti* - total: *57* elements
+
+[[HTML](https://www.misp-galaxy.org/mitre-campaign)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-campaign.json)]
+
 ## MITRE ATT&CK Mitigations
 
 [MITRE ATT&CK Mitigations](https://www.misp-galaxy.org/mitre-course-of-action) - Mitigations from MITRE ATT&CK.
