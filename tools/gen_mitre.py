@@ -14,7 +14,7 @@ values = []
 misp_dir = '../'
 
 
-domains = ['enterprise-attack', 'mobile-attack', 'pre-attack']
+domains = ['enterprise-attack', 'mobile-attack', 'pre-attack', 'ics-attack']
 types = {'data-source': 'x-mitre-data-source',
          'attack-pattern': ['attack-pattern', 'x-mitre-tactic'],
          'course-of-action': 'course-of-action',
@@ -27,6 +27,13 @@ types = {'data-source': 'x-mitre-data-source',
          }
 mitre_sources = ['mitre-attack', 'mitre-ics-attack', 'mitre-pre-attack', 'mitre-mobile-attack']
 
+# ATT&CK publishes Groups, Software and Campaigns as a single listing spanning every
+# domain, but keeps a separate matrix per domain for techniques, tactics and mitigations.
+# So only these galaxies take data from the ics-attack bundle; the ICS matrix itself
+# stays in the mitre-ics-* galaxies.
+cross_domain_types = ['intrusion-set', 'software', 'campaign']
+cross_domain_only_domains = ['ics-attack']
+
 
 def matches_type(item_type, meta_type):
     # allow a single type or a collection of acceptable types
@@ -36,12 +43,19 @@ def matches_type(item_type, meta_type):
 
 
 # pre-compute the allowed MITRE item types for quick membership checks
-allowed_item_types = set()
-for meta_type in types.values():
-    if isinstance(meta_type, (list, tuple, set)):
-        allowed_item_types.update(meta_type)
-    else:
-        allowed_item_types.add(meta_type)
+def build_allowed_item_types(keys):
+    allowed = set()
+    for key in keys:
+        meta_type = types[key]
+        if isinstance(meta_type, (list, tuple, set)):
+            allowed.update(meta_type)
+        else:
+            allowed.add(meta_type)
+    return allowed
+
+
+allowed_item_types = build_allowed_item_types(types)
+allowed_item_types_cross_domain = build_allowed_item_types(cross_domain_types)
 
 
 kill_chain_order_sort_order = {
@@ -161,8 +175,13 @@ for domain in domains:
     with open(os.path.join(attack_dir, domain + '.json')) as f:
         attack_data = json.load(f)
 
+    if domain in cross_domain_only_domains:
+        domain_item_types = allowed_item_types_cross_domain
+    else:
+        domain_item_types = allowed_item_types
+
     for item in attack_data['objects']:
-        if item['type'] not in allowed_item_types:
+        if item['type'] not in domain_item_types:
             continue
 
         # print(json.dumps(item, indent=2, sort_keys=True, ensure_ascii=False))
@@ -319,6 +338,15 @@ for domain in domains:
                 all_data_uuid[data_component_uuid]['related'].append(rel_data_component)
         except KeyError:
             pass  # ignore relations from which we do not know the source
+
+
+# drop relations whose target ended up in no galaxy at all.
+# the ics-attack bundle links its groups and software to the ICS techniques, which we
+# deliberately do not load here, so those targets would otherwise dangle.
+known_uuids = set(all_data_uuid) | non_mitre_uuids
+for value in all_data_uuid.values():
+    if 'related' in value:
+        value['related'] = [rel for rel in value['related'] if rel['dest-uuid'] in known_uuids]
 
 
 # dump all_data to their respective file
