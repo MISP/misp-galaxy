@@ -439,6 +439,10 @@
           "type": "uses"
         },
         {
+          "dest-uuid": "80099a91-4c86-4bea-9ccb-dac55d61960e",
+          "type": "uses"
+        },
+        {
           "dest-uuid": "9538b1a4-4120-4e2d-bf59-3b11fcab05a4",
           "type": "attributed-to"
         },
@@ -837,6 +841,23 @@
       ],
       "uuid": "a6aba167-5ada-4812-9da1-912c0e73335d",
       "value": "2025 Poland Wiper Attacks - C0063"
+    },
+    {
+      "description": "[Oldsmar Treatment Plant Intrusion](https://attack.mitre.org/campaigns/C0009) was a cyber incident involving a water treatment facility in Florida. During this incident, unidentified threat actors leveraged features of the system to access and modify setpoints for a specific chemical required in the treatment process. The incident was detected immediately and prevented before it could cause any harm to the public.(Citation: Pinellas County Sheriffs Office February 2021)(Citation: CISA AA21-042A Water Treatment Intrusion Feb 2021)(Citation: Dragos Oldsmar Feb 2021)",
+      "meta": {
+        "external_id": "C0009",
+        "refs": [
+          "https://attack.mitre.org/campaigns/C0009",
+          "https://www.cisa.gov/uscert/ncas/alerts/aa21-042a",
+          "https://www.dragos.com/blog/industry-news/recommendations-following-the-oldsmar-water-treatment-facility-cyber-attack/",
+          "https://www.youtube.com/watch?v=MkXDSOgLQ6M"
+        ],
+        "synonyms": [
+          "Oldsmar Treatment Plant Intrusion"
+        ]
+      },
+      "uuid": "65281d3e-b03c-46b8-8cd8-716363ac3cb2",
+      "value": "Oldsmar Treatment Plant Intrusion - C0009"
     },
     {
       "description": "[APT28 Nearest Neighbor Campaign](https://attack.mitre.org/campaigns/C0051) was conducted by [APT28](https://attack.mitre.org/groups/G0007) from early February 2022 to November 2024 against organizations and individuals with expertise on Ukraine. APT28 primarily leveraged living-off-the-land techniques, while leveraging the zero-day exploitation of CVE-2022-38028. Notably, APT28 leveraged Wi-Fi networks in close proximity to the intended target to gain initial access to the victim environment. By daisy-chaining multiple compromised organizations nearby the intended target, APT28 discovered dual-homed systems (with both a wired and wireless network connection) to enable Wi-Fi and use compromised credentials to connect to the victim network.(Citation: Nearest Neighbor Volexity)",
@@ -1303,6 +1324,45 @@
       ],
       "uuid": "590cd5b0-2421-4158-84a2-db13b5db02a3",
       "value": "Anthropic AI-orchestrated Campaign - C0062"
+    },
+    {
+      "description": "[Maroochy Water Breach](https://attack.mitre.org/campaigns/C0020) was an incident in 2000 where an adversary leveraged the local government’s wastewater control system and stolen engineering equipment to disrupt and eventually release 800,000 liters of raw sewage into the local community.(Citation: Marshall Abrams July 2008)",
+      "meta": {
+        "external_id": "C0020",
+        "refs": [
+          "https://attack.mitre.org/campaigns/C0020",
+          "https://www.mitre.org/sites/default/files/pdf/08_1145.pdf"
+        ],
+        "synonyms": [
+          "Maroochy Water Breach"
+        ]
+      },
+      "related": [],
+      "uuid": "70cab19e-1745-425e-b3db-c02cd5ff157a",
+      "value": "Maroochy Water Breach - C0020"
+    },
+    {
+      "description": "The [Unitronics Defacement Campaign](https://attack.mitre.org/campaigns/C0031) was a collection of intrusions across multiple sectors by the [CyberAv3ngers](https://attack.mitre.org/groups/G1027), where threat actors engaged in a seemingly opportunistic and global targeting and defacement of Unitronics Vision Series [Programmable Logic Controller (PLC)](https://attack.mitre.org/assets/A0003) with [Human-Machine Interface (HMI)](https://attack.mitre.org/assets/A0002). The sectors that these PLCs can be commonly found in are water and wastewater, energy, food and beverage manufacturing, and healthcare. The most notable feature of this attack was the defacement of the PLCs' HMIs.(Citation: CISA AA23-335A IRGC-Affiliated December 2023)(Citation: Frank Bajak and Marc Levy December 2023)",
+      "meta": {
+        "external_id": "C0031",
+        "refs": [
+          "https://apnews.com/article/hackers-iran-israel-water-utilities-critical-infrastructure-cisa-554b2aa969c8220016ab2ef94bd7635b",
+          "https://attack.mitre.org/campaigns/C0031",
+          "https://veronews.com/2023/12/15/hackers-in-iran-attack-computer-at-vero-utilities/",
+          "https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-335a"
+        ],
+        "synonyms": [
+          "Unitronics Defacement Campaign"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "a07a367a-146c-45a8-a830-d3d337b9befa",
+          "type": "attributed-to"
+        }
+      ],
+      "uuid": "8fda050f-470d-4401-994e-35c1a6c301de",
+      "value": "Unitronics Defacement Campaign - C0031"
     },
     {
       "description": "[Operation Digital Eye](https://attack.mitre.org/campaigns/C0061) was conducted in June and July of 2024 by suspected People's Republic of China (PRC)-nexus threat actors targeting business-to-business IT service providers in Southern Europe. [Operation Digital Eye](https://attack.mitre.org/campaigns/C0061) activity included the use of Visual Studio Code tunnels for command and control (C2) and custom lateral movement capabilities. Overlaps in tooling between Digital Eye and previous China-nexus campaigns, Operation Soft Cell and Operation Tainted Love, indicate the potential use of shared vendors or digital quartermasters.(Citation: sentinelone operationDigitalEye Dec 2024)",
@@ -3291,6 +3351,10 @@
         },
         {
           "dest-uuid": "5d0d3609-d06d-49e1-b9c9-b544e0c618cb",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "b34df04a-9d30-4d84-a03f-0d536ee19a05",
           "type": "uses"
         }
       ],
@@ -6599,5 +6663,5 @@
       "value": "RedPenguin - C0056"
     }
   ],
-  "version": 2
+  "version": 3
 }
