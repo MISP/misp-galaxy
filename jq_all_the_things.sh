@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# Seeds sponge, from moreutils
-
 # Validate all JSONs first in cluster and galaxy
 
 folders=( clusters/*.json galaxies/*.json )
@@ -15,20 +13,36 @@ do
 done
 
 set -e
+set -o pipefail
 set -x
+
+# Beautify a JSON file in place, but only if jq actually succeeded.
+# Writing through a temp file means a jq failure leaves the original intact
+# instead of truncating it to 0 bytes.
+beautify() {
+    local target="$1"
+    shift
+    local tmp
+    tmp="$(mktemp "${target}.XXXXXX")"
+    if jq "$@" . "${target}" > "${tmp}"; then
+        mv "${tmp}" "${target}"
+    else
+        rm -f "${tmp}"
+        echo "ERROR: jq failed on ${target}, left unchanged" >&2
+        return 1
+    fi
+}
 
 for dir in clusters/*.json
 do
-    python3 tools/add_missing_uuid.py -f ${dir}
-    # Beautify it
-    cat ${dir} | jq --sort-keys . | sponge ${dir}
+    python3 tools/add_missing_uuid.py -f "${dir}"
+    beautify "${dir}" --sort-keys
 done
 
 for dir in galaxies/*.json
 do
-    # Beautify it
-    cat ${dir} | jq --sort-keys . | sponge ${dir}
+    beautify "${dir}" --sort-keys
 done
 
-cat schema_clusters.json | jq . | sponge schema_clusters.json
-cat schema_galaxies.json | jq . | sponge schema_galaxies.json
+beautify schema_clusters.json
+beautify schema_galaxies.json
