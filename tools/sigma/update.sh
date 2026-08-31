@@ -3,7 +3,7 @@ set -euo pipefail
 
 # Always operate relative to this script, so `rm -rf sigma` and the clone
 # cannot land outside tools/sigma when invoked from another directory.
-cd "${0%/*}"
+#cd "${0%/*}"
 
 rm -rf sigma
 git clone https://github.com/SigmaHQ/sigma
