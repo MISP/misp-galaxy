@@ -4,7 +4,7 @@
 
 # Validate all JSONs first in cluster and galaxy
 
-folders=( clusters/*.json galaxy/*.json )
+folders=( clusters/*.json galaxies/*.json )
 for dir in "${folders[@]}"
 do
   echo validating ${dir}
