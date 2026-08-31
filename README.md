@@ -380,6 +380,14 @@ Category: *attack-pattern* - source: *https://github.com/mitre/cti* - total: *12
 
 [[HTML](https://www.misp-galaxy.org/mitre-attack-pattern)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-attack-pattern.json)]
 
+## MITRE ATT&CK Campaigns
+
+[MITRE ATT&CK Campaigns](https://www.misp-galaxy.org/mitre-campaign) - Campaigns tracked by MITRE ATT&CK.
+
+Category: *actor* - source: *https://github.com/mitre/cti* - total: *60* elements
+
+[[HTML](https://www.misp-galaxy.org/mitre-campaign)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-campaign.json)]
+
 ## MITRE ATT&CK Mitigations
 
 [MITRE ATT&CK Mitigations](https://www.misp-galaxy.org/mitre-course-of-action) - Mitigations from MITRE ATT&CK.
@@ -444,14 +452,6 @@ Category: *asset* - source: *https://collaborate.mitre.org/attackics/index.php/A
 
 [[HTML](https://www.misp-galaxy.org/mitre-ics-assets)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-ics-assets.json)]
 
-## MITRE ATT&CK ICS Groups
-
-[MITRE ATT&CK ICS Groups](https://www.misp-galaxy.org/mitre-ics-groups) - Adversary groups from MITRE ATT&CK for ICS.
-
-Category: *actor* - source: *https://collaborate.mitre.org/attackics/index.php/Groups* - total: *10* elements
-
-[[HTML](https://www.misp-galaxy.org/mitre-ics-groups)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-ics-groups.json)]
-
 ## MITRE ATT&CK ICS Levels
 
 [MITRE ATT&CK ICS Levels](https://www.misp-galaxy.org/mitre-ics-levels) - Purdue model levels used by MITRE ATT&CK for ICS.
@@ -459,14 +459,6 @@ Category: *actor* - source: *https://collaborate.mitre.org/attackics/index.php/G
 Category: *level* - source: *https://collaborate.mitre.org/attackics/index.php/All_Levels* - total: *3* elements
 
 [[HTML](https://www.misp-galaxy.org/mitre-ics-levels)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-ics-levels.json)]
-
-## MITRE ATT&CK ICS Software
-
-[MITRE ATT&CK ICS Software](https://www.misp-galaxy.org/mitre-ics-software) - Software from MITRE ATT&CK for ICS.
-
-Category: *tool* - source: *https://collaborate.mitre.org/attackics/index.php/Software* - total: *17* elements
-
-[[HTML](https://www.misp-galaxy.org/mitre-ics-software)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-ics-software.json)]
 
 ## MITRE ATT&CK ICS Tactics
 
@@ -488,25 +480,17 @@ Category: *attack-pattern* - source: *https://collaborate.mitre.org/attackics/in
 
 [MITRE ATT&CK Groups](https://www.misp-galaxy.org/mitre-intrusion-set) - Adversary groups tracked by MITRE ATT&CK.
 
-Category: *actor* - source: *https://github.com/mitre/cti* - total: *193* elements
+Category: *actor* - source: *https://github.com/mitre/cti* - total: *195* elements
 
 [[HTML](https://www.misp-galaxy.org/mitre-intrusion-set)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-intrusion-set.json)]
 
-## MITRE ATT&CK Malware
+## MITRE ATT&CK Software
 
-[MITRE ATT&CK Malware](https://www.misp-galaxy.org/mitre-malware) - Malicious software tracked by MITRE ATT&CK.
+[MITRE ATT&CK Software](https://www.misp-galaxy.org/mitre-software) - Malware and legitimate tools used by adversaries, tracked by MITRE ATT&CK.
 
-Category: *tool* - source: *https://github.com/mitre/cti* - total: *854* elements
+Category: *tool* - source: *https://github.com/mitre/cti* - total: *964* elements
 
-[[HTML](https://www.misp-galaxy.org/mitre-malware)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-malware.json)]
-
-## MITRE ATT&CK Tools
-
-[MITRE ATT&CK Tools](https://www.misp-galaxy.org/mitre-tool) - Legitimate tools abused by adversaries, tracked by MITRE ATT&CK.
-
-Category: *tool* - source: *https://github.com/mitre/cti* - total: *97* elements
-
-[[HTML](https://www.misp-galaxy.org/mitre-tool)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-tool.json)]
+[[HTML](https://www.misp-galaxy.org/mitre-software)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-software.json)]
 
 ## NACE
 

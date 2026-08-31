@@ -10361,14 +10361,14 @@
       "value": "Storm-1811 - G1046"
     },
     {
-      "description": "[TEMP.Veles](https://attack.mitre.org/groups/G0088) is a Russia-based threat group that has targeted critical infrastructure. The group has been observed utilizing TRITON, a malware framework designed to manipulate industrial safety systems.(Citation: FireEye TRITON 2019)(Citation: FireEye TEMP.Veles 2018)(Citation: FireEye TEMP.Veles JSON April 2019)",
+      "description": "[TEMP.Veles](https://attack.mitre.org/groups/G0088) is a Russia-based threat group that has targeted critical infrastructure. The group has been observed utilizing [TRITON](https://attack.mitre.org/software/S0609), a malware framework designed to manipulate industrial safety systems.(Citation: FireEye TRITON 2019)(Citation: FireEye TEMP.Veles 2018)(Citation: FireEye TEMP.Veles JSON April 2019)",
       "meta": {
         "external_id": "G0088",
         "refs": [
           "https://attack.mitre.org/groups/G0088",
           "https://dragos.com/resource/xenotime/",
           "https://pylos.co/2019/04/12/a-xenotime-to-remember-veles-in-the-wild/",
-          "https://www.fireeye.com/blog/threat-research/2018/10/triton-attribution-russian-government-owned-lab-most-likely-built-tools.html ",
+          "https://www.fireeye.com/blog/threat-research/2018/10/triton-attribution-russian-government-owned-lab-most-likely-built-tools.html",
           "https://www.fireeye.com/blog/threat-research/2019/04/triton-actor-ttp-profile-custom-attack-tools-detections.html",
           "https://www.fireeye.com/content/dam/fireeye-www/blog/files/TRITON_Appendix_C.html"
         ],
@@ -10384,6 +10384,10 @@
         },
         {
           "dest-uuid": "795c1a92-3a26-453e-b99a-6a566aa94dc6",
+          "type": "uses"
+        },
+        {
+          "dest-uuid": "80099a91-4c86-4bea-9ccb-dac55d61960e",
           "type": "uses"
         },
         {
@@ -10784,6 +10788,23 @@
       ],
       "uuid": "6a2e693f-24e5-451a-9f88-b36a108e5662",
       "value": "APT1 - G0006"
+    },
+    {
+      "description": "[ALLANITE](https://attack.mitre.org/groups/G1000) is a suspected Russian cyber espionage group, that has primarily targeted the electric utility sector within the United States and United Kingdom. The group's tactics and techniques are reportedly similar to [Dragonfly](https://attack.mitre.org/groups/G0035), although [ALLANITE](https://attack.mitre.org/groups/G1000)s technical capabilities have not exhibited disruptive or destructive abilities. It has been suggested that the group maintains a presence in ICS for the purpose of gaining understanding of processes and to maintain persistence. (Citation: Dragos)",
+      "meta": {
+        "external_id": "G1000",
+        "refs": [
+          "https://attack.mitre.org/groups/G1000",
+          "https://dragos.com/resource/allanite/"
+        ],
+        "synonyms": [
+          "ALLANITE",
+          "Palmetto Fusion"
+        ]
+      },
+      "related": [],
+      "uuid": "190242d7-73fc-4738-af68-20162f7a5aae",
+      "value": "ALLANITE - G1000"
     },
     {
       "description": "[Axiom](https://attack.mitre.org/groups/G0001) is a suspected Chinese cyber espionage group that has targeted the aerospace, defense, government, manufacturing, and media sectors since at least 2008. Some reporting suggests a degree of overlap between [Axiom](https://attack.mitre.org/groups/G0001) and [Winnti Group](https://attack.mitre.org/groups/G0044) but the two groups appear to be distinct based on differences in reporting on TTPs and targeting.(Citation: Kaspersky Winnti April 2013)(Citation: Kaspersky Winnti June 2015)(Citation: Novetta Winnti April 2015)",
@@ -25196,6 +25217,22 @@
       "value": "APT5 - G1023"
     },
     {
+      "description": "The [CyberAv3ngers](https://attack.mitre.org/groups/G1027) are a suspected Iranian Government Islamic Revolutionary Guard Corps (IRGC)-affiliated APT group. The [CyberAv3ngers](https://attack.mitre.org/groups/G1027) have been known to be active since at least 2020, with disputed and false claims of critical infrastructure compromises in Israel.(Citation: CISA AA23-335A IRGC-Affiliated December 2023)\n\nIn 2023, the [CyberAv3ngers](https://attack.mitre.org/groups/G1027) engaged in a global targeting and hacking of the Unitronics [Programmable Logic Controller (PLC)](https://attack.mitre.org/assets/A0003) with [Human-Machine Interface (HMI)](https://attack.mitre.org/assets/A0002). This PLC can be found in multiple sectors, including water and wastewater, energy, food and beverage manufacturing, and healthcare. The most notable feature of this attack was the defacement of the devices user interface.(Citation: CISA AA23-335A IRGC-Affiliated December 2023)",
+      "meta": {
+        "external_id": "G1027",
+        "refs": [
+          "https://attack.mitre.org/groups/G1027",
+          "https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-335a"
+        ],
+        "synonyms": [
+          "CyberAv3ngers",
+          "Soldiers of Soloman"
+        ]
+      },
+      "uuid": "a07a367a-146c-45a8-a830-d3d337b9befa",
+      "value": "CyberAv3ngers - G1027"
+    },
+    {
       "description": "[CostaRicto](https://attack.mitre.org/groups/G0132) is a suspected hacker-for-hire cyber espionage campaign that has targeted multiple industries worldwide since at least 2019. [CostaRicto](https://attack.mitre.org/groups/G0132)'s targets, a large portion of which are financial institutions, are scattered across Europe, the Americas, Asia, Australia, and Africa, with a large concentration in South Asia.(Citation: BlackBerry CostaRicto November 2020)",
       "meta": {
         "external_id": "G0132",
@@ -28368,5 +28405,5 @@
       "value": "ShinyHunters - G1057"
     }
   ],
-  "version": 42
+  "version": 43
 }
