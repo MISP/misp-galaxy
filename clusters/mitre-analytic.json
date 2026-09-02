@@ -1525,6 +1525,17 @@
       "value": "Analytic 0901 - AN0901"
     },
     {
+      "description": "Monitor ICS automation network protocols for functions related to reading an asset’s operating mode. In some cases, there may be multiple ways to detect a device’s operating mode, one of which is typically used in the operational environment. Monitor for the operating mode being checked in unexpected ways.",
+      "meta": {
+        "external_id": "AN1900",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0768#AN1900"
+        ]
+      },
+      "uuid": "899d41e8-8d02-45f9-ab8a-3a06f4cc4189",
+      "value": "Analytic 1900 - AN1900"
+    },
+    {
       "description": "Session cookie reuse on unmanaged browsers, devices, or client types deviating from user baseline (e.g., switching from Chrome to curl).",
       "meta": {
         "external_id": "AN0202",
@@ -1920,6 +1931,17 @@
       },
       "uuid": "cc5f309c-6eb0-4f96-ba1a-0f4fd3bc1b79",
       "value": "Analytic 0052 - AN0052"
+    },
+    {
+      "description": "Monitor for new processes engaging in scanning activity or connecting to multiple systems by correlating process creation network data.\n\nMonitor for hosts enumerating network connected resources using non-ICS enterprise protocols.  \n",
+      "meta": {
+        "external_id": "AN2050",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0907#AN2050"
+        ]
+      },
+      "uuid": "51a094bf-b7eb-452a-9b7a-ffac16fce1ac",
+      "value": "Analytic 2050 - AN2050"
     },
     {
       "description": "Once adversaries have provisioned software on a compromised server (ex: for use as a command and control server), internet scans may reveal servers that adversaries have compromised. Consider looking for identifiable patterns such as services listening, certificates in use, SSL/TLS negotiation features, or other response artifacts associated with adversary C2 software.(Citation: ThreatConnect Infrastructure Dec 2020)(Citation: Mandiant SCANdalous Jul 2020)(Citation: Koczwara Beacon Hunting Sep 2021)\nMuch of this activity will take place outside the visibility of the target organization, making detection of this behavior difficult. Detection efforts may be focused on related stages of the adversary lifecycle, such as during Command and Control.",
@@ -5439,6 +5461,28 @@
       "value": "Analytic 1091 - AN1091"
     },
     {
+      "description": "No standard detection method currently exists for this technique.",
+      "meta": {
+        "external_id": "AN1901",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0769#AN1901"
+        ]
+      },
+      "uuid": "68073351-4e4f-40e4-9394-a9166bb346d7",
+      "value": "Analytic 1901 - AN1901"
+    },
+    {
+      "description": "No standard detection method currently exists for this technique.",
+      "meta": {
+        "external_id": "AN1910",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0778#AN1910"
+        ]
+      },
+      "uuid": "cbf791b4-5186-4205-ac5a-a56042aaebec",
+      "value": "Analytic 1910 - AN1910"
+    },
+    {
       "description": "Much of this activity may have a very high occurrence and associated false positive rate, as well as potentially taking place outside the visibility of the target organization, making detection difficult for defenders.\n\nDetection efforts may be focused on related stages of the adversary lifecycle, such as during Initial Access.",
       "meta": {
         "external_id": "AN2012",
@@ -6124,6 +6168,17 @@
       },
       "uuid": "fb933fd5-5dd8-4879-b2bb-e68bc26ff60d",
       "value": "Analytic 0215 - AN0215"
+    },
+    {
+      "description": "Monitor for anomalies related to discovery related ICS functions, including devices that have not previously used these functions or for functions being sent to many outstations.\nMonitor for new ICS protocol connections to existing assets or for device scanning (i.e., a host connecting to many devices) over ICS and enterprise protocols (e.g., ICMP, DCOM, WinRM). For added context on adversary enterprise procedures and background see [Remote System Discovery](https://attack.mitre.org/techniques/T1018).\n",
+      "meta": {
+        "external_id": "AN2051",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0908#AN2051"
+        ]
+      },
+      "uuid": "f6324642-d17d-49d4-90b2-bab9d229d6fa",
+      "value": "Analytic 2051 - AN2051"
     },
     {
       "description": "Behavioral detection of domain group enumeration via ldapsearch or custom scripts leveraging LDAP over the network.",
@@ -6843,6 +6898,28 @@
       },
       "uuid": "d677a72d-db0e-4332-a467-95b19836ef16",
       "value": "Analytic 0912 - AN0912"
+    },
+    {
+      "description": "Monitor ICS automation protocols for anomalies related to reading point or tag data, such as new assets using these functions, changes in volume or timing, or unusual information being queried. Many protocols provide multiple ways to achieve the same result (e.g., functions with/without an acknowledgment or functions that operate on a single point vs. multiple points). Monitor for changes in the functions used.\nMonitor asset application logs which may provide information about requests for points or tags. Look for anomalies related to reading point or tag data, such as new assets using these functions, changes in volume or timing, or unusual information being queried. Many devices provide multiple ways to achieve the same result (e.g., functions with/without an acknowledgment or functions that operate on a single point vs. multiple points). Monitor for changes in the functions used.",
+      "meta": {
+        "external_id": "AN1920",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0788#AN1920"
+        ]
+      },
+      "uuid": "484023ea-6fea-4f91-b40d-c6d87188cbfe",
+      "value": "Analytic 1920 - AN1920"
+    },
+    {
+      "description": "Monitor executed commands and arguments that may look for details about the network configuration and settings, such as IP and/or MAC addresses, of systems they access or through information discovery of remote systems. Also monitor executed commands and arguments that may attempt to get a listing of network connections to or from the compromised system they are currently accessing or from remote systems by querying for information over the network. Information may also be acquired through Windows system management tools such as [Windows Management Instrumentation](https://attack.mitre.org/techniques/T1047) and [PowerShell](https://attack.mitre.org/techniques/T1059/001).\nMonitor for executed processes (such as ipconfig/ifconfig and arp) with arguments that may look for details about the network configuration and settings, such as IP and/or MAC addresses. Also monitor for executed processes that may attempt to get a listing of network connections to or from the compromised system they are currently accessing or from remote systems by querying for information over the network.\nMonitor for any suspicious attempts to enable script execution on a system. If scripts are not commonly used on a system, but enabled, scripts running out of cycle from patching or other administrator functions are suspicious. Scripts should be captured from the file system when possible to determine their actions and intent.\nMonitor for API calls (such as GetAdaptersInfo() and GetIpNetTable()) that may gather details about the network configuration and settings, such as IP and/or MAC addresses. Also monitor for API calls that may attempt to get a listing of network connections to or from the compromised system they are currently accessing or from remote systems by querying for information over the network. For added context on adversary procedures and background see [System Network Configuration Discovery](https://attack.mitre.org/techniques/T1016) and [System Network Connections Discovery](https://attack.mitre.org/techniques/T1049).",
+      "meta": {
+        "external_id": "AN1902",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0770#AN1902"
+        ]
+      },
+      "uuid": "7aa60595-5a1c-4de2-be60-cc1f9fea2313",
+      "value": "Analytic 1902 - AN1902"
     },
     {
       "description": "Monitoring for modification and execution of login hook scripts or LaunchAgents/LaunchDaemons used for persistence.",
@@ -7909,6 +7986,28 @@
       "value": "Analytic 1390 - AN1390"
     },
     {
+      "description": "Monitor network traffic for hardcoded credential use in protocols that allow unencrypted authentication.\nMonitor logon sessions for hardcoded credential use, when feasible.",
+      "meta": {
+        "external_id": "AN1930",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0798#AN1930"
+        ]
+      },
+      "uuid": "b337bf06-d69b-41e0-8e60-8f24cb718998",
+      "value": "Analytic 1930 - AN1930"
+    },
+    {
+      "description": "Monitor for device alarms produced when device management passwords are changed, although not all devices will produce such alarms.\nMonitor for device credential changes observable in automation or management network protocols.",
+      "meta": {
+        "external_id": "AN1903",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0771#AN1903"
+        ]
+      },
+      "uuid": "d3023733-5874-4746-a947-65925514e382",
+      "value": "Analytic 1903 - AN1903"
+    },
+    {
       "description": "Detects unauthorized access to browser cookie paths (e.g., `~/Library/Application Support/Google/Chrome/Default/Cookies`) or `task_for_pid`/`vm_read` calls to Safari/Chrome memory space.",
       "meta": {
         "external_id": "AN1404",
@@ -8819,6 +8918,17 @@
       "value": "Analytic 1409 - AN1409"
     },
     {
+      "description": "Monitor for newly executed processes related to services specifically designed to accept remote graphical connections, such as RDP and VNC. [Remote Services](https://attack.mitre.org/techniques/T0886) and [Valid Accounts](https://attack.mitre.org/techniques/T0859) may be used to access a host’s GUI.\nMonitor executed commands and arguments related to services specifically designed to accept remote graphical connections, such as RDP and VNC. [Remote Services](https://attack.mitre.org/techniques/T0886) and [Valid Accounts](https://attack.mitre.org/techniques/T0859) may be used to access a host’s GUI.\nMonitor DLL file events, specifically creation of these binary files as well as the loading of DLLs into processes associated with remote graphical connections, such as RDP and VNC. [Remote Services](https://attack.mitre.org/techniques/T0886) may be used to access a host’s GUI.\nMonitor for user accounts logged into systems they would not normally access or abnormal access patterns, such as multiple systems over a relatively short period of time. Correlate use of login activity related to remote services with unusual behavior or other malicious or suspicious activity. [Remote Services](https://attack.mitre.org/techniques/T0886) may be used to access a host’s GUI.",
+      "meta": {
+        "external_id": "AN1904",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0772#AN1904"
+        ]
+      },
+      "uuid": "dc014060-5116-4a2f-bac5-35ac1db8fabb",
+      "value": "Analytic 1904 - AN1904"
+    },
+    {
       "description": "Detection of malicious certificate installation via monitoring execution of the `security add-trusted-cert` command and modifications to system keychains.",
       "meta": {
         "external_id": "AN0155",
@@ -9561,6 +9671,17 @@
       "value": "Analytic 0915 - AN0915"
     },
     {
+      "description": "A manipulated I/O image requires analyzing the application program running on the PLC for specific data block writes. Detecting this requires obtaining and analyzing a PLC’s application program, either directly from the device or from asset management platforms.",
+      "meta": {
+        "external_id": "AN1905",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0773#AN1905"
+        ]
+      },
+      "uuid": "7841eb6b-8a05-4754-b738-a475bfbb89fb",
+      "value": "Analytic 1905 - AN1905"
+    },
+    {
       "description": "Monitors use of archive or encryption tools (zip, openssl) tied to user-scripted activity or binaries writing encoded payloads under /Users or /Volumes.",
       "meta": {
         "external_id": "AN1066",
@@ -9967,6 +10088,17 @@
       "value": "Analytic 1680 - AN1680"
     },
     {
+      "description": "Monitor ICS automation network protocols for functions related to reading an operational process state (e.g., “Read” function codes in protocols like DNP3 or Modbus). In some cases, there may be multiple ways to monitor an operational process’ state, one of which is typically used in the operational environment. Monitor for the operating mode being checked in unexpected ways.\nMonitor applications logs for any access attempts to operational databases (e.g., historians) or other sources of operational data within the ICS environment. These devices should be monitored for adversary collection using techniques relevant to the underlying technologies (e.g., Windows, Linux).",
+      "meta": {
+        "external_id": "AN1860",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0727#AN1860"
+        ]
+      },
+      "uuid": "1be515a0-2656-4b35-a561-e8157169350d",
+      "value": "Analytic 1860 - AN1860"
+    },
+    {
       "description": "Much of this activity may have a very high occurrence and associated false positive rate, as well as potentially taking place outside the visibility of the target organization, making detection difficult for defenders.\n\nDetection efforts may be focused on related stages of the adversary lifecycle, such as during Initial Access.",
       "meta": {
         "external_id": "AN1960",
@@ -10119,6 +10251,17 @@
       },
       "uuid": "a180ad2e-e3fa-4cec-a1f0-8baf754d9543",
       "value": "Analytic 1690 - AN1690"
+    },
+    {
+      "description": "Collecting information from the I/O image requires analyzing the application program running on the PLC for specific data block reads. Detecting this requires obtaining and analyzing a PLC’s application program, either directly from the device or from asset management platforms.",
+      "meta": {
+        "external_id": "AN1906",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0774#AN1906"
+        ]
+      },
+      "uuid": "c40ddd75-f2fc-4899-bda1-bff164c96622",
+      "value": "Analytic 1906 - AN1906"
     },
     {
       "description": "Detection of new IAM roles or policies attached to a user/service in AWS/GCP/Azure outside normal patterns or hours, often following account compromise.",
@@ -10359,6 +10502,17 @@
       "value": "Analytic 1780 - AN1780"
     },
     {
+      "description": "Monitor operational process data for write commands for an excessive number of I/O points or manipulating a single value an excessive number of times. This will not directly detect the technique’s execution, but instead may provide additional evidence that the technique has been used and may complement other detections.\nSome asset application logs may provide information on I/O points related to write commands. Monitor for write commands for an excessive number of I/O points or manipulating a single value an excessive number of times.\nMonitor network traffic for ICS functions related to write commands for an excessive number of I/O points or manipulating a single value an excessive number of times.",
+      "meta": {
+        "external_id": "AN1870",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0737#AN1870"
+        ]
+      },
+      "uuid": "77857bc3-6a38-4826-8109-30facf6c23ec",
+      "value": "Analytic 1870 - AN1870"
+    },
+    {
       "description": "Detects adversary creation of cloud or IdP accounts whose names resemble existing privileged or service accounts. May indicate preparation for privilege escalation or defense evasion.",
       "meta": {
         "external_id": "AN1079",
@@ -10516,6 +10670,17 @@
       "value": "Analytic 1709 - AN1709"
     },
     {
+      "description": "No standard detection method currently exists for this technique.",
+      "meta": {
+        "external_id": "AN1907",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0775#AN1907"
+        ]
+      },
+      "uuid": "29b6e4b8-878c-4139-aa56-7e1513714d34",
+      "value": "Analytic 1907 - AN1907"
+    },
+    {
       "description": "Use of AWS CLI (`aws iam list-users`, `list-roles`), Azure CLI (`az ad user list`), or GCP CLI (`gcloud iam service-accounts list`) from endpoints or cloud shells where such activity is unexpected.",
       "meta": {
         "external_id": "AN1088",
@@ -10584,6 +10749,17 @@
       },
       "uuid": "4476a312-d2c9-459e-96a3-53ac0b676c52",
       "value": "Analytic 1808 - AN1808"
+    },
+    {
+      "description": "No standard detection method currently exists for this technique.",
+      "meta": {
+        "external_id": "AN1880",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0747#AN1880"
+        ]
+      },
+      "uuid": "383a1a1c-8ecf-4909-9237-14a1f4fc4179",
+      "value": "Analytic 1880 - AN1880"
     },
     {
       "description": "Bulk enumeration of cloud user email identities through `Get-Recipient`, `Get-Mailbox`, `Get-User`, or Graph API directory listings by abnormal accounts or suspicious sessions.",
@@ -10728,6 +10904,28 @@
       "value": "Analytic 1809 - AN1809"
     },
     {
+      "description": "Monitor asset management systems for device configuration changes which can be used to understand expected parameter settings.\nMonitor device application logs parameter changes, although not all devices will produce such logs.\nMonitor for device alarms produced when parameters are changed, although not all devices will produce such alarms.\nMonitor ICS management protocols for parameter changes, including for unexpected values, changes far exceeding standard values, or for parameters being changed in an unexpected way (e.g., via a new function, at an unusual time).",
+      "meta": {
+        "external_id": "AN1908",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0776#AN1908"
+        ]
+      },
+      "uuid": "48d2023b-469d-4f9f-a4e6-010be72436b9",
+      "value": "Analytic 1908 - AN1908"
+    },
+    {
+      "description": "Monitor for changes made to a large quantity of files for unexpected modifications in both user directories and directories used to store programs and OS components (e.g., C:\\Windows\\System32). \nMonitor for newly executed processes of binaries that could be involved in data destruction activity, such as SDelete.\nMonitor for unexpected deletion of files.\nMonitor executed commands and arguments for binaries that could be involved in data destruction activity, such as SDelete.",
+      "meta": {
+        "external_id": "AN1890",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0758#AN1890"
+        ]
+      },
+      "uuid": "f666f516-f8d0-41f6-9a4c-0ac6c1f6086b",
+      "value": "Analytic 1890 - AN1890"
+    },
+    {
       "description": "Detects adversary use of logon script configuration via Group Policy or user object attributes, followed by script execution post-authentication. Behavior includes modification of script path or file, then process execution under user logon context.",
       "meta": {
         "external_id": "AN0199",
@@ -10796,6 +10994,17 @@
       },
       "uuid": "f8998263-e55f-428f-b8d0-46d9e31277d2",
       "value": "Analytic 0991 - AN0991"
+    },
+    {
+      "description": "Monitor ICS asset application logs that indicate alarm settings have changed, although not all assets will produce such logs.\nConsult asset management systems to understand expected alarm settings.\nData about the industrial process may indicate it is operating outside of expected bounds and could help indicate that that an alarm setting has changed. This will not directly detect the technique’s execution, but instead may provide additional evidence that the technique has been used and may complement other detections.\nMonitor for alarm setting changes observable in automation or management network protocols.",
+      "meta": {
+        "external_id": "AN1909",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0777#AN1909"
+        ]
+      },
+      "uuid": "330166da-bc80-4aca-bd41-cbd6b1742812",
+      "value": "Analytic 1909 - AN1909"
     },
     {
       "description": "Much of this activity may have a very high occurrence and associated false positive rate, as well as potentially taking place outside the visibility of the target organization, making detection difficult for defenders.\n\nDetection efforts may be focused on related stages of the adversary lifecycle, such as during Initial Access.",
@@ -11021,6 +11230,17 @@
       },
       "uuid": "d8f9ab20-4c82-42fc-9316-91781fa9e5e1",
       "value": "Analytic 0252 - AN0252"
+    },
+    {
+      "description": "Monitor for anomalies related to discovery related ICS functions, including devices that have not previously used these functions or for functions being sent to many outstations.\n\nMonitor for new ICS protocol connections to existing assets or for device scanning (i.e., a host connecting to many devices) over ICS and enterprise protocols (e.g., ICMP, DCOM, WinRM). For added context on adversary enterprise procedures and background see [Remote System Discovery](https://attack.mitre.org/techniques/T1018).\n",
+      "meta": {
+        "external_id": "AN2052",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0909#AN2052"
+        ]
+      },
+      "uuid": "67861309-0ba7-4713-843e-3def87e396ec",
+      "value": "Analytic 2052 - AN2052"
     },
     {
       "description": "Much of this activity will take place outside the visibility of the target organization, making detection of this behavior difficult. Detection efforts may be focused on behaviors relating to the use of exploits (i.e. [Exploit Public-Facing Application](https://attack.mitre.org/techniques/T1190), [Exploitation for Client Execution](https://attack.mitre.org/techniques/T1203), [Exploitation for Privilege Escalation](https://attack.mitre.org/techniques/T1068), [Exploitation for Stealth](https://attack.mitre.org/techniques/T1211), [Exploitation for Credential Access](https://attack.mitre.org/techniques/T1212), [Exploitation of Remote Services](https://attack.mitre.org/techniques/T1210), and [Application or System Exploitation](https://attack.mitre.org/techniques/T1499/004)).",
@@ -11529,6 +11749,17 @@
       },
       "uuid": "983e1849-6af7-491e-9605-46b9bf54bbd1",
       "value": "Analytic 2035 - AN2035"
+    },
+    {
+      "description": "Monitor asset alarms which may help identify a loss of communications. Consider correlating alarms with other data sources that indicate traffic has been blocked, such as network traffic. In cases where alternative methods of communicating with outstations exist, alarms may still be visible even if messages are blocked.\n\nMonitor for a loss of network communications, which may indicate this technique is being used.\n\nMonitor for lack of operational process data which may help identify a loss of communications. This will not directly detect the technique’s execution but instead may provide additional evidence that the technique has been used and may complement other detections.\n\nMonitor application logs for changes to settings and other events associated with network protocols that may be used to block communications.\n\nMonitor for the termination of processes or services associated with ICS automation protocols and application software which could help detect blocked communications.\n",
+      "meta": {
+        "external_id": "AN2053",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0910#AN2053"
+        ]
+      },
+      "uuid": "3f052beb-d384-4ebe-b942-2c4ddeb95833",
+      "value": "Analytic 2053 - AN2053"
     },
     {
       "description": "Monitor for creation of WMI EventFilter, EventConsumer, and FilterToConsumerBinding objects through WMI or MOF file execution. Detect command-line execution of `mofcomp.exe`, usage of `Register-WmiEvent` via PowerShell, and anomalous child processes of `WmiPrvSE.exe` that indicate triggered execution. Look for lateral anomalies in process lineage and WMI logging channels.",
@@ -12077,6 +12308,28 @@
       "value": "Analytic 0524 - AN0524"
     },
     {
+      "description": "Unauthorized messages may be detected by reviewing the content of automation protocols, either through detecting based on expected values or comparing to other out of band process data sources. Unauthorized messages may not precisely match legitimate messages which may lead to malformed traffic, although traffic may be malformed for benign reasons. Monitor messages for changes in how they are constructed.\n\nMonitor for anomalous or unexpected messages that may result in changes to the process operation observable via asset application logs (e.g., discrete write, logic and device configuration, mode changes, safety triggers).\n\nConsider monitoring for [Rogue Master](https://attack.mitre.org/techniques/T0848) and [Adversary-in-the-Middle](https://attack.mitre.org/techniques/T0830) activity which may precede this technique.\n",
+      "meta": {
+        "external_id": "AN2045",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0902#AN2045"
+        ]
+      },
+      "uuid": "613b28ef-88dd-4008-8d7e-206ce55a7cde",
+      "value": "Analytic 2045 - AN2045"
+    },
+    {
+      "description": "Monitor asset alarms which may help identify a loss of communications. Consider correlating alarms with other data sources that indicate traffic has been blocked, such as network traffic. In cases where alternative methods of communicating with outstations exist, alarms may still be visible even if Ethernet messages are blocked.\n\nMonitor for a loss of network communications, which may indicate this technique is being used.\n\nMonitor for lack of operational process data which may help identify a loss of communications. This will not directly detect the technique’s execution but instead may provide additional evidence that the technique has been used and may complement other detections.\n\nMonitor application logs for changes to settings and other events associated with network protocols that may be used to block communications.\n\nMonitor for the termination of processes or services associated with ICS automation protocols and application software which could help detect blocked communications.\n",
+      "meta": {
+        "external_id": "AN2054",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0911#AN2054"
+        ]
+      },
+      "uuid": "df7f8849-56a7-4e83-9fd7-a4f25227d960",
+      "value": "Analytic 2054 - AN2054"
+    },
+    {
       "description": "Keylogging on legacy network devices via unauthorized system image modification or remote capture of console keystrokes (telnet, SSH) through altered firmware or man-in-the-middle key sniffing.",
       "meta": {
         "external_id": "AN0246",
@@ -12175,6 +12428,17 @@
       "value": "Analytic 2064 - AN2064"
     },
     {
+      "description": "Monitor for the termination of processes or services associated with ICS automation protocols and application software which could help detect blocked communications.\n\nMonitor for lack of operational process data which may help identify a loss of communications. This will not directly detect the technique’s execution, but instead may provide additional evidence that the technique has been used and may complement other detections.\n\nMonitor application logs for changes to settings and other events associated with network protocols that may be used to block communications.\n\nMonitor for a loss of network communications, which may indicate this technique is being used.\n\nMonitor asset alarms which may help identify a loss of communications. Consider correlating alarms with other data sources that indicate traffic has been blocked, such as network traffic. In cases where alternative methods of communicating with outstations exist alarms may still be visible even if messages are blocked.\n\n",
+      "meta": {
+        "external_id": "AN2046",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0903#AN2046"
+        ]
+      },
+      "uuid": "c556c91d-64a0-401c-9c41-18971eeca0f2",
+      "value": "Analytic 2046 - AN2046"
+    },
+    {
       "description": "Detects file reads across locations followed by writes to temp or staging directories, often compressed or encrypted, indicating local staging behavior.",
       "meta": {
         "external_id": "AN0724",
@@ -12257,6 +12521,21 @@
       },
       "uuid": "c94b2c2b-8885-4f5e-abec-e80ab0a24f21",
       "value": "Analytic 0472 - AN0472"
+    },
+    {
+      "description": "Monitor for firmware changes which may be observable via operational alarms from devices.\n\nMonitor device application logs for firmware changes, although not all devices will produce such logs.\n\nMonitor ICS management protocols / file transfer protocols for protocol functions related to firmware changes.\n\nMonitor firmware for unexpected changes. Asset management systems should be consulted to understand known-good firmware versions. Dump and inspect BIOS images on vulnerable systems and compare against known good images.(Citation: MITRE Copernicus) Analyze differences to determine if malicious changes have occurred. Log attempts to read/write to BIOS and compare against known patching behavior. Likewise, EFI modules can be collected and compared against a known-clean list of EFI executable binaries to detect potentially malicious modules. The CHIPSEC framework can be used for analysis to determine if firmware modifications have been performed.(Citation: McAfee CHIPSEC Blog)(Citation: Github CHIPSEC)(Citation: Intel HackingTeam UEFI Rootkit)\n",
+      "meta": {
+        "external_id": "AN2047",
+        "refs": [
+          "http://www.mitre.org/capabilities/cybersecurity/overview/cybersecurity-blog/copernicus-question-your-assumptions-about",
+          "https://attack.mitre.org/detectionstrategies/DET0904#AN2047",
+          "https://github.com/chipsec/chipsec",
+          "https://securingtomorrow.mcafee.com/business/chipsec-support-vault-7-disclosure-scanning/",
+          "https://web.archive.org/web/20170313124421/http://www.intelsecurity.com/advanced-threat-research/content/data/HT-UEFI-rootkit.html"
+        ]
+      },
+      "uuid": "fc6641ac-5748-4498-89e9-d4ada2b6f88a",
+      "value": "Analytic 2047 - AN2047"
     },
     {
       "description": "Monitors for TCC-bypassing or unauthorized access to input services like IOHIDSystem or Quartz Event Services used in keylogging or screen monitoring.",
@@ -12343,6 +12622,17 @@
       "value": "Analytic 0482 - AN0482"
     },
     {
+      "description": "Monitor network traffic for insecure credential use in protocols that allow unencrypted authentication.\n\nMonitor logon sessions for insecure credential use, when feasible.\n",
+      "meta": {
+        "external_id": "AN2048",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0905#AN2048"
+        ]
+      },
+      "uuid": "1017530e-423d-4857-80b6-99891bf82d28",
+      "value": "Analytic 2048 - AN2048"
+    },
+    {
       "description": "Unsigned or scripting-based processes invoking password cracking binaries or accessing hashed credential artifacts post-login",
       "meta": {
         "external_id": "AN0294",
@@ -12427,6 +12717,17 @@
       "value": "Analytic 0924 - AN0924"
     },
     {
+      "description": "Monitor for unexpected changes to project files, although if the malicious modification occurs in tandem with legitimate changes it will be difficult to isolate the unintended changes by analyzing only file systems modifications.",
+      "meta": {
+        "external_id": "AN2049",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0906#AN2049"
+        ]
+      },
+      "uuid": "6a510bf0-0289-4eb0-8645-89f0f4d32cf3",
+      "value": "Analytic 2049 - AN2049"
+    },
+    {
       "description": "Adversary runs commands like `whoami`, `id`, `w`, or `cat /etc/passwd` from non-interactive or scripting contexts to enumerate system user details.",
       "meta": {
         "external_id": "AN0255",
@@ -12467,6 +12768,17 @@
       },
       "uuid": "c15d6b5e-bbb7-4dc7-8b59-8ce2c0663c05",
       "value": "Analytic 0525 - AN0525"
+    },
+    {
+      "description": "Monitor asset alarms which may help identify a loss of communications. Consider correlating alarms with other data sources that indicate traffic has been blocked, such as network traffic. In cases where alternative methods of communicating with outstations exist, alarms may still be visible even if Wi-Fi messages are blocked.\n\nMonitor for a loss of network communications, which may indicate this technique is being used.\n\nMonitor for lack of operational process data which may help identify a loss of communications. This will not directly detect the technique’s execution, but instead may provide additional evidence that the technique has been used and may complement other detections.\n\nMonitor application logs for changes to settings and other events associated with network protocols that may be used to block communications.\n\nMonitor for the termination of processes or services associated with ICS automation protocols and application software which could help detect blocked communications.\n",
+      "meta": {
+        "external_id": "AN2055",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0912#AN2055"
+        ]
+      },
+      "uuid": "0b4e7cfa-9f9d-49b0-b5bf-afdf62058c5a",
+      "value": "Analytic 2055 - AN2055"
     },
     {
       "description": "Adversary uses `dscl`, `who`, or environment variables like `$USER` to identify accounts or sessions via Terminal or malicious LaunchAgents.",
@@ -12567,6 +12879,17 @@
       "value": "Analytic 2065 - AN2065"
     },
     {
+      "description": "Monitor device alarms for program downloads, although not all devices produce such alarms.\n\nMonitor for protocol functions related to program download or modification. Program downloads may be observable in ICS automation protocols and remote management protocols.\n\nConsult asset management systems to understand expected program versions.\n\nMonitor devices configuration logs which may contain alerts that indicate whether a program download has occurred. Devices may maintain application logs that indicate whether a full program download, online edit, or program append function has occurred.\n",
+      "meta": {
+        "external_id": "AN2056",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0913#AN2056"
+        ]
+      },
+      "uuid": "e379be82-39d7-4ae4-8557-f846ba19cd4b",
+      "value": "Analytic 2056 - AN2056"
+    },
+    {
       "description": "Monitor for execution of hypervisor management commands such as `esxcli vm process list` or `vim-cmd vmsvc/getallvms` that enumerate virtual machines. Defenders observe unexpected users issuing VM listing commands outside normal administrative workflows.",
       "meta": {
         "external_id": "AN0572",
@@ -12651,6 +12974,17 @@
       "value": "Analytic 0752 - AN0752"
     },
     {
+      "description": "Monitor device alarms for program downloads, although not all devices produce such alarms.\n\nMonitor for protocol functions related to program download or modification. Program downloads may be observable in ICS automation protocols and remote management protocols.\n\nConsult asset management systems to understand expected program versions.\n\nMonitor devices configuration logs which may contain alerts that indicate whether a program download has occurred. Devices may maintain application logs that indicate whether a full program download, online edit, or program append function has occurred.\n",
+      "meta": {
+        "external_id": "AN2057",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0914#AN2057"
+        ]
+      },
+      "uuid": "3c6aa6f7-29e9-41d9-8500-30b6d0533d64",
+      "value": "Analytic 2057 - AN2057"
+    },
+    {
       "description": "Detects web-based credential phishing by analyzing traffic to suspicious URLs that mimic login portals and POST credential content.",
       "meta": {
         "external_id": "AN0285",
@@ -12733,6 +13067,17 @@
       },
       "uuid": "f2c03ef0-cd36-42b8-9c2d-e25a3b1b8b1c",
       "value": "Analytic 0582 - AN0582"
+    },
+    {
+      "description": "Monitor device alarms for program downloads, although not all devices produce such alarms.\n\nMonitor for protocol functions related to program download or modification. Program downloads may be observable in ICS automation protocols and remote management protocols.\n\nConsult asset management systems to understand expected program versions.\n\nMonitor devices configuration logs which may contain alerts that indicate whether a program download has occurred. Devices may maintain application logs that indicate whether a full program download, online edit, or program append function has occurred.\n",
+      "meta": {
+        "external_id": "AN2058",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0915#AN2058"
+        ]
+      },
+      "uuid": "22b202f2-d4dd-44dd-b5e1-791ff2aef8ed",
+      "value": "Analytic 2058 - AN2058"
     },
     {
       "description": "Sudden valid logins from accounts that previously had credentials dumped but had not authenticated successfully in the past; correlated with timeline of suspected hash cracking",
@@ -12873,6 +13218,17 @@
       },
       "uuid": "d02dbf1d-b6e9-4c3c-84a2-f70fec797504",
       "value": "Analytic 0662 - AN0662"
+    },
+    {
+      "description": "Monitor for newly constructed drive letters or mount points to removable media. Monitor for newly executed processes that execute from removable media after it is mounted or when initiated by a user.",
+      "meta": {
+        "external_id": "AN2066",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0748#AN2066"
+        ]
+      },
+      "uuid": "2b751a3d-c680-46c9-b92b-55a9d24bd4f9",
+      "value": "Analytic 2066 - AN2066"
     },
     {
       "description": "Detects staged data aggregated in /Users/Shared, /private/tmp with compression tools like ditto or zip, initiated via Terminal or AppleScript.",
@@ -18643,6 +18999,17 @@
       "value": "Analytic 1191 - AN1191"
     },
     {
+      "description": "No standard detection method currently exists for this technique.",
+      "meta": {
+        "external_id": "AN1911",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0779#AN1911"
+        ]
+      },
+      "uuid": "8c77f31f-c6f4-491c-965a-e25c506b0c68",
+      "value": "Analytic 1911 - AN1911"
+    },
+    {
       "description": "Detects the creation, modification, or deletion of scheduled tasks through Task Scheduler, WMI, PowerShell, or API-based methods followed by execution from svchost.exe or taskeng.exe. Includes detection of hidden or anomalous scheduled tasks, especially those created under SYSTEM or suspicious user contexts.",
       "meta": {
         "external_id": "AN1221",
@@ -19245,6 +19612,28 @@
       "value": "Analytic 1192 - AN1192"
     },
     {
+      "description": "Monitor asset alarms which may help identify a loss of communications. Consider correlating alarms with other data sources that indicate traffic has been blocked, such as network traffic. In cases where alternative methods of communicating with outstations exist alarms may still be visible even if reporting messages are blocked.  \nMonitor for the termination of processes or services associated with ICS automation protocols and application software which could help detect blocked communications.\nMonitor application logs for changes to settings and other events associated with network protocols that may be used to block communications.\nMonitor for a loss of network communications, which may indicate this technique is being used.\nMonitor for lack of operational process data which may help identify a loss of communications. This will not directly detect the technique’s execution, but instead may provide additional evidence that the technique has been used and may complement other detections.",
+      "meta": {
+        "external_id": "AN1921",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0789#AN1921"
+        ]
+      },
+      "uuid": "393d7e7b-0790-49e7-9bcd-87ab4662b05e",
+      "value": "Analytic 1921 - AN1921"
+    },
+    {
+      "description": "Monitor for changes made to firmware for unexpected modifications to settings and/or data that may be used by rootkits to hide the presence of programs, files, network connections, services, drivers, and other system components. Asset management systems should be consulted to understand known-good firmware versions and configurations.",
+      "meta": {
+        "external_id": "AN1912",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0780#AN1912"
+        ]
+      },
+      "uuid": "ec695157-8c3c-439b-9925-459c9d4172f0",
+      "value": "Analytic 1912 - AN1912"
+    },
+    {
       "description": "Identify repeated DNS resolutions where the same domain name returns multiple IPs in short succession, combined with low TTL values and high query volume from unusual processes. Correlate with process lineage (e.g., Office apps spawning abnormal DNS lookups).",
       "meta": {
         "external_id": "AN1331",
@@ -19763,6 +20152,31 @@
       "value": "Analytic 1139 - AN1139"
     },
     {
+      "description": "Monitor for suspicious descendant process spawning from Microsoft Office and other productivity software.(Citation: Elastic - Koadiac Detection with EQL) For added context on adversary procedures and background see [Spearphishing Attachment](https://attack.mitre.org/techniques/T1566/001).\nMonitor for newly constructed files from a spearphishing emails with a malicious attachment in an attempt to gain access to victim systems.\nMonitor network traffic for suspicious email attachments. Consider correlation with process monitoring and command line to detect anomalous processes execution and command line arguments associated to traffic patterns (e.g., monitor anomalies in use of files that do not normally initiate connections for respective protocol(s)). Use web proxies to review content of emails including sender information, headers, and attachments for potentially malicious content.\nMonitor mail server and proxy logs for evidence of messages originating from spoofed addresses, including records indicating failed DKIM+SPF validation or mismatched message headers.(Citation: Microsoft Anti Spoofing)(Citation: ACSC Email Spoofing) Anti-virus can potentially detect malicious documents and attachments as they're scanned to be stored on the email server or on the user's computer.",
+      "meta": {
+        "external_id": "AN1913",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0781#AN1913",
+          "https://docs.microsoft.com/en-us/microsoft-365/security/office-365-security/anti-spoofing-protection?view=o365-worldwide",
+          "https://web.archive.org/web/20210708014107/https://www.cyber.gov.au/sites/default/files/2019-03/spoof_email_sender_policy_framework.pdf",
+          "https://www.elastic.co/security-labs/embracing-offensive-tooling-building-detections-against-koadic-using-eql"
+        ]
+      },
+      "uuid": "5610211c-1458-4333-8640-384189d9318e",
+      "value": "Analytic 1913 - AN1913"
+    },
+    {
+      "description": "Monitor and analyze traffic flows that do not follow the expected protocol standards and traffic flows (e.g., extraneous packets that do not belong to established flows    , or gratuitous or anomalous traffic patterns). Consider correlation with process monitoring and command line to detect anomalous processes execution and command line arguments associated to traffic patterns (e.g., monitor anomalies in use of files that do not normally initiate connections for respective protocol(s)).\nMonitor and analyze traffic patterns and packet inspection associated to protocol(s), leveraging SSL/TLS inspection for encrypted traffic, that do not follow the expected protocol standards and traffic flows (e.g., extraneous packets that do not belong to established flows, gratuitous or anomalous traffic patterns, anomalous syntax, or structure). Consider correlation with process monitoring and command line to detect anomalous processes execution and command line arguments associated to traffic patterns  (e.g., monitor anomalies in use of files that do not normally initiate connections for respective protocol(s)).",
+      "meta": {
+        "external_id": "AN1931",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0799#AN1931"
+        ]
+      },
+      "uuid": "d271c7fc-d76a-4fb0-a645-5db2c1223a32",
+      "value": "Analytic 1931 - AN1931"
+    },
+    {
       "description": "Detects staged file access (e.g., archive or obfuscation), followed by an encrypted outbound connection (TLS/HTTPS) from unusual processes such as curl/wget, Python scripts, or custom binaries.",
       "meta": {
         "external_id": "AN1414",
@@ -20211,6 +20625,17 @@
       "value": "Analytic 1149 - AN1149"
     },
     {
+      "description": "Monitor for unusual network traffic that may indicate additional tools transferred to the system. Use network intrusion detection systems, sometimes with SSL/TLS inspection, to look for known malicious scripts (recon, heap spray, and browser identification scripts have been frequently reused), common script obfuscation, and exploit code.\nFirewalls and proxies can inspect URLs for potentially known-bad domains or parameters. They can also do reputation-based analytics on websites and their requested resources such as how old a domain is, who it's registered to, if it's on a known bad list, or how many other users have connected to it before.\nMonitor for behaviors on the endpoint system that might indicate successful compromise, such as abnormal behaviors of browser processes. This could include suspicious files written to disk.\nMonitor for newly constructed files written to disk through a user visiting a website over the normal course of browsing.\nMonitor for newly constructed network connections to untrusted hosts that are used to send or receive data.",
+      "meta": {
+        "external_id": "AN1914",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0782#AN1914"
+        ]
+      },
+      "uuid": "32db74f9-d46d-4728-891a-113a8b8e2b07",
+      "value": "Analytic 1914 - AN1914"
+    },
+    {
       "description": "Unusual access to ~/Library/Keychains, ~/.bash_history, or Terminal command history by unauthorized processes or users.",
       "meta": {
         "external_id": "AN1155",
@@ -20575,6 +21000,17 @@
       "value": "Analytic 1159 - AN1159"
     },
     {
+      "description": "Monitor device management protocols for functions that modify programs such as online edit and program append events.\nMonitor device alarms that indicate the program has changed, although not all devices produce such alarms.\nEngineering and asset management software will often maintain a copy of the expected program loaded on a controller and may also record any changes made to controller programs. Data from these platforms can be used to identify modified controller programs.\nMonitor device application logs that indicate the program has changed, although not all devices produce such logs.",
+      "meta": {
+        "external_id": "AN1915",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0783#AN1915"
+        ]
+      },
+      "uuid": "882f2365-4c14-4c48-8eef-2a7c293c8569",
+      "value": "Analytic 1915 - AN1915"
+    },
+    {
       "description": "Automated scripts or repeated CLI/API requests that trigger application backends to consume high CPU or memory (e.g., Apache/PHP, MySQL, mail servers), resulting in syslog errors and excessive process spawning.",
       "meta": {
         "external_id": "AN1166",
@@ -20771,6 +21207,17 @@
       "value": "Analytic 1681 - AN1681"
     },
     {
+      "description": "Monitor for loss of network traffic which could indicate alarms are being suppressed. A loss of expected communications associated with network protocols used to communicate alarm events or process data could indicate this technique is being used. This will not directly detect the technique’s execution, but instead may provide additional evidence that the technique has been used and may complement other detections.\nMonitor for loss of operational process data which could indicate alarms are being suppressed. This will not directly detect the technique’s execution, but instead may provide additional evidence that the technique has been used and may complement other detections.\nMonitor for loss of expected device alarms which could indicate alarms are being suppressed. As noted in the technique description, there may be multiple sources of alarms in an ICS environment. Discrepancies between alarms may indicate the adversary is suppressing some but not all the alarms in the environment. This will not directly detect the technique’s execution, but instead may provide additional evidence that the technique has been used and may complement other detections.\nMonitor for loss of expected operational process alarms which could indicate alarms are being suppressed. As noted in the technique description, there may be multiple sources of alarms in an ICS environment. Discrepancies between alarms may indicate the adversary is suppressing some but not all the alarms in the environment.  This will not directly detect the technique’s execution, but instead may provide additional evidence that the technique has been used and may complement other detections.",
+      "meta": {
+        "external_id": "AN1861",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0728#AN1861"
+        ]
+      },
+      "uuid": "edd8297d-ec63-4b54-8d28-106f228dd535",
+      "value": "Analytic 1861 - AN1861"
+    },
+    {
       "description": "Account discovery via VBA macros, COM objects, or embedded scripting.",
       "meta": {
         "external_id": "AN1619",
@@ -20840,6 +21287,17 @@
       },
       "uuid": "66adf2b9-42aa-401f-8bc3-3830854017ee",
       "value": "Analytic 1691 - AN1691"
+    },
+    {
+      "description": "Monitor for the termination of processes or services associated with ICS automation protocols and application software which could help detect blocked communications.\nMonitor for lack of operational process data which may help identify a loss of communications. This will not directly detect the technique’s execution, but instead may provide additional evidence that the technique has been used and may complement other detections.\nMonitor application logs for changes to settings and other events associated with network protocols that may be used to block communications.\nMonitor for a loss of network communications, which may indicate this technique is being used.\nMonitor asset alarms which may help identify a loss of communications. Consider correlating alarms with other data sources that indicate traffic has been blocked, such as network traffic. In cases where alternative methods of communicating with outstations exist alarms may still be visible even if command messages are blocked.",
+      "meta": {
+        "external_id": "AN1916",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0784#AN1916"
+        ]
+      },
+      "uuid": "11a350cf-1ea0-4065-877b-c3bb410bf3a0",
+      "value": "Analytic 1916 - AN1916"
     },
     {
       "description": "Multi-stage Windows DACL manipulation behavioral chain: (1) Process creation of permission-modifying utilities (icacls.exe, takeown.exe, attrib.exe, cacls.exe) or PowerShell ACL cmdlets, (2) Command-line analysis revealing privilege escalation intent through suspicious parameters (/grant, /takeown, /T, Set-Acl), (3) DACL modification events (4670) correlating with process execution, (4) Subsequent file access attempts (4663) indicating successful permission bypass, (5) Potential follow-on persistence or lateral movement activities",
@@ -20954,6 +21412,17 @@
       "value": "Analytic 1781 - AN1781"
     },
     {
+      "description": "Detecting software exploitation may be difficult depending on the tools available. Software exploits may not always succeed or may cause the exploited process to become unstable or crash.",
+      "meta": {
+        "external_id": "AN1871",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0738#AN1871"
+        ]
+      },
+      "uuid": "b6fb91d0-28f6-447d-ba25-e7b26116ebfe",
+      "value": "Analytic 1871 - AN1871"
+    },
+    {
       "description": "Identify processes issuing repeated DNS queries to random-looking domains with abnormal entropy or word concatenations. Correlate resolver logs with high NXDOMAIN rates and auditd socket connections.",
       "meta": {
         "external_id": "AN1179",
@@ -21024,6 +21493,17 @@
       "value": "Analytic 1791 - AN1791"
     },
     {
+      "description": "No standard detection method currently exists for this technique.",
+      "meta": {
+        "external_id": "AN1917",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0785#AN1917"
+        ]
+      },
+      "uuid": "d71e98fa-64d1-4ddb-acb1-bba1e4af6a73",
+      "value": "Analytic 1917 - AN1917"
+    },
+    {
       "description": "Creation, deletion, or modification of security groups and firewall rules in cloud control plane logs that expand access to cloud resources beyond expected baselines. Defender view: unexpected ingress/egress rules permitting 0.0.0.0/0 or opening atypical ports, often correlated with privileged role or API key activity.",
       "meta": {
         "external_id": "AN1188",
@@ -21050,6 +21530,17 @@
       },
       "uuid": "ece5746f-194b-4564-9f5f-7ebf3b23542e",
       "value": "Analytic 1818 - AN1818"
+    },
+    {
+      "description": "Monitor for unexpected/abnormal access to files that may be malicious collection of local data, such as user files (e.g., .pdf, .docx, .jpg, .dwg   ) or local databases.\nMonitor for newly executed processes that may search local system sources, such as file systems or local databases, to find files of interest and sensitive data.\nMonitor for any suspicious attempts to enable scripts running on a system. If scripts are not commonly used on a system, but enabled, scripts running out of cycle from patching or other administrator functions are suspicious. Scripts should be captured from the file system when possible to determine their actions and intent. Data may also be acquired through Windows system management tools such as [Windows Management Instrumentation](https://attack.mitre.org/techniques/T1047) and [PowerShell](https://attack.mitre.org/techniques/T1059/001).\nMonitor for API calls that may search local system sources, such as file systems or local databases, to find files of interest and sensitive data. \nMonitor executed commands and arguments that may search and collect local system sources, such as file systems or local databases, to find files of interest and sensitive data. Remote access tools with built-in features may interact directly with the Windows API to gather data. Data may also be acquired through Windows system management tools such as [Windows Management Instrumentation](https://attack.mitre.org/techniques/T1047) and [PowerShell](https://attack.mitre.org/techniques/T1059/001).",
+      "meta": {
+        "external_id": "AN1881",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0749#AN1881"
+        ]
+      },
+      "uuid": "0099659c-6a20-4331-9d47-b1c0c380fd6b",
+      "value": "Analytic 1881 - AN1881"
     },
     {
       "description": "Detects unusual outbound connections to web services from uncommon processes using SSL/TLS, particularly those exhibiting high outbound data volume or persistence.",
@@ -21108,6 +21599,28 @@
       "value": "Analytic 1819 - AN1819"
     },
     {
+      "description": "No standard detection method currently exists for this technique.",
+      "meta": {
+        "external_id": "AN1918",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0786#AN1918"
+        ]
+      },
+      "uuid": "7ec4b791-7054-442f-8967-6d6fa5e8678b",
+      "value": "Analytic 1918 - AN1918"
+    },
+    {
+      "description": "Monitor and analyze traffic patterns and packet inspection associated to protocol(s) that do not follow the expected protocol standards and traffic flows (e.g., extraneous packets that do not belong to established flows, gratuitous or anomalous traffic patterns, anomalous syntax, or structure). Consider correlation with process monitoring and command line to detect anomalous processes execution and command line arguments associated to traffic patterns (e.g., monitor anomalies in use of files that do not normally initiate connections for respective protocol(s)).\nMonitor for known proxy protocols (e.g., SOCKS, Tor, peer-to-peer protocols) and tool usage (e.g., Squid,  peer-to-peer software) on the network that are not part of normal operations. Also monitor network data for uncommon data flows. Processes utilizing the network that do not normally have network communication or have never been seen before are suspicious.",
+      "meta": {
+        "external_id": "AN1891",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0759#AN1891"
+        ]
+      },
+      "uuid": "ece52da2-ac60-4b0e-863f-ebbc95118a8c",
+      "value": "Analytic 1891 - AN1891"
+    },
+    {
       "description": "Once adversaries leverage compromised network devices as infrastructure (ex: for command and control), it may be possible to look for unique characteristics associated with adversary software, if known.(Citation: ThreatConnect Infrastructure Dec 2020) Much of this activity will take place outside the visibility of the target organization, making detection of this behavior difficult. Detection efforts may be focused on related stages of the adversary lifecycle. ",
       "meta": {
         "external_id": "AN1991",
@@ -21135,6 +21648,18 @@
       },
       "uuid": "571b10ce-fb7d-492e-b05a-23649ae14148",
       "value": "Analytic 1199 - AN1199"
+    },
+    {
+      "description": "Monitor for new ICS protocol connections to existing assets or for device scanning (i.e., a host connecting to many devices) over ICS and enterprise protocols (e.g., ICMP, DCOM, WinRM).\nMonitor for anomalies related to discovery related ICS functions, including devices that have not previously used these functions or for functions being sent to many outstations. Note that some ICS protocols use broadcast or multicast functionality, which may produce false positives. Also monitor for hosts enumerating network connected resources using non-ICS enterprise protocols.\nMonitor for files (such as /etc/hosts) being accessed that may attempt to get a listing of other systems by IP address, hostname, or other logical identifier on a network that may be used for Lateral Movement from the current system.\nMonitor for newly executed processes that can be used to discover remote systems, such as ping.exe and tracert.exe, especially when executed in quick succession.(Citation: Elastic - Koadiac Detection with EQL) Consider monitoring for new processes engaging in scanning activity or connecting to multiple systems by correlating process creation network data.",
+      "meta": {
+        "external_id": "AN1919",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0787#AN1919",
+          "https://www.elastic.co/security-labs/embracing-offensive-tooling-building-detections-against-koadic-using-eql"
+        ]
+      },
+      "uuid": "f123f13f-b6f4-4e86-96cd-14df0e855e0f",
+      "value": "Analytic 1919 - AN1919"
     },
     {
       "description": "Detection of anomalous registry modifications to Subject Interface Packages (SIPs) or trust provider DLL mappings, unexpected loading of non-Microsoft cryptographic modules, or attempts to redirect WinVerifyTrust validation logic. Defender view focuses on registry tampering, suspicious DLL loads into trusted processes, and abnormal trust validation failures correlated across event streams.",
@@ -21429,6 +21954,21 @@
       },
       "uuid": "4f2bc468-a57d-44e9-b9cd-d491df6b0daf",
       "value": "Analytic 1292 - AN1292"
+    },
+    {
+      "description": "Monitor for firmware changes which may be observable via operational alarms from devices.\nMonitor device application logs for firmware changes, although not all devices will produce such logs.\nMonitor ICS management protocols / file transfer protocols for protocol functions related to firmware changes.\nMonitor firmware for unexpected changes. Asset management systems should be consulted to understand known-good firmware versions. Dump and inspect BIOS images on vulnerable systems and compare against known good images.(Citation: MITRE Copernicus) Analyze differences to determine if malicious changes have occurred. Log attempts to read/write to BIOS and compare against known patching behavior. Likewise, EFI modules can be collected and compared against a known-clean list of EFI executable binaries to detect potentially malicious modules. The CHIPSEC framework can be used for analysis to determine if firmware modifications have been performed.(Citation: McAfee CHIPSEC Blog)(Citation: Github CHIPSEC)(Citation: Intel HackingTeam UEFI Rootkit)",
+      "meta": {
+        "external_id": "AN1922",
+        "refs": [
+          "http://www.mitre.org/capabilities/cybersecurity/overview/cybersecurity-blog/copernicus-question-your-assumptions-about",
+          "https://attack.mitre.org/detectionstrategies/DET0790#AN1922",
+          "https://github.com/chipsec/chipsec",
+          "https://securingtomorrow.mcafee.com/business/chipsec-support-vault-7-disclosure-scanning/",
+          "https://web.archive.org/web/20170313124421/http://www.intelsecurity.com/advanced-threat-research/content/data/HT-UEFI-rootkit.html"
+        ]
+      },
+      "uuid": "880a1133-6639-42f0-96a8-3e914426d38b",
+      "value": "Analytic 1922 - AN1922"
     },
     {
       "description": "Monitor resolver logs and auditd events for domains resolving to a rotating set of IPs within very short TTL intervals. Correlate high query rates from non-browser applications (e.g., python, curl).",
@@ -21949,6 +22489,28 @@
       "value": "Analytic 1392 - AN1392"
     },
     {
+      "description": "Monitor for newly executed processes that can aid in sniffing network traffic to capture information about an environment.\nMonitor executed commands and arguments for actions that aid in sniffing network traffic to capture information about an environment.",
+      "meta": {
+        "external_id": "AN1932",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0800#AN1932"
+        ]
+      },
+      "uuid": "28eb77c1-1834-4b7a-a06f-afebb7f2e756",
+      "value": "Analytic 1932 - AN1932"
+    },
+    {
+      "description": "Monitor for newly executed processes that depend on user interaction, especially for applications that can embed programmatic capabilities (e.g., Microsoft Office products with scripts, installers, zip files). This includes compression applications, such as those for zip files, that can be used to [Deobfuscate/Decode Files or Information](https://attack.mitre.org/techniques/T1140) in payloads. For added context on adversary procedures and background see [User Execution](https://attack.mitre.org/techniques/T1204) and applicable sub-techniques.\nMonitor for application logging, messaging, and/or other artifacts that may rely upon specific actions by a user in order to gain execution.\nMonitor for newly constructed web-based network connections that are sent to malicious or suspicious destinations (e.g., destinations attributed to phishing campaigns). Consider correlation with process monitoring and command line to detect anomalous processes execution and command line arguments (e.g., monitor anomalies in use of files that do not normally initiate network connections or unusual connections initiated by regsvr32.exe, rundll.exe, SCF, HTA, MSI, DLLs, or msiexec.exe). \nAnti-virus can potentially detect malicious documents and files that are downloaded and executed on the user's computer. Endpoint sensing or network sensing can potentially detect malicious events once the file is opened (such as a Microsoft Word document or PDF reaching out to the internet or spawning PowerShell).\nMonitor for newly executed processes that depend on user interaction, especially for applications that can embed programmatic capabilities (e.g., Microsoft Office products with scripts, installers, zip files). This includes compression applications, such as those for zip files, that can be used to [Deobfuscate/Decode Files or Information](https://attack.mitre.org/techniques/T1140) in payloads.\nMonitor and analyze traffic patterns and packet inspection associated with web-based network connections that are sent to malicious or suspicious destinations (e.g., destinations attributed to phishing campaigns). Consider correlation with process monitoring and command line to detect anomalous processes execution and command line arguments (e.g., monitor anomalies in use of files that do not normally initiate network connections or unusual connections initiated by regsvr32.exe, rundll.exe, SCF, HTA, MSI, DLLs, or msiexec.exe).",
+      "meta": {
+        "external_id": "AN1923",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0791#AN1923"
+        ]
+      },
+      "uuid": "d937e4b8-20f2-44c1-9940-48c74318c715",
+      "value": "Analytic 1923 - AN1923"
+    },
+    {
       "description": "Detect user-initiated kextload commands or modifications to /Library/Extensions. Correlate with changes to KextPolicy database or unauthorized developer signing identities. Alert on attempts to disable SIP or load legacy extensions from unsigned sources.",
       "meta": {
         "external_id": "AN1244",
@@ -22397,6 +22959,17 @@
       "value": "Analytic 1294 - AN1294"
     },
     {
+      "description": "Consult asset management systems which may help with the detection of computer systems or network devices that should not exist on a network.\nMonitor for network traffic originating from unknown/unexpected devices or addresses.  Local network traffic metadata could be used to identify unexpected connections, including unknown/unexpected source MAC addresses connecting to ports associated with operational protocols. Also, network management protocols such as DHCP and ARP may be helpful in identifying unexpected devices. \nMonitor for new master devices communicating with outstations, which may be visible in alarms within the ICS environment.\nMonitor for unexpected ICS protocol functions from new and existing devices. Monitoring known devices requires ICS function level insight to determine if an unauthorized device is issuing commands (e.g., a historian).\nMonitor for new master devices communicating with outstation assets, which may be visible in asset application logs.",
+      "meta": {
+        "external_id": "AN1924",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0792#AN1924"
+        ]
+      },
+      "uuid": "37d989e6-14cd-49a4-adec-3d8b72c8dc22",
+      "value": "Analytic 1924 - AN1924"
+    },
+    {
       "description": "Login attempt failures over SNMP, Telnet, or SSH interface, often reflected in logs or syslog events",
       "meta": {
         "external_id": "AN1525",
@@ -22763,6 +23336,17 @@
       "value": "Analytic 1295 - AN1295"
     },
     {
+      "description": "Monitor for any suspicious attempts to enable script execution on a system. If scripts are not commonly used on a system, but enabled, scripts running out of cycle from patching or other administrator functions are suspicious. Scripts should be captured from the file system when possible to determine their actions and intent.\nMonitor executed commands and associated arguments for application programs which support executing custom code, scripts, commands, or executables. \nMonitor for unusual processes execution, especially for processes that allow the proxy execution of malicious files.",
+      "meta": {
+        "external_id": "AN1925",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0793#AN1925"
+        ]
+      },
+      "uuid": "23ce0ac3-6afe-4647-be72-e1e9bcd1490e",
+      "value": "Analytic 1925 - AN1925"
+    },
+    {
       "description": "Detects attempts to modify file timestamps via API usage (e.g., `SetFileTime`), CLI tools (e.g., `w32tm`, PowerShell), or double-timestomp behavior where $SI and $FN timestamps are mismatched or reverted.",
       "meta": {
         "external_id": "AN1626",
@@ -22959,6 +23543,17 @@
       "value": "Analytic 1682 - AN1682"
     },
     {
+      "description": "No standard detection method currently exists for this technique.",
+      "meta": {
+        "external_id": "AN1862",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0729#AN1862"
+        ]
+      },
+      "uuid": "8428e0cd-009e-41c1-8292-88651d4486c9",
+      "value": "Analytic 1862 - AN1862"
+    },
+    {
       "description": "Use of leaked credential pairs against Outlook Web Access (OWA), Microsoft 365, or Exchange from a single client IP with multiple failures",
       "meta": {
         "external_id": "AN1269",
@@ -23027,6 +23622,17 @@
       },
       "uuid": "c956f269-d282-4c68-afc6-ca68d8532ab6",
       "value": "Analytic 1692 - AN1692"
+    },
+    {
+      "description": "Monitor industrial process history data for events that correspond with command message functions, such as setpoint modification or changes to system status for key devices. This will not directly detect the technique’s execution, but instead may provide additional evidence that the technique has been used and may complement other detections.\nMonitor for anomalous or unexpected commands that may result in changes to the process operation (e.g., discrete write, logic and device configuration, mode changes) observable via asset application logs.\nMonitor for new or unexpected connections to controllers, which could indicate an Unauthorized Command Message being sent via [Rogue Master](https://attack.mitre.org/techniques/T0848).\nMonitor for anomalous or unexpected commands that may result in changes to the process operation (e.g., discrete write, logic and device configuration, mode changes) observable via asset application logs.\nMonitor for unexpected ICS protocol command functions to controllers from existing master devices (including from new processes) or from new devices. The latter is like detection for [Rogue Master](https://attack.mitre.org/techniques/T0848) but requires ICS function level insight to determine if an unauthorized device is issuing commands (e.g., a historian).\n\nMonitoring for unexpected or problematic values below the function level will provide better insights into potentially malicious activity but at the cost of additional false positives depending on the underlying operational process.",
+      "meta": {
+        "external_id": "AN1926",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0794#AN1926"
+        ]
+      },
+      "uuid": "23eb2bc3-735d-4425-96e1-f9d3a1453bfa",
+      "value": "Analytic 1926 - AN1926"
     },
     {
       "description": "Password spraying or brute force attempts across user pool within short time intervals",
@@ -23141,6 +23747,18 @@
       "value": "Analytic 1782 - AN1782"
     },
     {
+      "description": "Monitor for files (such as /etc/hosts) being accessed that may attempt to get a listing of other systems by IP address, hostname, or other logical identifier on a network that may be used for Lateral Movement from the current system.\nMonitor for newly executed processes that can be used to discover remote systems, such as ping.exe and tracert.exe  , especially when executed in quick succession.(Citation: Elastic - Koadiac Detection with EQL) Consider monitoring for new processes engaging in scanning activity or connecting to multiple systems by correlating process creation network data.\nMonitor for anomalies related to discovery related ICS functions, including devices that have not previously used these functions or for functions being sent to many outstations. Note that some ICS protocols use broadcast or multicast functionality, which may produce false positives. Also monitor for hosts enumerating network connected resources using non-ICS enterprise protocols.\nMonitor for new ICS protocol connections to existing assets or for device scanning (i.e., a host connecting to many devices) over ICS and enterprise protocols (e.g., ICMP, DCOM, WinRM). For added context on adversary enterprise procedures and background see [Remote System Discovery](https://attack.mitre.org/techniques/T1018).",
+      "meta": {
+        "external_id": "AN1872",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0739#AN1872",
+          "https://www.elastic.co/security-labs/embracing-offensive-tooling-building-detections-against-koadic-using-eql"
+        ]
+      },
+      "uuid": "322ac45b-d540-4d2a-84a1-cde200238b95",
+      "value": "Analytic 1872 - AN1872"
+    },
+    {
       "description": "ESXi hosts initiating connections from non-standard daemons mimicking HTTP/HTTPS or SNMP traffic, but with irregular payload formats or expired/unsigned TLS certificates.",
       "meta": {
         "external_id": "AN1297",
@@ -23212,6 +23830,17 @@
       "value": "Analytic 1729 - AN1729"
     },
     {
+      "description": "Detecting software exploitation may be difficult depending on the tools available. Software exploits may not always succeed or may cause the exploited process to become unstable or crash.",
+      "meta": {
+        "external_id": "AN1927",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0795#AN1927"
+        ]
+      },
+      "uuid": "fbd4686e-f637-459b-ad48-c6fd7840acfa",
+      "value": "Analytic 1927 - AN1927"
+    },
+    {
       "description": "Execution of Microsoft-signed scripts (e.g., pubprn.vbs, installutil.exe, wscript.exe, cscript.exe) used to proxy execution of untrusted or external binaries. Behavior is detected through command-line process lineage, child process spawning, and unsigned payload execution from signed parent.",
       "meta": {
         "external_id": "AN1288",
@@ -23238,6 +23867,17 @@
       },
       "uuid": "7c96d701-391d-4904-b6ba-941344aaf059",
       "value": "Analytic 1828 - AN1828"
+    },
+    {
+      "description": "Monitor executed commands and arguments that may delete or alter generated artifacts on a host system, including logs or captured files such as quarantined malware.\nMonitor for API calls that may delete or alter generated artifacts on a host system, including logs or captured files such as quarantined malware.\nMonitor for changes made to Windows Registry keys or values that may delete or alter generated artifacts on a host system, including logs or captured files such as quarantined malware. For added context on adversary procedures and background see [Indicator Removal](https://attack.mitre.org/techniques/T1070) and applicable sub-techniques.\nMonitor for contextual file data that may show signs of deletion or alter generated artifacts on a host system, including logs or captured files such as quarantined malware.\nMonitor Windows registry keys that may be deleted or alter generated artifacts on a host system, including logs or captured files such as quarantined malware. For added context on adversary procedures and background see [Indicator Removal](https://attack.mitre.org/techniques/T1070) and applicable sub-techniques.\nMonitor for a file that may delete or alter generated artifacts on a host system, including logs or captured files such as quarantined malware.\nMonitor for changes made to a file may delete or alter generated artifacts on a host system, including logs or captured files such as quarantined malware.\nMonitor for newly executed processes that may delete or alter generated artifacts on a host system, including logs or captured files such as quarantined malware.",
+      "meta": {
+        "external_id": "AN1882",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0750#AN1882"
+        ]
+      },
+      "uuid": "55544bb8-440f-4b67-aa35-7e7af5952aca",
+      "value": "Analytic 1882 - AN1882"
     },
     {
       "description": "Detects thread local storage (TLS) callback injection by monitoring memory modifications to PE headers and TLS directory structures during or after process hollowing events, followed by anomalous thread behavior prior to main entry point execution.",
@@ -23300,6 +23940,28 @@
       "value": "Analytic 1829 - AN1829"
     },
     {
+      "description": "On Windows and Unix systems monitor executed commands and arguments that may use shell commands for execution. Shells may be common on administrator, developer, or power user systems depending on job function.\n\nOn network device and embedded system CLIs consider reviewing command history if unauthorized or suspicious commands were used to modify device configuration.\nMonitor logs from installed applications (e.g., historian logs) for unexpected commands or abuse of system features.\nMonitor for processes spawning from known command shell applications (e.g., PowerShell, Bash). Benign activity will need to be allow-listed. This information can be useful in gaining additional insight to adversaries' actions through how they use native processes or custom tools.",
+      "meta": {
+        "external_id": "AN1892",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0760#AN1892"
+        ]
+      },
+      "uuid": "7107739b-92d2-41fa-9fc8-ebe72f6086ee",
+      "value": "Analytic 1892 - AN1892"
+    },
+    {
+      "description": "Monitor logon activity for unexpected or unusual access to devices from the Internet.\nMonitor for unexpected protocols to/from the Internet. While network traffic content and logon session metadata may directly identify a login event, new Internet-based network flows may also be a reliable indicator of this technique.\nMonitor for unusual logins to Internet connected devices or unexpected protocols to/from the Internet. Network traffic content will provide valuable context and details about the content of network flows.",
+      "meta": {
+        "external_id": "AN1928",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0796#AN1928"
+        ]
+      },
+      "uuid": "87f5d864-d79b-474a-a3b4-43673dcb9f90",
+      "value": "Analytic 1928 - AN1928"
+    },
+    {
       "description": "Much of this activity may have a very high occurrence and associated false positive rate, as well as potentially taking place outside the visibility of the target organization, making detection difficult for defenders.\n\nDetection efforts may be focused on related stages of the adversary lifecycle, such as during Initial Access.",
       "meta": {
         "external_id": "AN1992",
@@ -23326,6 +23988,17 @@
       },
       "uuid": "7518f788-43dd-440a-955c-870cdb7dea26",
       "value": "Analytic 1299 - AN1299"
+    },
+    {
+      "description": "Monitor asset alarms which may help identify a loss of communications. Consider correlating alarms with other data sources that indicate traffic has been blocked, such as network traffic. In cases where alternative methods of communicating with outstations exist alarms may still be visible even if messages over serial COM ports are blocked.\nMonitor for a loss of network communications, which may indicate this technique is being used.\nMonitor for lack of operational process data which may help identify a loss of communications. This will not directly detect the technique’s execution, but instead may provide additional evidence that the technique has been used and may complement other detections.\nMonitor application logs for changes to settings and other events associated with network protocols that may be used to block communications.\nMonitor for the termination of processes or services associated with ICS automation protocols and application software which could help detect blocked communications.",
+      "meta": {
+        "external_id": "AN1929",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0797#AN1929"
+        ]
+      },
+      "uuid": "354b93da-06e9-4634-a5fd-7f9b7b3a9d5a",
+      "value": "Analytic 1929 - AN1929"
     },
     {
       "description": "Use unified logs to identify processes issuing repeated DNS queries where the resolved IP addresses change frequently within very short TTL values. Correlate with outbound network traffic to validate C2-like patterns.",
@@ -23578,6 +24251,17 @@
       },
       "uuid": "d9383849-c91c-4eef-88a0-97c2454ca1af",
       "value": "Analytic 1393 - AN1393"
+    },
+    {
+      "description": "Monitor for a loss of network communications, which may indicate a device has been shutdown or restarted. This will not directly detect the technique’s execution, but instead may provide additional evidence that the technique has been used and may complement other detections.\nDevice restarts and shutdowns may be observable in device application logs. Monitor for unexpected device restarts or shutdowns.\nDevices may produce alarms about restarts or shutdowns. Monitor for unexpected device restarts or shutdowns.\nMonitor ICS automation protocols for functions that restart or shutdown a device. Commands to restart or shutdown devices may also be observable in traditional IT management protocols.",
+      "meta": {
+        "external_id": "AN1933",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0801#AN1933"
+        ]
+      },
+      "uuid": "fcfe9c48-3a5a-49c8-96c3-be79414a8419",
+      "value": "Analytic 1933 - AN1933"
     },
     {
       "description": "Executable or script generating large outbound network traffic targeting remote hosts or known amplification ports",
@@ -24028,6 +24712,17 @@
       "value": "Analytic 1394 - AN1394"
     },
     {
+      "description": "Monitor ICS automation network protocols for information that an asset has been placed into Firmware Update Mode.\nMonitor device alarms that indicate the devices has been placed into Firmware Update Mode, although not all devices produce such alarms.\nMonitor asset log which may provide information that an asset has been placed into Firmware Update Mode. Some assets may log firmware updates themselves without logging that the device has been placed into update mode.",
+      "meta": {
+        "external_id": "AN1934",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0802#AN1934"
+        ]
+      },
+      "uuid": "96e7b86f-b960-489c-882b-9dcdb1c44aa9",
+      "value": "Analytic 1934 - AN1934"
+    },
+    {
       "description": "Execution of system utilities like 'system_profiler' and 'ioreg' to enumerate hardware components or USB devices, particularly if followed by clipboard, file, or network activity.",
       "meta": {
         "external_id": "AN1355",
@@ -24393,6 +25088,17 @@
       "value": "Analytic 1539 - AN1539"
     },
     {
+      "description": "Monitor for network traffic originating from unknown/unexpected systems.\nMonitor authentication logs and analyze for unusual access patterns, windows of activity, and access outside of normal business hours, including use of [Valid Accounts](https://attack.mitre.org/techniques/T0859).\nWhen authentication is not required to access an exposed remote service, monitor for follow-on activities such as anomalous external use of the exposed API or application.",
+      "meta": {
+        "external_id": "AN1935",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0803#AN1935"
+        ]
+      },
+      "uuid": "908fe88b-d8e2-47d1-b6a4-7a42b3bbe09b",
+      "value": "Analytic 1935 - AN1935"
+    },
+    {
       "description": "Detects exploitation of IaaS cloud security boundaries to evade defense controls. Defender perspective includes anomalous API calls that bypass audit logging, disable monitoring, or manipulate guardrails (e.g., CloudTrail tampering). Correlation highlights when exploitation attempts precede sudden absence of expected telemetry.",
       "meta": {
         "external_id": "AN1636",
@@ -24589,6 +25295,17 @@
       "value": "Analytic 1683 - AN1683"
     },
     {
+      "description": "Use verification of distributed binaries through hash checking or other integrity checking mechanisms. Scan downloads for malicious signatures.",
+      "meta": {
+        "external_id": "AN1863",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0730#AN1863"
+        ]
+      },
+      "uuid": "899d0dce-64f7-4924-93a1-8e3c83dd510f",
+      "value": "Analytic 1863 - AN1863"
+    },
+    {
       "description": "Detection of obfuscated commands via shell, osascript, or AppleScript interpreters using unusual tokens, encoding, variable substitution, or runtime string reconstruction.",
       "meta": {
         "external_id": "AN1396",
@@ -24660,6 +25377,17 @@
       },
       "uuid": "5e90ac48-345b-445a-877f-596737ad7efb",
       "value": "Analytic 1693 - AN1693"
+    },
+    {
+      "description": "Monitor network data for uncommon  data flows (e.g., time of day, unusual source/destination address) that may be related to abuse of [Valid Accounts](https://attack.mitre.org/techniques/T0859) to log into a service specifically designed to accept remote connections, such as RDP, Telnet, SSH, and VNC.\nMonitor DLL file events, specifically creation of these files as well as the loading of DLLs into processes specifically designed to accept remote connections, such as RDP, Telnet, SSH, and VNC.\nMonitor for user accounts logged into systems they would not normally access or abnormal access patterns, such as multiple systems over a relatively short period of time. Correlate use of login activity related to remote services with unusual behavior or other malicious or suspicious activity. Adversaries will likely need to learn about an environment and the relationships between systems through Discovery techniques prior to attempting Lateral Movement. For added context on adversary procedures and background see [Remote Services](https://attack.mitre.org/techniques/T1021) and applicable sub-techniques.\nMonitor for newly executed processes related to services specifically designed to accept remote connections, such as RDP, Telnet, SSH, and VNC. The adversary may use [Valid Accounts](https://attack.mitre.org/techniques/T0859) to login and may perform follow-on actions that spawn additional processes as the user.\nMonitor executed commands and arguments to services specifically designed to accept remote connections, such as RDP, Telnet, SSH, and VNC. The adversary may then perform these actions using [Valid Accounts](https://attack.mitre.org/techniques/T0859).\nMonitor for newly constructed network connections into a service specifically designed to accept remote connections, such as RDP, Telnet, SSH, and VNC. Monitor network connections involving common remote management protocols, such as ports tcp:3283 and tcp:5900, as well as ports tcp:3389 and tcp:22 for remote logins. The adversary may use [Valid Accounts](https://attack.mitre.org/techniques/T0859) to enable remote logins.\nMonitor interactions with network shares, such as reads or file transfers, using remote services such as Server Message Block (SMB). For added context on adversary procedures and background see [Remote Services](https://attack.mitre.org/techniques/T1021) and applicable sub-techniques.",
+      "meta": {
+        "external_id": "AN1936",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0804#AN1936"
+        ]
+      },
+      "uuid": "058d856a-6356-402f-b3ff-a7c1b6186921",
+      "value": "Analytic 1936 - AN1936"
     },
     {
       "description": "Creation of outbound connections on alternate ports or using covert transport (e.g., ICMP, DNS) from non-network-intensive processes, following known disruption or blocked traffic.",
@@ -24772,6 +25500,17 @@
       },
       "uuid": "fbc0a210-8942-4fcb-81f1-a120551013d4",
       "value": "Analytic 1837 - AN1837"
+    },
+    {
+      "description": "Detecting software exploitation may be difficult depending on the tools available. Software exploits may not always succeed or may cause the exploited process to become unstable or crash. Web Application Firewalls may detect improper inputs attempting exploitation.\nUse deep packet inspection to look for artifacts of common exploit traffic, such as known payloads.",
+      "meta": {
+        "external_id": "AN1873",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0740#AN1873"
+        ]
+      },
+      "uuid": "dd25b818-ceb0-4518-9384-dcf895d4956b",
+      "value": "Analytic 1873 - AN1873"
     },
     {
       "description": "Much of this activity may have a very high occurrence and associated false positive rate, as well as potentially taking place outside the visibility of the target organization, making detection difficult for defenders. \n\nDetection efforts may be focused on related stages of the adversary lifecycle, such as during Initial Access.",
@@ -24887,6 +25626,19 @@
       "value": "Analytic 1838 - AN1838"
     },
     {
+      "description": "Monitor executed commands and arguments that may attempt to take screen captures of the desktop to gather information over the course of an operation.\nMonitoring for screen capture behavior will depend on the method used to obtain data from the operating system and write output files. Detection methods could include collecting information from unusual processes using API calls used to obtain image data, and monitoring for image files written to disk, such as CopyFromScreen, xwd, or screencapture.(Citation: CopyFromScreen .NET)(Citation: Antiquated Mac Malware) The data may need to be correlated with other events to identify malicious activity, depending on the legitimacy of this behavior within a given network environment.",
+      "meta": {
+        "external_id": "AN1883",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0751#AN1883",
+          "https://blog.malwarebytes.com/threat-analysis/2017/01/new-mac-backdoor-using-antiquated-code/",
+          "https://docs.microsoft.com/en-us/dotnet/api/system.drawing.graphics.copyfromscreen?view=netframework-4.8"
+        ]
+      },
+      "uuid": "66070162-d51e-46e7-8d32-2140fd5e7086",
+      "value": "Analytic 1883 - AN1883"
+    },
+    {
       "description": "Detects the execution of non-browser processes establishing outbound encrypted network connections using uncommon symmetric encryption protocols (e.g., AES via PowerShell or custom scripts) to alternate external destinations.",
       "meta": {
         "external_id": "AN1389",
@@ -24956,6 +25708,17 @@
       },
       "uuid": "98b0a8a6-881d-4f00-84c3-3f70d368067e",
       "value": "Analytic 1839 - AN1839"
+    },
+    {
+      "description": "Program uploads may be observable in ICS management protocols or file transfer protocols. Note when protocol functions related to program uploads occur. In cases where the ICS protocols is not well understood, one option is to examine network traffic for the program files themselves using signature-based tools.\nMonitor device communication patterns to identify irregular bulk transfers of data between the embedded ICS asset and other nodes within the network. Note these indicators are dependent on the profile of normal operations and the capabilities of the industrial automation protocols involved (e.g., partial program uploads).\nMonitor for device alarms produced when program uploads occur, although not all devices will produce such alarms.",
+      "meta": {
+        "external_id": "AN1893",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0761#AN1893"
+        ]
+      },
+      "uuid": "3c6a21cb-8643-41bc-94a1-e860b02a1cad",
+      "value": "Analytic 1893 - AN1893"
     },
     {
       "description": "Detects process injection by correlating memory manipulation API calls (e.g., VirtualAllocEx, WriteProcessMemory), suspicious thread creation (e.g., CreateRemoteThread), and unusual DLL loads within another process's context.",
@@ -25801,6 +26564,21 @@
       "value": "Analytic 1684 - AN1684"
     },
     {
+      "description": "Monitor for firmware changes which may be observable via operational alarms from devices.\nMonitor device application logs for firmware changes, although not all devices will produce such logs.\nMonitor firmware for unexpected changes. Asset management systems should be consulted to understand known-good firmware versions. Dump and inspect BIOS images on vulnerable systems and compare against known good images.(Citation: MITRE Copernicus) Analyze differences to determine if malicious changes have occurred. Log attempts to read/write to BIOS and compare against known patching behavior. Likewise, EFI modules can be collected and compared against a known-clean list of EFI executable binaries to detect potentially malicious modules. The CHIPSEC framework can be used for analysis to determine if firmware modifications have been performed.(Citation: McAfee CHIPSEC Blog)(Citation: Github CHIPSEC)(Citation: Intel HackingTeam UEFI Rootkit)\nMonitor ICS management protocols / file transfer protocols for protocol functions related to firmware changes.",
+      "meta": {
+        "external_id": "AN1864",
+        "refs": [
+          "http://www.mitre.org/capabilities/cybersecurity/overview/cybersecurity-blog/copernicus-question-your-assumptions-about",
+          "https://attack.mitre.org/detectionstrategies/DET0731#AN1864",
+          "https://github.com/chipsec/chipsec",
+          "https://securingtomorrow.mcafee.com/business/chipsec-support-vault-7-disclosure-scanning/",
+          "https://web.archive.org/web/20170313124421/http://www.intelsecurity.com/advanced-threat-research/content/data/HT-UEFI-rootkit.html"
+        ]
+      },
+      "uuid": "3f10ffe9-fa73-4aeb-bf98-322831bf757f",
+      "value": "Analytic 1864 - AN1864"
+    },
+    {
       "description": "Processes not typically associated with encryption loading asymmetric crypto libraries (e.g., rsaenh.dll, crypt32.dll) and subsequently initiating outbound TLS/SSL connections with abnormal certificate chains or handshakes. Defender correlates process creation, module load, and unusual encrypted sessions.",
       "meta": {
         "external_id": "AN1496",
@@ -25999,6 +26777,17 @@
       "value": "Analytic 1784 - AN1784"
     },
     {
+      "description": "Monitor asset application logs for information that indicate task parameters have changed.\nMonitor device alarms that indicate controller task parameters have changed, although not all devices produce such alarms.\n \n[Program Download](https://attack.mitre.org/techniques/T0843) may be used to enable this technique. Monitor for program downloads which may be noticeable via operational alarms. Asset management systems should be consulted to understand expected program versions.\nEngineering and asset management software will often maintain a copy of the expected program loaded on a controller and may also record any changes made to controller programs and tasks. Data from these platforms can be used to identify modified controller tasking.",
+      "meta": {
+        "external_id": "AN1874",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0741#AN1874"
+        ]
+      },
+      "uuid": "2195ec67-7cea-4b0d-a678-18384089bf2c",
+      "value": "Analytic 1874 - AN1874"
+    },
+    {
       "description": "Processes (e.g., bash, python, custom binaries) dynamically linking libcrypto/libssl for RSA key exchange, then creating external connections with abnormal certificate validation or handshake anomalies. Defender observes syscall traces and outbound asymmetric key exchanges from non-SSL-native processes.",
       "meta": {
         "external_id": "AN1497",
@@ -26111,6 +26900,17 @@
       "value": "Analytic 1848 - AN1848"
     },
     {
+      "description": "Monitor device alarms for program downloads, although not all devices produce such alarms.\nMonitor for protocol functions related to program download or modification. Program downloads may be observable in ICS automation protocols and remote management protocols.\nConsult asset management systems to understand expected program versions.\nMonitor devices configuration logs which may contain alerts that indicate whether a program download has occurred. Devices may maintain application logs that indicate whether a full program download, online edit, or program append function has occurred.",
+      "meta": {
+        "external_id": "AN1884",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0752#AN1884"
+        ]
+      },
+      "uuid": "b74100d1-0085-468a-834a-2bf10924a3b7",
+      "value": "Analytic 1884 - AN1884"
+    },
+    {
       "description": "Much of this activity may have a very high occurrence and associated false positive rate, as well as potentially taking place outside the visibility of the target organization, making detection difficult for defenders.\n\nDetection efforts may be focused on related stages of the adversary lifecycle, such as during Initial Access.",
       "meta": {
         "external_id": "AN1948",
@@ -26180,6 +26980,17 @@
       },
       "uuid": "d7e3296a-9f95-4061-b3f5-0f02910745ab",
       "value": "Analytic 1849 - AN1849"
+    },
+    {
+      "description": "No standard detection method currently exists for this technique.",
+      "meta": {
+        "external_id": "AN1894",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0762#AN1894"
+        ]
+      },
+      "uuid": "636e612f-0b63-44e8-bf2c-31b62d20508b",
+      "value": "Analytic 1894 - AN1894"
     },
     {
       "description": "VMware services (hostd, vpxa) unexpectedly negotiating asymmetric crypto sessions to external endpoints outside vCenter or update servers. Defender sees encrypted handshakes in logs inconsistent with baseline ESXi communication patterns.",
@@ -26348,6 +27159,23 @@
       },
       "uuid": "8ed1a27f-3a60-441d-b92d-dc7b086db459",
       "value": "Analytic 1558 - AN1558"
+    },
+    {
+      "description": "Monitor for API calls that can be used to install a hook procedure, such as the SetWindowsHookEx and SetWinEventHook functions.(Citation: Microsoft Hook Overview)(Citation: Volatility Detecting Hooks Sept 2012) Also consider analyzing hook chains (which hold pointers to hook procedures for each type of hook) using tools(Citation: Volatility Detecting Hooks Sept 2012)(Citation: PreKageo Winhook Jul 2011)(Citation: Jay GetHooks Sept 2011) or by programmatically examining internal kernel structures.(Citation: Zairon Hooking Dec 2006)(Citation: EyeofRa Detecting Hooking June 2017)\nVerify integrity of live processes by comparing code in memory to that of corresponding static binaries, specifically checking for jumps and other instructions that redirect code flow.",
+      "meta": {
+        "external_id": "AN1855",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0722#AN1855",
+          "https://eyeofrablog.wordpress.com/2017/06/27/windows-keylogger-part-2-defense-against-user-land/",
+          "https://github.com/jay/gethooks",
+          "https://github.com/prekageo/winhook",
+          "https://msdn.microsoft.com/library/windows/desktop/ms644959.aspx",
+          "https://volatility-labs.blogspot.com/2012/09/movp-31-detecting-malware-hooks-in.html",
+          "https://zairon.wordpress.com/2006/12/06/any-application-defined-hook-procedure-on-my-machine/"
+        ]
+      },
+      "uuid": "05ca4f07-df4f-4e88-b216-f40ca6ce39b8",
+      "value": "Analytic 1855 - AN1855"
     },
     {
       "description": "Monitor for suspicious usage of driver enumeration utilities (driverquery.exe) or API calls such as EnumDeviceDrivers(). Registry queries against HKLM\\SYSTEM\\CurrentControlSet\\Services and HardwareProfiles that are abnormal may also indicate attempts to discover installed drivers and services. Correlate command execution, process creation, and registry access to build a behavioral chain of driver discovery.",
@@ -26578,6 +27406,28 @@
       "value": "Analytic 1658 - AN1658"
     },
     {
+      "description": "No standard detection method currently exists for this technique.",
+      "meta": {
+        "external_id": "AN1865",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0732#AN1865"
+        ]
+      },
+      "uuid": "cd4c92f9-3107-45c7-9d95-19a44d7dc92c",
+      "value": "Analytic 1865 - AN1865"
+    },
+    {
+      "description": "Monitor and analyze traffic patterns and packet inspection associated to protocol(s) that do not follow the expected protocol standards and traffic flows (e.g., extraneous packets that do not belong to established flows, gratuitous or anomalous traffic patterns, anomalous syntax, or structure). Consider correlation with process monitoring and command line to detect anomalous processes execution and command line arguments associated to traffic patterns (e.g., monitor anomalies in use of files that do not normally initiate connections for respective protocol(s)).\nMonitor network data for uncommon data flows. Processes utilizing the network that do not normally have network communication or have never been seen before are suspicious.\nMonitor for application logging, messaging, and/or other artifacts that may result from  Denial of Service (DoS) attacks which degrade or block the availability of services to users. In addition to network level detections, endpoint logging and instrumentation can be useful for detection.\nMonitor operational data for indicators of temporary data loss which may indicate a Denial of Service. This will not directly detect the technique’s execution, but instead may provide additional evidence that the technique has been used and may complement other detections.",
+      "meta": {
+        "external_id": "AN1856",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0723#AN1856"
+        ]
+      },
+      "uuid": "cff25f71-859e-48bf-88d6-852d05e22b33",
+      "value": "Analytic 1856 - AN1856"
+    },
+    {
       "description": "Consider analyzing self-signed code signing certificates for features that may be associated with the adversary and/or their developers, such as the thumbprint, algorithm used, validity period, and common name. Malware repositories can also be used to identify additional samples associated with the adversary and identify patterns an adversary has used in crafting self-signed code signing certificates.\nMuch of this activity will take place outside the visibility of the target organization, making detection of this behavior difficult. Detection efforts may be focused on related follow-on behavior, such as [Code Signing](https://attack.mitre.org/techniques/T1553/002) or [Install Root Certificate](https://attack.mitre.org/techniques/T1553/004).",
       "meta": {
         "external_id": "AN1965",
@@ -26760,6 +27610,28 @@
       "value": "Analytic 1758 - AN1758"
     },
     {
+      "description": "Monitor for an authentication attempt by a user that may obtain and abuse credentials of existing accounts as a means of gaining Initial Access, Persistence, Privilege Escalation, or Defense Evasion.\nMonitor for logon behavior that may abuse credentials of existing accounts as a means of gaining Lateral Movement or Persistence. Correlate other security systems with login information (e.g., a user has an active login session but has not entered the building or does not have VPN access). \nMonitor for suspicious account behavior across systems that share accounts, either user, admin, or service accounts. Examples: one account logged into multiple systems simultaneously; multiple accounts logged into the same machine simultaneously; accounts logged in at odd times or outside of business hours. Activity may be from interactive login sessions or process ownership from accounts being used to execute binaries on a remote system as a particular account.",
+      "meta": {
+        "external_id": "AN1857",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0724#AN1857"
+        ]
+      },
+      "uuid": "ddfcd948-3526-4241-a12f-d7bf63468e40",
+      "value": "Analytic 1857 - AN1857"
+    },
+    {
+      "description": "Devices that provide user access to the underlying operating system may allow the installation of custom software to monitor OS API execution. Monitoring API calls may generate a significant amount of data and may not be useful for defense unless collected under specific circumstances, since benign use of API functions are common and may be difficult to distinguish from malicious behavior. Correlation of other events with behavior surrounding API function calls using API monitoring will provide additional context to an event that may assist in determining if it is due to malicious behavior.",
+      "meta": {
+        "external_id": "AN1875",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0742#AN1875"
+        ]
+      },
+      "uuid": "e8f51c53-fc55-441b-a45f-ba7709ccbce2",
+      "value": "Analytic 1875 - AN1875"
+    },
+    {
       "description": "Detects assignment of high-privilege roles to user or service accounts via Kubernetes RoleBinding or ClusterRoleBinding objects, especially outside of CI/CD automation or from unknown IPs.",
       "meta": {
         "external_id": "AN1579",
@@ -26858,6 +27730,29 @@
       "value": "Analytic 1588 - AN1588"
     },
     {
+      "description": "Monitor for newly constructed services/daemons that may attempt to manipulate features of their artifacts to make them appear legitimate or benign to users and/or security tools.\nMonitor for changes made to files outside of an update or patch that may attempt to manipulate features of their artifacts to make them appear legitimate or benign to users and/or security tools.\nMonitor for file names that are mismatched between the file name on disk and that of the binary's metadata. This is a likely indicator that a binary was renamed after it was compiled. For added context on adversary procedures and background see [Masquerading](https://attack.mitre.org/techniques/T1036) and applicable sub-techniques.\nMonitor executed commands and arguments that may attempt to manipulate features of their artifacts to make them appear legitimate or benign to users and/or security tools.(Citation: Twitter ItsReallyNick Masquerading Update)\nMonitor for changes made to scheduled jobs that may attempt to manipulate features of their artifacts to make them appear legitimate or benign to users and/or security tools.\nMonitor for changes made to services that may attempt to manipulate features of their artifacts to make them appear legitimate or benign to users and/or security tools.\nCollect file hashes. Monitor for file names that do not match their expected hash. Perform file monitoring. Files with known names but in unusual locations are suspect.  Look for indications of common characters that may indicate an attempt to trick users into misidentifying the file type, such as a space as the last character of a file name or the right-to-left override characters\"\\u202E\", \"[U+202E]\", and \"%E2%80%AE\". For added context on adversary procedures and background see [Masquerading](https://attack.mitre.org/techniques/T1036) and applicable sub-techniques.\nMonitor for newly constructed scheduled jobs that may attempt to manipulate features of their artifacts to make them appear legitimate or benign to users and/or security tools.",
+      "meta": {
+        "external_id": "AN1858",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0725#AN1858",
+          "https://x.com/ItsReallyNick/status/1055321652777619457"
+        ]
+      },
+      "uuid": "791310ad-7db5-41df-9fa5-fa4097d8a51d",
+      "value": "Analytic 1858 - AN1858"
+    },
+    {
+      "description": "Devices that provide user access to the underlying operating system may allow the installation of custom software to monitor OS API execution. Monitoring API calls may generate a significant amount of data and may not be useful for defense unless collected under specific circumstances, since benign use of API functions are common and may be difficult to distinguish from malicious behavior. Correlation of other events with behavior surrounding API function calls using API monitoring will provide additional context to an event that may assist in determining if it is due to malicious behavior.",
+      "meta": {
+        "external_id": "AN1885",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0753#AN1885"
+        ]
+      },
+      "uuid": "aebd2848-98db-46f1-8e22-627e2ec3c280",
+      "value": "Analytic 1885 - AN1885"
+    },
+    {
       "description": "Consider analyzing malware for features that may be associated with the adversary and/or their developers, such as compiler used, debugging artifacts, or code similarities. Malware repositories can also be used to identify additional samples associated with the adversary and identify development patterns over time. Much of this activity will take place outside the visibility of the target organization, making detection of this behavior difficult. Detection efforts may be focused on related stages of the adversary lifecycle, such as during Defense Evasion or Command and Control.\nMonitor for contextual data about a malicious payload, such as compilation times, file hashes, as well as watermarks or other identifiable configuration information. Much of this activity will take place outside the visibility of the target organization, making detection of this behavior difficult. Detection efforts may be focused on related stages of the adversary lifecycle, such as during Defense Evasion or Command and Control.\nConsider use of services that may aid in the tracking of capabilities, such as certificates, in use on sites across the Internet. In some cases it may be possible to pivot on known pieces of information to uncover other adversary infrastructure.(Citation: Splunk Kovar Certificates 2017) Much of this activity will take place outside the visibility of the target organization, making detection of this behavior difficult. Detection efforts may be focused on related stages of the adversary lifecycle, such as during Defense Evasion or Command and Control.",
       "meta": {
         "external_id": "AN1985",
@@ -26915,6 +27810,30 @@
       },
       "uuid": "fe489775-b01e-4da2-a0e2-962d1572ba09",
       "value": "Analytic 1589 - AN1589"
+    },
+    {
+      "description": "No standard detection method currently exists for this technique.",
+      "meta": {
+        "external_id": "AN1895",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0763#AN1895"
+        ]
+      },
+      "uuid": "1e9c5d46-14e2-4efc-8861-e6dc942b3b9c",
+      "value": "Analytic 1895 - AN1895"
+    },
+    {
+      "description": "Monitor login sessions for new or unexpected devices or sessions on wireless networks.\nMonitor application logs for new or unexpected devices or sessions on wireless networks.\nNew or irregular network traffic flows may indicate potentially unwanted devices or sessions on wireless networks. In Wi-Fi networks monitor for changes such as rogue access points or low signal strength, indicating a device is further away from the access point then expected and changes in the physical layer signal.(Citation: Nzyme Alerts Intro) (Citation: Wireless Intrusion Detection) Network traffic content will provide important context, such as hardware (e.g., MAC) addresses, user accounts, and types of messages sent.",
+      "meta": {
+        "external_id": "AN1859",
+        "refs": [
+          "https://apps.dtic.mil/sti/pdfs/ADA466332.pdf",
+          "https://attack.mitre.org/detectionstrategies/DET0726#AN1859",
+          "https://docs.nzyme.org/wifi/monitoring/network-monitoring/"
+        ]
+      },
+      "uuid": "2388dc31-ba9a-4c12-b4b9-28bbc981c73e",
+      "value": "Analytic 1859 - AN1859"
     },
     {
       "description": "Monitor for logged domain name system (DNS) registry data that may hijack domains and/or subdomains that can be used during targeting.  In some cases, abnormal subdomain IP addresses (such as those originating in a different country from the root domain) may indicate a malicious subdomain.(Citation: Palo Alto Unit 42 Domain Shadowing 2022) Much of this activity will take place outside the visibility of the target organization, making detection of this behavior difficult. Detection efforts may be focused on related stages of the adversary lifecycle, such as during Command and Control.\nConsider monitoring for anomalous changes to domain registrant information and/or domain resolution information that may indicate the compromise of a domain. Efforts may need to be tailored to specific domains of interest as benign registration and resolution changes are a common occurrence on the internet.\nMonitor for queried domain name system (DNS) registry data that may hijack domains and/or subdomains that can be used during targeting. In some cases, abnormal subdomain IP addresses (such as those originating in a different country from the root domain) may indicate a malicious subdomain.(Citation: Palo Alto Unit 42 Domain Shadowing 2022) Much of this activity will take place outside the visibility of the target organization, making detection of this behavior difficult. Detection efforts may be focused on related stages of the adversary lifecycle, such as during Command and Control.",
@@ -27048,6 +27967,17 @@
       },
       "uuid": "c56cfd62-b8cb-49be-820b-e447a1605106",
       "value": "Analytic 1668 - AN1668"
+    },
+    {
+      "description": "Monitor for newly executed processes that execute from removable media after it is mounted or when initiated by a user. If a remote access tool is used in this manner to move laterally, then additional actions are likely to occur after execution, such as opening network connections for Command and Control and system and network information Discovery. \nMonitor for newly constructed files copied to or from removable media.\nMonitor for newly constructed drive letters or mount points to removable media.\nMonitor for files accessed on removable media, particularly those with executable content.",
+      "meta": {
+        "external_id": "AN1866",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0733#AN1866"
+        ]
+      },
+      "uuid": "9ad83be0-5c88-4fb6-b59d-19db21176923",
+      "value": "Analytic 1866 - AN1866"
     },
     {
       "description": "If infrastructure or patterns in tooling have been previously identified, internet scanning may uncover when an adversary has staged tools to make them accessible for targeting.\nMuch of this activity will take place outside the visibility of the target organization, making detection of this behavior difficult. Detection efforts may be focused on post-compromise phases of the adversary lifecycle, such as [Ingress Tool Transfer](https://attack.mitre.org/techniques/T1105).",
@@ -27190,6 +28120,30 @@
       "value": "Analytic 1678 - AN1678"
     },
     {
+      "description": "Purely passive network sniffing cannot be detected effectively. In cases where the adversary interacts with the wireless network (e.g., joining a Wi-Fi network) detection may be possible. Monitor for new or irregular network traffic flows which may indicate potentially unwanted devices or sessions on wireless networks.  In Wi-Fi networks monitor for changes such as rogue access points or low signal strength, indicating a device is further away from the access point then expected and changes in the physical layer signal.(Citation: Nzyme Alerts Intro) (Citation: Wireless Intrusion Detection)  Network traffic content will provide important context, such as hardware (e.g., MAC) addresses, user accounts, and types of messages sent.",
+      "meta": {
+        "external_id": "AN1876",
+        "refs": [
+          "https://apps.dtic.mil/sti/pdfs/ADA466332.pdf",
+          "https://attack.mitre.org/detectionstrategies/DET0743#AN1876",
+          "https://docs.nzyme.org/wifi/monitoring/network-monitoring/"
+        ]
+      },
+      "uuid": "c14544a4-5ca1-4523-97eb-4a9840d74c6d",
+      "value": "Analytic 1876 - AN1876"
+    },
+    {
+      "description": "Monitor for any suspicious attempts to enable script execution on a system. If scripts are not commonly used on a system, but enabled, scripts running out of cycle from patching or other administrator functions are suspicious. Scripts should be captured from the file system when possible, to determine their actions and intent.\nMonitor executed commands and arguments for actions that could be taken to collect internal data.\nMonitor for unexpected files (e.g., .pdf, .docx, .jpg) viewed for collecting internal data.\nMonitor for information collection on assets that may indicate deviations from standard operational tools. Examples include unexpected industrial automation protocol functions, new high volume communication sessions, or broad collection across many hosts within the network. ",
+      "meta": {
+        "external_id": "AN1867",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0734#AN1867"
+        ]
+      },
+      "uuid": "e25ef816-bbfd-4656-8ecb-c7eebcba31d4",
+      "value": "Analytic 1867 - AN1867"
+    },
+    {
       "description": "Consider use of services that may aid in the tracking of certificates in use on sites across the Internet. In some cases it may be possible to pivot on known pieces of certificate information to uncover other adversary infrastructure.(Citation: Splunk Kovar Certificates 2017)\nDetection efforts may be focused on related behaviors, such as [Web Protocols](https://attack.mitre.org/techniques/T1071/001) , [Asymmetric Cryptography](https://attack.mitre.org/techniques/T1573/002) , and/or [Install Root Certificate](https://attack.mitre.org/techniques/T1553/004) .",
       "meta": {
         "external_id": "AN1976",
@@ -27289,6 +28243,31 @@
       "value": "Analytic 1688 - AN1688"
     },
     {
+      "description": "Monitor for newly constructed logon behavior within Microsoft's SharePoint can be configured to report access to certain pages and documents.(Citation: Microsoft SharePoint Logging) Sharepoint audit logging can also be configured to report when a user shares a resource.(Citation: Sharepoint Sharing Events) The user access logging within Atlassian's Confluence can also be configured to report access to certain pages and documents through AccessLogFilter.(Citation: Atlassian Confluence Logging) Additional log storage and analysis infrastructure will likely be required for more robust detection capabilities. \nIn the case of detecting collection from shared network drives monitor for unexpected and abnormal accesses to network shares. \nMonitor for third-party application logging, messaging, and/or other artifacts that may leverage information repositories to mine valuable information. Information repositories generally have a considerably large user base, detection of malicious use can be non-trivial. At minimum, access to information repositories performed by privileged users (for example, Active Directory Domain, Enterprise, or Schema Administrators) should be closely monitored and alerted upon, as these types of accounts should generally not be used to access information repositories. If the capability exists, it may be of value to monitor and alert on users that are retrieving and viewing a large number of documents and pages; this behavior may be indicative of programmatic means being used to retrieve all data within the repository. In environments with high-maturity, it may be possible to leverage User-Behavioral Analytics (UBA) platforms to detect and alert on user-based anomalies.",
+      "meta": {
+        "external_id": "AN1886",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0754#AN1886",
+          "https://confluence.atlassian.com/confkb/how-to-enable-user-access-logging-182943.html",
+          "https://docs.microsoft.com/en-us/microsoft-365/compliance/use-sharing-auditing?view=o365-worldwide#sharepoint-sharing-events",
+          "https://support.office.com/en-us/article/configure-audit-settings-for-a-site-collection-a9920c97-38c0-44f2-8bcb-4cf1e2ae22d2"
+        ]
+      },
+      "uuid": "1672d2e3-8756-4380-b22c-517aa9f1cce0",
+      "value": "Analytic 1886 - AN1886"
+    },
+    {
+      "description": "Monitor command-line arguments for script execution and subsequent behavior. Actions may be related to network and system information Discovery, Collection, or other scriptable post-compromise behaviors and could be used as indicators of detection leading back to the source script. Scripts are likely to perform actions with various effects on a system that may generate events, depending on the types of monitoring used. \nMonitor log files for process execution through command-line and scripting activities. This information can be useful in gaining additional insight to adversaries' actions through how they use native processes or custom tools. Also monitor for loading of modules associated with specific languages.\nMonitor contextual data about a running process, which may include information such as environment variables, image name, user/owner, or other information that may reveal abuse of system features. \nMonitor for events associated with scripting execution, such as the loading of modules associated with scripting languages (e.g., JScript.dll, vbscript.dll).\nMonitor for any attempts to enable scripts running on a system would be considered suspicious. If scripts are not commonly used on a system, but enabled, scripts running out of cycle from patching or other administrator functions are suspicious. Scripts should be captured from the file system when possible to determine their actions and intent.",
+      "meta": {
+        "external_id": "AN1868",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0735#AN1868"
+        ]
+      },
+      "uuid": "302a5327-70cf-44b5-b592-ce9a62014dcc",
+      "value": "Analytic 1868 - AN1868"
+    },
+    {
       "description": "Once adversaries have provisioned software on a compromised VPS (ex: for use as a command and control server), internet scans may reveal VPSs that adversaries have compromised. Consider looking for identifiable patterns such as services listening, certificates in use, SSL/TLS negotiation features, or other response artifacts associated with adversary C2 software.(Citation: ThreatConnect Infrastructure Dec 2020)(Citation: Mandiant SCANdalous Jul 2020)(Citation: Koczwara Beacon Hunting Sep 2021)\n\nMuch of this activity will take place outside the visibility of the target organization, making detection of this behavior difficult. Detection efforts may be focused on related stages of the adversary lifecycle, such as during Command and Control.",
       "meta": {
         "external_id": "AN1986",
@@ -27346,6 +28325,29 @@
       },
       "uuid": "9aa716a2-0301-49cd-89c0-a441e5da0551",
       "value": "Analytic 1698 - AN1698"
+    },
+    {
+      "description": "Analyze network data for uncommon data flows (e.g., new protocols in use between hosts, unexpected ports in use). Processes utilizing the network that do not normally have network communication or have never been seen before are suspicious. \nMonitor for mismatches between protocols and their expected ports (e.g., non-HTTP traffic on tcp:80). Analyze packet contents to detect communications that do not follow the expected protocol behavior for the port that is being used.(Citation: University of Birmingham C2)",
+      "meta": {
+        "external_id": "AN1869",
+        "refs": [
+          "https://arxiv.org/ftp/arxiv/papers/1408/1408.1136.pdf",
+          "https://attack.mitre.org/detectionstrategies/DET0736#AN1869"
+        ]
+      },
+      "uuid": "981b659b-992a-4d71-9404-0e1b2b598e50",
+      "value": "Analytic 1869 - AN1869"
+    },
+    {
+      "description": "Monitor HKLM\\Software\\Policies\\Microsoft\\Windows NT\\DNSClient for changes to the \"EnableMulticast\" DWORD value. A value of \"0\" indicates LLMNR is disabled.\nHost-based implementations of this technique may utilize networking-based system calls or network utility commands (e.g., iptables) to locally intercept traffic. Monitor for relevant process creation events.\nMonitor for network traffic originating from unknown/unexpected hosts. Local network traffic metadata (such as source MAC addressing) as well as usage of network management protocols such as DHCP may be helpful in identifying hardware. For added context on adversary procedures and background see [Adversary-in-the-Middle](https://attack.mitre.org/techniques/T1557) and applicable sub-techniques.\nMonitor for newly constructed services/daemons through Windows event logs for event IDs 4697 and 7045.\nMonitor network traffic for anomalies associated with known AiTM behavior. For Collection activity where transmitted data is not manipulated, anomalies may be present in network management protocols (e.g., ARP, DHCP).\nMonitor application logs for changes to settings and other events associated with network protocols and other services commonly abused for AiTM.",
+      "meta": {
+        "external_id": "AN1896",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0764#AN1896"
+        ]
+      },
+      "uuid": "afc9e394-147e-49db-81df-953d2d3ea93e",
+      "value": "Analytic 1896 - AN1896"
     },
     {
       "description": "Much of this activity will take place outside the visibility of the target organization, making detection of this behavior difficult. Detection efforts may be focused on related stages of the adversary lifecycle, such as during [Phishing](https://attack.mitre.org/techniques/T1566), [Endpoint Denial of Service](https://attack.mitre.org/techniques/T1499), or [Network Denial of Service](https://attack.mitre.org/techniques/T1498).",
@@ -27433,6 +28435,17 @@
       "value": "Analytic 1787 - AN1787"
     },
     {
+      "description": "Monitor for network traffic originating from unknown/unexpected hardware devices. Local network traffic metadata (such as source MAC addressing) may be helpful in identifying transient assets.\nNetworking devices such as switches may log when new client devices connect (e.g., SNMP notifications). Monitor for any logs documenting changes to network connection status to determine when a new connection has occurred, including the resulting addresses (e.g., IP, MAC) of devices on that network.",
+      "meta": {
+        "external_id": "AN1877",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0744#AN1877"
+        ]
+      },
+      "uuid": "9127dd4e-0994-442f-8d73-b6b2dfb1f9ac",
+      "value": "Analytic 1877 - AN1877"
+    },
+    {
       "description": "Monitor for contextual data about a malicious payload, such as compilation times, file hashes, as well as watermarks or other identifiable configuration information. Much of this activity will take place outside the visibility of the target organization, making detection of this behavior difficult. Detection efforts may be focused on post-compromise phases of the adversary lifecycle.\nConsider analyzing malware for features that may be associated with malware providers, such as compiler used, debugging artifacts, code similarities, or even group identifiers associated with specific MaaS offerings. Malware repositories can also be used to identify additional samples associated with the developers and the adversary utilizing their services. Identifying overlaps in malware use by different adversaries may indicate malware was obtained by the adversary rather than developed by them. In some cases, identifying overlapping characteristics in malware used by different adversaries may point to a shared quartermaster.(Citation: FireEyeSupplyChain)",
       "meta": {
         "external_id": "AN1977",
@@ -27488,6 +28501,28 @@
       },
       "uuid": "36cb5f92-996c-42f4-be7e-43c5e21eee2e",
       "value": "Analytic 1788 - AN1788"
+    },
+    {
+      "description": "Monitor ICS management protocols for functions that change an asset’s operating mode.\nMonitor device application logs which may contain information related to operating mode changes, although not all devices produce such logs.\nMonitor alarms for information about when an operating mode is changed, although not all devices produce such logs.",
+      "meta": {
+        "external_id": "AN1887",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0755#AN1887"
+        ]
+      },
+      "uuid": "78615cd7-6a14-4921-aaa9-2aae0774f0f1",
+      "value": "Analytic 1887 - AN1887"
+    },
+    {
+      "description": "Monitor for unexpected network share access, such as files transferred between shares within a network using protocols such as Server Message Block (SMB).\nMonitor for alike file hashes or characteristics (ex: filename) that are created on multiple hosts. \nMonitor for file creation in conjunction with other techniques (e.g., file transfers using [Remote Services](https://attack.mitre.org/techniques/T0886)).\nMonitor for unusual processes with internal network connections creating files on-system which may be suspicious. \nMonitor executed commands and arguments for abnormal usage of utilities and command-line arguments that may be used in support of remote transfer of files.\nMonitor newly constructed processes that assist in lateral tool transfers, such as file transfer programs.\nMonitor for network traffic originating from unknown/unexpected hosts. Local network traffic metadata (such as source MAC addressing) as well as usage of network management protocols such as DHCP may be helpful in identifying hardware.",
+      "meta": {
+        "external_id": "AN1878",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0745#AN1878"
+        ]
+      },
+      "uuid": "930aae7c-e8f0-4594-8e3f-f0e71d7e1640",
+      "value": "Analytic 1878 - AN1878"
     },
     {
       "description": "Much of this activity may have a very high occurrence and associated false positive rate, as well as potentially taking place outside the visibility of the target organization, making detection difficult for defenders.\n\nDetection efforts may be focused on related stages of the adversary lifecycle, such as during Initial Access.",
@@ -27546,6 +28581,28 @@
       "value": "Analytic 1798 - AN1798"
     },
     {
+      "description": "Various techniques enable spoofing a reporting message. Consider monitoring for [Rogue Master](https://attack.mitre.org/techniques/T0848) and [Adversary-in-the-Middle](https://attack.mitre.org/techniques/T0830) activity which may precede this technique.\nMonitor asset logs for alarms or other information the adversary is unable to directly suppress. Relevant alarms include those from a loss of communications due to [Adversary-in-the-Middle](https://attack.mitre.org/techniques/T0830) activity.\nVarious techniques enable spoofing a reporting message. Monitor for LLMNR/NBT-NS poisoning via new services/daemons which may be used to enable this technique. For added context on adversary procedures and background see [Name Resolution Poisoning and SMB Relay](https://attack.mitre.org/techniques/T1557/001).\nSpoofed reporting messages may be detected by reviewing the content of automation protocols, either through detecting based on expected values or comparing to other out of band process data sources. Spoofed messages may not precisely match legitimate messages which may lead to malformed traffic, although traffic may be malformed for many benign reasons. Monitor reporting messages for changes in how they are constructed.\n\nVarious techniques enable spoofing a reporting message. Consider monitoring for [Rogue Master](https://attack.mitre.org/techniques/T0848) and [Adversary-in-the-Middle](https://attack.mitre.org/techniques/T0830) activity.",
+      "meta": {
+        "external_id": "AN1879",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0746#AN1879"
+        ]
+      },
+      "uuid": "32bfb2ab-2ad1-4c00-8428-96bc626c34f3",
+      "value": "Analytic 1879 - AN1879"
+    },
+    {
+      "description": "Monitor for changes made to files that may stop or disable services on a system to render those services unavailable to legitimate users.\nMonitor executed commands and arguments that may stop or disable services on a system to render those services unavailable to legitimate users.\nRemote access tools with built-in features may interact directly with the Windows API to perform these functions outside of typical system utilities. For example, ChangeServiceConfigW may be used by an adversary to prevent services from starting. For added context on adversary procedures and background see [Service Stop](https://attack.mitre.org/techniques/T1489).\nMonitor processes and command-line arguments to see if critical processes are terminated or stop running. For added context on adversary procedures and background see [Service Stop](https://attack.mitre.org/techniques/T1489).\nAlterations to the service binary path or the service startup type changed to disabled may be suspicious.\nMonitor for changes made to Windows registry keys and/or values that may stop or disable services on a system to render those services unavailable to legitimate users.\nMonitor for newly executed processes that may stop or disable services on a system to render those services unavailable to legitimate users.",
+      "meta": {
+        "external_id": "AN1897",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0765#AN1897"
+        ]
+      },
+      "uuid": "6b3b3e92-bef7-4977-9895-29036bab29f1",
+      "value": "Analytic 1897 - AN1897"
+    },
+    {
       "description": "Much of this activity may have a very high occurrence and associated false positive rate, as well as potentially taking place outside the visibility of the target organization, making detection difficult for defenders.\n\nDetection efforts may be focused on related stages of the adversary lifecycle, such as during Initial Access.",
       "meta": {
         "external_id": "AN1979",
@@ -27590,6 +28647,17 @@
       "value": "Analytic 1799 - AN1799"
     },
     {
+      "description": "Monitor network traffic for default credential use in protocols that allow unencrypted authentication.\nMonitor logon sessions for default credential use.",
+      "meta": {
+        "external_id": "AN1888",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0756#AN1888"
+        ]
+      },
+      "uuid": "f12aa823-91cc-40e1-93b7-eaa5f5fa9c4d",
+      "value": "Analytic 1888 - AN1888"
+    },
+    {
       "description": "Much of this activity may have a very high occurrence and associated false positive rate, as well as potentially taking place outside the visibility of the target organization, making detection difficult for defenders.\n\nDetection efforts may be focused on related stages of the adversary lifecycle, such as during Initial Access.",
       "meta": {
         "external_id": "AN1988",
@@ -27602,6 +28670,28 @@
       },
       "uuid": "c752faa1-9cc2-421a-b646-0efe4da990c9",
       "value": "Analytic 1988 - AN1988"
+    },
+    {
+      "description": "Monitor for unexpected changes to project files, although if the malicious modification occurs in tandem with legitimate changes it will be difficult to isolate the unintended changes by analyzing only file systems modifications.",
+      "meta": {
+        "external_id": "AN1898",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0766#AN1898"
+        ]
+      },
+      "uuid": "6e046c4c-6c93-4fdf-a69e-5d81b52d1e9c",
+      "value": "Analytic 1898 - AN1898"
+    },
+    {
+      "description": "No standard detection method currently exists for this technique.",
+      "meta": {
+        "external_id": "AN1889",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0757#AN1889"
+        ]
+      },
+      "uuid": "89ca8617-20fd-404b-9afb-dcfd2684a791",
+      "value": "Analytic 1889 - AN1889"
     },
     {
       "description": "Much of this activity may have a very high occurrence and associated false positive rate, as well as potentially taking place outside the visibility of the target organization, making detection difficult for defenders.\n\nDetection efforts may be focused on related stages of the adversary lifecycle, such as during Initial Access.",
@@ -27632,6 +28722,17 @@
       "value": "Analytic 1998 - AN1998"
     },
     {
+      "description": "Detecting software exploitation may be difficult depending on the tools available. Software exploits may not always succeed or may cause the exploited process to become unstable or crash, which may be recorded in the application log.\nUse deep packet inspection to look for artifacts of common exploit traffic, such as known payloads.",
+      "meta": {
+        "external_id": "AN1899",
+        "refs": [
+          "https://attack.mitre.org/detectionstrategies/DET0767#AN1899"
+        ]
+      },
+      "uuid": "3e456d4d-397d-4e04-9261-9399960c9633",
+      "value": "Analytic 1899 - AN1899"
+    },
+    {
       "description": "Monitor and analyze traffic patterns and packet inspection associated to protocol(s) that do not follow the expected protocol standards and traffic flows (e.g extraneous packets that do not belong to established flows, gratuitous or anomalous traffic patterns, anomalous syntax, or structure). Consider correlation with process monitoring and command line to detect anomalous processes execution and command line arguments associated to traffic patterns (e.g. monitor anomalies in use of files that do not normally initiate connections for respective protocol(s)).\nMonitor network data for uncommon data flows. Processes utilizing the network that do not normally have network communication or have never been seen before are suspicious.",
       "meta": {
         "external_id": "AN1999",
@@ -27646,5 +28747,5 @@
       "value": "Analytic 1999 - AN1999"
     }
   ],
-  "version": 5
+  "version": 6
 }
