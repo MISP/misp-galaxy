@@ -8113,7 +8113,8 @@
           "https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RW1aFyW",
           "https://jsac.jpcert.or.jp/archive/2023/pdf/JSAC2023_2_LT4.pdf",
           "https://thecyberwire.com/podcasts/microsoft-threat-intelligence/4/notes",
-          "https://cloud.google.com/blog/topics/threat-intelligence/updated-cyber-threat-actor-naming-system/"
+          "https://cloud.google.com/blog/topics/threat-intelligence/updated-cyber-threat-actor-naming-system/",
+          "https://www.ibm.com/think/x-force/trapping-a-mustang-panda"
         ],
         "synonyms": [
           "BRONZE PRESIDENT",
@@ -8128,7 +8129,11 @@
           "Polaris",
           "TANTALUM",
           "Twill Typhoon",
-          "BASIN CASTLE"
+          "BASIN CASTLE",
+          "ITG27",
+          "Hive0154",
+          "Mustang Panda",
+          "UNK_SteadySplit"
         ]
       },
       "related": [
@@ -24182,6 +24187,51 @@
       },
       "uuid": "33420fce-ac3e-4164-a1f5-ccc3d43657c2",
       "value": "SilkParasite"
+    },
+    {
+      "description": "Exilware is a Brazilian threat actor operating the \"Infect Marketplace,\" which commercializes access to compromised systems using the BraZetsu malware framework. BraZetsu employs a modular architecture and AI-driven reconnaissance to optimize target value across various sectors, including banking and government systems. The actor maintains a controlled operational model, requiring customers to spend quickly to limit exposure and risk. Exilware's activities reflect a sophisticated Initial Access Broker operation, transforming compromised systems into commercial assets through automated intelligence gathering.",
+      "meta": {
+        "country": "BR",
+        "refs": [
+          "https://www.group-ib.com/blog/brazetsu-ai-enhanced-iab-marketplace/"
+        ]
+      },
+      "uuid": "67d76ea9-758b-442d-8dd8-f64f6353adeb",
+      "value": "Exilware"
+    },
+    {
+      "description": "QTFY is a state-sponsored group from the People's Republic of China, operating as an infrastructure quartermaster that provides reconnaissance, access, and obfuscation services to various state customers, including the MSS and PLA. It developed QScan and QTRouter, leveraging high-tier commercial proxy services like fastlink.ws to obscure its traffic. QTFY personnel, including former PLA members, engage in exploit brokering and operate within a supply chain rather than merely deploying malware. The group has been linked to specific domains and infrastructure, with evidence of TLS certificate collection as part of its operational tactics.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://zerotracelab.com/blog/qtfy-hunt-internet-sensor"
+        ]
+      },
+      "uuid": "1ac591bf-cd86-4520-a82a-dde2245c85d3",
+      "value": "QTFY"
+    },
+    {
+      "description": "BREEZE COMET is a financially motivated threat actor targeting Brazilian financial services, retail, and eCommerce organizations through compromised websites, custom malware, and stolen credentials to manipulate payment systems and execute fraudulent transfers. The group employs custom tools such as REALBREEZE, COBALTSPIN, KICKPLATE, MILDFROST, LIGHTPAINT, and BOATBEAM for reconnaissance, lateral movement, persistence, tunneling, and stealth. Forensic evidence indicates that BREEZE COMET has executed waves of fraudulent transactions within 24-48 hours of compromise, likely stealing tens of thousands of USD in assets. The actor has also leveraged generative AI to enhance malware and script development while expanding its infrastructure across Latin America and Africa.",
+      "meta": {
+        "refs": [
+          "https://www.hendryadrian.com/financially-motivated-threat-actor-breeze-comet-targets-brazil/"
+        ],
+        "synonyms": [
+          "UNC5669"
+        ]
+      },
+      "uuid": "6b5b68ef-b290-43df-a42b-293e849854c0",
+      "value": "BREEZE COMET"
+    },
+    {
+      "description": "TheHatman is a highly organized threat actor known for systematically listing and selling internal employee directories stolen from major corporations, including nine Fortune 500 enterprises across various sectors. The actor claims to have obtained the data through compromised credentials, though the initial entry point remains under investigation. The volume of data suggests that after gaining access, TheHatman employed automated scripts, likely utilizing PowerShell modules or Python libraries, to extract the directories in bulk.",
+      "meta": {
+        "refs": [
+          "https://thecybersecguru.com/news/azure-data-exfiltration-thehatman-campaign/"
+        ]
+      },
+      "uuid": "ff6da609-9651-445d-b448-0ce9c372faec",
+      "value": "TheHatman"
     }
   ],
   "version": 350
