@@ -483,6 +483,68 @@
       "value": "Custom Command and Control Protocol Mitigation - T1094"
     },
     {
+      "description": "Remove or deny access to unnecessary and potentially vulnerable software to prevent abuse by adversaries.",
+      "meta": {
+        "external_id": "M0942",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0942"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "24a9253e-8948-4c98-b751-8e2aee53127c",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "25dfc8ad-bd73-4dfd-84a9-3c3d383f76e9",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "2dc2b567-8821-49f9-9045-8740f3d0b958",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "85a45294-08f1-4539-bf00-7da08aa7b0ee",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "8d2f3bab-507c-4424-b58b-edc977bd215c",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "9a505987-ab05-4f46-a9a6-6441442eec3b",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "c267bbee-bb59-47fe-85e0-3ed210337c21",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "e6c31185-8040-4267-83d3-b217b8a92f07",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "d0909119-2f71-4923-87db-b649881672d7",
+      "value": "Disable or Remove Feature or Program - M0942"
+    },
+    {
+      "description": "Prevent access to file shares, remote access to systems, unnecessary services. Mechanisms to limit access may include use of network concentrators, RDP gateways, etc.",
+      "meta": {
+        "external_id": "M0935",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0935"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "8d2f3bab-507c-4424-b58b-edc977bd215c",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "49b306c1-a046-42c5-a4d2-30f264ada110",
+      "value": "Limit Access to Resource Over Network - M0935"
+    },
+    {
       "description": "This type of attack technique cannot be easily mitigated with preventive controls since it is based on the abuse of operating system design features. For example, mitigating all IFEO will likely have unintended side effects, such as preventing legitimate software (i.e., security products) from operating properly. (Citation: Microsoft IFEOorMalware July 2015) Efforts should be focused on preventing adversary tools from running earlier in the chain of activity and on identifying subsequent malicious behavior.\n\nIdentify and block potentially malicious software that may be executed through IFEO by using whitelisting (Citation: Beechey 2010) tools, like AppLocker, (Citation: Windows Commands JPCERT) (Citation: NSA MS AppLocker) that are capable of auditing and/or blocking unknown executables.",
       "meta": {
         "external_id": "T1183",
@@ -1045,6 +1107,107 @@
       "value": "Communication Through Removable Media Mitigation - T1092"
     },
     {
+      "description": "Require the authentication of devices and software processes where appropriate. Devices that connect remotely to other systems should require strong authentication to prevent spoofing of communications. Furthermore, software processes should also require authentication when accessing APIs.",
+      "meta": {
+        "external_id": "M0813",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0813"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "19a71d1e-6334-4233-8260-b749cae37953",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "25852363-5968-4673-b81d-341d5ed90bd1",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "25dfc8ad-bd73-4dfd-84a9-3c3d383f76e9",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "2877063e-1851-48d2-bcc6-bc1d2733157e",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "2883c520-7957-46ca-89bd-dab1ad53b601",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "2aa406ed-81c3-4c1d-ba83-cfbee5a2847a",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "3067b85e-271e-4bc5-81ad-ab1a81d411e3",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "4344d1b8-968b-4697-9ab9-f9abe5f52265",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "527106b3-95a2-4ed2-bf89-db7f0e4d0da0",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "574d5bfb-9a7a-4b28-ab5c-743ac704c135",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "68a9324d-a524-4766-a899-a026f68a33df",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "75587e49-ab7e-44df-9549-faeb1da57f39",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "77015a55-eef8-4f71-a071-b152f82ec1ef",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "7b4c0e19-a9b0-4a74-a196-b38c07b79f20",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "8e7089d3-fba2-44f8-94a8-9a79c53920c4",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "9a505987-ab05-4f46-a9a6-6441442eec3b",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "b14395bd-5419-4ef4-9bd8-696936f509bb",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "be69c571-d746-4b1f-bdd0-c0c9817e9068",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "d85a6ee9-820c-4adf-8a64-2392ee70c83c",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "e17cdc00-8b58-4e5f-9d50-4cad1592c4c3",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "e1f9cdd2-9511-4fca-90d7-f3e92cfdd0bf",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "e5de767e-f513-41cd-aa15-33f6ce5fbf92",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "72e46e53-e12d-4106-9c70-33241b6ed549",
+      "value": "Software Process and Device Authentication - M0813"
+    },
+    {
       "description": "File system activity is a common part of an operating system, so it is unlikely that mitigation would be appropriate for this technique. It may still be beneficial to identify and block unnecessary system utilities or potentially malicious software by using whitelisting (Citation: Beechey 2010) tools, like AppLocker, (Citation: Windows Commands JPCERT) (Citation: NSA MS AppLocker) or Software Restriction Policies (Citation: Corio 2008) where appropriate. (Citation: TechNet Applocker vs SRP)",
       "meta": {
         "external_id": "T1083",
@@ -1161,6 +1324,43 @@
       "value": "Exploitation for Privilege Escalation Mitigation - T1068"
     },
     {
+      "description": "This type of attack technique cannot be easily mitigated with preventative controls since it is based on the abuse of system features.",
+      "meta": {
+        "external_id": "M0816",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0816"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "2d0d40ad-22fa-4cc8-b264-072557e1364b",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "36e9f5bc-ac13-4da4-a2f4-01f4877d9004",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "53a48c74-0025-45f4-b04a-baa853df8204",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "b0628bfc-5376-4a38-9182-f324501cb4cf",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "c5e3cdbc-0387-4be9-8f83-ff5c0865f377",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "ea0c980c-5cf0-43a7-a049-59c4c207566e",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "469b78dd-a54d-4f7c-8c3b-4a1dd916b433",
+      "value": "Mitigation Limited or Not Effective - M0816"
+    },
+    {
       "description": "Remove users from the local administrator group on systems. Although UAC bypass techniques exist, it is still prudent to use the highest enforcement level for UAC when possible and mitigate bypass opportunities that exist with techniques such as [DLL Search Order Hijacking](https://attack.mitre.org/techniques/T1038). \n\nCheck for common UAC bypass weaknesses on Windows systems to be aware of the risk posture and address issues where appropriate. (Citation: Github UACMe)",
       "meta": {
         "external_id": "T1088",
@@ -1172,6 +1372,55 @@
       "related": [],
       "uuid": "beb45abb-11e8-4aef-9778-1f9ac249784f",
       "value": "Bypass User Account Control Mitigation - T1088"
+    },
+    {
+      "description": "Restrict access by setting directory and file permissions that are not specific to users or privileged accounts.",
+      "meta": {
+        "external_id": "M0922",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0922"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "063b5b92-5361-481a-9c3f-95492ed9a2d8",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "3405891b-16aa-4bd7-bd7c-733501f9b20f",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "354ca909-b54d-4c41-b597-9c296b344a43",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "493832d9-cea6-4b63-abe7-9a65a6473675",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "53a26eee-1080-4d17-9762-2027d5a1b805",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "b7e13ee8-182c-4f19-92a4-a88d7d855d54",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "ba203963-3182-41ac-af14-7e7ebc83cd61",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "e72425f8-9ae6-41d3-bfdb-e1b865e60722",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "fa3aa267-da22-4bdd-961f-03223322a8d5",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "f9fcb3ec-6de0-4559-8cd9-ef1c0c7d1971",
+      "value": "Restrict File and Directory Permissions - M0922"
     },
     {
       "description": "Update software regularly by employing patch management for internal enterprise endpoints and servers. Develop a robust cyber threat intelligence capability to determine what types and levels of threat may use software exploits and 0-days against a particular organization. Make it difficult for adversaries to advance their operation through exploitation of undiscovered or unpatched vulnerabilities by using sandboxing, if available. Other types of virtualization and application microsegmentation may also mitigate the impact of some types of exploitation. The risks of additional exploits and weaknesses in implementation may still exist. (Citation: Ars Technica Pwn2Own 2017 VM Escape)\n\nSecurity applications that look for behavior used during exploitation such as Windows Defender Exploit Guard (WDEG) and the Enhanced Mitigation Experience Toolkit (EMET) can be used to mitigate some exploitation behavior. (Citation: TechNet Moving Beyond EMET) Control flow integrity checking is another way to potentially identify and stop a software exploit from occurring. (Citation: Wikipedia Control Flow Integrity) Many of these protections depend on the architecture and target application binary for compatibility and may not work for software targeted for defense evasion.",
@@ -1902,6 +2151,29 @@
       "value": "Taint Shared Content Mitigation - T1080"
     },
     {
+      "description": "Wireless signals frequently propagate outside of organizational boundaries, which provide opportunities for adversaries to monitor or gain unauthorized access to the wireless network. (Citation: CISA March 2010) To minimize this threat, organizations should implement measures to detect, understand, and reduce unnecessary RF propagation. (Citation: DHS  National Urban Security Technology Laboratory April 2019)",
+      "meta": {
+        "external_id": "M0806",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0806",
+          "https://us-cert.cisa.gov/ncas/tips/ST05-003",
+          "https://www.dhs.gov/sites/default/files/saver-msr-rf-detection_cod-508_10july2019.pdf"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "0fe075d5-beac-4d02-b93e-0f874997db72",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "2877063e-1851-48d2-bcc6-bc1d2733157e",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "fce6866f-9a87-4d3e-a73c-f02d8937fe0e",
+      "value": "Minimize Wireless Signal Propagation - M0806"
+    },
+    {
       "description": "Windows 8.1, Windows Server 2012 R2, and later versions may make LSA run as a Protected Process Light (PPL) by setting the Registry key <code>HKLM\\SYSTEM\\CurrentControlSet\\Control\\Lsa\\RunAsPPL</code>, which requires all SSP DLLs to be signed by Microsoft. (Citation: Graeber 2014) (Citation: Microsoft Configure LSA)",
       "meta": {
         "external_id": "T1101",
@@ -2393,6 +2665,43 @@
       "value": "Disabling Security Tools Mitigation - T1089"
     },
     {
+      "description": "Restrict the execution of code to a virtual environment on or in-transit to an endpoint system.",
+      "meta": {
+        "external_id": "M0948",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0948"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "2dc2b567-8821-49f9-9045-8740f3d0b958",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "32632a95-6856-47b9-9ab7-fea5cd7dce00",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "7830cfcf-b268-4ac0-a69e-73c6affbae9a",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "85a45294-08f1-4539-bf00-7da08aa7b0ee",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "9f947a1c-3860-48a8-8af0-a2dfa3efde03",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "cfe68e93-ce94-4c0f-a57d-3aa72cedd618",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "059ba11e-e3dc-49aa-84ca-88197f40d4ea",
+      "value": "Application Isolation and Sandboxing - M0948"
+    },
+    {
       "description": "Prevent files from having a trailing space after the extension.",
       "meta": {
         "external_id": "T1151",
@@ -2760,6 +3069,85 @@
       "value": "Out-of-Band Communications Channel - M1060"
     },
     {
+      "description": "Have alternative methods to support communication requirements during communication failures and data integrity attacks. (Citation: National Institute of Standards and Technology April 2013) (Citation: Defense Advanced Research Projects Agency)",
+      "meta": {
+        "external_id": "M0810",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0810",
+          "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf",
+          "https://www.darpa.mil/program/rapid-attack-detection-isolation-and-characterization-systems"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "138979ba-0430-4de6-a128-2fc0b056ba36",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "15ca2a99-2d3e-457f-b1d7-c52a1d5849c9",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "1af9e3fd-2bcc-414d-adbd-fe3b95c02ca1",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "2900bbd8-308a-4274-b074-5b8bde8347bc",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "338f4364-2269-4f70-9079-b20384b16628",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "4c2e1408-9d68-4187-8e6b-a77bc52700ec",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "55e7e5c1-3760-4451-bae0-e79b29f452c5",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "56ddc820-6cfb-407f-850b-52c035d123ac",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "6008c1f0-1b68-4614-8f5b-a547436b8855",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "71f2d49e-65dd-4fb6-a4cc-0d2b19d427fa",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "7866bb5f-98ee-45c2-984c-8a328c5176b2",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "9a505987-ab05-4f46-a9a6-6441442eec3b",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "a81696ef-c106-482c-8f80-59c30f2569fb",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "b5b9bacb-97f2-4249-b804-47fd44de1f95",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "e33c7ecc-5a38-497f-beb2-a9a2049a4c20",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "fbb67c2d-37c3-49ee-86e3-bf234cc48ca9",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "b11cad63-ef30-4eb8-af0d-6cc46eef3f3e",
+      "value": "Out-of-Band Communications Channel - M0810"
+    },
+    {
       "description": "Disable LLMNR and NetBIOS in local computer security settings or by group policy if they are not needed within an environment. (Citation: ADSecurity Windows Secure Baseline)\n\nUse host-based security software to block LLMNR/NetBIOS traffic. Enabling SMB Signing can stop NTLMv2 relay attacks.(Citation: byt3bl33d3r NTLM Relaying)(Citation: Secure Ideas SMB Relay)(Citation: Microsoft SMB Packet Signing)",
       "meta": {
         "external_id": "T1171",
@@ -2936,6 +3324,31 @@
       "related": [],
       "uuid": "160af6af-e733-4b6a-a04a-71c620ac0930",
       "value": "Third-party Software Mitigation - T1072"
+    },
+    {
+      "description": "Restrict use of certain websites, block downloads/attachments, block Javascript, restrict browser extensions, etc.",
+      "meta": {
+        "external_id": "M0921",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0921"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "2736b752-4ec5-4421-a230-8977dea7649c",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "648f995e-9c3a-41e4-aeee-98bb41037426",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "7830cfcf-b268-4ac0-a69e-73c6affbae9a",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "143b4398-3222-480a-b6a4-e131bc2d3144",
+      "value": "Restrict Web-Based Content - M0921"
     },
     {
       "description": "Update software regularly. Install software in write-protected locations. Use the program sxstrace.exe that is included with Windows along with manual inspection to check manifest files for side-loading vulnerabilities in software.",
@@ -3230,6 +3643,196 @@
       ],
       "uuid": "8220b57e-c400-4525-bf69-f8edc6b389a8",
       "value": "Encrypt Network Traffic - M1009"
+    },
+    {
+      "description": "Data Loss Prevention (DLP) technologies can be used to help identify adversarial attempts to exfiltrate operational information, such as engineering plans, trade secrets, recipes, intellectual property, or process telemetry. DLP functionality may be built into other security products such as firewalls or standalone suites running on the network and host-based agents. DLP may be configured to prevent the transfer of information through corporate resources such as email, web, and physical media such as USB for host-based solutions.",
+      "meta": {
+        "external_id": "M0803",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0803"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "b7e13ee8-182c-4f19-92a4-a88d7d855d54",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "fa3aa267-da22-4bdd-961f-03223322a8d5",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "337c4e2a-21a7-4d9a-bfee-9efd6cebf0e5",
+      "value": "Data Loss Prevention - M0803"
+    },
+    {
+      "description": "Require user authentication before allowing access to data or accepting commands to a device. While strong multi-factor authentication is preferable, it is not always feasible within ICS environments. Performing strong user authentication also requires additional security controls and processes which are often the target of related adversarial techniques (e.g., Valid Accounts, Default Credentials). Therefore, associated ATT&CK mitigations should be considered in addition to this, including [Multi-factor Authentication](https://attack.mitre.org/mitigations/M0932), [Account Use Policies](https://attack.mitre.org/mitigations/M0936), [Password Policies](https://attack.mitre.org/mitigations/M0927), [User Account Management](https://attack.mitre.org/mitigations/M0918), [Privileged Account Management](https://attack.mitre.org/mitigations/M0926), and [User Account Control](https://attack.mitre.org/mitigations/M1052).",
+      "meta": {
+        "external_id": "M0804",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0804"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "097924ce-a9a9-4039-8591-e0deedfb8722",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "09a61657-46e1-439e-b3ed-3e4556a78243",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "19a71d1e-6334-4233-8260-b749cae37953",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "25852363-5968-4673-b81d-341d5ed90bd1",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "25dfc8ad-bd73-4dfd-84a9-3c3d383f76e9",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "2883c520-7957-46ca-89bd-dab1ad53b601",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "2aa406ed-81c3-4c1d-ba83-cfbee5a2847a",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "3067b85e-271e-4bc5-81ad-ab1a81d411e3",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "574d5bfb-9a7a-4b28-ab5c-743ac704c135",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "5a2610f6-9fff-41e1-bc27-575ca20383d4",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "68a9324d-a524-4766-a899-a026f68a33df",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "75587e49-ab7e-44df-9549-faeb1da57f39",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "77015a55-eef8-4f71-a071-b152f82ec1ef",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "7b4c0e19-a9b0-4a74-a196-b38c07b79f20",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "be69c571-d746-4b1f-bdd0-c0c9817e9068",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "d85a6ee9-820c-4adf-8a64-2392ee70c83c",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "e1f9cdd2-9511-4fca-90d7-f3e92cfdd0bf",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "e5de767e-f513-41cd-aa15-33f6ce5fbf92",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "e6c31185-8040-4267-83d3-b217b8a92f07",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "fc5fda7e-6b2c-4457-b036-759896a2efa2",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "66cfe23e-34b6-4583-b178-ed6a412db2b0",
+      "value": "Human User Authentication - M0804"
+    },
+    {
+      "description": "Utilize a layered protection design based on physical or mechanical protection systems to prevent damage to property, equipment, human safety, or the environment. Examples include interlocks, rupture disk, release values, etc. (Citation: A G Foord, W G Gulland, C R Howard, T Kellacher, W H Smith 2004) ",
+      "meta": {
+        "external_id": "M0805",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0805",
+          "https://www.icheme.org/media/9906/xviii-paper-23.pdf"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "5fa00fdd-4a55-4191-94a0-564181d7fec2",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "83ebd22f-b401-4d59-8219-2294172cf916",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "8bc4a54e-810c-4600-8b6c-08fa8413a401",
+      "value": "Mechanical Protection Layers - M0805"
+    },
+    {
+      "description": "Utilize strong cryptographic techniques and protocols to prevent eavesdropping on network communications.",
+      "meta": {
+        "external_id": "M0808",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0808"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "0fe075d5-beac-4d02-b93e-0f874997db72",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "2877063e-1851-48d2-bcc6-bc1d2733157e",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "38213338-1aab-479d-949b-c81b66ccca5c",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "68a9324d-a524-4766-a899-a026f68a33df",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "75587e49-ab7e-44df-9549-faeb1da57f39",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "7b4c0e19-a9b0-4a74-a196-b38c07b79f20",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "7f153c28-e5f1-4764-88fb-eea1d9b0ad4a",
+      "value": "Encrypt Network Traffic - M0808"
+    },
+    {
+      "description": "Deploy mechanisms to protect the confidentiality of information related to operational processes, facility locations, device configurations, programs, or databases that may have information that can be used to infer organizational trade-secrets, recipes, and other intellectual property (IP).",
+      "meta": {
+        "external_id": "M0809",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0809"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "b7e13ee8-182c-4f19-92a4-a88d7d855d54",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "99c746d7-a08a-4169-94f9-b8c0dad716fa",
+      "value": "Operational Information Confidentiality - M0809"
     },
     {
       "description": "Set account lockout policies after a certain number of failed login attempts to prevent passwords from being guessed. \nToo strict a policy can create a denial of service condition and render environments un-usable, with all accounts being locked-out permanently. Use multifactor authentication. Follow best practices for mitigating access to [Valid Accounts](https://attack.mitre.org/techniques/T1078)\n\nRefer to NIST guidelines when creating passwords.(Citation: NIST 800-63-3)\n\nWhere possible, also enable multi factor authentication on external facing services.",
@@ -4472,6 +5075,43 @@
       "value": "Redundant Access Mitigation - T1108"
     },
     {
+      "description": "Redundancy could be provided for both critical ICS devices and services, such as back-up devices or hot-standbys.",
+      "meta": {
+        "external_id": "M0811",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0811"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "138979ba-0430-4de6-a128-2fc0b056ba36",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "56ddc820-6cfb-407f-850b-52c035d123ac",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "a81696ef-c106-482c-8f80-59c30f2569fb",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "b5b9bacb-97f2-4249-b804-47fd44de1f95",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "e33c7ecc-5a38-497f-beb2-a9a2049a4c20",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "fab8fc7d-f27f-4fbb-9de6-44740aade05f",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "f0f5c87a-a58d-440a-b3b5-ca679d98c6dd",
+      "value": "Redundancy of Service - M0811"
+    },
+    {
       "description": "Prevent adversary access to privileged accounts or access necessary to perform this technique.\n\nConsider removing and replacing system components suspected of being compromised.",
       "meta": {
         "external_id": "T1109",
@@ -5419,6 +6059,28 @@
       "value": "Operating System Configuration - M1028"
     },
     {
+      "description": "Utilize Safety Instrumented Systems (SIS) to provide an additional layer of protection to hazard scenarios that may cause property damage. A SIS will typically include sensors, logic solvers, and a final control element that can be used to automatically respond to an hazardous condition  (Citation: A G Foord, W G Gulland, C R Howard, T Kellacher, W H Smith 2004) . Ensure that all SISs are segmented from operational networks to prevent them from being targeted by additional adversarial behavior.",
+      "meta": {
+        "external_id": "M0812",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0812",
+          "https://www.icheme.org/media/9906/xviii-paper-23.pdf"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "5fa00fdd-4a55-4191-94a0-564181d7fec2",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "83ebd22f-b401-4d59-8219-2294172cf916",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "da44255d-85c5-492c-baf3-ee823d44f848",
+      "value": "Safety Instrumented Systems - M0812"
+    },
+    {
       "description": "Remote Data Storage focuses on moving critical data, such as security logs and sensitive files, to secure, off-host locations to minimize unauthorized access, tampering, or destruction by adversaries. By leveraging remote storage solutions, organizations enhance the protection of forensic evidence, sensitive information, and monitoring data. This mitigation can be implemented through the following measures:\n\nCentralized Log Management:\n\n- Configure endpoints to forward security logs to a centralized log collector or SIEM.\n- Use tools like Splunk Graylog, or Security Onion to aggregate and store logs.\n- Example command (Linux): `sudo auditd | tee /var/log/audit/audit.log | nc <remote-log-server> 514`\n\nRemote File Storage Solutions:\n\n- Utilize cloud storage solutions like AWS S3, Google Cloud Storage, or Azure Blob Storage for sensitive data.\n- Ensure proper encryption at rest and access control policies (IAM roles, ACLs).\n\nIntrusion Detection Log Forwarding:\n\n- Forward logs from IDS/IPS systems (e.g., Zeek/Suricata) to a remote security information system.\n- Example for Suricata log forwarding:\n`outputs:\n  - type: syslog\n    protocol: tls\n    address: <remote-syslog-server>`\n\nImmutable Backup Configurations:\n\n- Enable immutable storage settings for backups to prevent adversaries from modifying or deleting data.\n- Example: AWS S3 Object Lock.\n\nData Encryption:\n\n- Ensure encryption for sensitive data using AES-256 at rest and TLS 1.2+ for data in transit.\nTools: OpenSSL, BitLocker, LUKS for Linux.",
       "meta": {
         "external_id": "M1029",
@@ -6017,6 +6679,23 @@
       "value": "Logon Scripts Mitigation - T1037"
     },
     {
+      "description": "This mitigation describes any guidance or training given to developers of applications to avoid introducing security weaknesses that an adversary may be able to take advantage of.",
+      "meta": {
+        "external_id": "M0913",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0913"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "cd2c76a4-5e23-4ca5-9c40-d5e0604f7101",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "8a3aadd0-b5f4-433a-800e-4893e4196bb7",
+      "value": "Application Developer Guidance - M0913"
+    },
+    {
       "description": "Restrict the modification of environment variables to authorized users and processes by enforcing strict permissions and policies. This ensures the integrity of environment variables, preventing adversaries from abusing or altering them for malicious purposes. This mitigation can be implemented through the following measures:\n\nRestrict Write Access:\n\n- Use Case: Set file system-level permissions to restrict access to environment variable configuration files (e.g., `.bashrc`, `.bash_profile`, `.zshrc`, `systemd` service files).\n- Implementation: Configure `/etc/environment` or `/etc/profile` on Linux systems to only allow root or administrators to modify the file.\n\nSecure Access Controls:\n\n- Use Case: Limit access to environment variable settings in application deployment tools or CI/CD pipelines to authorized personnel.\n- Implementation: Use role-based access control (RBAC) in tools like Jenkins or GitLab to ensure only specific users can modify environment variables.\n\nRestrict Process Scope:\n\n- Use Case: Configure policies to ensure environment variables are only accessible to the processes they are explicitly intended for.\n- Implementation: Use containerized environments like Docker to isolate environment variables to specific containers and ensure they are not inherited by other processes.\n\nAudit Environment Variable Changes:\n\n- Use Case: Enable logging for changes to critical environment variables.\n- Implementation: Use `auditd` on Linux to monitor changes to files like `/etc/environment` or application-specific environment files.",
       "meta": {
         "external_id": "M1039",
@@ -6053,6 +6732,51 @@
       "related": [],
       "uuid": "7c39ebbf-244e-4d1c-b0ac-b282453ece43",
       "value": "Process Hollowing Mitigation - T1093"
+    },
+    {
+      "description": "Use intrusion detection signatures to block traffic at network boundaries.  In industrial control environments, network intrusion prevention should be configured so it will not disrupt protocols and communications responsible for real-time functions related to control or safety.",
+      "meta": {
+        "external_id": "M0931",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0931"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "2736b752-4ec5-4421-a230-8977dea7649c",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "5d24bb1d-4487-4923-ae3a-8e679092ac7a",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "648f995e-9c3a-41e4-aeee-98bb41037426",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "9a505987-ab05-4f46-a9a6-6441442eec3b",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "d67adac8-e3b9-44f9-9e6d-6c2a7d69dbe4",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "e076cca8-2f08-45c9-aff7-ea5ac798b387",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "e6c31185-8040-4267-83d3-b217b8a92f07",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "ead7bd34-186e-4c79-9a4d-b65bcce6ed9d",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "3172222b-4983-43f7-8983-753ded4f13bc",
+      "value": "Network Intrusion Prevention - M0931"
     },
     {
       "description": "Restricting library loading involves implementing security controls to ensure that only trusted and verified libraries (DLLs, shared objects, etc.) are loaded into processes. Adversaries often abuse Dynamic-Link Library (DLL) Injection, DLL Search Order Hijacking, or LD_PRELOAD mechanisms to execute malicious code by forcing the operating system to load untrusted libraries. This mitigation can be implemented through the following measures: \n\nEnforce Safe Library Loading Practices:\n\n- Enable `SafeDLLSearchMode` on Windows.\n- Restrict `LD_PRELOAD` and `LD_LIBRARY_PATH` usage on Linux systems.\n\nCode Signing Enforcement:\n\n- Require digital signatures for all libraries loaded into processes.\n- Use tools like Signtool, and WDAC to enforce signed DLL execution.\n\nEnvironment Hardening:\n\n- Secure library paths and directories to prevent adversaries from placing rogue libraries.\n- Monitor user-writable directories and system configurations for unauthorized changes.\n\nAudit and Monitor Library Loading:\n\n- Enable `Sysmon` on Windows to monitor for suspicious library loads.\n- Use `auditd` on Linux to monitor shared library paths and configuration file changes.\n\nUse Application Control Solutions:\n\n- Implement AppLocker, WDAC, or SELinux to allow only trusted libraries.\n\n*Tools for Implementation*\n\nWindows-Specific Tools:\n\n- AppLocker: Application whitelisting for DLLs.\n- Windows Defender Application Control (WDAC): Restrict unauthorized library execution.\n- Signtool: Verify and enforce code signing.\n- Sysmon: Monitor DLL load events (Event ID 7).\n\nLinux-Specific Tools:\n\n- auditd: Monitor changes to library paths and critical files.\n- SELinux/AppArmor: Define policies to restrict library loading.\n- ldconfig and chattr: Secure LD configuration files and prevent unauthorized modifications.\n\nCross-Platform Solutions:\n\n- Wazuh or OSSEC: File integrity monitoring for library changes.\n- Tripwire: Detect and alert on unauthorized library modifications.",
@@ -6122,6 +6846,63 @@
       "value": "Data Staged Mitigation - T1074"
     },
     {
+      "description": "Configure hosts and devices to use static network configurations when possible, protocols that require dynamic discovery/addressing (e.g., ARP, DHCP, DNS) can be used to manipulate network message forwarding and enable various AiTM attacks. This mitigation may not always be usable due to limited device features or challenges introduced with different network configurations.",
+      "meta": {
+        "external_id": "M0814",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0814"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "15ca2a99-2d3e-457f-b1d7-c52a1d5849c9",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "2900bbd8-308a-4274-b074-5b8bde8347bc",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "2fedbe69-581f-447d-8a78-32ee7db939a9",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "338f4364-2269-4f70-9079-b20384b16628",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "38213338-1aab-479d-949b-c81b66ccca5c",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "5d24bb1d-4487-4923-ae3a-8e679092ac7a",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "64bbc1b2-101f-4322-af1d-0c9cc25cef91",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "7866bb5f-98ee-45c2-984c-8a328c5176b2",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "9a505987-ab05-4f46-a9a6-6441442eec3b",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "c55f0be5-044e-4577-8095-65b37680d28c",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "d5a69cfb-fc2a-46cb-99eb-74b236db5061",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "52c7a1a9-3a78-4528-a44f-cd7b0fa3541a",
+      "value": "Static Network Configuration - M0814"
+    },
+    {
       "description": "This technique likely should not be mitigated with preventative controls because it may protect unintended targets from being compromised. If targeted, efforts should be focused on preventing adversary tools from running earlier in the chain of activity and on identifying subsequent malicious behavior if compromised.",
       "meta": {
         "external_id": "T1480",
@@ -6132,6 +6913,55 @@
       "related": [],
       "uuid": "c61e2da1-f51f-424c-b152-dc930d4f2e70",
       "value": "Environmental Keying Mitigation - T1480"
+    },
+    {
+      "description": "Protect sensitive data-at-rest with strong encryption.",
+      "meta": {
+        "external_id": "M0941",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0941"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "3405891b-16aa-4bd7-bd7c-733501f9b20f",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "35392fb4-a31d-4c6a-b9f2-1c65b7f5e6b9",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "354ca909-b54d-4c41-b597-9c296b344a43",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "68a9324d-a524-4766-a899-a026f68a33df",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "75587e49-ab7e-44df-9549-faeb1da57f39",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "7b4c0e19-a9b0-4a74-a196-b38c07b79f20",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "b7e13ee8-182c-4f19-92a4-a88d7d855d54",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "e72425f8-9ae6-41d3-bfdb-e1b865e60722",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "fa3aa267-da22-4bdd-961f-03223322a8d5",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "9f99fcfd-772e-4e63-9d39-e45612e546dc",
+      "value": "Encrypt Sensitive Information - M0941"
     },
     {
       "description": "The Do Not Mitigate category highlights scenarios where attempting to mitigate a specific technique may inadvertently increase the organization's security risk or operational instability. This could happen due to the complexity of the system, the integration of critical processes, or the potential for introducing new vulnerabilities. Instead of direct mitigation, these situations may call for alternative strategies such as detection, monitoring, or response. The Do Not Mitigate category underscores the importance of assessing the trade-offs between mitigation efforts and overall system integrity. This mitigation can be implemented through the following measures:\n\nComplex Systems Where Mitigation is Risky:\n\n- Interpretation: In certain systems, direct mitigation could introduce new risks, especially if the system is highly interconnected or complex, such as in legacy industrial control systems (ICS). Patching or modifying these systems could result in unplanned downtime, disruptions, or even safety risks.\n- Use Case: In a power grid control system, attempting to patch or disable certain services related to device communications might disrupt critical operations, leading to unintended service outages.\n\nRisk of Reducing Security Coverage:\n\n- Interpretation: In some cases, mitigating a technique might reduce the visibility or effectiveness of other security controls, limiting an organization’s ability to detect broader attacks.\n- Use Case: Disabling script execution on a web server to mitigate potential PowerShell-based attacks could interfere with legitimate administrative operations that rely on scripting, while attackers may still find alternate ways to execute code.\n\nIntroduction of New Vulnerabilities:\n\n- Interpretation: In highly sensitive or tightly controlled environments, implementing certain mitigations might create vulnerabilities in other parts of the system. For instance, disabling default security mechanisms in an attempt to resolve compatibility issues may open the system to exploitation.\n- Use Case: Disabling certificate validation to resolve internal communication issues in a secure environment could lead to man-in-the-middle attacks, creating a greater vulnerability than the original problem.\n\nNegative Impact on Performance and Availability:\n\n- Interpretation: Mitigations that involve removing or restricting system functionalities can have unintended consequences for system performance and availability. Some mitigations, while effective at blocking certain attacks, may introduce performance bottlenecks or compromise essential operations.\n- Use Case: Implementing high levels of encryption to mitigate data theft might result in significant performance degradation in systems handling large volumes of real-time transactions.",
@@ -6238,6 +7068,23 @@
       "value": "Process Discovery Mitigation - T1057"
     },
     {
+      "description": "Configure Active Directory to prevent use of certain techniques; use security identifier (SID) Filtering, etc.",
+      "meta": {
+        "external_id": "M0915",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0915"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "cd2c76a4-5e23-4ca5-9c40-d5e0604f7101",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "2f0160b7-e982-49d7-9612-f19b810f1722",
+      "value": "Active Directory Configuration - M0915"
+    },
+    {
       "description": "This category is to associate techniques that mitigation might increase risk of compromise and therefore mitigation is not recommended.",
       "meta": {
         "external_id": "M1059",
@@ -6289,6 +7136,23 @@
       "value": "Valid Accounts Mitigation - T1078"
     },
     {
+      "description": "Implement a supply chain management program, including policies and procedures to ensure all devices and components originate from a trusted supplier and are tested to verify their integrity.",
+      "meta": {
+        "external_id": "M0817",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0817"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "5e0f75da-e108-4688-a6de-a4f07cc2cbe3",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "ac8f3492-7fbb-4a0a-b0b4-b75ec676136c",
+      "value": "Supply Chain Management - M0817"
+    },
+    {
       "description": "Network intrusion detection and prevention systems that use network signatures to identify traffic for specific adversary malware can be used to mitigate activity at the network level. Use of encryption protocols may make typical network-based C2 detection more difficult due to a reduced ability to signature the traffic. Prior knowledge of adversary C2 infrastructure may be useful for domain and IP address blocking, but will likely not be an effective long-term solution because adversaries can change infrastructure often. (Citation: University of Birmingham C2)",
       "meta": {
         "external_id": "T1079",
@@ -6300,6 +7164,314 @@
       "related": [],
       "uuid": "24478001-2eb3-4b06-a02e-96b3d61d27ec",
       "value": "Multilayer Encryption Mitigation - T1079"
+    },
+    {
+      "description": "Devices and programs designed to interact with control system parameters should validate the format and content of all user inputs and actions to ensure the values are within intended operational ranges. These values should be evaluated and further enforced through the program logic running on the field controller. If a problematic or invalid input is identified, the programs should either utilize a predetermined safe value or enter a known safe state, while also logging or alerting on the event.(Citation: PLCTop20 Mar 2023)",
+      "meta": {
+        "external_id": "M0818",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0818",
+          "https://plc-security.com/content/Top_20_Secure_PLC_Coding_Practices_V1.0.pdf"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "097924ce-a9a9-4039-8591-e0deedfb8722",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "4344d1b8-968b-4697-9ab9-f9abe5f52265",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "1cbcceef-3233-4062-aa86-ec91afe39517",
+      "value": "Validate Program Inputs - M0818"
+    },
+    {
+      "description": "Manage the creation, modification, use, and permissions associated to user accounts.",
+      "meta": {
+        "external_id": "M0918",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0918"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "063b5b92-5361-481a-9c3f-95492ed9a2d8",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "3405891b-16aa-4bd7-bd7c-733501f9b20f",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "8d2f3bab-507c-4424-b58b-edc977bd215c",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "cd2c76a4-5e23-4ca5-9c40-d5e0604f7101",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "e1f9cdd2-9511-4fca-90d7-f3e92cfdd0bf",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "e5de767e-f513-41cd-aa15-33f6ce5fbf92",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "e57ebc6d-785f-40c8-adb1-b5b5e09b3b48",
+      "value": "User Account Management - M0918"
+    },
+    {
+      "description": "A threat intelligence program helps an organization generate their own threat intelligence information and track trends to inform defensive priorities to mitigate risk.",
+      "meta": {
+        "external_id": "M0919",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0919"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "85a45294-08f1-4539-bf00-7da08aa7b0ee",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "9f947a1c-3860-48a8-8af0-a2dfa3efde03",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "cfe68e93-ce94-4c0f-a57d-3aa72cedd618",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "d48b79b2-076d-483e-949c-0d38aa347499",
+      "value": "Threat Intelligence Program - M0919"
+    },
+    {
+      "description": "Restrict the ability to modify certain hives or keys in the Windows Registry.",
+      "meta": {
+        "external_id": "M0924",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0924"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "063b5b92-5361-481a-9c3f-95492ed9a2d8",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "3222a807-521b-4a1a-aa13-f1cda45734b3",
+      "value": "Restrict Registry Permissions - M0924"
+    },
+    {
+      "description": "Manage the creation, modification, use, and permissions associated to privileged accounts, including SYSTEM and root.",
+      "meta": {
+        "external_id": "M0926",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0926"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "32632a95-6856-47b9-9ab7-fea5cd7dce00",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "3405891b-16aa-4bd7-bd7c-733501f9b20f",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "38213338-1aab-479d-949b-c81b66ccca5c",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "493832d9-cea6-4b63-abe7-9a65a6473675",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "85a45294-08f1-4539-bf00-7da08aa7b0ee",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "cd2c76a4-5e23-4ca5-9c40-d5e0604f7101",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "622fe4d4-0e8e-4d17-9c25-6c9cef1f15d5",
+      "value": "Privileged Account Management - M0926"
+    },
+    {
+      "description": "Make configuration changes related to the operating system or a common feature of the operating system that result in system hardening against techniques.",
+      "meta": {
+        "external_id": "M0928",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0928"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "77d9c726-b53e-481d-8bcc-1068aebfbb9d",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "c267bbee-bb59-47fe-85e0-3ed210337c21",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "9a945a29-5233-4422-a9e3-3e957b0e8bce",
+      "value": "Operating System Configuration - M0928"
+    },
+    {
+      "description": "Block users or groups from installing or using unapproved hardware on systems, including USB devices.",
+      "meta": {
+        "external_id": "M0934",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0934"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "c267bbee-bb59-47fe-85e0-3ed210337c21",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "9e3adcad-0b8f-4ecc-a2f3-06f607f53bf0",
+      "value": "Limit Hardware Installation - M0934"
+    },
+    {
+      "description": "Configure features related to account use like login attempt lockouts, specific login times, etc.",
+      "meta": {
+        "external_id": "M0936",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0936"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "8d2f3bab-507c-4424-b58b-edc977bd215c",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "cd2c76a4-5e23-4ca5-9c40-d5e0604f7101",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "86b455f2-fb63-4043-93a8-32a3a7703a02",
+      "value": "Account Use Policies - M0936"
+    },
+    {
+      "description": "Use network appliances to filter ingress or egress traffic and perform protocol-based filtering. Configure software on endpoints to filter network traffic.   Perform inline allow/denylisting of network messages based on the application layer (OSI Layer 7) protocol, especially for automation protocols. Application allowlists are beneficial when there are well-defined communication sequences, types, rates, or patterns needed during expected system operations. Application denylists may be needed if all acceptable communication sequences cannot be defined, but instead a set of known malicious uses can be denied (e.g., excessive communication  attempts, shutdown messages, invalid commands).  Devices performing these functions are often referred to as deep-packet inspection (DPI) firewalls, context-aware firewalls, or firewalls blocking specific automation/SCADA protocol aware firewalls. (Citation: Centre for the Protection of National Infrastructure February 2005)",
+      "meta": {
+        "external_id": "M0937",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0937",
+          "https://www.energy.gov/sites/prod/files/Good%20Practices%20Guide%20for%20Firewall%20Deployment.pdf"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "19a71d1e-6334-4233-8260-b749cae37953",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "25852363-5968-4673-b81d-341d5ed90bd1",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "25dfc8ad-bd73-4dfd-84a9-3c3d383f76e9",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "2aa406ed-81c3-4c1d-ba83-cfbee5a2847a",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "3067b85e-271e-4bc5-81ad-ab1a81d411e3",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "4344d1b8-968b-4697-9ab9-f9abe5f52265",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "527106b3-95a2-4ed2-bf89-db7f0e4d0da0",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "574d5bfb-9a7a-4b28-ab5c-743ac704c135",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "68a9324d-a524-4766-a899-a026f68a33df",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "75587e49-ab7e-44df-9549-faeb1da57f39",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "77015a55-eef8-4f71-a071-b152f82ec1ef",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "7b4c0e19-a9b0-4a74-a196-b38c07b79f20",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "8e7089d3-fba2-44f8-94a8-9a79c53920c4",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "b14395bd-5419-4ef4-9bd8-696936f509bb",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "be69c571-d746-4b1f-bdd0-c0c9817e9068",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "cd2c76a4-5e23-4ca5-9c40-d5e0604f7101",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "d67adac8-e3b9-44f9-9e6d-6c2a7d69dbe4",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "d85a6ee9-820c-4adf-8a64-2392ee70c83c",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "e17cdc00-8b58-4e5f-9d50-4cad1592c4c3",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "e1f9cdd2-9511-4fca-90d7-f3e92cfdd0bf",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "11f242bc-3121-438c-84b2-5cbd46a4bb17",
+      "value": "Filter Network Traffic - M0937"
+    },
+    {
+      "description": "Prevent abuse of library loading mechanisms in the operating system and software to load untrusted code by configuring appropriate library loading mechanisms and investigating potential vulnerable software.",
+      "meta": {
+        "external_id": "M0944",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0944"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "ab390887-afc0-4715-826d-b1b167d522ae",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "2ab9fc6d-3cf6-4d7b-85f1-3ad6949233b3",
+      "value": "Restrict Library Loading - M0944"
     },
     {
       "description": "Misconfiguration of permissions in the Registry may lead to opportunities for an adversary to execute code, like through [Service Registry Permissions Weakness](https://attack.mitre.org/techniques/T1058). Ensure proper permissions are set for Registry hives to prevent users from modifying keys for system components that may lead to privilege escalation.\n\nIdentify and block unnecessary system utilities or potentially malicious software that may be used to modify the Registry by using whitelisting (Citation: Beechey 2010) tools like AppLocker (Citation: Windows Commands JPCERT) (Citation: NSA MS AppLocker) or Software Restriction Policies (Citation: Corio 2008) where appropriate. (Citation: TechNet Applocker vs SRP)",
@@ -7063,6 +8235,31 @@
       "value": "Multi-factor Authentication - M1032"
     },
     {
+      "description": "Use two or more pieces of evidence to authenticate to a system; such as username and password in addition to a token from a physical smart card or token generator.  Within industrial control environments assets such as low-level controllers, workstations, and HMIs have real-time operational control and safety requirements which may restrict the use of multi-factor.",
+      "meta": {
+        "external_id": "M0932",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0932"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "38213338-1aab-479d-949b-c81b66ccca5c",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "8d2f3bab-507c-4424-b58b-edc977bd215c",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "cd2c76a4-5e23-4ca5-9c40-d5e0604f7101",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "ddf3e568-f065-49e2-9106-42029a28ddbd",
+      "value": "Multi-factor Authentication - M0932"
+    },
+    {
       "description": "Limit privileges of user accounts so only authorized users can edit the rc.common file.",
       "meta": {
         "external_id": "T1163",
@@ -7104,6 +8301,23 @@
       "value": "SSL/TLS Inspection - M1020"
     },
     {
+      "description": "Break and inspect SSL/TLS sessions to look at encrypted web traffic for adversary activity.",
+      "meta": {
+        "external_id": "M0920",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0920"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "d67adac8-e3b9-44f9-9e6d-6c2a7d69dbe4",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "6a02e38a-9629-40c0-8c7d-e98e3470315c",
+      "value": "SSL/TLS Inspection - M0920"
+    },
+    {
       "description": "Regsvcs and Regasm may not be necessary within a given environment. Block execution of Regsvcs.exe and Regasm.exe if they are not required for a given system or network to prevent potential misuse by adversaries.",
       "meta": {
         "external_id": "T1121",
@@ -7114,6 +8328,85 @@
       "related": [],
       "uuid": "a90da496-b460-47e8-92e7-cc36eb00bd9a",
       "value": "Regsvcs/Regasm Mitigation - T1121"
+    },
+    {
+      "description": "The device or system should restrict read, manipulate, or execute privileges to only authenticated users who require access based on approved security policies.  Role-based Access Control (RBAC) schemes can help reduce the overhead of assigning permissions to the large number of devices within an ICS. For example, IEC 62351 provides examples of roles used to support common system operations within the electric power sector  (Citation: International Electrotechnical Commission July 2020), while IEEE 1686 defines standard permissions for users of IEDs. (Citation: Institute of Electrical and Electronics Engineers January 2014)",
+      "meta": {
+        "external_id": "M0800",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0800",
+          "https://standards.ieee.org/standard/1686-2013.html",
+          "https://webstore.iec.ch/publication/6912"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "097924ce-a9a9-4039-8591-e0deedfb8722",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "09a61657-46e1-439e-b3ed-3e4556a78243",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "19a71d1e-6334-4233-8260-b749cae37953",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "25852363-5968-4673-b81d-341d5ed90bd1",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "25dfc8ad-bd73-4dfd-84a9-3c3d383f76e9",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "2883c520-7957-46ca-89bd-dab1ad53b601",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "2aa406ed-81c3-4c1d-ba83-cfbee5a2847a",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "3067b85e-271e-4bc5-81ad-ab1a81d411e3",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "574d5bfb-9a7a-4b28-ab5c-743ac704c135",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "5a2610f6-9fff-41e1-bc27-575ca20383d4",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "77015a55-eef8-4f71-a071-b152f82ec1ef",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "be69c571-d746-4b1f-bdd0-c0c9817e9068",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "d85a6ee9-820c-4adf-8a64-2392ee70c83c",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "e1f9cdd2-9511-4fca-90d7-f3e92cfdd0bf",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "e5de767e-f513-41cd-aa15-33f6ce5fbf92",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "fc5fda7e-6b2c-4457-b036-759896a2efa2",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "e0d38502-decb-481d-ad8b-b8f0a0c330bd",
+      "value": "Authorization Enforcement - M0800"
     },
     {
       "description": "Install security updates in response to discovered vulnerabilities.\n\nPurchase devices with a vendor and/or mobile carrier commitment to provide security updates in a prompt manner for a set period of time.\n\nDecommission devices that will no longer receive security updates.\n\nLimit or block access to enterprise resources from devices that have not installed recent security updates.\n\nOn Android devices, access can be controlled based on each device's security patch level. On iOS devices, access can be controlled based on the iOS version.",
@@ -7458,6 +8751,543 @@
       ],
       "uuid": "d2a24649-9694-4c97-9c62-ce7b270bf6a3",
       "value": "Exploit Protection - M1050"
+    },
+    {
+      "description": "Access Management technologies can be used to enforce authorization polices and decisions, especially when existing field devices do not provide sufficient capabilities to support user identification and authentication. (Citation: McCarthy, J et al. July 2018) These technologies typically utilize an in-line network device or gateway system to prevent access to unauthenticated users, while also integrating with an authentication service to first verify user credentials. (Citation: Centre for the Protection of National Infrastructure November 2010)",
+      "meta": {
+        "external_id": "M0801",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0801",
+          "https://doi.org/10.6028/NIST.SP.1800-2",
+          "https://us-cert.cisa.gov/sites/default/files/recommended_practices/RP_Managing_Remote_Access_S508NC.pdf"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "19a71d1e-6334-4233-8260-b749cae37953",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "25852363-5968-4673-b81d-341d5ed90bd1",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "25dfc8ad-bd73-4dfd-84a9-3c3d383f76e9",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "2883c520-7957-46ca-89bd-dab1ad53b601",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "2aa406ed-81c3-4c1d-ba83-cfbee5a2847a",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "3067b85e-271e-4bc5-81ad-ab1a81d411e3",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "3e9b182e-e493-49e1-9a9b-bd0dfcd34a7c",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "5658ad88-7510-490e-a351-95d50b1bcd91",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "574d5bfb-9a7a-4b28-ab5c-743ac704c135",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "5a2610f6-9fff-41e1-bc27-575ca20383d4",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "68a9324d-a524-4766-a899-a026f68a33df",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "6b335943-c3af-430e-a135-ab09623bdc20",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "75587e49-ab7e-44df-9549-faeb1da57f39",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "77015a55-eef8-4f71-a071-b152f82ec1ef",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "7b4c0e19-a9b0-4a74-a196-b38c07b79f20",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "be69c571-d746-4b1f-bdd0-c0c9817e9068",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "cd2c76a4-5e23-4ca5-9c40-d5e0604f7101",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "d85a6ee9-820c-4adf-8a64-2392ee70c83c",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "e1f9cdd2-9511-4fca-90d7-f3e92cfdd0bf",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "e5de767e-f513-41cd-aa15-33f6ce5fbf92",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "3992ce42-43e9-4bea-b8db-a102ec3ec1e3",
+      "value": "Access Management - M0801"
+    },
+    {
+      "description": "When communicating over an untrusted network, utilize secure network protocols that both authenticate the message sender and can verify its integrity. This can be done either through message authentication codes (MACs) or digital signatures, to detect spoofed network messages and unauthorized connections.",
+      "meta": {
+        "external_id": "M0802",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0802"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "19a71d1e-6334-4233-8260-b749cae37953",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "1af9e3fd-2bcc-414d-adbd-fe3b95c02ca1",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "25852363-5968-4673-b81d-341d5ed90bd1",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "25dfc8ad-bd73-4dfd-84a9-3c3d383f76e9",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "2877063e-1851-48d2-bcc6-bc1d2733157e",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "2883c520-7957-46ca-89bd-dab1ad53b601",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "2aa406ed-81c3-4c1d-ba83-cfbee5a2847a",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "3067b85e-271e-4bc5-81ad-ab1a81d411e3",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "4344d1b8-968b-4697-9ab9-f9abe5f52265",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "4c2e1408-9d68-4187-8e6b-a77bc52700ec",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "527106b3-95a2-4ed2-bf89-db7f0e4d0da0",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "574d5bfb-9a7a-4b28-ab5c-743ac704c135",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "68a9324d-a524-4766-a899-a026f68a33df",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "75587e49-ab7e-44df-9549-faeb1da57f39",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "77015a55-eef8-4f71-a071-b152f82ec1ef",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "7b4c0e19-a9b0-4a74-a196-b38c07b79f20",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "9a505987-ab05-4f46-a9a6-6441442eec3b",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "b14395bd-5419-4ef4-9bd8-696936f509bb",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "be69c571-d746-4b1f-bdd0-c0c9817e9068",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "d85a6ee9-820c-4adf-8a64-2392ee70c83c",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "e17cdc00-8b58-4e5f-9d50-4cad1592c4c3",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "c7257b6e-4159-4771-b1f3-2bb93adaecac",
+      "value": "Communication Authenticity - M0802"
+    },
+    {
+      "description": "Architect sections of the network to isolate critical systems, functions, or resources. Use physical and logical segmentation to prevent access to potentially sensitive systems and information. Use a DMZ to contain any internet-facing services that should not be exposed from the internal network.  Restrict network access to only required systems and services. In addition, prevent systems from other networks or business functions (e.g., enterprise) from accessing critical process control systems. For example, in IEC 62443, systems within the same secure level should be grouped into a zone, and access to that zone is restricted by a conduit, or mechanism to restrict data flows between zones by segmenting the network. (Citation: IEC February 2019) (Citation: IEC August 2013)",
+      "meta": {
+        "external_id": "M0930",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0930",
+          "https://webstore.iec.ch/publication/34421",
+          "https://webstore.iec.ch/publication/7033"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "063b5b92-5361-481a-9c3f-95492ed9a2d8",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "19a71d1e-6334-4233-8260-b749cae37953",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "25852363-5968-4673-b81d-341d5ed90bd1",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "25dfc8ad-bd73-4dfd-84a9-3c3d383f76e9",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "2883c520-7957-46ca-89bd-dab1ad53b601",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "2900bbd8-308a-4274-b074-5b8bde8347bc",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "2aa406ed-81c3-4c1d-ba83-cfbee5a2847a",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "3067b85e-271e-4bc5-81ad-ab1a81d411e3",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "32632a95-6856-47b9-9ab7-fea5cd7dce00",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "35392fb4-a31d-4c6a-b9f2-1c65b7f5e6b9",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "38213338-1aab-479d-949b-c81b66ccca5c",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "3de230d4-3e42-4041-b089-17e1128feded",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "4344d1b8-968b-4697-9ab9-f9abe5f52265",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "527106b3-95a2-4ed2-bf89-db7f0e4d0da0",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "55e7e5c1-3760-4451-bae0-e79b29f452c5",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "574d5bfb-9a7a-4b28-ab5c-743ac704c135",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "5d24bb1d-4487-4923-ae3a-8e679092ac7a",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "6008c1f0-1b68-4614-8f5b-a547436b8855",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "64bbc1b2-101f-4322-af1d-0c9cc25cef91",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "68a9324d-a524-4766-a899-a026f68a33df",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "71f2d49e-65dd-4fb6-a4cc-0d2b19d427fa",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "75587e49-ab7e-44df-9549-faeb1da57f39",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "77015a55-eef8-4f71-a071-b152f82ec1ef",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "7b4c0e19-a9b0-4a74-a196-b38c07b79f20",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "85a45294-08f1-4539-bf00-7da08aa7b0ee",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "8d2f3bab-507c-4424-b58b-edc977bd215c",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "8e7089d3-fba2-44f8-94a8-9a79c53920c4",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "9a505987-ab05-4f46-a9a6-6441442eec3b",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "b14395bd-5419-4ef4-9bd8-696936f509bb",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "be69c571-d746-4b1f-bdd0-c0c9817e9068",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "c55f0be5-044e-4577-8095-65b37680d28c",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "d85a6ee9-820c-4adf-8a64-2392ee70c83c",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "e076cca8-2f08-45c9-aff7-ea5ac798b387",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "e17cdc00-8b58-4e5f-9d50-4cad1592c4c3",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "e1f9cdd2-9511-4fca-90d7-f3e92cfdd0bf",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "e5de767e-f513-41cd-aa15-33f6ce5fbf92",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "e6c31185-8040-4267-83d3-b217b8a92f07",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "f8df6b57-14bc-425f-9a91-6f59f6799307",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "fbb67c2d-37c3-49ee-86e3-bf234cc48ca9",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "1e7ccfc0-94c8-496e-8d27-032120892291",
+      "value": "Network Segmentation - M0930"
+    },
+    {
+      "description": "Use capabilities to detect and block conditions that may lead to or be indicative of a software exploit occurring.",
+      "meta": {
+        "external_id": "M0950",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0950"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "32632a95-6856-47b9-9ab7-fea5cd7dce00",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "7830cfcf-b268-4ac0-a69e-73c6affbae9a",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "85a45294-08f1-4539-bf00-7da08aa7b0ee",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "9f947a1c-3860-48a8-8af0-a2dfa3efde03",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "cfe68e93-ce94-4c0f-a57d-3aa72cedd618",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "49363b74-d506-4342-bd63-320586ebadb9",
+      "value": "Exploit Protection - M0950"
+    },
+    {
+      "description": "Network allowlists can be implemented through either host-based files or system hosts files to specify what connections (e.g., IP address, MAC address, port, protocol) can be made from a device. Allowlist techniques that operate at the  application layer (e.g., DNP3, Modbus, HTTP) are addressed in [Filter Network Traffic](https://attack.mitre.org/mitigations/M0937) mitigation.",
+      "meta": {
+        "external_id": "M0807",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0807"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "15ca2a99-2d3e-457f-b1d7-c52a1d5849c9",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "19a71d1e-6334-4233-8260-b749cae37953",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "25852363-5968-4673-b81d-341d5ed90bd1",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "25dfc8ad-bd73-4dfd-84a9-3c3d383f76e9",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "2883c520-7957-46ca-89bd-dab1ad53b601",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "2900bbd8-308a-4274-b074-5b8bde8347bc",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "2aa406ed-81c3-4c1d-ba83-cfbee5a2847a",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "3067b85e-271e-4bc5-81ad-ab1a81d411e3",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "338f4364-2269-4f70-9079-b20384b16628",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "3de230d4-3e42-4041-b089-17e1128feded",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "4344d1b8-968b-4697-9ab9-f9abe5f52265",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "527106b3-95a2-4ed2-bf89-db7f0e4d0da0",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "55e7e5c1-3760-4451-bae0-e79b29f452c5",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "574d5bfb-9a7a-4b28-ab5c-743ac704c135",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "6008c1f0-1b68-4614-8f5b-a547436b8855",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "68a9324d-a524-4766-a899-a026f68a33df",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "71f2d49e-65dd-4fb6-a4cc-0d2b19d427fa",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "75587e49-ab7e-44df-9549-faeb1da57f39",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "77015a55-eef8-4f71-a071-b152f82ec1ef",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "7866bb5f-98ee-45c2-984c-8a328c5176b2",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "7b4c0e19-a9b0-4a74-a196-b38c07b79f20",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "83ebd22f-b401-4d59-8219-2294172cf916",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "8e7089d3-fba2-44f8-94a8-9a79c53920c4",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "b14395bd-5419-4ef4-9bd8-696936f509bb",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "be69c571-d746-4b1f-bdd0-c0c9817e9068",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "d67adac8-e3b9-44f9-9e6d-6c2a7d69dbe4",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "d85a6ee9-820c-4adf-8a64-2392ee70c83c",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "e076cca8-2f08-45c9-aff7-ea5ac798b387",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "e17cdc00-8b58-4e5f-9d50-4cad1592c4c3",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "e1f9cdd2-9511-4fca-90d7-f3e92cfdd0bf",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "e5de767e-f513-41cd-aa15-33f6ce5fbf92",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "fbb67c2d-37c3-49ee-86e3-bf234cc48ca9",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "aadac250-bcdc-44e3-a4ae-f52bd0a7a16a",
+      "value": "Network Allowlists - M0807"
     },
     {
       "description": "Describes any guidance or training given to users to set particular configuration settings or avoid specific potentially risky behaviors.",
@@ -9280,6 +11110,68 @@
       "value": "Scripting Mitigation - T1064"
     },
     {
+      "description": "Utilize watchdog timers to ensure devices can quickly detect whether a system is unresponsive.",
+      "meta": {
+        "external_id": "M0815",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0815"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "1b22b676-9347-4c55-9a35-ef0dc653db5b",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "98aa0d61-fc9d-4b2d-8f18-b25d03549f53",
+      "value": "Watchdog Timers - M0815"
+    },
+    {
+      "description": "Perform regular software updates to mitigate exploitation risk. Software updates may need to be scheduled around operational down times.",
+      "meta": {
+        "external_id": "M0951",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0951"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "32632a95-6856-47b9-9ab7-fea5cd7dce00",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "35392fb4-a31d-4c6a-b9f2-1c65b7f5e6b9",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "5e0f75da-e108-4688-a6de-a4f07cc2cbe3",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "68a9324d-a524-4766-a899-a026f68a33df",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "7830cfcf-b268-4ac0-a69e-73c6affbae9a",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "85a45294-08f1-4539-bf00-7da08aa7b0ee",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "9f947a1c-3860-48a8-8af0-a2dfa3efde03",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "cfe68e93-ce94-4c0f-a57d-3aa72cedd618",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "97f33c84-8508-45b9-8a1d-cac921828c9e",
+      "value": "Update Software - M0951"
+    },
+    {
       "description": "Ensure proper permissions are in place to help prevent adversary access to privileged accounts necessary to perform this action. Use Trusted Platform Module technology and a secure or trusted boot process to prevent system integrity from being compromised. (Citation: TCG Trusted Platform Module) (Citation: TechNet Secure Boot Process)",
       "meta": {
         "external_id": "T1067",
@@ -9307,6 +11199,60 @@
       "value": "PowerShell Mitigation - T1086"
     },
     {
+      "description": "Vulnerability scanning is used to find potentially exploitable software vulnerabilities to remediate them.",
+      "meta": {
+        "external_id": "M0916",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0916"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "32632a95-6856-47b9-9ab7-fea5cd7dce00",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "5e0f75da-e108-4688-a6de-a4f07cc2cbe3",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "85a45294-08f1-4539-bf00-7da08aa7b0ee",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "de0bc375-50e1-4e26-a342-a8ff8c9d3037",
+      "value": "Vulnerability Scanning - M0916"
+    },
+    {
+      "description": "Train users to be aware of access or manipulation attempts by an adversary to reduce the risk of successful spearphishing, social engineering, and other techniques that involve user interaction.",
+      "meta": {
+        "external_id": "M0917",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0917"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "2736b752-4ec5-4421-a230-8977dea7649c",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "3405891b-16aa-4bd7-bd7c-733501f9b20f",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "648f995e-9c3a-41e4-aeee-98bb41037426",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "fa3aa267-da22-4bdd-961f-03223322a8d5",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "dc61c280-c29d-44e5-a960-c0dd1623d2ba",
+      "value": "User Training - M0917"
+    },
+    {
       "description": "Mitigation of timestomping specifically is likely difficult. Efforts should be focused on preventing potentially malicious software from running. Identify and block potentially malicious software that may contain functionality to perform timestomping by using whitelisting (Citation: Beechey 2010) tools like AppLocker (Citation: Windows Commands JPCERT) (Citation: NSA MS AppLocker) or Software Restriction Policies (Citation: Corio 2008) where appropriate. (Citation: TechNet Applocker vs SRP)",
       "meta": {
         "external_id": "T1099",
@@ -9322,6 +11268,243 @@
       "related": [],
       "uuid": "5c167af7-c2cb-42c8-ae67-3fb275bf8488",
       "value": "Timestomp Mitigation - T1099"
+    },
+    {
+      "description": "Set and enforce secure password policies for accounts.",
+      "meta": {
+        "external_id": "M0927",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0927"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "5658ad88-7510-490e-a351-95d50b1bcd91",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "8d2f3bab-507c-4424-b58b-edc977bd215c",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "cd2c76a4-5e23-4ca5-9c40-d5e0604f7101",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "e1f9cdd2-9511-4fca-90d7-f3e92cfdd0bf",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "fab8fc7d-f27f-4fbb-9de6-44740aade05f",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "5d97c693-e054-48ba-a3a3-eaf6942dfb65",
+      "value": "Password Policies - M0927"
+    },
+    {
+      "description": "Take and store data backups from end user systems and critical servers. Ensure backup and storage systems are hardened and kept separate from the corporate network to prevent compromise.   Maintain and exercise incident response plans  (Citation: Department of Homeland Security October 2009), including the management of  'gold-copy' back-up images and configurations for key systems to enable quick recovery and response from adversarial activities that impact control, view, or availability.",
+      "meta": {
+        "external_id": "M0953",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0953",
+          "https://us-cert.cisa.gov/sites/default/files/recommended_practices/final-RP_ics_cybersecurity_incident_response_100609.pdf"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "138979ba-0430-4de6-a128-2fc0b056ba36",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "1af9e3fd-2bcc-414d-adbd-fe3b95c02ca1",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "493832d9-cea6-4b63-abe7-9a65a6473675",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "4c2e1408-9d68-4187-8e6b-a77bc52700ec",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "56ddc820-6cfb-407f-850b-52c035d123ac",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "63b6942d-8359-4506-bfb3-cf87aa8120ee",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "a81696ef-c106-482c-8f80-59c30f2569fb",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "b5b9bacb-97f2-4249-b804-47fd44de1f95",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "e33c7ecc-5a38-497f-beb2-a9a2049a4c20",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "fab8fc7d-f27f-4fbb-9de6-44740aade05f",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "ad12819e-3211-4291-b360-069f280cff0a",
+      "value": "Data Backup - M0953"
+    },
+    {
+      "description": "Block execution of code on a system through application control, and/or script blocking.",
+      "meta": {
+        "external_id": "M0938",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0938"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "1c5cf58c-a34a-40d7-82f4-f987cdfc2b91",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "24a9253e-8948-4c98-b751-8e2aee53127c",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "2736b752-4ec5-4421-a230-8977dea7649c",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "2dc2b567-8821-49f9-9045-8740f3d0b958",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "5a2610f6-9fff-41e1-bc27-575ca20383d4",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "b52870cc-83f3-473c-b895-72d91751030b",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "ba203963-3182-41ac-af14-7e7ebc83cd61",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "4fa717d9-cabe-47c8-8cdd-86e9e2e37f30",
+      "value": "Execution Prevention - M0938"
+    },
+    {
+      "description": "Implement configuration changes to software (other than the operating system) to mitigate security risks associated with how the software operates.",
+      "meta": {
+        "external_id": "M0954",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0954"
+        ]
+      },
+      "uuid": "facb8840-ebe7-49f1-b464-8ef6c8131e21",
+      "value": "Software Configuration - M0954"
+    },
+    {
+      "description": "Enforce binary and application integrity with digital signature verification to prevent untrusted code from executing.",
+      "meta": {
+        "external_id": "M0945",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0945"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "09a61657-46e1-439e-b3ed-3e4556a78243",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "2736b752-4ec5-4421-a230-8977dea7649c",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "354ca909-b54d-4c41-b597-9c296b344a43",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "3b6b9246-43f8-4c69-ad7a-2b11cfe0a0d9",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "574d5bfb-9a7a-4b28-ab5c-743ac704c135",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "5e0f75da-e108-4688-a6de-a4f07cc2cbe3",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "68a9324d-a524-4766-a899-a026f68a33df",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "75587e49-ab7e-44df-9549-faeb1da57f39",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "77015a55-eef8-4f71-a071-b152f82ec1ef",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "7b4c0e19-a9b0-4a74-a196-b38c07b79f20",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "ba203963-3182-41ac-af14-7e7ebc83cd61",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "be69c571-d746-4b1f-bdd0-c0c9817e9068",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "d85a6ee9-820c-4adf-8a64-2392ee70c83c",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "e72425f8-9ae6-41d3-bfdb-e1b865e60722",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "fc5fda7e-6b2c-4457-b036-759896a2efa2",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "71eb7dad-07eb-4bbc-9df0-ac57bf2fba4a",
+      "value": "Code Signing - M0945"
+    },
+    {
+      "description": "Use secure methods to boot a system and verify the integrity of the operating system and loading mechanisms.",
+      "meta": {
+        "external_id": "M0946",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0946"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "68a9324d-a524-4766-a899-a026f68a33df",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "75587e49-ab7e-44df-9549-faeb1da57f39",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "7b4c0e19-a9b0-4a74-a196-b38c07b79f20",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "8ac1d6e1-b07f-476a-9732-84984ebc2405",
+      "value": "Boot Integrity - M0946"
     },
     {
       "description": "Microsoft's Enhanced Mitigation Experience Toolkit (EMET) Attack Surface Reduction (ASR) feature can be used to block regsvr32.exe from being used to bypass whitelisting. (Citation: Secure Host Baseline EMET)",
@@ -9964,6 +12147,32 @@
       "value": "Antivirus/Antimalware - M1058"
     },
     {
+      "description": "Use signatures or heuristics to detect malicious software.  Within industrial control environments, antivirus/antimalware installations should be limited to assets that are not involved in critical or real-time operations. To minimize the impact to system availability, all products should first be validated within a representative test environment before deployment to production systems. (Citation: NCCIC August 2018)",
+      "meta": {
+        "external_id": "M0949",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0949",
+          "https://us-cert.cisa.gov/sites/default/files/recommended_practices/Recommended%20Practice%20Updating%20Antivirus%20in%20an%20Industrial%20Control%20System_S508C.pdf"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "2736b752-4ec5-4421-a230-8977dea7649c",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "35392fb4-a31d-4c6a-b9f2-1c65b7f5e6b9",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "648f995e-9c3a-41e4-aeee-98bb41037426",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "faf2b40e-5981-433f-aa46-17458e0026f7",
+      "value": "Antivirus/Antimalware - M0949"
+    },
+    {
       "description": "Enable remote attestation capabilities when available (such as Android SafetyNet or Samsung Knox TIMA Attestation) and prohibit devices that fail the attestation from accessing enterprise resources.",
       "meta": {
         "external_id": "M1002",
@@ -10480,7 +12689,96 @@
       ],
       "uuid": "cc2399fd-3cd3-4319-8d0a-fbd6420cdaf8",
       "value": "Audit - M1047"
+    },
+    {
+      "description": "Perform audits or scans of systems, permissions, insecure software, insecure configurations, etc. to identify potential weaknesses. Perform periodic integrity checks of the device to validate the correctness of the firmware, software, programs, and configurations. Integrity checks, which typically include cryptographic hashes or digital signatures, should be compared to those obtained at known valid states, especially after events like device reboots, program downloads, or program restarts.",
+      "meta": {
+        "external_id": "M0947",
+        "refs": [
+          "https://attack.mitre.org/mitigations/M0947"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "097924ce-a9a9-4039-8591-e0deedfb8722",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "09a61657-46e1-439e-b3ed-3e4556a78243",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "3405891b-16aa-4bd7-bd7c-733501f9b20f",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "35392fb4-a31d-4c6a-b9f2-1c65b7f5e6b9",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "354ca909-b54d-4c41-b597-9c296b344a43",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "3b6b9246-43f8-4c69-ad7a-2b11cfe0a0d9",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "574d5bfb-9a7a-4b28-ab5c-743ac704c135",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "5e0f75da-e108-4688-a6de-a4f07cc2cbe3",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "68a9324d-a524-4766-a899-a026f68a33df",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "75587e49-ab7e-44df-9549-faeb1da57f39",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "77015a55-eef8-4f71-a071-b152f82ec1ef",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "7b4c0e19-a9b0-4a74-a196-b38c07b79f20",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "9a505987-ab05-4f46-a9a6-6441442eec3b",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "ab390887-afc0-4715-826d-b1b167d522ae",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "be69c571-d746-4b1f-bdd0-c0c9817e9068",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "cd2c76a4-5e23-4ca5-9c40-d5e0604f7101",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "d85a6ee9-820c-4adf-8a64-2392ee70c83c",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "e72425f8-9ae6-41d3-bfdb-e1b865e60722",
+          "type": "mitigates"
+        },
+        {
+          "dest-uuid": "fc5fda7e-6b2c-4457-b036-759896a2efa2",
+          "type": "mitigates"
+        }
+      ],
+      "uuid": "bcf91ebc-f316-4e19-b2f6-444e9940c697",
+      "value": "Audit - M0947"
     }
   ],
-  "version": 37
+  "version": 38
 }

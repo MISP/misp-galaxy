@@ -118,6 +118,17 @@
       "value": "Active Directory Object Creation - DC0087"
     },
     {
+      "description": "This includes any data stores that maintain historical or real-time events and telemetry recorded from various sensors or devices",
+      "meta": {
+        "external_id": "DC0107",
+        "refs": [
+          "https://attack.mitre.org/datacomponents/DC0107"
+        ]
+      },
+      "uuid": "931b3fc6-ad68-42a8-9018-e98515eedc95",
+      "value": "Process History/Live Data - DC0107"
+    },
+    {
       "description": "Changes made to an existing user, service, or machine account, including alterations to attributes, permissions, roles, authentication methods, or group memberships.",
       "meta": {
         "external_id": "DC0010",
@@ -490,6 +501,17 @@
       "value": "Logon Session Metadata - DC0088"
     },
     {
+      "description": "This includes a list of any process alarms or alerts produced to indicate unusual or concerning activity within the operational process (e.g., increased temperature/pressure)",
+      "meta": {
+        "external_id": "DC0109",
+        "refs": [
+          "https://attack.mitre.org/datacomponents/DC0109"
+        ]
+      },
+      "uuid": "4c12c1c8-bcef-4daf-8e5b-fca235f71d9e",
+      "value": "Process/Event Alarm - DC0109"
+    },
+    {
       "description": "Contextual data about a cloud volume and activity around it, such as id, type, state, and size",
       "meta": {
         "external_id": "DC0100",
@@ -596,6 +618,17 @@
       "related": [],
       "uuid": "f8213cde-6b3a-420d-9ab7-41c9af1a919f",
       "value": "Instance Start - DC0080"
+    },
+    {
+      "description": "This includes sources of current and expected devices on the network, including the manufacturer, model, and necessary identifiers (e.g., IP and hardware addresses)",
+      "meta": {
+        "external_id": "DC0110",
+        "refs": [
+          "https://attack.mitre.org/datacomponents/DC0110"
+        ]
+      },
+      "uuid": "b05a614b-033c-4578-b4f2-c63a9feee706",
+      "value": "Asset Inventory - DC0110"
     },
     {
       "description": "Code, strings, signatures, and other identifying characteristics of a malicious payload stored within a malware repository. It includes both static (file-based) and dynamic (behavioral or execution-based) components that can be analyzed for threat intelligence, detection, and prevention purposes. Examples:\n\n- Static Analysis:\n    - Executable Code: Analyze binary data to identify unique patterns, obfuscated code, or embedded resources.\n    - Strings Extraction: Use tools like strings or YARA rules to identify hardcoded URLs, IPs, filenames, or suspicious function calls.\n    - Signatures: Extract cryptographic hashes (MD5, SHA256) of files to track known malware variants or detect previously unseen samples.\n- Dynamic Analysis:\n    - Behavioral Observations: Monitor execution traces to capture API calls, registry modifications, or network traffic patterns indicative of malicious behavior.\n    - Memory Analysis: Examine memory dumps to uncover injected code or runtime-decrypted payloads.\n    - Artifacts: Record file system changes, process creation events, and command-line arguments.\n- Threat Intelligence Integration:\n    - Campaign Attribution: Associate observed code snippets or signatures with known APT campaigns or ransomware families.\n    - Indicator Sharing: Share identified Indicators of Compromise (IOCs) with threat intelligence platforms (e.g., MISP, OpenCTI).\n- Examples of Malware Content:\n    - Embedded C2 domains (e.g., malicious-domain.com hardcoded in the payload).\n    - Fileless malware indicators, such as PowerShell scripts invoking Invoke-Mimikatz.\n    - Malware-specific signatures, such as unique PE header values for a particular strain.\n\n*Data Collection Measures:*\n\n- Collection from Public Malware Repositories:\n    - VirusTotal: Obtain samples for static analysis.\n    - Hybrid Analysis: Gather execution data from sandbox analysis.\n    - Any.Run: Access interactive malware execution traces.\n    - MalwareBazaar: Download malware samples for research and signature generation.\n    - Automate data extraction using repository APIs (e.g., VirusTotal API for hash lookups or sample retrieval).\n- Internal Malware Labs:\n    - Sandbox Environments: Use dynamic malware analysis tools such as Cuckoo Sandbox or Joe Sandbox to execute and monitor malware in a controlled environment. Capture runtime behavior logs, memory dumps, and file system changes.\n    - Reverse Engineering: Disassemble binaries with tools like IDA Pro, Ghidra, or Radare2 to identify malicious functionality and extract code patterns.\n- EDR/Endpoint Telemetry:\n    - Collect samples of malicious binaries or scripts from infected endpoints using tools like CrowdStrike, Carbon Black, or SentinelOne.\n    - Extract memory-resident payloads from live systems for analysis.\n- Threat Intelligence Platforms:\n    - Gather contextual metadata for identified malware using tools like OpenCTI, Recorded Future, or ThreatConnect. Participate in intelligence-sharing groups such as ISACs (e.g., FS-ISAC, IT-ISAC).\n- Custom Data Collection Pipelines: Use open-source tools like malwoverview or Maltrail to automate sample downloads, hash extraction, and IOC generation.",
@@ -728,6 +761,17 @@
       "related": [],
       "uuid": "1067aa74-5796-4d9b-b4f1-a4c9eb6fd9da",
       "value": "Response Metadata - DC0106"
+    },
+    {
+      "description": "This includes alarms associated with unexpected device functions, such as shutdowns, restarts, failures, or configuration changes",
+      "meta": {
+        "external_id": "DC0108",
+        "refs": [
+          "https://attack.mitre.org/datacomponents/DC0108"
+        ]
+      },
+      "uuid": "9d56be63-3501-4dd3-bb5f-63c580833298",
+      "value": "Device Alarm - DC0108"
     },
     {
       "description": "Removal of a virtual machine (VM) or compute instance within a cloud infrastructure. This activity results in the termination and deletion of the allocated resources (e.g., CPU, memory, storage), making the instance unavailable for future use. Examples:\n\n- AWS: instance deletion involves the `TerminateInstances` API call, which is recorded in CloudTrail logs.\n- Azure: VM deletion can be monitored via Azure Activity Logs, showing the `Microsoft.Compute/virtualMachines/delete` operation.\n- GCP: instance deletion is logged as an instance.delete operation within GCP Audit Logs.",
@@ -1423,7 +1467,18 @@
       },
       "uuid": "55c669d9-b42a-4cf6-a38a-07161b228ce9",
       "value": "Application State - DC0123"
+    },
+    {
+      "description": "This includes sources of current and expected software or application programs deployed to a device, along with information on the version and patch level for vendor products, full source code for any application programs, and unique identifiers (e.g., hashes, signatures).",
+      "meta": {
+        "external_id": "DC0111",
+        "refs": [
+          "https://attack.mitre.org/datacomponents/DC0111"
+        ]
+      },
+      "uuid": "8ed4e6d0-56d7-4e6b-8fa6-41f41631f30d",
+      "value": "Software - DC0111"
     }
   ],
-  "version": 10
+  "version": 11
 }
