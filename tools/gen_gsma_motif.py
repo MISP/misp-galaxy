@@ -278,12 +278,13 @@ json_cluster = {
 
 
 # save the Galaxy and Cluster file
-# with open(os.path.join('..', 'galaxies', galaxy_fname), 'w') as f:
-#     # sort_keys, even if it breaks the kill_chain_order , but jq_all_the_things requires sorted keys
-#     json.dump(json_galaxy, f, indent=2, sort_keys=True, ensure_ascii=False)
-#     f.write('\n')  # only needed for the beauty and to be compliant with jq_all_the_things
+# sort_keys only orders dict keys; the kill_chain_order phase *lists* keep
+# their order, so this matches the committed galaxies/gsma-motif.json exactly.
+with open(os.path.join('..', 'galaxies', galaxy_fname), 'w', encoding='utf-8') as f:
+    json.dump(json_galaxy, f, indent=2, sort_keys=True, ensure_ascii=False)
+    f.write('\n')  # only needed for the beauty and to be compliant with jq_all_the_things
 
-with open(os.path.join('..', 'clusters', galaxy_fname), 'w') as f:
+with open(os.path.join('..', 'clusters', galaxy_fname), 'w', encoding='utf-8') as f:
     json.dump(json_cluster, f, indent=2, sort_keys=True, ensure_ascii=False)
     f.write('\n')  # only needed for the beauty and to be compliant with jq_all_the_things
 
