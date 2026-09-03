@@ -29,10 +29,12 @@ def loadjsons(path, return_paths=False):
             files.append(name)
     for jfile in files:
         filepath = os.path.join(path, jfile)
+        with open(filepath, encoding='utf-8') as f:
+            content = json.load(f)
         if return_paths:
-            data.append((filepath, json.load(open(filepath))))
+            data.append((filepath, content))
         else:
-            data.append(json.load(json.load(open(filepath))))
+            data.append(content)
     return data
 
 
