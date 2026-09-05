@@ -18,9 +18,11 @@ for c in data['values']:
     unique_uuid.add(c['uuid'])
     values.append(c)
 
-data['values'] = []
-data['values'] = values
+changed = len(values) != len(data['values'])
 
-with open(sys.argv[1], 'w') as f:
-    json.dump(data, f)
+if changed:
+    data['values'] = values
+    data['version'] += 1
 
+    with open(sys.argv[1], 'w') as f:
+        json.dump(data, f)
