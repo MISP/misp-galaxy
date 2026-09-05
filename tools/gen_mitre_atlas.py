@@ -1,203 +1,297 @@
 #!/usr/bin/env python3
-#
-# STIX files for ATLAS are available in the navigator
-#    https://github.com/mitre-atlas/atlas-navigator-data
-import json
-import re
-import os
+"""Rebuild the MITRE ATLAS galaxies from the ATLAS knowledge base.
+
+MITRE publishes ATLAS as a single YAML file, ``dist/ATLAS-latest.yaml`` in
+https://github.com/mitre-atlas/atlas-data.  Everything else MITRE ships for ATLAS,
+the STIX bundle of atlas-navigator-data this script used to read included, is
+generated out of that file, so we read it directly: it is both ahead of the copies
+and carries what the conversion into them drops -- the tactics, the sub-technique
+tree, the case studies, the maturity, the platforms and the ATT&CK cross-references.
+
+Every ATLAS object carries the UUID upstream assigns it, uuid5 of its ATLAS ID under
+the ATLAS namespace, so our cluster UUIDs and any ATLAS-derived STIX agree, across
+releases.
+
+Usage:
+    git clone https://github.com/mitre-atlas/atlas-data ../../atlas-data
+    python3 gen_mitre_atlas.py -p ../../atlas-data
+"""
 import argparse
+import json
+import os
+import re
+import uuid
 
-parser = argparse.ArgumentParser(description='Create a couple galaxy/cluster with MITRE ATLAS - Adversarial Threat Landscape for Artificial-Intelligence Systems\nMust be in the tools folder')
-parser.add_argument("-p", "--path", required=True, help="Path of the mitre atlas-navigator-data folder")
+import yaml
 
-args = parser.parse_args()
-
-values = []
 misp_dir = '../'
 
+# cluster name suffix -> the ATLAS export key holding those objects
+types = {
+    'attack-pattern': 'techniques',
+    'course-of-action': 'mitigations',
+    'case-study': 'case-studies',
+}
 
-# domains = ['enterprise-attack', 'mobile-attack', 'pre-attack']
-types = ['attack-pattern', 'course-of-action']
-mitre_sources = ['mitre-atlas']
+# what a galaxy/cluster pair looks like the first time it is generated; the files are
+# authoritative from then on, so that anything edited there by hand is not overwritten
+new_files = {
+    'case-study': {
+        'name': 'MITRE ATLAS Case Studies',
+        'description': 'Case studies from MITRE ATLAS (Adversarial Threat Landscape for '
+                       'Artificial-Intelligence Systems), real-world incidents and red team '
+                       'exercises against AI-enabled systems.',
+        'category': 'incident',
+        'icon': 'book',
+        'cluster-uuid': '9f7e6548-4f70-459d-899e-580f282710ae',
+        'galaxy-uuid': '2f6804b0-ac62-47bd-b847-5590dd9e0e94',
+    },
+}
 
-all_data = {}  # variable that will contain everything
+# the route an object type lives under on atlas.mitre.org
+routes = {
+    'tactics': 'tactics',
+    'techniques': 'techniques',
+    'mitigations': 'mitigations',
+    'case-studies': 'studies',
+}
 
-# read in the non-MITRE data
-# we need this to be able to build a list of non-MITRE-UUIDs which we will use later on
-# to remove relations that are from MITRE.
-# the reasoning is that the new MITRE export might contain less relationships than it did before
-# so we cannot migrate all existing relationships as such
+atlas_url = 'https://atlas.mitre.org'
+kill_chain_name = 'mitre-atlas'
+# uuid5 namespace ATLAS derives the UUID of an object from its ID with
+atlas_namespace = uuid.UUID('atlas.mitre.org.'.encode('utf-8').hex())
+almost_certain = ['estimative-language:likelihood-probability="almost-certain"']
+
+# the ATT&CK galaxies an ``attack-reference`` can point into
+attack_clusters = ['mitre-attack-pattern', 'mitre-course-of-action']
+
+# descriptions cross-reference the rest of ATLAS relative to atlas.mitre.org, which
+# leads nowhere once the description is read in MISP. The ID is matched loosely on
+# purpose: upstream has typos in it (AMl.T0118.001), and a link is worth making
+# absolute either way.
+relative_link = re.compile(r'\]\(/({})/([^)\s]+)\)'.format('|'.join(sorted(set(routes.values())))))
+
+
+def slug(name):
+    """Tactic name to kill-chain phase, the way upstream atlas_to_stix.py builds it."""
+    return name.lower().replace(' ', '-')
+
+
+def absolute_links(description):
+    """Make the ATLAS cross-references of a description resolvable from anywhere."""
+    return relative_link.sub(
+        lambda m: ']({}/{}/{})'.format(atlas_url, m.group(1), re.sub(r'^aml\.', 'AML.', m.group(2), flags=re.I)),
+        description)
+
+
+def load(path):
+    with open(path) as f:
+        return json.load(f)
+
+
+def dump(path, data):
+    with open(path, 'w') as f:
+        json.dump(data, f, indent=2, sort_keys=True, ensure_ascii=False)
+        f.write('\n')  # only needed for the beauty and to be compliant with jq_all_the_things
+
+
+parser = argparse.ArgumentParser(
+    description='Create the galaxies/clusters of MITRE ATLAS - Adversarial Threat Landscape '
+                'for Artificial-Intelligence Systems\nMust be in the tools folder')
+parser.add_argument('-p', '--path', required=True, help='Path of the mitre-atlas/atlas-data folder')
+args = parser.parse_args()
+
+atlas_file = os.path.join(args.path, 'dist', 'ATLAS-latest.yaml')
+if not os.path.exists(atlas_file):
+    exit('ERROR: {} not found, is --path pointing at the atlas-data folder?'.format(atlas_file))
+
+with open(atlas_file) as f:
+    export = yaml.safe_load(f)
+
+print('Loading ATLAS {} (format {})'.format(export['collection']['version'], export['format-version']))
+
+# ATLAS ID -> UUID, for every object a relation may have to point at
+uuid_by_id = {}
+for key in routes:
+    for atlas_id, item in export[key].items():
+        expected = str(uuid.uuid5(atlas_namespace, atlas_id))
+        if item['uuid'] != expected:
+            exit('ERROR: {} carries {}, expected {} - has the ATLAS UUID scheme changed?'.format(
+                atlas_id, item['uuid'], expected))
+        uuid_by_id[atlas_id] = item['uuid']
+
+# ATT&CK ID -> UUID of the matching cluster value, to cross-link both frameworks
+attack_uuid_by_id = {}
+for cluster_name in attack_clusters:
+    for value in load(os.path.join(misp_dir, 'clusters', cluster_name + '.json'))['values']:
+        external_id = value.get('meta', {}).get('external_id')
+        if external_id:
+            attack_uuid_by_id.setdefault(external_id, value['uuid'])
+
+# relations are stored per source object, grouped by type
+achieves = {}     # technique -> the tactics it achieves, which is our kill chain
+specializes = {}  # sub-technique -> its parent technique
+mitigates = {}    # mitigation -> the techniques it mitigates
+employs = {}      # case study -> the techniques it employs
+sequences = []    # matrix -> its tactics, in matrix order
+for source, groups in export['relationships'].items():
+    for relation in groups.get('achieves', []):
+        achieves.setdefault(source, []).append(relation['target'])
+    for relation in groups.get('specializes', []):
+        specializes[source] = relation['target']
+    for relation in groups.get('mitigates', []):
+        mitigates.setdefault(source, []).append(relation['target'])
+    for relation in groups.get('employs', []):
+        employs.setdefault(source, []).append(relation['target'])
+    if source == export['matrix']['id']:
+        sequences += groups.get('sequences', [])
+
+# read in the non-MITRE data, so that relations other galaxies added to an ATLAS value
+# survive the regeneration while the (possibly stale) MITRE ones are rebuilt
 non_mitre_uuids = set()
 for fname in os.listdir(os.path.join(misp_dir, 'clusters')):
-    if 'mitre' in fname:
+    if 'mitre' in fname or not fname.endswith('.json'):
         continue
-    if '.json' in fname:
-        # print(fname)
-        with open(os.path.join(misp_dir, 'clusters', fname)) as f_in:
-            cluster_data = json.load(f_in)
-            for cluster in cluster_data['values']:
-                non_mitre_uuids.add(cluster['uuid'])
+    for value in load(os.path.join(misp_dir, 'clusters', fname))['values']:
+        non_mitre_uuids.add(value['uuid'])
 
-# read in existing MITRE data
-# first build a data set of the MISP Galaxy ATT&CK elements by using the UUID as reference, this speeds up lookups later on.
-# at the end we will convert everything again to separate datasets
-all_data_uuid = {}
 
-for t in types:
-    fname = os.path.join(misp_dir, 'clusters', 'mitre-atlas-{}.json'.format(t))
-    if os.path.exists(fname):
-        # print("##### {}".format(fname))
-        with open(fname) as f:
-            file_data = json.load(f)
-        # print(file_data)
-        for value in file_data['values']:
-            # remove (old)MITRE relations, and keep non-MITRE relations
-            if 'related' in value:
-                related_original = value['related']
-                related_new = []
-                for rel in related_original:
-                    if rel['dest-uuid'] in non_mitre_uuids:
-                        related_new.append(rel)
-                value['related'] = related_new
-            # find and handle duplicate uuids
-            if value['uuid'] in all_data_uuid:
-                # exit("ERROR: Something is really wrong, we seem to have duplicates.")
-                # if it already exists we need to copy over all the data manually to merge it
-                # on the other hand, from a manual analysis it looks like it's mostly the relations that are different
-                # so now we will just copy over the relationships
-                # actually, at time of writing the code below results in no change as the new items always contained more than the previously seen items
-                value_orig = all_data_uuid[value['uuid']]
-                if 'related' in value_orig:
-                    for related_item in value_orig['related']:
-                        if related_item not in value['related']:
-                            value['related'].append(related_item)
-            all_data_uuid[value['uuid']] = value
+def related(dest_id, rel_type, tagged=True):
+    """Build a relation to an ATLAS object, or None when upstream does not know it."""
+    if dest_id not in uuid_by_id:
+        return None
+    relation = {'dest-uuid': uuid_by_id[dest_id], 'type': rel_type}
+    if tagged:
+        relation['tags'] = list(almost_certain)
+    return relation
 
-# now load the MITRE ATT&CK
 
-attack_dir = os.path.join(args.path, 'dist')
-if not os.path.exists(attack_dir):
-    exit("ERROR: MITRE ATT&CK folder incorrect")
+def refs(item, key):
+    urls = {'{}/{}/{}'.format(atlas_url, routes[key], item['id'])}
+    for reference in item.get('references', []):
+        if reference.get('url'):
+            urls.add(reference['url'])
+    if (item.get('attack-reference') or {}).get('url'):
+        urls.add(item['attack-reference']['url'])
+    return sorted(urls)
 
-with open(os.path.join(attack_dir, 'stix-atlas.json')) as f:
-    attack_data = json.load(f)
 
-for item in attack_data['objects']:
-    if item['type'] not in types:
-        continue
-
-    # print(json.dumps(item, indent=2, sort_keys=True, ensure_ascii=False))
-    try:
-        # build the new data structure
-        value = {}
-        uuid = re.search('--(.*)$', item['id']).group(0)[2:]
-        # item exist already in the all_data set
-        update = False
-        if uuid in all_data_uuid:
-            value = all_data_uuid[uuid]
-
-        if 'description' in item:
-            value['description'] = item['description']
-        value['value'] = item['name']
-        value['meta'] = {}
-        value['meta']['refs'] = []
-        value['uuid'] = re.search('--(.*)$', item['id']).group(0)[2:]
-
-        for reference in item['external_references']:
-            if 'url' in reference and reference['url'] not in value['meta']['refs']:
-                value['meta']['refs'].append(reference['url'])
-            # Find Mitre external IDs from allowed sources
-            if 'external_id' in reference and reference.get("source_name", None) in mitre_sources:
-                value['meta']['external_id'] = reference['external_id']
-        if not value['meta'].get('external_id', None):
-            # dataset also contains MITRE ATT&CK, whenever we don't find external ID from the allowed sources it's a sign that the entry is not of the type of interest
-            continue
-            # exit("Entry is missing an external ID, please update mitre_sources. Available references: {}".format(
-            #     json.dumps(item['external_references'])
-            # ))
-
-        if 'kill_chain_phases' in item:   # many (but not all) attack-patterns have this
-            value['meta']['kill_chain'] = []
-            for killchain in item['kill_chain_phases']:
-                value['meta']['kill_chain'].append(killchain['kill_chain_name'] + ':' + killchain['phase_name'])
-        if 'x_mitre_data_sources' in item:
-            value['meta']['mitre_data_sources'] = item['x_mitre_data_sources']
-        if 'x_mitre_platforms' in item:
-            value['meta']['mitre_platforms'] = item['x_mitre_platforms']
-        # TODO add the other x_mitre elements dynamically
-
-        # relationships will be build separately afterwards
-        value['type'] = item['type']  # remove this before dump to json
-        # print(json.dumps(value, sort_keys=True, indent=2))
-
-        all_data_uuid[uuid] = value
-
-    except Exception:
-        print(json.dumps(item, sort_keys=True, indent=2))
-        import traceback
-        traceback.print_exc()
-
-# process the 'relationship' type as we now know the existence of all ATT&CK uuids
-for item in attack_data['objects']:
-    if item['type'] != 'relationship':
-        continue
-    # print(json.dumps(item, indent=2, sort_keys=True, ensure_ascii=False))
-
-    rel_type = item['relationship_type']
-    dest_uuid = re.findall(r'--([0-9a-f-]+)', item['target_ref']).pop()
-    source_uuid = re.findall(r'--([0-9a-f-]+)', item['source_ref']).pop()
-    tags = []
-
-    # add the relation in the defined way
-    rel_source = {
-        "dest-uuid": dest_uuid,
-        "type": rel_type
+def build_value(atlas_id, item, key, kept_relations):
+    value = {
+        'description': absolute_links(item['description']),
+        'meta': {
+            'external_id': atlas_id,
+            'refs': refs(item, key),
+        },
+        'uuid': item['uuid'],
+        'value': '{} - {}'.format(item['name'], atlas_id),
     }
-    if rel_type != 'subtechnique-of':
-        rel_source['tags'] = [
-            "estimative-language:likelihood-probability=\"almost-certain\""
-        ]
-    try:
-        if 'related' not in all_data_uuid[source_uuid]:
-            all_data_uuid[source_uuid]['related'] = []
-        if rel_source not in all_data_uuid[source_uuid]['related']:
-            all_data_uuid[source_uuid]['related'].append(rel_source)
-    except KeyError:
-        pass  # ignore relations from which we do not know the source
+    meta = value['meta']
+    relations = list(kept_relations.get(atlas_id, []))
 
-    # LATER find the opposite word of "rel_type" and build the relation in the opposite direction
+    if key == 'techniques':
+        meta['kill_chain'] = sorted(
+            '{}:{}'.format(kill_chain_name, slug(export['tactics'][tactic]['name']))
+            for tactic in achieves.get(atlas_id, []) if tactic in export['tactics'])
+        meta['maturity'] = item['maturity']
+        meta['mitre_platforms'] = item['platforms']
+        if atlas_id in specializes:
+            relations.append(related(specializes[atlas_id], 'subtechnique-of', tagged=False))
+    elif key == 'mitigations':
+        meta['categories'] = item['categories']
+        meta['lifecycle_phases'] = item['lifecycle-phases']
+        relations += [related(target, 'mitigates') for target in mitigates.get(atlas_id, [])]
+    elif key == 'case-studies':
+        meta['actor'] = item['actor']
+        meta['case_study_type'] = item['type']
+        meta['date'] = item['date']
+        meta['date_granularity'] = item['date-granularity']
+        meta['target'] = item['target']
+        if item.get('reporter'):
+            meta['reporter'] = item['reporter']
+        relations += [related(target, 'uses') for target in employs.get(atlas_id, [])]
+
+    # the ATT&CK entry this ATLAS entry derives from
+    attack_id = (item.get('attack-reference') or {}).get('id')
+    if attack_id:
+        meta['mitre_attack_id'] = attack_id
+        if attack_id in attack_uuid_by_id:
+            relations.append({'dest-uuid': attack_uuid_by_id[attack_id],
+                              'type': 'related-to', 'tags': list(almost_certain)})
+
+    # a case study employs the same technique twice when it did so at two points of the
+    # story, which is one relation to us
+    deduplicated = []
+    for relation in relations:
+        if relation and relation not in deduplicated:
+            deduplicated.append(relation)
+    if deduplicated:
+        value['related'] = sorted(deduplicated, key=lambda x: (x['dest-uuid'], x['type']))
+    return value
 
 
-# dump all_data to their respective file
-for t in types:
-    fname = os.path.join(misp_dir, 'clusters', 'mitre-atlas-{}.json'.format(t))
-    if not os.path.exists(fname):
-        exit("File {} does not exist, this is unexpected.".format(fname))
-    with open(fname) as f:
-        file_data = json.load(f)
+def create_files(suffix):
+    """Write the galaxy and the empty cluster of a type we did not carry before."""
+    template = new_files.get(suffix)
+    if not template:
+        exit('clusters/mitre-atlas-{}.json does not exist, this is unexpected.'.format(suffix))
+    galaxy = {
+        'description': template['description'],
+        'icon': template['icon'],
+        'name': template['name'],
+        'namespace': 'mitre',
+        'type': 'mitre-atlas-{}'.format(suffix),
+        'uuid': template['galaxy-uuid'],
+        'version': 1,
+    }
+    dump(os.path.join(misp_dir, 'galaxies', 'mitre-atlas-{}.json'.format(suffix)), galaxy)
+    return {
+        'authors': ['MITRE'],
+        'category': template['category'],
+        'description': template['description'],
+        'name': template['name'],
+        'source': 'https://github.com/mitre-atlas/atlas-data',
+        'type': 'mitre-atlas-{}'.format(suffix),
+        'uuid': template['cluster-uuid'],
+        'values': [],
+        'version': 0,
+    }
 
-    file_data['values'] = []
-    for item in all_data_uuid.values():
-        # print(json.dumps(item, sort_keys=True, indent=2))
-        if 'type' not in item or item['type'] != t:  # drop old data or not from the right type
-            continue
-        item_2 = item.copy()
-        item_2.pop('type', None)
-        file_data['values'].append(item_2)
 
-    # FIXME the sort algo needs to be further improved, potentially with a recursive deep sort
-    file_data['values'] = sorted(file_data['values'], key=lambda x: x['meta']['external_id'])
-    for item in file_data['values']:
-        if 'related' in item:
-            item['related'] = sorted(item['related'], key=lambda x: x['dest-uuid'])
-        if 'meta' in item:
-            if 'refs' in item['meta']:
-                item['meta']['refs'] = sorted(item['meta']['refs'])
-            if 'mitre_data_sources' in item['meta']:
-                item['meta']['mitre_data_sources'] = sorted(item['meta']['mitre_data_sources'])
+for suffix, key in sorted(types.items()):
+    fname = os.path.join(misp_dir, 'clusters', 'mitre-atlas-{}.json'.format(suffix))
+    file_data = load(fname) if os.path.exists(fname) else create_files(suffix)
+
+    # keyed by ATLAS ID rather than by UUID, so that the relations other galaxies added
+    # are kept even on a release that changes the UUID of a value
+    kept_relations = {}
+    for value in file_data['values']:
+        external_id = value.get('meta', {}).get('external_id')
+        kept = [relation for relation in value.get('related', [])
+                if relation['dest-uuid'] in non_mitre_uuids]
+        if external_id and kept:
+            kept_relations[external_id] = kept
+
+    file_data['values'] = sorted(
+        (build_value(atlas_id, item, key, kept_relations) for atlas_id, item in export[key].items()),
+        key=lambda x: x['meta']['external_id'])
     file_data['version'] += 1
-    with open(fname, 'w') as f:
-        json.dump(file_data, f, indent=2, sort_keys=True, ensure_ascii=False)
-        f.write('\n')  # only needed for the beauty and to be compliant with jq_all_the_things
+    dump(fname, file_data)
+    print('{}: {} values, {} relations'.format(
+        os.path.basename(fname), len(file_data['values']),
+        sum(len(value.get('related', [])) for value in file_data['values'])))
+
+# the matrix orders the tactics, which is the kill chain order of the techniques galaxy
+fname = os.path.join(misp_dir, 'galaxies', 'mitre-atlas-attack-pattern.json')
+galaxy_data = load(fname)
+kill_chain_order = [slug(export['tactics'][relation['target']]['name'])
+                    for relation in sorted(sequences, key=lambda x: x['position'])
+                    if relation['target'] in export['tactics']]
+if galaxy_data.get('kill_chain_order', {}).get(kill_chain_name) != kill_chain_order:
+    galaxy_data['kill_chain_order'] = {kill_chain_name: kill_chain_order}
+    galaxy_data['version'] += 1
+    dump(fname, galaxy_data)
+    print('{}: kill chain order updated to the {} tactics of the matrix'.format(
+        os.path.basename(fname), len(kill_chain_order)))
 
 print("All done, please don't forget to ./jq_all_the_things.sh, commit, and then ./validate_all.sh.")
