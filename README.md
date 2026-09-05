@@ -368,15 +368,23 @@ Category: *asset* - source: *https://github.com/mitre/cti* - total: *18* element
 
 [MITRE ATLAS Techniques](https://www.misp-galaxy.org/mitre-atlas-attack-pattern) - Techniques from MITRE ATLAS (Adversarial Threat Landscape for Artificial-Intelligence Systems).
 
-Category: *attack-pattern* - source: *https://github.com/mitre-atlas/atlas-data* - total: *91* elements
+Category: *attack-pattern* - source: *https://github.com/mitre-atlas/atlas-data* - total: *197* elements
 
 [[HTML](https://www.misp-galaxy.org/mitre-atlas-attack-pattern)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-atlas-attack-pattern.json)]
+
+## MITRE ATLAS Case Studies
+
+[MITRE ATLAS Case Studies](https://www.misp-galaxy.org/mitre-atlas-case-study) - Case studies from MITRE ATLAS (Adversarial Threat Landscape for Artificial-Intelligence Systems): real-world incidents and red team exercises against AI systems.
+
+Category: *actor* - source: *https://github.com/mitre-atlas/atlas-data* - total: *72* elements
+
+[[HTML](https://www.misp-galaxy.org/mitre-atlas-case-study)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-atlas-case-study.json)]
 
 ## MITRE ATLAS Mitigations
 
 [MITRE ATLAS Mitigations](https://www.misp-galaxy.org/mitre-atlas-course-of-action) - Mitigations from MITRE ATLAS (Adversarial Threat Landscape for Artificial-Intelligence Systems).
 
-Category: *course-of-action* - source: *https://github.com/mitre-atlas/atlas-data* - total: *26* elements
+Category: *course-of-action* - source: *https://github.com/mitre-atlas/atlas-data* - total: *39* elements
 
 [[HTML](https://www.misp-galaxy.org/mitre-atlas-course-of-action)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-atlas-course-of-action.json)]
 
