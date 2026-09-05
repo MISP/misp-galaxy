@@ -5,7 +5,7 @@
   "category": "attack-pattern",
   "description": "Techniques from MITRE ATLAS (Adversarial Threat Landscape for Artificial-Intelligence Systems).",
   "name": "MITRE ATLAS Techniques",
-  "source": "https://github.com/mitre-atlas/atlas-navigator-data",
+  "source": "https://github.com/mitre-atlas/atlas-data",
   "type": "mitre-atlas-attack-pattern",
   "uuid": "95e55c7e-68a9-453b-9677-020c8fc06333",
   "values": [
@@ -23,8 +23,8 @@
           "https://atlas.mitre.org/techniques/AML.T0000"
         ]
       },
-      "uuid": "65d21e6b-7abe-4623-8f5c-88011cb362cb",
-      "value": "Search for Victim's Publicly Available Research Materials"
+      "uuid": "c02f812d-59cc-5366-b1aa-7eb05154b772",
+      "value": "Search for Victim's Publicly Available Research Materials - AML.T0000"
     },
     {
       "description": "Many of the publications accepted at premier machine learning conferences and journals come from commercial labs.\nSome journals and conferences are open access, others may require paying for access or a membership.\nThese publications will often describe in detail all aspects of a particular approach for reproducibility.\nThis information can be used by adversaries to implement the paper.\n",
@@ -42,12 +42,12 @@
       },
       "related": [
         {
-          "dest-uuid": "65d21e6b-7abe-4623-8f5c-88011cb362cb",
+          "dest-uuid": "c02f812d-59cc-5366-b1aa-7eb05154b772",
           "type": "subtechnique-of"
         }
       ],
-      "uuid": "a17a1941-ca02-4273-9d7f-d864ea122bdb",
-      "value": "Journals and Conference Proceedings"
+      "uuid": "518338b9-9239-5e02-95f5-146bc758520f",
+      "value": "Journals and Conference Proceedings - AML.T0000.000"
     },
     {
       "description": "Pre-Print repositories, such as arXiv, contain the latest academic research papers that haven't been peer reviewed.\nThey may contain research notes, or technical reports that aren't typically published in journals or conference proceedings.\nPre-print repositories also serve as a central location to share papers that have been accepted to journals.\nSearching pre-print repositories  provide adversaries with a relatively up-to-date view of what researchers in the victim organization are working on.\n",
@@ -65,12 +65,12 @@
       },
       "related": [
         {
-          "dest-uuid": "65d21e6b-7abe-4623-8f5c-88011cb362cb",
+          "dest-uuid": "c02f812d-59cc-5366-b1aa-7eb05154b772",
           "type": "subtechnique-of"
         }
       ],
-      "uuid": "f09d9beb-4cb5-4094-83b6-e46bedc8a20e",
-      "value": "Pre-Print Repositories"
+      "uuid": "02ea7626-0eec-5a4b-98ff-b3f21733b783",
+      "value": "Pre-Print Repositories - AML.T0000.001"
     },
     {
       "description": "Research labs at academic institutions and Company R&D divisions often have blogs that highlight their use of machine learning and its application to the organizations unique problems.\nIndividual researchers also frequently document their work in blogposts.\nAn adversary may search for posts made by the target victim organization or its employees.\nIn comparison to [Journals and Conference Proceedings](/techniques/AML.T0000.000) and [Pre-Print Repositories](/techniques/AML.T0000.001) this material will often contain more practical aspects of the machine learning system.\nThis could include underlying technologies and frameworks used, and possibly some information about the API access and use case.\nThis will help the adversary better understand how that organization is using machine learning internally and the details of their approach that could aid in tailoring an attack.\n",
@@ -88,12 +88,12 @@
       },
       "related": [
         {
-          "dest-uuid": "65d21e6b-7abe-4623-8f5c-88011cb362cb",
+          "dest-uuid": "c02f812d-59cc-5366-b1aa-7eb05154b772",
           "type": "subtechnique-of"
         }
       ],
-      "uuid": "b37a58fd-ee29-4f1d-92d8-3bfccf884e8b",
-      "value": "Technical Blogs"
+      "uuid": "88a794e9-fa8c-5185-a677-bf476cd8890b",
+      "value": "Technical Blogs - AML.T0000.002"
     },
     {
       "description": "Much like the [Search for Victim's Publicly Available Research Materials](/techniques/AML.T0000), there is often ample research available on the vulnerabilities of common models. Once a target has been identified, an adversary will likely try to identify any pre-existing work that has been done for this class of models.\nThis will include not only reading academic papers that may identify the particulars of a successful attack, but also identifying pre-existing implementations of those attacks. The adversary may obtain [Adversarial ML Attack Implementations](/techniques/AML.T0016.000) or develop their own [Adversarial ML Attacks](/techniques/AML.T0017.000) if necessary.",
@@ -109,8 +109,8 @@
           "https://atlas.mitre.org/techniques/AML.T0001"
         ]
       },
-      "uuid": "8f510e67-2f0c-4642-9811-25c67643363c",
-      "value": "Search for Publicly Available Adversarial Vulnerability Analysis"
+      "uuid": "4f36677b-3ba6-5556-9eba-0a2311796803",
+      "value": "Search for Publicly Available Adversarial Vulnerability Analysis - AML.T0001"
     },
     {
       "description": "Adversaries may search public sources, including cloud storage, public-facing services, and software or data repositories, to identify machine learning artifacts.\nThese machine learning artifacts may include the software stack used to train and deploy models, training and testing data, model configurations and parameters.\nAn adversary will be particularly interested in artifacts hosted by or associated with the victim organization as they may represent what that organization uses in a production environment.\nAdversaries may identify artifact repositories via other resources associated with the victim organization (e.g. [Search Victim-Owned Websites](/techniques/AML.T0003) or [Search for Victim's Publicly Available Research Materials](/techniques/AML.T0000)).\nThese ML artifacts often provide adversaries with details of the ML task and approach.\n\nML artifacts can aid in an adversary's ability to [Create Proxy ML Model](/techniques/AML.T0005).\nIf these artifacts include pieces of the actual model in production, they can be used to directly [Craft Adversarial Data](/techniques/AML.T0043).\nAcquiring some artifacts requires registration (providing user details such email/name), AWS keys, or written requests, and may require the adversary to [Establish Accounts](/techniques/AML.T0021).\n\nArtifacts might be hosted on victim-controlled infrastructure, providing the victim with some information on who has accessed that data.\n",
@@ -126,8 +126,8 @@
           "https://atlas.mitre.org/techniques/AML.T0002"
         ]
       },
-      "uuid": "aa17fe8d-62f8-4c4c-b7a2-6858c82dd84b",
-      "value": "Acquire Public ML Artifacts"
+      "uuid": "a8393765-c78b-5bd3-8f92-74579e8f5a9f",
+      "value": "Acquire Public ML Artifacts - AML.T0002"
     },
     {
       "description": "Adversaries may collect public datasets to use in their operations.\nDatasets used by the victim organization or datasets that are representative of the data used by the victim organization may be valuable to adversaries.\nDatasets can be stored in cloud storage, or on victim-owned websites.\nSome datasets require the adversary to [Establish Accounts](/techniques/AML.T0021) for access.\n\nAcquired datasets help the adversary advance their operations, stage attacks,  and tailor attacks to the victim organization.\n",
@@ -145,12 +145,12 @@
       },
       "related": [
         {
-          "dest-uuid": "aa17fe8d-62f8-4c4c-b7a2-6858c82dd84b",
+          "dest-uuid": "a8393765-c78b-5bd3-8f92-74579e8f5a9f",
           "type": "subtechnique-of"
         }
       ],
-      "uuid": "a3baff3d-7228-4ab7-ae00-ffe150e7ef8a",
-      "value": "Datasets"
+      "uuid": "bbffbb39-c270-5822-8786-7bbab1a43dc3",
+      "value": "Datasets - AML.T0002.000"
     },
     {
       "description": "Adversaries may acquire public models to use in their operations.\nAdversaries may seek models used by the victim organization or models that are representative of those used by the victim organization.\nRepresentative models may include model architectures, or pre-trained models which define the architecture as well as model parameters from training on a dataset.\nThe adversary may search public sources for common model architecture configuration file formats such as YAML or Python configuration files, and common model storage file formats such as ONNX (.onnx), HDF5 (.h5), Pickle (.pkl), PyTorch (.pth), or TensorFlow (.pb, .tflite).\n\nAcquired models are useful in advancing the adversary's operations and are frequently used to tailor attacks to the victim model.\n",
@@ -168,12 +168,12 @@
       },
       "related": [
         {
-          "dest-uuid": "aa17fe8d-62f8-4c4c-b7a2-6858c82dd84b",
+          "dest-uuid": "a8393765-c78b-5bd3-8f92-74579e8f5a9f",
           "type": "subtechnique-of"
         }
       ],
-      "uuid": "c086784e-1494-4f75-a4a0-d3ad054b9428",
-      "value": "Models"
+      "uuid": "cf1a7a78-0509-59a6-a8a4-35d9e1e966a4",
+      "value": "Models - AML.T0002.001"
     },
     {
       "description": "Adversaries may search websites owned by the victim for information that can be used during targeting.\nVictim-owned websites may contain technical details about their ML-enabled products or services.\nVictim-owned websites may contain a variety of details, including names of departments/divisions, physical locations, and data about key employees such as names, roles, and contact info.\nThese sites may also have details highlighting business operations and relationships.\n\nAdversaries may search victim-owned websites to gather actionable information.\nThis information may help adversaries tailor their attacks (e.g. [Adversarial ML Attacks](/techniques/AML.T0017.000) or [Manual Modification](/techniques/AML.T0043.003)).\nInformation from these sources may reveal opportunities for other forms of reconnaissance (e.g. [Search for Victim's Publicly Available Research Materials](/techniques/AML.T0000) or [Search for Publicly Available Adversarial Vulnerability Analysis](/techniques/AML.T0001))\n",
@@ -189,8 +189,8 @@
           "https://atlas.mitre.org/techniques/AML.T0003"
         ]
       },
-      "uuid": "b23cda85-3457-406d-b043-24d2cf9e6fcf",
-      "value": "Search Victim-Owned Websites"
+      "uuid": "deca63a5-2a52-54ea-abe5-2cd7089d46e4",
+      "value": "Search Victim-Owned Websites - AML.T0003"
     },
     {
       "description": "Adversaries may search open application repositories during targeting.\nExamples of these include Google Play, the iOS App store, the macOS App Store, and the Microsoft Store.\n\nAdversaries may craft search queries seeking applications that contain a ML-enabled components.\nFrequently, the next step is to [Acquire Public ML Artifacts](/techniques/AML.T0002).\n",
@@ -206,8 +206,8 @@
           "https://atlas.mitre.org/techniques/AML.T0004"
         ]
       },
-      "uuid": "8c26f51a-c403-4c4d-852a-a1c56fe9e7cd",
-      "value": "Search Application Repositories"
+      "uuid": "d229d87c-9400-53f0-bca3-b9514fd9227f",
+      "value": "Search Application Repositories - AML.T0004"
     },
     {
       "description": "Adversaries may obtain models to serve as proxies for the target model in use at the victim organization.\nProxy models are used to simulate complete access to the target model in a fully offline manner.\n\nAdversaries may train models from representative datasets, attempt to replicate models from victim inference APIs, or use available pre-trained models.\n",
@@ -223,8 +223,8 @@
           "https://atlas.mitre.org/techniques/AML.T0005"
         ]
       },
-      "uuid": "c2bd321e-e196-4954-a8e9-c22f1793acc7",
-      "value": "Create Proxy ML Model"
+      "uuid": "6a4ccafa-0e03-5e98-b8cd-5fccc68409d4",
+      "value": "Create Proxy ML Model - AML.T0005"
     },
     {
       "description": "Proxy models may be trained from ML artifacts (such as data, model architectures, and pre-trained models) that are representative of the target model gathered by the adversary.\nThis can be used to develop attacks that require higher levels of access than the adversary has available or as a means to validate pre-existing attacks without interacting with the target model.\n",
@@ -242,12 +242,12 @@
       },
       "related": [
         {
-          "dest-uuid": "c2bd321e-e196-4954-a8e9-c22f1793acc7",
+          "dest-uuid": "6a4ccafa-0e03-5e98-b8cd-5fccc68409d4",
           "type": "subtechnique-of"
         }
       ],
-      "uuid": "75e15967-69df-4bdf-b662-979fb1e56c3e",
-      "value": "Train Proxy via Gathered ML Artifacts"
+      "uuid": "3b4f64bf-fb3a-53ee-ac26-d5783e0f9001",
+      "value": "Train Proxy via Gathered ML Artifacts - AML.T0005.000"
     },
     {
       "description": "Adversaries may replicate a private model.\nBy repeatedly querying the victim's [AI Model Inference API Access](/techniques/AML.T0040), the adversary can collect the target model's inferences into a dataset.\nThe inferences are used as labels for training a separate model offline that will mimic the behavior and performance of the target model.\n\nA replicated model that closely mimic's the target model is a valuable resource in staging the attack.\nThe adversary can use the replicated model to [Craft Adversarial Data](/techniques/AML.T0043) for various purposes (e.g. [Evade ML Model](/techniques/AML.T0015), [Spamming ML System with Chaff Data](/techniques/AML.T0046)).\n",
@@ -265,12 +265,12 @@
       },
       "related": [
         {
-          "dest-uuid": "c2bd321e-e196-4954-a8e9-c22f1793acc7",
+          "dest-uuid": "6a4ccafa-0e03-5e98-b8cd-5fccc68409d4",
           "type": "subtechnique-of"
         }
       ],
-      "uuid": "a3660a2d-f6e5-4f1b-9618-332cceb389c8",
-      "value": "Train Proxy via Replication"
+      "uuid": "298dc6c6-5683-5475-b724-2a2a3db3a7dc",
+      "value": "Train Proxy via Replication - AML.T0005.001"
     },
     {
       "description": "Adversaries may use an off-the-shelf pre-trained model as a proxy for the victim model to aid in staging the attack.\n",
@@ -288,12 +288,12 @@
       },
       "related": [
         {
-          "dest-uuid": "c2bd321e-e196-4954-a8e9-c22f1793acc7",
+          "dest-uuid": "6a4ccafa-0e03-5e98-b8cd-5fccc68409d4",
           "type": "subtechnique-of"
         }
       ],
-      "uuid": "ad290fa3-d87b-43d2-a547-bfa22387c132",
-      "value": "Use Pre-Trained Model"
+      "uuid": "43d26237-62d6-5e56-9252-18af7c9ff7ae",
+      "value": "Use Pre-Trained Model - AML.T0005.002"
     },
     {
       "description": "An adversary may probe or scan the victim system to gather information for targeting.\nThis is distinct from other reconnaissance techniques that do not involve direct interaction with the victim system.\n",
@@ -309,8 +309,8 @@
           "https://atlas.mitre.org/techniques/AML.T0006"
         ]
       },
-      "uuid": "79460396-01b4-4e91-8695-7d26df1abb95",
-      "value": "Active Scanning"
+      "uuid": "cbebfc30-9124-5c7e-915c-d4af59ddb34e",
+      "value": "Active Scanning - AML.T0006"
     },
     {
       "description": "Adversaries may search private sources to identify machine learning artifacts that exist on the system and gather information about them.\nThese artifacts can include the software stack used to train and deploy models, training and testing data management systems, container registries, software repositories, and model zoos.\n\nThis information can be used to identify targets for further collection, exfiltration, or disruption, and to tailor and improve attacks.\n",
@@ -326,8 +326,8 @@
           "https://atlas.mitre.org/techniques/AML.T0007"
         ]
       },
-      "uuid": "6a88dccb-fb37-4f11-a5ad-42908aaee1d0",
-      "value": "Discover ML Artifacts"
+      "uuid": "0855cdf6-5b4f-5586-a658-942b7222ede7",
+      "value": "Discover ML Artifacts - AML.T0007"
     },
     {
       "description": "Adversaries may buy, lease, or rent infrastructure for use throughout their operation.\nA wide variety of infrastructure exists for hosting and orchestrating adversary operations.\nInfrastructure solutions include physical or cloud servers, domains, mobile devices, and third-party web services.\nFree resources may also be used, but they are typically limited.\nInfrastructure can also include physical components such as countermeasures that degrade or disrupt AI components or sensors, including printed materials, wearables, or disguises.\n\nUse of these infrastructure solutions allows an adversary to stage, launch, and execute an operation.\nSolutions may help adversary operations blend in with traffic that is seen as normal, such as contact to third-party web services.\nDepending on the implementation, adversaries may use infrastructure that makes it difficult to physically tie back to them as well as utilize infrastructure that can be rapidly provisioned, modified, and shut down.",
@@ -343,8 +343,8 @@
           "https://atlas.mitre.org/techniques/AML.T0008"
         ]
       },
-      "uuid": "01203e88-6c9a-4611-b278-7ba3c604a234",
-      "value": "Acquire Infrastructure"
+      "uuid": "159106db-413f-5f36-854f-09729ed0a18f",
+      "value": "Acquire Infrastructure - AML.T0008"
     },
     {
       "description": "Developing and staging machine learning attacks often requires expensive compute resources.\nAdversaries may need access to one or many GPUs in order to develop an attack.\nThey may try to anonymously use free resources such as Google Colaboratory, or cloud resources such as AWS, Azure, or Google Cloud as an efficient way to stand up temporary resources to conduct operations.\nMultiple workspaces may be used to avoid detection.\n",
@@ -362,12 +362,12 @@
       },
       "related": [
         {
-          "dest-uuid": "01203e88-6c9a-4611-b278-7ba3c604a234",
+          "dest-uuid": "159106db-413f-5f36-854f-09729ed0a18f",
           "type": "subtechnique-of"
         }
       ],
-      "uuid": "d65acc80-abf9-4147-a612-6536d31c5a91",
-      "value": "ML Development Workspaces"
+      "uuid": "b14fb0a1-a329-5982-a44c-c5da0b458d39",
+      "value": "ML Development Workspaces - AML.T0008.000"
     },
     {
       "description": "Adversaries may acquire consumer hardware to conduct their attacks.\nOwning the hardware provides the adversary with complete control of the environment. These devices can be hard to trace.\n",
@@ -385,12 +385,12 @@
       },
       "related": [
         {
-          "dest-uuid": "01203e88-6c9a-4611-b278-7ba3c604a234",
+          "dest-uuid": "159106db-413f-5f36-854f-09729ed0a18f",
           "type": "subtechnique-of"
         }
       ],
-      "uuid": "c90d78ed-0f2f-41e9-b85f-1d13be7a40f6",
-      "value": "Consumer Hardware"
+      "uuid": "2bc7b6ec-2304-5913-8b0c-bb92ba135724",
+      "value": "Consumer Hardware - AML.T0008.001"
     },
     {
       "description": "Adversaries may acquire domains that can be used during targeting. Domain names are the human readable names used to represent one or more IP addresses. They can be purchased or, in some cases, acquired for free.\n\nAdversaries may use acquired domains for a variety of purposes (see [ATT&CK](https://attack.mitre.org/techniques/T1583/001/)). Large AI datasets are often distributed as a list of URLs to individual datapoints. Adversaries may acquire expired domains that are included in these datasets and replace individual datapoints with poisoned examples ([Publish Poisoned Datasets](/techniques/AML.T0019)).",
@@ -408,12 +408,12 @@
       },
       "related": [
         {
-          "dest-uuid": "782c346d-9af5-4145-b6c6-b9cccdc2c950",
+          "dest-uuid": "3fa94ab1-4033-559a-971d-4419d0ecdcbd",
           "type": "subtechnique-of"
         }
       ],
-      "uuid": "dd88c52a-ec0f-42fa-8622-f992d6bcf2d5",
-      "value": "Domains"
+      "uuid": "88ed7595-57b1-547d-8de1-436641bda943",
+      "value": "Domains - AML.T0008.002"
     },
     {
       "description": "Adversaries may acquire or manufacture physical countermeasures to aid or support their attack.\n\nThese components may be used to disrupt or degrade the model, such as adversarial patterns printed on stickers or T-shirts, disguises, or decoys. They may also be used to disrupt or degrade the sensors used in capturing data, such as laser pointers, light bulbs, or other tools.",
@@ -431,12 +431,12 @@
       },
       "related": [
         {
-          "dest-uuid": "782c346d-9af5-4145-b6c6-b9cccdc2c950",
+          "dest-uuid": "3fa94ab1-4033-559a-971d-4419d0ecdcbd",
           "type": "subtechnique-of"
         }
       ],
-      "uuid": "c2ca6b46-bcdf-45a8-b33d-3272c7a65cde",
-      "value": "Physical Countermeasures"
+      "uuid": "855d14fa-795d-5000-9116-3b54d49f42ea",
+      "value": "Physical Countermeasures - AML.T0008.003"
     },
     {
       "description": "Adversaries may gain initial access to a system by compromising the unique portions of the ML supply chain.\nThis could include [Hardware](/techniques/AML.T0010.000), [Data](/techniques/AML.T0010.002) and its annotations, parts of the ML [ML Software](/techniques/AML.T0010.001) stack, or the [Model](/techniques/AML.T0010.003) itself.\nIn some instances the attacker will need secondary access to fully carry out an attack using compromised components of the supply chain.\n",
@@ -452,8 +452,8 @@
           "https://atlas.mitre.org/techniques/AML.T0010"
         ]
       },
-      "uuid": "d2cf31e0-a550-4fe0-8fdb-8941b3ac00d9",
-      "value": "ML Supply Chain Compromise"
+      "uuid": "2ea180c5-5df4-5815-8c78-a1cec1da6e18",
+      "value": "ML Supply Chain Compromise - AML.T0010"
     },
     {
       "description": "Adversaries may target AI systems by disrupting or manipulating the hardware supply chain. AI models often run on specialized hardware such as GPUs, TPUs, or embedded devices, but may also be optimized to operate on CPUs.",
@@ -471,12 +471,12 @@
       },
       "related": [
         {
-          "dest-uuid": "d2cf31e0-a550-4fe0-8fdb-8941b3ac00d9",
+          "dest-uuid": "2ea180c5-5df4-5815-8c78-a1cec1da6e18",
           "type": "subtechnique-of"
         }
       ],
-      "uuid": "8dfc1d73-0de8-4daa-a8cf-83e019347395",
-      "value": "Hardware"
+      "uuid": "e0774a36-8183-5b12-a76c-492b904f32d7",
+      "value": "Hardware - AML.T0010.000"
     },
     {
       "description": "Most machine learning systems rely on a limited set of machine learning frameworks.\nAn adversary could get access to a large number of machine learning systems through a comprise of one of their supply chains.\nMany machine learning projects also rely on other open source implementations of various algorithms.\nThese can also be compromised in a targeted way to get access to specific systems.\n",
@@ -494,12 +494,12 @@
       },
       "related": [
         {
-          "dest-uuid": "d2cf31e0-a550-4fe0-8fdb-8941b3ac00d9",
+          "dest-uuid": "2ea180c5-5df4-5815-8c78-a1cec1da6e18",
           "type": "subtechnique-of"
         }
       ],
-      "uuid": "d8292a1c-21e7-4b45-b110-0e05feb30a9a",
-      "value": "ML Software"
+      "uuid": "3bf297c5-2ab2-573a-aa4e-f20af3d2643c",
+      "value": "ML Software - AML.T0010.001"
     },
     {
       "description": "Data is a key vector of supply chain compromise for adversaries.\nEvery machine learning project will require some form of data.\nMany rely on large open source datasets that are publicly available.\nAn adversary could rely on compromising these sources of data.\nThe malicious data could be a result of [Poison Training Data](/techniques/AML.T0020) or include traditional malware.\n\nAn adversary can also target private datasets in the labeling phase.\nThe creation of private datasets will often require the hiring of outside labeling services.\nAn adversary can poison a dataset by modifying the labels being generated by the labeling service.\n",
@@ -517,12 +517,12 @@
       },
       "related": [
         {
-          "dest-uuid": "d2cf31e0-a550-4fe0-8fdb-8941b3ac00d9",
+          "dest-uuid": "2ea180c5-5df4-5815-8c78-a1cec1da6e18",
           "type": "subtechnique-of"
         }
       ],
-      "uuid": "8d644240-ad99-4410-a7f8-3ef8f53a463e",
-      "value": "Data"
+      "uuid": "ca5a090b-feaf-575d-98c6-61930fffc5b5",
+      "value": "Data - AML.T0010.002"
     },
     {
       "description": "Machine learning systems often rely on open sourced models in various ways.\nMost commonly, the victim organization may be using these models for fine tuning.\nThese models will be downloaded from an external source and then used as the base for the model as it is tuned on a smaller, private dataset.\nLoading models often requires executing some saved code in the form of a saved model file.\nThese can be compromised with traditional malware, or through some adversarial machine learning techniques.\n",
@@ -540,12 +540,12 @@
       },
       "related": [
         {
-          "dest-uuid": "d2cf31e0-a550-4fe0-8fdb-8941b3ac00d9",
+          "dest-uuid": "2ea180c5-5df4-5815-8c78-a1cec1da6e18",
           "type": "subtechnique-of"
         }
       ],
-      "uuid": "452b8fdf-8679-4013-bb38-4d16f65430bc",
-      "value": "Model"
+      "uuid": "1a1c3b28-eeab-52d0-87cf-4ba0a7ff687a",
+      "value": "Model - AML.T0010.003"
     },
     {
       "description": "An adversary may rely upon specific actions by a user in order to gain execution.\nUsers may inadvertently execute unsafe code introduced via [ML Supply Chain Compromise](/techniques/AML.T0010).\nUsers may be subjected to social engineering to get them to execute malicious code by, for example, opening a malicious document file or link.\n",
@@ -561,8 +561,8 @@
           "https://atlas.mitre.org/techniques/AML.T0011"
         ]
       },
-      "uuid": "8c849dd4-5d15-45aa-b5b2-59c96a3ab939",
-      "value": "User Execution"
+      "uuid": "aac7fa8d-c943-5fec-a01f-cd4d14184395",
+      "value": "User Execution - AML.T0011"
     },
     {
       "description": "Adversaries may develop unsafe ML artifacts that when executed have a deleterious effect.\nThe adversary can use this technique to establish persistent access to systems.\nThese models may be introduced via a [ML Supply Chain Compromise](/techniques/AML.T0010).\n\nSerialization of models is a popular technique for model storage, transfer, and loading.\nHowever, this format without proper checking presents an opportunity for code execution.\n",
@@ -580,12 +580,12 @@
       },
       "related": [
         {
-          "dest-uuid": "8c849dd4-5d15-45aa-b5b2-59c96a3ab939",
+          "dest-uuid": "aac7fa8d-c943-5fec-a01f-cd4d14184395",
           "type": "subtechnique-of"
         }
       ],
-      "uuid": "be6ef5c5-1ecb-486d-9743-42085bd2c256",
-      "value": "Unsafe ML Artifacts"
+      "uuid": "a5cc5062-f672-510a-8a4f-a8d1aa7f5024",
+      "value": "Unsafe ML Artifacts - AML.T0011.000"
     },
     {
       "description": "Adversaries may develop malicious software packages that when imported by a user have a deleterious effect.\nMalicious packages may behave as expected to the user. They may be introduced via [ML Supply Chain Compromise](/techniques/AML.T0010). They may not present as obviously malicious to the user and may appear to be useful for an AI-related task.",
@@ -603,12 +603,12 @@
       },
       "related": [
         {
-          "dest-uuid": "89731d07-679e-4da3-8f70-aba314068a89",
+          "dest-uuid": "6cc31098-f336-5fd8-932e-0289ff502d16",
           "type": "subtechnique-of"
         }
       ],
-      "uuid": "7d76070d-2124-4ee6-913d-6015a697eaf6",
-      "value": "Malicious Package"
+      "uuid": "08fd47ac-8b5f-5c0b-8b1d-8e915351cdc2",
+      "value": "Malicious Package - AML.T0011.001"
     },
     {
       "description": "Adversaries may obtain and abuse credentials of existing accounts as a means of gaining Initial Access.\nCredentials may take the form of usernames and passwords of individual user accounts or API keys that provide access to various ML resources and services.\n\nCompromised credentials may provide access to additional ML artifacts and allow the adversary to perform [Discover ML Artifacts](/techniques/AML.T0007).\nCompromised credentials may also grant an adversary increased privileges such as write access to ML artifacts used during development or production.\n",
@@ -624,8 +624,8 @@
           "https://atlas.mitre.org/techniques/AML.T0012"
         ]
       },
-      "uuid": "1b047901-cd87-4d1d-aa88-d7335855b65f",
-      "value": "Valid Accounts"
+      "uuid": "ed66b442-059b-54cb-a806-620e6f8109a6",
+      "value": "Valid Accounts - AML.T0012"
     },
     {
       "description": "Adversaries may discover the ontology of a machine learning model's output space, for example, the types of objects a model can detect.\nThe adversary may discovery the ontology by repeated queries to the model, forcing it to enumerate its output space.\nOr the ontology may be discovered in a configuration file or in documentation about the model.\n\nThe model ontology helps the adversary understand how the model is being used by the victim.\nIt is useful to the adversary in creating targeted attacks.\n",
@@ -641,8 +641,8 @@
           "https://atlas.mitre.org/techniques/AML.T0013"
         ]
       },
-      "uuid": "943303ef-846b-49d6-b53f-b0b9341ac1ca",
-      "value": "Discover ML Model Ontology"
+      "uuid": "4480d7c5-7096-5360-8b2a-875cf4b710ea",
+      "value": "Discover ML Model Ontology - AML.T0013"
     },
     {
       "description": "Adversaries may discover the general family of model.\nGeneral information about the model may be revealed in documentation, or the adversary may use carefully constructed examples and analyze the model's responses to categorize it.\n\nKnowledge of the model family can help the adversary identify means of attacking the model and help tailor the attack.\n",
@@ -658,8 +658,8 @@
           "https://atlas.mitre.org/techniques/AML.T0014"
         ]
       },
-      "uuid": "c552f0b5-2e2c-4f8f-badc-0876ecca7255",
-      "value": "Discover ML Model Family"
+      "uuid": "3b83b5ba-6855-592b-82a0-9bef7c6b0c7b",
+      "value": "Discover ML Model Family - AML.T0014"
     },
     {
       "description": "Adversaries can [Craft Adversarial Data](/techniques/AML.T0043) that prevent a machine learning model from correctly identifying the contents of the data.\nThis technique can be used to evade a downstream task where machine learning is utilized.\nThe adversary may evade machine learning based virus/malware detection, or network scanning towards the goal of a traditional cyber attack.\n",
@@ -677,8 +677,8 @@
           "https://atlas.mitre.org/techniques/AML.T0015"
         ]
       },
-      "uuid": "071df654-813a-4708-85dc-f715f785d37f",
-      "value": "Evade ML Model"
+      "uuid": "d74153d6-ac3c-52fb-9847-e0a6f675cd93",
+      "value": "Evade ML Model - AML.T0015"
     },
     {
       "description": "Adversaries may search for and obtain software capabilities for use in their operations.\nCapabilities may be specific to ML-based attacks [Adversarial ML Attack Implementations](/techniques/AML.T0016.000) or generic software tools repurposed for malicious intent ([Software Tools](/techniques/AML.T0016.001)). In both instances, an adversary may modify or customize the capability to aid in targeting a particular ML system.",
@@ -694,8 +694,8 @@
           "https://atlas.mitre.org/techniques/AML.T0016"
         ]
       },
-      "uuid": "db2b3112-a99b-45a0-be10-c69157b616f0",
-      "value": "Obtain Capabilities"
+      "uuid": "94e1836d-1749-5d64-8f2f-de06a218ded7",
+      "value": "Obtain Capabilities - AML.T0016"
     },
     {
       "description": "Adversaries may search for existing open source implementations of machine learning attacks. The research community often publishes their code for reproducibility and to further future research. Libraries intended for research purposes, such as CleverHans, the Adversarial Robustness Toolbox, and FoolBox, can be weaponized by an adversary. Adversaries may also obtain and use tools that were not originally designed for adversarial ML attacks as part of their attack.",
@@ -713,12 +713,12 @@
       },
       "related": [
         {
-          "dest-uuid": "db2b3112-a99b-45a0-be10-c69157b616f0",
+          "dest-uuid": "94e1836d-1749-5d64-8f2f-de06a218ded7",
           "type": "subtechnique-of"
         }
       ],
-      "uuid": "3250c828-3852-4efb-857d-f7ca5c1a1ebc",
-      "value": "Adversarial ML Attack Implementations"
+      "uuid": "e249e479-eb89-5082-a51e-e862d705ec1d",
+      "value": "Adversarial ML Attack Implementations - AML.T0016.000"
     },
     {
       "description": "Adversaries may search for and obtain software tools to support their operations.\nSoftware designed for legitimate use may be repurposed by an adversary for malicious intent.\nAn adversary may modify or customize software tools to achieve their purpose.\nSoftware tools used to support attacks on ML systems are not necessarily ML-based themselves.\n",
@@ -736,12 +736,12 @@
       },
       "related": [
         {
-          "dest-uuid": "db2b3112-a99b-45a0-be10-c69157b616f0",
+          "dest-uuid": "94e1836d-1749-5d64-8f2f-de06a218ded7",
           "type": "subtechnique-of"
         }
       ],
-      "uuid": "d18afb87-0de2-43dc-ab6a-eb914a7dbae7",
-      "value": "Software Tools"
+      "uuid": "f321adfd-7fd1-5a86-91e0-c8aa32fbe421",
+      "value": "Software Tools - AML.T0016.001"
     },
     {
       "description": "Adversaries may develop their own capabilities to support operations. This process encompasses identifying requirements, building solutions, and deploying capabilities. Capabilities used to support attacks on ML systems are not necessarily ML-based themselves. Examples include setting up websites with adversarial information or creating Jupyter notebooks with obfuscated exfiltration code.",
@@ -757,8 +757,8 @@
           "https://atlas.mitre.org/techniques/AML.T0017"
         ]
       },
-      "uuid": "c9153697-7d92-43aa-a16e-38436beff79d",
-      "value": "Develop Capabilities"
+      "uuid": "07ba3218-6e26-5eed-8017-4a2e8c0cbd5d",
+      "value": "Develop Capabilities - AML.T0017"
     },
     {
       "description": "Adversaries may develop their own adversarial attacks.\nThey may leverage existing libraries as a starting point ([Adversarial ML Attack Implementations](/techniques/AML.T0016.000)).\nThey may implement ideas described in public research papers or develop custom made attacks for the victim model.\n",
@@ -776,12 +776,12 @@
       },
       "related": [
         {
-          "dest-uuid": "c9153697-7d92-43aa-a16e-38436beff79d",
+          "dest-uuid": "07ba3218-6e26-5eed-8017-4a2e8c0cbd5d",
           "type": "subtechnique-of"
         }
       ],
-      "uuid": "4f0f548a-5f39-4dc7-b5e6-c84d824e39bd",
-      "value": "Adversarial ML Attacks"
+      "uuid": "80a54397-082c-5d02-9d2e-1d30d7375c75",
+      "value": "Adversarial ML Attacks - AML.T0017.000"
     },
     {
       "description": "Adversaries may introduce a backdoor into a ML model.\nA backdoored model operates performs as expected under typical conditions, but will produce the adversary's desired output when a trigger is introduced to the input data.\nA backdoored model provides the adversary with a persistent artifact on the victim system.\nThe embedded vulnerability is typically activated at a later time by data samples with an [Insert Backdoor Trigger](/techniques/AML.T0043.004)\n",
@@ -798,8 +798,8 @@
           "https://atlas.mitre.org/techniques/AML.T0018"
         ]
       },
-      "uuid": "c704a49c-abf0-4258-9919-a862b1865469",
-      "value": "Backdoor ML Model"
+      "uuid": "0bbf1c2c-1dd0-5376-8119-1ee01b910f69",
+      "value": "Backdoor ML Model - AML.T0018"
     },
     {
       "description": "Adversaries may introduce a backdoor by training the model poisoned data, or by interfering with its training process.\nThe model learns to associate an adversary-defined trigger with the adversary's desired output.\n",
@@ -818,12 +818,12 @@
       },
       "related": [
         {
-          "dest-uuid": "c704a49c-abf0-4258-9919-a862b1865469",
+          "dest-uuid": "0bbf1c2c-1dd0-5376-8119-1ee01b910f69",
           "type": "subtechnique-of"
         }
       ],
-      "uuid": "e0eb2b64-aebd-4412-80f3-b71d7805a65f",
-      "value": "Poison ML Model"
+      "uuid": "a1494aa9-35bb-52b4-bd73-15444dc04706",
+      "value": "Poison ML Model - AML.T0018.000"
     },
     {
       "description": "Adversaries may introduce a backdoor into a model by injecting a payload into the model file.\nThe payload detects the presence of the trigger and bypasses the model, instead producing the adversary's desired output.\n",
@@ -842,12 +842,12 @@
       },
       "related": [
         {
-          "dest-uuid": "c704a49c-abf0-4258-9919-a862b1865469",
+          "dest-uuid": "0bbf1c2c-1dd0-5376-8119-1ee01b910f69",
           "type": "subtechnique-of"
         }
       ],
-      "uuid": "a50f02df-1130-4945-94bb-7857952da585",
-      "value": "Inject Payload"
+      "uuid": "04641d66-7ecd-5b83-a3da-938e11a81254",
+      "value": "Inject Payload - AML.T0018.001"
     },
     {
       "description": "Adversaries may [Poison Training Data](/techniques/AML.T0020) and publish it to a public location.\nThe poisoned dataset may be a novel dataset or a poisoned variant of an existing open source dataset.\nThis data may be introduced to a victim system via [ML Supply Chain Compromise](/techniques/AML.T0010).\n",
@@ -881,8 +881,8 @@
           "https://atlas.mitre.org/techniques/AML.T0020"
         ]
       },
-      "uuid": "0ec538ca-589b-4e42-bcaa-06097a0d679f",
-      "value": "Poison Training Data"
+      "uuid": "4f25f684-63f5-5dfa-a286-20dfbd6db4c1",
+      "value": "Poison Training Data - AML.T0020"
     },
     {
       "description": "Adversaries may create accounts with various services for use in targeting, to gain access to resources needed in [ML Attack Staging](/tactics/AML.TA0001), or for victim impersonation.\n",
@@ -898,8 +898,8 @@
           "https://atlas.mitre.org/techniques/AML.T0021"
         ]
       },
-      "uuid": "aaa79096-814f-4fb0-a553-1701b2765317",
-      "value": "Establish Accounts"
+      "uuid": "d3d7763a-58e1-5e38-84fd-3abea967cb08",
+      "value": "Establish Accounts - AML.T0021"
     },
     {
       "description": "Adversaries may exfiltrate private information via [AI Model Inference API Access](/techniques/AML.T0040).\nML Models have been shown leak private information about their training data (e.g.  [Infer Training Data Membership](/techniques/AML.T0024.000), [Invert ML Model](/techniques/AML.T0024.001)).\nThe model itself may also be extracted ([Extract ML Model](/techniques/AML.T0024.002)) for the purposes of [ML Intellectual Property Theft](/techniques/AML.T0048.004).\n\nExfiltration of information relating to private training data raises privacy concerns.\nPrivate training data may include personally identifiable information, or other protected data.\n",
@@ -915,8 +915,8 @@
           "https://atlas.mitre.org/techniques/AML.T0024"
         ]
       },
-      "uuid": "b07d147f-51c8-4eb6-9a05-09c86762a9c1",
-      "value": "Exfiltration via ML Inference API"
+      "uuid": "85fed2c6-e2df-595e-88bf-f356a17cec21",
+      "value": "Exfiltration via ML Inference API - AML.T0024"
     },
     {
       "description": "Adversaries may infer the membership of a data sample in its training set, which raises privacy concerns.\nSome strategies make use of a shadow model that could be obtained via [Train Proxy via Replication](/techniques/AML.T0005.001), others use statistics of model prediction scores.\n\nThis can cause the victim model to leak private information, such as PII of those in the training set or other forms of protected IP.\n",
@@ -934,12 +934,12 @@
       },
       "related": [
         {
-          "dest-uuid": "b07d147f-51c8-4eb6-9a05-09c86762a9c1",
+          "dest-uuid": "85fed2c6-e2df-595e-88bf-f356a17cec21",
           "type": "subtechnique-of"
         }
       ],
-      "uuid": "86b5f486-afb8-4aa9-991f-0e24d5737f0c",
-      "value": "Infer Training Data Membership"
+      "uuid": "df4da5b6-5fad-5c93-a854-be2b187d1fbc",
+      "value": "Infer Training Data Membership - AML.T0024.000"
     },
     {
       "description": "Machine learning models' training data could be reconstructed by exploiting the confidence scores that are available via an inference API.\nBy querying the inference API strategically, adversaries can back out potentially private information embedded within the training data.\nThis could lead to privacy violations if the attacker can reconstruct the data of sensitive features used in the algorithm.\n",
@@ -957,12 +957,12 @@
       },
       "related": [
         {
-          "dest-uuid": "b07d147f-51c8-4eb6-9a05-09c86762a9c1",
+          "dest-uuid": "85fed2c6-e2df-595e-88bf-f356a17cec21",
           "type": "subtechnique-of"
         }
       ],
-      "uuid": "e19c6f8a-f1e2-46cc-9387-03a3092f01ed",
-      "value": "Invert ML Model"
+      "uuid": "9e0f6fd8-948c-508e-8d36-8b6517c6aaa1",
+      "value": "Invert ML Model - AML.T0024.001"
     },
     {
       "description": "Adversaries may extract a functional copy of a private model.\nBy repeatedly querying the victim's [AI Model Inference API Access](/techniques/AML.T0040), the adversary can collect the target model's inferences into a dataset.\nThe inferences are used as labels for training a separate model offline that will mimic the behavior and performance of the target model.\n\nAdversaries may extract the model to avoid paying per query in a machine learning as a service setting.\nModel extraction is used for [ML Intellectual Property Theft](/techniques/AML.T0048.004).\n",
@@ -980,12 +980,12 @@
       },
       "related": [
         {
-          "dest-uuid": "b07d147f-51c8-4eb6-9a05-09c86762a9c1",
+          "dest-uuid": "85fed2c6-e2df-595e-88bf-f356a17cec21",
           "type": "subtechnique-of"
         }
       ],
-      "uuid": "f78e0ac3-6d72-42ed-b20a-e10d8c752cf6",
-      "value": "Extract ML Model"
+      "uuid": "3f567912-629a-5e0b-ab0c-0102977c2d6c",
+      "value": "Extract ML Model - AML.T0024.002"
     },
     {
       "description": "Adversaries may exfiltrate ML artifacts or other information relevant to their goals via traditional cyber means.\n\nSee the ATT&CK [Exfiltration](https://attack.mitre.org/tactics/TA0010/) tactic for more information.\n",
@@ -1001,8 +1001,8 @@
           "https://atlas.mitre.org/techniques/AML.T0025"
         ]
       },
-      "uuid": "2680aa95-5620-4677-9c62-b0c3d15d9450",
-      "value": "Exfiltration via Cyber Means"
+      "uuid": "f13dede7-12ee-5f0e-985a-4f801aecb681",
+      "value": "Exfiltration via Cyber Means - AML.T0025"
     },
     {
       "description": "Adversaries may target machine learning systems with a flood of requests for the purpose of degrading or shutting down the service.\nSince many machine learning systems require significant amounts of specialized compute, they are often expensive bottlenecks that can become overloaded.\nAdversaries can intentionally craft inputs that require heavy amounts of useless compute from the machine learning system.\n",
@@ -1018,8 +1018,8 @@
           "https://atlas.mitre.org/techniques/AML.T0029"
         ]
       },
-      "uuid": "8f644f37-e2e6-468e-b720-f395b8c27fbc",
-      "value": "Denial of ML Service"
+      "uuid": "c4bae5b7-482f-572f-b44b-6a829b186a2e",
+      "value": "Denial of ML Service - AML.T0029"
     },
     {
       "description": "Adversaries may degrade the target model's performance with adversarial data inputs to erode confidence in the system over time.\nThis can lead to the victim organization wasting time and money both attempting to fix the system and performing the tasks it was meant to automate by hand.\n",
@@ -1035,8 +1035,8 @@
           "https://atlas.mitre.org/techniques/AML.T0031"
         ]
       },
-      "uuid": "8735735d-c09d-4298-8e64-9a2b6168a74c",
-      "value": "Erode ML Model Integrity"
+      "uuid": "030c4477-af33-5676-9723-1ecc6314b1ce",
+      "value": "Erode ML Model Integrity - AML.T0031"
     },
     {
       "description": "Adversaries may target different machine learning services to send useless queries or computationally expensive inputs to increase the cost of running services at the victim organization.\nSponge examples are a particular type of adversarial data designed to maximize energy consumption and thus operating cost.\n",
@@ -1052,8 +1052,8 @@
           "https://atlas.mitre.org/techniques/AML.T0034"
         ]
       },
-      "uuid": "ae71ca3a-8ca4-40d2-bdba-4276b29ac8f9",
-      "value": "Cost Harvesting"
+      "uuid": "7bbac64e-2b1d-5cb0-a442-bb7573b0a328",
+      "value": "Cost Harvesting - AML.T0034"
     },
     {
       "description": "Adversaries may collect ML artifacts for [Exfiltration](/tactics/AML.TA0010) or for use in [ML Attack Staging](/tactics/AML.TA0001).\nML artifacts include models and datasets as well as other telemetry data produced when interacting with a model.\n",
@@ -1069,8 +1069,8 @@
           "https://atlas.mitre.org/techniques/AML.T0035"
         ]
       },
-      "uuid": "e2ebc190-9ff6-496e-afeb-ac868df2361e",
-      "value": "ML Artifact Collection"
+      "uuid": "801658f2-81cd-5935-93c7-5e6e2d80e669",
+      "value": "ML Artifact Collection - AML.T0035"
     },
     {
       "description": "Adversaries may leverage information repositories to mine valuable information.\nInformation repositories are tools that allow for storage of information, typically to facilitate collaboration or information sharing between users, and can store a wide variety of data that may aid adversaries in further objectives, or direct access to the target information.\n\nInformation stored in a repository may vary based on the specific instance or environment.\nSpecific common information repositories include SharePoint, Confluence, and enterprise databases such as SQL Server.\n",
@@ -1086,8 +1086,8 @@
           "https://atlas.mitre.org/techniques/AML.T0036"
         ]
       },
-      "uuid": "9f998b9a-d20e-48e7-bee5-034ed5a696dd",
-      "value": "Data from Information Repositories"
+      "uuid": "bea143b9-41d8-5b7d-a72f-7f3400010641",
+      "value": "Data from Information Repositories - AML.T0036"
     },
     {
       "description": "Adversaries may search local system sources, such as file systems and configuration files or local databases, to find files of interest and sensitive data prior to Exfiltration.\n\nThis can include basic fingerprinting information and sensitive data such as ssh keys.\n",
@@ -1103,8 +1103,8 @@
           "https://atlas.mitre.org/techniques/AML.T0037"
         ]
       },
-      "uuid": "a7f17bbd-e2fd-4413-89e1-a5e5226cc23c",
-      "value": "Data from Local System"
+      "uuid": "60f738d1-1f94-5976-8cb0-ab4355b3f848",
+      "value": "Data from Local System - AML.T0037"
     },
     {
       "description": "Adversaries may gain access to a model via legitimate access to the inference API.\nInference API access can be a source of information to the adversary ([Discover ML Model Ontology](/techniques/AML.T0013), [Discover ML Model Family](/techniques/AML.T0014)), a means of staging the attack ([Verify Attack](/techniques/AML.T0042), [Craft Adversarial Data](/techniques/AML.T0043)), or for introducing data to the target system for Impact ([Evade ML Model](/techniques/AML.T0015), [Erode ML Model Integrity](/techniques/AML.T0031)).\n\nMany systems rely on the same models provided via an inference API, which means they share the same vulnerabilities. This is especially true of foundation models which are prohibitively resource intensive to train. Adversaries may use their access to model APIs to identify vulnerabilities such as jailbreaks or hallucinations and then target applications that use the same models.",
@@ -1120,8 +1120,8 @@
           "https://atlas.mitre.org/techniques/AML.T0040"
         ]
       },
-      "uuid": "90a420d4-3f03-4800-86c0-223c4376804a",
-      "value": "AI Model Inference API Access"
+      "uuid": "5ac1f849-523e-51bf-a1e9-1a97ab91cc91",
+      "value": "AI Model Inference API Access - AML.T0040"
     },
     {
       "description": "In addition to the attacks that take place purely in the digital domain, adversaries may also exploit the physical environment for their attacks.\nIf the model is interacting with data collected from the real world in some way, the adversary can influence the model through access to wherever the data is being collected.\nBy modifying the data in the collection process, the adversary can perform modified versions of attacks designed for digital access.\n",
@@ -1137,8 +1137,8 @@
           "https://atlas.mitre.org/techniques/AML.T0041"
         ]
       },
-      "uuid": "4d5c6974-0307-4535-bf37-7bb4c6a2ef47",
-      "value": "Physical Environment Access"
+      "uuid": "065b0269-0d72-558c-a840-2012f0481f07",
+      "value": "Physical Environment Access - AML.T0041"
     },
     {
       "description": "Adversaries can verify the efficacy of their attack via an inference API or access to an offline copy of the target model.\nThis gives the adversary confidence that their approach works and allows them to carry out the attack at a later time of their choosing.\nThe adversary may verify the attack once but use it against many edge devices running copies of the target model.\nThe adversary may verify their attack digitally, then deploy it in the [Physical Environment Access](/techniques/AML.T0041) at a later time.\nVerifying the attack may be hard to detect since the adversary can use a minimal number of queries or an offline copy of the model.\n",
@@ -1154,8 +1154,8 @@
           "https://atlas.mitre.org/techniques/AML.T0042"
         ]
       },
-      "uuid": "b587a898-010b-4b2f-98a4-379d7c36c9e0",
-      "value": "Verify Attack"
+      "uuid": "8981726f-193d-5528-9adf-5e4a2cebfeab",
+      "value": "Verify Attack - AML.T0042"
     },
     {
       "description": "Adversarial data are inputs to a machine learning model that have been modified such that they cause the adversary's desired effect in the target model.\nEffects can range from misclassification, to missed detections, to maximizing energy consumption.\nTypically, the modification is constrained in magnitude or location so that a human still perceives the data as if it were unmodified, but human perceptibility may not always be a concern depending on the adversary's intended effect.\nFor example, an adversarial input for an image classification task is an image the machine learning model would misclassify, but a human would still recognize as containing the correct class.\n\nDepending on the adversary's knowledge of and access to the target model, the adversary may use different classes of algorithms to develop the adversarial example such as [White-Box Optimization](/techniques/AML.T0043.000), [Black-Box Optimization](/techniques/AML.T0043.001), [Black-Box Transfer](/techniques/AML.T0043.002), or [Manual Modification](/techniques/AML.T0043.003).\n\nThe adversary may [Verify Attack](/techniques/AML.T0042) their approach works if they have white-box or inference API access to the model.\nThis allows the adversary to gain confidence their attack is effective \"live\" environment where their attack may be noticed.\nThey can then use the attack at a later time to accomplish their goals.\nAn adversary may optimize adversarial examples for [Evade ML Model](/techniques/AML.T0015), or to [Erode ML Model Integrity](/techniques/AML.T0031).\n",
@@ -1171,8 +1171,8 @@
           "https://atlas.mitre.org/techniques/AML.T0043"
         ]
       },
-      "uuid": "a7c30122-b393-4265-91b7-57cd1211e3f9",
-      "value": "Craft Adversarial Data"
+      "uuid": "c9122fef-2e35-5d75-9e0a-6ae552ee208f",
+      "value": "Craft Adversarial Data - AML.T0043"
     },
     {
       "description": "In White-Box Optimization, the adversary has full access to the target model and optimizes the adversarial example directly.\nAdversarial examples trained in this manner are most effective against the target model.\n",
@@ -1190,12 +1190,12 @@
       },
       "related": [
         {
-          "dest-uuid": "a7c30122-b393-4265-91b7-57cd1211e3f9",
+          "dest-uuid": "c9122fef-2e35-5d75-9e0a-6ae552ee208f",
           "type": "subtechnique-of"
         }
       ],
-      "uuid": "ab01ba21-1438-4cd9-a588-92eb271086bc",
-      "value": "White-Box Optimization"
+      "uuid": "5f8f898d-1e29-52a7-bf95-2d420313aee8",
+      "value": "White-Box Optimization - AML.T0043.000"
     },
     {
       "description": "In Black-Box attacks, the adversary has black-box (i.e. [AI Model Inference API Access](/techniques/AML.T0040) via API access) access to the target model.\nWith black-box attacks, the adversary may be using an API that the victim is monitoring.\nThese attacks are generally less effective and require more inferences than [White-Box Optimization](/techniques/AML.T0043.000) attacks, but they require much less access.\n",
@@ -1213,12 +1213,12 @@
       },
       "related": [
         {
-          "dest-uuid": "a7c30122-b393-4265-91b7-57cd1211e3f9",
+          "dest-uuid": "c9122fef-2e35-5d75-9e0a-6ae552ee208f",
           "type": "subtechnique-of"
         }
       ],
-      "uuid": "c4e52005-7416-45c4-9feb-8cd5fd34f70a",
-      "value": "Black-Box Optimization"
+      "uuid": "cf1f989f-9b4e-5dae-aaf8-719e71b2fb8b",
+      "value": "Black-Box Optimization - AML.T0043.001"
     },
     {
       "description": "In Black-Box Transfer attacks, the adversary uses one or more proxy models (trained via [Create Proxy ML Model](/techniques/AML.T0005) or [Train Proxy via Replication](/techniques/AML.T0005.001)) they have full access to and are representative of the target model.\nThe adversary uses [White-Box Optimization](/techniques/AML.T0043.000) on the proxy models to generate adversarial examples.\nIf the set of proxy models are close enough to the target model, the adversarial example should generalize from one to another.\nThis means that an attack that works for the proxy models will likely then work for the target model.\nIf the adversary has [AI Model Inference API Access](/techniques/AML.T0040), they may use [Verify Attack](/techniques/AML.T0042) to confirm the attack is working and incorporate that information into their training process.\n",
@@ -1236,12 +1236,12 @@
       },
       "related": [
         {
-          "dest-uuid": "a7c30122-b393-4265-91b7-57cd1211e3f9",
+          "dest-uuid": "c9122fef-2e35-5d75-9e0a-6ae552ee208f",
           "type": "subtechnique-of"
         }
       ],
-      "uuid": "241ad2a0-3fe2-4912-bb77-b79cee573fd2",
-      "value": "Black-Box Transfer"
+      "uuid": "079c33e1-722c-58ad-983d-1bcd94a35c7b",
+      "value": "Black-Box Transfer - AML.T0043.002"
     },
     {
       "description": "Adversaries may manually modify the input data to craft adversarial data.\nThey may use their knowledge of the target model to modify parts of the data they suspect helps the model in performing its task.\nThe adversary may use trial and error until they are able to verify they have a working adversarial input.\n",
@@ -1259,12 +1259,12 @@
       },
       "related": [
         {
-          "dest-uuid": "a7c30122-b393-4265-91b7-57cd1211e3f9",
+          "dest-uuid": "c9122fef-2e35-5d75-9e0a-6ae552ee208f",
           "type": "subtechnique-of"
         }
       ],
-      "uuid": "fa01f518-7217-4432-83c6-772d9390647c",
-      "value": "Manual Modification"
+      "uuid": "d7874f78-a3bf-52a2-9add-428d6801be62",
+      "value": "Manual Modification - AML.T0043.003"
     },
     {
       "description": "The adversary may add a perceptual trigger into inference data.\nThe trigger may be imperceptible or non-obvious to humans.\nThis technique is used in conjunction with [Poison ML Model](/techniques/AML.T0018.000) and allows the adversary to produce their desired effect in the target model.\n",
@@ -1282,12 +1282,12 @@
       },
       "related": [
         {
-          "dest-uuid": "a7c30122-b393-4265-91b7-57cd1211e3f9",
+          "dest-uuid": "c9122fef-2e35-5d75-9e0a-6ae552ee208f",
           "type": "subtechnique-of"
         }
       ],
-      "uuid": "b15151a4-d832-46b0-8ddd-14dad0b67afc",
-      "value": "Insert Backdoor Trigger"
+      "uuid": "e9e0c817-539a-5977-9238-ad88d7e301a6",
+      "value": "Insert Backdoor Trigger - AML.T0043.004"
     },
     {
       "description": "Adversaries may gain full \"white-box\" access to a machine learning model.\nThis means the adversary has complete knowledge of the model architecture, its parameters, and class ontology.\nThey may exfiltrate the model to [Craft Adversarial Data](/techniques/AML.T0043) and [Verify Attack](/techniques/AML.T0042) in an offline where it is hard to detect their behavior.\n",
@@ -1303,8 +1303,8 @@
           "https://atlas.mitre.org/techniques/AML.T0044"
         ]
       },
-      "uuid": "3de90963-bc9f-4ae1-b780-7d05e46eacdd",
-      "value": "Full ML Model Access"
+      "uuid": "5e652b34-b92f-5b43-afca-36f9cbf9d7c1",
+      "value": "Full ML Model Access - AML.T0044"
     },
     {
       "description": "Adversaries may spam the machine learning system with chaff data that causes increase in the number of detections.\nThis can cause analysts at the victim organization to waste time reviewing and correcting incorrect inferences.\n",
@@ -1320,8 +1320,8 @@
           "https://atlas.mitre.org/techniques/AML.T0046"
         ]
       },
-      "uuid": "6c1fca80-3ba9-41c9-8f7b-9824310a94f1",
-      "value": "Spamming ML System with Chaff Data"
+      "uuid": "b72ea3f4-fd80-5d95-bf47-abbfab0e813c",
+      "value": "Spamming ML System with Chaff Data - AML.T0046"
     },
     {
       "description": "Adversaries may use a product or service that uses machine learning under the hood to gain access to the underlying machine learning model.\nThis type of indirect model access may reveal details of the ML model or its inferences in logs or metadata.\n",
@@ -1337,8 +1337,8 @@
           "https://atlas.mitre.org/techniques/AML.T0047"
         ]
       },
-      "uuid": "b5626410-b33d-4487-9c0f-2b7d844b8e95",
-      "value": "ML-Enabled Product or Service"
+      "uuid": "a18245d0-2fb1-5f72-a069-5c176a0a11df",
+      "value": "ML-Enabled Product or Service - AML.T0047"
     },
     {
       "description": "Adversaries may abuse their access to a victim system and use its resources or capabilities to further their goals by causing harms external to that system.\nThese harms could affect the organization (e.g. Financial Harm, Reputational Harm), its users (e.g. User Harm), or the general public (e.g. Societal Harm).\n",
@@ -1354,8 +1354,8 @@
           "https://atlas.mitre.org/techniques/AML.T0048"
         ]
       },
-      "uuid": "ba500f0e-52ca-40ff-aed4-e6dbf00cca10",
-      "value": "External Harms"
+      "uuid": "2093defe-1976-5bca-9c88-f63072c90073",
+      "value": "External Harms - AML.T0048"
     },
     {
       "description": "Financial harm involves the loss of wealth, property, or other monetary assets due to theft, fraud or forgery, or pressure to provide financial resources to the adversary.\n",
@@ -1373,12 +1373,12 @@
       },
       "related": [
         {
-          "dest-uuid": "ba500f0e-52ca-40ff-aed4-e6dbf00cca10",
+          "dest-uuid": "2093defe-1976-5bca-9c88-f63072c90073",
           "type": "subtechnique-of"
         }
       ],
-      "uuid": "4b1c5ebf-e05d-414d-a557-5c29f505f589",
-      "value": "Financial Harm"
+      "uuid": "37f5d47b-5f1c-5831-be6d-218371ac7eb9",
+      "value": "Financial Harm - AML.T0048.000"
     },
     {
       "description": "Reputational harm involves a degradation of public perception and trust in organizations.  Examples of reputation-harming incidents include scandals or false impersonations.\n",
@@ -1396,12 +1396,12 @@
       },
       "related": [
         {
-          "dest-uuid": "ba500f0e-52ca-40ff-aed4-e6dbf00cca10",
+          "dest-uuid": "2093defe-1976-5bca-9c88-f63072c90073",
           "type": "subtechnique-of"
         }
       ],
-      "uuid": "69e73593-f838-4855-9096-c316eabfb4d6",
-      "value": "Reputational Harm"
+      "uuid": "780c1969-4275-5327-ba93-8987888429e1",
+      "value": "Reputational Harm - AML.T0048.001"
     },
     {
       "description": "Societal harms might generate harmful outcomes that reach either the general public or specific vulnerable groups such as the exposure of children to vulgar content.\n",
@@ -1419,12 +1419,12 @@
       },
       "related": [
         {
-          "dest-uuid": "ba500f0e-52ca-40ff-aed4-e6dbf00cca10",
+          "dest-uuid": "2093defe-1976-5bca-9c88-f63072c90073",
           "type": "subtechnique-of"
         }
       ],
-      "uuid": "5921c4ad-0a32-47fb-8ab2-67d18dbac8ba",
-      "value": "Societal Harm"
+      "uuid": "d6a38c02-ad95-5958-ab29-759c0ff495ee",
+      "value": "Societal Harm - AML.T0048.002"
     },
     {
       "description": "User harms may encompass a variety of harm types including financial and reputational that are directed at or felt by individual victims of the attack rather than at the organization level.\n",
@@ -1442,12 +1442,12 @@
       },
       "related": [
         {
-          "dest-uuid": "ba500f0e-52ca-40ff-aed4-e6dbf00cca10",
+          "dest-uuid": "2093defe-1976-5bca-9c88-f63072c90073",
           "type": "subtechnique-of"
         }
       ],
-      "uuid": "6ca1ad37-f08f-4f15-b85d-a48905cc245c",
-      "value": "User Harm"
+      "uuid": "154cff1b-1e2d-5437-9ec4-1812d38c8f57",
+      "value": "User Harm - AML.T0048.003"
     },
     {
       "description": "Adversaries may exfiltrate ML artifacts to steal intellectual property and cause economic harm to the victim organization.\n\nProprietary training data is costly to collect and annotate and may be a target for [Exfiltration](/tactics/AML.TA0010) and theft.\n\nMLaaS providers charge for use of their API.\nAn adversary who has stolen a model via [Exfiltration](/tactics/AML.TA0010) or via [Extract ML Model](/techniques/AML.T0024.002) now has unlimited use of that service without paying the owner of the intellectual property.\n",
@@ -1465,12 +1465,12 @@
       },
       "related": [
         {
-          "dest-uuid": "ba500f0e-52ca-40ff-aed4-e6dbf00cca10",
+          "dest-uuid": "2093defe-1976-5bca-9c88-f63072c90073",
           "type": "subtechnique-of"
         }
       ],
-      "uuid": "d1f013a8-11f3-4560-831c-8ed5e39247c9",
-      "value": "ML Intellectual Property Theft"
+      "uuid": "73772ced-edba-578c-bacd-703e082a9c57",
+      "value": "ML Intellectual Property Theft - AML.T0048.004"
     },
     {
       "description": "Adversaries may attempt to take advantage of a weakness in an Internet-facing computer or program using software, data, or commands in order to cause unintended or unanticipated behavior. The weakness in the system can be a bug, a glitch, or a design vulnerability. These applications are often websites, but can include databases (like SQL), standard services (like SMB or SSH), network device administration and management protocols (like SNMP and Smart Install), and any other applications with Internet accessible open sockets, such as web servers and related services.\n",
@@ -1486,8 +1486,8 @@
           "https://atlas.mitre.org/techniques/AML.T0049"
         ]
       },
-      "uuid": "47d73872-5336-44f7-81e3-d30bc7e039dd",
-      "value": "Exploit Public-Facing Application"
+      "uuid": "ebeed0c7-c5de-5049-8f27-efcae5f88b00",
+      "value": "Exploit Public-Facing Application - AML.T0049"
     },
     {
       "description": "Adversaries may abuse command and script interpreters to execute commands, scripts, or binaries. These interfaces and languages provide ways of interacting with computer systems and are a common feature across many different platforms. Most systems come with some built-in command-line interface and scripting capabilities, for example, macOS and Linux distributions include some flavor of Unix Shell while Windows installations include the Windows Command Shell and PowerShell.\n\nThere are also cross-platform interpreters such as Python, as well as those commonly associated with client applications such as JavaScript and Visual Basic.\n\nAdversaries may abuse these technologies in various ways as a means of executing arbitrary commands. Commands and scripts can be embedded in Initial Access payloads delivered to victims as lure documents or as secondary payloads downloaded from an existing C2. Adversaries may also execute commands through interactive terminals/shells, as well as utilize various Remote Services in order to achieve remote Execution.\n",
@@ -1503,8 +1503,8 @@
           "https://atlas.mitre.org/techniques/AML.T0050"
         ]
       },
-      "uuid": "716d3a6b-2f8c-4a1f-85f7-d884bb7b2800",
-      "value": "Command and Scripting Interpreter"
+      "uuid": "07421f1a-a5ae-5936-9713-c77e4758177c",
+      "value": "Command and Scripting Interpreter - AML.T0050"
     },
     {
       "description": "An adversary may craft malicious prompts as inputs to an LLM that cause the LLM to act in unintended ways.\nThese \"prompt injections\" are often designed to cause the model to ignore aspects of its original instructions and follow the adversary's instructions instead.\n\nPrompt Injections can be an initial access vector to the LLM that provides the adversary with a foothold to carry out other steps in their operation.\nThey may be designed to bypass defenses in the LLM, or allow the adversary to issue privileged commands.\nThe effects of a prompt injection can persist throughout an interactive session with an LLM.\n\nMalicious prompts may be injected directly by the adversary ([Direct](/techniques/AML.T0051.000)) either to leverage the LLM to generate harmful content or to gain a foothold on the system and lead to further effects.\nPrompts may also be injected indirectly when as part of its normal operation the LLM ingests the malicious prompt from another data source ([Indirect](/techniques/AML.T0051.001)). This type of injection can be used by the adversary to a foothold on the system or to target the user of the LLM.\n",
@@ -1523,8 +1523,8 @@
           "https://atlas.mitre.org/techniques/AML.T0051"
         ]
       },
-      "uuid": "19cd2d12-66ff-487c-a05c-e058b027efc9",
-      "value": "LLM Prompt Injection"
+      "uuid": "6ff098e9-2864-579e-bebb-a0f1c92ec772",
+      "value": "LLM Prompt Injection - AML.T0051"
     },
     {
       "description": "An adversary may inject prompts directly as a user of the LLM. This type of injection may be used by the adversary to gain a foothold in the system or to misuse the LLM itself, as for example to generate harmful content.\n",
@@ -1545,12 +1545,12 @@
       },
       "related": [
         {
-          "dest-uuid": "19cd2d12-66ff-487c-a05c-e058b027efc9",
+          "dest-uuid": "6ff098e9-2864-579e-bebb-a0f1c92ec772",
           "type": "subtechnique-of"
         }
       ],
-      "uuid": "d911e8cb-0601-42f1-90de-7ce0b21cd578",
-      "value": "Direct"
+      "uuid": "073f16fc-c4c0-5351-8a22-9c77aaaab91f",
+      "value": "Direct - AML.T0051.000"
     },
     {
       "description": "An adversary may inject prompts indirectly via separate data channel ingested by the LLM such as include text or multimedia pulled from databases or websites.\nThese malicious prompts may be hidden or obfuscated from the user. This type of injection may be used by the adversary to gain a foothold in the system or to target an unwitting user of the system.\n",
@@ -1571,12 +1571,12 @@
       },
       "related": [
         {
-          "dest-uuid": "19cd2d12-66ff-487c-a05c-e058b027efc9",
+          "dest-uuid": "6ff098e9-2864-579e-bebb-a0f1c92ec772",
           "type": "subtechnique-of"
         }
       ],
-      "uuid": "a4a55526-2f1f-403b-9691-609e46381e17",
-      "value": "Indirect"
+      "uuid": "59e47398-ebf9-5606-857a-94da5ee0079d",
+      "value": "Indirect - AML.T0051.001"
     },
     {
       "description": "Adversaries may send phishing messages to gain access to victim systems. All forms of phishing are electronically delivered social engineering. Phishing can be targeted, known as spearphishing. In spearphishing, a specific individual, company, or industry will be targeted by the adversary. More generally, adversaries can conduct non-targeted phishing, such as in mass malware spam campaigns.\n\nGenerative AI, including LLMs that generate synthetic text, visual deepfakes of faces, and audio deepfakes of speech, is enabling adversaries to scale targeted phishing campaigns. LLMs can interact with users via text conversations and can be programmed with a meta prompt to phish for sensitive information. Deepfakes can be use in impersonation as an aid to phishing.\n",
@@ -1592,8 +1592,8 @@
           "https://atlas.mitre.org/techniques/AML.T0052"
         ]
       },
-      "uuid": "1f1f14ef-7d04-42b2-9f05-b740113b30f5",
-      "value": "Phishing"
+      "uuid": "c9a9741c-6c66-5456-807f-1d47140851a9",
+      "value": "Phishing - AML.T0052"
     },
     {
       "description": "Adversaries may turn LLMs into targeted social engineers.\nLLMs are capable of interacting with users via text conversations.\nThey can be instructed by an adversary to seek sensitive information from a user and act as effective social engineers.\nThey can be targeted towards particular personas defined by the adversary.\nThis allows adversaries to scale spearphishing efforts and target individuals to reveal private information such as credentials to privileged systems.\n",
@@ -1611,12 +1611,12 @@
       },
       "related": [
         {
-          "dest-uuid": "1f1f14ef-7d04-42b2-9f05-b740113b30f5",
+          "dest-uuid": "c9a9741c-6c66-5456-807f-1d47140851a9",
           "type": "subtechnique-of"
         }
       ],
-      "uuid": "7159b4d1-7681-4028-8110-8ebdb16c7700",
-      "value": "Spearphishing via Social Engineering LLM"
+      "uuid": "2eeced6c-9800-55c1-a285-2a34ee79c244",
+      "value": "Spearphishing via Social Engineering LLM - AML.T0052.000"
     },
     {
       "description": "Adversaries may use their access to an LLM that is part of a larger system to compromise connected plugins.\nLLMs are often connected to other services or resources via plugins to increase their capabilities.\nPlugins may include integrations with other applications, access to public or private data sources, and the ability to execute code.\n\nThis may allow adversaries to execute API calls to integrated applications or plugins, providing the adversary with increased privileges on the system.\nAdversaries may take advantage of connected data sources to retrieve sensitive information.\nThey may also use an LLM integrated with a command or script interpreter to execute arbitrary instructions.\n",
@@ -1633,8 +1633,8 @@
           "https://atlas.mitre.org/techniques/AML.T0053"
         ]
       },
-      "uuid": "adbb0dd5-ff66-4b2f-869f-bfb3fdb45fc8",
-      "value": "LLM Plugin Compromise"
+      "uuid": "b23b5475-a05e-5b4a-8e9f-8c758dd0cda8",
+      "value": "LLM Plugin Compromise - AML.T0053"
     },
     {
       "description": "An adversary may use a carefully crafted [LLM Prompt Injection](/techniques/AML.T0051) designed to place LLM in a state in which it will freely respond to any user input, bypassing any controls, restrictions, or guardrails placed on the LLM.\nOnce successfully jailbroken, the LLM can be used in unintended ways by the adversary.\n",
@@ -1651,8 +1651,8 @@
           "https://atlas.mitre.org/techniques/AML.T0054"
         ]
       },
-      "uuid": "172427e3-9ecc-49a3-b628-96b824cc4131",
-      "value": "LLM Jailbreak"
+      "uuid": "9bf148ad-b901-5aeb-a029-6c0a8ce0a564",
+      "value": "LLM Jailbreak - AML.T0054"
     },
     {
       "description": "Adversaries may search compromised systems to find and obtain insecurely stored credentials.\nThese credentials can be stored and/or misplaced in many locations on a system, including plaintext files (e.g. bash history), environment variables, operating system, or application-specific repositories (e.g. Credentials in Registry), or other specialized files/artifacts (e.g. private keys).\n",
@@ -1668,8 +1668,8 @@
           "https://atlas.mitre.org/techniques/AML.T0055"
         ]
       },
-      "uuid": "04d61746-9df1-468e-99d3-0a4685856deb",
-      "value": "Unsecured Credentials"
+      "uuid": "1b2fb3ca-e233-5cf5-8103-2b1fa37524eb",
+      "value": "Unsecured Credentials - AML.T0055"
     },
     {
       "description": "An adversary may induce an LLM to reveal its initial instructions, or \"meta prompt.\"\nDiscovering the meta prompt can inform the adversary about the internal workings of the system.\nPrompt engineering is an emerging field that requires expertise and exfiltrating the meta prompt can prompt in order to steal valuable intellectual property.\n",
@@ -1686,8 +1686,8 @@
           "https://atlas.mitre.org/techniques/AML.T0056"
         ]
       },
-      "uuid": "e98acce8-ed69-4ebe-845b-1bcb662836ba",
-      "value": "LLM Meta Prompt Extraction"
+      "uuid": "b8b16dac-3b95-59f7-8bf7-60e39b0c062f",
+      "value": "LLM Meta Prompt Extraction - AML.T0056"
     },
     {
       "description": "Adversaries may craft prompts that induce the LLM to leak sensitive information.\nThis can include private user data or proprietary information.\nThe leaked information may come from proprietary training data, data sources the LLM is connected to, or information from other users of the LLM.\n",
@@ -1703,8 +1703,8 @@
           "https://atlas.mitre.org/techniques/AML.T0057"
         ]
       },
-      "uuid": "45d378aa-20ae-401d-bf61-7f00104eeaca",
-      "value": "LLM Data Leakage"
+      "uuid": "0c8eca96-8d33-5fd4-a9c0-51db41128b89",
+      "value": "LLM Data Leakage - AML.T0057"
     },
     {
       "description": "Adversaries may publish a poisoned model to a public location such as a model registry or code repository. The poisoned model may be a novel model or a poisoned variant of an existing open-source model. This model may be introduced to a victim system via [ML Supply Chain Compromise](/techniques/AML.T0010).",
@@ -1737,8 +1737,8 @@
           "https://atlas.mitre.org/techniques/AML.T0059"
         ]
       },
-      "uuid": "89731d07-679e-4da3-8f70-aba314068a89",
-      "value": "Erode Dataset Integrity"
+      "uuid": "6cc31098-f336-5fd8-932e-0289ff502d16",
+      "value": "Erode Dataset Integrity - AML.T0059"
     },
     {
       "description": "Adversaries may create an entity they control, such as a software package, website, or email address to a source hallucinated by an LLM. The hallucinations may take the form of package names commands, URLs, company names, or email addresses that point the victim to the entity controlled by the adversary. When the victim interacts with the adversary-controlled entity, the attack can proceed.",
@@ -1754,8 +1754,8 @@
           "https://atlas.mitre.org/techniques/AML.T0060"
         ]
       },
-      "uuid": "53c52153-8a3f-4952-8e20-e9ab7ca899a7",
-      "value": "Publish Hallucinated Entities"
+      "uuid": "7ef953bd-97c4-5fac-af50-8619601046e2",
+      "value": "Publish Hallucinated Entities - AML.T0060"
     },
     {
       "description": "An adversary may use a carefully crafted [LLM Prompt Injection](/techniques/AML.T0051) designed to cause the LLM to replicate the prompt as part of its output. This allows the prompt to propagate to other LLMs and persist on the system. The self-replicating prompt is typically paired with other malicious instructions (ex: [LLM Jailbreak](/techniques/AML.T0054), [LLM Data Leakage](/techniques/AML.T0057)).",
@@ -1771,8 +1771,8 @@
           "https://atlas.mitre.org/techniques/AML.T0061"
         ]
       },
-      "uuid": "f16a79dd-95ff-4eb7-a986-18a727c4fc9d",
-      "value": "LLM Prompt Self-Replication"
+      "uuid": "7c3e684b-70cd-53e8-b50b-5dfae6d4b4f7",
+      "value": "LLM Prompt Self-Replication - AML.T0061"
     },
     {
       "description": "Adversaries may prompt large language models and identify hallucinated entities.\nThey may request software packages, commands, URLs, organization names, or e-mail addresses, and identify hallucinations with no connected real-world source. Discovered hallucinations provide the adversary with potential targets to [Publish Hallucinated Entities](/techniques/AML.T0060). Different LLMs have been shown to produce the same hallucinations, so the hallucinations exploited by an adversary may affect users of other LLMs.",
@@ -1788,8 +1788,8 @@
           "https://atlas.mitre.org/techniques/AML.T0062"
         ]
       },
-      "uuid": "782c346d-9af5-4145-b6c6-b9cccdc2c950",
-      "value": "Discover LLM Hallucinations"
+      "uuid": "3fa94ab1-4033-559a-971d-4419d0ecdcbd",
+      "value": "Discover LLM Hallucinations - AML.T0062"
     },
     {
       "description": "Adversaries may discover model outputs, such as class scores, whose presence is not required for the system to function and are not intended for use by the end user. Model outputs may be found in logs or may be included in API responses.\nModel outputs may enable the adversary to identify weaknesses in the model and develop attacks.",
@@ -1805,9 +1805,9 @@
           "https://atlas.mitre.org/techniques/AML.T0063"
         ]
       },
-      "uuid": "0926acf1-f3e0-40ef-af0d-89515371bf89",
-      "value": "Discover AI Model Outputs"
+      "uuid": "727ea6be-7237-553d-a02b-416caedc37c3",
+      "value": "Discover AI Model Outputs - AML.T0063"
     }
   ],
-  "version": 15
+  "version": 16
 }
