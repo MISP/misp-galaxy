@@ -211,10 +211,11 @@ def parse_sigma_to_cluster(jsonData, sigmaFile, sigmaPath):
         "https://github.com/SigmaHQ/sigma/tree/master/rules%s/%s"
         % (sigmaPath.replace("\\", "/"), sigmaFile)
     )  # this value only works if you set the path like it was cloned from github
-    valueData["meta"]["logsource.category"] = jsonData.get("logsource").get(
+    logsource = jsonData.get("logsource") or {}
+    valueData["meta"]["logsource.category"] = logsource.get(
         "category", "No established category"
     )
-    valueData["meta"]["logsource.product"] = jsonData.get("logsource").get(
+    valueData["meta"]["logsource.product"] = logsource.get(
         "product", "No established product"
     )
     return valueData
