@@ -8,6 +8,7 @@
 #Note 3 : New uuids are generated on every run (fixed)
 
 import json
+import os
 import csv
 import uuid
 
@@ -96,7 +97,10 @@ with open('naics.csv', newline='') as csvfile:
 
 galaxy['values']=values
 
-tojson = json.dumps(galaxy, indent=2)
-jsonFile = open("naisc_cluster.json", "w")
-jsonFile.write(tojson)
-jsonFile.close()
+# Was: open("naisc_cluster.json", "w") -- a misspelling of "naics", written
+# into the current directory, so clusters/naics.json was never updated.
+cluster_path = os.path.join('..', 'clusters', 'naics.json')
+with open(cluster_path, 'w', encoding='utf-8') as jsonFile:
+    json.dump(galaxy, jsonFile, indent=2, sort_keys=True, ensure_ascii=False)
+    jsonFile.write('\n')  # match jq_all_the_things.sh formatting
+print("Wrote %s" % cluster_path)
