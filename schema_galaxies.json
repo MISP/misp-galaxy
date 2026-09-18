@@ -26,6 +26,46 @@
     "namespace": {
       "type": "string"
     },
+    "category": {
+      "type": "string",
+      "enum": [
+        "named-threat",
+        "technique",
+        "victim",
+        "defensive",
+        "detection",
+        "targeting",
+        "context",
+        "reference"
+      ]
+    },
+    "kind": {
+      "type": "string",
+      "enum": [
+        "actor",
+        "campaign",
+        "malware",
+        "tool",
+        "attack-pattern",
+        "technique",
+        "tactic",
+        "sector",
+        "location",
+        "target",
+        "course-of-action",
+        "control",
+        "rule",
+        "strategy",
+        "data-source",
+        "asset",
+        "platform",
+        "service",
+        "producer",
+        "organisation",
+        "vulnerability",
+        "reference"
+      ]
+    },
     "kill_chain_order": {
       "type": "object"
     }
