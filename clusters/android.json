@@ -4934,7 +4934,18 @@
       },
       "uuid": "56da55d5-ad5b-4c3f-abd9-e44d918e2a5c",
       "value": "Mirax"
+    },
+    {
+      "description": "RemControl is an Android banking trojan offered as Malware-as-a-Service, documented by Group-IB in September 2026. Infrastructure has been active since May 2026 and the first samples appeared in July 2026. It is distributed through malvertising leading to fake Google Play pages impersonating the TVTap IPTV application, with geofencing and mobile User-Agent filtering on at least one Italian campaign, and Meta Pixel identifiers on the landing pages. A dropper generates a fresh signing key per installation, so payload hashes differ on every device. The payload resolves its C2 through Telegram dead-drop channels (AES-128-CBC, key and IV derived from SHA-256 of a marker string), talks to it over WebSocket with an HTTP fallback, and ships more than 30 banking overlays. Reported targets: Italy, France, Spain, Poland, Portugal, Canada and the Middle East. The same dropper naming convention delivered Medusa (Android) until July 2026; this is a distribution overlap, not a code relationship.",
+      "meta": {
+        "refs": [
+          "https://www.group-ib.com/blog/remcontrol-android-banking-trojan/",
+          "https://www.bleepingcomputer.com/news/security/new-remcontrol-android-banking-malware-targets-users-in-europe-and-canada/"
+        ]
+      },
+      "uuid": "2a5adbd6-4eb7-4c92-8516-a70bd6a3e858",
+      "value": "RemControl"
     }
   ],
-  "version": 24
+  "version": 25
 }
