@@ -1,0 +1,297 @@
+{
+  "authors": [
+    "MITRE"
+  ],
+  "category": "asset",
+  "description": "Assets from MITRE ATT&CK, representing the devices and systems that adversaries target.",
+  "name": "MITRE ATT&CK Assets",
+  "source": "https://github.com/mitre/cti",
+  "type": "mitre-asset",
+  "uuid": "f527feac-8bbb-4752-9500-c16806de049d",
+  "values": [
+    {
+      "description": "A VPN server is a device that is used to establish a secure network tunnel between itself and other remote VPN devices, including field VPNs. VPN servers can be used to establish a secure connection with a single remote device, or to securely bridge all traffic between two separate networks together by encapsulating all data between those networks. VPN servers typically support remote network services that are used by field VPNs to initiate the establishment of the secure VPN tunnel between the field device and server.",
+      "meta": {
+        "external_id": "A0011",
+        "mitre_platforms": [
+          "Embedded",
+          "Linux",
+          "Windows"
+        ],
+        "refs": [
+          "https://attack.mitre.org/assets/A0011",
+          "https://webstore.iec.ch/publication/34421"
+        ]
+      },
+      "uuid": "0804f037-a3b9-4715-98e1-9f73d19d6945",
+      "value": "Virtual Private Network (VPN) Server - A0011"
+    },
+    {
+      "description": "A Distributed Control System (DCS) Controller is a microprocessor unit that is used to manage automation processes. DCS Controllers are often found in plants (chemical, manufacturing, oil and gas, etc.) where large scale continuous automation processes are required. A DCS Controller typically operates as part of a larger networked system with other DCS Controllers where each DCS Controller manages an individual part of a continuous process. In addition to these other controllers, DCS Controllers operate along side multiple other system components including system software, operator stations, and other embedded field controllers. The distributed nature of DCS Controllers provides scalability, redundancy, and improved process reliability. DCS Controllers are programmed using traditional process automation programming languages (IEC-61131). ",
+      "meta": {
+        "external_id": "A0017",
+        "mitre_platforms": [
+          "Embedded"
+        ],
+        "refs": [
+          "https://attack.mitre.org/assets/A0017"
+        ]
+      },
+      "uuid": "85f285f9-0a48-4998-921d-8a47d81c0e6d",
+      "value": "Distributed Control System (DCS) Controller - A0017"
+    },
+    {
+      "description": "A Programmable Logic Controller (PLC) is an embedded programmable control device. PLCs typically utilize a modular architecture with separate modules used to support its processing capabilities, communication mediums, and I/O interfaces. PLCs allow for the deployment of customized programs/logic to control or monitor an operational process. This logic is defined using industry specific programming languages, such as IEC 61131 (Citation: IEC February 2013), which define the set of tasks and program organizational units (POUs) included in the device’s programs.  PLCs also typically have distinct operating modes (e.g., Remote, Run, Program, Stop) which are used to determine when the device can be programmed or whether it should execute the custom logic.",
+      "meta": {
+        "external_id": "A0003",
+        "mitre_platforms": [
+          "Embedded"
+        ],
+        "refs": [
+          "https://attack.mitre.org/assets/A0003",
+          "https://webstore.iec.ch/publication/4552"
+        ]
+      },
+      "uuid": "986c455b-0f43-42b6-8360-33ac48bd9990",
+      "value": "Programmable Logic Controller (PLC) - A0003"
+    },
+    {
+      "description": "A Remote Terminal Unit (RTU) is a device that typically resides between field devices (e.g., PLCs, IEDs) and control/SCADA servers and supports various communication interfacing and data aggregation functions. RTUs are typically responsible for forwarding commands from the control server and the collection of telemetry, events, and alerts from the field devices. An RTU can be implemented as a dedicated embedded device, as software platform that runs on a hardened/ruggedized computer, or using a custom application program on a PLC.",
+      "meta": {
+        "external_id": "A0004",
+        "mitre_platforms": [
+          "Embedded",
+          "Linux",
+          "Windows"
+        ],
+        "refs": [
+          "https://attack.mitre.org/assets/A0004"
+        ]
+      },
+      "uuid": "1769c499-55e5-462f-bab2-c39b8cd5ae32",
+      "value": "Remote Terminal Unit (RTU) - A0004"
+    },
+    {
+      "description": "An Intelligent Electronic Device (IED) is a type of specialized field device that is designed to perform specific operational functions, frequently for protection, monitoring, or control within the electric sector. IEDs are typically used to both acquire telemetry and execute tailored control algorithms/actions based on customizable parameters/settings. An IED is usually implemented as a dedicated embedded device and supports various network automation protocols to communicate with RTUs and Control Servers.",
+      "meta": {
+        "external_id": "A0005",
+        "mitre_platforms": [
+          "Embedded"
+        ],
+        "refs": [
+          "https://attack.mitre.org/assets/A0005"
+        ]
+      },
+      "uuid": "75f810ad-b678-4c57-b93b-fdc79bba0c04",
+      "value": "Intelligent Electronic Device (IED) - A0005"
+    },
+    {
+      "description": "A Programmable Automation Controller (PAC) is an embedded programmable control device. PACs are designed to enable automation applications across integrated software applications, peer controllers (e.g., PLC), Human Machine Interfaces, and other systems. PACs often include advanced features for process control, motion control, drive control, and vision applications. PACs are programmed using traditional process automation programming languages (IEC-61131) and sometimes languages such as C and C++ to support more advanced controls.",
+      "meta": {
+        "external_id": "A0018",
+        "mitre_platforms": [
+          "Embedded"
+        ],
+        "refs": [
+          "https://attack.mitre.org/assets/A0018"
+        ]
+      },
+      "uuid": "459e4335-74e1-4136-b730-0f116f0d541d",
+      "value": "Programmable Automation Controller (PAC) - A0018"
+    },
+    {
+      "description": "Human-Machine Interfaces (HMIs) are systems used by an operator to monitor the real-time status of an operational process and to perform necessary control functions, including the adjustment of device parameters. An HMI can take various forms, including a dedicated screen or control panel integrated with a specific device/controller, or a customizable software GUI application running on a standard operating system (e.g., MS Windows) that interfaces with a control/SCADA server. The HMI is critical to ensuring operators have sufficient visibility and control over the operational process.",
+      "meta": {
+        "external_id": "A0002",
+        "mitre_platforms": [
+          "Linux",
+          "Windows"
+        ],
+        "refs": [
+          "https://attack.mitre.org/assets/A0002",
+          "https://webstore.iec.ch/publication/34421"
+        ]
+      },
+      "uuid": "3a95f7e4-4877-4967-b2e8-e287976c3e64",
+      "value": "Human-Machine Interface (HMI) - A0002"
+    },
+    {
+      "description": "Field I/O are devices that communicate with a controller or data aggregator to either send input data or receive output data. Input data may include readings about a given environment/device state from sensors, while output data may include data sent back to actuators for them to either undertake actions or change parameter values.(Citation: Guidance - NIST SP800-82) These devices are frequently embedded devices running on lightweight embedded operating systems or RTOSes. ",
+      "meta": {
+        "external_id": "A0013",
+        "mitre_platforms": [
+          "Embedded"
+        ],
+        "refs": [
+          "https://attack.mitre.org/assets/A0013",
+          "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-82r2.pdf"
+        ]
+      },
+      "uuid": "2b676abd-8263-49ea-81a4-78a7e1f776fe",
+      "value": "Field I/O - A0013"
+    },
+    {
+      "description": "Safety controllers are typically a type of field device used to perform the safety critical function. Safety controllers often support the deployment of custom programs/logic, similar to a PLC, but can also be tailored for sector specific functions/applications. The safety controllers typically utilize redundant hardware and processors to ensure they operate reliably if a component fails.",
+      "meta": {
+        "external_id": "A0010",
+        "mitre_platforms": [
+          "Embedded"
+        ],
+        "refs": [
+          "https://attack.mitre.org/assets/A0010",
+          "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-82r2.pdf",
+          "https://sigtto.org/media/3457/sigtto-2021-esd-systems.pdf"
+        ]
+      },
+      "uuid": "69d1b1ef-e918-4cfd-9a98-29debd04cb32",
+      "value": "Safety Controller - A0010"
+    },
+    {
+      "description": "Data historians, or historian, are systems used to collect and store data, including telemetry, events, alerts, and alarms about the operational process and supporting devices. The historian typically utilizes a database to store this data, and commonly provide tools and interfaces to support the analysis of the data. Data historians are often used to support various engineering or business analysis functions and therefore commonly needs access from the corporate network. Data historians often work in a hierarchical paradigm where lower/site level historians collect and store data which is then aggregated into a site/plant level historian. Therefore, data historians often have remote services that can be accessed externally from the ICS network. Many data historian vendors have designed their software to securely transfer data between the ICS and business networks instead of requiring business systems to access the data historian in the ICS network directly.",
+      "meta": {
+        "external_id": "A0006",
+        "mitre_platforms": [
+          "Embedded",
+          "Linux",
+          "Windows"
+        ],
+        "refs": [
+          "https://attack.mitre.org/assets/A0006"
+        ]
+      },
+      "uuid": "e2c3336a-dd93-44d6-8246-f93cf132c499",
+      "value": "Data Historian - A0006"
+    },
+    {
+      "description": "Control servers are typically a software platform that runs on a modern server operating system (e.g., MS Windows Server). The server typically uses one or more automation protocols (e.g., Modbus, DNP3) to communicate with the various low-level control devices such as Remote Terminal Units (RTUs) and Programmable Logic Controllers (PLCs). The control server also usually provides an interface/network service to connect with an HMI.",
+      "meta": {
+        "external_id": "A0007",
+        "mitre_platforms": [
+          "Embedded",
+          "Linux",
+          "Windows"
+        ],
+        "refs": [
+          "https://attack.mitre.org/assets/A0007",
+          "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-82r2.pdf"
+        ]
+      },
+      "uuid": "ecb81a8b-022e-4529-a404-55cffca7d3a3",
+      "value": "Control Server - A0007"
+    },
+    {
+      "description": "Application servers are used across many different sectors to host various diverse software applications necessary to supporting the ICS. Example functions can include data analytics and reporting, alarm management, and the management/coordination of different control servers.  The application server typically runs on a modern server operating system (e.g., MS Windows Server).",
+      "meta": {
+        "external_id": "A0008",
+        "mitre_platforms": [
+          "Linux",
+          "Windows"
+        ],
+        "refs": [
+          "https://attack.mitre.org/assets/A0008"
+        ]
+      },
+      "uuid": "973bc51e-c41e-4cec-ac03-9389c71f3d0d",
+      "value": "Application Server - A0008"
+    },
+    {
+      "description": "Data Gateway is a device that supports the communication and exchange of data between different systems, networks, or protocols within the ICS. Different types of data gateways are used to perform various functions, including:\n\n *  <u>Protocol Translation:</u> Enable communication to devices that support different or incompatible protocols by translating information from one protocol to another. \n *  <u>Media Converter:</u> Convert data across different Layer 1 and 2 network protocols / mediums, for example, converting from Serial to Ethernet. \n *  <u>Data Aggregation:</u> Collect and combine data from different devices into one consistent format and protocol interface. \n*  <u>Data Mirroring:</u> Create a real-time, exact copy of data streams from devices to a separate destination for redundancy, monitoring, or backup purposes.\n\nData gateways are often critical to the forwarding/transmission of critical control or monitoring data within the ICS. Further, these devices often have remote various network services that are used to communicate across different zones or networks.  \n\nThese assets may focus on a single function listed below or combinations of these functions to best fit the industry use-case. \n",
+      "meta": {
+        "external_id": "A0009",
+        "mitre_platforms": [
+          "Windows",
+          "Linux",
+          "Embedded",
+          "Network"
+        ],
+        "refs": [
+          "https://attack.mitre.org/assets/A0009"
+        ]
+      },
+      "uuid": "68388d4f-8138-420b-be2b-5a7dfe9ff6b4",
+      "value": "Data Gateway - A0009"
+    },
+    {
+      "description": "Jump hosts are devices used to support remote management sessions into ICS networks or devices. The system is used to access the ICS environment securely from external networks, such as the corporate network. The user must first remote into the jump host before they can access ICS devices. The jump host may be a customized Windows server using common remote access protocols (e.g., RDP) or a dedicated access management device. The jump host typically performs various security functions to ensure the authenticity of remote sessions, including authentication, enforcing access controls/permissions, and auditing all access attempts.  ",
+      "meta": {
+        "external_id": "A0012",
+        "mitre_platforms": [
+          "Embedded",
+          "Linux",
+          "Windows"
+        ],
+        "refs": [
+          "https://attack.mitre.org/assets/A0012",
+          "https://www.nerc.com/pa/Stand/Glossary%20of%20Terms/Glossary_of_Terms.pdf"
+        ]
+      },
+      "uuid": "14932ed5-1098-4cc1-9f57-159ab7366787",
+      "value": "Jump Host - A0012"
+    },
+    {
+      "description": "Workstations are devices used by human operators or engineers to perform various configuration, programming, maintenance, diagnostic, or operational tasks. Workstations typically utilize standard desktop or laptop hardware and operating systems (e.g., MS Windows), but run dedicated control system applications or diagnostic/management software     to support interfacing with the control servers or field devices. Some workstations have a fixed location within the network architecture, while others are transient devices that are directly connected to various field devices to support local management activities.",
+      "meta": {
+        "external_id": "A0001",
+        "mitre_platforms": [
+          "Linux",
+          "Windows"
+        ],
+        "refs": [
+          "https://attack.mitre.org/assets/A0001",
+          "https://www.nerc.com/pa/Stand/Glossary%20of%20Terms/Glossary_of_Terms.pdf"
+        ]
+      },
+      "uuid": "f1315d02-9118-4e3b-8cdf-4c2d3f77ce41",
+      "value": "Workstation - A0001"
+    },
+    {
+      "description": "A computer that is a gateway between two networks at OSI layer 3 and that relays and directs data packets through that inter-network. The most common form of router operates on IP packets.(Citation: IETF RFC4949 2007)",
+      "meta": {
+        "external_id": "A0014",
+        "mitre_platforms": [
+          "Embedded",
+          "Network"
+        ],
+        "refs": [
+          "https://attack.mitre.org/assets/A0014",
+          "https://www.ietf.org/rfc/rfc4949.txt"
+        ]
+      },
+      "uuid": "dcb1d1c1-b195-45bf-b4cf-5b98c5b859a5",
+      "value": "Routers - A0014"
+    },
+    {
+      "description": "A switch is a network device that connects endpoints (e.g., workstations, servers, HMIs, PLCs, etc.) so that they can communicate and share data and resources. Switches may operate at either Layer 2 or Layer 3 of the OSI Model and intelligently forward packets across the network based on the specified address (Media Access Control (MAC) address for Layer 2 and Internet Protocol (IP) address for Layer 3). Switches are typically used to define network segments and connect the devices within a particular level of the Purdue Model.  ",
+      "meta": {
+        "external_id": "A0015",
+        "mitre_platforms": [
+          "Embedded",
+          "Network"
+        ],
+        "refs": [
+          "https://attack.mitre.org/assets/A0015"
+        ]
+      },
+      "uuid": "bb553fda-8355-40bc-87c6-5ae25124fa95",
+      "value": "Switch - A0015"
+    },
+    {
+      "description": "A gateway that limits access between networks in accordance with local security policy.\n\nIn ICS networks, firewalls can exist in multiple locations in the network architecture and  serve a variety of purposes. The first, and often the most important, is the firewall segmenting the ICS network from the business network. This firewall acts as the primary network boundary point that controls the ingress/egress of network traffic between the ICS and business networks. This firewall may also be a single device connected to multiple network segments, where the firewall defines individual zones for the different network segments and can control access to the zones and between the zones. This can limit the ability of an adversary to traverse a network.\n",
+      "meta": {
+        "external_id": "A0016",
+        "mitre_platforms": [
+          "Embedded",
+          "Windows",
+          "Linux",
+          "Network"
+        ],
+        "refs": [
+          "https://attack.mitre.org/assets/A0016"
+        ]
+      },
+      "uuid": "bb141168-ae41-4974-8ece-dc9b63e59237",
+      "value": "Firewall - A0016"
+    }
+  ],
+  "version": 2
+}

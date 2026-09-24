@@ -1,5 +1,5 @@
 {
-  "description": "A knowledge graph of cybersecurity countermeasures.",
+  "description": "Defensive countermeasure techniques from MITRE D3FEND.",
   "icon": "user-shield",
   "kill_chain_order": {
     "Deceive": [
@@ -11,22 +11,28 @@
       "Identifier-Analysis",
       "Message-Analysis",
       "Network-Traffic-Analysis",
+      "Physical-Access-Monitoring",
       "Platform-Monitoring",
       "Process-Analysis",
       "User-Behavior-Analysis"
     ],
     "Evict": [
       "Credential-Eviction",
-      "File-Eviction",
+      "Object-Eviction",
       "Process-Eviction"
     ],
     "Harden": [
+      "Agent-Authentication",
       "Application-Hardening",
       "Credential-Hardening",
       "Message-Hardening",
-      "Platform-Hardening"
+      "Platform-Hardening",
+      "Source-Code-Hardening"
     ],
     "Isolate": [
+      "Access-Mediation",
+      "Access-Policy-Administration",
+      "Content-Filtering",
       "Execution-Isolation",
       "Network-Isolation"
     ],
@@ -41,9 +47,9 @@
       "Restore-Object"
     ]
   },
-  "name": "MITRE D3FEND",
+  "name": "MITRE D3FEND Techniques",
   "namespace": "mitre",
   "type": "mitre-d3fend",
   "uuid": "77d1bbfa-2982-4e0a-9238-1dae4a48c5b4",
-  "version": 1
+  "version": 3
 }

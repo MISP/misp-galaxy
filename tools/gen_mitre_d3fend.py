@@ -17,246 +17,390 @@
 #    You should have received a copy of the GNU Affero General Public License
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-import requests
+import argparse
+import json
+import os
 import uuid
-from pymispgalaxies import Cluster, Galaxy
+from collections import defaultdict
+from concurrent.futures import ThreadPoolExecutor
 
+import requests
 
-d3fend_url = 'https://d3fend.mitre.org/ontologies/d3fend.json'
-d3fend_full_mappings_url = 'https://d3fend.mitre.org/api/ontology/inference/d3fend-full-mappings.json'
-
+# The bulk mappings dump (api/ontology/inference/d3fend-full-mappings.json) was
+# removed from the site in the D3FEND 1.6.0 release. The per-technique API
+# returns the same query results, one technique at a time.
+API_URL = 'https://d3fend.mitre.org/api'
+TECHNIQUE_URL = 'https://d3fend.mitre.org/technique'
 
 galaxy_fname = 'mitre-d3fend.json'
 galaxy_type = "mitre-d3fend"
-galaxy_name = "MITRE D3FEND"
-galaxy_description = 'A knowledge graph of cybersecurity countermeasures.'
+galaxy_name = "MITRE D3FEND Techniques"
+galaxy_description = 'Defensive countermeasure techniques from MITRE D3FEND.'
 galaxy_source = 'https://d3fend.mitre.org/'
-
-
-# we love eating lots of memory
-r = requests.get(d3fend_url)
-d3fend_json = r.json()
-
-r = requests.get(d3fend_full_mappings_url)
-d3fend_mappings_json = r.json()
-
 
 uuid_seed = '35527064-12b4-4b73-952b-6d76b9f1b1e3'
 
-tactics = {}   # key = tactic, value = phases
-phases_ids = []
-techniques_ids = []
-techniques = []
-relations = {}
+# D3FEND has no uuids of its own: a technique is identified by its IRI and by
+# d3f:d3fend-id, and since 1.3.0 both are derived from the label. Renaming a
+# technique therefore moves its id and, with it, the uuid we mint from that id -
+# D3-FR "File Removal" became D3-FEV "File Eviction" in 1.6.0. Upstream records
+# none of this: the old class is deleted from the ontology outright, and
+# owl:deprecated is only ever set on the offensive (ATT&CK/SPARTA) classes, so a
+# rename is indistinguishable from a removal except through the mappings the old
+# and the new id share.
+successor_link_ratio = 0.8   # link the revoked technique to its successor
+successor_hint_ratio = 0.5   # only report the candidate, the call is a human one
+
+misp_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+default_cache_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '.cache', 'd3fend')
+
+# offensive framework -> cluster holding the techniques of that framework
+framework_clusters = {
+    'enterprise': 'mitre-attack-pattern',
+    'ics': 'mitre-attack-pattern',
+    'sparta': 'sparta-techniques',
+}
+
+session = requests.Session()
+session.headers.update({'User-Agent': 'misp-galaxy/gen_mitre_d3fend.py'})
 
 
-def get_as_list(item):
-    if isinstance(item, dict):
-        return item.values()
-    elif isinstance(item, list):
-        result = []
-        for i in item:
-            if isinstance(i, dict):
-                result += i.values()
-            if isinstance(i, str):
-                result.append(i)
-        return result
-    elif isinstance(item, str):
-        return [item]
-    else:
-        raise ValueError(f'Unexpected type: {type(item)}')
+def fetch(path: str, cache_dir: str = None) -> dict:
+    """GET <API_URL>/<path>, caching the response per ontology version."""
+    cache_file = None
+    if cache_dir:
+        cache_file = os.path.join(cache_dir, path.replace('/', '_'))
+        if os.path.exists(cache_file):
+            with open(cache_file) as f:
+                return json.load(f)
+    r = session.get(f'{API_URL}/{path}', timeout=180)
+    r.raise_for_status()   # the old code fed 404 HTML straight into r.json()
+    data = r.json()
+    if cache_file:
+        os.makedirs(os.path.dirname(cache_file), exist_ok=True)
+        with open(cache_file, 'w') as f:
+            json.dump(data, f)
+    return data
 
 
-def is_val_in_element(val, element):
-    result = False
-    if isinstance(element, dict):  # only one entry
-        if val == element['@id']:
-            return True
-    elif isinstance(element, list):  # multiple entries
-        for e in element:
-            if val == e['@id']:
-                return True
-    elif not element:
-        pass
-    else:
-        raise ValueError(f'Unexpected type: {type(element)}')
-    return result
+def load_json(*path_parts: str) -> dict:
+    with open(os.path.join(misp_dir, *path_parts)) as f:
+        return json.load(f)
 
 
-def is_element_in_list(element, lst):
-    if isinstance(element, dict):  # only one entry
-        if element['@id'] in lst:
-            return True
-
-    elif isinstance(element, list):  # multiple entries
-        for e in element:
-            if e['@id'] in lst:
-                return True
-    else:
-        raise ValueError(f'Unexpected type: {type(element)}')
+def save_json(data: dict, *path_parts: str) -> None:
+    with open(os.path.join(misp_dir, *path_parts), 'w') as f:
+        json.dump(data, f, indent=2, sort_keys=True, ensure_ascii=False)
+        f.write('\n')  # only needed for the beauty and to be compliant with jq_all_the_things
 
 
-def id_to_label(id):
-    return data[id]['rdfs:label']
+def external_id_to_uuid(cluster_name: str) -> tuple[dict, set]:
+    """external_id -> uuid of an existing cluster, plus the uuids it marks revoked."""
+    result = {}
+    revoked = set()
+    for value in load_json('clusters', f'{cluster_name}.json')['values']:
+        external_id = value.get('meta', {}).get('external_id')
+        if external_id:
+            result[external_id] = value['uuid']
+            if value.get('revoked'):
+                revoked.add(value['uuid'])
+    return result, revoked
 
 
-def get_parent(item):
-    # value of subClassOf starts with d3f
-    if 'rdfs:subClassOf' in item:
-        # if 'd3f:enables' in item:
-        #     parent_classes = get_as_list(item['d3f:enables'])
-        # else:
-        parent_classes = get_as_list(item['rdfs:subClassOf'])
-        for parent_class in parent_classes:
-            if parent_class.startswith('d3f'):
-                return parent_class
-    return None
+def label_of(value: dict) -> str:
+    """The technique name of a cluster value, whichever naming the run that wrote it used.
+
+    Values were named after the bare label until the galaxy moved to the
+    "<name> - <id>" convention every other MITRE galaxy follows, so a value read
+    back from the cluster can carry either form.
+    """
+    suffix = f" - {value['meta']['external_id']}"
+    return value['value'][:-len(suffix)] if value['value'].endswith(suffix) else value['value']
 
 
-def find_kill_chain_of(original_item):
-    # find if back in the kill chain_tactics list we built before
-    parent_classes = get_as_list(original_item['rdfs:subClassOf'])
-    for parent_class in parent_classes:
-        if parent_class.startswith('d3f'):
-            parent_class_name = id_to_label(parent_class).replace(' ', '-')
-            for tactic, phases in kill_chain_tactics.items():
-                if parent_class_name in phases:
-                    return f"{tactic}:{parent_class_name}"
-    # child with one more parent in between
-    for parent_class in parent_classes:
-        if parent_class.startswith('d3f'):
-            return find_kill_chain_of(data[parent_class])
+def relation_keys(value: dict) -> set:
+    """The (dest-uuid, type) pairs of a value, deduplicated."""
+    return {(rel['dest-uuid'], rel['type']) for rel in value.get('related', [])}
 
 
-mitre_attack_pattern = Cluster('mitre-attack-pattern')
+def as_related(keys: set) -> list:
+    return [{'dest-uuid': dest_uuid, 'type': rel_type} for dest_uuid, rel_type in sorted(keys)]
 
 
-def find_mitre_uuid_from_technique_id(technique_id):
-    try:
-        return mitre_attack_pattern.get_by_external_id(technique_id).uuid
-    except KeyError:
-        print("No MITRE UUID found for technique_id: ", technique_id)
-        return None
+def find_successor(previous: dict, candidates: dict) -> tuple[float, str]:
+    """Best match for a revoked technique among the ids that are new this run.
+
+    Scored by the Jaccard ratio of the offensive mappings both carry: a renamed
+    technique keeps nearly all of them, an unrelated one shares a handful.
+    """
+    keys = relation_keys(previous)
+    if not keys:
+        return 0.0, None
+    best_ratio, best_id = 0.0, None
+    for external_id, candidate in candidates.items():
+        other = relation_keys(candidate)
+        if not other:
+            continue
+        ratio = len(keys & other) / len(keys | other)
+        if ratio > best_ratio:
+            best_ratio, best_id = ratio, external_id
+    return best_ratio, best_id
 
 
-try:
-    cluster = Cluster('mitre-d3fend')
-except (KeyError, FileNotFoundError):
-    cluster = Cluster({
-        'authors': ["MITRE"],
-        'category': 'd3fend',
-        'name': galaxy_name,
-        'description': galaxy_description,
-        'source': galaxy_source,
-        'type': galaxy_type,
-        'uuid': "b8bd7e45-63bf-4c44-8ab1-c81c82547380",
-        'version': 0
-    })
+def walk_matrix(matrix: list) -> tuple[dict, dict]:
+    """Flatten api/matrix.json into techniques and the tactic/phase ordering.
 
-# relationships
-for item in d3fend_mappings_json['results']['bindings']:
-    d3fend_technique = item['def_tech_label']['value']
-    attack_technique = item['off_tech_label']['value']
-    attack_technique_id = item['off_tech']['value'].split('#')[-1]
-    # print(f"Mapping: {d3fend_technique} -> {attack_technique} ({attack_technique_id})")
-    dest_uuid = find_mitre_uuid_from_technique_id(attack_technique_id)
-    if dest_uuid:
-        rel_type = item['def_artifact_rel_label']['value']
-        if d3fend_technique not in relations:
-            relations[d3fend_technique] = []
-        relations[d3fend_technique].append(
-            {
-                'dest-uuid': dest_uuid,
-                'type': rel_type
+    The tree is tactic (depth 0) -> technique (depth 1) -> sub-technique (depth 2+),
+    replacing the recursive subClassOf lookups of the previous version. Only the
+    tactic is a grouping: a depth 1 node is a top-level technique in its own right
+    - d3f:ObjectEviction is subClassOf d3f:DefensiveTechnique, exactly like the
+    sub-techniques under it, and carries its own id, definition and mappings - so
+    it becomes a cluster value and names the kill chain phase of its subtree.
+    """
+    techniques = {}          # d3fend-id -> {value, description, iri, kill_chain}
+    kill_chain_order = {}    # tactic -> [phases]
+
+    def walk(node, tactic, phase, depth):
+        if depth == 1:
+            phase = node['rdfs:label']
+        if depth >= 1 and 'd3f:d3fend-id' in node:
+            techniques[node['d3f:d3fend-id']] = {
+                'value': node['rdfs:label'],
+                'description': node['d3f:definition'],
+                'iri': node['@id'],
+                'kill_chain': f"{tactic}:{phase.replace(' ', '-')}",
             }
-        )
+        elif depth >= 1:
+            print(f"WARNING: no d3fend-id, skipping {node['@id']}")
+        for child in node.get('children', []):
+            walk(child, tactic, phase, depth + 1)
+
+    for tactic_node in matrix:
+        tactic = tactic_node['rdfs:label']
+        kill_chain_order[tactic] = sorted(
+            phase['rdfs:label'].replace(' ', '-') for phase in tactic_node.get('children', []))
+        walk(tactic_node, tactic, None, 0)
+
+    return techniques, kill_chain_order
 
 
-# first convert as dict with key = @id
-data = {}
-for item in d3fend_json['@graph']:
-    data[item['@id']] = item
-
-# tactic
-for item in d3fend_json['@graph']:
-    if is_val_in_element('d3f:DefensiveTactic', item.get('rdfs:subClassOf')):
-        tactics[item['rdfs:label']] = {
-            'order': item['d3f:display-order'],
-            'phases': []
-        }
-        print(f"Tactic: {item['rdfs:label']}")
-
-# phases
-for item in d3fend_json['@graph']:
-    if 'rdfs:subClassOf' in item:
-        if is_val_in_element('d3f:DefensiveTechnique', item['rdfs:subClassOf']):
-            phases_ids.append(item['@id'])
-            parent = id_to_label(item['d3f:enables']['@id'])
-            tactics[parent]['phases'].append(item['rdfs:label'].replace(' ', '-'))
-            # print(f"Tactic: {parent} \tPhase: {item['rdfs:label']}")
-
-# sort the tactics based on the order
-tactics = dict(sorted(tactics.items(), key=lambda item: item[1]['order']))
-# sort the values
-kill_chain_tactics = {}
-for tactic, value in tactics.items():
-    kill_chain_tactics[tactic] = sorted(value['phases'])
+def get_synonyms(item: dict) -> list:
+    synonyms = item.get('d3f:synonym')
+    if not synonyms:
+        return []
+    if isinstance(synonyms, str):
+        return [synonyms]
+    return list(synonyms)
 
 
-# extract all parent, child and ... techniques
-seen_new = True
-while seen_new:
-    seen_new = False
-    for item in d3fend_json['@graph']:
-        if 'rdfs:subClassOf' in item:
-            element = item['rdfs:subClassOf']
-            if is_element_in_list(element, phases_ids) or is_element_in_list(element, techniques_ids):
-                if item['@id'] in techniques_ids:
-                    continue
-                seen_new = True
-                techniques_ids.append(item['@id'])
-                if 'Memory Boundary Tracking' in item['rdfs:label']:
-                    print(f"Technique: {item['rdfs:label']}")
-                kill_chain = find_kill_chain_of(item)
-                technique = {
-                    'value': item['rdfs:label'],
-                    'description': item['d3f:definition'],
-                    'uuid': str(uuid.uuid5(uuid.UUID(uuid_seed), item['d3f:d3fend-id'])),
-                    'meta': {
-                        'kill_chain': [kill_chain],
-                        'refs': [f"https://d3fend.mitre.org/technique/{item['@id']}"],
-                        'external_id': item['d3f:d3fend-id']
-                    }
-                }
-                # synonyms
-                if 'd3f:synonym' in item:
-                    technique['meta']['synonyms'] = get_as_list(item['d3f:synonym'])
-                # relations
-                if item['rdfs:label'] in relations:
-                    technique['related'] = relations[item['rdfs:label']]
+def build_relations(technique_json: dict, resolvers: dict, unresolved: dict) -> list:
+    """Convert the def_to_off bindings of one technique into related entries.
 
-                cluster.append(technique)
-                print(f"Technique: {item['rdfs:label']} - {item['d3f:d3fend-id']}")
+    D3FEND returns the cross product of defensive technique x offensive technique
+    x digital artifact path, so the same (dest-uuid, type) shows up many times.
+    Rows where def_tech_label differs from the queried technique belong to a
+    parent phase, which is not a cluster value, and are dropped.
+    """
+    relations = set()
+    for row in technique_json.get('def_to_off', {}).get('results', {}).get('bindings', []):
+        if row['def_tech_label']['value'] != row['query_def_tech_label']['value']:
+            continue
+        framework = row['framework_key']['value']
+        cluster_name = framework_clusters.get(framework)
+        if not cluster_name:
+            unresolved[framework].add(row['off_tech_id']['value'])
+            continue
+        dest_uuid = resolvers[cluster_name].get(row['off_tech_id']['value'])
+        if not dest_uuid:
+            unresolved[framework].add(row['off_tech_id']['value'])
+            continue
+        relations.add((dest_uuid, row['def_artifact_rel_label']['value']))
+    return as_related(relations)
 
 
-cluster.save('mitre-d3fend')
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description='Convert MITRE D3FEND to a MISP galaxy.')
+    parser.add_argument('-c', '--cache-dir', default=default_cache_dir,
+                        help='directory to cache the API responses in (per ontology version)')
+    parser.add_argument('--no-cache', action='store_true', help='always fetch from the API')
+    parser.add_argument('-j', '--jobs', type=int, default=4, help='parallel requests')
+    return parser.parse_args()
 
 
-try:
-    galaxy = Galaxy('mitre-d3fend')
-    galaxy.kill_chain_order = kill_chain_tactics
-except (KeyError, FileNotFoundError):
-    galaxy = Galaxy({
-        'description': galaxy_description,
-        'icon': "user-shield",
-        'kill_chain_order': kill_chain_tactics,
-        'name': galaxy_name,
-        'namespace': "mitre",
-        'type': galaxy_type,
-        'uuid': "77d1bbfa-2982-4e0a-9238-1dae4a48c5b4",
-        'version': 1
-    })
+def load_resolvers() -> tuple[dict, set]:
+    """external_id -> uuid per offensive cluster, and the uuids those clusters revoked."""
+    resolvers = {}
+    revoked_targets = set()
+    for name in sorted(set(framework_clusters.values())):
+        resolvers[name], revoked = external_id_to_uuid(name)
+        revoked_targets |= revoked
+    return resolvers, revoked_targets
 
-galaxy.save('mitre-d3fend')
 
-print("All done, please don't forget to ./jq_all_the_things.sh, commit, and then ./validate_all.sh.")
+def build_value(d3fend_id: str, technique: dict, synonyms: list, technique_json: dict,
+                resolvers: dict, unresolved: dict) -> dict:
+    """One cluster value, out of a technique and the mappings the API returned for it."""
+    value = {
+        'value': f"{technique['value']} - {d3fend_id}",
+        'description': technique['description'],
+        'uuid': str(uuid.uuid5(uuid.UUID(uuid_seed), d3fend_id)),
+        'meta': {
+            'external_id': d3fend_id,
+            'kill_chain': [technique['kill_chain']],
+            'refs': [f"{TECHNIQUE_URL}/{technique['iri']}"],
+        },
+    }
+    if synonyms:
+        value['meta']['synonyms'] = sorted(synonyms)
+    relations = build_relations(technique_json, resolvers, unresolved)
+    if relations:
+        value['related'] = relations
+    return value
+
+
+def build_values(techniques: dict, synonyms_of: dict, resolvers: dict, unresolved: dict,
+                 cache_dir: str, jobs: int) -> list:
+    """Fetch every technique - the API serves one at a time - and convert them."""
+    def get_technique(d3fend_id: str) -> tuple:
+        return d3fend_id, fetch(f"technique/{techniques[d3fend_id]['iri']}.json", cache_dir)
+
+    with ThreadPoolExecutor(max_workers=jobs) as executor:
+        return [build_value(d3fend_id, techniques[d3fend_id], synonyms_of.get(d3fend_id, []),
+                            technique_json, resolvers, unresolved)
+                for d3fend_id, technique_json in executor.map(get_technique, sorted(techniques))]
+
+
+def carry_over_synonyms(new_values: dict, previous_values: dict) -> None:
+    """Keep the old label of a technique renamed under a stable id searchable.
+
+    The synonyms already recorded have to be carried over as well: they are
+    rebuilt from upstream on every run, so a label kept here would be dropped
+    again by the very next regeneration.
+    """
+    for external_id, value in new_values.items():
+        previous = previous_values.get(external_id)
+        if not previous:
+            continue
+        synonyms = set(value['meta'].get('synonyms', [])) | set(previous['meta'].get('synonyms', []))
+        if label_of(previous) != label_of(value):
+            # Only an upstream rename earns a synonym: moving every value to the
+            # "<name> - <id>" convention is a migration, not 241 renames.
+            print(f"Renamed: {label_of(previous)} -> {label_of(value)}")
+            synonyms.add(previous['value'])
+        if synonyms:
+            value['meta']['synonyms'] = sorted(synonyms)
+
+
+def link_successor(previous: dict, candidates: dict) -> None:
+    """Point a revoked technique at the one that replaced it, where that is clear enough."""
+    linked = {key for key in relation_keys(previous) if key[1] == 'revoked-by'}
+    if linked:
+        previous['related'] = as_related(linked)   # a successor set on an earlier run
+        return
+    ratio, successor_id = find_successor(previous, candidates)
+    if ratio >= successor_link_ratio:
+        successor = candidates[successor_id]
+        print(f"    renamed upstream to {successor['value']} "
+              f"(mapping overlap {ratio:.2f}), linking with revoked-by")
+        previous['related'] = [{'dest-uuid': successor['uuid'], 'type': 'revoked-by'}]
+        return
+    if ratio >= successor_hint_ratio:
+        print(f"WARNING: {previous['meta']['external_id']} may have been renamed to "
+              f"{candidates[successor_id]['value']} "
+              f"(mapping overlap {ratio:.2f}); add revoked-by by hand if it was")
+    if previous.get('related'):
+        previous['related'] = as_related(relation_keys(previous))
+
+
+def drop_stale_kill_chain(value: dict, valid_kill_chains: set) -> None:
+    """Drop phases the galaxy no longer declares - File-Eviction became Object-Eviction."""
+    kill_chain = value['meta'].get('kill_chain', [])
+    stale = [kc for kc in kill_chain if kc not in valid_kill_chains]
+    if not stale:
+        return
+    print(f"    dropping kill_chain no longer in the galaxy: {', '.join(stale)}")
+    remaining = [kc for kc in kill_chain if kc in valid_kill_chains]
+    if remaining:
+        value['meta']['kill_chain'] = remaining
+    else:
+        del value['meta']['kill_chain']
+
+
+def revoke_missing(previous_values: dict, new_values: dict, kill_chain_order: dict) -> list:
+    """Revoke - never delete - the techniques that disappeared upstream.
+
+    Deleting them would orphan the tags of existing MISP events. A rename that
+    moved the id lands here too, which is what link_successor is for.
+    """
+    valid_kill_chains = {f"{tactic}:{phase}"
+                         for tactic, phases in kill_chain_order.items() for phase in phases}
+    candidates = {external_id: value for external_id, value in new_values.items()
+                  if external_id not in previous_values}
+    revoked = []
+    for external_id, previous in previous_values.items():
+        if external_id in new_values:
+            continue
+        print(f"Revoked: {label_of(previous)} - {external_id}")
+        previous['value'] = f"{label_of(previous)} - {external_id}"
+        previous['revoked'] = True
+        link_successor(previous, candidates)
+        drop_stale_kill_chain(previous, valid_kill_chains)
+        revoked.append(previous)
+    return revoked
+
+
+def report(cluster: dict, revoked_count: int, unresolved: dict, revoked_targets: set) -> None:
+    relations_count = sum(len(value.get('related', [])) for value in cluster['values'])
+    print(f"\n{len(cluster['values'])} values ({revoked_count} revoked), "
+          f"{relations_count} relations")
+    for framework, ids in sorted(unresolved.items()):
+        print(f"WARNING: {len(ids)} unresolved {framework} technique(s): {', '.join(sorted(ids))}")
+    stale_targets = sum(1 for value in cluster['values'] for rel in value.get('related', [])
+                        if rel['dest-uuid'] in revoked_targets)
+    if stale_targets:
+        print(f"WARNING: {stale_targets} relation(s) point at a value the target cluster has "
+              f"revoked; D3FEND still maps to them, so they are kept - check if that diverges")
+    print("All done, please don't forget to ./jq_all_the_things.sh, commit, and then ./validate_all.sh.")
+
+
+def main() -> None:
+    args = parse_args()
+
+    version_json = fetch('version.json')
+    ontology_version = version_json['ontology_version']
+    cache_dir = None if args.no_cache else os.path.join(args.cache_dir, ontology_version)
+    print(f"D3FEND {ontology_version} released {version_json['release_date']} "
+          f"({version_json['ontology_hash_sha256']})")
+
+    techniques, kill_chain_order = walk_matrix(fetch('matrix.json', cache_dir))
+    synonyms_of = {item['d3f:d3fend-id']: get_synonyms(item)
+                   for item in fetch('technique/all.json', cache_dir)['@graph']
+                   if 'd3f:d3fend-id' in item}
+    print(f"{len(techniques)} techniques in "
+          f"{sum(len(phases) for phases in kill_chain_order.values())} phases")
+
+    resolvers, revoked_targets = load_resolvers()
+    unresolved = defaultdict(set)
+    values = build_values(techniques, synonyms_of, resolvers, unresolved, cache_dir, args.jobs)
+    new_values = {value['meta']['external_id']: value for value in values}
+
+    cluster = load_json('clusters', galaxy_fname)
+    previous_values = {value['meta']['external_id']: value
+                       for value in cluster['values'] if value.get('meta', {}).get('external_id')}
+    carry_over_synonyms(new_values, previous_values)
+    revoked = revoke_missing(previous_values, new_values, kill_chain_order)
+
+    cluster['values'] = sorted(values + revoked, key=lambda value: value['meta']['external_id'])
+    cluster['version'] += 1
+    save_json(cluster, 'clusters', galaxy_fname)
+
+    galaxy = load_json('galaxies', galaxy_fname)
+    galaxy['kill_chain_order'] = kill_chain_order
+    galaxy['version'] += 1
+    save_json(galaxy, 'galaxies', galaxy_fname)
+
+    report(cluster, len(revoked), unresolved, revoked_targets)
+
+
+if __name__ == '__main__':
+    main()
