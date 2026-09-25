@@ -4,6 +4,17 @@ document$.subscribe(function () {
     // const NODE_COLOR = "#69b3a2";
     const Parent_Node_COLOR = "#ff0000";
 
+    // Galaxy names go into a CSS class and into the selector that looks it up
+    // again. Only [A-Za-z0-9_-] is safe there: 17 of the 131 galaxy names
+    // contain "&", "/", "(" or ")" -- every "MITRE ATT&CK *" galaxy among
+    // them -- and those produce a selector that makes querySelectorAll throw
+    // a DOMException, aborting the handler that issued it.
+    // Both the class attribute and the selectors go through this one function
+    // so they cannot drift apart.
+    function galaxyClass(name) {
+        return "galaxy-" + String(name).replace(/[^A-Za-z0-9_-]+/g, "-");
+    }
+
 
     function applyTableFilter(tf) {
         var valuesToSelect = ['1', '2', '3'];
@@ -125,7 +136,7 @@ document$.subscribe(function () {
             d3.select(this)
                 .attr("r", parseFloat(d3.select(this).attr("r")) + 5)
                 .style("opacity", 1);
-            d3.selectAll(".legend-text.galaxy-" + d.galaxy.replace(/\s+/g, '-').replace(/[\s.]/g, '-'))
+            d3.selectAll(".legend-text." + galaxyClass(d.galaxy))
                 .style("font-weight", "bold")
                 .style("font-size", "14px");
             link.filter(l => l.source.id === d.id || l.target.id === d.id)
@@ -145,7 +156,7 @@ document$.subscribe(function () {
                 node.style("opacity", 1);
                 link.style("opacity", 1);
                 d3.select(this).attr("r", d => d.id === Parent_Node.id ? NODE_RADIUS + 5 : NODE_RADIUS);
-                d3.selectAll(".legend-text.galaxy-" + d.galaxy.replace(/\s+/g, '-').replace(/[\s.]/g, '-'))
+                d3.selectAll(".legend-text." + galaxyClass(d.galaxy))
                     .style("font-weight", "normal")
                     .style("font-size", "12px");
                 link.filter(l => l.source.id === d.id || l.target.id === d.id)
@@ -227,7 +238,7 @@ document$.subscribe(function () {
             .style("text-anchor", "start")
             .style("fill", "grey")
             .style("font-size", "12px")
-            .attr("class", d => "legend-text galaxy-" + d.name.replace(/\s+/g, '-').replace(/[\s.]/g, '-'))
+            .attr("class", d => "legend-text " + galaxyClass(d.name))
             .text(d => d.name.length > maxCharLength ? d.name.substring(0, maxCharLength) + "..." : d.name)
             .on("mouseover", mouseoverEffect)
             .on("mouseout", mouseoutEffect);
@@ -238,7 +249,7 @@ document$.subscribe(function () {
             link.style("opacity", 0.1);
 
             // Highlight elements associated with the hovered galaxy
-            svg.selectAll(".galaxy-" + d.name.replace(/\s+/g, '-').replace(/[\s.]/g, '-'))
+            svg.selectAll("." + galaxyClass(d.name))
                 .each(function () {
                     d3.select(this).style("opacity", 1); // Increase opacity for related elements
                 });
@@ -329,7 +340,7 @@ document$.subscribe(function () {
             .attr("fill", function (d, i) {
                 return d.id === Parent_Node.id ? Parent_Node_COLOR : colorScale(d.galaxy);
             })
-            .attr("class", d => "node galaxy-" + d.galaxy.replace(/\s+/g, '-').replace(/[\s.]/g, '-'));
+            .attr("class", d => "node " + galaxyClass(d.galaxy));
 
         initializeNodeInteractions(node, link, tooltip, simulation, links, Parent_Node, NODE_RADIUS);
         createGalaxyColorLegend(svg, width, galaxies, colorScale, node, link, tooltip);
@@ -366,7 +377,7 @@ document$.subscribe(function () {
                             .attr("fill", function (d, i) {
                                 return d.id === Parent_Node.id ? Parent_Node_COLOR : colorScale(d.galaxy);
                             })
-                            .attr("class", d => "node galaxy-" + d.galaxy.replace(/\s+/g, '-').replace(/[\s.]/g, '-')),
+                            .attr("class", d => "node " + galaxyClass(d.galaxy)),
                         update => update,
                         exit => exit.remove()
                     );
