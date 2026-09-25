@@ -7,9 +7,8 @@ from pathlib import Path
 
 # open clusters/ransomware
 ransompath = Path(__file__).parent.parent.parent / 'clusters' / 'ransomware.json'
-ransomware_galaxy = ransompath.open("r")
-ransom_galaxy = json.load(ransomware_galaxy)
-ransomware_galaxy.close()
+with ransompath.open("r", encoding="utf-8") as ransomware_galaxy:
+    ransom_galaxy = json.load(ransomware_galaxy)
 
 # get groups names from ransomlook
 ransomlook_groups = requests.get("https://www.ransomlook.io/api/groups")
@@ -147,6 +146,14 @@ print("\nTotal modified :" + str(len(updated) + len(created)))
 ransom_galaxy['version'] = ransom_galaxy['version'] + 1
 
 tojson = json.dumps(ransom_galaxy, indent=2, ensure_ascii=False)
-ransomware_galaxy = ransompath.open("w+")
-ransomware_galaxy.write(tojson)
-ransomware_galaxy.close()
+
+# Serialise to a temp file next to the target and replace it only once the
+# write has completed. `ransompath.open("w+")` truncated clusters/ransomware.json
+# before writing a byte, and without an explicit encoding the ensure_ascii=False
+# payload raises UnicodeEncodeError under a non-UTF-8 locale -- destroying the
+# cluster with no recovery path.
+tmppath = ransompath.with_suffix(".json.tmp")
+with tmppath.open("w", encoding="utf-8") as ransomware_galaxy:
+    ransomware_galaxy.write(tojson)
+    ransomware_galaxy.write("\n")  # match jq_all_the_things.sh formatting
+tmppath.replace(ransompath)
