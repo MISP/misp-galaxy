@@ -256,7 +256,7 @@ Category: *tool* - source: *https://www.misp-project.org/galaxy.html* - total: *
 
 [Exploit-Kit](https://www.misp-galaxy.org/exploit-kit) - Exploit-Kit is an enumeration of some exploitation kits used by adversaries. The list includes document, browser and router exploit kits.It's not meant to be totally exhaustive but aim at covering the most seen in the past 5 years
 
-Category: *tool* - source: *MISP Project* - total: *53* elements
+Category: *tool* - source: *MISP Project* - total: *54* elements
 
 [[HTML](https://www.misp-galaxy.org/exploit-kit)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/exploit-kit.json)]
 
