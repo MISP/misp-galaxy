@@ -696,7 +696,7 @@ Category: *scor* - source: *https://misp-galaxy.org/scor-tens/* - total: *30* el
 
 [Sector](https://www.misp-galaxy.org/sector) - Activity sectors
 
-Category: *sector* - source: *CERT-EU* - total: *118* elements
+Category: *sector* - source: *CERT-EU* - total: *119* elements
 
 [[HTML](https://www.misp-galaxy.org/sector)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/sector.json)]
 
