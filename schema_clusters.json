@@ -47,24 +47,29 @@
           },
           "related": {
             "type": "array",
-            "additionalProperties": false,
             "items": {
-              "type": "object"
-            },
-            "properties": {
-              "dest-uuid": {
-                "type": "string"
-              },
-              "type": {
-                "type": "string"
-              },
-              "tags": {
-                "type": "array",
-                "uniqueItems": true,
-                "items": {
+              "type": "object",
+              "properties": {
+                "dest-uuid": {
+                  "type": "string",
+                  "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
+                },
+                "type": {
                   "type": "string"
+                },
+                "tags": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "items": {
+                    "type": "string"
+                  }
                 }
-              }
+              },
+              "required": [
+                "dest-uuid",
+                "type"
+              ],
+              "additionalProperties": false
             }
           },
           "meta": {
