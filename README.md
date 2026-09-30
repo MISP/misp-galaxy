@@ -48,7 +48,7 @@ Category: *firearm* - source: *https://ammo.com/* - total: *409* elements
 
 [Android](https://www.misp-galaxy.org/android) - Android malware galaxy based on multiple open sources.
 
-Category: *tool* - source: *Open Sources* - total: *449* elements
+Category: *tool* - source: *Open Sources* - total: *450* elements
 
 [[HTML](https://www.misp-galaxy.org/android)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/android.json)]
 
@@ -696,7 +696,7 @@ Category: *scor* - source: *https://misp-galaxy.org/scor-tens/* - total: *30* el
 
 [Sector](https://www.misp-galaxy.org/sector) - Activity sectors
 
-Category: *sector* - source: *CERT-EU* - total: *118* elements
+Category: *sector* - source: *CERT-EU* - total: *119* elements
 
 [[HTML](https://www.misp-galaxy.org/sector)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/sector.json)]
 
@@ -824,7 +824,7 @@ Category: *threat-actor* - source: *https://www.publicsafety.gc.ca/cnt/_xml/lstd
 
 [Threat Actor](https://www.misp-galaxy.org/threat-actor) - Known or estimated adversary groups targeting organizations and employees. Adversary groups are regularly confused with their initial operation or campaign. threat-actor-classification meta can be used to clarify the understanding of the threat-actor if also considered as operation, campaign or activity group.
 
-Category: *actor* - source: *MISP Project* - total: *1052* elements
+Category: *actor* - source: *MISP Project* - total: *1056* elements
 
 [[HTML](https://www.misp-galaxy.org/threat-actor)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/threat-actor.json)]
 
