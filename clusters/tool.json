@@ -11410,7 +11410,70 @@
       ],
       "uuid": "80f5eb4e-cf4e-49dd-bf59-10f9f7258ff3",
       "value": "SpiceRAT"
+    },
+    {
+      "description": "Phishing-as-a-service (PhaaS) kit abusing the OAuth 2.0 device authorization grant (device code phishing) against Microsoft 365: the operator initiates the device code flow and lures the victim into approving it on Microsoft's legitimate sign-in page, obtaining access and refresh tokens without capturing the password. Active since February 2026, first publicly reported in March 2026 by Huntress and Sekoia. Microsoft attributes its development and support to Storm-2992, which sold it to affiliates on Telegram; post-compromise features include AI-assisted mailbox triage and lure generation and Microsoft Graph reconnaissance, feeding business email compromise. Infrastructure disrupted by Microsoft's Digital Crimes Unit with partners in September 2026.",
+      "meta": {
+        "date": "March 2026.",
+        "refs": [
+          "https://blog.sekoia.io/new-widespread-eviltokens-kit-device-code-phishing-as-a-service-part-1/",
+          "https://blog.sekoia.io/eviltokens-an-ai-augmented-phishing-as-a-service-for-automating-bec-fraud-part-2/",
+          "https://www.huntress.com/blog/railway-paas-m365-token-replay-campaign",
+          "https://www.microsoft.com/en-us/security/blog/2026/09/22/unmasking-eviltokens-getting-to-the-root-of-device-code-phishing/"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "b687defa-308c-4f9e-bb9e-d9d30fb4b1a0",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "44078616-6834-4f26-bd25-5393f8d54ee9",
+      "value": "EvilTokens"
+    },
+    {
+      "description": "PHP web shell reported by Mandiant and Google Threat Intelligence Group in intrusions exploiting Citrix NetScaler ADC and Gateway zero-day CVE-2026-88772. Disguised as a Debian package under /netscaler/ns_gui/vpn/scripts/linux/, it extracts Base64-encoded data split across custom HTTP request headers and relays it over loopback to the SLAPSHOT tunneler; if SLAPSHOT is not running, WHIPSHOT unpacks its embedded payload and launches it in the background. Not attributed to a named threat actor at the time of reporting.",
+      "meta": {
+        "date": "September 2026.",
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/defending-against-active-exploitation-of-citrix-netscaler-adc-and-gateway-appliances"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "3f91f85e-743f-4df4-b4e0-a5e6cc6da4ba",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "deploys"
+        }
+      ],
+      "uuid": "8f43e544-2389-49ac-857f-74138dd086eb",
+      "value": "WHIPSHOT"
+    },
+    {
+      "description": "TCP tunneling tool written in Python, reported by Mandiant and Google Threat Intelligence Group in intrusions exploiting Citrix NetScaler ADC and Gateway zero-day CVE-2026-88772. Companion to the WHIPSHOT web shell, which embeds it, launches it in the background and relays operator traffic to it over loopback; SLAPSHOT then proxies arbitrary TCP streams from the compromised appliance to internal hosts for reconnaissance and credential theft, using a custom binary wire protocol. It records its port and lock in /tmp/.uxdport and /tmp/.uxdlock, closes idle sessions and terminates itself after a period of inactivity. Not attributed to a named threat actor at the time of reporting.",
+      "meta": {
+        "date": "September 2026.",
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/defending-against-active-exploitation-of-citrix-netscaler-adc-and-gateway-appliances"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "8f43e544-2389-49ac-857f-74138dd086eb",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "is-deployed-by"
+        }
+      ],
+      "uuid": "3f91f85e-743f-4df4-b4e0-a5e6cc6da4ba",
+      "value": "SLAPSHOT"
     }
   ],
-  "version": 181
+  "version": 182
 }
