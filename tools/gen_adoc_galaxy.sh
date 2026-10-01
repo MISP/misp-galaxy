@@ -16,4 +16,6 @@ asciidoctor-pdf -a allow-uri-read -o "${workdir}/a.pdf" "${workdir}/a.txt"
 cp "${workdir}/a.html" ../../misp-website/static/galaxy.html
 cp "${workdir}/a.pdf"  ../../misp-website/static/galaxy.pdf
 scp -l 81920 "${workdir}/a.html" circl@cpab.circl.lu:/var/www/nwww.circl.lu/doc/misp-galaxy/index.html
+scp "${workdir}/a.html" circl@www-circl-lu.cfss1.circl.lu:/var/www/www.circl.lu/doc/misp/misp-galaxy/index.html
 scp -l 81920 "${workdir}/a.pdf"  circl@cpab.circl.lu:/var/www/nwww.circl.lu/doc/misp-galaxy/galaxy.pdf
+scp "${workdir}/a.pdf" circl@www-circl-lu.cfss1.circl.lu:/var/www/www.circl.lu/doc/misp/misp-galaxy/galaxy.pdf
