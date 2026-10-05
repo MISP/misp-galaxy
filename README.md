@@ -268,6 +268,14 @@ Category: *firearm* - source: *https://www.impactguns.com* - total: *5953* eleme
 
 [[HTML](https://www.misp-galaxy.org/firearms)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/firearms.json)]
 
+## FireHOL IPsets
+
+[FireHOL IPsets](https://www.misp-galaxy.org/firehol-ipsets) - FireHOL IPsets Knowlege Base
+
+Category: *IPset* - source: *https://iplists.firehol.org/* - total: *194* elements
+
+[[HTML](https://www.misp-galaxy.org/firehol-ipsets)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/firehol-ipsets.json)]
+
 ## FIRST CSIRT Services Framework
 
 [FIRST CSIRT Services Framework](https://www.misp-galaxy.org/first-csirt-services-framework) - The Computer Security Incident Response Team (CSIRT) Services Framework is a high-level document describing in a structured way a collection of cyber security services and associated functions that Computer Security Incident Response Teams and other teams providing incident management related services may provide
