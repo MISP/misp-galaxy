@@ -11160,7 +11160,320 @@
       },
       "uuid": "7501abf2-4864-4fc2-a8a3-3a1250ab8e71",
       "value": "SilentRunLoader"
+    },
+    {
+      "description": "According to Symantec, Antino is the Windows backdoor used by the Jewelbug (aka REF7707, Earth Alux, CL-STA-0049) group. It is delivered by HTA downloaders themed on current geopolitical events, and as fake Adobe Flash or Adobe installers (file names such as flashcenter_pp_ax_install_en.exe and Adobeinstall.exe) hosted on group-controlled domains. Once running, it uses the Microsoft Graph API as its command-and-control channel, hiding its traffic inside legitimate Microsoft cloud services. It also sideloads a malicious 'PDF Viewer' browser extension into the victim's browser profile and drops a native-messaging helper registered as com.microsoft.runedge, which runs operator commands through the Windows command interpreter. Note that most antivirus engines label samples of this family as Fsysna, Midie or CRAITHNEX; Antino is the Symantec name.",
+      "meta": {
+        "date": "August 2026.",
+        "refs": [
+          "https://www.security.com/threat-intelligence/jewelbug-crypto-fraud-espionage"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "ff080026-9df7-4874-ad04-0c7d4dcb3e7f",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "dcdb06f3-2d50-4d5c-893b-383e0a2ea4ac",
+      "value": "Antino"
+    },
+    {
+      "description": "According to Symantec, ClientKing is a Rust implant used by the Jewelbug (aka REF7707, Earth Alux, CL-STA-0049) group to reach servers and network devices rather than browsers. Thirty-seven builds were observed, spanning x86-64 servers, ARM64 devices and ASUS consumer routers. It supports five command-and-control transports, including a custom DNS tunnel, and offers a full interactive shell, SOCKS pivoting and the ability to load kernel modules directly from memory. A companion toolkit adds a kernel-module rootkit and a malicious authentication module hooked into su and sudo to steal credentials.",
+      "meta": {
+        "date": "August 2026.",
+        "refs": [
+          "https://www.security.com/threat-intelligence/jewelbug-crypto-fraud-espionage"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "ff080026-9df7-4874-ad04-0c7d4dcb3e7f",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "ae48283b-562f-4800-98d2-df3eced24b29",
+      "value": "ClientKing"
+    },
+    {
+      "description": "According to Symantec, XG-Web is the operator control panel of the Jewelbug (aka REF7707, Earth Alux, CL-STA-0049) group, administering both its espionage and cryptocurrency fraud operations. It is a browser-centric remote-access and information-stealing platform built as a React panel over a Node.js backend, with a MySQL database that doubles as the rendezvous point for victim implants. Its developers describe it as a penetration-testing platform, while internal terms for its functions include browser hijacking, data theft and man-in-the-middle attack. Campaign payloads were served through public Google Documents created by the backend, and a scheduled job checked the group's own C&C domains against VirusTotal every twelve hours so operators could rotate away from flagged infrastructure.",
+      "meta": {
+        "date": "August 2026.",
+        "refs": [
+          "https://www.security.com/threat-intelligence/jewelbug-crypto-fraud-espionage"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "ff080026-9df7-4874-ad04-0c7d4dcb3e7f",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "078618f7-c422-4fea-b290-8dad859f5fa8",
+      "value": "XG-Web"
+    },
+    {
+      "description": "According to Zscaler ThreatLabz, C2Looper is a Rust-based Windows backdoor first identified in July 2026 and assessed with low to medium confidence to be delivered through multi-stage ClickFix infection chains, likely by an initial access broker establishing a foothold for ransomware. It resolves Windows APIs dynamically through LoadLibrary and GetProcAddress, and decrypts its strings at runtime with a single 8-byte XOR key reused throughout the code. Early variants beacon over plaintext HTTP to /api/beacon every second, reporting username, hostname and process ID, and return command output to /api/result/. Supported commands cover remote shell execution, reconnaissance, and second-stage delivery; the upload command writes a payload as wtsapi32.dll under %LocalAppData%\\Microsoft\\OneDrive\\, kills the OneDrive process and sideloads the DLL through the legitimate executable. A later variant, tagged version 2 by its own debug strings, abandons HTTP endpoints entirely and drives all command and control through a GitHub repository, writing cmd.json, result.json and beacon.json per bot, and adds directory listing, drive enumeration, richer reconnaissance and shellcode injection into the text section of a loaded winspool.drv. Note that no antivirus engine names this family: detections on the published samples are entirely generic.",
+      "meta": {
+        "date": "August 2026.",
+        "refs": [
+          "https://www.zscaler.com/blogs/security-research/c2looper-new-backdoor-likely-tied-ransomware-github-c2"
+        ]
+      },
+      "uuid": "e3de66ff-1ec1-4097-ba11-9764a23bdf69",
+      "value": "C2Looper"
+    },
+    {
+      "description": "CoolClient is a modular backdoor used by Mustang Panda. The name is not a vendor label: it comes from the developers' own build paths, recovered by Sophos in November 2022 from PDB strings such as G:\\project\\木马\\Cool\\Client\\hijack_export\\libvlc\\Release\\libvlc.pdb, where 木马 means trojan. Sophos documented the campaign without attributing it, noting that Mustang Panda and LuminousMoth artefacts found alongside were collateral of the USB worm's indiscriminate file collection rather than evidence of collusion; Trend Micro attributed the backdoor to Mustang Panda in 2023, Symantec observed it against telecom operators in Asia in June 2024, and Kaspersky has tracked it since 2025. It is delivered by DLL sideloading through a renamed legitimate binary, persists as a service, terminates security software, and supports file read and delete, clipboard and active-window monitoring, and second-stage delivery. Kaspersky's August 2026 analysis describes a variant that installs a kernel-mode rootkit driver signed with an expired Nanjing Ranyi Technology Co., Ltd. certificate, hooking nsiproxy to hide the C2 addresses from local network tooling. Note that only Kaspersky labels samples Rootkit.Win64.CoolClient; other engines report the driver as Etset or generic rootkit detections.",
+      "meta": {
+        "date": "November 2022.",
+        "refs": [
+          "https://news.sophos.com/en-us/2022/11/03/family-tree-dll-sideloading-cases-may-be-related/",
+          "https://www.trendmicro.com/en_gb/research/23/c/earth-preta-updated-stealthy-strategies.html",
+          "https://securelist.com/honeymyte-updates-coolclient-uses-browser-stealers-and-scripts/118664/",
+          "https://securelist.com/honeymyte-coolclient-driver-rootkit/121028/"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "78bf726c-a9e6-11e8-9e43-77249a2f7339",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "6d26e384-8dcc-4ef1-941b-b84c826ea68d",
+      "value": "CoolClient"
+    },
+    {
+      "description": "CookiETagRAT is a C++ remote access trojan used by the SilkParasite activity cluster, observed by Bitdefender in Central Asia. It hides its command-and-control exchange inside HTTP Cookie and ETag headers, so the traffic carries no distinctive body and inspection that looks only at payloads sees ordinary web requests. Delivery relies on DLL sideloading through renamed legitimate binaries.",
+      "meta": {
+        "date": "August 2026.",
+        "refs": [
+          "https://www.bitdefender.com/en-us/blog/businessinsights/silkparasite-tracking-china-nexus-apt-across-central-asia"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "33420fce-ac3e-4164-a1f5-ccc3d43657c2",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "0b49a769-99ce-4279-8664-d5410471a04c",
+      "value": "CookiETagRAT"
+    },
+    {
+      "description": "DriveSilkRAT is a remote access trojan used by the SilkParasite activity cluster, observed by Bitdefender in Central Asia. Two lineages exist: an original .NET implementation and a later C++ rewrite. Its distinguishing trait is command and control over Google Drive, which places the traffic inside a service most networks already allow and cannot easily distinguish from legitimate use. Delivery relies on DLL sideloading through renamed legitimate binaries.",
+      "meta": {
+        "date": "August 2026.",
+        "refs": [
+          "https://www.bitdefender.com/en-us/blog/businessinsights/silkparasite-tracking-china-nexus-apt-across-central-asia"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "33420fce-ac3e-4164-a1f5-ccc3d43657c2",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "96422a8c-ae49-41c6-9f85-56d8f03fd871",
+      "value": "DriveSilkRAT"
+    },
+    {
+      "description": "GoginRAT is a remote access trojan written in Go, used by the SilkParasite activity cluster and observed by Bitdefender in Central Asia. Bitdefender notes development artefacts across this cluster's newer implants that suggest AI-assisted coding, including test functions left in shipped builds and placeholder cryptographic material such as a literal change_this_key. Delivery relies on DLL sideloading through renamed legitimate binaries.",
+      "meta": {
+        "date": "August 2026.",
+        "refs": [
+          "https://www.bitdefender.com/en-us/blog/businessinsights/silkparasite-tracking-china-nexus-apt-across-central-asia"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "33420fce-ac3e-4164-a1f5-ccc3d43657c2",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "28d502d5-db8a-4fb9-81eb-422e573ea40a",
+      "value": "GoginRAT"
+    },
+    {
+      "description": "HelpLoader is the loader component that delivers SpiceRAT, named by Cisco Talos in June 2024. It is sideloaded by a renamed legitimate executable and is responsible for decrypting and running the implant, which never touches disk in its final form. Reported in campaigns attributed to SneakyChef, and observed again in August 2026 by Bitdefender within the SilkParasite activity cluster.",
+      "meta": {
+        "date": "June 2024.",
+        "refs": [
+          "https://blog.talosintelligence.com/sneakychef-spicerat-suncrypt/",
+          "https://www.bitdefender.com/en-us/blog/businessinsights/silkparasite-tracking-china-nexus-apt-across-central-asia"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "cdf4506e-09ea-4eb8-b898-b1b5381aa343",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "33420fce-ac3e-4164-a1f5-ccc3d43657c2",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "35cef3a8-5e19-4aa5-b512-9460ed025e5e",
+      "value": "HelpLoader"
+    },
+    {
+      "description": "NodeEdgeRAT is a remote access trojan written in JavaScript and running on Node.js, used by the SilkParasite activity cluster and observed by Bitdefender in Central Asia. Its command-and-control infrastructure includes domains impersonating legitimate regional hosting providers, a pattern that makes the traffic plausible to a local defender.",
+      "meta": {
+        "date": "August 2026.",
+        "refs": [
+          "https://www.bitdefender.com/en-us/blog/businessinsights/silkparasite-tracking-china-nexus-apt-across-central-asia"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "33420fce-ac3e-4164-a1f5-ccc3d43657c2",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "620b78ec-bf00-468d-a0eb-0ff18a8bcd40",
+      "value": "NodeEdgeRAT"
+    },
+    {
+      "description": "NomadRAT is a C++ remote access trojan used by the SilkParasite activity cluster, observed by Bitdefender against government and telecommunications targets in Central Asia. Delivery relies on DLL sideloading through renamed legitimate binaries, the pattern shared across this cluster's tooling.",
+      "meta": {
+        "date": "August 2026.",
+        "refs": [
+          "https://www.bitdefender.com/en-us/blog/businessinsights/silkparasite-tracking-china-nexus-apt-across-central-asia"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "33420fce-ac3e-4164-a1f5-ccc3d43657c2",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "e693625b-0d70-4acd-b08d-49e7320db974",
+      "value": "NomadRAT"
+    },
+    {
+      "description": "SpiceRAT is a remote access trojan first reported by Cisco Talos in June 2024, in a campaign attributed to SneakyChef targeting government agencies and think tanks in EMEA and Asia. It is delivered through two chains, one using a LNK file and one using an HTA, both loading the implant by DLL sideloading through a renamed legitimate executable; Talos names the loader component HelpLoader. Bitdefender observed SpiceRAT again in August 2026 as part of the SilkParasite activity cluster in Central Asia, alongside implants of that cluster's own.",
+      "meta": {
+        "date": "June 2024.",
+        "refs": [
+          "https://blog.talosintelligence.com/sneakychef-spicerat-suncrypt/",
+          "https://www.bitdefender.com/en-us/blog/businessinsights/silkparasite-tracking-china-nexus-apt-across-central-asia"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "cdf4506e-09ea-4eb8-b898-b1b5381aa343",
+          "tags": [
+            "estimative-language:likelihood-probability=\"very-likely\""
+          ],
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "33420fce-ac3e-4164-a1f5-ccc3d43657c2",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "80f5eb4e-cf4e-49dd-bf59-10f9f7258ff3",
+      "value": "SpiceRAT"
+    },
+    {
+      "description": "Phishing-as-a-service (PhaaS) kit abusing the OAuth 2.0 device authorization grant (device code phishing) against Microsoft 365: the operator initiates the device code flow and lures the victim into approving it on Microsoft's legitimate sign-in page, obtaining access and refresh tokens without capturing the password. Active since February 2026, first publicly reported in March 2026 by Huntress and Sekoia. Microsoft attributes its development and support to Storm-2992, which sold it to affiliates on Telegram; post-compromise features include AI-assisted mailbox triage and lure generation and Microsoft Graph reconnaissance, feeding business email compromise. Infrastructure disrupted by Microsoft's Digital Crimes Unit with partners in September 2026.",
+      "meta": {
+        "date": "March 2026.",
+        "refs": [
+          "https://blog.sekoia.io/new-widespread-eviltokens-kit-device-code-phishing-as-a-service-part-1/",
+          "https://blog.sekoia.io/eviltokens-an-ai-augmented-phishing-as-a-service-for-automating-bec-fraud-part-2/",
+          "https://www.huntress.com/blog/railway-paas-m365-token-replay-campaign",
+          "https://www.microsoft.com/en-us/security/blog/2026/09/22/unmasking-eviltokens-getting-to-the-root-of-device-code-phishing/"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "b687defa-308c-4f9e-bb9e-d9d30fb4b1a0",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "44078616-6834-4f26-bd25-5393f8d54ee9",
+      "value": "EvilTokens"
+    },
+    {
+      "description": "PHP web shell reported by Mandiant and Google Threat Intelligence Group in intrusions exploiting Citrix NetScaler ADC and Gateway zero-day CVE-2026-88772. Disguised as a Debian package under /netscaler/ns_gui/vpn/scripts/linux/, it extracts Base64-encoded data split across custom HTTP request headers and relays it over loopback to the SLAPSHOT tunneler; if SLAPSHOT is not running, WHIPSHOT unpacks its embedded payload and launches it in the background. Not attributed to a named threat actor at the time of reporting.",
+      "meta": {
+        "date": "September 2026.",
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/defending-against-active-exploitation-of-citrix-netscaler-adc-and-gateway-appliances"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "3f91f85e-743f-4df4-b4e0-a5e6cc6da4ba",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "deploys"
+        }
+      ],
+      "uuid": "8f43e544-2389-49ac-857f-74138dd086eb",
+      "value": "WHIPSHOT"
+    },
+    {
+      "description": "TCP tunneling tool written in Python, reported by Mandiant and Google Threat Intelligence Group in intrusions exploiting Citrix NetScaler ADC and Gateway zero-day CVE-2026-88772. Companion to the WHIPSHOT web shell, which embeds it, launches it in the background and relays operator traffic to it over loopback; SLAPSHOT then proxies arbitrary TCP streams from the compromised appliance to internal hosts for reconnaissance and credential theft, using a custom binary wire protocol. It records its port and lock in /tmp/.uxdport and /tmp/.uxdlock, closes idle sessions and terminates itself after a period of inactivity. Not attributed to a named threat actor at the time of reporting.",
+      "meta": {
+        "date": "September 2026.",
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/defending-against-active-exploitation-of-citrix-netscaler-adc-and-gateway-appliances"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "8f43e544-2389-49ac-857f-74138dd086eb",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "is-deployed-by"
+        }
+      ],
+      "uuid": "3f91f85e-743f-4df4-b4e0-a5e6cc6da4ba",
+      "value": "SLAPSHOT"
     }
   ],
-  "version": 177
+  "version": 182
 }

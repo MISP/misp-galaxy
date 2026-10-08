@@ -1,5 +1,19 @@
 import validators
 
+
+def _escape_table_cell(value):
+    """Make a meta value safe to drop into a markdown table cell.
+
+    A raw newline ends the row -- and, because these tables live inside an
+    indented ``??? info`` admonition, it ends the admonition too -- while a
+    raw ``|`` splits the row into extra columns. 223 meta values contain a
+    newline and 76 contain a pipe.
+    """
+    text = str(value)
+    text = text.replace("|", "\\|")
+    return text.replace("\r\n", "<br>").replace("\n", "<br>").replace("\r", "<br>")
+
+
 class Cluster:
     def __init__(self, uuid, galaxy, description=None, value=None, meta=None):
         self.uuid = uuid
@@ -97,9 +111,7 @@ class Cluster:
             entry += f"    |-----------------------------------|-----|\n"
             for meta in sorted(self.meta.keys()):
                 if meta not in excluded_meta:
-                    if meta == 'outcome':
-                        self.meta[meta] = self.meta[meta].replace("\n", ".")
-                    entry += f'    | {meta} | {self.meta[meta]} |\n'
+                    entry += f'    | {meta} | {_escape_table_cell(self.meta[meta])} |\n'
         return entry
 
     def _create_related_entry(self):
