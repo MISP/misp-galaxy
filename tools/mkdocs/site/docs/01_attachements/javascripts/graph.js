@@ -117,7 +117,7 @@ document$.subscribe(function () {
             tooltip.transition()
                 .duration(200)
                 .style("opacity", .9);
-            tooltip.html(d.id)
+            tooltip.text(d.id)
                 .style("left", (event.pageX) + "px")
                 .style("top", (event.pageY - 28) + "px");
             node.style("opacity", 0.1);
@@ -247,7 +247,7 @@ document$.subscribe(function () {
             tooltip.transition()
                 .duration(200)
                 .style("opacity", .9);
-            tooltip.html(d.name)
+            tooltip.text(d.name)
                 .style("left", (event.pageX) + "px")
                 .style("top", (event.pageY - 28) + "px");
         }
