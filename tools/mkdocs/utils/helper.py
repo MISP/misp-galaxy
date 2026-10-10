@@ -1,5 +1,7 @@
 import operator
 
+from markdown.extensions.toc import slugify
+
 
 def get_top_x(dict, x, big_to_small=True):
     sorted_dict = sorted(
@@ -10,15 +12,13 @@ def get_top_x(dict, x, big_to_small=True):
 
 
 def name_to_section(name):
-    placeholder = "__TMP__"
-    return (
-        name.lower()
-        .replace(" - ", placeholder)  # Replace " - " first
-        .replace(" ", "-")
-        .replace("/", "")
-        .replace(":", "")
-        .replace(placeholder, "-")
-    )  # Replace the placeholder with "-"
+    """Anchor for the ``## {name}`` heading a cluster renders as.
+
+    Delegates to Python-Markdown's own toc slugify -- the function that
+    actually generates the heading ids -- so a link can never point at an
+    anchor the renderer did not create.
+    """
+    return slugify(name, "-")
 
 
 def create_bar_chart(x_axis, y_axis, values, log=False, galaxy=False):
@@ -46,15 +46,7 @@ def create_pie_chart(sector, unit, values):
 
 
 def cluster_transform_to_link(cluster, uuid=False):
-    placeholder = "__TMP__"
-    section = (
-        cluster.value.lower()
-        .replace(" - ", placeholder)  # Replace " - " first
-        .replace(" ", "-")
-        .replace("/", "")
-        .replace(":", "")
-        .replace(placeholder, "-")
-    )
+    section = name_to_section(cluster.value)
     galaxy_folder = cluster.galaxy.json_file_name.replace(".json", "")
     if uuid:
         return f"[{cluster.value} ({cluster.uuid})](../../{galaxy_folder}/index.md#{section})"
