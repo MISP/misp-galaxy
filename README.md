@@ -48,7 +48,7 @@ Category: *firearm* - source: *https://ammo.com/* - total: *409* elements
 
 [Android](https://www.misp-galaxy.org/android) - Android malware galaxy based on multiple open sources.
 
-Category: *tool* - source: *Open Sources* - total: *449* elements
+Category: *tool* - source: *Open Sources* - total: *450* elements
 
 [[HTML](https://www.misp-galaxy.org/android)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/android.json)]
 
@@ -256,7 +256,7 @@ Category: *tool* - source: *https://www.misp-project.org/galaxy.html* - total: *
 
 [Exploit-Kit](https://www.misp-galaxy.org/exploit-kit) - Exploit-Kit is an enumeration of some exploitation kits used by adversaries. The list includes document, browser and router exploit kits.It's not meant to be totally exhaustive but aim at covering the most seen in the past 5 years
 
-Category: *tool* - source: *MISP Project* - total: *53* elements
+Category: *tool* - source: *MISP Project* - total: *54* elements
 
 [[HTML](https://www.misp-galaxy.org/exploit-kit)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/exploit-kit.json)]
 
@@ -267,6 +267,14 @@ Category: *tool* - source: *MISP Project* - total: *53* elements
 Category: *firearm* - source: *https://www.impactguns.com* - total: *5953* elements
 
 [[HTML](https://www.misp-galaxy.org/firearms)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/firearms.json)]
+
+## FireHOL IPsets
+
+[FireHOL IPsets](https://www.misp-galaxy.org/firehol-ipsets) - FireHOL IPsets Knowlege Base
+
+Category: *IPset* - source: *https://iplists.firehol.org/* - total: *194* elements
+
+[[HTML](https://www.misp-galaxy.org/firehol-ipsets)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/firehol-ipsets.json)]
 
 ## FIRST CSIRT Services Framework
 
@@ -600,7 +608,7 @@ Category: *actor* - source: *MISP Project* - total: *135* elements
 
 [Ransomware](https://www.misp-galaxy.org/ransomware) - Ransomware galaxy based on different sources and maintained by the MISP Project.
 
-Category: *tool* - source: *Various* - total: *2135* elements
+Category: *tool* - source: *Various* - total: *2179* elements
 
 [[HTML](https://www.misp-galaxy.org/ransomware)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/ransomware.json)]
 
@@ -696,7 +704,7 @@ Category: *scor* - source: *https://misp-galaxy.org/scor-tens/* - total: *30* el
 
 [Sector](https://www.misp-galaxy.org/sector) - Activity sectors
 
-Category: *sector* - source: *CERT-EU* - total: *118* elements
+Category: *sector* - source: *CERT-EU* - total: *119* elements
 
 [[HTML](https://www.misp-galaxy.org/sector)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/sector.json)]
 
@@ -824,7 +832,7 @@ Category: *threat-actor* - source: *https://www.publicsafety.gc.ca/cnt/_xml/lstd
 
 [Threat Actor](https://www.misp-galaxy.org/threat-actor) - Known or estimated adversary groups targeting organizations and employees. Adversary groups are regularly confused with their initial operation or campaign. threat-actor-classification meta can be used to clarify the understanding of the threat-actor if also considered as operation, campaign or activity group.
 
-Category: *actor* - source: *MISP Project* - total: *1052* elements
+Category: *actor* - source: *MISP Project* - total: *1060* elements
 
 [[HTML](https://www.misp-galaxy.org/threat-actor)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/threat-actor.json)]
 
@@ -888,7 +896,7 @@ Category: *tmss* - source: *https://github.com/microsoft/Threat-matrix-for-stora
 
 [Tool](https://www.misp-galaxy.org/tool) - threat-actor-tools is an enumeration of tools used by adversaries. The list includes malware but also common software regularly used by the adversaries.
 
-Category: *tool* - source: *MISP Project* - total: *620* elements
+Category: *tool* - source: *MISP Project* - total: *623* elements
 
 [[HTML](https://www.misp-galaxy.org/tool)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/tool.json)]
 
@@ -896,7 +904,7 @@ Category: *tool* - source: *MISP Project* - total: *620* elements
 
 [UAVs/UCAVs](https://www.misp-galaxy.org/uavs) - OSINT Database of Unmanned Combat Aerial Vehicle
 
-Category: *Military equipment* - source: *OSINT* - total: *1173* elements
+Category: *Military equipment* - source: *OSINT* - total: *1216* elements
 
 [[HTML](https://www.misp-galaxy.org/uavs)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/uavs.json)]
 

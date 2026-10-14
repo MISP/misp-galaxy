@@ -402,7 +402,11 @@
         ],
         "origin:Storm-2603": "Microsoft",
         "refs": [
-          "https://www.microsoft.com/en-us/security/blog/2025/07/22/disrupting-active-exploitation-of-on-premises-sharepoint-vulnerabilities/"
+          "https://www.microsoft.com/en-us/security/blog/2025/07/22/disrupting-active-exploitation-of-on-premises-sharepoint-vulnerabilities/",
+          "https://www.security.com/threat-intelligence/warlock-ransomware-critical-infrastructure"
+        ],
+        "synonyms": [
+          "Longlegs"
         ]
       },
       "uuid": "981402be-3b2d-4310-a7c6-c773aec869c1",
@@ -15479,7 +15483,9 @@
         "refs": [
           "https://cyberwarzone.com/shinyhunters-22-year-old-member-pleads-guilty-to-cyber-extortion-causing-6-million-in-damage/",
           "https://www.bitdefender.com/blog/hotforsecurity/pizza-hut-australia-leaks-one-million-customers-details-claims-shinyhunters-hacking-group/",
-          "https://www.justice.gov/usao-wdwa/pr/alleged-french-cybercriminal-appear-seattle-indictment-conspiracy-computer-intrusion"
+          "https://www.justice.gov/usao-wdwa/pr/alleged-french-cybercriminal-appear-seattle-indictment-conspiracy-computer-intrusion",
+          "https://cloud.google.com/blog/topics/threat-intelligence/shinyhunters-targets-education-sector-oracle-exploit",
+          "https://cloud.google.com/blog/topics/threat-intelligence/shinyhunters-renewed-mass-exploitation-campaign-targeting-oracle-peoplesoft"
         ]
       },
       "uuid": "d4fd0a30-15d4-4dfd-bf98-beff5fe34c33",
@@ -21283,6 +21289,15 @@
           "Jewelbug"
         ]
       },
+      "related": [
+        {
+          "dest-uuid": "6ccf810e-3021-4974-9b1e-29fb6cdcaedc",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        }
+      ],
       "uuid": "ff080026-9df7-4874-ad04-0c7d4dcb3e7f",
       "value": "REF7707"
     },
@@ -21323,6 +21338,15 @@
           "https://www.security.com/threat-intelligence/jewelbug-crypto-fraud-espionage"
         ]
       },
+      "related": [
+        {
+          "dest-uuid": "ff080026-9df7-4874-ad04-0c7d4dcb3e7f",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        }
+      ],
       "uuid": "6ccf810e-3021-4974-9b1e-29fb6cdcaedc",
       "value": "Earth Alux"
     },
@@ -24001,7 +24025,14 @@
           "https://krypt3ia.wordpress.com/2026/07/13/threat-intelligence-report-jadepuffer-agentic-ransomware-and-automated-extortion/",
           "https://nsfocusglobal.com/ai-security-incident-jadepuffer-ransomware-leverages-ai-agent-to-automate-attacks/",
           "https://securereading.com/jadepuffer-ai-ransomware-autonomous-llm-attack/",
-          "https://socfortress.medium.com/jadepuffer-the-dawn-of-agentic-ransomware-operations-003a59848007"
+          "https://socfortress.medium.com/jadepuffer-the-dawn-of-agentic-ransomware-operations-003a59848007",
+          "https://www.microsoft.com/en-us/security/blog/2026/09/25/storm-3168-agentic-driven-cloud-attacks-using-compromised-service-principals/",
+          "https://www.sysdig.com/blog/jadepuffer-evolves-the-agentic-threat-actor-deploys-ransomware-built-to-destroy-ai-models",
+          "https://www.sysdig.com/blog/jadepuffer-agentic-ransomware-for-automated-database-extortion"
+        ],
+        "synonyms": [
+          "Storm-3168",
+          "JADEPUFFER"
         ]
       },
       "uuid": "3ba33e02-c485-40dd-b9af-c4f9a7c46fd5",
@@ -24283,7 +24314,118 @@
       },
       "uuid": "9775d015-39d4-4759-b6d0-2e5413cfe3f3",
       "value": "DaOnlySpark"
+    },
+    {
+      "description": "IAmNotAVillain is a threat actor that claimed responsibility for a data breach at Revolut, threatening to sell confidential customer records unless a ransom of $3 million is paid. They asserted that they compromised an Italian government email system and communicated with Revolut for months. The group published an ultimatum online and created a new Telegram channel for further communication.",
+      "meta": {
+        "refs": [
+          "https://www.ft.com/content/d1f2c9bd-26ce-4e87-9da4-fe0238bd531d?syn-25a6b1a6=1"
+        ]
+      },
+      "uuid": "46b65f4d-9550-4164-a500-2c32ea243b92",
+      "value": "IAmNotAVillain"
+    },
+    {
+      "description": "CikLeak is a threat actor that claims to have accessed systems of Russia’s Central Election Commission and companies involved in the Vybory platform, which administers elections. The group asserts that its objective is to expose internal workings of the Russian electoral system and potential manipulation opportunities, rather than disrupt voting. Prior to their disclosure, Russian officials conducted a security assessment of the Vybory portal and identified vulnerabilities in the video surveillance system.",
+      "meta": {
+        "refs": [
+          "https://therecord.media/russia-election-hackers-breach"
+        ]
+      },
+      "uuid": "55dd69cb-a166-46f7-af51-d09e3657a191",
+      "value": "CikLeak"
+    },
+    {
+      "description": "GTG-20006 is a Russian espionage operator that has targeted over 20 organizations in Ukrainian and European government, defense, and diplomatic sectors, exfiltrating more than 300,000 national identity records. The actor employs an auto-rebuild loop for flagged implants to evade detection and has delivered payloads that freeze victim machines' security updates. GTG-20006 has also been linked to an intrusion into a North African government technology authority, compromising a central account server to exfiltrate a credential database. The group utilizes customized AI-driven workflows throughout its attack chain.",
+      "meta": {
+        "country": "RU",
+        "refs": [
+          "https://thehackernews.com/2026/09/russian-state-sponsored-hackers-use.html"
+        ]
+      },
+      "uuid": "edc11644-6375-4760-8403-0153bd092aa0",
+      "value": "GTG-20006"
+    },
+    {
+      "description": "V0idix is a threat actor known for distributing leaked data for free on leak forums, with some files requiring a reply-to-unlock to access.",
+      "meta": {
+        "refs": [
+          "https://securityaffairs.com/197174/breaking-news/chess-com-leak-exposes-7-3-million-users-evidence-points-to-scraping.html"
+        ]
+      },
+      "uuid": "20200364-8b07-488a-a1e2-7b5e8be6a785",
+      "value": "V0idix"
+    },
+    {
+      "description": "Financially motivated threat actor tracked by Microsoft Threat Intelligence as the developer and support operator of the EvilTokens phishing-as-a-service platform, advertised and sold to other cybercriminals through Telegram channels. Storm-XXXX is Microsoft's designation for a developing or emerging activity cluster: the name is provisional and may be merged or renamed once attribution matures. Its infrastructure was disrupted by Microsoft's Digital Crimes Unit with partners in September 2026.",
+      "meta": {
+        "refs": [
+          "https://www.microsoft.com/en-us/security/blog/2026/09/22/unmasking-eviltokens-getting-to-the-root-of-device-code-phishing/"
+        ],
+        "since": "2026"
+      },
+      "related": [
+        {
+          "dest-uuid": "44078616-6834-4f26-bd25-5393f8d54ee9",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "uses"
+        }
+      ],
+      "uuid": "b687defa-308c-4f9e-bb9e-d9d30fb4b1a0",
+      "value": "Storm-2992"
+    },
+    {
+      "description": "According to Proofpoint, TA419 is a China-aligned, espionage-motivated threat actor conducting regular targeted credential phishing campaigns against individuals at US- and Japan-based think tanks, defense contractors, universities and law firms since at least April 2025. In 2026 it impersonated real subject-matter experts, including a former White House OSTP official and a senior Anthropic employee, to target AI policy experts. Benign rapport-building emails are followed by multi-stage URL redirection to an adversary-in-the-middle phishing page against Microsoft 365 / Entra ID, built on a customised Frameless BitB kit embedding an Evilginx phishlet. Proofpoint states the group's activity had not been previously reported publicly.",
+      "meta": {
+        "name-attribution": [
+          "TA419:cae79680-67a6-4411-903c-f824dbcc813f"
+        ],
+        "refs": [
+          "https://www.proofpoint.com/us/blog/threat-insight/hallucinating-credibility-china-aligned-ta419-impersonates-its-way-us-ai-policy"
+        ],
+        "since": "2025"
+      },
+      "uuid": "d7140683-7af8-41c6-8938-18a69bb809e3",
+      "value": "TA419"
+    },
+    {
+      "description": "ZaWoo is a ransomware group that has claimed multiple attacks on various organizations across different countries, including France, New Zealand, Germany, the USA, Canada, and the Czech Republic. Their operations have resulted in encrypted and compromised systems, leading to potential disruptions in victim operations. Notable targets include ambpvc, zenithtechnology.co.nz, and fes-sport.de.",
+      "meta": {
+        "refs": [
+          "https://www.broadcom.com/support/security-center/protection-bulletin/zawoo-ransomware",
+          "https://certainity.com/en/blog/zawoo-team-ransomware/"
+        ],
+        "synonyms": [
+          "ZaWoo Team"
+        ]
+      },
+      "uuid": "afd10845-ea76-4251-b385-f51a32c2dcec",
+      "value": "ZaWoo"
+    },
+    {
+      "description": "BlackLock is a ransomware group established around March 2024, operating under a RaaS model and actively recruiting affiliates. The ransomware is developed in Go, enabling cross-platform attacks on Windows, Linux, and VMware ESXi environments, and employs ChaCha20 for file encryption. BlackLock appends encryption keys and metadata to files for decryption post-ransom payment and utilizes a covert method to delete Volume Shadow Copy Service data to hinder recovery efforts. The group has been linked to operational failures due to significant OPSEC mistakes, including a breach of its leak site that exposed internal data.",
+      "meta": {
+        "refs": [
+          "https://asec.ahnlab.com/en/90175/",
+          "https://reliaquest.com/blog/threat-spotlight-inside-the-worlds-fastest-rising-ransomware-operator-blacklock/",
+          "https://www.resecurity.com/blog/article/blacklock-ransomware-a-late-holiday-gift-with-intrusion-into-the-threat-actors-infrastructure",
+          "https://cofense.com/blog/from-payment-plan-to-ransomware-inside-a-global-group-attack",
+          "https://exchange.xforce.ibmcloud.com/report/details/guid:5689a0200c31471e9cf96949cd00c12c",
+          "https://blog.eclecticiq.com/global-group-emerging-ransomware-as-a-service"
+        ],
+        "synonyms": [
+          "El Dorado",
+          "BlackLocks",
+          "Eldorado",
+          "Mamona",
+          "GLOBAL GROUP"
+        ]
+      },
+      "uuid": "eb8fb25d-ba4f-4970-ae8a-b0020b2b9841",
+      "value": "BlackLock"
     }
   ],
-  "version": 350
+  "version": 352
 }
