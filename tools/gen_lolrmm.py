@@ -126,8 +126,23 @@ def build_meta(entry):
     return meta
 
 
+def merge_clusters(existing, incoming):
+    """Merge duplicate LOLRMM records without discarding useful indicators."""
+    if len(incoming.get("description", "")) > len(existing.get("description", "")):
+        existing["description"] = incoming["description"]
+
+    existing_meta = existing.setdefault("meta", {})
+    for key, value in incoming.get("meta", {}).items():
+        if key not in existing_meta:
+            existing_meta[key] = value
+        elif isinstance(value, list) and isinstance(existing_meta[key], list):
+            existing_meta[key] = clean_list(existing_meta[key] + value)
+        elif key == "last_modified" and value > existing_meta[key]:
+            existing_meta[key] = value
+
+
 def build_cluster_values(entries):
-    values = []
+    values_by_name = {}
     for entry in entries:
         name = str(entry.get("Name", "")).strip()
         if not name:
@@ -145,8 +160,16 @@ def build_cluster_values(entries):
         if meta:
             cluster["meta"] = meta
 
-        values.append(cluster)
+        # LOLRMM occasionally contains two records for the same product. Since
+        # UUIDs are derived from names, emitting both creates invalid duplicate
+        # galaxy elements. Merge their complementary metadata instead.
+        normalized_name = name.casefold()
+        if normalized_name in values_by_name:
+            merge_clusters(values_by_name[normalized_name], cluster)
+        else:
+            values_by_name[normalized_name] = cluster
 
+    values = list(values_by_name.values())
     values.sort(key=lambda c: c["value"].lower())
     return values
 
