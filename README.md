@@ -360,7 +360,7 @@ Category: *misinformation-pattern* - source: *https://github.com/misinfosecproje
 
 [MITRE ATT&CK Analytics](https://www.misp-galaxy.org/mitre-analytic) - Detection analytics from MITRE ATT&CK.
 
-Category: *attack-pattern* - source: *https://attack.mitre.org/analytics/* - total: *2066* elements
+Category: *attack-pattern* - source: *https://attack.mitre.org/analytics/* - total: *2283* elements
 
 [[HTML](https://www.misp-galaxy.org/mitre-analytic)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-analytic.json)]
 
@@ -400,7 +400,7 @@ Category: *course-of-action* - source: *https://github.com/mitre-atlas/atlas-dat
 
 [MITRE ATT&CK Techniques](https://www.misp-galaxy.org/mitre-attack-pattern) - Techniques, sub-techniques and tactics from MITRE ATT&CK (Enterprise, Mobile, PRE and ICS).
 
-Category: *attack-pattern* - source: *https://github.com/mitre/cti* - total: *1396* elements
+Category: *attack-pattern* - source: *https://github.com/mitre/cti* - total: *1414* elements
 
 [[HTML](https://www.misp-galaxy.org/mitre-attack-pattern)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-attack-pattern.json)]
 
@@ -408,7 +408,7 @@ Category: *attack-pattern* - source: *https://github.com/mitre/cti* - total: *13
 
 [MITRE ATT&CK Campaigns](https://www.misp-galaxy.org/mitre-campaign) - Campaigns tracked by MITRE ATT&CK.
 
-Category: *actor* - source: *https://github.com/mitre/cti* - total: *60* elements
+Category: *actor* - source: *https://github.com/mitre/cti* - total: *62* elements
 
 [[HTML](https://www.misp-galaxy.org/mitre-campaign)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-campaign.json)]
 
@@ -416,7 +416,7 @@ Category: *actor* - source: *https://github.com/mitre/cti* - total: *60* element
 
 [MITRE ATT&CK Mitigations](https://www.misp-galaxy.org/mitre-course-of-action) - Mitigations from MITRE ATT&CK.
 
-Category: *course-of-action* - source: *https://github.com/mitre/cti* - total: *334* elements
+Category: *course-of-action* - source: *https://github.com/mitre/cti* - total: *335* elements
 
 [[HTML](https://www.misp-galaxy.org/mitre-course-of-action)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-course-of-action.json)]
 
@@ -448,7 +448,7 @@ Category: *data-source* - source: *https://github.com/mitre/cti* - total: *42* e
 
 [MITRE ATT&CK Detection Strategies](https://www.misp-galaxy.org/mitre-detection-strategy) - Detection strategies from MITRE ATT&CK.
 
-Category: *attack-pattern* - source: *https://attack.mitre.org/detectionstrategies/* - total: *920* elements
+Category: *attack-pattern* - source: *https://attack.mitre.org/detectionstrategies/* - total: *935* elements
 
 [[HTML](https://www.misp-galaxy.org/mitre-detection-strategy)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-detection-strategy.json)]
 
@@ -472,7 +472,7 @@ Category: *attack-pattern* - source: *https://ctid.mitre.org/fightfraud* - total
 
 [MITRE ATT&CK Groups](https://www.misp-galaxy.org/mitre-intrusion-set) - Adversary groups tracked by MITRE ATT&CK.
 
-Category: *actor* - source: *https://github.com/mitre/cti* - total: *195* elements
+Category: *actor* - source: *https://github.com/mitre/cti* - total: *197* elements
 
 [[HTML](https://www.misp-galaxy.org/mitre-intrusion-set)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-intrusion-set.json)]
 
@@ -480,7 +480,7 @@ Category: *actor* - source: *https://github.com/mitre/cti* - total: *195* elemen
 
 [MITRE ATT&CK Software](https://www.misp-galaxy.org/mitre-software) - Malware and legitimate tools used by adversaries, tracked by MITRE ATT&CK.
 
-Category: *tool* - source: *https://github.com/mitre/cti* - total: *964* elements
+Category: *tool* - source: *https://github.com/mitre/cti* - total: *982* elements
 
 [[HTML](https://www.misp-galaxy.org/mitre-software)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/mitre-software.json)]
 
