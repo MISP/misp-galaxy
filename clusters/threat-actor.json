@@ -24795,7 +24795,44 @@
       },
       "uuid": "2e3bea3d-afcf-4d74-a436-168873ed41bb",
       "value": "GTG-87001"
+    },
+    {
+      "description": "Uncategorized threat cluster tracked by Google Threat Intelligence Group and Mandiant, responsible for an ephemeral supply chain compromise of AOMEI Backupper between April and July 2026, investigated with ManageEngine's Threat Analysis Lab (METAL). The actor briefly modified the down_html.ini and Notifycfg.ini configuration files on AOMEI's origin servers for windows of five to ten minutes, redirecting the update and promotion flow to an attacker-hosted archive, then restored them. It deployed the CROSSROAD downloader and the SHINYROAD backdoor through trojanized Radmin components, later Adaptix C2, and on one occasion coerced NetNTLMv2 authentication through a hidden WebDAV popup. Victims were opportunistic, in IT services, telecommunications and higher education across several countries. No state nexus has been stated.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/investigating-ephemeral-supply-chain-tampering",
+          "https://www.manageengine.com/threat-analysis-lab/aomei-backupper-supply-chain-compromise.html"
+        ]
+      },
+      "uuid": "c1ef86d7-ab86-4188-91d2-af3f36207d96",
+      "value": "UNC7017"
+    },
+    {
+      "description": "Intrusion set tracked by Elastic Security Labs, posing as a Web3 venture accelerator (Apex Accelerator / Apex Arena, Apex Foundation) to target cryptocurrency start-ups and founders. Lures offer investment, free AI credits and security audits, and lead victims to install npm packages (@apexacc/cli, @apexacc/audit) that fetch platform-specific payloads: the CloudSyncD backdoor on macOS and a custom information stealer exfiltrating through Telegram on Windows. The packages also repackage a legitimate coding agent to route LLM traffic through attacker infrastructure and register an attacker-controlled MCP server in the victim's agent configuration. Earlier npm packages from the same operation were reported by SafeDep in July 2026. Elastic makes no state or group attribution.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://www.elastic.co/security-labs/threat-command/apex-accelerator-malicious-npm-packages",
+          "https://thehackernews.com/2026/10/fake-web3-accelerator-uses-npm-packages.html"
+        ]
+      },
+      "uuid": "b101baba-907b-4aba-8ea2-1f77e53eb782",
+      "value": "REF8801"
+    },
+    {
+      "description": "Software supply chain campaign and its unnamed operator, first reported by GitGuardian in September 2025: malicious GitHub Actions workflows named \"Github Actions Security\" injected into compromised repositories exfiltrated CI/CD secrets, with 3,325 secrets stolen from 817 repositories. In October 2026 OpenSourceMalware reported a renewed wave and a second stage that no longer needs a CI runner: a .vscode/tasks.json launcher with a folderOpen trigger runs a Node.js credential stealer disguised as public/fonts/fa-solid-400.woff2, installs a cron job polling the operator's server, and is backed by a fallback workflow. OpenSourceMalware calls this stage a copycat of the DPRK PolinRider technique rather than an extension of it, and ties it to GhostAction through shared server infrastructure. A phishing kit on the lookalike domain my-github.com, harvesting credentials and silently authorizing an OAuth application with repo and workflow scopes, was reported on the same infrastructure.",
+      "meta": {
+        "date": "September 2025.",
+        "refs": [
+          "https://blog.gitguardian.com/ghostaction-campaign-3-325-secrets-stolen/",
+          "https://opensourcemalware.com/blog/ghostaction-copycats-polinrider-by-hiding-a-stealer-in-a-fake-font-file",
+          "https://thehackernews.com/2026/10/ghostaction-attackers-plant-credential.html"
+        ]
+      },
+      "uuid": "98ff9870-3da1-4642-be8c-df6834623b23",
+      "value": "GhostAction"
     }
   ],
-  "version": 352
+  "version": 353
 }
