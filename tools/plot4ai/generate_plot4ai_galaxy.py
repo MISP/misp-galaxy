@@ -12,7 +12,11 @@ import json
 import re
 import sys
 import uuid
+import sys as _sys
 from pathlib import Path
+
+_sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from galaxy_uuid import UuidAssigner, load_committed_cluster  # noqa: E402
 from typing import Any
 from urllib.request import urlopen
 
@@ -147,7 +151,14 @@ def _cluster_value(label: str, category_name: str, label_counts: collections.Cou
     return label
 
 
-def build_cluster(deck: list[dict[str, Any]]) -> dict[str, Any]:
+def build_cluster(deck: list[dict[str, Any]], cluster_path: Path | None = None) -> dict[str, Any]:
+    # A card's uuid was seeded with its position in the deck, so inserting or
+    # reordering a single card reminted every uuid after it. Seed on the card
+    # label -- which is its identity -- and prefer the committed uuid.
+    assigner = UuidAssigner(
+        UUID_NAMESPACE,
+        load_committed_cluster(cluster_path) if cluster_path else None,
+    )
     values: list[dict[str, Any]] = []
     source_cards = _deck_cards(deck)
     label_counts = collections.Counter(clean_text(card["label"]) for _category, card in source_cards)
@@ -197,7 +208,7 @@ def build_cluster(deck: list[dict[str, Any]]) -> dict[str, Any]:
         entry: dict[str, Any] = {
             "description": description,
             "meta": meta,
-            "uuid": uuid_for("card", f"{sequence:03d}", label),
+            "uuid": assigner.for_value(value, seed=("card", label)),
             "value": value,
         }
         related = RELATED_BY_LABEL.get(label)
@@ -211,7 +222,7 @@ def build_cluster(deck: list[dict[str, Any]]) -> dict[str, Any]:
         "name": NAME,
         "source": SOURCE_DECK_URL,
         "type": TYPE,
-        "uuid": CLUSTER_UUID,
+        "uuid": assigner.for_cluster("cluster"),
         "values": values,
         "version": 1,
     }
@@ -247,7 +258,7 @@ def main() -> int:
     galaxy_path = args.output_dir / "galaxies" / f"{TYPE}.json"
     cluster_path = args.output_dir / "clusters" / f"{TYPE}.json"
     write_json(galaxy_path, build_galaxy())
-    write_json(cluster_path, build_cluster(deck))
+    write_json(cluster_path, build_cluster(deck, cluster_path))
     if args.validate:
         validate(cluster_path, galaxy_path, args.output_dir)
     print(f"Wrote {galaxy_path}")

@@ -5,6 +5,8 @@ import fnmatch
 import uuid
 import inspect
 
+from galaxy_uuid import UuidAssigner, load_committed_cluster
+
 class ObjectEncoder(json.JSONEncoder):
 
     def default(self, obj):
@@ -27,6 +29,16 @@ class ObjectEncoder(json.JSONEncoder):
             return self.default(d)
         return obj
 
+# A malware family's uuid is its permanent identity -- other galaxies point at
+# it through `related` edges. uuid4() minted a brand new one on every run, so
+# regenerating this cluster replaced all ~2000 entries and orphaned every
+# inbound reference. Derive from the family name instead, and reuse whatever
+# is already committed.
+UUID_NAMESPACE = uuid.uuid5(uuid.NAMESPACE_URL, 'https://malpedia.caad.fkie.fraunhofer.de/')
+CLUSTER_PATH = '../clusters/malpedia.json'
+ASSIGNER = UuidAssigner(UUID_NAMESPACE, load_committed_cluster(CLUSTER_PATH))
+
+
 class Malpedia(object):
 
     def __init__(self, authors, description, name, source, type, folder_path, version=1):
@@ -35,14 +47,14 @@ class Malpedia(object):
         self.name = name
         self.source = source
         self.type = type
-        self.uuid = str(uuid.uuid4())
+        self.uuid = ASSIGNER.for_cluster('cluster')
         self.version = version
         self.values = self.get_files(folder_path)
 
     def get_files(self, folder_path):
         galaxies = []
         for root, dirnames, filenames in os.walk(folder_path):
-            for filename in fnmatch.filter(filenames, '*.json'):
+            for filename in sorted(fnmatch.filter(filenames, '*.json')):
                 with open(os.path.join(root, filename), 'r') as f:
                     json_dict = json.loads(
                         "".join([str(x) for x in f.readlines()]))
@@ -59,11 +71,12 @@ class Galaxy(object):
     def __init__(self, description, value, synonyms=[], refs=[], type=[]):
         self.description = description
         self.value = value
-        self.uuid = str(uuid.uuid4())
+        self.uuid = ASSIGNER.for_value(value, synonyms=synonyms)
         self.meta = {}
-        # duplicate item in array generate errors
-        self.meta['refs'] = list(set(refs)) 
-        self.meta['synonyms'] = list(set(synonyms))
+        # duplicate item in array generate errors; set() ordering varies between
+        # runs, so sort for a reproducible file
+        self.meta['refs'] = sorted(set(refs))
+        self.meta['synonyms'] = sorted(set(synonyms))
         self.meta['type'] = type
 
 a = Malpedia(authors=['Daniel Plohmann', 'Andrea Garavaglia', 'Davide Arcuri'], 
