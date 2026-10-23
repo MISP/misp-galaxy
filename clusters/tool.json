@@ -11610,7 +11610,79 @@
       ],
       "uuid": "d3e1542f-98b5-4d74-aa05-d968aa6835d7",
       "value": "BARECLAW"
+    },
+    {
+      "description": "Windows backdoor written in Go, reported by ESET as deployed on July 17th, 2025 at a Ukrainian grain logistics company, one day after UAC-0099 gained initial access through the MATCHBOIL/MATCHWOK chain and two months before Sandworm wiped data there with SDelete pushed through Active Directory Group Policy. Built on yggstack, it joins the public Yggdrasil mesh network through three peers picked from an embedded list of 32 and reaches a C&C server hosted inside that network over HTTPS (JSON messages checkin, tasking, result, getfile). It runs as the ieupdate Windows service, keeps an AES-256-CFB encrypted configuration in dot-files such as C:\\Windows\\Temp\\.updatecache, and supports shell execution, file transfer, screenshots, directory navigation, exposing local TCP ports over Yggdrasil and a reverse SOCKS5 proxy derived from revsocks. A .crond configuration path suggests a Linux variant. ESET could not determine whether it was operated primarily by UAC-0099 or by Sandworm.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://www.welivesecurity.com/en/eset-research/mythicratatoskr-yggdrasil-enabled-backdoor-deployed-uac0099-sandworm-collaboration/",
+          "https://therecord.media/ukraine-hackers-russia-grain-sandworm"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "267488cb-159a-46d6-a6d6-fe93c90360b2",
+          "tags": [
+            "estimative-language:likelihood-probability=\"roughly-even-chance\""
+          ],
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "f512de42-f76b-40d2-9923-59e7dbdfec35",
+          "tags": [
+            "estimative-language:likelihood-probability=\"roughly-even-chance\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "d0074f84-a12b-4330-ba2f-09ddb3c802bc",
+      "value": "MythicRatatoskr"
+    },
+    {
+      "description": "C# backdoor first documented by CERT-UA and described by ESET as used exclusively by UAC-0099. It is the payload most often installed by the MATCHBOIL downloader, which retrieves it hex-encoded inside an HTML response and persists it, for instance through the UpdateMonitor value under HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run. In the July 2025 intrusion at a Ukrainian grain logistics company reported by ESET, MATCHWOK (C&C uztickets[.]com) was the execution chain that led to the deployment of MythicRatatoskr before access was handed off to Sandworm.",
+      "meta": {
+        "date": "August 2025.",
+        "refs": [
+          "https://www.welivesecurity.com/en/eset-research/matchboil-new-tricks-same-old-evil-intentions/",
+          "https://www.welivesecurity.com/en/eset-research/mythicratatoskr-yggdrasil-enabled-backdoor-deployed-uac0099-sandworm-collaboration/"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "267488cb-159a-46d6-a6d6-fe93c90360b2",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "4cfbee48-80a5-4257-b076-2effbd7db8aa",
+      "value": "MATCHWOK"
+    },
+    {
+      "description": "Agentic AI penetration testing framework developed in China by Autumn-27: a multi-agent LLM system written in Go with a Next.js frontend, model-agnostic, that runs an autonomous test from reconnaissance to data exfiltration and accumulates discovered assets and vulnerabilities into a graph. Released as open source, it was made closed source by its developer after its abuse became public. CrowdStrike first reported its use, alongside Claude Code, DeepSeek, Grok and GLM, by an unattributed suspected Chinese-speaking, financially motivated operator against South Korean financial institutions from late September 2026, activity Recorded Future tracks as TAG-217. Microsoft reports that Storm-0940 used it from September 2026 to automate password spraying, reconnaissance and OAuth application abuse against hundreds of organisations, including downstream tenants in the ConnectWise cloud backup supply chain compromise, and that actors across multiple regions use it. Dual-use: its presence alone does not indicate malicious activity.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://www.crowdstrike.com/en-us/blog/unknown-threat-actor-uses-artex-to-target-south-korean-finance/",
+          "https://www.microsoft.com/en-us/security/blog/2026/10/21/storm-0940-uses-artex-agentic-ai-connectwise-supply-chain-compromise/",
+          "https://www.recordedfuture.com/blog/tag-217-artex-south-korean-banks",
+          "https://thehackernews.com/2026/10/artex-ai-pentesting-tool-used-in-data.html"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "301ffea9-edd5-4d89-a65f-8add8e34e95d",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "71c8c8d5-3658-4d83-938c-79b6ca48f9be",
+      "value": "ARTEX"
     }
   ],
-  "version": 183
+  "version": 184
 }
