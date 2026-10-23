@@ -11473,7 +11473,144 @@
       ],
       "uuid": "3f91f85e-743f-4df4-b4e0-a5e6cc6da4ba",
       "value": "SLAPSHOT"
+    },
+    {
+      "description": "Lightweight Windows backdoor written as batch scripts with VBS launchers, reported by Recorded Future's Insikt Group as a successor to HEADLACE. Delivered through macro-enabled Word documents that show a fake error, drop six files and create a scheduled task, it fetches and runs .cmd payloads and returns their output, using webhook.site exclusively for command and control (separate staging and exfiltration webhooks) with requests issued through hidden Microsoft Edge instances to blend with browsing traffic. Insikt attributes it with moderate confidence to BlueDelta, which it describes as overlapping APT28, against government, diplomatic and defense targets in Europe. In October 2026 Symantec reported its use by APT28 against two defense contractors and a law enforcement agency in two NATO countries.",
+      "meta": {
+        "date": "August 2026.",
+        "refs": [
+          "https://www.recordedfuture.com/research/bluedelta-targets-with-hookedge",
+          "https://therecord.media/european-defense-contractors-fancy-bear-espionage"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "5b4ee3ea-eee3-4c8e-8323-85ae32658754",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "9d5b2e4a-279c-4782-86cd-05587599ae6d",
+      "value": "HOOKEDGE"
+    },
+    {
+      "description": "64-bit Windows downloader written in C, reported by Google Threat Intelligence Group and Mandiant as the first stage of UNC7017's ephemeral supply chain compromise of AOMEI Backupper. Delivered through tampered AOMEI update and promotion configuration files, it checks that it runs from an AOMEI path, aborts its main path when the external IP geolocates to China, resets down_html.ini to legitimate values, downloads and unpacks an archive of trojanized Radmin components into %LOCALAPPDATA%\\Radmin\\, persists through the RadminComponentRuntime scheduled task and deletes itself. It stages the SHINYROAD backdoor.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/investigating-ephemeral-supply-chain-tampering",
+          "https://www.manageengine.com/threat-analysis-lab/aomei-backupper-supply-chain-compromise.html"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "c1ef86d7-ab86-4188-91d2-af3f36207d96",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "73a6aeab-b4e9-40c3-8eee-a3aef3f89c38",
+      "value": "CROSSROAD"
+    },
+    {
+      "description": "Modular Windows backdoor reported by Google Threat Intelligence Group and Mandiant in UNC7017's ephemeral supply chain compromise of AOMEI Backupper. It runs compiled Python bytecode inside an embedded PocketPy interpreter with custom C extensions, loaded through trojanized Famatech Radmin 3.x components: the signed FamItrfc.exe sideloads BlkScrDl.dll, which registers a COM in-process server that decrypts the bytecode with ChaCha20. It has no persistence of its own and relies on the CROSSROAD scheduled task. Command and control runs over raw TCP with an agent identifier derived from host and user names, and offers remote shell, traffic chaffing and in-memory extension loading.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/investigating-ephemeral-supply-chain-tampering",
+          "https://www.manageengine.com/threat-analysis-lab/aomei-backupper-supply-chain-compromise.html"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "c1ef86d7-ab86-4188-91d2-af3f36207d96",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "761bd953-76b2-42ac-99c8-dd970db8b212",
+      "value": "SHINYROAD"
+    },
+    {
+      "description": "Multi-payload ClickFix delivery platform reported by Forescout Research - Vedere Labs, running on at least six servers. A shared backend with a login panel and install statistics serves PowerShell staging scripts that pick the next payload: trojanized MSI installers abusing DLL sideloading (including a Stardock DeElevation chain and, per Siemens and Huntress, a signed Siemens Software Center abused through CVE-2026-110936) or an encrypted archive delivering LegionLoader (Satacom). Some lures were reached through malicious ChatGPT custom GPTs. Forescout does not know whether it is a private panel, a commercial delivery service, an affiliate framework or copied software, and states it has no evidence linking it to RomulusLoader, the unrelated loader associated with Silver Fox.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://www.forescout.com/blog/romulus-analysis-of-a-new-multi-payload-clickfix-delivery-platform/",
+          "https://thehackernews.com/2026/10/clickfix-attackers-exploit-siemens.html"
+        ]
+      },
+      "uuid": "654f0938-ff56-407c-89cc-28fe3f1bc611",
+      "value": "ROMULUS"
+    },
+    {
+      "description": "Persistent macOS backdoor first observed by Jamf Threat Labs in mid-September 2026, distributed as a fake Zoom installer disk image. The dropper extracts a universal Mach-O payload at runtime, phishes the user's password through a fake activation prompt and uses it locally to run the payload with sudo, after which it runs as a daemon named CloudSyncD, profiles the host and polls its command-and-control server to download and run further payloads; later builds use Cloudflare-fronted domains disguised as jQuery requests. Elastic Security Labs reported it in October 2026 as the macOS payload of the REF8801 fake Web3 accelerator operation. No threat actor has been named.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://www.jamf.com/blog/cloudsyncd-macos-backdoor-fake-zoom-installer/",
+          "https://www.elastic.co/security-labs/threat-command/apex-accelerator-malicious-npm-packages",
+          "https://www.securityweek.com/macos-users-targeted-by-fake-zoom-installer-carrying-cloudsyncd-backdoor/"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "b101baba-907b-4aba-8ea2-1f77e53eb782",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "7a1242cf-ae0a-4c59-aa69-7012f976d3ad",
+      "value": "CloudSyncD"
+    },
+    {
+      "description": "Obfuscated PHP web shell reported by Google Threat Intelligence Group and Mandiant in ARMORY CASTLE (formerly UNC5221) intrusions exploiting CVE-2026-102764 in BeyondTrust Remote Support, used as a zero-day from late August 2026. Deployed as mangoapi.php, it uses Base32 transport and RC4 encryption and served as a primary foothold on compromised appliances, alongside the BARECLAW tunneler.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/armory-castle-exploits-beyondtrust"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "f288f686-b5b3-4c86-9960-5f8fb18709a3",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "b96d98b9-2b37-4b84-a186-ac24df9a581c",
+      "value": "SAWFLY"
+    },
+    {
+      "description": "SOCKS5-over-WebSocket tunneler written in C, reported by Google Threat Intelligence Group and Mandiant in ARMORY CASTLE (formerly UNC5221) intrusions exploiting CVE-2026-102764 in BeyondTrust Remote Support. Deployed as ingredi_ws, it was exposed to the operator by editing the appliance's HAProxy configuration, giving tunnelled access to internal networks from the compromised appliance; it was used alongside the SAWFLY web shell.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/armory-castle-exploits-beyondtrust"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "f288f686-b5b3-4c86-9960-5f8fb18709a3",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "d3e1542f-98b5-4d74-aa05-d968aa6835d7",
+      "value": "BARECLAW"
     }
   ],
-  "version": 182
+  "version": 183
 }
