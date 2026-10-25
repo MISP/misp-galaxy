@@ -11752,7 +11752,7 @@
       "value": "BlackX"
     },
     {
-      "description": "OxiDLLRunner is a loader reported by Kaspersky GReAT as one of the user-mode payloads deployed by the BlackX UEFI bootkit against diplomatic organizations in Central Asia in early 2026. It is an OLLVM-obfuscated malicious DLL sideloaded by a legitimate executable dropped as googleupdate.exe (original name jcef_helper.exe). It decrypts the file v8_context_snapshot.bin from the same folder and jumps to the result, which is shellcode followed by a Rust payload. That payload communicates with the C2 www[.]archivetj[.]com and runs received DLL plugins that export create_plugin, each in its own thread. Kaspersky attributes the campaign to APT41 with medium confidence, citing OLLVM obfuscation and the DLL sideloading pattern among its arguments.",
+      "description": "OxiDLLRunner is a loader reported by Kaspersky GReAT as one of the user-mode payloads deployed by the BlackX UEFI bootkit against diplomatic organizations in Central Asia in early 2026. It is an OLLVM-obfuscated malicious DLL sideloaded by a legitimate executable dropped as googleupdate.exe (original name jcef_helper.exe). It decrypts the file v8_context_snapshot.bin from the same folder and jumps to the result, which is shellcode followed by a Rust payload. That payload communicates with the C2 www[.]archivetj[.]com and runs received DLL plugins that export create_plugin, each in its own thread. Kaspersky attributes the BlackX campaign, not OxiDLLRunner specifically, to APT41 with medium confidence. Its only actor-specific clue is an 'xdd' identifier found in BlackX payloads and in a FishMonger kernel implant documented by ESET, FishMonger itself being only assumed to be related to APT41. The arguments that concern OxiDLLRunner directly, OLLVM obfuscation and DLL sideloading with an encrypted file, point to Chinese-speaking actors in general, hence the lower confidence of the APT41 link here.",
       "meta": {
         "date": "October 2026.",
         "refs": [
@@ -11763,7 +11763,7 @@
         {
           "dest-uuid": "9c124874-042d-48cd-b72b-ccdc51ecbbd6",
           "tags": [
-            "estimative-language:likelihood-probability=\"likely\""
+            "estimative-language:likelihood-probability=\"roughly-even-chance\""
           ],
           "type": "used-by"
         }
