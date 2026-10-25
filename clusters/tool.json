@@ -11682,7 +11682,120 @@
       ],
       "uuid": "71c8c8d5-3658-4d83-938c-79b6ca48f9be",
       "value": "ARTEX"
+    },
+    {
+      "description": "MATCHBOIL is a C# downloader used by the Russia-aligned group UAC-0099 against Ukrainian targets in the transportation, manufacturing and energy sectors. It was first documented by CERT-UA in August 2025, but ESET found samples compiled as early as April 2024 and versions up to April 2026. It is delivered through spearphishing links leading to an archive with a VBScript that fetches and runs it. It fingerprints the host through WMI (CPUID, BIOS serial number, MAC address) and makes three HTTPS requests to its C2: the first gets a numeric value, the second gets a hex-encoded payload embedded in HTML (usually the MATCHWOK backdoor), and the third gets a configuration file. It then persists the payload through a Run registry value or a scheduled task. Over time it moved from Unicode symbol renaming and custom string encryption to the Eziriz .NET Reactor obfuscator, from a one-shot run to a two-minute polling timer, and added sandbox checks (event ID 6013 uptime, debugger detection, OS install date) and decoy GUIs (a daily planner, a regex search tool). The April 2026 DLL variant loaded by a C# loader is named MATCHBOIL.V2 by CERT-UA. C2 servers are hosted on BitLaunch VPSes behind Cloudflare.",
+      "meta": {
+        "date": "August 2025.",
+        "refs": [
+          "https://cert.gov.ua/article/6284949",
+          "https://www.welivesecurity.com/en/eset-research/matchboil-new-tricks-same-old-evil-intentions/",
+          "https://cert.gov.ua/article/6318634",
+          "https://www.welivesecurity.com/en/eset-research/mythicratatoskr-yggdrasil-enabled-backdoor-deployed-uac0099-sandworm-collaboration/",
+          "https://therecord.media/russia-ukraine-malware-transportation"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "267488cb-159a-46d6-a6d6-fe93c90360b2",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "da0277f1-cc33-4b3c-83ba-8aafffc0d34f",
+      "value": "MATCHBOIL"
+    },
+    {
+      "description": "NikoWiper is a data wiper reported by ESET in January 2023, used by Sandworm in October 2022 against an energy company in Ukraine, around the time of Russian missile strikes on Ukrainian energy infrastructure. ESET describes it as based on the Microsoft Sysinternals SDelete secure-deletion utility. ESET also saw Sandworm experimenting with SDelete as a wiper in other incidents, such as the attack on the Ukrinform news agency reported by CERT-UA, but told The Hacker News that NikoWiper is a distinct malware rather than SDelete itself. In October 2026, ESET documented another SDelete-based wiping operation by Sandworm, deployed through Active Directory Group Policy against a Ukrainian grain logistics company after initial access by UAC-0099.",
+      "meta": {
+        "date": "January 2023.",
+        "refs": [
+          "https://www.eset.com/gr-en/about/newsroom/press-releases-1/eset-research-russian-apt-groups-including-sandworm-continue-their-attacks-against-ukraine-with-wipers-and-ransomware1/",
+          "https://thehackernews.com/2023/01/new-report-reveals-nikowiper-malware.html",
+          "https://thehackernews.com/2026/10/russian-linked-hackers-used-new-mesh.html"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "f512de42-f76b-40d2-9923-59e7dbdfec35",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "c8ae3c81-9d31-422a-a294-f93e7d8d1967",
+      "value": "NikoWiper"
+    },
+    {
+      "description": "BlackX is a UEFI bootkit reported by Kaspersky GReAT, used in early 2026 against diplomatic organizations in Tajikistan, Uzbekistan and Turkmenistan. Not to be confused with the unrelated 'black x' ransomware entry (misp-galaxy:ransomware=\"black x\"), which only shares the name. It is deployed after the network is compromised and administrator rights are obtained: an installer (inst.exe) decrypts an RC4-encrypted package whose key is passed on the command line. It exploits Baton Drop (CVE-2022-21894) to install custom Machine Owner Keys and bypass Secure Boot. Its exploit implementation is very close to BlackLotus but differs from it, which suggests the BlackLotus code was reverse-engineered or bought, since it was never published. Fully patched machines were still infected because the 'Windows Production PCA 2011' certificate revocation that the patch relies on must be enabled manually. The UEFI payload injects a kernel driver signed with a since-revoked certificate. The driver tampers with security products (callbacks, ETW, with routines aimed at Kaspersky and Avast), protects the bootkit files and deploys user-mode payloads: a .NET-capable RAT using Google Drive, OneDrive or Yandex.Disk for C2, and the OxiDLLRunner loader. Kaspersky attributes the campaign to APT41 with medium confidence, based on the 'xdd' identifier shared with a FishMonger kernel implant documented by ESET, which mentioned an unspecified UEFI bootkit, and on typical Chinese-speaking tradecraft (DLL sideloading, OLLVM).",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://securelist.com/uefi-bootkit-blackx/121539/",
+          "https://thehackernews.com/2026/10/blackx-uefi-bootkit-bypasses-secure.html",
+          "https://www.bleepingcomputer.com/news/security/blackx-uefi-bootkit-exploits-baton-drop-flaw-to-bypass-secure-boot/"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "9c124874-042d-48cd-b72b-ccdc51ecbbd6",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "f13c0d5e-16ba-435f-a82e-166d3a1904c3",
+      "value": "BlackX"
+    },
+    {
+      "description": "OxiDLLRunner is a loader reported by Kaspersky GReAT as one of the user-mode payloads deployed by the BlackX UEFI bootkit against diplomatic organizations in Central Asia in early 2026. It is an OLLVM-obfuscated malicious DLL sideloaded by a legitimate executable dropped as googleupdate.exe (original name jcef_helper.exe). It decrypts the file v8_context_snapshot.bin from the same folder and jumps to the result, which is shellcode followed by a Rust payload. That payload communicates with the C2 www[.]archivetj[.]com and runs received DLL plugins that export create_plugin, each in its own thread. Kaspersky attributes the BlackX campaign, not OxiDLLRunner specifically, to APT41 with medium confidence. Its only actor-specific clue is an 'xdd' identifier found in BlackX payloads and in a FishMonger kernel implant documented by ESET, FishMonger itself being only assumed to be related to APT41. The arguments that concern OxiDLLRunner directly, OLLVM obfuscation and DLL sideloading with an encrypted file, point to Chinese-speaking actors in general, hence the lower confidence of the APT41 link here.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://securelist.com/uefi-bootkit-blackx/121539/"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "9c124874-042d-48cd-b72b-ccdc51ecbbd6",
+          "tags": [
+            "estimative-language:likelihood-probability=\"roughly-even-chance\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "97069b2c-8e22-43c6-9138-edea86b58bf0",
+      "value": "OxiDLLRunner"
+    },
+    {
+      "description": "Aokigahara is a Windows infostealer reported by Check Point Research in October 2026. According to Check Point, an earlier version may have been known as Kamidere or Stygian, and its YARA rule matches both the aokigahara and kamidere strings. Besides the usual targets (Chromium and Firefox credentials and cookies, desktop and browser-extension crypto wallets, Discord, Telegram, Steam and gaming launchers, Outlook and Thunderbird, VPN, FTP/SFTP and password-manager data, screenshots, clipboard, file grabbing), it has dedicated handlers for AI and developer tools. The aisessions and ide handlers collect authentication, session and configuration files from Claude Code/Desktop, ChatGPT Desktop, Codex, Cursor, Windsurf, Kiro, GitHub Copilot/VS Code, Gemini CLI, JetBrains AI Assistant and Amazon Q, as well as Git credentials, SSH keys and AWS/Azure/Google Cloud credentials. It can also drop a separate clipper component. Its configuration, stored AES-256-CBC encrypted in a .stgcfg section, enables modules through a bitmask, and optional checks stop execution on CIS keyboard or UI languages and on analysis environments. Stolen data is uploaded as AES-256-GCM encrypted ZIP chunks to /gate/handshake, /gate/chunk and /gate/complete endpoints, with an X25519 key exchange. No threat actor has been attributed.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://research.checkpoint.com/2026/infostealer-riding-the-ai-train/"
+        ]
+      },
+      "uuid": "b85dcd6d-1ee2-48b3-b732-73f797d36e0c",
+      "value": "Aokigahara"
+    },
+    {
+      "description": "RevSocks (revsocks) is an open-source reverse SOCKS5 tunneler written in Go (TLS, DNS tunneling, proxy support) and a dual-use utility. In October 2026, SOCRadar described its use by the Russian-speaking operators of the AI-driven 'Phantom' intrusion ecosystem, affiliated with the INC and The Gentlemen ransomware groups, to pivot inside victim networks and to stage and collect data over reverse-SOCKS tunnels. ESET separately found that the reverse SOCKS5 proxy command of the MythicRatatoskr backdoor (UAC-0099/Sandworm) and its C2 server code are largely derived from revsocks, based on its debug strings and on TLS certificates rotated the way revsocks generates them. Because the tool is public, its presence alone does not indicate a specific actor, so it is not linked to any actor here.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://github.com/kost/revsocks",
+          "https://socradar.io/blog/inc-gentlemen-ransomware-ai-infrastructure/",
+          "https://thehackernews.com/2026/10/exposed-infrastructure-reveals-how.html",
+          "https://www.welivesecurity.com/en/eset-research/mythicratatoskr-yggdrasil-enabled-backdoor-deployed-uac0099-sandworm-collaboration/"
+        ]
+      },
+      "uuid": "d3ed06de-8bab-463e-bb41-b4079223d24f",
+      "value": "RevSocks"
     }
   ],
-  "version": 184
+  "version": 185
 }
