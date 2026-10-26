@@ -4958,10 +4958,11 @@
       "value": "GhostBat RAT"
     },
     {
-      "description": "YuanKong RAT is an Android remote access trojan that lets cybercriminals remotely control infected devices, steal sensitive data and potentially intercept banking transactions, as relayed by The Hacker News in October 2026. Like RedHook and RatHat, it abuses Accessibility to enable Wireless Debugging and pairs with the device's own adbd to obtain shell-level privileges. The original research vendor is not named in the available reporting, and no threat actor is attributed.",
+      "description": "YuanKong RAT is an Android remote access trojan documented by STAR Labs (Jacob Soo) in October 2026. The child app (com.remote.control.RemoteControlApp) is signed with a certificate naming O=YuanKong, L=Beijing, C=CN ('YuanKong' abbreviating the Chinese for 'remote control') and is shipped encrypted inside a 'Nova' dropper using a simple two-key XOR scheme labelled SVLT-XOR-v2, with key and IV stored in cleartext in the dropper assets. It relies on Accessibility rather than data permissions (no SMS, contacts, call log, camera or microphone access in the analysed build) for screen streaming, remote input, reading on-screen content including password fields, keylogging, PIN capture through a fake keypad overlay and tap-to-digit mapping, overlay phishing of payment apps, and theft of clipboard, notifications/OTPs, files and location; persistence uses device admin, watchdog services and icon hiding. Like RedHook and RatHat it enables Wireless Debugging and self-pairs with the local adbd to obtain an ADB shell (not root), which STAR Labs describes as shared tradecraft, not shared code. C2 uses Socket.IO over WebSocket with TLS only. The operation is multi-tenant: one codebase and signing certificate across 110 droppers, 57 distinct payloads, 42 operator accounts and 44 rotating build brands, each build embedding its operator account ID, name and enrollment code. No victim geography or threat actor is identified.",
       "meta": {
         "date": "October 2026.",
         "refs": [
+          "https://starlabs.sg/blog/2026/10-yuankong-rat-the-android-remote-control-service-that-stamps-its-operators-names-into-every-build/",
           "https://thehackernews.com/2026/10/weekly-recap-this2shell-that2shell.html"
         ]
       },
@@ -4969,10 +4970,11 @@
       "value": "YuanKong RAT"
     },
     {
-      "description": "uCreator is a rentable Android spyware kit, sold under the makers' own product name YingGai, that hides its code inside working copies of messaging apps (Telegram, Telegram X) patched with LSPatch, or runs WeChat inside the makers' container app 'Onion Box' (洋葱盒子). It was analysed by researcher Ovi in October 2026. Its Telegram component matches Baohuo, a backdoor reported by Doctor Web in October 2025 in tampered Telegram X copies (more than 58,000 infected devices, spread since mid-2024 via in-app ads leading to fake app store sites and via third-party stores such as APKPure): The Hacker News found the same code namespace (com.ucreator.tgjar), the same C2 server and matching command names in both reports. Baohuo and uCreator are therefore two vendor names for the same code; Doctor Web did not name the kit and Ovi did not cite Doctor Web. The kit runs a local command server inside each tampered app, downloads per-app modules after installation, can query the app's message store, captures the Telegram 2FA password before hashing, resets sessions, changes the linked phone number and hides the attacker's session from the device list. For WeChat it clones the account by exfiltrating the login identity and app data. A leaked back end shows a cloud console rented by merchants and resellers, driving a phone farm with 'account cultivation' scheduling. Code supports about 20 apps (WeCom, QQ, WhatsApp, LINE, Zalo, KakaoTalk, Viber, GCash, MoMo). Ovi ties the operation to three companies in Hunan province, China, but a shared owner remains unproven; no threat actor is linked here.",
+      "description": "uCreator is a rentable Android spyware kit, sold under the makers' own product name YingGai, that hides its code inside working copies of messaging apps (Telegram, Telegram X) patched with LSPatch, or runs WeChat inside the makers' container app 'Onion Box' (洋葱盒子). It was analysed by researcher Ovi in October 2026. Its Telegram component matches Baohuo (Android.Backdoor.Baohuo.1.origin), a backdoor reported by Doctor Web in October 2025 in tampered Telegram X copies, controlled through a Redis database (more than 58,000 infected devices, mainly Brazilian and Indonesian audiences, spread since mid-2024 via in-app ads leading to fake app store sites and via third-party stores such as APKPure): The Hacker News found the same code namespace (com.ucreator.tgjar), the same C2 server and matching command names in both reports. Baohuo and uCreator are therefore two vendor names for the same code; Doctor Web did not name the kit and Ovi did not cite Doctor Web. The kit runs a local command server inside each tampered app, downloads per-app modules after installation, can query the app's message store, captures the Telegram 2FA password before hashing, resets sessions, changes the linked phone number and hides the attacker's session from the device list. For WeChat it clones the account by exfiltrating the login identity and app data. A leaked back end shows a cloud console rented by merchants and resellers, driving a phone farm with 'account cultivation' scheduling. Code supports about 20 apps (WeCom, QQ, WhatsApp, LINE, Zalo, KakaoTalk, Viber, GCash, MoMo). Ovi ties the operation to three companies in Hunan province, China, but a shared owner remains unproven; no threat actor is linked here.",
       "meta": {
         "date": "October 2025.",
         "refs": [
+          "https://news.drweb.com/show/?i=15076",
           "https://thehackernews.com/2026/10/ucreator-android-spyware-can-steal.html"
         ],
         "synonyms": [
@@ -5002,6 +5004,7 @@
       "meta": {
         "date": "October 2026.",
         "refs": [
+          "https://www.threatfabric.com/blogs/hirudo-from-fake-updates-to-patched-banking-apps",
           "https://www.bleepingcomputer.com/news/security/hirudo-android-malware-replaces-banking-apps-to-evade-security-checks/",
           "https://thehackernews.com/2026/10/hirudo-android-trojan-uses-patched.html"
         ]
