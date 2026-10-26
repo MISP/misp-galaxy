@@ -4945,7 +4945,70 @@
       },
       "uuid": "2a5adbd6-4eb7-4c92-8516-a70bd6a3e858",
       "value": "RemControl"
+    },
+    {
+      "description": "GhostBat RAT is an Android remote access trojan first documented by Cyble in October 2025 in RTO-themed campaigns targeting Indian users. In October 2026 Cyble reported a new variant and traced the malware to a broader operator-controlled ecosystem that Cyble dubs GhostX. It is primarily distributed via smishing messages containing malicious links. The latest variant abuses the Android Accessibility Service to implement a 'Ghost Overlay' that transparently intercepts PIN keypad interactions in Google Pay and MobiKwik and replays the touches into the legitimate application, capturing PINs without presenting a conventional phishing interface. It targets about 60 banking, UPI, wallet, fintech and payment applications used in India. GhostX is the name of the surrounding ecosystem, not a synonym of the malware; it is unrelated to the Ghost-X UAV listed in the uavs galaxy. No threat actor is attributed in the reporting.",
+      "meta": {
+        "date": "October 2025.",
+        "refs": [
+          "https://thehackernews.com/2026/10/weekly-recap-this2shell-that2shell.html"
+        ]
+      },
+      "uuid": "2af06b67-4b7f-49e5-9064-e1a050294b75",
+      "value": "GhostBat RAT"
+    },
+    {
+      "description": "YuanKong RAT is an Android remote access trojan that lets cybercriminals remotely control infected devices, steal sensitive data and potentially intercept banking transactions, as relayed by The Hacker News in October 2026. Like RedHook and RatHat, it abuses Accessibility to enable Wireless Debugging and pairs with the device's own adbd to obtain shell-level privileges. The original research vendor is not named in the available reporting, and no threat actor is attributed.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://thehackernews.com/2026/10/weekly-recap-this2shell-that2shell.html"
+        ]
+      },
+      "uuid": "115c1536-6c5a-4a2b-bb28-bfc5809debfe",
+      "value": "YuanKong RAT"
+    },
+    {
+      "description": "uCreator is a rentable Android spyware kit, sold under the makers' own product name YingGai, that hides its code inside working copies of messaging apps (Telegram, Telegram X) patched with LSPatch, or runs WeChat inside the makers' container app 'Onion Box' (洋葱盒子). It was analysed by researcher Ovi in October 2026. Its Telegram component matches Baohuo, a backdoor reported by Doctor Web in October 2025 in tampered Telegram X copies (more than 58,000 infected devices, spread since mid-2024 via in-app ads leading to fake app store sites and via third-party stores such as APKPure): The Hacker News found the same code namespace (com.ucreator.tgjar), the same C2 server and matching command names in both reports. Baohuo and uCreator are therefore two vendor names for the same code; Doctor Web did not name the kit and Ovi did not cite Doctor Web. The kit runs a local command server inside each tampered app, downloads per-app modules after installation, can query the app's message store, captures the Telegram 2FA password before hashing, resets sessions, changes the linked phone number and hides the attacker's session from the device list. For WeChat it clones the account by exfiltrating the login identity and app data. A leaked back end shows a cloud console rented by merchants and resellers, driving a phone farm with 'account cultivation' scheduling. Code supports about 20 apps (WeCom, QQ, WhatsApp, LINE, Zalo, KakaoTalk, Viber, GCash, MoMo). Ovi ties the operation to three companies in Hunan province, China, but a shared owner remains unproven; no threat actor is linked here.",
+      "meta": {
+        "date": "October 2025.",
+        "refs": [
+          "https://thehackernews.com/2026/10/ucreator-android-spyware-can-steal.html"
+        ],
+        "synonyms": [
+          "Baohuo",
+          "YingGai"
+        ]
+      },
+      "uuid": "d7366062-0137-4d0b-be05-f9cec0f04171",
+      "value": "uCreator"
+    },
+    {
+      "description": "RatHat is an Android banking trojan and RAT reported by Zimperium zLabs in September 2026, assessed to be operated by China-based actors based on Chinese-language LLM prompts. It is distributed via smishing, malvertising and phishing sites leading to third-party APK download portals, through a dropper with anti-analysis tricks (APK container tampering, a 61MB manifest bomb, invalid DEX pseudo-instructions, dual string encryption). It abuses Accessibility to enable Developer Options and Wireless Debugging, reads the pairing code and self-pairs with the local ADB daemon to gain shell (UID 2000) privileges, then stages a Go agent (liblocal-service.so) for persistence and reinstallation after uninstall, and an FRP reverse-proxy client (libmedia_codec.so) for a persistent tunnel to the C2. Capabilities include HTML overlays on banking and crypto apps, SMS/OTP and notification interception, hardware-level touch keylogging to reconstruct PINs and unlock patterns, screen capture and blocking of uninstallation with a fake Google Play error. Its UI automation sends the serialized Accessibility tree to Google Gemini. Cleafy later traced nearly 100 deployments of its web console (Fisher, BlackCat Remote Control Management, Panda Workshop V5/V6) since April 2026, consistent with a malware-as-a-service model, the latest version using Gemini to rank victims by estimated bank balance. No named threat actor is attributed.",
+      "meta": {
+        "date": "September 2026.",
+        "refs": [
+          "https://zimperium.com/blog/rathat-ai-powered-mobile-threat-is-here-for-your-credentials-bank-accounts",
+          "https://www.bleepingcomputer.com/news/security/new-rathat-android-malware-uses-ai-to-automate-device-control/",
+          "https://thehackernews.com/2026/09/rathat-android-malware-abuses-adb-to.html",
+          "https://thehackernews.com/2026/09/rathat-android-malware-console-uses.html"
+        ]
+      },
+      "uuid": "2c5dd7ff-be79-48d6-b2f8-f2e28c6aca43",
+      "value": "RatHat"
+    },
+    {
+      "description": "Hirudo is an Android banking trojan and RAT reported by ThreatFabric in October 2026. It is delivered by functional dropper apps (shopping, adult video, short drama, e.g. Shopora, 1V1 X, KoiShort, ZoyaTV) promoted through fake Google Play landing pages and Meta ads, which serve the payload as a fake in-app update, after setting up a deliberately non-functional VPN to hinder online reputation checks. Its distinctive technique is replacing legitimate banking apps (eight Indonesian apps) with patched copies: the RAT triggers the uninstaller of the genuine app and installs a replacement embedding a hooking engine built on YAHFA and Dobby, which returns the genuine signing certificate, hides enabled Accessibility services, strips FLAG_SECURE, re-signs key-attestation certificates with a publicly leaked keybox and relays Play Integrity requests to an operator server. It also steals credentials, payment PINs, unlock secrets and SMS, streams the screen and accesses both cameras. Credential targeting spans Indonesia, China, India, Mexico, Morocco and Thailand. No threat actor is attributed.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://www.bleepingcomputer.com/news/security/hirudo-android-malware-replaces-banking-apps-to-evade-security-checks/",
+          "https://thehackernews.com/2026/10/hirudo-android-trojan-uses-patched.html"
+        ]
+      },
+      "uuid": "e64a72ee-51dc-44c4-8c08-71069fc43ee4",
+      "value": "Hirudo"
     }
   ],
-  "version": 25
+  "version": 26
 }
