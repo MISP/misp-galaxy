@@ -616,7 +616,7 @@ Category: *tool* - source: *Various* - total: *2179* elements
 
 [RAT](https://www.misp-galaxy.org/rat) - remote administration tool or remote access tool (RAT), also called sometimes remote access trojan, is a piece of software or programming that allows a remote "operator" to control a system as if they have physical access to that system.
 
-Category: *tool* - source: *MISP Project* - total: *270* elements
+Category: *tool* - source: *MISP Project* - total: *271* elements
 
 [[HTML](https://www.misp-galaxy.org/rat)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/rat.json)]
 
