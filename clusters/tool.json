@@ -11795,7 +11795,42 @@
       },
       "uuid": "d3ed06de-8bab-463e-bb41-b4079223d24f",
       "value": "RevSocks"
+    },
+    {
+      "description": "Athena StealthRoute is a modular phishing-as-a-service (PhaaS) platform reported by Abnormal AI in October 2026. Rather than harvesting credentials or tokens itself, it prepares, delivers and conceals phishing campaigns: a marketplace for campaign materials, domain and link management, traffic-filtering and cloaking controls that divert security scanners, and an 'AI Studio' with six workflows generating tailored messages, subject lines, attachments and benign decoy pages; credential and token harvesting relies on separate downstream services. Linked infrastructure was first identified in August 2026, and about 89,700 messages matching its link pattern were observed across roughly 2,280 organizations in the U.S. and E.U. over the six months to 9 October 2026. It is unrelated to the Athena malware family listed in malpedia. No threat actor is attributed.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://abnormal.ai/blog/athena-stealthroute-phishing-marketplace-cloaking-ai",
+          "https://thehackernews.com/2026/10/weekly-recap-this2shell-that2shell.html"
+        ]
+      },
+      "uuid": "54ea5764-1006-491e-9bad-b6c24dc04cf0",
+      "value": "Athena StealthRoute"
+    },
+    {
+      "description": "ARToken (also written ARTokens) is a Microsoft 365 account-takeover phishing-as-a-service panel abusing the OAuth 2.0 device authorization grant, first described by Cisco Talos in July 2026 as sharing infrastructure, API contracts and operational patterns with the EvilTokens platform. Lures impersonate vendor invoices aimed at accounts-payable staff and lead, via SharePoint shares on compromised or look-alike tenants and Windows Internet Shortcut files, to Cloudflare Workers pages showing the device code, so the victim completes MFA on the genuine Microsoft sign-in page while the backend captures access and refresh tokens. A 'broker' mode obtains Primary Refresh Tokens that persist across password changes. Its 80+ API endpoints cover mailbox reading and sending, inbox rules, keyword monitoring for BEC, SharePoint/OneDrive access, device registration and Entra ID takeover. Abnormal AI describes a multi-affiliate model in which a central developer licenses the panel and backend to paying affiliates. In October 2026 ZeroBEC reported an updated panel (build 5.1.2-prod) used in two disrupted campaigns with RFP and payment-invoice lures chaining a compromised SharePoint tenant, a .URL file, Google Sites and Cloudflare Workers, with headless-browser detection, operator-configurable polling aliases replacing the documented endpoints, and optional Workers-hosted polling. No developer or threat actor is named.",
+      "meta": {
+        "date": "July 2026.",
+        "refs": [
+          "https://blog.talosintelligence.com/artoken-inside-an-eviltokens-affiliate-panel-targeting-microsoft-365/",
+          "https://abnormal.ai/blog/artoken-the-device-code-phishing-platform-built-for-full-microsoft-365-takeover",
+          "https://zerobec.com/blog/artokens-5-1-2-sharepoint-device-code-phishing",
+          "https://thehackernews.com/2026/10/weekly-recap-this2shell-that2shell.html"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "44078616-6834-4f26-bd25-5393f8d54ee9",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "2040c9fb-0b34-43e3-b4af-dca3d22ca618",
+      "value": "ARToken"
     }
   ],
-  "version": 185
+  "version": 186
 }
