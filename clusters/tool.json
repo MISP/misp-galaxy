@@ -11830,7 +11830,33 @@
       ],
       "uuid": "2040c9fb-0b34-43e3-b4af-dca3d22ca618",
       "value": "ARToken"
+    },
+    {
+      "description": "GoGRPC is a Go-based backdoor named by Zscaler ThreatLabz in July 2026, used since January 2026 by a threat actor that ThreatLabz assesses is likely an initial access broker for ransomware attacks. Victims are spam-bombed, then called over Microsoft Teams by operators impersonating the helpdesk and persuaded to open a Quick Assist session; PowerShell gathers host information, copies the payload to %APPDATA% as sekv<random>.exe and persists through a 'Realtek HD Audio' value under the HKCU Run key. GoGRPC communicates over gRPC on HTTP/2 (port 443, endpoint /agent.AgentService/Connect, renamed /Refuse/Connect in the latest variant), registers with host fingerprinting (machine GUID as agent ID), sends heartbeats and executes shell commands returning stdout, stderr and exit code; most variants log to %PROGRAMDATA%\\appscreen\\appscreen.log. ThreatLabz describes four variants it labelled Lep (January 2026), Giver (February 2026), Pet (April 2026) and Kind (June 2026), adding TLS and obfuscation over time; an unimplemented proxy command was dropped in later versions. The same actor deployed BlindDoor, the RevSocket and PyGRPC reverse SOCKS proxies, the S3Siphon exfiltration utility and the RSOX Rust relay. In October 2026 Arctic Wolf, analysing more than 400 Teams IT-support impersonation incidents, listed GoGRPC among payloads delivered before lateral movement to domain controllers, installation of the Level RMM, exfiltration and ransomware, crediting Zscaler, and related the activity to the STAC4749 cluster that Sophos linked to Chaos ransomware. The loader Sophos documented for STAC4749 shares GoGRPC's artifacts (sekv-prefixed filename, 'Realtek HD Audio' Run value, appscreen.log check, gRPC C2), but no vendor states that they are the same; ThreatLabz names no ransomware group.",
+      "meta": {
+        "date": "July 2026.",
+        "refs": [
+          "https://www.zscaler.com/blogs/security-research/helpdesk-hijackers-teams-vishing-quick-assist-and-gogrpc-backdoor",
+          "https://arcticwolf.com/resources/blog/threat-actors-abuse-microsoft-teams-external-chat-for-initial-access/",
+          "https://thehackernews.com/2026/10/attackers-use-microsoft-teams-it.html"
+        ]
+      },
+      "uuid": "d0483236-479e-4e38-87e6-dd1e521ac129",
+      "value": "GoGRPC"
+    },
+    {
+      "description": "Ingram is an open-source Python webcam vulnerability scanner published on GitHub by jorhelp under GPL-3.0, a dual-use tool described by its author as for security testing only. It fingerprints cameras from Hikvision, Dahua, Uniview, D-Link and other vendors and tests them against known vulnerabilities and weak credentials; the repository references CVE-2017-7921, CVE-2020-25078, CVE-2021-33044 and CVE-2021-36260. In August 2026 Hunt.io reported two open directories of Russian-speaking operators that used it: on the first server, a containerised tool called 'camview' wrapped Ingram instead of custom exploits, and JSON files listed 58 compromised cameras in Ukraine (mostly Hikvision and Dahua, around Odessa, Burshtyn and Kherson), with Hunt.io listing CVE-2017-7921, CVE-2020-25078, CVE-2020-25169, CVE-2021-33044, CVE-2021-33045 and CVE-2021-36260 as Ingram targets; on a second, unrelated server, an all_ingram.csv target list contained only Ukrainian IP addresses, alongside scripts against MikroTik devices and TP-Link Archer routers (CVE-2024-53375 chained with CVE-2024-57049) and router scanning across 15 European countries including France, where Hunt.io found no sign of successful exploitation. Hunt.io ties neither directory to a state actor or named group; the shared tool is the only link between them. The Hacker News later related these findings to an October 2026 CERT-UA/SSSCIP alert on Dahua cameras accessed through the Easy4IP P2P platform, which does not mention Ingram.",
+      "meta": {
+        "date": "August 2026.",
+        "refs": [
+          "https://hunt.io/blog/russian-speaking-operator-ukrainian-camera-toolkit",
+          "https://github.com/jorhelp/Ingram",
+          "https://thehackernews.com/2026/10/attackers-hijack-dahua-ip-cameras-in.html"
+        ]
+      },
+      "uuid": "334a0738-1b18-4ebd-95eb-3ca9c28bedf0",
+      "value": "Ingram"
     }
   ],
-  "version": 186
+  "version": 187
 }

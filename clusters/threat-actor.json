@@ -24876,7 +24876,20 @@
       ],
       "uuid": "5869bc41-c58a-4e06-9419-b3874a4d3a12",
       "value": "Jingle Thief"
+    },
+    {
+      "description": "STAC4749 is a financially motivated activity cluster reported by Sophos in July 2026, observed between February and June 2026 against dozens of organizations, nearly 95% of them in Canada and the U.S. Operators contact victims through Microsoft Teams chats and calls impersonating IT support, using plausible employee usernames on IT-themed '.top' cloud domains rather than onmicrosoft.com tenants, and obtain a remote session through Microsoft Quick Assist or, increasingly from April 2026, the RemSupp RMM tool; RDP is then enabled for lateral movement. PowerShell retrieves a loader communicating over gRPC with hard-coded C2 addresses and checking for an appscreen.log file, later replaced by a PyArmour-obfuscated PyInstaller backdoor that fetches its AES key from a public GitHub repository and talks to workers.dev infrastructure, followed by Golang implants launched with a '--token-raw' argument and pinning embedded CA certificates (issuers such as loop-CA, connectify-CA, james-bond-CA), plus a reverse SOCKS proxy. Persistence relies on HKCU Run keys masquerading as Realtek or WinAudio components and hidden Startup shortcuts; DWAgent and AnyDesk provide redundant access. At least three intrusions ended in Chaos ransomware deployment (the RaaS reportedly launched by former BlackSuit members, not the Chaos builder lineage), in one case under 17 hours after initial access. Sophos notes a Russian-keyboard typo in operator commands, found no evidence of a link to MuddyWater, and states the evidence is insufficient for attribution. In October 2026 Arctic Wolf, analysing more than 400 Teams IT-support impersonation incidents, stated that the shift to '.top' tenants aligns with Sophos's reporting on STAC4749. The Sophos loader shares its artifacts (sekv-prefixed filename, 'Realtek HD Audio' Run value, appscreen.log check, gRPC C2) with the GoGRPC backdoor documented by Zscaler ThreatLabz, although neither vendor equates the two.",
+      "meta": {
+        "date": "July 2026.",
+        "refs": [
+          "https://www.sophos.com/en-us/blog/chaos-in-teams-vishing",
+          "https://arcticwolf.com/resources/blog/threat-actors-abuse-microsoft-teams-external-chat-for-initial-access/",
+          "https://thehackernews.com/2026/10/attackers-use-microsoft-teams-it.html"
+        ]
+      },
+      "uuid": "aa09600e-29a2-4ba0-a6c0-bd305c30140c",
+      "value": "STAC4749"
     }
   ],
-  "version": 355
+  "version": 356
 }
