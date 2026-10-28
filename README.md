@@ -48,7 +48,7 @@ Category: *firearm* - source: *https://ammo.com/* - total: *409* elements
 
 [Android](https://www.misp-galaxy.org/android) - Android malware galaxy based on multiple open sources.
 
-Category: *tool* - source: *Open Sources* - total: *455* elements
+Category: *tool* - source: *Open Sources* - total: *456* elements
 
 [[HTML](https://www.misp-galaxy.org/android)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/android.json)]
 
@@ -896,7 +896,7 @@ Category: *tmss* - source: *https://github.com/microsoft/Threat-matrix-for-stora
 
 [Tool](https://www.misp-galaxy.org/tool) - threat-actor-tools is an enumeration of tools used by adversaries. The list includes malware but also common software regularly used by the adversaries.
 
-Category: *tool* - source: *MISP Project* - total: *643* elements
+Category: *tool* - source: *MISP Project* - total: *650* elements
 
 [[HTML](https://www.misp-galaxy.org/tool)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/tool.json)]
 

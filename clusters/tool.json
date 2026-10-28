@@ -11856,7 +11856,131 @@
       },
       "uuid": "334a0738-1b18-4ebd-95eb-3ca9c28bedf0",
       "value": "Ingram"
+    },
+    {
+      "description": "Downloader reported by Kaspersky as the first payload of Operation FlashHole, a Lazarus Group espionage campaign against South Korean software, construction and wired communication equipment manufacturing companies active since at least July 2025. It is injected as shellcode into the legitimate fsquirt.exe spawned by the INISAFE CrossWeb EX financial security software, and also exists as a plain DLL side-loading variant and as a side-loaded variant registered as a Windows service, launched by TOUCHSHIFT. It uses private GitHub repositories as C2 through the GitHub API with a personal access token, handshaking through issues and exchanging RSA/AES-protected files, profiles the host, and supports four commands, including in-memory execution of received shellcode; in FlashHole it deploys TouchHub, ClientHub, LPEClient and Cubridge. Naming: Kaspersky describes TechHub as a more advanced version of the malware Mandiant named CLOUDBURST and ESET named NickelLoader, which used HTTP(S) C2 instead of GitHub; earlier versions were seen in the Dream Job campaign in 2022-2023.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://securelist.com/lazarus-operation-flashhole/121541/",
+          "https://cloud.google.com/blog/topics/threat-intelligence/lightshow-north-korea-unc2970",
+          "https://www.welivesecurity.com/en/eset-research/lazarus-luring-employees-trojanized-coding-challenges-case-spanish-aerospace-company/"
+        ],
+        "synonyms": [
+          "CLOUDBURST",
+          "NickelLoader"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "68391641-859f-4a9a-9a1e-3e5cf71ec376",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "7b296597-afca-45ca-b568-c21ca153f2ad",
+      "value": "TechHub"
+    },
+    {
+      "description": "Installer reported and named by Kaspersky in Operation FlashHole, a Lazarus Group espionage campaign against South Korean companies, retrieved by TechHub from its private GitHub repository. It copies the legitimate printfilterpipelinesvc.exe to C:\\Windows\\System32\\RasConv\\ImeBroker.exe, drops an embedded TOUCHSHIFT payload beside it as mscoree.dll for DLL side-loading together with the TechHub configuration file ActivationStore.dat, timestomps the files from monitor.sys, and registers a service named after a random netsvcs service plus two random letters so that TOUCHSHIFT runs with SYSTEM privileges and relaunches TechHub. Not to be confused with TOUCHSHIFT (misp-galaxy:malpedia=\"TOUCHSHIFT\"), the loader it installs.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://securelist.com/lazarus-operation-flashhole/121541/"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "68391641-859f-4a9a-9a1e-3e5cf71ec376",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "e911778e-24ba-46d5-b8cd-be594a7d54cb",
+      "value": "TouchHub"
+    },
+    {
+      "description": "Modular downloader reported and named by Kaspersky in Operation FlashHole, a Lazarus Group espionage campaign against South Korean companies, deployed by TechHub to load LPEClient and relay its C2 traffic through a shared buffer. Two versions exist, one using HTTP(S) to compromised legitimate South Korean websites and one using the Dropbox API; its configuration and C2 addresses are protected with the SNOW 1.0 stream cipher, a first for Lazarus according to Kaspersky, and its requests imitate Chromium browser headers. Commands are encoded as a bitmask to reflectively load, invoke and unload DLLs and plugins (file archiver, file collector, file cleaner, drive and session monitor). Kaspersky assesses with medium-high confidence that ClientHub is an advanced version of CookiePlus.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://securelist.com/lazarus-operation-flashhole/121541/",
+          "https://securelist.com/lazarus-new-malware/115059/"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "68391641-859f-4a9a-9a1e-3e5cf71ec376",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "8f38514a-c772-41dd-b43b-e23dd792e838",
+      "value": "ClientHub"
+    },
+    {
+      "description": "Backdoor and orchestrator of the modular malware framework used in Operation FlashHole, a Lazarus Group espionage campaign against South Korean companies, reported by Kaspersky. Deployed by TechHub and redeployed in memory through ClientHub and LPEClient after persistence, it uses compromised legitimate South Korean websites as C2 with URLs generated from news-like word lists, an RSA and RC6 handshake and browser-like headers. It loads plugins (ADFinder, FileCollector), tools (browser stealer, process collector) and two modules: an action module for file, process and command operations and a function module re-implementing Windows commands such as ipconfig, net, netstat, reg, sc, schtasks and whoami, plus screen capture and Chrome key extraction. Naming: Kaspersky states that an earlier version of Cubridge is the malware Mandiant named SIDESHOW, and that ESET named one of its modules LightlessCan; Kaspersky believes the function module is based on LightlessCan. Earlier versions were seen in the Dream Job campaign in 2022-2023.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://securelist.com/lazarus-operation-flashhole/121541/",
+          "https://cloud.google.com/blog/topics/threat-intelligence/lightshow-north-korea-unc2970",
+          "https://www.welivesecurity.com/en/eset-research/lazarus-luring-employees-trojanized-coding-challenges-case-spanish-aerospace-company/"
+        ],
+        "synonyms": [
+          "SIDESHOW"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "68391641-859f-4a9a-9a1e-3e5cf71ec376",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "0140b247-e0e6-43ba-abdb-384644786975",
+      "value": "Cubridge"
+    },
+    {
+      "description": "Dropper of the Yoba malware chain reported and named by Check Point Research, distributed through fake GitHub projects and GitHub Pages sites posing as desktop applications for GPT-5.6 Sol, GPT-6 Astra and Claude Opus, promoted by SEO poisoning, and earlier (June 2026) as Cursor. Delivered as winmm.dll in unprotected ZIP releases and side-loaded by legitimate signed OpenAI and Anthropic Setup.exe binaries, it checks the DJB2 hash of its host process name (stalling for about 13 days in a sandbox), skips CIS keyboard layouts except Ukrainian, requires administrator rights, then drops the XOR-encrypted YobaLoader as wmpdui.dll beside a copy of WMPDMC.exe in ProgramData\\WMProcess and persists through a SYSTEM scheduled task masquerading as Windows Media Player. Check Point reports indicators of Russian origin and an operator in UTC-4; the campaign is not attributed to a known actor.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://research.checkpoint.com/2026/tricks-from-the-past-deployed-via-signed-chatgpt-and-claude-binaries/"
+        ]
+      },
+      "uuid": "ed18ba84-4308-4ab1-82f2-d6d7abe1f196",
+      "value": "YobaDropper"
+    },
+    {
+      "description": "Generic loader of the Yoba malware chain reported and named by Check Point Research, dropped by YobaDropper as wmpdui.dll and side-loaded by a copy of WMPDMC.exe. It avoids dedicated C2 infrastructure: it reads the profile picture of the Telegram channel yoba_fanclub, uses its last 50 bytes to seed a dictionary-based DGA producing dedyn.io domains (aber.ir in an early variant), fetches an Ed25519-signed, AES-encrypted tasking from their DNS TXT record over Google DNS-over-HTTPS, downloads the payload from Catbox and runs it by injection into svchost.exe, as an executable or as a PowerShell script. In the campaign impersonating ChatGPT and Claude desktop applications the final payload was an XMRig miner mining through Tor, but any PE or PowerShell payload can be delivered. Not attributed to a known actor; Check Point reports indicators of Russian origin.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://research.checkpoint.com/2026/tricks-from-the-past-deployed-via-signed-chatgpt-and-claude-binaries/"
+        ]
+      },
+      "uuid": "b7e7d08c-6b1e-4e80-9822-8dc14ec829e8",
+      "value": "YobaLoader"
+    },
+    {
+      "description": "Open-source AI penetration testing platform abused by threat actors, according to TrendAI (Trend Micro) as relayed by The Hacker News, which notes earlier abuse in a campaign against Fortinet FortiGate appliances. In one of three attacker environments TrendAI found exposed, active in October 2026 against organisations mainly in Japan, and also in Taiwan and Hong Kong, it automated the whole lifecycle with 44 agents, from reconnaissance and vulnerability validation to exploitation, C2, persistence, exfiltration and reporting, including Japanese-language forms and fake login pages; at least 19 organisations were subjected to validation activity. Distinct from the ARTEX framework. The operator is not attributed. Dual-use: its presence alone does not indicate malicious activity.",
+      "meta": {
+        "refs": [
+          "https://thehackernews.com/2026/10/cyberstrikeai-uses-44-ai-agents-to.html"
+        ]
+      },
+      "uuid": "1a7b6d89-775c-4b06-b4c6-19584066bea7",
+      "value": "CyberStrikeAI"
     }
   ],
-  "version": 187
+  "version": 188
 }
