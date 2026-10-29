@@ -11980,7 +11980,93 @@
       },
       "uuid": "1a7b6d89-775c-4b06-b4c6-19584066bea7",
       "value": "CyberStrikeAI"
+    },
+    {
+      "description": "Covert operational framework reported and named by Lumen Black Lotus Labs, used by Volt Typhoon to gain and maintain access to strategic networks and observed consistently since November 2023, shortly before the first KV-botnet takedown. Black Lotus Labs distinguishes it from traditional botnets, proxy networks and operational relay box (ORB) networks: it is built around rapidly rotating chains of compromised SOHO, IoT and enterprise devices exploited on demand, used against selected targets and dismantled after each operation, across more than 27 device classes including TP-Link, Intelbras, Ruckus, SATO, Netgear, Zyxel, Cambium, Fortinet, Cisco, PRTG, Mirth Connect and CyberPanel. Sessions begin from VPS outside the U.S., chain through compromised non-U.S. devices (Intelbras modems only as overseas relays) and pivot to U.S. devices such as Netgear Orbi or Fortinet FortiGate before the victim, over chained SSH built with temporary SSH services, keys, configuration files and living-off-the-land utilities; operators removed all artifacts and dismantled the chain at the end of each session. By early 2025 it had become a hybrid framework keeping enterprise devices for one to three months, and some operations used reverse tunnels through Chisel and FRP. Reserved for exploitation, credential access, data exfiltration and continued access, it supported at least four confirmed and one likely zero-day exploitation campaigns, including N-able N-central (CVE-2025-8875, CVE-2025-8876), Cisco Catalyst SD-WAN (CVE-2026-20127), VeloCloud Orchestrator (CVE-2026-16812), Versa Director and, with moderate confidence, a Quest KACE zero-day affecting more than 30 victims. Targets include telecommunications providers, defense contractors, government, satellite and mission-critical communications, MSPs and IT firms, universities with military affiliations and critical infrastructure, most often in Hawaii, California and Texas; activity follows China Standard Time working hours. Cisco Talos assesses with high confidence that the infrastructure of UAT-11473 overlaps considerably with Silent Train.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://www.lumen.com/blog/en-us/silent-train-volt-typhoon-operational-framework",
+          "https://blog.talosintelligence.com/uat-11473-keydrift/",
+          "https://www.bleepingcomputer.com/news/security/volt-typhoon-hides-zero-day-attacks-using-silent-train-framework/",
+          "https://thehackernews.com/2026/10/volt-typhoon-used-covert-silent-train.html"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "f02679fa-5e85-4050-8eb5-c2677d93306f",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "46750d9d-de6e-4656-a30f-e45b2cce2668",
+      "value": "Silent Train"
+    },
+    {
+      "description": "Custom malware framework reported and named by Cisco Talos, installed by UAT-11473 in Cisco SD-WAN controller environments after exploiting the CVE-2026-20127 authentication bypass. Talos assesses with high confidence that it is designed for long-term persistent access and automated exfiltration of sensitive keying material. It uses Cisco SD-WAN runit service paths as its execution anchor: a modified sshd run script remounts /rootfs.rw executable and starts the conf_sshd loader script, which records the vdaemon PIDs and calls the rsshd ptrace injector to inject the main module PolyFlame into vdaemon, while on an affected vBond appliance a malicious aaamgr runit service runs the packed aaamgrd PolyFlame loader. Its LittleFilch module hooks SSL_read inside vdaemon to extract keying material from decrypted control traffic and stage it encrypted for exfiltration. Talos observed timestomping, and variations of the modules and deployment mechanisms suggesting active development.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://blog.talosintelligence.com/uat-11473-keydrift/",
+          "https://thehackernews.com/2026/10/hackers-exploited-cisco-sd-wan-flaw-to.html"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "87e0e168-99df-4863-9fd1-23f529c5f24c",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "48dbe392-8dee-4c09-9370-b0ca9ca6a24f",
+      "value": "KeyDrift"
+    },
+    {
+      "description": "Primary module of the KeyDrift framework reported and named by Cisco Talos, used by UAT-11473 on Cisco SD-WAN controllers. Memory-resident, it is injected as libdssl.so into legitimate running vdaemon processes by the rsshd injector, and a distinct variant masquerades as the aaamgr service as aaamgrd, a statically linked packed loader with an RC4-encrypted embedded ELF payload, direct syscalls and a TracerPid anti-debug check. It interposes socket, DTLS and runtime-linker behaviour (recvfrom, sendto, getpeername, dlopen, dlsym, mprotect) to access SD-WAN control-plane traffic and receive tasking in-band rather than through a fixed external beacon; no hardcoded C2 address was recovered from the analyzed samples. Tasking is validated against an MD5 of the current date. It acts either as a TinyShell-like backdoor (command execution, file write, file read) or as a one-to-many intermediate C2 relaying data between its C2 and peers.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://blog.talosintelligence.com/uat-11473-keydrift/",
+          "https://thehackernews.com/2026/10/hackers-exploited-cisco-sd-wan-flaw-to.html"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "87e0e168-99df-4863-9fd1-23f529c5f24c",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "8563a25c-4006-489c-9929-b67de9b140e1",
+      "value": "PolyFlame"
+    },
+    {
+      "description": "Collection and exfiltration module of the KeyDrift framework reported and named by Cisco Talos, used by UAT-11473 on Cisco SD-WAN controllers. Delivered as libcommon.so into the vSmart vdaemon process, it installs an SSL_read hook, inspects decrypted control-plane buffers and, for a predefined list of edge nodes, extracts the vEdge public/transport IP, the peer system-IP and a 32-byte field that Talos assesses to be OMP-distributed AES-256 IPsec data-plane key material. It RSA-encrypts the records into /var/tmp/vdaemon.bin and can send them over UDP in DTLS 1.2 application-data style records to an endpoint read from /var/tmp/vdaemon.conf, which it deletes after reading.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://blog.talosintelligence.com/uat-11473-keydrift/",
+          "https://thehackernews.com/2026/10/hackers-exploited-cisco-sd-wan-flaw-to.html"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "87e0e168-99df-4863-9fd1-23f529c5f24c",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "95d76fe1-d533-47b1-bc9e-a9d8240f7c9a",
+      "value": "LittleFilch"
     }
   ],
-  "version": 188
+  "version": 189
 }
