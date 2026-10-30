@@ -12066,7 +12066,30 @@
       ],
       "uuid": "95d76fe1-d533-47b1-bc9e-a9d8240f7c9a",
       "value": "LittleFilch"
+    },
+    {
+      "description": "Complex .NET assembly-loading framework built on XAML markup, reported and named by Kaspersky GReAT, used against a customized Windows 10 build reserved for government entities in Asia in what Kaspersky assesses as a supply-chain attack. A CAB archive placed in the Windows update download folder holds legitimate Patch My PC components and Microsoft-signed assemblies: PatchMyPC-ScriptRunner.exe is hijacked through AppDomainManager injection, a design flaw in the AppFabric DataCacheFactoryConfiguration class loads a crafted Resources.resx, and BinaryFormatter deserialization with TypeConfuseDelegate runs layered AES-encrypted XAML payloads. It patches AMSI through its COM virtual table, disables .NET ETW, wipes Windows update logs, CLR usage logs and Prefetch files, and moves into dllhost.exe through a remote COM object deserialization exploit. Its final .NET plugin polls the C2 (openaigpt4v[.]com, behind Cloudflare) over HTTPS with AES-128-CBC and HMAC, with delays of 20 to 40 minutes before first contact and 22 to 28 hours between polls, and runs downloaded XAML in an isolated AppDomain. Kaspersky saw a single victim in Asia and could not link the attack to any known APT group.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://securelist.com/netamloader/121676/"
+        ]
+      },
+      "uuid": "9bc79998-2198-4771-b9cf-8776d1218b56",
+      "value": "NetamLoader"
+    },
+    {
+      "description": "AI-integrated command-and-control framework reported and named by Cisco Talos, observed in the wild with a panel hosted at 87.120.196[.]120 (total-sitevv[.]lol, certificate CN nik-panel). Its Go-based 64-bit Windows implant (build path /opt/nik_panel/…, at least three versions) talks to the C2 over TLS WebSockets on port 443 with an HTTP polling fallback every 250 ms, encrypts traffic with AES-256-GCM from a hardcoded seed, and rotates across three tiers of C2 addresses. More than 52 commands cover credential, cookie, Discord token, Wi-Fi and cryptocurrency wallet theft, keylogging streamed live, screen, camera and microphone capture, HVNC, SOCKS5 and reverse proxy pivoting, RDP operations, AMSI patching, fodhelper UAC bypass, process hollowing and critical-process protection. Its ai_generate command sends operator prompts to the OpenAI Chat Completions API from the victim's machine, falling back to the victim's own OPENAI_API_KEY. It can also back up the MBR, stage a bootkit placeholder and deploy an HTML screen-locking ransomware demanding Bitcoin or USDT. Not attributed to a known actor.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://blog.talosintelligence.com/nik-c2-new-ai-enabled-framework/",
+          "https://github.com/Cisco-Talos/IOCs/tree/main/2026/10"
+        ]
+      },
+      "uuid": "b3c545be-33ae-454c-a90b-7e84d2028c9f",
+      "value": "NIK C2"
     }
   ],
-  "version": 189
+  "version": 190
 }
