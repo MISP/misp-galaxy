@@ -776,7 +776,7 @@ Category: *tool* - source: *https://github.com/AssoEchap/stalkerware-indicators*
 
 [Stealer](https://www.misp-galaxy.org/stealer) - A list of malware stealer.
 
-Category: *tool* - source: *Open Sources* - total: *19* elements
+Category: *tool* - source: *Open Sources* - total: *20* elements
 
 [[HTML](https://www.misp-galaxy.org/stealer)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/stealer.json)]
 
