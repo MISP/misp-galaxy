@@ -1,5 +1,6 @@
 {
-  "description": "Techniques, sub-techniques and tactics from MITRE ATT&CK (Enterprise and Mobile).",
+  "category": "technique",
+  "description": "Techniques, sub-techniques and tactics from MITRE ATT&CK (Enterprise, Mobile, PRE and ICS).",
   "icon": "map",
   "kill_chain_order": {
     "attack-Containers": [
@@ -151,6 +152,97 @@
       "exfiltration",
       "impact"
     ],
+    "ics-attack": [
+      "execution",
+      "persistence",
+      "evasion",
+      "lateral-movement",
+      "command-and-control",
+      "inhibit-response-function",
+      "impair-process-control",
+      "impact"
+    ],
+    "ics-attack-Control-Server": [
+      "collection"
+    ],
+    "ics-attack-Data-Historian": [
+      "collection"
+    ],
+    "ics-attack-Embedded": [
+      "initial-access",
+      "execution",
+      "persistence",
+      "privilege-escalation",
+      "evasion",
+      "discovery",
+      "lateral-movement",
+      "collection",
+      "command-and-control",
+      "inhibit-response-function",
+      "impair-process-control"
+    ],
+    "ics-attack-Engineering-Workstation": [
+      "initial-access"
+    ],
+    "ics-attack-Field-Controller/RTU/PLC/IED": [
+      "execution",
+      "discovery",
+      "lateral-movement",
+      "collection",
+      "inhibit-response-function",
+      "impair-process-control"
+    ],
+    "ics-attack-Human-Machine-Interface": [
+      "collection"
+    ],
+    "ics-attack-Input/Output-Server": [
+      "discovery"
+    ],
+    "ics-attack-Linux": [
+      "initial-access",
+      "execution",
+      "persistence",
+      "privilege-escalation",
+      "evasion",
+      "discovery",
+      "lateral-movement",
+      "collection",
+      "command-and-control",
+      "inhibit-response-function",
+      "impair-process-control"
+    ],
+    "ics-attack-Network-Devices": [
+      "initial-access",
+      "execution",
+      "persistence",
+      "privilege-escalation",
+      "evasion",
+      "discovery",
+      "lateral-movement",
+      "collection",
+      "command-and-control",
+      "inhibit-response-function",
+      "impair-process-control"
+    ],
+    "ics-attack-Safety-Instrumented-System/Protection-Relay": [
+      "execution",
+      "lateral-movement",
+      "inhibit-response-function",
+      "impair-process-control"
+    ],
+    "ics-attack-Windows": [
+      "initial-access",
+      "execution",
+      "persistence",
+      "privilege-escalation",
+      "evasion",
+      "discovery",
+      "lateral-movement",
+      "collection",
+      "command-and-control",
+      "inhibit-response-function",
+      "impair-process-control"
+    ],
     "mobile-attack-Android": [
       "initial-access",
       "execution",
@@ -205,7 +297,8 @@
   },
   "name": "MITRE ATT&CK Techniques",
   "namespace": "mitre",
+  "sub_category": "attack-pattern",
   "type": "mitre-attack-pattern",
   "uuid": "c4e851fa-775f-11e7-8163-b774922098cd",
-  "version": 17
+  "version": 22
 }

@@ -11410,7 +11410,663 @@
       ],
       "uuid": "80f5eb4e-cf4e-49dd-bf59-10f9f7258ff3",
       "value": "SpiceRAT"
+    },
+    {
+      "description": "Phishing-as-a-service (PhaaS) kit abusing the OAuth 2.0 device authorization grant (device code phishing) against Microsoft 365: the operator initiates the device code flow and lures the victim into approving it on Microsoft's legitimate sign-in page, obtaining access and refresh tokens without capturing the password. Active since February 2026, first publicly reported in March 2026 by Huntress and Sekoia. Microsoft attributes its development and support to Storm-2992, which sold it to affiliates on Telegram; post-compromise features include AI-assisted mailbox triage and lure generation and Microsoft Graph reconnaissance, feeding business email compromise. Infrastructure disrupted by Microsoft's Digital Crimes Unit with partners in September 2026.",
+      "meta": {
+        "date": "March 2026.",
+        "refs": [
+          "https://blog.sekoia.io/new-widespread-eviltokens-kit-device-code-phishing-as-a-service-part-1/",
+          "https://blog.sekoia.io/eviltokens-an-ai-augmented-phishing-as-a-service-for-automating-bec-fraud-part-2/",
+          "https://www.huntress.com/blog/railway-paas-m365-token-replay-campaign",
+          "https://www.microsoft.com/en-us/security/blog/2026/09/22/unmasking-eviltokens-getting-to-the-root-of-device-code-phishing/"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "b687defa-308c-4f9e-bb9e-d9d30fb4b1a0",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "44078616-6834-4f26-bd25-5393f8d54ee9",
+      "value": "EvilTokens"
+    },
+    {
+      "description": "PHP web shell reported by Mandiant and Google Threat Intelligence Group in intrusions exploiting Citrix NetScaler ADC and Gateway zero-day CVE-2026-88772. Disguised as a Debian package under /netscaler/ns_gui/vpn/scripts/linux/, it extracts Base64-encoded data split across custom HTTP request headers and relays it over loopback to the SLAPSHOT tunneler; if SLAPSHOT is not running, WHIPSHOT unpacks its embedded payload and launches it in the background. Not attributed to a named threat actor at the time of reporting.",
+      "meta": {
+        "date": "September 2026.",
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/defending-against-active-exploitation-of-citrix-netscaler-adc-and-gateway-appliances"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "3f91f85e-743f-4df4-b4e0-a5e6cc6da4ba",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "deploys"
+        }
+      ],
+      "uuid": "8f43e544-2389-49ac-857f-74138dd086eb",
+      "value": "WHIPSHOT"
+    },
+    {
+      "description": "TCP tunneling tool written in Python, reported by Mandiant and Google Threat Intelligence Group in intrusions exploiting Citrix NetScaler ADC and Gateway zero-day CVE-2026-88772. Companion to the WHIPSHOT web shell, which embeds it, launches it in the background and relays operator traffic to it over loopback; SLAPSHOT then proxies arbitrary TCP streams from the compromised appliance to internal hosts for reconnaissance and credential theft, using a custom binary wire protocol. It records its port and lock in /tmp/.uxdport and /tmp/.uxdlock, closes idle sessions and terminates itself after a period of inactivity. Not attributed to a named threat actor at the time of reporting.",
+      "meta": {
+        "date": "September 2026.",
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/defending-against-active-exploitation-of-citrix-netscaler-adc-and-gateway-appliances"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "8f43e544-2389-49ac-857f-74138dd086eb",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "is-deployed-by"
+        }
+      ],
+      "uuid": "3f91f85e-743f-4df4-b4e0-a5e6cc6da4ba",
+      "value": "SLAPSHOT"
+    },
+    {
+      "description": "Lightweight Windows backdoor written as batch scripts with VBS launchers, reported by Recorded Future's Insikt Group as a successor to HEADLACE. Delivered through macro-enabled Word documents that show a fake error, drop six files and create a scheduled task, it fetches and runs .cmd payloads and returns their output, using webhook.site exclusively for command and control (separate staging and exfiltration webhooks) with requests issued through hidden Microsoft Edge instances to blend with browsing traffic. Insikt attributes it with moderate confidence to BlueDelta, which it describes as overlapping APT28, against government, diplomatic and defense targets in Europe. In October 2026 Symantec reported its use by APT28 against two defense contractors and a law enforcement agency in two NATO countries.",
+      "meta": {
+        "date": "August 2026.",
+        "refs": [
+          "https://www.recordedfuture.com/research/bluedelta-targets-with-hookedge",
+          "https://therecord.media/european-defense-contractors-fancy-bear-espionage"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "5b4ee3ea-eee3-4c8e-8323-85ae32658754",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "9d5b2e4a-279c-4782-86cd-05587599ae6d",
+      "value": "HOOKEDGE"
+    },
+    {
+      "description": "64-bit Windows downloader written in C, reported by Google Threat Intelligence Group and Mandiant as the first stage of UNC7017's ephemeral supply chain compromise of AOMEI Backupper. Delivered through tampered AOMEI update and promotion configuration files, it checks that it runs from an AOMEI path, aborts its main path when the external IP geolocates to China, resets down_html.ini to legitimate values, downloads and unpacks an archive of trojanized Radmin components into %LOCALAPPDATA%\\Radmin\\, persists through the RadminComponentRuntime scheduled task and deletes itself. It stages the SHINYROAD backdoor.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/investigating-ephemeral-supply-chain-tampering",
+          "https://www.manageengine.com/threat-analysis-lab/aomei-backupper-supply-chain-compromise.html"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "c1ef86d7-ab86-4188-91d2-af3f36207d96",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "73a6aeab-b4e9-40c3-8eee-a3aef3f89c38",
+      "value": "CROSSROAD"
+    },
+    {
+      "description": "Modular Windows backdoor reported by Google Threat Intelligence Group and Mandiant in UNC7017's ephemeral supply chain compromise of AOMEI Backupper. It runs compiled Python bytecode inside an embedded PocketPy interpreter with custom C extensions, loaded through trojanized Famatech Radmin 3.x components: the signed FamItrfc.exe sideloads BlkScrDl.dll, which registers a COM in-process server that decrypts the bytecode with ChaCha20. It has no persistence of its own and relies on the CROSSROAD scheduled task. Command and control runs over raw TCP with an agent identifier derived from host and user names, and offers remote shell, traffic chaffing and in-memory extension loading.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/investigating-ephemeral-supply-chain-tampering",
+          "https://www.manageengine.com/threat-analysis-lab/aomei-backupper-supply-chain-compromise.html"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "c1ef86d7-ab86-4188-91d2-af3f36207d96",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "761bd953-76b2-42ac-99c8-dd970db8b212",
+      "value": "SHINYROAD"
+    },
+    {
+      "description": "Multi-payload ClickFix delivery platform reported by Forescout Research - Vedere Labs, running on at least six servers. A shared backend with a login panel and install statistics serves PowerShell staging scripts that pick the next payload: trojanized MSI installers abusing DLL sideloading (including a Stardock DeElevation chain and, per Siemens and Huntress, a signed Siemens Software Center abused through CVE-2026-110936) or an encrypted archive delivering LegionLoader (Satacom). Some lures were reached through malicious ChatGPT custom GPTs. Forescout does not know whether it is a private panel, a commercial delivery service, an affiliate framework or copied software, and states it has no evidence linking it to RomulusLoader, the unrelated loader associated with Silver Fox.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://www.forescout.com/blog/romulus-analysis-of-a-new-multi-payload-clickfix-delivery-platform/",
+          "https://thehackernews.com/2026/10/clickfix-attackers-exploit-siemens.html"
+        ]
+      },
+      "uuid": "654f0938-ff56-407c-89cc-28fe3f1bc611",
+      "value": "ROMULUS"
+    },
+    {
+      "description": "Persistent macOS backdoor first observed by Jamf Threat Labs in mid-September 2026, distributed as a fake Zoom installer disk image. The dropper extracts a universal Mach-O payload at runtime, phishes the user's password through a fake activation prompt and uses it locally to run the payload with sudo, after which it runs as a daemon named CloudSyncD, profiles the host and polls its command-and-control server to download and run further payloads; later builds use Cloudflare-fronted domains disguised as jQuery requests. Elastic Security Labs reported it in October 2026 as the macOS payload of the REF8801 fake Web3 accelerator operation. No threat actor has been named.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://www.jamf.com/blog/cloudsyncd-macos-backdoor-fake-zoom-installer/",
+          "https://www.elastic.co/security-labs/threat-command/apex-accelerator-malicious-npm-packages",
+          "https://www.securityweek.com/macos-users-targeted-by-fake-zoom-installer-carrying-cloudsyncd-backdoor/"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "b101baba-907b-4aba-8ea2-1f77e53eb782",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "7a1242cf-ae0a-4c59-aa69-7012f976d3ad",
+      "value": "CloudSyncD"
+    },
+    {
+      "description": "Obfuscated PHP web shell reported by Google Threat Intelligence Group and Mandiant in ARMORY CASTLE (formerly UNC5221) intrusions exploiting CVE-2026-102764 in BeyondTrust Remote Support, used as a zero-day from late August 2026. Deployed as mangoapi.php, it uses Base32 transport and RC4 encryption and served as a primary foothold on compromised appliances, alongside the BARECLAW tunneler.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/armory-castle-exploits-beyondtrust"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "f288f686-b5b3-4c86-9960-5f8fb18709a3",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "b96d98b9-2b37-4b84-a186-ac24df9a581c",
+      "value": "SAWFLY"
+    },
+    {
+      "description": "SOCKS5-over-WebSocket tunneler written in C, reported by Google Threat Intelligence Group and Mandiant in ARMORY CASTLE (formerly UNC5221) intrusions exploiting CVE-2026-102764 in BeyondTrust Remote Support. Deployed as ingredi_ws, it was exposed to the operator by editing the appliance's HAProxy configuration, giving tunnelled access to internal networks from the compromised appliance; it was used alongside the SAWFLY web shell.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/armory-castle-exploits-beyondtrust"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "f288f686-b5b3-4c86-9960-5f8fb18709a3",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "d3e1542f-98b5-4d74-aa05-d968aa6835d7",
+      "value": "BARECLAW"
+    },
+    {
+      "description": "Windows backdoor written in Go, reported by ESET as deployed on July 17th, 2025 at a Ukrainian grain logistics company, one day after UAC-0099 gained initial access through the MATCHBOIL/MATCHWOK chain and two months before Sandworm wiped data there with SDelete pushed through Active Directory Group Policy. Built on yggstack, it joins the public Yggdrasil mesh network through three peers picked from an embedded list of 32 and reaches a C&C server hosted inside that network over HTTPS (JSON messages checkin, tasking, result, getfile). It runs as the ieupdate Windows service, keeps an AES-256-CFB encrypted configuration in dot-files such as C:\\Windows\\Temp\\.updatecache, and supports shell execution, file transfer, screenshots, directory navigation, exposing local TCP ports over Yggdrasil and a reverse SOCKS5 proxy derived from revsocks. A .crond configuration path suggests a Linux variant. ESET could not determine whether it was operated primarily by UAC-0099 or by Sandworm.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://www.welivesecurity.com/en/eset-research/mythicratatoskr-yggdrasil-enabled-backdoor-deployed-uac0099-sandworm-collaboration/",
+          "https://therecord.media/ukraine-hackers-russia-grain-sandworm"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "267488cb-159a-46d6-a6d6-fe93c90360b2",
+          "tags": [
+            "estimative-language:likelihood-probability=\"roughly-even-chance\""
+          ],
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "f512de42-f76b-40d2-9923-59e7dbdfec35",
+          "tags": [
+            "estimative-language:likelihood-probability=\"roughly-even-chance\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "d0074f84-a12b-4330-ba2f-09ddb3c802bc",
+      "value": "MythicRatatoskr"
+    },
+    {
+      "description": "C# backdoor first documented by CERT-UA and described by ESET as used exclusively by UAC-0099. It is the payload most often installed by the MATCHBOIL downloader, which retrieves it hex-encoded inside an HTML response and persists it, for instance through the UpdateMonitor value under HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run. In the July 2025 intrusion at a Ukrainian grain logistics company reported by ESET, MATCHWOK (C&C uztickets[.]com) was the execution chain that led to the deployment of MythicRatatoskr before access was handed off to Sandworm.",
+      "meta": {
+        "date": "August 2025.",
+        "refs": [
+          "https://www.welivesecurity.com/en/eset-research/matchboil-new-tricks-same-old-evil-intentions/",
+          "https://www.welivesecurity.com/en/eset-research/mythicratatoskr-yggdrasil-enabled-backdoor-deployed-uac0099-sandworm-collaboration/"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "267488cb-159a-46d6-a6d6-fe93c90360b2",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "4cfbee48-80a5-4257-b076-2effbd7db8aa",
+      "value": "MATCHWOK"
+    },
+    {
+      "description": "Agentic AI penetration testing framework developed in China by Autumn-27: a multi-agent LLM system written in Go with a Next.js frontend, model-agnostic, that runs an autonomous test from reconnaissance to data exfiltration and accumulates discovered assets and vulnerabilities into a graph. Released as open source, it was made closed source by its developer after its abuse became public. CrowdStrike first reported its use, alongside Claude Code, DeepSeek, Grok and GLM, by an unattributed suspected Chinese-speaking, financially motivated operator against South Korean financial institutions from late September 2026, activity Recorded Future tracks as TAG-217. Microsoft reports that Storm-0940 used it from September 2026 to automate password spraying, reconnaissance and OAuth application abuse against hundreds of organisations, including downstream tenants in the ConnectWise cloud backup supply chain compromise, and that actors across multiple regions use it. Dual-use: its presence alone does not indicate malicious activity.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://www.crowdstrike.com/en-us/blog/unknown-threat-actor-uses-artex-to-target-south-korean-finance/",
+          "https://www.microsoft.com/en-us/security/blog/2026/10/21/storm-0940-uses-artex-agentic-ai-connectwise-supply-chain-compromise/",
+          "https://www.recordedfuture.com/blog/tag-217-artex-south-korean-banks",
+          "https://thehackernews.com/2026/10/artex-ai-pentesting-tool-used-in-data.html"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "301ffea9-edd5-4d89-a65f-8add8e34e95d",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "71c8c8d5-3658-4d83-938c-79b6ca48f9be",
+      "value": "ARTEX"
+    },
+    {
+      "description": "MATCHBOIL is a C# downloader used by the Russia-aligned group UAC-0099 against Ukrainian targets in the transportation, manufacturing and energy sectors. It was first documented by CERT-UA in August 2025, but ESET found samples compiled as early as April 2024 and versions up to April 2026. It is delivered through spearphishing links leading to an archive with a VBScript that fetches and runs it. It fingerprints the host through WMI (CPUID, BIOS serial number, MAC address) and makes three HTTPS requests to its C2: the first gets a numeric value, the second gets a hex-encoded payload embedded in HTML (usually the MATCHWOK backdoor), and the third gets a configuration file. It then persists the payload through a Run registry value or a scheduled task. Over time it moved from Unicode symbol renaming and custom string encryption to the Eziriz .NET Reactor obfuscator, from a one-shot run to a two-minute polling timer, and added sandbox checks (event ID 6013 uptime, debugger detection, OS install date) and decoy GUIs (a daily planner, a regex search tool). The April 2026 DLL variant loaded by a C# loader is named MATCHBOIL.V2 by CERT-UA. C2 servers are hosted on BitLaunch VPSes behind Cloudflare.",
+      "meta": {
+        "date": "August 2025.",
+        "refs": [
+          "https://cert.gov.ua/article/6284949",
+          "https://www.welivesecurity.com/en/eset-research/matchboil-new-tricks-same-old-evil-intentions/",
+          "https://cert.gov.ua/article/6318634",
+          "https://www.welivesecurity.com/en/eset-research/mythicratatoskr-yggdrasil-enabled-backdoor-deployed-uac0099-sandworm-collaboration/",
+          "https://therecord.media/russia-ukraine-malware-transportation"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "267488cb-159a-46d6-a6d6-fe93c90360b2",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "da0277f1-cc33-4b3c-83ba-8aafffc0d34f",
+      "value": "MATCHBOIL"
+    },
+    {
+      "description": "NikoWiper is a data wiper reported by ESET in January 2023, used by Sandworm in October 2022 against an energy company in Ukraine, around the time of Russian missile strikes on Ukrainian energy infrastructure. ESET describes it as based on the Microsoft Sysinternals SDelete secure-deletion utility. ESET also saw Sandworm experimenting with SDelete as a wiper in other incidents, such as the attack on the Ukrinform news agency reported by CERT-UA, but told The Hacker News that NikoWiper is a distinct malware rather than SDelete itself. In October 2026, ESET documented another SDelete-based wiping operation by Sandworm, deployed through Active Directory Group Policy against a Ukrainian grain logistics company after initial access by UAC-0099.",
+      "meta": {
+        "date": "January 2023.",
+        "refs": [
+          "https://www.eset.com/gr-en/about/newsroom/press-releases-1/eset-research-russian-apt-groups-including-sandworm-continue-their-attacks-against-ukraine-with-wipers-and-ransomware1/",
+          "https://thehackernews.com/2023/01/new-report-reveals-nikowiper-malware.html",
+          "https://thehackernews.com/2026/10/russian-linked-hackers-used-new-mesh.html"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "f512de42-f76b-40d2-9923-59e7dbdfec35",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "c8ae3c81-9d31-422a-a294-f93e7d8d1967",
+      "value": "NikoWiper"
+    },
+    {
+      "description": "BlackX is a UEFI bootkit reported by Kaspersky GReAT, used in early 2026 against diplomatic organizations in Tajikistan, Uzbekistan and Turkmenistan. Not to be confused with the unrelated 'black x' ransomware entry (misp-galaxy:ransomware=\"black x\"), which only shares the name. It is deployed after the network is compromised and administrator rights are obtained: an installer (inst.exe) decrypts an RC4-encrypted package whose key is passed on the command line. It exploits Baton Drop (CVE-2022-21894) to install custom Machine Owner Keys and bypass Secure Boot. Its exploit implementation is very close to BlackLotus but differs from it, which suggests the BlackLotus code was reverse-engineered or bought, since it was never published. Fully patched machines were still infected because the 'Windows Production PCA 2011' certificate revocation that the patch relies on must be enabled manually. The UEFI payload injects a kernel driver signed with a since-revoked certificate. The driver tampers with security products (callbacks, ETW, with routines aimed at Kaspersky and Avast), protects the bootkit files and deploys user-mode payloads: a .NET-capable RAT using Google Drive, OneDrive or Yandex.Disk for C2, and the OxiDLLRunner loader. Kaspersky attributes the campaign to APT41 with medium confidence, based on the 'xdd' identifier shared with a FishMonger kernel implant documented by ESET, which mentioned an unspecified UEFI bootkit, and on typical Chinese-speaking tradecraft (DLL sideloading, OLLVM).",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://securelist.com/uefi-bootkit-blackx/121539/",
+          "https://thehackernews.com/2026/10/blackx-uefi-bootkit-bypasses-secure.html",
+          "https://www.bleepingcomputer.com/news/security/blackx-uefi-bootkit-exploits-baton-drop-flaw-to-bypass-secure-boot/"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "9c124874-042d-48cd-b72b-ccdc51ecbbd6",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "f13c0d5e-16ba-435f-a82e-166d3a1904c3",
+      "value": "BlackX"
+    },
+    {
+      "description": "OxiDLLRunner is a loader reported by Kaspersky GReAT as one of the user-mode payloads deployed by the BlackX UEFI bootkit against diplomatic organizations in Central Asia in early 2026. It is an OLLVM-obfuscated malicious DLL sideloaded by a legitimate executable dropped as googleupdate.exe (original name jcef_helper.exe). It decrypts the file v8_context_snapshot.bin from the same folder and jumps to the result, which is shellcode followed by a Rust payload. That payload communicates with the C2 www[.]archivetj[.]com and runs received DLL plugins that export create_plugin, each in its own thread. Kaspersky attributes the BlackX campaign, not OxiDLLRunner specifically, to APT41 with medium confidence. Its only actor-specific clue is an 'xdd' identifier found in BlackX payloads and in a FishMonger kernel implant documented by ESET, FishMonger itself being only assumed to be related to APT41. The arguments that concern OxiDLLRunner directly, OLLVM obfuscation and DLL sideloading with an encrypted file, point to Chinese-speaking actors in general, hence the lower confidence of the APT41 link here.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://securelist.com/uefi-bootkit-blackx/121539/"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "9c124874-042d-48cd-b72b-ccdc51ecbbd6",
+          "tags": [
+            "estimative-language:likelihood-probability=\"roughly-even-chance\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "97069b2c-8e22-43c6-9138-edea86b58bf0",
+      "value": "OxiDLLRunner"
+    },
+    {
+      "description": "Aokigahara is a Windows infostealer reported by Check Point Research in October 2026. According to Check Point, an earlier version may have been known as Kamidere or Stygian, and its YARA rule matches both the aokigahara and kamidere strings. Besides the usual targets (Chromium and Firefox credentials and cookies, desktop and browser-extension crypto wallets, Discord, Telegram, Steam and gaming launchers, Outlook and Thunderbird, VPN, FTP/SFTP and password-manager data, screenshots, clipboard, file grabbing), it has dedicated handlers for AI and developer tools. The aisessions and ide handlers collect authentication, session and configuration files from Claude Code/Desktop, ChatGPT Desktop, Codex, Cursor, Windsurf, Kiro, GitHub Copilot/VS Code, Gemini CLI, JetBrains AI Assistant and Amazon Q, as well as Git credentials, SSH keys and AWS/Azure/Google Cloud credentials. It can also drop a separate clipper component. Its configuration, stored AES-256-CBC encrypted in a .stgcfg section, enables modules through a bitmask, and optional checks stop execution on CIS keyboard or UI languages and on analysis environments. Stolen data is uploaded as AES-256-GCM encrypted ZIP chunks to /gate/handshake, /gate/chunk and /gate/complete endpoints, with an X25519 key exchange. No threat actor has been attributed.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://research.checkpoint.com/2026/infostealer-riding-the-ai-train/"
+        ]
+      },
+      "uuid": "b85dcd6d-1ee2-48b3-b732-73f797d36e0c",
+      "value": "Aokigahara"
+    },
+    {
+      "description": "RevSocks (revsocks) is an open-source reverse SOCKS5 tunneler written in Go (TLS, DNS tunneling, proxy support) and a dual-use utility. In October 2026, SOCRadar described its use by the Russian-speaking operators of the AI-driven 'Phantom' intrusion ecosystem, affiliated with the INC and The Gentlemen ransomware groups, to pivot inside victim networks and to stage and collect data over reverse-SOCKS tunnels. ESET separately found that the reverse SOCKS5 proxy command of the MythicRatatoskr backdoor (UAC-0099/Sandworm) and its C2 server code are largely derived from revsocks, based on its debug strings and on TLS certificates rotated the way revsocks generates them. Because the tool is public, its presence alone does not indicate a specific actor, so it is not linked to any actor here.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://github.com/kost/revsocks",
+          "https://socradar.io/blog/inc-gentlemen-ransomware-ai-infrastructure/",
+          "https://thehackernews.com/2026/10/exposed-infrastructure-reveals-how.html",
+          "https://www.welivesecurity.com/en/eset-research/mythicratatoskr-yggdrasil-enabled-backdoor-deployed-uac0099-sandworm-collaboration/"
+        ]
+      },
+      "uuid": "d3ed06de-8bab-463e-bb41-b4079223d24f",
+      "value": "RevSocks"
+    },
+    {
+      "description": "Athena StealthRoute is a modular phishing-as-a-service (PhaaS) platform reported by Abnormal AI in October 2026. Rather than harvesting credentials or tokens itself, it prepares, delivers and conceals phishing campaigns: a marketplace for campaign materials, domain and link management, traffic-filtering and cloaking controls that divert security scanners, and an 'AI Studio' with six workflows generating tailored messages, subject lines, attachments and benign decoy pages; credential and token harvesting relies on separate downstream services. Linked infrastructure was first identified in August 2026, and about 89,700 messages matching its link pattern were observed across roughly 2,280 organizations in the U.S. and E.U. over the six months to 9 October 2026. It is unrelated to the Athena malware family listed in malpedia. No threat actor is attributed.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://abnormal.ai/blog/athena-stealthroute-phishing-marketplace-cloaking-ai",
+          "https://thehackernews.com/2026/10/weekly-recap-this2shell-that2shell.html"
+        ]
+      },
+      "uuid": "54ea5764-1006-491e-9bad-b6c24dc04cf0",
+      "value": "Athena StealthRoute"
+    },
+    {
+      "description": "ARToken (also written ARTokens) is a Microsoft 365 account-takeover phishing-as-a-service panel abusing the OAuth 2.0 device authorization grant, first described by Cisco Talos in July 2026 as sharing infrastructure, API contracts and operational patterns with the EvilTokens platform. Lures impersonate vendor invoices aimed at accounts-payable staff and lead, via SharePoint shares on compromised or look-alike tenants and Windows Internet Shortcut files, to Cloudflare Workers pages showing the device code, so the victim completes MFA on the genuine Microsoft sign-in page while the backend captures access and refresh tokens. A 'broker' mode obtains Primary Refresh Tokens that persist across password changes. Its 80+ API endpoints cover mailbox reading and sending, inbox rules, keyword monitoring for BEC, SharePoint/OneDrive access, device registration and Entra ID takeover. Abnormal AI describes a multi-affiliate model in which a central developer licenses the panel and backend to paying affiliates. In October 2026 ZeroBEC reported an updated panel (build 5.1.2-prod) used in two disrupted campaigns with RFP and payment-invoice lures chaining a compromised SharePoint tenant, a .URL file, Google Sites and Cloudflare Workers, with headless-browser detection, operator-configurable polling aliases replacing the documented endpoints, and optional Workers-hosted polling. No developer or threat actor is named.",
+      "meta": {
+        "date": "July 2026.",
+        "refs": [
+          "https://blog.talosintelligence.com/artoken-inside-an-eviltokens-affiliate-panel-targeting-microsoft-365/",
+          "https://abnormal.ai/blog/artoken-the-device-code-phishing-platform-built-for-full-microsoft-365-takeover",
+          "https://zerobec.com/blog/artokens-5-1-2-sharepoint-device-code-phishing",
+          "https://thehackernews.com/2026/10/weekly-recap-this2shell-that2shell.html"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "44078616-6834-4f26-bd25-5393f8d54ee9",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "2040c9fb-0b34-43e3-b4af-dca3d22ca618",
+      "value": "ARToken"
+    },
+    {
+      "description": "GoGRPC is a Go-based backdoor named by Zscaler ThreatLabz in July 2026, used since January 2026 by a threat actor that ThreatLabz assesses is likely an initial access broker for ransomware attacks. Victims are spam-bombed, then called over Microsoft Teams by operators impersonating the helpdesk and persuaded to open a Quick Assist session; PowerShell gathers host information, copies the payload to %APPDATA% as sekv<random>.exe and persists through a 'Realtek HD Audio' value under the HKCU Run key. GoGRPC communicates over gRPC on HTTP/2 (port 443, endpoint /agent.AgentService/Connect, renamed /Refuse/Connect in the latest variant), registers with host fingerprinting (machine GUID as agent ID), sends heartbeats and executes shell commands returning stdout, stderr and exit code; most variants log to %PROGRAMDATA%\\appscreen\\appscreen.log. ThreatLabz describes four variants it labelled Lep (January 2026), Giver (February 2026), Pet (April 2026) and Kind (June 2026), adding TLS and obfuscation over time; an unimplemented proxy command was dropped in later versions. The same actor deployed BlindDoor, the RevSocket and PyGRPC reverse SOCKS proxies, the S3Siphon exfiltration utility and the RSOX Rust relay. In October 2026 Arctic Wolf, analysing more than 400 Teams IT-support impersonation incidents, listed GoGRPC among payloads delivered before lateral movement to domain controllers, installation of the Level RMM, exfiltration and ransomware, crediting Zscaler, and related the activity to the STAC4749 cluster that Sophos linked to Chaos ransomware. The loader Sophos documented for STAC4749 shares GoGRPC's artifacts (sekv-prefixed filename, 'Realtek HD Audio' Run value, appscreen.log check, gRPC C2), but no vendor states that they are the same; ThreatLabz names no ransomware group.",
+      "meta": {
+        "date": "July 2026.",
+        "refs": [
+          "https://www.zscaler.com/blogs/security-research/helpdesk-hijackers-teams-vishing-quick-assist-and-gogrpc-backdoor",
+          "https://arcticwolf.com/resources/blog/threat-actors-abuse-microsoft-teams-external-chat-for-initial-access/",
+          "https://thehackernews.com/2026/10/attackers-use-microsoft-teams-it.html"
+        ]
+      },
+      "uuid": "d0483236-479e-4e38-87e6-dd1e521ac129",
+      "value": "GoGRPC"
+    },
+    {
+      "description": "Ingram is an open-source Python webcam vulnerability scanner published on GitHub by jorhelp under GPL-3.0, a dual-use tool described by its author as for security testing only. It fingerprints cameras from Hikvision, Dahua, Uniview, D-Link and other vendors and tests them against known vulnerabilities and weak credentials; the repository references CVE-2017-7921, CVE-2020-25078, CVE-2021-33044 and CVE-2021-36260. In August 2026 Hunt.io reported two open directories of Russian-speaking operators that used it: on the first server, a containerised tool called 'camview' wrapped Ingram instead of custom exploits, and JSON files listed 58 compromised cameras in Ukraine (mostly Hikvision and Dahua, around Odessa, Burshtyn and Kherson), with Hunt.io listing CVE-2017-7921, CVE-2020-25078, CVE-2020-25169, CVE-2021-33044, CVE-2021-33045 and CVE-2021-36260 as Ingram targets; on a second, unrelated server, an all_ingram.csv target list contained only Ukrainian IP addresses, alongside scripts against MikroTik devices and TP-Link Archer routers (CVE-2024-53375 chained with CVE-2024-57049) and router scanning across 15 European countries including France, where Hunt.io found no sign of successful exploitation. Hunt.io ties neither directory to a state actor or named group; the shared tool is the only link between them. The Hacker News later related these findings to an October 2026 CERT-UA/SSSCIP alert on Dahua cameras accessed through the Easy4IP P2P platform, which does not mention Ingram.",
+      "meta": {
+        "date": "August 2026.",
+        "refs": [
+          "https://hunt.io/blog/russian-speaking-operator-ukrainian-camera-toolkit",
+          "https://github.com/jorhelp/Ingram",
+          "https://thehackernews.com/2026/10/attackers-hijack-dahua-ip-cameras-in.html"
+        ]
+      },
+      "uuid": "334a0738-1b18-4ebd-95eb-3ca9c28bedf0",
+      "value": "Ingram"
+    },
+    {
+      "description": "Downloader reported by Kaspersky as the first payload of Operation FlashHole, a Lazarus Group espionage campaign against South Korean software, construction and wired communication equipment manufacturing companies active since at least July 2025. It is injected as shellcode into the legitimate fsquirt.exe spawned by the INISAFE CrossWeb EX financial security software, and also exists as a plain DLL side-loading variant and as a side-loaded variant registered as a Windows service, launched by TOUCHSHIFT. It uses private GitHub repositories as C2 through the GitHub API with a personal access token, handshaking through issues and exchanging RSA/AES-protected files, profiles the host, and supports four commands, including in-memory execution of received shellcode; in FlashHole it deploys TouchHub, ClientHub, LPEClient and Cubridge. Naming: Kaspersky describes TechHub as a more advanced version of the malware Mandiant named CLOUDBURST and ESET named NickelLoader, which used HTTP(S) C2 instead of GitHub; earlier versions were seen in the Dream Job campaign in 2022-2023.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://securelist.com/lazarus-operation-flashhole/121541/",
+          "https://cloud.google.com/blog/topics/threat-intelligence/lightshow-north-korea-unc2970",
+          "https://www.welivesecurity.com/en/eset-research/lazarus-luring-employees-trojanized-coding-challenges-case-spanish-aerospace-company/"
+        ],
+        "synonyms": [
+          "CLOUDBURST",
+          "NickelLoader"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "68391641-859f-4a9a-9a1e-3e5cf71ec376",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "7b296597-afca-45ca-b568-c21ca153f2ad",
+      "value": "TechHub"
+    },
+    {
+      "description": "Installer reported and named by Kaspersky in Operation FlashHole, a Lazarus Group espionage campaign against South Korean companies, retrieved by TechHub from its private GitHub repository. It copies the legitimate printfilterpipelinesvc.exe to C:\\Windows\\System32\\RasConv\\ImeBroker.exe, drops an embedded TOUCHSHIFT payload beside it as mscoree.dll for DLL side-loading together with the TechHub configuration file ActivationStore.dat, timestomps the files from monitor.sys, and registers a service named after a random netsvcs service plus two random letters so that TOUCHSHIFT runs with SYSTEM privileges and relaunches TechHub. Not to be confused with TOUCHSHIFT (misp-galaxy:malpedia=\"TOUCHSHIFT\"), the loader it installs.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://securelist.com/lazarus-operation-flashhole/121541/"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "68391641-859f-4a9a-9a1e-3e5cf71ec376",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "e911778e-24ba-46d5-b8cd-be594a7d54cb",
+      "value": "TouchHub"
+    },
+    {
+      "description": "Modular downloader reported and named by Kaspersky in Operation FlashHole, a Lazarus Group espionage campaign against South Korean companies, deployed by TechHub to load LPEClient and relay its C2 traffic through a shared buffer. Two versions exist, one using HTTP(S) to compromised legitimate South Korean websites and one using the Dropbox API; its configuration and C2 addresses are protected with the SNOW 1.0 stream cipher, a first for Lazarus according to Kaspersky, and its requests imitate Chromium browser headers. Commands are encoded as a bitmask to reflectively load, invoke and unload DLLs and plugins (file archiver, file collector, file cleaner, drive and session monitor). Kaspersky assesses with medium-high confidence that ClientHub is an advanced version of CookiePlus.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://securelist.com/lazarus-operation-flashhole/121541/",
+          "https://securelist.com/lazarus-new-malware/115059/"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "68391641-859f-4a9a-9a1e-3e5cf71ec376",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "8f38514a-c772-41dd-b43b-e23dd792e838",
+      "value": "ClientHub"
+    },
+    {
+      "description": "Backdoor and orchestrator of the modular malware framework used in Operation FlashHole, a Lazarus Group espionage campaign against South Korean companies, reported by Kaspersky. Deployed by TechHub and redeployed in memory through ClientHub and LPEClient after persistence, it uses compromised legitimate South Korean websites as C2 with URLs generated from news-like word lists, an RSA and RC6 handshake and browser-like headers. It loads plugins (ADFinder, FileCollector), tools (browser stealer, process collector) and two modules: an action module for file, process and command operations and a function module re-implementing Windows commands such as ipconfig, net, netstat, reg, sc, schtasks and whoami, plus screen capture and Chrome key extraction. Naming: Kaspersky states that an earlier version of Cubridge is the malware Mandiant named SIDESHOW, and that ESET named one of its modules LightlessCan; Kaspersky believes the function module is based on LightlessCan. Earlier versions were seen in the Dream Job campaign in 2022-2023.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://securelist.com/lazarus-operation-flashhole/121541/",
+          "https://cloud.google.com/blog/topics/threat-intelligence/lightshow-north-korea-unc2970",
+          "https://www.welivesecurity.com/en/eset-research/lazarus-luring-employees-trojanized-coding-challenges-case-spanish-aerospace-company/"
+        ],
+        "synonyms": [
+          "SIDESHOW"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "68391641-859f-4a9a-9a1e-3e5cf71ec376",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "0140b247-e0e6-43ba-abdb-384644786975",
+      "value": "Cubridge"
+    },
+    {
+      "description": "Dropper of the Yoba malware chain reported and named by Check Point Research, distributed through fake GitHub projects and GitHub Pages sites posing as desktop applications for GPT-5.6 Sol, GPT-6 Astra and Claude Opus, promoted by SEO poisoning, and earlier (June 2026) as Cursor. Delivered as winmm.dll in unprotected ZIP releases and side-loaded by legitimate signed OpenAI and Anthropic Setup.exe binaries, it checks the DJB2 hash of its host process name (stalling for about 13 days in a sandbox), skips CIS keyboard layouts except Ukrainian, requires administrator rights, then drops the XOR-encrypted YobaLoader as wmpdui.dll beside a copy of WMPDMC.exe in ProgramData\\WMProcess and persists through a SYSTEM scheduled task masquerading as Windows Media Player. Check Point reports indicators of Russian origin and an operator in UTC-4; the campaign is not attributed to a known actor.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://research.checkpoint.com/2026/tricks-from-the-past-deployed-via-signed-chatgpt-and-claude-binaries/"
+        ]
+      },
+      "uuid": "ed18ba84-4308-4ab1-82f2-d6d7abe1f196",
+      "value": "YobaDropper"
+    },
+    {
+      "description": "Generic loader of the Yoba malware chain reported and named by Check Point Research, dropped by YobaDropper as wmpdui.dll and side-loaded by a copy of WMPDMC.exe. It avoids dedicated C2 infrastructure: it reads the profile picture of the Telegram channel yoba_fanclub, uses its last 50 bytes to seed a dictionary-based DGA producing dedyn.io domains (aber.ir in an early variant), fetches an Ed25519-signed, AES-encrypted tasking from their DNS TXT record over Google DNS-over-HTTPS, downloads the payload from Catbox and runs it by injection into svchost.exe, as an executable or as a PowerShell script. In the campaign impersonating ChatGPT and Claude desktop applications the final payload was an XMRig miner mining through Tor, but any PE or PowerShell payload can be delivered. Not attributed to a known actor; Check Point reports indicators of Russian origin.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://research.checkpoint.com/2026/tricks-from-the-past-deployed-via-signed-chatgpt-and-claude-binaries/"
+        ]
+      },
+      "uuid": "b7e7d08c-6b1e-4e80-9822-8dc14ec829e8",
+      "value": "YobaLoader"
+    },
+    {
+      "description": "Open-source AI penetration testing platform abused by threat actors, according to TrendAI (Trend Micro) as relayed by The Hacker News, which notes earlier abuse in a campaign against Fortinet FortiGate appliances. In one of three attacker environments TrendAI found exposed, active in October 2026 against organisations mainly in Japan, and also in Taiwan and Hong Kong, it automated the whole lifecycle with 44 agents, from reconnaissance and vulnerability validation to exploitation, C2, persistence, exfiltration and reporting, including Japanese-language forms and fake login pages; at least 19 organisations were subjected to validation activity. Distinct from the ARTEX framework. The operator is not attributed. Dual-use: its presence alone does not indicate malicious activity.",
+      "meta": {
+        "refs": [
+          "https://thehackernews.com/2026/10/cyberstrikeai-uses-44-ai-agents-to.html"
+        ]
+      },
+      "uuid": "1a7b6d89-775c-4b06-b4c6-19584066bea7",
+      "value": "CyberStrikeAI"
+    },
+    {
+      "description": "Covert operational framework reported and named by Lumen Black Lotus Labs, used by Volt Typhoon to gain and maintain access to strategic networks and observed consistently since November 2023, shortly before the first KV-botnet takedown. Black Lotus Labs distinguishes it from traditional botnets, proxy networks and operational relay box (ORB) networks: it is built around rapidly rotating chains of compromised SOHO, IoT and enterprise devices exploited on demand, used against selected targets and dismantled after each operation, across more than 27 device classes including TP-Link, Intelbras, Ruckus, SATO, Netgear, Zyxel, Cambium, Fortinet, Cisco, PRTG, Mirth Connect and CyberPanel. Sessions begin from VPS outside the U.S., chain through compromised non-U.S. devices (Intelbras modems only as overseas relays) and pivot to U.S. devices such as Netgear Orbi or Fortinet FortiGate before the victim, over chained SSH built with temporary SSH services, keys, configuration files and living-off-the-land utilities; operators removed all artifacts and dismantled the chain at the end of each session. By early 2025 it had become a hybrid framework keeping enterprise devices for one to three months, and some operations used reverse tunnels through Chisel and FRP. Reserved for exploitation, credential access, data exfiltration and continued access, it supported at least four confirmed and one likely zero-day exploitation campaigns, including N-able N-central (CVE-2025-8875, CVE-2025-8876), Cisco Catalyst SD-WAN (CVE-2026-20127), VeloCloud Orchestrator (CVE-2026-16812), Versa Director and, with moderate confidence, a Quest KACE zero-day affecting more than 30 victims. Targets include telecommunications providers, defense contractors, government, satellite and mission-critical communications, MSPs and IT firms, universities with military affiliations and critical infrastructure, most often in Hawaii, California and Texas; activity follows China Standard Time working hours. Cisco Talos assesses with high confidence that the infrastructure of UAT-11473 overlaps considerably with Silent Train.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://www.lumen.com/blog/en-us/silent-train-volt-typhoon-operational-framework",
+          "https://blog.talosintelligence.com/uat-11473-keydrift/",
+          "https://www.bleepingcomputer.com/news/security/volt-typhoon-hides-zero-day-attacks-using-silent-train-framework/",
+          "https://thehackernews.com/2026/10/volt-typhoon-used-covert-silent-train.html"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "f02679fa-5e85-4050-8eb5-c2677d93306f",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "46750d9d-de6e-4656-a30f-e45b2cce2668",
+      "value": "Silent Train"
+    },
+    {
+      "description": "Custom malware framework reported and named by Cisco Talos, installed by UAT-11473 in Cisco SD-WAN controller environments after exploiting the CVE-2026-20127 authentication bypass. Talos assesses with high confidence that it is designed for long-term persistent access and automated exfiltration of sensitive keying material. It uses Cisco SD-WAN runit service paths as its execution anchor: a modified sshd run script remounts /rootfs.rw executable and starts the conf_sshd loader script, which records the vdaemon PIDs and calls the rsshd ptrace injector to inject the main module PolyFlame into vdaemon, while on an affected vBond appliance a malicious aaamgr runit service runs the packed aaamgrd PolyFlame loader. Its LittleFilch module hooks SSL_read inside vdaemon to extract keying material from decrypted control traffic and stage it encrypted for exfiltration. Talos observed timestomping, and variations of the modules and deployment mechanisms suggesting active development.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://blog.talosintelligence.com/uat-11473-keydrift/",
+          "https://thehackernews.com/2026/10/hackers-exploited-cisco-sd-wan-flaw-to.html"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "87e0e168-99df-4863-9fd1-23f529c5f24c",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "48dbe392-8dee-4c09-9370-b0ca9ca6a24f",
+      "value": "KeyDrift"
+    },
+    {
+      "description": "Primary module of the KeyDrift framework reported and named by Cisco Talos, used by UAT-11473 on Cisco SD-WAN controllers. Memory-resident, it is injected as libdssl.so into legitimate running vdaemon processes by the rsshd injector, and a distinct variant masquerades as the aaamgr service as aaamgrd, a statically linked packed loader with an RC4-encrypted embedded ELF payload, direct syscalls and a TracerPid anti-debug check. It interposes socket, DTLS and runtime-linker behaviour (recvfrom, sendto, getpeername, dlopen, dlsym, mprotect) to access SD-WAN control-plane traffic and receive tasking in-band rather than through a fixed external beacon; no hardcoded C2 address was recovered from the analyzed samples. Tasking is validated against an MD5 of the current date. It acts either as a TinyShell-like backdoor (command execution, file write, file read) or as a one-to-many intermediate C2 relaying data between its C2 and peers.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://blog.talosintelligence.com/uat-11473-keydrift/",
+          "https://thehackernews.com/2026/10/hackers-exploited-cisco-sd-wan-flaw-to.html"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "87e0e168-99df-4863-9fd1-23f529c5f24c",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "8563a25c-4006-489c-9929-b67de9b140e1",
+      "value": "PolyFlame"
+    },
+    {
+      "description": "Collection and exfiltration module of the KeyDrift framework reported and named by Cisco Talos, used by UAT-11473 on Cisco SD-WAN controllers. Delivered as libcommon.so into the vSmart vdaemon process, it installs an SSL_read hook, inspects decrypted control-plane buffers and, for a predefined list of edge nodes, extracts the vEdge public/transport IP, the peer system-IP and a 32-byte field that Talos assesses to be OMP-distributed AES-256 IPsec data-plane key material. It RSA-encrypts the records into /var/tmp/vdaemon.bin and can send them over UDP in DTLS 1.2 application-data style records to an endpoint read from /var/tmp/vdaemon.conf, which it deletes after reading.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://blog.talosintelligence.com/uat-11473-keydrift/",
+          "https://thehackernews.com/2026/10/hackers-exploited-cisco-sd-wan-flaw-to.html"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "87e0e168-99df-4863-9fd1-23f529c5f24c",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "95d76fe1-d533-47b1-bc9e-a9d8240f7c9a",
+      "value": "LittleFilch"
     }
   ],
-  "version": 181
+  "version": 189
 }

@@ -14,18 +14,25 @@ values = []
 misp_dir = '../'
 
 
-domains = ['enterprise-attack', 'mobile-attack', 'pre-attack']
+domains = ['enterprise-attack', 'mobile-attack', 'pre-attack', 'ics-attack']
 types = {'data-source': 'x-mitre-data-source',
+         'asset': 'x-mitre-asset',
          'attack-pattern': ['attack-pattern', 'x-mitre-tactic'],
          'course-of-action': 'course-of-action',
          'intrusion-set': 'intrusion-set',
-         'malware': 'malware',
-         'tool': 'tool',
+         'software': ['malware', 'tool'],
+         'campaign': 'campaign',
          'data-component': 'x-mitre-data-component',
          'detection-strategy': 'x-mitre-detection-strategy',
          'analytic': 'x-mitre-analytic',
          }
 mitre_sources = ['mitre-attack', 'mitre-ics-attack', 'mitre-pre-attack', 'mitre-mobile-attack']
+
+# Every domain contributes every object type. ATT&CK does keep a separate matrix per
+# domain, but a matrix is a per-domain *view*, not an object type: an ICS technique is
+# an attack-pattern with a T-prefixed ID exactly like an Enterprise one, so it belongs
+# in mitre-attack-pattern next to the Enterprise, Mobile and PRE ones. The mitre-ics-*
+# matrix galaxies are deprecated in favour of that.
 
 
 def matches_type(item_type, meta_type):
@@ -36,12 +43,18 @@ def matches_type(item_type, meta_type):
 
 
 # pre-compute the allowed MITRE item types for quick membership checks
-allowed_item_types = set()
-for meta_type in types.values():
-    if isinstance(meta_type, (list, tuple, set)):
-        allowed_item_types.update(meta_type)
-    else:
-        allowed_item_types.add(meta_type)
+def build_allowed_item_types(keys):
+    allowed = set()
+    for key in keys:
+        meta_type = types[key]
+        if isinstance(meta_type, (list, tuple, set)):
+            allowed.update(meta_type)
+        else:
+            allowed.add(meta_type)
+    return allowed
+
+
+allowed_item_types = build_allowed_item_types(types)
 
 
 kill_chain_order_sort_order = {
@@ -96,6 +109,20 @@ kill_chain_order_sort_order = {
         "stage-capabilities",
         "launch",     # added manually
         "compromise"  # added manually
+    ],
+    "ics-attack": [
+        "initial-access",
+        "execution",
+        "persistence",
+        "privilege-escalation",
+        "evasion",
+        "discovery",
+        "lateral-movement",
+        "collection",
+        "command-and-control",
+        "inhibit-response-function",
+        "impair-process-control",
+        "impact"
     ]
 }
 
@@ -212,21 +239,25 @@ for domain in domains:
                         json.dumps(item['external_references'])
                     ))
 
+            # most ICS objects carry the literal string "None" as their only platform,
+            # which means the same as having no platform at all
+            platforms = [platform for platform in item.get('x_mitre_platforms', []) if platform != 'None']
+
             if 'kill_chain_phases' in item:   # many (but not all) attack-patterns have this
                 value['meta']['kill_chain'] = []
                 for killchain in item['kill_chain_phases']:
                     kill_chain_name = killchain['kill_chain_name'][6:]
                     phase_name = killchain['phase_name']
-                    if 'x_mitre_platforms' in item:
-                        for platform in item['x_mitre_platforms']:
+                    if platforms:
+                        for platform in platforms:
                             platform = platform.replace(' ', '-')
                             value['meta']['kill_chain'].append(f"{kill_chain_name}-{platform}:{phase_name}")
                     else:
                         value['meta']['kill_chain'].append(f"{kill_chain_name}:{phase_name}")
             if 'x_mitre_data_sources' in item:
                 value['meta']['mitre_data_sources'] = item['x_mitre_data_sources']
-            if 'x_mitre_platforms' in item:
-                value['meta']['mitre_platforms'] = item['x_mitre_platforms']
+            if platforms:
+                value['meta']['mitre_platforms'] = platforms
             if 'x_mitre_analytic_refs' in item:
                 for ref in item['x_mitre_analytic_refs']:
                     ref_data = {
@@ -319,6 +350,14 @@ for domain in domains:
                 all_data_uuid[data_component_uuid]['related'].append(rel_data_component)
         except KeyError:
             pass  # ignore relations from which we do not know the source
+
+
+# drop relations whose target ended up in no galaxy at all,
+# so that no cluster ends up with a dangling dest-uuid.
+known_uuids = set(all_data_uuid) | non_mitre_uuids
+for value in all_data_uuid.values():
+    if 'related' in value:
+        value['related'] = [rel for rel in value['related'] if rel['dest-uuid'] in known_uuids]
 
 
 # dump all_data to their respective file
