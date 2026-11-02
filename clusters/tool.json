@@ -11661,19 +11661,38 @@
       "value": "MATCHWOK"
     },
     {
-      "description": "Agentic AI penetration testing framework developed in China by Autumn-27: a multi-agent LLM system written in Go with a Next.js frontend, model-agnostic, that runs an autonomous test from reconnaissance to data exfiltration and accumulates discovered assets and vulnerabilities into a graph. Released as open source, it was made closed source by its developer after its abuse became public. CrowdStrike first reported its use, alongside Claude Code, DeepSeek, Grok and GLM, by an unattributed suspected Chinese-speaking, financially motivated operator against South Korean financial institutions from late September 2026, activity Recorded Future tracks as TAG-217. Microsoft reports that Storm-0940 used it from September 2026 to automate password spraying, reconnaissance and OAuth application abuse against hundreds of organisations, including downstream tenants in the ConnectWise cloud backup supply chain compromise, and that actors across multiple regions use it. Dual-use: its presence alone does not indicate malicious activity.",
+      "description": "Agentic AI penetration testing framework developed in China by Autumn-27: a multi-agent LLM system written in Go with a Next.js frontend, model-agnostic, that runs an autonomous test from reconnaissance to data exfiltration and accumulates discovered assets and vulnerabilities into a graph. Released as open source, it was made closed source by its developer after its abuse became public. CrowdStrike first reported its use, alongside Claude Code, DeepSeek, Grok and GLM, by an unattributed suspected Chinese-speaking, financially motivated operator against South Korean financial institutions from late September 2026, activity Recorded Future tracks as TAG-217. Microsoft reports that Storm-0940 used it from September 2026 to automate password spraying, reconnaissance and OAuth application abuse against hundreds of organisations, including downstream tenants in the ConnectWise cloud backup supply chain compromise, and that actors across multiple regions use it. Dual-use: its presence alone does not indicate malicious activity. CrowdStrike reports that Vapor Panda ran it from 17 October 2026 against more than 200 organisations, a campaign it states is separate from Storm-0940. Google Threat Intelligence Group tracks an ARTEX campaign, also followed by Wiz Research, as UNC7228, which overlaps with Storm-0940, and reports that the framework keeps spreading through community forks after the original repository was taken down, including the localised ScopeWeaver and a commercial ARTEX PRO, recorded here as synonyms.",
       "meta": {
         "date": "October 2026.",
         "refs": [
           "https://www.crowdstrike.com/en-us/blog/unknown-threat-actor-uses-artex-to-target-south-korean-finance/",
           "https://www.microsoft.com/en-us/security/blog/2026/10/21/storm-0940-uses-artex-agentic-ai-connectwise-supply-chain-compromise/",
           "https://www.recordedfuture.com/blog/tag-217-artex-south-korean-banks",
-          "https://thehackernews.com/2026/10/artex-ai-pentesting-tool-used-in-data.html"
+          "https://thehackernews.com/2026/10/artex-ai-pentesting-tool-used-in-data.html",
+          "https://cloud.google.com/blog/topics/threat-intelligence/artex-and-friends-enter-agentic-offensive-frameworks/"
+        ],
+        "synonyms": [
+          "ARTEX PRO",
+          "ScopeWeaver"
         ]
       },
       "related": [
         {
           "dest-uuid": "301ffea9-edd5-4d89-a65f-8add8e34e95d",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "4125764c-ec9a-4a11-88c3-140d8b6e2810",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "used-by"
+        },
+        {
+          "dest-uuid": "a7e30dc5-6efd-4d0b-ba09-ce8a3a573c96",
           "tags": [
             "estimative-language:likelihood-probability=\"almost-certain\""
           ],
@@ -12089,7 +12108,60 @@
       },
       "uuid": "b3c545be-33ae-454c-a90b-7e84d2028c9f",
       "value": "NIK C2"
+    },
+    {
+      "description": "Open-source agentic AI penetration testing framework. Google Threat Intelligence Group and Mandiant report that multiple threat actors abused it, alongside ARTEX and CAIRN, in incident response engagements from late August 2026, to carry out actions across several phases of the attack lifecycle. Kaspersky places HexStrike AI and similar tools on the reconnaissance and exploitation (\"find and break\") side of the kill chain, as opposed to LLM-orchestrated post-exploitation C2 frameworks such as CyberStrikeAI. Neither source attributes its use to a named actor. Dual-use: its presence alone does not indicate malicious activity.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/artex-and-friends-enter-agentic-offensive-frameworks/",
+          "https://securelist.com/tr/cyberstrikeai-attacks/121715/"
+        ],
+        "synonyms": [
+          "Hexstrike"
+        ]
+      },
+      "uuid": "18406398-1f5b-4bda-beb1-b1c9fd03872c",
+      "value": "HexStrike AI"
+    },
+    {
+      "description": "PentAGI (Penetration Testing Artificial General Intelligence) is an autonomous multi-agent penetration testing framework developed by VXControl, offered in open-source and commercial editions. The operator describes a target and a goal; specialised agents split the task into \"Flows\" and sub-tasks and run standard Kali Linux tools (Metasploit, Nmap, sqlmap) inside isolated sandboxes, with a dozen cloud and local LLM backends supported. Google Threat Intelligence Group reports in-the-wild abuse since late August 2026: most observed activity stayed at WHOIS asset mapping and vulnerability scanning, but some operations progressed to intrusion and persistence across multiple organisations. GTIG describes a customised orchestration platform built on the open-source version, used between late August and early October 2026 for reconnaissance against system integrators and telecommunications firms in Asia, and PentAGI chained with proxy services against the aerospace sector. No actor attribution is given. Dual-use: its presence alone does not indicate malicious activity.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/artex-and-friends-enter-agentic-offensive-frameworks/"
+        ]
+      },
+      "uuid": "33ffc3d8-fbf2-4905-bae2-d6a97b6d1e40",
+      "value": "PentAGI"
+    },
+    {
+      "description": "Self-deleting Windows (PE32+ x86-64) information stealer, self-named VOLTA-AUTODOXER, reported by Cisco Talos after surfacing through its CAIRN research toolkit. It harvests Chromium, Firefox and Thunderbird credentials, cookies and payment cards (bypassing Chrome App-Bound Encryption via headless Chrome), cryptocurrency wallets with an inline vault cracker, Outlook, Slack, Discord, Telegram, Steam, Battle.net and Roblox sessions, Microsoft OAuth tokens, SSH and cloud-provider configuration and saved Wi-Fi passwords. It then enriches a victim profile with the stolen sessions (Gmail receipts to confirm a home address, Uber Eats and DoorDash order history, Discord data) and POSTs the bundle to OpenRouter under a system prompt asking for a \"target assessment\" ranking the victim's assets by monetization value; the default model is Claude Opus with a fallback chain to Kimi K2 and Gemini 2.5 Flash when the model refuses, and the stealer runs without the LLM stage if no key is configured. Results are exfiltrated to the operator's Telegram (volta_log.zip, volta_dox.zip, volta_doxnet.zip). A six-slot build template suggests a builder sold to customers. All observed endpoints are third-party services; Talos reports no actor-owned infrastructure and no attribution.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://blog.talosintelligence.com/appraisal-by-ai-model-driven-victim-prioritization-in-the-volta-infostealer/",
+          "https://thehackernews.com/2026/11/new-volta-infostealer-uses-claude.html"
+        ],
+        "synonyms": [
+          "VOLTA-AUTODOXER"
+        ]
+      },
+      "uuid": "16f01499-31d8-4a8e-b13c-6b99c94c31af",
+      "value": "VOLTA"
+    },
+    {
+      "description": "Public NTLM authentication coercion technique and proof-of-concept tool that abuses the Encrypting File System Remote Protocol (MS-EFSRPC) to force a Windows server, typically a domain controller, to authenticate with its machine account to an attacker-controlled host. Chained with NTLM relay to Active Directory Certificate Services Web Enrollment (ESC8), it lets an attacker obtain a certificate for the domain controller identity without knowing its password; Microsoft's KB5005413 covers mitigation of this relay path. In October 2026 Microsoft reported its use in a help desk impersonation intrusion: after Teams social engineering and remote access, the attacker coerced domain controller authentication with PetitPotam, relayed it to AD CS through ESC8 and used the issued certificate for Kerberos authentication. No actor attribution is given. Dual-use: it is also a common red-team technique.",
+      "meta": {
+        "date": "July 2021.",
+        "refs": [
+          "https://www.microsoft.com/en-us/security/blog/2026/10/30/help-desk-impersonation-ad-cs-abuse-investigating-esc1-esc8-intrusion-paths/",
+          "https://support.microsoft.com/en-us/topic/kb5005413-mitigating-ntlm-relay-attacks-on-active-directory-certificate-services-ad-cs-3612b773-4043-4aa9-b23d-b87910cd3429"
+        ]
+      },
+      "uuid": "69078927-c1b1-4a64-aedb-5a5cf61ef06b",
+      "value": "PetitPotam"
     }
   ],
-  "version": 190
+  "version": 191
 }
