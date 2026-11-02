@@ -25049,7 +25049,63 @@
       },
       "uuid": "c2a10fc3-a12f-4310-94c2-88a1eb136719",
       "value": "GOLD OGRE"
+    },
+    {
+      "description": "China-nexus targeted intrusion adversary tracked by CrowdStrike, formerly tracked as VexatiousTemper, active since at least 2021 against government, think tank, energy and extractive organisations across Europe, North America, Oceania and the UK. From 17 October 2026 CrowdStrike observed it run the agentic AI framework ARTEX, mainly with DeepSeek plus a second commercial LLM, from a single controller against more than 200 organisations in at least 14 countries, including foreign ministries in Latin America, Europe, Asia and the Middle East, US pharmaceutical, semiconductor, defense and nuclear organisations, and telecommunications providers. A human operator steered the agents in Chinese, including instructions to find hosts without the CrowdStrike Falcon sensor. Post-exploitation at nine organisations included deployment of the BLOODALCHEMY backdoor, side-loaded by a renamed GameHook binary. CrowdStrike states this campaign is separate from the ARTEX activity tracked as Storm-0940. The Hacker News reports, without a CrowdStrike quote, that the group overlaps with Trend Micro's Earth Estries; this overlap is recorded as a similar relation, not as a synonym.",
+      "meta": {
+        "country": "CN",
+        "date": "October 2026.",
+        "refs": [
+          "https://www.crowdstrike.com/en-us/blog/vapor-panda-uses-artex-to-scale-global-campaign/",
+          "https://thehackernews.com/2026/10/chinese-hackers-use-ai-powered-artex-to.html"
+        ],
+        "synonyms": [
+          "VexatiousTemper"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "1f7f4a51-c4a8-4365-ade3-83b222e7cb67",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "4125764c-ec9a-4a11-88c3-140d8b6e2810",
+      "value": "Vapor Panda"
+    },
+    {
+      "description": "Uncategorized threat cluster tracked by Google Threat Intelligence Group for an ARTEX-enabled intrusion campaign also tracked by Wiz Research. GTIG states that it overlaps with the PRC-nexus actor Microsoft tracks as Storm-0940. Activity dates back to at least August 2026 and affected multiple entities in the US and Europe in enterprise software, industrial automation, semiconductor manufacturing and design, and telecommunications. The actor typically moved from a first compromised account to deep system access in about four hours, once in 15 minutes, customised its tooling to victim-specific setups and fell back to open proxies when its infrastructure was blocked. The overlap with Storm-0940 is recorded as a similar relation, not as a synonym.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/artex-and-friends-enter-agentic-offensive-frameworks/"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "301ffea9-edd5-4d89-a65f-8add8e34e95d",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "a7e30dc5-6efd-4d0b-ba09-ce8a3a573c96",
+      "value": "UNC7228"
+    },
+    {
+      "description": "Previously unknown threat actor tracked by Volexity, which from 3 October 2026 exploited a zero-day chain in Ivanti Connect Secure (authentication bypass and RCE tracked as CVE-2026-104935, plus a privilege escalation) to obtain unauthenticated root code execution on a fully patched appliance (22.8R2.4). It re-ran the whole exploit chain for each command instead of deploying a web shell or backdoor, and used in-memory Python, Perl and Bash stages. Post-exploitation focused on credential theft and reconnaissance: Active Directory exports and a custom LDAP tool searching for LAPS passwords and BitLocker recovery keys, parsing of the appliance's own packet captures for LDAP, HTTP Basic and NTLM credentials, a Python Kerberos implementation, and password spraying. Anti-forensic steps included selective log tampering, restoring patched in-memory components and evading the Ivanti Integrity Checker Tool. Volexity assesses with low confidence a criminal rather than espionage motivation, and with medium confidence that the actor uses LLMs for exploit development and post-exploitation.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://www.volexity.com/blog/2026/10/13/a-series-of-unauthenticated-events-chained-exploitation-of-ivanti-connect-secure-zero-days/"
+        ]
+      },
+      "uuid": "529ab5a8-b53d-4c4d-b2c2-75f13a5eaaa6",
+      "value": "UTA0576"
     }
   ],
-  "version": 358
+  "version": 359
 }
