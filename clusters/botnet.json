@@ -2349,7 +2349,25 @@
       },
       "uuid": "09d1387f-b576-4cf2-9072-d9fc01295ed8",
       "value": "Potassium"
+    },
+    {
+      "description": "Botnet of more than 1.3 million devices, mostly Android TV set-top boxes along with other Android-based IoT devices (telehealth devices, karaoke machines, digital signage), built on the x.cpe backdoor preinstalled in device firmware. Google Threat Intelligence Group assesses with high confidence that the backdoor and botnet were intentionally developed, deployed and operated for financial gain by the Shenzhen-based Android OEM Videostrong Technology Co., which sold access to criminal affiliates and loaded their modules onto infected devices. The x.cpe stub (com.oemservice in some builds) runs at android.uid.system level from the system partition and reinstalls itself from /oem/ on reboot; since late 2024 it offloads module execution to a separate loader, com.abc.nexus, replaced from August 2026 by droppers disguised as system applications. C2 uses an AES-encrypted HTTP bootstrap followed by a persistent MQTT channel used for silent app installs, shell commands, screenshots, keystroke injection and data theft; modules are largely staged on operator-owned GitHub releases. Monetization modules include residential proxy and bandwidth-sharing SDKs (Linkfog, AppSalt/Honeygain, GaGaNode/IPCola, Popanet/NetNut, Traffmonetizer, EarnFM Fleet), ad fraud modules (Fission, HiddenView) and backdoors (Spirit, and Moyu and Bird previously tied to BadBox). Disrupted in late October 2026 by Google with Japan's National Police Agency, Lumen, HUMAN Security, Plume, Synthient and TrendAI; Google banned Videostrong from certified Android devices.",
+      "meta": {
+        "date": "November 2026.",
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/shutting-the-door-on-the-xcpe-botnet/",
+          "https://www.bleepingcomputer.com/news/security/google-disrupts-million-device-xcpe-android-malware-botnet-bans-tv-box-maker/",
+          "https://thehackernews.com/2026/11/google-disrupts-13-million-device.html",
+          "https://therecord.media/google-dismantles-botnet-hidden-android-tv-boxes"
+        ],
+        "synonyms": [
+          "X.CPE",
+          "x.cpe"
+        ]
+      },
+      "uuid": "e0e37cef-bdfd-4bc3-bd2b-124d38ac78da",
+      "value": "XCPE"
     }
   ],
-  "version": 44
+  "version": 45
 }

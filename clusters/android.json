@@ -5021,7 +5021,29 @@
       },
       "uuid": "7c6c2554-8be3-4291-880c-fc93739fc7a8",
       "value": "ZloyRAT"
+    },
+    {
+      "description": "Android post-exploitation payload named and reported by Sekoia TDR, delivered as the final stage of the Android exploit chain (\"Class C\") of a large-scale watering hole campaign uncovered in October 2026, which Sekoia attributes with moderate to high confidence to APT29 or one of its subgroups. The chain targets Chrome 139 to 145 (excluding 143): renderer code execution through CVE-2026-3910, then a sandbox escape and privilege escalation through the Adreno GPU driver flaw CVE-2025-27038. AndroSnitch itself is a small shared library (libexploit.so, 16 functions) that collects Chrome cookies, saved logins and history, and Wi-Fi credentials from WifiConfigStore.xml, and sends them with libcurl to the same telemetry endpoint used by the campaign's iOS chain, with a hardcoded device identifier. Sekoia named it after ANDROSNATCH, documented by Google TAG in 2024: both target the same files (WifiConfigStore replacing TrustTokens), share a Clang/LLD 14.0.7 toolchain marker, libcurl exfiltration and a hardcoded token. Sekoia states these similarities could indicate lineage but are too limited to be conclusive.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://www.sekoia.com/blog/poisoned-source-apt29-watering-holes-targets-mobile-devices-with-n-day-exploits",
+          "https://www.bleepingcomputer.com/news/security/hackers-use-n-day-exploits-in-zero-click-attacks-on-ios-android-devices/",
+          "https://thehackernews.com/2026/11/apt29-linked-hackers-hijack-web.html"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "b2056ff0-00b9-482e-b11c-c771daa5f28a",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "6b5d8306-c9d9-4f11-8306-5ec96ad6eaec",
+      "value": "AndroSnitch"
     }
   ],
-  "version": 27
+  "version": 28
 }

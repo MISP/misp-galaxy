@@ -25105,7 +25105,45 @@
       },
       "uuid": "529ab5a8-b53d-4c4d-b2c2-75f13a5eaaa6",
       "value": "UTA0576"
+    },
+    {
+      "description": "Russia-aligned cyberespionage group named and reported by ESET, active since at least February 2025 and focused exclusively on Ukrainian targets: law enforcement and justice entities (about a quarter of victims), local administrations near the front line (another quarter), the defense sector, and a major transportation hub for foreign military aid. Initial access relies on spearphishing with government-themed lures (administrative fines, taxes), sometimes sent from compromised Ukrainian government mailboxes: macro-enabled Excel attachments in 2025, then from early 2026 RAR archives exploiting the WinRAR path traversal CVE-2025-8088, which drop a decoy PDF, a PowerShell loader and a Startup-folder LNK for persistence. The toolset is small and built for one-pass collection rather than long-term access: Prime ReverseShell, a PowerShell reverse shell, and BeautyStealer, a C++ browser-data and file stealer that exfiltrates to Telegram or a FastAPI C2 and then deletes itself. ESET assesses that Gorbag may act as an initial access broker for other Russia-aligned actors, without having established it. Naming: ESET notes that its GIFTEDCROOK infostealer is attributed by CERT-UA to UAC-0226, and The Hacker News reports overlaps with UAC-0226 and with Trend Micro's SHADOW-EARTH-066; the labels likely cover overlapping activity but are not stated to be identical.",
+      "meta": {
+        "country": "RU",
+        "date": "October 2026.",
+        "refs": [
+          "https://www.welivesecurity.com/en/eset-research/gorbag-orcs-border-harvesting-intelligence-ukraine/",
+          "https://thehackernews.com/2026/11/russia-aligned-gorbag-hackers-exploit.html",
+          "https://therecord.media/russia-linked-cyber-spies-target-ukraine-war-support"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "41522eb4-1e34-42d2-be13-69baf0574e09",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "0bba7438-92d9-47d5-81af-1a77e12a20f7",
+      "value": "Gorbag"
+    },
+    {
+      "description": "Financially motivated, Russian-speaking cybercriminal group active since at least 2016, also tracked as Fluffy Wolf, targeting mainly Russian organizations and, in 2026, also Belarus and Kazakhstan. As relayed by The Record and The Hacker News, citing reports from BI.ZONE, F6 and Kaspersky, it gains initial access through phishing emails with attachments disguised as financial or accounting documents, relying on a network of phishing domains imitating financial and accounting services and on servers abroad. Its toolset combines off-the-shelf malware (MetaStealer, PureCrypter, PureLogs Stealer, WarZone RAT, XMRig, BurnsRAT, PureHVNC, PureRAT, Pay2Key, PowerLoader), legitimate remote access software such as Remote Utilities, and, per Kaspersky, a Golang backdoor executing arbitrary commands. Kaspersky recorded over 100 attempted attacks between January and September 2026, mostly against metallurgical companies, raw material and industrial suppliers and government agencies. In November 2026 the Russian Ministry of Internal Affairs announced the arrest of three suspected members and the dismantling of the group's infrastructure, with Kaspersky's assistance, citing a September 2025 theft of 660,000 rubles from a company's bank account. The original BI.ZONE, F6 and Kaspersky reports were not reviewed for this entry.",
+      "meta": {
+        "date": "November 2026.",
+        "refs": [
+          "https://therecord.media/russia-dismantles-vasygrek-infrastructure-detains-three",
+          "https://thehackernews.com/2026/11/russian-police-arrest-3-suspected.html"
+        ],
+        "synonyms": [
+          "Fluffy Wolf"
+        ]
+      },
+      "uuid": "4f330f14-6553-4177-b040-27fcacb0a7e8",
+      "value": "VasyGrek"
     }
   ],
-  "version": 359
+  "version": 360
 }

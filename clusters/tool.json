@@ -12161,7 +12161,61 @@
       },
       "uuid": "69078927-c1b1-4a64-aedb-5a5cf61ef06b",
       "value": "PetitPotam"
+    },
+    {
+      "description": "Open-source multi-agent penetration testing framework driven by large language models. Google Threat Intelligence Group and Mandiant report that multiple threat actors abused it, alongside ARTEX, Hexstrike and PentAGI, in incident response engagements from late August 2026, with agentic activity covering significant parts of the attack lifecycle such as lateral movement, database exploitation and exfiltration preparation; use was corroborated by GTIG research telemetry. The source only names the framework and does not describe its architecture or attribute its use to a named actor. Dual-use: its presence alone does not indicate malicious activity.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/artex-and-friends-enter-agentic-offensive-frameworks/"
+        ]
+      },
+      "uuid": "05dd063c-73e6-4f7b-a9e9-0431d70010c6",
+      "value": "CAIRN"
+    },
+    {
+      "description": "C++ browser-data and file stealer named and reported by ESET as the main data-collection tool of the Russia-aligned group Gorbag, tracked across versions 0.9 to 2.0. It harvests cookies, stored passwords and local state from Chrome, Edge, Opera and Firefox, OpenVPN configurations, and files with selected extensions (Office documents, archives, emails, KeePass databases, RDP files, PFX and Java keystores, and .zs2 Ukrainian qualified electronic signature keys) from the Desktop, Documents and Downloads folders, removable media and mapped network drives. Delivered by a VBA macro decoding a base64 payload stored in spreadsheet cells, later through RAR archives exploiting CVE-2025-8088. Stolen data is archived and exfiltrated to a Telegram chat via the sendDocument API or, from version 1.2, to a custom FastAPI C2; version 1.2 added XOR string encryption and version 2.0 RC4 encryption and a Windows API based self-deletion. It removes itself after exfiltration, reflecting a one-pass collection model rather than persistent access.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://www.welivesecurity.com/en/eset-research/gorbag-orcs-border-harvesting-intelligence-ukraine/",
+          "https://thehackernews.com/2026/11/russia-aligned-gorbag-hackers-exploit.html",
+          "https://therecord.media/russia-linked-cyber-spies-target-ukraine-war-support"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "0bba7438-92d9-47d5-81af-1a77e12a20f7",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "2b0b7a79-8f3a-45b4-ab71-c6776f624382",
+      "value": "BeautyStealer"
+    },
+    {
+      "description": "PowerShell reverse shell embedded in a .NET binary with PS2EXE, named and reported by ESET as used by the Russia-aligned group Gorbag from February 2025, before the group moved to its BeautyStealer infostealer; ESET has not observed it since. Derived from the publicly available PSSW100AVB repository with operator modifications, it executes commands on compromised hosts and returns the output to its C2 over HTTPS. One variant carries a header comment written to persuade AI assistants and security products that the script is a harmless prime number generator; ESET reports that the AI assistants it tested were not misled. The Hacker News reports that CERT-UA flagged its use by UAC-0226 in April 2025.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://www.welivesecurity.com/en/eset-research/gorbag-orcs-border-harvesting-intelligence-ukraine/",
+          "https://thehackernews.com/2026/11/russia-aligned-gorbag-hackers-exploit.html"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "0bba7438-92d9-47d5-81af-1a77e12a20f7",
+          "tags": [
+            "estimative-language:likelihood-probability=\"almost-certain\""
+          ],
+          "type": "used-by"
+        }
+      ],
+      "uuid": "07526394-8a75-4ac6-87db-75dfed388d24",
+      "value": "Prime ReverseShell"
     }
   ],
-  "version": 191
+  "version": 193
 }
