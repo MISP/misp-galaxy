@@ -18,6 +18,10 @@ jobs:
     steps:
 
     - uses: actions/checkout@v2
+      with:
+        # chk_related_integrity.py diffs against the base branch, so it needs
+        # more than the default single-commit checkout.
+        fetch-depth: 0
 
     - name: Set up Python ${{matrix.python-version}}
       uses: actions/setup-python@v2
@@ -32,6 +36,15 @@ jobs:
 
     - name: Validate files
       run: ./validate_all.sh
+
+    - name: Check related dest-uuid integrity
+      run: |
+        # GITHUB_BASE_REF is set by Actions on pull_request and holds the base
+        # branch name; it is not attacker-controlled text interpolated into the
+        # script. On push it is empty, so fall back to the default branch.
+        base="${GITHUB_BASE_REF:-main}"
+        git fetch --no-tags --depth=1 origin "$base"
+        python3 tools/chk_related_integrity.py --baseline FETCH_HEAD
 
     - name: Install Python dependencies
       run: python -m pip install poetry
