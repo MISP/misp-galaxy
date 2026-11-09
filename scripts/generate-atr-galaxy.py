@@ -3,7 +3,7 @@
 
 Reads ATR rule YAML files, emits:
 - galaxies/agent-threat-rules.json (metadata)
-- clusters/agent-threat-rules.json (713 entries)
+- clusters/agent-threat-rules.json (one value per ATR rule)
 
 UUIDs are deterministic (UUID5) so regenerating is byte-stable.
 Run from misp-galaxy fork root, with --rules-dir pointing at the
@@ -33,6 +33,7 @@ CATEGORIES = [
     "data-poisoning",
     "model-abuse",
     "skill-compromise",
+    "model-security",
 ]
 
 GALAXY_UUID = "5b3d8c2e-7a1f-4e9b-8c5d-2a4f6b9e8c1d"
@@ -108,16 +109,18 @@ def load_rules(rules_dir: Path) -> list[dict]:
 
 def build_galaxy() -> dict:
     return {
-        "description": "Agent Threat Rules (ATR) — open detection standard for AI agent threats covering prompt injection, tool poisoning, context exfiltration, and 6 other attack classes against MCP servers, skill manifests, and agent runtimes. 713 rules across 9 categories.",
+        "category": "detection",
+        "description": f"Agent Threat Rules (ATR) — open detection standard for AI agent threats covering prompt injection, tool poisoning, context exfiltration, and other attack classes against MCP servers, skill manifests, and agent runtimes. One cluster value per ATR rule, grouped into {len(CATEGORIES)} categories.",
         "icon": "shield-virus",
         "kill_chain_order": {
             "agent-threat": CATEGORIES,
         },
         "name": "Agent Threat Rules",
         "namespace": "agent-threat-rules",
+        "sub_category": "rule",
         "type": "agent-threat-rules",
         "uuid": GALAXY_UUID,
-        "version": 2,
+        "version": 4,
     }
 
 
@@ -126,6 +129,35 @@ def category_of(rule: dict) -> str:
     if cat in CATEGORIES:
         return cat
     return "skill-compromise"  # safe fallback for any uncategorised
+
+
+# OWASP Top 10 for LLM Applications 2025. ATR rules carry the bare ID
+# (e.g. "LLM01:2025"); the cluster shows "LLM01:2025 - Prompt Injection".
+OWASP_LLM_2025 = {
+    "LLM01": "Prompt Injection",
+    "LLM02": "Sensitive Information Disclosure",
+    "LLM03": "Supply Chain",
+    "LLM04": "Data and Model Poisoning",
+    "LLM05": "Improper Output Handling",
+    "LLM06": "Excessive Agency",
+    "LLM07": "System Prompt Leakage",
+    "LLM08": "Vector and Embedding Weaknesses",
+    "LLM09": "Misinformation",
+    "LLM10": "Unbounded Consumption",
+}
+OWASP_LLM_ID = re.compile(r"^(LLM\d{2}):2025$")
+
+
+def owasp_llm_refs(rule: dict) -> list[str]:
+    out = []
+    for ref in (rule.get("references") or {}).get("owasp_llm") or []:
+        if not isinstance(ref, str):
+            continue
+        m = OWASP_LLM_ID.match(ref.strip())
+        if m and m.group(1) in OWASP_LLM_2025:
+            ref = f"{ref.strip()} - {OWASP_LLM_2025[m.group(1)]}"
+        out.append(ref)
+    return out
 
 
 def cve_refs(rule: dict) -> list[str]:
@@ -160,7 +192,7 @@ def build_value(
     if cves:
         meta["cve"] = cves
 
-    owasp_llm = (rule.get("references") or {}).get("owasp_llm") or []
+    owasp_llm = owasp_llm_refs(rule)
     if owasp_llm:
         meta["owasp_llm"] = owasp_llm
     mitre_atlas = (rule.get("references") or {}).get("mitre_atlas") or []
@@ -210,7 +242,7 @@ def build_cluster(
         "type": "agent-threat-rules",
         "uuid": CLUSTER_UUID,
         "values": values,
-        "version": 2,
+        "version": 4,
     }
 
 
