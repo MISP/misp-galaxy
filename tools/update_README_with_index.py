@@ -43,27 +43,40 @@ for f in galaxies_fnames:
     output.append(f"\n[[HTML](https://www.misp-galaxy.org/{link})] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/{f})]\n\n")
 
 # update the README.md
-readme_out = []
 readme_marker_start = '# Available Galaxy - clusters'
 readme_marker_end = '# Online documentation'
-with open('../README.md', 'r') as f:
-    skip = False
-    for line in f:
-        if not skip:
-            readme_out.append(line)
-        if line.strip() == readme_marker_start:
-            skip = True
-        if line.strip() == readme_marker_end:
-            # append the index
-            readme_out.append("\n")
-            readme_out += output
-            readme_out.append("\n")
-            readme_out.append(line)
-            # stop skipping
-            skip = False
+with open('../README.md', 'r', encoding='utf-8') as f:
+    readme_lines = f.readlines()
 
+# Locate both markers up front. The generated index replaces everything
+# between them, so if either is missing -- renamed heading, reordered
+# README -- the rebuild would silently truncate the file from the start
+# marker onwards. Refuse to write instead.
+start_idx = end_idx = None
+for i, line in enumerate(readme_lines):
+    stripped = line.strip()
+    if stripped == readme_marker_start and start_idx is None:
+        start_idx = i
+    elif stripped == readme_marker_end and start_idx is not None:
+        end_idx = i
+        break
 
-with open('../README.md', 'w') as f:
+if start_idx is None or end_idx is None:
+    missing = readme_marker_start if start_idx is None else readme_marker_end
+    raise SystemExit(
+        f"ERROR: marker {missing!r} not found in ../README.md (start={start_idx}, "
+        f"end={end_idx}). README.md left unchanged -- the index is inserted "
+        f"between {readme_marker_start!r} and {readme_marker_end!r}, so both "
+        f"headings must be present, in that order."
+    )
+
+readme_out = readme_lines[:start_idx + 1]
+readme_out.append("\n")
+readme_out += output
+readme_out.append("\n")
+readme_out += readme_lines[end_idx:]
+
+with open('../README.md', 'w', encoding='utf-8') as f:
     f.write(''.join(readme_out))
 
 print("README.md updated with the index of the galaxies.")
