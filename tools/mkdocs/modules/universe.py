@@ -83,13 +83,26 @@ class Universe:
                 if current_cluster not in visited:
                     visited.add(current_cluster)
 
-                    # Process all relationships regardless of direction
-                    if self.add_inbound_relationship:
-                        neighbors = current_cluster.outbound_relationships.union(
+                    # The traversal follows outbound edges. `related` is
+                    # authored one way round, so a cluster that is only ever
+                    # pointed *at* would otherwise show no relations at all --
+                    # 5602 clusters are in that position today.
+                    #
+                    # Include the start cluster's inbound edges so its own page
+                    # lists what points at it. They are recorded as level-1
+                    # relations but deliberately not enqueued: walking them
+                    # transitively turns the graph undirected, and the largest
+                    # component holds 11961 clusters, so every page in it would
+                    # render the same ~38500-row table.
+                    #
+                    # add_inbound_relationship=True opts into that full
+                    # undirected traversal.
+                    neighbors = current_cluster.outbound_relationships
+                    if self.add_inbound_relationship or current_cluster is start_cluster:
+                        neighbors = neighbors.union(
                             current_cluster.inbound_relationships
                         )
-                    else:
-                        neighbors = current_cluster.outbound_relationships
+                    walk_inbound = self.add_inbound_relationship
                     for neighbor in neighbors:
                         link = frozenset([current_cluster, neighbor])
                         if level + 1 < relationships[link]:
@@ -97,6 +110,10 @@ class Universe:
                             if (
                                 neighbor not in visited
                                 and neighbor.value != "Private Cluster"
+                                and (
+                                    walk_inbound
+                                    or neighbor in current_cluster.outbound_relationships
+                                )
                             ):
                                 queue.append((neighbor, level + 1))
 
