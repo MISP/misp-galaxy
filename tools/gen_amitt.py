@@ -2,6 +2,19 @@ import pandas as pd
 import os
 import json
 import uuid
+
+from galaxy_uuid import UuidAssigner, load_committed_cluster
+
+# An AM!TT entry's identity is its framework id (TA01, T0001, ...), carried
+# through as meta.external_id. uuid4() minted a fresh uuid on every run, so
+# regenerating replaced every entry and orphaned every inbound `related`
+# edge. Derive from the id instead, and reuse whatever is already committed.
+UUID_NAMESPACE = uuid.uuid5(
+    uuid.NAMESPACE_URL,
+    'https://github.com/misinfosecproject/amitt_framework')
+CLUSTER_PATH = '../clusters/misinfosec-amitt-misinformation-pattern.json'
+ASSIGNER = UuidAssigner(UUID_NAMESPACE,
+                        load_committed_cluster(CLUSTER_PATH))
 import xlrd
 
 
@@ -43,7 +56,7 @@ class Amitt:
         galaxy['name'] = 'Misinformation Pattern'
         galaxy['type'] = 'amitt-misinformation-pattern'
         galaxy['description'] = 'AM!TT Tactic'
-        galaxy['uuid'] = str(uuid.uuid4())
+        galaxy['uuid'] = ASSIGNER.derive('galaxy')
         galaxy['version'] = 3
         galaxy['icon'] = 'map'
         galaxy['namespace'] = 'misinfosec'
@@ -70,7 +83,7 @@ class Amitt:
         cluster['name'] = 'Misinformation Pattern'
         cluster['source'] = 'https://github.com/misinfosecproject/amitt_framework'
         cluster['type'] = 'amitt-misinformation-pattern'
-        cluster['uuid'] = str(uuid.uuid4())
+        cluster['uuid'] = ASSIGNER.for_cluster('cluster', 'technique')
         cluster['values'] = []
         cluster['version'] = 3
 
@@ -91,7 +104,8 @@ class Amitt:
             if technique[1] == technique[2] == technique[3] == '':
                 continue
 
-            t['uuid'] = str(uuid.uuid4())
+            t['uuid'] = ASSIGNER.for_value(technique[1],
+                                           seed=('technique', technique[0]))
             t['value'] = technique[1]
             t['description'] = technique[3]
             t['meta'] = {
@@ -117,7 +131,7 @@ class Amitt:
         cluster['name'] = 'Misinformation Task'
         cluster['source'] = 'https://github.com/misinfosecproject/amitt_framework'
         cluster['type'] = 'amitt-misinformation-pattern'
-        cluster['uuid'] = str(uuid.uuid4())
+        cluster['uuid'] = ASSIGNER.derive('cluster', 'task')
         cluster['values'] = []
         cluster['version'] = '3'
 
@@ -138,7 +152,8 @@ class Amitt:
             if technique[1] == technique[2] == technique[3] == '':
                 continue
 
-            t['uuid'] = str(uuid.uuid4())
+            t['uuid'] = ASSIGNER.for_value(technique[1],
+                                           seed=('technique', technique[0]))
             t['value'] = technique[1]
             t['description'] = technique[3]
             t['meta'] = {

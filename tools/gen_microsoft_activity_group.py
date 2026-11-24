@@ -15,6 +15,8 @@ import json
 import re
 import uuid
 from pathlib import Path
+
+from galaxy_uuid import UuidAssigner, load_committed_cluster
 from typing import Any
 from urllib.request import urlopen
 
@@ -28,6 +30,13 @@ DEFAULT_INPUT = Path("clusters/microsoft-activity-group.json")
 THREAT_ACTOR_CLUSTER = Path("clusters/threat-actor.json")
 REL_PROBABLE = 'estimative-language:likelihood-probability="likely"'
 UUID_NAMESPACE = uuid.UUID("28b5e55d-acba-4748-a79d-0afa3512689a")
+
+# The uuid was derived from the current display name, so a Microsoft rename
+# minted a new uuid and orphaned the old entry along with every `related`
+# edge pointing at it. Prefer the committed uuid, matching on the old name
+# via synonyms -- a rename demotes the previous name to `Other names`.
+ASSIGNER = UuidAssigner(UUID_NAMESPACE,
+                        load_committed_cluster(DEFAULT_OUTPUT))
 
 
 COUNTRY_CODES = {
@@ -170,7 +179,7 @@ def create_entry(record: dict[str, str], source_url: str) -> dict[str, Any]:
     entry: dict[str, Any] = {
         "value": value,
         "description": description,
-        "uuid": str(uuid.uuid5(UUID_NAMESPACE, value.casefold())),
+        "uuid": ASSIGNER.for_value(value, synonyms=aliases),
         "meta": {
             "refs": [source_url],
             "synonyms": aliases,
