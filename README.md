@@ -32,7 +32,7 @@ Category: *actor* - source: *https://apt.360.net/aptlist* - total: *42* elements
 
 [Agent Threat Rules](https://www.misp-galaxy.org/agent-threat-rules) - Open detection rules for AI agent threats — prompt injection, tool poisoning, MCP server attacks, skill compromise. Each cluster value is one ATR rule with category, severity, and CVE/OWASP/MITRE ATLAS references where mapped.
 
-Category: *agent-threat-rules* - source: *https://github.com/Agent-Threat-Rule/agent-threat-rules* - total: *713* elements
+Category: *agent-threat-rules* - source: *https://github.com/Agent-Threat-Rule/agent-threat-rules* - total: *844* elements
 
 [[HTML](https://www.misp-galaxy.org/agent-threat-rules)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/agent-threat-rules.json)]
 
@@ -608,7 +608,7 @@ Category: *actor* - source: *MISP Project* - total: *135* elements
 
 [Ransomware](https://www.misp-galaxy.org/ransomware) - Ransomware galaxy based on different sources and maintained by the MISP Project.
 
-Category: *tool* - source: *Various* - total: *2179* elements
+Category: *tool* - source: *Various* - total: *2180* elements
 
 [[HTML](https://www.misp-galaxy.org/ransomware)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/ransomware.json)]
 
@@ -776,7 +776,7 @@ Category: *tool* - source: *https://github.com/AssoEchap/stalkerware-indicators*
 
 [Stealer](https://www.misp-galaxy.org/stealer) - A list of malware stealer.
 
-Category: *tool* - source: *Open Sources* - total: *19* elements
+Category: *tool* - source: *Open Sources* - total: *20* elements
 
 [[HTML](https://www.misp-galaxy.org/stealer)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/stealer.json)]
 
@@ -784,7 +784,7 @@ Category: *tool* - source: *Open Sources* - total: *19* elements
 
 [Surveillance Vendor](https://www.misp-galaxy.org/surveillance-vendor) - List of vendors selling surveillance technologies including malware, interception devices or computer exploitation services.
 
-Category: *actor* - source: *MISP Project* - total: *615* elements
+Category: *actor* - source: *MISP Project* - total: *616* elements
 
 [[HTML](https://www.misp-galaxy.org/surveillance-vendor)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/surveillance-vendor.json)]
 
@@ -832,7 +832,7 @@ Category: *threat-actor* - source: *https://www.publicsafety.gc.ca/cnt/_xml/lstd
 
 [Threat Actor](https://www.misp-galaxy.org/threat-actor) - Known or estimated adversary groups targeting organizations and employees. Adversary groups are regularly confused with their initial operation or campaign. threat-actor-classification meta can be used to clarify the understanding of the threat-actor if also considered as operation, campaign or activity group.
 
-Category: *actor* - source: *MISP Project* - total: *1114* elements
+Category: *actor* - source: *MISP Project* - total: *1132* elements
 
 [[HTML](https://www.misp-galaxy.org/threat-actor)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/threat-actor.json)]
 
@@ -896,7 +896,7 @@ Category: *tmss* - source: *https://github.com/microsoft/Threat-matrix-for-stora
 
 [Tool](https://www.misp-galaxy.org/tool) - threat-actor-tools is an enumeration of tools used by adversaries. The list includes malware but also common software regularly used by the adversaries.
 
-Category: *tool* - source: *MISP Project* - total: *654* elements
+Category: *tool* - source: *MISP Project* - total: *662* elements
 
 [[HTML](https://www.misp-galaxy.org/tool)] - [[JSON](https://github.com/MISP/misp-galaxy/blob/main/clusters/tool.json)]
 

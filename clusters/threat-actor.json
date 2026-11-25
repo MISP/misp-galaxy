@@ -25038,7 +25038,238 @@
       ],
       "uuid": "87e0e168-99df-4863-9fd1-23f529c5f24c",
       "value": "UAT-11473"
+    },
+    {
+      "description": "Cybercriminal group tracked by the Sophos Counter Threat Unit (CTU) that operates the Aur0ra ransomware (also known as Aurora ransomware). Sophos reports that the group used AI extensively: it tested the evasion capabilities of tools and techniques against several EDR products in an AI-assisted post-exploitation framework built with Cursor, then gave its associates similar technology for Aur0ra intrusions, in which Cursor's Composer agent and models from Anthropic, xAI and Moonshot performed network and Active Directory discovery, password spraying, Kerberoasting, NTLM coercion and relay and credential extraction, with human operators supplying VPN credentials, SOCKS access and objectives; guardrails were bypassed by framing the intrusions as authorized red team or diagnostics testing. Intrusions relied on Cobalt Strike, shared C2 infrastructure, SharpShares enumeration and exfiltration to S3-compatible storage, and victims were later named on Aur0ra's data leak site. Multiple distinct operators followed the same pattern; artifacts suggest Russian speakers.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://www.sophos.com/en-us/blog/ai-used-in-aur0ra-ransomware-testing-and-execution"
+        ]
+      },
+      "uuid": "c2a10fc3-a12f-4310-94c2-88a1eb136719",
+      "value": "GOLD OGRE"
+    },
+    {
+      "description": "China-nexus targeted intrusion adversary tracked by CrowdStrike, formerly tracked as VexatiousTemper, active since at least 2021 against government, think tank, energy and extractive organisations across Europe, North America, Oceania and the UK. From 17 October 2026 CrowdStrike observed it run the agentic AI framework ARTEX, mainly with DeepSeek plus a second commercial LLM, from a single controller against more than 200 organisations in at least 14 countries, including foreign ministries in Latin America, Europe, Asia and the Middle East, US pharmaceutical, semiconductor, defense and nuclear organisations, and telecommunications providers. A human operator steered the agents in Chinese, including instructions to find hosts without the CrowdStrike Falcon sensor. Post-exploitation at nine organisations included deployment of the BLOODALCHEMY backdoor, side-loaded by a renamed GameHook binary. CrowdStrike states this campaign is separate from the ARTEX activity tracked as Storm-0940. The Hacker News reports, without a CrowdStrike quote, that the group overlaps with Trend Micro's Earth Estries; this overlap is recorded as a similar relation, not as a synonym.",
+      "meta": {
+        "country": "CN",
+        "date": "October 2026.",
+        "refs": [
+          "https://www.crowdstrike.com/en-us/blog/vapor-panda-uses-artex-to-scale-global-campaign/",
+          "https://thehackernews.com/2026/10/chinese-hackers-use-ai-powered-artex-to.html"
+        ],
+        "synonyms": [
+          "VexatiousTemper"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "1f7f4a51-c4a8-4365-ade3-83b222e7cb67",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "4125764c-ec9a-4a11-88c3-140d8b6e2810",
+      "value": "Vapor Panda"
+    },
+    {
+      "description": "Uncategorized threat cluster tracked by Google Threat Intelligence Group for an ARTEX-enabled intrusion campaign also tracked by Wiz Research. GTIG states that it overlaps with the PRC-nexus actor Microsoft tracks as Storm-0940. Activity dates back to at least August 2026 and affected multiple entities in the US and Europe in enterprise software, industrial automation, semiconductor manufacturing and design, and telecommunications. The actor typically moved from a first compromised account to deep system access in about four hours, once in 15 minutes, customised its tooling to victim-specific setups and fell back to open proxies when its infrastructure was blocked. The overlap with Storm-0940 is recorded as a similar relation, not as a synonym.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://cloud.google.com/blog/topics/threat-intelligence/artex-and-friends-enter-agentic-offensive-frameworks/"
+        ]
+      },
+      "related": [
+        {
+          "dest-uuid": "301ffea9-edd5-4d89-a65f-8add8e34e95d",
+          "tags": [
+            "estimative-language:likelihood-probability=\"likely\""
+          ],
+          "type": "similar"
+        }
+      ],
+      "uuid": "a7e30dc5-6efd-4d0b-ba09-ce8a3a573c96",
+      "value": "UNC7228"
+    },
+    {
+      "description": "Previously unknown threat actor tracked by Volexity, which from 3 October 2026 exploited a zero-day chain in Ivanti Connect Secure (authentication bypass and RCE tracked as CVE-2026-104935, plus a privilege escalation) to obtain unauthenticated root code execution on a fully patched appliance (22.8R2.4). It re-ran the whole exploit chain for each command instead of deploying a web shell or backdoor, and used in-memory Python, Perl and Bash stages. Post-exploitation focused on credential theft and reconnaissance: Active Directory exports and a custom LDAP tool searching for LAPS passwords and BitLocker recovery keys, parsing of the appliance's own packet captures for LDAP, HTTP Basic and NTLM credentials, a Python Kerberos implementation, and password spraying. Anti-forensic steps included selective log tampering, restoring patched in-memory components and evading the Ivanti Integrity Checker Tool. Volexity assesses with low confidence a criminal rather than espionage motivation, and with medium confidence that the actor uses LLMs for exploit development and post-exploitation.",
+      "meta": {
+        "date": "October 2026.",
+        "refs": [
+          "https://www.volexity.com/blog/2026/10/13/a-series-of-unauthenticated-events-chained-exploitation-of-ivanti-connect-secure-zero-days/"
+        ]
+      },
+      "uuid": "529ab5a8-b53d-4c4d-b2c2-75f13a5eaaa6",
+      "value": "UTA0576"
+    },
+    {
+      "description": "DarkLunnen targeted organizations across Europe using exposed services, known vulnerabilities, and weak or stolen credentials. Its activity included network appliance exploitation, credential theft, webshell tunneling, remote access, internal reconnaissance, and lateral movement. DarkLunnen used a modified watchTowr PoC for FortiGate CVE-2024-55591 to create a backdoor super-admin account named “service”. Group-IB has not linked DarkLunnen to a known actor or established its nationality or state affiliation.",
+      "meta": {
+        "refs": [
+          "https://www.group-ib.com/blog/offensive-cyber-operations-europe/"
+        ]
+      },
+      "uuid": "ce34603a-a4b9-4545-bd13-ab8964fa952b",
+      "value": "DarkLunnen"
+    },
+    {
+      "description": "n0n is a financially motivated data-theft and destructive-extortion group active since September 2026. It gains access through compromised credentials, including FortiGate SSL-VPN credential stuffing, and exfiltrates data before threatening publication. Its documented TTPs include deploying an AES-256-CBC locker that appends `.n0n`, deleting shadow copies and backups, and wiping free space; key reuse across builds may enable decryption. By October 19, 2026, n0n had listed 93 alleged victims, while researchers tied its exposed operator workspace to at least 23 organizations and cautioned that some claims may be inflated.",
+      "meta": {
+        "refs": [
+          "https://socradar.io/blog/dark-web-profile-n0n-ransomware/",
+          "https://socradar.io/blog/n0n-ransomware-ai-assisted-extortion/#indicators-of-compromise-iocs#new_tab",
+          "https://socradar.io/blog/n0n-group-global-ports-shipping-leak/"
+        ]
+      },
+      "uuid": "944c3e9d-003d-43f9-bffd-f098bec755d7",
+      "value": "n0n"
+    },
+    {
+      "description": "Atesh is a pro-Ukrainian hacking group that claimed to have hacked an app and compromised regional ministry channels on the MAX messenger. It posted a screenshot of a fake alert on Telegram. Russian media and regional authorities confirmed that the ministry’s services were hacked, but Atesh’s involvement has not been independently confirmed.",
+      "meta": {
+        "country": "UA",
+        "refs": [
+          "https://kylesinvestigation.com/2026/11/02/fake-nuclear-alert-sent-through-russian-emergencies-ministry-app-after-hack/"
+        ]
+      },
+      "uuid": "d01dc4f6-36a5-42b3-9d8f-b2f313487650",
+      "value": "Atesh"
+    },
+    {
+      "description": "StingyBasilisk is an unattributed espionage actor with active infrastructure since at least April 2022; its initial access vector is unknown. In February 2026, it expanded laterally using SMB and a modified Impacket atexec tool to execute commands through scheduled tasks. It maintains persistence through COM hijacking and abuse of the Windows Time service. Its custom agents relay C2 traffic through named pipes over SMB, while the Go-based HenMapCaCon.dll backdoor supports file access and exfiltration.",
+      "meta": {
+        "refs": [
+          "https://socfortress.medium.com/malware-spreads-across-isolated-government-networks-via-smb-and-pipes-a4f782e35046?source=rss-36613248f635------2"
+        ]
+      },
+      "uuid": "3ef79614-adde-4b87-af8f-e0c71c1ca201",
+      "value": "StingyBasilisk"
+    },
+    {
+      "description": "SilentAir is a state-level threat actor assessed with low confidence to be aligned with China-nexus operations. It primarily targets Taiwan and launches attacks from hijacked mobile operator nodes, mostly over SS7 and sometimes Diameter. By manipulating subscriber location updates, SilentAir redirects incoming calls and SMS messages through compromised nodes for interception and harvests subscriber details. It also sends silent SMS messages, potentially to verify continued interception.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://commsrisk.com/china-linked-hackers-infiltrate-mobile-networks-to-intercept-calls-and-sms/",
+          "https://www.securityweek.com/silentair-hackers-intercept-calls-sms-from-inside-mobile-networks/"
+        ]
+      },
+      "uuid": "25c1c735-97ce-440c-9bef-e4db51bc4a62",
+      "value": "SilentAir"
+    },
+    {
+      "description": "PixelLeaks is a ransomware group that has claimed attacks on organizations in India, Indonesia, the USA, the UAE, and Vietnam. Named targets include PlasmaGen Biosciences, Connectwell Industries, PT Fiber Networks Indonesia, and SPI Corp / SPI Energy group. PixelLeaks also posted about Godrej & Boyce Mfg Co Ltd.",
+      "meta": {
+        "refs": [
+          "https://ransomfeed.it/index.php?page=post_details&id_post=38685",
+          "https://ransomfeed.it/index.php?page=post_details&id_post=38658",
+          "https://ransomfeed.it/index.php?page=post_details&id_post=38662",
+          "https://ransomfeed.it/index.php?page=post_details&id_post=38660",
+          "https://ransomfeed.it/index.php?page=post_details&id_post=38665",
+          "https://ransomfeed.it/index.php?page=post_details&id_post=38670"
+        ]
+      },
+      "uuid": "89eabfa6-bd41-4365-a4f3-0cd34c7ecb5c",
+      "value": "PixelLeaks"
+    },
+    {
+      "description": "Gorbag is a Russia-aligned threat actor active since at least February 2025 that targets Ukrainian organizations, including law enforcement, justice entities, frontline administrations, defense organizations, and a transportation hub for foreign military aid. It collects credentials, VPN configurations, documents, and .zs2 electronic signature keys in a single pass, including from mapped drives and removable media, before deleting its malware. ESET assesses that Gorbag may act as an initial access broker, passing stolen credentials to other Russia-aligned actors.",
+      "meta": {
+        "country": "RU",
+        "refs": [
+          "https://www.welivesecurity.com/en/eset-research/gorbag-orcs-border-harvesting-intelligence-ukraine/#new_tab"
+        ]
+      },
+      "uuid": "f07ba380-bd12-4c44-a4b2-238db4249465",
+      "value": "Gorbag"
+    },
+    {
+      "description": "CyberXero is a Russian-speaking, financially motivated IAB that conducts a global campaign against WordPress and e-commerce platforms alongside targeted reconnaissance of Ukrainian energy and utilities organizations. Its TTPs include exploiting disclosed vulnerabilities, using shared or default credentials, extracting victim databases and deploying Cobalt Strike. The actor’s infrastructure includes up to 51 specialized Claude Code agents and a PentAGI deployment connected to its Cobalt Strike Team Server. An exposed directory revealed session logs, exploitation tools and victim data, including confirmed data on more than 628,000 Ukrainian individuals.",
+      "meta": {
+        "country": "RU",
+        "refs": [
+          "https://socradar.io/blog/dark-web-profile-cyberxero/",
+          "https://socradar.io/blog/cyberxero-ai-iab-ukraine-critical-infrastructure/"
+        ]
+      },
+      "uuid": "023a27be-ee4e-417c-a58c-e165c4a7c647",
+      "value": "CyberXero"
+    },
+    {
+      "description": "SlippyNunchucks is a China-aligned APT group active since at least September 15, 2023, targeting organizations and Chinese-speaking individuals primarily in South and East Asia, with some victims in Europe. Its cyberespionage operations center on DarkVigil, a modular .NET implant with more than 20 known plugins. The group abuses Chinese applications to deploy DarkVigil, including by hijacking DNS resolution and injecting malicious configuration into Sogou Input Method’s insecure HTTP communications. ESET tracks SlippyNunchucks independently of Mustang Panda, with no known associations between the groups.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://www.welivesecurity.com/en/eset-research/slippynunchucks-hijacks-sogou-input-methods-brand-promotion-mechanism-to-distribute-malware/"
+        ]
+      },
+      "uuid": "ebd89c47-0789-4e20-8d17-30be2b85b2b8",
+      "value": "SlippyNunchucks"
+    },
+    {
+      "description": "Storm-3358 is a Cambodia-based, financially motivated intrusion cluster that primarily targets financial organizations in Southeast Asia. In October 2026, it began using the ARTEX framework alongside conventional tools to scan internet-facing systems and exploit flaws including anonymous file upload and SSRF. It has deployed the WISP, VShell, and AdaptixC2 RATs for persistence and lateral movement, using utilities such as netcat and curl to download them.",
+      "meta": {
+        "country": "KH",
+        "refs": [
+          "https://blog.talosintelligence.com/artex-and-beyond/",
+          "https://blog.malwaremustdie.org/2026/11/mmd-072-2026-artex-detection-signature.html",
+          "https://www.microsoft.com/en-us/security/blog/2026/11/06/artex-abuse-expands-as-cybercriminals-target-financial-sector/"
+        ]
+      },
+      "uuid": "a5ddcb59-6fb9-4384-b3aa-4ca5c00d78c3",
+      "value": "Storm-3358"
+    },
+    {
+      "description": "Crafty Falcon is an AI-assisted threat actor targeting Indian fintechs, lenders, payment firms and cryptocurrency exchanges. It exploits exposed test environments and shared credentials, then moves money through victims’ payment and disbursement APIs. Its tooling includes ARTEX, PentAGI, Cairn and CyberStrikeAI, and it rotates C2 infrastructure within hours to days.",
+      "meta": {
+        "refs": [
+          "https://cyble.com/blog/crafty-falcon-ai-assisted-financial-threat-actor/",
+          "https://thehackernews.com/2026/11/backdoored-docker-image-for-artex-ai.html"
+        ]
+      },
+      "uuid": "27396c22-9bc0-42ff-a99c-67fb882f86da",
+      "value": "CRAFTY FALCON"
+    },
+    {
+      "description": "Knaithe is a Chinese-speaking operator assessed with moderate confidence to be operating from Zhuhai, China. The actor used Hermes Agent with DeepSeek, orchestrated via Telegram, for autonomous vulnerability scanning of Langflow and n8n instances. Separately, manual exploitation resulted in confirmed data exfiltration from three Citrix NetScaler targets and command execution on 11 Marimo Notebook endpoints.",
+      "meta": {
+        "country": "CN",
+        "refs": [
+          "https://unit42.paloaltonetworks.com/autonomous-ai-cyber-attack-campaign/",
+          "https://www.tenable.com/blog/the-agentic-ai-threat-cluster-seven-incidents-three-actors-and-what-they-mean"
+        ],
+        "synonyms": [
+          "KnYuan"
+        ]
+      },
+      "uuid": "d00d0781-5a17-4a6c-82d0-46b602f65834",
+      "value": "Knaithe"
+    },
+    {
+      "description": "Hitcore claimed responsibility for a breach of Ukraine’s Air Alert app that sent false air-raid alerts to users in Kyiv on November 1. A Russian-language alert warned of a possible Oreshnik missile strike and linked to Hitcore’s Telegram channel. Zelensky described it as a Russian attack in a November 2 interview.",
+      "meta": {
+        "country": "RU",
+        "refs": [
+          "https://therecord.media/ukraine-hackers-russia-alert-system"
+        ]
+      },
+      "uuid": "da2ef8ce-e09f-418a-bd63-483d4d8542ab",
+      "value": "Hitcore Corp"
+    },
+    {
+      "description": "DARK CARTOGRAPHER is using Discover-Tech’s infrastructure to exploit vulnerabilities across numerous mobile carriers to link device advertising IDs with phone numbers, mass-deanonymizing internet users. Notably, DARK CARTOGRAPHER’s infrastructure links to both a mercenary adtech vendor and a U.S. government contractor. It is rare to see such direct overlaps between mercenary vendors and U.S. government or intelligence contractors.",
+      "meta": {
+        "refs": [
+          "https://citizenlab.ca/research/how-discover-tech-turned-targeted-ads-into-a-pipeline-for-spyware/"
+        ]
+      },
+      "uuid": "8c8f4d0e-ef58-4f3d-9936-2c29c53de947",
+      "value": "DARK CARTOGRAPHER"
     }
   ],
-  "version": 357
+  "version": 360
 }
