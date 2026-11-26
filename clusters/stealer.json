@@ -325,6 +325,18 @@
       "value": "FormBook"
     },
     {
+      "description": "BubbleGym is a two-stage Windows x64 malware family delivered through fake TV-episode torrents on public indexers (seen October 2026). A loader padded to about 1 GB carries a ChaCha20-encrypted C++ infostealer described by a 64-byte footer. The stealer targets Chromium-based browsers and resolves its C2 (beenetprotect.com) from the description of the YouTube channel \"bubblegym\", with a GitHub Gist as backup.",
+      "meta": {
+        "date": "October 2026",
+        "refs": [
+          "https://github.com/PeterFellow/bubblegym",
+          "https://thereallo.dev/blog/someone-on-torrent-sites-kept-fucking-with-my-sonarr-setup",
+          "https://bazaar.abuse.ch/sample/8dde632a363c563929045e50d400ba03331b250b74ca04474259478eea389667/"
+        ]
+      },
+      "uuid": "d92f5f7c-ec72-4ee0-ab49-264ee6a8c582",
+      "value": "BubbleGym"
+    },
       "description": "Aokigahara is a Windows infostealer reported by Check Point Research in October 2026; an earlier version may have been known as Kamidere or Stygian (the string 'kamidere' appears in samples). Besides browsers (Chromium and Firefox), crypto wallets and extensions, Discord, Telegram, Steam and gaming platforms, Outlook and Thunderbird, VPN, FTP/SFTP clients and password managers, it has a dedicated 'aisessions' module collecting credentials and session files of AI and developer tools (Claude Code/Desktop, Codex, ChatGPT Desktop, Cursor, Windsurf, Kiro, Amazon Q, GitHub Copilot, Gemini CLI, JetBrains AI Assistant) and an 'ide' module targeting Git credentials, SSH keys and AWS/Azure/Google Cloud configuration. It also drops a clipper component. Its AES-256-CBC encrypted configuration (.stgcfg section, magic STGC) holds the C2 URL, an X25519 server key, build ID, gate token and a module bitmask; data is exfiltrated as AES-256-GCM encrypted ZIP chunks to /gate/handshake, /gate/chunk and /gate/complete. Optional checks stop execution on CIS keyboard or UI languages and in analysis environments. No threat actor is attributed.",
       "meta": {
         "date": "October 2026.",
